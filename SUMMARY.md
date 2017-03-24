@@ -11,5 +11,5 @@
 ## API References
 
 * [Final Cut Pro](finalcutpro.md)
-* [Hammerspoon](hammerspoon/index.html)
+* [Hammerspoon](http://www.hammerspoon.org/docs/index.html)
 
