@@ -19,5 +19,6 @@
 
 ## External Resources
 
+* [Lua](external-resources/lua-tips.md)
 * [FCPXML](external-resources/fcpxml.md)
 
