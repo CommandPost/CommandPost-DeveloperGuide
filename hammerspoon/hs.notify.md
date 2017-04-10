@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.notify
+# [docs](hammerspoon/index.md) » hs.notify
 ---
 
 This module allows you to create on screen notifications in the User Notification Center located at the right of the users screen.

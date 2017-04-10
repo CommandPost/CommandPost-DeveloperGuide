@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.grid
+# [docs](hammerspoon/index.md) » hs.grid
 ---
 
 Move/resize windows within a grid

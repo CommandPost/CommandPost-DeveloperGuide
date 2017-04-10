@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.json
+# [docs](hammerspoon/index.md) » hs.json
 ---
 
 JSON encoding and decoding

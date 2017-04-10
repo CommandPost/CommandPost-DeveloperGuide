@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.spotlight.item
+# [docs](hammerspoon/index.md) » hs.spotlight.item
 ---
 
 This sub-module is used to access the individual results of a spotlightObject or a spotlightGroupObject.

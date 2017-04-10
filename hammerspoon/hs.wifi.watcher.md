@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.wifi.watcher
+# [docs](hammerspoon/index.md) » hs.wifi.watcher
 ---
 
 Watch for changes to the associated wifi network

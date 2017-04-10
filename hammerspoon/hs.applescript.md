@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.applescript
+# [docs](hammerspoon/index.md) » hs.applescript
 ---
 
 Execute AppleScript code

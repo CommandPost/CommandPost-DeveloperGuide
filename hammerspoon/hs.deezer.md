@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.deezer
+# [docs](hammerspoon/index.md) » hs.deezer
 ---
 
 

@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.socket
+# [docs](hammerspoon/index.md) » hs.socket
 ---
 
 Talk to custom protocols using asynchronous TCP sockets

@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.usb
+# [docs](hammerspoon/index.md) » hs.usb
 ---
 
 Inspect USB devices

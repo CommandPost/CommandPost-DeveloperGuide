@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.location.geocoder
+# [docs](hammerspoon/index.md) » hs.location.geocoder
 ---
 
 Converts between GPS coordinates and more user friendly representations like an address or points of interest.

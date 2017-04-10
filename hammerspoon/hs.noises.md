@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.noises
+# [docs](hammerspoon/index.md) » hs.noises
 ---
 
 Contains two low latency audio recognizers for different mouth noises, which can be used to trigger actions like scrolling or clicking.

@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.audiodevice.watcher
+# [docs](hammerspoon/index.md) » hs.audiodevice.watcher
 ---
 
 Watch for system level audio hardware events

@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.doc.markdown
+# [docs](hammerspoon/index.md) » hs.doc.markdown
 ---
 
 Markdown to HTML and plaintext conversion support used by hs.doc

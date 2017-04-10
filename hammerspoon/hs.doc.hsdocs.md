@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.doc.hsdocs
+# [docs](hammerspoon/index.md) » hs.doc.hsdocs
 ---
 
 Manage the internal documentation web server.

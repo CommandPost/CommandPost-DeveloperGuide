@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.itunes
+# [docs](hammerspoon/index.md) » hs.itunes
 ---
 
 Controls for iTunes music player

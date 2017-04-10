@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.inspect
+# [docs](hammerspoon/index.md) » hs.inspect
 ---
 
 Produce human-readable representations of Lua variables (particularly tables)

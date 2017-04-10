@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.fnutils
+# [docs](hammerspoon/index.md) » hs.fnutils
 ---
 
 Functional programming utility functions

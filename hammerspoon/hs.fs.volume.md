@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.fs.volume
+# [docs](hammerspoon/index.md) » hs.fs.volume
 ---
 
 Interact with OS X filesystem volumes

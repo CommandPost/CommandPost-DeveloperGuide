@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.timer.delayed
+# [docs](hammerspoon/index.md) » hs.timer.delayed
 ---
 
 Specialized timer objects to coalesce processing of unpredictable asynchronous events into a single callback

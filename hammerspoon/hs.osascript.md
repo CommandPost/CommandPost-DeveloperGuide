@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.osascript
+# [docs](hammerspoon/index.md) » hs.osascript
 ---
 
 Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript

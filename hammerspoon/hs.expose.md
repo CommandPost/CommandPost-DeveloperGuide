@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.expose
+# [docs](hammerspoon/index.md) » hs.expose
 ---
 
 Keyboard-driven expose replacement/enhancement

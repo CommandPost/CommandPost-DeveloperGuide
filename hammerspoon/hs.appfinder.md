@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.appfinder
+# [docs](hammerspoon/index.md) » hs.appfinder
 ---
 
 Easily find ```hs.application``` and ```hs.window``` objects

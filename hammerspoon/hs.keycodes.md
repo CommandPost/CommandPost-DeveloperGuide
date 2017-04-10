@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.keycodes
+# [docs](hammerspoon/index.md) » hs.keycodes
 ---
 
 Convert between key-strings and key-codes. Also provides funcionality for querying and changing keyboard layouts.

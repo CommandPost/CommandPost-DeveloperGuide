@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.speech
+# [docs](hammerspoon/index.md) » hs.speech
 ---
 
 This module provides access to the Speech Synthesizer component of OS X.

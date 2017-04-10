@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.html) » hs.console
+# [docs](hammerspoon/index.md) » hs.console
 ---
 
 Some functions for manipulating the Hammerspoon console.
