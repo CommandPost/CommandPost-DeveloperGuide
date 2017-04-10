@@ -14,50 +14,54 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-** [post](#post)
+ * [post](#post)
 * Constructors - API calls which return an object, typically one that offers API methods
-** [new](#new)
+ * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-** [start](#start)
-** [stop](#stop)
+ * [start](#start)
+ * [stop](#stop)
 
 ## API Documentation
-
 ### Functions
 
 #### [post](#post)
-| | |
-|-|-|
+|             |                 |
+| ------------|-----------------|
 | Signature   | hs.distributednotifications.post(name[, sender[, userInfo]])  |
 | Type        | Function |
 | Description | Sends a distributed notification |
-  Paramters:
-     * name - A string containing the name of the notification
-     * sender - An optional string containing the name of the sender of the notification (in the form `com.domain.application.foo`). Defaults to nil.
-     * userInfo - An optional table containing additional information to post with the notification. Defaults to nil.
+ |
 
 ### Constructors
 
 #### [new](#new)
-| | |
-|-|-|
+|             |                 |
+| ------------|-----------------|
 | Signature   | hs.distributednotifications.new(callback[, name[, object]]) -> object  |
 | Type        | Constructor |
 | Description | Creates a new NSDistributedNotificationCenter watcher |
-| Parameters |  * callback - A function to be called when a matching notification arrives. The function should accept one argument:  * notificationName - A string containing the name of the notification * name - An optional string containing the name of notifications to watch for. A value of `nil` will cause all notifications to be watched. Defaults to `nil`. * object - An optional string containing the name of sending objects to watch for. A value of `nil` will cause all sending objects to be watched. Defaults to `nil`. | | Returns |  * An `hs.distributednotifications` object | 
+| Parameters |  * callback - A function to be called when a matching notification arrives. The function should accept one argument:  * notificationName - A string containing the name of the notification * name - An optional string containing the name of notifications to watch for. A value of `nil` will cause all notifications to be watched. Defaults to `nil`. * object - An optional string containing the name of sending objects to watch for. A value of `nil` will cause all sending objects to be watched. Defaults to `nil`. |
+| Returns |  * An `hs.distributednotifications` object |
+ |
+
 ### Methods
 
 #### [start](#start)
-| | |
-|-|-|
+|             |                 |
+| ------------|-----------------|
 | Signature   | hs.distributednotifications:start() -> object  |
 | Type        | Method |
 | Description | Starts a NSDistributedNotificationCenter watcher |
-| Parameters |  * None | | Returns |  * The `hs.distributednotifications` object | 
+| Parameters |  * None |
+| Returns |  * The `hs.distributednotifications` object |
+
+
 #### [stop](#stop)
-| | |
-|-|-|
+|             |                 |
+| ------------|-----------------|
 | Signature   | hs.distributednotifications:stop() -> object  |
 | Type        | Method |
 | Description | Stops a NSDistributedNotificationCenter watcher |
-| Parameters |  * None | | Returns |  * The `hs.distributednotifications` object | 
+| Parameters |  * None |
+| Returns |  * The `hs.distributednotifications` object |
+ |
