@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.urlevent
+# [docs](../hammerspoon/index.md) » hs.urlevent
 ---
 
 Allows Hammerspoon to respond to URLs

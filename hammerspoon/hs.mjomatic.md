@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.mjomatic
+# [docs](../hammerspoon/index.md) » hs.mjomatic
 ---
 
 tmuxomatic-like window management

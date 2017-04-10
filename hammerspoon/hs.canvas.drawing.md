@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.canvas.drawing
+# [docs](../hammerspoon/index.md) » hs.canvas.drawing
 ---
 
 An wrapper to replace `hs.drawing` with `hs.canvas`.

@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.network.ping.echoRequest
+# [docs](../hammerspoon/index.md) » hs.network.ping.echoRequest
 ---
 
 Provides lower-level access to the ICMP Echo Request infrastructure used by the hs.network.ping module. In general, you should not need to use this module directly unless you have specific requirements not met by the hs.network.ping module and the `hs.network.ping` object methods.

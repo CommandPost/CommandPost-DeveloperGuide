@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.uielement.watcher
+# [docs](../hammerspoon/index.md) » hs.uielement.watcher
 ---
 
 Watch for events on certain UI elements (including windows and applications)

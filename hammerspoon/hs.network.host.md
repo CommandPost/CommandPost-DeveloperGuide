@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.network.host
+# [docs](../hammerspoon/index.md) » hs.network.host
 ---
 
 This sub-module provides functions for acquiring host information, such as hostnames, addresses, and reachability.

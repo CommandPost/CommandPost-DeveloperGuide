@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.messages
+# [docs](../hammerspoon/index.md) » hs.messages
 ---
 
 Send messages via iMessage and SMS Relay (note, SMS Relay requires OS X 10.10 and an established SMS Relay pairing between your Mac and an iPhone running iOS8)

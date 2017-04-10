@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.sharing
+# [docs](../hammerspoon/index.md) » hs.sharing
 ---
 
 Share items with the macOS Sharing Services under the control of Hammerspoon.

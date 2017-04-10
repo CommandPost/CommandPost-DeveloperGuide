@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.javascript
+# [docs](../hammerspoon/index.md) » hs.javascript
 ---
 
 Execute JavaScript code

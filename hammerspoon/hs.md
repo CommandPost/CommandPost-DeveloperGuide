@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs
+# [docs](../hammerspoon/index.md) » hs
 ---
 
 Core Hammerspoon functionality

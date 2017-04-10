@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.screen
+# [docs](../hammerspoon/index.md) » hs.screen
 ---
 
 Manipulate screens (i.e. monitors)

@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.battery
+# [docs](../hammerspoon/index.md) » hs.battery
 ---
 
 Battery/power information

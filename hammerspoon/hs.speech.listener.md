@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.speech.listener
+# [docs](../hammerspoon/index.md) » hs.speech.listener
 ---
 
 This module provides access to the Speech Recognizer component of OS X.

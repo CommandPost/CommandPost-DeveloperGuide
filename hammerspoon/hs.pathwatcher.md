@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.pathwatcher
+# [docs](../hammerspoon/index.md) » hs.pathwatcher
 ---
 
 Watch paths recursively for changes

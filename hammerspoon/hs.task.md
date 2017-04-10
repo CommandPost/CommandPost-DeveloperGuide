@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.task
+# [docs](../hammerspoon/index.md) » hs.task
 ---
 
 Execute processes in the background and capture their output

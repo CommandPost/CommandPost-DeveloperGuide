@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.httpserver.hsminweb.cgilua
+# [docs](../hammerspoon/index.md) » hs.httpserver.hsminweb.cgilua
 ---
 
 Provides support functions in the `cgilua` module for Hammerspoon Minimal Web Server Lua templates.

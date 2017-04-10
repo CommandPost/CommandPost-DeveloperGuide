@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.utf8
+# [docs](../hammerspoon/index.md) » hs.utf8
 ---
 
 Functions providing basic support for UTF-8 encodings

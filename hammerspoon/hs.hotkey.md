@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.hotkey
+# [docs](../hammerspoon/index.md) » hs.hotkey
 ---
 
 Create and manage global keyboard shortcuts

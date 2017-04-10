@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.settings
+# [docs](../hammerspoon/index.md) » hs.settings
 ---
 
 Serialize simple Lua variables across Hammerspoon launches

@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.screen.watcher
+# [docs](../hammerspoon/index.md) » hs.screen.watcher
 ---
 
 Watch for screen layout changes

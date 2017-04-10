@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.drawing
+# [docs](../hammerspoon/index.md) » hs.drawing
 ---
 
 Primitives for drawing on the screen in various ways

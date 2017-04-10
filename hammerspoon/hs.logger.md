@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.logger
+# [docs](../hammerspoon/index.md) » hs.logger
 ---
 
 Simple logger for debugging purposes

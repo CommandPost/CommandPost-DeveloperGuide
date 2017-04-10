@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.sqlite3
+# [docs](../hammerspoon/index.md) » hs.sqlite3
 ---
 
 Interact with SQLite databases

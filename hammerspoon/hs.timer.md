@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.timer
+# [docs](../hammerspoon/index.md) » hs.timer
 ---
 
 Execute functions with various timing rules

@@ -1,4 +1,4 @@
-# [docs](hammerspoon/index.md) » hs.application.watcher
+# [docs](../hammerspoon/index.md) » hs.application.watcher
 ---
 
 Watch for application launch/terminate events
