@@ -40,84 +40,74 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
  * [validateJSONFile](#validateJSONFile)
 
 ## API Documentation
+
 ### Functions
 
-#### [fromJSONFile](#fromJSONFile)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.fromJSONFile(jsonfile) -> doc-array  |
-| Type        | Function |
-| Description | Builds a doc array construct from the JSON file provided. |
-| Parameters |  * jsonfile - A string containing the location of a JSON file |
-| Returns |  * A table containing the documentation data loaded from the JSON file |
+| #### [fromJSONFile](#fromJSONFile)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.fromJSONFile(jsonfile) -> doc-array                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Builds a doc array construct from the JSON file provided.                                                           |
+| **Parameters**                              |  * jsonfile - A string containing the location of a JSON file         |
+| **Returns**                                 |  * A table containing the documentation data loaded from the JSON file                  |
 
+| #### [fromRegisteredFiles](#fromRegisteredFiles)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.fromRegisteredFiles() -> doc-array                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Builds a doc array construct from the registered JSON files.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * A table containing the documentation data loaded from the registered JSON files                  |
+| **Notes**                                   |  * By default, the internal core documentation is already registered.  If you wish to remove it from the list of registered sources, issue the command `hs.doc.unregisterJSONFile(hs.docstrings_json_file)`. * The documentation object is created from the sources that are registered at the time of its invocation. If you register additional files later, you will need to reissue this command to build the updated documentation object.                        |
 
-#### [fromRegisteredFiles](#fromRegisteredFiles)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.fromRegisteredFiles() -> doc-array  |
-| Type        | Function |
-| Description | Builds a doc array construct from the registered JSON files. |
-| Parameters |  * None |
-| Returns |  * A table containing the documentation data loaded from the registered JSON files |
-| Notes |  * By default, the internal core documentation is already registered.  If you wish to remove it from the list of registered sources, issue the command `hs.doc.unregisterJSONFile(hs.docstrings_json_file)`. * The documentation object is created from the sources that are registered at the time of its invocation. If you register additional files later, you will need to reissue this command to build the updated documentation object.
+| #### [help](#help)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.help(identifier)                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Prints the documentation for some part of Hammerspoon's API and Lua 5.3.  This function has also been aliased as `hs.help` and `help` as a shorthand for use within the Hammerspoon console.                                                           |
+| **Parameters**                              |  * identifier - A string containing the signature of some part of Hammerspoon's API (e.g. `"hs.reload"`)         |
+| **Returns**                                 |  * None                  |
+| **Notes**                                   |  * This function is mainly for runtime API help while using Hammerspoon's Console * This function only returns information about the core Hammerspoon API and Lua 5.3.  If you register additional files from 3rd party modules, or deregister the initial files for creating your own `hs.doc` objects, it will not affect the results used by this function.                        |
 
-#### [help](#help)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.help(identifier)  |
-| Type        | Function |
-| Description | Prints the documentation for some part of Hammerspoon's API and Lua 5.3.  This function has also been aliased as `hs.help` and `help` as a shorthand for use within the Hammerspoon console. |
-| Parameters |  * identifier - A string containing the signature of some part of Hammerspoon's API (e.g. `"hs.reload"`) |
-| Returns |  * None |
-| Notes |  * This function is mainly for runtime API help while using Hammerspoon's Console * This function only returns information about the core Hammerspoon API and Lua 5.3.  If you register additional files from 3rd party modules, or deregister the initial files for creating your own `hs.doc` objects, it will not affect the results used by this function.
+| #### [locateJSONFile](#locateJSONFile)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.locateJSONFile(module) -> path | false, message                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Locates the JSON file corresponding to the specified module by searching package.path and package.cpath.                                                           |
+| **Parameters**                              |  * module - the name of the module to locate a JSON file for         |
+| **Returns**                                 |  * the path to the JSON file, or `false, error` if unable to locate a corresponding JSON file.                  |
+| **Notes**                                   |  * The JSON should be named 'full.module.name.json' and located in the same directory as the `lua` or `so` file which is used when the module is loaded via `require`.                        |
 
-#### [locateJSONFile](#locateJSONFile)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.locateJSONFile(module) -> path | false, message  |
-| Type        | Function |
-| Description | Locates the JSON file corresponding to the specified module by searching package.path and package.cpath. |
-| Parameters |  * module - the name of the module to locate a JSON file for |
-| Returns |  * the path to the JSON file, or `false, error` if unable to locate a corresponding JSON file. |
-| Notes |  * The JSON should be named 'full.module.name.json' and located in the same directory as the `lua` or `so` file which is used when the module is loaded via `require`.
+| #### [registerJSONFile](#registerJSONFile)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.registerJSONFile(jsonfile) -> status[, message]                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Register a JSON file for inclusion when Hammerspoon generates internal documentation.                                                           |
+| **Parameters**                              |  * jsonfile - A string containing the location of a JSON file         |
+| **Returns**                                 |  * status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned.                  |
 
-#### [registerJSONFile](#registerJSONFile)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.registerJSONFile(jsonfile) -> status[, message]  |
-| Type        | Function |
-| Description | Register a JSON file for inclusion when Hammerspoon generates internal documentation. |
-| Parameters |  * jsonfile - A string containing the location of a JSON file |
-| Returns |  * status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned. |
+| #### [registeredFiles](#registeredFiles)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.registeredFiles() -> table                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Returns the list of registered JSON files.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * a table containing the list of registered JSON files                  |
+| **Notes**                                   |  * The table returned by this function has a metatable including a __tostring method which allows you to see the list of registered files by simply typing `hs.doc.registeredFiles()` in the Hammerspoon Console.                        |
 
+| #### [unregisterJSONFile](#unregisterJSONFile)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.unregisterJSONFile(jsonfile) -> status[, message]                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Remove a JSON file from the list of registered files.                                                           |
+| **Parameters**                              |  * jsonfile - A string containing the location of a JSON file         |
+| **Returns**                                 |  * status - Boolean flag indicating if the file was unregistered or not.  If the file was not unregistered, then a message indicating the error is also returned.                  |
 
-#### [registeredFiles](#registeredFiles)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.registeredFiles() -> table  |
-| Type        | Function |
-| Description | Returns the list of registered JSON files. |
-| Parameters |  * None |
-| Returns |  * a table containing the list of registered JSON files |
-| Notes |  * The table returned by this function has a metatable including a __tostring method which allows you to see the list of registered files by simply typing `hs.doc.registeredFiles()` in the Hammerspoon Console.
+| #### [validateJSONFile](#validateJSONFile)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.validateJSONFile(jsonfile) -> status, message|table                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Validate a JSON file potential inclusion in the Hammerspoon internal documentation.                                                           |
+| **Parameters**                              |  * jsonfile - A string containing the location of a JSON file         |
+| **Returns**                                 |  * status - Boolean flag indicating if the file was validated or not. * message|table - If the file did not contain valid JSON data, then a message indicating the error is returned; otherwise the parsed JSON data is returned as a table.                  |
 
-#### [unregisterJSONFile](#unregisterJSONFile)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.unregisterJSONFile(jsonfile) -> status[, message]  |
-| Type        | Function |
-| Description | Remove a JSON file from the list of registered files. |
-| Parameters |  * jsonfile - A string containing the location of a JSON file |
-| Returns |  * status - Boolean flag indicating if the file was unregistered or not.  If the file was not unregistered, then a message indicating the error is also returned. |
-
-
-#### [validateJSONFile](#validateJSONFile)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.validateJSONFile(jsonfile) -> status, message|table  |
-| Type        | Function |
-| Description | Validate a JSON file potential inclusion in the Hammerspoon internal documentation. |
-| Parameters |  * jsonfile - A string containing the location of a JSON file |
-| Returns |  * status - Boolean flag indicating if the file was validated or not. * message|table - If the file did not contain valid JSON data, then a message indicating the error is returned; otherwise the parsed JSON data is returned as a table. |
- |

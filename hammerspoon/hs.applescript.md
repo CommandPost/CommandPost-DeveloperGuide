@@ -8,3 +8,4 @@ This module has been replaced by: [hs.osascript.applescript](./hs.osascript.html
 ## API Overview
 
 ## API Documentation
+

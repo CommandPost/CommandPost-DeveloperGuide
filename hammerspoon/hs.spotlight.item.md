@@ -13,24 +13,24 @@ For convenience, metamethods have been added to the spotlightItemObjects as a sh
  * [valueForAttribute](#valueForAttribute)
 
 ## API Documentation
+
 ### Methods
 
-#### [attributes](#attributes)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.spotlight.item:attributes() -> table  |
-| Type        | Method |
-| Description | Returns a list of attributes associated with the spotlightItemObject |
-| Parameters |  * None |
-| Returns |  * an array table containing a list of attributes associated with the result item. |
-| Notes |  * This list of attributes is usually not a complete list of the attributes available for a given spotlightItemObject. Many of the known attribute names are included in the `hs.spotlight.commonAttributeKeys` constant array, but even this is not an exhaustive list -- an application may create and assign any key it wishes to an entity for inclusion in the Spotlight metadata database.
+| #### [attributes](#attributes)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.spotlight.item:attributes() -> table                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns a list of attributes associated with the spotlightItemObject                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * an array table containing a list of attributes associated with the result item.                  |
+| **Notes**                                   |  * This list of attributes is usually not a complete list of the attributes available for a given spotlightItemObject. Many of the known attribute names are included in the `hs.spotlight.commonAttributeKeys` constant array, but even this is not an exhaustive list -- an application may create and assign any key it wishes to an entity for inclusion in the Spotlight metadata database.                        |
 
-#### [valueForAttribute](#valueForAttribute)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.spotlight.item:valueForAttribute(attribute) -> value  |
-| Type        | Method |
-| Description | Returns the value for the specified attribute of the spotlightItemObject |
-| Parameters |  * `attribute` - a string specifying the attribute to get the value of for the spotlightItemObject |
-| Returns |  * the attribute value as an appropriate data type or nil if the attribute does not exist or contains no value |
-| Notes |  * See [hs.spotlight.item:attributes](#attributes) for information about possible attribute names. |
+| #### [valueForAttribute](#valueForAttribute)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.spotlight.item:valueForAttribute(attribute) -> value                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns the value for the specified attribute of the spotlightItemObject                                                           |
+| **Parameters**                              |  * `attribute` - a string specifying the attribute to get the value of for the spotlightItemObject         |
+| **Returns**                                 |  * the attribute value as an appropriate data type or nil if the attribute does not exist or contains no value                  |
+| **Notes**                                   |  * See [hs.spotlight.item:attributes](#attributes) for information about possible attribute names.                        |
+

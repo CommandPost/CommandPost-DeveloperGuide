@@ -49,188 +49,167 @@ Common item data types that can be shared with Sharing Services include (but are
  * [title](#title)
 
 ## API Documentation
+
 ### Constants
 
-#### [builtinSharingServices[]](#builtinSharingServices[])
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing.builtinSharingServices[]  |
-| Type        | Constant |
-| Description | A table containing the predefined sharing service labels defined by Apple. |
- |
+| #### [builtinSharingServices[]](#builtinSharingServices[])    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing.builtinSharingServices[]                                                            |
+| **Type**                                    | Constant                                                           |
+| **Description**                             | A table containing the predefined sharing service labels defined by Apple.                                                           |
 
 ### Functions
 
-#### [URL](#URL)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing.URL(URL, [fileURL]) -> table  |
-| Type        | Function |
-| Description | Returns a table representing the URL specified. |
-| Parameters |  * URL     - a string or table specifying the URL. * fileURL - an optional boolean, default `false`, specifying whether or not the URL is supposed to represent a file on the local computer. |
-| Returns |  * a table containing the necessary labels for representing the specified URL as required by the macOS APIs. |
-| Notes |  * If the URL is specified as a table, it is expected to contain a `url` key with a string value specifying a proper schema and resource locator.
+| #### [URL](#URL)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing.URL(URL, [fileURL]) -> table                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Returns a table representing the URL specified.                                                           |
+| **Parameters**                              |  * URL     - a string or table specifying the URL. * fileURL - an optional boolean, default `false`, specifying whether or not the URL is supposed to represent a file on the local computer.         |
+| **Returns**                                 |  * a table containing the necessary labels for representing the specified URL as required by the macOS APIs.                  |
+| **Notes**                                   |  * If the URL is specified as a table, it is expected to contain a `url` key with a string value specifying a proper schema and resource locator.                        |
 
-#### [fileURL](#fileURL)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing.fileURL(path) -> table  |
-| Type        | Function |
-| Description | Returns a table representing a file URL for the path specified. |
-| Parameters |  * path - a string specifying a path to represent as a file URL. |
-| Returns |  * a table containing the necessary labels for converting the specified path into a URL as required by the macOS APIs. |
-| Notes |  * this function is a wrapper to [hs.sharing.URL](#URL) which sets the second argument to `true` for you. * see [hs.sharing.URL](#URL) for more information about the table format returned by this function.
+| #### [fileURL](#fileURL)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing.fileURL(path) -> table                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Returns a table representing a file URL for the path specified.                                                           |
+| **Parameters**                              |  * path - a string specifying a path to represent as a file URL.         |
+| **Returns**                                 |  * a table containing the necessary labels for converting the specified path into a URL as required by the macOS APIs.                  |
+| **Notes**                                   |  * this function is a wrapper to [hs.sharing.URL](#URL) which sets the second argument to `true` for you. * see [hs.sharing.URL](#URL) for more information about the table format returned by this function.                        |
 
-#### [shareTypesFor](#shareTypesFor)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing.shareTypesFor(items) -> identifiersTable  |
-| Type        | Function |
-| Description | Returns a table containing the sharing service identifiers which can share the items specified. |
-| Parameters |  * items - an array (table) or list of items separated by commas which you wish to share with this module. |
-| Returns |  * an array (table) containing strings which identify sharing service identifiers which may be used by the [hs.sharing.newShare](#newShare) constructor to share the specified data. |
-| Notes |  * this function is intended to be used to determine the identifiers for sharing services available on your computer and that may not be included in the [hs.sharing.builtinSharingServices](#builtinSharingServices) table. |
+| #### [shareTypesFor](#shareTypesFor)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing.shareTypesFor(items) -> identifiersTable                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Returns a table containing the sharing service identifiers which can share the items specified.                                                           |
+| **Parameters**                              |  * items - an array (table) or list of items separated by commas which you wish to share with this module.         |
+| **Returns**                                 |  * an array (table) containing strings which identify sharing service identifiers which may be used by the [hs.sharing.newShare](#newShare) constructor to share the specified data.                  |
+| **Notes**                                   |  * this function is intended to be used to determine the identifiers for sharing services available on your computer and that may not be included in the [hs.sharing.builtinSharingServices](#builtinSharingServices) table.                        |
 
 ### Constructors
 
-#### [newShare](#newShare)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing.newShare(type) -> sharingObject  |
-| Type        | Constructor |
-| Description | Creates a new sharing object of the type specified by the identifier provided. |
-| Parameters |  * type - a string specifying a sharing type identifier as listed in the [hs.sharing.builtinSharingServices](#builtinSharingServices) table or returned by the [hs.sharing.shareTypesFor](#shareTypesFor). |
-| Returns |  * a sharingObject or nil if the type identifier cannot be created on this system |
- |
+| #### [newShare](#newShare)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing.newShare(type) -> sharingObject                                                            |
+| **Type**                                    | Constructor                                                           |
+| **Description**                             | Creates a new sharing object of the type specified by the identifier provided.                                                           |
+| **Parameters**                              |  * type - a string specifying a sharing type identifier as listed in the [hs.sharing.builtinSharingServices](#builtinSharingServices) table or returned by the [hs.sharing.shareTypesFor](#shareTypesFor).         |
+| **Returns**                                 |  * a sharingObject or nil if the type identifier cannot be created on this system                  |
 
 ### Methods
 
-#### [accountName](#accountName)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:accountName() -> string | nil  |
-| Type        | Method |
-| Description | The account name used by the sharing service when posting on Twitter or Sina Weibo. |
-| Parameters |  * None |
-| Returns |  * a string containing the account name used by the sharing service, or nil if the sharing service does not provide this. |
-| Notes |  * According to the Apple API documentation, only the Twitter and Sina Weibo sharing services will set this property, but this has not been fully tested.
+| #### [accountName](#accountName)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:accountName() -> string | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | The account name used by the sharing service when posting on Twitter or Sina Weibo.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * a string containing the account name used by the sharing service, or nil if the sharing service does not provide this.                  |
+| **Notes**                                   |  * According to the Apple API documentation, only the Twitter and Sina Weibo sharing services will set this property, but this has not been fully tested.                        |
 
-#### [alternateImage](#alternateImage)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:alternateImage() -> hs.image object | nil  |
-| Type        | Method |
-| Description | Returns an alternate image, if one exists, representing the sharing service provided by this sharing object. |
-| Parameters |  * None |
-| Returns |  * an hs.image object or nil, if no alternate image representation for the sharing service is defined. |
+| #### [alternateImage](#alternateImage)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:alternateImage() -> hs.image object | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns an alternate image, if one exists, representing the sharing service provided by this sharing object.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * an hs.image object or nil, if no alternate image representation for the sharing service is defined.                  |
 
+| #### [attachments](#attachments)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:attachments() -> table | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | If the sharing service provides an array of the attachments included when the data was posted, this method will return an array of file URL tables of the attachments.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * an array (table) containing the attachment file URLs, or nil if the sharing service selected does not provide this.                  |
+| **Notes**                                   |  * not all sharing services will set a value for this property.                        |
 
-#### [attachments](#attachments)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:attachments() -> table | nil  |
-| Type        | Method |
-| Description | If the sharing service provides an array of the attachments included when the data was posted, this method will return an array of file URL tables of the attachments. |
-| Parameters |  * None |
-| Returns |  * an array (table) containing the attachment file URLs, or nil if the sharing service selected does not provide this. |
-| Notes |  * not all sharing services will set a value for this property.
+| #### [callback](#callback)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:callback(function | nil) -> sharingObject                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Set or clear the callback for the sharingObject.                                                           |
+| **Parameters**                              |  * a function, or nil, to set or remove the callback for the sharingObject         |
+| **Returns**                                 |  * the sharingObject                  |
+| **Notes**                                   |  * the callback should expect 3 or 4 arguments and return no results.  The arguments will be as follows:   * the sharingObject itself   * the callback message, which will be a string equal to one of the following:     * "didFail"   - an error occurred while attempting to share the items     * "didShare"  - the sharing service has finished sharing the items     * "willShare" - the sharing service is about to start sharing the items; occurs before sharing actually begins   * an array (table) containing the items being shared; if the message is "didFail" or "didShare", the items may be in a different order or converted to a different internal type to facilitate sharing.   * if the message is "didFail", the fourth argument will be a localized description of the error that occurred.                        |
 
-#### [callback](#callback)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:callback(function | nil) -> sharingObject  |
-| Type        | Method |
-| Description | Set or clear the callback for the sharingObject. |
-| Parameters |  * a function, or nil, to set or remove the callback for the sharingObject |
-| Returns |  * the sharingObject |
-| Notes |  * the callback should expect 3 or 4 arguments and return no results.  The arguments will be as follows:   * the sharingObject itself   * the callback message, which will be a string equal to one of the following:     * "didFail"   - an error occurred while attempting to share the items     * "didShare"  - the sharing service has finished sharing the items     * "willShare" - the sharing service is about to start sharing the items; occurs before sharing actually begins   * an array (table) containing the items being shared; if the message is "didFail" or "didShare", the items may be in a different order or converted to a different internal type to facilitate sharing.   * if the message is "didFail", the fourth argument will be a localized description of the error that occurred.
+| #### [canShareItems](#canShareItems)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:canShareItems(items) -> boolean                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns a boolean specifying whether or not all of the items specified can be shared with the sharing service represented by the sharingObject.                                                           |
+| **Parameters**                              |  * items - an array (table) or list of items separated by commas which are to be shared by the sharing service         |
+| **Returns**                                 |  * a boolean value indicating whether or not all of the specified items can be shared with the sharing service represented by the sharingObject.                  |
 
-#### [canShareItems](#canShareItems)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:canShareItems(items) -> boolean  |
-| Type        | Method |
-| Description | Returns a boolean specifying whether or not all of the items specified can be shared with the sharing service represented by the sharingObject. |
-| Parameters |  * items - an array (table) or list of items separated by commas which are to be shared by the sharing service |
-| Returns |  * a boolean value indicating whether or not all of the specified items can be shared with the sharing service represented by the sharingObject. |
+| #### [image](#image)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:image() -> hs.image object | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns an image, if one exists, representing the sharing service provided by this sharing object.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * an hs.image object or nil, if no image representation for the sharing service is defined.                  |
 
+| #### [messageBody](#messageBody)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:messageBody() -> string | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | If the sharing service provides the message body that was posted when sharing has completed, this method will return the message body as a string.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * a string containing the message body, or nil if the sharing service selected does not provide this.                  |
+| **Notes**                                   |  * not all sharing services will set a value for this property.                        |
 
-#### [image](#image)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:image() -> hs.image object | nil  |
-| Type        | Method |
-| Description | Returns an image, if one exists, representing the sharing service provided by this sharing object. |
-| Parameters |  * None |
-| Returns |  * an hs.image object or nil, if no image representation for the sharing service is defined. |
+| #### [permanentLink](#permanentLink)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:permanentLink() -> URL table | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | If the sharing service provides a permanent link to the post when sharing has completed, this method will return the corresponding URL.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * the URL for the permanent link, or nil if the sharing service selected does not provide this.                  |
+| **Notes**                                   |  * not all sharing services will set a value for this property.                        |
 
+| #### [recipients](#recipients)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:recipients([recipients]) -> current value | sharingObject                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Get or set the subject to be used when the sharing service performs its sharing method.                                                           |
+| **Parameters**                              |  * recipients - an optional array (table) or list of recipient strings separated by commas which specify the recipients of the shared items.         |
+| **Returns**                                 |  * if an argument is provided, returns the sharingObject; otherwise returns the current value.                  |
+| **Notes**                                   |  * not all sharing services will make use of the value set by this method. * the individual recipients should be specified as strings in the format expected by the sharing service; e.g. for items being shared in an email, the recipients should be email address, etc.                        |
 
-#### [messageBody](#messageBody)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:messageBody() -> string | nil  |
-| Type        | Method |
-| Description | If the sharing service provides the message body that was posted when sharing has completed, this method will return the message body as a string. |
-| Parameters |  * None |
-| Returns |  * a string containing the message body, or nil if the sharing service selected does not provide this. |
-| Notes |  * not all sharing services will set a value for this property.
+| #### [serviceName](#serviceName)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:serviceName() -> string                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | The service identifier for the sharing service represented by the sharingObject.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * a string containing the identifier for the sharing service.                  |
+| **Notes**                                   |  * this string will match the identifier used to create the sharing service object with [hs.sharing.newShare](#newShare)                        |
 
-#### [permanentLink](#permanentLink)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:permanentLink() -> URL table | nil  |
-| Type        | Method |
-| Description | If the sharing service provides a permanent link to the post when sharing has completed, this method will return the corresponding URL. |
-| Parameters |  * None |
-| Returns |  * the URL for the permanent link, or nil if the sharing service selected does not provide this. |
-| Notes |  * not all sharing services will set a value for this property.
+| #### [shareItems](#shareItems)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:shareItems(items) -> sharingObject                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Shares the items specified with the sharing service represented by the sharingObject.                                                           |
+| **Parameters**                              |  * items - an array (table) or list of items separated by commas which are to be shared by the sharing service         |
+| **Returns**                                 |  * the sharingObject, or nil if one or more of the items cannot be shared with the sharing service represented by the sharingObject.                  |
+| **Notes**                                   |  * You can check to see if all of your items can be shared with the [hs.sharing:canShareItems](#canShareItems) method.                        |
 
-#### [recipients](#recipients)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:recipients([recipients]) -> current value | sharingObject  |
-| Type        | Method |
-| Description | Get or set the subject to be used when the sharing service performs its sharing method. |
-| Parameters |  * recipients - an optional array (table) or list of recipient strings separated by commas which specify the recipients of the shared items. |
-| Returns |  * if an argument is provided, returns the sharingObject; otherwise returns the current value. |
-| Notes |  * not all sharing services will make use of the value set by this method. * the individual recipients should be specified as strings in the format expected by the sharing service; e.g. for items being shared in an email, the recipients should be email address, etc.
+| #### [subject](#subject)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:subject([subject]) -> current value | sharingObject                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Get or set the subject to be used when the sharing service performs its sharing method.                                                           |
+| **Parameters**                              |  * subject - an optional string specifying the subject for the posting of the shared content         |
+| **Returns**                                 |  * if an argument is provided, returns the sharingObject; otherwise returns the current value.                  |
+| **Notes**                                   |  * not all sharing services will make use of the value set by this method.                        |
 
-#### [serviceName](#serviceName)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:serviceName() -> string  |
-| Type        | Method |
-| Description | The service identifier for the sharing service represented by the sharingObject. |
-| Parameters |  * None |
-| Returns |  * a string containing the identifier for the sharing service. |
-| Notes |  * this string will match the identifier used to create the sharing service object with [hs.sharing.newShare](#newShare)
+| #### [title](#title)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.sharing:title() -> string                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | The title for the sharing service represented by the sharingObject.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * a string containing the title of the sharing service.                  |
+| **Notes**                                   |  * this string differs from the identifier used to create the sharing service object with [hs.sharing.newShare](#newShare) and is intended to provide a more friendly label for the service if you need to list or refer to it elsewhere.                        |
 
-#### [shareItems](#shareItems)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:shareItems(items) -> sharingObject  |
-| Type        | Method |
-| Description | Shares the items specified with the sharing service represented by the sharingObject. |
-| Parameters |  * items - an array (table) or list of items separated by commas which are to be shared by the sharing service |
-| Returns |  * the sharingObject, or nil if one or more of the items cannot be shared with the sharing service represented by the sharingObject. |
-| Notes |  * You can check to see if all of your items can be shared with the [hs.sharing:canShareItems](#canShareItems) method.
-
-#### [subject](#subject)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:subject([subject]) -> current value | sharingObject  |
-| Type        | Method |
-| Description | Get or set the subject to be used when the sharing service performs its sharing method. |
-| Parameters |  * subject - an optional string specifying the subject for the posting of the shared content |
-| Returns |  * if an argument is provided, returns the sharingObject; otherwise returns the current value. |
-| Notes |  * not all sharing services will make use of the value set by this method.
-
-#### [title](#title)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.sharing:title() -> string  |
-| Type        | Method |
-| Description | The title for the sharing service represented by the sharingObject. |
-| Parameters |  * None |
-| Returns |  * a string containing the title of the sharing service. |
-| Notes |  * this string differs from the identifier used to create the sharing service object with [hs.sharing.newShare](#newShare) and is intended to provide a more friendly label for the service if you need to list or refer to it elsewhere. |

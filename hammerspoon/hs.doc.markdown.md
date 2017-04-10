@@ -14,14 +14,15 @@ The Lua wrapper portion is licensed under the MIT license by the Hammerspoon dev
  * [convert](#convert)
 
 ## API Documentation
+
 ### Functions
 
-#### [convert](#convert)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.doc.markdown.convert(markdown, [type]) -> output  |
-| Type        | Function |
-| Description | Converts markdown encoded text to html or plaintext. |
-| Parameters |  * markdown - a string containing the input text encoded using markdown tags * type     - an optional string specifying the conversion options and output type.  Defaults to "gfm".  The currently recognized types are:   * "markdown"  - specfies that the output should be HTML with the standard GitHub/Markdown extensions enabled.   * "gfm"       - specifies that the output should be HTML with additional GitHub extensions enabled.   * "plaintext" - specifies that the output should plain text with the standard GitHub/Markdown extensions enabled. |
-| Returns |  * an HTML or plaintext representation of the markdown encoded text provided. |
-| Notes |  * The standard GitHub/Markdown extensions enabled for all conversions are:   * NO_INTRA_EMPHASIS -  disallow emphasis inside of words   * LAX_SPACING       - supports spacing like in Markdown 1.0.0 (i.e. do not require an empty line between two different blocks in a paragraph)   * STRIKETHROUGH     - support strikethrough with double tildes (~)   * TABLES            - support Markdown tables   * FENCED_CODE       - supports fenced code blocks surround by three back-ticks (`) or three tildes (~)   * AUTOLINK          - HTTP URL's are treated as links, even if they aren't marked as such with Markdown tags |
+| #### [convert](#convert)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.doc.markdown.convert(markdown, [type]) -> output                                                            |
+| **Type**                                    | Function                                                           |
+| **Description**                             | Converts markdown encoded text to html or plaintext.                                                           |
+| **Parameters**                              |  * markdown - a string containing the input text encoded using markdown tags * type     - an optional string specifying the conversion options and output type.  Defaults to "gfm".  The currently recognized types are:   * "markdown"  - specfies that the output should be HTML with the standard GitHub/Markdown extensions enabled.   * "gfm"       - specifies that the output should be HTML with additional GitHub extensions enabled.   * "plaintext" - specifies that the output should plain text with the standard GitHub/Markdown extensions enabled.         |
+| **Returns**                                 |  * an HTML or plaintext representation of the markdown encoded text provided.                  |
+| **Notes**                                   |  * The standard GitHub/Markdown extensions enabled for all conversions are:   * NO_INTRA_EMPHASIS -  disallow emphasis inside of words   * LAX_SPACING       - supports spacing like in Markdown 1.0.0 (i.e. do not require an empty line between two different blocks in a paragraph)   * STRIKETHROUGH     - support strikethrough with double tildes (~)   * TABLES            - support Markdown tables   * FENCED_CODE       - supports fenced code blocks surround by three back-ticks (`) or three tildes (~)   * AUTOLINK          - HTTP URL's are treated as links, even if they aren't marked as such with Markdown tags                        |
+

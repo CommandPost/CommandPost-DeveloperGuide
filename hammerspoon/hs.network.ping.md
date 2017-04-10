@@ -24,134 +24,116 @@ This module provides a basic ping function which can test host availability. Pin
  * [summary](#summary)
 
 ## API Documentation
+
 ### Constructors
 
-#### [ping](#ping)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping.ping(server, [count], [interval], [timeout], [class], [fn]) -> pingObject  |
-| Type        | Constructor |
-| Description | Test server availability by pinging it with ICMP Echo Requests. |
-| Parameters |  * `server`   - a string containing the hostname or ip address of the server to test. Both IPv4 and IPv6 addresses are supported. * `count`    - an optional integer, default 5, specifying the number of ICMP Echo Requests to send to the server. * `interval` - an optional number, default 1.0, in seconds specifying the delay between the sending of each echo request. To set this parameter, you must supply `count` as well. * `timeout`  - an optional number, default 2.0, in seconds specifying how long before an echo reply is considered to have timed-out. To set this parameter, you must supply `count` and `interval` as well. * `class`    - an optional string, default "any", specifying whether IPv4 or IPv6 should be used to send the ICMP packets. The string must be one of the following:   * `any`  - uses the IP version which corresponds to the first address the `server` resolves to   * `IPv4` - use IPv4; if `server` cannot resolve to an IPv4 address, or if IPv4 traffic is not supported on the network, the ping will fail with an error.   * `IPv6` - use IPv6; if `server` cannot resolve to an IPv6 address, or if IPv6 traffic is not supported on the network, the ping will fail with an error. * `fn`       - the callback function which receives update messages for the ping process. See the Notes for details regarding the callback function. |
-| Returns |  * a pingObject |
-| Notes |  * For convenience, you can call this constructor as `hs.network.ping(server, ...)` * the full ping process will take at most `count` * `interval` + `timeout` seconds from `didStart` to `didFinish`. |
+| #### [ping](#ping)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping.ping(server, [count], [interval], [timeout], [class], [fn]) -> pingObject                                                            |
+| **Type**                                    | Constructor                                                           |
+| **Description**                             | Test server availability by pinging it with ICMP Echo Requests.                                                           |
+| **Parameters**                              |  * `server`   - a string containing the hostname or ip address of the server to test. Both IPv4 and IPv6 addresses are supported. * `count`    - an optional integer, default 5, specifying the number of ICMP Echo Requests to send to the server. * `interval` - an optional number, default 1.0, in seconds specifying the delay between the sending of each echo request. To set this parameter, you must supply `count` as well. * `timeout`  - an optional number, default 2.0, in seconds specifying how long before an echo reply is considered to have timed-out. To set this parameter, you must supply `count` and `interval` as well. * `class`    - an optional string, default "any", specifying whether IPv4 or IPv6 should be used to send the ICMP packets. The string must be one of the following:   * `any`  - uses the IP version which corresponds to the first address the `server` resolves to   * `IPv4` - use IPv4; if `server` cannot resolve to an IPv4 address, or if IPv4 traffic is not supported on the network, the ping will fail with an error.   * `IPv6` - use IPv6; if `server` cannot resolve to an IPv6 address, or if IPv6 traffic is not supported on the network, the ping will fail with an error. * `fn`       - the callback function which receives update messages for the ping process. See the Notes for details regarding the callback function.         |
+| **Returns**                                 |  * a pingObject                  |
+| **Notes**                                   |  * For convenience, you can call this constructor as `hs.network.ping(server, ...)` * the full ping process will take at most `count` * `interval` + `timeout` seconds from `didStart` to `didFinish`.                        |
 
 ### Methods
 
-#### [address](#address)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:address() -> string  |
-| Type        | Method |
-| Description | Returns a string containing the resolved IPv4 or IPv6 address this pingObject is sending echo requests to. |
-| Parameters |  * None |
-| Returns |  * A string containing the IPv4 or IPv6 address this pingObject is sending echo requests to or "<unresolved address>" if the address cannot be resolved. |
+| #### [address](#address)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:address() -> string                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns a string containing the resolved IPv4 or IPv6 address this pingObject is sending echo requests to.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * A string containing the IPv4 or IPv6 address this pingObject is sending echo requests to or "<unresolved address>" if the address cannot be resolved.                  |
 
+| #### [cancel](#cancel)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:cancel() -> none                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Cancels an in progress ping process, terminating it immediately                                                           |
+| **Returns**                                 |  * None                  |
+| **Notes**                                   |  * the `didFinish` message will be sent to the callback function as its final message.                        |
 
-#### [cancel](#cancel)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:cancel() -> none  |
-| Type        | Method |
-| Description | Cancels an in progress ping process, terminating it immediately |
-| Returns |  * None |
-| Notes |  * the `didFinish` message will be sent to the callback function as its final message.
+| #### [count](#count)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:count([count]) -> integer | pingObject | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Get or set the number of ICMP Echo Requests that will be sent by the ping process                                                           |
+| **Parameters**                              |  * `count` - an optional integer specifying the total number of echo requests that the ping process should send. If specified, this number must be greater than the number of requests already sent.         |
+| **Returns**                                 |  * if no argument is specified, returns the current number of echo requests the ping process will send; if an argument is specified and the ping process has not completed, returns the pingObject; if the ping process has already completed, then this method returns nil.                  |
 
-#### [count](#count)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:count([count]) -> integer | pingObject | nil  |
-| Type        | Method |
-| Description | Get or set the number of ICMP Echo Requests that will be sent by the ping process |
-| Parameters |  * `count` - an optional integer specifying the total number of echo requests that the ping process should send. If specified, this number must be greater than the number of requests already sent. |
-| Returns |  * if no argument is specified, returns the current number of echo requests the ping process will send; if an argument is specified and the ping process has not completed, returns the pingObject; if the ping process has already completed, then this method returns nil. |
+| #### [isPaused](#isPaused)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:isPaused() -> boolean                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns whether or not the ping process is currently paused.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * A boolean indicating if the ping process is paused (true) or not (false)                  |
 
+| #### [isRunning](#isRunning)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:isRunning() -> boolean                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns whether or not the ping process is currently active.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * A boolean indicating if the ping process is active (true) or not (false)                  |
+| **Notes**                                   |  * This method will return false only if the ping process has finished sending all echo requests or if it has been cancelled with [hs.network.ping:cancel](#cancel).  To determine if the process is currently sending out echo requests, see [hs.network.ping:isPaused](#isPaused).                        |
 
-#### [isPaused](#isPaused)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:isPaused() -> boolean  |
-| Type        | Method |
-| Description | Returns whether or not the ping process is currently paused. |
-| Parameters |  * None |
-| Returns |  * A boolean indicating if the ping process is paused (true) or not (false) |
+| #### [packets](#packets)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:packets([sequenceNumber]) -> table                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns a table containing information about the ICMP Echo packets sent by this pingObject.                                                           |
+| **Parameters**                              |  * `sequenceNumber` - an optional integer specifying the sequence number of the ICMP Echo packet to return information about.         |
+| **Returns**                                 |  * If `sequenceNumber` is specified, returns a table with key-value pairs containing information about the specific ICMP Echo packet with that sequence number, or an empty table if no packet with that sequence number has been sent yet. If no sequence number is specified, returns an array table of all ICMP Echo packets this object has sent.                  |
+| **Notes**                                   |  * Sequence numbers start at 0 while Lua array tables are indexed starting at 1. If you do not specify a `sequenceNumber` to this method, index 1 of the array table returned will contain a table describing the ICMP Echo packet with sequence number 0, index 2 will describe the ICMP Echo packet with sequence number 1, etc.                        |
 
+| #### [pause](#pause)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:pause() -> pingObject | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Pause an in progress ping process.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * if the ping process is currently active, returns the pingObject; if the process has already completed, returns nil.                  |
 
-#### [isRunning](#isRunning)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:isRunning() -> boolean  |
-| Type        | Method |
-| Description | Returns whether or not the ping process is currently active. |
-| Parameters |  * None |
-| Returns |  * A boolean indicating if the ping process is active (true) or not (false) |
-| Notes |  * This method will return false only if the ping process has finished sending all echo requests or if it has been cancelled with [hs.network.ping:cancel](#cancel).  To determine if the process is currently sending out echo requests, see [hs.network.ping:isPaused](#isPaused).
+| #### [resume](#resume)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:resume() -> pingObject | nil                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Resume an in progress ping process, if it has been paused.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * if the ping process is currently active, returns the pingObject; if the process has already completed, returns nil.                  |
 
-#### [packets](#packets)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:packets([sequenceNumber]) -> table  |
-| Type        | Method |
-| Description | Returns a table containing information about the ICMP Echo packets sent by this pingObject. |
-| Parameters |  * `sequenceNumber` - an optional integer specifying the sequence number of the ICMP Echo packet to return information about. |
-| Returns |  * If `sequenceNumber` is specified, returns a table with key-value pairs containing information about the specific ICMP Echo packet with that sequence number, or an empty table if no packet with that sequence number has been sent yet. If no sequence number is specified, returns an array table of all ICMP Echo packets this object has sent. |
-| Notes |  * Sequence numbers start at 0 while Lua array tables are indexed starting at 1. If you do not specify a `sequenceNumber` to this method, index 1 of the array table returned will contain a table describing the ICMP Echo packet with sequence number 0, index 2 will describe the ICMP Echo packet with sequence number 1, etc.
+| #### [sent](#sent)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:sent() -> integer                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns the number of ICMP Echo Requests which have been sent.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * The number of echo requests which have been sent so far.                  |
 
-#### [pause](#pause)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:pause() -> pingObject | nil  |
-| Type        | Method |
-| Description | Pause an in progress ping process. |
-| Parameters |  * None |
-| Returns |  * if the ping process is currently active, returns the pingObject; if the process has already completed, returns nil. |
+| #### [server](#server)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:server() -> string                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns the hostname or ip address string given to the [hs.network.ping.ping](#ping) constructor.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * A string matching the hostname or ip address given to the [hs.network.ping.ping](#ping) constructor for this object.                  |
 
+| #### [setCallback](#setCallback)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:setCallback(fn | nil) -> pingObject                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Set or remoce the callback function for the pingObject.                                                           |
+| **Returns**                                 |  * the pingObject                  |
+| **Notes**                                   |  * Because the ping process begins immediately upon creation with the [hs.network.ping.ping](#ping) constructor, it is preferable to assign the callback with the constructor itself. * This method is provided as a means of changing the callback based on other events (a change in the current network or location, perhaps.) * If you truly wish to create a pingObject with no callback, you will need to do something like `hs.network.ping.ping(...):setCallback(function() end)`.                        |
 
-#### [resume](#resume)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:resume() -> pingObject | nil  |
-| Type        | Method |
-| Description | Resume an in progress ping process, if it has been paused. |
-| Parameters |  * None |
-| Returns |  * if the ping process is currently active, returns the pingObject; if the process has already completed, returns nil. |
+| #### [summary](#summary)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.network.ping:summary() -> string                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns a string containing summary information about the ping process.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * a summary string for the current state of the ping process                  |
+| **Notes**                                   |  * The summary string will look similar to the following:~~~--- hostname ping statistics 5 packets transmitted, 5 packets received, 0.0 packet lossround-trip min/avg/max = 2.282/4.133/4.926 ms~~~ * The numer of packets received will match the number that has currently been sent, not necessarily the value returned by [hs.network.ping:count](#count).                        |
 
-
-#### [sent](#sent)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:sent() -> integer  |
-| Type        | Method |
-| Description | Returns the number of ICMP Echo Requests which have been sent. |
-| Parameters |  * None |
-| Returns |  * The number of echo requests which have been sent so far. |
-
-
-#### [server](#server)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:server() -> string  |
-| Type        | Method |
-| Description | Returns the hostname or ip address string given to the [hs.network.ping.ping](#ping) constructor. |
-| Parameters |  * None |
-| Returns |  * A string matching the hostname or ip address given to the [hs.network.ping.ping](#ping) constructor for this object. |
-
-
-#### [setCallback](#setCallback)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:setCallback(fn | nil) -> pingObject  |
-| Type        | Method |
-| Description | Set or remoce the callback function for the pingObject. |
-| Returns |  * the pingObject |
-| Notes |  * Because the ping process begins immediately upon creation with the [hs.network.ping.ping](#ping) constructor, it is preferable to assign the callback with the constructor itself. * This method is provided as a means of changing the callback based on other events (a change in the current network or location, perhaps.) * If you truly wish to create a pingObject with no callback, you will need to do something like `hs.network.ping.ping(...):setCallback(function() end)`.
-
-#### [summary](#summary)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.network.ping:summary() -> string  |
-| Type        | Method |
-| Description | Returns a string containing summary information about the ping process. |
-| Parameters |  * None |
-| Returns |  * a summary string for the current state of the ping process |
-| Notes |  * The summary string will look similar to the following:~~~--- hostname ping statistics 5 packets transmitted, 5 packets received, 0.0 packet lossround-trip min/avg/max = 2.282/4.133/4.926 ms~~~ * The numer of packets received will match the number that has currently been sent, not necessarily the value returned by [hs.network.ping:count](#count). |

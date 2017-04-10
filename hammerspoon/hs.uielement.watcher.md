@@ -36,34 +36,32 @@ These work on all UI elements, including windows.
  * [stop](#stop)
 
 ## API Documentation
+
 ### Methods
 
-#### [element](#element)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.uielement.watcher:element() -> object  |
-| Type        | Method |
-| Description | Returns the element the watcher is watching. |
-| Parameters |  * None |
-| Returns |  * The element the watcher is watching. |
+| #### [element](#element)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.uielement.watcher:element() -> object                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Returns the element the watcher is watching.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * The element the watcher is watching.                  |
 
+| #### [start](#start)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.uielement.watcher:start(events) -> hs.uielement.watcher                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Tells the watcher to start watching for the given list of events.                                                           |
+| **Parameters**                              |  * An array of events to be watched for.         |
+| **Returns**                                 |  * hs.uielement.watcher                  |
+| **Notes**                                   |  * See hs.uielement.watcher for a list of events. You may also specify arbitrary event names as strings. * Does nothing if the watcher has already been started. To start with different events, stop it first.                        |
 
-#### [start](#start)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.uielement.watcher:start(events) -> hs.uielement.watcher  |
-| Type        | Method |
-| Description | Tells the watcher to start watching for the given list of events. |
-| Parameters |  * An array of events to be watched for. |
-| Returns |  * hs.uielement.watcher |
-| Notes |  * See hs.uielement.watcher for a list of events. You may also specify arbitrary event names as strings. * Does nothing if the watcher has already been started. To start with different events, stop it first.
+| #### [stop](#stop)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.uielement.watcher:stop() -> hs.uielement.watcher                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Tells the watcher to stop listening for events.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * hs.uielement.watcher                  |
+| **Notes**                                   |  * This is automatically called if the element is destroyed.                        |
 
-#### [stop](#stop)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.uielement.watcher:stop() -> hs.uielement.watcher  |
-| Type        | Method |
-| Description | Tells the watcher to stop listening for events. |
-| Parameters |  * None |
-| Returns |  * hs.uielement.watcher |
-| Notes |  * This is automatically called if the element is destroyed. |

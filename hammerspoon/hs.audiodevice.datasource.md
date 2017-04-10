@@ -11,24 +11,22 @@ Note: These objects are obtained from the methods on an `hs.audiodevice` object
  * [setDefault](#setDefault)
 
 ## API Documentation
+
 ### Methods
 
-#### [name](#name)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.audiodevice.datasource:name() -> string  |
-| Type        | Method |
-| Description | Gets the name of an audio device datasource |
-| Parameters |  * None |
-| Returns |  * A string containing the name of the datasource |
+| #### [name](#name)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.audiodevice.datasource:name() -> string                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Gets the name of an audio device datasource                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * A string containing the name of the datasource                  |
 
+| #### [setDefault](#setDefault)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.audiodevice.datasource:setDefault() -> hs.audiodevice.datasource                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Sets the audio device datasource as the default                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * The `hs.audiodevice.datasource` object                  |
 
-#### [setDefault](#setDefault)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.audiodevice.datasource:setDefault() -> hs.audiodevice.datasource  |
-| Type        | Method |
-| Description | Sets the audio device datasource as the default |
-| Parameters |  * None |
-| Returns |  * The `hs.audiodevice.datasource` object |
- |

@@ -33,36 +33,32 @@ The only false positives I've ever had with this detector are various rare throa
  * [stop](#stop)
 
 ## API Documentation
+
 ### Constructors
 
-#### [new](#new)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.noises.new(fn) -> listener  |
-| Type        | Constructor |
-| Description | Creates a new listener for mouth noise recognition |
-| Parameters |  * A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs). |
-| Returns |  * An `hs.noises` object |
- |
+| #### [new](#new)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.noises.new(fn) -> listener                                                            |
+| **Type**                                    | Constructor                                                           |
+| **Description**                             | Creates a new listener for mouth noise recognition                                                           |
+| **Parameters**                              |  * A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs).         |
+| **Returns**                                 |  * An `hs.noises` object                  |
 
 ### Methods
 
-#### [start](#start)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.noises:start() -> self  |
-| Type        | Method |
-| Description | Starts listening to the microphone and passing the audio to the recognizer. |
-| Parameters |  * None |
-| Returns |  * The `hs.noises` object |
+| #### [start](#start)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.noises:start() -> self                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Starts listening to the microphone and passing the audio to the recognizer.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * The `hs.noises` object                  |
 
+| #### [stop](#stop)    |                                                                           |
+| --------------------------------------------|---------------------------------------------------------------------------|
+| **Signature**                               | hs.noises:stop() -> self                                                            |
+| **Type**                                    | Method                                                           |
+| **Description**                             | Stops the listener from recording and analyzing microphone input.                                                           |
+| **Parameters**                              |  * None         |
+| **Returns**                                 |  * The `hs.noises` object                  |
 
-#### [stop](#stop)
-|             |                 |
-| ------------|-----------------|
-| Signature   | hs.noises:stop() -> self  |
-| Type        | Method |
-| Description | Stops the listener from recording and analyzing microphone input. |
-| Parameters |  * None |
-| Returns |  * The `hs.noises` object |
- |
