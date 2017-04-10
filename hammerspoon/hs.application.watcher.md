@@ -73,9 +73,9 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Signature**                               | `hs.application.watcher.new(fn) -> watcher`                                                                    |
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates an application event watcher                                                                     |
-| **Parameters**                              | <ul><li> * fn - A function that will be called when application events happen. It should accept three parameters:</li><li>  * A string containing the name of the application</li><li>  * An event type (see the constants defined above)</li><li>  * An `hs.application` object representing the application, or nil if the application couldn't be found</li></ul> |
-| **Returns**                                 | <ul><li> * An `hs.application.watcher` object</li></ul>          |
-| **Notes**                                   | <ul><li> * If the function is called with an event type of `hs.application.watcher.terminated` then the application name parameter will be `nil` and the `hs.application` parameter, will only be useful for getting the UNIX process ID (i.e. the PID) of the application</li></ul>                |
+| **Parameters**                              | <ul><li>fn - A function that will be called when application events happen. It should accept three parameters:</li><li> A string containing the name of the application</li><li> An event type (see the constants defined above)</li><li> An `hs.application` object representing the application, or nil if the application couldn't be found</li></ul> |
+| **Returns**                                 | <ul><li>An `hs.application.watcher` object</li></ul>          |
+| **Notes**                                   | <ul><li>If the function is called with an event type of `hs.application.watcher.terminated` then the application name parameter will be `nil` and the `hs.application` parameter, will only be useful for getting the UNIX process ID (i.e. the PID) of the application</li></ul>                |
 
 ### Methods
 
@@ -84,14 +84,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Signature**                               | `hs.application.watcher:start()`                                                                    |
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts the application watcher                                                                     |
-| **Parameters**                              | <ul><li> * None</li></ul> |
-| **Returns**                                 | <ul><li> * The `hs.application.watcher` object</li></ul>          |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>The `hs.application.watcher` object</li></ul>          |
 
 | [stop](#stop)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.application.watcher:stop()`                                                                    |
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops the application watcher                                                                     |
-| **Parameters**                              | <ul><li> * None</li></ul> |
-| **Returns**                                 | <ul><li> * The `hs.application.watcher` object</li></ul>          |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>The `hs.application.watcher` object</li></ul>          |
 

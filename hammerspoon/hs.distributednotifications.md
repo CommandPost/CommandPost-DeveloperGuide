@@ -38,8 +38,8 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 | **Signature**                               | `hs.distributednotifications.new(callback[, name[, object]]) -> object`                                                                    |
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new NSDistributedNotificationCenter watcher                                                                     |
-| **Parameters**                              | <ul><li> * callback - A function to be called when a matching notification arrives. The function should accept one argument:</li><li>  * notificationName - A string containing the name of the notification</li><li> * name - An optional string containing the name of notifications to watch for. A value of `nil` will cause all notifications to be watched. Defaults to `nil`.</li><li> * object - An optional string containing the name of sending objects to watch for. A value of `nil` will cause all sending objects to be watched. Defaults to `nil`.</li></ul> |
-| **Returns**                                 | <ul><li> * An `hs.distributednotifications` object</li></ul>          |
+| **Parameters**                              | <ul><li>callback - A function to be called when a matching notification arrives. The function should accept one argument:</li><li> notificationName - A string containing the name of the notification</li><li>name - An optional string containing the name of notifications to watch for. A value of `nil` will cause all notifications to be watched. Defaults to `nil`.</li><li>object - An optional string containing the name of sending objects to watch for. A value of `nil` will cause all sending objects to be watched. Defaults to `nil`.</li></ul> |
+| **Returns**                                 | <ul><li>An `hs.distributednotifications` object</li></ul>          |
 
 ### Methods
 
@@ -48,14 +48,14 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 | **Signature**                               | `hs.distributednotifications:start() -> object`                                                                    |
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts a NSDistributedNotificationCenter watcher                                                                     |
-| **Parameters**                              | <ul><li> * None</li></ul> |
-| **Returns**                                 | <ul><li> * The `hs.distributednotifications` object</li></ul>          |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>The `hs.distributednotifications` object</li></ul>          |
 
 | [stop](#stop)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.distributednotifications:stop() -> object`                                                                    |
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops a NSDistributedNotificationCenter watcher                                                                     |
-| **Parameters**                              | <ul><li> * None</li></ul> |
-| **Returns**                                 | <ul><li> * The `hs.distributednotifications` object</li></ul>          |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>The `hs.distributednotifications` object</li></ul>          |
 

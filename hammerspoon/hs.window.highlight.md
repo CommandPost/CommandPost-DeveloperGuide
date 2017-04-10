@@ -40,23 +40,23 @@ or automatically by passing an appropriate windowfilter (or a list of apps) to `
 | **Signature**                               | `hs.window.highlight.start([windowfilterIsolate[, windowfilterOverlay]])`                                                                    |
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Starts the module                                                                     |
-| **Parameters**                              | <ul><li> * windowfilterIsolate - (optional) an `hs.window.filter` instance that automatically enable "isolate" mode</li><li>   whenever one of the allowed windows is focused; alternatively, you can just provide a list of application</li><li>   names and a windowfilter will be created for you that enables isolate mode whenever one of these apps is focused;</li><li>   if omitted or nil, isolate mode won't be toggled automatically, but you can still toggle it manually via</li><li>   `hs.window.higlight.toggleIsolate()`</li><li> * windowfilterOverlay - (optional) an `hs.window.filter` instance that determines which windows to consider</li><li>   for "overlay" mode when focused; if omitted or nil, the default windowfilter will be used</li></ul> |
-| **Returns**                                 | <ul><li> * None</li></ul>          |
-| **Notes**                                   | <ul><li> * overlay mode is disabled by default - see `hs.window.highlight.ui.overlayColor`</li></ul>                |
+| **Parameters**                              | <ul><li>windowfilterIsolate - (optional) an `hs.window.filter` instance that automatically enable "isolate" mode</li><li>   whenever one of the allowed windows is focused; alternatively, you can just provide a list of application</li><li>   names and a windowfilter will be created for you that enables isolate mode whenever one of these apps is focused;</li><li>   if omitted or nil, isolate mode won't be toggled automatically, but you can still toggle it manually via</li><li>   `hs.window.higlight.toggleIsolate()`</li><li>windowfilterOverlay - (optional) an `hs.window.filter` instance that determines which windows to consider</li><li>   for "overlay" mode when focused; if omitted or nil, the default windowfilter will be used</li></ul> |
+| **Returns**                                 | <ul><li>None</li></ul>          |
+| **Notes**                                   | <ul><li>overlay mode is disabled by default - see `hs.window.highlight.ui.overlayColor`</li></ul>                |
 
 | [stop](#stop)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.window.highlight.stop()`                                                                    |
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Stops the module and disables focused window highlighting (both "overlay" and "isolate" mode)                                                                     |
-| **Parameters**                              | <ul><li> * None</li></ul> |
-| **Returns**                                 | <ul><li> * None</li></ul>          |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>None</li></ul>          |
 
 | [toggleIsolate](#toggleIsolate)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.window.highlight.toggleIsolate([v])`                                                                    |
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Sets or clears the user override for "isolate" mode.                                                                     |
-| **Parameters**                              | <ul><li> * v - (optional) a boolean; if true, enable isolate mode; if false, disable isolate mode,</li><li>   even when `windowfilterIsolate` passed to `.start()` would otherwise enable it; if omitted or nil,</li><li>   toggle the override, i.e. clear it if it's currently enforced, or set it to the opposite of the current</li><li>   isolate mode status otherwise.</li></ul> |
-| **Returns**                                 | <ul><li> * None</li></ul>          |
+| **Parameters**                              | <ul><li>v - (optional) a boolean; if true, enable isolate mode; if false, disable isolate mode,</li><li>   even when `windowfilterIsolate` passed to `.start()` would otherwise enable it; if omitted or nil,</li><li>   toggle the override, i.e. clear it if it's currently enforced, or set it to the opposite of the current</li><li>   isolate mode status otherwise.</li></ul> |
+| **Returns**                                 | <ul><li>None</li></ul>          |
 

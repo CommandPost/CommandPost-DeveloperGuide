@@ -63,9 +63,9 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 | **Signature**                               | `hs.expose.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.expose object`                                                                    |
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new hs.expose instance; it can use a windowfilter to determine which windows to show                                                                     |
-| **Parameters**                              | <ul><li> * windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter</li><li>   instance or constructor table</li><li> * uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values</li><li>   must follow the conventions described in `hs.expose.ui`; this parameter allows you to have multiple</li><li>   expose instances with different behaviour (for example, with and without thumbnails and/or titles)</li><li>   using different hotkeys</li><li> * logname - (optional) name of the `hs.logger` instance for the new expose; if omitted, the class logger will be used</li><li> * loglevel - (optional) log level for the `hs.logger` instance for the new expose</li></ul> |
-| **Returns**                                 | <ul><li> * the new instance</li></ul>          |
-| **Notes**                                   | <ul><li>  * by default expose will show invisible windows and (unlike the OSX expose) windows from other spaces; use</li><li>    `hs.expose.ui` or the `uiPrefs` parameter to change these behaviours.</li></ul>                |
+| **Parameters**                              | <ul><li>windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter</li><li>   instance or constructor table</li><li>uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values</li><li>   must follow the conventions described in `hs.expose.ui`; this parameter allows you to have multiple</li><li>   expose instances with different behaviour (for example, with and without thumbnails and/or titles)</li><li>   using different hotkeys</li><li>logname - (optional) name of the `hs.logger` instance for the new expose; if omitted, the class logger will be used</li><li>loglevel - (optional) log level for the `hs.logger` instance for the new expose</li></ul> |
+| **Returns**                                 | <ul><li>the new instance</li></ul>          |
+| **Notes**                                   | <ul><li> by default expose will show invisible windows and (unlike the OSX expose) windows from other spaces; use</li><li>    `hs.expose.ui` or the `uiPrefs` parameter to change these behaviours.</li></ul>                |
 
 ### Methods
 
@@ -74,22 +74,22 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 | **Signature**                               | `hs.expose:hide()`                                                                    |
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Hides the expose, if visible, and exits the modal mode.                                                                     |
-| **Parameters**                              | <ul><li> * None</li></ul> |
-| **Returns**                                 | <ul><li> * None</li></ul>          |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>None</li></ul>          |
 
 | [show](#show)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.expose:show([activeApplication])`                                                                    |
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Shows an expose-like screen with modal keyboard hints for switching to, closing or minimizing/unminimizing windows.                                                                     |
-| **Parameters**                              | <ul><li> * activeApplication - (optional) if true, only show windows of the active application (within the</li><li>  scope of the instance windowfilter); otherwise show all windows allowed by the instance windowfilter</li></ul> |
-| **Returns**                                 | <ul><li> * None</li></ul>          |
-| **Notes**                                   | <ul><li> * passing `true` for `activeApplication` will simply hide hints/thumbnails for applications other</li><li>   than the active one, without recalculating the hints layout; conversely, setting `onlyActiveApplication=true`</li><li>   for an expose instance's `ui` will calculate an optimal layout for the current active application's windows</li><li> * Completing a hint will exit the expose and focus the selected window.</li><li> * Pressing esc will exit the expose and with no action taken.</li><li> * If shift is being held when a hint is completed (the background will be red), the selected</li><li>   window will be closed. If it's the last window of an application, the application will be closed.</li><li> * If alt is being held when a hint is completed (the background will be blue), the selected</li><li>   window will be minimized (if visible) or unminimized/unhidden (if minimized or hidden).</li></ul>                |
+| **Parameters**                              | <ul><li>activeApplication - (optional) if true, only show windows of the active application (within the</li><li>  scope of the instance windowfilter); otherwise show all windows allowed by the instance windowfilter</li></ul> |
+| **Returns**                                 | <ul><li>None</li></ul>          |
+| **Notes**                                   | <ul><li>passing `true` for `activeApplication` will simply hide hints/thumbnails for applications other</li><li>   than the active one, without recalculating the hints layout; conversely, setting `onlyActiveApplication=true`</li><li>   for an expose instance's `ui` will calculate an optimal layout for the current active application's windows</li><li>Completing a hint will exit the expose and focus the selected window.</li><li>Pressing esc will exit the expose and with no action taken.</li><li>If shift is being held when a hint is completed (the background will be red), the selected</li><li>   window will be closed. If it's the last window of an application, the application will be closed.</li><li>If alt is being held when a hint is completed (the background will be blue), the selected</li><li>   window will be minimized (if visible) or unminimized/unhidden (if minimized or hidden).</li></ul>                |
 
 | [toggleShow](#toggleShow)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.expose:toggleShow([activeApplication])`                                                                    |
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Toggles the expose - see `hs.expose:show()` and `hs.expose:hide()`                                                                     |
-| **Returns**                                 | <ul><li> * None</li></ul>          |
+| **Returns**                                 | <ul><li>None</li></ul>          |
 
