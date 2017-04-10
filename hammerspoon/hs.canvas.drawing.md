@@ -21,12 +21,12 @@ The wrapper is not enabled by default.  See the `hs.canvas.drawingWrapper` funct
 
 ### Functions
 
-| #### [drawingWrapper](#drawingWrapper)    |                                                                           |
-| --------------------------------------------|---------------------------------------------------------------------------|
-| **Signature**                               | hs.canvas.drawingWrapper([state]) -> boolean                                                            |
-| **Type**                                    | Function                                                           |
-| **Description**                             | Get or set whether or not `hs.drawing` is replaced by a wrapper which uses this module.                                                           |
-| **Parameters**                              |  * `state` - an optional boolean specifying whether or not `hs.drawing` should be replaced with a wrapper using this module.         |
-| **Returns**                                 |  * the current, possibly newly changed, state.                  |
-| **Notes**                                   |  * This module was designed to address some of the limitations found with the `hs.drawing` module.  It is expected that at some point this module may completely replace the existing `hs.drawing` as it provides more flexibility and will be easier to extend with future additions. This function allows you to choose whether or not you wish to migrate fully to this new drawing model now to facilitate the testing of the wrapper or not. * This wrapper was designed to fully mimic the current `hs.drawing` functions and methods -- you should not need to change your existing code in any way once this wrapper is enabled.  If you find that you do need to make adjustments or that something in the wrapper does not work as expected, please log an issue at https://github.com/Hammerspoon/hammerspoon/issues.                        |
+| [drawingWrapper](#drawingWrapper)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `hs.canvas.drawingWrapper([state]) -> boolean`                                                                    |
+| **Type**                                    | Function                                                                     |
+| **Description**                             | Get or set whether or not `hs.drawing` is replaced by a wrapper which uses this module.                                                                     |
+| **Parameters**                              | <ul><li> * `state` - an optional boolean specifying whether or not `hs.drawing` should be replaced with a wrapper using this module.</li></ul> |
+| **Returns**                                 | <ul><li> * the current, possibly newly changed, state.</li></ul>          |
+| **Notes**                                   | <ul><li> * This module was designed to address some of the limitations found with the `hs.drawing` module.  It is expected that at some point this module may completely replace the existing `hs.drawing` as it provides more flexibility and will be easier to extend with future additions. This function allows you to choose whether or not you wish to migrate fully to this new drawing model now to facilitate the testing of the wrapper or not.</li><li> * This wrapper was designed to fully mimic the current `hs.drawing` functions and methods -- you should not need to change your existing code in any way once this wrapper is enabled.  If you find that you do need to make adjustments or that something in the wrapper does not work as expected, please log an issue at https://github.com/Hammerspoon/hammerspoon/issues.</li></ul>                |
 
