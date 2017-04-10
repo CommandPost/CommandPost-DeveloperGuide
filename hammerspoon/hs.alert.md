@@ -1,4 +1,4 @@
-# [docs](../hammerspoon/index.md) » hs.alert
+# [docs](../hammerspoon/index.md) > hs.alert
 ---
 
 Simple on-screen alerts
