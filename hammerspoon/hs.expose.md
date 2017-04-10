@@ -1,4 +1,5 @@
-# Hammerspoon docs: hs.expose
+# [docs](index.md) » hs.expose
+---
 
 Keyboard-driven expose replacement/enhancement
 
@@ -36,23 +37,23 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 ```
 
 ## API Overview
-* Variables - Configurable values</li>
-  * ui
-* Constructors - API calls which return an object, typically one that offers API methods</li>
-  * new
-* Methods - API calls which can only be made on an object returned by a constructor</li>
-  * hide
-  * show
-  * toggleShow
+* Variables - Configurable values
+* [ui](#ui)
+* Constructors - API calls which return an object, typically one that offers API methods
+* [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+* [hide](#hide)
+* [show](#show)
+* [toggleShow](#toggleShow)
 
 ## API Documentation
 
 ### Variables
 
-#### ui
-  * Signature: hs.expose.ui
-  * Type: Variable
-  * Description: Allows customization of the expose behaviour and user interface
+#### [ui](#ui)
+| Signature   | hs.expose.ui  |
+| Type        | Variable |
+| Description | Allows customization of the expose behaviour and user interface |
   This table contains variables that you can change to customize the behaviour of the expose and the look of the UI.
     To have multiple expose instances with different behaviour/looks, use the `uiPrefs` parameter for the constructor;
     the passed keys and values will override those in this table for that particular instance.
@@ -90,61 +91,27 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 
 ### Constructors
 
-#### new
-  * Signature: hs.expose.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.expose object
-  * Type: Constructor
-  * Description: Creates a new hs.expose instance; it can use a windowfilter to determine which windows to show
-  * Parameters:
-     * windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter
-       instance or constructor table
-     * uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values
-       must follow the conventions described in `hs.expose.ui`; this parameter allows you to have multiple
-       expose instances with different behaviour (for example, with and without thumbnails and/or titles)
-       using different hotkeys
-     * logname - (optional) name of the `hs.logger` instance for the new expose; if omitted, the class logger will be used
-     * loglevel - (optional) log level for the `hs.logger` instance for the new expose
-  * Returns:
-     * the new instance
-  * Notes:
-      * by default expose will show invisible windows and (unlike the OSX expose) windows from other spaces; use
-        `hs.expose.ui` or the `uiPrefs` parameter to change these behaviours.
-
+#### [new](#new)
+| Signature   | hs.expose.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.expose object  |
+| Type        | Constructor |
+| Description | Creates a new hs.expose instance; it can use a windowfilter to determine which windows to show |
+| Parameters |  * windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter   instance or constructor table * uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values   must follow the conventions described in `hs.expose.ui`; this parameter allows you to have multiple   expose instances with different behaviour (for example, with and without thumbnails and/or titles)   using different hotkeys * logname - (optional) name of the `hs.logger` instance for the new expose; if omitted, the class logger will be used * loglevel - (optional) log level for the `hs.logger` instance for the new expose | | Returns |  * the new instance | | Notes |   * by default expose will show invisible windows and (unlike the OSX expose) windows from other spaces; use    `hs.expose.ui` or the `uiPrefs` parameter to change these behaviours. | 
 ### Methods
 
-#### hide
-  * Signature: hs.expose:hide()
-  * Type: Method
-  * Description: Hides the expose, if visible, and exits the modal mode.
+#### [hide](#hide)
+| Signature   | hs.expose:hide()  |
+| Type        | Method |
+| Description | Hides the expose, if visible, and exits the modal mode. |
   Call this function if you need to make sure the modal is exited without waiting for the user to press `esc`.
-  * Parameters:
-     * None
-  * Returns:
-     * None
-
-#### show
-  * Signature: hs.expose:show([activeApplication])
-  * Type: Method
-  * Description: Shows an expose-like screen with modal keyboard hints for switching to, closing or minimizing/unminimizing windows.
-  * Parameters:
-     * activeApplication - (optional) if true, only show windows of the active application (within the
-      scope of the instance windowfilter); otherwise show all windows allowed by the instance windowfilter
-  * Returns:
-     * None
-  * Notes:
-     * passing `true` for `activeApplication` will simply hide hints/thumbnails for applications other
-       than the active one, without recalculating the hints layout; conversely, setting `onlyActiveApplication=true`
-       for an expose instance's `ui` will calculate an optimal layout for the current active application's windows
-     * Completing a hint will exit the expose and focus the selected window.
-     * Pressing esc will exit the expose and with no action taken.
-     * If shift is being held when a hint is completed (the background will be red), the selected
-       window will be closed. If it's the last window of an application, the application will be closed.
-     * If alt is being held when a hint is completed (the background will be blue), the selected
-       window will be minimized (if visible) or unminimized/unhidden (if minimized or hidden).
-
-#### toggleShow
-  * Signature: hs.expose:toggleShow([activeApplication])
-  * Type: Method
-  * Description: Toggles the expose - see `hs.expose:show()` and `hs.expose:hide()`
+| Parameters |  * None | | Returns |  * None | 
+#### [show](#show)
+| Signature   | hs.expose:show([activeApplication])  |
+| Type        | Method |
+| Description | Shows an expose-like screen with modal keyboard hints for switching to, closing or minimizing/unminimizing windows. |
+| Parameters |  * activeApplication - (optional) if true, only show windows of the active application (within the  scope of the instance windowfilter); otherwise show all windows allowed by the instance windowfilter | | Returns |  * None | | Notes |  * passing `true` for `activeApplication` will simply hide hints/thumbnails for applications other   than the active one, without recalculating the hints layout; conversely, setting `onlyActiveApplication=true`   for an expose instance's `ui` will calculate an optimal layout for the current active application's windows * Completing a hint will exit the expose and focus the selected window. * Pressing esc will exit the expose and with no action taken. * If shift is being held when a hint is completed (the background will be red), the selected   window will be closed. If it's the last window of an application, the application will be closed. * If alt is being held when a hint is completed (the background will be blue), the selected   window will be minimized (if visible) or unminimized/unhidden (if minimized or hidden). | 
+#### [toggleShow](#toggleShow)
+| Signature   | hs.expose:toggleShow([activeApplication])  |
+| Type        | Method |
+| Description | Toggles the expose - see `hs.expose:show()` and `hs.expose:hide()` |
   Parameters: see `hs.expose:show()`
-  * Returns:
-     * None
+| Returns |  * None | 

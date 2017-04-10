@@ -1,4 +1,5 @@
-# Hammerspoon docs: hs.noises
+# [docs](index.md) » hs.noises
+---
 
 Contains two low latency audio recognizers for different mouth noises, which can be used to trigger actions like scrolling or clicking.
 The recognizers are also high accuracy and don't use much CPU time.
@@ -25,41 +26,30 @@ Personally I use this to scroll up by a large increment in case I scroll down to
 The only false positives I've ever had with this detector are various rare throat clearing noises that make a pop sound very much like a lip pop.
 
 ## API Overview
-* Constructors - API calls which return an object, typically one that offers API methods</li>
-  * new
-* Methods - API calls which can only be made on an object returned by a constructor</li>
-  * start
-  * stop
+* Constructors - API calls which return an object, typically one that offers API methods
+* [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+* [start](#start)
+* [stop](#stop)
 
 ## API Documentation
 
 ### Constructors
 
-#### new
-  * Signature: hs.noises.new(fn) -> listener
-  * Type: Constructor
-  * Description: Creates a new listener for mouth noise recognition
-  * Parameters:
-     * A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs).
-  * Returns:
-     * An `hs.noises` object
-
+#### [new](#new)
+| Signature   | hs.noises.new(fn) -> listener  |
+| Type        | Constructor |
+| Description | Creates a new listener for mouth noise recognition |
+| Parameters |  * A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs). | | Returns |  * An `hs.noises` object | 
 ### Methods
 
-#### start
-  * Signature: hs.noises:start() -> self
-  * Type: Method
-  * Description: Starts listening to the microphone and passing the audio to the recognizer.
-  * Parameters:
-     * None
-  * Returns:
-     * The `hs.noises` object
-
-#### stop
-  * Signature: hs.noises:stop() -> self
-  * Type: Method
-  * Description: Stops the listener from recording and analyzing microphone input.
-  * Parameters:
-     * None
-  * Returns:
-     * The `hs.noises` object
+#### [start](#start)
+| Signature   | hs.noises:start() -> self  |
+| Type        | Method |
+| Description | Starts listening to the microphone and passing the audio to the recognizer. |
+| Parameters |  * None | | Returns |  * The `hs.noises` object | 
+#### [stop](#stop)
+| Signature   | hs.noises:stop() -> self  |
+| Type        | Method |
+| Description | Stops the listener from recording and analyzing microphone input. |
+| Parameters |  * None | | Returns |  * The `hs.noises` object | 

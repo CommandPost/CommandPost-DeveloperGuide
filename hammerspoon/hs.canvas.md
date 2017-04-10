@@ -1,4 +1,5 @@
-# Hammerspoon docs: hs.canvas
+# [docs](index.md) » hs.canvas
+---
 
 A different approach to drawing in Hammerspoon
 
@@ -19,71 +20,71 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
  * [hs.canvas.matrix](hs.canvas.matrix.md)
 
 ## API Overview
-* Constants - Useful values which cannot be changed</li>
-  * compositeTypes[]
-  * windowBehaviors[]
-  * windowLevels
-* Functions - API calls offered directly by the extension</li>
-  * defaultTextStyle
-  * disableScreenUpdates
-  * elementSpec
-  * enableScreenUpdates
-  * help
-* Constructors - API calls which return an object, typically one that offers API methods</li>
-  * new
-* Fields - Variables which can only be access from an object returned by a constructor</li>
-  * attributes
-  * object[index]
-  * percentages
-* Methods - API calls which can only be made on an object returned by a constructor</li>
-  * alpha
-  * appendElements
-  * assignElement
-  * behavior
-  * behaviorAsLabels
-  * bringToFront
-  * canvasDefaultFor
-  * canvasDefaultKeys
-  * canvasDefaults
-  * canvasElements
-  * canvasMouseEvents
-  * clickActivating
-  * copy
-  * delete
-  * elementAttribute
-  * elementBounds
-  * elementCount
-  * elementKeys
-  * frame
-  * hide
-  * imageFromCanvas
-  * insertElement
-  * isOccluded
-  * isShowing
-  * isVisible
-  * level
-  * minimumTextSize
-  * mouseCallback
-  * orderAbove
-  * orderBelow
-  * removeElement
-  * replaceElements
-  * rotateElement
-  * sendToBack
-  * show
-  * size
-  * topLeft
-  * transformation
-  * wantsLayer
+* Constants - Useful values which cannot be changed
+* [compositeTypes[]](#compositeTypes[])
+* [windowBehaviors[]](#windowBehaviors[])
+* [windowLevels](#windowLevels)
+* Functions - API calls offered directly by the extension
+* [defaultTextStyle](#defaultTextStyle)
+* [disableScreenUpdates](#disableScreenUpdates)
+* [elementSpec](#elementSpec)
+* [enableScreenUpdates](#enableScreenUpdates)
+* [help](#help)
+* Constructors - API calls which return an object, typically one that offers API methods
+* [new](#new)
+* Fields - Variables which can only be access from an object returned by a constructor
+* [attributes](#attributes)
+* [object[index]](#object[index])
+* [percentages](#percentages)
+* Methods - API calls which can only be made on an object returned by a constructor
+* [alpha](#alpha)
+* [appendElements](#appendElements)
+* [assignElement](#assignElement)
+* [behavior](#behavior)
+* [behaviorAsLabels](#behaviorAsLabels)
+* [bringToFront](#bringToFront)
+* [canvasDefaultFor](#canvasDefaultFor)
+* [canvasDefaultKeys](#canvasDefaultKeys)
+* [canvasDefaults](#canvasDefaults)
+* [canvasElements](#canvasElements)
+* [canvasMouseEvents](#canvasMouseEvents)
+* [clickActivating](#clickActivating)
+* [copy](#copy)
+* [delete](#delete)
+* [elementAttribute](#elementAttribute)
+* [elementBounds](#elementBounds)
+* [elementCount](#elementCount)
+* [elementKeys](#elementKeys)
+* [frame](#frame)
+* [hide](#hide)
+* [imageFromCanvas](#imageFromCanvas)
+* [insertElement](#insertElement)
+* [isOccluded](#isOccluded)
+* [isShowing](#isShowing)
+* [isVisible](#isVisible)
+* [level](#level)
+* [minimumTextSize](#minimumTextSize)
+* [mouseCallback](#mouseCallback)
+* [orderAbove](#orderAbove)
+* [orderBelow](#orderBelow)
+* [removeElement](#removeElement)
+* [replaceElements](#replaceElements)
+* [rotateElement](#rotateElement)
+* [sendToBack](#sendToBack)
+* [show](#show)
+* [size](#size)
+* [topLeft](#topLeft)
+* [transformation](#transformation)
+* [wantsLayer](#wantsLayer)
 
 ## API Documentation
 
 ### Constants
 
-#### compositeTypes[]
-  * Signature: hs.canvas.compositeTypes[]
-  * Type: Constant
-  * Description: A table containing the possible compositing rules for elements within the canvas.
+#### [compositeTypes[]](#compositeTypes[])
+| Signature   | hs.canvas.compositeTypes[]  |
+| Type        | Constant |
+| Description | A table containing the possible compositing rules for elements within the canvas. |
   Compositing rules specify how an element assigned to the canvas is combined with the earlier elements of the canvas. The default compositing rule for the canvas is `sourceOver`, but each element of the canvas can be assigned a composite type which overrides this default for the specific element.
     The available types are as follows:
      * `clear`           - Transparent. (R = 0)
@@ -102,10 +103,10 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
     In each equation, R is the resulting (premultiplied) color, S is the source color, D is the destination color, Sa is the alpha value of the source color, and Da is the alpha value of the destination color.
     The `source` object is the individual element as it is rendered in order within the canvas, and the `destination` object is the combined state of the previous elements as they have been composited within the canvas.
 
-#### windowBehaviors[]
-  * Signature: hs.canvas.windowBehaviors[]
-  * Type: Constant
-  * Description: Array of window behavior labels for determining how a canvas or drawing object is handled in Spaces and Exposé
+#### [windowBehaviors[]](#windowBehaviors[])
+| Signature   | hs.canvas.windowBehaviors[]  |
+| Type        | Constant |
+| Description | Array of window behavior labels for determining how a canvas or drawing object is handled in Spaces and Exposé |
   * `default`                   - The window can be associated to one space at a time.
     * `canJoinAllSpaces`          - The window appears in all spaces. The menu bar behaves this way.
     * `moveToActiveSpace`         - Making the window active does not cause a space switch; the window switches to the active space.
@@ -124,10 +125,10 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
     * `fullScreenAllowsTiling`    - A window with this collection behavior be a full screen tile window and does not have to have `fullScreenPrimary` set.
     * `fullScreenDisallowsTiling` - A window with this collection behavior cannot be made a fullscreen tile window, but it can have `fullScreenPrimary` set.  You can use this setting to prevent other windows from being placed in the window’s fullscreen tile.
 
-#### windowLevels
-  * Signature: hs.canvas.windowLevels
-  * Type: Constant
-  * Description: A table of predefined window levels usable with [hs.canvas:level](#level)
+#### [windowLevels](#windowLevels)
+| Signature   | hs.canvas.windowLevels  |
+| Type        | Constant |
+| Description | A table of predefined window levels usable with [hs.canvas:level](#level) |
   Predefined levels are:
      * _MinimumWindowLevelKey - lowest allowed window level
      * desktop
@@ -148,90 +149,49 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
      * assistiveTechHigh
      * cursor
      * _MaximumWindowLevelKey - highest allowed window level
-  * Notes:
-     * These key names map to the constants used in CoreGraphics to specify window levels and may not actually be used for what the name might suggest. For example, tests suggest that an active screen saver actually runs at a level of 2002, rather than at 1000, which is the window level corresponding to kCGScreenSaverWindowLevelKey.
-     * Each window level is sorted separately and [hs.canvas:orderAbove](#orderAbove) and [hs.canvas:orderBelow](#orderBelow) only arrange windows within the same level.
-     * If you use Dock hiding (or in 10.11, Menubar hiding) please note that when the Dock (or Menubar) is popped up, it is done so with an implicit orderAbove, which will place it above any items you may also draw at the Dock (or MainMenu) level.
-
+| Notes |  * These key names map to the constants used in CoreGraphics to specify window levels and may not actually be used for what the name might suggest. For example, tests suggest that an active screen saver actually runs at a level of 2002, rather than at 1000, which is the window level corresponding to kCGScreenSaverWindowLevelKey. * Each window level is sorted separately and [hs.canvas:orderAbove](#orderAbove) and [hs.canvas:orderBelow](#orderBelow) only arrange windows within the same level. * If you use Dock hiding (or in 10.11, Menubar hiding) please note that when the Dock (or Menubar) is popped up, it is done so with an implicit orderAbove, which will place it above any items you may also draw at the Dock (or MainMenu) level. | 
 ### Functions
 
-#### defaultTextStyle
-  * Signature: hs.canvas.defaultTextStyle() -> `hs.styledtext` attributes table
-  * Type: Function
-  * Description: Returns a table containing the default font, size, color, and paragraphStyle used by `hs.canvas` for text drawing objects.
-  * Parameters:
-     * None
-  * Returns:
-     * a table containing the default style attributes `hs.canvas` uses for text drawing objects in the `hs.styledtext` attributes table format.
-  * Notes:
-     * This method is intended to be used in conjunction with `hs.styledtext` to create styledtext objects that are based on, or a slight variation of, the defaults used by `hs.canvas`.
-
-#### disableScreenUpdates
-  * Signature: hs.canvas.disableScreenUpdates() -> None
-  * Type: Function
-  * Description: Tells the OS X window server to pause updating the physical displays for a short while.
+#### [defaultTextStyle](#defaultTextStyle)
+| Signature   | hs.canvas.defaultTextStyle() -> `hs.styledtext` attributes table  |
+| Type        | Function |
+| Description | Returns a table containing the default font, size, color, and paragraphStyle used by `hs.canvas` for text drawing objects. |
+| Parameters |  * None | | Returns |  * a table containing the default style attributes `hs.canvas` uses for text drawing objects in the `hs.styledtext` attributes table format. | | Notes |  * This method is intended to be used in conjunction with `hs.styledtext` to create styledtext objects that are based on, or a slight variation of, the defaults used by `hs.canvas`. | 
+#### [disableScreenUpdates](#disableScreenUpdates)
+| Signature   | hs.canvas.disableScreenUpdates() -> None  |
+| Type        | Function |
+| Description | Tells the OS X window server to pause updating the physical displays for a short while. |
    * The window server will only allow you to pause updates for up to 1 second.  This prevents a rogue or hung process from locking the system`s display completely.  Updates will be resumed when [hs.canvas.enableScreenUpdates](#enableScreenUpdates) is encountered or after 1 second, whichever comes first.
-  * Parameters:
-     * None
-  * Returns:
-     * None
-  * Notes:
-     * This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.
-     * This method should always be balanced with a call to [hs.canvas.enableScreenUpdates](#enableScreenUpdates) when your updates have been completed.  Failure to do so will be logged in the system logs.
-
-#### elementSpec
-  * Signature: hs.canvas.elementSpec() -> table
-  * Type: Function
-  * Description: Returns the list of attributes and their specifications that are recognized for canvas elements by this module.
-  * Parameters:
-     * None
-  * Returns:
-     * A table containing the attributes and specifications defined for this module.
-  * Notes:
-     * This is primarily for debugging purposes and may be removed in the future.
-
-#### enableScreenUpdates
-  * Signature: hs.canvas.enableScreenUpdates() -> None
-  * Type: Function
-  * Description: Tells the OS X window server to resume updating the physical displays after a previous pause.
+| Parameters |  * None | | Returns |  * None | | Notes |  * This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule. * This method should always be balanced with a call to [hs.canvas.enableScreenUpdates](#enableScreenUpdates) when your updates have been completed.  Failure to do so will be logged in the system logs. | 
+#### [elementSpec](#elementSpec)
+| Signature   | hs.canvas.elementSpec() -> table  |
+| Type        | Function |
+| Description | Returns the list of attributes and their specifications that are recognized for canvas elements by this module. |
+| Parameters |  * None | | Returns |  * A table containing the attributes and specifications defined for this module. | | Notes |  * This is primarily for debugging purposes and may be removed in the future. | 
+#### [enableScreenUpdates](#enableScreenUpdates)
+| Signature   | hs.canvas.enableScreenUpdates() -> None  |
+| Type        | Function |
+| Description | Tells the OS X window server to resume updating the physical displays after a previous pause. |
    * The window server will only allow you to pause updates for up to 1 second.  This prevents a rogue or hung process from locking the system`s display completely.  Updates will be resumed when this function is encountered  or after 1 second, whichever comes first.
-  * Parameters:
-     * None
-  * Returns:
-     * None
-  * Notes:
-     * In conjunction with [hs.canvas.disableScreenUpdates](#disableScreenUpdates), this method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.
-     * This method should always be preceded by a call to [hs.canvas.disableScreenUpdates](#disableScreenUpdates).  Failure to do so will be logged in the system logs.
-
-#### help
-  * Signature: hs.canvas.help([attribute]) -> string
-  * Type: Function
-  * Description: Provides specification information for the recognized attributes, or the specific attribute specified.
-  * Parameters:
-     * `attribute` - an optional string specifying an element attribute. If this argument is not provided, all attributes are listed.
-  * Returns:
-     * a string containing some of the information provided by the [hs.canvas.elementSpec](#elementSpec) in a manner that is easy to reference from the Hammerspoon console.
-
+| Parameters |  * None | | Returns |  * None | | Notes |  * In conjunction with [hs.canvas.disableScreenUpdates](#disableScreenUpdates), this method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule. * This method should always be preceded by a call to [hs.canvas.disableScreenUpdates](#disableScreenUpdates).  Failure to do so will be logged in the system logs. | 
+#### [help](#help)
+| Signature   | hs.canvas.help([attribute]) -> string  |
+| Type        | Function |
+| Description | Provides specification information for the recognized attributes, or the specific attribute specified. |
+| Parameters |  * `attribute` - an optional string specifying an element attribute. If this argument is not provided, all attributes are listed. | | Returns |  * a string containing some of the information provided by the [hs.canvas.elementSpec](#elementSpec) in a manner that is easy to reference from the Hammerspoon console. | 
 ### Constructors
 
-#### new
-  * Signature: hs.canvas.new(rect) -> canvasObject
-  * Type: Constructor
-  * Description: Create a new canvas object at the specified coordinates
-  * Parameters:
-     * `rect` - A rect-table containing the co-ordinates and size for the canvas object
-  * Returns:
-     * a new, empty, canvas object, or nil if the canvas cannot be created with the specified coordinates
-  * Notes:
-     * The size of the canvas defines the visible area of the canvas -- any portion of a canvas element which extends past the canvas's edges will be clipped.
-     * a rect-table is a table with key-value pairs specifying the top-left coordinate on the screen for the canvas (keys `x`  and `y`) and the size (keys `h` and `w`) of the canvas. The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.
-
+#### [new](#new)
+| Signature   | hs.canvas.new(rect) -> canvasObject  |
+| Type        | Constructor |
+| Description | Create a new canvas object at the specified coordinates |
+| Parameters |  * `rect` - A rect-table containing the co-ordinates and size for the canvas object | | Returns |  * a new, empty, canvas object, or nil if the canvas cannot be created with the specified coordinates | | Notes |  * The size of the canvas defines the visible area of the canvas -- any portion of a canvas element which extends past the canvas's edges will be clipped. * a rect-table is a table with key-value pairs specifying the top-left coordinate on the screen for the canvas (keys `x`  and `y`) and the size (keys `h` and `w`) of the canvas. The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object. | 
 ### Fields
 
-#### attributes
-  * Signature: hs.canvas.attributes
-  * Type: Field
-  * Description: Canvas Element Attributes
+#### [attributes](#attributes)
+| Signature   | hs.canvas.attributes  |
+| Type        | Field |
+| Description | Canvas Element Attributes |
   * `type` - specifies the type of canvas element the table represents. This attribute has no default and must be specified for each element in the canvas array. Valid type strings are:
       * `arc`           - an arc inscribed on a circle, defined by `radius`, `center`, `startAngle`, and `endAngle`.
       * `canvas`        - an independent canvas object, displayed as an element within the specified frame. Defined by `canvas` and `frame`.
@@ -329,10 +289,10 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
       * `windingRule`         - Default "nonZero".  A string specifying the winding rule in effect for the canvas element. May be "nonZero" or "evenOdd".  The winding rule determines which portions of an element to fill. This setting will only have a visible effect on compound elements (built with the `build` action) or elements of type `segments` when the object is made from lines which cross.
       * `withShadow`          - Default `false`. Specifies whether a shadow effect should be applied to the canvas element.  Ignored for the `text` type.
 
-#### object[index]
-  * Signature: hs.canvas.object[index]
-  * Type: Field
-  * Description: An array-like method for accessing the attributes for the canvas element at the specified index
+#### [object[index]](#object[index])
+| Signature   | hs.canvas.object[index]  |
+| Type        | Field |
+| Description | An array-like method for accessing the attributes for the canvas element at the specified index |
   Metamethods are assigned to the canvas object so that you can refer to individual elements of the canvas as if the canvas object was an array.  Each element is represented by a table of key-value pairs, where each key represents an attribute for that element.  Valid index numbers range from 1 to [hs.canvas:elementCount()](#elementCount) when getting an element or getting or setting one of its attributes, and from 1 to [hs.canvas:elementCount()](#elementCount) + 1 when assign an element table to an index in the canvas.  For example:
     ~~~lua
     c = require("hs.canvas")
@@ -356,10 +316,10 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
     You can, however, remove the last element with `a[#a] = nil`.
     To print out all of the elements in the canvas with: `for i, v in ipairs(a) do print(v) end`.  The `pairs` iterator will also work, and will work on element sub-tables (transformations, fillColor and strokeColor, etc.), but this iterator does not guarantee order.
 
-#### percentages
-  * Signature: hs.canvas.percentages
-  * Type: Field
-  * Description: Canvas attributes which specify the location and size of canvas elements can be specified with an absolute position or as a percentage of the canvas size.
+#### [percentages](#percentages)
+| Signature   | hs.canvas.percentages  |
+| Type        | Field |
+| Description | Canvas attributes which specify the location and size of canvas elements can be specified with an absolute position or as a percentage of the canvas size. |
   Percentages may be assigned to the following attributes:
      * `frame`       - the frame used by the `rectangle`, `oval`, `ellipticalArc`, `text`, and `image` types.  The `x` and `w` fields will be a percentage of the canvas's width, and the `y` and `h` fields will be a percentage of the canvas's height.
      * `center`      - the center point for the `circle` and `arc` types.  The `x` field will be a percentage of the canvas's width and the `y` field will be a percentage of the canvas's height.
@@ -370,316 +330,152 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 
 ### Methods
 
-#### alpha
-  * Signature: hs.canvas:alpha([alpha]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set the alpha level of the window containing the canvasObject.
-  * Parameters:
-     * `alpha` - an optional number specifying the new alpha level (0.0 - 1.0, inclusive) for the canvasObject
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value.
-
-#### appendElements
-  * Signature: hs.canvas:appendElements(element, ...) -> canvasObject
-  * Type: Method
-  * Description: Appends the elements specified to the canvas.
-  * Parameters:
-     * `element` - a table containing key-value pairs that define the element to be appended to the canvas.  You can specify one or more elements and they will be appended in the order they are listed.
-  * Returns:
-     * the canvas object
-  * Notes:
-     * You can also specify multiple elements in a table as an array, where each index in the table contains an element table, and use the array as a single argument to this method if this style works better in your code.
-
-#### assignElement
-  * Signature: hs.canvas:assignElement(elementTable, [index]) -> canvasObject
-  * Type: Method
-  * Description: Assigns a new element to the canvas at the specified index.
-  * Parameters:
-     * `elementTable` - a table containing key-value pairs that define the element to be added to the canvas.
-     * `index`        - an optional integer between 1 and the canvas element count + 1 specifying the index position to put the new element.  Any element currently at that index will be replaced.  Defaults to the canvas element count + 1 (i.e. after the end of the currently defined elements).
-  * Returns:
-     * the canvasObject
-  * Notes:
-     * When the index specified is the canvas element count + 1, the behavior of this method is the same as [hs.canvas:insertElement](#insertElement); i.e. it adds the new element to the end of the currently defined element list.
-
-#### behavior
-  * Signature: hs.canvas:behavior([behavior]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set the window behavior settings for the canvas object using labels defined in [hs.canvas.windowBehaviors](#windowBehaviors).
-  * Parameters:
-     * `behavior` - if present, the behavior should be a combination of values found in [hs.canvas.windowBehaviors](#windowBehaviors) describing the window behavior.  The behavior should be specified as one of the following:
-       * integer - a number representing the behavior which can be created by combining values found in [hs.canvas.windowBehaviors](#windowBehaviors) with the logical or operator.
-       * string  - a single key from [hs.canvas.windowBehaviors](#windowBehaviors) which will be toggled in the current window behavior.
-       * table   - a list of keys from [hs.canvas.windowBehaviors](#windowBehaviors) which will be combined to make the final behavior by combining their values with the logical or operator.
-  * Returns:
-     * if an argument is provided, then the canvasObject is returned; otherwise the current behavior value is returned.
-
-#### behaviorAsLabels
-  * Signature: hs.canvas:behaviorAsLabels(behaviorTable) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set the window behavior settings for the canvas object using labels defined in [hs.canvas.windowBehaviors](#windowBehaviors).
-  * Parameters:
-     * behaviorTable - an optional table of strings and/or integers specifying the desired window behavior for the canvas object.
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value as a table of strings.
-
-#### bringToFront
-  * Signature: hs.canvas:bringToFront([aboveEverything]) -> canvasObject
-  * Type: Method
-  * Description: Places the canvas object on top of normal windows
-  * Parameters:
-     * aboveEverything - An optional boolean value that controls how far to the front the canvas should be placed. Defaults to false.
-       * if true, place the canvas on top of all windows (including the dock and menubar and fullscreen windows).
-       * if false, place the canvas above normal windows, but below the dock, menubar and fullscreen windows.
-  * Returns:
-     * The canvas object
-
-#### canvasDefaultFor
-  * Signature: hs.canvas:canvasDefaultFor(keyName, [newValue]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set the element default specified by keyName.
+#### [alpha](#alpha)
+| Signature   | hs.canvas:alpha([alpha]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set the alpha level of the window containing the canvasObject. |
+| Parameters |  * `alpha` - an optional number specifying the new alpha level (0.0 - 1.0, inclusive) for the canvasObject | | Returns |  * If an argument is provided, the canvas object; otherwise the current value. | 
+#### [appendElements](#appendElements)
+| Signature   | hs.canvas:appendElements(element, ...) -> canvasObject  |
+| Type        | Method |
+| Description | Appends the elements specified to the canvas. |
+| Parameters |  * `element` - a table containing key-value pairs that define the element to be appended to the canvas.  You can specify one or more elements and they will be appended in the order they are listed. | | Returns |  * the canvas object | | Notes |  * You can also specify multiple elements in a table as an array, where each index in the table contains an element table, and use the array as a single argument to this method if this style works better in your code. | 
+#### [assignElement](#assignElement)
+| Signature   | hs.canvas:assignElement(elementTable, [index]) -> canvasObject  |
+| Type        | Method |
+| Description | Assigns a new element to the canvas at the specified index. |
+| Parameters |  * `elementTable` - a table containing key-value pairs that define the element to be added to the canvas. * `index`        - an optional integer between 1 and the canvas element count + 1 specifying the index position to put the new element.  Any element currently at that index will be replaced.  Defaults to the canvas element count + 1 (i.e. after the end of the currently defined elements). | | Returns |  * the canvasObject | | Notes |  * When the index specified is the canvas element count + 1, the behavior of this method is the same as [hs.canvas:insertElement](#insertElement); i.e. it adds the new element to the end of the currently defined element list. | 
+#### [behavior](#behavior)
+| Signature   | hs.canvas:behavior([behavior]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set the window behavior settings for the canvas object using labels defined in [hs.canvas.windowBehaviors](#windowBehaviors). |
+| Parameters |  * `behavior` - if present, the behavior should be a combination of values found in [hs.canvas.windowBehaviors](#windowBehaviors) describing the window behavior.  The behavior should be specified as one of the following:   * integer - a number representing the behavior which can be created by combining values found in [hs.canvas.windowBehaviors](#windowBehaviors) with the logical or operator.   * string  - a single key from [hs.canvas.windowBehaviors](#windowBehaviors) which will be toggled in the current window behavior.   * table   - a list of keys from [hs.canvas.windowBehaviors](#windowBehaviors) which will be combined to make the final behavior by combining their values with the logical or operator. | | Returns |  * if an argument is provided, then the canvasObject is returned; otherwise the current behavior value is returned. | 
+#### [behaviorAsLabels](#behaviorAsLabels)
+| Signature   | hs.canvas:behaviorAsLabels(behaviorTable) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set the window behavior settings for the canvas object using labels defined in [hs.canvas.windowBehaviors](#windowBehaviors). |
+| Parameters |  * behaviorTable - an optional table of strings and/or integers specifying the desired window behavior for the canvas object. | | Returns |  * If an argument is provided, the canvas object; otherwise the current value as a table of strings. | 
+#### [bringToFront](#bringToFront)
+| Signature   | hs.canvas:bringToFront([aboveEverything]) -> canvasObject  |
+| Type        | Method |
+| Description | Places the canvas object on top of normal windows |
+| Parameters |  * aboveEverything - An optional boolean value that controls how far to the front the canvas should be placed. Defaults to false.   * if true, place the canvas on top of all windows (including the dock and menubar and fullscreen windows).   * if false, place the canvas above normal windows, but below the dock, menubar and fullscreen windows. | | Returns |  * The canvas object | 
+#### [canvasDefaultFor](#canvasDefaultFor)
+| Signature   | hs.canvas:canvasDefaultFor(keyName, [newValue]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set the element default specified by keyName. |
   Paramters:
      * `keyName` - the element default to examine or modify
      * `value`   - an optional new value to set as the default fot his canvas when not specified explicitly in an element declaration.
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value.
-  * Notes:
-     * Not all keys will apply to all element types.
-     * Currently set and built-in defaults may be retrieved in a table with [hs.canvas:canvasDefaults](#canvasDefaults).
-
-#### canvasDefaultKeys
-  * Signature: hs.canvas:canvasDefaultKeys([module]) -> table
-  * Type: Method
-  * Description: Returns a list of the key names for the attributes set for the canvas defaults.
-  * Parameters:
-     * `module` - an optional boolean flag, default false, indicating whether the key names for the module defaults (true) should be included in the list.  If false, only those defaults which have been explicitly set for the canvas are included.
-  * Returns:
-     * a table containing the key names for the defaults which are set for this canvas. May also optionally include key names for all attributes which have a default value defined by the module.
-
-#### canvasDefaults
-  * Signature: hs.canvas:canvasDefaults([module]) -> table
-  * Type: Method
-  * Description: Get a table of the default key-value pairs which apply to the canvas.
-  * Parameters:
-     * `module` - an optional boolean flag, default false, indicating whether module defaults (true) should be included in the table.  If false, only those defaults which have been explicitly set for the canvas are returned.
-  * Returns:
-     * a table containing key-value pairs for the defaults which apply to the canvas.
-  * Notes:
-     * Not all keys will apply to all element types.
-     * To change the defaults for the canvas, use [hs.canvas:canvasDefaultFor](#canvasDefaultFor).
-
-#### canvasElements
-  * Signature: hs.canvas:canvasElements() -> table
-  * Type: Method
-  * Description: Returns an array containing the elements defined for this canvas.  Each array entry will be a table containing the key-value pairs which have been set for that canvas element.
-  * Parameters:
-     * None
-  * Returns:
-     * an array of element tables which are defined for the canvas.
-
-#### canvasMouseEvents
-  * Signature: hs.canvas:canvasMouseEvents([down], [up], [enterExit], [move]) -> canvasObject | current values
-  * Type: Method
-  * Description: Get or set whether or not regions of the canvas which are not otherwise covered by an element with mouse tracking enabled should generate a callback for mouse events.
+| Returns |  * If an argument is provided, the canvas object; otherwise the current value. | | Notes |  * Not all keys will apply to all element types. * Currently set and built-in defaults may be retrieved in a table with [hs.canvas:canvasDefaults](#canvasDefaults). | 
+#### [canvasDefaultKeys](#canvasDefaultKeys)
+| Signature   | hs.canvas:canvasDefaultKeys([module]) -> table  |
+| Type        | Method |
+| Description | Returns a list of the key names for the attributes set for the canvas defaults. |
+| Parameters |  * `module` - an optional boolean flag, default false, indicating whether the key names for the module defaults (true) should be included in the list.  If false, only those defaults which have been explicitly set for the canvas are included. | | Returns |  * a table containing the key names for the defaults which are set for this canvas. May also optionally include key names for all attributes which have a default value defined by the module. | 
+#### [canvasDefaults](#canvasDefaults)
+| Signature   | hs.canvas:canvasDefaults([module]) -> table  |
+| Type        | Method |
+| Description | Get a table of the default key-value pairs which apply to the canvas. |
+| Parameters |  * `module` - an optional boolean flag, default false, indicating whether module defaults (true) should be included in the table.  If false, only those defaults which have been explicitly set for the canvas are returned. | | Returns |  * a table containing key-value pairs for the defaults which apply to the canvas. | | Notes |  * Not all keys will apply to all element types. * To change the defaults for the canvas, use [hs.canvas:canvasDefaultFor](#canvasDefaultFor). | 
+#### [canvasElements](#canvasElements)
+| Signature   | hs.canvas:canvasElements() -> table  |
+| Type        | Method |
+| Description | Returns an array containing the elements defined for this canvas.  Each array entry will be a table containing the key-value pairs which have been set for that canvas element. |
+| Parameters |  * None | | Returns |  * an array of element tables which are defined for the canvas. | 
+#### [canvasMouseEvents](#canvasMouseEvents)
+| Signature   | hs.canvas:canvasMouseEvents([down], [up], [enterExit], [move]) -> canvasObject | current values  |
+| Type        | Method |
+| Description | Get or set whether or not regions of the canvas which are not otherwise covered by an element with mouse tracking enabled should generate a callback for mouse events. |
    * Use [hs.canvas:mouseCallback](#mouseCallback) to set the callback function.  The identifier field in the callback's argument list will be "_canvas_", but otherwise identical to those specified in [hs.canvas:mouseCallback](#mouseCallback).
-  * Parameters:
-     * `down`      - an optional boolean, or nil placeholder, specifying whether or not the mouse button being pushed down should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled.
-     * `up`        - an optional boolean, or nil placeholder, specifying whether or not the mouse button being released should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled.
-     * `enterExit` - an optional boolean, or nil placeholder, specifying whether or not the mouse pointer entering or exiting the canvas bounds should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled.
-     * `move`      - an optional boolean, or nil placeholder, specifying whether or not the mouse pointer moving within the canvas bounds should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled.
-  * Returns:
-     * If any arguments are provided, returns the canvas Object, otherwise returns the current values as four separate boolean values (i.e. not in a table).
-  * Notes:
-     * Each value that you wish to set must be provided in the order given above, but you may specify a position as `nil` to indicate that whatever it's current state, no change should be applied.  For example, to activate a callback for entering and exiting the canvas without changing the current callback status for up or down button clicks, you could use: `hs.canvas:canvasMouseTracking(nil, nil, true)`.
-
-#### clickActivating
-  * Signature: hs.canvas:clickActivating([flag]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set whether or not clicking on a canvas with a click callback defined should bring all of Hammerspoon's open windows to the front.
-  * Parameters:
-     * `flag` - an optional boolean indicating whether or not clicking on a canvas with a click callback function defined should activate Hammerspoon and bring its windows forward. Defaults to true.
-  * Returns:
-     * If an argument is provided, returns the canvas object; otherwise returns the current setting.
-  * Notes:
-     * Setting this to false changes a canvas object's AXsubrole value and may affect the results of filters used with `hs.window.filter`, depending upon how they are defined.
-
-#### copy
-  * Signature: hs.canvas:copy() -> canvasObject
-  * Type: Method
-  * Description: Creates a copy of the canvas.
+| Parameters |  * `down`      - an optional boolean, or nil placeholder, specifying whether or not the mouse button being pushed down should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled. * `up`        - an optional boolean, or nil placeholder, specifying whether or not the mouse button being released should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled. * `enterExit` - an optional boolean, or nil placeholder, specifying whether or not the mouse pointer entering or exiting the canvas bounds should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled. * `move`      - an optional boolean, or nil placeholder, specifying whether or not the mouse pointer moving within the canvas bounds should generate a callback for the canvas areas not otherwise covered by an element with mouse tracking enabled. | | Returns |  * If any arguments are provided, returns the canvas Object, otherwise returns the current values as four separate boolean values (i.e. not in a table). | | Notes |  * Each value that you wish to set must be provided in the order given above, but you may specify a position as `nil` to indicate that whatever it's current state, no change should be applied.  For example, to activate a callback for entering and exiting the canvas without changing the current callback status for up or down button clicks, you could use: `hs.canvas:canvasMouseTracking(nil, nil, true)`. | 
+#### [clickActivating](#clickActivating)
+| Signature   | hs.canvas:clickActivating([flag]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set whether or not clicking on a canvas with a click callback defined should bring all of Hammerspoon's open windows to the front. |
+| Parameters |  * `flag` - an optional boolean indicating whether or not clicking on a canvas with a click callback function defined should activate Hammerspoon and bring its windows forward. Defaults to true. | | Returns |  * If an argument is provided, returns the canvas object; otherwise returns the current setting. | | Notes |  * Setting this to false changes a canvas object's AXsubrole value and may affect the results of filters used with `hs.window.filter`, depending upon how they are defined. | 
+#### [copy](#copy)
+| Signature   | hs.canvas:copy() -> canvasObject  |
+| Type        | Method |
+| Description | Creates a copy of the canvas. |
    * This method allows you to display a canvas in multiple places or use it as a canvas element multiple times.
-  * Parameters:
-     * None
-  * Returns:
-     * a copy of the canvas
-  * Notes:
-     * The copy of the canvas will be identical in all respectes except:
-       * The new canvas will not have a callback function assigned, even if the original canvas does.
-       * The new canvas will not initially be visible, even if the original is.
-     * The new canvas is an independant entity -- any subsequent changes to either canvas will not be reflected in the other canvas.
-
-#### delete
-  * Signature: hs.canvas:delete([fadeOutTime]) -> none
-  * Type: Method
-  * Description: Destroys the canvas object, optionally fading it out first (if currently visible).
-  * Parameters:
-     * `fadeOutTime` - An optional number of seconds over which to fade out the canvas object. Defaults to zero.
-  * Returns:
-     * None
-  * Notes:
-     * This method is automatically called during garbage collection, notably during a Hammerspoon termination or reload, with a fade time of 0.
-
-#### elementAttribute
-  * Signature: hs.canvas:elementAttribute(index, key, [value]) -> canvasObject | current value
-  * Type: Method
-  * Description: Get or set the attribute `key` for the canvas element at the specified index.
-  * Parameters:
-     * `index` - the index of the canvas element whose attribute is to be retrieved or set.
-     * `key`   - the key name of the attribute to get or set.
-     * `value` - an optional value to assign to the canvas element's attribute.
-  * Returns:
-     * if a value for the attribute is specified, returns the canvas object; otherwise returns the current value for the specified attribute.
-
-#### elementBounds
-  * Signature: hs.canvas:elementBounds(index) -> rectTable
-  * Type: Method
-  * Description: Returns the smallest rectangle which can fully contain the canvas element at the specified index.
-  * Parameters:
-     * `index` - the index of the canvas element to get the bounds for
-  * Returns:
-     * a rect table containing the smallest rectangle which can fully contain the canvas element.
-  * Notes:
-     * For many elements, this will be the same as the element frame.  For items without a frame (e.g. `segments`, `circle`, etc.) this will be the smallest rectangle which can fully contain the canvas element as specified by it's attributes.
-
-#### elementCount
-  * Signature: hs.canvas:elementCount() -> integer
-  * Type: Method
-  * Description: Returns the number of elements currently defined for the canvas object.
-  * Parameters:
-     * None
-  * Returns:
-     * the number of elements currently defined for the canvas object.
-
-#### elementKeys
-  * Signature: hs.canvas:elementKeys(index, [optional]) -> table
-  * Type: Method
-  * Description: Returns a list of the key names for the attributes set for the canvas element at the specified index.
-  * Parameters:
-     * `index`    - the index of the element to get the assigned key list from.
-     * `optional` - an optional boolean, default false, indicating whether optional, but unset, keys relevant to this canvas object should also be included in the list returned.
-  * Returns:
-     * a table containing the keys that are set for this canvas element.  May also optionally include keys which are not specifically set for this element but use inherited values from the canvas or module defaults.
-  * Notes:
-     * Any attribute which has been explicitly set for the element will be included in the key list (even if it is ignored for the element type).  If the `optional` flag is set to true, the *additional* attribute names added to the list will only include those which are relevant to the element type.
-
-#### frame
-  * Signature: hs.canvas:frame([rect]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set the frame of the canvasObject.
+| Parameters |  * None | | Returns |  * a copy of the canvas | | Notes |  * The copy of the canvas will be identical in all respectes except:   * The new canvas will not have a callback function assigned, even if the original canvas does.   * The new canvas will not initially be visible, even if the original is. * The new canvas is an independant entity -- any subsequent changes to either canvas will not be reflected in the other canvas. | 
+#### [delete](#delete)
+| Signature   | hs.canvas:delete([fadeOutTime]) -> none  |
+| Type        | Method |
+| Description | Destroys the canvas object, optionally fading it out first (if currently visible). |
+| Parameters |  * `fadeOutTime` - An optional number of seconds over which to fade out the canvas object. Defaults to zero. | | Returns |  * None | | Notes |  * This method is automatically called during garbage collection, notably during a Hammerspoon termination or reload, with a fade time of 0. | 
+#### [elementAttribute](#elementAttribute)
+| Signature   | hs.canvas:elementAttribute(index, key, [value]) -> canvasObject | current value  |
+| Type        | Method |
+| Description | Get or set the attribute `key` for the canvas element at the specified index. |
+| Parameters |  * `index` - the index of the canvas element whose attribute is to be retrieved or set. * `key`   - the key name of the attribute to get or set. * `value` - an optional value to assign to the canvas element's attribute. | | Returns |  * if a value for the attribute is specified, returns the canvas object; otherwise returns the current value for the specified attribute. | 
+#### [elementBounds](#elementBounds)
+| Signature   | hs.canvas:elementBounds(index) -> rectTable  |
+| Type        | Method |
+| Description | Returns the smallest rectangle which can fully contain the canvas element at the specified index. |
+| Parameters |  * `index` - the index of the canvas element to get the bounds for | | Returns |  * a rect table containing the smallest rectangle which can fully contain the canvas element. | | Notes |  * For many elements, this will be the same as the element frame.  For items without a frame (e.g. `segments`, `circle`, etc.) this will be the smallest rectangle which can fully contain the canvas element as specified by it's attributes. | 
+#### [elementCount](#elementCount)
+| Signature   | hs.canvas:elementCount() -> integer  |
+| Type        | Method |
+| Description | Returns the number of elements currently defined for the canvas object. |
+| Parameters |  * None | | Returns |  * the number of elements currently defined for the canvas object. | 
+#### [elementKeys](#elementKeys)
+| Signature   | hs.canvas:elementKeys(index, [optional]) -> table  |
+| Type        | Method |
+| Description | Returns a list of the key names for the attributes set for the canvas element at the specified index. |
+| Parameters |  * `index`    - the index of the element to get the assigned key list from. * `optional` - an optional boolean, default false, indicating whether optional, but unset, keys relevant to this canvas object should also be included in the list returned. | | Returns |  * a table containing the keys that are set for this canvas element.  May also optionally include keys which are not specifically set for this element but use inherited values from the canvas or module defaults. | | Notes |  * Any attribute which has been explicitly set for the element will be included in the key list (even if it is ignored for the element type).  If the `optional` flag is set to true, the *additional* attribute names added to the list will only include those which are relevant to the element type. | 
+#### [frame](#frame)
+| Signature   | hs.canvas:frame([rect]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set the frame of the canvasObject. |
    * elements in the canvas that have the `absolutePosition` attribute set to false will be moved so that their relative position within the canvas remains the same with respect to the new size.
      * elements in the canvas that have the `absoluteSize` attribute set to false will be resized so that their relative size with respect to the canvas remains the same with respect to the new size.
-  * Parameters:
-     * rect - An optional rect-table containing the co-ordinates and size the canvas object should be moved and set to
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value.
-  * Notes:
-     * a rect-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the canvas (keys `x`  and `y`) and the new size (keys `h` and `w`).  The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.
-
-#### hide
-  * Signature: hs.canvas:hide([fadeOutTime]) -> canvasObject
-  * Type: Method
-  * Description: Hides the canvas object
-  * Parameters:
-     * `fadeOutTime` - An optional number of seconds over which to fade out the canvas object. Defaults to zero.
-  * Returns:
-     * The canvas object
-
-#### imageFromCanvas
-  * Signature: hs.canvas:imageFromCanvas() -> hs.image object
-  * Type: Method
-  * Description: Returns an image of the canvas contents as an `hs.image` object.
-  * Parameters:
-     * None
-  * Returns:
-     * an `hs.image` object
-  * Notes:
-     * The canvas does not have to be visible in order for an image to be generated from it.
-
-#### insertElement
-  * Signature: hs.canvas:insertElement(elementTable, [index]) -> canvasObject
-  * Type: Method
-  * Description: Insert a new element into the canvas at the specified index.
-  * Parameters:
-     * `elementTable` - a table containing key-value pairs that define the element to be added to the canvas.
-     * `index`        - an optional integer between 1 and the canvas element count + 1 specifying the index position to put the new element.  Any element currently at that index, and those that follow, will be moved one position up in the element array.  Defaults to the canvas element count + 1 (i.e. after the end of the currently defined elements).
-  * Returns:
-     * the canvasObject
-  * Notes:
-     * see also [hs.canvas:assignElement](#assignElement).
-
-#### isOccluded
-  * Signature: hs.canvas:isOccluded() -> boolean
-  * Type: Method
-  * Description: Returns whether or not the canvas is currently occluded (hidden by other windows, off screen, etc).
-  * Parameters:
-     * None
-  * Returns:
-     * a boolean indicating whether or not the canvas is currently being occluded.
-  * Notes:
-     * If any part of the canvas is visible (even if that portion of the canvas does not contain any canvas elements), then the canvas is not considered occluded.
-     * a canvas which is completely covered by one or more opaque windows is considered occluded; however, if the windows covering the canvas are not opaque, then the canvas is not occluded.
-     * a canvas that is currently hidden or with a height of 0 or a width of 0 is considered occluded.
-     * See also [hs.canvas:isShowing](#isShowing).
-
-#### isShowing
-  * Signature: hs.canvas:isShowing() -> boolean
-  * Type: Method
-  * Description: Returns whether or not the canvas is currently being shown.
-  * Parameters:
-     * None
-  * Returns:
-     * a boolean indicating whether or not the canvas is currently being shown (true) or is currently hidden (false).
-  * Notes:
-     * This method only determines whether or not the canvas is being shown or is hidden -- it does not indicate whether or not the canvas is currently off screen or is occluded by other objects.
-     * See also [hs.canvas:isOccluded](#isOccluded).
-
-#### isVisible
-  * Signature: hs.canvas:isVisible() -> boolean
-  * Type: Method
-  * Description: Returns whether or not the canvas is currently showing and is (at least partially) visible on screen.
-  * Parameters:
-     * None
-  * Returns:
-     * a boolean indicating whether or not the canvas is currently visible.
-  * Notes:
-     * This is syntactic sugar for `not hs.canvas:isOccluded()`.
-     * See [hs.canvas:isOccluded](#isOccluded) for more details.
-
-#### level
-  * Signature: hs.canvas:level([level]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Sets the window level more precisely than sendToBack and bringToFront.
-  * Parameters:
-     * `level` - an optional level, specified as a number or as a string, specifying the new window level for the canvasObject. If it is a string, it must match one of the keys in [hs.canvas.windowLevels](#windowLevels).
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value.
-
-#### minimumTextSize
-  * Signature: hs.canvas:minimumTextSize([index], text) -> table
-  * Type: Method
-  * Description: Returns a table specifying the size of the rectangle which can fully render the text with the specified style so that is will be completely visible.
-  * Parameters:
-     * `index` - an optional index specifying the element in the canvas which contains the text attributes which should be used when determining the size of the text. If not provided, the canvas defaults will be used instead. Ignored if `text` is an hs.styledtext object.
-     * `text`  - a string or hs.styledtext object specifying the text.
-  * Returns:
-     * a size table specifying the height and width of a rectangle which could fully contain the text when displayed in the canvas
-  * Notes:
-     * Multi-line text (separated by a newline or return) is supported.  The height will be for the multiple lines and the width returned will be for the longest line.
-
-#### mouseCallback
-  * Signature: hs.canvas:mouseCallback(mouseCallbackFn) -> canvasObject
-  * Type: Method
-  * Description: Sets a callback for mouse events with respect to the canvas
+| Parameters |  * rect - An optional rect-table containing the co-ordinates and size the canvas object should be moved and set to | | Returns |  * If an argument is provided, the canvas object; otherwise the current value. | | Notes |  * a rect-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the canvas (keys `x`  and `y`) and the new size (keys `h` and `w`).  The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object. | 
+#### [hide](#hide)
+| Signature   | hs.canvas:hide([fadeOutTime]) -> canvasObject  |
+| Type        | Method |
+| Description | Hides the canvas object |
+| Parameters |  * `fadeOutTime` - An optional number of seconds over which to fade out the canvas object. Defaults to zero. | | Returns |  * The canvas object | 
+#### [imageFromCanvas](#imageFromCanvas)
+| Signature   | hs.canvas:imageFromCanvas() -> hs.image object  |
+| Type        | Method |
+| Description | Returns an image of the canvas contents as an `hs.image` object. |
+| Parameters |  * None | | Returns |  * an `hs.image` object | | Notes |  * The canvas does not have to be visible in order for an image to be generated from it. | 
+#### [insertElement](#insertElement)
+| Signature   | hs.canvas:insertElement(elementTable, [index]) -> canvasObject  |
+| Type        | Method |
+| Description | Insert a new element into the canvas at the specified index. |
+| Parameters |  * `elementTable` - a table containing key-value pairs that define the element to be added to the canvas. * `index`        - an optional integer between 1 and the canvas element count + 1 specifying the index position to put the new element.  Any element currently at that index, and those that follow, will be moved one position up in the element array.  Defaults to the canvas element count + 1 (i.e. after the end of the currently defined elements). | | Returns |  * the canvasObject | | Notes |  * see also [hs.canvas:assignElement](#assignElement). | 
+#### [isOccluded](#isOccluded)
+| Signature   | hs.canvas:isOccluded() -> boolean  |
+| Type        | Method |
+| Description | Returns whether or not the canvas is currently occluded (hidden by other windows, off screen, etc). |
+| Parameters |  * None | | Returns |  * a boolean indicating whether or not the canvas is currently being occluded. | | Notes |  * If any part of the canvas is visible (even if that portion of the canvas does not contain any canvas elements), then the canvas is not considered occluded. * a canvas which is completely covered by one or more opaque windows is considered occluded; however, if the windows covering the canvas are not opaque, then the canvas is not occluded. * a canvas that is currently hidden or with a height of 0 or a width of 0 is considered occluded. * See also [hs.canvas:isShowing](#isShowing). | 
+#### [isShowing](#isShowing)
+| Signature   | hs.canvas:isShowing() -> boolean  |
+| Type        | Method |
+| Description | Returns whether or not the canvas is currently being shown. |
+| Parameters |  * None | | Returns |  * a boolean indicating whether or not the canvas is currently being shown (true) or is currently hidden (false). | | Notes |  * This method only determines whether or not the canvas is being shown or is hidden -- it does not indicate whether or not the canvas is currently off screen or is occluded by other objects. * See also [hs.canvas:isOccluded](#isOccluded). | 
+#### [isVisible](#isVisible)
+| Signature   | hs.canvas:isVisible() -> boolean  |
+| Type        | Method |
+| Description | Returns whether or not the canvas is currently showing and is (at least partially) visible on screen. |
+| Parameters |  * None | | Returns |  * a boolean indicating whether or not the canvas is currently visible. | | Notes |  * This is syntactic sugar for `not hs.canvas:isOccluded()`. * See [hs.canvas:isOccluded](#isOccluded) for more details. | 
+#### [level](#level)
+| Signature   | hs.canvas:level([level]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Sets the window level more precisely than sendToBack and bringToFront. |
+| Parameters |  * `level` - an optional level, specified as a number or as a string, specifying the new window level for the canvasObject. If it is a string, it must match one of the keys in [hs.canvas.windowLevels](#windowLevels). | | Returns |  * If an argument is provided, the canvas object; otherwise the current value. | 
+#### [minimumTextSize](#minimumTextSize)
+| Signature   | hs.canvas:minimumTextSize([index], text) -> table  |
+| Type        | Method |
+| Description | Returns a table specifying the size of the rectangle which can fully render the text with the specified style so that is will be completely visible. |
+| Parameters |  * `index` - an optional index specifying the element in the canvas which contains the text attributes which should be used when determining the size of the text. If not provided, the canvas defaults will be used instead. Ignored if `text` is an hs.styledtext object. * `text`  - a string or hs.styledtext object specifying the text. | | Returns |  * a size table specifying the height and width of a rectangle which could fully contain the text when displayed in the canvas | | Notes |  * Multi-line text (separated by a newline or return) is supported.  The height will be for the multiple lines and the width returned will be for the longest line. | 
+#### [mouseCallback](#mouseCallback)
+| Signature   | hs.canvas:mouseCallback(mouseCallbackFn) -> canvasObject  |
+| Type        | Method |
+| Description | Sets a callback for mouse events with respect to the canvas |
    * The following mouse attributes may be set to true for a canvas element and will invoke the callback with the specified message:
        * `trackMouseDown`      - indicates that a callback should be invoked when a mouse button is clicked down on the canvas element.  The message will be "mouseDown".
        * `trackMouseUp`        - indicates that a callback should be invoked when a mouse button has been released over the canvas element.  The message will be "mouseUp".
@@ -689,135 +485,62 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
      * No distinction is made between the left, right, or other mouse buttons. If you need to determine which specific button was pressed, use `hs.eventtap.checkMouseButtons()` within your callback to check.
      * The hit point detection occurs by comparing the mouse pointer location to the rendered content of each individual canvas object... if an object which obscures a lower object does not have mouse tracking enabled, the lower object will still receive the event if it does have tracking enabled.
      * Clipping regions which remove content from the visible area of a rendered object are ignored for the purposes of element hit-detection.
-  * Parameters:
-     * `mouseCallbackFn`   - A function, can be nil, that will be called when a mouse event occurs within the canvas, and an element beneath the mouse's current position has one of the `trackMouse...` attributes set to true.
-  * Returns:
-     * The canvas object
-  * Notes:
-     * The callback function should expect 5 arguments: the canvas object itself, a message specifying the type of mouse event, the canvas element `id` (or index position in the canvas if the `id` attribute is not set for the element), the x position of the mouse when the event was triggered within the rendered portion of the canvas element, and the y position of the mouse when the event was triggered within the rendered portion of the canvas element.
-     * See also [hs.canvas:canvasMouseEvents](#canvasMouseEvents) for tracking mouse events in regions of the canvas not covered by an element with mouse tracking enabled.
-
-#### orderAbove
-  * Signature: hs.canvas:orderAbove([canvas2]) -> canvasObject
-  * Type: Method
-  * Description: Moves canvas object above canvas2, or all canvas objects in the same presentation level, if canvas2 is not given.
-  * Parameters:
-     * `canvas2` -An optional canvas object to place the canvas object above.
-  * Returns:
-     * The canvas object
-  * Notes:
-     * If the canvas object and canvas2 are not at the same presentation level, this method will will move the canvas object as close to the desired relationship as possible without changing the canvas object's presentation level. See [hs.canvas.level](#level).
-
-#### orderBelow
-  * Signature: hs.canvas:orderBelow([canvas2]) -> canvasObject
-  * Type: Method
-  * Description: Moves canvas object below canvas2, or all canvas objects in the same presentation level, if canvas2 is not given.
-  * Parameters:
-     * `canvas2` -An optional canvas object to place the canvas object below.
-  * Returns:
-     * The canvas object
-  * Notes:
-     * If the canvas object and canvas2 are not at the same presentation level, this method will will move the canvas object as close to the desired relationship as possible without changing the canvas object's presentation level. See [hs.canvas.level](#level).
-
-#### removeElement
-  * Signature: hs.canvas:removeElement([index]) -> canvasObject
-  * Type: Method
-  * Description: Insert a new element into the canvas at the specified index.
-  * Parameters:
-     * `index`        - an optional integer between 1 and the canvas element count specifying the index of the canvas element to remove. Any elements that follow, will be moved one position down in the element array.  Defaults to the canvas element count (i.e. the last element of the currently defined elements).
-  * Returns:
-     * the canvasObject
-
-#### replaceElements
-  * Signature: hs.canvas:replaceElements(element, ...) -> canvasObject
-  * Type: Method
-  * Description: Replaces all of the elements in the canvas with the elements specified.  Shortens or lengthens the canvas element count if necessary to accomodate the new canvas elements.
-  * Parameters:
-     * `element` - a table containing key-value pairs that define the element to be assigned to the canvas.  You can specify one or more elements and they will be appended in the order they are listed.
-  * Returns:
-     * the canvas object
-  * Notes:
-     * You can also specify multiple elements in a table as an array, where each index in the table contains an element table, and use the array as a single argument to this method if this style works better in your code.
-
-#### rotateElement
-  * Signature: hs.canvas:rotateElement(index, angle, [point], [append]) -> canvasObject
-  * Type: Method
-  * Description: Rotates an element about the point specified, or the elements center if no point is specified.
+| Parameters |  * `mouseCallbackFn`   - A function, can be nil, that will be called when a mouse event occurs within the canvas, and an element beneath the mouse's current position has one of the `trackMouse...` attributes set to true. | | Returns |  * The canvas object | | Notes |  * The callback function should expect 5 arguments: the canvas object itself, a message specifying the type of mouse event, the canvas element `id` (or index position in the canvas if the `id` attribute is not set for the element), the x position of the mouse when the event was triggered within the rendered portion of the canvas element, and the y position of the mouse when the event was triggered within the rendered portion of the canvas element. * See also [hs.canvas:canvasMouseEvents](#canvasMouseEvents) for tracking mouse events in regions of the canvas not covered by an element with mouse tracking enabled. | 
+#### [orderAbove](#orderAbove)
+| Signature   | hs.canvas:orderAbove([canvas2]) -> canvasObject  |
+| Type        | Method |
+| Description | Moves canvas object above canvas2, or all canvas objects in the same presentation level, if canvas2 is not given. |
+| Parameters |  * `canvas2` -An optional canvas object to place the canvas object above. | | Returns |  * The canvas object | | Notes |  * If the canvas object and canvas2 are not at the same presentation level, this method will will move the canvas object as close to the desired relationship as possible without changing the canvas object's presentation level. See [hs.canvas.level](#level). | 
+#### [orderBelow](#orderBelow)
+| Signature   | hs.canvas:orderBelow([canvas2]) -> canvasObject  |
+| Type        | Method |
+| Description | Moves canvas object below canvas2, or all canvas objects in the same presentation level, if canvas2 is not given. |
+| Parameters |  * `canvas2` -An optional canvas object to place the canvas object below. | | Returns |  * The canvas object | | Notes |  * If the canvas object and canvas2 are not at the same presentation level, this method will will move the canvas object as close to the desired relationship as possible without changing the canvas object's presentation level. See [hs.canvas.level](#level). | 
+#### [removeElement](#removeElement)
+| Signature   | hs.canvas:removeElement([index]) -> canvasObject  |
+| Type        | Method |
+| Description | Insert a new element into the canvas at the specified index. |
+| Parameters |  * `index`        - an optional integer between 1 and the canvas element count specifying the index of the canvas element to remove. Any elements that follow, will be moved one position down in the element array.  Defaults to the canvas element count (i.e. the last element of the currently defined elements). | | Returns |  * the canvasObject | 
+#### [replaceElements](#replaceElements)
+| Signature   | hs.canvas:replaceElements(element, ...) -> canvasObject  |
+| Type        | Method |
+| Description | Replaces all of the elements in the canvas with the elements specified.  Shortens or lengthens the canvas element count if necessary to accomodate the new canvas elements. |
+| Parameters |  * `element` - a table containing key-value pairs that define the element to be assigned to the canvas.  You can specify one or more elements and they will be appended in the order they are listed. | | Returns |  * the canvas object | | Notes |  * You can also specify multiple elements in a table as an array, where each index in the table contains an element table, and use the array as a single argument to this method if this style works better in your code. | 
+#### [rotateElement](#rotateElement)
+| Signature   | hs.canvas:rotateElement(index, angle, [point], [append]) -> canvasObject  |
+| Type        | Method |
+| Description | Rotates an element about the point specified, or the elements center if no point is specified. |
    * This method uses [hs.canvas.matrix](MATRIX.md) to generate the rotation transformation and provides a wrapper for `hs.canvas.matrix.translate(x, y):rotate(angle):translate(-x, -y)` which is then assigned or appended to the element's existing `transformation` attribute.
-  * Parameters:
-     * `index`  - the index of the element to rotate
-     * `angle`  - the angle to rotate the object in a clockwise direction
-     * `point`  - an optional point table, defaulting to the elements center, specifying the point around which the object should be rotated
-     * `append` - an optional boolean, default false, specifying whether or not the rotation transformation matrix should be appended to the existing transformation assigned to the element (true) or replace it (false).
-  * Returns:
-     * the canvas object
-  * Notes:
-     * a point-table is a table with key-value pairs specifying a coordinate in the canvas (keys `x`  and `y`). The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.
-     * The center of the object is determined by getting the element's bounds with [hs.canvas:elementBounds](#elementBounds).
-     * If the third argument is a boolean value, the `point` argument is assumed to be the element's center and the boolean value is used as the `append` argument.
-
-#### sendToBack
-  * Signature: hs.canvas:sendToBack() -> canvasObject
-  * Type: Method
-  * Description: Places the canvas object behind normal windows, between the desktop wallpaper and desktop icons
-  * Parameters:
-     * None
-  * Returns:
-     * The canvas object
-
-#### show
-  * Signature: hs.canvas:show([fadeInTime]) -> canvasObject
-  * Type: Method
-  * Description: Displays the canvas object
-  * Parameters:
-     * `fadeInTime` - An optional number of seconds over which to fade in the canvas object. Defaults to zero.
-  * Returns:
-     * The canvas object
-  * Notes:
-     * if the canvas is in use as an element in another canvas, this method will result in an error.
-
-#### size
-  * Signature: hs.canvas:size([size]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set the size of a canvas object
+| Parameters |  * `index`  - the index of the element to rotate * `angle`  - the angle to rotate the object in a clockwise direction * `point`  - an optional point table, defaulting to the elements center, specifying the point around which the object should be rotated * `append` - an optional boolean, default false, specifying whether or not the rotation transformation matrix should be appended to the existing transformation assigned to the element (true) or replace it (false). | | Returns |  * the canvas object | | Notes |  * a point-table is a table with key-value pairs specifying a coordinate in the canvas (keys `x`  and `y`). The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object. * The center of the object is determined by getting the element's bounds with [hs.canvas:elementBounds](#elementBounds). * If the third argument is a boolean value, the `point` argument is assumed to be the element's center and the boolean value is used as the `append` argument. | 
+#### [sendToBack](#sendToBack)
+| Signature   | hs.canvas:sendToBack() -> canvasObject  |
+| Type        | Method |
+| Description | Places the canvas object behind normal windows, between the desktop wallpaper and desktop icons |
+| Parameters |  * None | | Returns |  * The canvas object | 
+#### [show](#show)
+| Signature   | hs.canvas:show([fadeInTime]) -> canvasObject  |
+| Type        | Method |
+| Description | Displays the canvas object |
+| Parameters |  * `fadeInTime` - An optional number of seconds over which to fade in the canvas object. Defaults to zero. | | Returns |  * The canvas object | | Notes |  * if the canvas is in use as an element in another canvas, this method will result in an error. | 
+#### [size](#size)
+| Signature   | hs.canvas:size([size]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set the size of a canvas object |
    * elements in the canvas that have the `absolutePosition` attribute set to false will be moved so that their relative position within the canvas remains the same with respect to the new size.
      * elements in the canvas that have the `absoluteSize` attribute set to false will be resized so that their relative size with respect to the canvas remains the same with respect to the new size.
-  * Parameters:
-     * `size` - An optional size-table specifying the width and height the canvas object should be resized to
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value.
-  * Notes:
-     * a size-table is a table with key-value pairs specifying the size (keys `h` and `w`) the canvas should be resized to. The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.
-
-#### topLeft
-  * Signature: hs.canvas:topLeft([point]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set the top-left coordinate of the canvas object
-  * Parameters:
-     * `point` - An optional point-table specifying the new coordinate the top-left of the canvas object should be moved to
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value.
-  * Notes:
-     * a point-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the canvas (keys `x`  and `y`). The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.
-
-#### transformation
-  * Signature: hs.canvas:transformation([matrix]) -> canvasObject | current value
-  * Type: Method
-  * Description: Get or set the matrix transformation which is applied to every element in the canvas before being individually processed and added to the canvas.
-  * Parameters:
-     * `matrix` - an optional table specifying the matrix table, as defined by the [hs.canvas.matrix](MATRIX.md) module, to be applied to every element of the canvas, or an explicit `nil` to reset the transformation to the identity matrix.
-  * Returns:
-     * if an argument is provided, returns the canvasObject, otherwise returns the current value
-  * Notes:
-     * An example use for this method would be to change the canvas's origin point { x = 0, y = 0 } from the lower left corner of the canvas to somewhere else, like the middle of the canvas.
-
-#### wantsLayer
-  * Signature: hs.canvas:wantsLayer([flag]) -> canvasObject | currentValue
-  * Type: Method
-  * Description: Get or set whether or not the canvas object should be rendered by the view or by Core Animation.
-  * Parameters:
-     * `flag` - optional boolean (default false) which indicates whether the canvas object should be rendered by the containing view (false) or by Core Animation (true).
-  * Returns:
-     * If an argument is provided, the canvas object; otherwise the current value.
-  * Notes:
-     * This method can help smooth the display of small text objects on non-Retina monitors.
+| Parameters |  * `size` - An optional size-table specifying the width and height the canvas object should be resized to | | Returns |  * If an argument is provided, the canvas object; otherwise the current value. | | Notes |  * a size-table is a table with key-value pairs specifying the size (keys `h` and `w`) the canvas should be resized to. The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object. | 
+#### [topLeft](#topLeft)
+| Signature   | hs.canvas:topLeft([point]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set the top-left coordinate of the canvas object |
+| Parameters |  * `point` - An optional point-table specifying the new coordinate the top-left of the canvas object should be moved to | | Returns |  * If an argument is provided, the canvas object; otherwise the current value. | | Notes |  * a point-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the canvas (keys `x`  and `y`). The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object. | 
+#### [transformation](#transformation)
+| Signature   | hs.canvas:transformation([matrix]) -> canvasObject | current value  |
+| Type        | Method |
+| Description | Get or set the matrix transformation which is applied to every element in the canvas before being individually processed and added to the canvas. |
+| Parameters |  * `matrix` - an optional table specifying the matrix table, as defined by the [hs.canvas.matrix](MATRIX.md) module, to be applied to every element of the canvas, or an explicit `nil` to reset the transformation to the identity matrix. | | Returns |  * if an argument is provided, returns the canvasObject, otherwise returns the current value | | Notes |  * An example use for this method would be to change the canvas's origin point { x = 0, y = 0 } from the lower left corner of the canvas to somewhere else, like the middle of the canvas. | 
+#### [wantsLayer](#wantsLayer)
+| Signature   | hs.canvas:wantsLayer([flag]) -> canvasObject | currentValue  |
+| Type        | Method |
+| Description | Get or set whether or not the canvas object should be rendered by the view or by Core Animation. |
+| Parameters |  * `flag` - optional boolean (default false) which indicates whether the canvas object should be rendered by the containing view (false) or by Core Animation (true). | | Returns |  * If an argument is provided, the canvas object; otherwise the current value. | | Notes |  * This method can help smooth the display of small text objects on non-Retina monitors. | 

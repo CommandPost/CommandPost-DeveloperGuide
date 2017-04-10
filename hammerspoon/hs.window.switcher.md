@@ -1,4 +1,5 @@
-# Hammerspoon docs: hs.window.switcher
+# [docs](index.md) » hs.window.switcher
+---
 
 Window-based cmd-tab replacement
 
@@ -20,25 +21,25 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 ```
 
 ## API Overview
-* Variables - Configurable values</li>
-  * ui
-* Functions - API calls offered directly by the extension</li>
-  * nextWindow
-  * previousWindow
-* Constructors - API calls which return an object, typically one that offers API methods</li>
-  * new
-* Methods - API calls which can only be made on an object returned by a constructor</li>
-  * next
-  * previous
+* Variables - Configurable values
+* [ui](#ui)
+* Functions - API calls offered directly by the extension
+* [nextWindow](#nextWindow)
+* [previousWindow](#previousWindow)
+* Constructors - API calls which return an object, typically one that offers API methods
+* [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+* [next](#next)
+* [previous](#previous)
 
 ## API Documentation
 
 ### Variables
 
-#### ui
-  * Signature: hs.window.switcher.ui
-  * Type: Variable
-  * Description: Allows customization of the switcher behaviour and user interface
+#### [ui](#ui)
+| Signature   | hs.window.switcher.ui  |
+| Type        | Variable |
+| Description | Allows customization of the switcher behaviour and user interface |
   This table contains variables that you can change to customize the behaviour of the switcher and the look of the UI.
     To have multiple switcher instances with different behaviour/looks, use the `uiPrefs` parameter for the constructor;
     the passed keys and values will override those in this table for that particular instance.
@@ -63,66 +64,32 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 
 ### Functions
 
-#### nextWindow
-  * Signature: hs.window.switcher.nextWindow()
-  * Type: Function
-  * Description: Shows the switcher (if not yet visible) and selects the next window
-  * Parameters:
-     * None
-  * Returns:
-     * None
-  * Notes:
-     * the switcher will be dismissed (and the selected window focused) when all modifier keys are released
-
-#### previousWindow
-  * Signature: hs.window.switcher.previousWindow()
-  * Type: Function
-  * Description: Shows the switcher (if not yet visible) and selects the previous window
-  * Parameters:
-     * None
-  * Returns:
-     * None
-  * Notes:
-     * the switcher will be dismissed (and the selected window focused) when all modifier keys are released
-
+#### [nextWindow](#nextWindow)
+| Signature   | hs.window.switcher.nextWindow()  |
+| Type        | Function |
+| Description | Shows the switcher (if not yet visible) and selects the next window |
+| Parameters |  * None | | Returns |  * None | | Notes |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released | 
+#### [previousWindow](#previousWindow)
+| Signature   | hs.window.switcher.previousWindow()  |
+| Type        | Function |
+| Description | Shows the switcher (if not yet visible) and selects the previous window |
+| Parameters |  * None | | Returns |  * None | | Notes |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released | 
 ### Constructors
 
-#### new
-  * Signature: hs.window.switcher.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.window.switcher object
-  * Type: Constructor
-  * Description: Creates a new switcher instance; it can use a windowfilter to determine which windows to show
-  * Parameters:
-     * windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter
-       instance or constructor table
-     * uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values
-       must follow the conventions described in `hs.window.switcher.ui`; this parameter allows you to have multiple
-       switcher instances with different behaviour (for example, with and without thumbnails and/or titles)
-       using different hotkeys
-     * logname - (optional) name of the `hs.logger` instance for the new switcher; if omitted, the class logger will be used
-     * loglevel - (optional) log level for the `hs.logger` instance for the new switcher
-  * Returns:
-     * the new instance
-
+#### [new](#new)
+| Signature   | hs.window.switcher.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.window.switcher object  |
+| Type        | Constructor |
+| Description | Creates a new switcher instance; it can use a windowfilter to determine which windows to show |
+| Parameters |  * windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter   instance or constructor table * uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values   must follow the conventions described in `hs.window.switcher.ui`; this parameter allows you to have multiple   switcher instances with different behaviour (for example, with and without thumbnails and/or titles)   using different hotkeys * logname - (optional) name of the `hs.logger` instance for the new switcher; if omitted, the class logger will be used * loglevel - (optional) log level for the `hs.logger` instance for the new switcher | | Returns |  * the new instance | 
 ### Methods
 
-#### next
-  * Signature: hs.window.switcher:next()
-  * Type: Method
-  * Description: Shows the switcher instance (if not yet visible) and selects the next window
-  * Parameters:
-     * None
-  * Returns:
-     * None
-  * Notes:
-     * the switcher will be dismissed (and the selected window focused) when all modifier keys are released
-
-#### previous
-  * Signature: hs.window.switcher:previous()
-  * Type: Method
-  * Description: Shows the switcher instance (if not yet visible) and selects the previous window
-  * Parameters:
-     * None
-  * Returns:
-     * None
-  * Notes:
-     * the switcher will be dismissed (and the selected window focused) when all modifier keys are released
+#### [next](#next)
+| Signature   | hs.window.switcher:next()  |
+| Type        | Method |
+| Description | Shows the switcher instance (if not yet visible) and selects the next window |
+| Parameters |  * None | | Returns |  * None | | Notes |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released | 
+#### [previous](#previous)
+| Signature   | hs.window.switcher:previous()  |
+| Type        | Method |
+| Description | Shows the switcher instance (if not yet visible) and selects the previous window |
+| Parameters |  * None | | Returns |  * None | | Notes |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released | 

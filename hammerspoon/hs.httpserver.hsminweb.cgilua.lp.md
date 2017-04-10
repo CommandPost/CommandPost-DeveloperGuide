@@ -1,4 +1,5 @@
-# Hammerspoon docs: hs.httpserver.hsminweb.cgilua.lp
+# [docs](index.md) » hs.httpserver.hsminweb.cgilua.lp
+---
 
 Support functions for the CGILua compatibility module for including and translating Lua template pages into Lua code for execution within the Hammerspoon environment to provide dynamic content for http requests.
 
@@ -11,33 +12,24 @@ Note that the above considerations only apply to creating new "global" variables
 See the documentation for the [cgilua.lp.include](#include) for more information.
 
 ## API Overview
-* Functions - API calls offered directly by the extension</li>
-  * compile
-  * include
-  * translate
+* Functions - API calls offered directly by the extension
+* [compile](#compile)
+* [include](#include)
+* [translate](#translate)
 
 ## API Documentation
 
 ### Functions
 
-#### compile
-  * Signature: hs.httpserver.hsminweb.cgilua.lp.compile(source, name, [env]) -> function
-  * Type: Function
-  * Description: Converts the specified Lua template source into a Lua function.
-  * Parameters:
-     * source - a string containing the contents of a Lua/HTML template to be converted into a function
-     * name   - a label used in an error message if execution of the returned function results in a run-time error
-     * env    - an optional table specifying the environment to be used by the lua builtin function `load` when converting the source into a function.  By default, the function will inherit its caller's environment.
-  * Returns:
-     * A lua function which should take no arguments.
-  * Notes:
-     * The source provided is first compared to a stored cache of previously translated templates and will re-use an existing translation if the template has been seen before.  If the source is unique, [cgilua.lp.translate](#translate) is called on the template source.
-     * This function is used internally by [cgilua.lp.include](#include), and probably won't be useful unless you want to translate a dynamically generated template -- which has security implications, depending upon what inputs you use to generate this template, because the resulting Lua code will execute within your Hammerspoon environment.  Be very careful about your inputs if you choose to ignore this warning.
-
-#### include
-  * Signature: hs.httpserver.hsminweb.cgilua.lp.include(file, [env]) -> none
-  * Type: Function
-  * Description: Includes the template specified by the `file` parameter.
+#### [compile](#compile)
+| Signature   | hs.httpserver.hsminweb.cgilua.lp.compile(source, name, [env]) -> function  |
+| Type        | Function |
+| Description | Converts the specified Lua template source into a Lua function. |
+| Parameters |  * source - a string containing the contents of a Lua/HTML template to be converted into a function * name   - a label used in an error message if execution of the returned function results in a run-time error * env    - an optional table specifying the environment to be used by the lua builtin function `load` when converting the source into a function.  By default, the function will inherit its caller's environment. | | Returns |  * A lua function which should take no arguments. | | Notes |  * The source provided is first compared to a stored cache of previously translated templates and will re-use an existing translation if the template has been seen before.  If the source is unique, [cgilua.lp.translate](#translate) is called on the template source. * This function is used internally by [cgilua.lp.include](#include), and probably won't be useful unless you want to translate a dynamically generated template -- which has security implications, depending upon what inputs you use to generate this template, because the resulting Lua code will execute within your Hammerspoon environment.  Be very careful about your inputs if you choose to ignore this warning. | 
+#### [include](#include)
+| Signature   | hs.httpserver.hsminweb.cgilua.lp.include(file, [env]) -> none  |
+| Type        | Function |
+| Description | Includes the template specified by the `file` parameter. |
   * The default template environment provides the following:
       * the `__index` metamethod points to the `_G` environment variable in the Hammerspoon Lua instance; this means that any global variable in the Hammerspoon environment is available to the lua code in a template file.
       * the `__newindex` metamethod points to a function which creates new "global" variables in the template files environment; this means that if a template includes another template file, and that second template file creates a "global" variable, that new variable will be available in the environment of the calling template, but will not be shared with the Hammerspoon global variable space;  "global" variables created in this manner will be released when the HTTP request is completed.
@@ -58,23 +50,9 @@ See the documentation for the [cgilua.lp.include](#include) for more information
           * code    - an integer representing the currently expected response code for the HTTP request.
           * headers - a table containing key-value pairs of the currently defined response headers
         * _tmpfiles    - used internally to track temporary files used in the completion of this HTTP request; do not modify directly.
-  * Parameters:
-     * file - a string containing the file system path to the template to include.
-     * env  - an optional table specifying the environment to be used by the included template.  By default, the template will inherit its caller's environment.
-  * Returns:
-     * None
-  * Notes:
-    * This function is called by the web server to process the template specified by the requested URL.  Subsequent invocations of this function can be used to include common or re-used code from other template files and will be included in-line where the `cgilua.lp.include` function is invoked in the originating template.
-     * During the processing of a web request, the local directory is temporarily changed to match the local directory of the path of the file being served, as determined by the URL of the request.  This is usually different than the Hammerspoon default directory which corresponds to the directory which contains the `init.lua` file for Hammerspoon.
-
-#### translate
-  * Signature: hs.httpserver.hsminweb.cgilua.lp.translate(source) -> luaCode
-  * Type: Function
-  * Description: Converts the specified Lua template source into Lua code executable within the Hammerspoon environment.
-  * Parameters:
-     * source - a string containing the contents of a Lua/HTML template to be converted into true Lua code
-  * Returns:
-     * The lua code corresponding to the provided source which can be fed into the `load` lua builtin to generate a Lua function.
-  * Notes:
-     * This function is used internally by [cgilua.lp.include](#include), and probably won't be useful unless you want to translate a dynamically generated template -- which has security implications, depending upon what inputs you use to generate this template, because the resulting Lua code will execute within your Hammerspoon environment.  Be very careful about your inputs if you choose to ignore this warning.
-     * To ensure that the translated code has access to the `cgilua` support functions, pass `_ENV` as the environment argument to the `load` lua builtin; otherwise any output generated by the resulting function will be sent to the Hammerspoon console and not included in the HTTP response sent back to the client.
+| Parameters |  * file - a string containing the file system path to the template to include. * env  - an optional table specifying the environment to be used by the included template.  By default, the template will inherit its caller's environment. | | Returns |  * None | | Notes | * This function is called by the web server to process the template specified by the requested URL.  Subsequent invocations of this function can be used to include common or re-used code from other template files and will be included in-line where the `cgilua.lp.include` function is invoked in the originating template. * During the processing of a web request, the local directory is temporarily changed to match the local directory of the path of the file being served, as determined by the URL of the request.  This is usually different than the Hammerspoon default directory which corresponds to the directory which contains the `init.lua` file for Hammerspoon. | 
+#### [translate](#translate)
+| Signature   | hs.httpserver.hsminweb.cgilua.lp.translate(source) -> luaCode  |
+| Type        | Function |
+| Description | Converts the specified Lua template source into Lua code executable within the Hammerspoon environment. |
+| Parameters |  * source - a string containing the contents of a Lua/HTML template to be converted into true Lua code | | Returns |  * The lua code corresponding to the provided source which can be fed into the `load` lua builtin to generate a Lua function. | | Notes |  * This function is used internally by [cgilua.lp.include](#include), and probably won't be useful unless you want to translate a dynamically generated template -- which has security implications, depending upon what inputs you use to generate this template, because the resulting Lua code will execute within your Hammerspoon environment.  Be very careful about your inputs if you choose to ignore this warning. * To ensure that the translated code has access to the `cgilua` support functions, pass `_ENV` as the environment argument to the `load` lua builtin; otherwise any output generated by the resulting function will be sent to the Hammerspoon console and not included in the HTTP response sent back to the client. | 
