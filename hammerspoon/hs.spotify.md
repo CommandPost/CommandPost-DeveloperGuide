@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.spotify
+# [docs](/hammerspoon/index.html) » hs.spotify
 ---
 
 Controls for Spotify music player

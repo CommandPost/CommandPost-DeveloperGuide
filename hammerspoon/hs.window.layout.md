@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.window.layout
+# [docs](/hammerspoon/index.html) » hs.window.layout
 ---
 
 **WARNING**: EXPERIMENTAL MODULE. DO **NOT** USE IN PRODUCTION.

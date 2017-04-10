@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.window
+# [docs](/hammerspoon/index.html) » hs.window
 ---
 
 Inspect/manipulate windows

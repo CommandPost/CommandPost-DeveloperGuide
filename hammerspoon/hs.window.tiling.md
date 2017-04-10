@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.window.tiling
+# [docs](/hammerspoon/index.html) » hs.window.tiling
 ---
 
 **WARNING**: EXPERIMENTAL MODULE. DO **NOT** USE IN PRODUCTION.

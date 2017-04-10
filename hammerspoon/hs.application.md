@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.application
+# [docs](/hammerspoon/index.html) » hs.application
 ---
 
 Manipulate running applications

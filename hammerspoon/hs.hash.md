@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.hash
+# [docs](/hammerspoon/index.html) » hs.hash
 ---
 
 Various hashing algorithms

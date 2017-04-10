@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.mouse
+# [docs](/hammerspoon/index.html) » hs.mouse
 ---
 
 Inspect/manipulate the position of the mouse pointer

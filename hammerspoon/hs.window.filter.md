@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.window.filter
+# [docs](/hammerspoon/index.html) » hs.window.filter
 ---
 
 Filter windows by application, title, location on screen and more, and easily subscribe to events on these windows

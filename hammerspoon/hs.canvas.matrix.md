@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.canvas.matrix
+# [docs](/hammerspoon/index.html) » hs.canvas.matrix
 ---
 
 A sub module to `hs.canvas` which provides support for basic matrix manipulations which can be used as the values for `transformation` attributes in the `hs.canvas` module.

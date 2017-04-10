@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.httpserver.hsminweb.cgilua.lp
+# [docs](/hammerspoon/index.html) » hs.httpserver.hsminweb.cgilua.lp
 ---
 
 Support functions for the CGILua compatibility module for including and translating Lua template pages into Lua code for execution within the Hammerspoon environment to provide dynamic content for http requests.

@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.wifi
+# [docs](/hammerspoon/index.html) » hs.wifi
 ---
 
 Inspect WiFi networks

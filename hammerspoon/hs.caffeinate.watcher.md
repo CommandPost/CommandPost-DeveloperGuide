@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.caffeinate.watcher
+# [docs](/hammerspoon/index.html) » hs.caffeinate.watcher
 ---
 
 Watch for display and system sleep/wake/power events

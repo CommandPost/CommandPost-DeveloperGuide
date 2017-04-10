@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.brightness
+# [docs](/hammerspoon/index.html) » hs.brightness
 ---
 
 Inspect/manipulate display brightness

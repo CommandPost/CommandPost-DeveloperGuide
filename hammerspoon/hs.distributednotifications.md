@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.distributednotifications
+# [docs](/hammerspoon/index.html) » hs.distributednotifications
 ---
 
 Interact with NSDistributedNotificationCenter

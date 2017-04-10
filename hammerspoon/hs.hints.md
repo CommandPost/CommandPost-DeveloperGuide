@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.hints
+# [docs](/hammerspoon/index.html) » hs.hints
 ---
 
 Switch focus with a transient per-application keyboard shortcut

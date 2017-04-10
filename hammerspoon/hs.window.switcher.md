@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.window.switcher
+# [docs](/hammerspoon/index.html) » hs.window.switcher
 ---
 
 Window-based cmd-tab replacement

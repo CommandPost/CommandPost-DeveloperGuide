@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.network.reachability
+# [docs](/hammerspoon/index.html) » hs.network.reachability
 ---
 
 This sub-module can be used to determine the reachability of a target host. A remote host is considered reachable when a data packet, sent by an application into the network stack, can leave the local device. Reachability does not guarantee that the data packet will actually be received by the host.

@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.menubar
+# [docs](/hammerspoon/index.html) » hs.menubar
 ---
 
 Create and manage menubar icons

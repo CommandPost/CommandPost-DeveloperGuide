@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.http
+# [docs](/hammerspoon/index.html) » hs.http
 ---
 
 Perform HTTP requests

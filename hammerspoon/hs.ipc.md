@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.ipc
+# [docs](/hammerspoon/index.html) » hs.ipc
 ---
 
 Provides the server portion of the Hammerspoon command line interface

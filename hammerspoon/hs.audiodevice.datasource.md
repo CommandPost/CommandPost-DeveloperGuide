@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.audiodevice.datasource
+# [docs](/hammerspoon/index.html) » hs.audiodevice.datasource
 ---
 
 Inspect/manipulate the data sources of an audio device

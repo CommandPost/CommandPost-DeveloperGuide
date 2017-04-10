@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.watchable
+# [docs](/hammerspoon/index.html) » hs.watchable
 ---
 
 A minimalistic Key-Value-Observer framework for Lua.

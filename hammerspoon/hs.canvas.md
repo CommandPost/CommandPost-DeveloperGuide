@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.canvas
+# [docs](/hammerspoon/index.html) » hs.canvas
 ---
 
 A different approach to drawing in Hammerspoon

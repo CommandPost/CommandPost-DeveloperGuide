@@ -1,4 +1,4 @@
-# [docs](/hammerspoon/index.md) » hs.httpserver
+# [docs](/hammerspoon/index.html) » hs.httpserver
 ---
 
 Simple HTTP server
