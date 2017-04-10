@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.caffeinate
+# [docs](/hammerspoon/index.md) » hs.caffeinate
 ---
 
 Control system power states (sleeping, preventing sleep, screen locking, etc)

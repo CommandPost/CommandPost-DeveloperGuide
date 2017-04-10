@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.location
+# [docs](/hammerspoon/index.md) » hs.location
 ---
 
 Determine the machine's location and useful information about that location

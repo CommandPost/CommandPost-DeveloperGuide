@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.eventtap.event
+# [docs](/hammerspoon/index.md) » hs.eventtap.event
 ---
 
 Create, modify and inspect events for `hs.eventtap`

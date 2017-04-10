@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.spaces.watcher
+# [docs](/hammerspoon/index.md) » hs.spaces.watcher
 ---
 
 Watches for the current Space being changed

@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.image
+# [docs](/hammerspoon/index.md) » hs.image
 ---
 
 A module for capturing and manipulating image objects from other modules for use with hs.drawing.

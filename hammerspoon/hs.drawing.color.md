@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.drawing.color
+# [docs](/hammerspoon/index.md) » hs.drawing.color
 ---
 
 Additions to hs.drawing which provide access to the system color lists and a wider variety of ways to represent color within Hammerspoon.

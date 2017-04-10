@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.eventtap
+# [docs](/hammerspoon/index.md) » hs.eventtap
 ---
 
 Tap into input events (mouse, keyboard, trackpad) for observation and possibly overriding them

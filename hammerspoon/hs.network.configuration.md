@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.network.configuration
+# [docs](/hammerspoon/index.md) » hs.network.configuration
 ---
 
 This sub-module provides access to the current location set configuration settings in the system's dynamic store.

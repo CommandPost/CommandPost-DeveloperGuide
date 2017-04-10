@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.uielement
+# [docs](/hammerspoon/index.md) » hs.uielement
 ---
 
 A generalized framework for working with OSX UI elements

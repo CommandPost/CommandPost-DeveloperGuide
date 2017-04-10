@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.host
+# [docs](/hammerspoon/index.md) » hs.host
 ---
 
 Inspect information about the machine Hammerspoon is running on

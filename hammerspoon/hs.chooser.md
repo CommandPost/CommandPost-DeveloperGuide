@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.chooser
+# [docs](/hammerspoon/index.md) » hs.chooser
 ---
 
 Graphical, interactive tool for choosing/searching data

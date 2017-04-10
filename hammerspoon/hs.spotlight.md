@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.spotlight
+# [docs](/hammerspoon/index.md) » hs.spotlight
 ---
 
 This module allows Hammerspoon to preform Spotlight metadata queries.

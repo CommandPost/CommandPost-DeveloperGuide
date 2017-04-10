@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.window.highlight
+# [docs](/hammerspoon/index.md) » hs.window.highlight
 ---
 
 Highlight the focused window

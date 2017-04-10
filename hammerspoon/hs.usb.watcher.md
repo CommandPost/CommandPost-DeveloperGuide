@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.usb.watcher
+# [docs](/hammerspoon/index.md) » hs.usb.watcher
 ---
 
 Watch for USB device connection/disconnection events

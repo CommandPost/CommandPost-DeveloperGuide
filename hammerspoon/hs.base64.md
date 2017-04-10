@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.base64
+# [docs](/hammerspoon/index.md) » hs.base64
 ---
 
 Base64 encoding and decoding

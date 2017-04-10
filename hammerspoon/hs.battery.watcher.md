@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.battery.watcher
+# [docs](/hammerspoon/index.md) » hs.battery.watcher
 ---
 
 Watch for battery/power state changes

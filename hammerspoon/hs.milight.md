@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.milight
+# [docs](/hammerspoon/index.md) » hs.milight
 ---
 
 Simple controls for the MiLight LED WiFi bridge (also known as LimitlessLED and EasyBulb)

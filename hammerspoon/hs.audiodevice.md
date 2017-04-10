@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.audiodevice
+# [docs](/hammerspoon/index.md) » hs.audiodevice
 ---
 
 Manipulate the system's audio devices

@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.hotkey.modal
+# [docs](/hammerspoon/index.md) » hs.hotkey.modal
 ---
 
 Create/manage modal keyboard shortcut environments

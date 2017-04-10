@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.fs
+# [docs](/hammerspoon/index.md) » hs.fs
 ---
 
 Access/inspect the filesystem

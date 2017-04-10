@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.httpserver.hsminweb
+# [docs](/hammerspoon/index.md) » hs.httpserver.hsminweb
 ---
 
 Minimalist Web Server for Hammerspoon

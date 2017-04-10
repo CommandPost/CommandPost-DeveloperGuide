@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.socket.udp
+# [docs](/hammerspoon/index.md) » hs.socket.udp
 ---
 
 Talk to custom protocols using asynchronous UDP sockets

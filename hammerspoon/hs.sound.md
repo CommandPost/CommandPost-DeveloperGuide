@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.sound
+# [docs](/hammerspoon/index.md) » hs.sound
 ---
 
 Load/play/manipulate sound files

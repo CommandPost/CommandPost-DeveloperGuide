@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.layout
+# [docs](/hammerspoon/index.md) » hs.layout
 ---
 
 Window layout manager

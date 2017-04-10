@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.webview
+# [docs](/hammerspoon/index.md) » hs.webview
 ---
 
 Display web content in a window from Hammerspoon

@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.webview.toolbar
+# [docs](/hammerspoon/index.md) » hs.webview.toolbar
 ---
 
 Create and manipulate toolbars which can be attached to the Hammerspoon console or hs.webview objects.

@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.dockicon
+# [docs](/hammerspoon/index.md) » hs.dockicon
 ---
 
 Control Hammerspoon's dock icon

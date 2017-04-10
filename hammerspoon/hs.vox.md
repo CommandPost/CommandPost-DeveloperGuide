@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.vox
+# [docs](/hammerspoon/index.md) » hs.vox
 ---
 
 Controls for VOX music player

@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.tabs
+# [docs](/hammerspoon/index.md) » hs.tabs
 ---
 
 Place the windows of an application into tabs drawn on its titlebar

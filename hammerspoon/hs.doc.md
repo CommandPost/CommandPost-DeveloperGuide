@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.doc
+# [docs](/hammerspoon/index.md) » hs.doc
 ---
 
 Create documentation objects for interactive help within Hammerspoon

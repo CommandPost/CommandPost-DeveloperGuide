@@ -1,4 +1,4 @@
-# [docs](index.md) » hs.pasteboard
+# [docs](/hammerspoon/index.md) » hs.pasteboard
 ---
 
 Inspect/manipulate pasteboards (more commonly called clipboards). Both the system default pasteboard and custom named pasteboards can be interacted with.
