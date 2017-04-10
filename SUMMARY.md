@@ -6,11 +6,11 @@
 
 ## Plugins
 
+* [Plugin Overview](plugins/plugin-overview.md)
+
 ## API References
 
-* [Plugins](plugins.md)
-* [Final Cut Pro \(cp.finalcutpro\)](finalcutpro.md)
-* [Hammerspoon \(hs\)](hammerspoon/index.md)
+* [Hammerspoon](hammerspoon/index.md)
 
 ## Final Cut Pro
 
