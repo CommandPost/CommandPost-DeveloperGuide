@@ -5,18 +5,20 @@ This module provides support for injecting custom JavaScript user content into y
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [injectScript](#injectScript)
-* [removeAllScripts](#removeAllScripts)
-* [setCallback](#setCallback)
-* [userScripts](#userScripts)
+** [injectScript](#injectScript)
+** [removeAllScripts](#removeAllScripts)
+** [setCallback](#setCallback)
+** [userScripts](#userScripts)
 
 ## API Documentation
 
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.webview.usercontent.new(name) -> usercontentControllerObject  |
 | Type        | Constructor |
 | Description | Create a new user content controller for a webview and create the message port with the specified name for JavaScript message support. |
@@ -24,16 +26,22 @@ This module provides support for injecting custom JavaScript user content into y
 ### Methods
 
 #### [injectScript](#injectScript)
+| | |
+|-|-|
 | Signature   | hs.webview.usercontent:injectScript(scriptTable) -> usercontentControllerObject  |
 | Type        | Method |
 | Description | Add a script to be injected into webviews which use this user content controller. |
 | Parameters |  * scriptTable - a table containing the following keys which define the script and how it is to be injected:   * source        - the javascript which is injected (required)   * mainFrame     - a boolean value which indicates whether this script is only injected for the main webview frame (true) or for all frames within the webview (false).  Defaults to true.   * injectionTime - a string which indicates whether the script is injected at "documentStart" or "documentEnd". Defaults to "documentStart". | | Returns |  * the usercontentControllerObject or nil if the script table was malformed in some way. | 
 #### [removeAllScripts](#removeAllScripts)
+| | |
+|-|-|
 | Signature   | hs.webview.usercontent:removeAllScripts() -> usercontentControllerObject  |
 | Type        | Method |
 | Description | Removes all user scripts currently defined for this user content controller. |
 | Parameters |  * None | | Returns |  * the usercontentControllerObjectNotes: * The WKUserContentController class only allows for removing all scripts.  If you need finer control, make a copy of the current scripts with `hs.webview.usercontent.userScripts()` first so you can recreate the scripts you want to keep. | | Notes |  * The WKUserContentController class only allows for removing all scripts.  If you need finer control, make a copy of the current scripts with `hs.webview.usercontent.userScripts()` first so you can recreate the scripts you want to keep. | 
 #### [setCallback](#setCallback)
+| | |
+|-|-|
 | Signature   | hs.webview.usercontent:setCallback(fn) -> usercontentControllerObject  |
 | Type        | Method |
 | Description | Set or remove the callback function to handle message posted to this user content's message port. |
@@ -45,6 +53,8 @@ This module provides support for injecting custom JavaScript user content into y
      * Where *name* matches the name specified in the constructor and *message-object* is the object to post to the function.  This object can be a number, string, date, array, dictionary(table), or nil.
 | Parameters |  * fn - The function which should receive messages posted to this user content's message port.  Specify an explicit nil to disable the callback.  The function should take one argument which will be the message posted and any returned value will be ignored. | | Returns |  * the usercontentControllerObject | | Notes |  * Within your (injected or served) JavaScript, you can post messages via the message port created with the constructor like this: | 
 #### [userScripts](#userScripts)
+| | |
+|-|-|
 | Signature   | hs.webview.usercontent:userScripts() -> array  |
 | Type        | Method |
 | Description | Get a table containing all of the currently defined injection scripts for this user content controller |

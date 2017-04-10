@@ -11,13 +11,15 @@ The Lua wrapper portion is licensed under the MIT license by the Hammerspoon dev
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [convert](#convert)
+** [convert](#convert)
 
 ## API Documentation
 
 ### Functions
 
 #### [convert](#convert)
+| | |
+|-|-|
 | Signature   | hs.doc.markdown.convert(markdown, [type]) -> output  |
 | Type        | Function |
 | Description | Converts markdown encoded text to html or plaintext. |

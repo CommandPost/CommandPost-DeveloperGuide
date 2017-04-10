@@ -8,19 +8,23 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [decode](#decode)
-* [encode](#encode)
+** [decode](#decode)
+** [encode](#encode)
 
 ## API Documentation
 
 ### Functions
 
 #### [decode](#decode)
+| | |
+|-|-|
 | Signature   | hs.json.decode(jsonString) -> table  |
 | Type        | Function |
 | Description | Decodes JSON into a table |
 | Parameters |  * jsonString - A string containing some JSON data | | Returns |  * A table representing the supplied JSON data | | Notes |  * This is useful for retrieving some of the more complex lua table structures as a persistent setting (see `hs.settings`) | 
 #### [encode](#encode)
+| | |
+|-|-|
 | Signature   | hs.json.encode(val[, prettyprint]) -> string  |
 | Type        | Function |
 | Description | Encodes a table as JSON |

@@ -9,32 +9,34 @@ Notes:
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [closeInput](#closeInput)
-* [environment](#environment)
-* [interrupt](#interrupt)
-* [isRunning](#isRunning)
-* [pause](#pause)
-* [pid](#pid)
-* [resume](#resume)
-* [setCallback](#setCallback)
-* [setEnvironment](#setEnvironment)
-* [setInput](#setInput)
-* [setStreamCallback](#setStreamCallback)
-* [setWorkingDirectory](#setWorkingDirectory)
-* [start](#start)
-* [terminate](#terminate)
-* [terminationReason](#terminationReason)
-* [terminationStatus](#terminationStatus)
-* [waitUntilExit](#waitUntilExit)
-* [workingDirectory](#workingDirectory)
+** [closeInput](#closeInput)
+** [environment](#environment)
+** [interrupt](#interrupt)
+** [isRunning](#isRunning)
+** [pause](#pause)
+** [pid](#pid)
+** [resume](#resume)
+** [setCallback](#setCallback)
+** [setEnvironment](#setEnvironment)
+** [setInput](#setInput)
+** [setStreamCallback](#setStreamCallback)
+** [setWorkingDirectory](#setWorkingDirectory)
+** [start](#start)
+** [terminate](#terminate)
+** [terminationReason](#terminationReason)
+** [terminationStatus](#terminationStatus)
+** [waitUntilExit](#waitUntilExit)
+** [workingDirectory](#workingDirectory)
 
 ## API Documentation
 
 ### Functions
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.task.new(launchPath, callbackFn[, streamCallbackFn, arguments]) -> hs.task object  |
 | Type        | Function |
 | Description | Creates a new hs.task object |
@@ -42,11 +44,15 @@ Notes:
 ### Methods
 
 #### [closeInput](#closeInput)
+| | |
+|-|-|
 | Signature   | hs.task:closeInput() -> hs.task object  |
 | Type        | Method |
 | Description | Closes the task's stdin |
 | Parameters |  * None | | Returns |  * The hs.task object | | Notes |  * This should only be called on tasks with a streaming callback - tasks without it will automatically close stdin when any data supplied via `hs.task:setInput()` has been written * This is primarily useful for sending EOF to long-running tasks | 
 #### [environment](#environment)
+| | |
+|-|-|
 | Signature   | hs.task:environment() -> environment  |
 | Type        | Method |
 | Description | Returns the environment variables as a table for the task. |
@@ -54,36 +60,50 @@ Notes:
      * if you have not yet set an environment table with the `hs.task:setEnvironment` method, this method will return a copy of the Hammerspoon environment table, as this is what the task will inherit by default.
 | Parameters |  * None | | Returns |  * a table of the environment variables for the task where each key is the environment variable name. | 
 #### [interrupt](#interrupt)
+| | |
+|-|-|
 | Signature   | hs.task:interrupt() -> hs.task object  |
 | Type        | Method |
 | Description | Interrupts the task |
 | Parameters |  * None | | Returns |  * The `hs.task` object | | Notes |  * This will send SIGINT to the process | 
 #### [isRunning](#isRunning)
+| | |
+|-|-|
 | Signature   | hs.task:isRunning() -> boolean  |
 | Type        | Method |
 | Description | Test if a task is still running. |
 | Parameters |  * None | | Returns |  * true if the task is running or false if it is not. | | Notes |  * A task which has not yet been started yet will also return false. | 
 #### [pause](#pause)
+| | |
+|-|-|
 | Signature   | hs.task:pause() -> boolean  |
 | Type        | Method |
 | Description | Pauses the task |
 | Parameters |  * None | | Returns |  *  If the task was paused successfully, returns the task object; otherwise returns false | | Notes |  * If the task is not paused, the error message will be printed to the Hammerspoon Console * This method can be called multiple times, but a matching number of `hs.task:resume()` calls will be required to allow the process to continue | 
 #### [pid](#pid)
+| | |
+|-|-|
 | Signature   | hs.task:pid() -> integer  |
 | Type        | Method |
 | Description | Gets the PID of a running/finished task |
 | Parameters |  * None | | Returns |  * An integer containing the PID of the task | | Notes |  * The PID will still be returned if the task has already completed and the process terminated | 
 #### [resume](#resume)
+| | |
+|-|-|
 | Signature   | hs.task:resume() -> boolean  |
 | Type        | Method |
 | Description | Resumes the task |
 | Parameters |  * None | | Returns |  *  If the task was resumed successfully, returns the task object; otherwise returns false | | Notes |  * If the task is not resumed successfully, the error message will be printed to the Hammerspoon Console | 
 #### [setCallback](#setCallback)
+| | |
+|-|-|
 | Signature   | hs.task:setCallback(fn) -> hs.task object  |
 | Type        | Method |
 | Description | Set or remove a callback function for a task. |
 | Parameters |  * fn - A function to be called when the task completes or is terminated, or nil to remove an existing callback | | Returns |  * the hs.task object | 
 #### [setEnvironment](#setEnvironment)
+| | |
+|-|-|
 | Signature   | hs.task:setEnvironment(environment) -> hs.task object | false  |
 | Type        | Method |
 | Description | Sets the environment variables for the task. |
@@ -91,46 +111,64 @@ Notes:
      * If you do not set an environment table with this method, the task will inherit the environment variables of the Hammerspoon application.  Set this to an empty table if you wish for no variables to be set for the task.
 | Parameters |  * environment - a table of key-value pairs representing the environment variables that will be set for the task. | | Returns |  * The hs.task object, or false if the table was not set (usually because the task is already running or has completed) | 
 #### [setInput](#setInput)
+| | |
+|-|-|
 | Signature   | hs.task:setInput(inputData) -> hs.task object  |
 | Type        | Method |
 | Description | Sets the standard input data for a task |
 | Parameters |  * inputData - Data, in string form, to pass to the task as its standard input | | Returns |  * The hs.task object | | Notes |  * This method can be called before the task has been started, to prepare some input for it (particularly if it is not a streaming task) * If this method is called multiple times, any input that has not been passed to the task already, is discarded (for streaming tasks, the data is generally consumed very quickly, but for now there is no way to syncronise this) | 
 #### [setStreamCallback](#setStreamCallback)
+| | |
+|-|-|
 | Signature   | hs.task:setStreamCallback(fn) -> hs.task object  |
 | Type        | Method |
 | Description | Set a stream callback function for a task |
 | Parameters |  * fn - A function to be called when the task outputs to stdout or stderr, or nil to remove a callback | | Returns |  * The hs.task object | | Notes |  * For information about the requirements of the callback function, see `hs.task.new()` * If a callback is removed without it previously having returned false, any further stdout/stderr output from the task will be silently discarded | 
 #### [setWorkingDirectory](#setWorkingDirectory)
+| | |
+|-|-|
 | Signature   | hs.task:setWorkingDirectory(path) -> hs.task object | false  |
 | Type        | Method |
 | Description | Sets the working directory for the task. |
 | Parameters |  * path - a string containing the path you wish to be the working directory for the task. | | Returns |  * The hs.task object, or false if the working directory was not set (usually because the task is already running or has completed) | | Notes |  * You can only set the working directory if the task has not already been started. * This will only set the directory that the task starts in.  The task itself can change the directory while it is running. | 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.task:start() -> hs.task object | false  |
 | Type        | Method |
 | Description | Starts the task |
 | Parameters |  * None | | Returns |  *  If the task was started successfully, returns the task object; otherwise returns false | | Notes |  * If the task does not start successfully, the error message will be printed to the Hammerspoon Console | 
 #### [terminate](#terminate)
+| | |
+|-|-|
 | Signature   | hs.task:terminate() -> hs.task object  |
 | Type        | Method |
 | Description | Terminates the task |
 | Parameters |  * None | | Returns |  * The `hs.task` object | | Notes |  * This will send SIGTERM to the process | 
 #### [terminationReason](#terminationReason)
+| | |
+|-|-|
 | Signature   | hs.task:terminationReason() -> exitCode | false  |
 | Type        | Method |
 | Description | Returns the termination reason for a task, or false if the task is still running. |
 | Parameters |  * None | | Returns |  * a string value of "exit" if the process exited normally or "interrupt" if it was killed by a signal.  Returns false if the termination reason is unavailable (the task is still running, or has not yet been started). | 
 #### [terminationStatus](#terminationStatus)
+| | |
+|-|-|
 | Signature   | hs.task:terminationStatus() -> exitCode | false  |
 | Type        | Method |
 | Description | Returns the termination status of a task, or false if the task is still running. |
 | Parameters |  * None | | Returns |  * the numeric exitCode of the task, or the boolean false if the task has not yet exited (either because it has not yet been started or because it is still running). | 
 #### [waitUntilExit](#waitUntilExit)
+| | |
+|-|-|
 | Signature   | hs.task:waitUntilExit() -> hs.task object  |
 | Type        | Method |
 | Description | Blocks Hammerspoon until the task exits |
 | Parameters |  * None | | Returns |  * The `hs.task` object | | Notes |  * All Lua and Hammerspoon activity will be blocked by this method. Its use is highly discouraged. | 
 #### [workingDirectory](#workingDirectory)
+| | |
+|-|-|
 | Signature   | hs.task:workingDirectory() -> path  |
 | Type        | Method |
 | Description | Returns the working directory for the task. |

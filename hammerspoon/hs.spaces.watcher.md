@@ -6,16 +6,18 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
+** [start](#start)
+** [stop](#stop)
 
 ## API Documentation
 
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.spaces.watcher.new(handler) -> watcher  |
 | Type        | Constructor |
 | Description | Creates a new watcher for Space change events |
@@ -23,11 +25,15 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.spaces.watcher:start()  |
 | Type        | Method |
 | Description | Starts the Spaces watcher |
 | Parameters |  * None | | Returns |  * The watcher object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.spaces.watcher:stop()  |
 | Type        | Method |
 | Description | Stops the Spaces watcher |

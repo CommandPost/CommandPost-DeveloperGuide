@@ -7,75 +7,97 @@ This extension allows you to trigger window placement/sizing to a number of wind
 
 ## API Overview
 * Constants - Useful values which cannot be changed
-* [left25](#left25)
-* [left30](#left30)
-* [left50](#left50)
-* [left70](#left70)
-* [left75](#left75)
-* [maximized](#maximized)
-* [right25](#right25)
-* [right30](#right30)
-* [right50](#right50)
-* [right70](#right70)
-* [right75](#right75)
+** [left25](#left25)
+** [left30](#left30)
+** [left50](#left50)
+** [left70](#left70)
+** [left75](#left75)
+** [maximized](#maximized)
+** [right25](#right25)
+** [right30](#right30)
+** [right50](#right50)
+** [right70](#right70)
+** [right75](#right75)
 * Functions - API calls offered directly by the extension
-* [apply](#apply)
+** [apply](#apply)
 
 ## API Documentation
 
 ### Constants
 
 #### [left25](#left25)
+| | |
+|-|-|
 | Signature   | hs.layout.left25  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the left 25% of a screen |
 
 #### [left30](#left30)
+| | |
+|-|-|
 | Signature   | hs.layout.left30  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the left 30% of a screen |
 
 #### [left50](#left50)
+| | |
+|-|-|
 | Signature   | hs.layout.left50  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the left 50% of a screen |
 
 #### [left70](#left70)
+| | |
+|-|-|
 | Signature   | hs.layout.left70  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the left 70% of a screen |
 
 #### [left75](#left75)
+| | |
+|-|-|
 | Signature   | hs.layout.left75  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the left 75% of a screen |
 
 #### [maximized](#maximized)
+| | |
+|-|-|
 | Signature   | hs.layout.maximized  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy all of a screen |
 
 #### [right25](#right25)
+| | |
+|-|-|
 | Signature   | hs.layout.right25  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the right 25% of a screen |
 
 #### [right30](#right30)
+| | |
+|-|-|
 | Signature   | hs.layout.right30  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the right 30% of a screen |
 
 #### [right50](#right50)
+| | |
+|-|-|
 | Signature   | hs.layout.right50  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the right 50% of a screen |
 
 #### [right70](#right70)
+| | |
+|-|-|
 | Signature   | hs.layout.right70  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the right 70% of a screen |
 
 #### [right75](#right75)
+| | |
+|-|-|
 | Signature   | hs.layout.right75  |
 | Type        | Constant |
 | Description | A unit rect which will make a window occupy the right 75% of a screen |
@@ -83,6 +105,8 @@ This extension allows you to trigger window placement/sizing to a number of wind
 ### Functions
 
 #### [apply](#apply)
+| | |
+|-|-|
 | Signature   | hs.layout.apply(table[, windowTitleComparator])  |
 | Type        | Function |
 | Description | Applies a layout to applications/windows |

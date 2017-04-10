@@ -11,16 +11,18 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
+** [start](#start)
+** [stop](#stop)
 
 ## API Documentation
 
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.pathwatcher.new(path, fn) -> watcher  |
 | Type        | Constructor |
 | Description | Creates a new path watcher object |
@@ -28,11 +30,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.pathwatcher:start()  |
 | Type        | Method |
 | Description | Starts a path watcher |
 | Parameters |  * None | | Returns |  * The `hs.pathwatcher` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.pathwatcher:stop()  |
 | Type        | Method |
 | Description | Stops a path watcher |

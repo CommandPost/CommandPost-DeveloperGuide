@@ -7,16 +7,18 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
+** [start](#start)
+** [stop](#stop)
 
 ## API Documentation
 
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.battery.watcher.new(fn) -> watcher  |
 | Type        | Constructor |
 | Description | Creates a battery watcher |
@@ -24,11 +26,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.battery.watcher:start() -> self  |
 | Type        | Method |
 | Description | Starts the battery watcher |
 | Parameters |  * None | | Returns |  * The `hs.battery.watcher` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.battery.watcher:stop() -> self  |
 | Type        | Method |
 | Description | Stops the battery watcher |

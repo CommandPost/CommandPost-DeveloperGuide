@@ -38,19 +38,21 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 
 ## API Overview
 * Variables - Configurable values
-* [ui](#ui)
+** [ui](#ui)
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [hide](#hide)
-* [show](#show)
-* [toggleShow](#toggleShow)
+** [hide](#hide)
+** [show](#show)
+** [toggleShow](#toggleShow)
 
 ## API Documentation
 
 ### Variables
 
 #### [ui](#ui)
+| | |
+|-|-|
 | Signature   | hs.expose.ui  |
 | Type        | Variable |
 | Description | Allows customization of the expose behaviour and user interface |
@@ -92,6 +94,8 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.expose.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.expose object  |
 | Type        | Constructor |
 | Description | Creates a new hs.expose instance; it can use a windowfilter to determine which windows to show |
@@ -99,17 +103,23 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 ### Methods
 
 #### [hide](#hide)
+| | |
+|-|-|
 | Signature   | hs.expose:hide()  |
 | Type        | Method |
 | Description | Hides the expose, if visible, and exits the modal mode. |
   Call this function if you need to make sure the modal is exited without waiting for the user to press `esc`.
 | Parameters |  * None | | Returns |  * None | 
 #### [show](#show)
+| | |
+|-|-|
 | Signature   | hs.expose:show([activeApplication])  |
 | Type        | Method |
 | Description | Shows an expose-like screen with modal keyboard hints for switching to, closing or minimizing/unminimizing windows. |
 | Parameters |  * activeApplication - (optional) if true, only show windows of the active application (within the  scope of the instance windowfilter); otherwise show all windows allowed by the instance windowfilter | | Returns |  * None | | Notes |  * passing `true` for `activeApplication` will simply hide hints/thumbnails for applications other   than the active one, without recalculating the hints layout; conversely, setting `onlyActiveApplication=true`   for an expose instance's `ui` will calculate an optimal layout for the current active application's windows * Completing a hint will exit the expose and focus the selected window. * Pressing esc will exit the expose and with no action taken. * If shift is being held when a hint is completed (the background will be red), the selected   window will be closed. If it's the last window of an application, the application will be closed. * If alt is being held when a hint is completed (the background will be blue), the selected   window will be minimized (if visible) or unminimized/unhidden (if minimized or hidden). | 
 #### [toggleShow](#toggleShow)
+| | |
+|-|-|
 | Signature   | hs.expose:toggleShow([activeApplication])  |
 | Type        | Method |
 | Description | Toggles the expose - see `hs.expose:show()` and `hs.expose:hide()` |

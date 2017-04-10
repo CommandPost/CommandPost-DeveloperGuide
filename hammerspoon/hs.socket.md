@@ -64,32 +64,34 @@ The document has moved
 
 ## API Overview
 * Variables - Configurable values
-* [timeout](#timeout)
+** [timeout](#timeout)
 * Functions - API calls offered directly by the extension
-* [parseAddress](#parseAddress)
+** [parseAddress](#parseAddress)
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
-* [server](#server)
+** [new](#new)
+** [server](#server)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [connect](#connect)
-* [connected](#connected)
-* [connections](#connections)
-* [disconnect](#disconnect)
-* [info](#info)
-* [listen](#listen)
-* [read](#read)
-* [receive](#receive)
-* [send](#send)
-* [setCallback](#setCallback)
-* [setTimeout](#setTimeout)
-* [startTLS](#startTLS)
-* [write](#write)
+** [connect](#connect)
+** [connected](#connected)
+** [connections](#connections)
+** [disconnect](#disconnect)
+** [info](#info)
+** [listen](#listen)
+** [read](#read)
+** [receive](#receive)
+** [send](#send)
+** [setCallback](#setCallback)
+** [setTimeout](#setTimeout)
+** [startTLS](#startTLS)
+** [write](#write)
 
 ## API Documentation
 
 ### Variables
 
 #### [timeout](#timeout)
+| | |
+|-|-|
 | Signature   | hs.socket.timeout  |
 | Type        | Variable |
 | Description | Timeout for the socket operations, in seconds. New [`hs.socket`](#new) objects will be created with this timeout value, but can individually change it with the [`setTimeout`](#setTimeout) method |
@@ -98,6 +100,8 @@ The document has moved
 ### Functions
 
 #### [parseAddress](#parseAddress)
+| | |
+|-|-|
 | Signature   | hs.socket.parseAddress(sockaddr) -> table or nil  |
 | Type        | Function |
 | Description | Parses a binary socket address structure into a readable table |
@@ -117,11 +121,15 @@ The document has moved
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.socket.new([fn]) -> hs.socket object  |
 | Type        | Constructor |
 | Description | Creates an unconnected asynchronous TCP socket object |
 | Parameters |  * fn - An optional [callback function](#setCallback) for reading data from the socket, settable here for convenience | | Returns |  * An [`hs.socket`](#new) object | 
 #### [server](#server)
+| | |
+|-|-|
 | Signature   | hs.socket.server(port|path[, fn]) -> hs.socket object  |
 | Type        | Constructor |
 | Description | Creates and binds an [`hs.socket`](#new) instance to a port or path (Unix domain socket) for listening |
@@ -129,51 +137,71 @@ The document has moved
 ### Methods
 
 #### [connect](#connect)
+| | |
+|-|-|
 | Signature   | hs.socket:connect({host, port}|path[, fn]) -> self or nil  |
 | Type        | Method |
 | Description | Connects an unconnected [`hs.socket`](#new) instance |
 | Parameters |  * host - A string containing the hostname or IP address * port - A port number [1-65535] * path - A string containing the path to the Unix domain socket * fn - An optional single-use callback function to execute after establishing the connection. Receives no parameters | | Returns |  * The [`hs.socket`](#new) object or `nil` if an error occurred | | Notes |  * Either a host/port pair OR a Unix domain socket path must be supplied. If no port is passed, the first param is assumed to be a path to the socket file | 
 #### [connected](#connected)
+| | |
+|-|-|
 | Signature   | hs.socket:connected() -> bool  |
 | Type        | Method |
 | Description | Returns the connection status of the [`hs.socket`](#new) instance |
 | Parameters |  * None | | Returns |  * `true` if connected, otherwise `false` | 
 #### [connections](#connections)
+| | |
+|-|-|
 | Signature   | hs.socket:connections() -> number  |
 | Type        | Method |
 | Description | Returns the number of connections to the socket, which is at most 1 for default (non-listening) sockets |
 | Parameters |  * None | | Returns |  * The number of connections to the socket | 
 #### [disconnect](#disconnect)
+| | |
+|-|-|
 | Signature   | hs.socket:disconnect() -> self  |
 | Type        | Method |
 | Description | Disconnects the [`hs.socket`](#new) instance, freeing it for reuse |
 | Parameters |  * None | | Returns |  * The [`hs.socket`](#new) object | | Notes |  * If called on a listening socket with multiple connections, each client is disconnected | 
 #### [info](#info)
+| | |
+|-|-|
 | Signature   | hs.socket:info() -> table  |
 | Type        | Method |
 | Description | Returns information on the [`hs.socket`](#new) instance |
 | Parameters |  * None | | Returns |  * A table containing the following keys:  * connectedAddress - `string` (`sockaddr` struct)  * connectedHost - `string`  * connectedPort - `number`  * connectedURL - `string`  * connections - `number`  * isConnected - `boolean`  * isDisconnected - `boolean`  * isIPv4 - `boolean`  * isIPv4Enabled - `boolean`  * isIPv4PreferredOverIPv6 - `boolean`  * isIPv6 - `boolean`  * isIPv6Enabled - `boolean`  * isSecure - `boolean`  * localAddress - `string` (`sockaddr` struct)  * localHost - `string`  * localPort - `number`  * timeout - `number`  * unixSocketPath - `string`  * userData - `string` | 
 #### [listen](#listen)
+| | |
+|-|-|
 | Signature   | hs.socket:listen(port|path) -> self or nil  |
 | Type        | Method |
 | Description | Binds an unconnected [`hs.socket`](#new) instance to a port or path (Unix domain socket) for listening |
 | Parameters |  * port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port * path - A string containing the path to the Unix domain socket | | Returns |  * The [`hs.socket`](#new) object or `nil` if an error occurred | 
 #### [read](#read)
+| | |
+|-|-|
 | Signature   | hs.socket:read(delimiter[, tag]) -> self or nil  |
 | Type        | Method |
 | Description | Read data from the socket. Results are passed to the [callback function](#setCallback), which must be set to use this method |
 | Parameters |  * delimiter - Either a number of bytes to read, or a string delimiter such as "&#92;n" or "&#92;r&#92;n". Data is read up to and including the delimiter * tag - An optional integer to assist with labeling reads. It is passed to the callback to assist with implementing [state machines](https://github.com/robbiehanson/CocoaAsyncSocket/wiki/Intro_GCDAsyncSocket#reading--writing) for processing complex protocols | | Returns |  * The [`hs.socket`](#new) object or `nil` if an error occured | | Notes |  * If called on a listening socket with multiple connections, data is read from each of them | 
 #### [receive](#receive)
+| | |
+|-|-|
 | Signature   | hs.socket:receive(delimiter[, tag]) -> self  |
 | Type        | Method |
 | Description | Alias for [`hs.socket:read`](#read) |
 
 #### [send](#send)
+| | |
+|-|-|
 | Signature   | hs.socket:send(message[, tag]) -> self  |
 | Type        | Method |
 | Description | Alias for [`hs.socket:write`](#write) |
 
 #### [setCallback](#setCallback)
+| | |
+|-|-|
 | Signature   | hs.socket:setCallback([fn]) -> self  |
 | Type        | Method |
 | Description | Sets the read callback for the [`hs.socket`](#new) instance. Must be set to read data from the socket |
@@ -182,16 +210,22 @@ The document has moved
      * tag - The integer tag associated with the read call, which defaults to -1
 | Parameters |  * fn - An optional callback function to process data read from the socket. `nil` or no argument clears the callback | | Returns |  * The [`hs.socket`](#new) object | 
 #### [setTimeout](#setTimeout)
+| | |
+|-|-|
 | Signature   | hs.socket:setTimeout(timeout) -> self  |
 | Type        | Method |
 | Description | Sets the timeout for the socket operations. If the timeout value is negative, the operations will not use a timeout, which is the default |
 | Parameters |  * timeout - A number containing the timeout duration, in seconds | | Returns |  * The [`hs.socket`](#new) object | 
 #### [startTLS](#startTLS)
+| | |
+|-|-|
 | Signature   | hs.socket:startTLS([verify][, peerName]) -> self  |
 | Type        | Method |
 | Description | Secures the socket with TLS. The socket will disconnect immediately if TLS negotiation fails |
 | Parameters |  * verify - An optional boolean that, if `false`, allows TLS handshaking with servers with self-signed certificates and does not evaluate the chain of trust. Defaults to `true` and omitted if `peerName` is supplied * peerName - An optional string containing the fully qualified domain name of the peer to validate against — for example, `store.apple.com`. It should match the name in the X.509 certificate given by the remote party. See notes below | | Returns |  * The [`hs.socket`](#new) object | | Notes | * IMPORTANT SECURITY NOTE:The default settings will check to make sure the remote party's certificate is signed by atrusted 3rd party certificate agency (e.g. verisign) and that the certificate is not expired.However it will not verify the name on the certificate unless yougive it a name to verify against via `peerName`.The security implications of this are important to understand.Imagine you are attempting to create a secure connection to MySecureServer.com,but your socket gets directed to MaliciousServer.com because of a hacked DNS server.If you simply use the default settings, and MaliciousServer.com has a valid certificate,the default settings will not detect any problems since the certificate is valid.To properly secure your connection in this particular scenario youshould set `peerName` to "MySecureServer.com". | 
 #### [write](#write)
+| | |
+|-|-|
 | Signature   | hs.socket:write(message[, tag][, fn]) -> self  |
 | Type        | Method |
 | Description | Write data to the socket |

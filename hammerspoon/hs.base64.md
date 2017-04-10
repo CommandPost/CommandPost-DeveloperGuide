@@ -7,19 +7,23 @@ Portions sourced from (https://gist.github.com/shpakovski/1902994).
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [decode](#decode)
-* [encode](#encode)
+** [decode](#decode)
+** [encode](#encode)
 
 ## API Documentation
 
 ### Functions
 
 #### [decode](#decode)
+| | |
+|-|-|
 | Signature   | hs.base64.decode(str) -> val  |
 | Type        | Function |
 | Description | Decodes a given base64 string |
 | Parameters |  * str - A base64 encoded string | | Returns |  * A string containing the decoded data | 
 #### [encode](#encode)
+| | |
+|-|-|
 | Signature   | hs.base64.encode(val[,width]) -> str  |
 | Type        | Function |
 | Description | Encodes a given string to base64 |

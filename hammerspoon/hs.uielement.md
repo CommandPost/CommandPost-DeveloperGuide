@@ -8,20 +8,22 @@ A generalized framework for working with OSX UI elements
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [focusedElement](#focusedElement)
+** [focusedElement](#focusedElement)
 * Constructors - API calls which return an object, typically one that offers API methods
-* [newWatcher](#newWatcher)
+** [newWatcher](#newWatcher)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [isApplication](#isApplication)
-* [isWindow](#isWindow)
-* [role](#role)
-* [selectedText](#selectedText)
+** [isApplication](#isApplication)
+** [isWindow](#isWindow)
+** [role](#role)
+** [selectedText](#selectedText)
 
 ## API Documentation
 
 ### Functions
 
 #### [focusedElement](#focusedElement)
+| | |
+|-|-|
 | Signature   | hs.uielement.focusedElement() -> element or nil  |
 | Type        | Function |
 | Description | Gets the currently focused UI element |
@@ -29,6 +31,8 @@ A generalized framework for working with OSX UI elements
 ### Constructors
 
 #### [newWatcher](#newWatcher)
+| | |
+|-|-|
 | Signature   | hs.uielement:newWatcher(handler[, userData]) -> hs.uielement.watcher or nil  |
 | Type        | Constructor |
 | Description | Creates a new watcher for the element represented by self (the object the method is being invoked for). |
@@ -36,21 +40,29 @@ A generalized framework for working with OSX UI elements
 ### Methods
 
 #### [isApplication](#isApplication)
+| | |
+|-|-|
 | Signature   | hs.uielement:isApplication() -> bool  |
 | Type        | Method |
 | Description | Returns whether the UI element represents an application. |
 | Parameters |  * None | | Returns |  * A boolean, true if the UI element is an application | 
 #### [isWindow](#isWindow)
+| | |
+|-|-|
 | Signature   | hs.uielement:isWindow() -> bool  |
 | Type        | Method |
 | Description | Returns whether the UI element represents a window. |
 | Parameters |  * None | | Returns |  * A boolean, true if the UI element is a window, otherwise false | 
 #### [role](#role)
+| | |
+|-|-|
 | Signature   | hs.uielement:role() -> string  |
 | Type        | Method |
 | Description | Returns the role of the element. |
 | Parameters |  * None | | Returns |  * A string containing the role of the UI element | 
 #### [selectedText](#selectedText)
+| | |
+|-|-|
 | Signature   | hs.uielement:selectedText() -> string or nil  |
 | Type        | Method |
 | Description | Returns the selected text in the element |

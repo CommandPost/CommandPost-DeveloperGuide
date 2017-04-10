@@ -12,27 +12,29 @@ Notes:
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [getInterface](#getInterface)
-* [getName](#getName)
-* [getPort](#getPort)
-* [maxBodySize](#maxBodySize)
-* [send](#send)
-* [setCallback](#setCallback)
-* [setInterface](#setInterface)
-* [setName](#setName)
-* [setPassword](#setPassword)
-* [setPort](#setPort)
-* [start](#start)
-* [stop](#stop)
-* [websocket](#websocket)
+** [getInterface](#getInterface)
+** [getName](#getName)
+** [getPort](#getPort)
+** [maxBodySize](#maxBodySize)
+** [send](#send)
+** [setCallback](#setCallback)
+** [setInterface](#setInterface)
+** [setName](#setName)
+** [setPassword](#setPassword)
+** [setPort](#setPort)
+** [start](#start)
+** [stop](#stop)
+** [websocket](#websocket)
 
 ## API Documentation
 
 ### Functions
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.httpserver.new([ssl], [bonjour]) -> object  |
 | Type        | Function |
 | Description | Creates a new HTTP or HTTPS server |
@@ -40,66 +42,92 @@ Notes:
 ### Methods
 
 #### [getInterface](#getInterface)
+| | |
+|-|-|
 | Signature   | hs.httpserver:getInterface() -> string or nil  |
 | Type        | Method |
 | Description | Gets the network interface the server is configured to listen on |
 | Parameters |  * None | | Returns |  * A string containing the network interface name, or nil if the server will listen on all interfaces | 
 #### [getName](#getName)
+| | |
+|-|-|
 | Signature   | hs.httpserver:getName() -> string  |
 | Type        | Method |
 | Description | Gets the Bonjour name the server is configured to advertise itself as |
 | Parameters |  * None | | Returns |  * A string containing the Bonjour name of this server | | Notes |  * This is not the hostname of the server, just its name in Bonjour service lists (e.g. Safari's Bonjour bookmarks menu) | 
 #### [getPort](#getPort)
+| | |
+|-|-|
 | Signature   | hs.httpserver:getPort() -> number  |
 | Type        | Method |
 | Description | Gets the TCP port the server is configured to listen on |
 | Parameters |  * None | | Returns |  * A number containing the TCP port | 
 #### [maxBodySize](#maxBodySize)
+| | |
+|-|-|
 | Signature   | hs.httpserver:maxBodySize([size]) -> object | current-value  |
 | Type        | Method |
 | Description | Get or set the maximum allowed body size for an incoming HTTP request. |
 | Parameters |  * size - An optional integer value specifying the maximum body size allowed for an incoming HTTP request in bytes.  Defaults to 10485760 (10 MB). | | Returns |  * If a new size is specified, returns the `hs.httpserver` object; otherwise the current value. | | Notes |  * Because the Hammerspoon http server processes incoming requests completely in memory, this method puts a limit on the maximum size for a POST or PUT request. | 
 #### [send](#send)
+| | |
+|-|-|
 | Signature   | hs.httpserver:send(message) -> object  |
 | Type        | Method |
 | Description | Sends a message to the websocket client |
 | Parameters |  * message - A string containing the message to send | | Returns |  * The `hs.httpserver` object | 
 #### [setCallback](#setCallback)
+| | |
+|-|-|
 | Signature   | hs.httpserver:setCallback([callback]) -> object  |
 | Type        | Method |
 | Description | Sets the request handling callback for an HTTP server object |
 | Parameters |  * callback - An optional function that will be called to process each incoming HTTP request, or nil to remove an existing callback. See the notes section below for more information about this callback | | Returns |  * The `hs.httpserver` object | | Notes |  * The callback will be passed four arguments:  * A string containing the type of request (i.e. `GET`/`POST`/`DELETE`/etc)  * A string containing the path element of the request (e.g. `/index.html`)  * A table containing the request headers  * A string containing the raw contents of the request body, or the empty string if no body is included in the request. * The callback *must* return three values:  * A string containing the body of the response  * An integer containing the response code (e.g. 200 for a successful request)  * A table containing additional HTTP headers to set (or an empty table, `{}`, if no extra headers are required) | 
 #### [setInterface](#setInterface)
+| | |
+|-|-|
 | Signature   | hs.httpserver:setInterface(interface) -> object  |
 | Type        | Method |
 | Description | Sets the network interface the server is configured to listen on |
 | Parameters |  * interface - A string containing an interface name | | Returns |  * The `hs.httpserver` object | | Notes |  * As well as real interface names (e.g. `en0`) the following values are valid:  * An IP address of one of your interfaces  * localhost  * loopback  * nil (which means all interfaces, and is the default) | 
 #### [setName](#setName)
+| | |
+|-|-|
 | Signature   | hs.httpserver:setName(name) -> object  |
 | Type        | Method |
 | Description | Sets the Bonjour name the server should advertise itself as |
 | Parameters |  * name - A string containing the Bonjour name for the server | | Returns |  * The `hs.httpserver` object | | Notes |  * This is not the hostname of the server, just its name in Bonjour service lists (e.g. Safari's Bonjour bookmarks menu) | 
 #### [setPassword](#setPassword)
+| | |
+|-|-|
 | Signature   | hs.httpserver:setPassword([password]) -> object  |
 | Type        | Method |
 | Description | Sets a password for an HTTP server object |
 | Parameters |  * password - An optional string that contains the server password, or nil to remove an existing password | | Returns |  * The `hs.httpserver` object | | Notes |  * It is not currently possible to set multiple passwords for different users, or passwords only on specific paths | 
 #### [setPort](#setPort)
+| | |
+|-|-|
 | Signature   | hs.httpserver:setPort(port) -> object  |
 | Type        | Method |
 | Description | Sets the TCP port the server is configured to listen on |
 | Parameters |  * port - An integer containing a TCP port to listen on | | Returns |  * The `hs.httpserver` object | 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.httpserver:start() -> object  |
 | Type        | Method |
 | Description | Starts an HTTP server object |
 | Parameters |  * None | | Returns |  * The `hs.httpserver` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.httpserver:stop() -> object  |
 | Type        | Method |
 | Description | Stops an HTTP server object |
 | Parameters |  * None | | Returns |  * The `hs.httpserver` object | 
 #### [websocket](#websocket)
+| | |
+|-|-|
 | Signature   | hs.httpserver:websocket(path, callback) -> object  |
 | Type        | Method |
 | Description | Enables a websocket endpoint on the HTTP server |

@@ -9,37 +9,47 @@ For each spotlightGroupObject you can identify the attribute and value the group
 
 ## API Overview
 * Methods - API calls which can only be made on an object returned by a constructor
-* [attribute](#attribute)
-* [count](#count)
-* [resultAtIndex](#resultAtIndex)
-* [subgroups](#subgroups)
-* [value](#value)
+** [attribute](#attribute)
+** [count](#count)
+** [resultAtIndex](#resultAtIndex)
+** [subgroups](#subgroups)
+** [value](#value)
 
 ## API Documentation
 
 ### Methods
 
 #### [attribute](#attribute)
+| | |
+|-|-|
 | Signature   | hs.spotlight.group:attribute() -> string  |
 | Type        | Method |
 | Description | Returns the name of the attribute the spotlightGroupObject results are grouped by. |
 | Parameters |  * None | | Returns |  * the attribute name as a string | 
 #### [count](#count)
+| | |
+|-|-|
 | Signature   | hs.spotlight.group:count() -> integer  |
 | Type        | Method |
 | Description | Returns the number of query results contained in the spotlightGroupObject. |
 | Parameters |  * None | | Returns |  * an integer specifying the number of results that match the attribute and value represented by this spotlightGroup object. | | Notes |  * For convenience, metamethods have been added to the spotlightGroupObject which allow you to use `#spotlightGroupObject` as a shortcut for `spotlightGroupObject:count()`. | 
 #### [resultAtIndex](#resultAtIndex)
+| | |
+|-|-|
 | Signature   | hs.spotlight.group:resultAtIndex(index) -> spotlightItemObject  |
 | Type        | Method |
 | Description | Returns the spotlightItemObject at the specified index of the spotlightGroupObject |
 | Parameters |  * `index` - an integer specifying the index of the result to return. | | Returns |  * the spotlightItemObject at the specified index or an error if the index is out of bounds. | | Notes |  * For convenience, metamethods have been added to the spotlightGroupObject which allow you to use `spotlightGroupObject[index]` as a shortcut for `spotlightGroupObject:resultAtIndex(index)`. | 
 #### [subgroups](#subgroups)
+| | |
+|-|-|
 | Signature   | hs.spotlight.group:subgroups() -> table  |
 | Type        | Method |
 | Description | Returns the subgroups of the spotlightGroupObject |
 | Parameters |  * None | | Returns |  * an array table containing the subgroups of the spotlightGroupObject or nil if no subgroups exist | | Notes |  * Subgroups are created when you supply more than one grouping attribute to `hs.spotlight:groupingAttributes`. | 
 #### [value](#value)
+| | |
+|-|-|
 | Signature   | hs.spotlight.group:value() -> value  |
 | Type        | Method |
 | Description | Returns the value for the attribute the spotlightGroupObject results are grouped by. |

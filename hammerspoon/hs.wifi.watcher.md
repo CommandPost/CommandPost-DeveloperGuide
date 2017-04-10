@@ -5,19 +5,21 @@ Watch for changes to the associated wifi network
 
 ## API Overview
 * Constants - Useful values which cannot be changed
-* [eventTypes[]](#eventTypes[])
+** [eventTypes[]](#eventTypes[])
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
-* [watchingFor](#watchingFor)
+** [start](#start)
+** [stop](#stop)
+** [watchingFor](#watchingFor)
 
 ## API Documentation
 
 ### Constants
 
 #### [eventTypes[]](#eventTypes[])
+| | |
+|-|-|
 | Signature   | hs.wifi.watcher.eventTypes[]  |
 | Type        | Constant |
 | Description | A table containing the possible event types that this watcher can monitor for. |
@@ -34,6 +36,8 @@ Watch for changes to the associated wifi network
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.wifi.watcher.new(fn) -> watcher  |
 | Type        | Constructor |
 | Description | Creates a new watcher for WiFi network events |
@@ -77,16 +81,22 @@ Watch for changes to the associated wifi network
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.wifi.watcher:start() -> watcher  |
 | Type        | Method |
 | Description | Starts the SSID watcher |
 | Parameters |  * None | | Returns |  * The `hs.wifi.watcher` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.wifi.watcher:stop() -> watcher  |
 | Type        | Method |
 | Description | Stops the SSID watcher |
 | Parameters |  * None | | Returns |  * The `hs.wifi.watcher` object | 
 #### [watchingFor](#watchingFor)
+| | |
+|-|-|
 | Signature   | hs.wifi.watcher:watchingFor([messages]) -> watcher | current-value  |
 | Type        | Method |
 | Description | Get or set the specific types of wifi events to generate a callback for with this watcher. |

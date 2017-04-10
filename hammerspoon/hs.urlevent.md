@@ -17,20 +17,22 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 
 ## API Overview
 * Variables - Configurable values
-* [httpCallback](#httpCallback)
+** [httpCallback](#httpCallback)
 * Functions - API calls offered directly by the extension
-* [bind](#bind)
-* [getAllHandlersForScheme](#getAllHandlersForScheme)
-* [getDefaultHandler](#getDefaultHandler)
-* [openURLWithBundle](#openURLWithBundle)
-* [setDefaultHandler](#setDefaultHandler)
-* [setRestoreHandler](#setRestoreHandler)
+** [bind](#bind)
+** [getAllHandlersForScheme](#getAllHandlersForScheme)
+** [getDefaultHandler](#getDefaultHandler)
+** [openURLWithBundle](#openURLWithBundle)
+** [setDefaultHandler](#setDefaultHandler)
+** [setRestoreHandler](#setRestoreHandler)
 
 ## API Documentation
 
 ### Variables
 
 #### [httpCallback](#httpCallback)
+| | |
+|-|-|
 | Signature   | hs.urlevent.httpCallback  |
 | Type        | Variable |
 | Description | A function that should handle http:// and https:// URL events |
@@ -38,31 +40,43 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 ### Functions
 
 #### [bind](#bind)
+| | |
+|-|-|
 | Signature   | hs.urlevent.bind(eventName, callback)  |
 | Type        | Function |
 | Description | Registers a callback for a hammerspoon:// URL event |
 | Parameters |  * eventName - A string containing the name of an event * callback - A function that will be called when the specified event is received, or nil to remove an existing callback | | Returns |  * None | | Notes |  * The callback function should accept two parameters:  * eventName - A string containing the name of the event  * params - A table containing key/value string pairs containing any URL parameters that were specified in the URL * Given the URL `hammerspoon://doThingA?value=1` The event name is `doThingA` and the callback's `params` argument will be a table containing `{["value"] = "1"}` | 
 #### [getAllHandlersForScheme](#getAllHandlersForScheme)
+| | |
+|-|-|
 | Signature   | hs.urlevent.getAllHandlersForScheme(scheme) -> table  |
 | Type        | Function |
 | Description | Gets all of the application bundle identifiers of applications able to handle a URL scheme |
 | Parameters |  * scheme - A string containing a URL scheme (e.g. 'http') | | Returns |  * A table containing the bundle identifiers of all applications that can handle the scheme | 
 #### [getDefaultHandler](#getDefaultHandler)
+| | |
+|-|-|
 | Signature   | hs.urlevent.getDefaultHandler(scheme) -> string  |
 | Type        | Function |
 | Description | Gets the application bundle identifier of the application currently registered to handle a URL scheme |
 | Parameters |  * scheme - A string containing a URL scheme (e.g. 'http') | | Returns |  * A string containing the bundle identifier of the current default application | 
 #### [openURLWithBundle](#openURLWithBundle)
+| | |
+|-|-|
 | Signature   | hs.urlevent.openURLWithBundle(url, bundleID) -> boolean  |
 | Type        | Function |
 | Description | Opens a URL with a specified application |
 | Parameters |  * url - A string containing a URL * bundleID - A string containing an application bundle identifier (e.g. "com.apple.Safari") | | Returns |  * True if the application was launched successfully, otherwise false | 
 #### [setDefaultHandler](#setDefaultHandler)
+| | |
+|-|-|
 | Signature   | hs.urlevent.setDefaultHandler(scheme[, bundleID])  |
 | Type        | Function |
 | Description | Sets the default system handler for URLs of a given scheme |
 | Parameters |  * scheme - A string containing the URL scheme to change. This must be 'http' or 'https' (although entering either will change the handler for both) * bundleID - An optional string containing an application bundle identifier for the application to set as the default handler. Defaults to `org.hammerspoon.Hammerspoon`. | | Returns |  * None | | Notes |  * Changing the default handler for http/https URLs will display a system prompt asking the user to confirm the change | 
 #### [setRestoreHandler](#setRestoreHandler)
+| | |
+|-|-|
 | Signature   | hs.urlevent.setRestoreHandler(scheme, bundleID)  |
 | Type        | Function |
 | Description | Stores a URL handler that will be restored when Hammerspoon or reloads its config |

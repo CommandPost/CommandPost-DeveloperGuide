@@ -14,18 +14,20 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [post](#post)
+** [post](#post)
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
+** [start](#start)
+** [stop](#stop)
 
 ## API Documentation
 
 ### Functions
 
 #### [post](#post)
+| | |
+|-|-|
 | Signature   | hs.distributednotifications.post(name[, sender[, userInfo]])  |
 | Type        | Function |
 | Description | Sends a distributed notification |
@@ -37,6 +39,8 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.distributednotifications.new(callback[, name[, object]]) -> object  |
 | Type        | Constructor |
 | Description | Creates a new NSDistributedNotificationCenter watcher |
@@ -44,11 +48,15 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.distributednotifications:start() -> object  |
 | Type        | Method |
 | Description | Starts a NSDistributedNotificationCenter watcher |
 | Parameters |  * None | | Returns |  * The `hs.distributednotifications` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.distributednotifications:stop() -> object  |
 | Type        | Method |
 | Description | Stops a NSDistributedNotificationCenter watcher |

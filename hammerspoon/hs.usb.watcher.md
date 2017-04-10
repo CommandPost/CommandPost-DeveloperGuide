@@ -5,16 +5,18 @@ Watch for USB device connection/disconnection events
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
+** [start](#start)
+** [stop](#stop)
 
 ## API Documentation
 
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.usb.watcher.new(fn) -> watcher  |
 | Type        | Constructor |
 | Description | Creates a new watcher for USB device events |
@@ -22,11 +24,15 @@ Watch for USB device connection/disconnection events
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.usb.watcher:start() -> watcher  |
 | Type        | Method |
 | Description | Starts the USB watcher |
 | Parameters |  * None | | Returns |  * The `hs.usb.watcher` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.usb.watcher:stop() -> watcher  |
 | Type        | Method |
 | Description | Stops the USB watcher |

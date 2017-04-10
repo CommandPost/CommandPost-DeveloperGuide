@@ -15,13 +15,15 @@ The wrapper is not enabled by default.  See the `hs.canvas.drawingWrapper` funct
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [drawingWrapper](#drawingWrapper)
+** [drawingWrapper](#drawingWrapper)
 
 ## API Documentation
 
 ### Functions
 
 #### [drawingWrapper](#drawingWrapper)
+| | |
+|-|-|
 | Signature   | hs.canvas.drawingWrapper([state]) -> boolean  |
 | Type        | Function |
 | Description | Get or set whether or not `hs.drawing` is replaced by a wrapper which uses this module. |

@@ -8,13 +8,15 @@ https://github.com/kikito/inspect.lua
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [inspect](#inspect)
+** [inspect](#inspect)
 
 ## API Documentation
 
 ### Functions
 
 #### [inspect](#inspect)
+| | |
+|-|-|
 | Signature   | hs.inspect.inspect(variable[, options]) -> string  |
 | Type        | Function |
 | Description | Gets a human readable version of the supplied Lua variable |

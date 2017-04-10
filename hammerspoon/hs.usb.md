@@ -8,13 +8,15 @@ Inspect USB devices
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [attachedDevices](#attachedDevices)
+** [attachedDevices](#attachedDevices)
 
 ## API Documentation
 
 ### Functions
 
 #### [attachedDevices](#attachedDevices)
+| | |
+|-|-|
 | Signature   | hs.usb.attachedDevices() -> table or nil  |
 | Type        | Function |
 | Description | Gets details about currently attached USB devices |

@@ -27,16 +27,18 @@ The only false positives I've ever had with this detector are various rare throa
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
+** [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
+** [start](#start)
+** [stop](#stop)
 
 ## API Documentation
 
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.noises.new(fn) -> listener  |
 | Type        | Constructor |
 | Description | Creates a new listener for mouth noise recognition |
@@ -44,11 +46,15 @@ The only false positives I've ever had with this detector are various rare throa
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.noises:start() -> self  |
 | Type        | Method |
 | Description | Starts listening to the microphone and passing the audio to the recognizer. |
 | Parameters |  * None | | Returns |  * The `hs.noises` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.noises:stop() -> self  |
 | Type        | Method |
 | Description | Stops the listener from recording and analyzing microphone input. |

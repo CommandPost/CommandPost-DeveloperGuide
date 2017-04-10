@@ -5,13 +5,15 @@ tmuxomatic-like window management
 
 ## API Overview
 * Functions - API calls offered directly by the extension
-* [go](#go)
+** [go](#go)
 
 ## API Documentation
 
 ### Functions
 
 #### [go](#go)
+| | |
+|-|-|
 | Signature   | hs.mjomatic.go(cfg)  |
 | Type        | Function |
 | Description | Applies a configuration to the currently open windows |

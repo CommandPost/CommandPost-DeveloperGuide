@@ -8,26 +8,28 @@ This module provides a basic ping function which can test host availability. Pin
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [ping](#ping)
+** [ping](#ping)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [address](#address)
-* [cancel](#cancel)
-* [count](#count)
-* [isPaused](#isPaused)
-* [isRunning](#isRunning)
-* [packets](#packets)
-* [pause](#pause)
-* [resume](#resume)
-* [sent](#sent)
-* [server](#server)
-* [setCallback](#setCallback)
-* [summary](#summary)
+** [address](#address)
+** [cancel](#cancel)
+** [count](#count)
+** [isPaused](#isPaused)
+** [isRunning](#isRunning)
+** [packets](#packets)
+** [pause](#pause)
+** [resume](#resume)
+** [sent](#sent)
+** [server](#server)
+** [setCallback](#setCallback)
+** [summary](#summary)
 
 ## API Documentation
 
 ### Constructors
 
 #### [ping](#ping)
+| | |
+|-|-|
 | Signature   | hs.network.ping.ping(server, [count], [interval], [timeout], [class], [fn]) -> pingObject  |
 | Type        | Constructor |
 | Description | Test server availability by pinging it with ICMP Echo Requests. |
@@ -56,11 +58,15 @@ This module provides a basic ping function which can test host availability. Pin
 ### Methods
 
 #### [address](#address)
+| | |
+|-|-|
 | Signature   | hs.network.ping:address() -> string  |
 | Type        | Method |
 | Description | Returns a string containing the resolved IPv4 or IPv6 address this pingObject is sending echo requests to. |
 | Parameters |  * None | | Returns |  * A string containing the IPv4 or IPv6 address this pingObject is sending echo requests to or "<unresolved address>" if the address cannot be resolved. | 
 #### [cancel](#cancel)
+| | |
+|-|-|
 | Signature   | hs.network.ping:cancel() -> none  |
 | Type        | Method |
 | Description | Cancels an in progress ping process, terminating it immediately |
@@ -68,21 +74,29 @@ This module provides a basic ping function which can test host availability. Pin
      * None
 | Returns |  * None | | Notes |  * the `didFinish` message will be sent to the callback function as its final message. | 
 #### [count](#count)
+| | |
+|-|-|
 | Signature   | hs.network.ping:count([count]) -> integer | pingObject | nil  |
 | Type        | Method |
 | Description | Get or set the number of ICMP Echo Requests that will be sent by the ping process |
 | Parameters |  * `count` - an optional integer specifying the total number of echo requests that the ping process should send. If specified, this number must be greater than the number of requests already sent. | | Returns |  * if no argument is specified, returns the current number of echo requests the ping process will send; if an argument is specified and the ping process has not completed, returns the pingObject; if the ping process has already completed, then this method returns nil. | 
 #### [isPaused](#isPaused)
+| | |
+|-|-|
 | Signature   | hs.network.ping:isPaused() -> boolean  |
 | Type        | Method |
 | Description | Returns whether or not the ping process is currently paused. |
 | Parameters |  * None | | Returns |  * A boolean indicating if the ping process is paused (true) or not (false) | 
 #### [isRunning](#isRunning)
+| | |
+|-|-|
 | Signature   | hs.network.ping:isRunning() -> boolean  |
 | Type        | Method |
 | Description | Returns whether or not the ping process is currently active. |
 | Parameters |  * None | | Returns |  * A boolean indicating if the ping process is active (true) or not (false) | | Notes |  * This method will return false only if the ping process has finished sending all echo requests or if it has been cancelled with [hs.network.ping:cancel](#cancel).  To determine if the process is currently sending out echo requests, see [hs.network.ping:isPaused](#isPaused). | 
 #### [packets](#packets)
+| | |
+|-|-|
 | Signature   | hs.network.ping:packets([sequenceNumber]) -> table  |
 | Type        | Method |
 | Description | Returns a table containing information about the ICMP Echo packets sent by this pingObject. |
@@ -99,26 +113,36 @@ This module provides a basic ping function which can test host availability. Pin
          * `_raw`           - A string containing the ICMP packet as raw data.
 | Parameters |  * `sequenceNumber` - an optional integer specifying the sequence number of the ICMP Echo packet to return information about. | | Returns |  * If `sequenceNumber` is specified, returns a table with key-value pairs containing information about the specific ICMP Echo packet with that sequence number, or an empty table if no packet with that sequence number has been sent yet. If no sequence number is specified, returns an array table of all ICMP Echo packets this object has sent. | | Notes |  * Sequence numbers start at 0 while Lua array tables are indexed starting at 1. If you do not specify a `sequenceNumber` to this method, index 1 of the array table returned will contain a table describing the ICMP Echo packet with sequence number 0, index 2 will describe the ICMP Echo packet with sequence number 1, etc. | 
 #### [pause](#pause)
+| | |
+|-|-|
 | Signature   | hs.network.ping:pause() -> pingObject | nil  |
 | Type        | Method |
 | Description | Pause an in progress ping process. |
 | Parameters |  * None | | Returns |  * if the ping process is currently active, returns the pingObject; if the process has already completed, returns nil. | 
 #### [resume](#resume)
+| | |
+|-|-|
 | Signature   | hs.network.ping:resume() -> pingObject | nil  |
 | Type        | Method |
 | Description | Resume an in progress ping process, if it has been paused. |
 | Parameters |  * None | | Returns |  * if the ping process is currently active, returns the pingObject; if the process has already completed, returns nil. | 
 #### [sent](#sent)
+| | |
+|-|-|
 | Signature   | hs.network.ping:sent() -> integer  |
 | Type        | Method |
 | Description | Returns the number of ICMP Echo Requests which have been sent. |
 | Parameters |  * None | | Returns |  * The number of echo requests which have been sent so far. | 
 #### [server](#server)
+| | |
+|-|-|
 | Signature   | hs.network.ping:server() -> string  |
 | Type        | Method |
 | Description | Returns the hostname or ip address string given to the [hs.network.ping.ping](#ping) constructor. |
 | Parameters |  * None | | Returns |  * A string matching the hostname or ip address given to the [hs.network.ping.ping](#ping) constructor for this object. | 
 #### [setCallback](#setCallback)
+| | |
+|-|-|
 | Signature   | hs.network.ping:setCallback(fn | nil) -> pingObject  |
 | Type        | Method |
 | Description | Set or remoce the callback function for the pingObject. |
@@ -126,6 +150,8 @@ This module provides a basic ping function which can test host availability. Pin
      * `fn` - the function to set as the callback, or nil if you wish use the default callback.
 | Returns |  * the pingObject | | Notes |  * Because the ping process begins immediately upon creation with the [hs.network.ping.ping](#ping) constructor, it is preferable to assign the callback with the constructor itself. * This method is provided as a means of changing the callback based on other events (a change in the current network or location, perhaps.) * If you truly wish to create a pingObject with no callback, you will need to do something like `hs.network.ping.ping(...):setCallback(function() end)`. | 
 #### [summary](#summary)
+| | |
+|-|-|
 | Signature   | hs.network.ping:summary() -> string  |
 | Type        | Method |
 | Description | Returns a string containing summary information about the ping process. |

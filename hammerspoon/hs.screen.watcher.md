@@ -8,22 +8,26 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
-* [new](#new)
-* [newWithActiveScreen](#newWithActiveScreen)
+** [new](#new)
+** [newWithActiveScreen](#newWithActiveScreen)
 * Methods - API calls which can only be made on an object returned by a constructor
-* [start](#start)
-* [stop](#stop)
+** [start](#start)
+** [stop](#stop)
 
 ## API Documentation
 
 ### Constructors
 
 #### [new](#new)
+| | |
+|-|-|
 | Signature   | hs.screen.watcher.new(fn) -> watcher  |
 | Type        | Constructor |
 | Description | Creates a new screen-watcher. |
 | Parameters |  * The function to be called when a change in the screen layout occurs.  This function should take no arguments. | | Returns |  * An `hs.screen.watcher` object | | Notes |  * A screen layout change usually involves a change that is made from the Displays Preferences Panel or when a monitor is attached or removed. | 
 #### [newWithActiveScreen](#newWithActiveScreen)
+| | |
+|-|-|
 | Signature   | hs.screen.watcher.newWithActiveScreen(fn) -> watcher  |
 | Type        | Constructor |
 | Description | Creates a new screen-watcher that is also called when the active screen changes. |
@@ -31,11 +35,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [start](#start)
+| | |
+|-|-|
 | Signature   | hs.screen.watcher:start() -> watcher  |
 | Type        | Method |
 | Description | Starts the screen watcher, making it so fn is called each time the screen arrangement changes |
 | Parameters |  * None | | Returns |  * The `hs.screen.watcher` object | 
 #### [stop](#stop)
+| | |
+|-|-|
 | Signature   | hs.screen.watcher:stop() -> watcher  |
 | Type        | Method |
 | Description | Stops the screen watcher's fn from getting called until started again |
