@@ -4,13 +4,19 @@
 
 * [Introduction](README.md)
 
+## Control CommandPost
+
+* AppleScript
+* URL Handler
+* [Command Line Tool](control-commandpost/command-line.md)
+
 ## Plugins
 
-* [Plugin Overview](plugins/plugin-overview.md)
+* [Plugins Overview](plugins/plugin-overview.md)
 
 ## API References
 
-* [Hammerspoon](hammerspoon/index.md)
+* [Hammerspoon](hs/index.md)
 
 ## Final Cut Pro
 
