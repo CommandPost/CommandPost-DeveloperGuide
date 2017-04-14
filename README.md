@@ -54,7 +54,7 @@ CommandPost also has a URL Handler which allows you to trigger CommandPost Comma
 
 For example:
 
-```commandpost://command?group=fcpx&id=cpSelectClipAtLaneOne```
+`commandpost://command?group=fcpx&id=cpSelectClipAtLaneOne`
 
 You can learn more about the URL Handler [here](control/urlhandler.md).
 
