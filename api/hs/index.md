@@ -18,7 +18,7 @@
 | Module | Description |
 | --- | --- |
 | [hs](hs.md) | Core Hammerspoon functionality |
-| [hs.alert](hs.alert.md) | Simple on-screen alerts |
+| [hs.alert](hs_alert.md) | Simple on-screen alerts |
 | [hs.appfinder](hs.appfinder.md) | Easily find `hs.application` and `hs.window` objects |
 | [hs.applescript](hs.applescript.md) | Execute AppleScript code |
 | [hs.application](hs.application.md) | Manipulate running applications |
