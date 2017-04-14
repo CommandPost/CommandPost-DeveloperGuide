@@ -1,4 +1,9 @@
-CommandPost is made up of two seperate components - the [standalone app](https://github.com/CommandPost/CommandPost-App) (which is a fork of [Hammerspoon](http://www.hammerspoon.org)), and the [Lua](https://www.lua.org/about.html) scripts contained within this repository.
+# Installing CommandPost
+
+CommandPost is made up of two seperate components:
+
+* [CommandPost-App](https://github.com/CommandPost/CommandPost-App) contains the [Hammerspoon](http://www.hammerspoon.org) fork which makes up the main application.
+* [CommandPost](https://github.com/CommandPost/CommandPost) contains all the [Lua](https://www.lua.org/about.html) scripts that drive the interface and feature set.
 
 To build your own version of CommandPost, first download or clone this repository. You can then either link the `~/CommandPost` directory to the GitHub `src` directory, or copy the contents of GitHub `src` into said directory.
 
