@@ -4,13 +4,13 @@
 "theme-api": {
 "languages": [
 {
-"lang": "js",
-"name": "JavaScript",
+"lang": "lua",
+"name": "Lua",
 "default": true
 },
 {
-"lang": "go",
-"name": "Go"
+"lang": "applescript",
+"name": "AppleScript"
 }
 ]
 }
