@@ -3,14 +3,11 @@
 ## Developer Guide
 
 * [Introduction](README.md)
+* [Installation](install.md)
 
 ## Lua
 
 * [Lua Overview](lua/index.md)
-
-## Installation
-
-* [Installation](install.md)
 
 ## Control CommandPost
 
