@@ -90,8 +90,8 @@ template.render([[
 You may use the following tags in templates:
 
 * `{{expression}}`, writes result of expression - html escaped
-* `{*expression*}`, writes result of expression 
-* `{% lua code %}`, executes Lua code
+* `{*expression*}`, writes result of expression
+* `{\% lua code %}`, executes Lua code
 * `{(template)}`, includes `template` file, you may also supply context for include file `{(file.html, { message = "Hello, World" } )}`
 * `{[expression]}`, includes `expression` file (the result of expression), you may also supply context for include file `{["file.html", { message = "Hello, World" } ]}`
 * `{-block-}...{-block-}`, wraps inside of a `{-block-}` to a value stored in a `blocks` table with a key `block` (in this case), see [using blocks](https://github.com/bungle/lua-resty-template#using-blocks). Don't use predefined block names `verbatim` and `raw`.
@@ -174,7 +174,7 @@ template.render("view.html", {
   title   = "Testing lua-resty-template",
   message = "Hello, World!",
   names   = { "James", "Jack", "Anne" },
-  jquery  = '<script src="js/jquery.min.js"></script>' 
+  jquery  = '<script src="js/jquery.min.js"></script>'
 })
 ```
 
@@ -282,7 +282,7 @@ http {
       content_by_lua '
         local template = require "resty.template"
         template.render("view.html", { message = "Hello, World!" })
-      ';      
+      ';
     }
   }
 }
@@ -301,7 +301,7 @@ http {
       content_by_lua '
         local template = require "resty.template"
         template.render("view.html", { message = "Hello, World!" })
-      ';      
+      ';
     }
   }
 }
@@ -320,12 +320,12 @@ http {
       content_by_lua '
         local template = require "resty.template"
         template.render("view.html", { message = "Hello, World!" })
-      ';      
+      ';
     }
     location /templates {
       internal;
       alias html/templates/;
-    }    
+    }
   }
 }
 ```
@@ -339,7 +339,7 @@ http {
 This function enables or disables template caching, or if no parameters are passed, returns current state of template caching. By default template caching is enabled, but you may want to disable it on development or low-memory situations.
 
 ```lua
-local template = require "resty.template"   
+local template = require "resty.template"
 -- Get current state of template caching
 local enabled = template.caching()
 -- Disable template caching
@@ -830,7 +830,7 @@ Say you have `base.html`, `layout1.html`, `layout2.html` and `page.html`. You wa
 ##### Lua
 
 ```lua
-local res = require"resty.template".compile("page.html"){} 
+local res = require"resty.template".compile("page.html"){}
 ```
 
 ##### base.html
@@ -863,7 +863,7 @@ local res = require"resty.template".compile("page.html"){}
     </div>
 {-main-}
 ```
-    
+
 ##### layout2.html
 
 ```html
@@ -879,7 +879,7 @@ local res = require"resty.template".compile("page.html"){}
 {-main-}
 ```
 
-##### page.html 
+##### page.html
 
 ```html
 {% layout = "layout1.html" %}
@@ -922,7 +922,7 @@ Or:
   <script src="js/page.js"></script>
 {-page_js-}
 ```
-    
+
 ### Macros
 
 [@DDarko](https://github.com/DDarko) mentioned in an [issue #5](https://github.com/bungle/lua-resty-template/issues/5) that he has a use case where he needs to have macros or parameterized views. That is a nice feature that you can use with `lua-resty-template`.
@@ -932,7 +932,7 @@ To use macros, let's first define some Lua code:
 ```lua
 template.render("macro.html", {
     item = "original",
-    items = { a = "original-a", b = "original-b" } 
+    items = { a = "original-a", b = "original-b" }
 })
 ```
 
@@ -1029,7 +1029,7 @@ template.render([[
 <h1>HELLO, WORLD!</h1>
 ```
 ### Embedding Angular or other tags / templating inside the Templates
- 
+
 Sometimes you need to mix and match other templates (say client side Javascript templates like Angular) with
 server side lua-resty-templates. Say you have this kind of Angular template:
 
@@ -1147,7 +1147,7 @@ Testing Markdown with "SmartyPants"...
 </html>
 ```
 
-You may also want to add caching layer for your Markdowns, or a helper functions instead of placing Hoedown library directly  as a template helper function in `template`.   
+You may also want to add caching layer for your Markdowns, or a helper functions instead of placing Hoedown library directly  as a template helper function in `template`.
 
 ### Lua Server Pages (LSP) with OpenResty
 
@@ -1249,7 +1249,7 @@ context.title = 'My Application - ' .. title
 
 * [jd.com](http://www.jd.com/) – Jingdong Mall (Chinese: 京东商城; pinyin: Jīngdōng Shāngchéng), formerly 360Buy, is a Chinese electronic commerce company
 
-Please let me know if there are errors or old information in this list. 
+Please let me know if there are errors or old information in this list.
 
 ## Alternatives
 
@@ -1304,7 +1304,7 @@ https://github.com/bungle/lua-resty-template/blob/master/lib/resty/template/micr
 There is also a regression in LuaJIT that affects the results. If you want your LuaJIT patched against this,
 you need to merge this pull request: https://github.com/LuaJIT/LuaJIT/pull/174.
 
-Others have [reported](https://github.com/bungle/lua-resty-template/issues/21#issuecomment-226786051) that in simple benchmarks running this template engine actually beats Nginx serving static files by a factor of three. So I guess this engine is quite fast. 
+Others have [reported](https://github.com/bungle/lua-resty-template/issues/21#issuecomment-226786051) that in simple benchmarks running this template engine actually beats Nginx serving static files by a factor of three. So I guess this engine is quite fast.
 
 ##### Lua
 
