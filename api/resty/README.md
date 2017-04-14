@@ -1,4 +1,4 @@
-# lua-resty-template
+{% raw %}# lua-resty-template
 
 **lua-resty-template** is a compiling (1) (HTML) templating engine for Lua and OpenResty.
 
@@ -91,7 +91,7 @@ You may use the following tags in templates:
 
 * `{{expression}}`, writes result of expression - html escaped
 * `{*expression*}`, writes result of expression
-* `{\% lua code %}`, executes Lua code
+* `{% lua code %}`, executes Lua code
 * `{(template)}`, includes `template` file, you may also supply context for include file `{(file.html, { message = "Hello, World" } )}`
 * `{[expression]}`, includes `expression` file (the result of expression), you may also supply context for include file `{["file.html", { message = "Hello, World" } ]}`
 * `{-block-}...{-block-}`, wraps inside of a `{-block-}` to a value stored in a `blocks` table with a key `block` (in this case), see [using blocks](https://github.com/bungle/lua-resty-template#using-blocks). Don't use predefined block names `verbatim` and `raw`.
@@ -1458,4 +1458,4 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-```
+```{% endraw %}
