@@ -4,11 +4,19 @@
 
 * [Introduction](README.md)
 
+## Lua
+
+* [Lua Overview](lua/index.md)
+
+## Installation
+
+* [Installation](install.md)
+
 ## Control CommandPost
 
-* AppleScript
-* URL Handler
-* [Command Line Tool](control-commandpost/command-line.md)
+* [AppleScript](control/applescript.md)
+* [URL Handler](control/urlhandler.md)
+* [Command Line Tool](control/command-line.md)
 
 ## Plugins
 
@@ -16,7 +24,15 @@
 
 ## API References
 
-* [Hammerspoon](hs/index.md)
+* [cp](api/cp/index.md)
+* [hs](api/hs/index.md)
+* [i18n](api/i18n/README.md)
+* [mimetypes](api/README.md)
+* [moses](api/README.md)
+* [plugins](api/index.md)
+* [resty](api/resty/README.md)
+* [semver](api/README.md)
+* [slaxml](api/README.md)
 
 ## Final Cut Pro
 
@@ -26,4 +42,3 @@
 
 * [Lua](external-resources/lua-tips.md)
 * [FCPXML](external-resources/fcpxml.md)
-
