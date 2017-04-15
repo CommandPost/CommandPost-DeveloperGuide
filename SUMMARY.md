@@ -59,4 +59,4 @@
 ## Final Cut Pro
 
 * [Package Contents](finalcutpro/package_contents.md)
-* [FCPXML](finalcupro/fcpxml.md)
+* [FCPXML](finalcutpro/fcpxml.md)
