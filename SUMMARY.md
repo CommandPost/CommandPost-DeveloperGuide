@@ -1,9 +1,8 @@
 # Summary
 
+## CommandPost
+
 * [Introduction](README.md)
-* [Naming Conventions](naming_conventions.md)
-* [Building CommandPost](building_commandpost.md)
-* [Building Hammerspoon](hammerspoon/CONTRIBUTING.md)
 
 ## Lua
 
@@ -15,6 +14,12 @@
 * [AppleScript](control/applescript.md)
 * [URL Handler](control/urlhandler.md)
 * [Command Line Tool](control/commandline.md)
+
+## Code CommandPost
+
+* [Naming Conventions](naming_conventions.md)
+* [Building CommandPost](building_commandpost.md)
+* [Building Hammerspoon](hammerspoon/CONTRIBUTING.md)
 
 ## Plugins
 
