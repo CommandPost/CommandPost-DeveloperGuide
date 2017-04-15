@@ -19,8 +19,8 @@
 | --- | --- |
 | [hs](hs.md) | Core Hammerspoon functionality |
 | [hs.alert](hs_alert.md) | Simple on-screen alerts |
-| [hs.appfinder](hs.appfinder.md) | Easily find `hs.application` and `hs.window` objects |
-| [hs.applescript](hs.applescript.md) | Execute AppleScript code |
+| [hs.appfinder](hs.appfinder.html) | Easily find `hs.application` and `hs.window` objects |
+| [hs.applescript](hs_applescript/README.md) | Execute AppleScript code |
 | [hs.application](hs.application.md) | Manipulate running applications |
 | [hs.application.watcher](hs.application.watcher.md) | Watch for application launch/terminate events |
 | [hs.audiodevice](hs.audiodevice.md) | Manipulate the system's audio devices |

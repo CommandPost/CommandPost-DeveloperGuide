@@ -1,7 +1,5 @@
 # Summary
 
-## Developer Guide
-
 * [Introduction](README.md)
 * [Naming Conventions](naming_conventions.md)
 * [Building CommandPost](building_commandpost.md)
@@ -10,13 +8,13 @@
 ## Lua
 
 * [Lua Overview](lua/index.md)
-* [Lua](external-resources/lua_tips.md)
+* [Lua Resources](lua/lua_tips.md)
 
 ## Control CommandPost
 
 * [AppleScript](control/applescript.md)
 * [URL Handler](control/urlhandler.md)
-* [Command Line Tool](control/command-line.md)
+* [Command Line Tool](control/commandline.md)
 
 ## Plugins
 
@@ -27,14 +25,14 @@
 * [cp](api/cp/index.md)
 * [hs](api/hs/index.md)
 * [i18n](api/i18n/README.md)
-* [mimetypes](api/README.md)
+* [mimetypes](api/mimetypes/README.md)
 * [moses](api/moses/README.md)
 * [plugins](api/plugins/index.md)
 * [resty](api/resty/README.md)
-* [semver](api/README.md)
-* [slaxml](api/README.md)
+* [semver](api/semver/README.md)
+* [slaxml](api/slaxml/README.md)
 
 ## Final Cut Pro
 
 * [Package Contents](finalcutpro/package_contents.md)
-* [FCPXML](external-resources/fcpxml.md)
+* [FCPXML](finalcupro/fcpxml.md)
