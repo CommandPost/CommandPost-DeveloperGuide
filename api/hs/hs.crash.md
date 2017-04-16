@@ -11,6 +11,7 @@ Various features/facilities for developers who are working on Hammerspoon itself
  * [crash](#crash)
  * [crashKV](#crashKV)
  * [crashLog](#crashLog)
+ * [crashlyticsCrash](#crashlyticsCrash)
  * [dumpCLIBS](#dumpCLIBS)
  * [residentSize](#residentSize)
  * [throwObjCException](#throwObjCException)
@@ -61,6 +62,15 @@ Various features/facilities for developers who are working on Hammerspoon itself
 | **Parameters**                              | <ul><li>logMessage - A string containing a message to log</li></ul> |
 | **Returns**                                 | <ul><li>None</li></ul>          |
 | **Notes**                                   | <ul><li>This is probably only useful to extension developers. If you are trying to track down a confusing crash, and you have access to the Crashlytics project for Hammerspoon (or access to someone who has access!), this can be a useful way to leave breadcrumbs from Lua in the crash dump</li></ul>                |
+
+| [crashlyticsCrash](#crashlyticsCrash)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `hs.crash.crashlyticsCrash()`                                                                    |
+| **Type**                                    | Function                                                                     |
+| **Description**                             | Causes Crashlytics to immediately crash                                                                     |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>None</li></ul>          |
+| **Notes**                                   | <ul><li>This is for testing purposes only, you are extremely unlikely to need this in normal Hammerspoon usage</li></ul>                |
 
 | [dumpCLIBS](#dumpCLIBS)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|

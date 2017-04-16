@@ -1,9 +1,33 @@
-# cp.finalcutpro
+# Hammerspoon.app
 ---
+
+## Project Links
+| Resource        | Link                             |
+| --------------- | -------------------------------- |
+| Website | [http://www.hammerspoon.org/](http://www.hammerspoon.org/) |
+| GitHub page | [https://github.com/Hammerspoon/hammerspoon](https://github.com/Hammerspoon/hammerspoon) |
+| Getting Started Guide | [http://www.hammerspoon.org/go/](http://www.hammerspoon.org/go/) |
+| IRC channel | [irc://chat.freenode.net/#hammerspoon](irc://chat.freenode.net/#hammerspoon) |
+| Mailing list | [https://groups.google.com/forum/#!forum/hammerspoon/](https://groups.google.com/forum/#!forum/hammerspoon/) |
+| LuaSkin API docs | [http://www.hammerspoon.org/docs/LuaSkin/](http://www.hammerspoon.org/docs/LuaSkin/) |
 
 ## API Documentation
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
+| [cp](cp.md)                          | Core CommandPost functionality     |
+| [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
+| [cp.choices](cp.choices.md)                          | Choices Module.     |
+| [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
+| [cp.commands](cp.commands.md)                          | Commands Module.     |
+| [cp.commands.command](cp.commands.command.md)                          | Commands Module.     |
+| [cp.commands.englishKeyCodes](cp.commands.englishKeyCodes.md)                          | Returns a table of all the English Key Codes.     |
+| [cp.commands.shortcut](cp.commands.shortcut.md)                          | Shortcut Commands     |
+| [cp.commands.shortcut.builder](cp.commands.shortcut.builder.md)                          | Shortcut Commands Builder Module.     |
+| [cp.config](cp.config.md)                          | Manage CommandPost's constants and settings.     |
+| [cp.config.fileDroppedToDockIconCallback](cp.config.fileDroppedToDockIconCallback.md)                          | File Dropped to Dock Icon Callback     |
+| [cp.config.shutdownCallback](cp.config.shutdownCallback.md)                          | Shutdown Callback Module.     |
+| [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)                          | Text Dropped to Dock Icon Callback     |
+| [cp.developer](cp.developer.md)                          | Developer Tools     |
 | [cp.finalcutpro](cp.finalcutpro.md)                          | Represents the Final Cut Pro X application, providing functions that allow different tasks to be accomplished.     |
 | [cp.finalcutpro.MenuBar](cp.finalcutpro.MenuBar.md)                          | Represents the Final Cut Pro X menu bar, providing functions that allow different tasks to be accomplished.     |
 | [cp.finalcutpro.axutils](cp.finalcutpro.axutils.md)                          | Utility functions to support 'axuielement'     |
@@ -47,3 +71,10 @@
 | [cp.finalcutpro.ui.Table](cp.finalcutpro.ui.Table.md)                          | Table Module.     |
 | [cp.finalcutpro.ui.TextField](cp.finalcutpro.ui.TextField.md)                          | Text Field Module.     |
 | [cp.finalcutpro.ui.WindowWatcher](cp.finalcutpro.ui.WindowWatcher.md)                          | Window Watcher Module.     |
+| [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
+| [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
+| [cp.plist.archiver](cp.plist.archiver.md)                          | Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.     |
+| [cp.plugins](cp.plugins.md)                          | This is a simple plugin manager.     |
+| [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and      |
+| [cp.watcher](cp.watcher.md)                          | Watcher Module.     |
+| [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |

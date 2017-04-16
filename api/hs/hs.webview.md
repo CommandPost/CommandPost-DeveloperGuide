@@ -77,6 +77,7 @@ Any suggestions or updates to the code to address any of these or other limitati
  * [url](#url)
  * [urlParts](#urlParts)
  * [userAgent](#userAgent)
+ * [windowCallback](#windowCallback)
  * [windowStyle](#windowStyle)
  * [windowTitle](#windowTitle)
 
@@ -535,6 +536,14 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Parameters**                              | <ul><li>`agent` - an options string specifying the user agent string to include in all URL requests made by the webview object.</li></ul> |
 | **Returns**                                 | <ul><li>if a parameter is specified, returns the webviewObject, otherwise returns the current value</li></ul>          |
 | **Notes**                                   | <ul><li>This method is only supported by OS X 10.11 and newer</li></ul>                |
+
+| [windowCallback](#windowCallback)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `hs.webview:windowCallback(fn) -> webviewObject`                                                                    |
+| **Type**                                    | Method                                                                     |
+| **Description**                             | Set or clear a callback for updates to the webview window                                                                     |
+| **Parameters**                              | <ul><li>`fn` - the function to be called when the webview window is moved or closed. Specify an explicit nil to clear the current callback.  The function should expect 2 or 3 arguments and return none.  The arguments will be one of the following:</li></ul> |
+| **Returns**                                 | <ul><li>The webview object</li></ul>          |
 
 | [windowStyle](#windowStyle)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|

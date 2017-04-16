@@ -54,6 +54,7 @@
 | [hs.hash](hs.hash.md)                          | Various hashing algorithms     |
 | [hs.hints](hs.hints.md)                          | Switch focus with a transient per-application keyboard shortcut     |
 | [hs.host](hs.host.md)                          | Inspect information about the machine Hammerspoon is running on     |
+| [hs.host.locale](hs.host.locale.md)                          | Retrieve information about the user's Language and Region settings.     |
 | [hs.hotkey](hs.hotkey.md)                          | Create and manage global keyboard shortcuts     |
 | [hs.hotkey.modal](hs.hotkey.modal.md)                          | Create/manage modal keyboard shortcut environments     |
 | [hs.http](hs.http.md)                          | Perform HTTP requests     |
@@ -112,7 +113,7 @@
 | [hs.timer.delayed](hs.timer.delayed.md)                          | Specialized timer objects to coalesce processing of unpredictable asynchronous events into a single callback     |
 | [hs.uielement](hs.uielement.md)                          | A generalized framework for working with OSX UI elements     |
 | [hs.uielement.watcher](hs.uielement.watcher.md)                          | Watch for events on certain UI elements (including windows and applications)     |
-| [hs.urlevent](hs.urlevent.md)                          | Allows Hammerspoon to respond to URLs     |
+| [hs.urlevent](hs.urlevent.md)                          | Allows CommandPost to respond to URLs     |
 | [hs.usb](hs.usb.md)                          | Inspect USB devices     |
 | [hs.usb.watcher](hs.usb.watcher.md)                          | Watch for USB device connection/disconnection events     |
 | [hs.utf8](hs.utf8.md)                          | Functions providing basic support for UTF-8 encodings     |

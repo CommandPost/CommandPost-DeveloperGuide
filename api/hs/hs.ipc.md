@@ -26,7 +26,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.ipc.cli`                                                                    |
 | **Type**                                    | Command                                                                     |
-| **Description**                             | This documents the external shell command `hs` provided by the hs.ipc module for external access to and control of your `Hammerspoon` environment.                                                                     |
+| **Description**                             | This documents the external shell command `cmdpost` provided by the hs.ipc module for external access to and control of your `CommandPost` environment.                                                                     |
 
 ### Functions
 

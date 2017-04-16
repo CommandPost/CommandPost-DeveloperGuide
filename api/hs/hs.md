@@ -88,9 +88,12 @@ Core Hammerspoon functionality
 * Variables - Configurable values
  * [accessibilityStateCallback](#accessibilityStateCallback)
  * [completionsForInputString](#completionsForInputString)
+ * [fileDroppedToDockIconCallback](#fileDroppedToDockIconCallback)
  * [shutdownCallback](#shutdownCallback)
+ * [textDroppedToDockIconCallback](#textDroppedToDockIconCallback)
 * Functions - API calls offered directly by the extension
  * [accessibilityState](#accessibilityState)
+ * [allowAppleScript](#allowAppleScript)
  * [autoLaunch](#autoLaunch)
  * [automaticallyCheckForUpdates](#automaticallyCheckForUpdates)
  * [canCheckForUpdates](#canCheckForUpdates)
@@ -145,7 +148,7 @@ Core Hammerspoon functionality
 | **Signature**                               | `hs.accessibilityStateCallback`                                                                    |
 | **Type**                                    | Variable                                                                     |
 | **Description**                             | An optional function that will be called when the Accessibility State is changed.                                                                     |
-| **Notes**                                   | <ul><li>* The function will not receive any arguments when called.  To check what the accessibility state has been changed to, you should call [hs.accessibilityState](#accessibilityState) from within your function.</li></ul>                |
+| **Notes**                                   | <ul><li>The function will not receive any arguments when called.  To check what the accessibility state has been changed to, you should call [hs.accessibilityState](#accessibilityState) from within your function.</li></ul>                |
 
 | [completionsForInputString](#completionsForInputString)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
@@ -156,12 +159,26 @@ Core Hammerspoon functionality
 | **Returns**                                 | <ul><li>A table of strings, each of which will be shown as a possible completion option to the user</li></ul>          |
 | **Notes**                                   | <ul><li>Hammerspoon provides a default implementation of this function, which can complete against the global Lua namespace, the 'hs' (i.e. extension) namespace, and object metatables. You can assign a new function to the variable to replace it with your own variant.</li></ul>                |
 
+| [fileDroppedToDockIconCallback](#fileDroppedToDockIconCallback)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `hs.fileDroppedToDockIconCallback`                                                                    |
+| **Type**                                    | Variable                                                                     |
+| **Description**                             | An optional function that will be called when a files are dragged to the Hammerspoon Dock Icon or sent via the Services menu                                                                     |
+| **Notes**                                   | <ul><li>The function should accept a single parameter, which will be a string containing the full path to the file that was dragged to the dock icon</li><li>If multiple files are sent, this callback will be called once for each file</li><li>This callback will be triggered when ANY file type is dragged onto the Hammerspoon Dock Icon, however certain filetypes are also processed seperately by Hammerspoon. For example, `hs.urlevent` will be triggered when the following filetypes are dropped onto the Dock Icon: HTML Documents (.html, .htm, .shtml, .jhtml), Plain text documents (.txt, .text), Web site locations (.url), XHTML documents (.xhtml, .xht, .xhtm, .xht).</li></ul>                |
+
 | [shutdownCallback](#shutdownCallback)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `hs.shutdownCallback`                                                                    |
 | **Type**                                    | Variable                                                                     |
 | **Description**                             | An optional function that will be called when the Lua environment is being destroyed (either because Hammerspoon is exiting or reloading its config)                                                                     |
 | **Notes**                                   | <ul><li>This function should not perform any asynchronous tasks</li><li>You do not need to fastidiously destroy objects you have created, this callback exists purely for utility reasons (e.g. serialising state, destroying system resources that will not be released by normal Lua garbage collection processes, etc)</li></ul>                |
+
+| [textDroppedToDockIconCallback](#textDroppedToDockIconCallback)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `hs.textDroppedToDockIconCallback`                                                                    |
+| **Type**                                    | Variable                                                                     |
+| **Description**                             | An optional function that will be called when text is dragged to the Hammerspoon Dock Icon or sent via the Services menu                                                                     |
+| **Notes**                                   | <ul><li>The function should accept a single parameter, which will be a string containing the text that was dragged to the dock icon</li></ul>                |
 
 ### Functions
 
@@ -173,6 +190,15 @@ Core Hammerspoon functionality
 | **Parameters**                              | <ul><li>shouldPrompt - an optional boolean value indicating if the dialog box asking if the System Preferences application should be opened should be presented when Accessibility is not currently enabled for Hammerspoon.  Defaults to false.</li></ul> |
 | **Returns**                                 | <ul><li>True or False indicating whether or not Accessibility is enabled for Hammerspoon.</li></ul>          |
 | **Notes**                                   | <ul><li>Since this check is done automatically when Hammerspoon loads, it is probably of limited use except for skipping things that are known to fail when Accessibility is not enabled.  Evettaps which try to capture keyUp and keyDown events, for example, will fail until Accessibility is enabled and the Hammerspoon application is relaunched.</li></ul>                |
+
+| [allowAppleScript](#allowAppleScript)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `hs.allowAppleScript([state]) -> bool`                                                                    |
+| **Type**                                    | Function                                                                     |
+| **Description**                             | Set or display whether or not external Hammerspoon AppleScript commands are allowed                                                                     |
+| **Parameters**                              | <ul><li>state - an optional boolean which will set whether or not external Hammerspoon's AppleScript commands are allowed</li></ul> |
+| **Returns**                                 | <ul><li>A boolean, true if Hammerspoon's AppleScript commands are (or has just been) allowed otherwise false</li></ul>          |
+| **Notes**                                   | <ul><li>AppleScript access is disallowed by default</li><li>Due to the way AppleScript support works, Hammerspoon will always allow AppleScript commands that are part of the "Standard Suite", such as `name, `quit`, `version`, etc. However, Hammerspoon will only allow commands from the "Hammerspoon Suite" if `hs.allowAppleScript()` is set to `true`</li><li>For a full list of AppleScript Commands:</li><li>     - Open `/Applications/Utilities/Script Editor.app`</li><li>     - Click `File > Open Dictionary...`</li><li>     - Select Hammerspoon from the list of Applications</li><li>     - This will now open a Dictionary containing all of the availible Hammerspoon AppleScript commands.</li><li>Here's an example AppleScript that can be used in Apple's Script Editor to control Hammerspoon:</li></ul>                |
 
 | [autoLaunch](#autoLaunch)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
@@ -356,11 +382,11 @@ Core Hammerspoon functionality
 
 | [updateAvailable](#updateAvailable)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Signature**                               | `hs.updateAvailable() -> boolean`                                                                    |
+| **Signature**                               | `hs.updateAvailable() -> string or false`                                                                    |
 | **Type**                                    | Function                                                                     |
-| **Description**                             | Returns a boolean indicating whether or not the Sparkle framework has found a Hammerspoon update.                                                                     |
+| **Description**                             | Gets the version number of an available update                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A boolean, true if an update is available, otherwise false</li></ul>          |
+| **Returns**                                 | <ul><li>A string containing the version number of the latest release, or a boolean false if no update is available</li></ul>          |
 | **Notes**                                   | <ul><li>This is not a live check, it is a cached result of whatever the previous update check found. By default Hammerspoon checks for updates every few hours, but you can also add your own timer to check for updates more frequently with `hs.checkForUpdates()`</li></ul>                |
 
 | [uploadCrashData](#uploadCrashData)         |                                                                                     |
