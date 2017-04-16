@@ -1,8 +1,9 @@
 # Summary
 
-## CommandPost
+## Getting Started
 
 * [Introduction](README.md)
+* [Installation and Setup]()
 
 ## Lua
 
@@ -28,6 +29,7 @@
 ## CommandPost API
 
 * [cp.bench](api/cp/cp.bench/index.md)
+ * [cp.bench](api/cp/cp.bench/cp.bench.md)
 * [cp.choices](api/cp/cp.choices/index.md)
 * [cp.commands]()
 * [cp.config]()
@@ -46,9 +48,14 @@
 * [cp.watcher]()
 * [cp.web]()
 
+## Bundled Plugins API
+
+* TBC
+
 ## 3rd Party API
 
-* [hs](api_hs/index.md)
+* [hs](api/hs/index.md)
+ * [hs.alert](api/hs/hs.alert.md)
 * [i18n](api/i18n/README.md)
 * [mimetypes](api/mimetypes/README.md)
 * [moses](api/moses/README.md)
