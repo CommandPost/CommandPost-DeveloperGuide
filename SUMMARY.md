@@ -3,7 +3,8 @@
 ## Getting Started
 
 * [Introduction](README.md)
-* [Installation and Setup]()
+* [Installation and Setup](getting_started/install.md)
+* [Naming Conventions](naming_conventions.md)
 
 ## Lua
 
@@ -16,20 +17,29 @@
 * [URL Handler](control/urlhandler.md)
 * [Command Line Tool](control/commandline.md)
 
-## Code CommandPost
-
-* [Naming Conventions](naming_conventions.md)
-* [Building CommandPost](building_commandpost.md)
-* [Building Hammerspoon](hammerspoon/CONTRIBUTING.md)
-
 ## Plugins
 
 * [Plugins Overview](plugins/plugin-overview.md)
 
+## Final Cut Pro
+
+* [Package Contents](final_cut_pro/package_contents.md)
+* [FCPXML](final_cut_pro/fcpxml.md)
+
+## Bundled Extensions
+
+* [i18n](api/i18n/README.md)
+* [mimetypes](api/mimetypes/README.md)
+* [moses](api/moses/README.md)
+* [resty](api/resty/README.md)
+* [semver](api/semver/README.md)
+* [slaxml](api/slaxml/README.md)
+
 ## CommandPost API
 
-* [cp](api/cp/index.md)
- * [cp](api/cp/cp.md)
+* [Index](api/cp/index.md)
+
+* [cp](api/cp/cp.md)
 * [cp.bench](api/cp/cp.bench.md)
 * [cp.choices](api/cp/cp.choices.md)
  * [cp.choices.builder](api/cp/cp.choices.builder.md)
@@ -94,16 +104,11 @@
 * [cp.watcher](api/cp/cp.watcher.md)
 * [cp.web.generate](api/cp/cp.web.generate.md)
 
-## Bundled Plugins API
+## Hammerspoon API
 
-* TBC
+* [Index](api/hs/index.md)
 
-## 3rd Party API
-
-### Hammerspoon
-
-* [hs](api/hs/index.md)
- * [hs](api/hs/hs.md)
+* [hs](api/hs/hs.md)
 * [hs.alert](api/hs/hs.alert.md)
 * [hs.appfinder](api/hs/hs.appfinder.md)
 * [hs.applescript](api/hs/hs.applescript.md)
@@ -220,32 +225,3 @@
  * [hs.window.layout](api/hs/hs.window.layout.md)
  * [hs.window.switcher](api/hs/hs.window.switcher.md)
  * [hs.window.tiling](api/hs/hs.window.tiling.md)
-
-### i18n
-
-* [i18n](api/i18n/README.md)
-
-### mimetypes
-
-* [mimetypes](api/mimetypes/README.md)
-
-### moses
-
-* [moses](api/moses/README.md)
-
-### resty
-
-* [resty](api/resty/README.md)
-
-### semver
-
-* [semver](api/semver/README.md)
-
-### slaxml
-
-* [slaxml](api/slaxml/README.md)
-
-## Final Cut Pro
-
-* [Package Contents](finalcutpro/package_contents.md)
-* [FCPXML](finalcutpro/fcpxml.md)
