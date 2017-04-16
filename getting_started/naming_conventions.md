@@ -79,3 +79,82 @@ The `Parameters` and `Returns` sections should always be present. If there is no
 --- Returns:
 ---  * Boolean indicating whether the operation succeeded.
 ```
+
+---
+
+## Example Plugin
+
+Here is an example of how plugins should be structured:
+
+```lua
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--                               E X A M P L E                                --
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- === plugins.core.example ===
+---
+--- An example plugin.
+
+--------------------------------------------------------------------------------
+--
+-- EXTENSIONS:
+--
+--------------------------------------------------------------------------------
+local config			= require("cp.config")
+local dialog			= require("cp.dialog")
+
+--------------------------------------------------------------------------------
+--
+-- CONSTANTS:
+--
+--------------------------------------------------------------------------------
+local MESSAGE			= "The CommandPost Version is: "
+
+--------------------------------------------------------------------------------
+--
+-- THE MODULE:
+--
+--------------------------------------------------------------------------------
+local mod = {}
+
+--- plugins.core.example.displayVersion() -> nil
+--- Function
+--- Displays a Dialog Box that displays the CommandPost Version.
+---
+--- Parameters:
+---  * None
+---
+--- Returns:
+---  * None
+function mod.displayVersion()
+	dialog.displayMessage(MESSAGE .. config.appVersion)
+end
+
+--------------------------------------------------------------------------------
+--
+-- THE PLUGIN:
+--
+--------------------------------------------------------------------------------
+local plugin = {
+	id				= "core.example",
+	group			= "core",
+	dependencies	= {
+		["core.menu.bottom"] = "bottom",
+	}
+}
+
+--------------------------------------------------------------------------------
+-- INITIALISE PLUGIN:
+--------------------------------------------------------------------------------
+function plugin.init(deps)
+	deps.bottom:addSeparator(9999999999):addItem(99999999999, function()
+		return { title = "Example Menu Item",	fn = mod.displayVersion }
+	end)
+
+	return mod
+end
+
+return plugin
+```

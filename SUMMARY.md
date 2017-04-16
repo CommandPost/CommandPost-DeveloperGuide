@@ -20,6 +20,10 @@
 
 * [Plugins Overview](plugins/plugin-overview.md)
 
+## Internationalisation
+
+* [Translating CommandPost](internationalisation/translate.md)
+
 ## Final Cut Pro
 
 * [Package Contents](final_cut_pro/package_contents.md)
