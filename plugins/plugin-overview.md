@@ -24,13 +24,13 @@ A CommandPost Plugin is simply a macOS bundle which contains Lua scripts (and an
 
 When you first run CommandPost it will register the `.cpPlugin` extension in macOS, which means if you create a folder called `SOMETHING.cpPlugin` it will prompt you with:
 
-![CommandPost Plugin](./images/cpplugin.png)
+![CommandPost Plugin](images/cpplugin.png)
 
 If you click **Add** it will turn that newly created folder into a CommandPost Plugin Bundle.
 
 You view the contents of the bundle, simply right click and select **Show Package Contents**.
 
-![Show Package Contents](./images/show-package-contents.png)
+![Show Package Contents](images/show-package-contents.png)
 
 At a very minimum, the plugin should contain a single `.lua` file, which will be the Lua code that's executed.
 
