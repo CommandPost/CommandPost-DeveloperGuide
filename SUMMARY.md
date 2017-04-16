@@ -37,8 +37,6 @@
 
 ## CommandPost API
 
-* [Index](api/cp/index.md)
-
 * [cp](api/cp/cp.md)
 * [cp.bench](api/cp/cp.bench.md)
 * [cp.choices](api/cp/cp.choices.md)
@@ -105,8 +103,6 @@
 * [cp.web.generate](api/cp/cp.web.generate.md)
 
 ## Hammerspoon API
-
-* [Index](api/hs/index.md)
 
 * [hs](api/hs/hs.md)
 * [hs.alert](api/hs/hs.alert.md)
