@@ -1,5 +1,5 @@
 # Lua Overview
-
+---
 ## What is Lua?
 
 What do Adobe Photoshop Lightroom, Angry Birds, Apache HTTP Server, Apache Traffic Server, the Firefox web browser, MediaWiki, and World of Warcraft all have in common?
@@ -15,36 +15,32 @@ Lua is designed to be a lightweight embeddable scripting language and is used fo
 Lua is freely available for any purpose, including commercial purposes, at absolutely no cost, and using it requires no paperwork. Read the details in the [license page](https://www.lua.org/license.html).
 
 For complete information, visit [Lua's web site](http://www.lua.org/).
-
 ---
-
 ## Tutorials
 
 Here's some links to useful tutorials...
 
-### Beginners:
+#### Beginners:
 
 * [Lua Tutorial (Video)](https://www.youtube.com/watch?v=iMacxZQMPXs) & [Cheatsheet](http://www.newthinktank.com/2015/06/learn-lua-one-video/)
 * [Intro to Programming in Lua (Video)](https://www.youtube.com/playlist?list=PLz-rYTT-2nIvtosMFa-OVURa5J9fAgtNU)
 * [Learn Lua in 15 Minutes](http://tylerneylon.com/a/learn-lua/)
 * [Learn Lua the Hard Way](http://www.phailed.me/2011/02/learn-lua-the-hard-way-1/)
 
-### Programmers:
+#### Programmers:
 
 * [Lua for Programmers Part 1: Language Essentials](http://nova-fusion.com/2012/08/27/lua-for-programmers-part-1/)
 * [Learning Lua from JavaScript](http://phrogz.net/lua/LearningLua_FromJS.html)
 * [Lua for Python Programmers](http://the4thwiki.com/lua/)
 * [A Quick Start Guide On Lua For C/C++ Programmers](https://docs.google.com/presentation/d/1wU7QwUQGved6jpnn-oYHjv9sU3d9TlqEvhv_TqyAZwM/edit#slide=id.i0)
 
-### The Manual
+#### The Manual:
 
 *  [Programming in Lua (first edition)](http://www.lua.org/pil/contents.html)
-
 ---
-
 ## Crash Course
 
-### The Basic's
+#### The Basic's:
 
 * Like JavaScript, Lua is a case sensitive language - "and", "And" or "AND" are not the same.
 * The following are Lua keywords:
@@ -56,7 +52,7 @@ repeat    return    then      true      until     while
 ```
 * The following strings denote other tokens:
 ```lua
-+     -     *     /     %     ^     #
+\+     -     *     /     %     ^     #
 ==    ~=    <=    >=    <     >     =
 (     )     {     }     [     ]
 ;     :     ,     .     ..    ...
@@ -67,7 +63,7 @@ repeat    return    then      true      until     while
 a=4 -- variable a is now 4!
 ```
 
-### Values & Types
+#### Values & Types
 
 * Lua is a dynamically typed language which means that variables do not have types; only values do.
 * There are 8 basic types in Lua:
@@ -80,7 +76,7 @@ a=4 -- variable a is now 4!
  * `thread` - independent threads of execution used to implement coroutines
  * `table` - arrays that can hold values of any type except `nil`
 
- ### Variables
+ #### Variables
 
 * There are 3 kinds of variables:
  * Global Variables
@@ -90,7 +86,7 @@ a=4 -- variable a is now 4!
 * Before the first assignment to a variable, its value is `nil`.
 * Square brackets are used to index a table (e.g. `value=table[x]`). The first value in a table is at position 1 (and not 0 as for C arrays).
 
-### Statements
+#### Statements
 
 * Lua allows multiple assignments. The syntax for assignments defines a list of variables on the left side and a list of expressions on the right side. The elements in both lists are separated by commas:
 ```lua
