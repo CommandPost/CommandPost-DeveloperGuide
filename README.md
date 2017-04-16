@@ -89,7 +89,7 @@ Because behind-the-scenes CommandPost is pretty much exactly the same code as Ha
 
 Hammerspoon is actually a fork of [Mjolnir](https://github.com/sdegutis/mjolnir) by Steven Degutis. Unlike Hammerspoon, Mjolnir aims to be a very minimal application, with its extensions hosted externally and managed using a Lua package manager. Hammerspoon wanted to provide a more integrated experience.
 
-Hammerspoon is composed of three separate logical areas - a Lua runtime wrapper framework called [LuaSkin](http://www.hammerspoon.org/docs/LuaSkin/Classes/LuaSkin/index.html#), the core Hammerspoon app which houses the LuaSkin/Lua runtime and provides the ability to load extensions, and [various extension modules](https://github.com/Hammerspoon/hammerspoon/tree/master/extensions) that [expose system APIs](/api/hs/index.md) to the user's Lua code.
+Hammerspoon is composed of three separate logical areas - a Lua runtime wrapper framework called [LuaSkin](http://www.hammerspoon.org/docs/LuaSkin/Classes/LuaSkin/index.html#), the core Hammerspoon app which houses the LuaSkin/Lua runtime and provides the ability to load extensions, and [various extension modules](https://github.com/Hammerspoon/hammerspoon/tree/master/extensions) that [expose system APIs](/api/hs/hs.md) to the user's Lua code.
 
 ---
 
@@ -141,4 +141,4 @@ In this case we create the menubar item and connect a callback (in this case `ca
 
 As you can see, with very few lines of code, we can do incredibly powerful things.
 
-What we've done with CommandPost is basically take all the power of Hammerspoon, and it's extensive Hammerspoon Extensions, and then built our own set of extensions, such as [`cp.finalcutpro`](/api/cp/index.md) - which allows use to control Final Cut Pro.
+What we've done with CommandPost is basically take all the power of Hammerspoon, and it's extensive Hammerspoon Extensions, and then built our own set of extensions, such as [`cp.finalcutpro`](/api/cp/cp.md) - which allows use to control Final Cut Pro.
