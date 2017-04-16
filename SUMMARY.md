@@ -48,7 +48,7 @@
 
 ## 3rd Party API
 
-* [hs](api/hs/index.md)
+* [hs](api_hs/index.md)
 * [i18n](api/i18n/README.md)
 * [mimetypes](api/mimetypes/README.md)
 * [moses](api/moses/README.md)
