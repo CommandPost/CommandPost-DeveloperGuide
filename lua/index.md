@@ -34,6 +34,10 @@ Here's some links to useful tutorials...
 * [Lua for Python Programmers](http://the4thwiki.com/lua/)
 * [A Quick Start Guide On Lua For C/C++ Programmers](https://docs.google.com/presentation/d/1wU7QwUQGved6jpnn-oYHjv9sU3d9TlqEvhv_TqyAZwM/edit#slide=id.i0)
 
+#### Advanced:
+
+* [Lua Performance Tips](https://www.lua.org/gems/sample.pdf)
+
 #### The Manual:
 
 *  [Programming in Lua (first edition)](http://www.lua.org/pil/contents.html)
@@ -83,6 +87,7 @@ a=4 -- variable a is now 4!
  * Local Variables
  * Table Fields
 * Any variable is assumed to be global unless explicitely declared as local.
+* [Asmagill explains Global Variables](https://github.com/Hammerspoon/hammerspoon/issues/1103#issuecomment-265087511).
 * Before the first assignment to a variable, its value is `nil`.
 * Square brackets are used to index a table (e.g. `value=table[x]`). The first value in a table is at position 1 (and not 0 as for C arrays).
 
