@@ -1,6 +1,9 @@
 {
 	"plugins": [ "theme-api" ],
 	"pluginsConfig": {
+		"search": {
+        	"maxIndexSize": 100000
+        },
 		"theme-api": {
 			 "theme": "dark",
 			"languages": [
@@ -16,14 +19,4 @@
 			]
 		}
 	}
-}
-{
-    "search": {
-        "maxIndexSize": 1000000000
-    }
-}
-{
-    "lunr": {
-        "maxIndexSize": 1000000000
-    }
 }
