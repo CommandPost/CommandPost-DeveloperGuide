@@ -16,9 +16,13 @@
 			]
 		}
 	}
+}
+{
     "search": {
         "maxIndexSize": 1000000000
     }
+}
+{
     "lunr": {
         "maxIndexSize": 1000000000
     }
