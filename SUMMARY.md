@@ -3,38 +3,36 @@
 ## Getting Started
 
 * [Introduction](README.md)
-* [Installation and Setup](getting_started/install.md)
+* [Installation & Setup](getting_started/install/README.md)
 
 ## Lua
 
-* [Lua Overview](lua/index.md)
+* [Lua Overview](lua/overview/README.md)
 
 ## Contributing
 
-* [Naming Conventions](contributing/naming_conventions.md)
-* [CommandPost-App](contributing/commandpost-app.md)
-* [CommandPost](contributing/commandpost.md)
+* [Naming Conventions](contributing/naming_conventions/README.md)
+* [CommandPost-App](contributing/commandpost-app/README.md)
+* [CommandPost](contributing/commandpost/README.md)
 
 ## Control CommandPost
 
-* [AppleScript](control/applescript.md)
-* [URL Handler](control/urlhandler.md)
-* [Command Line Tool](control/commandline.md)
+* [AppleScript](control/applescript/README.md)
+* [URL Handler](control/urlhandler/README.md)
+* [Command Line Tool](control/commandline/README.md)
 
 ## Plugins
 
-* [Plugins Overview](plugins/plugin-overview.md)
+* [Plugins Overview](plugins/overview/README.md)
 
 ## Internationalisation
 
-* [Translating CommandPost](internationalisation/translate.md)
+* [Translating CommandPost](internationalisation/translate/README.md)
 
 ## Final Cut Pro
 
-* [Package Contents](final_cut_pro/package_contents.md)
-* [FCPXML](final_cut_pro/fcpxml.md)
-
----
+* [Package Contents](final_cut_pro/package_contents/README.md)
+* [FCPXML](final_cut_pro/fcpxml/README.md)
 
 ## Bundled Extensions
 
@@ -44,8 +42,6 @@
 * [resty](api/resty/README.md)
 * [semver](api/semver/README.md)
 * [slaxml](api/slaxml/README.md)
-
----
 
 ## CommandPost API
 
@@ -117,8 +113,6 @@
 	* [sourcewatcher](api/cp/cp.sourcewatcher.md)
 	* [watcher](api/cp/cp.watcher.md)
 	* [web.generate](api/cp/cp.web.generate.md)
-
----
 
 ## Bundled Plugins API
 
@@ -230,8 +224,6 @@
 				* [appmissing](api/plugins/plugins.finalcutpro.welcome.panels.appmissing.md)
 				* [commandset](api/plugins/plugins.finalcutpro.welcome.panels.commandset.md)
 				* [scanfinalcutpro](api/plugins/plugins.finalcutpro.welcome.panels.scanfinalcutpro.md)
-
----
 
 ## Hammerspoon API
 

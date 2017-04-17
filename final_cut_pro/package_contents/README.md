@@ -1,6 +1,8 @@
+# Final Cut Pro Package Contents
+
 This document is a random collection of notes, thoughts and comments as we start to experiment and play with the "insides" of Final Cut Pro.
 
-***
+---
 
 ## Frameworks
 
@@ -10,7 +12,7 @@ I'm not exactly sure what this is but I'm ASSUMING it has something to do with t
 
 `PROGRAM:Bloodhound  PROJECT:Motion-29551.8.52`
 
-I don't think this is much help to FCPX Hacks.
+I don't think this is much help to CommandPost.
 
 ### CoreMedia
 

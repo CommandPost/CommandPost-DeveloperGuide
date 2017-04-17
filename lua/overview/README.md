@@ -15,7 +15,9 @@ Lua is designed to be a lightweight embeddable scripting language and is used fo
 Lua is freely available for any purpose, including commercial purposes, at absolutely no cost, and using it requires no paperwork. Read the details in the [license page](https://www.lua.org/license.html).
 
 For complete information, visit [Lua's web site](http://www.lua.org/).
+
 ---
+
 ## Tutorials
 
 Here's some links to useful tutorials...
@@ -41,10 +43,12 @@ Here's some links to useful tutorials...
 #### The Manual:
 
 *  [Programming in Lua (first edition)](http://www.lua.org/pil/contents.html)
+
 ---
+
 ## Crash Course
 
-#### The Basic's:
+#### Introduction
 
 * Like JavaScript, Lua is a case sensitive language - "and", "And" or "AND" are not the same.
 * The following are Lua keywords:
@@ -80,7 +84,7 @@ a=4 -- variable a is now 4!
  * `thread` - independent threads of execution used to implement coroutines
  * `table` - arrays that can hold values of any type except `nil`
 
- #### Variables
+#### Variables
 
 * There are 3 kinds of variables:
  * Global Variables
