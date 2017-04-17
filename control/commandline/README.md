@@ -1,4 +1,5 @@
 # Command Line Tool
+---
 
 CommandPost offers an optional Command Line Tool, that allows you to trigger any arbitrary Lua code via Apple's Terminal.
 

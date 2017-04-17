@@ -1,4 +1,5 @@
 # Plugin Overview
+---
 
 CommandPost has a very easy to use and powerful plugins functionality, and because Lua is quite a simple language to use, it's really easy to throw together your own CommandPost Plugins!
 

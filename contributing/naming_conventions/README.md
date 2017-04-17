@@ -1,4 +1,5 @@
 # Naming Conventions
+---
 
 Both Lua and Objective-C portions of an extension/plugin should contain in-line documention of all of the functions they expose to users of the extension/plugin.
 

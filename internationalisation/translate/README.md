@@ -1,4 +1,5 @@
 # Translating CommandPost
+---
 
 CommandPost has been designed with internationalisation in mind.
 

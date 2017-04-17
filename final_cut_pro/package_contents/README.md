@@ -1,4 +1,5 @@
 # Final Cut Pro Package Contents
+---
 
 This document is a random collection of notes, thoughts and comments as we start to experiment and play with the "insides" of Final Cut Pro.
 
