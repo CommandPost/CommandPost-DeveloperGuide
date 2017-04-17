@@ -2,8 +2,11 @@
 	"plugins": [ "theme-api" ],
 	"pluginsConfig": {
 		"search": {
-        	"maxIndexSize": 100000
+        	"maxIndexSize": 1000000000
         },
+		"lunr": {
+			"maxIndexSize": 1000000000
+		},
 		"theme-api": {
 			 "theme": "dark",
 			"languages": [
