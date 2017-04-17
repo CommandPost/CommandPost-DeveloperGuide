@@ -17,12 +17,14 @@ This also means that you can use AppleScript Commands within Apple Automator to 
 
 CommandPost supports the following AppleScript commands:
 
-> **execute lua code** text : The string to execute
->                -> Returns the Lua Code Execution Result
+> **execute lua code** text : The string to execute -> Returns the Lua Code Execution Result
 >
 > **quit** : Quits CommandPost
+>
 > **application name** (text, r/o) : The name of the application.
+>
 > **application frontmost** (boolean, r/o) : Is this the active application?
+>
 > **version** (text, r/o) : The version number of the application.
 
 The ability to mix and match AppleScript & Lua allows for all kinds of interesting possibilities!
