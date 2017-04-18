@@ -12,7 +12,7 @@ Core CommandPost functionality
 ### Functions
 
 #### [quit](#quit)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.quit.quit() -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.quit.quit() -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Quit's CommandPost                                                                                         |

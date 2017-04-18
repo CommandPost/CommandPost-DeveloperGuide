@@ -24,13 +24,13 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 ### Constants
 
 #### [bundleID](#bundleid)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.bundleID` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.bundleID` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A string representing the ID of the bundle Hammerspoon's settings are stored in . You can use this with the command line tool `defaults` or other tools which allow access to the `User Defaults` of applications, to access these outside of Hammerspoon                                                                                         |
 
 #### [dateFormat](#dateformat)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.dateFormat` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.dateFormat` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A string representing the expected format of date and time when presenting the date and time as a string to `hs.setDate()`.  e.g. `os.date(hs.settings.dateFormat)`                                                                                         |
@@ -38,7 +38,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 ### Functions
 
 #### [clear](#clear)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.clear(key) -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.clear(key) -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Deletes a setting                                                                                         |
@@ -46,7 +46,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A boolean, true if the setting was deleted, otherwise false</li></ul>          |
 
 #### [get](#get)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.get(key) -> string or boolean or number or nil or table or binary data` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.get(key) -> string or boolean or number or nil or table or binary data` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a setting                                                                                         |
@@ -55,7 +55,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This function can load all of the datatypes supported by `hs.settings.set()`, `hs.settings.setData()` and `hs.settings.setDate()`</li></ul>                |
 
 #### [getKeys](#getkeys)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.getKeys() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.getKeys() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets all of the previously stored setting names                                                                                         |
@@ -64,7 +64,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>Use `ipairs(hs.settings.getKeys())` to iterate over all available settings</li><li>Use `hs.settings.getKeys()["someKey"]` to test for the existance of a particular key</li></ul>                |
 
 #### [set](#set)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.set(key[, val])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.set(key[, val])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves a setting with common datatypes                                                                                         |
@@ -73,7 +73,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This function cannot set dates or raw data types, see `hs.settings.setDate()` and `hs.settings.setData()`</li><li>Assigning a nil value is equivalent to clearing the value with `hs.settings.clear`</li></ul>                |
 
 #### [setData](#setdata)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.setData(key, val)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.setData(key, val)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves a setting with raw binary data                                                                                         |
@@ -81,7 +81,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setDate](#setdate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.settings.setDate(key, val)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.settings.setDate(key, val)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves a setting with a date                                                                                         |

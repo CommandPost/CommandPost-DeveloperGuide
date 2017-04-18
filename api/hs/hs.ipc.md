@@ -23,7 +23,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 ### Commands
 
 #### [cli](#cli)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.cli` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.cli` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Command                                                                                         |
 | **Description**                                      | This documents the external shell command `cmdpost` provided by the hs.ipc module for external access to and control of your `CommandPost` environment.                                                                                         |
@@ -31,7 +31,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 ### Functions
 
 #### [cliGetColors](#cligetcolors)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.cliGetColors() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.cliGetColors() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the terminal escape codes used to produce colors in the `hs` command line tool                                                                                         |
@@ -39,7 +39,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Returns**                                          | <ul><li>A table containing the terminal escape codes used to produce colors. The available keys are:</li><li> initial</li><li> input</li><li> output</li></ul>          |
 
 #### [cliInstall](#cliinstall)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.cliInstall([path][,silent]) -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.cliInstall([path][,silent]) -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Installs the `hs` command line tool                                                                                         |
@@ -47,7 +47,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Returns**                                          | <ul><li>A boolean, true if the tool was successfully installed, otherwise false</li></ul>          |
 
 #### [cliResetColors](#cliresetcolors)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.cliResetColors()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.cliResetColors()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Restores default terminal escape codes used to produce colors in the `hs` command line tool                                                                                         |
@@ -55,7 +55,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [cliSetColors](#clisetcolors)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.cliSetColors(table) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.cliSetColors(table) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the terminal escape codes used to produce colors in the `hs` command line tool                                                                                         |
@@ -64,7 +64,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Notes**                                            | <ul><li>For a brief intro into terminal colors, you can visit a web site like this one [http://jafrog.com/2013/11/23/colors-in-terminal.html](http://jafrog.com/2013/11/23/colors-in-terminal.html)</li><li>Lua doesn't support octal escapes in it's strings, so use `\x1b` or `\27` to indicate the `escape` character e.g. `ipc.cliSetColors{ initial = "", input = "\27[33m", output = "\27[38;5;11m" }`</li><li>The values are stored by the `hs.settings` extension, so will persist across restarts of Hammerspoon</li></ul>                |
 
 #### [cliStatus](#clistatus)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.cliStatus([path][,silent]) -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.cliStatus([path][,silent]) -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the status of the `hs` command line tool                                                                                         |
@@ -72,7 +72,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Returns**                                          | <ul><li>A boolean, true if the `hs` command line tool is correctly installed, otherwise false</li></ul>          |
 
 #### [cliUninstall](#cliuninstall)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.cliUninstall([path][,silent]) -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.cliUninstall([path][,silent]) -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Uninstalls the `hs` command line tool                                                                                         |
@@ -81,7 +81,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Notes**                                            | <ul><li>This function is very conservative and will only remove the tool if it was installed by this instance of Hammerspoon. If you have more than one copy of Hammerspoon, this will be detected and they will not remove each others' tools.</li></ul>                |
 
 #### [handler](#handler)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.ipc.handler(str) -> value` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.ipc.handler(str) -> value` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Processes received IPC messages and returns the results                                                                                         |

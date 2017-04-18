@@ -18,7 +18,7 @@ Functions for Generating HTML UI Items
 ### Functions
 
 #### [button](#button)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.generate.button() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.generate.button() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Button                                                                                         |
@@ -26,7 +26,7 @@ Functions for Generating HTML UI Items
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul>          |
 
 #### [checkbox](#checkbox)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.generate.checkbox() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.generate.checkbox() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Checkbox                                                                                         |
@@ -34,7 +34,7 @@ Functions for Generating HTML UI Items
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul>          |
 
 #### [dropdown](#dropdown)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.generate.dropdown() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.generate.dropdown() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Dropdown                                                                                         |
@@ -42,7 +42,7 @@ Functions for Generating HTML UI Items
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul>          |
 
 #### [heading](#heading)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.generate.heading() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.generate.heading() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Heading                                                                                         |
@@ -50,7 +50,7 @@ Functions for Generating HTML UI Items
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul>          |
 
 #### [javascript](#javascript)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.generate.javascript(script, context) -> cp.web.html.block` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.generate.javascript(script, context) -> cp.web.html.block` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Heading                                                                                         |
@@ -58,7 +58,7 @@ Functions for Generating HTML UI Items
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul>          |
 
 #### [setWebviewLabel](#setwebviewlabel)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.generate.setWebviewLabel() -> none` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.generate.setWebviewLabel() -> none` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the WebView Label                                                                                         |
@@ -66,7 +66,7 @@ Functions for Generating HTML UI Items
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [text](#text)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.generate.text() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.generate.text() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a blank HTML                                                                                         |

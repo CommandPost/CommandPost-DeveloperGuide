@@ -37,7 +37,7 @@ The only false positives I've ever had with this detector are various rare throa
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.noises.new(fn) -> listener` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.noises.new(fn) -> listener` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new listener for mouth noise recognition                                                                                         |
@@ -47,7 +47,7 @@ The only false positives I've ever had with this detector are various rare throa
 ### Methods
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.noises:start() -> self` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.noises:start() -> self` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts listening to the microphone and passing the audio to the recognizer.                                                                                         |
@@ -55,7 +55,7 @@ The only false positives I've ever had with this detector are various rare throa
 | **Returns**                                          | <ul><li>The `hs.noises` object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.noises:stop() -> self` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.noises:stop() -> self` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the listener from recording and analyzing microphone input.                                                                                         |

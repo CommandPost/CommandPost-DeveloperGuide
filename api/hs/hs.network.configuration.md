@@ -27,7 +27,7 @@ This sub-module provides access to the current location set configuration settin
 ### Constructors
 
 #### [open](#open)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration.open() -> storeObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration.open() -> storeObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Opens a session to the dynamic store maintained by the System Configuration server.                                                                                         |
@@ -37,7 +37,7 @@ This sub-module provides access to the current location set configuration settin
 ### Methods
 
 #### [computerName](#computername)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:computerName() -> name, encoding` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:computerName() -> name, encoding` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the name of the computeras specified in the Sharing Preferences, and its string encoding                                                                                         |
@@ -46,7 +46,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with `hs.network.configuration:contents("Setup:/System")`</li></ul>                |
 
 #### [consoleUser](#consoleuser)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:consoleUser() -> name, uid, gid` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:consoleUser() -> name, uid, gid` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the name of the user currently logged into the system, including the users id and primary group id                                                                                         |
@@ -55,7 +55,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with `hs.network.configuration:contents("State:/Users/ConsoleUser")`</li></ul>                |
 
 #### [contents](#contents)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:contents([keys], [pattern]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:contents([keys], [pattern]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return the contents of the store for the specified keys or keys matching the specified pattern(s)                                                                                         |
@@ -64,7 +64,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>if no parameters are provided, then all key-value pairs in the dynamic store are returned.</li></ul>                |
 
 #### [dhcpInfo](#dhcpinfo)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:dhcpInfo([serviceID]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:dhcpInfo([serviceID]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return the DHCP information for the specified service or the primary service if no parameter is specified.                                                                                         |
@@ -73,7 +73,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>a list of possible Service ID's can be retrieved with `hs.network.configuration:contents("Setup:/Network/Global/IPv4")`</li><li>generates an error if the service ID is invalid or was not assigned an IP address via DHCP.</li></ul>                |
 
 #### [hostname](#hostname)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:hostname() -> name` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:hostname() -> name` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current local host name for the computer                                                                                         |
@@ -82,7 +82,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with `hs.network.configuration:contents("Setup:/System")`</li></ul>                |
 
 #### [keys](#keys)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:keys([keypattern]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:keys([keypattern]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return the keys in the dynamic store which match the specified pattern                                                                                         |
@@ -90,7 +90,7 @@ This sub-module provides access to the current location set configuration settin
 | **Returns**                                          | <ul><li>a table of keys from the dynamic store.</li></ul>          |
 
 #### [location](#location)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:location() -> location` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:location() -> location` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current location identifier                                                                                         |
@@ -99,7 +99,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with `hs.network.configuration:contents("Setup:")`</li><li>If you have different locations defined in the Network preferences panel, this can be used to determine the currently active location.</li></ul>                |
 
 #### [locations](#locations)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:locations() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:locations() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns all configured locations                                                                                         |
@@ -107,7 +107,7 @@ This sub-module provides access to the current location set configuration settin
 | **Returns**                                          | <ul><li>a table of key-value pairs mapping location UUIDs to their names</li></ul>          |
 
 #### [monitorKeys](#monitorkeys)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:monitorKeys([keys], [pattern]) -> storeObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:monitorKeys([keys], [pattern]) -> storeObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specify the key(s) or key pattern(s) to monitor for changes.                                                                                         |
@@ -116,7 +116,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>if no parameters are provided, then all key-value pairs in the dynamic store are monitored for changes.</li></ul>                |
 
 #### [proxies](#proxies)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:proxies() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:proxies() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns information about the currently active proxies, if any                                                                                         |
@@ -125,7 +125,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with `hs.network.configuration:contents("State:/Network/Global/Proxies")`</li></ul>                |
 
 #### [setCallback](#setcallback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:setCallback(function | nil) -> storeObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:setCallback(function | nil) -> storeObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or remove the callback function for a store object                                                                                         |
@@ -134,7 +134,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>The callback function will be invoked each time a monitored key changes value and the callback function should accept two parameters: the storeObject itself, and an array of the keys which contain values that have changed.</li><li>This method just sets the callback function.  You specify which keys to watch with [hs.network.configuration:monitorKeys](#monitorKeys) and start or stop the watcher with [hs.network.configuration:start](#start) or [hs.network.configuartion:stop](#stop)</li></ul>                |
 
 #### [setLocation](#setlocation)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:setLocation(location) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:setLocation(location) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Switches to a new location                                                                                         |
@@ -142,7 +142,7 @@ This sub-module provides access to the current location set configuration settin
 | **Returns**                                          | <ul><li>bool</li></ul>          |
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:start() -> storeObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:start() -> storeObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts watching the store object for changes to the monitored keys and invokes the callback function (if any) when a change occurs.                                                                                         |
@@ -151,7 +151,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>The callback function should be specified with [hs.network.configuration:setCallback](#setCallback) and the keys to monitor should be specified with [hs.network.configuration:monitorKeys](#monitorKeys).</li></ul>                |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.network.configuration:stop() -> storeObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.configuration:stop() -> storeObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops watching the store object for changes.                                                                                         |

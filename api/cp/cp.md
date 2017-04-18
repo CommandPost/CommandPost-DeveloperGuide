@@ -32,7 +32,7 @@ Core CommandPost functionality
 ### Functions
 
 #### [init](#init)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.init()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.init()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise CommandPost                                                                                         |
@@ -40,7 +40,7 @@ Core CommandPost functionality
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [javascript](#javascript)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.ui.javascript(script, context) -> cp.web.ui` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.ui.javascript(script, context) -> cp.web.ui` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates an HTML script element which will execute the provided                                                                                         |
@@ -48,7 +48,7 @@ Core CommandPost functionality
 | **Returns**                                          | <ul><li>a </li></ul>          |
 
 #### [select](#select)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.ui.select(params) -> cp.web.html` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.ui.select(params) -> cp.web.html` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a `cp.web.html` `select` element. The `data` should be a table or a function returning a table                                                                                         |
@@ -59,7 +59,7 @@ Core CommandPost functionality
 ### Constructors
 
 #### [button](#button)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.ui.button(params) -> cp.web.ui` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.ui.button(params) -> cp.web.ui` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Generates a HTML Button                                                                                         |
@@ -68,7 +68,7 @@ Core CommandPost functionality
 | **Notes**                                            | <ul><li>* The `params` can contain the following fields:</li><li>** `value`		- The value of th button.</li><li>** `label`		- The text label for the button. Defaults to the `value` if not provided.</li><li>** `width`		- The width of the button in pixels.</li></ul>                |
 
 #### [checkbox](#checkbox)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.ui.checkbox(title, value[, id]) -> cp.web.ui` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.ui.checkbox(title, value[, id]) -> cp.web.ui` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Generates a HTML Checkbox element. The `data` should be a table or a function returning a table                                                                                         |
@@ -77,7 +77,7 @@ Core CommandPost functionality
 | **Notes**                                            | <ul><li>The `params` table has the following supported fields:</li><li> ** `value`		- a string (or function) with the value of the checkbox. If not specified, the title is used.</li><li> ** `checked`	- a boolean (or function) set to `true` or `false`, depending on if the checkbox is checked.</li><li> ** `id`		- (optional) a string (or function) with the unique ID for the checkbox.</li><li> ** `name`		- (optional) a unique name for the checkbox field.</li><li> ** `class`		- (optional) the CSS class list.</li></ul>                |
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.web.ui.new(data, generateFn) -> cp.web.ui` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.web.ui.new(data, generateFn) -> cp.web.ui` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Generates an HTML element with the provided `data` and generator function.                                                                                         |

@@ -12,7 +12,7 @@ Check Box UI Module.
 ### Functions
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.ui.CheckBox:new(axuielement, function) -> CheckBox` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.ui.CheckBox:new(axuielement, function) -> CheckBox` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new CheckBox                                                                                         |

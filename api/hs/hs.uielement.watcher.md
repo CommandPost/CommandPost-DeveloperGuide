@@ -40,7 +40,7 @@ These work on all UI elements, including windows.
 ### Methods
 
 #### [element](#element)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement.watcher:element() -> object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement.watcher:element() -> object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the element the watcher is watching.                                                                                         |
@@ -48,7 +48,7 @@ These work on all UI elements, including windows.
 | **Returns**                                          | <ul><li>The element the watcher is watching.</li></ul>          |
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement.watcher:start(events) -> hs.uielement.watcher` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement.watcher:start(events) -> hs.uielement.watcher` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Tells the watcher to start watching for the given list of events.                                                                                         |
@@ -57,7 +57,7 @@ These work on all UI elements, including windows.
 | **Notes**                                            | <ul><li>See hs.uielement.watcher for a list of events. You may also specify arbitrary event names as strings.</li><li>Does nothing if the watcher has already been started. To start with different events, stop it first.</li></ul>                |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement.watcher:stop() -> hs.uielement.watcher` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement.watcher:stop() -> hs.uielement.watcher` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Tells the watcher to stop listening for events.                                                                                         |

@@ -43,7 +43,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 ### Functions
 
 #### [attributesForVoice](#attributesforvoice)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech.attributesForVoice(voice) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech.attributesForVoice(voice) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing a variety of properties describing and defining the specified voice.                                                                                         |
@@ -52,7 +52,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  `com.apple.speech.synthesis.voice.*name*`.  You can provide this suffix or not as you prefer when specifying a voice name.</li></ul>                |
 
 #### [availableVoices](#availablevoices)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech.availableVoices([full]) -> array` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech.availableVoices([full]) -> array` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a list of the currently installed voices for speech synthesis.                                                                                         |
@@ -61,7 +61,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  `com.apple.speech.synthesis.voice.*name*`.  This prefix is normally suppressed unless you pass in true.</li></ul>                |
 
 #### [defaultVoice](#defaultvoice)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech.defaultVoice([full]) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech.defaultVoice([full]) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the name of the currently selected default voice for the user.  This voice is the voice selected in the System Preferences for Dictation & Speech as the System Voice.                                                                                         |
@@ -70,7 +70,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  `com.apple.speech.synthesis.voice.*name*`.  This prefix is normally suppressed unless you pass in true.</li></ul>                |
 
 #### [isAnyApplicationSpeaking](#isanyapplicationspeaking)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech.isAnyApplicationSpeaking() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech.isAnyApplicationSpeaking() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether or not the system is currently using a speech synthesizer in any application to generate speech.                                                                                         |
@@ -81,7 +81,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech.new([voice]) -> synthesizerObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech.new([voice]) -> synthesizerObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new speech synthesizer object for use by Hammerspoon.                                                                                         |
@@ -92,7 +92,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 ### Methods
 
 #### [continue](#continue)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:continue() -> synthesizerObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:continue() -> synthesizerObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resumes a paused speech synthesizer.                                                                                         |
@@ -100,7 +100,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
 
 #### [isPaused](#ispaused)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:isPaused() -> boolean | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:isPaused() -> boolean | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not the synthesizer is currently paused.                                                                                         |
@@ -109,7 +109,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>If an error occurs retrieving this value, the details will be logged in the system logs which can be viewed with the Console application.  You can also have such messages logged to the Hammerspoon console by setting the module's log level to at least Information (This can be done with the following, or similar, command: `hs.speech.log.level = 3`.  See `hs.logger` for more information)</li></ul>                |
 
 #### [isSpeaking](#isspeaking)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:isSpeaking() -> boolean | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:isSpeaking() -> boolean | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not the synthesizer is currently speaking, either to an audio device or to a file.                                                                                         |
@@ -118,7 +118,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>If an error occurs retrieving this value, the details will be logged in the system logs which can be viewed with the Console application.  You can also have such messages logged to the Hammerspoon console by setting the module's log level to at least Information (This can be done with the following, or similar, command: `hs.speech.log.level = 3`.  See `hs.logger` for more information)</li></ul>                |
 
 #### [modulation](#modulation)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:modulation([modulation]) -> synthsizerObject | modulation | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:modulation([modulation]) -> synthsizerObject | modulation | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the pitch modulation for the synthesizer's voice.                                                                                         |
@@ -126,7 +126,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>Pitch modulation is expressed as a floating-point value in the range of 0.000 to 127.000. These values correspond to MIDI note values, where 60.000 is equal to middle C on a piano scale. The most useful speech pitches fall in the range of 40.000 to 55.000. A pitch modulation value of 0.000 corresponds to a monotone in which all speech is generated at the frequency corresponding to the speech pitch. Given a speech pitch value of 46.000, a pitch modulation of 2.000 would mean that the widest possible range of pitches corresponding to the actual frequency of generated text would be 44.000 to 48.000.</li></ul>                |
 
 #### [pause](#pause)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:pause([where]) -> synthesizerObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:pause([where]) -> synthesizerObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Pauses the output of the speech synthesizer.                                                                                         |
@@ -134,7 +134,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
 
 #### [phonemes](#phonemes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:phonemes(text) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:phonemes(text) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the phonemes which would be spoken if the text were to be synthesized.                                                                                         |
@@ -143,7 +143,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>This method only returns a phonetic representation of the text if a Macintalk voice has been selected.  The more modern higher quality voices do not use a phonetic representation and an empty string will be returned if this method is used.</li><li>You can modify the phonetic representation and feed it into `hs.speech:speak` if you find that the default interpretation is not correct.  You will need to set the input mode to Phonetic by prefixing the text with "[[inpt PHON]]".</li><li>The specific phonetic symbols recognized by a given voice can be queried by examining the array returned by `hs.speech:phoneticSymbols` after setting an appropriate voice.</li></ul>                |
 
 #### [phoneticSymbols](#phoneticsymbols)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:phoneticSymbols() -> array | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:phoneticSymbols() -> array | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an array of the phonetic symbols recognized by the synthesizer for the current voice.                                                                                         |
@@ -152,7 +152,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>Each entry in the array of phonemes returned will contain the following keys:</li><li>  Symbol      - The textual representation of this phoneme when returned by `hs.speech:phonemes` or that you should use for this sound when crafting a phonetic string yourself.</li><li>  Opcode      - The numeric opcode passed to the callback for the "willSpeakPhoneme" message corresponding to this phoneme.</li><li>  Example     - An example word which contains the sound the phoneme represents</li><li>  HiliteEnd   - The character position in the Example where this phoneme's sound begins</li><li>  HiliteStart - The character position in the Example where this phoneme's sound ends</li></ul>                |
 
 #### [pitch](#pitch)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:pitch([pitch]) -> synthsizerObject | pitch | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:pitch([pitch]) -> synthsizerObject | pitch | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the base pitch for the synthesizer's voice.                                                                                         |
@@ -160,7 +160,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>Typical voice frequencies range from around 90 hertz for a low-pitched male voice to perhaps 300 hertz for a high-pitched child’s voice. These frequencies correspond to approximate pitch values in the ranges of 30.000 to 40.000 and 55.000 to 65.000, respectively.</li></ul>                |
 
 #### [rate](#rate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:rate([rate]) -> synthesizerObject | rate` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:rate([rate]) -> synthesizerObject | rate` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the synthesizers speaking rate (words per minute).                                                                                         |
@@ -169,7 +169,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>The range of supported rates is not predefined by the Speech Synthesis framework; but the synthesizer may only respond to a limited range of speech rates. Average human speech occurs at a rate of 180.0 to 220.0 words per minute.</li></ul>                |
 
 #### [reset](#reset)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:reset() -> synthsizerObject | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:reset() -> synthsizerObject | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Reset a synthesizer back to its default state.                                                                                         |
@@ -177,7 +177,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>This method will reset a synthesizer to its default state, including pitch, modulation, volume, rate, etc.</li><li>The changes go into effect immediately, if queried, but will not affect a synthesis in progress.</li></ul>                |
 
 #### [setCallback](#setcallback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:setCallback(fn | nil) -> synthesizerObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:setCallback(fn | nil) -> synthesizerObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or removes a callback function for the synthesizer.                                                                                         |
@@ -186,7 +186,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>The callback function should expect between 3 and 5 arguments and should not return anything.  The first two arguments will always be the synthesizer object itself and a string indicating the activity which has caused the callback.  The value of this string also dictates the remaining arguments as follows:</li></ul>                |
 
 #### [speak](#speak)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:speak(textToSpeak) -> synthesizerObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:speak(textToSpeak) -> synthesizerObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts speaking the provided text through the system's current audio device.                                                                                         |
@@ -194,7 +194,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
 
 #### [speakToFile](#speaktofile)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:speakToFile(textToSpeak, destination) -> synthesizerObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:speakToFile(textToSpeak, destination) -> synthesizerObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts speaking the provided text and saves the audio as an AIFF file.                                                                                         |
@@ -202,7 +202,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
 
 #### [speaking](#speaking)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:speaking() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:speaking() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not this synthesizer is currently generating speech.                                                                                         |
@@ -211,7 +211,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>See also `hs.speech.isAnyApplicationSpeaking`.</li></ul>                |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:stop([where]) -> synthesizerObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:stop([where]) -> synthesizerObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the output of the speech synthesizer.                                                                                         |
@@ -219,7 +219,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
 
 #### [usesFeedbackWindow](#usesfeedbackwindow)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:usesFeedbackWindow([flag]) -> synthesizerObject | boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:usesFeedbackWindow([flag]) -> synthesizerObject | boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets whether or not the synthesizer uses the speech feedback window.                                                                                         |
@@ -228,7 +228,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>*Special Note:* I am not sure where the visual feedback actually occurs -- I have not been able to locate a feedback window for synthesis in 10.11; however the method is defined and not marked deprecated, so I include it in the module.  If anyone has more information, please file an issue and the documentation will be updated.</li></ul>                |
 
 #### [voice](#voice)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:voice([full] | [voice]) -> synthesizerObject | voice` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:voice([full] | [voice]) -> synthesizerObject | voice` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the active voice for a synthesizer.                                                                                         |
@@ -237,7 +237,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  `com.apple.speech.synthesis.voice.*name*`.  You can provide this suffix or not as you prefer when specifying a voice name.</li><li>The voice cannot be changed while the synthesizer is currently producing output.</li><li>If you change the voice while a synthesizer is paused, the current synthesis will be terminated and the voice will be changed.</li></ul>                |
 
 #### [volume](#volume)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.speech:volume([volume]) -> synthesizerObject | volume` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.speech:volume([volume]) -> synthesizerObject | volume` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the synthesizers speaking volume.                                                                                         |

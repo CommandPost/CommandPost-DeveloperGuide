@@ -19,7 +19,7 @@ Shortcut Commands
 ### Methods
 
 #### [bind](#bind)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut:bind(pressedFn, releasedFn, repeatedFn) -> shortcut` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.shortcut:bind(pressedFn, releasedFn, repeatedFn) -> shortcut` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This function binds the shortcut to a hotkey, with the specified callback functions for `pressedFn`, `releasedFn` and `repeatedFn`.                                                                                         |
@@ -28,7 +28,7 @@ Shortcut Commands
 | **Notes**                                            | <ul><li>If the shortcut is enabled, the hotkey will also be enabled at this point.</li></ul>                |
 
 #### [build](#build)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut:build(receiverFn) -> cp.commands.shortcut.builder` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.shortcut:build(receiverFn) -> cp.commands.shortcut.builder` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new shortcut builder.                                                                                         |
@@ -37,7 +37,7 @@ Shortcut Commands
 | **Notes**                                            | <ul><li>* If provided, the receiver function will be called when the shortcut has been configured, and passed the new</li><li>  shortcut. The result of that function will be returned to the next stage.</li><li>  If no `receiverFn` is provided, the shortcut will be returned directly.</li></ul>                |
 
 #### [enable](#enable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut:enable() - > shortcut` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.shortcut:enable() - > shortcut` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This enables the shortcut. If a hotkey has been bound, it will be enabled also.                                                                                         |
@@ -45,7 +45,7 @@ Shortcut Commands
 | **Returns**                                          | <ul><li>`self`</li></ul>          |
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut:new(command) -> shortcut` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.shortcut:new(command) -> shortcut` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new keyboard shortcut, attached to the specified `hs.commands.command`                                                                                         |
@@ -53,7 +53,7 @@ Shortcut Commands
 | **Returns**                                          | <ul><li>shortcut - The shortcut that was created.</li></ul>          |
 
 #### [trigger](#trigger)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut:trigger() -> shortcut` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.shortcut:trigger() -> shortcut` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This will trigger the keystroke specified in the shortcut.                                                                                         |

@@ -62,7 +62,7 @@ The following labels are used to describe tables which are used by functions and
 ### Functions
 
 #### [authorizationStatus](#authorizationstatus)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.authorizationStatus() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.authorizationStatus() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a string describing the authorization status of Hammerspoon's use of Location Services.                                                                                         |
@@ -71,7 +71,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>The first time you use a function which requires Location Services, you will be prompted to grant Hammerspoon access. If you wish to change this permission after the initial prompt, you may do so from the Location Services section of the Security & Privacy section in the System Preferences application.</li></ul>                |
 
 #### [distance](#distance)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.distance(from, to) -> meters` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.distance(from, to) -> meters` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Measures the distance between two points of latitude and longitude                                                                                         |
@@ -80,7 +80,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This function does not require Location Services to be enabled for Hammerspoon.</li></ul>                |
 
 #### [get](#get)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.get() -> locationTable or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.get() -> locationTable or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table representing the current location                                                                                         |
@@ -89,7 +89,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li><li>If access to Location Services is enabled for Hammerspoon, this function will return the most recent cached data for the computer's location.</li><li>  Internally, the Location Services cache is updated whenever additional WiFi networks are detected or lost (not necessarily joined). When update tracking is enabled with the [hs.location.start](#start) function, calculations based upon the RSSI of all currently seen networks are preformed more often to provide a more precise fix, but it's still based on the WiFi networks near you.</li></ul>                |
 
 #### [register](#register)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.register(tag, fn[, distance])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.register(tag, fn[, distance])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Registers a callback function to be called when the system location is updated                                                                                         |
@@ -97,7 +97,7 @@ The following labels are used to describe tables which are used by functions and
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [servicesEnabled](#servicesenabled)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.servicesEnabled() -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.servicesEnabled() -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the state of OS X Location Services                                                                                         |
@@ -105,7 +105,7 @@ The following labels are used to describe tables which are used by functions and
 | **Returns**                                          | <ul><li>True if Location Services are enabled, otherwise false</li></ul>          |
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.start() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.start() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Begins location tracking using OS X's Location Services so that registered callback functions can be invoked as the computer location changes.                                                                                         |
@@ -114,7 +114,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.stop()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.stop()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stops location tracking.  Registered callback functions will cease to receive notification of location changes.                                                                                         |
@@ -122,7 +122,7 @@ The following labels are used to describe tables which are used by functions and
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [sunrise](#sunrise)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.sunrise(latitude, longitude, offset[, date]) -> number or string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.sunrise(latitude, longitude, offset[, date]) -> number or string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the time of official sunrise for the supplied location                                                                                         |
@@ -131,7 +131,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>You can turn the return value into a more useful structure, with ```os.date("*t", returnvalue)```</li><li>For compatibility with the locationTable object returned by [hs.location.get](#get), this function can also be invoked as `hs.location.sunrise(locationTable, offset[, date])`.</li></ul>                |
 
 #### [sunset](#sunset)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.sunset(latitude, longitude, offset[, date]) -> number or string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.sunset(latitude, longitude, offset[, date]) -> number or string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the time of official sunset for the supplied location                                                                                         |
@@ -140,7 +140,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>You can turn the return value into a more useful structure, with ```os.date("*t", returnvalue)```</li><li>For compatibility with the locationTable object returned by [hs.location.get](#get), this function can also be invoked as `hs.location.sunset(locationTable, offset[, date])`.</li></ul>                |
 
 #### [unregister](#unregister)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.unregister(tag)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.unregister(tag)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unregisters a callback                                                                                         |
@@ -150,7 +150,7 @@ The following labels are used to describe tables which are used by functions and
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location.new() -> locationObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location.new() -> locationObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Create a new location object which can receive callbacks independant of other Hammerspoon use of Location Services.                                                                                         |
@@ -161,7 +161,7 @@ The following labels are used to describe tables which are used by functions and
 ### Methods
 
 #### [addMonitoredRegion](#addmonitoredregion)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:addMonitoredRegion(regionTable) -> locationObject | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:addMonitoredRegion(regionTable) -> locationObject | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a region to be monitored by Location Services                                                                                         |
@@ -170,7 +170,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li><li>If the `identifier` key is not provided, a new UUID string is generated and used as the identifier.</li><li>If the `identifier` key matches an already monitored region, this region will replace the existing one.</li></ul>                |
 
 #### [callback](#callback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:callback(fn | nil) -> locationObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:callback(fn | nil) -> locationObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or removes the callback function for this locationObject                                                                                         |
@@ -178,7 +178,7 @@ The following labels are used to describe tables which are used by functions and
 | **Returns**                                          | <ul><li>the locationObject</li></ul>          |
 
 #### [currentRegion](#currentregion)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:currentRegion() -> identifier | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:currentRegion() -> identifier | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the string identifier for the current region                                                                                         |
@@ -187,7 +187,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                |
 
 #### [distanceFrom](#distancefrom)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:distanceFrom(locationTable) -> distance | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:distanceFrom(locationTable) -> distance | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Enable callbacks for location changes/refinements for this locationObject                                                                                         |
@@ -196,7 +196,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                |
 
 #### [location](#location)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:location() -> locationTable | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:location() -> locationTable | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current location                                                                                         |
@@ -205,7 +205,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li><li>If access to Location Services is enabled for Hammerspoon, this function will return the most recent cached data for the computer's location.</li><li>  Internally, the Location Services cache is updated whenever additional WiFi networks are detected or lost (not necessarily joined). When update tracking is enabled with the [hs.location.start](#start) function, calculations based upon the RSSI of all currently seen networks are preformed more often to provide a more precise fix, but it's still based on the WiFi networks near you.</li></ul>                |
 
 #### [monitoredRegions](#monitoredregions)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:monitoredRegions() -> table | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:monitoredRegions() -> table | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a table containing the regionTables for the regions currently being monitored for this locationObject                                                                                         |
@@ -214,7 +214,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                |
 
 #### [removeMonitoredRegion](#removemonitoredregion)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:removeMonitoredRegion(identifier) -> locationObject | false | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:removeMonitoredRegion(identifier) -> locationObject | false | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes a monitored region from Location Services                                                                                         |
@@ -223,7 +223,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li><li>If the `identifier` key is not provided, a new UUID string is generated and used as the identifier.</li><li>If the `identifier` key matches an already monitored region, this region will replace the existing one.</li></ul>                |
 
 #### [startTracking](#starttracking)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:startTracking() -> locationObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:startTracking() -> locationObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Enable callbacks for location changes/refinements for this locationObject                                                                                         |
@@ -232,7 +232,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                |
 
 #### [stopTracking](#stoptracking)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.location:stopTracking() -> locationObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.location:stopTracking() -> locationObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Disable callbacks for location changes/refinements for this locationObject                                                                                         |

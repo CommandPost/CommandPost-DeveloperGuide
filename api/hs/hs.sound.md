@@ -31,7 +31,7 @@ Load/play/manipulate sound files
 ### Functions
 
 #### [soundFileTypes](#soundfiletypes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound.soundFileTypes() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound.soundFileTypes() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the supported sound file types                                                                                         |
@@ -40,7 +40,7 @@ Load/play/manipulate sound files
 | **Notes**                                            | <ul><li>This function is unlikely to be tremendously useful, as filename extensions are essentially meaningless. The data returned by `hs.sound.soundTypes()` is far more valuable</li></ul>                |
 
 #### [soundTypes](#soundtypes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound.soundTypes() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound.soundTypes() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the supported UTI sound file formats                                                                                         |
@@ -48,7 +48,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>A table containing the UTI sound formats that are supported by the system</li></ul>          |
 
 #### [systemSounds](#systemsounds)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound.systemSounds() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound.systemSounds() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a table of available system sounds                                                                                         |
@@ -59,7 +59,7 @@ Load/play/manipulate sound files
 ### Constructors
 
 #### [getByFile](#getbyfile)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound.getByFile(path) -> sound or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound.getByFile(path) -> sound or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates an `hs.sound` object from a file                                                                                         |
@@ -67,7 +67,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>An `hs.sound` object or nil if the file could not be loaded</li></ul>          |
 
 #### [getByName](#getbyname)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound.getByName(name) -> sound or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound.getByName(name) -> sound or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates an `hs.sound` object from a named sound                                                                                         |
@@ -78,7 +78,7 @@ Load/play/manipulate sound files
 ### Methods
 
 #### [currentTime](#currenttime)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:currentTime([seekTime]) -> soundObject | seconds` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:currentTime([seekTime]) -> soundObject | seconds` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the current seek offset within an `hs.sound` object.                                                                                         |
@@ -86,7 +86,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>If a parameter is provided, returns the sound object; otherwise returns the current position.</li></ul>          |
 
 #### [device](#device)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:device([deviceUID]) -> soundObject | UID string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:device([deviceUID]) -> soundObject | UID string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the playback device to use for an `hs.sound` object                                                                                         |
@@ -95,7 +95,7 @@ Load/play/manipulate sound files
 | **Notes**                                            | <ul><li>To obtain the UID of a sound device, see `hs.audiodevice:uid()`</li></ul>                |
 
 #### [duration](#duration)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:duration() -> seconds` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:duration() -> seconds` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the length of an `hs.sound` object                                                                                         |
@@ -103,7 +103,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>A number containing the length of the sound, in seconds</li></ul>          |
 
 #### [isPlaying](#isplaying)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:isPlaying() -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:isPlaying() -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the current playback state of an `hs.sound` object                                                                                         |
@@ -111,7 +111,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>A boolean, true if the sound is currently playing, otherwise false</li></ul>          |
 
 #### [loopSound](#loopsound)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:loopSound([loop]) -> soundObject | bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:loopSound([loop]) -> soundObject | bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the looping behaviour of an `hs.sound` object                                                                                         |
@@ -120,7 +120,7 @@ Load/play/manipulate sound files
 | **Notes**                                            | <ul><li>If you have registered a callback function for completion of a sound's playback, it will not be called when the sound loops</li></ul>                |
 
 #### [name](#name)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:name([soundName]) -> soundObject | name string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:name([soundName]) -> soundObject | name string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the name of an `hs.sound` object                                                                                         |
@@ -129,7 +129,7 @@ Load/play/manipulate sound files
 | **Notes**                                            | <ul><li>If remove the sound name by specifying `nil`, the sound will automatically be set to stop when Hammerspoon is reloaded.</li></ul>                |
 
 #### [pause](#pause)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:pause() -> soundObject | bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:pause() -> soundObject | bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Pauses an `hs.sound` object                                                                                         |
@@ -137,7 +137,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>The `hs.sound` object if the command was successful, otherwise false.</li></ul>          |
 
 #### [play](#play)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:play() -> soundObject | bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:play() -> soundObject | bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Plays an `hs.sound` object                                                                                         |
@@ -145,7 +145,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>The `hs.sound` object if the command was successful, otherwise false.</li></ul>          |
 
 #### [resume](#resume)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:resume() -> soundObject | bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:resume() -> soundObject | bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resumes playing a paused `hs.sound` object                                                                                         |
@@ -153,7 +153,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>The `hs.sound` object if the command was successful, otherwise false.</li></ul>          |
 
 #### [setCallback](#setcallback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:setCallback(function) -> soundObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:setCallback(function) -> soundObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or remove the callback for receiving completion notification for the sound object.                                                                                         |
@@ -162,7 +162,7 @@ Load/play/manipulate sound files
 | **Notes**                                            | <ul><li>the callback function should accept two parameters and return none.  The parameters passed to the callback function are:</li><li>  state - a boolean flag indicating if the sound completed playing.  Returns true if playback completes properly, or false if a decoding error occurs or if the sound is stopped early with `hs.sound:stop`.</li><li>  sound - the soundObject userdata</li></ul>                |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:stop() -> soundObject | bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:stop() -> soundObject | bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops playing an `hs.sound` object                                                                                         |
@@ -170,7 +170,7 @@ Load/play/manipulate sound files
 | **Returns**                                          | <ul><li>The `hs.sound` object if the command was successful, otherwise false.</li></ul>          |
 
 #### [stopOnReload](#stoponreload)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:stopOnReload([stopOnReload]) -> soundObject | bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:stopOnReload([stopOnReload]) -> soundObject | bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether a sound should be stopped when Hammerspoon reloads its configuration                                                                                         |
@@ -179,7 +179,7 @@ Load/play/manipulate sound files
 | **Notes**                                            | <ul><li>This method can only be used on a named `hs.sound` object, see `hs.sound:name()`</li></ul>                |
 
 #### [volume](#volume)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sound:volume([level]) -> soundObject | number` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sound:volume([level]) -> soundObject | number` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the playback volume of an `hs.sound` object                                                                                         |

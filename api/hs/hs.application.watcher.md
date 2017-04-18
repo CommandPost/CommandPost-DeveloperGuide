@@ -25,43 +25,43 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Constants
 
 #### [activated](#activated)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.activated` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.activated` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | An application has been activated (i.e. given keyboard/mouse focus)                                                                                         |
 
 #### [deactivated](#deactivated)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.deactivated` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.deactivated` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | An application has been deactivated (i.e. lost keyboard/mouse focus)                                                                                         |
 
 #### [hidden](#hidden)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.hidden` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.hidden` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | An application has been hidden                                                                                         |
 
 #### [launched](#launched)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.launched` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.launched` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | An application has been launched                                                                                         |
 
 #### [launching](#launching)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.launching` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.launching` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | An application is in the process of being launched                                                                                         |
 
 #### [terminated](#terminated)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.terminated` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.terminated` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | An application has been terminated                                                                                         |
 
 #### [unhidden](#unhidden)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.unhidden` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.unhidden` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | An application has been unhidden                                                                                         |
@@ -69,7 +69,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher.new(fn) -> watcher` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher.new(fn) -> watcher` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates an application event watcher                                                                                         |
@@ -80,7 +80,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher:start()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher:start()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the application watcher                                                                                         |
@@ -88,7 +88,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>The `hs.application.watcher` object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.application.watcher:stop()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.watcher:stop()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the application watcher                                                                                         |

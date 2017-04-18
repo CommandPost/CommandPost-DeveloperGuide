@@ -20,7 +20,7 @@ The `tileWindows` function in this module is primarily meant for use by `hs.wind
 ### Functions
 
 #### [tileWindows](#tilewindows)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.window.tiling.tileWindows(windows,rect[,desiredAspect[,processInOrder[,preserveRelativeArea[,animationDuration]]]])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.tiling.tileWindows(windows,rect[,desiredAspect[,processInOrder[,preserveRelativeArea[,animationDuration]]]])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Tile (or fit) windows into a rect                                                                                         |

@@ -15,7 +15,7 @@ Note: This extension works by controlling the OS X "Messages" app via AppleScrip
 ### Functions
 
 #### [SMS](#sms)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.messages.SMS(targetNumber, message)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.messages.SMS(targetNumber, message)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an SMS using SMS Relay                                                                                         |
@@ -23,7 +23,7 @@ Note: This extension works by controlling the OS X "Messages" app via AppleScrip
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [iMessage](#imessage)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.messages.iMessage(targetAddress, message)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.messages.iMessage(targetAddress, message)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an iMessage                                                                                         |

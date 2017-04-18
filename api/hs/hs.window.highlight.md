@@ -28,7 +28,7 @@ or automatically by passing an appropriate windowfilter (or a list of apps) to `
 ### Variables
 
 #### [ui](#ui)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.window.highlight.ui` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.highlight.ui` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Allows customization of the highlight overlays and behaviour.                                                                                         |
@@ -36,7 +36,7 @@ or automatically by passing an appropriate windowfilter (or a list of apps) to `
 ### Functions
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.window.highlight.start([windowfilterIsolate[, windowfilterOverlay]])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.highlight.start([windowfilterIsolate[, windowfilterOverlay]])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Starts the module                                                                                         |
@@ -45,7 +45,7 @@ or automatically by passing an appropriate windowfilter (or a list of apps) to `
 | **Notes**                                            | <ul><li>overlay mode is disabled by default - see `hs.window.highlight.ui.overlayColor`</li></ul>                |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.window.highlight.stop()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.highlight.stop()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stops the module and disables focused window highlighting (both "overlay" and "isolate" mode)                                                                                         |
@@ -53,7 +53,7 @@ or automatically by passing an appropriate windowfilter (or a list of apps) to `
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleIsolate](#toggleisolate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.window.highlight.toggleIsolate([v])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.highlight.toggleIsolate([v])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets or clears the user override for "isolate" mode.                                                                                         |

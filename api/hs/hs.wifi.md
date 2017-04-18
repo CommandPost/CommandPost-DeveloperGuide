@@ -25,7 +25,7 @@ Inspect WiFi networks
 ### Functions
 
 #### [associate](#associate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.associate(network, passphrase[, interface]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.associate(network, passphrase[, interface]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Connect the interface to a wireless network                                                                                         |
@@ -34,7 +34,7 @@ Inspect WiFi networks
 | **Notes**                                            | <ul><li>Enterprise WiFi networks are not currently supported. Please file an issue on GitHub if you need support for enterprise networks</li><li>This function blocks Hammerspoon until the operation is completed</li><li>If multiple access points are available with the same SSID, one will be chosen at random to connect to</li></ul>                |
 
 #### [availableNetworks](#availablenetworks)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.availableNetworks([interface]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.availableNetworks([interface]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a list of available WiFi networks                                                                                         |
@@ -43,7 +43,7 @@ Inspect WiFi networks
 | **Notes**                                            | <ul><li>WARNING: This function will block all Lua execution until the scan has completed. It's probably not very sensible to use this function very much, if at all.</li></ul>                |
 
 #### [currentNetwork](#currentnetwork)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.currentNetwork([interface]) -> string or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.currentNetwork([interface]) -> string or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of the current WiFi network                                                                                         |
@@ -51,7 +51,7 @@ Inspect WiFi networks
 | **Returns**                                          | <ul><li>A string containing the SSID of the WiFi network currently joined, or nil if no there is no WiFi connection</li></ul>          |
 
 #### [disassociate](#disassociate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.disassociate([interface]) -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.disassociate([interface]) -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Disconnect the interface from its current network.                                                                                         |
@@ -59,7 +59,7 @@ Inspect WiFi networks
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [interfaceDetails](#interfacedetails)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.interfaceDetails([interface]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.interfaceDetails([interface]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing details about the wireless interface.                                                                                         |
@@ -67,7 +67,7 @@ Inspect WiFi networks
 | **Returns**                                          | <ul><li>A table containing details about the interface.  The table will contain the following keys:</li><li>  active            - The interface has its corresponding network service enabled.</li><li>  activePHYMode     - The current active PHY mode for the interface.</li><li>  bssid             - The current basic service set identifier (BSSID) for the interface.</li><li>  cachedScanResults - A table containing the networks currently in the scan cache for the WLAN interface.  See [hs.wifi.backgroundScan](#backgroundScan) for details on the table format.</li><li>  configuration     - A table containing the current configuration for the given WLAN interface.  This table will contain the following keys:</li><li>    networkProfiles                    - A table containing an array of known networks for the interface.  Entries in the array will each contain the following keys:</li><li>      ssid     - The service set identifier (SSID) for the network profile.</li><li>      ssidData - The service set identifier (SSID) for the network, returned as data (1-32 octets).</li><li>      security - The security mode for the network profile.</li><li>    rememberJoinedNetworks             - A boolean flag indicating whether or not the AirPort client will remember all joined networks.</li><li>    requireAdministratorForAssociation - A boolean flag indicating whether or not changing the wireless network requires an Administrator password.</li><li>    requireAdministratorForIBSSMode    - A boolean flag indicating whether or not creating an IBSS (Ad Hoc) network requires an Administrator password.</li><li>    requireAdministratorForPower       - A boolean flag indicating whether or not changing the wireless power state requires an Administrator password.</li><li>  countryCode       - The current country code (ISO/IEC 3166-1:1997) for the interface.</li><li>  hardwareAddress   - The hardware media access control (MAC) address for the interface.</li><li>  interface         - The BSD name of the interface.</li><li>  interfaceMode     - The current mode for the interface.</li><li>  noise             - The current aggregate noise measurement (dBm) for the interface.</li><li>  power             - Whether or not the interface is currently powered on.</li><li>  rssi              - The current aggregate received signal strength indication (RSSI) measurement (dBm) for the interface.</li><li>  security          - The current security mode for the interface.</li><li>  ssid              - The current service set identifier (SSID) for the interface.</li><li>  ssidData          - The service set identifier (SSID) for the interface, returned as data (1-32 octets).</li><li>  supportedChannels - An array of channels supported by the interface for the active country code.  The array will contain entries with the following keys:</li><li>    band   - The channel band.</li><li>    number - The channel number.</li><li>    width  - The channel width.</li><li>  transmitPower     - The current transmit power (mW) for the interface. Returns 0 in the case of an error.</li><li>  transmitRate      - The current transmit rate (Mbps) for the interface.</li><li>  wlanChannel       - A table containing details about the channel the interface is on. The table will contain the following keys:</li><li>    band   - The channel band.</li><li>    number - The channel number.</li><li>    width  - The channel width.</li></ul>          |
 
 #### [interfaces](#interfaces)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.interfaces() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.interfaces() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a list of interface names for WLAN devices attached to the system                                                                                         |
@@ -76,7 +76,7 @@ Inspect WiFi networks
 | **Notes**                                            | <ul><li>For most systems, this will be one interface, but the result is still returned as an array.</li></ul>                |
 
 #### [setPower](#setpower)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.setPower(state, [interface]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.setPower(state, [interface]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Turns a wifi interface on or off                                                                                         |
@@ -86,7 +86,7 @@ Inspect WiFi networks
 ### Constructors
 
 #### [backgroundScan](#backgroundscan)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.backgroundScan(fn, [interface]) -> scanObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.backgroundScan(fn, [interface]) -> scanObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Perform a scan for available wifi networks in the background (non-blocking)                                                                                         |
@@ -97,7 +97,7 @@ Inspect WiFi networks
 ### Methods
 
 #### [isDone](#isdone)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi:isDone() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi:isDone() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not a scan object has completed its scan for wireless networks.                                                                                         |

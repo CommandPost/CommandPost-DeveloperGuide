@@ -14,7 +14,7 @@ Match Frame Tools for Final Cut Pro.
 ### Functions
 
 #### [getMulticamAngleFromSelectedClip](#getmulticamanglefromselectedclip)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.matchframe.getMulticamAngleFromSelectedClip() -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.matchframe.getMulticamAngleFromSelectedClip() -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get Multicam Angle From Selected Clip                                                                                         |
@@ -22,7 +22,7 @@ Match Frame Tools for Final Cut Pro.
 | **Returns**                                          | <ul><li>Angle or `false` on error</li></ul>          |
 
 #### [matchFrame](#matchframe)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.matchframe.matchFrame() -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.matchframe.matchFrame() -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a Single Match Frame.                                                                                         |
@@ -30,7 +30,7 @@ Match Frame Tools for Final Cut Pro.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [multicamMatchFrame](#multicammatchframe)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.matchframe.multicamMatchFrame(goBackToTimeline) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.matchframe.multicamMatchFrame(goBackToTimeline) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Multicam Match Frame                                                                                         |

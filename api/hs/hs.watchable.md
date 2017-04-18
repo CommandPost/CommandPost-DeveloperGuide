@@ -24,7 +24,7 @@ The goal is to provide a mechanism for sharing state information between separat
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable.new(path, [externalChanges]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable.new(path, [externalChanges]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a table that can be watched by other modules for key changes                                                                                         |
@@ -33,7 +33,7 @@ The goal is to provide a mechanism for sharing state information between separat
 | **Notes**                                            | <ul><li>This constructor is used by code which wishes to share state information which other code may register to watch.</li></ul>                |
 
 #### [watch](#watch)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable.watch(path, [key], callback) -> watchableObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable.watch(path, [key], callback) -> watchableObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a watcher that will be invoked when the specified key in the specified path is modified.                                                                                         |
@@ -44,7 +44,7 @@ The goal is to provide a mechanism for sharing state information between separat
 ### Methods
 
 #### [callback](#callback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable:callback(fn | nil) -> watchableObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable:callback(fn | nil) -> watchableObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Change or remove the callback function for the watchableObject.                                                                                         |
@@ -53,7 +53,7 @@ The goal is to provide a mechanism for sharing state information between separat
 | **Notes**                                            | <ul><li>see [hs.watchable.watch](#watch) for a description of the arguments the callback function should expect.</li></ul>                |
 
 #### [change](#change)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable:change([key], value) -> watchableObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable:change([key], value) -> watchableObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Externally change the value of the key-value pair being watched by the watchableObject                                                                                         |
@@ -62,7 +62,7 @@ The goal is to provide a mechanism for sharing state information between separat
 | **Notes**                                            | <ul><li>if external changes are not allowed for the specified path, this method generates an error</li></ul>                |
 
 #### [pause](#pause)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable:pause() -> watchableObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable:pause() -> watchableObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Temporarily stop notifications about the key-value pair(s) watched by this watchableObject.                                                                                         |
@@ -70,7 +70,7 @@ The goal is to provide a mechanism for sharing state information between separat
 | **Returns**                                          | <ul><li>the watchableObject</li></ul>          |
 
 #### [release](#release)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable:release() -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable:release() -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes the watchableObject so that key-value pairs watched by this object no longer generate notifications.                                                                                         |
@@ -78,7 +78,7 @@ The goal is to provide a mechanism for sharing state information between separat
 | **Returns**                                          | <ul><li>nil</li></ul>          |
 
 #### [resume](#resume)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable:resume() -> watchableObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable:resume() -> watchableObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resume notifications about the key-value pair(s) watched by this watchableObject which were previously paused.                                                                                         |
@@ -86,7 +86,7 @@ The goal is to provide a mechanism for sharing state information between separat
 | **Returns**                                          | <ul><li>the watchableObject</li></ul>          |
 
 #### [value](#value)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.watchable:value([key]) -> currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.watchable:value([key]) -> currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the current value for the key-value pair being watched by the watchableObject                                                                                         |

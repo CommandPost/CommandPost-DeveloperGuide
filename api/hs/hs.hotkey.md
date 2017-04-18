@@ -27,7 +27,7 @@ Create and manage global keyboard shortcuts
 ### Variables
 
 #### [alertDuration](#alertduration)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.alertDuration` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.alertDuration` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Duration of the alert shown when a hotkey created with a `message` parameter is triggered, in seconds. Default is 1.                                                                                         |
@@ -35,7 +35,7 @@ Create and manage global keyboard shortcuts
 ### Functions
 
 #### [deleteAll](#deleteall)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.deleteAll(mods, key)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.deleteAll(mods, key)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Deletes all previously set callbacks for a given keyboard combination                                                                                         |
@@ -43,7 +43,7 @@ Create and manage global keyboard shortcuts
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [disableAll](#disableall)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.disableAll(mods, key)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.disableAll(mods, key)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Disables all previously set callbacks for a given keyboard combination                                                                                         |
@@ -51,7 +51,7 @@ Create and manage global keyboard shortcuts
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [getHotkeys](#gethotkeys)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.getHotkeys() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.getHotkeys() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a list of all currently active hotkeys                                                                                         |
@@ -59,7 +59,7 @@ Create and manage global keyboard shortcuts
 | **Returns**                                          | <ul><li>A table containing the hotkeys that are active, i.e. enabled and not "shadowed", in the current context</li><li>   (usually, the global hotkey context, but it could be a modal hotkey context). Every element in the list</li><li>   is a table with two fields:</li><li>  idx - a string describing the keyboard combination for the hotkey</li><li>  msg - the hotkey message, if provided when the hotkey was created (prefixed with the keyboard combination)</li></ul>          |
 
 #### [showHotkeys](#showhotkeys)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.showHotkeys(mods, key) -> hs.hotkey object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.showHotkeys(mods, key) -> hs.hotkey object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates (and enables) a hotkey that shows all currently active hotkeys (i.e. enabled and not "shadowed"                                                                                         |
@@ -69,7 +69,7 @@ Create and manage global keyboard shortcuts
 ### Constructors
 
 #### [bind](#bind)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.bind(mods, key, message, pressedfn, releasedfn, repeatfn) -> hs.hotkey object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.bind(mods, key, message, pressedfn, releasedfn, repeatfn) -> hs.hotkey object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a hotkey and enables it immediately                                                                                         |
@@ -78,7 +78,7 @@ Create and manage global keyboard shortcuts
 | **Notes**                                            | <ul><li>This function is just a wrapper that performs `hs.hotkey.new(...):enable()`</li></ul>                |
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.new(mods, key, [message,] pressedfn, releasedfn, repeatfn) -> hs.hotkey object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.new(mods, key, [message,] pressedfn, releasedfn, repeatfn) -> hs.hotkey object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new hotkey                                                                                         |
@@ -89,7 +89,7 @@ Create and manage global keyboard shortcuts
 ### Methods
 
 #### [delete](#delete)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey:delete()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey:delete()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Disables and deletes a hotkey object                                                                                         |
@@ -97,7 +97,7 @@ Create and manage global keyboard shortcuts
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [disable](#disable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey:disable() -> hs.hotkey object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey:disable() -> hs.hotkey object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Disables a hotkey object                                                                                         |
@@ -105,7 +105,7 @@ Create and manage global keyboard shortcuts
 | **Returns**                                          | <ul><li>The `hs.hotkey` object for method chaining</li></ul>          |
 
 #### [enable](#enable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey:enable() -> hs.hotkey object | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey:enable() -> hs.hotkey object | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Enables a hotkey object                                                                                         |

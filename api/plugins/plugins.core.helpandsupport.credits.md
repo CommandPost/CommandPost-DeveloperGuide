@@ -12,7 +12,7 @@ Credits Menu Item.
 ### Functions
 
 #### [openCredits](#opencredits)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.helpandsupport.credits.openCredits() -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.helpandsupport.credits.openCredits() -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens CommandPost Credits Window                                                                                         |

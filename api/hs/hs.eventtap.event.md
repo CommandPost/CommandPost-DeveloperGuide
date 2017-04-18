@@ -34,14 +34,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Constants
 
 #### [properties](#properties)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event.properties -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event.properties -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing property types for use with `hs.eventtap.event:getProperty()` and `hs.eventtap.event:setProperty()`.  The table supports forward (label to number) and reverse (number to label) lookups to increase its flexibility.                                                                                         |
 | **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing `hs.eventtap.event.properties`.</li><li>In previous versions of Hammerspoon, property labels were defined with the labels in all lowercase.  This practice is deprecated, but an __index metamethod allows the lowercase labels to still be used; however a warning will be printed to the Hammerspoon console.  At some point, this may go away, so please update your code to follow the new format.</li></ul>                |
 
 #### [types](#types)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event.types -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event.types -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing event types to be used with `hs.eventtap.new(...)` and returned by `hs.eventtap.event:type()`.  The table supports forward (label to number) and reverse (number to label) lookups to increase its flexibility.                                                                                         |
@@ -50,7 +50,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Constructors
 
 #### [copy](#copy)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:copy() -> event` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:copy() -> event` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Duplicates an `hs.eventtap.event` event for further modification or injection                                                                                         |
@@ -58,7 +58,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A new `hs.eventtap.event` object</li></ul>          |
 
 #### [newKeyEvent](#newkeyevent)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event.newKeyEvent(mods, key, isdown) -> event` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event.newKeyEvent(mods, key, isdown) -> event` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a keyboard event                                                                                         |
@@ -66,7 +66,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>An `hs.eventtap.event` object</li></ul>          |
 
 #### [newMouseEvent](#newmouseevent)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event.newMouseEvent(eventtype, point[, modifiers) -> event` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event.newMouseEvent(eventtype, point[, modifiers) -> event` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new mouse event                                                                                         |
@@ -74,7 +74,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>An `hs.eventtap` object</li></ul>          |
 
 #### [newScrollEvent](#newscrollevent)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event.newScrollEvent(offsets, mods, unit) -> event` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event.newScrollEvent(offsets, mods, unit) -> event` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a scroll wheel event                                                                                         |
@@ -82,7 +82,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>An `hs.eventtap.event` object</li></ul>          |
 
 #### [newSystemKeyEvent](#newsystemkeyevent)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event.newSystemKeyEvent(key, isdown) -> event` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event.newSystemKeyEvent(key, isdown) -> event` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a keyboard event for special keys (e.g. media playback)                                                                                         |
@@ -93,7 +93,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [getButtonState](#getbuttonstate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:getButtonState(button) -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:getButtonState(button) -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the state of a mouse button in the event                                                                                         |
@@ -102,7 +102,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This method should only be called on mouse events</li></ul>                |
 
 #### [getCharacters](#getcharacters)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:getCharacters([clean]) -> string or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:getCharacters([clean]) -> string or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Unicode character, if any, represented by a keyDown or keyUp event.                                                                                         |
@@ -111,7 +111,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This method should only be used on keyboard events</li><li>If `clean` is true, all modifiers except for Shift are stripped from the character before converting to the Unicode character represented by the keypress.</li><li>If the keypress does not correspond to a valid Unicode character, an empty string is returned (e.g. if `clean` is false, then Opt-E will return an empty string, while Opt-Shift-E will return an accent mark).</li></ul>                |
 
 #### [getFlags](#getflags)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:getFlags() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:getFlags() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the keyboard modifiers of an event                                                                                         |
@@ -119,7 +119,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A table containing the keyboard modifiers that present in the event - i.e. zero or more of the following keys, each with a value of `true`:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li></ul>          |
 
 #### [getKeyCode](#getkeycode)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:getKeyCode() -> keycode` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:getKeyCode() -> keycode` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the raw keycode for the event                                                                                         |
@@ -128,7 +128,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This method should only be used on keyboard events</li></ul>                |
 
 #### [getProperty](#getproperty)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:getProperty(prop) -> number` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:getProperty(prop) -> number` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a property of the event                                                                                         |
@@ -137,7 +137,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The properties are `CGEventField` values, as documented at https://developer.apple.com/library/mac/documentation/Carbon/Reference/QuartzEventServicesRef/index.html#//apple_ref/c/tdef/CGEventField</li></ul>                |
 
 #### [getRawEventData](#getraweventdata)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:getRawEventData() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:getRawEventData() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns raw data about the event                                                                                         |
@@ -146,7 +146,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>Most of the data in `CGEventData` is already available through other methods, but is presented here without any cleanup or parsing.</li><li>This method is expected to be used mostly for testing and expanding the range of possibilities available with the hs.eventtap module.  If you find that you are regularly using specific data from this method for common or re-usable purposes, consider submitting a request for adding a more targeted method to hs.eventtap or hs.eventtap.event -- it will likely be more efficient and faster for common tasks, something eventtaps need to be to minimize affecting system responsiveness.</li></ul>                |
 
 #### [getType](#gettype)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:getType() -> number` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:getType() -> number` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the type of the event                                                                                         |
@@ -154,7 +154,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A number containing the type of the event, taken from `hs.eventtap.event.types`</li></ul>          |
 
 #### [post](#post)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:post([app])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:post([app])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Posts the event to the OS - i.e. emits the keyboard/mouse input defined by the event                                                                                         |
@@ -162,7 +162,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>The `hs.eventtap.event` object</li></ul>          |
 
 #### [setFlags](#setflags)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:setFlags(table)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:setFlags(table)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the keyboard modifiers of an event                                                                                         |
@@ -170,7 +170,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>The `hs.eventap.event` object.</li></ul>          |
 
 #### [setKeyCode](#setkeycode)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:setKeyCode(keycode)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:setKeyCode(keycode)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the raw keycode for the event                                                                                         |
@@ -179,7 +179,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This method should only be used on keyboard events</li></ul>                |
 
 #### [setProperty](#setproperty)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:setProperty(prop, value)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:setProperty(prop, value)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets a property of the event                                                                                         |
@@ -188,7 +188,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The properties are `CGEventField` values, as documented at https://developer.apple.com/library/mac/documentation/Carbon/Reference/QuartzEventServicesRef/index.html#//apple_ref/c/tdef/CGEventField</li></ul>                |
 
 #### [systemKey](#systemkey)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.eventtap.event:systemKey() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.event:systemKey() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the special key and its state if the event is a NSSystemDefined event of subtype AUX_CONTROL_BUTTONS (special-key pressed)                                                                                         |

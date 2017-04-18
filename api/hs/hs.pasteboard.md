@@ -38,7 +38,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 ### Functions
 
 #### [allContentTypes](#allcontenttypes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.allContentTypes([name]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.allContentTypes([name]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | An array whose elements are a table containing the content types for each element on the clipboard.                                                                                         |
@@ -46,7 +46,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>an array with each index representing an object on the pasteboard.  If the pasteboard contains only one element, this is equivalent to `{ hs.pasteboard.contentTypes(name) }`.</li></ul>          |
 
 #### [changeCount](#changecount)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.changeCount([name]) -> number` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.changeCount([name]) -> number` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the number of times the pasteboard owner has changed                                                                                         |
@@ -55,7 +55,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This is useful for seeing if the pasteboard has been updated by another process</li></ul>                |
 
 #### [clearContents](#clearcontents)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.clearContents([name])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.clearContents([name])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Clear the contents of the pasteboard                                                                                         |
@@ -63,7 +63,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [contentTypes](#contenttypes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.contentTypes([name]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.contentTypes([name]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Return the UTI strings of the data types for the first pasteboard item on the specified pasteboard.                                                                                         |
@@ -71,7 +71,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>a table containing the UTI strings of the data types for the first pasteboard item.</li></ul>          |
 
 #### [deletePasteboard](#deletepasteboard)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.deletePasteboard(name)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.deletePasteboard(name)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Deletes a custom pasteboard                                                                                         |
@@ -80,7 +80,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>You can not delete the system pasteboard, this function should only be called on custom pasteboards you have created</li></ul>                |
 
 #### [getContents](#getcontents)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.getContents([name]) -> string or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.getContents([name]) -> string or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the contents of the pasteboard                                                                                         |
@@ -88,7 +88,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A string containing the contents of the pasteboard, or nil if an error occurred</li></ul>          |
 
 #### [pasteboardTypes](#pasteboardtypes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.pasteboardTypes([name]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.pasteboardTypes([name]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Return the pasteboard type identifier strings for the specified pasteboard.                                                                                         |
@@ -96,7 +96,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>a table containing the pasteboard type identifier strings</li></ul>          |
 
 #### [readAllData](#readalldata)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readAllData([name]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readAllData([name]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns all values in the first item on the pasteboard in a table that maps a UTI value to the raw data of the item                                                                                         |
@@ -104,7 +104,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul></ul>          |
 
 #### [readArchiverDataForUTI](#readarchiverdataforuti)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readArchiverDataForUTI([name], uti) -> any` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readArchiverDataForUTI([name], uti) -> any` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the first item on the pasteboard with the specified UTI. The data on the pasteboard must be encoded as a keyed archive object conforming to NSKeyedArchiver.                                                                                         |
@@ -113,7 +113,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>NSKeyedArchiver specifies an architecture-independent format that is often used in OS X applications to store and transmit objects between applications and when storing data to a file. It works by recording information about the object types and key-value pairs which make up the objects being stored.</li><li>Only objects which have conversion functions built in to Hammerspoon can be converted. A string representation describing unrecognized types wil be returned. If you find a common data type that you believe may be of interest to Hammerspoon users, feel free to contribute a conversion function or make a request in the Hammerspoon Google group or Github site.</li><li>Some applications may define their own classes which can be archived.  Hammerspoon will be unable to recognize these types if the application does not make the object type available in one of its frameworks.  You *may* be able to load the necessary framework with `package.loadlib("/Applications/appname.app/Contents/Frameworks/frameworkname.framework/frameworkname", "*")` before retrieving the data, but a full representation of the data in Hammerspoon is probably not possible without support from the Application's developers.</li></ul>                |
 
 #### [readColor](#readcolor)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readColor([name], [all]) -> hs.drawing.color table or array of hs.drawing.color tables` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readColor([name], [all]) -> hs.drawing.color table or array of hs.drawing.color tables` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns one or more `hs.drawing.color` tables from the clipboard, or nil if no compatible objects are present.                                                                                         |
@@ -121,7 +121,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>By default the first color on the clipboard, or a table of all colors on the clipboard if the `all` parameter is provided and set to true.  Returns nil if no colors are present.</li></ul>          |
 
 #### [readDataForUTI](#readdataforuti)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readDataForUTI([name], uti) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readDataForUTI([name], uti) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the first item on the pasteboard with the specified UTI as raw data                                                                                         |
@@ -130,7 +130,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The UTI's of the items on the pasteboard can be determined with the [hs.pasteboard.allContentTypes](#allContentTypes) and [hs.pasteboard.contentTypes](#contentTypes) functions.</li></ul>                |
 
 #### [readImage](#readimage)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readImage([name], [all]) -> hs.image object or array of hs.image objects` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readImage([name], [all]) -> hs.image object or array of hs.image objects` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns one or more `hs.image` objects from the clipboard, or nil if no compatible objects are present.                                                                                         |
@@ -138,7 +138,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>By default the first image on the clipboard, or a table of all images on the clipboard if the `all` parameter is provided and set to true.  Returns nil if no images are present.</li></ul>          |
 
 #### [readPListForUTI](#readplistforuti)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readPListForUTI([name], uti) -> any` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readPListForUTI([name], uti) -> any` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the first item on the pasteboard with the specified UTI as a property list item                                                                                         |
@@ -147,7 +147,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The UTI's of the items on the pasteboard can be determined with the [hs.pasteboard.allContentTypes](#allContentTypes) and [hs.pasteboard.contentTypes](#contentTypes) functions.</li><li>Property lists consist only of certain types of data: tables, strings, numbers, dates, binary data, and Boolean values.</li></ul>                |
 
 #### [readSound](#readsound)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readSound([name], [all]) -> hs.sound object or array of hs.sound objects` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readSound([name], [all]) -> hs.sound object or array of hs.sound objects` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns one or more `hs.sound` objects from the clipboard, or nil if no compatible objects are present.                                                                                         |
@@ -155,7 +155,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>By default the first sound on the clipboard, or a table of all sounds on the clipboard if the `all` parameter is provided and set to true.  Returns nil if no sounds are present.</li></ul>          |
 
 #### [readString](#readstring)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readString([name], [all]) -> string or array of strings` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readString([name], [all]) -> string or array of strings` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns one or more strings from the clipboard, or nil if no compatible objects are present.                                                                                         |
@@ -164,7 +164,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>almost all string and styledText objects are internally convertible and will be available with this method as well as [hs.pasteboard.readStyledText](#readStyledText). If the item is actually an `hs.styledtext` object, the string will be just the text of the object.</li></ul>                |
 
 #### [readStyledText](#readstyledtext)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readStyledText([name], [all]) -> hs.styledtext object or array of hs.styledtext objects` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readStyledText([name], [all]) -> hs.styledtext object or array of hs.styledtext objects` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns one or more `hs.styledtext` objects from the clipboard, or nil if no compatible objects are present.                                                                                         |
@@ -173,7 +173,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>almost all string and styledText objects are internally convertible and will be available with this method as well as [hs.pasteboard.readString](#readString). If the item on the clipboard is actually just a string, the `hs.styledtext` object representation will have no attributes set</li></ul>                |
 
 #### [readURL](#readurl)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.readURL([name], [all]) -> string or array of strings representing file or resource urls` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.readURL([name], [all]) -> string or array of strings representing file or resource urls` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns one or more strings representing file or resource urls from the clipboard, or nil if no compatible objects are present.                                                                                         |
@@ -181,7 +181,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>By default the first url on the clipboard, or a table of all urls on the clipboard if the `all` parameter is provided and set to true.  Returns nil if no urls are present.</li></ul>          |
 
 #### [setContents](#setcontents)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.setContents(contents[, name]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.setContents(contents[, name]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the contents of the pasteboard                                                                                         |
@@ -189,7 +189,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>True if the operation succeeded, otherwise false</li></ul>          |
 
 #### [typesAvailable](#typesavailable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.typesAvailable([name]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.typesAvailable([name]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table indicating what content types are available on the pasteboard.                                                                                         |
@@ -198,7 +198,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>almost all string and styledText objects are internally convertible and will return true for both keys</li><li>  if the item on the clipboard is actually just a string, the `hs.styledtext` object representation will have no attributes set</li><li>  if the item is actually an `hs.styledtext` object, the string representation will be the text without any attributes.</li></ul>                |
 
 #### [uniquePasteboard](#uniquepasteboard)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.uniquePasteboard() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.uniquePasteboard() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the name of a new pasteboard with a name that is guaranteed to be unique with respect to other pasteboards on the computer.                                                                                         |
@@ -207,7 +207,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>to properly manage system resources, you should release the created pasteboard with [hs.pasteboard.deletePasteboard](#deletePasteboard) when you are certain that it is no longer necessary.</li></ul>                |
 
 #### [writeAllData](#writealldata)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.writeAllData([name], table) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.writeAllData([name], table) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stores in the pasteboard a given table of UTI to data mapping all at once                                                                                         |
@@ -215,7 +215,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul></ul>          |
 
 #### [writeArchiverDataForUTI](#writearchiverdataforuti)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.writeArchiverDataForUTI([name], uti, data, [add]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.writeArchiverDataForUTI([name], uti, data, [add]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the pasteboard to the contents of the data and assigns its type to the specified UTI. The data will be encoded as an archive conforming to NSKeyedArchiver.                                                                                         |
@@ -224,7 +224,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>NSKeyedArchiver specifies an architecture-independent format that is often used in OS X applications to store and transmit objects between applications and when storing data to a file. It works by recording information about the object types and key-value pairs which make up the objects being stored.</li><li>Only objects which have conversion functions built in to Hammerspoon can be converted.</li></ul>                |
 
 #### [writeDataForUTI](#writedataforuti)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.writeDataForUTI([name], uti, data, [add]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.writeDataForUTI([name], uti, data, [add]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the pasteboard to the contents of the data and assigns its type to the specified UTI.                                                                                         |
@@ -233,7 +233,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The UTI's of the items on the pasteboard can be determined with the [hs.pasteboard.allContentTypes](#allContentTypes) and [hs.pasteboard.contentTypes](#contentTypes) functions.</li></ul>                |
 
 #### [writeObjects](#writeobjects)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.writeObjects(object, [name]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.writeObjects(object, [name]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the pasteboard contents to the object or objects specified.                                                                                         |
@@ -242,7 +242,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>Most applications can only receive the first item on the clipboard.  Multiple items on a clipboard are most often used for intra-application communication where the sender and receiver are specifically written with multiple objects in mind.</li></ul>                |
 
 #### [writePListForUTI](#writeplistforuti)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.pasteboard.writePListForUTI([name], uti, data, [add]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.pasteboard.writePListForUTI([name], uti, data, [add]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the pasteboard to the contents of the data and assigns its type to the specified UTI.                                                                                         |

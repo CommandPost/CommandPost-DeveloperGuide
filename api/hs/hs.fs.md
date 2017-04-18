@@ -38,7 +38,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 ### Functions
 
 #### [attributes](#attributes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.attributes(filepath [, aName]) -> table or string or nil,error` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.attributes(filepath [, aName]) -> table or string or nil,error` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the attributes of a file                                                                                         |
@@ -47,7 +47,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Notes**                                            | <ul><li>This function uses `stat()` internally thus if the given filepath is a symbolic link, it is followed (if it points to another link the chain is followed recursively) and the information is about the file it refers to. To obtain information about the link itself, see function `hs.fs.symlinkAttributes()`</li></ul>                |
 
 #### [chdir](#chdir)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.chdir(path) -> true or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.chdir(path) -> true or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Changes the current working directory to the given path.                                                                                         |
@@ -55,7 +55,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>If successful, returns true, otherwise returns nil and an error string</li></ul>          |
 
 #### [currentDir](#currentdir)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.currentDir() -> string or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.currentDir() -> string or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the current working directory                                                                                         |
@@ -63,7 +63,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>A string containing the current working directory, or if an error occured, nil and an error string</li></ul>          |
 
 #### [dir](#dir)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.dir(path) -> iter_fn, dir_obj` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.dir(path) -> iter_fn, dir_obj` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates an iterator for walking a filesystem path                                                                                         |
@@ -72,7 +72,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Notes**                                            | <ul><li>The data object should be passed to the iterator function. Each call will return either a string containing the name of an entry in the directory, or nil if there are no more entries.</li><li>Iteration can also be performed by calling `:next()` on the data object. Note that if you do this, you must call `:close()` on the object when you have finished</li><li>This function will raise a Lua error if it cannot iterate the supplied path</li></ul>                |
 
 #### [fileUTI](#fileuti)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.fileUTI(path) -> string or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.fileUTI(path) -> string or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Uniform Type Identifier for the file location specified.                                                                                         |
@@ -80,7 +80,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>a string containing the Uniform Type Identifier for the file location specified or nil if an error occured</li></ul>          |
 
 #### [fileUTIalternate](#fileutialternate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.fileUTIalternate(fileUTI, type) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.fileUTIalternate(fileUTI, type) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the fileUTI's equivalent form in an alternate type specification format.                                                                                         |
@@ -88,7 +88,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>the file UTI in the alternate format or nil if the UTI does not have an alternate of the specified type.</li></ul>          |
 
 #### [link](#link)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.link(old, new[, symlink]) -> true or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.link(old, new[, symlink]) -> true or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a link                                                                                         |
@@ -96,7 +96,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>True if the link was created, otherwise nil and an error string</li></ul>          |
 
 #### [lock](#lock)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.lock(filehandle, mode[, start[, length]]) -> true or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.lock(filehandle, mode[, start[, length]]) -> true or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Locks a file, or part of it                                                                                         |
@@ -104,7 +104,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>True if the lock was obtained successfully, otherwise nil and an error string</li></ul>          |
 
 #### [lockDir](#lockdir)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.lockDir(path, [seconds_stale]) -> lock or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.lockDir(path, [seconds_stale]) -> lock or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Locks a directory                                                                                         |
@@ -113,7 +113,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Notes**                                            | <ul><li>This is not a low level OS feature, the lock is actually a file created in the path, called `lockfile.lfs`, so the directory must be writable for this function to succeed</li><li>The returned lock object can be freed with ```lock:free()```</li><li>If the lock already exists and is not stale, the error string returned will be "File exists"</li></ul>                |
 
 #### [mkdir](#mkdir)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.mkdir(dirname) -> true or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.mkdir(dirname) -> true or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new directory                                                                                         |
@@ -121,7 +121,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>True if the directory was created, otherwise nil and an error string</li></ul>          |
 
 #### [pathToAbsolute](#pathtoabsolute)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.pathToAbsolute(filepath) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.pathToAbsolute(filepath) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the absolute path of a given path                                                                                         |
@@ -129,7 +129,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>A string containing the absolute path of `filepath` (i.e. one that doesn't intolve `.`, `..` or symlinks)</li><li>Note that symlinks will be resolved to their target file</li></ul>          |
 
 #### [rmdir](#rmdir)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.rmdir(dirname) -> true or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.rmdir(dirname) -> true or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes an existing directory                                                                                         |
@@ -137,7 +137,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>True if the directory was removed, otherwise nil and an error string</li></ul>          |
 
 #### [symlinkAttributes](#symlinkattributes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.symlinkAttributes (filepath [, aname]) -> table or string or nil,error` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.symlinkAttributes (filepath [, aname]) -> table or string or nil,error` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the attributes of a symbolic link                                                                                         |
@@ -146,7 +146,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Notes**                                            | <ul><li>The return values for this function are identical to those provided by `hs.fs.attributes()`</li></ul>                |
 
 #### [tagsAdd](#tagsadd)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.tagsAdd(filepath, tags)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.tagsAdd(filepath, tags)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds one or more tags to the Finder tags of a file                                                                                         |
@@ -154,7 +154,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [tagsGet](#tagsget)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.tagsGet(filepath) -> table or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.tagsGet(filepath) -> table or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Finder tags of a file                                                                                         |
@@ -162,7 +162,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>A table containing the list of the file's tags, or nil if an error occurred</li></ul>          |
 
 #### [tagsRemove](#tagsremove)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.tagsRemove(filepath, tags)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.tagsRemove(filepath, tags)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes Finder tags from a file                                                                                         |
@@ -170,7 +170,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [tagsSet](#tagsset)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.tagsSet(filepath, tags)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.tagsSet(filepath, tags)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the Finder tags of a file, removing any that are already set                                                                                         |
@@ -178,7 +178,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [temporaryDirectory](#temporarydirectory)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.temporaryDirectory() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.temporaryDirectory() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the path of the temporary directory for the current user.                                                                                         |
@@ -186,7 +186,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>The path to the system designated temporary directory for the current user.</li></ul>          |
 
 #### [touch](#touch)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.touch(filepath [, atime [, mtime]]) -> true or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.touch(filepath [, atime [, mtime]]) -> true or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the access and modification times of a file                                                                                         |
@@ -194,7 +194,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>True if the operation was successful, otherwise nil and an error string</li></ul>          |
 
 #### [unlock](#unlock)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.fs.unlock(filehandle[, start[, length]]) -> true or (nil,error)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.unlock(filehandle[, start[, length]]) -> true or (nil,error)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unlocks a file or a part of it.                                                                                         |

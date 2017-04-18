@@ -25,7 +25,7 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.modal.new(mods, key, message) -> hs.hotkey.modal object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.modal.new(mods, key, message) -> hs.hotkey.modal object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new modal state, optionally with a global keyboard combination to trigger it                                                                                         |
@@ -36,7 +36,7 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
 ### Methods
 
 #### [bind](#bind)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.modal:bind(mods, key, message, pressedfn, releasedfn, repeatfn) -> hs.hotkey.modal object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.modal:bind(mods, key, message, pressedfn, releasedfn, repeatfn) -> hs.hotkey.modal object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a hotkey that is enabled/disabled as the modal is entered/exited                                                                                         |
@@ -44,7 +44,7 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
 | **Returns**                                          | <ul><li>The `hs.hotkey.modal` object for method chaining</li></ul>          |
 
 #### [enter](#enter)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.modal:enter() -> hs.hotkey.modal object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.modal:enter() -> hs.hotkey.modal object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Enters a modal state                                                                                         |
@@ -53,7 +53,7 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
 | **Notes**                                            | <ul><li>This method will enable all of the hotkeys defined in the modal state via `hs.hotkey.modal:bind()`,</li><li>   and disable the hotkey that entered the modal state (if one was defined)</li><li>If the modal state was created with a keyboard combination, this method will be called automatically</li></ul>                |
 
 #### [entered](#entered)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.modal:entered()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.modal:entered()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Optional callback for when a modal is entered                                                                                         |
@@ -62,7 +62,7 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
 | **Notes**                                            | <ul><li>This is a pre-existing function that you should override if you need to use it; the default implementation does nothing.</li></ul>                |
 
 #### [exit](#exit)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.modal:exit() -> hs.hotkey.modal object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.modal:exit() -> hs.hotkey.modal object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Exits a modal state                                                                                         |
@@ -71,7 +71,7 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
 | **Notes**                                            | <ul><li>This method will disable all of the hotkeys defined in the modal state, and enable the hotkey for entering the modal state (if one was defined)</li></ul>                |
 
 #### [exited](#exited)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.hotkey.modal:exited()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hotkey.modal:exited()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Optional callback for when a modal is exited                                                                                         |

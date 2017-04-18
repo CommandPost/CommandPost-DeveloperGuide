@@ -15,7 +15,7 @@ delayed, up to a finite number of loops.
 ### Functions
 
 #### [doUntil](#dountil)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.just.doUntil(actionFn, period, loops) -> result` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.just.doUntil(actionFn, period, loops) -> result` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs an `action` function, looping until the result of the function evaluates to `true` (or a non-nil value).                                                                                         |
@@ -23,7 +23,7 @@ delayed, up to a finite number of loops.
 | **Returns**                                          | <ul><li>The last return value of the action function.</li></ul>          |
 
 #### [doWhile](#dowhile)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.just.doWhile(actionFn, period, loops) -> UI` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.just.doWhile(actionFn, period, loops) -> UI` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs an 'action' function, looping while the result of the function evaluates to 'true'.                                                                                         |
@@ -31,7 +31,7 @@ delayed, up to a finite number of loops.
 | **Returns**                                          | <ul><li>The last return value of the action function.</li></ul>          |
 
 #### [wait](#wait)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.just.wait(integer) -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.just.wait(integer) -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Pauses the application for the specified number of seconds.                                                                                         |

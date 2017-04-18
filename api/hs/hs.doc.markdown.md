@@ -18,7 +18,7 @@ The Lua wrapper portion is licensed under the MIT license by the Hammerspoon dev
 ### Functions
 
 #### [convert](#convert)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.doc.markdown.convert(markdown, [type]) -> output` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.markdown.convert(markdown, [type]) -> output` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts markdown encoded text to html or plaintext.                                                                                         |

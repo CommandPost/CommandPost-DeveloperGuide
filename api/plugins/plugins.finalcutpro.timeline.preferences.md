@@ -13,7 +13,7 @@ Final Cut Pro Timeline Preferences.
 ### Functions
 
 #### [getAutoRenderDelay](#getautorenderdelay)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.preferences.getAutoRenderDelay() -> number` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.preferences.getAutoRenderDelay() -> number` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the 'FFAutoRenderDelay' value from the Final Cut Pro Preferences file.                                                                                         |
@@ -21,7 +21,7 @@ Final Cut Pro Timeline Preferences.
 | **Returns**                                          | <ul><li>'FFAutoRenderDelay' value as number.</li></ul>          |
 
 #### [toggleBackgroundRender](#togglebackgroundrender)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.preferences.toggleBackgroundRender(optionalValue) -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.preferences.toggleBackgroundRender(optionalValue) -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles Background Render in Final Cut Pro.                                                                                         |

@@ -14,7 +14,7 @@ Timeline Contents Module.
 ### Functions
 
 #### [clipsUI](#clipsui)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.main.TimelineContents:clipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.main.TimelineContents:clipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the list of clips in the Timeline.                                                                                         |
@@ -22,7 +22,7 @@ Timeline Contents Module.
 | **Returns**                                          | <ul><li>The table of axuielements that match the conditions</li></ul>          |
 
 #### [playheadClipsUI](#playheadclipsui)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.main.TimelineContents:playheadClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.main.TimelineContents:playheadClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table array containing the list of clips in the Timeline under the playhead, ordered with the                                                                                         |
@@ -30,7 +30,7 @@ Timeline Contents Module.
 | **Returns**                                          | <ul><li>The table of axuielements that match the conditions</li></ul>          |
 
 #### [selectedClipsUI](#selectedclipsui)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.main.TimelineContents:selectedClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.main.TimelineContents:selectedClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the list of selected clips.                                                                                         |

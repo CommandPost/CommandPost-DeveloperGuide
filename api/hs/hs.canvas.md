@@ -82,19 +82,19 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 ### Constants
 
 #### [compositeTypes[]](#compositetypes[])
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.compositeTypes[]` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.compositeTypes[]` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing the possible compositing rules for elements within the canvas.                                                                                         |
 
 #### [windowBehaviors[]](#windowbehaviors[])
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.windowBehaviors[]` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.windowBehaviors[]` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Array of window behavior labels for determining how a canvas or drawing object is handled in Spaces and Exposé                                                                                         |
 
 #### [windowLevels](#windowlevels)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.windowLevels` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.windowLevels` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table of predefined window levels usable with [hs.canvas:level](#level)                                                                                         |
@@ -103,7 +103,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 ### Functions
 
 #### [defaultTextStyle](#defaulttextstyle)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.defaultTextStyle() -> `hs.styledtext` attributes table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.defaultTextStyle() -> `hs.styledtext` attributes table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the default font, size, color, and paragraphStyle used by `hs.canvas` for text drawing objects.                                                                                         |
@@ -112,7 +112,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>This method is intended to be used in conjunction with `hs.styledtext` to create styledtext objects that are based on, or a slight variation of, the defaults used by `hs.canvas`.</li></ul>                |
 
 #### [disableScreenUpdates](#disablescreenupdates)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.disableScreenUpdates() -> None` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.disableScreenUpdates() -> None` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Tells the OS X window server to pause updating the physical displays for a short while.                                                                                         |
@@ -121,7 +121,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be balanced with a call to [hs.canvas.enableScreenUpdates](#enableScreenUpdates) when your updates have been completed.  Failure to do so will be logged in the system logs.</li></ul>                |
 
 #### [elementSpec](#elementspec)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.elementSpec() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.elementSpec() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the list of attributes and their specifications that are recognized for canvas elements by this module.                                                                                         |
@@ -130,7 +130,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>This is primarily for debugging purposes and may be removed in the future.</li></ul>                |
 
 #### [enableScreenUpdates](#enablescreenupdates)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.enableScreenUpdates() -> None` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.enableScreenUpdates() -> None` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Tells the OS X window server to resume updating the physical displays after a previous pause.                                                                                         |
@@ -139,7 +139,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>In conjunction with [hs.canvas.disableScreenUpdates](#disableScreenUpdates), this method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be preceded by a call to [hs.canvas.disableScreenUpdates](#disableScreenUpdates).  Failure to do so will be logged in the system logs.</li></ul>                |
 
 #### [help](#help)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.help([attribute]) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.help([attribute]) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Provides specification information for the recognized attributes, or the specific attribute specified.                                                                                         |
@@ -149,7 +149,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.new(rect) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.new(rect) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Create a new canvas object at the specified coordinates                                                                                         |
@@ -160,19 +160,19 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 ### Fields
 
 #### [attributes](#attributes)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.attributes` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.attributes` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Canvas Element Attributes                                                                                         |
 
 #### [object[index]](#object[index])
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.object[index]` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.object[index]` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | An array-like method for accessing the attributes for the canvas element at the specified index                                                                                         |
 
 #### [percentages](#percentages)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.percentages` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.percentages` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Canvas attributes which specify the location and size of canvas elements can be specified with an absolute position or as a percentage of the canvas size.                                                                                         |
@@ -180,7 +180,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 ### Methods
 
 #### [alpha](#alpha)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:alpha([alpha]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:alpha([alpha]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the alpha level of the window containing the canvasObject.                                                                                         |
@@ -188,7 +188,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>If an argument is provided, the canvas object; otherwise the current value.</li></ul>          |
 
 #### [appendElements](#appendelements)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:appendElements(element, ...) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:appendElements(element, ...) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Appends the elements specified to the canvas.                                                                                         |
@@ -197,7 +197,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>You can also specify multiple elements in a table as an array, where each index in the table contains an element table, and use the array as a single argument to this method if this style works better in your code.</li></ul>                |
 
 #### [assignElement](#assignelement)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:assignElement(elementTable, [index]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:assignElement(elementTable, [index]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Assigns a new element to the canvas at the specified index.                                                                                         |
@@ -206,7 +206,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>When the index specified is the canvas element count + 1, the behavior of this method is the same as [hs.canvas:insertElement](#insertElement); i.e. it adds the new element to the end of the currently defined element list.</li></ul>                |
 
 #### [behavior](#behavior)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:behavior([behavior]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:behavior([behavior]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the window behavior settings for the canvas object using labels defined in [hs.canvas.windowBehaviors](#windowBehaviors).                                                                                         |
@@ -214,7 +214,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>if an argument is provided, then the canvasObject is returned; otherwise the current behavior value is returned.</li></ul>          |
 
 #### [behaviorAsLabels](#behavioraslabels)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:behaviorAsLabels(behaviorTable) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:behaviorAsLabels(behaviorTable) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the window behavior settings for the canvas object using labels defined in [hs.canvas.windowBehaviors](#windowBehaviors).                                                                                         |
@@ -222,7 +222,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>If an argument is provided, the canvas object; otherwise the current value as a table of strings.</li></ul>          |
 
 #### [bringToFront](#bringtofront)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:bringToFront([aboveEverything]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:bringToFront([aboveEverything]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Places the canvas object on top of normal windows                                                                                         |
@@ -230,7 +230,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>The canvas object</li></ul>          |
 
 #### [canvasDefaultFor](#canvasdefaultfor)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:canvasDefaultFor(keyName, [newValue]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:canvasDefaultFor(keyName, [newValue]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the element default specified by keyName.                                                                                         |
@@ -238,7 +238,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>Not all keys will apply to all element types.</li><li>Currently set and built-in defaults may be retrieved in a table with [hs.canvas:canvasDefaults](#canvasDefaults).</li></ul>                |
 
 #### [canvasDefaultKeys](#canvasdefaultkeys)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:canvasDefaultKeys([module]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:canvasDefaultKeys([module]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a list of the key names for the attributes set for the canvas defaults.                                                                                         |
@@ -246,7 +246,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>a table containing the key names for the defaults which are set for this canvas. May also optionally include key names for all attributes which have a default value defined by the module.</li></ul>          |
 
 #### [canvasDefaults](#canvasdefaults)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:canvasDefaults([module]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:canvasDefaults([module]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get a table of the default key-value pairs which apply to the canvas.                                                                                         |
@@ -255,7 +255,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>Not all keys will apply to all element types.</li><li>To change the defaults for the canvas, use [hs.canvas:canvasDefaultFor](#canvasDefaultFor).</li></ul>                |
 
 #### [canvasElements](#canvaselements)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:canvasElements() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:canvasElements() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an array containing the elements defined for this canvas.  Each array entry will be a table containing the key-value pairs which have been set for that canvas element.                                                                                         |
@@ -263,7 +263,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>an array of element tables which are defined for the canvas.</li></ul>          |
 
 #### [canvasMouseEvents](#canvasmouseevents)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:canvasMouseEvents([down], [up], [enterExit], [move]) -> canvasObject | current values` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:canvasMouseEvents([down], [up], [enterExit], [move]) -> canvasObject | current values` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether or not regions of the canvas which are not otherwise covered by an element with mouse tracking enabled should generate a callback for mouse events.                                                                                         |
@@ -272,7 +272,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>Each value that you wish to set must be provided in the order given above, but you may specify a position as `nil` to indicate that whatever it's current state, no change should be applied.  For example, to activate a callback for entering and exiting the canvas without changing the current callback status for up or down button clicks, you could use: `hs.canvas:canvasMouseTracking(nil, nil, true)`.</li></ul>                |
 
 #### [clickActivating](#clickactivating)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:clickActivating([flag]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:clickActivating([flag]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether or not clicking on a canvas with a click callback defined should bring all of Hammerspoon's open windows to the front.                                                                                         |
@@ -281,7 +281,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>Setting this to false changes a canvas object's AXsubrole value and may affect the results of filters used with `hs.window.filter`, depending upon how they are defined.</li></ul>                |
 
 #### [copy](#copy)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:copy() -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:copy() -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a copy of the canvas.                                                                                         |
@@ -290,7 +290,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>The copy of the canvas will be identical in all respectes except:</li><li>  The new canvas will not have a callback function assigned, even if the original canvas does.</li><li>  The new canvas will not initially be visible, even if the original is.</li><li>The new canvas is an independant entity -- any subsequent changes to either canvas will not be reflected in the other canvas.</li></ul>                |
 
 #### [delete](#delete)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:delete([fadeOutTime]) -> none` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:delete([fadeOutTime]) -> none` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Destroys the canvas object, optionally fading it out first (if currently visible).                                                                                         |
@@ -299,7 +299,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>This method is automatically called during garbage collection, notably during a Hammerspoon termination or reload, with a fade time of 0.</li></ul>                |
 
 #### [elementAttribute](#elementattribute)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:elementAttribute(index, key, [value]) -> canvasObject | current value` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:elementAttribute(index, key, [value]) -> canvasObject | current value` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the attribute `key` for the canvas element at the specified index.                                                                                         |
@@ -307,7 +307,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>if a value for the attribute is specified, returns the canvas object; otherwise returns the current value for the specified attribute.</li></ul>          |
 
 #### [elementBounds](#elementbounds)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:elementBounds(index) -> rectTable` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:elementBounds(index) -> rectTable` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the smallest rectangle which can fully contain the canvas element at the specified index.                                                                                         |
@@ -316,7 +316,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>For many elements, this will be the same as the element frame.  For items without a frame (e.g. `segments`, `circle`, etc.) this will be the smallest rectangle which can fully contain the canvas element as specified by it's attributes.</li></ul>                |
 
 #### [elementCount](#elementcount)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:elementCount() -> integer` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:elementCount() -> integer` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the number of elements currently defined for the canvas object.                                                                                         |
@@ -324,7 +324,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>the number of elements currently defined for the canvas object.</li></ul>          |
 
 #### [elementKeys](#elementkeys)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:elementKeys(index, [optional]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:elementKeys(index, [optional]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a list of the key names for the attributes set for the canvas element at the specified index.                                                                                         |
@@ -333,7 +333,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>Any attribute which has been explicitly set for the element will be included in the key list (even if it is ignored for the element type).  If the `optional` flag is set to true, the *additional* attribute names added to the list will only include those which are relevant to the element type.</li></ul>                |
 
 #### [frame](#frame)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:frame([rect]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:frame([rect]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the frame of the canvasObject.                                                                                         |
@@ -342,7 +342,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>a rect-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the canvas (keys `x`  and `y`) and the new size (keys `h` and `w`).  The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.</li></ul>                |
 
 #### [hide](#hide)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:hide([fadeOutTime]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:hide([fadeOutTime]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the canvas object                                                                                         |
@@ -350,7 +350,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>The canvas object</li></ul>          |
 
 #### [imageFromCanvas](#imagefromcanvas)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:imageFromCanvas() -> hs.image object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:imageFromCanvas() -> hs.image object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an image of the canvas contents as an `hs.image` object.                                                                                         |
@@ -359,7 +359,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>The canvas does not have to be visible in order for an image to be generated from it.</li></ul>                |
 
 #### [insertElement](#insertelement)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:insertElement(elementTable, [index]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:insertElement(elementTable, [index]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Insert a new element into the canvas at the specified index.                                                                                         |
@@ -368,7 +368,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>see also [hs.canvas:assignElement](#assignElement).</li></ul>                |
 
 #### [isOccluded](#isoccluded)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:isOccluded() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:isOccluded() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not the canvas is currently occluded (hidden by other windows, off screen, etc).                                                                                         |
@@ -377,7 +377,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>If any part of the canvas is visible (even if that portion of the canvas does not contain any canvas elements), then the canvas is not considered occluded.</li><li>a canvas which is completely covered by one or more opaque windows is considered occluded; however, if the windows covering the canvas are not opaque, then the canvas is not occluded.</li><li>a canvas that is currently hidden or with a height of 0 or a width of 0 is considered occluded.</li><li>See also [hs.canvas:isShowing](#isShowing).</li></ul>                |
 
 #### [isShowing](#isshowing)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:isShowing() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:isShowing() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not the canvas is currently being shown.                                                                                         |
@@ -386,7 +386,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>This method only determines whether or not the canvas is being shown or is hidden -- it does not indicate whether or not the canvas is currently off screen or is occluded by other objects.</li><li>See also [hs.canvas:isOccluded](#isOccluded).</li></ul>                |
 
 #### [isVisible](#isvisible)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:isVisible() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:isVisible() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not the canvas is currently showing and is (at least partially) visible on screen.                                                                                         |
@@ -395,7 +395,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>This is syntactic sugar for `not hs.canvas:isOccluded()`.</li><li>See [hs.canvas:isOccluded](#isOccluded) for more details.</li></ul>                |
 
 #### [level](#level)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:level([level]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:level([level]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the window level more precisely than sendToBack and bringToFront.                                                                                         |
@@ -403,7 +403,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>If an argument is provided, the canvas object; otherwise the current value.</li></ul>          |
 
 #### [minimumTextSize](#minimumtextsize)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:minimumTextSize([index], text) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:minimumTextSize([index], text) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a table specifying the size of the rectangle which can fully render the text with the specified style so that is will be completely visible.                                                                                         |
@@ -412,7 +412,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>Multi-line text (separated by a newline or return) is supported.  The height will be for the multiple lines and the width returned will be for the longest line.</li></ul>                |
 
 #### [mouseCallback](#mousecallback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:mouseCallback(mouseCallbackFn) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:mouseCallback(mouseCallbackFn) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets a callback for mouse events with respect to the canvas                                                                                         |
@@ -421,7 +421,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>The callback function should expect 5 arguments: the canvas object itself, a message specifying the type of mouse event, the canvas element `id` (or index position in the canvas if the `id` attribute is not set for the element), the x position of the mouse when the event was triggered within the rendered portion of the canvas element, and the y position of the mouse when the event was triggered within the rendered portion of the canvas element.</li><li>See also [hs.canvas:canvasMouseEvents](#canvasMouseEvents) for tracking mouse events in regions of the canvas not covered by an element with mouse tracking enabled.</li></ul>                |
 
 #### [orderAbove](#orderabove)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:orderAbove([canvas2]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:orderAbove([canvas2]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Moves canvas object above canvas2, or all canvas objects in the same presentation level, if canvas2 is not given.                                                                                         |
@@ -430,7 +430,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>If the canvas object and canvas2 are not at the same presentation level, this method will will move the canvas object as close to the desired relationship as possible without changing the canvas object's presentation level. See [hs.canvas.level](#level).</li></ul>                |
 
 #### [orderBelow](#orderbelow)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:orderBelow([canvas2]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:orderBelow([canvas2]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Moves canvas object below canvas2, or all canvas objects in the same presentation level, if canvas2 is not given.                                                                                         |
@@ -439,7 +439,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>If the canvas object and canvas2 are not at the same presentation level, this method will will move the canvas object as close to the desired relationship as possible without changing the canvas object's presentation level. See [hs.canvas.level](#level).</li></ul>                |
 
 #### [removeElement](#removeelement)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:removeElement([index]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:removeElement([index]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Insert a new element into the canvas at the specified index.                                                                                         |
@@ -447,7 +447,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>the canvasObject</li></ul>          |
 
 #### [replaceElements](#replaceelements)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:replaceElements(element, ...) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:replaceElements(element, ...) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Replaces all of the elements in the canvas with the elements specified.  Shortens or lengthens the canvas element count if necessary to accomodate the new canvas elements.                                                                                         |
@@ -456,7 +456,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>You can also specify multiple elements in a table as an array, where each index in the table contains an element table, and use the array as a single argument to this method if this style works better in your code.</li></ul>                |
 
 #### [rotateElement](#rotateelement)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:rotateElement(index, angle, [point], [append]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:rotateElement(index, angle, [point], [append]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Rotates an element about the point specified, or the elements center if no point is specified.                                                                                         |
@@ -465,7 +465,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>a point-table is a table with key-value pairs specifying a coordinate in the canvas (keys `x`  and `y`). The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.</li><li>The center of the object is determined by getting the element's bounds with [hs.canvas:elementBounds](#elementBounds).</li><li>If the third argument is a boolean value, the `point` argument is assumed to be the element's center and the boolean value is used as the `append` argument.</li></ul>                |
 
 #### [sendToBack](#sendtoback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:sendToBack() -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:sendToBack() -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Places the canvas object behind normal windows, between the desktop wallpaper and desktop icons                                                                                         |
@@ -473,7 +473,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Returns**                                          | <ul><li>The canvas object</li></ul>          |
 
 #### [show](#show)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:show([fadeInTime]) -> canvasObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:show([fadeInTime]) -> canvasObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Displays the canvas object                                                                                         |
@@ -482,7 +482,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>if the canvas is in use as an element in another canvas, this method will result in an error.</li></ul>                |
 
 #### [size](#size)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:size([size]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:size([size]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the size of a canvas object                                                                                         |
@@ -491,7 +491,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>a size-table is a table with key-value pairs specifying the size (keys `h` and `w`) the canvas should be resized to. The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.</li></ul>                |
 
 #### [topLeft](#topleft)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:topLeft([point]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:topLeft([point]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the top-left coordinate of the canvas object                                                                                         |
@@ -500,7 +500,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>a point-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the canvas (keys `x`  and `y`). The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.</li></ul>                |
 
 #### [transformation](#transformation)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:transformation([matrix]) -> canvasObject | current value` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:transformation([matrix]) -> canvasObject | current value` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the matrix transformation which is applied to every element in the canvas before being individually processed and added to the canvas.                                                                                         |
@@ -509,7 +509,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Notes**                                            | <ul><li>An example use for this method would be to change the canvas's origin point { x = 0, y = 0 } from the lower left corner of the canvas to somewhere else, like the middle of the canvas.</li></ul>                |
 
 #### [wantsLayer](#wantslayer)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas:wantsLayer([flag]) -> canvasObject | currentValue` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas:wantsLayer([flag]) -> canvasObject | currentValue` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether or not the canvas object should be rendered by the view or by Core Animation.                                                                                         |

@@ -14,7 +14,7 @@ Place the windows of an application into tabs drawn on its titlebar
 ### Functions
 
 #### [enableForApp](#enableforapp)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.tabs.enableForApp(app)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.tabs.enableForApp(app)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Places all the windows of an app into one place and tab them                                                                                         |
@@ -22,7 +22,7 @@ Place the windows of an application into tabs drawn on its titlebar
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [focusTab](#focustab)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.tabs.focusTab(app, num)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.tabs.focusTab(app, num)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Focuses a specific tab of an app                                                                                         |
@@ -31,7 +31,7 @@ Place the windows of an application into tabs drawn on its titlebar
 | **Notes**                                            | <ul><li>If num is higher than the number of tabs, the last tab will be focussed</li></ul>                |
 
 #### [tabWindows](#tabwindows)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.tabs.tabWindows(app)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.tabs.tabWindows(app)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a list of the tabs of a window                                                                                         |

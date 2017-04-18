@@ -19,7 +19,7 @@ This module is *deprecated*; you can use `hs.window.find()`, `hs.window.get()`, 
 ### Functions
 
 #### [appFromName](#appfromname)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.appfinder.appFromName(name) -> app or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.appfinder.appFromName(name) -> app or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds an application by its name (e.g. "Safari")                                                                                         |
@@ -27,7 +27,7 @@ This module is *deprecated*; you can use `hs.window.find()`, `hs.window.get()`, 
 | **Returns**                                          | <ul><li>An hs.application object if one can be found, otherwise nil</li></ul>          |
 
 #### [appFromWindowTitle](#appfromwindowtitle)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.appfinder.appFromWindowTitle(title) -> app or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.appfinder.appFromWindowTitle(title) -> app or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds an application by its window title (e.g. "Activity Monitor (All Processes)")                                                                                         |
@@ -35,7 +35,7 @@ This module is *deprecated*; you can use `hs.window.find()`, `hs.window.get()`, 
 | **Returns**                                          | <ul><li>An hs.application object if one can be found, otherwise nil</li></ul>          |
 
 #### [appFromWindowTitlePattern](#appfromwindowtitlepattern)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.appfinder.appFromWindowTitlePattern(pattern) -> app or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.appfinder.appFromWindowTitlePattern(pattern) -> app or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds an application by Lua pattern in its window title (e.g."Inbox %(%d+ messages.*)")                                                                                         |
@@ -44,7 +44,7 @@ This module is *deprecated*; you can use `hs.window.find()`, `hs.window.get()`, 
 | **Notes**                                            | <ul><li>For more about Lua patterns, see http://lua-users.org/wiki/PatternsTutorial and http://www.lua.org/manual/5.2/manual.html#6.4.1</li></ul>                |
 
 #### [windowFromWindowTitle](#windowfromwindowtitle)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.appfinder.windowFromWindowTitle(title) -> win or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.appfinder.windowFromWindowTitle(title) -> win or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds a window by its title (e.g. "Activity Monitor (All Processes)")                                                                                         |
@@ -52,7 +52,7 @@ This module is *deprecated*; you can use `hs.window.find()`, `hs.window.get()`, 
 | **Returns**                                          | <ul><li>An hs.window object if one can be found, otherwise nil</li></ul>          |
 
 #### [windowFromWindowTitlePattern](#windowfromwindowtitlepattern)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.appfinder.windowFromWindowTitlePattern(pattern) -> app or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.appfinder.windowFromWindowTitlePattern(pattern) -> app or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds a window by Lua pattern in its title (e.g."Inbox %(%d+ messages.*)")                                                                                         |

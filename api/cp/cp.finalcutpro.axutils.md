@@ -16,7 +16,7 @@ Utility functions to support 'axuielement'
 ### Functions
 
 #### [cached](#cached)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.axutils.cached(table, string, function) -> axuielement` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.axutils.cached(table, string, function) -> axuielement` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the cached value at the `source[key]` is a valid axuielement. If not                                                                                         |
@@ -24,7 +24,7 @@ Utility functions to support 'axuielement'
 | **Returns**                                          | <ul><li>The valid cached value.</li></ul>          |
 
 #### [childWith](#childwith)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.axutils.childWith(element, matcherFn) -> axuielement` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.axutils.childWith(element, matcherFn) -> axuielement` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | This searches for the first child of the specified element for which the provided function returns true. The function will receive one parameter - the current child.                                                                                         |
@@ -32,7 +32,7 @@ Utility functions to support 'axuielement'
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul>          |
 
 #### [childrenMatching](#childrenmatching)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.axutils.childrenMatching(axuielement, function) -> {axuielement}` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.axutils.childrenMatching(axuielement, function) -> {axuielement}` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | This searches for all children of the specified element for which the provided                                                                                         |
@@ -40,7 +40,7 @@ Utility functions to support 'axuielement'
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul>          |
 
 #### [childrenWith](#childrenwith)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.axutils.childrenWith(element, string, value) -> axuielement` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.axutils.childrenWith(element, string, value) -> axuielement` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | This searches for all children of the specified element which has an attribute with the matching name and value.                                                                                         |
@@ -48,7 +48,7 @@ Utility functions to support 'axuielement'
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul>          |
 
 #### [isValid](#isvalid)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.axutils.isValid(axuielement) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.axutils.isValid(axuielement) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the axuilelement is still valid                                                                                         |

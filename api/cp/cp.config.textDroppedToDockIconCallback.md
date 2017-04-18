@@ -16,7 +16,7 @@ Text Dropped to Dock Icon Callback
 ### Methods
 
 #### [callbackFn](#callbackfn)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.config.textDroppedToDockIconCallback:callbackFn() -> function` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.textDroppedToDockIconCallback:callbackFn() -> function` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the callbackFn of the current Text Dropped to Dock Icon Callback                                                                                         |
@@ -24,7 +24,7 @@ Text Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>The callbackFn of the current Shutdown Callback</li></ul>          |
 
 #### [get](#get)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.config.textDroppedToDockIconCallback:get(id) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.textDroppedToDockIconCallback:get(id) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new Text Dropped to Dock Icon Callback.                                                                                         |
@@ -32,7 +32,7 @@ Text Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>table containing the callback</li></ul>          |
 
 #### [getAll](#getall)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.config.textDroppedToDockIconCallback:getAll() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.textDroppedToDockIconCallback:getAll() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns all of the created Text Dropped to Dock Icon Callbacks                                                                                         |
@@ -40,7 +40,7 @@ Text Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>table containing all of the created callbacks</li></ul>          |
 
 #### [id](#id)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.config.textDroppedToDockIconCallback:id() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.textDroppedToDockIconCallback:id() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ID of the current Text Dropped to Dock Icon Callback                                                                                         |
@@ -48,7 +48,7 @@ Text Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>The ID of the current Shutdown Callback as a `string`</li></ul>          |
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.config.textDroppedToDockIconCallback:new(id, callbackFn) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.textDroppedToDockIconCallback:new(id, callbackFn) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new Text Dropped to Dock Icon Callback.                                                                                         |

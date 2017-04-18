@@ -15,7 +15,7 @@ Inspect USB devices
 ### Functions
 
 #### [attachedDevices](#attacheddevices)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.usb.attachedDevices() -> table or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.usb.attachedDevices() -> table or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets details about currently attached USB devices                                                                                         |

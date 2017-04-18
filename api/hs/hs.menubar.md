@@ -31,7 +31,7 @@ Create and manage menubar icons
 ### Constants
 
 #### [priorities[]](#priorities[])
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar.priorities[]` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar.priorities[]` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Pre-defined list of priority levels which can be used for positioning menubar items.                                                                                         |
@@ -39,7 +39,7 @@ Create and manage menubar icons
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar.new([inMenuBar]) -> menubaritem or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar.new([inMenuBar]) -> menubaritem or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new menu bar item object and optionally add it to the system menubar                                                                                         |
@@ -48,7 +48,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>You should call hs.menubar:setTitle() or hs.menubar:setIcon() after creating the object, otherwise it will be invisible</li></ul>                |
 
 #### [newWithPriority](#newwithpriority)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar.newWithPriority(priority) -> menubaritem or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar.newWithPriority(priority) -> menubaritem or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new menu bar item object with the specified priority                                                                                         |
@@ -59,7 +59,7 @@ Create and manage menubar icons
 ### Methods
 
 #### [delete](#delete)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:delete()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:delete()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes the menubar item from the menubar and destroys it                                                                                         |
@@ -67,7 +67,7 @@ Create and manage menubar icons
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [frame](#frame)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:frame() -> hs.geometry rect` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:frame() -> hs.geometry rect` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the menubar item frame                                                                                         |
@@ -75,7 +75,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>This will return a frame even if no icon or title is set</li></ul>                |
 
 #### [icon](#icon)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:icon() -> hs.image object` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:icon() -> hs.image object` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current icon of the menubar item object.                                                                                         |
@@ -83,7 +83,7 @@ Create and manage menubar icons
 | **Returns**                                          | <ul><li>the menubar item icon as an hs.image object, or nil, if there isn't one.</li></ul>          |
 
 #### [isInMenuBar](#isinmenubar)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:isInMenuBar() -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:isInMenuBar() -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a boolean indicating whether or not the specified menu is currently in the OS X menubar.                                                                                         |
@@ -91,7 +91,7 @@ Create and manage menubar icons
 | **Returns**                                          | <ul><li>a boolean indicating whether or not the specified menu is currently in the OS X menubar</li></ul>          |
 
 #### [popupMenu](#popupmenu)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:popupMenu(point) -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:popupMenu(point) -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Display a menubaritem as a pop up menu at the specified screen point.                                                                                         |
@@ -100,7 +100,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>Items which trigger hs.menubar:setClickCallback() will invoke the callback function, but we cannot control the positioning of any visual elements the function may create -- calling this method on such an object is the equivalent of invoking its callback function directly.</li></ul>                |
 
 #### [priority](#priority)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:priority([priority]) -> menubaritem | current-value` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:priority([priority]) -> menubaritem | current-value` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set a menubar item's priority                                                                                         |
@@ -109,7 +109,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>Default priority levels can be found in the [hs.menubar.priorities](#priorities) table.</li></ul>                |
 
 #### [removeFromMenuBar](#removefrommenubar)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:removeFromMenuBar() -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:removeFromMenuBar() -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes a menu from the system menu bar.  The item can still be used as a pop-up menu, unless you also delete it.                                                                                         |
@@ -117,7 +117,7 @@ Create and manage menubar icons
 | **Returns**                                          | <ul><li>the menubaritem</li></ul>          |
 
 #### [returnToMenuBar](#returntomenubar)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:returnToMenuBar() -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:returnToMenuBar() -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a previously removed menu back to the system menu bar.                                                                                         |
@@ -125,7 +125,7 @@ Create and manage menubar icons
 | **Returns**                                          | <ul><li>the menubaritem</li></ul>          |
 
 #### [setClickCallback](#setclickcallback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:setClickCallback(fn) -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:setClickCallback(fn) -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a function to be called when the menubar item is clicked                                                                                         |
@@ -134,7 +134,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>If a menu has been attached to the menubar item, this callback will never be called</li><li>Has no affect on the display of a pop-up menu, but changes will be be in effect if hs.menubar:returnToMenuBar() is called on the menubaritem.</li></ul>                |
 
 #### [setIcon](#seticon)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:setIcon(imageData[, template]) -> menubaritem or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:setIcon(imageData[, template]) -> menubaritem or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the image of a menubar item object. The image will be displayed in the system menubar                                                                                         |
@@ -143,7 +143,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>** API Change **</li><li>  This method used to return true on success -- this has been changed to return the menubaritem on success to facilitate method chaining.  Since Lua treats any value which is not nil or false as "true", this should only affect code where the return value was actually being compared to true, e.g. `if result == true then...` rather than the (unaffected) `if result then...`.</li></ul>                |
 
 #### [setMenu](#setmenu)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:setMenu(menuTable) -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:setMenu(menuTable) -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Attaches a dropdown menu to the menubar item                                                                                         |
@@ -152,7 +152,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>If you are using the callback function, you should take care not to take too long to generate the menu, as you will block the process and the OS may decide to remove the menubar item</li></ul>                |
 
 #### [setTitle](#settitle)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:setTitle(title) -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:setTitle(title) -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the title of a menubar item object. The title will be displayed in the system menubar                                                                                         |
@@ -161,7 +161,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>If you set an icon as well as a title, they will both be displayed next to each other</li><li>Has no affect on the display of a pop-up menu, but changes will be be in effect if hs.menubar:returnToMenuBar() is called on the menubaritem.</li></ul>                |
 
 #### [setTooltip](#settooltip)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:setTooltip(tooltip) -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:setTooltip(tooltip) -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the tooltip text on a menubar item                                                                                         |
@@ -170,7 +170,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>Has no affect on the display of a pop-up menu, but changes will be be in effect if hs.menubar:returnToMenuBar() is called on the menubaritem.</li></ul>                |
 
 #### [stateImageSize](#stateimagesize)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:stateImageSize([size]) -> hs.image object | current value` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:stateImageSize([size]) -> hs.image object | current value` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the size for state images when the menu is displayed.                                                                                         |
@@ -179,7 +179,7 @@ Create and manage menubar icons
 | **Notes**                                            | <ul><li>An image is used rather than a checkmark or dash only when you set them with the `onStateImage`, `offStateImage`, or `mixedStateImage` keys.  If you are not using these keys, then this method will have no visible effect on the menu's rendering.  See  [hs.menubar:setMenu](#setMenu) for more information.</li><li>If you are setting the menu contents with a static table, you should invoke this method before invoking [hs.menubar:setMenu](#setMenu), as changes will only go into effect when the table is next converted to a menu structure.</li></ul>                |
 
 #### [title](#title)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.menubar:title([styled]) -> string | styledtextObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menubar:title([styled]) -> string | styledtextObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current title of the menubar item object.                                                                                         |

@@ -22,7 +22,7 @@ The wrapper is not enabled by default.  See the `hs.canvas.drawingWrapper` funct
 ### Functions
 
 #### [drawingWrapper](#drawingwrapper)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.canvas.drawingWrapper([state]) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canvas.drawingWrapper([state]) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get or set whether or not `hs.drawing` is replaced by a wrapper which uses this module.                                                                                         |

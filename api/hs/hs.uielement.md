@@ -22,7 +22,7 @@ A generalized framework for working with OSX UI elements
 ### Functions
 
 #### [focusedElement](#focusedelement)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement.focusedElement() -> element or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement.focusedElement() -> element or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the currently focused UI element                                                                                         |
@@ -32,7 +32,7 @@ A generalized framework for working with OSX UI elements
 ### Constructors
 
 #### [newWatcher](#newwatcher)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement:newWatcher(handler[, userData]) -> hs.uielement.watcher or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement:newWatcher(handler[, userData]) -> hs.uielement.watcher or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new watcher for the element represented by self (the object the method is being invoked for).                                                                                         |
@@ -42,7 +42,7 @@ A generalized framework for working with OSX UI elements
 ### Methods
 
 #### [isApplication](#isapplication)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement:isApplication() -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement:isApplication() -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether the UI element represents an application.                                                                                         |
@@ -50,7 +50,7 @@ A generalized framework for working with OSX UI elements
 | **Returns**                                          | <ul><li>A boolean, true if the UI element is an application</li></ul>          |
 
 #### [isWindow](#iswindow)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement:isWindow() -> bool` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement:isWindow() -> bool` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether the UI element represents a window.                                                                                         |
@@ -58,7 +58,7 @@ A generalized framework for working with OSX UI elements
 | **Returns**                                          | <ul><li>A boolean, true if the UI element is a window, otherwise false</li></ul>          |
 
 #### [role](#role)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement:role() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement:role() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the role of the element.                                                                                         |
@@ -66,7 +66,7 @@ A generalized framework for working with OSX UI elements
 | **Returns**                                          | <ul><li>A string containing the role of the UI element</li></ul>          |
 
 #### [selectedText](#selectedtext)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.uielement:selectedText() -> string or nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uielement:selectedText() -> string or nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the selected text in the element                                                                                         |

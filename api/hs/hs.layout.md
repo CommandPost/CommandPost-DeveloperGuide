@@ -26,67 +26,67 @@ This extension allows you to trigger window placement/sizing to a number of wind
 ### Constants
 
 #### [left25](#left25)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.left25` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.left25` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the left 25% of a screen                                                                                         |
 
 #### [left30](#left30)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.left30` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.left30` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the left 30% of a screen                                                                                         |
 
 #### [left50](#left50)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.left50` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.left50` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the left 50% of a screen                                                                                         |
 
 #### [left70](#left70)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.left70` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.left70` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the left 70% of a screen                                                                                         |
 
 #### [left75](#left75)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.left75` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.left75` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the left 75% of a screen                                                                                         |
 
 #### [maximized](#maximized)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.maximized` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.maximized` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy all of a screen                                                                                         |
 
 #### [right25](#right25)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.right25` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.right25` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the right 25% of a screen                                                                                         |
 
 #### [right30](#right30)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.right30` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.right30` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the right 30% of a screen                                                                                         |
 
 #### [right50](#right50)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.right50` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.right50` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the right 50% of a screen                                                                                         |
 
 #### [right70](#right70)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.right70` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.right70` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the right 70% of a screen                                                                                         |
 
 #### [right75](#right75)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.right75` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.right75` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A unit rect which will make a window occupy the right 75% of a screen                                                                                         |
@@ -94,7 +94,7 @@ This extension allows you to trigger window placement/sizing to a number of wind
 ### Functions
 
 #### [apply](#apply)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.layout.apply(table[, windowTitleComparator])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.layout.apply(table[, windowTitleComparator])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies a layout to applications/windows                                                                                         |

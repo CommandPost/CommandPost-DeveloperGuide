@@ -12,7 +12,7 @@ Move To Playhead.
 ### Functions
 
 #### [moveToPlayhead](#movetoplayhead)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.movetoplayhead.moveToPlayhead() -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.movetoplayhead.moveToPlayhead() -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Move to Playhead                                                                                         |

@@ -15,7 +15,7 @@ https://github.com/kikito/inspect.lua
 ### Functions
 
 #### [inspect](#inspect)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.inspect.inspect(variable[, options]) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.inspect.inspect(variable[, options]) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a human readable version of the supplied Lua variable                                                                                         |

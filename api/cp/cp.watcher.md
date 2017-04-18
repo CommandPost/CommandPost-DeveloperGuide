@@ -12,7 +12,7 @@ Watcher Module.
 ### Functions
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.watcher:new(...) -> watcher` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.watcher:new(...) -> watcher` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Constructs a new watcher instance.                                                                                         |

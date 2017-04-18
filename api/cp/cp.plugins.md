@@ -95,7 +95,7 @@ return plugin
 ### Functions
 
 #### [disable](#disable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.disable(id) -> nothing` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.disable(id) -> nothing` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Disabled the plugin with the specified ID and reloads the application.                                                                                         |
@@ -103,7 +103,7 @@ return plugin
 | **Returns**                                          | <ul><li>nothing</li></ul>          |
 
 #### [enable](#enable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.enable(id) -> nothing` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.enable(id) -> nothing` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enables the plugin with the specified ID, and reloads the application.                                                                                         |
@@ -111,7 +111,7 @@ return plugin
 | **Returns**                                          | <ul><li>nothing</li></ul>          |
 
 #### [getPlugin](#getplugin)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.getPlugin(id) -> value` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.getPlugin(id) -> value` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an initialised plugin result with the specified `id`                                                                                         |
@@ -119,7 +119,7 @@ return plugin
 | **Returns**                                          | <ul><li>the result of the plugin's `init(...)` function call.</li></ul>          |
 
 #### [getPluginGroup](#getplugingroup)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.getPluginGroup(id) -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.getPluginGroup(id) -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the group for the specifed plugin ID.                                                                                         |
@@ -127,7 +127,7 @@ return plugin
 | **Returns**                                          | <ul><li>the list of plugin IDs.</li></ul>          |
 
 #### [getPluginIds](#getpluginids)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.getPluginIds() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.getPluginIds() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves an array of the loaded plugin IDs.                                                                                         |
@@ -135,7 +135,7 @@ return plugin
 | **Returns**                                          | <ul><li>the list of plugin IDs.</li></ul>          |
 
 #### [getPluginInfos](#getplugininfos)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.getPluginInfos() -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.getPluginInfos() -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves an array of details about the set of loaded plugins.                                                                                         |
@@ -143,7 +143,7 @@ return plugin
 | **Returns**                                          | <ul><li>the list of plugin infos.</li></ul>          |
 
 #### [getPluginStatus](#getpluginstatus)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.getPluginStatus(id) -> cp.plugins.status` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.getPluginStatus(id) -> cp.plugins.status` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the status for the specified plugin ID.                                                                                         |
@@ -151,7 +151,7 @@ return plugin
 | **Returns**                                          | <ul><li>the plugin status, or `nil` if the plugin has not been registered.</li></ul>          |
 
 #### [init](#init)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.init(ids) -> cp.plugins` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.init(ids) -> cp.plugins` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the plugin loader to look in the specified file paths for plugins.                                                                                         |
@@ -159,7 +159,7 @@ return plugin
 | **Returns**                                          | <ul><li>`cp.plugins` - The module.</li></ul>          |
 
 #### [initPlugin](#initplugin)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.initPlugin(id) -> instance` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.initPlugin(id) -> instance` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises a specific plugin with the specified path.                                                                                         |
@@ -167,7 +167,7 @@ return plugin
 | **Returns**                                          | <ul><li>the result of the plugin's `init(...)` function call.</li></ul>          |
 
 #### [initPlugins](#initplugins)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.initPlugins() -> nothing` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.initPlugins() -> nothing` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises all registered plugins.                                                                                         |
@@ -175,7 +175,7 @@ return plugin
 | **Returns**                                          | <ul><li>Nothing</li></ul>          |
 
 #### [isDisabled](#isdisabled)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.isDisabled(id) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.isDisabled(id) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the specified plugin ID is disabled.                                                                                         |
@@ -183,7 +183,7 @@ return plugin
 | **Returns**                                          | <ul><li>`true` if the plugin is disabled.</li></ul>          |
 
 #### [loadComplexPlugin](#loadcomplexplugin)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.loadComplexPlugin(id) -> plugin` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.loadComplexPlugin(id) -> plugin` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a 'complex' plugin, which is a folder containing an `init.lua` file.                                                                                         |
@@ -191,7 +191,7 @@ return plugin
 | **Returns**                                          | <ul><li>`true` if the plugin ias successfully post-initialised.</li></ul>          |
 
 #### [loadDependencies](#loaddependencies)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.loadDependencies(plugin) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.loadDependencies(plugin) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads the list of dependencies for the provided plugin.                                                                                         |
@@ -199,7 +199,7 @@ return plugin
 | **Returns**                                          | <ul><li>an array of the dependencies required by the plugin, or `nil` if any could not be loaded.</li></ul>          |
 
 #### [loadSimplePlugin](#loadsimpleplugin)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.loadSimplePlugin(id) -> plugin` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.loadSimplePlugin(id) -> plugin` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a 'simple' plugin, where it is defined by a single LUA script.                                                                                         |
@@ -207,7 +207,7 @@ return plugin
 | **Returns**                                          | <ul><li>`true` if the plugin ias successfully post-initialised.</li></ul>          |
 
 #### [postInitPlugin](#postinitplugin)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.postInitPlugin(id) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.postInitPlugin(id) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Runs any post-initialisation functions declared for the specified plugin ID.                                                                                         |
@@ -215,7 +215,7 @@ return plugin
 | **Returns**                                          | <ul><li>`true` if the plugin ias successfully post-initialised.</li></ul>          |
 
 #### [postInitPlugins](#postinitplugins)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.postInitPlugins() -> nothing` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.postInitPlugins() -> nothing` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs any post-initialisation required for plugins.                                                                                         |
@@ -223,7 +223,7 @@ return plugin
 | **Returns**                                          | <ul><li>Nothing</li></ul>          |
 
 #### [scanDirectory](#scandirectory)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.scanDirectory(directoryPath) -> cp.plugins` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.scanDirectory(directoryPath) -> cp.plugins` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Scans the specified directory and loads any plugins in the directory,                                                                                         |
@@ -231,7 +231,7 @@ return plugin
 | **Returns**                                          | <ul><li>boolean - `true` if the path was loaded successfully, false if there were any issues.</li></ul>          |
 
 #### [watchPluginPaths](#watchpluginpaths)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.plugins.watchPluginPaths() -> nothing` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plugins.watchPluginPaths() -> nothing` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Watches the plugin paths for changes and reloads the  application if any change.                                                                                         |

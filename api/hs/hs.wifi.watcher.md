@@ -18,7 +18,7 @@ Watch for changes to the associated wifi network
 ### Constants
 
 #### [eventTypes[]](#eventtypes[])
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.watcher.eventTypes[]` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.watcher.eventTypes[]` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing the possible event types that this watcher can monitor for.                                                                                         |
@@ -26,7 +26,7 @@ Watch for changes to the associated wifi network
 ### Constructors
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.watcher.new(fn) -> watcher` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.watcher.new(fn) -> watcher` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new watcher for WiFi network events                                                                                         |
@@ -37,7 +37,7 @@ Watch for changes to the associated wifi network
 ### Methods
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.watcher:start() -> watcher` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.watcher:start() -> watcher` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the SSID watcher                                                                                         |
@@ -45,7 +45,7 @@ Watch for changes to the associated wifi network
 | **Returns**                                          | <ul><li>The `hs.wifi.watcher` object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.watcher:stop() -> watcher` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.watcher:stop() -> watcher` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the SSID watcher                                                                                         |
@@ -53,7 +53,7 @@ Watch for changes to the associated wifi network
 | **Returns**                                          | <ul><li>The `hs.wifi.watcher` object</li></ul>          |
 
 #### [watchingFor](#watchingfor)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.wifi.watcher:watchingFor([messages]) -> watcher | current-value` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.wifi.watcher:watchingFor([messages]) -> watcher | current-value` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the specific types of wifi events to generate a callback for with this watcher.                                                                                         |

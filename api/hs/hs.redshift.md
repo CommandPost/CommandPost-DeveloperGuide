@@ -34,7 +34,7 @@ Note:
 ### Variables
 
 #### [COLORRAMP](#colorramp)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.COLORRAMP` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.COLORRAMP` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A table holding the gamma values for given color temperatures; each key must be a color temperature number in K (useful values are between                                                                                         |
@@ -43,7 +43,7 @@ Note:
 ### Functions
 
 #### [invertSubscribe](#invertsubscribe)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.invertSubscribe([id,]fn)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.invertSubscribe([id,]fn)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Subscribes a callback to be notified when the color inversion status changes                                                                                         |
@@ -51,7 +51,7 @@ Note:
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [invertUnsubscribe](#invertunsubscribe)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.invertUnsubscribe(id)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.invertUnsubscribe(id)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unsubscribes a previously subscribed color inversion change callback                                                                                         |
@@ -59,7 +59,7 @@ Note:
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [isInverted](#isinverted)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.isInverted() -> string or false` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.isInverted() -> string or false` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the colors are currently inverted                                                                                         |
@@ -67,7 +67,7 @@ Note:
 | **Returns**                                          | <ul><li>false if the colors are not currently inverted; otherwise, a string indicating the reason, one of:</li><li>  "user" for the user override (see `hs.redshift.toggleInvert()`)</li><li>  "redshift-night" if `hs.redshift.start()` was called with `invertAtNight` set to true,</li><li>     and it's currently night time</li><li>  the ID string (usually the module name) provided to `hs.redshift.requestInvert()`, if another module requested color inversion</li></ul>          |
 
 #### [requestInvert](#requestinvert)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.requestInvert(id,v)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.requestInvert(id,v)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets or clears a request for color inversion                                                                                         |
@@ -76,7 +76,7 @@ Note:
 | **Notes**                                            | <ul><li>you can use this function e.g. to automatically invert colors if the ambient light sensor reading drops below</li><li>   a certain threshold (`hs.brightness.DDCauto()` can optionally do exactly that)</li><li>if the user's configuration doesn't explicitly start the redshift module, calling this will have no effect</li></ul>                |
 
 #### [start](#start)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.start(colorTemp,nightStart,nightEnd[,transition[,invertAtNight[,windowfilterDisable[,dayColorTemp]]]])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.start(colorTemp,nightStart,nightEnd[,transition[,invertAtNight[,windowfilterDisable[,dayColorTemp]]]])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the schedule and (re)starts the module                                                                                         |
@@ -84,7 +84,7 @@ Note:
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [stop](#stop)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.stop()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.stop()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stops the module and disables color adjustment and color inversion                                                                                         |
@@ -92,7 +92,7 @@ Note:
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggle](#toggle)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.toggle([v])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.toggle([v])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets or clears the user override for color temperature adjustment.                                                                                         |
@@ -100,7 +100,7 @@ Note:
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleInvert](#toggleinvert)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.redshift.toggleInvert([v])` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.redshift.toggleInvert([v])` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets or clears the user override for color inversion.                                                                                         |

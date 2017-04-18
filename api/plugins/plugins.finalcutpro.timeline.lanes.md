@@ -12,7 +12,7 @@ Controls Final Cut Pro's Lanes.
 ### Functions
 
 #### [selectClipAtLane](#selectclipatlane)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.lanes.selectClipAtLane() -> nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.lanes.selectClipAtLane() -> nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Select Clip at Lane in Final Cut Pro                                                                                         |

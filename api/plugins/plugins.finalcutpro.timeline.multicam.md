@@ -12,7 +12,7 @@ Multicam Tools.
 ### Functions
 
 #### [cutAndSwitchMulticam](#cutandswitchmulticam)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.multicam.cutAndSwitchMulticam(whichMode, whichAngle) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.multicam.cutAndSwitchMulticam(whichMode, whichAngle) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Cut & Switch Multicam.                                                                                         |

@@ -25,7 +25,7 @@ Commands Module.
 ### Methods
 
 #### [activated](#activated)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:activated(repeats) -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:activated(repeats) -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the 'pressed', then 'repeated', then 'released' functions, if present.                                                                                         |
@@ -33,7 +33,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>the last 'truthy' result (non-nil/false).</li></ul>          |
 
 #### [activatedBy](#activatedby)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:activatedBy([modifiers,] [keyCode]) -> command/modifier` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:activatedBy([modifiers,] [keyCode]) -> command/modifier` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies that the command is activated by pressing a key combination.                                                                                         |
@@ -41,7 +41,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>`command` if a `keyCode` was provided, or `modifier` if not.</li></ul>          |
 
 #### [addShortcut](#addshortcut)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:addShortcut() -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:addShortcut() -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified shortcut to the command.                                                                                         |
@@ -49,7 +49,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>`self`</li></ul>          |
 
 #### [deleteShortcuts](#deleteshortcuts)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:deleteShortcuts() -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:deleteShortcuts() -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is pressed.                                                                                         |
@@ -57,7 +57,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [getShortcuts](#getshortcuts)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:getShortcuts() -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:getShortcuts() -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the set of shortcuts assigned to this command.                                                                                         |
@@ -65,7 +65,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>The associated shortcuts.</li></ul>          |
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:new() -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:new() -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new menu command, which can have items and sub-menus added to it.                                                                                         |
@@ -73,7 +73,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The command that was created.</li></ul>          |
 
 #### [pressed](#pressed)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:pressed() -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:pressed() -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the 'pressed' function, if present.                                                                                         |
@@ -81,7 +81,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>the result of the function, or `nil` if none is present.</li></ul>          |
 
 #### [released](#released)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:released() -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:released() -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the 'released' function, if present.                                                                                         |
@@ -89,7 +89,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>the result of the function, or `nil` if none is present.</li></ul>          |
 
 #### [repeated](#repeated)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:repeated(repeats) -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:repeated(repeats) -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the 'repeated' function, if present.                                                                                         |
@@ -97,7 +97,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>the last result.</li></ul>          |
 
 #### [titled](#titled)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:titled(title) -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:titled(title) -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Applies the provided human-readable title to the command.                                                                                         |
@@ -105,7 +105,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The command that was created.</li></ul>          |
 
 #### [whenActivated](#whenactivated)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:whenActivated(function) -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:whenActivated(function) -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command is activated.                                                                                         |
@@ -113,7 +113,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [whenPressed](#whenpressed)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:whenPressed(function) -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:whenPressed(function) -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is pressed.                                                                                         |
@@ -121,7 +121,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [whenReleased](#whenreleased)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:whenReleased(function) -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:whenReleased(function) -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is released.                                                                                         |
@@ -129,7 +129,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [whenRepeated](#whenrepeated)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.command:whenRepeated(function) -> command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.command:whenRepeated(function) -> command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is repeated.                                                                                         |

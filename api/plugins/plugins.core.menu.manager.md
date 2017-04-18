@@ -21,7 +21,7 @@ Menu Manager Plugin.
 ### Functions
 
 #### [addSection](#addsection)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.menu.manager.addSection(priority) -> section` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.addSection(priority) -> section` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new menu section, which can have items and sub-menus added to it.                                                                                         |
@@ -29,7 +29,7 @@ Menu Manager Plugin.
 | **Returns**                                          | <ul><li>section - The section that was created.</li></ul>          |
 
 #### [addTitleSuffix](#addtitlesuffix)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.menu.manager.addTitleSuffix(fnTitleSuffix)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.addTitleSuffix(fnTitleSuffix)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Allows you to add a custom Suffix to the Menubar Title                                                                                         |
@@ -37,7 +37,7 @@ Menu Manager Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [disable](#disable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.menu.manager.disable(priority) -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.disable(priority) -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes the menu from the system menu bar.                                                                                         |
@@ -45,7 +45,7 @@ Menu Manager Plugin.
 | **Returns**                                          | <ul><li>the menubaritem</li></ul>          |
 
 #### [enable](#enable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.menu.manager.enable(priority) -> menubaritem` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.enable(priority) -> menubaritem` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the previously removed menu back to the system menu bar.                                                                                         |
@@ -53,7 +53,7 @@ Menu Manager Plugin.
 | **Returns**                                          | <ul><li>the menubaritem</li></ul>          |
 
 #### [generateMenuTable](#generatemenutable)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.menu.manager.generateMenuTable()` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.generateMenuTable()` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates the Menu Table                                                                                         |
@@ -61,7 +61,7 @@ Menu Manager Plugin.
 | **Returns**                                          | <ul><li>The Menu Table</li></ul>          |
 
 #### [init](#init)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.menu.manager.init() -> none` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.init() -> none` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
@@ -69,7 +69,7 @@ Menu Manager Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [updateMenubarIcon](#updatemenubaricon)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.menu.manager.updateMenubarIcon(priority) -> none` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.updateMenubarIcon(priority) -> none` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Menubar Icon                                                                                         |

@@ -13,7 +13,7 @@ Shortcut Commands Builder Module.
 ### Methods
 
 #### [add](#add)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut.builder:add(modifier, [keyCode]) -> shortcut/command` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.shortcut.builder:add(modifier, [keyCode]) -> shortcut/command` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified modifier to the set. If a `keyCode` is provided,                                                                                         |
@@ -21,7 +21,7 @@ Shortcut Commands Builder Module.
 | **Returns**                                          | <ul><li>`self` if no `keyCode` is provided, or the original `command`.</li></ul>          |
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut.builder:new(receiverFn)` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.shortcut.builder:new(receiverFn)` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new shortcut builder. If provided, the receiver function                                                                                         |

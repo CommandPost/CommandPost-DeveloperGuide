@@ -22,7 +22,7 @@ See the documentation for the [cgilua.lp.include](#include) for more information
 ### Functions
 
 #### [compile](#compile)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.httpserver.hsminweb.cgilua.lp.compile(source, name, [env]) -> function` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.cgilua.lp.compile(source, name, [env]) -> function` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts the specified Lua template source into a Lua function.                                                                                         |
@@ -31,7 +31,7 @@ See the documentation for the [cgilua.lp.include](#include) for more information
 | **Notes**                                            | <ul><li>The source provided is first compared to a stored cache of previously translated templates and will re-use an existing translation if the template has been seen before.  If the source is unique, [cgilua.lp.translate](#translate) is called on the template source.</li><li>This function is used internally by [cgilua.lp.include](#include), and probably won't be useful unless you want to translate a dynamically generated template -- which has security implications, depending upon what inputs you use to generate this template, because the resulting Lua code will execute within your Hammerspoon environment.  Be very careful about your inputs if you choose to ignore this warning.</li></ul>                |
 
 #### [include](#include)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.httpserver.hsminweb.cgilua.lp.include(file, [env]) -> none` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.cgilua.lp.include(file, [env]) -> none` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Includes the template specified by the `file` parameter.                                                                                         |
@@ -40,7 +40,7 @@ See the documentation for the [cgilua.lp.include](#include) for more information
 | **Notes**                                            | <ul><li>* This function is called by the web server to process the template specified by the requested URL.  Subsequent invocations of this function can be used to include common or re-used code from other template files and will be included in-line where the `cgilua.lp.include` function is invoked in the originating template.</li><li>During the processing of a web request, the local directory is temporarily changed to match the local directory of the path of the file being served, as determined by the URL of the request.  This is usually different than the Hammerspoon default directory which corresponds to the directory which contains the `init.lua` file for Hammerspoon.</li></ul>                |
 
 #### [translate](#translate)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.httpserver.hsminweb.cgilua.lp.translate(source) -> luaCode` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.cgilua.lp.translate(source) -> luaCode` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts the specified Lua template source into Lua code executable within the Hammerspoon environment.                                                                                         |

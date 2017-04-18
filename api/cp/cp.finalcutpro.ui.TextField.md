@@ -12,7 +12,7 @@ Text Field Module.
 ### Functions
 
 #### [new](#new)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.ui.TextField:new(axuielement, function) -> TextField` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.ui.TextField:new(axuielement, function) -> TextField` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new TextField                                                                                         |

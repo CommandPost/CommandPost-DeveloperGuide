@@ -53,7 +53,7 @@ Common item data types that can be shared with Sharing Services include (but are
 ### Constants
 
 #### [builtinSharingServices[]](#builtinsharingservices[])
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing.builtinSharingServices[]` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing.builtinSharingServices[]` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing the predefined sharing service labels defined by Apple.                                                                                         |
@@ -61,7 +61,7 @@ Common item data types that can be shared with Sharing Services include (but are
 ### Functions
 
 #### [URL](#url)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing.URL(URL, [fileURL]) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing.URL(URL, [fileURL]) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table representing the URL specified.                                                                                         |
@@ -70,7 +70,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>If the URL is specified as a table, it is expected to contain a `url` key with a string value specifying a proper schema and resource locator.</li></ul>                |
 
 #### [fileURL](#fileurl)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing.fileURL(path) -> table` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing.fileURL(path) -> table` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table representing a file URL for the path specified.                                                                                         |
@@ -79,7 +79,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>this function is a wrapper to [hs.sharing.URL](#URL) which sets the second argument to `true` for you.</li><li>see [hs.sharing.URL](#URL) for more information about the table format returned by this function.</li></ul>                |
 
 #### [shareTypesFor](#sharetypesfor)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing.shareTypesFor(items) -> identifiersTable` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing.shareTypesFor(items) -> identifiersTable` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the sharing service identifiers which can share the items specified.                                                                                         |
@@ -90,7 +90,7 @@ Common item data types that can be shared with Sharing Services include (but are
 ### Constructors
 
 #### [newShare](#newshare)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing.newShare(type) -> sharingObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing.newShare(type) -> sharingObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new sharing object of the type specified by the identifier provided.                                                                                         |
@@ -100,7 +100,7 @@ Common item data types that can be shared with Sharing Services include (but are
 ### Methods
 
 #### [accountName](#accountname)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:accountName() -> string | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:accountName() -> string | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The account name used by the sharing service when posting on Twitter or Sina Weibo.                                                                                         |
@@ -109,7 +109,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>According to the Apple API documentation, only the Twitter and Sina Weibo sharing services will set this property, but this has not been fully tested.</li></ul>                |
 
 #### [alternateImage](#alternateimage)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:alternateImage() -> hs.image object | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:alternateImage() -> hs.image object | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an alternate image, if one exists, representing the sharing service provided by this sharing object.                                                                                         |
@@ -117,7 +117,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Returns**                                          | <ul><li>an hs.image object or nil, if no alternate image representation for the sharing service is defined.</li></ul>          |
 
 #### [attachments](#attachments)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:attachments() -> table | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:attachments() -> table | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | If the sharing service provides an array of the attachments included when the data was posted, this method will return an array of file URL tables of the attachments.                                                                                         |
@@ -126,7 +126,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>not all sharing services will set a value for this property.</li></ul>                |
 
 #### [callback](#callback)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:callback(function | nil) -> sharingObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:callback(function | nil) -> sharingObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or clear the callback for the sharingObject.                                                                                         |
@@ -135,7 +135,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>the callback should expect 3 or 4 arguments and return no results.  The arguments will be as follows:</li><li>  the sharingObject itself</li><li>  the callback message, which will be a string equal to one of the following:</li><li>    "didFail"   - an error occurred while attempting to share the items</li><li>    "didShare"  - the sharing service has finished sharing the items</li><li>    "willShare" - the sharing service is about to start sharing the items; occurs before sharing actually begins</li><li>  an array (table) containing the items being shared; if the message is "didFail" or "didShare", the items may be in a different order or converted to a different internal type to facilitate sharing.</li><li>  if the message is "didFail", the fourth argument will be a localized description of the error that occurred.</li></ul>                |
 
 #### [canShareItems](#canshareitems)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:canShareItems(items) -> boolean` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:canShareItems(items) -> boolean` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a boolean specifying whether or not all of the items specified can be shared with the sharing service represented by the sharingObject.                                                                                         |
@@ -143,7 +143,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Returns**                                          | <ul><li>a boolean value indicating whether or not all of the specified items can be shared with the sharing service represented by the sharingObject.</li></ul>          |
 
 #### [image](#image)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:image() -> hs.image object | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:image() -> hs.image object | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an image, if one exists, representing the sharing service provided by this sharing object.                                                                                         |
@@ -151,7 +151,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Returns**                                          | <ul><li>an hs.image object or nil, if no image representation for the sharing service is defined.</li></ul>          |
 
 #### [messageBody](#messagebody)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:messageBody() -> string | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:messageBody() -> string | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | If the sharing service provides the message body that was posted when sharing has completed, this method will return the message body as a string.                                                                                         |
@@ -160,7 +160,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>not all sharing services will set a value for this property.</li></ul>                |
 
 #### [permanentLink](#permanentlink)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:permanentLink() -> URL table | nil` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:permanentLink() -> URL table | nil` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | If the sharing service provides a permanent link to the post when sharing has completed, this method will return the corresponding URL.                                                                                         |
@@ -169,7 +169,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>not all sharing services will set a value for this property.</li></ul>                |
 
 #### [recipients](#recipients)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:recipients([recipients]) -> current value | sharingObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:recipients([recipients]) -> current value | sharingObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the subject to be used when the sharing service performs its sharing method.                                                                                         |
@@ -178,7 +178,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>not all sharing services will make use of the value set by this method.</li><li>the individual recipients should be specified as strings in the format expected by the sharing service; e.g. for items being shared in an email, the recipients should be email address, etc.</li></ul>                |
 
 #### [serviceName](#servicename)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:serviceName() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:serviceName() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The service identifier for the sharing service represented by the sharingObject.                                                                                         |
@@ -187,7 +187,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>this string will match the identifier used to create the sharing service object with [hs.sharing.newShare](#newShare)</li></ul>                |
 
 #### [shareItems](#shareitems)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:shareItems(items) -> sharingObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:shareItems(items) -> sharingObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shares the items specified with the sharing service represented by the sharingObject.                                                                                         |
@@ -196,7 +196,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>You can check to see if all of your items can be shared with the [hs.sharing:canShareItems](#canShareItems) method.</li></ul>                |
 
 #### [subject](#subject)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:subject([subject]) -> current value | sharingObject` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:subject([subject]) -> current value | sharingObject` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the subject to be used when the sharing service performs its sharing method.                                                                                         |
@@ -205,7 +205,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>not all sharing services will make use of the value set by this method.</li></ul>                |
 
 #### [title](#title)
-| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.sharing:title() -> string` </span>                                                |
+| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.sharing:title() -> string` </span>                                                |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The title for the sharing service represented by the sharingObject.                                                                                         |
