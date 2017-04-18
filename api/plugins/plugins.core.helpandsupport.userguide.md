@@ -11,9 +11,9 @@ User Guide Menu Item.
 
 ### Functions
 
-| [show](#show)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [show](#show)
 | **Signature**                               | `plugins.core.helpandsupport.userguide.show() -> nil`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Opens the CommandPost User Guide in your default Browser.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

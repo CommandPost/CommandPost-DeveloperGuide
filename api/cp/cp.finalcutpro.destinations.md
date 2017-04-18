@@ -11,9 +11,9 @@ Utility class to process custom User Destinations
 
 ### Functions
 
-| [getUserDestinationsAsTable](#getUserDestinationsAsTable)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [getUserDestinationsAsTable](#getUserDestinationsAsTable)
 | **Signature**                               | `cp.finalcutpro.destinations.getUserDestinationsAsTable() -> table`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Loads the 'UserDestinations' plist and returns a basic table containing the structure.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

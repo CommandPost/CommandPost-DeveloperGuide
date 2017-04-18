@@ -11,9 +11,9 @@ Radio Button Module.
 
 ### Functions
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `cp.finalcutpro.ui.RadioButton:new(axuielement, function) -> RadioButton`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Creates a new RadioButton                                                                     |
 

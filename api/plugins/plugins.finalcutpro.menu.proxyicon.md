@@ -13,25 +13,25 @@ Final Cut Pro Proxy Icon Plugin.
 
 ### Functions
 
-| [generateProxyTitle](#generateProxyTitle)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [generateProxyTitle](#generateProxyTitle)
 | **Signature**                               | `plugins.finalcutpro.menu.proxyicon.generateProxyTitle() -> string`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Generates the Proxy Title                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>String containing the Proxy Title</li></ul>          |
 
-| [getEnableProxyMenuIcon](#getEnableProxyMenuIcon)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [getEnableProxyMenuIcon](#getEnableProxyMenuIcon)
 | **Signature**                               | `plugins.finalcutpro.menu.proxyicon.getEnableProxyMenuIcon() -> string`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Generates the Proxy Title                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>String containing the Proxy Title</li></ul>          |
 
-| [toggleEnableProxyMenuIcon](#toggleEnableProxyMenuIcon)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [toggleEnableProxyMenuIcon](#toggleEnableProxyMenuIcon)
 | **Signature**                               | `plugins.finalcutpro.menu.proxyicon.toggleEnableProxyMenuIcon() -> none`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Toggles the Enable Proxy Menu Icon                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

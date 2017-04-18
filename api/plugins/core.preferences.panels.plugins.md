@@ -13,17 +13,17 @@ Plugins Preferences Panel
 
 ### Constants
 
-| [SETTINGS_DISABLED](#SETTINGS_DISABLED)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [SETTINGS_DISABLED](#SETTINGS_DISABLED)
 | **Signature**                               | `core.preferences.panels.plugins.SETTINGS_DISABLED`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | Plugins Disabled                                                                     |
 
 ### Functions
 
-| [init](#init)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [init](#init)
 | **Signature**                               | `core.preferences.panels.plugins.init() -> none`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Initialises the module.                                                                     |
 | **Parameters**                              | <ul><li>deps - The plugin dependencies.</li><li>env	- The plugin environment.</li></ul> |

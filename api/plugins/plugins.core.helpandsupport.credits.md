@@ -11,9 +11,9 @@ Credits Menu Item.
 
 ### Functions
 
-| [openCredits](#openCredits)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [openCredits](#openCredits)
 | **Signature**                               | `plugins.core.helpandsupport.credits.openCredits() -> nil`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Opens CommandPost Credits Window                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

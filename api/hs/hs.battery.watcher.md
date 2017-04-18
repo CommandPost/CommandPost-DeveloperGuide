@@ -16,9 +16,9 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Constructors
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.battery.watcher.new(fn) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a battery watcher                                                                     |
 | **Parameters**                              | <ul><li>A function that will be called when the battery state changes. The function should accept no arguments.</li></ul> |
@@ -27,17 +27,17 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Methods
 
-| [start](#start)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [start](#start)
 | **Signature**                               | `hs.battery.watcher:start() -> self`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts the battery watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.battery.watcher` object</li></ul>          |
 
-| [stop](#stop)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [stop](#stop)
 | **Signature**                               | `hs.battery.watcher:stop() -> self`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops the battery watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

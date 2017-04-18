@@ -21,9 +21,9 @@ The wrapper is not enabled by default.  See the `hs.canvas.drawingWrapper` funct
 
 ### Functions
 
-| [drawingWrapper](#drawingWrapper)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [drawingWrapper](#drawingWrapper)
 | **Signature**                               | `hs.canvas.drawingWrapper([state]) -> boolean`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Get or set whether or not `hs.drawing` is replaced by a wrapper which uses this module.                                                                     |
 | **Parameters**                              | <ul><li>`state` - an optional boolean specifying whether or not `hs.drawing` should be replaced with a wrapper using this module.</li></ul> |

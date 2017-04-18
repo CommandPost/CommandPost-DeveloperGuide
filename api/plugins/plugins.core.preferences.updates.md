@@ -12,17 +12,17 @@ Updates Module.
 
 ### Functions
 
-| [checkForUpdates](#checkForUpdates)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [checkForUpdates](#checkForUpdates)
 | **Signature**                               | `plugins.core.preferences.updates.checkForUpdates() -> boolean`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Returns the 'Check for Updates' status                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>`true` or `false`</li></ul>          |
 
-| [toggleCheckForUpdates](#toggleCheckForUpdates)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [toggleCheckForUpdates](#toggleCheckForUpdates)
 | **Signature**                               | `plugins.core.preferences.updates.toggleCheckForUpdates() -> nil`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Toggles 'Check For Updates'                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

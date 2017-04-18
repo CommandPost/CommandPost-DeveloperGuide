@@ -26,41 +26,41 @@ Create and manage global keyboard shortcuts
 
 ### Variables
 
-| [alertDuration](#alertDuration)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [alertDuration](#alertDuration)
 | **Signature**                               | `hs.hotkey.alertDuration`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Variable                                                                     |
 | **Description**                             | Duration of the alert shown when a hotkey created with a `message` parameter is triggered, in seconds. Default is 1.                                                                     |
 
 ### Functions
 
-| [deleteAll](#deleteAll)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [deleteAll](#deleteAll)
 | **Signature**                               | `hs.hotkey.deleteAll(mods, key)`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Deletes all previously set callbacks for a given keyboard combination                                                                     |
 | **Parameters**                              | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li><li>   which should be zero or more of the following:</li><li>  "cmd", "command" or "⌘"</li><li>  "ctrl", "control" or "⌃"</li><li>  "alt", "option" or "⌥"</li><li>  "shift" or "⇧"</li><li>key - A string containing the name of a keyboard key (as found in [hs.keycodes.map](hs.keycodes.html#map) ), or a raw keycode number</li></ul> |
 | **Returns**                                 | <ul><li>None</li></ul>          |
 
-| [disableAll](#disableAll)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [disableAll](#disableAll)
 | **Signature**                               | `hs.hotkey.disableAll(mods, key)`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Disables all previously set callbacks for a given keyboard combination                                                                     |
 | **Parameters**                              | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li><li>   which should be zero or more of the following:</li><li>  "cmd", "command" or "⌘"</li><li>  "ctrl", "control" or "⌃"</li><li>  "alt", "option" or "⌥"</li><li>  "shift" or "⇧"</li><li>key - A string containing the name of a keyboard key (as found in [hs.keycodes.map](hs.keycodes.html#map) ), or a raw keycode number</li></ul> |
 | **Returns**                                 | <ul><li>None</li></ul>          |
 
-| [getHotkeys](#getHotkeys)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [getHotkeys](#getHotkeys)
 | **Signature**                               | `hs.hotkey.getHotkeys() -> table`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Returns a list of all currently active hotkeys                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>A table containing the hotkeys that are active, i.e. enabled and not "shadowed", in the current context</li><li>   (usually, the global hotkey context, but it could be a modal hotkey context). Every element in the list</li><li>   is a table with two fields:</li><li>  idx - a string describing the keyboard combination for the hotkey</li><li>  msg - the hotkey message, if provided when the hotkey was created (prefixed with the keyboard combination)</li></ul>          |
 
-| [showHotkeys](#showHotkeys)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [showHotkeys](#showHotkeys)
 | **Signature**                               | `hs.hotkey.showHotkeys(mods, key) -> hs.hotkey object`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Creates (and enables) a hotkey that shows all currently active hotkeys (i.e. enabled and not "shadowed"                                                                     |
 | **Parameters**                              | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li><li>   which should be zero or more of the following:</li><li>  "cmd", "command" or "⌘"</li><li>  "ctrl", "control" or "⌃"</li><li>  "alt", "option" or "⌥"</li><li>  "shift" or "⇧"</li><li>key - A string containing the name of a keyboard key (as found in [hs.keycodes.map](hs.keycodes.html#map) ), or a raw keycode number</li></ul> |
@@ -68,18 +68,18 @@ Create and manage global keyboard shortcuts
 
 ### Constructors
 
-| [bind](#bind)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [bind](#bind)
 | **Signature**                               | `hs.hotkey.bind(mods, key, message, pressedfn, releasedfn, repeatfn) -> hs.hotkey object`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a hotkey and enables it immediately                                                                     |
 | **Parameters**                              | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li><li>   which should be zero or more of the following:</li><li>  "cmd", "command" or "⌘"</li><li>  "ctrl", "control" or "⌃"</li><li>  "alt", "option" or "⌥"</li><li>  "shift" or "⇧"</li><li>key - A string containing the name of a keyboard key (as found in [hs.keycodes.map](hs.keycodes.html#map) ), or a raw keycode number</li><li>message - A string containing a message to be displayed via `hs.alert()` when the hotkey has been triggered, or nil for no alert</li><li>pressedfn - A function that will be called when the hotkey has been pressed, or nil</li><li>releasedfn - A function that will be called when the hotkey has been released, or nil</li><li>repeatfn - A function that will be called when a pressed hotkey is repeating, or nil</li></ul> |
 | **Returns**                                 | <ul><li>A new `hs.hotkey` object for method chaining</li></ul>          |
 | **Notes**                                   | <ul><li>This function is just a wrapper that performs `hs.hotkey.new(...):enable()`</li></ul>                |
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.hotkey.new(mods, key, [message,] pressedfn, releasedfn, repeatfn) -> hs.hotkey object`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new hotkey                                                                     |
 | **Parameters**                              | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li><li>   which should be zero or more of the following:</li><li>  "cmd", "command" or "⌘"</li><li>  "ctrl", "control" or "⌃"</li><li>  "alt", "option" or "⌥"</li><li>  "shift" or "⇧"</li><li>key - A string containing the name of a keyboard key (as found in [hs.keycodes.map](hs.keycodes.html#map) ), or a raw keycode number</li><li>message - (optional) A string containing a message to be displayed via `hs.alert()` when the hotkey has been</li><li>   triggered; if omitted, no alert will be shown</li><li>pressedfn - A function that will be called when the hotkey has been pressed, or nil</li><li>releasedfn - A function that will be called when the hotkey has been released, or nil</li><li>repeatfn - A function that will be called when a pressed hotkey is repeating, or nil</li></ul> |
@@ -88,25 +88,25 @@ Create and manage global keyboard shortcuts
 
 ### Methods
 
-| [delete](#delete)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [delete](#delete)
 | **Signature**                               | `hs.hotkey:delete()`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Disables and deletes a hotkey object                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>None</li></ul>          |
 
-| [disable](#disable)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [disable](#disable)
 | **Signature**                               | `hs.hotkey:disable() -> hs.hotkey object`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Disables a hotkey object                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.hotkey` object for method chaining</li></ul>          |
 
-| [enable](#enable)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [enable](#enable)
 | **Signature**                               | `hs.hotkey:enable() -> hs.hotkey object | nil`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Enables a hotkey object                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

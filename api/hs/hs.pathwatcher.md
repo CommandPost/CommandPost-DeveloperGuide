@@ -20,9 +20,9 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Constructors
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.pathwatcher.new(path, fn) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new path watcher object                                                                     |
 | **Parameters**                              | <ul><li>path - A string containing the path to be watched</li><li>fn - A function to be called when changes are detected. It should accept a single argument, a table containing a list of files that have changed</li></ul> |
@@ -30,17 +30,17 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Methods
 
-| [start](#start)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [start](#start)
 | **Signature**                               | `hs.pathwatcher:start()`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts a path watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.pathwatcher` object</li></ul>          |
 
-| [stop](#stop)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [stop](#stop)
 | **Signature**                               | `hs.pathwatcher:stop()`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops a path watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

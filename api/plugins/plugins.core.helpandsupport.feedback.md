@@ -11,9 +11,9 @@ Feedback Menu Item.
 
 ### Functions
 
-| [showFeedback](#showFeedback)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [showFeedback](#showFeedback)
 | **Signature**                               | `plugins.core.helpandsupport.feedback.showFeedback() -> nil`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Opens CommandPost Credits Window                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

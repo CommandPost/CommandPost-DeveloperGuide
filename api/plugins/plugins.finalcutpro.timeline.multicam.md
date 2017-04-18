@@ -11,9 +11,9 @@ Multicam Tools.
 
 ### Functions
 
-| [cutAndSwitchMulticam](#cutAndSwitchMulticam)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [cutAndSwitchMulticam](#cutAndSwitchMulticam)
 | **Signature**                               | `plugins.finalcutpro.timeline.multicam.cutAndSwitchMulticam(whichMode, whichAngle) -> boolean`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Cut & Switch Multicam.                                                                     |
 | **Parameters**                              | <ul><li>whichMode - "Audio", "Video" or "Both" as string</li><li>whichAngle - Number of Angle</li></ul> |

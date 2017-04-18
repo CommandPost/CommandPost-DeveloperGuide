@@ -17,9 +17,9 @@ The Lua wrapper portion is licensed under the MIT license by the Hammerspoon dev
 
 ### Functions
 
-| [convert](#convert)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [convert](#convert)
 | **Signature**                               | `hs.doc.markdown.convert(markdown, [type]) -> output`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Converts markdown encoded text to html or plaintext.                                                                     |
 | **Parameters**                              | <ul><li>markdown - a string containing the input text encoded using markdown tags</li><li>type     - an optional string specifying the conversion options and output type.  Defaults to "gfm".  The currently recognized types are:</li><li>  "markdown"  - specfies that the output should be HTML with the standard GitHub/Markdown extensions enabled.</li><li>  "gfm"       - specifies that the output should be HTML with additional GitHub extensions enabled.</li><li>  "plaintext" - specifies that the output should plain text with the standard GitHub/Markdown extensions enabled.</li></ul> |

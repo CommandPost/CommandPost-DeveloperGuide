@@ -13,15 +13,15 @@ Registers itself with the `core.action.manager`.
 
 ### Functions
 
-| [choices](#choices)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [choices](#choices)
 | **Signature**                               | `plugins.core.commands.commandaction.choices() -> table`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Returns an array of available choices                                                                     |
 
-| [execute](#execute)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [execute](#execute)
 | **Signature**                               | `plugins.core.commands.commandaction.execute(params) -> boolean`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Executes the action with the provided parameters.                                                                     |
 | **Parameters**                              | <ul><li>* `params`	- A table of parameters, matching the following:</li><li>		* `group`	- The Command Group ID</li><li>		* `id`		- The specific Command ID within the group.</li></ul> |

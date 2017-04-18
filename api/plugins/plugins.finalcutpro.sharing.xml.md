@@ -11,9 +11,9 @@ Shared XML Plugin.
 
 ### Functions
 
-| [shareXML](#shareXML)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [shareXML](#shareXML)
 | **Signature**                               | `plugins.finalcutpro.sharing.xml.shareXML() -> none`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Share XML                                                                     |
 | **Parameters**                              | <ul><li>incomingXML - XML data as string</li><li>noErrors - Prevents error messages from being displayed.</li></ul> |

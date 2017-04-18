@@ -15,9 +15,9 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 
 ### Constructors
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.spaces.watcher.new(handler) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new watcher for Space change events                                                                     |
 | **Parameters**                              | <ul><li>handler - A function to be called when the active Space changes. It should accept one argument, which will be the number of the new Space (or -1 if the number cannot be determined)</li></ul> |
@@ -25,17 +25,17 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 
 ### Methods
 
-| [start](#start)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [start](#start)
 | **Signature**                               | `hs.spaces.watcher:start()`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts the Spaces watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The watcher object</li></ul>          |
 
-| [stop](#stop)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [stop](#stop)
 | **Signature**                               | `hs.spaces.watcher:stop()`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops the Spaces watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

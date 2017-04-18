@@ -25,17 +25,17 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 
 ### Functions
 
-| [post](#post)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [post](#post)
 | **Signature**                               | `hs.distributednotifications.post(name[, sender[, userInfo]])`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Sends a distributed notification                                                                     |
 
 ### Constructors
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.distributednotifications.new(callback[, name[, object]]) -> object`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new NSDistributedNotificationCenter watcher                                                                     |
 | **Parameters**                              | <ul><li>callback - A function to be called when a matching notification arrives. The function should accept one argument:</li><li> notificationName - A string containing the name of the notification</li><li>name - An optional string containing the name of notifications to watch for. A value of `nil` will cause all notifications to be watched. Defaults to `nil`.</li><li>object - An optional string containing the name of sending objects to watch for. A value of `nil` will cause all sending objects to be watched. Defaults to `nil`.</li></ul> |
@@ -43,17 +43,17 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 
 ### Methods
 
-| [start](#start)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [start](#start)
 | **Signature**                               | `hs.distributednotifications:start() -> object`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts a NSDistributedNotificationCenter watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.distributednotifications` object</li></ul>          |
 
-| [stop](#stop)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [stop](#stop)
 | **Signature**                               | `hs.distributednotifications:stop() -> object`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops a NSDistributedNotificationCenter watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

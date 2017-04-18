@@ -11,9 +11,9 @@ Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.
 
 ### Functions
 
-| [unarchive](#unarchive)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [unarchive](#unarchive)
 | **Signature**                               | `cp.plist.archiver.unarchive(archive) -> table`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Unarchives a LUA table which was archived into a plist using the NSKeyedArchiver.                                                                     |
 | **Parameters**                              | <ul><li>`archive`		- the table containing the archive plist as a table</li><li>`defrostFn`	- (optional) a function which will be passed an object with a '$class' entry</li></ul> |

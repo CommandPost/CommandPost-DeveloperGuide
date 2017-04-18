@@ -11,9 +11,9 @@ Move To Playhead.
 
 ### Functions
 
-| [moveToPlayhead](#moveToPlayhead)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [moveToPlayhead](#moveToPlayhead)
 | **Signature**                               | `plugins.finalcutpro.timeline.movetoplayhead.moveToPlayhead() -> nil`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Move to Playhead                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

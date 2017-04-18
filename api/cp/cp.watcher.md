@@ -11,9 +11,9 @@ Watcher Module.
 
 ### Functions
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `cp.watcher:new(...) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Constructs a new watcher instance.                                                                     |
 | **Parameters**                              | <ul><li>`...` - The list of event name strings supported by the watcher.</li></ul> |

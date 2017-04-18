@@ -24,53 +24,53 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Constants
 
-| [activated](#activated)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [activated](#activated)
 | **Signature**                               | `hs.application.watcher.activated`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | An application has been activated (i.e. given keyboard/mouse focus)                                                                     |
 
-| [deactivated](#deactivated)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [deactivated](#deactivated)
 | **Signature**                               | `hs.application.watcher.deactivated`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | An application has been deactivated (i.e. lost keyboard/mouse focus)                                                                     |
 
-| [hidden](#hidden)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [hidden](#hidden)
 | **Signature**                               | `hs.application.watcher.hidden`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | An application has been hidden                                                                     |
 
-| [launched](#launched)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [launched](#launched)
 | **Signature**                               | `hs.application.watcher.launched`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | An application has been launched                                                                     |
 
-| [launching](#launching)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [launching](#launching)
 | **Signature**                               | `hs.application.watcher.launching`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | An application is in the process of being launched                                                                     |
 
-| [terminated](#terminated)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [terminated](#terminated)
 | **Signature**                               | `hs.application.watcher.terminated`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | An application has been terminated                                                                     |
 
-| [unhidden](#unhidden)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [unhidden](#unhidden)
 | **Signature**                               | `hs.application.watcher.unhidden`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | An application has been unhidden                                                                     |
 
 ### Constructors
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.application.watcher.new(fn) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates an application event watcher                                                                     |
 | **Parameters**                              | <ul><li>fn - A function that will be called when application events happen. It should accept three parameters:</li><li> A string containing the name of the application</li><li> An event type (see the constants defined above)</li><li> An `hs.application` object representing the application, or nil if the application couldn't be found</li></ul> |
@@ -79,17 +79,17 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Methods
 
-| [start](#start)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [start](#start)
 | **Signature**                               | `hs.application.watcher:start()`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts the application watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.application.watcher` object</li></ul>          |
 
-| [stop](#stop)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [stop](#stop)
 | **Signature**                               | `hs.application.watcher:stop()`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops the application watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

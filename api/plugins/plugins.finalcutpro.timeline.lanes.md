@@ -11,9 +11,9 @@ Controls Final Cut Pro's Lanes.
 
 ### Functions
 
-| [selectClipAtLane](#selectClipAtLane)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [selectClipAtLane](#selectClipAtLane)
 | **Signature**                               | `plugins.finalcutpro.timeline.lanes.selectClipAtLane() -> nil`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Select Clip at Lane in Final Cut Pro                                                                     |
 | **Parameters**                              | <ul><li>whichLane - Lane Number</li></ul> |

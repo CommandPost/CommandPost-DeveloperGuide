@@ -11,9 +11,9 @@ tmuxomatic-like window management
 
 ### Functions
 
-| [go](#go)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [go](#go)
 | **Signature**                               | `hs.mjomatic.go(cfg)`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Applies a configuration to the currently open windows                                                                     |
 | **Parameters**                              | <ul><li>cfg - A table containing a series of strings, representing the desired window layout</li></ul> |

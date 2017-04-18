@@ -32,9 +32,9 @@ For more information on the mathematics behind these, you can check the web.  On
 
 ### Constructors
 
-| [identity](#identity)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [identity](#identity)
 | **Signature**                               | `hs.canvas.matrix.identity() -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Specifies the identity matrix.  Resets all existing transformations when applied as a method to an existing matrixObject.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
@@ -43,61 +43,61 @@ For more information on the mathematics behind these, you can check the web.  On
 
 ### Methods
 
-| [append](#append)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [append](#append)
 | **Signature**                               | `hs.canvas.matrix:append(matrix) -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Appends the specified matrix transformations to the matrix and returns the new matrix.  This method cannot be used as a constructor.                                                                     |
 | **Parameters**                              | <ul><li>`matrix` - the table to append to the current matrix.</li></ul> |
 | **Returns**                                 | <ul><li>the new matrix</li></ul>          |
 | **Notes**                                   | <ul><li>Mathematically this method multiples the original matrix by the new one and returns the result of the multiplication.</li><li>You can use this method to "stack" additional transformations on top of existing transformations, without having to know what the existing transformations in effect for the canvas element are.</li></ul>                |
 
-| [invert](#invert)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [invert](#invert)
 | **Signature**                               | `hs.canvas.matrix:invert() -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Generates the mathematical inverse of the matrix.  This method cannot be used as a constructor.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>the inverted matrix.</li></ul>          |
 | **Notes**                                   | <ul><li>Inverting a matrix which represents a series of transformations has the effect of reversing or undoing the original transformations.</li><li>This is useful when used with [hs.canvas.matrix.append](#append) to undo a previously applied transformation without actually replacing all of the transformations which may have been applied to a canvas element.</li></ul>                |
 
-| [prepend](#prepend)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [prepend](#prepend)
 | **Signature**                               | `hs.canvas.matrix:prepend(matrix) -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Prepends the specified matrix transformations to the matrix and returns the new matrix.  This method cannot be used as a constructor.                                                                     |
 | **Parameters**                              | <ul><li>`matrix` - the table to append to the current matrix.</li></ul> |
 | **Returns**                                 | <ul><li>the new matrix</li></ul>          |
 | **Notes**                                   | <ul><li>Mathematically this method multiples the new matrix by the original one and returns the result of the multiplication.</li><li>You can use this method to apply a transformation *before* the currently applied transformations, without having to know what the existing transformations in effect for the canvas element are.</li></ul>                |
 
-| [rotate](#rotate)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [rotate](#rotate)
 | **Signature**                               | `hs.canvas.matrix:rotate(angle) -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Applies a rotation of the specified number of degrees to the transformation matrix.  This method can be used as a constructor or a method.                                                                     |
 | **Parameters**                              | <ul><li>`angle` - the number of degrees to rotate in a clockwise direction.</li></ul> |
 | **Returns**                                 | <ul><li>the new matrix</li></ul>          |
 | **Notes**                                   | <ul><li>The rotation of an element this matrix is applied to will be rotated about the origin (zero point).  To rotate an object about another point (its center for example), prepend a translation to the point to rotate about, and append a translation reversing the initial translation.</li><li>  e.g. `hs.canvas.matrix.translate(x, y):rotate(angle):translate(-x, -y)`</li></ul>                |
 
-| [scale](#scale)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [scale](#scale)
 | **Signature**                               | `hs.canvas.matrix:scale(xFactor, [yFactor]) -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Applies a scaling transformation to the matrix.  This method can be used as a constructor or a method.                                                                     |
 | **Parameters**                              | <ul><li>`xFactor` - the scaling factor to apply to the object in the horizontal orientation.</li><li>`yFactor` - an optional argument specifying a different scaling factor in the vertical orientation.  If this argument is not provided, the `xFactor` argument will be used for both orientations.</li></ul> |
 | **Returns**                                 | <ul><li>the new matrix</li></ul>          |
 
-| [shear](#shear)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [shear](#shear)
 | **Signature**                               | `hs.canvas.matrix:shear(xFactor, [yFactor]) -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Applies a shearing transformation to the matrix.  This method can be used as a constructor or a method.                                                                     |
 | **Parameters**                              | <ul><li>`xFactor` - the shearing factor to apply to the object in the horizontal orientation.</li><li>`yFactor` - an optional argument specifying a different shearing factor in the vertical orientation.  If this argument is not provided, the `xFactor` argument will be used for both orientations.</li></ul> |
 | **Returns**                                 | <ul><li>the new matrix</li></ul>          |
 
-| [translate](#translate)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [translate](#translate)
 | **Signature**                               | `hs.canvas.matrix:translate(x, y) -> matrixObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Applies a translation transformation to the matrix.  This method can be used as a constructor or a method.                                                                     |
 | **Parameters**                              | <ul><li>`x` - the distance to translate the object in the horizontal direction.</li><li>`y` - the distance to translate the object in the vertical direction.</li></ul> |

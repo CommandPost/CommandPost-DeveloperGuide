@@ -18,18 +18,18 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Constructors
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.screen.watcher.new(fn) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new screen-watcher.                                                                     |
 | **Parameters**                              | <ul><li>The function to be called when a change in the screen layout occurs.  This function should take no arguments.</li></ul> |
 | **Returns**                                 | <ul><li>An `hs.screen.watcher` object</li></ul>          |
 | **Notes**                                   | <ul><li>A screen layout change usually involves a change that is made from the Displays Preferences Panel or when a monitor is attached or removed.</li></ul>                |
 
-| [newWithActiveScreen](#newWithActiveScreen)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [newWithActiveScreen](#newWithActiveScreen)
 | **Signature**                               | `hs.screen.watcher.newWithActiveScreen(fn) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new screen-watcher that is also called when the active screen changes.                                                                     |
 | **Parameters**                              | <ul><li>The function to be called when a change in the screen layout or active screen occurs.  This function can optionally take one argument, a boolean which will indicate if the change was due to a screen layout change (nil) or because the active screen changed (true).</li></ul> |
@@ -38,17 +38,17 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Methods
 
-| [start](#start)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [start](#start)
 | **Signature**                               | `hs.screen.watcher:start() -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts the screen watcher, making it so fn is called each time the screen arrangement changes                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.screen.watcher` object</li></ul>          |
 
-| [stop](#stop)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [stop](#stop)
 | **Signature**                               | `hs.screen.watcher:stop() -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops the screen watcher's fn from getting called until started again                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

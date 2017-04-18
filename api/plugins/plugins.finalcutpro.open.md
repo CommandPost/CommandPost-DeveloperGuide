@@ -11,9 +11,9 @@ Opens Final Cut Pro via Global Shortcut & Menubar.
 
 ### Functions
 
-| [openFinalCutPro](#openFinalCutPro)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [openFinalCutPro](#openFinalCutPro)
 | **Signature**                               | `plugins.finalcutpro.open.openFinalCutPro() -> none`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Opens Final Cut Pro                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |

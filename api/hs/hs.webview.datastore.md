@@ -26,9 +26,9 @@ The datastore for a webview contains various types of data including cookies, di
 
 ### Functions
 
-| [websiteDataTypes](#websiteDataTypes)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [websiteDataTypes](#websiteDataTypes)
 | **Signature**                               | `hs.webview.datastore.websiteDataTypes() -> table`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Returns a list of the currently available data types within a datastore.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
@@ -37,27 +37,27 @@ The datastore for a webview contains various types of data including cookies, di
 
 ### Constructors
 
-| [default](#default)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [default](#default)
 | **Signature**                               | `hs.webview.datastore.default() -> datastoreObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Returns an object representing the default datastore for Hammerspoon `hs.webview` instances.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>a datastoreObject</li></ul>          |
 | **Notes**                                   | <ul><li>this is the datastore used unless otherwise specified when creating an `hs.webview` instance.</li></ul>                |
 
-| [fromWebview](#fromWebview)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [fromWebview](#fromWebview)
 | **Signature**                               | `hs.webview.datastore.fromWebview(webview) -> datastoreObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Returns an object representing the datastore for the specified `hs.webview` instance.                                                                     |
 | **Parameters**                              | <ul><li>`webview` - an `hs.webview` instance (webviewObject)</li></ul> |
 | **Returns**                                 | <ul><li>a datastoreObject</li></ul>          |
 | **Notes**                                   | <ul><li>When running on a system with OS X 10.11 or later, this method will also be added to the metatable for `hs.webview` objects so that you can retrieve a webview's datastore with `hs.webview:datastore()`.</li></ul>                |
 
-| [newPrivate](#newPrivate)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [newPrivate](#newPrivate)
 | **Signature**                               | `hs.webview.datastore.newPrivate() -> datastoreObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Returns an object representing a newly created non-persistent (private) datastore for use with a Hammerspoon `hs.webview` instance.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
@@ -66,35 +66,35 @@ The datastore for a webview contains various types of data including cookies, di
 
 ### Methods
 
-| [fetchRecords](#fetchRecords)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [fetchRecords](#fetchRecords)
 | **Signature**                               | `hs.webview.datastore:fetchRecords([dataTypes], callback) -> datastoreObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Generates a list of the datastore records of the specified type, and invokes the callback function with the list.                                                                     |
 | **Parameters**                              | <ul><li>`dataTypes` - an optional string or table specifying the data types to fetch from the datastore.  If this parameter is not specified, it defaults to the list returned by [hs.webview.datastore.websiteDataTypes](#websiteDataTypes).</li><li>`callback`  - a function which accepts as it's argument an array-table containing tables with the following key-value pairs:</li><li>  `displayName` - a string containing the site's display name.  Typically, the display name is the domain name with suffix taken from the resource’s security origin (website name).</li><li>  `dataTypes`   - a table containing strings representing the types of data stored for the website specified by `displayName`.</li></ul> |
 | **Returns**                                 | <ul><li>the datastore object</li></ul>          |
 | **Notes**                                   | <ul><li>only those sites with one or more of the specified data types are returned</li><li>for the sites returned, only those data types that were present in the query will be included in the list, even if the site has data of another type in the datastore.</li></ul>                |
 
-| [persistent](#persistent)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [persistent](#persistent)
 | **Signature**                               | `hs.webview.datastore:persistent() -> bool`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Returns whether or not the datastore is persistent.                                                                     |
 | **Returns**                                 | <ul><li>a boolean value indicating whether or not the datastore is persistent (true) or private (false)</li></ul>          |
 | **Notes**                                   | <ul><li>Note that this value is the inverse of `hs.webview:privateBrowsing()`, since private browsing uses a non-persistent datastore.</li></ul>                |
 
-| [removeRecordsAfter](#removeRecordsAfter)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [removeRecordsAfter](#removeRecordsAfter)
 | **Signature**                               | `hs.webview.datastore:removeRecordsAfter(date, dataTypes, [callback]) -> datastoreObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Removes the specified types of data from the datastore if the data was added or changed since the given date.                                                                     |
 | **Parameters**                              | <ul><li>`date`         - an integer representing seconds since `1970-01-01 00:00:00 +0000` (e.g. `os.time()`), or a string containing a date in RFC3339 format (`YYYY-MM-DD[T]HH:MM:SS[Z]`).</li><li>`dataTypes`    - a string or array of strings specifying the types of data to remove from the datastore for the specified sites.</li><li>`callback`     - an optional function, which should expect no arguments, that will be called when the specified items have been removed from the datastore.</li></ul> |
 | **Returns**                                 | <ul><li>the datastore object</li></ul>          |
 | **Notes**                                   | <ul><li>Yes, you read the description correctly -- removes data *newer* then the date specified.  I've not yet found a way to remove data *older* then the date specified (to expire old data, for example) but updates or suggestions are welcome in the Hammerspoon Google group or Github web site.</li></ul>                |
 
-| [removeRecordsFor](#removeRecordsFor)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [removeRecordsFor](#removeRecordsFor)
 | **Signature**                               | `hs.webview.datastore:removeRecordsFor(displayNames, dataTypes, [callback]) -> datastoreObject`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Remove data from the datastore of the specified type(s) for the specified site(s).                                                                     |
 | **Parameters**                              | <ul><li>`displayNames` - a string or array of strings specifying the display names (sites) to remove records for.</li><li>`dataTypes`    - a string or array of strings specifying the types of data to remove from the datastore for the specified sites.</li><li>`callback`     - an optional function, which should expect no arguments, that will be called when the specified items have been removed from the datastore.</li></ul> |

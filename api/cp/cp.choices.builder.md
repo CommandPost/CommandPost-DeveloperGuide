@@ -16,9 +16,9 @@ Choices Builder Module.
 
 ### Functions
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `cp.choices.builder.new(choiceType) -> builder`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Creates a new choice builder instance.                                                                     |
 | **Parameters**                              | <ul><li>* `choice`	- The choice instance to configure.</li></ul> |
@@ -26,33 +26,33 @@ Choices Builder Module.
 
 ### Methods
 
-| [id](#id)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [id](#id)
 | **Signature**                               | `cp.choices.builder:id(value) -> builder`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Indicates the choice is a favorite.                                                                     |
 | **Parameters**                              | <ul><li>* `value`	- True or false.</li></ul> |
 | **Returns**                                 | <ul><li>* The choice builder.</li></ul>          |
 
-| [params](#params)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [params](#params)
 | **Signature**                               | `cp.choices.builder:params(value) -> builder`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Specifies a table of parameter values for the choice. These                                                                     |
 | **Parameters**                              | <ul><li>* `value`	- The table of parameters.</li></ul> |
 | **Returns**                                 | <ul><li>* The choice builder, added to the choices set.</li></ul>          |
 
-| [subText](#subText)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [subText](#subText)
 | **Signature**                               | `cp.choices.builder:subText(value) -> builder`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Specifies the `subText` value for the choice being built.                                                                     |
 | **Parameters**                              | <ul><li>* `value`	- The subText title for the choice.</li></ul> |
 | **Returns**                                 | <ul><li>* The choice builder.</li></ul>          |
 
-| [text](#text)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [text](#text)
 | **Signature**                               | `cp.choices.builder:text(value) -> builder`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Specifies the text value for the choice being built.                                                                     |
 | **Parameters**                              | <ul><li>* `value`	- The text title for the choice.</li></ul> |

@@ -17,17 +17,17 @@ Watch for changes to the associated wifi network
 
 ### Constants
 
-| [eventTypes[]](#eventTypes[])         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [eventTypes[]](#eventTypes[])
 | **Signature**                               | `hs.wifi.watcher.eventTypes[]`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | A table containing the possible event types that this watcher can monitor for.                                                                     |
 
 ### Constructors
 
-| [new](#new)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [new](#new)
 | **Signature**                               | `hs.wifi.watcher.new(fn) -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Constructor                                                                     |
 | **Description**                             | Creates a new watcher for WiFi network events                                                                     |
 | **Parameters**                              | <ul><li>fn - A function that will be called when a WiFi event that is being monitored occurs. The function should expect 2 or 4 arguments as described in the notes below.</li></ul> |
@@ -36,25 +36,25 @@ Watch for changes to the associated wifi network
 
 ### Methods
 
-| [start](#start)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [start](#start)
 | **Signature**                               | `hs.wifi.watcher:start() -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Starts the SSID watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.wifi.watcher` object</li></ul>          |
 
-| [stop](#stop)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [stop](#stop)
 | **Signature**                               | `hs.wifi.watcher:stop() -> watcher`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Stops the SSID watcher                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>The `hs.wifi.watcher` object</li></ul>          |
 
-| [watchingFor](#watchingFor)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
+#### [watchingFor](#watchingFor)
 | **Signature**                               | `hs.wifi.watcher:watchingFor([messages]) -> watcher | current-value`                                                                    |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Type**                                    | Method                                                                     |
 | **Description**                             | Get or set the specific types of wifi events to generate a callback for with this watcher.                                                                     |
 | **Parameters**                              | <ul><li>`messages` - an optional table of or list of strings specifying the types of events this watcher should invoke a callback for.  You can specify multiple types of events to watch for. Defaults to `{ "SSIDChange" }`.</li></ul> |
