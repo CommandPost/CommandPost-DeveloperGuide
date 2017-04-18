@@ -5,17 +5,17 @@ Feedback Menu Item.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [showFeedback](#showFeedback)
+ * [showFeedback](#showfeedback)
 
 ## API Documentation
 
 ### Functions
 
-#### [showFeedback](#showFeedback)
-| **Signature**                               | `plugins.core.helpandsupport.feedback.showFeedback() -> nil`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Opens CommandPost Credits Window                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [showFeedback](#showfeedback)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.helpandsupport.feedback.showFeedback() -> nil` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Opens CommandPost Credits Window                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

@@ -12,10 +12,10 @@ User Guide Menu Item.
 ### Functions
 
 #### [show](#show)
-| **Signature**                               | `plugins.core.helpandsupport.userguide.show() -> nil`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Opens the CommandPost User Guide in your default Browser.                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.helpandsupport.userguide.show() -> nil` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Opens the CommandPost User Guide in your default Browser.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

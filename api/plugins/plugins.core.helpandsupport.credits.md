@@ -5,17 +5,17 @@ Credits Menu Item.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [openCredits](#openCredits)
+ * [openCredits](#opencredits)
 
 ## API Documentation
 
 ### Functions
 
-#### [openCredits](#openCredits)
-| **Signature**                               | `plugins.core.helpandsupport.credits.openCredits() -> nil`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Opens CommandPost Credits Window                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [openCredits](#opencredits)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.helpandsupport.credits.openCredits() -> nil` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Opens CommandPost Credits Window                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

@@ -8,18 +8,18 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [screensDidLock](#screensDidLock)
- * [screensDidSleep](#screensDidSleep)
- * [screensDidUnlock](#screensDidUnlock)
- * [screensDidWake](#screensDidWake)
- * [screensaverDidStart](#screensaverDidStart)
- * [screensaverDidStop](#screensaverDidStop)
- * [screensaverWillStop](#screensaverWillStop)
- * [sessionDidBecomeActive](#sessionDidBecomeActive)
- * [sessionDidResignActive](#sessionDidResignActive)
- * [systemDidWake](#systemDidWake)
- * [systemWillPowerOff](#systemWillPowerOff)
- * [systemWillSleep](#systemWillSleep)
+ * [screensDidLock](#screensdidlock)
+ * [screensDidSleep](#screensdidsleep)
+ * [screensDidUnlock](#screensdidunlock)
+ * [screensDidWake](#screensdidwake)
+ * [screensaverDidStart](#screensaverdidstart)
+ * [screensaverDidStop](#screensaverdidstop)
+ * [screensaverWillStop](#screensaverwillstop)
+ * [sessionDidBecomeActive](#sessiondidbecomeactive)
+ * [sessionDidResignActive](#sessiondidresignactive)
+ * [systemDidWake](#systemdidwake)
+ * [systemWillPowerOff](#systemwillpoweroff)
+ * [systemWillSleep](#systemwillsleep)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -30,103 +30,103 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ### Constants
 
-#### [screensDidLock](#screensDidLock)
-| **Signature**                               | `hs.caffeinate.watcher.screensDidLock`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The screen was locked                                                                     |
+#### [screensDidLock](#screensdidlock)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.screensDidLock` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screen was locked                                                                                         |
 
-#### [screensDidSleep](#screensDidSleep)
-| **Signature**                               | `hs.caffeinate.watcher.screensDidSleep`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The displays have gone to sleep                                                                     |
+#### [screensDidSleep](#screensdidsleep)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.screensDidSleep` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The displays have gone to sleep                                                                                         |
 
-#### [screensDidUnlock](#screensDidUnlock)
-| **Signature**                               | `hs.caffeinate.watcher.screensDidUnlock`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The screen was unlocked                                                                     |
+#### [screensDidUnlock](#screensdidunlock)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.screensDidUnlock` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screen was unlocked                                                                                         |
 
-#### [screensDidWake](#screensDidWake)
-| **Signature**                               | `hs.caffeinate.watcher.screensDidWake`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The displays have woken from sleep                                                                     |
+#### [screensDidWake](#screensdidwake)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.screensDidWake` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The displays have woken from sleep                                                                                         |
 
-#### [screensaverDidStart](#screensaverDidStart)
-| **Signature**                               | `hs.caffeinate.watcher.screensaverDidStart`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The screensaver started                                                                     |
+#### [screensaverDidStart](#screensaverdidstart)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.screensaverDidStart` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver started                                                                                         |
 
-#### [screensaverDidStop](#screensaverDidStop)
-| **Signature**                               | `hs.caffeinate.watcher.screensaverDidStop`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The screensaver stopped                                                                     |
+#### [screensaverDidStop](#screensaverdidstop)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.screensaverDidStop` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver stopped                                                                                         |
 
-#### [screensaverWillStop](#screensaverWillStop)
-| **Signature**                               | `hs.caffeinate.watcher.screensaverWillStop`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The screensaver is about to stop                                                                     |
+#### [screensaverWillStop](#screensaverwillstop)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.screensaverWillStop` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver is about to stop                                                                                         |
 
-#### [sessionDidBecomeActive](#sessionDidBecomeActive)
-| **Signature**                               | `hs.caffeinate.watcher.sessionDidBecomeActive`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The session became active, due to fast user switching                                                                     |
+#### [sessionDidBecomeActive](#sessiondidbecomeactive)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.sessionDidBecomeActive` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The session became active, due to fast user switching                                                                                         |
 
-#### [sessionDidResignActive](#sessionDidResignActive)
-| **Signature**                               | `hs.caffeinate.watcher.sessionDidResignActive`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The session is no longer active, due to fast user switching                                                                     |
+#### [sessionDidResignActive](#sessiondidresignactive)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.sessionDidResignActive` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The session is no longer active, due to fast user switching                                                                                         |
 
-#### [systemDidWake](#systemDidWake)
-| **Signature**                               | `hs.caffeinate.watcher.systemDidWake`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The system woke from sleep                                                                     |
+#### [systemDidWake](#systemdidwake)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.systemDidWake` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The system woke from sleep                                                                                         |
 
-#### [systemWillPowerOff](#systemWillPowerOff)
-| **Signature**                               | `hs.caffeinate.watcher.systemWillPowerOff`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The user requested a logout or shutdown                                                                     |
+#### [systemWillPowerOff](#systemwillpoweroff)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.systemWillPowerOff` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The user requested a logout or shutdown                                                                                         |
 
-#### [systemWillSleep](#systemWillSleep)
-| **Signature**                               | `hs.caffeinate.watcher.systemWillSleep`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | The system is preparing to sleep                                                                     |
+#### [systemWillSleep](#systemwillsleep)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.systemWillSleep` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The system is preparing to sleep                                                                                         |
 
 ### Constructors
 
 #### [new](#new)
-| **Signature**                               | `hs.caffeinate.watcher.new(fn) -> watcher`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constructor                                                                     |
-| **Description**                             | Creates a watcher object for system and display sleep/wake/power events                                                                     |
-| **Parameters**                              | <ul><li>fn - A function that will be called when system/display events happen. It should accept one parameter:</li><li> An event type (see the constants defined above)</li></ul> |
-| **Returns**                                 | <ul><li>An `hs.caffeinate.watcher` object</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher.new(fn) -> watcher` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a watcher object for system and display sleep/wake/power events                                                                                         |
+| **Parameters**                                       | <ul><li>fn - A function that will be called when system/display events happen. It should accept one parameter:</li><li> An event type (see the constants defined above)</li></ul> |
+| **Returns**                                          | <ul><li>An `hs.caffeinate.watcher` object</li></ul>          |
 
 ### Methods
 
 #### [start](#start)
-| **Signature**                               | `hs.caffeinate.watcher:start()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Method                                                                     |
-| **Description**                             | Starts the sleep/wake watcher                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>An `hs.caffeinate.watcher` object</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher:start()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Starts the sleep/wake watcher                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>An `hs.caffeinate.watcher` object</li></ul>          |
 
 #### [stop](#stop)
-| **Signature**                               | `hs.caffeinate.watcher:stop()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Method                                                                     |
-| **Description**                             | Stops the sleep/wake watcher                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>An `hs.caffeinate.watcher` object</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.caffeinate.watcher:stop()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Stops the sleep/wake watcher                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>An `hs.caffeinate.watcher` object</li></ul>          |
 

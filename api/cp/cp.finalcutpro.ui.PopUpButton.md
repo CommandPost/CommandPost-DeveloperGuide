@@ -12,8 +12,8 @@ Pop Up Button Module.
 ### Functions
 
 #### [new](#new)
-| **Signature**                               | `cp.finalcutpro.ui.PopUpButton:new(axuielement, function) -> PopUpButton`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Creates a new PopUpButton                                                                     |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.ui.PopUpButton:new(axuielement, function) -> PopUpButton` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Creates a new PopUpButton                                                                                         |
 

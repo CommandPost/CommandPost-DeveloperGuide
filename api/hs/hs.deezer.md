@@ -10,207 +10,207 @@ Controls for Deezer music player
  * [state_playing](#state_playing)
  * [state_stopped](#state_stopped)
 * Functions - API calls offered directly by the extension
- * [displayCurrentTrack](#displayCurrentTrack)
+ * [displayCurrentTrack](#displaycurrenttrack)
  * [ff](#ff)
- * [getCurrentAlbum](#getCurrentAlbum)
- * [getCurrentArtist](#getCurrentArtist)
- * [getCurrentTrack](#getCurrentTrack)
- * [getPlaybackState](#getPlaybackState)
- * [getPosition](#getPosition)
- * [getVolume](#getVolume)
- * [isPlaying](#isPlaying)
- * [isRunning](#isRunning)
+ * [getCurrentAlbum](#getcurrentalbum)
+ * [getCurrentArtist](#getcurrentartist)
+ * [getCurrentTrack](#getcurrenttrack)
+ * [getPlaybackState](#getplaybackstate)
+ * [getPosition](#getposition)
+ * [getVolume](#getvolume)
+ * [isPlaying](#isplaying)
+ * [isRunning](#isrunning)
  * [next](#next)
  * [pause](#pause)
  * [play](#play)
  * [playpause](#playpause)
  * [previous](#previous)
  * [rw](#rw)
- * [setPosition](#setPosition)
- * [setVolume](#setVolume)
- * [volumeDown](#volumeDown)
- * [volumeUp](#volumeUp)
+ * [setPosition](#setposition)
+ * [setVolume](#setvolume)
+ * [volumeDown](#volumedown)
+ * [volumeUp](#volumeup)
 
 ## API Documentation
 
 ### Constants
 
 #### [state_paused](#state_paused)
-| **Signature**                               | `hs.deezer.state_paused`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | Returned by `hs.deezer.getPlaybackState()` to indicates deezer is paused                                                                     |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.state_paused` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Returned by `hs.deezer.getPlaybackState()` to indicates deezer is paused                                                                                         |
 
 #### [state_playing](#state_playing)
-| **Signature**                               | `hs.deezer.state_playing`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | Returned by `hs.deezer.getPlaybackState()` to indicates deezer is playing                                                                     |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.state_playing` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Returned by `hs.deezer.getPlaybackState()` to indicates deezer is playing                                                                                         |
 
 #### [state_stopped](#state_stopped)
-| **Signature**                               | `hs.deezer.state_stopped`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Constant                                                                     |
-| **Description**                             | Returned by `hs.deezer.getPlaybackState()` to indicates deezer is stopped                                                                     |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.state_stopped` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Returned by `hs.deezer.getPlaybackState()` to indicates deezer is stopped                                                                                         |
 
 ### Functions
 
-#### [displayCurrentTrack](#displayCurrentTrack)
-| **Signature**                               | `hs.deezer.displayCurrentTrack()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Displays information for current track on screen                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [displayCurrentTrack](#displaycurrenttrack)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.displayCurrentTrack()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Displays information for current track on screen                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [ff](#ff)
-| **Signature**                               | `hs.deezer.ff()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Skips the playback position forwards by 5 seconds                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.ff()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Skips the playback position forwards by 5 seconds                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [getCurrentAlbum](#getCurrentAlbum)
-| **Signature**                               | `hs.deezer.getCurrentAlbum()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Gets the name of the album of the current track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A string containing the Album of the current track, or nil if an error occurred</li></ul>          |
+#### [getCurrentAlbum](#getcurrentalbum)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.getCurrentAlbum()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the name of the album of the current track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the Album of the current track, or nil if an error occurred</li></ul>          |
 
-#### [getCurrentArtist](#getCurrentArtist)
-| **Signature**                               | `hs.deezer.getCurrentArtist()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Gets the name of the artist of the current track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A string containing the Artist of the current track, or nil if an error occurred</li></ul>          |
+#### [getCurrentArtist](#getcurrentartist)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.getCurrentArtist()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the name of the artist of the current track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the Artist of the current track, or nil if an error occurred</li></ul>          |
 
-#### [getCurrentTrack](#getCurrentTrack)
-| **Signature**                               | `hs.deezer.getCurrentTrack()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Gets the name of the current track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A string containing the name of the current track, or nil if an error occurred</li></ul>          |
+#### [getCurrentTrack](#getcurrenttrack)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.getCurrentTrack()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the name of the current track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the name of the current track, or nil if an error occurred</li></ul>          |
 
-#### [getPlaybackState](#getPlaybackState)
-| **Signature**                               | `hs.deezer.getPlaybackState()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Gets the current playback state of deezer                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A string containing one of the following constants:</li><li>   - `hs.deezer.state_stopped`</li><li>   - `hs.deezer.state_paused`</li><li>   - `hs.deezer.state_playing`</li></ul>          |
+#### [getPlaybackState](#getplaybackstate)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.getPlaybackState()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the current playback state of deezer                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing one of the following constants:</li><li>   - `hs.deezer.state_stopped`</li><li>   - `hs.deezer.state_paused`</li><li>   - `hs.deezer.state_playing`</li></ul>          |
 
-#### [getPosition](#getPosition)
-| **Signature**                               | `hs.deezer.getPosition()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Gets the playback position (in seconds) in the current song                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A number indicating the current position in the song</li></ul>          |
+#### [getPosition](#getposition)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.getPosition()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the playback position (in seconds) in the current song                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A number indicating the current position in the song</li></ul>          |
 
-#### [getVolume](#getVolume)
-| **Signature**                               | `hs.deezer.getVolume()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Gets the deezer volume setting                                                                     |
-| **Returns**                                 | <ul><li>A number containing the volume deezer is set to between 1 and 100</li></ul>          |
+#### [getVolume](#getvolume)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.getVolume()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the deezer volume setting                                                                                         |
+| **Returns**                                          | <ul><li>A number containing the volume deezer is set to between 1 and 100</li></ul>          |
 
-#### [isPlaying](#isPlaying)
-| **Signature**                               | `hs.deezer.isPlaying()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Returns whether deezer is currently playing                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A boolean value indicating whether deezer is currently playing a track, or nil if an error occurred (unknown player state). Also returns false if the application is not running</li></ul>          |
+#### [isPlaying](#isplaying)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.isPlaying()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns whether deezer is currently playing                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A boolean value indicating whether deezer is currently playing a track, or nil if an error occurred (unknown player state). Also returns false if the application is not running</li></ul>          |
 
-#### [isRunning](#isRunning)
-| **Signature**                               | `hs.deezer.isRunning()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Returns whether deezer is currently open. Most other functions in hs.deezer will automatically start the application, so this function can be used to guard against that.                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>A boolean value indicating whether the deezer application is running.</li></ul>          |
+#### [isRunning](#isrunning)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.isRunning()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns whether deezer is currently open. Most other functions in hs.deezer will automatically start the application, so this function can be used to guard against that.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A boolean value indicating whether the deezer application is running.</li></ul>          |
 
 #### [next](#next)
-| **Signature**                               | `hs.deezer.next()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Skips to the next deezer track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.next()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Skips to the next deezer track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [pause](#pause)
-| **Signature**                               | `hs.deezer.pause()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Pauses the current deezer track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.pause()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Pauses the current deezer track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [play](#play)
-| **Signature**                               | `hs.deezer.play()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Plays the current deezer track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.play()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Plays the current deezer track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [playpause](#playpause)
-| **Signature**                               | `hs.deezer.playpause()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Toggles play/pause of current deezer track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.playpause()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Toggles play/pause of current deezer track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [previous](#previous)
-| **Signature**                               | `hs.deezer.previous()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Skips to previous deezer track                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.previous()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Skips to previous deezer track                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [rw](#rw)
-| **Signature**                               | `hs.deezer.rw`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Skips the playback position backwards by 5 seconds                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.rw` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Skips the playback position backwards by 5 seconds                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [setPosition](#setPosition)
-| **Signature**                               | `hs.deezer.setPosition(pos)`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Sets the playback position in the current song                                                                     |
-| **Parameters**                              | <ul><li>pos - A number containing the position (in seconds) to jump to in the current song</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [setPosition](#setposition)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.setPosition(pos)` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets the playback position in the current song                                                                                         |
+| **Parameters**                                       | <ul><li>pos - A number containing the position (in seconds) to jump to in the current song</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [setVolume](#setVolume)
-| **Signature**                               | `hs.deezer.setVolume(vol)`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Sets the deezer volume setting                                                                     |
-| **Parameters**                              | <ul><li>vol - A number between 1 and 100</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [setVolume](#setvolume)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.setVolume(vol)` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets the deezer volume setting                                                                                         |
+| **Parameters**                                       | <ul><li>vol - A number between 1 and 100</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [volumeDown](#volumeDown)
-| **Signature**                               | `hs.deezer.volumeDown()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Reduces the volume by 5                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [volumeDown](#volumedown)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.volumeDown()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Reduces the volume by 5                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [volumeUp](#volumeUp)
-| **Signature**                               | `hs.deezer.volumeUp()`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Increases the volume by 5                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [volumeUp](#volumeup)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.deezer.volumeUp()` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Increases the volume by 5                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

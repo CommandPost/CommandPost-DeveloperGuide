@@ -15,18 +15,18 @@ Portions sourced from (https://gist.github.com/shpakovski/1902994).
 ### Functions
 
 #### [decode](#decode)
-| **Signature**                               | `hs.base64.decode(str) -> val`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Decodes a given base64 string                                                                     |
-| **Parameters**                              | <ul><li>str - A base64 encoded string</li></ul> |
-| **Returns**                                 | <ul><li>A string containing the decoded data</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.base64.decode(str) -> val` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Decodes a given base64 string                                                                                         |
+| **Parameters**                                       | <ul><li>str - A base64 encoded string</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the decoded data</li></ul>          |
 
 #### [encode](#encode)
-| **Signature**                               | `hs.base64.encode(val[,width]) -> str`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Encodes a given string to base64                                                                     |
-| **Parameters**                              | <ul><li>val - A string to encode as base64</li><li>width - Optional line width to split the string into (usually 64 or 76)</li></ul> |
-| **Returns**                                 | <ul><li>A string containing the base64 representation of the input string</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`hs.base64.encode(val[,width]) -> str` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Encodes a given string to base64                                                                                         |
+| **Parameters**                                       | <ul><li>val - A string to encode as base64</li><li>width - Optional line width to split the string into (usually 64 or 76)</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the base64 representation of the input string</li></ul>          |
 

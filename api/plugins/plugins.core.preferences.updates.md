@@ -5,26 +5,26 @@ Updates Module.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [checkForUpdates](#checkForUpdates)
- * [toggleCheckForUpdates](#toggleCheckForUpdates)
+ * [checkForUpdates](#checkforupdates)
+ * [toggleCheckForUpdates](#togglecheckforupdates)
 
 ## API Documentation
 
 ### Functions
 
-#### [checkForUpdates](#checkForUpdates)
-| **Signature**                               | `plugins.core.preferences.updates.checkForUpdates() -> boolean`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Returns the 'Check for Updates' status                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>`true` or `false`</li></ul>          |
+#### [checkForUpdates](#checkforupdates)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.preferences.updates.checkForUpdates() -> boolean` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the 'Check for Updates' status                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`true` or `false`</li></ul>          |
 
-#### [toggleCheckForUpdates](#toggleCheckForUpdates)
-| **Signature**                               | `plugins.core.preferences.updates.toggleCheckForUpdates() -> nil`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Toggles 'Check For Updates'                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [toggleCheckForUpdates](#togglecheckforupdates)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.preferences.updates.toggleCheckForUpdates() -> nil` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Toggles 'Check For Updates'                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

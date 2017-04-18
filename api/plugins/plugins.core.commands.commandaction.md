@@ -14,15 +14,15 @@ Registers itself with the `core.action.manager`.
 ### Functions
 
 #### [choices](#choices)
-| **Signature**                               | `plugins.core.commands.commandaction.choices() -> table`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Returns an array of available choices                                                                     |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.commands.commandaction.choices() -> table` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns an array of available choices                                                                                         |
 
 #### [execute](#execute)
-| **Signature**                               | `plugins.core.commands.commandaction.execute(params) -> boolean`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Executes the action with the provided parameters.                                                                     |
-| **Parameters**                              | <ul><li>* `params`	- A table of parameters, matching the following:</li><li>		* `group`	- The Command Group ID</li><li>		* `id`		- The specific Command ID within the group.</li></ul> |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.commands.commandaction.execute(params) -> boolean` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Executes the action with the provided parameters.                                                                                         |
+| **Parameters**                                       | <ul><li>* `params`	- A table of parameters, matching the following:</li><li>		* `group`	- The Command Group ID</li><li>		* `id`		- The specific Command ID within the group.</li></ul> |
 

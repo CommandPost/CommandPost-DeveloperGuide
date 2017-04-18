@@ -5,17 +5,17 @@ Controls Final Cut Pro's Lanes.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [selectClipAtLane](#selectClipAtLane)
+ * [selectClipAtLane](#selectclipatlane)
 
 ## API Documentation
 
 ### Functions
 
-#### [selectClipAtLane](#selectClipAtLane)
-| **Signature**                               | `plugins.finalcutpro.timeline.lanes.selectClipAtLane() -> nil`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Select Clip at Lane in Final Cut Pro                                                                     |
-| **Parameters**                              | <ul><li>whichLane - Lane Number</li></ul> |
-| **Returns**                                 | <ul><li>`true` if successful otherwise `false`</li></ul>          |
+#### [selectClipAtLane](#selectclipatlane)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.lanes.selectClipAtLane() -> nil` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Select Clip at Lane in Final Cut Pro                                                                                         |
+| **Parameters**                                       | <ul><li>whichLane - Lane Number</li></ul> |
+| **Returns**                                          | <ul><li>`true` if successful otherwise `false`</li></ul>          |
 

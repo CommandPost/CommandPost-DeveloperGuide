@@ -12,10 +12,10 @@ Full Screen Window
 ### Methods
 
 #### [watch](#watch)
-| **Signature**                               | `cp.finalcutpro.main.FullScreenWindow:watch() -> bool`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Method                                                                     |
-| **Description**                             | Watch for events that happen in the command editor                                                                     |
-| **Parameters**                              | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(CommandEditor)` - Triggered when the window is shown.</li><li>  `hide(CommandEditor)` - Triggered when the window is hidden.</li></ul> |
-| **Returns**                                 | <ul><li>An ID which can be passed to `unwatch` to stop watching.</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.main.FullScreenWindow:watch() -> bool` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Watch for events that happen in the command editor                                                                                         |
+| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(CommandEditor)` - Triggered when the window is shown.</li><li>  `hide(CommandEditor)` - Triggered when the window is hidden.</li></ul> |
+| **Returns**                                          | <ul><li>An ID which can be passed to `unwatch` to stop watching.</li></ul>          |
 

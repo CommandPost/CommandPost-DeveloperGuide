@@ -12,10 +12,10 @@ Core CommandPost functionality
 ### Functions
 
 #### [quit](#quit)
-| **Signature**                               | `plugins.core.quit.quit() -> nil`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Quit's CommandPost                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.core.quit.quit() -> nil` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Quit's CommandPost                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

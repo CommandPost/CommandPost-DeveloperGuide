@@ -12,8 +12,8 @@ Slider Module.
 ### Functions
 
 #### [new](#new)
-| **Signature**                               | `cp.finalcutpro.ui.Slider:new(axuielement, function) -> Slider`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Creates a new Slider                                                                     |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.finalcutpro.ui.Slider:new(axuielement, function) -> Slider` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Creates a new Slider                                                                                         |
 

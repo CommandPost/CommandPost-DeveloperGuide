@@ -5,17 +5,17 @@ Shortcut for changing Final Cut Pro's Timeline Height
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [changeTimelineClipHeight](#changeTimelineClipHeight)
+ * [changeTimelineClipHeight](#changetimelineclipheight)
 
 ## API Documentation
 
 ### Functions
 
-#### [changeTimelineClipHeight](#changeTimelineClipHeight)
-| **Signature**                               | `plugins.finalcutpro.timeline.height.changeTimelineClipHeight(direction) -> none`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Change the Timeline Clip Height                                                                     |
-| **Parameters**                              | <ul><li>direction - "up" or "down"</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [changeTimelineClipHeight](#changetimelineclipheight)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.timeline.height.changeTimelineClipHeight(direction) -> none` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Change the Timeline Clip Height                                                                                         |
+| **Parameters**                                       | <ul><li>direction - "up" or "down"</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

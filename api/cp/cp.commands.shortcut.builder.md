@@ -13,18 +13,18 @@ Shortcut Commands Builder Module.
 ### Methods
 
 #### [add](#add)
-| **Signature**                               | `cp.commands.shortcut.builder:add(modifier, [keyCode]) -> shortcut/command`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Method                                                                     |
-| **Description**                             | Adds the specified modifier to the set. If a `keyCode` is provided,                                                                     |
-| **Parameters**                              | <ul><li>modifier - (optional) The modifier that was added.</li><li>keyCode	- (optional) The key code being modified.</li></ul> |
-| **Returns**                                 | <ul><li>`self` if no `keyCode` is provided, or the original `command`.</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut.builder:add(modifier, [keyCode]) -> shortcut/command` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Adds the specified modifier to the set. If a `keyCode` is provided,                                                                                         |
+| **Parameters**                                       | <ul><li>modifier - (optional) The modifier that was added.</li><li>keyCode	- (optional) The key code being modified.</li></ul> |
+| **Returns**                                          | <ul><li>`self` if no `keyCode` is provided, or the original `command`.</li></ul>          |
 
 #### [new](#new)
-| **Signature**                               | `cp.commands.shortcut.builder:new(receiverFn)`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Method                                                                     |
-| **Description**                             | Creates a new shortcut builder. If provided, the receiver function                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`cp.commands.shortcut.builder:new(receiverFn)` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Creates a new shortcut builder. If provided, the receiver function                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

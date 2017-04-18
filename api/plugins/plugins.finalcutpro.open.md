@@ -5,17 +5,17 @@ Opens Final Cut Pro via Global Shortcut & Menubar.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [openFinalCutPro](#openFinalCutPro)
+ * [openFinalCutPro](#openfinalcutpro)
 
 ## API Documentation
 
 ### Functions
 
-#### [openFinalCutPro](#openFinalCutPro)
-| **Signature**                               | `plugins.finalcutpro.open.openFinalCutPro() -> none`                                                                    |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Opens Final Cut Pro                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
+#### [openFinalCutPro](#openfinalcutpro)
+| <span style="font-align: left;">**Signature**</span> | <span style="font-align: left;">`plugins.finalcutpro.open.openFinalCutPro() -> none` </span>                                                |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Opens Final Cut Pro                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
