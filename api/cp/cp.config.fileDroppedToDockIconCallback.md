@@ -16,7 +16,7 @@ File Dropped to Dock Icon Callback
 ### Methods
 
 #### [callbackFn](#callbackfn)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.fileDroppedToDockIconCallback:callbackFn() -> function` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.fileDroppedToDockIconCallback:callbackFn() -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the callbackFn of the current File Dropped to Dock Icon Callback                                                                                         |
@@ -24,7 +24,7 @@ File Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>The callbackFn of the current Shutdown Callback</li></ul>          |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.fileDroppedToDockIconCallback:get(id) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.fileDroppedToDockIconCallback:get(id) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new File Dropped to Dock Icon Callback.                                                                                         |
@@ -32,7 +32,7 @@ File Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>table containing the callback</li></ul>          |
 
 #### [getAll](#getall)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.fileDroppedToDockIconCallback:getAll() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.fileDroppedToDockIconCallback:getAll() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns all of the created File Dropped to Dock Icon Callbacks                                                                                         |
@@ -40,7 +40,7 @@ File Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>table containing all of the created callbacks</li></ul>          |
 
 #### [id](#id)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.fileDroppedToDockIconCallback:id() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.fileDroppedToDockIconCallback:id() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ID of the current Text Dropped to Dock Icon Callback                                                                                         |
@@ -48,7 +48,7 @@ File Dropped to Dock Icon Callback
 | **Returns**                                          | <ul><li>The ID of the current File Dropped to Dock Icon Callback as a `string`</li></ul>          |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.fileDroppedToDockIconCallback:new(id, callbackFn) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.fileDroppedToDockIconCallback:new(id, callbackFn) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new File Dropped to Dock Icon Callback.                                                                                         |

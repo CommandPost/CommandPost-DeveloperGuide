@@ -36,7 +36,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 ### Variables
 
 #### [defaultLogLevel](#defaultloglevel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.defaultLogLevel` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.defaultLogLevel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Default log level for new logger instances.                                                                                         |
@@ -44,7 +44,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 ### Functions
 
 #### [history](#history)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.history() -> list of log entries` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.history() -> list of log entries` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the global log history                                                                                         |
@@ -52,7 +52,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>a list of (at most `hs.logger.historySize()`) log entries produced by all the logger instances, in chronological order;</li><li>   each entry is a table with the following fields:</li><li>  time - timestamp in seconds since the epoch</li><li>  level - a number between 1 (error) and 5 (verbose)</li><li>  id - a string containing the id of the logger instance that produced this entry</li><li>  message - a string containing the logged message</li></ul>          |
 
 #### [historySize](#historysize)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.historySize([size]) -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.historySize([size]) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets or gets the global log history size                                                                                         |
@@ -61,7 +61,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Notes**                                            | <ul><li>if you change history size (other than from 0) after creating any logger instances, things will likely break</li></ul>                |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.new(id, loglevel) -> logger` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.new(id, loglevel) -> logger` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new logger instance                                                                                         |
@@ -70,7 +70,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Notes**                                            | <ul><li>the logger instance created by this method is not a regular object, but a plain table with "static" functions;</li><li>   therefore, do not use the colon syntax for so-called "methods" in this module (as in `mylogger:setLogLevel(3)`);</li><li>   you must instead use the regular dot syntax: `mylogger.setLogLevel(3)`</li></ul>                |
 
 #### [printHistory](#printhistory)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.printHistory([entries[, level[, filter[, caseSensitive]]]])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.printHistory([entries[, level[, filter[, caseSensitive]]]])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Prints the global log history to the console                                                                                         |
@@ -78,7 +78,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setGlobalLogLevel](#setgloballoglevel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.setGlobalLogLevel(lvl)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.setGlobalLogLevel(lvl)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the log level for all logger instances (including objects' loggers)                                                                                         |
@@ -86,7 +86,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setModulesLogLevel](#setmodulesloglevel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.setModulesLogLevel(lvl)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.setModulesLogLevel(lvl)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the log level for all currently loaded modules                                                                                         |
@@ -97,7 +97,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 ### Fields
 
 #### [level](#level)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger.level` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.level` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | The log level of the logger instance, as a number between 0 and 5                                                                                         |
@@ -105,7 +105,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 ### Methods
 
 #### [d](#d)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:d(...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:d(...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs debug info to the console                                                                                         |
@@ -113,7 +113,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [df](#df)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:df(fmt,...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:df(fmt,...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs formatted debug info to the console                                                                                         |
@@ -121,7 +121,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [e](#e)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:e(...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:e(...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs an error to the console                                                                                         |
@@ -129,7 +129,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [ef](#ef)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:ef(fmt,...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:ef(fmt,...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs a formatted error to the console                                                                                         |
@@ -137,7 +137,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [f](#f)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:f(fmt,...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:f(fmt,...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs formatted info to the console                                                                                         |
@@ -145,7 +145,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [getLogLevel](#getloglevel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:getLogLevel() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:getLogLevel() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the log level of the logger instance                                                                                         |
@@ -153,7 +153,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>The log level of this logger as a number between 0 and 5</li></ul>          |
 
 #### [i](#i)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:i(...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:i(...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs info to the console                                                                                         |
@@ -161,7 +161,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setLogLevel](#setloglevel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:setLogLevel(loglevel)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:setLogLevel(loglevel)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the log level of the logger instance                                                                                         |
@@ -169,7 +169,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [v](#v)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:v(...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:v(...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs verbose info to the console                                                                                         |
@@ -177,7 +177,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [vf](#vf)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:vf(fmt,...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:vf(fmt,...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs formatted verbose info to the console                                                                                         |
@@ -185,7 +185,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [w](#w)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:w(...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:w(...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs a warning to the console                                                                                         |
@@ -193,7 +193,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [wf](#wf)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.logger:wf(fmt,...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:wf(fmt,...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Logs a formatted warning to the console                                                                                         |

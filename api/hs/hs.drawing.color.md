@@ -59,7 +59,7 @@ Except where specified above to indicate the color model being used, any key whi
 ### Constants
 
 #### [definedCollections](#definedcollections)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.definedCollections` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.definedCollections` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | This table contains this list of defined color collections provided by the `hs.drawing.color` module.  Collections differ from the system color lists in that you can modify the color values their members contain by modifying the table at `hs.drawing.color.<collection>.<color>` and future references to that color will reflect the new changes, thus allowing you to customize the palettes for your installation.                                                                                         |
@@ -68,21 +68,21 @@ Except where specified above to indicate the color model being used, any key whi
 ### Variables
 
 #### [ansiTerminalColors](#ansiterminalcolors)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.ansiTerminalColors` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.ansiTerminalColors` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A collection of colors representing the ANSI Terminal color sequences.  The color definitions are based upon code found at https://github.com/balthamos/geektool-3 in the /NerdTool/classes/ANSIEscapeHelper.m file.                                                                                         |
 | **Notes**                                            | <ul><li>This is not a constant, so you can adjust the colors at run time for your installation if desired.</li></ul>                |
 
 #### [hammerspoon](#hammerspoon)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.hammerspoon` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.hammerspoon` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | This table contains a collection of various useful pre-defined colors:                                                                                         |
 | **Notes**                                            | <ul><li>This is not a constant, so you can adjust the colors at run time for your installation if desired.</li></ul>                |
 
 #### [x11](#x11)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.x11` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.x11` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A collection of colors representing the X11 color names as defined at  https://en.wikipedia.org/wiki/Web_colors#X11_color_names (names in lowercase)                                                                                         |
@@ -91,7 +91,7 @@ Except where specified above to indicate the color model being used, any key whi
 ### Functions
 
 #### [asHSB](#ashsb)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.asHSB(color) -> table | string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.asHSB(color) -> table | string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the HSB representation of the specified color.                                                                                         |
@@ -100,7 +100,7 @@ Except where specified above to indicate the color model being used, any key whi
 | **Notes**                                            | <ul><li>See also `hs.drawing.color.asRGB`</li></ul>                |
 
 #### [asRGB](#asrgb)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.asRGB(color) -> table | string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.asRGB(color) -> table | string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the RGB representation of the specified color.                                                                                         |
@@ -109,7 +109,7 @@ Except where specified above to indicate the color model being used, any key whi
 | **Notes**                                            | <ul><li>See also `hs.drawing.color.asHSB`</li></ul>                |
 
 #### [colorsFor](#colorsfor)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.colorsFor(list) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.colorsFor(list) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the colors for the specified system color list or hs.drawing.color collection.                                                                                         |
@@ -118,7 +118,7 @@ Except where specified above to indicate the color model being used, any key whi
 | **Notes**                                            | <ul><li>Where possible, each color node is provided as its RGB color representation.  Where this is not possible, the color node contains the keys `list` and `name` which identify the indicated color.  This means that you can use the following wherever a color parameter is expected: `hs.drawing.color.colorsFor(list)["color-name"]`</li><li>This function provides a tostring metatable method which allows listing the defined colors in the list in the Hammerspoon console with: `hs.drawing.colorsFor(list)`</li><li>See also `hs.drawing.color.lists`</li></ul>                |
 
 #### [lists](#lists)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.color.lists() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.color.lists() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the system color lists and hs.drawing.color collections with their defined colors.                                                                                         |

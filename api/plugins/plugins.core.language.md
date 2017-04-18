@@ -14,7 +14,7 @@ Language Module.
 ### Functions
 
 #### [getCommandPostLanguages](#getcommandpostlanguages)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.language.getCommandPostLanguages() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.language.getCommandPostLanguages() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets CommandPost Languages in Table                                                                                         |
@@ -22,7 +22,7 @@ Language Module.
 | **Returns**                                          | <ul><li>installedLanguages - table of Installed Languages</li></ul>          |
 
 #### [getCommandPostLanguagesMenu](#getcommandpostlanguagesmenu)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.language.getCommandPostLanguagesMenu() -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.language.getCommandPostLanguagesMenu() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a table for the Menubar creation of all the supported CommandPost Languages                                                                                         |
@@ -30,7 +30,7 @@ Language Module.
 | **Returns**                                          | <ul><li>settingsLanguage - table of Supported Languages for CommandPost's Menubar</li></ul>          |
 
 #### [loadCommandPostLanguages](#loadcommandpostlanguages)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.language.loadCommandPostLanguages() -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.language.loadCommandPostLanguages() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads Command Post Languages                                                                                         |

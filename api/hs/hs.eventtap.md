@@ -34,7 +34,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Functions
 
 #### [checkKeyboardModifiers](#checkkeyboardmodifiers)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.checkKeyboardModifiers([raw]) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.checkKeyboardModifiers([raw]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the current key modifiers being pressed or in effect *at this instant* for the keyboard most recently used.                                                                                         |
@@ -43,7 +43,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This is an instantaneous poll of the current keyboard modifiers for the most recently used keyboard, not a callback.  This is useful primarily in conjuction with other modules, such as `hs.menubar`, when a callback is already in progress or waiting for an event callback is not practical or possible.</li><li>the numeric value returned is useful if you need to detect device dependent flags or flags which we normally ignore because they are not present (or are accessible another way) on most keyboards.</li></ul>                |
 
 #### [checkMouseButtons](#checkmousebuttons)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.checkMouseButtons() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.checkMouseButtons() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the current mouse buttons being pressed *at this instant*.                                                                                         |
@@ -52,7 +52,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This is an instantaneous poll of the current mouse buttons, not a callback.  This is useful primarily in conjuction with other modules, such as `hs.menubar`, when a callback is already in progress or waiting for an event callback is not practical or possible.</li></ul>                |
 
 #### [doubleClickInterval](#doubleclickinterval)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.doubleClickInterval() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.doubleClickInterval() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the system-wide setting for the delay between two clicks, to register a double click event                                                                                         |
@@ -60,7 +60,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A number containing the maximum number of seconds between two mouse click events, for a double click event to be registered</li></ul>          |
 
 #### [keyRepeatDelay](#keyrepeatdelay)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.keyRepeatDelay() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyRepeatDelay() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the system-wide setting for the delay before keyboard repeat events begin                                                                                         |
@@ -68,7 +68,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A number containing the number of seconds before repeat events begin, after a key is held down</li></ul>          |
 
 #### [keyRepeatInterval](#keyrepeatinterval)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.keyRepeatInterval() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyRepeatInterval() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the system-wide setting for the interval between repeated keyboard events                                                                                         |
@@ -76,7 +76,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A number containing the number of seconds between keyboard events, if a key is held down</li></ul>          |
 
 #### [keyStroke](#keystroke)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.keyStroke(modifiers, character[, delay])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStroke(modifiers, character[, delay])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates and emits a single keystroke event pair for the supplied keyboard modifiers and character                                                                                         |
@@ -85,7 +85,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This function is ideal for sending single keystrokes with a modifier applied (e.g. sending ⌘-v to paste, with `hs.eventtap.keyStroke({"cmd"}, "v")`). If you want to emit multiple keystrokes for typing strings of text, see `hs.eventtap.keyStrokes()`</li></ul>                |
 
 #### [keyStrokes](#keystrokes)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.keyStrokes(text)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStrokes(text)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates and emits keystroke events for the supplied text                                                                                         |
@@ -94,7 +94,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>If you want to send a single keystroke with keyboard modifiers (e.g. sending ⌘-v to paste), see `hs.eventtap.keyStroke()`</li></ul>                |
 
 #### [leftClick](#leftclick)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.leftClick(point[, delay])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.leftClick(point[, delay])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a left mouse click event at the specified point                                                                                         |
@@ -103,7 +103,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This is a wrapper around `hs.eventtap.event.newMouseEvent` that sends `leftmousedown` and `leftmouseup` events)</li></ul>                |
 
 #### [middleClick](#middleclick)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.middleClick(point[, delay])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.middleClick(point[, delay])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a middle mouse click event at the specified point                                                                                         |
@@ -112,7 +112,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This is a wrapper around `hs.eventtap.event.newMouseEvent` that sends `middlemousedown` and `middlemouseup` events)</li></ul>                |
 
 #### [rightClick](#rightclick)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.rightClick(point[, delay])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.rightClick(point[, delay])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a right mouse click event at the specified point                                                                                         |
@@ -121,7 +121,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This is a wrapper around `hs.eventtap.event.newMouseEvent` that sends `rightmousedown` and `rightmouseup` events)</li></ul>                |
 
 #### [scrollWheel](#scrollwheel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.scrollWheel(offsets, modifiers, unit) -> event` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.scrollWheel(offsets, modifiers, unit) -> event` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates and emits a scroll wheel event                                                                                         |
@@ -131,7 +131,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap.new(types, fn) -> eventtap` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.new(types, fn) -> eventtap` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Create a new event tap object                                                                                         |
@@ -142,7 +142,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [isEnabled](#isenabled)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap:isEnabled() -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap:isEnabled() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Determine whether or not an event tap object is enabled.                                                                                         |
@@ -150,7 +150,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>True if the event tap is enabled or false if it is not.</li></ul>          |
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap:start()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap:start()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts an event tap                                                                                         |
@@ -158,7 +158,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>The event tap object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.eventtap:stop()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap:stop()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops an event tap                                                                                         |

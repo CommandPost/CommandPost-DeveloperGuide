@@ -37,7 +37,7 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 ### Variables
 
 #### [ui](#ui)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.switcher.ui` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher.ui` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Allows customization of the switcher behaviour and user interface                                                                                         |
@@ -45,7 +45,7 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 ### Functions
 
 #### [nextWindow](#nextwindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.switcher.nextWindow()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher.nextWindow()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the switcher (if not yet visible) and selects the next window                                                                                         |
@@ -54,7 +54,7 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 | **Notes**                                            | <ul><li>the switcher will be dismissed (and the selected window focused) when all modifier keys are released</li></ul>                |
 
 #### [previousWindow](#previouswindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.switcher.previousWindow()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher.previousWindow()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the switcher (if not yet visible) and selects the previous window                                                                                         |
@@ -65,7 +65,7 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.switcher.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.window.switcher object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.window.switcher object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new switcher instance; it can use a windowfilter to determine which windows to show                                                                                         |
@@ -75,7 +75,7 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 ### Methods
 
 #### [next](#next)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.switcher:next()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher:next()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the switcher instance (if not yet visible) and selects the next window                                                                                         |
@@ -84,7 +84,7 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 | **Notes**                                            | <ul><li>the switcher will be dismissed (and the selected window focused) when all modifier keys are released</li></ul>                |
 
 #### [previous](#previous)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.switcher:previous()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher:previous()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the switcher instance (if not yet visible) and selects the previous window                                                                                         |

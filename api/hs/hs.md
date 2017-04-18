@@ -124,19 +124,19 @@ Core Hammerspoon functionality
 ### Constants
 
 #### [configdir](#configdir)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.configdir` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.configdir` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A string containing Hammerspoon's configuration directory. Typically `~/.hammerspoon/`                                                                                         |
 
 #### [docstrings_json_file](#docstrings_json_file)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.docstrings_json_file` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.docstrings_json_file` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A string containing the full path to the `docs.json` file inside Hammerspoon's app bundle. This contains the full Hammerspoon API documentation and can be accessed in the Console using `help("someAPI")`. It can also be loaded and processed by the `hs.doc` extension                                                                                         |
 
 #### [processInfo](#processinfo)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.processInfo` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.processInfo` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing read-only information about the Hammerspoon application instance currently running.                                                                                         |
@@ -144,14 +144,14 @@ Core Hammerspoon functionality
 ### Variables
 
 #### [accessibilityStateCallback](#accessibilitystatecallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.accessibilityStateCallback` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.accessibilityStateCallback` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | An optional function that will be called when the Accessibility State is changed.                                                                                         |
 | **Notes**                                            | <ul><li>The function will not receive any arguments when called.  To check what the accessibility state has been changed to, you should call [hs.accessibilityState](#accessibilityState) from within your function.</li></ul>                |
 
 #### [completionsForInputString](#completionsforinputstring)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.completionsForInputString(completionWord) -> table of strings` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.completionsForInputString(completionWord) -> table of strings` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Gathers tab completion options for the Console window                                                                                         |
@@ -160,21 +160,21 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>Hammerspoon provides a default implementation of this function, which can complete against the global Lua namespace, the 'hs' (i.e. extension) namespace, and object metatables. You can assign a new function to the variable to replace it with your own variant.</li></ul>                |
 
 #### [fileDroppedToDockIconCallback](#filedroppedtodockiconcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fileDroppedToDockIconCallback` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fileDroppedToDockIconCallback` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | An optional function that will be called when a files are dragged to the Hammerspoon Dock Icon or sent via the Services menu                                                                                         |
 | **Notes**                                            | <ul><li>The function should accept a single parameter, which will be a string containing the full path to the file that was dragged to the dock icon</li><li>If multiple files are sent, this callback will be called once for each file</li><li>This callback will be triggered when ANY file type is dragged onto the Hammerspoon Dock Icon, however certain filetypes are also processed seperately by Hammerspoon. For example, `hs.urlevent` will be triggered when the following filetypes are dropped onto the Dock Icon: HTML Documents (.html, .htm, .shtml, .jhtml), Plain text documents (.txt, .text), Web site locations (.url), XHTML documents (.xhtml, .xht, .xhtm, .xht).</li></ul>                |
 
 #### [shutdownCallback](#shutdowncallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.shutdownCallback` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.shutdownCallback` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | An optional function that will be called when the Lua environment is being destroyed (either because Hammerspoon is exiting or reloading its config)                                                                                         |
 | **Notes**                                            | <ul><li>This function should not perform any asynchronous tasks</li><li>You do not need to fastidiously destroy objects you have created, this callback exists purely for utility reasons (e.g. serialising state, destroying system resources that will not be released by normal Lua garbage collection processes, etc)</li></ul>                |
 
 #### [textDroppedToDockIconCallback](#textdroppedtodockiconcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.textDroppedToDockIconCallback` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.textDroppedToDockIconCallback` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | An optional function that will be called when text is dragged to the Hammerspoon Dock Icon or sent via the Services menu                                                                                         |
@@ -183,7 +183,7 @@ Core Hammerspoon functionality
 ### Functions
 
 #### [accessibilityState](#accessibilitystate)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.accessibilityState(shouldPrompt) -> isEnabled` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.accessibilityState(shouldPrompt) -> isEnabled` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      |                                                                                          |
@@ -192,7 +192,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>Since this check is done automatically when Hammerspoon loads, it is probably of limited use except for skipping things that are known to fail when Accessibility is not enabled.  Evettaps which try to capture keyUp and keyDown events, for example, will fail until Accessibility is enabled and the Hammerspoon application is relaunched.</li></ul>                |
 
 #### [allowAppleScript](#allowapplescript)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.allowAppleScript([state]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.allowAppleScript([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Set or display whether or not external Hammerspoon AppleScript commands are allowed                                                                                         |
@@ -201,7 +201,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>AppleScript access is disallowed by default</li><li>Due to the way AppleScript support works, Hammerspoon will always allow AppleScript commands that are part of the "Standard Suite", such as `name, `quit`, `version`, etc. However, Hammerspoon will only allow commands from the "Hammerspoon Suite" if `hs.allowAppleScript()` is set to `true`</li><li>For a full list of AppleScript Commands:</li><li>     - Open `/Applications/Utilities/Script Editor.app`</li><li>     - Click `File > Open Dictionary...`</li><li>     - Select Hammerspoon from the list of Applications</li><li>     - This will now open a Dictionary containing all of the availible Hammerspoon AppleScript commands.</li><li>Here's an example AppleScript that can be used in Apple's Script Editor to control Hammerspoon:</li></ul>                |
 
 #### [autoLaunch](#autolaunch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.autoLaunch([state]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.autoLaunch([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Set or display the "Launch on Login" status for Hammerspoon.                                                                                         |
@@ -209,7 +209,7 @@ Core Hammerspoon functionality
 | **Returns**                                          | <ul><li>True if Hammerspoon is currently (or has just been) set to launch on login or False if Hammerspoon is not.</li></ul>          |
 
 #### [automaticallyCheckForUpdates](#automaticallycheckforupdates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.automaticallyCheckForUpdates([setting]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.automaticallyCheckForUpdates([setting]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets and optionally sets the Hammerspoon option to automatically check for updates.                                                                                         |
@@ -218,7 +218,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>If you are running a non-release or locally compiled version of Hammerspoon then the results of this function are unspecified.</li></ul>                |
 
 #### [canCheckForUpdates](#cancheckforupdates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.canCheckForUpdates() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canCheckForUpdates() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a boolean indicating whether or not the Sparkle framework is available to check for Hammerspoon updates.                                                                                         |
@@ -227,7 +227,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>The Sparkle framework is included in all regular releases of Hammerspoon but not included if you are running a non-release or locally compiled version of Hammerspoon, so this function can be used as a simple test to determine whether or not you are running a formal release Hammerspoon or not.</li></ul>                |
 
 #### [checkForUpdates](#checkforupdates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.checkForUpdates([silent]) -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.checkForUpdates([silent]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Check for an update now, and if one is available, prompt the user to continue the update process.                                                                                         |
@@ -236,7 +236,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>If you are running a non-release or locally compiled version of Hammerspoon then the results of this function are unspecified.</li></ul>                |
 
 #### [cleanUTF8forConsole](#cleanutf8forconsole)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.cleanUTF8forConsole(inString) -> outString` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.cleanUTF8forConsole(inString) -> outString` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a copy of the incoming string that can be displayed in the Hammerspoon console.  Invalid UTF8 sequences are converted to the Unicode Replacement Character and NULL (0x00) is converted to the Unicode Empty Set character.                                                                                         |
@@ -245,7 +245,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>This function is applied automatically to all output which appears in the Hammerspoon console, but not to the output provided by the `hs` command line tool.</li><li>This function does not modify the original string - to actually replace it, assign the result of this function to the original string.</li><li>This function is a more specifically targeted version of the `hs.utf8.fixUTF8(...)` function.</li></ul>                |
 
 #### [consoleOnTop](#consoleontop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.consoleOnTop([state]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.consoleOnTop([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Set or display whether or not the Hammerspoon console is always on top when visible.                                                                                         |
@@ -253,7 +253,7 @@ Core Hammerspoon functionality
 | **Returns**                                          | <ul><li>True if the console is currently set (or has just been) to be always on top when visible or False if it is not.</li></ul>          |
 
 #### [dockIcon](#dockicon)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.dockIcon([state]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockIcon([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Set or display whether or not the Hammerspoon dock icon is visible.                                                                                         |
@@ -262,7 +262,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>This function is a wrapper to functions found in the `hs.dockicon` module, but is provided here to provide an interface consistent with other selectable preference items.</li></ul>                |
 
 #### [execute](#execute)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.execute(command[, with_user_env]) -> output, status, type, rc` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.execute(command[, with_user_env]) -> output, status, type, rc` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Runs a shell command, optionally loading the users shell environment first, and returns stdout as a string, followed by the same result codes as `os.execute` would return.                                                                                         |
@@ -271,13 +271,13 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>Setting `with_user_env` to true does incur noticeable overhead, so it should only be used if necessary (to set the path or other environment variables).</li><li>Because this function returns the stdout as it's first return value, it is not quite a drop-in replacement for `os.execute`.  In most cases, it is probable that `stdout` will be the empty string when `status` is nil, but this is not guaranteed, so this trade off of shifting os.execute's results was deemed acceptable.</li><li>This particular function is most useful when you're more interested in the command's output then a simple check for completion and result codes.  If you only require the result codes or verification of command completion, then `os.execute` will be slightly more efficient.</li></ul>                |
 
 #### [focus](#focus)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.focus()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.focus()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Makes Hammerspoon the foreground app.                                                                                         |
 
 #### [getObjectMetatable](#getobjectmetatable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.getObjectMetatable(name) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.getObjectMetatable(name) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Fetches the Lua metatable for objects produced by an extension                                                                                         |
@@ -285,7 +285,7 @@ Core Hammerspoon functionality
 | **Returns**                                          | <ul><li>The extension's object metatable, or nil if an error occurred</li></ul>          |
 
 #### [help](#help)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.help(identifier)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.help(identifier)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Prints the documentation for some part of Hammerspoon's API and Lua 5.3.  This function is actually sourced from hs.doc.help.                                                                                         |
@@ -294,7 +294,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>This function is mainly for runtime API help while using Hammerspoon's Console</li><li>You can also access the results of this function by the following methods from the console:</li><li>  help("identifier") -- quotes are required, e.g. `help("hs.reload")`</li><li>  help.identifier.path -- no quotes are required, e.g. `help.hs.reload`</li><li>Lua information can be accessed by using the `lua` prefix, rather than `hs`.</li><li>  the identifier `lua._man` provides the table of contents for the Lua 5.3 manual.  You can pull up a specific section of the lua manual by including the chapter (and subsection) like this: `lua._man._3_4_8`.</li><li>  the identifier `lua._C` will provide information specifically about the Lua C API for use when developing modules which require external libraries.</li></ul>                |
 
 #### [hsdocs](#hsdocs)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hsdocs([identifier])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hsdocs([identifier])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Display's Hammerspoon API documentation in a webview browser.                                                                                         |
@@ -303,7 +303,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>You can also access the results of this function by the following methods from the console:</li><li>  hs.hsdocs.identifier.path -- no quotes are required, e.g. `hs.hsdocs.hs.reload`</li><li>See `hs.doc.hsdocs` for more information about the available settings for the documentation browser.</li><li>This function provides documentation for Hammerspoon modules, functions, and methods similar to the Hammerspoon Dash docset, but does not require any additional software.</li><li>This currently only provides documentation for the built in Hammerspoon modules, functions, and methods.  The Lua documentation and third-party modules are not presently supported, but may be added in a future release.</li></ul>                |
 
 #### [loadSpoon](#loadspoon)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.loadSpoon(name[, global]) -> Spoon object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.loadSpoon(name[, global]) -> Spoon object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a Spoon                                                                                         |
@@ -312,7 +312,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>Spoons are a way of distributing self-contained units of Lua functionality, for Hammerspoon. For more information, see https://github.com/Hammerspoon/hammerspoon/blob/master/SPOON.md</li><li>This function will load the Spoon and call its `:init()` method if it has one. If you do not wish this to happen, or wish to use a Spoon that somehow doesn't fit with the behaviours of this function, you can also simply `require('name')` to load the Spoon</li><li>If the Spoon provides documentation, it will be loaded by made available in hs.docs</li><li>To learn how to distribute your own code as a Spoon, see https://github.com/Hammerspoon/hammerspoon/blob/master/SPOON.md</li></ul>                |
 
 #### [menuIcon](#menuicon)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.menuIcon([state]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.menuIcon([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Set or display whether or not the Hammerspoon menu icon is visible.                                                                                         |
@@ -320,26 +320,26 @@ Core Hammerspoon functionality
 | **Returns**                                          | <ul><li>True if the icon is currently set (or has just been) to be visible or False if it is not.</li></ul>          |
 
 #### [openAbout](#openabout)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.openAbout()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.openAbout()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays the OS X About panel for Hammerspoon; implicitly focuses Hammerspoon.                                                                                         |
 
 #### [openConsole](#openconsole)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.openConsole([bringToFront])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.openConsole([bringToFront])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens the Hammerspoon Console window and optionally focuses it.                                                                                         |
 | **Parameters**                                       | <ul><li>bringToFront - if true (default), the console will be focused as well as opened.</li></ul> |
 
 #### [openPreferences](#openpreferences)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.openPreferences()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.openPreferences()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays the Hammerspoon Preferences panel; implicitly focuses Hammerspoon.                                                                                         |
 
 #### [printf](#printf)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.printf(format, ...)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.printf(format, ...)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Prints formatted strings to the Console                                                                                         |
@@ -348,7 +348,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>This is a simple wrapper around the Lua code `print(string.format(...))`.</li></ul>                |
 
 #### [rawprint](#rawprint)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.rawprint(aString)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.rawprint(aString)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The original Lua print() function                                                                                         |
@@ -357,13 +357,13 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>Hammerspoon overrides Lua's print() function, but this is a reference we retain to is, should you need it for any reason</li></ul>                |
 
 #### [reload](#reload)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.reload()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.reload()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Reloads your init-file in a fresh Lua environment.                                                                                         |
 
 #### [showError](#showerror)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.showError(err)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.showError(err)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows an error to the user, using Hammerspoon's Console                                                                                         |
@@ -372,7 +372,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>This function is called whenever an (uncaught) error occurs or is thrown (via `error()`)</li><li>The default implementation shows a notification, opens the Console, and prints the error message and stacktrace</li><li>You can override this function if you wish to route errors differently (e.g. for remote systems)</li></ul>                |
 
 #### [toggleConsole](#toggleconsole)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.toggleConsole()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.toggleConsole()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the visibility of the console                                                                                         |
@@ -381,7 +381,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>If the console is not currently open, it will be opened. If it is open and not the focused window, it will be brought forward and focused.</li><li>If the console is focused, it will be closed.</li></ul>                |
 
 #### [updateAvailable](#updateavailable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.updateAvailable() -> string or false` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.updateAvailable() -> string or false` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the version number of an available update                                                                                         |
@@ -390,7 +390,7 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>This is not a live check, it is a cached result of whatever the previous update check found. By default Hammerspoon checks for updates every few hours, but you can also add your own timer to check for updates more frequently with `hs.checkForUpdates()`</li></ul>                |
 
 #### [uploadCrashData](#uploadcrashdata)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.uploadCrashData([state]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.uploadCrashData([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get or set the "Upload Crash Data" preference for Hammerspoon                                                                                         |

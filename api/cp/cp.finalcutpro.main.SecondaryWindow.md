@@ -12,7 +12,7 @@ Secondary Window Module.
 ### Methods
 
 #### [watch](#watch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.main.SecondaryWindow:watch() -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.main.SecondaryWindow:watch() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Watch for events that happen in the command editor                                                                                         |

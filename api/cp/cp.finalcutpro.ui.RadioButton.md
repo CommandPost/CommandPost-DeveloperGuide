@@ -12,7 +12,7 @@ Radio Button Module.
 ### Functions
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.ui.RadioButton:new(axuielement, function) -> RadioButton` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.ui.RadioButton:new(axuielement, function) -> RadioButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new RadioButton                                                                                         |

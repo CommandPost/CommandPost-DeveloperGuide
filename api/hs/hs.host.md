@@ -29,7 +29,7 @@ Notes:
 ### Functions
 
 #### [addresses](#addresses)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.addresses() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.addresses() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a list of network addresses for the current machine                                                                                         |
@@ -38,7 +38,7 @@ Notes:
 | **Notes**                                            | <ul><li>The results will include IPv4 and IPv6 addresses</li></ul>                |
 
 #### [cpuUsage](#cpuusage)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.cpuUsage([period], [callback]) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.cpuUsage([period], [callback]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Query CPU usage statistics for a given time interval using [hs.host.cpuUsageTicks](#cpuUsageTicks) and return the results as percentages.                                                                                         |
@@ -47,7 +47,7 @@ Notes:
 | **Notes**                                            | <ul><li>If no callback function is provided, Hammerspoon will block (i.e. no other Hammerspoon activity can occur) during execution of this function for `period` microseconds (1 second = 1,000,000 microseconds).  The default period is 1/10 of a second. If `period` is too small, it is possible that some of the CPU statistics may result in `nan` (not-a-number).</li></ul>                |
 
 #### [cpuUsageTicks](#cpuusageticks)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.cpuUsageTicks() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.cpuUsageTicks() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the current cpu usage information for the system in `ticks` since the most recent system boot.                                                                                         |
@@ -56,7 +56,7 @@ Notes:
 | **Notes**                                            | <ul><li>CPU mode ticks are updated during system interrupts and are incremented based upon the mode the CPU is in at the time of the interrupt. By its nature, this is always going to be approximate, and a single call to this function will return the current tick values since the system was last rebooted.</li><li>To generate a snapshot of the system's usage "at this moment", you must take two samples and calculate the difference between them.  The [hs.host.cpuUsage](#cpuUsage) function is a wrapper which does this for you and returns the cpu usage statistics as a percentage of the total number of ticks which occurred during the sample period you specify when invoking `hs.host.cpuUsage`.</li></ul>                |
 
 #### [globallyUniqueString](#globallyuniquestring)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.globallyUniqueString() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.globallyUniqueString() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a newly generated global unique identifier as a string                                                                                         |
@@ -65,7 +65,7 @@ Notes:
 | **Notes**                                            | <ul><li>See also `hs.host.uuid`</li><li>The global unique identifier for a process includes the host name, process ID, and a time stamp, which ensures that the ID is unique for the network. This property generates a new string each time it is invoked, and it uses a counter to guarantee that strings are unique.</li><li>This is often used as a file or directory name in conjunction with `hs.host.temporaryDirectory()` when creating temporary files.</li></ul>                |
 
 #### [interfaceStyle](#interfacestyle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.interfaceStyle() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.interfaceStyle() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the OS X interface style for the current user.                                                                                         |
@@ -74,7 +74,7 @@ Notes:
 | **Notes**                                            | <ul><li>As of OS X 10.10.4, other than the default style, only "Dark" is recognized as a valid style.</li></ul>                |
 
 #### [localizedName](#localizedname)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.localizedName() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.localizedName() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of the current machine, as displayed in the Finder sidebar                                                                                         |
@@ -82,7 +82,7 @@ Notes:
 | **Returns**                                          | <ul><li>A string containing the name of the current machine</li></ul>          |
 
 #### [names](#names)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.names() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.names() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a list of network names for the current machine                                                                                         |
@@ -91,7 +91,7 @@ Notes:
 | **Notes**                                            | <ul><li>This function should be used sparingly, as it may involve blocking network access to resolve hostnames</li></ul>                |
 
 #### [operatingSystemVersion](#operatingsystemversion)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.operatingSystemVersion() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.operatingSystemVersion() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The operating system version as a table containing the major, minor, and patch numbers.                                                                                         |
@@ -100,7 +100,7 @@ Notes:
 | **Notes**                                            | <ul><li>Prior to 10.10 (Yosemite), there was no definitive way to reliably get an exact OS X version number without either mapping it to the Darwin kernel version, mapping it to the AppKitVersionNumber (the recommended method), or parsing the result of NSProcessingInfo's `operatingSystemVersionString` selector, which Apple states is not guaranteed to be reliably parseable.</li><li>  for OS X versions prior to 10.10, the version number is approximately determined by evaluating the AppKitVersionNumber.  For these operating systems, the `approximate` key is defined and set to true, as the exact patch level cannot be definitively determined.</li><li>  for OS X Versions starting at 10.10 and going forward, an exact value for the version number can be determined with NSProcessingInfo's `operatingSystemVersion` selector and the `exact` key is defined and set to true if this method is used.</li></ul>                |
 
 #### [operatingSystemVersionString](#operatingsystemversionstring)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.operatingSystemVersionString() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.operatingSystemVersionString() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The operating system version as a human readable string.                                                                                         |
@@ -109,7 +109,7 @@ Notes:
 | **Notes**                                            | <ul><li>According to the OS X Developer documentation, "The operating system version string is human readable, localized, and is appropriate for displaying to the user. This string is not appropriate for parsing."</li></ul>                |
 
 #### [uuid](#uuid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.uuid() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.uuid() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a newly generated UUID as a string                                                                                         |
@@ -118,7 +118,7 @@ Notes:
 | **Notes**                                            | <ul><li>See also `hs.host.globallyUniqueString`</li><li>UUIDs (Universally Unique Identifiers), also known as GUIDs (Globally Unique Identifiers) or IIDs (Interface Identifiers), are 128-bit values. UUIDs created by NSUUID conform to RFC 4122 version 4 and are created with random bytes.</li></ul>                |
 
 #### [vmStat](#vmstat)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.vmStat() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.vmStat() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing virtual memory statistics for the current machine, as well as the page size (in bytes) and physical memory size (in bytes).                                                                                         |
@@ -127,7 +127,7 @@ Notes:
 | **Notes**                                            | <ul><li>The table returned has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing `hs.host.vmStats()`.</li><li>Except for the addition of cacheHits, cacheLookups, pageSize and memSize, the results for this function should be identical to the OS X command `vm_stat`.</li><li>Adapted primarily from the source code to Apple's vm_stat command located at http://www.opensource.apple.com/source/system_cmds/system_cmds-643.1.1/vm_stat.tproj/vm_stat.c</li></ul>                |
 
 #### [volumeInformation](#volumeinformation)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.volumeInformation([showHidden]) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.volumeInformation([showHidden]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table of information about disk volumes attached to the system                                                                                         |

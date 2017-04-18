@@ -12,7 +12,7 @@ tmuxomatic-like window management
 ### Functions
 
 #### [go](#go)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mjomatic.go(cfg)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mjomatic.go(cfg)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies a configuration to the currently open windows                                                                                         |

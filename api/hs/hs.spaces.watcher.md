@@ -16,7 +16,7 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spaces.watcher.new(handler) -> watcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spaces.watcher.new(handler) -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new watcher for Space change events                                                                                         |
@@ -26,7 +26,7 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 ### Methods
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spaces.watcher:start()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spaces.watcher:start()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the Spaces watcher                                                                                         |
@@ -34,7 +34,7 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 | **Returns**                                          | <ul><li>The watcher object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spaces.watcher:stop()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spaces.watcher:stop()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the Spaces watcher                                                                                         |

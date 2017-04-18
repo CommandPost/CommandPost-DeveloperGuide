@@ -18,7 +18,7 @@ Controls sections for the CommandPost menu.
 ### Methods
 
 #### [_addGenerator](#_addgenerator)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.section:_addGenerator() -> section` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:_addGenerator() -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | A private method for registering a generator. This should not be called directly.                                                                                         |
@@ -26,7 +26,7 @@ Controls sections for the CommandPost menu.
 | **Returns**                                          | <ul><li>section - The section.</li></ul>          |
 
 #### [addItem](#additem)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.section:addItem(priority, itemFn) -> section` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addItem(priority, itemFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a function which will generate a single table item.                                                                                         |
@@ -34,7 +34,7 @@ Controls sections for the CommandPost menu.
 | **Returns**                                          | <ul><li>section - The section the item was added to.</li></ul>          |
 
 #### [addItems](#additems)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.section:addItems(priority, itemsFn) -> section` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addItems(priority, itemsFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a function which will generate multiple table items.                                                                                         |
@@ -42,7 +42,7 @@ Controls sections for the CommandPost menu.
 | **Returns**                                          | <ul><li>section - The section the item was added to.</li></ul>          |
 
 #### [addMenu](#addmenu)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.section:addMenu(priority, titleFn) -> section` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addMenu(priority, titleFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new sub-menu with the specified priority. The section that will contain                                                                                         |
@@ -50,7 +50,7 @@ Controls sections for the CommandPost menu.
 | **Returns**                                          | <ul><li>section - The new section that was created.</li></ul>          |
 
 #### [addSection](#addsection)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.section:addSection(priority, itemFn) -> section` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addSection(priority, itemFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new sub-section with the specified priority. The new sub-section is returned.                                                                                         |
@@ -58,7 +58,7 @@ Controls sections for the CommandPost menu.
 | **Returns**                                          | <ul><li>section - The new section that was created.</li></ul>          |
 
 #### [generateTable](#generatetable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.section:generateTable() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:generateTable() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Generates a new menu table based on the registered items and sections inside this section.                                                                                         |
@@ -66,7 +66,7 @@ Controls sections for the CommandPost menu.
 | **Returns**                                          | <ul><li>`table`	- The menu table for this section. See `hs.menubar` for details on the format.</li></ul>          |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.menu.manager.section:new() -> section` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:new() -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new menu section, which can have items and sub-menus added to it.                                                                                         |

@@ -25,25 +25,25 @@ This is distinct from hs.fs in that hs.fs deals with UNIX filesystem operations,
 ### Constants
 
 #### [didMount](#didmount)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume.didMount` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume.didMount` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A volume was mounted                                                                                         |
 
 #### [didRename](#didrename)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume.didRename` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume.didRename` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A volume changed either its name or mountpoint (or more likely, both)                                                                                         |
 
 #### [didUnmount](#didunmount)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume.didUnmount` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume.didUnmount` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A volume was unmounted                                                                                         |
 
 #### [willUnmount](#willunmount)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume.willUnmount` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume.willUnmount` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A volume is about to be unmounted                                                                                         |
@@ -51,7 +51,7 @@ This is distinct from hs.fs in that hs.fs deals with UNIX filesystem operations,
 ### Functions
 
 #### [allVolumes](#allvolumes)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume.allVolumes([showHidden]) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume.allVolumes([showHidden]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table of information about disk volumes attached to the system                                                                                         |
@@ -60,7 +60,7 @@ This is distinct from hs.fs in that hs.fs deals with UNIX filesystem operations,
 | **Notes**                                            | <ul><li>This is an alias for `hs.host.volumeInformation()`</li><li>The possible keys in the table are:</li><li> NSURLVolumeTotalCapacityKey - Size of the volume in bytes</li><li> NSURLVolumeAvailableCapacityKey - Available space on the volume in bytes</li><li> NSURLVolumeIsAutomountedKey - Boolean indicating if the volume was automounted</li><li> NSURLVolumeIsBrowsableKey - Boolean indicating if the volume can be browsed</li><li> NSURLVolumeIsEjectableKey - Boolean indicating if the volume can be ejected</li><li> NSURLVolumeIsInternalKey - Boolean indicating if the volume is an internal drive or an external drive</li><li> NSURLVolumeIsLocalKey - Boolean indicating if the volume is a local or remote drive</li><li> NSURLVolumeIsReadOnlyKey - Boolean indicating if the volume is read only</li><li> NSURLVolumeIsRemovableKey - Boolean indicating if the volume is removable</li><li> NSURLVolumeMaximumFileSizeKey - Maximum file size the volume can support, in bytes</li><li> NSURLVolumeUUIDStringKey - The UUID of volume's filesystem</li><li> NSURLVolumeURLForRemountingKey - For remote volumes, the network URL of the volume</li><li> NSURLVolumeLocalizedNameKey - Localized version of the volume's name</li><li> NSURLVolumeNameKey - The volume's name</li><li> NSURLVolumeLocalizedFormatDescriptionKey - Localized description of the volume</li><li>* Not all keys will be present for all volumes</li></ul>                |
 
 #### [eject](#eject)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume.eject(path) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume.eject(path) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unmounts and ejects a volume                                                                                         |
@@ -70,7 +70,7 @@ This is distinct from hs.fs in that hs.fs deals with UNIX filesystem operations,
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume.new(fn) -> watcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume.new(fn) -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a watcher object for volume events                                                                                         |
@@ -80,7 +80,7 @@ This is distinct from hs.fs in that hs.fs deals with UNIX filesystem operations,
 ### Methods
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume:start()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume:start()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the volume watcher                                                                                         |
@@ -88,7 +88,7 @@ This is distinct from hs.fs in that hs.fs deals with UNIX filesystem operations,
 | **Returns**                                          | <ul><li>An `hs.fs.volume` object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fs.volume:stop()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.volume:stop()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the volume watcher                                                                                         |

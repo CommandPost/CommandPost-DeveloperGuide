@@ -15,7 +15,7 @@ Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript
 ### Functions
 
 #### [_osascript](#_osascript)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.osascript._osascript(source, language) -> bool, object, descriptor` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript._osascript(source, language) -> bool, object, descriptor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Runs osascript code                                                                                         |
@@ -23,7 +23,7 @@ Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript
 | **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li><li>A string containing the raw output of the code and/or its errors</li></ul>          |
 
 #### [applescript](#applescript)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.osascript.applescript(source) -> bool, object, descriptor` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.applescript(source) -> bool, object, descriptor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Runs AppleScript code                                                                                         |
@@ -32,7 +32,7 @@ Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript
 | **Notes**                                            | <ul><li>Use hs.osascript._osascript(source, "AppleScript") if you always want the result as a string, even when a failure occurs</li></ul>                |
 
 #### [javascript](#javascript)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.osascript.javascript(source) -> bool, object, descriptor` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.javascript(source) -> bool, object, descriptor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Runs JavaScript code                                                                                         |

@@ -12,7 +12,7 @@ Shortcut for changing Final Cut Pro's Timeline Height
 ### Functions
 
 #### [changeTimelineClipHeight](#changetimelineclipheight)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.height.changeTimelineClipHeight(direction) -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.height.changeTimelineClipHeight(direction) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Change the Timeline Clip Height                                                                                         |

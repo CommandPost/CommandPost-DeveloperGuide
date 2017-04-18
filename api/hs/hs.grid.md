@@ -57,14 +57,14 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 ### Variables
 
 #### [HINTS](#hints)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.HINTS` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.HINTS` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A bidimensional array (table of tables of strings) holding the keyboard hints (as per `hs.keycodes.map`) to be used for the interactive resizing interface.                                                                                         |
 | **Notes**                                            | <ul><li>`hs.inspect(hs.grid.HINTS)` from the console will show you how the table is built</li></ul>                |
 
 #### [ui](#ui)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.ui` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.ui` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Allows customization of the modal resizing grid user interface                                                                                         |
@@ -72,7 +72,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 ### Functions
 
 #### [adjustWindow](#adjustwindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.adjustWindow(fn, window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.adjustWindow(fn, window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calls a user specified function to adjust a window's cell                                                                                         |
@@ -80,7 +80,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.get(win) -> cell` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.get(win) -> cell` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the cell describing a window                                                                                         |
@@ -88,7 +88,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>* a cell object (i.e. an `hs.geometry` rect), or nil if an error occurred</li></ul>          |
 
 #### [getCell](#getcell)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.getCell(cell, screen) -> hs.geometry` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.getCell(cell, screen) -> hs.geometry` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the `hs.geometry` rect for a cell on a particular screen                                                                                         |
@@ -96,7 +96,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.geometry` rect for a cell on a particular screen or nil if the screen isn't found</li></ul>          |
 
 #### [getGrid](#getgrid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.getGrid(screen) -> hs.geometry size` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.getGrid(screen) -> hs.geometry size` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the defined grid size for a given screen or screen resolution                                                                                         |
@@ -105,7 +105,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Notes**                                            | <ul><li> if a grid was not set for the specified screen or geometry, the default grid will be returned</li></ul>                |
 
 #### [getGridFrame](#getgridframe)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.getGridFrame(screen) -> hs.geometry rect` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.getGridFrame(screen) -> hs.geometry rect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the defined grid frame for a given screen or screen resolution.                                                                                         |
@@ -113,7 +113,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li> an `hs.geometry` rect object indicating the frame used by the grid for the given screen; if no custom frame</li><li>    was given via `hs.grid.setGrid()`, returns the screen's frame</li></ul>          |
 
 #### [hide](#hide)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.hide()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.hide()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Hides the grid, if visible, and exits the modal resizing mode.                                                                                         |
@@ -122,7 +122,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Notes**                                            | <ul><li>If an exit callback was provided when invoking the modal interface, calling `.hide()` will call it</li></ul>                |
 
 #### [maximizeWindow](#maximizewindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.maximizeWindow(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.maximizeWindow(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Moves and resizes a window to fill the entire grid                                                                                         |
@@ -130,7 +130,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [pushWindowDown](#pushwindowdown)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.pushWindowDown(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowDown(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Moves a window one grid cell down the screen, or onto the adjacent screen's grid when necessary                                                                                         |
@@ -138,7 +138,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [pushWindowLeft](#pushwindowleft)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.pushWindowLeft(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowLeft(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Moves a window one grid cell to the left, or onto the adjacent screen's grid when necessary                                                                                         |
@@ -146,7 +146,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [pushWindowRight](#pushwindowright)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.pushWindowRight(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowRight(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Moves a window one cell to the right, or onto the adjacent screen's grid when necessary                                                                                         |
@@ -154,7 +154,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [pushWindowUp](#pushwindowup)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.pushWindowUp(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowUp(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Moves a window one grid cell up the screen, or onto the adjacent screen's grid when necessary                                                                                         |
@@ -162,7 +162,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [resizeWindowShorter](#resizewindowshorter)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.resizeWindowShorter(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowShorter(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resizes a window so its bottom edge moves one grid cell higher                                                                                         |
@@ -170,7 +170,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [resizeWindowTaller](#resizewindowtaller)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.resizeWindowTaller(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowTaller(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resizes a window so its bottom edge moves one grid cell lower                                                                                         |
@@ -179,7 +179,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Notes**                                            | <ul><li>if the window hits the bottom edge of the screen and is asked to become taller, its top edge will shift further up</li></ul>                |
 
 #### [resizeWindowThinner](#resizewindowthinner)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.resizeWindowThinner(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowThinner(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resizes a window to be one cell thinner                                                                                         |
@@ -187,7 +187,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [resizeWindowWider](#resizewindowwider)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.resizeWindowWider(window) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowWider(window) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resizes a window to be one cell wider                                                                                         |
@@ -196,7 +196,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Notes**                                            | <ul><li>if the window hits the right edge of the screen and is asked to become wider, its left edge will shift further left</li></ul>                |
 
 #### [set](#set)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.set(win, cell, screen) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.set(win, cell, screen) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the cell for a window on a particular screen                                                                                         |
@@ -204,7 +204,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [setGrid](#setgrid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.setGrid(grid,screen,frame) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.setGrid(grid,screen,frame) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the grid size for a given screen or screen resolution                                                                                         |
@@ -212,7 +212,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li> the `hs.grid` module for method chaining</li></ul>          |
 
 #### [setMargins](#setmargins)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.setMargins(margins) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.setMargins(margins) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the margins between windows                                                                                         |
@@ -220,7 +220,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li> the `hs.grid` module for method chaining</li></ul>          |
 
 #### [show](#show)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.show([exitedCallback][, multipleWindows])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.show([exitedCallback][, multipleWindows])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the grid and starts the modal interactive resizing process for the focused or frontmost window.                                                                                         |
@@ -229,7 +229,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Notes**                                            | <ul><li>In the modal interface, press the arrow keys to jump to adjacent screens; spacebar to maximize/unmaximize; esc to quit without any effect</li><li>Pressing `tab` or `shift-tab` in the modal interface will cycle to the next or previous window; if `multipleWindows`</li><li>   is false or omitted, the first press will just enable the multiple windows behaviour</li><li>The keyboard hints assume a QWERTY layout; if you use a different layout, change `hs.grid.HINTS` accordingly</li></ul>                |
 
 #### [snap](#snap)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.snap(win) -> hs.grid` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.snap(win) -> hs.grid` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Snaps a window into alignment with the nearest grid lines                                                                                         |
@@ -237,7 +237,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | **Returns**                                          | <ul><li>the `hs.grid` module for method chaining</li></ul>          |
 
 #### [toggleShow](#toggleshow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.grid.toggleShow([exitedCallback][, multipleWindows])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.toggleShow([exitedCallback][, multipleWindows])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the grid and modal resizing mode - see `hs.grid.show()` and `hs.grid.hide()`                                                                                         |

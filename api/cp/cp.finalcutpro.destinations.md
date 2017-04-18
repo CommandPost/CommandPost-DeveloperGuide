@@ -12,7 +12,7 @@ Utility class to process custom User Destinations
 ### Functions
 
 #### [getUserDestinationsAsTable](#getuserdestinationsastable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.destinations.getUserDestinationsAsTable() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.destinations.getUserDestinationsAsTable() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads the 'UserDestinations' plist and returns a basic table containing the structure.                                                                                         |

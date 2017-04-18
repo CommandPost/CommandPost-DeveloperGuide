@@ -20,7 +20,7 @@ Commands Module.
 ### Functions
 
 #### [group](#group)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.group(id) -> cp.command or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.group(id) -> cp.command or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a collection of commands. These commands can be enabled or disabled as a group.                                                                                         |
@@ -28,7 +28,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>`cp.commands` - The command group with the specified ID, or `nil` if none exists.</li></ul>          |
 
 #### [groupIds](#groupids)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands.groupIds() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.groupIds() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an array of IDs of command groups which have been created.                                                                                         |
@@ -38,7 +38,7 @@ Commands Module.
 ### Methods
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.commands:new(id) -> cp.commands` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:new(id) -> cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a collection of commands. These commands can be enabled or disabled as a group.                                                                                         |

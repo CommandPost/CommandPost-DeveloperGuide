@@ -44,7 +44,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 ### Functions
 
 #### [fromJSONFile](#fromjsonfile)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.fromJSONFile(jsonfile) -> doc-array` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.fromJSONFile(jsonfile) -> doc-array` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Builds a doc array construct from the JSON file provided.                                                                                         |
@@ -52,7 +52,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Returns**                                          | <ul><li>A table containing the documentation data loaded from the JSON file</li></ul>          |
 
 #### [fromRegisteredFiles](#fromregisteredfiles)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.fromRegisteredFiles() -> doc-array` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.fromRegisteredFiles() -> doc-array` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Builds a doc array construct from the registered JSON files.                                                                                         |
@@ -61,7 +61,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Notes**                                            | <ul><li>By default, the internal core documentation is already registered.  If you wish to remove it from the list of registered sources, issue the command `hs.doc.unregisterJSONFile(hs.docstrings_json_file)`.</li><li>The documentation object is created from the sources that are registered at the time of its invocation. If you register additional files later, you will need to reissue this command to build the updated documentation object.</li></ul>                |
 
 #### [help](#help)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.help(identifier)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.help(identifier)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Prints the documentation for some part of Hammerspoon's API and Lua 5.3.  This function has also been aliased as `hs.help` and `help` as a shorthand for use within the Hammerspoon console.                                                                                         |
@@ -70,7 +70,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Notes**                                            | <ul><li>This function is mainly for runtime API help while using Hammerspoon's Console</li><li>This function only returns information about the core Hammerspoon API and Lua 5.3.  If you register additional files from 3rd party modules, or deregister the initial files for creating your own `hs.doc` objects, it will not affect the results used by this function.</li></ul>                |
 
 #### [locateJSONFile](#locatejsonfile)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.locateJSONFile(module) -> path | false, message` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.locateJSONFile(module) -> path | false, message` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Locates the JSON file corresponding to the specified module by searching package.path and package.cpath.                                                                                         |
@@ -79,7 +79,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Notes**                                            | <ul><li>The JSON should be named 'full.module.name.json' and located in the same directory as the `lua` or `so` file which is used when the module is loaded via `require`.</li></ul>                |
 
 #### [registerJSONFile](#registerjsonfile)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.registerJSONFile(jsonfile) -> status[, message]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registerJSONFile(jsonfile) -> status[, message]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Register a JSON file for inclusion when Hammerspoon generates internal documentation.                                                                                         |
@@ -87,7 +87,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned.</li></ul>          |
 
 #### [registeredFiles](#registeredfiles)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.registeredFiles() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registeredFiles() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the list of registered JSON files.                                                                                         |
@@ -96,7 +96,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Notes**                                            | <ul><li>The table returned by this function has a metatable including a __tostring method which allows you to see the list of registered files by simply typing `hs.doc.registeredFiles()` in the Hammerspoon Console.</li></ul>                |
 
 #### [unregisterJSONFile](#unregisterjsonfile)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.unregisterJSONFile(jsonfile) -> status[, message]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.unregisterJSONFile(jsonfile) -> status[, message]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Remove a JSON file from the list of registered files.                                                                                         |
@@ -104,7 +104,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was unregistered or not.  If the file was not unregistered, then a message indicating the error is also returned.</li></ul>          |
 
 #### [validateJSONFile](#validatejsonfile)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.doc.validateJSONFile(jsonfile) -> status, message|table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.validateJSONFile(jsonfile) -> status, message|table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Validate a JSON file potential inclusion in the Hammerspoon internal documentation.                                                                                         |

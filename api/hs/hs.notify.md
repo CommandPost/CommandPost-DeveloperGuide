@@ -54,14 +54,14 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 ### Constants
 
 #### [activationTypes[]](#activationtypes[])
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.activationTypes[]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.activationTypes[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Convenience array of the possible activation types for a notification, and their reverse for reference.                                                                                         |
 | **Notes**                                            | <ul><li>Count starts at zero. (implemented in Objective-C)</li></ul>                |
 
 #### [defaultNotificationSound](#defaultnotificationsound)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.defaultNotificationSound` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.defaultNotificationSound` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The string representation of the default notification sound. Use `hs.notify:soundName()` or set the `soundName` attribute in `hs:notify.new()`, to this constant, if you want to use the default sound                                                                                         |
@@ -69,14 +69,14 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 ### Variables
 
 #### [registry[]](#registry[])
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.registry[]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.registry[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A table containing the registered callback functions and their tags.                                                                                         |
 | **Notes**                                            | <ul><li>This table should not be modified directly. Use the `hs.notify.register(tag, fn)` and `hs.notify.unregister(id)` functions.</li><li>This table has a __tostring metamethod so you can see the list of registered function tags in the console by typing `hs.notify.registry`</li><li>If a notification attempts to perform a callback to a function tag which is not present in this table, a warning will be printed in the console.</li></ul>                |
 
 #### [warnAboutMissingFunctionTag](#warnaboutmissingfunctiontag)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.warnAboutMissingFunctionTag` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.warnAboutMissingFunctionTag` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A boolean value indicating whether or not a missing notification function tag should cause a warning to be printed to the console during activation callback. Defaults to true.                                                                                         |
@@ -84,7 +84,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 ### Functions
 
 #### [register](#register)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.register(tag, fn) -> id` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.register(tag, fn) -> id` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Registers a function callback with the specified tag for a notification. The callback function will be invoked when the user clicks on or interacts with a notification.                                                                                         |
@@ -93,7 +93,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>If a function is already registered with the specified tag, it is replaced by with the new one.</li></ul>                |
 
 #### [unregister](#unregister)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.unregister(id|tag)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.unregister(id|tag)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unregisters a function callback so that it is no longer available as a callback when notifications corresponding to the specified entry are interacted with.                                                                                         |
@@ -101,7 +101,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [unregisterall](#unregisterall)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.unregisterall()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.unregisterall()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unregisters all functions registered as callbacks.                                                                                         |
@@ -110,7 +110,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>This does not remove the notifications from the User Notification Center, it just removes their callback function for when the user interacts with them. To remove all notifications, see `hs.notify.withdrawAll` and `hs.notify.withdrawAllScheduled`</li></ul>                |
 
 #### [withdrawAll](#withdrawall)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.withdrawAll()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.withdrawAll()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Withdraw all delivered notifications from Hammerspoon                                                                                         |
@@ -119,7 +119,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>This will withdraw all notifications for Hammerspoon, including those not sent by this module or that linger from a previous load of Hammerspoon.</li></ul>                |
 
 #### [withdrawAllScheduled](#withdrawallscheduled)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.withdrawAllScheduled()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.withdrawAllScheduled()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Withdraw all scheduled notifications from Hammerspoon                                                                                         |
@@ -129,7 +129,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.new([fn,][attributes]) -> notification` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.new([fn,][attributes]) -> notification` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new notification object                                                                                         |
@@ -138,7 +138,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>A function-tag is a string key which corresponds to a function stored in the `hs.notify.registry` table with the `hs.notify.register()` function.</li><li>If a notification does not have a `title` attribute set, OS X will not display it, so by default it will be set to "Notification". You can use the `title` key in the attributes table, or call `hs.notify:title()` before displaying the notification to change this.</li></ul>                |
 
 #### [show](#show)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify.show(title, subTitle, information[, tag]) -> notfication` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.show(title, subTitle, information[, tag]) -> notfication` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Shorthand constructor to create and show simple notifications                                                                                         |
@@ -149,7 +149,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 ### Methods
 
 #### [actionButtonTitle](#actionbuttontitle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:actionButtonTitle([buttonTitle]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:actionButtonTitle([buttonTitle]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the label of a notification's action button                                                                                         |
@@ -158,7 +158,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>The affects of this method only apply if the user has set Hammerspoon notifications to `Alert` in the Notification Center pane of System Preferences</li></ul>                |
 
 #### [activationType](#activationtype)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:activationType() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:activationType() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns how the notification was activated by the user.                                                                                         |
@@ -166,7 +166,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>the integer value corresponding to how the notification was activated by the user.  See the table `hs.notify.activationTypes[]` for more information.</li></ul>          |
 
 #### [actualDeliveryDate](#actualdeliverydate)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:actualDeliveryDate() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:actualDeliveryDate() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the date and time when a notification was delivered                                                                                         |
@@ -175,7 +175,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>You can turn epoch times into a human readable string or a table of date elements with the `os.date()` function.</li></ul>                |
 
 #### [alwaysPresent](#alwayspresent)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:alwaysPresent([alwaysPresent]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:alwaysPresent([alwaysPresent]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether a notification should be presented even if this overrides Notification Center's decision process.                                                                                         |
@@ -184,7 +184,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>This does not affect the return value of `hs.notify:presented()` -- that will still reflect the decision of the Notification Center</li><li>Examples of why the users Notification Center would choose not to display a notification would be if Hammerspoon is the currently focussed application, being attached to a projector, or the user having set Do Not Disturb.</li></ul>                |
 
 #### [autoWithdraw](#autowithdraw)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:autoWithdraw([shouldWithdraw]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:autoWithdraw([shouldWithdraw]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether a notification should automatically withdraw once activated                                                                                         |
@@ -192,7 +192,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>The notification object, if shouldWithdraw is present; otherwise the current setting.</li></ul>          |
 
 #### [contentImage](#contentimage)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:contentImage([image]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:contentImage([image]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set a notification's content image.                                                                                         |
@@ -201,7 +201,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>See hs.image for details on how to specify or define an image</li><li>This method is only supported in OS X 10.9 or greater. A warning will be displayed in the console and the method will be treated as a no-op if used on an unsupported system.</li></ul>                |
 
 #### [delivered](#delivered)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:delivered() -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:delivered() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether the notification has been delivered to the Notification Center                                                                                         |
@@ -209,7 +209,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>A boolean indicating whether the notification has been delivered to the users Notification Center</li></ul>          |
 
 #### [getFunctionTag](#getfunctiontag)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:getFunctionTag() -> functiontag` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:getFunctionTag() -> functiontag` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return the name of the function tag the notification will call when activated.                                                                                         |
@@ -218,7 +218,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>This tag should correspond to a function in `hs.notify.registry` and can be used to either add a replacement with `hs.notify.register(...)` or remove it with `hs.notify.unregister(...)`</li></ul>                |
 
 #### [hasActionButton](#hasactionbutton)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:hasActionButton([hasButton]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:hasActionButton([hasButton]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the presence of an action button in a notification                                                                                         |
@@ -227,7 +227,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>The affects of this method only apply if the user has set Hammerspoon notifications to `Alert` in the Notification Center pane of System Preferences</li></ul>                |
 
 #### [informativeText](#informativetext)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:informativeText([informativeText]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:informativeText([informativeText]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the informative text of a notification                                                                                         |
@@ -235,7 +235,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>The notification object, if informativeText is present; otherwise the current setting.</li></ul>          |
 
 #### [otherButtonTitle](#otherbuttontitle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:otherButtonTitle([buttonTitle]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:otherButtonTitle([buttonTitle]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the label of a notification's other button                                                                                         |
@@ -244,7 +244,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>The affects of this method only apply if the user has set Hammerspoon notifications to `Alert` in the Notification Center pane of System Preferences</li><li>Due to OSX limitations, it is NOT possible to get a callback for this button.</li></ul>                |
 
 #### [presented](#presented)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:presented() -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:presented() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether the users Notification Center decided to display the notification                                                                                         |
@@ -253,7 +253,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>Examples of why the users Notification Center would choose not to display a notification would be if Hammerspoon is the currently focussed application, being attached to a projector, or the user having set Do Not Disturb.</li></ul>                |
 
 #### [release](#release)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:release() -> notificationObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:release() -> notificationObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This is a no-op included for backwards compatibility.                                                                                         |
@@ -262,7 +262,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>This is no longer required during garbage collection as function tags can be re-established after a reload.</li><li>The proper way to release a notifications callback is to remove its tag from the `hs.notify.registry` with `hs.notify.unregister`.</li><li>This is included for backwards compatibility.</li></ul>                |
 
 #### [schedule](#schedule)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:schedule(date) -> notificationObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:schedule(date) -> notificationObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Schedules a notification for delivery in the future.                                                                                         |
@@ -271,7 +271,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>See also hs.notify:send()</li><li>hs.settings.dateFormat specifies a lua format string which can be used with `os.date()` to properly present the date and time as a string for use with this method.</li></ul>                |
 
 #### [send](#send)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:send() -> notificationObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:send() -> notificationObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Delivers the notification immediately to the users Notification Center.                                                                                         |
@@ -280,7 +280,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>See also hs.notify:schedule()</li><li>If a notification has been modified, then this will resend it.</li><li>You can invoke this multiple times if you wish to repeat the same notification.</li></ul>                |
 
 #### [setIdImage](#setidimage)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:setIdImage(image[, withBorder]) -> notificationObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:setIdImage(image[, withBorder]) -> notificationObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set a notification's identification image (replace the Hammerspoon icon with a custom image)                                                                                         |
@@ -289,7 +289,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>See hs.image for details on how to specify or define an image</li><li>**WARNING**: This method uses a private API. It could break at any time. Please file an issue if it does</li></ul>                |
 
 #### [soundName](#soundname)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:soundName([soundName]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:soundName([soundName]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the sound for a notification                                                                                         |
@@ -298,7 +298,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Notes**                                            | <ul><li>Sounds will first be matched against the names of system sounds. If no matches can be found, they will then be searched for in the following paths, in order:</li><li> `~/Library/Sounds`</li><li> `/Library/Sounds`</li><li> `/Network/Sounds`</li><li> `/System/Library/Sounds`</li></ul>                |
 
 #### [subTitle](#subtitle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:subTitle([subtitleText]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:subTitle([subtitleText]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the subtitle of a notification                                                                                         |
@@ -306,7 +306,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>The notification object, if subtitleText is present; otherwise the current setting.</li></ul>          |
 
 #### [title](#title)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:title([titleText]) -> notificationObject | current-setting` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:title([titleText]) -> notificationObject | current-setting` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the title of a notification                                                                                         |
@@ -314,7 +314,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>The notification object, if titleText is present; otherwise the current setting.</li></ul>          |
 
 #### [withdraw](#withdraw)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.notify:withdraw() -> notificationObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:withdraw() -> notificationObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Withdraws a delivered notification from the Notification Center.                                                                                         |

@@ -19,7 +19,7 @@ Various hashing algorithms
 ### Functions
 
 #### [MD5](#md5)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.MD5(data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.MD5(data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an MD5 hash                                                                                         |
@@ -27,7 +27,7 @@ Various hashing algorithms
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul>          |
 
 #### [SHA1](#sha1)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.SHA1(data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.SHA1(data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an SHA1 hash                                                                                         |
@@ -35,7 +35,7 @@ Various hashing algorithms
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul>          |
 
 #### [SHA256](#sha256)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.SHA256(data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.SHA256(data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an SHA256 hash                                                                                         |
@@ -43,7 +43,7 @@ Various hashing algorithms
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul>          |
 
 #### [SHA512](#sha512)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.SHA512(data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.SHA512(data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an SHA512 hash                                                                                         |
@@ -51,7 +51,7 @@ Various hashing algorithms
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul>          |
 
 #### [hmacMD5](#hmacmd5)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.hmacMD5(key, data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.hmacMD5(key, data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an HMAC using a key and an MD5 hash                                                                                         |
@@ -59,7 +59,7 @@ Various hashing algorithms
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul>          |
 
 #### [hmacSHA1](#hmacsha1)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.hmacSHA1(key, data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.hmacSHA1(key, data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an HMAC using a key and a SHA1 hash                                                                                         |
@@ -67,7 +67,7 @@ Various hashing algorithms
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul>          |
 
 #### [hmacSHA256](#hmacsha256)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.hmacSHA256(key, data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.hmacSHA256(key, data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an HMAC using a key and a SHA256 hash                                                                                         |
@@ -75,7 +75,7 @@ Various hashing algorithms
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul>          |
 
 #### [hmacSHA512](#hmacsha512)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hash.hmacSHA512(key, data) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hash.hmacSHA512(key, data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Calculates an HMAC using a key and a SHA512 hash                                                                                         |

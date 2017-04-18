@@ -19,37 +19,37 @@ Switch focus with a transient per-application keyboard shortcut
 ### Variables
 
 #### [fontName](#fontname)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hints.fontName` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.fontName` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A fully specified family-face name, preferrably the PostScript name, such as Helvetica-BoldOblique or Times-Roman. (The Font Book app displays PostScript names of fonts in the Font Info panel.)                                                                                         |
 
 #### [fontSize](#fontsize)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hints.fontSize` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.fontSize` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | The size of font that should be used. A value of 0.0 will use the default size.                                                                                         |
 
 #### [hintChars](#hintchars)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hints.hintChars` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.hintChars` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | This controls the set of characters that will be used for window hints. They must be characters found in hs.keycodes.map                                                                                         |
 
 #### [showTitleThresh](#showtitlethresh)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hints.showTitleThresh` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.showTitleThresh` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | If there are less than or equal to this many windows on screen their titles will be shown in the hints.                                                                                         |
 
 #### [style](#style)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hints.style` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.style` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | If this is set to "vimperator", every window hint starts with the first character                                                                                         |
 
 #### [titleMaxSize](#titlemaxsize)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hints.titleMaxSize` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.titleMaxSize` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | If the title is longer than maxSize, the string is truncated, -1 to disable, valid value is >= 6                                                                                         |
@@ -57,7 +57,7 @@ Switch focus with a transient per-application keyboard shortcut
 ### Functions
 
 #### [windowHints](#windowhints)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.hints.windowHints([windows, callback, allowNonStandard])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.windowHints([windows, callback, allowNonStandard])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays a keyboard hint for switching focus to each window                                                                                         |

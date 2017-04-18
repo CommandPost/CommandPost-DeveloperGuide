@@ -20,7 +20,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Functions
 
 #### [getAbsolutePosition](#getabsoluteposition)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mouse.getAbsolutePosition() -> point` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getAbsolutePosition() -> point` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the absolute co-ordinates of the mouse pointer                                                                                         |
@@ -29,7 +29,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The co-ordinates returned by this function are in relation to the full size of your desktop. If you have multiple monitors, the desktop is a large virtual rectangle that contains them all (e.g. if you have two 1920x1080 monitors and the mouse is in the middle of the second monitor, the returned table would be `{ x=2879, y=540 }`)</li><li>Multiple monitors of different sizes can cause the co-ordinates of some areas of the desktop to be negative. This is perfectly normal. 0,0 in the co-ordinates of the desktop is the top left of the primary monitor</li></ul>                |
 
 #### [getButtons](#getbuttons)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mouse.getButtons() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getButtons() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the current mouse buttons being pressed *at this instant*.                                                                                         |
@@ -38,7 +38,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This function is a wrapper to `hs.eventtap.checkMouseButtons`</li><li>This is an instantaneous poll of the current mouse buttons, not a callback.</li></ul>                |
 
 #### [getCurrentScreen](#getcurrentscreen)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mouse.getCurrentScreen() -> screen or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getCurrentScreen() -> screen or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the screen the mouse pointer is on                                                                                         |
@@ -46,7 +46,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>An `hs.screen` object that the mouse pointer is on, or nil if an error occurred</li></ul>          |
 
 #### [getRelativePosition](#getrelativeposition)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mouse.getRelativePosition() -> point or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getRelativePosition() -> point or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the co-ordinates of the mouse pointer, relative to the screen it is on                                                                                         |
@@ -55,7 +55,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The co-ordinates returned by this function are relative to the top left pixel of the screen the mouse is on (see `hs.mouse.getAbsolutePosition` if you need the location in the full desktop space)</li></ul>                |
 
 #### [setAbsolutePosition](#setabsoluteposition)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mouse.setAbsolutePosition(point)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.setAbsolutePosition(point)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the absolute co-ordinates of the mouse pointer                                                                                         |
@@ -64,7 +64,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>The co-ordinates given to this function must be in relation to the full size of your desktop. See the notes for `hs.mouse.getAbsolutePosition` for more information</li></ul>                |
 
 #### [setRelativePosition](#setrelativeposition)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mouse.setRelativePosition(point[, screen])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.setRelativePosition(point[, screen])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the co-ordinates of the mouse pointer, relative to a screen                                                                                         |
@@ -72,7 +72,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [trackingSpeed](#trackingspeed)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.mouse.trackingSpeed([speed]) -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.trackingSpeed([speed]) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets/Sets the current system mouse tracking speed setting                                                                                         |

@@ -14,13 +14,13 @@ Registers itself with the `core.action.manager`.
 ### Functions
 
 #### [choices](#choices)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.commands.commandaction.choices() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.commands.commandaction.choices() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an array of available choices                                                                                         |
 
 #### [execute](#execute)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.commands.commandaction.execute(params) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.commands.commandaction.execute(params) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Executes the action with the provided parameters.                                                                                         |

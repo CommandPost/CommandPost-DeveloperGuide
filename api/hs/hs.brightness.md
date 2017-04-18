@@ -18,7 +18,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Functions
 
 #### [ambient](#ambient)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.brightness.ambient() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.brightness.ambient() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the current ambient brightness                                                                                         |
@@ -27,7 +27,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>Even though external Apple displays include an ambient light sensor, their data is typically not available, so this function will likely only be useful to MacBook users</li><li>The raw sensor data is converted to lux via an algorithm used by Mozilla Firefox and is not guaranteed to give an accurate lux value</li></ul>                |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.brightness.get() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.brightness.get() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the current brightness of the display                                                                                         |
@@ -35,7 +35,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A number containing the brightness of the display, between 0 and 100</li></ul>          |
 
 #### [set](#set)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.brightness.set(brightness) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.brightness.set(brightness) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the display brightness                                                                                         |

@@ -20,7 +20,7 @@ Reads & Writes plist data.
 ### Functions
 
 #### [base64ToTable](#base64totable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plist.base64ToTable(base64Data) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.base64ToTable(base64Data) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts base64 Data into a LUA Table.                                                                                         |
@@ -29,7 +29,7 @@ Reads & Writes plist data.
 | **Notes**                                            | <ul><li>None</li></ul>                |
 
 #### [binaryFileToTable](#binaryfiletotable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plist.binaryFileToTable(plistFileName) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.binaryFileToTable(plistFileName) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts the data from a Binary File into a LUA Table.                                                                                         |
@@ -38,7 +38,7 @@ Reads & Writes plist data.
 | **Notes**                                            | <ul><li>None</li></ul>                |
 
 #### [binaryFileToXML](#binaryfiletoxml)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plist.binaryFileToXML(plistFileName) -> string | nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.binaryFileToXML(plistFileName) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts the data from a Binary plist File into XML as a string.                                                                                         |
@@ -47,7 +47,7 @@ Reads & Writes plist data.
 | **Notes**                                            | <ul><li>None</li></ul>                |
 
 #### [binaryToTable](#binarytotable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plist.binaryToTable(binaryData) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.binaryToTable(binaryData) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts Binary Data into a LUA Table.                                                                                         |
@@ -56,7 +56,7 @@ Reads & Writes plist data.
 | **Notes**                                            | <ul><li>None</li></ul>                |
 
 #### [fileToTable](#filetotable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plist.fileToTable(plistFileName) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.fileToTable(plistFileName) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts plist data from a binary or XML file into a LUA Table.                                                                                         |
@@ -65,7 +65,7 @@ Reads & Writes plist data.
 | **Notes**                                            | <ul><li>None</li></ul>                |
 
 #### [xmlFileToTable](#xmlfiletotable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plist.xmlFileToTable(plistFileName) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.xmlFileToTable(plistFileName) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts XML data from a file into a LUA Table.                                                                                         |

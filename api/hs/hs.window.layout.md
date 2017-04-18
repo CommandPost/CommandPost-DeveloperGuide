@@ -90,13 +90,13 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 ### Variables
 
 #### [applyDelay](#applydelay)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout.applyDelay` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.applyDelay` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | When "active mode" windowlayouts apply a rule, they will pause briefly for this amount of time in seconds, to allow windows                                                                                         |
 
 #### [screensChangedDelay](#screenschangeddelay)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout.screensChangedDelay` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.screensChangedDelay` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | The number of seconds to wait, after a screen configuration change has been detected, before                                                                                         |
@@ -104,7 +104,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 ### Functions
 
 #### [applyLayout](#applylayout)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout.applyLayout(rules)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.applyLayout(rules)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies a layout                                                                                         |
@@ -113,7 +113,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Notes**                                            | <ul><li>this is a convenience wrapper for "passive mode" use that creates, applies, and deletes a windowlayout object;</li><li>   do *not* use shared windowfilters in `rules`, as they'll be deleted; you can just use constructor argument maps instead</li></ul>                |
 
 #### [pauseAllInstances](#pauseallinstances)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout.pauseAllInstances()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.pauseAllInstances()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Pauses all active windowlayout instances                                                                                         |
@@ -121,7 +121,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [resumeAllInstances](#resumeallinstances)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout.resumeAllInstances()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.resumeAllInstances()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resumes all active windowlayout instances                                                                                         |
@@ -131,7 +131,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout.new(rules[,logname[,loglevel]]) -> hs.window.layout object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.new(rules[,logname[,loglevel]]) -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new hs.window.layout instance                                                                                         |
@@ -141,7 +141,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 ### Methods
 
 #### [apply](#apply)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout:apply()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:apply()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Applies the layout                                                                                         |
@@ -150,7 +150,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Notes**                                            | <ul><li>if a screen configuration is defined for this windowfilter, and currently not satisfied, this method will do nothing</li></ul>                |
 
 #### [getRules](#getrules)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout:getRules() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:getRules() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return a table with all the rules (and the screen configuration, if present) defined for this windowlayout                                                                                         |
@@ -158,7 +158,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Returns**                                          | <ul><li>a table containing the rules of this windowlayout; you can pass this table (optionally</li><li>   after performing valid manipulations) to `hs.window.layout.new()`</li></ul>          |
 
 #### [pause](#pause)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout:pause() -> hs.window.layout object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:pause() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Pauses an active windowlayout instance; while paused no automatic window management will occur                                                                                         |
@@ -166,7 +166,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Returns**                                          | <ul><li>the `hs.window.layout` object</li></ul>          |
 
 #### [resume](#resume)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout:resume() -> hs.window.layout object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:resume() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resumes an active windowlayout instance after it was paused                                                                                         |
@@ -175,7 +175,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Notes**                                            | <ul><li>if a screen configuration is defined for this windowfilter, and currently not satisfied, this method will do nothing</li></ul>                |
 
 #### [setScreenConfiguration](#setscreenconfiguration)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout:setScreenConfiguration(screens) -> hs.window.layout object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:setScreenConfiguration(screens) -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Determines the screen configuration that permits applying this windowlayout                                                                                         |
@@ -184,7 +184,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Notes**                                            | <ul><li>if `screens` is `nil`, any previous screen configuration is removed, and this windowlayout will be always allowed</li><li>for "active" windowlayouts, call this method *before* calling `hs.window.layout:start()`</li><li>by using `hs.geometry` size objects as hints you can define separate layouts for the same physical</li><li>   screen at different resolutions</li></ul>                |
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout:start() -> hs.window.layout object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:start() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Puts a windowlayout instance in "active mode"                                                                                         |
@@ -193,7 +193,7 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | **Notes**                                            | <ul><li>if a screen configuration is defined for this windowfilter, and currently not satisfied, this</li><li>   windowfilter will be put in "active mode" but will remain paused until the screen configuration</li><li>   requirements are met</li></ul>                |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.window.layout:stop() -> hs.window.layout object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:stop() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops a windowlayout instance (i.e. not in "active mode" anymore)                                                                                         |

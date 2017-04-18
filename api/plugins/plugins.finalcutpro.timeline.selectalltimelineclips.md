@@ -12,7 +12,7 @@ Select All Timeline Clips
 ### Functions
 
 #### [selectalltimelineclips](#selectalltimelineclips)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.selectalltimelineclips(forwards) -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.selectalltimelineclips(forwards) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Selects all timeline clips to the left or right of the timeline playhead in Final Cut Pro.                                                                                         |

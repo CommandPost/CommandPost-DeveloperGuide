@@ -20,7 +20,7 @@ via the Final Cut Pro Command Editor.
 ### Functions
 
 #### [disableHacksShortcuts](#disablehacksshortcuts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.disableHacksShortcuts() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.disableHacksShortcuts() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Disable Hacks Shortcuts                                                                                         |
@@ -29,7 +29,7 @@ via the Final Cut Pro Command Editor.
 | **Notes**                                            | <ul><li>Used by Trash Preferences menubar command.</li></ul>                |
 
 #### [editCommands](#editcommands)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.editCommands() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.editCommands() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Launch the Final Cut Pro Command Editor                                                                                         |
@@ -37,7 +37,7 @@ via the Final Cut Pro Command Editor.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [enableHacksShortcuts](#enablehacksshortcuts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.enableHacksShortcuts() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.enableHacksShortcuts() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enable Hacks Shortcuts                                                                                         |
@@ -45,7 +45,7 @@ via the Final Cut Pro Command Editor.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [enabled](#enabled)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.enabled() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.enabled() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Are Hacks Shortcuts Enabled?                                                                                         |
@@ -53,7 +53,7 @@ via the Final Cut Pro Command Editor.
 | **Returns**                                          | <ul><li>`true` if Hacks Shortcuts are enabled otherwise `false`</li></ul>          |
 
 #### [init](#init)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.init() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
@@ -61,7 +61,7 @@ via the Final Cut Pro Command Editor.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setEditable](#seteditable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.setEditable() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.setEditable() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enable Hacks Shortcuts                                                                                         |
@@ -69,7 +69,7 @@ via the Final Cut Pro Command Editor.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleEditable](#toggleeditable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.toggleEditable() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.toggleEditable() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggle Editable                                                                                         |
@@ -77,7 +77,7 @@ via the Final Cut Pro Command Editor.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [update](#update)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.hacks.shortcuts.update() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Read shortcut keys from the Final Cut Pro Preferences.                                                                                         |

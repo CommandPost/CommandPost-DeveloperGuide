@@ -12,7 +12,7 @@ User Guide Menu Item.
 ### Functions
 
 #### [show](#show)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.helpandsupport.userguide.show() -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.helpandsupport.userguide.show() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens the CommandPost User Guide in your default Browser.                                                                                         |

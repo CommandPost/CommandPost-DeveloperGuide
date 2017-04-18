@@ -90,7 +90,7 @@ The document has moved
 ### Variables
 
 #### [timeout](#timeout)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket.timeout` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.timeout` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Timeout for the socket operations, in seconds. New [`hs.socket`](#new) objects will be created with this timeout value, but can individually change it with the [`setTimeout`](#setTimeout) method                                                                                         |
@@ -98,7 +98,7 @@ The document has moved
 ### Functions
 
 #### [parseAddress](#parseaddress)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket.parseAddress(sockaddr) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.parseAddress(sockaddr) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Parses a binary socket address structure into a readable table                                                                                         |
@@ -109,7 +109,7 @@ The document has moved
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket.new([fn]) -> hs.socket object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.new([fn]) -> hs.socket object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates an unconnected asynchronous TCP socket object                                                                                         |
@@ -117,7 +117,7 @@ The document has moved
 | **Returns**                                          | <ul><li>An [`hs.socket`](#new) object</li></ul>          |
 
 #### [server](#server)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket.server(port|path[, fn]) -> hs.socket object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.server(port|path[, fn]) -> hs.socket object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates and binds an [`hs.socket`](#new) instance to a port or path (Unix domain socket) for listening                                                                                         |
@@ -127,7 +127,7 @@ The document has moved
 ### Methods
 
 #### [connect](#connect)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:connect({host, port}|path[, fn]) -> self or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:connect({host, port}|path[, fn]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Connects an unconnected [`hs.socket`](#new) instance                                                                                         |
@@ -136,7 +136,7 @@ The document has moved
 | **Notes**                                            | <ul><li>Either a host/port pair OR a Unix domain socket path must be supplied. If no port is passed, the first param is assumed to be a path to the socket file</li></ul>                |
 
 #### [connected](#connected)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:connected() -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:connected() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the connection status of the [`hs.socket`](#new) instance                                                                                         |
@@ -144,7 +144,7 @@ The document has moved
 | **Returns**                                          | <ul><li>`true` if connected, otherwise `false`</li></ul>          |
 
 #### [connections](#connections)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:connections() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:connections() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the number of connections to the socket, which is at most 1 for default (non-listening) sockets                                                                                         |
@@ -152,7 +152,7 @@ The document has moved
 | **Returns**                                          | <ul><li>The number of connections to the socket</li></ul>          |
 
 #### [disconnect](#disconnect)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:disconnect() -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:disconnect() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Disconnects the [`hs.socket`](#new) instance, freeing it for reuse                                                                                         |
@@ -161,7 +161,7 @@ The document has moved
 | **Notes**                                            | <ul><li>If called on a listening socket with multiple connections, each client is disconnected</li></ul>                |
 
 #### [info](#info)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:info() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:info() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns information on the [`hs.socket`](#new) instance                                                                                         |
@@ -169,7 +169,7 @@ The document has moved
 | **Returns**                                          | <ul><li>A table containing the following keys:</li><li> connectedAddress - `string` (`sockaddr` struct)</li><li> connectedHost - `string`</li><li> connectedPort - `number`</li><li> connectedURL - `string`</li><li> connections - `number`</li><li> isConnected - `boolean`</li><li> isDisconnected - `boolean`</li><li> isIPv4 - `boolean`</li><li> isIPv4Enabled - `boolean`</li><li> isIPv4PreferredOverIPv6 - `boolean`</li><li> isIPv6 - `boolean`</li><li> isIPv6Enabled - `boolean`</li><li> isSecure - `boolean`</li><li> localAddress - `string` (`sockaddr` struct)</li><li> localHost - `string`</li><li> localPort - `number`</li><li> timeout - `number`</li><li> unixSocketPath - `string`</li><li> userData - `string`</li></ul>          |
 
 #### [listen](#listen)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:listen(port|path) -> self or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:listen(port|path) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Binds an unconnected [`hs.socket`](#new) instance to a port or path (Unix domain socket) for listening                                                                                         |
@@ -177,7 +177,7 @@ The document has moved
 | **Returns**                                          | <ul><li>The [`hs.socket`](#new) object or `nil` if an error occurred</li></ul>          |
 
 #### [read](#read)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:read(delimiter[, tag]) -> self or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:read(delimiter[, tag]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Read data from the socket. Results are passed to the [callback function](#setCallback), which must be set to use this method                                                                                         |
@@ -186,19 +186,19 @@ The document has moved
 | **Notes**                                            | <ul><li>If called on a listening socket with multiple connections, data is read from each of them</li></ul>                |
 
 #### [receive](#receive)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:receive(delimiter[, tag]) -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:receive(delimiter[, tag]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Alias for [`hs.socket:read`](#read)                                                                                         |
 
 #### [send](#send)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:send(message[, tag]) -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:send(message[, tag]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Alias for [`hs.socket:write`](#write)                                                                                         |
 
 #### [setCallback](#setcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:setCallback([fn]) -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:setCallback([fn]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the read callback for the [`hs.socket`](#new) instance. Must be set to read data from the socket                                                                                         |
@@ -206,7 +206,7 @@ The document has moved
 | **Returns**                                          | <ul><li>The [`hs.socket`](#new) object</li></ul>          |
 
 #### [setTimeout](#settimeout)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:setTimeout(timeout) -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:setTimeout(timeout) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the timeout for the socket operations. If the timeout value is negative, the operations will not use a timeout, which is the default                                                                                         |
@@ -214,7 +214,7 @@ The document has moved
 | **Returns**                                          | <ul><li>The [`hs.socket`](#new) object</li></ul>          |
 
 #### [startTLS](#starttls)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:startTLS([verify][, peerName]) -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:startTLS([verify][, peerName]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Secures the socket with TLS. The socket will disconnect immediately if TLS negotiation fails                                                                                         |
@@ -223,7 +223,7 @@ The document has moved
 | **Notes**                                            | <ul><li>* IMPORTANT SECURITY NOTE:</li><li>The default settings will check to make sure the remote party's certificate is signed by a</li><li>trusted 3rd party certificate agency (e.g. verisign) and that the certificate is not expired.</li><li>However it will not verify the name on the certificate unless you</li><li>give it a name to verify against via `peerName`.</li><li>The security implications of this are important to understand.</li><li>Imagine you are attempting to create a secure connection to MySecureServer.com,</li><li>but your socket gets directed to MaliciousServer.com because of a hacked DNS server.</li><li>If you simply use the default settings, and MaliciousServer.com has a valid certificate,</li><li>the default settings will not detect any problems since the certificate is valid.</li><li>To properly secure your connection in this particular scenario you</li><li>should set `peerName` to "MySecureServer.com".</li></ul>                |
 
 #### [write](#write)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.socket:write(message[, tag][, fn]) -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:write(message[, tag][, fn]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Write data to the socket                                                                                         |

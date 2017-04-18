@@ -41,115 +41,115 @@ Manage CommandPost's constants and settings.
 ### Constants
 
 #### [appName](#appname)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.appName` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appName` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The name of the Application                                                                                         |
 
 #### [appVersion](#appversion)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.appVersion` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appVersion` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Prefix used for Configuration Settings                                                                                         |
 
 #### [assetsPath](#assetspath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.assetsPath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.assetsPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where Application Assets are stored                                                                                         |
 
 #### [basePath](#basepath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.basePath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.basePath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where the Extensions & Plugins folders are stored.                                                                                         |
 
 #### [bugReportEmail](#bugreportemail)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.bugReportEmail` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bugReportEmail` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Email address used for bug reports                                                                                         |
 
 #### [bundleID](#bundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.bundleID` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundleID` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Application's Bundle ID                                                                                         |
 
 #### [bundledPluginsPath](#bundledpluginspath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.bundledPluginsPath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundledPluginsPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to bundled plugins                                                                                         |
 
 #### [configPrefix](#configprefix)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.configPrefix` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.configPrefix` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Prefix used for Configuration Settings                                                                                         |
 
 #### [iconPath](#iconpath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.iconPath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.iconPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to the Application Icon                                                                                         |
 
 #### [languagePath](#languagepath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.languagePath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.languagePath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to the Languages Folder                                                                                         |
 
 #### [menubarIconPath](#menubariconpath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.menubarIconPath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.menubarIconPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to the Menubar Application Icon                                                                                         |
 
 #### [pluginPaths](#pluginpaths)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.pluginPaths` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.pluginPaths` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Table of Plugins Paths. Earlier entries take precedence.                                                                                         |
 
 #### [privacyPolicyURL](#privacypolicyurl)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.privacyPolicyURL` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.privacyPolicyURL` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | URL for Privacy Policy                                                                                         |
 
 #### [processID](#processid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.processID` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.processID` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Application's Process ID                                                                                         |
 
 #### [scriptPath](#scriptpath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.scriptPath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.scriptPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where Application Scripts are stored                                                                                         |
 
 #### [sourceExtensions](#sourceextensions)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.sourceExtensions` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.sourceExtensions` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Extensions for files which will trigger a reload when modified.                                                                                         |
 
 #### [sourceWatcher](#sourcewatcher)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.sourceWatcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.sourceWatcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A `cp.sourcewatcher` that will watch for source files and reload CommandPost if any change.                                                                                         |
 
 #### [userConfigRootPath](#userconfigrootpath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.userConfigRootPath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.userConfigRootPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to user configuration folders                                                                                         |
 
 #### [userPluginsPath](#userpluginspath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.userPluginsPath` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.userPluginsPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to user plugins                                                                                         |
@@ -157,7 +157,7 @@ Manage CommandPost's constants and settings.
 ### Functions
 
 #### [application](#application)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.application() -> hs.application object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.application() -> hs.application object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Application as a hs.application object                                                                                         |
@@ -165,7 +165,7 @@ Manage CommandPost's constants and settings.
 | **Returns**                                          | <ul><li>hs.application object</li></ul>          |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.get() -> string or boolean or number or nil or table or binary data` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.get() -> string or boolean or number or nil or table or binary data` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a setting                                                                                         |
@@ -173,7 +173,7 @@ Manage CommandPost's constants and settings.
 | **Returns**                                          | <ul><li>The value of the setting</li></ul>          |
 
 #### [isFrontmost](#isfrontmost)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.isFrontmost() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.isFrontmost() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether or not the Application is front most                                                                                         |
@@ -181,7 +181,7 @@ Manage CommandPost's constants and settings.
 | **Returns**                                          | <ul><li>`true` if Application is front most otherwise `false`</li></ul>          |
 
 #### [reset](#reset)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.reset()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.reset()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resets all the settings for the Application                                                                                         |
@@ -189,7 +189,7 @@ Manage CommandPost's constants and settings.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [set](#set)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.set(key, value)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.set(key, value)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves a setting with common datatypes                                                                                         |

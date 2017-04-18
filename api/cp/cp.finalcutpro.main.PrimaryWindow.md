@@ -12,7 +12,7 @@ Primary Window Module.
 ### Methods
 
 #### [watch](#watch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.main.PrimaryWindow:watch() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.main.PrimaryWindow:watch() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Watch for events that happen in the command editor                                                                                         |

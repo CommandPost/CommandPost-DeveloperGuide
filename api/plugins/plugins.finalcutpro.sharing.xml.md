@@ -12,7 +12,7 @@ Shared XML Plugin.
 ### Functions
 
 #### [shareXML](#sharexml)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.sharing.xml.shareXML() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.sharing.xml.shareXML() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Share XML                                                                                         |

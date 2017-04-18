@@ -16,7 +16,7 @@ Advanced Preferences Panel.
 ### Functions
 
 #### [getDeveloperMode](#getdevelopermode)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.advanced.getDeveloperMode() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.getDeveloperMode() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Developer Mode status.                                                                                         |
@@ -24,7 +24,7 @@ Advanced Preferences Panel.
 | **Returns**                                          | <ul><li>`true` if developer mode is enabled otherwise `false`.</li></ul>          |
 
 #### [openErrorLog](#openerrorlog)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.advanced.openErrorLog() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.openErrorLog() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens the Error Log                                                                                         |
@@ -32,7 +32,7 @@ Advanced Preferences Panel.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleCommandLineTool](#togglecommandlinetool)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.advanced.toggleCommandLineTool() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.toggleCommandLineTool() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the Command Line Tool                                                                                         |
@@ -40,7 +40,7 @@ Advanced Preferences Panel.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleDeveloperMode](#toggledevelopermode)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.advanced.toggleDeveloperMode() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.toggleDeveloperMode() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the Developer Mode.                                                                                         |
@@ -48,7 +48,7 @@ Advanced Preferences Panel.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [trashPreferences](#trashpreferences)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.advanced.trashPreferences() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.trashPreferences() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resets all of the CommandPost Preferences to their default values.                                                                                         |

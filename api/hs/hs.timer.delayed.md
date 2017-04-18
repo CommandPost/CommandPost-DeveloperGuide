@@ -18,7 +18,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.timer.delayed.new(delay, fn) -> hs.timer.delayed object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.delayed.new(delay, fn) -> hs.timer.delayed object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new delayed timer.                                                                                         |
@@ -29,7 +29,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 ### Methods
 
 #### [nextTrigger](#nexttrigger)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.timer.delayed:nextTrigger() -> number or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.delayed:nextTrigger() -> number or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the time left in the callback countdown                                                                                         |
@@ -37,7 +37,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 | **Returns**                                          | <ul><li> if the callback countdown is running, returns the number of seconds until it triggers; otherwise returns nil</li></ul>          |
 
 #### [running](#running)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.timer.delayed:running() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.delayed:running() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a boolean indicating whether the callback countdown is running                                                                                         |
@@ -45,7 +45,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 | **Returns**                                          | <ul><li> a boolean</li></ul>          |
 
 #### [setDelay](#setdelay)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.timer.delayed:setDelay(delay) -> hs.timer.delayed object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.delayed:setDelay(delay) -> hs.timer.delayed object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Changes the callback countdown duration                                                                                         |
@@ -54,7 +54,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 | **Notes**                                            | <ul><li> if the callback countdown is running, calling this method will restart it</li></ul>                |
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.timer.delayed:start([delay]) -> hs.timer.delayed object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.delayed:start([delay]) -> hs.timer.delayed object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts or restarts the callback countdown                                                                                         |
@@ -62,7 +62,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 | **Returns**                                          | <ul><li> the delayed timer object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.timer.delayed:stop() -> hs.timer.delayed object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.delayed:stop() -> hs.timer.delayed object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Cancels the callback countdown, if running; the callback will therefore not be triggered                                                                                         |

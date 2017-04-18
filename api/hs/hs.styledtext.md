@@ -112,34 +112,34 @@ Note that due to differences in the way Lua determines when to use metamethods f
 ### Constants
 
 #### [defaultFonts](#defaultfonts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.defaultFonts` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.defaultFonts` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing the system default fonts and sizes.                                                                                         |
 | **Notes**                                            | <ul><li>These are useful when defining a styled text object which should be similar to or based on a specific system element type.</li></ul>                |
 
 #### [fontTraits](#fonttraits)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.fontTraits -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontTraits -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table for containing Font Trait masks for use with `hs.styledtext.fontNamesWithTraits(...)`                                                                                         |
 
 #### [lineAppliesTo](#lineappliesto)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.lineAppliesTo` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.lineAppliesTo` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table of values indicating how the line for underlining or strike-through are applied to the text.                                                                                         |
 | **Notes**                                            | <ul><li>Valid keys are as follows:</li><li>  line - the underline or strike-through is applied to an entire line of text</li><li>  word - the underline or strike-through is only applied to words and not the spaces in a line of text</li></ul>                |
 
 #### [linePatterns](#linepatterns)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.linePatterns` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.linePatterns` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table of patterns which apply to the line for underlining or strike-through.                                                                                         |
 | **Notes**                                            | <ul><li>Valid line pattern keys are as follows:</li><li>  solid      - a solid line</li><li>  dot        - a dotted line</li><li>  dash       - a dashed line</li><li>  dashDot    - a pattern of a dash followed by a dot</li><li>  dashDotDot - a pattern of a dash followed by two dots</li></ul>                |
 
 #### [lineStyles](#linestyles)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.lineStyles` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.lineStyles` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table of styles which apply to the line for underlining or strike-through.                                                                                         |
@@ -148,7 +148,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 ### Functions
 
 #### [convertFont](#convertfont)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.convertFont(fontTable, trait) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.convertFont(fontTable, trait) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the font which most closely matches the given font and the trait change requested.                                                                                         |
@@ -156,14 +156,14 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Returns**                                          | <ul><li>a table containing the name and size of the font which most closely matches the specified font and the trait change requested.  If no such font is available, then the original font is returned unchanged.</li></ul>          |
 
 #### [fontInfo](#fontinfo)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.fontInfo(font) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontInfo(font) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get information about the font Specified in the attributes table.                                                                                         |
 | **Returns**                                          | <ul><li>a table containing the following keys:</li><li>  fontName           - The font's internally recognized name.</li><li>  familyName         - The font's family name.</li><li>  displayName        - The font’s display name is typically localized for the user’s language.</li><li>  fixedPitch         - A boolean value indicating whether all glyphs in the font have the same advancement.</li><li>  ascender           - The top y-coordinate, offset from the baseline, of the font’s longest ascender.</li><li>  boundingRect       - A table containing the font’s bounding rectangle, scaled to the font’s size.  This rectangle is the union of the bounding rectangles of every glyph in the font.</li><li>  capHeight          - The cap height of the font.</li><li>  descender          - The bottom y-coordinate, offset from the baseline, of the font’s longest descender.</li><li>  italicAngle        - The number of degrees that the font is slanted counterclockwise from the vertical. (read-only)</li><li>  leading            - The leading value of the font.</li><li>  maximumAdvancement - A table containing the maximum advance of any of the font’s glyphs.</li><li>  numberOfGlyphs     - The number of glyphs in the font.</li><li>  pointSize          - The point size of the font.</li><li>  underlinePosition  - The baseline offset to use when drawing underlines with the font.</li><li>  underlineThickness - The thickness to use when drawing underlines with the font.</li><li>  xHeight            - The x-height of the font.</li></ul>          |
 
 #### [fontNames](#fontnames)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.fontNames() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontNames() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the names of all installed fonts for the system.                                                                                         |
@@ -171,7 +171,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Returns**                                          | <ul><li>a table containing the names of every font installed for the system.  The individual names are strings which can be used in the `hs.drawing:setTextFont(fontname)` method.</li></ul>          |
 
 #### [fontNamesWithTraits](#fontnameswithtraits)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.fontNamesWithTraits(fontTraitMask) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontNamesWithTraits(fontTraitMask) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the names of all installed fonts for the system with the specified traits.                                                                                         |
@@ -182,7 +182,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 ### Constructors
 
 #### [ansi](#ansi)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.ansi(string, [attributes]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.ansi(string, [attributes]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Create an `hs.styledtext` object from the string provided, converting ANSI SGR color and some font sequences into the appropriate attributes.  Attributes to apply to the resulting string may also be optionally provided.                                                                                         |
@@ -191,7 +191,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>Because a font is required for the SGR sequences indicating Bold and Italic, the base font is determined using the following logic:</li><li>* if no `attributes` table is provided, the font is assumed to be the default for `hs.drawing` as returned by the `hs.drawing.defaultTextStyle` function</li><li>* if an `attributes` table is provided and it defines a `font` attribute, this font is used.</li><li>* if an `attributes` table is provided, but it does not provide a `font` attribute, the NSAttributedString default of Helvetica at 12 points is used.</li><li>As the most common use of this constructor is likely to be from the output of a terminal shell command, you will most likely want to specify a fixed-pitch (monospace) font.  You can get a list of installed fixed-pitch fonts by typing `hs.styledtext.fontNamesWithTraits(hs.styledtext.fontTraits.fixedPitchFont)` into the Hammerspoon console.</li></ul>                |
 
 #### [getStyledTextFromData](#getstyledtextfromdata)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.getStyledTextFromData(data, [type]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.getStyledTextFromData(data, [type]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Converts the provided data into a styled text string.                                                                                         |
@@ -200,7 +200,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>See also `hs.styledtext.getStyledTextFromFile`</li></ul>                |
 
 #### [getStyledTextFromFile](#getstyledtextfromfile)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.getStyledTextFromFile(file, [type]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.getStyledTextFromFile(file, [type]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Converts the data in the specified file into a styled text string.                                                                                         |
@@ -209,7 +209,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>See also `hs.styledtext.getStyledTextFromData`</li></ul>                |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext.new(string, [attributes]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.new(string, [attributes]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Create an `hs.styledtext` object from the string or table representation provided.  Attributes to apply to the resulting string may also be optionally provided.                                                                                         |
@@ -220,7 +220,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 ### Methods
 
 #### [asTable](#astable)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:asTable([starts], [ends]) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:asTable([starts], [ends]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the table representation of the `hs.styledtext` object or its specified substring.                                                                                         |
@@ -229,7 +229,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>`starts` and `ends` follow the conventions of `i` and `j` for Lua's `string.sub` function.</li><li>The attribute which contains an attachment (image) for a converted RTFD or other document is known to set the `unsupportedFields` flag.</li></ul>                |
 
 #### [byte](#byte)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:byte([starts], [ends]) -> integer, ...` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:byte([starts], [ends]) -> integer, ...` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the internal numerical representation of the characters in the `hs.styledtext` object specified by the given indicies.  Mimics the Lua `string.byte` function.                                                                                         |
@@ -238,7 +238,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>`starts` and `ends` follow the conventions of `i` and `j` for Lua's `string.sub` function.</li></ul>                |
 
 #### [convert](#convert)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:convert([type]) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:convert([type]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Converts the styledtext object into the data format specified.                                                                                         |
@@ -246,7 +246,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Returns**                                          | <ul><li>a string containing the converted data</li></ul>          |
 
 #### [copy](#copy)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:copy(styledText) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:copy(styledText) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Create a copy of the `hs.styledtext` object.                                                                                         |
@@ -254,7 +254,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Returns**                                          | <ul><li>a copy of the styledText object</li></ul>          |
 
 #### [find](#find)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:find(pattern, [init, [plain]]) -> start, end, ... | nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:find(pattern, [init, [plain]]) -> start, end, ... | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the indicies of the first occurrence of the specified pattern in the text of the `hs.styledtext` object.  Mimics the Lua `string.find` function.                                                                                         |
@@ -263,7 +263,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>Any captures returned are returned as Lua Strings, not as `hs.styledtext` objects.</li></ul>                |
 
 #### [getString](#getstring)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:getString([starts], [ends]) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:getString([starts], [ends]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the text of the `hs.styledtext` object as a Lua String                                                                                         |
@@ -272,7 +272,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>`starts` and `ends` follow the conventions of `i` and `j` for Lua's `string.sub` function.</li></ul>                |
 
 #### [gmatch](#gmatch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:gmatch(pattern) -> iterator-function` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:gmatch(pattern) -> iterator-function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an iterator function which will return the captures (or the entire pattern) of the next match of the specified pattern in the text of the `hs.styledtext` object each time it is called.  Mimics the Lua `string.gmatch` function.                                                                                         |
@@ -281,7 +281,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>Any captures (or the entire pattern) returned by the iterator are returned as Lua Strings, not as `hs.styledtext` objects.</li></ul>                |
 
 #### [isIdentical](#isidentical)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:isIdentical(styledText) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:isIdentical(styledText) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Determine if the `styledText` object is identical to the one specified.                                                                                         |
@@ -290,7 +290,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>comparing two `hs.styledtext` objects with the `==` operator only compares whether or not the string values are identical.  This method also compares their attributes.</li></ul>                |
 
 #### [len](#len)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:len() -> integer` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:len() -> integer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the length of the text of the `hs.styledtext` object.  Mimics the Lua `string.len` function.                                                                                         |
@@ -298,7 +298,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Returns**                                          | <ul><li>an integer which is the length of the text of the `hs.styledtext` object.</li></ul>          |
 
 #### [lower](#lower)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:lower() -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:lower() -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a copy of the `hs.styledtext` object with all alpha characters converted to lower case.  Mimics the Lua `string.lower` function.                                                                                         |
@@ -306,7 +306,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Returns**                                          | <ul><li>a copy of the `hs.styledtext` object with all alpha characters converted to lower case</li></ul>          |
 
 #### [match](#match)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:match(pattern, [init]) -> match ... | nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:match(pattern, [init]) -> match ... | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the first occurrence of the captures in the specified pattern (or the complete pattern, if no captures are specified) in the text of the `hs.styledtext` object.  Mimics the Lua `string.match` function.                                                                                         |
@@ -315,7 +315,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>Any captures (or the entire pattern) returned are returned as Lua Strings, not as `hs.styledtext` objects.</li></ul>                |
 
 #### [removeStyle](#removestyle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:removeStyle(attributes, [starts], [ends]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:removeStyle(attributes, [starts], [ends]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return a copy of the `hs.styledtext` object containing the changes to its attributes specified in the `attributes` table.                                                                                         |
@@ -324,7 +324,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>`starts` and `ends` follow the conventions of `i` and `j` for Lua's `string.sub` function.</li></ul>                |
 
 #### [rep](#rep)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:rep(n, [separator]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:rep(n, [separator]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an `hs.styledtext` object which contains `n` repetitions of the `hs.styledtext` object, optionally with `separator` between each repetition.  Mimics the Lua `string.rep` function.                                                                                         |
@@ -332,7 +332,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Returns**                                          | <ul><li>an `hs.styledtext` object which contains `n` repitions of the object, including `separator` between repetitions, if it is specified.</li></ul>          |
 
 #### [setString](#setstring)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:setString(string, [starts], [ends], [clear]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:setString(string, [starts], [ends], [clear]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return a copy of the `hs.styledtext` object containing the changes to its attributes specified in the `attributes` table.                                                                                         |
@@ -341,7 +341,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>`starts` and `ends` follow the conventions of `i` and `j` for Lua's `string.sub` function except that `starts` must refer to an index preceding or equal to `ends`, even after negative and out-of-bounds indices are adjusted for.</li></ul>                |
 
 #### [setStyle](#setstyle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:setStyle(attributes, [starts], [ends], [clear]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:setStyle(attributes, [starts], [ends], [clear]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return a copy of the `hs.styledtext` object containing the changes to its attributes specified in the `attributes` table.                                                                                         |
@@ -350,7 +350,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>`starts` and `ends` follow the conventions of `i` and `j` for Lua's `string.sub` function.</li></ul>                |
 
 #### [sub](#sub)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:sub(starts, [ends]) -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:sub(starts, [ends]) -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a substring, including the style attributes, specified by the given indicies from the `hs.styledtext` object.  Mimics the Lua `string.sub` function.                                                                                         |
@@ -359,7 +359,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Notes**                                            | <ul><li>`starts` and `ends` follow the conventions of `i` and `j` for Lua's `string.sub` function.</li></ul>                |
 
 #### [upper](#upper)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.styledtext:upper() -> styledText object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext:upper() -> styledText object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a copy of the `hs.styledtext` object with all alpha characters converted to upper case.  Mimics the Lua `string.upper` function.                                                                                         |

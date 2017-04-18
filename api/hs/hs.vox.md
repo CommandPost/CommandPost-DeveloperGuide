@@ -33,7 +33,7 @@ Controls for VOX music player
 ### Functions
 
 #### [addurl](#addurl)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.addurl(url)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.addurl(url)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Add media URL to current list                                                                                         |
@@ -41,7 +41,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [backward](#backward)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.backward()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.backward()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips the playback position backwards by about 7 seconds                                                                                         |
@@ -49,7 +49,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [decreaseVolume](#decreasevolume)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.decreaseVolume()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.decreaseVolume()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Decreases the player volume                                                                                         |
@@ -57,7 +57,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [fastBackward](#fastbackward)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.fastBackward()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.fastBackward()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips the playback position backwards by about 14 seconds                                                                                         |
@@ -65,7 +65,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [fastForward](#fastforward)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.fastForward()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.fastForward()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips the playback position forwards by about 17 seconds                                                                                         |
@@ -73,7 +73,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [forward](#forward)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.forward()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.forward()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips the playback position forwards by about 7 seconds                                                                                         |
@@ -81,7 +81,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [getAlbumArtist](#getalbumartist)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.getAlbumArtist()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.getAlbumArtist()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the artist of current Album                                                                                         |
@@ -89,7 +89,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>A string containing the artist of current Album, or nil if an error occurred</li></ul>          |
 
 #### [getCurrentAlbum](#getcurrentalbum)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.getCurrentAlbum()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.getCurrentAlbum()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of the album of the current track                                                                                         |
@@ -97,7 +97,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>A string containing the Album of the current track, or nil if an error occurred</li></ul>          |
 
 #### [getCurrentArtist](#getcurrentartist)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.getCurrentArtist()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.getCurrentArtist()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of the artist of the current track                                                                                         |
@@ -105,7 +105,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>A string containing the Artist of the current track, or nil if an error occurred</li></ul>          |
 
 #### [getPlayerState](#getplayerstate)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.getPlayerState()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.getPlayerState()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the current playback state of vox                                                                                         |
@@ -113,7 +113,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>0 for paused</li><li>1 for playing</li></ul>          |
 
 #### [getUniqueID](#getuniqueid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.getUniqueID()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.getUniqueID()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the uniqueID of the current track                                                                                         |
@@ -121,7 +121,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>A string containing the name of the current track, or nil if an error occurred</li></ul>          |
 
 #### [increaseVolume](#increasevolume)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.increaseVolume()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.increaseVolume()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Increases the palyer volume                                                                                         |
@@ -129,7 +129,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [isRunning](#isrunning)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.isRunning()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.isRunning()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether VOX is currently open                                                                                         |
@@ -137,7 +137,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>A boolean value indicating whether the vox application is running</li></ul>          |
 
 #### [next](#next)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.next()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.next()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips to the next track                                                                                         |
@@ -145,7 +145,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [pause](#pause)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.pause()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.pause()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Pauses the current vox track                                                                                         |
@@ -153,7 +153,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [play](#play)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.play()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.play()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Plays the current vox track                                                                                         |
@@ -161,7 +161,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [playpause](#playpause)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.playpause()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.playpause()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles play/pause of current vox track                                                                                         |
@@ -169,7 +169,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [playurl](#playurl)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.playurl(url)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.playurl(url)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Play media from the given URL                                                                                         |
@@ -177,7 +177,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [previous](#previous)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.previous()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.previous()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips to previous track                                                                                         |
@@ -185,7 +185,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [shuffle](#shuffle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.shuffle()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.shuffle()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggle shuffle state of current list                                                                                         |
@@ -193,7 +193,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [togglePlaylist](#toggleplaylist)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.togglePlaylist()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.togglePlaylist()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggle playlist                                                                                         |
@@ -201,7 +201,7 @@ Controls for VOX music player
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [trackInfo](#trackinfo)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.vox.trackInfo()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.trackInfo()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays information for current track on screen                                                                                         |

@@ -31,7 +31,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 ### Variables
 
 #### [registeredKeys[]](#registeredkeys[])
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.utf8.registeredKeys[]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.registeredKeys[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A collection of UTF-8 characters already converted from codepoint and available as convient key-value pairs.  UTF-8 printable versions of common Apple and OS X special keys are predefined and others can be added with `hs.utf8.registerCodepoint(label, codepoint)` for your own use.                                                                                         |
@@ -40,7 +40,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 ### Functions
 
 #### [asciiOnly](#asciionly)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.utf8.asciiOnly(string[, all]) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.asciiOnly(string[, all]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the provided string with all non-printable ascii characters escaped, except Return, Linefeed, and Tab.                                                                                         |
@@ -49,7 +49,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 | **Notes**                                            | <ul><li>Because Unicode characters outside of the basic ascii alphabet are multi-byte characters, any UTF8 or other Unicode encoded character will be broken up into their individual bytes and likely escaped by this function.</li><li>This function is useful for displaying binary data in a human readable way that might otherwise be inexpressible in the Hammerspoon console or other destination.  For example:</li><li>  `utf8.charpattern`, which contains the regular expression for matching valid UTF8 encoded sequences, results in `(null)` in the Hammerspoon console, but `hs.utf8.asciiOnly(utf8.charpattern)` will display `[\x00-\x7F\xC2-\xF4][\x80-\xBF]*`.</li></ul>                |
 
 #### [codepointToUTF8](#codepointtoutf8)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.utf8.codepointToUTF8(...) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.codepointToUTF8(...) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Wrapper to `utf8.char(...)` which ensures that all codepoints return valid UTF8 characters.                                                                                         |
@@ -58,7 +58,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 | **Notes**                                            | <ul><li>Valid codepoint values are from 0x0000 - 0x10FFFF (0 - 1114111)</li><li>If the codepoint provided is a string that starts with U+, then the 'U+' is converted to a '0x' so that lua can properly treat the value as numeric.</li><li>Invalid codepoints are returned as the Unicode Replacement Character (U+FFFD)</li><li>  This includes out of range codepoints as well as the Unicode Surrogate codepoints (U+D800 - U+DFFF)</li></ul>                |
 
 #### [fixUTF8](#fixutf8)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.utf8.fixUTF8(inString[, replacementChar]) -> outString, posTable` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.fixUTF8(inString[, replacementChar]) -> outString, posTable` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Replace invalid UTF8 character sequences in `inString` with `replacementChar` so it can be safely displayed in the console or other destination which requires valid UTF8 encoding.                                                                                         |
@@ -67,7 +67,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 | **Notes**                                            | <ul><li>This function is a slight modification to code found at http://notebook.kulchenko.com/programming/fixing-malformed-utf8-in-lua.</li><li>If `replacementChar` is a multi-byte character (like U+FFFD) or multi character string, then the string length of `outString` will be longer than the string length of `inString`.  The character positions in `posTable` will reflect these new positions in `outString`.</li><li>To calculate the character position of the invalid characters in `inString`, use something like the following:</li></ul>                |
 
 #### [hexDump](#hexdump)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.utf8.hexDump(inputString [, count]) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.hexDump(inputString [, count]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a hex dump of the provided string.  This is primarily useful for examining the exact makeup of binary data contained in a Lua String as individual bytes for debugging purposes.                                                                                         |
@@ -76,7 +76,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 | **Notes**                                            | <ul><li>Like hs.utf8.asciiOnly, this function will break up Unicode characters into their individual bytes.</li><li>As an example:</li><li>     `hs.utf8.hexDump(utf8.charpattern)` will return</li><li>     `00 : 5B 00 2D 7F C2 2D F4 5D 5B 80 2D BF 5D 2A        : [.-..-.][.-.]*`</li></ul>                |
 
 #### [registerCodepoint](#registercodepoint)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.utf8.registerCodepoint(label, codepoint) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.registerCodepoint(label, codepoint) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Registers a Unicode codepoint under the given label as a UTF-8 string of bytes which can be referenced by the label later in your code as `hs.utf8.registeredKeys[label]` for convenience and readability.                                                                                         |
@@ -85,7 +85,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 | **Notes**                                            | <ul><li>If a codepoint label was previously registered, this will overwrite the previous value with a new one.  Because many of the special keys you may want to register have different variants, this allows you to easily modify the existing predefined defaults to suite your preferences.</li><li>The return value is merely syntactic sugar and you do not need to save it locally; it can be safely ignored -- future access to the pre-converted codepoint should be retrieved as `hs.utf8.registeredKeys[label]` in your code.  It looks good when invoked from the console, though ☺.</li></ul>                |
 
 #### [registeredLabels](#registeredlabels)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.utf8.registeredLabels(utf8char) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.registeredLabels(utf8char) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the label name for a UTF8 character, as it is registered in `hs.utf8.registeredKeys[]`.                                                                                         |

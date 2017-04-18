@@ -23,7 +23,7 @@ Perform HTTP requests
 ### Variables
 
 #### [htmlEntities[]](#htmlentities[])
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.htmlEntities[]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.htmlEntities[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A collection of common HTML Entities (&whatever;) and their UTF8 equivalents.  To retrieve the UTF8 sequence for a given entity, reference the table as `hs.http.htmlEntities["&key;"]` where `key` is the text of the entity's name or a numeric reference like `#number`.                                                                                         |
@@ -32,7 +32,7 @@ Perform HTTP requests
 ### Functions
 
 #### [asyncGet](#asyncget)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.asyncGet(url, headers, callback)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.asyncGet(url, headers, callback)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an HTTP GET request asynchronously                                                                                         |
@@ -40,7 +40,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul>                |
 
 #### [asyncPost](#asyncpost)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.asyncPost(url, data, headers, callback)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.asyncPost(url, data, headers, callback)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an HTTP POST request asynchronously                                                                                         |
@@ -48,7 +48,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul>                |
 
 #### [convertHtmlEntities](#converthtmlentities)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.convertHtmlEntities(inString) -> outString` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.convertHtmlEntities(inString) -> outString` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Convert all recognized HTML Entities in the `inString` to appropriate UTF8 byte sequences and returns the converted text.                                                                                         |
@@ -57,7 +57,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>Recognized HTML Entities are those registered in `hs.http.htmlEntities` or numeric entity sequences: &#n; where `n` can be any integer number.</li><li>This function is especially useful as a post-filter to data retrieved by the `hs.http.get` and `hs.http.asyncGet` functions.</li></ul>                |
 
 #### [doAsyncRequest](#doasyncrequest)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.doAsyncRequest(url, method, data, headers, callback)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.doAsyncRequest(url, method, data, headers, callback)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates an HTTP request and executes it asynchronously                                                                                         |
@@ -66,7 +66,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul>                |
 
 #### [doRequest](#dorequest)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.doRequest(url, method, [data, headers]) -> int, string, table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.doRequest(url, method, [data, headers]) -> int, string, table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates an HTTP request and executes it synchronously                                                                                         |
@@ -75,7 +75,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul>                |
 
 #### [encodeForQuery](#encodeforquery)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.encodeForQuery(string) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.encodeForQuery(string) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a copy of the provided string in which characters that are not valid within an HTTP query key or value are escaped with their %## equivalent.                                                                                         |
@@ -84,7 +84,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>The intent of this function is to provide a valid key or a valid value for a query string, not to validate the entire query string.  For this reason, ?, =, +, and & are included in the converted characters.</li></ul>                |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.get(url, headers) -> int, string, table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.get(url, headers) -> int, string, table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an HTTP GET request to a URL                                                                                         |
@@ -92,7 +92,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul>                |
 
 #### [post](#post)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.post(url, data, headers) -> int, string, table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.post(url, data, headers) -> int, string, table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an HTTP POST request to a URL                                                                                         |
@@ -100,7 +100,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul>                |
 
 #### [registerEntity](#registerentity)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.registerEntity(entity, codepoint) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.registerEntity(entity, codepoint) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Registers an HTML Entity with the specified Unicode codepoint which can later referenced in your code as `hs.http.htmlEntity[entity]` for convenience and readability.                                                                                         |
@@ -109,7 +109,7 @@ Perform HTTP requests
 | **Notes**                                            | <ul><li>If an entity label was previously registered, this will overwrite the previous value with a new one.</li><li>The return value is merely syntactic sugar and you do not need to save it locally; it can be safely ignored -- future access to the pre-converted entity should be retrieved as `hs.http.htmlEntities[entity]` in your code.  It looks good when invoked from the console, though ☺.</li></ul>                |
 
 #### [urlParts](#urlparts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.http.urlParts(url) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.urlParts(url) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table of keys containing the individual components of the provided url.                                                                                         |

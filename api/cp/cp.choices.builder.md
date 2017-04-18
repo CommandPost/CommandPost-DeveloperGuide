@@ -17,7 +17,7 @@ Choices Builder Module.
 ### Functions
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices.builder.new(choiceType) -> builder` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder.new(choiceType) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new choice builder instance.                                                                                         |
@@ -27,7 +27,7 @@ Choices Builder Module.
 ### Methods
 
 #### [id](#id)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices.builder:id(value) -> builder` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:id(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Indicates the choice is a favorite.                                                                                         |
@@ -35,7 +35,7 @@ Choices Builder Module.
 | **Returns**                                          | <ul><li>* The choice builder.</li></ul>          |
 
 #### [params](#params)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices.builder:params(value) -> builder` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:params(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies a table of parameter values for the choice. These                                                                                         |
@@ -43,7 +43,7 @@ Choices Builder Module.
 | **Returns**                                          | <ul><li>* The choice builder, added to the choices set.</li></ul>          |
 
 #### [subText](#subtext)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices.builder:subText(value) -> builder` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:subText(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies the `subText` value for the choice being built.                                                                                         |
@@ -51,7 +51,7 @@ Choices Builder Module.
 | **Returns**                                          | <ul><li>* The choice builder.</li></ul>          |
 
 #### [text](#text)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices.builder:text(value) -> builder` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:text(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies the text value for the choice being built.                                                                                         |

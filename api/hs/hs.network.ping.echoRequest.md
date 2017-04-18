@@ -38,7 +38,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 ### Constructors
 
 #### [echoRequest](#echorequest)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest.echoRequest(server) -> echoRequestObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest.echoRequest(server) -> echoRequestObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new ICMP Echo Request object for the server specified.                                                                                         |
@@ -49,7 +49,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 ### Methods
 
 #### [acceptAddressFamily](#acceptaddressfamily)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:acceptAddressFamily([family]) -> echoRequestObject | current value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:acceptAddressFamily([family]) -> echoRequestObject | current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the address family the echoRequestObject should communicate with.                                                                                         |
@@ -58,7 +58,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Notes**                                            | <ul><li>Setting this value to "IPv6" or "IPv4" will cause the echoRequestObject to attempt to resolve the server's name into an IPv6 address or an IPv4 address and communicate via ICMPv6 or ICMP(v4) when the [hs.network.ping.echoRequest:start](#start) method is invoked.  A callback with the message "didFail" will occur if the server could not be resolved to an address in the specified family.</li><li>If this value is set to "any", then the first address which is discovered for the server's name will determine whether ICMPv6 or ICMP(v4) is used, based upon the family of the address.</li></ul>                |
 
 #### [hostAddress](#hostaddress)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:hostAddress() -> string | false | nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:hostAddress() -> string | false | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a string representation for the server's IP address, or a boolean if address resolution has not completed yet.                                                                                         |
@@ -66,7 +66,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Returns**                                          | <ul><li>If the object has been started and address resolution has completed, then the string representation of the server's IP address is returned.</li><li>If the object has been started, but resolution is still pending, returns a boolean value of false.</li><li>If the object has not been started, returns nil.</li></ul>          |
 
 #### [hostAddressFamily](#hostaddressfamily)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:hostAddressFamily() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:hostAddressFamily() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the host address family currently in use by this echoRequestObject.                                                                                         |
@@ -74,7 +74,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Returns**                                          | <ul><li>a string indicating the IP address family currently used by this echoRequestObject.  It will be one of the following values:</li><li>  "IPv4"       - indicates that ICMP(v4) packets are being sent and listened for.</li><li>  "IPv6"       - indicates that ICMPv6 packets are being sent and listened for.</li><li>  "unresolved" - indicates that the echoRequestObject has not been started or that address resolution is still in progress.</li></ul>          |
 
 #### [hostName](#hostname)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:hostName() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:hostName() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the name of the target host as provided to the echoRequestObject's constructor                                                                                         |
@@ -82,7 +82,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Returns**                                          | <ul><li>a string containing the hostname as specified when the object was created.</li></ul>          |
 
 #### [identifier](#identifier)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:identifier() -> integer` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:identifier() -> integer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the identifier number for the echoRequestObject.                                                                                         |
@@ -91,7 +91,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Notes**                                            | <ul><li>ICMP Echo Replies which include this identifier will generate a "receivedPacket" message to the object callback, while replies which include a different identifier will generate a "receivedUnexpectedPacket" message.</li></ul>                |
 
 #### [isRunning](#isrunning)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:isRunning() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:isRunning() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a boolean indicating whether or not this echoRequestObject is currently listening for ICMP Echo Replies.                                                                                         |
@@ -99,7 +99,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Returns**                                          | <ul><li>true if the object is currently listening for ICMP Echo Replies, or false if it is not.</li></ul>          |
 
 #### [nextSequenceNumber](#nextsequencenumber)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:nextSequenceNumber() -> integer` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:nextSequenceNumber() -> integer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The sequence number that will be used for the next ICMP packet sent by this object.                                                                                         |
@@ -108,7 +108,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Notes**                                            | <ul><li>ICMP Echo Replies which are expected by this object should always be less than this number, with the caveat that this number is a 16-bit integer which will wrap around to 0 after sending a packet with the sequence number 65535.</li><li>Because of this wrap around effect, this module will generate a "receivedPacket" message to the object callback whenever the received packet has a sequence number that is within the last 120 sequence numbers we've sent and a "receivedUnexpectedPacket" otherwise.</li><li>  Per the comments in Apple's SimplePing.m file: Why 120?  Well, if we send one ping per second, 120 is 2 minutes, which is the standard "max time a packet can bounce around the Internet" value.</li></ul>                |
 
 #### [seeAllUnexpectedPackets](#seeallunexpectedpackets)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:seeAllUnexpectedPackets([state]) -> boolean | echoRequestObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:seeAllUnexpectedPackets([state]) -> boolean | echoRequestObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether or not the callback should receive all unexpected packets or only those which carry our identifier.                                                                                         |
@@ -117,7 +117,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Notes**                                            | <ul><li>The nature of ICMP packet reception is such that all listeners receive all ICMP packets, even those which belong to another process or echoRequestObject.</li><li>  By default, a valid packet (i.e. with a valid checksum) which does not contain our identifier is ignored since it was not intended for our receiver.  Only corrupt or packets with our identifier but that were otherwise unexpected will generate a "receivedUnexpectedPacket" callback message.</li><li>  This method optionally allows the echoRequestObject to receive *all* incoming packets, even ones which are expected by another process or echoRequestObject.</li><li>If you wish to examine ICMPv6 router advertisement and neighbor discovery packets, you should set this property to true. Note that this module does not provide the necessary tools to decode these packets at present, so you will have to decode them yourself if you wish to examine their contents.</li></ul>                |
 
 #### [sendPayload](#sendpayload)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:sendPayload([payload]) -> echoRequestObject | false | nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:sendPayload([payload]) -> echoRequestObject | false | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sends a single ICMP Echo Request packet.                                                                                         |
@@ -126,7 +126,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Notes**                                            | <ul><li>By convention, unless you are trying to test for specific network fragmentation or congestion problems, ICMP Echo Requests are generally 64 bytes in length (this includes the 8 byte header, giving 56 bytes of payload data).  If you do not specify a payload, a default payload which will result in a packet size of 64 bytes is constructed.</li></ul>                |
 
 #### [setCallback](#setcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:setCallback(fn | nil) -> echoRequestObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:setCallback(fn | nil) -> echoRequestObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or remove the object callback function                                                                                         |
@@ -135,7 +135,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Notes**                                            | <ul><li>The callback function should expect between 3 and 5 arguments and return none. The possible arguments which are sent will be one of the following:</li></ul>                |
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:start() -> echoRequestObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:start() -> echoRequestObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Start the echoRequestObject by resolving the server's address and start listening for ICMP Echo Reply packets.                                                                                         |
@@ -143,7 +143,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Returns**                                          | <ul><li>the echoRequestObject</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.ping.echoRequest:stop() -> echoRequestObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:stop() -> echoRequestObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Start listening for ICMP Echo Reply packets with this object.                                                                                         |

@@ -76,14 +76,14 @@ Primitives for drawing on the screen in various ways
 ### Constants
 
 #### [windowBehaviors[]](#windowbehaviors[])
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.windowBehaviors[]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.windowBehaviors[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Array of window behavior labels for determining how an hs.drawing object is handled in Spaces and Exposé                                                                                         |
 | **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing `hs.drawing.windowBehaviors`.</li></ul>                |
 
 #### [windowLevels](#windowlevels)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.windowLevels` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.windowLevels` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table of predefined window levels usable with `hs.drawing:setLevel(...)`                                                                                         |
@@ -92,7 +92,7 @@ Primitives for drawing on the screen in various ways
 ### Functions
 
 #### [defaultTextStyle](#defaulttextstyle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.defaultTextStyle() -> `hs.styledtext` attributes table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.defaultTextStyle() -> `hs.styledtext` attributes table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the default font, size, color, and paragraphStyle used by `hs.drawing` for text drawing objects.                                                                                         |
@@ -101,7 +101,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method returns the default font, size, color, and paragraphStyle used by `hs.drawing` for text objects.  If you modify a drawing object's defaults with `hs.drawing:setColor`, `hs.drawing:setTextFont`, or `hs.drawing:setTextSize`, the changes will not be reflected by this function.</li></ul>                |
 
 #### [disableScreenUpdates](#disablescreenupdates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.disableScreenUpdates() -> None` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.disableScreenUpdates() -> None` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Tells the OS X window server to pause updating the physical displays for a short while.                                                                                         |
@@ -110,7 +110,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be balanced with a call to [hs.drawing.enableScreenUpdates](#enableScreenUpdates) when your updates have been completed.  Failure to do so will be logged in the system logs.</li></ul>                |
 
 #### [enableScreenUpdates](#enablescreenupdates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.enableScreenUpdates() -> None` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.enableScreenUpdates() -> None` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Tells the OS X window server to resume updating the physical displays after a previous pause.                                                                                         |
@@ -119,7 +119,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>In conjunction with [hs.drawing.disableScreenUpdates](#disableScreenUpdates), this method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li></ul>                |
 
 #### [getTextDrawingSize](#gettextdrawingsize)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.getTextDrawingSize(styledTextObject or theText, [textStyle]) -> sizeTable | nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.getTextDrawingSize(styledTextObject or theText, [textStyle]) -> sizeTable | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get the size of the rectangle necessary to fully render the text with the specified style so that is will be completely visible.                                                                                         |
@@ -130,7 +130,7 @@ Primitives for drawing on the screen in various ways
 ### Constructors
 
 #### [appImage](#appimage)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.appImage(sizeRect, bundleID) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.appImage(sizeRect, bundleID) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new image object with the icon of a given app                                                                                         |
@@ -138,7 +138,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>An `hs.drawing` image object, or nil if an error occurs</li></ul>          |
 
 #### [arc](#arc)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.arc(centerPoint, radius, startAngle, endAngle) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.arc(centerPoint, radius, startAngle, endAngle) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new arc object                                                                                         |
@@ -147,7 +147,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This constructor is actually a wrapper for the `hs.drawing.ellipticalArc` constructor.</li></ul>                |
 
 #### [circle](#circle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.circle(sizeRect) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.circle(sizeRect) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new circle object                                                                                         |
@@ -155,7 +155,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>An `hs.drawing` circle object, or nil if an error occurs</li></ul>          |
 
 #### [ellipticalArc](#ellipticalarc)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.ellipticalArc(sizeRect, startAngle, endAngle) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.ellipticalArc(sizeRect, startAngle, endAngle) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new elliptical arc object                                                                                         |
@@ -163,7 +163,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>An `hs.drawing` arc object, or nil if an error occurs</li></ul>          |
 
 #### [image](#image)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.image(sizeRect, imageData) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.image(sizeRect, imageData) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new image object                                                                                         |
@@ -172,7 +172,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>To use the ASCII diagram image support, see http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring/ and be sure to preface your ASCII diagram with the special string `ASCII:`</li></ul>                |
 
 #### [line](#line)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.line(originPoint, endPoint) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.line(originPoint, endPoint) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new line object                                                                                         |
@@ -180,7 +180,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>An `hs.drawing` line object, or nil if an error occurs</li></ul>          |
 
 #### [rectangle](#rectangle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.rectangle(sizeRect) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.rectangle(sizeRect) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new rectangle object                                                                                         |
@@ -188,7 +188,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>An `hs.drawing` rectangle object, or nil if an error occurs</li></ul>          |
 
 #### [text](#text)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing.text(sizeRect, message) -> drawingObject or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.text(sizeRect, message) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new text object                                                                                         |
@@ -198,7 +198,7 @@ Primitives for drawing on the screen in various ways
 ### Methods
 
 #### [alpha](#alpha)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:alpha() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:alpha() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the alpha level of the window containing the hs.drawing object.                                                                                         |
@@ -206,7 +206,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The current alpha level for the hs.drawing object</li></ul>          |
 
 #### [behavior](#behavior)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:behavior() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:behavior() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current behavior of the hs.drawing object with respect to Spaces and Exposé for the object.                                                                                         |
@@ -214,7 +214,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The numeric representation of the current behaviors for the hs.drawing object</li></ul>          |
 
 #### [behaviorAsLabels](#behavioraslabels)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:behaviorAsLabels() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:behaviorAsLabels() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a table of the labels for the current behaviors of the object.                                                                                         |
@@ -222,7 +222,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>Returns a table of the labels for the current behaviors with respect to Spaces and Exposé for the object.</li></ul>          |
 
 #### [bringToFront](#bringtofront)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:bringToFront([aboveEverything]) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:bringToFront([aboveEverything]) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Places the drawing object on top of normal windows                                                                                         |
@@ -230,7 +230,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
 
 #### [clickCallbackActivating](#clickcallbackactivating)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:clickCallbackActivating([false]) -> drawingObject or current value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:clickCallbackActivating([false]) -> drawingObject or current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether or not clicking on a drawing with a click callback defined should bring all of Hammerspoon's open windows to the front.                                                                                         |
@@ -239,7 +239,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>Setting this to false changes a drawing object's AXsubrole value and may affect the results of filters defined for hs.window.filter, depending upon how they are defined.</li></ul>                |
 
 #### [clippingRectangle](#clippingrectangle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:clippingRectangle([rect | nil]) -> drawingObject or current value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:clippingRectangle([rect | nil]) -> drawingObject or current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set the screen area in which the drawing contents are visible.                                                                                         |
@@ -248,7 +248,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method can be used to specify the area of the display where this drawing should be visible.  If any portion of the drawing extends beyond this rectangle, the image is clipped so that only the portion within this rectangle is visible.</li><li>The rectangle defined by this method is independant of the drawing's actual frame -- if you move the drawing with [hs.drawing:setFrame](#setFrame) or [hs.drawing:setTopLeft](#setTopLeft), this rectangle retains its current value.</li></ul>                |
 
 #### [delete](#delete)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:delete()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:delete()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Destroys the drawing object                                                                                         |
@@ -257,7 +257,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method immediately destroys the drawing object. If you want it to fade out, use `:hide()` first, with some suitable time, and `hs.timer.doAfter()` to schedule the `:delete()` call</li></ul>                |
 
 #### [frame](#frame)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:frame() -> hs.geometry object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:frame() -> hs.geometry object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the frame of a drawingObject in absolute coordinates                                                                                         |
@@ -265,7 +265,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>An `hs.geometry` object containing the frame of the drawing object</li></ul>          |
 
 #### [getStyledText](#getstyledtext)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:getStyledText() -> `hs.styledtext` object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:getStyledText() -> `hs.styledtext` object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the text of a drawing object as an `hs.styledtext` object                                                                                         |
@@ -274,7 +274,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li></ul>                |
 
 #### [hide](#hide)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:hide([fadeOutTime]) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:hide([fadeOutTime]) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the drawing object                                                                                         |
@@ -282,7 +282,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
 
 #### [imageAlignment](#imagealignment)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:imageAlignment([type]) -> drawingObject or current value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:imageAlignment([type]) -> drawingObject or current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the alignment of an image that doesn't fully fill the drawing objects frame.                                                                                         |
@@ -290,7 +290,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>If a setting value is provided, the drawing object is returned; if no argument is provided, the current setting is returned.</li></ul>          |
 
 #### [imageAnimates](#imageanimates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:imageAnimates([flag]) -> drawingObject or current value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:imageAnimates([flag]) -> drawingObject or current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set whether or not an animated GIF image should cycle through its animation.                                                                                         |
@@ -298,7 +298,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>If a setting value is provided, the drawing object is returned; if no argument is provided, the current setting is returned.</li></ul>          |
 
 #### [imageFrame](#imageframe)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:imageFrame([type]) -> drawingObject or current value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:imageFrame([type]) -> drawingObject or current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set what type of frame should be around the drawing frame of the image.                                                                                         |
@@ -307,7 +307,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>Apple considers the photo, groove, and button style frames "stylistically obsolete" and if a frame is required, recommend that you use the bezel style or draw your own to more closely match the OS look and feel.</li></ul>                |
 
 #### [imageScaling](#imagescaling)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:imageScaling([type]) -> drawingObject or current value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:imageScaling([type]) -> drawingObject or current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set how an image is scaled within the frame of a drawing object containing an image.                                                                                         |
@@ -315,7 +315,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>If a setting value is provided, the drawing object is returned; if no argument is provided, the current setting is returned.</li></ul>          |
 
 #### [orderAbove](#orderabove)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:orderAbove([object2]) -> object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:orderAbove([object2]) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Moves drawing object above drawing object2, or all drawing objects in the same presentation level, if object2 is not provided.                                                                                         |
@@ -323,7 +323,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The `hs.drawing` object</li></ul>          |
 
 #### [orderBelow](#orderbelow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:orderBelow([object2]) -> object1` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:orderBelow([object2]) -> object1` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Moves drawing object below drawing object2, or all drawing objects in the same presentation level, if object2 is not provided.                                                                                         |
@@ -331,7 +331,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The `hs.drawing` object</li></ul>          |
 
 #### [rotateImage](#rotateimage)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:rotateImage(angle) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:rotateImage(angle) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Rotates an image clockwise around its center                                                                                         |
@@ -340,7 +340,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>* This method works by rotating the image view within its drawing window.  This means that an image which completely fills its viewing area will most likely be cropped in some places.  Best results are achieved with images that have clear space around their edges or with `hs.drawing.imageScaling` set to "none".</li></ul>                |
 
 #### [sendToBack](#sendtoback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:sendToBack() -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:sendToBack() -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Places the drawing object behind normal windows, between the desktop wallpaper and desktop icons                                                                                         |
@@ -348,7 +348,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
 
 #### [setAlpha](#setalpha)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setAlpha(level) -> object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setAlpha(level) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the alpha level of the window containing the hs.drawing object.                                                                                         |
@@ -356,7 +356,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The `hs.drawing` object</li></ul>          |
 
 #### [setArcAngles](#setarcangles)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setArcAngles(startAngle, endAngle) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setArcAngles(startAngle, endAngle) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Changes the starting and ending angles for an arc drawing object                                                                                         |
@@ -365,7 +365,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on arc drawing objects</li></ul>                |
 
 #### [setBehavior](#setbehavior)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setBehavior(behavior) -> object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setBehavior(behavior) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the window behaviors represented by the number provided for the window containing the hs.drawing object.                                                                                         |
@@ -373,7 +373,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The `hs.drawing` object</li></ul>          |
 
 #### [setBehaviorByLabels](#setbehaviorbylabels)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setBehaviorByLabels(table) -> object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setBehaviorByLabels(table) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the window behaviors based upon the labels specified in the table provided.                                                                                         |
@@ -381,7 +381,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The `hs.drawing` object</li></ul>          |
 
 #### [setClickCallback](#setclickcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setClickCallback(mouseUpFn, mouseDownFn) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setClickCallback(mouseUpFn, mouseDownFn) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets a callback for mouseUp and mouseDown click events                                                                                         |
@@ -390,7 +390,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>No distinction is made between the left, right, or other mouse buttons -- they all invoke the same up or down function.  If you need to determine which specific button was pressed, use `hs.eventtap.checkMouseButtons()` within your callback to check.</li></ul>                |
 
 #### [setFill](#setfill)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setFill(doFill) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setFill(doFill) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets whether or not to fill a drawing object                                                                                         |
@@ -399,7 +399,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on line, rectangle, circle, or arc drawing objects</li></ul>                |
 
 #### [setFillColor](#setfillcolor)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setFillColor(color) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setFillColor(color) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the fill color of a drawing object                                                                                         |
@@ -408,7 +408,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on rectangle, circle, or arc drawing objects</li><li>Calling this method will remove any gradient fill colors previously set with `hs.drawing:setFillGradient()`</li></ul>                |
 
 #### [setFillGradient](#setfillgradient)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setFillGradient(startColor, endColor, angle) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setFillGradient(startColor, endColor, angle) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the fill gradient of a drawing object                                                                                         |
@@ -417,7 +417,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on rectangle, circle, or arc drawing objects</li><li>Calling this method will remove any fill color previously set with `hs.drawing:setFillColor()`</li></ul>                |
 
 #### [setFrame](#setframe)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setFrame(rect) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setFrame(rect) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the frame of the drawingObject in absolute coordinates                                                                                         |
@@ -425,7 +425,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
 
 #### [setImage](#setimage)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setImage(image) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setImage(image) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the image of a drawing object                                                                                         |
@@ -433,7 +433,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
 
 #### [setImageASCII](#setimageascii)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setImageASCII(ascii) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setImageASCII(ascii) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the image of a drawing object from an ASCII representation                                                                                         |
@@ -442,7 +442,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>To use the ASCII diagram image support, see http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring</li></ul>                |
 
 #### [setImageFromPath](#setimagefrompath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setImageFromPath(imagePath) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setImageFromPath(imagePath) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the image path of a drawing object                                                                                         |
@@ -451,7 +451,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on an image drawing object</li><li>Paths relative to the PWD of Hammerspoon (typically ~/.hammerspoon/) will work, but paths relative to the UNIX homedir character, `~` will not</li><li>Animated GIFs are supported. They're not super friendly on your CPU, but they work</li></ul>                |
 
 #### [setLevel](#setlevel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setLevel(theLevel) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setLevel(theLevel) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the window level more precisely than sendToBack and bringToFront.                                                                                         |
@@ -460,7 +460,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>see the notes for `hs.drawing.windowLevels`</li></ul>                |
 
 #### [setRoundedRectRadii](#setroundedrectradii)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setRoundedRectRadii(xradius, yradius) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setRoundedRectRadii(xradius, yradius) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the radii of the corners of a rectangle drawing object                                                                                         |
@@ -469,7 +469,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on rectangle drawing objects</li><li>If either radius value is greater than half the width/height (as appropriate) of the rectangle, the value will be clamped at half the width/height</li><li>If either (or both) radius values are 0, the rectangle will be drawn without rounded corners</li></ul>                |
 
 #### [setSize](#setsize)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setSize(size) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setSize(size) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resizes a drawing object                                                                                         |
@@ -478,7 +478,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>If this is called on an `hs.drawing.text` object, only its window will be resized. If you also want to change the font size, use `:setTextSize()`</li></ul>                |
 
 #### [setStroke](#setstroke)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setStroke(doStroke) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setStroke(doStroke) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets whether or not to stroke a drawing object                                                                                         |
@@ -487,7 +487,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on line, rectangle, circle, or arc drawing objects</li></ul>                |
 
 #### [setStrokeColor](#setstrokecolor)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setStrokeColor(color) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setStrokeColor(color) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the stroke color of a drawing object                                                                                         |
@@ -496,7 +496,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on line, rectangle, circle, or arc drawing objects</li></ul>                |
 
 #### [setStrokeWidth](#setstrokewidth)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setStrokeWidth(width) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setStrokeWidth(width) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the stroke width of a drawing object                                                                                         |
@@ -505,7 +505,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on line, rectangle, circle, or arc drawing objects</li></ul>                |
 
 #### [setStyledText](#setstyledtext)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setStyledText(message) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setStyledText(message) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the text of a drawing object from an `hs.styledtext` object                                                                                         |
@@ -514,7 +514,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li></ul>                |
 
 #### [setText](#settext)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setText(message) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setText(message) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the text of a drawing object                                                                                         |
@@ -523,7 +523,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>If the text of the drawing object is emptied (i.e. "") then style changes may be lost.  Use a placeholder such as a space (" ") or hide the object if style changes need to be saved but the text should disappear for a while.</li></ul>                |
 
 #### [setTextColor](#settextcolor)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setTextColor(color) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextColor(color) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the default text color for a drawing object                                                                                         |
@@ -532,7 +532,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be called on text drawing objects</li><li>This method changes the font color for portions of an `hs.drawing` text object which do not have a specific font set in their attributes list (see `hs.styledtext` for more details).</li></ul>                |
 
 #### [setTextFont](#settextfont)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setTextFont(fontname) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextFont(fontname) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the default font for a drawing object                                                                                         |
@@ -541,7 +541,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>This method changes the font for portions of an `hs.drawing` text object which do not have a specific font set in their attributes list (see `hs.styledtext` for more details).</li></ul>                |
 
 #### [setTextSize](#settextsize)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setTextSize(size) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextSize(size) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the default text size for a drawing object                                                                                         |
@@ -550,7 +550,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>This method changes the font size for portions of an `hs.drawing` text object which do not have a specific font set in their attributes list (see `hs.styledtext` for more details).</li></ul>                |
 
 #### [setTextStyle](#settextstyle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setTextStyle([textStyle]) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextStyle([textStyle]) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets some simple style parameters for the entire text of a drawing object.  For more control over style including having multiple styles within a single text object, use `hs.styledtext` and `hs.drawing:setStyledText` instead.                                                                                         |
@@ -559,7 +559,7 @@ Primitives for drawing on the screen in various ways
 | **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>If the text of the drawing object is currently empty (i.e. "") then style changes may be lost.  Use a placeholder such as a space (" ") or hide the object if style changes need to be saved but the text should disappear for a while.</li><li>Only the keys specified are changed.  To reset an object to all of its defaults, call this method with an explicit nil as its only parameter (e.g. `hs.drawing:setTextStyle(nil)`</li><li>The font, font size, and font color can also be set by their individual specific methods as well; this method is provided so that style components can be stored and applied collectively, as well as used by `hs.drawing.getTextDrawingSize()` to determine the proper rectangle size for a textual drawing object.</li></ul>                |
 
 #### [setTopLeft](#settopleft)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:setTopLeft(point) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTopLeft(point) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Moves the drawingObject to a given point                                                                                         |
@@ -567,7 +567,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
 
 #### [show](#show)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:show([fadeInTime]) -> drawingObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:show([fadeInTime]) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Displays the drawing object                                                                                         |
@@ -575,7 +575,7 @@ Primitives for drawing on the screen in various ways
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
 
 #### [wantsLayer](#wantslayer)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.drawing:wantsLayer([flag]) -> object or boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:wantsLayer([flag]) -> object or boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets whether or not the drawing object should be rendered by the view or by Core Animation.                                                                                         |

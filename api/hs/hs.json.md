@@ -16,7 +16,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 ### Functions
 
 #### [decode](#decode)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.json.decode(jsonString) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.json.decode(jsonString) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Decodes JSON into a table                                                                                         |
@@ -25,7 +25,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>This is useful for retrieving some of the more complex lua table structures as a persistent setting (see `hs.settings`)</li></ul>                |
 
 #### [encode](#encode)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.json.encode(val[, prettyprint]) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.json.encode(val[, prettyprint]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Encodes a table as JSON                                                                                         |

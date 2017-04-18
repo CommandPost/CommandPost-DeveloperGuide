@@ -16,7 +16,7 @@ General Preferences Panel.
 ### Functions
 
 #### [getDisplayMenubarAsIcon](#getdisplaymenubarasicon)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.general.getDisplayMenubarAsIcon() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.getDisplayMenubarAsIcon() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether the menubar is display as an icon or not.                                                                                         |
@@ -24,7 +24,7 @@ General Preferences Panel.
 | **Returns**                                          | <ul><li>`true` if set to display the menubar as an icon other `false` if displaying menubar as text.</li></ul>          |
 
 #### [openPrivacyPolicy](#openprivacypolicy)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.general.openPrivacyPolicy() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.openPrivacyPolicy() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens the CommandPost Privacy Policy in your browser.                                                                                         |
@@ -32,7 +32,7 @@ General Preferences Panel.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleAutoLaunch](#toggleautolaunch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.general.toggleAutoLaunch() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.toggleAutoLaunch() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the "Launch on Login" status for CommandPost.                                                                                         |
@@ -40,7 +40,7 @@ General Preferences Panel.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleDisplayMenubarAsIcon](#toggledisplaymenubarasicon)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.general.toggleDisplayMenubarAsIcon() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.toggleDisplayMenubarAsIcon() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the menubar display icon from icon to text value and vice versa.                                                                                         |
@@ -48,7 +48,7 @@ General Preferences Panel.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggleUploadCrashData](#toggleuploadcrashdata)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.general.toggleUploadCrashData() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.toggleUploadCrashData() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the "Upload Crash Data" status for CommandPost.                                                                                         |

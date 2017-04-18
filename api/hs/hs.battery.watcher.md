@@ -17,7 +17,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.battery.watcher.new(fn) -> watcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.watcher.new(fn) -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a battery watcher                                                                                         |
@@ -28,7 +28,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.battery.watcher:start() -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.watcher:start() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the battery watcher                                                                                         |
@@ -36,7 +36,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>The `hs.battery.watcher` object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.battery.watcher:stop() -> self` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.watcher:stop() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the battery watcher                                                                                         |

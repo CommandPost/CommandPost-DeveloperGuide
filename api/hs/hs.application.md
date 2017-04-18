@@ -54,7 +54,7 @@ Manipulate running applications
 ### Variables
 
 #### [menuGlyphs](#menuglyphs)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.menuGlyphs` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.menuGlyphs` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A table containing UTF8 representations of the defined key glyphs used in Menus for keybaord shortcuts which are presented pictorially rather than as text (arrow keys, return key, etc.)                                                                                         |
@@ -63,7 +63,7 @@ Manipulate running applications
 ### Functions
 
 #### [applicationForPID](#applicationforpid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.applicationForPID(pid) -> hs.application object or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.applicationForPID(pid) -> hs.application object or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the running app for the given pid, if it exists.                                                                                         |
@@ -71,7 +71,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>An hs.application object if one can be found, otherwise nil</li></ul>          |
 
 #### [applicationsForBundleID](#applicationsforbundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.applicationsForBundleID(bundleID) -> list of hs.application objects` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.applicationsForBundleID(bundleID) -> list of hs.application objects` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns any running apps that have the given bundleID.                                                                                         |
@@ -79,7 +79,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A table of zero or more hs.application objects that match the given identifier</li></ul>          |
 
 #### [enableSpotlightForNameSearches](#enablespotlightfornamesearches)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.enableSpotlightForNameSearches([state]) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.enableSpotlightForNameSearches([state]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get or set whether Spotlight should be used to find alternate names for applications.                                                                                         |
@@ -88,7 +88,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>This setting is persistent across reloading and restarting Hammerspoon.</li><li>If this was set to true and you set it to true again, it will purge the alternate name map and rebuild it from scratch.</li><li>You can disable Spotlight alternate name mapping by setting this value to false or nil. If you set this to false, then the notifications indicating that more results might be possible if Spotlight is enabled will be suppressed.</li></ul>                |
 
 #### [frontmostApplication](#frontmostapplication)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.frontmostApplication() -> hs.application object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.frontmostApplication() -> hs.application object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the application object for the frontmost (active) application.  This is the application which currently receives input events.                                                                                         |
@@ -96,7 +96,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>An hs.application object</li></ul>          |
 
 #### [infoForBundleID](#infoforbundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.infoForBundleID(bundleID) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.infoForBundleID(bundleID) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the metadata of an application from its bundle identifier                                                                                         |
@@ -104,7 +104,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A table containing information about the application, or nil if the bundle identifier could not be located</li></ul>          |
 
 #### [launchOrFocus](#launchorfocus)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.launchOrFocus(name) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.launchOrFocus(name) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Launches the app with the given name, or activates it if it's already running                                                                                         |
@@ -113,7 +113,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>The name parameter should match the name of the application on disk, e.g. "IntelliJ IDEA", rather than "IntelliJ"</li></ul>                |
 
 #### [launchOrFocusByBundleID](#launchorfocusbybundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.launchOrFocusByBundleID(bundleID) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.launchOrFocusByBundleID(bundleID) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Launches the app with the given bundle ID, or activates it if it's already running                                                                                         |
@@ -122,7 +122,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>Bundle identifiers typically take the form of `com.company.ApplicationName`</li></ul>                |
 
 #### [nameForBundleID](#nameforbundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.nameForBundleID(bundleID) -> string or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.nameForBundleID(bundleID) -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of an application from its bundle identifier                                                                                         |
@@ -130,7 +130,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A string containing the application name, or nil if the bundle identifier could not be located</li></ul>          |
 
 #### [pathForBundleID](#pathforbundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.pathForBundleID(bundleID) -> string or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.pathForBundleID(bundleID) -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the filesystem path of an application from its bundle identifier                                                                                         |
@@ -138,7 +138,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A string containing the app bundle's filesystem path, or nil if the bundle identifier could not be located</li></ul>          |
 
 #### [runningApplications](#runningapplications)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.runningApplications() -> list of hs.application objects` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.runningApplications() -> list of hs.application objects` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns all running apps.                                                                                         |
@@ -148,7 +148,7 @@ Manipulate running applications
 ### Constructors
 
 #### [find](#find)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.find(hint) -> hs.application object(s)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.find(hint) -> hs.application object(s)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Finds running applications                                                                                         |
@@ -157,7 +157,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>If multiple results are found, this function will return multiple values. See [https://www.lua.org/pil/5.1.html](https://www.lua.org/pil/5.1.html) for more information on how to work with this</li><li>for convenience you can call this as `hs.application(hint)`</li><li>use this function when you don't know the exact name of an application you're interested in, i.e.</li><li>   from the console: `hs.application'term' --> hs.application: iTerm2 (0x61000025fb88)  hs.application: Terminal (0x618000447588)`.</li><li>   But be careful when using it in your `init.lua`: `terminal=hs.application'term'` will assign either "Terminal" or "iTerm2" arbitrarily (or even,</li><li>   if neither are running, any other app with a window that happens to have "term" in its title); to make sure you get the right app in your scripts,</li><li>   use `hs.application.get` with the exact name: `terminal=hs.application.get'Terminal' --> "Terminal" app, or nil if it's not running`</li></ul>                |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.get(hint) -> hs.application object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.get(hint) -> hs.application object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Gets a running application                                                                                         |
@@ -166,7 +166,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>see also `hs.application.find`</li></ul>                |
 
 #### [open](#open)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application.open(app[, wait, [waitForFirstWindow]]) -> hs.application object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.open(app[, wait, [waitForFirstWindow]]) -> hs.application object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Launches an application, or activates it if it's already running                                                                                         |
@@ -177,7 +177,7 @@ Manipulate running applications
 ### Methods
 
 #### [activate](#activate)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:activate([allWindows]) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:activate([allWindows]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Tries to activate the app (make its key window focused) and returns whether it succeeded; if allWindows is true, all windows of the application are brought forward as well.                                                                                         |
@@ -185,7 +185,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A boolean value indicating whether or not the application could be activated</li></ul>          |
 
 #### [allWindows](#allwindows)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:allWindows() -> list of hs.window objects` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:allWindows() -> list of hs.window objects` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns all open windows owned by the given app.                                                                                         |
@@ -194,7 +194,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>This function can only return windows in the current Mission Control Space; if you need to address windows across</li><li>   different Spaces you can use the `hs.window.filter` module</li><li>   - if `Displays have separate Spaces` is *on* (in System Preferences>Mission Control) the current Space is defined</li><li>     as the union of all currently visible Spaces</li><li>   - minimized windows and hidden windows (i.e. belonging to hidden apps, e.g. via cmd-h) are always considered</li><li>     to be in the current Space</li></ul>                |
 
 #### [bundleID](#bundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:bundleID() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:bundleID() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the bundle identifier of the app.                                                                                         |
@@ -202,7 +202,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A string containing the bundle identifier of the application</li></ul>          |
 
 #### [findMenuItem](#findmenuitem)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:findMenuItem(menuItem[, isRegex]) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:findMenuItem(menuItem[, isRegex]) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches the application for a menu item                                                                                         |
@@ -211,7 +211,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>This can only search for menu items that don't have children - i.e. you can't search for the name of a submenu</li></ul>                |
 
 #### [findWindow](#findwindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:findWindow(titlePattern) -> hs.window object(s)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:findWindow(titlePattern) -> hs.window object(s)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds windows from this application                                                                                         |
@@ -219,7 +219,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>one or more hs.window objects belonging to this application that match the supplied search criterion, or `nil` if none found</li></ul>          |
 
 #### [focusedWindow](#focusedwindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:focusedWindow() -> hs.window object or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:focusedWindow() -> hs.window object or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the currently focused window of the application, or nil                                                                                         |
@@ -227,7 +227,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>An hs.window object representing the window of the application that currently has focus, or nil if there are none</li></ul>          |
 
 #### [getMenuItems](#getmenuitems)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:getMenuItems() -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:getMenuItems() -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the menu structure of the application                                                                                         |
@@ -236,7 +236,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>In some applications, this can take a little while to complete, because quite a large number of round trips are required to the source application, to get the information. Take care!</li><li>The table is nested with the same structure as the menus of the application. Each item has several keys containing information about the menu item. Not all keys will appear for all items. The possible keys are:</li><li> AXTitle - A string containing the text of the menu item (entries which have no title are menu separators)</li><li> AXEnabled - A boolean, 1 if the menu item is clickable, 0 if not</li><li> AXRole - A string containing the role of the menu item - this will be either AXMenuBarItem for a top level menu, or AXMenuItem for an item in a menu</li><li> AXMenuItemMarkChar - A string containing the "mark" character for a menu item. This is for toggleable menu items and will usually be an empty string or a Unicode tick character (✓)</li><li> AXMenuItemCmdModifiers - A table containing string representations of the keyboard modifiers for the menu item's keyboard shortcut, or nil if no modifiers are present</li><li> AXMenuItemCmdChar - A string containing the key for the menu item's keyboard shortcut, or an empty string if no shortcut is present</li><li> AXMenuItemCmdGlyph - An integer, corresponding to one of the defined glyphs in `hs.application.menuGlyphs` if the keyboard shortcut is a special character usually represented by a pictorial representation (think arrow keys, return, etc), or an empty string if no glyph is used in presenting the keyboard shortcut.</li><li>Using `hs.inspect()` on these tables, while useful for exploration, can be extremely slow, taking several minutes to correctly render very complex menus</li></ul>                |
 
 #### [getWindow](#getwindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:getWindow(title) -> hs.window object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:getWindow(title) -> hs.window object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a specific window from this application                                                                                         |
@@ -244,7 +244,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>the desired hs.window object belonging to this application, or `nil` if not found</li></ul>          |
 
 #### [hide](#hide)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:hide() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:hide() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the app (and all its windows).                                                                                         |
@@ -252,7 +252,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A boolean indicating whether the application was successfully hidden</li></ul>          |
 
 #### [isFrontmost](#isfrontmost)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:isFrontmost() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:isFrontmost() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether the app is the frontmost (i.e. is the currently active application)                                                                                         |
@@ -260,7 +260,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>True if the application is the frontmost application, otherwise false</li></ul>          |
 
 #### [isHidden](#ishidden)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:isHidden() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:isHidden() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether the app is currently hidden.                                                                                         |
@@ -268,7 +268,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A boolean indicating whether the application is hidden or not</li></ul>          |
 
 #### [isRunning](#isrunning)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:isRunning() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:isRunning() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if the application is still running                                                                                         |
@@ -277,7 +277,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>If an application is terminated and re-launched, this method will still return false, as `hs.application` objects are tied to a specific instance of an application (i.e. its PID)</li></ul>                |
 
 #### [kill](#kill)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:kill()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:kill()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Tries to terminate the app gracefully.                                                                                         |
@@ -285,7 +285,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [kill9](#kill9)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:kill9()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:kill9()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Tries to terminate the app forcefully.                                                                                         |
@@ -293,7 +293,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [kind](#kind)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:kind() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:kind() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Identify the application's GUI state                                                                                         |
@@ -301,7 +301,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A number that is either 1 if the app is in the dock, 0 if it is not, or -1 if the application is prohibited from having GUI elements</li></ul>          |
 
 #### [mainWindow](#mainwindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:mainWindow() -> hs.window object or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:mainWindow() -> hs.window object or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the main window of the given app, or nil.                                                                                         |
@@ -309,13 +309,13 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>An hs.window object representing the main window of the application, or nil if it has no windows</li></ul>          |
 
 #### [name](#name)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:name()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:name()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Alias for `hs.application:title()`                                                                                         |
 
 #### [path](#path)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:path() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:path() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the filesystem path of the app.                                                                                         |
@@ -323,7 +323,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A string containing the filesystem path of the application</li></ul>          |
 
 #### [pid](#pid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:pid() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:pid() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app's process identifier.                                                                                         |
@@ -331,7 +331,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>The UNIX process identifier of the application (i.e. a number)</li></ul>          |
 
 #### [selectMenuItem](#selectmenuitem)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:selectMenuItem(menuitem) -> true or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:selectMenuItem(menuitem) -> true or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects a menu item (i.e. simulates clicking on the menu item)                                                                                         |
@@ -340,7 +340,7 @@ Manipulate running applications
 | **Notes**                                            | <ul><li>Depending on the type of menu item involved, this will either activate or tick/untick the menu item</li></ul>                |
 
 #### [title](#title)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:title() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:title() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the localized name of the app (in UTF8).                                                                                         |
@@ -348,7 +348,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A string containing the name of the application</li></ul>          |
 
 #### [unhide](#unhide)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:unhide() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:unhide() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Unhides the app (and all its windows) if it's hidden.                                                                                         |
@@ -356,7 +356,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>A boolean indicating whether the application was successfully unhidden</li></ul>          |
 
 #### [visibleWindows](#visiblewindows)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.application:visibleWindows() -> win[]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:visibleWindows() -> win[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns only the app's windows that are visible.                                                                                         |

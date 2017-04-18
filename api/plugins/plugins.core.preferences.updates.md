@@ -13,7 +13,7 @@ Updates Module.
 ### Functions
 
 #### [checkForUpdates](#checkforupdates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.updates.checkForUpdates() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.updates.checkForUpdates() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the 'Check for Updates' status                                                                                         |
@@ -21,7 +21,7 @@ Updates Module.
 | **Returns**                                          | <ul><li>`true` or `false`</li></ul>          |
 
 #### [toggleCheckForUpdates](#togglecheckforupdates)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.preferences.updates.toggleCheckForUpdates() -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.updates.toggleCheckForUpdates() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles 'Check For Updates'                                                                                         |

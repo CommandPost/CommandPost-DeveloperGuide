@@ -14,7 +14,7 @@ Plugins Preferences Panel
 ### Constants
 
 #### [SETTINGS_DISABLED](#settings_disabled)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`core.preferences.panels.plugins.SETTINGS_DISABLED` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`core.preferences.panels.plugins.SETTINGS_DISABLED` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Plugins Disabled                                                                                         |
@@ -22,7 +22,7 @@ Plugins Preferences Panel
 ### Functions
 
 #### [init](#init)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`core.preferences.panels.plugins.init() -> none` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`core.preferences.panels.plugins.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |

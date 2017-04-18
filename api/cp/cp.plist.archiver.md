@@ -12,7 +12,7 @@ Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.
 ### Functions
 
 #### [unarchive](#unarchive)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.plist.archiver.unarchive(archive) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.archiver.unarchive(archive) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unarchives a LUA table which was archived into a plist using the NSKeyedArchiver.                                                                                         |

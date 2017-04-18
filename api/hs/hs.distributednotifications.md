@@ -26,7 +26,7 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 ### Functions
 
 #### [post](#post)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.distributednotifications.post(name[, sender[, userInfo]])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications.post(name[, sender[, userInfo]])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends a distributed notification                                                                                         |
@@ -34,7 +34,7 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.distributednotifications.new(callback[, name[, object]]) -> object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications.new(callback[, name[, object]]) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new NSDistributedNotificationCenter watcher                                                                                         |
@@ -44,7 +44,7 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 ### Methods
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.distributednotifications:start() -> object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications:start() -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts a NSDistributedNotificationCenter watcher                                                                                         |
@@ -52,7 +52,7 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 | **Returns**                                          | <ul><li>The `hs.distributednotifications` object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.distributednotifications:stop() -> object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications:stop() -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops a NSDistributedNotificationCenter watcher                                                                                         |

@@ -19,7 +19,7 @@ Locales encapsulate information about linguistic, cultural, and technological co
 ### Functions
 
 #### [availableLocales](#availablelocales)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.locale.availableLocales() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.locale.availableLocales() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an array table containing the identifiers for the locales available on the system.                                                                                         |
@@ -28,7 +28,7 @@ Locales encapsulate information about linguistic, cultural, and technological co
 | **Notes**                                            | <ul><li>these values can be used with [hs.host.locale.details](#details) to get details for a specific locale.</li></ul>                |
 
 #### [current](#current)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.locale.current() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.locale.current() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an string specifying the user's currently selected locale identifier.                                                                                         |
@@ -37,7 +37,7 @@ Locales encapsulate information about linguistic, cultural, and technological co
 | **Notes**                                            | <ul><li>this value can be used with [hs.host.locale.details](#details) to get details for the returned locale.</li></ul>                |
 
 #### [details](#details)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.locale.details([identifier]) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.locale.details([identifier]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing information about the current or specified locale.                                                                                         |
@@ -46,7 +46,7 @@ Locales encapsulate information about linguistic, cultural, and technological co
 | **Notes**                                            | <ul><li>If you specify a locale identifier as an argument, it should be based on one of the strings returned by [hs.host.locale.availableLocales](#availableLocales).  Use of an arbitrary string may produce unreliable or inconsistent results.</li></ul>                |
 
 #### [preferredLanguages](#preferredlanguages)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.locale.preferredLanguages() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.locale.preferredLanguages() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the user's language preference order as an array of strings.                                                                                         |
@@ -54,7 +54,7 @@ Locales encapsulate information about linguistic, cultural, and technological co
 | **Returns**                                          | <ul><li>an array table of strings specifying the user's preferred languages as string identifiers.</li></ul>          |
 
 #### [registerCallback](#registercallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.locale.registerCallback(function) -> uuidString` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.locale.registerCallback(function) -> uuidString` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Registers a function to be invoked when anything in the user's locale settings change                                                                                         |
@@ -63,7 +63,7 @@ Locales encapsulate information about linguistic, cultural, and technological co
 | **Notes**                                            | <ul><li>The callback function will not receive any arguments and should return none.  You can retrieve the new locale settings with [hs.host.locale.localeInformation](#localeInformation) and check its keys to determine if the change is of interest.</li></ul>                |
 
 #### [unregisterCallback](#unregistercallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.host.locale.unregisterCallback(uuidString) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.locale.unregisterCallback(uuidString) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unregister a callback function when you no longer care about changes to the user's locale                                                                                         |

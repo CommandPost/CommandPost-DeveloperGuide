@@ -27,7 +27,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 ### Functions
 
 #### [declareUserActivity](#declareuseractivity)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.declareUserActivity([id])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.declareUserActivity([id])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Informs the OS that the user performed some activity                                                                                         |
@@ -36,7 +36,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Notes**                                            | <ul><li>This is intended to simulate user activity, for example to prevent displays from sleeping, or to wake them up</li><li>It is not mandatory to re-use assertion IDs if you are calling this function mulitple times, but it is recommended that you do so if the calls are related</li></ul>                |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.get(sleepType) -> bool or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.get(sleepType) -> bool or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Queries whether a particular sleep type is being prevented                                                                                         |
@@ -44,7 +44,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Returns**                                          | <ul><li>True if the specified type of sleep is being prevented, false if not. nil if sleepType was an invalid value</li></ul>          |
 
 #### [lockScreen](#lockscreen)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.lockScreen()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.lockScreen()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Request the system lock the displays                                                                                         |
@@ -52,7 +52,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [logOut](#logout)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.logOut()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.logOut()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Request the system log out the current user                                                                                         |
@@ -60,7 +60,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [restartSystem](#restartsystem)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.restartSystem()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.restartSystem()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Request the system reboot                                                                                         |
@@ -68,7 +68,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [sessionProperties](#sessionproperties)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.sessionProperties()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.sessionProperties()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Fetches information from the display server about the current session                                                                                         |
@@ -77,7 +77,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Notes**                                            | <ul><li>The keys in this dictionary will vary based on the current state of the system (e.g. local vs VNC login, screen locked vs unlocked).</li></ul>                |
 
 #### [set](#set)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.set(sleepType, aValue, acAndBattery)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.set(sleepType, aValue, acAndBattery)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Configures the sleep prevention settings                                                                                         |
@@ -86,7 +86,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Notes**                                            | <ul><li>These calls are not guaranteed to prevent the system sleep behaviours described above. The OS may override them if it feels it must (e.g. if your CPU temperature becomes dangerously high).</li><li>The acAndBattery argument only applies to the `system` sleep type.</li><li>You can toggle the acAndBattery state by calling `hs.caffeinate.set()` again and altering the acAndBattery value.</li></ul>                |
 
 #### [shutdownSystem](#shutdownsystem)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.shutdownSystem()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.shutdownSystem()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Request the system log out and power down                                                                                         |
@@ -94,7 +94,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [startScreensaver](#startscreensaver)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.startScreensaver()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.startScreensaver()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Request the system start the screensaver (which may lock the screen if the OS is configured to do so)                                                                                         |
@@ -102,7 +102,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [systemSleep](#systemsleep)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.systemSleep()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.systemSleep()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Requests the system to sleep immediately                                                                                         |
@@ -110,7 +110,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [toggle](#toggle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.caffeinate.toggle(sleepType) -> bool or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.toggle(sleepType) -> bool or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the current state of the specified type of sleep                                                                                         |

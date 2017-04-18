@@ -51,7 +51,7 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 ### Variables
 
 #### [ui](#ui)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.expose.ui` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.expose.ui` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Allows customization of the expose behaviour and user interface                                                                                         |
@@ -59,7 +59,7 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.expose.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.expose object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.expose.new([windowfilter[, uiPrefs][, logname, [loglevel]]]) -> hs.expose object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new hs.expose instance; it can use a windowfilter to determine which windows to show                                                                                         |
@@ -70,7 +70,7 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 ### Methods
 
 #### [hide](#hide)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.expose:hide()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.expose:hide()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the expose, if visible, and exits the modal mode.                                                                                         |
@@ -78,7 +78,7 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [show](#show)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.expose:show([activeApplication])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.expose:show([activeApplication])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows an expose-like screen with modal keyboard hints for switching to, closing or minimizing/unminimizing windows.                                                                                         |
@@ -87,7 +87,7 @@ hs.hotkey.bind('ctrl-cmd-shift','e','App Expose',function()expose_app:toggleShow
 | **Notes**                                            | <ul><li>passing `true` for `activeApplication` will simply hide hints/thumbnails for applications other</li><li>   than the active one, without recalculating the hints layout; conversely, setting `onlyActiveApplication=true`</li><li>   for an expose instance's `ui` will calculate an optimal layout for the current active application's windows</li><li>Completing a hint will exit the expose and focus the selected window.</li><li>Pressing esc will exit the expose and with no action taken.</li><li>If shift is being held when a hint is completed (the background will be red), the selected</li><li>   window will be closed. If it's the last window of an application, the application will be closed.</li><li>If alt is being held when a hint is completed (the background will be blue), the selected</li><li>   window will be minimized (if visible) or unminimized/unhidden (if minimized or hidden).</li></ul>                |
 
 #### [toggleShow](#toggleshow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.expose:toggleShow([activeApplication])` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.expose:toggleShow([activeApplication])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Toggles the expose - see `hs.expose:show()` and `hs.expose:hide()`                                                                                         |

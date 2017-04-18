@@ -20,7 +20,7 @@ For each spotlightGroupObject you can identify the attribute and value the group
 ### Methods
 
 #### [attribute](#attribute)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spotlight.group:attribute() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:attribute() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the name of the attribute the spotlightGroupObject results are grouped by.                                                                                         |
@@ -28,7 +28,7 @@ For each spotlightGroupObject you can identify the attribute and value the group
 | **Returns**                                          | <ul><li>the attribute name as a string</li></ul>          |
 
 #### [count](#count)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spotlight.group:count() -> integer` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:count() -> integer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the number of query results contained in the spotlightGroupObject.                                                                                         |
@@ -37,7 +37,7 @@ For each spotlightGroupObject you can identify the attribute and value the group
 | **Notes**                                            | <ul><li>For convenience, metamethods have been added to the spotlightGroupObject which allow you to use `#spotlightGroupObject` as a shortcut for `spotlightGroupObject:count()`.</li></ul>                |
 
 #### [resultAtIndex](#resultatindex)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spotlight.group:resultAtIndex(index) -> spotlightItemObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:resultAtIndex(index) -> spotlightItemObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the spotlightItemObject at the specified index of the spotlightGroupObject                                                                                         |
@@ -46,7 +46,7 @@ For each spotlightGroupObject you can identify the attribute and value the group
 | **Notes**                                            | <ul><li>For convenience, metamethods have been added to the spotlightGroupObject which allow you to use `spotlightGroupObject[index]` as a shortcut for `spotlightGroupObject:resultAtIndex(index)`.</li></ul>                |
 
 #### [subgroups](#subgroups)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spotlight.group:subgroups() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:subgroups() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the subgroups of the spotlightGroupObject                                                                                         |
@@ -55,7 +55,7 @@ For each spotlightGroupObject you can identify the attribute and value the group
 | **Notes**                                            | <ul><li>Subgroups are created when you supply more than one grouping attribute to `hs.spotlight:groupingAttributes`.</li></ul>                |
 
 #### [value](#value)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spotlight.group:value() -> value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:value() -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the value for the attribute the spotlightGroupObject results are grouped by.                                                                                         |

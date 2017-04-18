@@ -17,7 +17,7 @@ For convenience, metamethods have been added to the spotlightItemObjects as a sh
 ### Methods
 
 #### [attributes](#attributes)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spotlight.item:attributes() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.item:attributes() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a list of attributes associated with the spotlightItemObject                                                                                         |
@@ -26,7 +26,7 @@ For convenience, metamethods have been added to the spotlightItemObjects as a sh
 | **Notes**                                            | <ul><li>This list of attributes is usually not a complete list of the attributes available for a given spotlightItemObject. Many of the known attribute names are included in the `hs.spotlight.commonAttributeKeys` constant array, but even this is not an exhaustive list -- an application may create and assign any key it wishes to an entity for inclusion in the Spotlight metadata database.</li></ul>                |
 
 #### [valueForAttribute](#valueforattribute)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.spotlight.item:valueForAttribute(attribute) -> value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.item:valueForAttribute(attribute) -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the value for the specified attribute of the spotlightItemObject                                                                                         |

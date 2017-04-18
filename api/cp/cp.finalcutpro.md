@@ -142,31 +142,31 @@ end
 ### Constants
 
 #### [BUNDLE_ID](#bundle_id)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.BUNDLE_ID` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.BUNDLE_ID` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Final Cut Pro's Bundle ID                                                                                         |
 
 #### [FLEXO_LANGUAGES](#flexo_languages)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.FLEXO_LANGUAGES` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.FLEXO_LANGUAGES` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Table of Final Cut Pro's supported Languages for the Flexo Framework                                                                                         |
 
 #### [PASTEBOARD_UTI](#pasteboard_uti)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.PASTEBOARD_UTI` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.PASTEBOARD_UTI` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Final Cut Pro's Pasteboard UTI                                                                                         |
 
 #### [PREFS_PLIST_PATH](#prefs_plist_path)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.PREFS_PLIST_PATH` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.PREFS_PLIST_PATH` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Final Cut Pro's Preferences Path                                                                                         |
 
 #### [SUPPORTED_LANGUAGES](#supported_languages)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.SUPPORTED_LANGUAGES` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.SUPPORTED_LANGUAGES` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Table of Final Cut Pro's supported Languages                                                                                         |
@@ -174,7 +174,7 @@ end
 ### Functions
 
 #### [application](#application)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:application() -> hs.application` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:application() -> hs.application` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the hs.application for Final Cut Pro X.                                                                                         |
@@ -182,7 +182,7 @@ end
 | **Returns**                                          | <ul><li>The hs.application, or nil if the application is not installed.</li></ul>          |
 
 #### [browser](#browser)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:browser() -> Browser` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:browser() -> Browser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Browser instance, whether it is in the primary or secondary window.                                                                                         |
@@ -190,7 +190,7 @@ end
 | **Returns**                                          | <ul><li>the Browser</li></ul>          |
 
 #### [colorBoard](#colorboard)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:colorBoard() -> ColorBoard` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:colorBoard() -> ColorBoard` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the ColorBoard instance from the primary window                                                                                         |
@@ -198,7 +198,7 @@ end
 | **Returns**                                          | <ul><li>the ColorBoard</li></ul>          |
 
 #### [commandEditor](#commandeditor)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:commandEditor() -> commandEditor object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:commandEditor() -> commandEditor object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Command Editor                                                                                         |
@@ -206,7 +206,7 @@ end
 | **Returns**                                          | <ul><li>The Final Cut Pro Command Editor</li></ul>          |
 
 #### [effects](#effects)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:effects() -> EffectsBrowser` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:effects() -> EffectsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the EffectsBrowser instance, whether it is in the primary or secondary window.                                                                                         |
@@ -214,7 +214,7 @@ end
 | **Returns**                                          | <ul><li>the EffectsBrowser</li></ul>          |
 
 #### [eventViewer](#eventviewer)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:eventViewer() -> Event Viewer` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:eventViewer() -> Event Viewer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Event Viewer instance, whether it is in the primary or secondary window.                                                                                         |
@@ -222,7 +222,7 @@ end
 | **Returns**                                          | <ul><li>the Event Viewer</li></ul>          |
 
 #### [exportDialog](#exportdialog)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:exportDialog() -> exportDialog object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:exportDialog() -> exportDialog object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Export Dialog Box                                                                                         |
@@ -230,7 +230,7 @@ end
 | **Returns**                                          | <ul><li>The Final Cut Pro Export Dialog Box</li></ul>          |
 
 #### [fullScreenWindow](#fullscreenwindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:fullScreenWindow() -> fullScreenWindow object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:fullScreenWindow() -> fullScreenWindow object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Full Screen Window                                                                                         |
@@ -238,7 +238,7 @@ end
 | **Returns**                                          | <ul><li>The Full Screen Playback Window</li></ul>          |
 
 #### [generators](#generators)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:generators() -> GeneratorsBrowser` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:generators() -> GeneratorsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the GeneratorsBrowser instance, whether it is in the primary or secondary window.                                                                                         |
@@ -246,7 +246,7 @@ end
 | **Returns**                                          | <ul><li>the GeneratorsBrowser</li></ul>          |
 
 #### [getActiveCommandSet](#getactivecommandset)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getActiveCommandSet([forceReload]) -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getActiveCommandSet([forceReload]) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the 'Active Command Set' as a Table. The result is cached, so pass in                                                                                         |
@@ -254,7 +254,7 @@ end
 | **Returns**                                          | <ul><li>A table of the Active Command Set's contents, or `nil` if an error occurred</li></ul>          |
 
 #### [getActiveCommandSetPath](#getactivecommandsetpath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getActiveCommandSetPath() -> string or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getActiveCommandSetPath() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences                                                                                         |
@@ -262,7 +262,7 @@ end
 | **Returns**                                          | <ul><li>The 'Active Command Set' value, or the 'Default' command set if none is set.</li></ul>          |
 
 #### [getBundleID](#getbundleid)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getBundleID() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getBundleID() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Bundle ID                                                                                         |
@@ -270,7 +270,7 @@ end
 | **Returns**                                          | <ul><li>A string of the Final Cut Pro Bundle ID</li></ul>          |
 
 #### [getCommandSet](#getcommandset)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getCommandSet(path) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getCommandSet(path) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads the Command Set at the specified path into a table.                                                                                         |
@@ -278,7 +278,7 @@ end
 | **Returns**                                          | <ul><li>The Command Set as a table, or `nil` if there was a problem.</li></ul>          |
 
 #### [getCommandShortcuts](#getcommandshortcuts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.getCommandShortcuts(id) -> table of hs.commands.shortcut` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.getCommandShortcuts(id) -> table of hs.commands.shortcut` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds a shortcut from the Active Command Set with the specified ID and returns a table                                                                                         |
@@ -286,7 +286,7 @@ end
 | **Returns**                                          | <ul><li>The array of shortcuts, or `nil` if no command exists with the specified `id`.</li></ul>          |
 
 #### [getCurrentLanguage](#getcurrentlanguage)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getCurrentLanguage() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getCurrentLanguage() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the language Final Cut Pro is currently using.                                                                                         |
@@ -294,7 +294,7 @@ end
 | **Returns**                                          | <ul><li>Returns the current language as string (or 'en' if unknown).</li></ul>          |
 
 #### [getDefaultCommandSetPath](#getdefaultcommandsetpath)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getDefaultCommandSetPath([langauge]) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getDefaultCommandSetPath([langauge]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the path to the 'Default' Command Set.                                                                                         |
@@ -302,7 +302,7 @@ end
 | **Returns**                                          | <ul><li>The 'Default' Command Set path, or `nil` if an error occurred</li></ul>          |
 
 #### [getFlexoLanguages](#getflexolanguages)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getFlexoLanguages() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getFlexoLanguages() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table of languages Final Cut Pro's Flexo Framework supports                                                                                         |
@@ -310,7 +310,7 @@ end
 | **Returns**                                          | <ul><li>A table of languages Final Cut Pro supports</li></ul>          |
 
 #### [getPasteboardUTI](#getpasteboarduti)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getPasteboardUTI() -> axuielementObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getPasteboardUTI() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro axuielementObject                                                                                         |
@@ -318,7 +318,7 @@ end
 | **Returns**                                          | <ul><li>A axuielementObject of Final Cut Pro</li></ul>          |
 
 #### [getPreference](#getpreference)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.getPreference(value, default, forceReload) -> string or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.getPreference(value, default, forceReload) -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get an individual Final Cut Pro preference                                                                                         |
@@ -326,7 +326,7 @@ end
 | **Returns**                                          | <ul><li>A string with the preference value, or nil if an error occurred</li></ul>          |
 
 #### [getPreferences](#getpreferences)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getPreferences() -> table or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getPreferences() -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets Final Cut Pro's Preferences as a table. It checks if the preferences                                                                                         |
@@ -334,7 +334,7 @@ end
 | **Returns**                                          | <ul><li>A table with all of Final Cut Pro's preferences, or nil if an error occurred</li></ul>          |
 
 #### [getSupportedLanguages](#getsupportedlanguages)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getSupportedLanguages() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getSupportedLanguages() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table of languages Final Cut Pro supports                                                                                         |
@@ -342,7 +342,7 @@ end
 | **Returns**                                          | <ul><li>A table of languages Final Cut Pro supports</li></ul>          |
 
 #### [getVersion](#getversion)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:getVersion() -> string or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:getVersion() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Version of Final Cut Pro                                                                                         |
@@ -351,7 +351,7 @@ end
 | **Notes**                                            | <ul><li>If Final Cut Pro is running it will get the version of the active Final Cut Pro application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul>                |
 
 #### [hide](#hide)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:hide() -> cp.finalcutpro object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:hide() -> cp.finalcutpro object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Hides Final Cut Pro                                                                                         |
@@ -359,7 +359,7 @@ end
 | **Returns**                                          | <ul><li>An cp.finalcutpro object otherwise nil</li></ul>          |
 
 #### [importXML](#importxml)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:importXML() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:importXML() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Imports an XML file into Final Cut Pro                                                                                         |
@@ -367,7 +367,7 @@ end
 | **Returns**                                          | <ul><li>A boolean value indicating whether the AppleScript succeeded or not</li></ul>          |
 
 #### [inspector](#inspector)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:inspector() -> Inspector` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:inspector() -> Inspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Inspector instance from the primary window                                                                                         |
@@ -375,7 +375,7 @@ end
 | **Returns**                                          | <ul><li>the Inspector</li></ul>          |
 
 #### [isFrontmost](#isfrontmost)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:isFrontmost() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:isFrontmost() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Is Final Cut Pro X Frontmost?                                                                                         |
@@ -383,7 +383,7 @@ end
 | **Returns**                                          | <ul><li>`true` if Final Cut Pro is Frontmost.</li></ul>          |
 
 #### [isInstalled](#isinstalled)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:isInstalled() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:isInstalled() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Is Final Cut Pro X Installed?                                                                                         |
@@ -391,7 +391,7 @@ end
 | **Returns**                                          | <ul><li>`true` if a version of FCPX is installed.</li></ul>          |
 
 #### [isRunning](#isrunning)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:isRunning() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:isRunning() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Is Final Cut Pro Running?                                                                                         |
@@ -399,7 +399,7 @@ end
 | **Returns**                                          | <ul><li>True if Final Cut Pro is running otherwise False</li></ul>          |
 
 #### [launch](#launch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:launch() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:launch() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Launches Final Cut Pro, or brings it to the front if it was already running.                                                                                         |
@@ -407,7 +407,7 @@ end
 | **Returns**                                          | <ul><li>`true` if Final Cut Pro was either launched or focused, otherwise false (e.g. if Final Cut Pro doesn't exist)</li></ul>          |
 
 #### [libraries](#libraries)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:libraries() -> LibrariesBrowser` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:libraries() -> LibrariesBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the LibrariesBrowser instance, whether it is in the primary or secondary window.                                                                                         |
@@ -415,7 +415,7 @@ end
 | **Returns**                                          | <ul><li>the LibrariesBrowser</li></ul>          |
 
 #### [media](#media)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:media() -> MediaBrowser` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:media() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the MediaBrowser instance, whether it is in the primary or secondary window.                                                                                         |
@@ -423,7 +423,7 @@ end
 | **Returns**                                          | <ul><li>the MediaBrowser</li></ul>          |
 
 #### [mediaImport](#mediaimport)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:mediaImport() -> mediaImport object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:mediaImport() -> mediaImport object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Media Import Window                                                                                         |
@@ -431,7 +431,7 @@ end
 | **Returns**                                          | <ul><li>The Final Cut Pro Media Import Window</li></ul>          |
 
 #### [menuBar](#menubar)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:menuBar() -> menuBar object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:menuBar() -> menuBar object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Menu Bar                                                                                         |
@@ -439,7 +439,7 @@ end
 | **Returns**                                          | <ul><li>A menuBar object</li></ul>          |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:new() -> App` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:new() -> App` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new App instance representing Final Cut Pro                                                                                         |
@@ -447,7 +447,7 @@ end
 | **Returns**                                          | <ul><li>True is successful otherwise Nil</li></ul>          |
 
 #### [path](#path)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:path() -> string or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:path() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Path to Final Cut Pro Application                                                                                         |
@@ -455,7 +455,7 @@ end
 | **Returns**                                          | <ul><li>A string containing Final Cut Pro's filesystem path, or nil if the bundle identifier could not be located</li></ul>          |
 
 #### [performShortcut](#performshortcut)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.performShortcut() -> Boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.performShortcut() -> Boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a Final Cut Pro Shortcut                                                                                         |
@@ -463,7 +463,7 @@ end
 | **Returns**                                          | <ul><li>true if successful otherwise false</li></ul>          |
 
 #### [preferencesWindow](#preferenceswindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:preferencesWindow() -> preferenceWindow object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:preferencesWindow() -> preferenceWindow object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Preferences Window                                                                                         |
@@ -471,7 +471,7 @@ end
 | **Returns**                                          | <ul><li>The Preferences Window</li></ul>          |
 
 #### [primaryWindow](#primarywindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:primaryWindow() -> primaryWindow object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:primaryWindow() -> primaryWindow object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Preferences Window                                                                                         |
@@ -479,7 +479,7 @@ end
 | **Returns**                                          | <ul><li>The Primary Window</li></ul>          |
 
 #### [quit](#quit)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:quit() -> cp.finalcutpro object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:quit() -> cp.finalcutpro object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Quits Final Cut Pro                                                                                         |
@@ -487,7 +487,7 @@ end
 | **Returns**                                          | <ul><li>An cp.finalcutpro object otherwise nil</li></ul>          |
 
 #### [restart](#restart)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:restart() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:restart() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Restart Final Cut Pro X                                                                                         |
@@ -495,7 +495,7 @@ end
 | **Returns**                                          | <ul><li>`true` if Final Cut Pro X was running and restarted successfully.</li></ul>          |
 
 #### [secondaryWindow](#secondarywindow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:secondaryWindow() -> secondaryWindow object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:secondaryWindow() -> secondaryWindow object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Preferences Window                                                                                         |
@@ -503,7 +503,7 @@ end
 | **Returns**                                          | <ul><li>The Secondary Window</li></ul>          |
 
 #### [selectMenu](#selectmenu)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:selectMenu(...) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:selectMenu(...) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English.                                                                                         |
@@ -511,7 +511,7 @@ end
 | **Returns**                                          | <ul><li>`true` if the press was successful.</li></ul>          |
 
 #### [setPreference](#setpreference)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:setPreference(key, value) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:setPreference(key, value) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets an individual Final Cut Pro preference                                                                                         |
@@ -519,7 +519,7 @@ end
 | **Returns**                                          | <ul><li>True if executed successfully otherwise False</li></ul>          |
 
 #### [show](#show)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:show() -> cp.finalcutpro object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:show() -> cp.finalcutpro object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Activate Final Cut Pro                                                                                         |
@@ -527,7 +527,7 @@ end
 | **Returns**                                          | <ul><li>An cp.finalcutpro object otherwise nil</li></ul>          |
 
 #### [timeline](#timeline)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:timeline() -> Timeline` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:timeline() -> Timeline` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Timeline instance, whether it is in the primary or secondary window.                                                                                         |
@@ -535,7 +535,7 @@ end
 | **Returns**                                          | <ul><li>the Timeline</li></ul>          |
 
 #### [transitions](#transitions)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:transitions() -> TransitionsBrowser` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:transitions() -> TransitionsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the TransitionsBrowser instance, whether it is in the primary or secondary window.                                                                                         |
@@ -543,7 +543,7 @@ end
 | **Returns**                                          | <ul><li>the TransitionsBrowser</li></ul>          |
 
 #### [viewer](#viewer)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:viewer() -> Viewer` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:viewer() -> Viewer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Viewer instance, whether it is in the primary or secondary window.                                                                                         |
@@ -551,7 +551,7 @@ end
 | **Returns**                                          | <ul><li>the Viewer</li></ul>          |
 
 #### [windowsUI](#windowsui)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:windowsUI() -> axuielement` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:windowsUI() -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the UI containing the list of windows in the app.                                                                                         |
@@ -561,7 +561,7 @@ end
 ### Methods
 
 #### [unwatch](#unwatch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:unwatch() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:unwatch() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stop watching for events that happen in the application for the specified ID.                                                                                         |
@@ -569,7 +569,7 @@ end
 | **Returns**                                          | <ul><li>* `true` if the ID was watching and has been removed.</li></ul>          |
 
 #### [watch](#watch)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro:watch() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro:watch() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Watch for events that happen in the application.                                                                                         |

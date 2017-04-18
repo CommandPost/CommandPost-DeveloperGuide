@@ -12,7 +12,7 @@ Feedback Menu Item.
 ### Functions
 
 #### [showFeedback](#showfeedback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.core.helpandsupport.feedback.showFeedback() -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.helpandsupport.feedback.showFeedback() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens CommandPost Credits Window                                                                                         |

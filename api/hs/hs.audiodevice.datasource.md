@@ -15,7 +15,7 @@ Note: These objects are obtained from the methods on an `hs.audiodevice` object
 ### Methods
 
 #### [name](#name)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.audiodevice.datasource:name() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice.datasource:name() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the name of an audio device datasource                                                                                         |
@@ -23,7 +23,7 @@ Note: These objects are obtained from the methods on an `hs.audiodevice` object
 | **Returns**                                          | <ul><li>A string containing the name of the datasource</li></ul>          |
 
 #### [setDefault](#setdefault)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.audiodevice.datasource:setDefault() -> hs.audiodevice.datasource` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice.datasource:setDefault() -> hs.audiodevice.datasource` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the audio device datasource as the default                                                                                         |

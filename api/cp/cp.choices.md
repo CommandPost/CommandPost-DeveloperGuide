@@ -20,7 +20,7 @@ Choices Module.
 ### Functions
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices.new(choiceType) -> choices` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.new(choiceType) -> choices` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.plugin.chooser.choices` instance for the specified type.                                                                                         |
@@ -30,7 +30,7 @@ Choices Module.
 ### Methods
 
 #### [getChoices](#getchoices)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices:getChoices() -> array of choices` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices:getChoices() -> array of choices` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the array of choices that have been added to this instance.                                                                                         |
@@ -38,7 +38,7 @@ Choices Module.
 | **Returns**                                          | <ul><li>The array of choices.</li></ul>          |
 
 #### [isStatic](#isstatic)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices:isStatic() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices:isStatic() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns `true` if the choices set is static.                                                                                         |
@@ -46,7 +46,7 @@ Choices Module.
 | **Returns**                                          | <ul><li>`true` if the choices set is static.</li></ul>          |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices:new(choiceType) -> choices.builder` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices:new(choiceType) -> choices.builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new choice with the specified. Additional settings                                                                                         |
@@ -54,7 +54,7 @@ Choices Module.
 | **Returns**                                          | <ul><li>The choice builder, added to the choices set.</li></ul>          |
 
 #### [setStatic](#setstatic)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.choices:setStatic(value) -> choices` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices:setStatic(value) -> choices` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | By default, choices are considered to be dynamic, and should be                                                                                         |

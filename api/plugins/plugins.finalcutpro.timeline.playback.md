@@ -13,7 +13,7 @@ Playback Plugin.
 ### Functions
 
 #### [pause](#pause)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.playback.pause() -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playback.pause() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | 'Pause' in Final Cut Pro                                                                                         |
@@ -21,7 +21,7 @@ Playback Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [play](#play)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`plugins.finalcutpro.timeline.playback.play() -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playback.play() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | 'Play' in Final Cut Pro                                                                                         |

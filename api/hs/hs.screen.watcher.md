@@ -19,7 +19,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.screen.watcher.new(fn) -> watcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher.new(fn) -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new screen-watcher.                                                                                         |
@@ -28,7 +28,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>A screen layout change usually involves a change that is made from the Displays Preferences Panel or when a monitor is attached or removed.</li></ul>                |
 
 #### [newWithActiveScreen](#newwithactivescreen)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.screen.watcher.newWithActiveScreen(fn) -> watcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher.newWithActiveScreen(fn) -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new screen-watcher that is also called when the active screen changes.                                                                                         |
@@ -39,7 +39,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ### Methods
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.screen.watcher:start() -> watcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher:start() -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the screen watcher, making it so fn is called each time the screen arrangement changes                                                                                         |
@@ -47,7 +47,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>The `hs.screen.watcher` object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.screen.watcher:stop() -> watcher` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher:stop() -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the screen watcher's fn from getting called until started again                                                                                         |

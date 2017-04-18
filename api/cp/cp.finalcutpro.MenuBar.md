@@ -16,7 +16,7 @@ Represents the Final Cut Pro X menu bar, providing functions that allow differen
 ### Functions
 
 #### [generateMenuMap](#generatemenumap)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.MenuBar:generateMenuMap() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.MenuBar:generateMenuMap() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a map of the menu bar and saves it in the location specified                                                                                         |
@@ -24,7 +24,7 @@ Represents the Final Cut Pro X menu bar, providing functions that allow differen
 | **Returns**                                          | <ul><li>True is successful otherwise Nil</li></ul>          |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.MenuBar:new(App) -> MenuBar` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.MenuBar:new(App) -> MenuBar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Constructs a new MenuBar for the specified App.                                                                                         |
@@ -32,7 +32,7 @@ Represents the Final Cut Pro X menu bar, providing functions that allow differen
 | **Returns**                                          | <ul><li>a new MenuBar instance</li></ul>          |
 
 #### [selectMenu](#selectmenu)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.MenuBar:selectMenu(...) -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.MenuBar:selectMenu(...) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English.                                                                                         |
@@ -42,7 +42,7 @@ Represents the Final Cut Pro X menu bar, providing functions that allow differen
 ### Methods
 
 #### [visitMenuItems](#visitmenuitems)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.finalcutpro.MenuBar:visitMenuItems(visitFn[, startPath]) -> nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.finalcutpro.MenuBar:visitMenuItems(visitFn[, startPath]) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Walks the menu tree, calling the `visitFn` on all the 'item' values - that is,                                                                                         |

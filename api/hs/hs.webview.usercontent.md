@@ -17,7 +17,7 @@ This module provides support for injecting custom JavaScript user content into y
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.webview.usercontent.new(name) -> usercontentControllerObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.usercontent.new(name) -> usercontentControllerObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Create a new user content controller for a webview and create the message port with the specified name for JavaScript message support.                                                                                         |
@@ -28,7 +28,7 @@ This module provides support for injecting custom JavaScript user content into y
 ### Methods
 
 #### [injectScript](#injectscript)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.webview.usercontent:injectScript(scriptTable) -> usercontentControllerObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.usercontent:injectScript(scriptTable) -> usercontentControllerObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Add a script to be injected into webviews which use this user content controller.                                                                                         |
@@ -36,7 +36,7 @@ This module provides support for injecting custom JavaScript user content into y
 | **Returns**                                          | <ul><li>the usercontentControllerObject or nil if the script table was malformed in some way.</li></ul>          |
 
 #### [removeAllScripts](#removeallscripts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.webview.usercontent:removeAllScripts() -> usercontentControllerObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.usercontent:removeAllScripts() -> usercontentControllerObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes all user scripts currently defined for this user content controller.                                                                                         |
@@ -45,7 +45,7 @@ This module provides support for injecting custom JavaScript user content into y
 | **Notes**                                            | <ul><li>The WKUserContentController class only allows for removing all scripts.  If you need finer control, make a copy of the current scripts with `hs.webview.usercontent.userScripts()` first so you can recreate the scripts you want to keep.</li></ul>                |
 
 #### [setCallback](#setcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.webview.usercontent:setCallback(fn) -> usercontentControllerObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.usercontent:setCallback(fn) -> usercontentControllerObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or remove the callback function to handle message posted to this user content's message port.                                                                                         |
@@ -54,7 +54,7 @@ This module provides support for injecting custom JavaScript user content into y
 | **Notes**                                            | <ul><li>Within your (injected or served) JavaScript, you can post messages via the message port created with the constructor like this:</li></ul>                |
 
 #### [userScripts](#userscripts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.webview.usercontent:userScripts() -> array` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.usercontent:userScripts() -> array` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get a table containing all of the currently defined injection scripts for this user content controller                                                                                         |

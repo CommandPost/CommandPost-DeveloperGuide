@@ -36,7 +36,7 @@ Notes:
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser.new(completionFn) -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser.new(completionFn) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new chooser object                                                                                         |
@@ -46,7 +46,7 @@ Notes:
 ### Methods
 
 #### [bgDark](#bgdark)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:bgDark([beDark]) -> hs.chooser object or boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:bgDark([beDark]) -> hs.chooser object or boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the background of the chooser between light and dark                                                                                         |
@@ -55,7 +55,7 @@ Notes:
 | **Notes**                                            | <ul><li>The text colors will not automatically change when you toggle the darkness of the chooser window, you should also set appropriate colors with `hs.chooser:fgColor()` and `hs.chooser:subTextColor()`</li></ul>                |
 
 #### [cancel](#cancel)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:cancel() -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:cancel() -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Cancels the chooser                                                                                         |
@@ -63,7 +63,7 @@ Notes:
 | **Returns**                                          | <ul><li>The `hs.chooser` object</li></ul>          |
 
 #### [choices](#choices)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:choices(choices) -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:choices(choices) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the choices for a chooser                                                                                         |
@@ -72,7 +72,7 @@ Notes:
 | **Notes**                                            | <ul><li>The table of choices (be it provided statically, or returned by the callback) must contain at least the following keys for each choice:</li><li> text - A string that will be shown as the main text of the choice</li><li>Each choice may also optionally contain the following keys:</li><li> subText - A string that will be shown underneath the main text of the choice</li><li> image - An `hs.image` image object that will be displayed next to the choice</li><li>Any other keys/values in each choice table will be retained by the chooser and returned to the completion callback when a choice is made. This is useful for storing UUIDs or other non-user-facing information, however, it is important to note that you should not store userdata objects in the table - it is run through internal conversion functions, so only basic Lua types should be stored.</li><li>If a function is given, it will be called once, when the chooser window is displayed. The results are then cached until this method is called again, or `hs.chooser:refreshChoicesCallback()` is called.</li></ul>                |
 
 #### [delete](#delete)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:delete()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:delete()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Deletes a chooser                                                                                         |
@@ -80,7 +80,7 @@ Notes:
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [fgColor](#fgcolor)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:fgColor(color) -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:fgColor(color) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the foreground color of the chooser                                                                                         |
@@ -88,7 +88,7 @@ Notes:
 | **Returns**                                          | <ul><li>The `hs.chooser` object or a color table</li></ul>          |
 
 #### [hide](#hide)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:hide() -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:hide() -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the chooser                                                                                         |
@@ -96,7 +96,7 @@ Notes:
 | **Returns**                                          | <ul><li>The `hs.chooser` object</li></ul>          |
 
 #### [isVisible](#isvisible)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:isVisible() -> boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:isVisible() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if the chooser is currently displayed                                                                                         |
@@ -104,7 +104,7 @@ Notes:
 | **Returns**                                          | <ul><li>A boolean, true if the chooser is displayed on screen, false if not</li></ul>          |
 
 #### [query](#query)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:query([queryString]) -> hs.chooser object or string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:query([queryString]) -> hs.chooser object or string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets/gets the search string                                                                                         |
@@ -113,7 +113,7 @@ Notes:
 | **Notes**                                            | <ul><li>You can provide an explicit nil or empty string to clear the current query string.</li></ul>                |
 
 #### [queryChangedCallback](#querychangedcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:queryChangedCallback([fn]) -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:queryChangedCallback([fn]) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets/clears a callback for when the search query changes                                                                                         |
@@ -122,7 +122,7 @@ Notes:
 | **Notes**                                            | <ul><li>As the user is typing, the callback function will be called for every keypress. You may wish to do filtering on each call, or you may wish to use a delayed `hs.timer` object to only react when they have finished typing.</li><li>The callback function should accept a single argument:</li><li> A string containing the new search query</li></ul>                |
 
 #### [refreshChoicesCallback](#refreshchoicescallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:refreshChoicesCallback() -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:refreshChoicesCallback() -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Refreshes the choices data from a callback                                                                                         |
@@ -131,7 +131,7 @@ Notes:
 | **Notes**                                            | <ul><li>This method will do nothing if you have not set a function with `hs.chooser:choices()`</li></ul>                |
 
 #### [rightClickCallback](#rightclickcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:rightClickCallback([fn]) -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:rightClickCallback([fn]) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets/clears a callback for right clicking on choices                                                                                         |
@@ -139,7 +139,7 @@ Notes:
 | **Notes**                                            | <ul><li> The callback may accept one argument, the row the right click occurred in or 0 if there is currently no selectable row where the right click occurred. To determine the location of the mouse pointer at the right click, see `hs.mouse`.</li><li> To display a context menu, see `hs.menubar`, specifically the `:popupMenu()` method</li></ul>                |
 
 #### [rows](#rows)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:rows([numRows]) -> hs.chooser object or number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:rows([numRows]) -> hs.chooser object or number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets/Sets the number of rows that will be shown                                                                                         |
@@ -147,7 +147,7 @@ Notes:
 | **Returns**                                          | <ul><li>The `hs.chooser` object or a number</li></ul>          |
 
 #### [searchSubText](#searchsubtext)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:searchSubText([searchSubText]) -> hs.chooser object or boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:searchSubText([searchSubText]) -> hs.chooser object or boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets/Sets whether the chooser should search in the sub-text of each item                                                                                         |
@@ -156,7 +156,7 @@ Notes:
 | **Notes**                                            | <ul><li>This should be used before a chooser has been displayed</li></ul>                |
 
 #### [select](#select)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:select([row]) -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:select([row]) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Closes the chooser by selecting the specified row, or the currently selected row if not given                                                                                         |
@@ -164,7 +164,7 @@ Notes:
 | **Returns**                                          | <ul><li>The `hs.chooser` object</li></ul>          |
 
 #### [selectedRow](#selectedrow)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:selectedRow([row]) -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:selectedRow([row]) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the currently selected row                                                                                         |
@@ -172,7 +172,7 @@ Notes:
 | **Returns**                                          | <ul><li>If an argument is provided, returns the hs.chooser object; otherwise returns a number containing the row currently selected (i.e. the one highlighted in the UI)</li></ul>          |
 
 #### [selectedRowContents](#selectedrowcontents)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:selectedRowContents([row]) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:selectedRowContents([row]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the contents of the currently selected or specified row                                                                                         |
@@ -180,7 +180,7 @@ Notes:
 | **Returns**                                          | <ul><li>a table containing whatever information was supplied for the row currently selected or an empty table if no row is selected or the specified row does not exist.</li></ul>          |
 
 #### [show](#show)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:show() -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:show() -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Displays the chooser                                                                                         |
@@ -188,7 +188,7 @@ Notes:
 | **Returns**                                          | <ul><li>The hs.chooser object</li></ul>          |
 
 #### [showCallback](#showcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:showCallback([fn]) -> hs.chooser object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:showCallback([fn]) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets/clears a callback for when the chooser window is shown                                                                                         |
@@ -196,7 +196,7 @@ Notes:
 | **Returns**                                          | <ul><li>The hs.chooser object</li></ul>          |
 
 #### [subTextColor](#subtextcolor)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:subTextColor(color) -> hs.chooser object or hs.color object` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:subTextColor(color) -> hs.chooser object or hs.color object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the sub-text color of the chooser                                                                                         |
@@ -204,7 +204,7 @@ Notes:
 | **Returns**                                          | <ul><li>The `hs.chooser` object or a color table</li></ul>          |
 
 #### [width](#width)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.chooser:width([percent]) -> hs.chooser object or number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:width([percent]) -> hs.chooser object or number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets/Sets the width of the chooser                                                                                         |

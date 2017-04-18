@@ -52,7 +52,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 ### Constants
 
 #### [flags[]](#flags[])
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability.flags[]` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.flags[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      |                                                                                          |
@@ -60,7 +60,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 ### Constructors
 
 #### [forAddress](#foraddress)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability.forAddress(address) -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.forAddress(address) -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a reachability object for the specified network address.                                                                                         |
@@ -69,7 +69,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>this object will reflect reachability status for any interface available on the computer.  To check for reachability from a specific interface, use [hs.network.reachability.forAddressPair](#addressPair).</li></ul>                |
 
 #### [forAddressPair](#foraddresspair)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability.forAddressPair(localAddress, remoteAddress) -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.forAddressPair(localAddress, remoteAddress) -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a reachability object for the specified network address from the specified localAddress.                                                                                         |
@@ -78,7 +78,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>this object will reflect reachability status for a specific interface on the computer.  To check for reachability from any interface, use [hs.network.reachability.forAddress](#address).</li><li>this constructor can be used to test for a specific local network.</li></ul>                |
 
 #### [forHostName](#forhostname)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability.forHostName(hostName) -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.forHostName(hostName) -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a reachability object for the specified host.                                                                                         |
@@ -87,7 +87,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>this object will reflect reachability status for any interface available on the computer.</li><li>this constructor relies on the hostname being resolvable, possibly through DNS, Bonjour, locally defined, etc.</li></ul>                |
 
 #### [internet](#internet)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability.internet() -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.internet() -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a reachability object for testing internet access                                                                                         |
@@ -96,7 +96,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>This is equivalent to `hs.network.reachability.forAddress("0.0.0.0")`</li><li>This constructor assumes that a default route for IPv4 traffic is sufficient to determine internet access.  If you are on an IPv6 only network which does not also provide IPv4 route mapping, you should probably use something along the lines of `hs.network.reachability.forAddress("::")` instead.</li></ul>                |
 
 #### [linkLocal](#linklocal)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability.linkLocal() -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.linkLocal() -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a reachability object for testing IPv4 link local networking                                                                                         |
@@ -107,7 +107,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 ### Methods
 
 #### [setCallback](#setcallback)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability:setCallback(function | nil) -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability:setCallback(function | nil) -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or remove the callback function for a reachability object                                                                                         |
@@ -116,7 +116,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>The callback function will be invoked each time the status for the given reachability object changes.  The callback function should expect 2 arguments, the reachability object itself and a numeric representation of the reachability flags, and should not return anything.</li><li>This method just sets the callback function.  You can start or stop the watcher with [hs.network.reachability:start](#start) or [hs.network.reachability:stop](#stop)</li></ul>                |
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability:start() -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability:start() -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts watching the reachability object for changes and invokes the callback function (if any) when a change occurs.                                                                                         |
@@ -125,7 +125,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>The callback function should be specified with [hs.network.reachability:setCallback](#setCallback).</li></ul>                |
 
 #### [status](#status)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability:status() -> number` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability:status() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the reachability status for the object                                                                                         |
@@ -134,7 +134,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>The numeric representation is made up from a combination of the flags defined in [hs.network.reachability.flags](#flags).</li></ul>                |
 
 #### [statusString](#statusstring)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability:statusString() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability:statusString() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a string representation of the reachability status for the object                                                                                         |
@@ -143,7 +143,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | **Notes**                                            | <ul><li>This is included primarily for debugging, but may be more useful when you just want a quick look at the reachability status for display or testing.</li><li>The string will be made up of the following flags:</li><li>  't'|'-' indicates if the destination is reachable through a transient connection</li><li>  'R'|'-' indicates if the destination is reachable</li><li>  'c'|'-' indicates that a connection of some sort is required for the destination to be reachable</li><li>  'C'|'-' indicates if the destination requires a connection which will be initiated when traffic to the destination is present</li><li>  'i'|'-' indicates if the destination requires a connection which will require user activity to initiate</li><li>  'D'|'-' indicates if the destination requires a connection which will be initiated on demand through the CFSocketStream interface</li><li>  'l'|'-' indicates if the destination is actually a local address</li><li>  'd'|'-' indicates if the destination is directly connected</li></ul>                |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.network.reachability:stop() -> reachabilityObject` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability:stop() -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops watching the reachability object for changes.                                                                                         |

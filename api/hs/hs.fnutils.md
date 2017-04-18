@@ -33,7 +33,7 @@ Functional programming utility functions
 ### Functions
 
 #### [concat](#concat)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.concat(table1, table2)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.concat(table1, table2)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Join two tables together                                                                                         |
@@ -42,7 +42,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>table2 cannot be a sparse table, see [http://www.luafaq.org/gotchas.html#T6.4](http://www.luafaq.org/gotchas.html#T6.4)</li></ul>                |
 
 #### [contains](#contains)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.contains(table, element) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.contains(table, element) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Determine if a table contains a given object                                                                                         |
@@ -50,7 +50,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>A boolean, true if the element could be found in the table, otherwise false</li></ul>          |
 
 #### [copy](#copy)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.copy(table) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.copy(table) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Copy a table using `pairs()`                                                                                         |
@@ -58,7 +58,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>A new table containing the same data as the input table</li></ul>          |
 
 #### [each](#each)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.each(table, fn)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.each(table, fn)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Execute a function across a table (in arbitrary order), and discard the results                                                                                         |
@@ -66,7 +66,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [every](#every)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.every(table, fn) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.every(table, fn) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns true if the application of fn on every entry in table is true.                                                                                         |
@@ -74,7 +74,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>True if the application of fn on every element of the table is true</li><li>False if the function returns `false` for any element of the table.  Note that testing stops when the first false return is detected.</li></ul>          |
 
 #### [filter](#filter)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.filter(table, fn) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.filter(table, fn) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Filter a table by running a predicate function on its elements (in arbitrary order)                                                                                         |
@@ -83,7 +83,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>If `table` is a pure array table (list-like) without "holes", use `hs.fnutils.ifilter()` if you need guaranteed in-order</li><li> processing and for better performance.</li></ul>                |
 
 #### [find](#find)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.find(table, fn) -> element` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.find(table, fn) -> element` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Execute a function across a table and return the first element where that function returns true                                                                                         |
@@ -91,7 +91,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>The element of the supplied table that first caused fn to return true</li></ul>          |
 
 #### [ieach](#ieach)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.ieach(list, fn)` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.ieach(list, fn)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Execute a function across a list-like table in order, and discard the results                                                                                         |
@@ -99,7 +99,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [ifilter](#ifilter)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.ifilter(list, fn) -> list` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.ifilter(list, fn) -> list` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Filter a list-like table by running a predicate function on its elements in order                                                                                         |
@@ -108,7 +108,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>If `list` has "holes", all elements after the first hole will be lost, as the table is iterated over with `ipairs`;</li><li>   use `hs.fnutils.map()` if your table has holes</li></ul>                |
 
 #### [imap](#imap)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.imap(list, fn) -> list` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.imap(list, fn) -> list` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Execute a function across a list-like table in order, and collect the results                                                                                         |
@@ -117,7 +117,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>If `list` has "holes", all elements after the first hole will be lost, as the table is iterated over with `ipairs`;</li><li>   use `hs.fnutils.map()` if your table has holes</li></ul>                |
 
 #### [indexOf](#indexof)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.indexOf(table, element) -> number or nil` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.indexOf(table, element) -> number or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Determine the location in a table of a given object                                                                                         |
@@ -125,7 +125,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>A number containing the index of the element in the table, or nil if it could not be found</li></ul>          |
 
 #### [map](#map)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.map(table, fn) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.map(table, fn) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Execute a function across a table (in arbitrary order) and collect the results                                                                                         |
@@ -134,7 +134,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>If `table` is a pure array table (list-like) without "holes", use `hs.fnutils.imap()` if you need guaranteed in-order</li><li> processing and for better performance.</li></ul>                |
 
 #### [mapCat](#mapcat)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.mapCat(table, fn) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.mapCat(table, fn) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Execute, across a table, a function that outputs tables, and concatenate all of those tables together                                                                                         |
@@ -142,7 +142,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>A table containing the concatenated results of calling fn(element) for every element in the supplied table</li></ul>          |
 
 #### [reduce](#reduce)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.reduce(table, fn) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.reduce(table, fn) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Reduce a table to a single element, using a function                                                                                         |
@@ -151,7 +151,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>table cannot be a sparse table, see [http://www.luafaq.org/gotchas.html#T6.4](http://www.luafaq.org/gotchas.html#T6.4)</li><li>The first iteration of the reducer will call fn with the first and second elements of the table. The second iteration will call fn with the result of the first iteration, and the third element. This repeats until there is only one element left</li></ul>                |
 
 #### [some](#some)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.some(table, fn) -> bool` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.some(table, fn) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns true if the application of fn on entries in table are true for at least one of the members.                                                                                         |
@@ -159,7 +159,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>True if the application of fn on any element of the table is true.  Note that testing stops when the first true return is detected.</li><li>False if the function returns `false` for all elements of the table.</li></ul>          |
 
 #### [split](#split)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.split(sString, sSeparator [, nMax] [, bPlain]) -> { array }` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.split(sString, sSeparator [, nMax] [, bPlain]) -> { array }` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Convert string to an array of strings, breaking at the specified separator.                                                                                         |
@@ -170,7 +170,7 @@ Functional programming utility functions
 ### Constructors
 
 #### [cycle](#cycle)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.cycle(table) -> fn()` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.cycle(table) -> fn()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a function that repeatedly iterates a table                                                                                         |
@@ -179,7 +179,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>table cannot be a sparse table, see [http://www.luafaq.org/gotchas.html#T6.4](http://www.luafaq.org/gotchas.html#T6.4)</li><li>An example usage:</li><li>    ```lua</li><li>    f = cycle({4, 5, 6})</li><li>    {f(), f(), f(), f(), f(), f(), f()} == {4, 5, 6, 4, 5, 6, 4}</li><li>    ```</li></ul>                |
 
 #### [partial](#partial)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.partial(fn, ...) -> fn'` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.partial(fn, ...) -> fn'` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a new function which takes the provided arguments and pre-applies them as the initial arguments to the provided function.  When the new function is later invoked with additional arguments, they are appended to the end of the initial list given and the complete list of arguments is finally passed into the provided function and its result returned.                                                                                         |
@@ -188,7 +188,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>This is best understood with an example which you can test in the Hammerspoon console:</li></ul>                |
 
 #### [sequence](#sequence)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.sequence(...) -> fn` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sequence(...) -> fn` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a function that will collect the result of a series of functions into a table                                                                                         |
@@ -196,7 +196,7 @@ Functional programming utility functions
 | **Returns**                                          | <ul><li>A function that, when called, will call all of the functions passed to this constructor. The output of these functions will be collected together and returned.</li></ul>          |
 
 #### [sortByKeyValues](#sortbykeyvalues)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.sortByKeyValues(table[ , function]) -> function` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sortByKeyValues(table[ , function]) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Iterator for retrieving elements from a table of key-value pairs in the order of the values.                                                                                         |
@@ -205,7 +205,7 @@ Functional programming utility functions
 | **Notes**                                            | <ul><li>Similar to Perl's `sort { $hash{$a} <=> $hash{$b} } keys %hash`</li><li>Iterators are used in looping constructs like `for`:</li><li>  `for i,v in hs.fnutils.sortByKeyValues(t[, f]) do ... end`</li><li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.</li><li>  e.g. `function(m,n) return not (m < n) end` would result in reverse alphabetic order.</li><li>  See _Programming_In_Lua,_3rd_ed_, page 52 for a more complete discussion.</li><li>  The default sort is to compare values directly, if they are of the same type, or as their tostring() versions, if the value types differ:</li><li>    function(m,n) if type(m) ~= type(n) then return tostring(m) < tostring(n) else return m < n end</li></ul>                |
 
 #### [sortByKeys](#sortbykeys)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.fnutils.sortByKeys(table[ , function]) -> function` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sortByKeys(table[ , function]) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Iterator for retrieving elements from a table of key-value pairs in the order of the keys.                                                                                         |

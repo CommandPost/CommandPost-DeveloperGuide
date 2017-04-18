@@ -61,13 +61,13 @@ You can start this web server by typing the following into your Hammerspoon cons
 ### Constants
 
 #### [dateFormatString](#dateformatstring)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.dateFormatString` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.dateFormatString` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A format string, usable with `os.date`, which will display a date in the format expected for HTTP communications as described in RFC 822, updated by RFC 1123.                                                                                         |
 
 #### [statusCodes](#statuscodes)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.statusCodes` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.statusCodes` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | HTTP Response Status Codes                                                                                         |
@@ -76,31 +76,31 @@ You can start this web server by typing the following into your Hammerspoon cons
 ### Variables
 
 #### [_accessLog](#_accesslog)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb._accessLog` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb._accessLog` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Accessed as `self._accessLog`.  If query logging is enabled for the web server, an Apache style common log entry will be appended to this string for each request.  See [hs.httpserver.hsminweb:queryLogging](#queryLogging).                                                                                         |
 
 #### [_errorHandlers](#_errorhandlers)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb._errorHandlers` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb._errorHandlers` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Accessed as `self._errorHandlers[errorCode]`.  A table whose keyed entries specify the function to generate the error response page for an HTTP error.                                                                                         |
 
 #### [_serverAdmin](#_serveradmin)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb._serverAdmin` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb._serverAdmin` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Accessed as `self._serverAdmin`.  A string containing the administrator for the web server.  Defaults to the currently logged in user's short form username and the computer's localized name as returned by `hs.host.localizedName()` (e.g. "user@computer").                                                                                         |
 
 #### [_supportMethods](#_supportmethods)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb._supportMethods` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb._supportMethods` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Accessed as `self._supportMethods[method]`.  A table whose keyed entries specify whether or not a specified HTTP method is supported by this server.                                                                                         |
 
 #### [log](#log)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.log` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.log` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | The `hs.logger` instance for the `hs.httpserver.hsminweb` module. See the documentation for `hs.logger` for more information.                                                                                         |
@@ -108,7 +108,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 ### Functions
 
 #### [formattedDate](#formatteddate)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.formattedDate([date]) -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.formattedDate([date]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the current or specified time in the format expected for HTTP communications as described in RFC 822, updated by RFC 1123.                                                                                         |
@@ -116,7 +116,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Returns**                                          | <ul><li>the time indicated as a string in the format expected for HTTP communications as described in RFC 822, updated by RFC 1123.</li></ul>          |
 
 #### [urlParts](#urlparts)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.urlParts(url) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.urlParts(url) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Parse the specified URL into it's constituant parts.                                                                                         |
@@ -127,7 +127,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 ### Constructors
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb.new([documentRoot]) -> hsminwebTable` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.new([documentRoot]) -> hsminwebTable` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Create a new hsminweb table object representing a Hammerspoon Web Server.                                                                                         |
@@ -138,7 +138,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 ### Methods
 
 #### [accessList](#accesslist)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:accessList([table]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:accessList([table]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the access-list table for the hsminweb web server                                                                                         |
@@ -147,7 +147,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>The access-list feature works by comparing the request headers against a list of tests which either accept or reject the request.  If no access list is set (i.e. it is assigned a value of `nil`), then all requests are served.  If a table is passed into this method, then any request which is not explicitly accepted by one of the tests provided is rejected (i.e. there is an implicit "reject" at the end of the list).</li><li>The access-list table is a list of tests which are evaluated in order.  The first test which matches a given request determines whether or not the request is accepted or rejected.</li><li>Each entry in the access-list table is also a table with the following format:</li><li>  { 'header', 'value', isPattern, isAccepted }</li><li>    header     - a string value matching the name of a header.  While the header name must match exactly, the comparison is case-insensitive (i.e. "X-Remote-addr" and "x-remote-addr" will both match the actual header name used, which is "X-Remote-Addr").</li><li>    value      - a string value specifying the value to compare the header key's value to.</li><li>    isPattern  - a boolean indicating whether or not the header key's value should be compared to `value` as a pattern match (true) -- see Lua documentation 6.4.1, `help.lua._man._6_4_1` in the console, or as an exact match (false)</li><li>    isAccepted - a boolean indicating whether or not a match should be accepted (true) or rejected (false)</li><li>  A special entry of the form { '\*', '\*', '\*', true } accepts all further requests and can be used as the final entry if you wish for the access list to function as a list of requests to reject, but to accept any requests which do not match a previous test.</li><li>  A special entry of the form { '\*', '\*', '\*', false } rejects all further requests and can be used as the final entry if you wish for the access list to function as a list of requests to accept, but to reject any requests which do not match a previous test.  This is the implicit "default" final test if a table is assigned with the access-list method and does not actually need to be specified, but is included for completeness.</li><li>  Note that any entry after an entry in which the first two parameters are equal to '\*' will never actually be used.</li></ul>                |
 
 #### [allowDirectory](#allowdirectory)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:allowDirectory([flag]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:allowDirectory([flag]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the whether or not a directory index is returned when the requested URL specifies a directory and no file matching an entry in the directory indexes table is found.                                                                                         |
@@ -156,7 +156,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>if this value is false, then an attempt to retrieve a URL specifying a directory that does not contain a default file as identified by one of the entries in the [hs.httpserver.hsminweb:directoryIndex](#directoryIndex) list will result in a "403.2" error.</li></ul>                |
 
 #### [bonjour](#bonjour)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:bonjour([flag]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:bonjour([flag]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the whether or not the web server should advertise itself via Bonjour when it is running.                                                                                         |
@@ -165,7 +165,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>this flag can only be changed when the server is not running (i.e. the [hs.httpserver.hsminweb:start](#start) method has not yet been called, or the [hs.httpserver.hsminweb:stop](#stop) method is called first.)</li></ul>                |
 
 #### [cgiEnabled](#cgienabled)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:cgiEnabled([flag]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:cgiEnabled([flag]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the whether or not CGI file execution is enabled.                                                                                         |
@@ -173,7 +173,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Returns**                                          | <ul><li>the hsminwebTable object if a parameter is provided, or the current value if no parameter is specified.</li></ul>          |
 
 #### [cgiExtensions](#cgiextensions)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:cgiExtensions([table]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:cgiExtensions([table]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the file extensions which identify files which should be executed as CGI scripts to provide the results to an HTTP request.                                                                                         |
@@ -182,7 +182,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>this list is ignored if [hs.httpserver.hsminweb:cgiEnabled](#cgiEnabled) is not also set to true.</li></ul>                |
 
 #### [directoryIndex](#directoryindex)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:directoryIndex([table]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:directoryIndex([table]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the file names to look for when the requested URL specifies a directory.                                                                                         |
@@ -191,7 +191,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>Files listed in this table are checked in order, so the first matched is served.  If no file match occurs, then the server will return a generated list of the files in the directory, or a "403.2" error, depending upon the value controlled by [hs.httpserver.hsminweb:allowDirectory](#allowDirectory).</li></ul>                |
 
 #### [dnsLookup](#dnslookup)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:dnsLookup([flag]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:dnsLookup([flag]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the whether or not DNS lookups are performed.                                                                                         |
@@ -200,7 +200,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>DNS lookups can be time consuming or even block Hammerspoon for a short time, so they are disabled by default.</li><li>Currently DNS lookups are (optionally) performed for CGI scripts, but may be added for other purposes in the future (logging, etc.).</li></ul>                |
 
 #### [documentRoot](#documentroot)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:documentRoot([path]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:documentRoot([path]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the document root for the web server.                                                                                         |
@@ -208,7 +208,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Returns**                                          | <ul><li>the hsminwebTable object if a parameter is provided, or the current value if no parameter is specified.</li></ul>          |
 
 #### [interface](#interface)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:interface([interface]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:interface([interface]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the network interface that the hsminweb web server will listen on                                                                                         |
@@ -216,7 +216,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>See `hs.httpserver.setInterface` for a description of valid values that can be specified as the `interface` argument to this method.</li><li>the interface can only be specified before the hsminweb web server has been started.  If you wish to change the listening interface for a running web server, you must stop it with [hs.httpserver.hsminweb:stop](#stop) before invoking this method and then restart it with [hs.httpserver.hsminweb:start](#start).</li></ul>                |
 
 #### [luaTemplateExtension](#luatemplateextension)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:luaTemplateExtension([string]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:luaTemplateExtension([string]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the extension of files which contain Lua code which should be executed within Hammerspoon to provide the results to an HTTP request.                                                                                         |
@@ -225,7 +225,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>This extension is checked after the extensions given to [hs.httpserver.hsminweb:cgiExtensions](#cgiExtensions); this means that if the same extension set by this method is also in the CGI extensions list, then the file will be interpreted as a CGI script and ignore this setting.</li></ul>                |
 
 #### [maxBodySize](#maxbodysize)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:maxBodySize([size]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:maxBodySize([size]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the maximum body size for an HTTP request                                                                                         |
@@ -234,7 +234,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>Because the Hammerspoon http server processes incoming requests completely in memory, this method puts a limit on the maximum size for a POST or PUT request.</li><li>If the request body excedes this size, `hs.httpserver` will respond with a status code of 405 for the method before this module ever receives the request.</li></ul>                |
 
 #### [name](#name)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:name([name]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:name([name]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the name the web server uses in Bonjour advertisement when the web server is running.                                                                                         |
@@ -242,7 +242,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Returns**                                          | <ul><li>the hsminwebTable object if a parameter is provided, or the current value if no parameter is specified.</li></ul>          |
 
 #### [password](#password)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:password([password]) -> hsminwebTable | boolean` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:password([password]) -> hsminwebTable | boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set a password for the hsminweb web server, or return a boolean indicating whether or not a password is currently set for the web server.                                                                                         |
@@ -251,7 +251,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>the password, if set, is server wide and causes the server to use the Basic authentication scheme with an empty string for the username.</li><li>this module is an extension to the Hammerspoon core module `hs.httpserver`, so it has the same limitations regarding server passwords. See the documentation for `hs.httpserver.setPassword` (`help.hs.httpserver.setPassword` in the Hammerspoon console).</li></ul>                |
 
 #### [port](#port)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:port([port]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:port([port]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the name the port the web server listens on                                                                                         |
@@ -260,7 +260,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>due to security restrictions enforced by OS X, the port must be a number greater than 1023</li></ul>                |
 
 #### [queryLogging](#querylogging)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:queryLogging([flag]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:queryLogging([flag]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the whether or not requests to this web server are logged.                                                                                         |
@@ -269,7 +269,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>If logging is enabled, an Apache common style log entry is appended to [self._accesslog](#_accessLog) for each request made to the web server.</li><li>Error messages during content generation are always logged to the Hammerspoon console via the `hs.logger` instance saved to [hs.httpserver.hsminweb.log](#log).</li></ul>                |
 
 #### [scriptTimeout](#scripttimeout)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:scriptTimeout([integer]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:scriptTimeout([integer]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the timeout for a CGI script                                                                                         |
@@ -278,7 +278,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>With the current functionality available in `hs.httpserver`, any script which is expected to return content for an HTTP request must run in a blocking manner -- this means that no other Hammerspoon activity can be occurring while the script is executing.  This parameter lets you set the maximum amount of time such a script can hold things up before being terminated.</li><li>An alternative implementation of at least some of the methods available in `hs.httpserver` is being considered which may make it possible to use `hs.task` for these scripts, which would alleviate this blocking behavior.  However, even if this is addressed, a timeout for scripts is still desirable so that a client making a request doesn't sit around waiting forever if a script is malformed.</li></ul>                |
 
 #### [ssl](#ssl)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:ssl([flag]) -> hsminwebTable | current-value` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:ssl([flag]) -> hsminwebTable | current-value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the whether or not the web server utilizes SSL for HTTP request and response communications.                                                                                         |
@@ -287,7 +287,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Notes**                                            | <ul><li>this flag can only be changed when the server is not running (i.e. the [hs.httpserver.hsminweb:start](#start) method has not yet been called, or the [hs.httpserver.hsminweb:stop](#stop) method is called first.)</li><li>this module is an extension to the Hammerspoon core module `hs.httpserver`, so it has the same considerations regarding SSL. See the documentation for `hs.httpserver.new` (`help.hs.httpserver.new` in the Hammerspoon console).</li></ul>                |
 
 #### [start](#start)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:start() -> hsminwebTable` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:start() -> hsminwebTable` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Start serving pages for the hsminweb web server.                                                                                         |
@@ -295,7 +295,7 @@ You can start this web server by typing the following into your Hammerspoon cons
 | **Returns**                                          | <ul><li>the hsminWebTable object</li></ul>          |
 
 #### [stop](#stop)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`hs.httpserver.hsminweb:stop() -> hsminwebTable` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb:stop() -> hsminwebTable` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stop serving pages for the hsminweb web server.                                                                                         |

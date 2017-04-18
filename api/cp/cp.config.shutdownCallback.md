@@ -16,7 +16,7 @@ Shutdown Callback Module.
 ### Methods
 
 #### [callbackFn](#callbackfn)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.shutdownCallback:callbackFn() -> function` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.shutdownCallback:callbackFn() -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the callbackFn of the current Shutdown Callback                                                                                         |
@@ -24,7 +24,7 @@ Shutdown Callback Module.
 | **Returns**                                          | <ul><li>The callbackFn of the current Shutdown Callback</li></ul>          |
 
 #### [get](#get)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.shutdownCallback:get(id) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.shutdownCallback:get(id) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new Shutdown Callback.                                                                                         |
@@ -32,7 +32,7 @@ Shutdown Callback Module.
 | **Returns**                                          | <ul><li>table containing the callback</li></ul>          |
 
 #### [getAll](#getall)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.shutdownCallback:getAll() -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.shutdownCallback:getAll() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns all of the created Shutdown Callbacks                                                                                         |
@@ -40,7 +40,7 @@ Shutdown Callback Module.
 | **Returns**                                          | <ul><li>table containing all of the created callbacks</li></ul>          |
 
 #### [id](#id)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.shutdownCallback:id() -> string` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.shutdownCallback:id() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ID of the current Shutdown Callback                                                                                         |
@@ -48,7 +48,7 @@ Shutdown Callback Module.
 | **Returns**                                          | <ul><li>The ID of the current Shutdown Callback as a `string`</li></ul>          |
 
 #### [new](#new)
-| <span style="text-align: left;">**Signature**</span> | <span style="text-align: left;">`cp.config.shutdownCallback:new(id, callbackFn) -> table` </span>                                                |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.shutdownCallback:new(id, callbackFn) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new Shutdown Callback.                                                                                         |
