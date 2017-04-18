@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.preferences.panels.plugins
+# [docs](index.md) » core.preferences.panels.plugins
 ---
 
 Plugins Preferences Panel
@@ -7,7 +7,7 @@ Plugins Preferences Panel
 * Constants - Useful values which cannot be changed
  * [SETTINGS_DISABLED](#SETTINGS_DISABLED)
 * Functions - API calls offered directly by the extension
- * [plugins](#plugins)
+ * [init](#init)
 
 ## API Documentation
 
@@ -15,17 +15,17 @@ Plugins Preferences Panel
 
 | [SETTINGS_DISABLED](#SETTINGS_DISABLED)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Signature**                               | `plugins.core.preferences.panels.plugins.SETTINGS_DISABLED`                                                                    |
+| **Signature**                               | `core.preferences.panels.plugins.SETTINGS_DISABLED`                                                                    |
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | Plugins Disabled                                                                     |
 
 ### Functions
 
-| [plugins](#plugins)         |                                                                                     |
+| [init](#init)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Signature**                               | `plugins.core.preferences.panels.plugins() -> none`                                                                    |
+| **Signature**                               | `core.preferences.panels.plugins.init() -> none`                                                                    |
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Initialises the module.                                                                     |
-| **Parameters**                              | <ul><li>deps - Dependencies Table</li></ul> |
+| **Parameters**                              | <ul><li>deps - The plugin dependencies.</li><li>env	- The plugin environment.</li></ul> |
 | **Returns**                                 | <ul><li>None</li></ul>          |
 

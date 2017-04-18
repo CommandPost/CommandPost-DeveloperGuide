@@ -7,9 +7,9 @@ Advanced Preferences Panel.
 * Functions - API calls offered directly by the extension
  * [getDeveloperMode](#getDeveloperMode)
  * [openErrorLog](#openErrorLog)
- * [resetSettings](#resetSettings)
  * [toggleCommandLineTool](#toggleCommandLineTool)
  * [toggleDeveloperMode](#toggleDeveloperMode)
+ * [trashPreferences](#trashPreferences)
 
 ## API Documentation
 
@@ -31,14 +31,6 @@ Advanced Preferences Panel.
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>None</li></ul>          |
 
-| [resetSettings](#resetSettings)         |                                                                                     |
-| --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Signature**                               | `plugins.core.preferences.advanced.resetSettings() -> none`                                                                    |
-| **Type**                                    | Function                                                                     |
-| **Description**                             | Resets all of the CommandPost Preferences to their default values.                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>None</li></ul>          |
-
 | [toggleCommandLineTool](#toggleCommandLineTool)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
 | **Signature**                               | `plugins.core.preferences.advanced.toggleCommandLineTool() -> none`                                                                    |
@@ -52,6 +44,14 @@ Advanced Preferences Panel.
 | **Signature**                               | `plugins.core.preferences.advanced.toggleDeveloperMode() -> none`                                                                    |
 | **Type**                                    | Function                                                                     |
 | **Description**                             | Toggles the Developer Mode.                                                                     |
+| **Parameters**                              | <ul><li>None</li></ul> |
+| **Returns**                                 | <ul><li>None</li></ul>          |
+
+| [trashPreferences](#trashPreferences)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `plugins.core.preferences.advanced.trashPreferences() -> none`                                                                    |
+| **Type**                                    | Function                                                                     |
+| **Description**                             | Resets all of the CommandPost Preferences to their default values.                                                                     |
 | **Parameters**                              | <ul><li>None</li></ul> |
 | **Returns**                                 | <ul><li>None</li></ul>          |
 

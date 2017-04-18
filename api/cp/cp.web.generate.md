@@ -9,7 +9,7 @@ Functions for Generating HTML UI Items
  * [checkbox](#checkbox)
  * [dropdown](#dropdown)
  * [heading](#heading)
- * [init](#init)
+ * [javascript](#javascript)
  * [setWebviewLabel](#setWebviewLabel)
  * [text](#text)
 
@@ -49,13 +49,13 @@ Functions for Generating HTML UI Items
 | **Parameters**                              | <ul><li>data - Table containing the data you want to display on the Checkbox</li></ul> |
 | **Returns**                                 | <ul><li>String containing the HTML</li></ul>          |
 
-| [init](#init)         |                                                                                     |
+| [javascript](#javascript)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
-| **Signature**                               | `cp.web.generate.init() -> none`                                                                    |
+| **Signature**                               | `cp.web.generate.javascript(script, context) -> cp.web.html.block`                                                                    |
 | **Type**                                    | Function                                                                     |
-| **Description**                             | Initialises the module                                                                     |
-| **Parameters**                              | <ul><li>None</li></ul> |
-| **Returns**                                 | <ul><li>Table containing the module</li></ul>          |
+| **Description**                             | Generates a HTML Heading                                                                     |
+| **Parameters**                              | <ul><li>data - Table containing the data you want to display on the Checkbox</li></ul> |
+| **Returns**                                 | <ul><li>String containing the HTML</li></ul>          |
 
 | [setWebviewLabel](#setWebviewLabel)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|

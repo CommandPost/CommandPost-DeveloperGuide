@@ -14,6 +14,7 @@
 ## API Documentation
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
+| [core.preferences.panels.plugins](core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.core.action.manager](plugins.core.action.manager.md)                          | Action Manager Module.     |
 | [plugins.core.commands.commandaction](plugins.core.commands.commandaction.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.core.commands.global](plugins.core.commands.global.md)                          | The 'global' command collection.     |
@@ -29,10 +30,10 @@
 | [plugins.core.preferences.advanced](plugins.core.preferences.advanced.md)                          | Advanced Preferences Panel.     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Panel.     |
+| [plugins.core.preferences.manager.panel](plugins.core.preferences.manager.panel.md)                          | CommandPost Preferences Panel.     |
 | [plugins.core.preferences.panels.advanced](plugins.core.preferences.panels.advanced.md)                          | Advanced Preferences Panel     |
 | [plugins.core.preferences.panels.general](plugins.core.preferences.panels.general.md)                          | General Preferences Panel     |
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
-| [plugins.core.preferences.panels.plugins](plugins.core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.core.preferences.panels.shortcuts](plugins.core.preferences.panels.shortcuts.md)                          | Shortcuts Preferences Panel     |
 | [plugins.core.preferences.panels.webapp](plugins.core.preferences.panels.webapp.md)                          | WebApp Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |

@@ -78,3 +78,4 @@
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and      |
 | [cp.watcher](cp.watcher.md)                          | Watcher Module.     |
 | [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |
+| [cp.web.html](cp.web.html.md)                          | Functions for Generating HTML markup.     |

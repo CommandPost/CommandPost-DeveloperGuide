@@ -22,6 +22,7 @@ Manage CommandPost's constants and settings.
  * [languagePath](#languagePath)
  * [menubarIconPath](#menubarIconPath)
  * [pluginPaths](#pluginPaths)
+ * [privacyPolicyURL](#privacyPolicyURL)
  * [processID](#processID)
  * [scriptPath](#scriptPath)
  * [sourceExtensions](#sourceExtensions)
@@ -110,6 +111,12 @@ Manage CommandPost's constants and settings.
 | **Signature**                               | `cp.config.pluginPaths`                                                                    |
 | **Type**                                    | Constant                                                                     |
 | **Description**                             | Table of Plugins Paths. Earlier entries take precedence.                                                                     |
+
+| [privacyPolicyURL](#privacyPolicyURL)         |                                                                                     |
+| --------------------------------------------|-------------------------------------------------------------------------------------|
+| **Signature**                               | `cp.config.privacyPolicyURL`                                                                    |
+| **Type**                                    | Constant                                                                     |
+| **Description**                             | URL for Privacy Policy                                                                     |
 
 | [processID](#processID)         |                                                                                     |
 | --------------------------------------------|-------------------------------------------------------------------------------------|
