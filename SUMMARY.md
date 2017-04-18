@@ -44,6 +44,7 @@
 * [resty](api/resty/README.md)
 * [semver](api/semver/README.md)
 * [slaxml](api/slaxml/README.md)
+* [touchbar](api/touchbar/README.md)
 
 ## CommandPost API
 
