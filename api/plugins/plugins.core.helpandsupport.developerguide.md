@@ -1,7 +1,7 @@
-# [docs](index.md) » plugins.core.helpandsupport.feedback
+# [docs](index.md) » plugins.core.helpandsupport.developerguide
 ---
 
-Feedback Menu Item.
+Developer Guide Menu Item.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -12,10 +12,10 @@ Feedback Menu Item.
 ### Functions
 
 #### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.helpandsupport.feedback.show() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.helpandsupport.developerguide.show() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Opens CommandPost Credits Window                                                                                         |
+| **Description**                                      | Opens the CommandPost Developer Guide in the Default Browser.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

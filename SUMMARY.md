@@ -49,6 +49,57 @@
 ## CommandPost API
 
 * [cp](api/cp/cp.md)
+	* apple
+		* [compressor](api/cp/cp.compressor.md)
+		* [finalcutpro](api/cp/cp.finalcutpro.md)
+			* [axutils](api/cp/cp.finalcutpro.axutils.md)
+			* cmd
+				* [CommandEditor](api/cp/cp.finalcutpro.cmd.CommandEditor.md)
+			* [destinations](api/cp/cp.finalcutpro.destinations.md)
+			* export
+				* [ExportDialog](api/cp/cp.finalcutpro.export.ExportDialog.md)
+				* [GoToPrompt](api/cp/cp.finalcutpro.export.GoToPrompt.md)
+				* [ReplaceAlert](api/cp/cp.finalcutpro.export.ReplaceAlert.md)
+				* [SaveSheet](api/cp/cp.finalcutpro.export.SaveSheet.md)
+			* import
+				* [MediaImport](api/cp/cp.finalcutpro.import.MediaImport.md)
+			* [keycodes](api/cp/cp.finalcutpro.keycodes.md)
+			* main
+				* [Browser](api/cp/cp.finalcutpro.main.Browser.md)
+				* [ColorBoard](api/cp/cp.finalcutpro.main.ColorBoard.md)
+				* [ColorPucker](api/cp/cp.finalcutpro.main.ColorPucker.md)
+				* [EffectsBrowser](api/cp/cp.finalcutpro.main.EffectsBrowser.md)
+				* [FullScreenWindow](api/cp/cp.finalcutpro.main.FullScreenWindow.md)
+				* [GeneratorsBrowser](api/cp/cp.finalcutpro.main.GeneratorsBrowser.md)
+				* [Inspector](api/cp/cp.finalcutpro.main.Inspector.md)
+				* [LibrariesBrowser](api/cp/cp.finalcutpro.main.LibrariesBrowser.md)
+				* [LibrariesFilmstrip](api/cp/cp.finalcutpro.main.LibrariesFilmstrip.md)
+				* [LibrariesList](api/cp/cp.finalcutpro.main.LibrariesList.md)
+				* [MediaBrowser](api/cp/cp.finalcutpro.main.MediaBrowser.md)
+				* [Playhead](api/cp/cp.finalcutpro.main.Playhead.md)
+				* [PrimaryWindow](api/cp/cp.finalcutpro.main.PrimaryWindow.md)
+				* [SecondaryWindow](api/cp/cp.finalcutpro.main.SecondaryWindow.md)
+				* [Timeline](api/cp/cp.finalcutpro.main.Timeline.md)
+				* [TimelineAppearance](api/cp/cp.finalcutpro.main.TimelineAppearance.md)
+				* [TimelineContents](api/cp/cp.finalcutpro.main.TimelineContents.md)
+				* [TimelineToolbar](api/cp/cp.finalcutpro.main.TimelineToolbar.md)
+				* [Viewer](api/cp/cp.finalcutpro.main.Viewer.md)
+			* [MenuBar](api/cp/cp.finalcutpro.MenuBar.md)
+			* prefs
+				* [ImportPanel](api/cp/cp.finalcutpro.prefs.ImportPanel.md)
+				* [PlaybackPanel](api/cp/cp.finalcutpro.prefs.PlaybackPanel.md)
+				* [PreferencesWindow](api/cp/cp.finalcutpro.prefs.PreferencesWindow.md)
+			* ui
+				* [Alert](api/cp/cp.finalcutpro.ui.Alert.md)
+				* [Button](api/cp/cp.finalcutpro.ui.Button.md)
+				* [CheckBox](api/cp/cp.finalcutpro.ui.CheckBox.md)
+				* [PopUpButton](api/cp/cp.finalcutpro.ui.PopUpButton.md)
+				* [RadioButton](api/cp/cp.finalcutpro.ui.RadioButton.md)
+				* [ScrollArea](api/cp/cp.finalcutpro.ui.ScrollArea.md)
+				* [Slider](api/cp/cp.finalcutpro.ui.Slider.md)
+				* [Table](api/cp/cp.finalcutpro.ui.Table.md)
+				* [TextField](api/cp/cp.finalcutpro.ui.TextField.md)
+				* [WindowWatcher](api/cp/cp.finalcutpro.ui.WindowWatcher.md)
 	* [bench](api/cp/cp.bench.md)
 	* [choices](api/cp/cp.choices.md)
 		* [builder](api/cp/cp.choices.builder.md)
@@ -58,58 +109,11 @@
 		* [shortcut](api/cp/cp.commands.shortcut.md)
 			* [builder](api/cp/cp.commands.shortcut.builder.md)
 	* [config](api/cp/cp.config.md)
+		* [dockIconClickCallback](api/cp/cp.config.dockIconClickCallback.md)
 		* [fileDroppedToDockIconCallback](api/cp/cp.config.fileDroppedToDockIconCallback.md)
 		* [shutdownCallback](api/cp/cp.config.shutdownCallback.md)
 		* [textDroppedToDockIconCallback](api/cp/cp.config.textDroppedToDockIconCallback.md)
 	* [developer](api/cp/cp.developer.md)
-	* [finalcutpro](api/cp/cp.finalcutpro.md)
-		* [axutils](api/cp/cp.finalcutpro.axutils.md)
-		* [cmd.CommandEditor](api/cp/cp.finalcutpro.cmd.CommandEditor.md)
-		* [destinations](api/cp/cp.finalcutpro.destinations.md)
-		* export
-			* [ExportDialog](api/cp/cp.finalcutpro.export.ExportDialog.md)
-			* [GoToPrompt](api/cp/cp.finalcutpro.export.GoToPrompt.md)
-			* [ReplaceAlert](api/cp/cp.finalcutpro.export.ReplaceAlert.md)
-			* [SaveSheet](api/cp/cp.finalcutpro.export.SaveSheet.md)
-		* import
-			* [MediaImport](api/cp/cp.finalcutpro.import.MediaImport.md)
-		* [keycodes](api/cp/cp.finalcutpro.keycodes.md)
-		* main
-			* [Browser](api/cp/cp.finalcutpro.main.Browser.md)
-			* [ColorBoard](api/cp/cp.finalcutpro.main.ColorBoard.md)
-			* [ColorPucker](api/cp/cp.finalcutpro.main.ColorPucker.md)
-			* [EffectsBrowser](api/cp/cp.finalcutpro.main.EffectsBrowser.md)
-			* [FullScreenWindow](api/cp/cp.finalcutpro.main.FullScreenWindow.md)
-			* [GeneratorsBrowser](api/cp/cp.finalcutpro.main.GeneratorsBrowser.md)
-			* [Inspector](api/cp/cp.finalcutpro.main.Inspector.md)
-			* [LibrariesBrowser](api/cp/cp.finalcutpro.main.LibrariesBrowser.md)
-			* [LibrariesFilmstrip](api/cp/cp.finalcutpro.main.LibrariesFilmstrip.md)
-			* [LibrariesList](api/cp/cp.finalcutpro.main.LibrariesList.md)
-			* [MediaBrowser](api/cp/cp.finalcutpro.main.MediaBrowser.md)
-			* [Playhead](api/cp/cp.finalcutpro.main.Playhead.md)
-			* [PrimaryWindow](api/cp/cp.finalcutpro.main.PrimaryWindow.md)
-			* [SecondaryWindow](api/cp/cp.finalcutpro.main.SecondaryWindow.md)
-			* [Timeline](api/cp/cp.finalcutpro.main.Timeline.md)
-			* [TimelineAppearance](api/cp/cp.finalcutpro.main.TimelineAppearance.md)
-			* [TimelineContents](api/cp/cp.finalcutpro.main.TimelineContents.md)
-			* [TimelineToolbar](api/cp/cp.finalcutpro.main.TimelineToolbar.md)
-			* [Viewer](api/cp/cp.finalcutpro.main.Viewer.md)
-		* [MenuBar](api/cp/cp.finalcutpro.MenuBar.md)
-		* prefs
-			* [ImportPanel](api/cp/cp.finalcutpro.prefs.ImportPanel.md)
-			* [PlaybackPanel](api/cp/cp.finalcutpro.prefs.PlaybackPanel.md)
-			* [PreferencesWindow](api/cp/cp.finalcutpro.prefs.PreferencesWindow.md)
-		* ui
-			* [Alert](api/cp/cp.finalcutpro.ui.Alert.md)
-			* [Button](api/cp/cp.finalcutpro.ui.Button.md)
-			* [CheckBox](api/cp/cp.finalcutpro.ui.CheckBox.md)
-			* [PopUpButton](api/cp/cp.finalcutpro.ui.PopUpButton.md)
-			* [RadioButton](api/cp/cp.finalcutpro.ui.RadioButton.md)
-			* [ScrollArea](api/cp/cp.finalcutpro.ui.ScrollArea.md)
-			* [Slider](api/cp/cp.finalcutpro.ui.Slider.md)
-			* [Table](api/cp/cp.finalcutpro.ui.Table.md)
-			* [TextField](api/cp/cp.finalcutpro.ui.TextField.md)
-			* [WindowWatcher](api/cp/cp.finalcutpro.ui.WindowWatcher.md)
 	* [just](api/cp/cp.just.md)
 	* [plist](api/cp/cp.plist.md)
 		* [archiver](api/cp/cp.plist.archiver.md)
@@ -124,7 +128,8 @@
 
 * plugins
 	* core
-		* [action.manager](api/plugins/plugins.core.action.manager.md)
+		* action
+			* [manager](api/plugins/plugins.core.action.manager.md)
 		* commands
 			* [commandaction](api/plugins/plugins.core.commands.commandaction.md)
 			* [global](api/plugins/plugins.core.commands.global.md)
@@ -137,7 +142,7 @@
 			* [bottom](api/plugins/plugins.core.menu.bottom.md)
 			* [helpandsupport](api/plugins/plugins.core.menu.helpandsupport.md)
 			* [manager](api/plugins/plugins.core.menu.manager.md)
-			* [manager.section](api/plugins/plugins.core.menu.manager.section.md)
+				* [section](api/plugins/plugins.core.menu.manager.section.md)
 			* [top](api/plugins/plugins.core.menu.top.md)
 		* preferences
 			* [advanced](api/plugins/plugins.core.preferences.advanced.md)
@@ -172,7 +177,8 @@
 		* [console](api/plugins/plugins.finalcutpro.console.md)
 		* export
 			* [batch](api/plugins/plugins.finalcutpro.export.batch.md)
-		* [fullscreen.shortcuts](api/plugins/plugins.finalcutpro.fullscreen.shortcuts.md)
+		* fullscreen
+			* [shortcuts](api/plugins/plugins.finalcutpro.fullscreen.shortcuts.md)
 		* hacks
 			* [backupinterval](api/plugins/plugins.finalcutpro.hacks.backupinterval.md)
 			* [movingmarkers](api/plugins/plugins.finalcutpro.hacks.movingmarkers.md)
@@ -206,9 +212,11 @@
 			* [touchbar](api/plugins/plugins.finalcutpro.os.touchbar.md)
 			* [voice](api/plugins/plugins.finalcutpro.os.voice.md)
 		* preferences
-			* [panels.finalcutpro](api/plugins/plugins.finalcutpro.preferences.panels.finalcutpro.md)
+			* panels
+				* [finalcutpro](api/plugins/plugins.finalcutpro.preferences.panels.finalcutpro.md)
 			* [scanfinalcutpro](api/plugins/plugins.finalcutpro.preferences.scanfinalcutpro.md)
-		* [sharing.xml](api/plugins/plugins.finalcutpro.sharing.xml.md)
+		* sharing
+			* [xml](api/plugins/plugins.finalcutpro.sharing.xml.md)
 		* timeline
 			* [colorboard](api/plugins/plugins.finalcutpro.timeline.colorboard.md)
 			* [effects](api/plugins/plugins.finalcutpro.timeline.effects.md)

@@ -116,7 +116,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the keyboard modifiers of an event                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the keyboard modifiers that present in the event - i.e. zero or more of the following keys, each with a value of `true`:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li></ul>          |
+| **Returns**                                          | <ul><li>A table containing the keyboard modifiers that present in the event - i.e. zero or more of the following keys, each with a value of `true`:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li><li>The table responds to the following methods:</li><li> contain(mods) -> boolean</li><li>  Returns true if the modifiers contain all of given modifiers</li><li> containExactly(mods) -> boolean</li><li>  Returns true if the modifiers contain all of given modifiers exactly and nothing else</li><li>Parameter mods is a table containing zero or more of the following:</li><li> cmd or ⌘</li><li> alt or ⌥</li><li> shift or ⇧</li><li> ctrl or ⌃</li><li> fn</li></ul>          |
 
 #### [getKeyCode](#getkeycode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getKeyCode() -> keycode` </span>                                                          |

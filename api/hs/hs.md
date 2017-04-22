@@ -88,6 +88,7 @@ Core Hammerspoon functionality
 * Variables - Configurable values
  * [accessibilityStateCallback](#accessibilitystatecallback)
  * [completionsForInputString](#completionsforinputstring)
+ * [dockIconClickCallback](#dockiconclickcallback)
  * [fileDroppedToDockIconCallback](#filedroppedtodockiconcallback)
  * [shutdownCallback](#shutdowncallback)
  * [textDroppedToDockIconCallback](#textdroppedtodockiconcallback)
@@ -110,6 +111,7 @@ Core Hammerspoon functionality
  * [menuIcon](#menuicon)
  * [openAbout](#openabout)
  * [openConsole](#openconsole)
+ * [openConsoleOnDockClick](#openconsoleondockclick)
  * [openPreferences](#openpreferences)
  * [printf](#printf)
  * [rawprint](#rawprint)
@@ -159,6 +161,13 @@ Core Hammerspoon functionality
 | **Returns**                                          | <ul><li>A table of strings, each of which will be shown as a possible completion option to the user</li></ul>          |
 | **Notes**                                            | <ul><li>Hammerspoon provides a default implementation of this function, which can complete against the global Lua namespace, the 'hs' (i.e. extension) namespace, and object metatables. You can assign a new function to the variable to replace it with your own variant.</li></ul>                |
 
+#### [dockIconClickCallback](#dockiconclickcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockIconClickCallback` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | An optional function that will be called when the Hammerspoon Dock Icon is clicked while the app is running                                                                                         |
+| **Notes**                                            | <ul><li>If set, this callback will be called regardless of whether or not Hammerspoon shows its console window in response to a click (which can be enabled/disabled via `hs.openConsoleOnDockClick()`</li></ul>                |
+
 #### [fileDroppedToDockIconCallback](#filedroppedtodockiconcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fileDroppedToDockIconCallback` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -198,7 +207,7 @@ Core Hammerspoon functionality
 | **Description**                                      | Set or display whether or not external Hammerspoon AppleScript commands are allowed                                                                                         |
 | **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not external Hammerspoon's AppleScript commands are allowed</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if Hammerspoon's AppleScript commands are (or has just been) allowed otherwise false</li></ul>          |
-| **Notes**                                            | <ul><li>AppleScript access is disallowed by default</li><li>Due to the way AppleScript support works, Hammerspoon will always allow AppleScript commands that are part of the "Standard Suite", such as `name, `quit`, `version`, etc. However, Hammerspoon will only allow commands from the "Hammerspoon Suite" if `hs.allowAppleScript()` is set to `true`</li><li>For a full list of AppleScript Commands:</li><li>     - Open `/Applications/Utilities/Script Editor.app`</li><li>     - Click `File > Open Dictionary...`</li><li>     - Select Hammerspoon from the list of Applications</li><li>     - This will now open a Dictionary containing all of the availible Hammerspoon AppleScript commands.</li><li>Here's an example AppleScript that can be used in Apple's Script Editor to control Hammerspoon:</li></ul>                |
+| **Notes**                                            | <ul><li>AppleScript access is disallowed by default</li><li>Due to the way AppleScript support works, Hammerspoon will always allow AppleScript commands that are part of the "Standard Suite", such as `name, `quit`, `version`, etc. However, Hammerspoon will only allow commands from the "Hammerspoon Suite" if `hs.allowAppleScript()` is set to `true`</li><li>For a full list of AppleScript Commands:</li><li>     - Open `/Applications/Utilities/Script Editor.app`</li><li>     - Click `File > Open Dictionary...`</li><li>     - Select Hammerspoon from the list of Applications</li><li>     - This will now open a Dictionary containing all of the availible Hammerspoon AppleScript commands.</li><li>Note that strings within the Lua code you pass from AppleScript can be delimited by `[[` and `]]` rather than normal quotes</li></ul>                |
 
 #### [autoLaunch](#autolaunch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.autoLaunch([state]) -> bool` </span>                                                          |
@@ -331,6 +340,15 @@ Core Hammerspoon functionality
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens the Hammerspoon Console window and optionally focuses it.                                                                                         |
 | **Parameters**                                       | <ul><li>bringToFront - if true (default), the console will be focused as well as opened.</li></ul> |
+
+#### [openConsoleOnDockClick](#openconsoleondockclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.openConsoleOnDockClick([state]) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Set or display whether or not the Console window will open when the Hammerspoon dock icon is clicked                                                                                         |
+| **Parameters**                                       | <ul><li>state - An optional boolean, true if the console window should open, false if not</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if the console window will open when the dock icon</li></ul>          |
+| **Notes**                                            | <ul><li>This only refers to dock icon clicks while Hammerspoon is already running. The console window is not opened by launching the app</li></ul>                |
 
 #### [openPreferences](#openpreferences)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.openPreferences()` </span>                                                          |

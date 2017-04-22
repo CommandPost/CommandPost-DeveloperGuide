@@ -4,6 +4,7 @@
 Manage CommandPost's constants and settings.
 
 ## Submodules
+ * [cp.config.dockIconClickCallback](cp.config.dockIconClickCallback.md)
  * [cp.config.fileDroppedToDockIconCallback](cp.config.fileDroppedToDockIconCallback.md)
  * [cp.config.shutdownCallback](cp.config.shutdownCallback.md)
  * [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)
@@ -14,7 +15,6 @@ Manage CommandPost's constants and settings.
  * [appVersion](#appversion)
  * [assetsPath](#assetspath)
  * [basePath](#basepath)
- * [bugReportEmail](#bugreportemail)
  * [bundleID](#bundleid)
  * [bundledPluginsPath](#bundledpluginspath)
  * [configPrefix](#configprefix)
@@ -63,12 +63,6 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where the Extensions & Plugins folders are stored.                                                                                         |
-
-#### [bugReportEmail](#bugreportemail)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bugReportEmail` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Email address used for bug reports                                                                                         |
 
 #### [bundleID](#bundleid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundleID` </span>                                                          |
