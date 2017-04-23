@@ -15,8 +15,8 @@ Manage CommandPost's constants and settings.
  * [appVersion](#appversion)
  * [assetsPath](#assetspath)
  * [basePath](#basepath)
- * [bundleID](#bundleid)
  * [bundledPluginsPath](#bundledpluginspath)
+ * [bundleID](#bundleid)
  * [configPrefix](#configprefix)
  * [iconPath](#iconpath)
  * [languagePath](#languagepath)
@@ -64,17 +64,17 @@ Manage CommandPost's constants and settings.
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where the Extensions & Plugins folders are stored.                                                                                         |
 
-#### [bundleID](#bundleid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundleID` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Application's Bundle ID                                                                                         |
-
 #### [bundledPluginsPath](#bundledpluginspath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundledPluginsPath` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to bundled plugins                                                                                         |
+
+#### [bundleID](#bundleid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundleID` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Application's Bundle ID                                                                                         |
 
 #### [configPrefix](#configprefix)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.configPrefix` </span>                                                          |

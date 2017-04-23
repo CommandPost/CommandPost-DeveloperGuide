@@ -28,9 +28,9 @@ Common item data types that can be shared with Sharing Services include (but are
 * Constants - Useful values which cannot be changed
  * [builtinSharingServices[]](#builtinsharingservices[])
 * Functions - API calls offered directly by the extension
- * [URL](#url)
  * [fileURL](#fileurl)
  * [shareTypesFor](#sharetypesfor)
+ * [URL](#url)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [newShare](#newshare)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -60,15 +60,6 @@ Common item data types that can be shared with Sharing Services include (but are
 
 ### Functions
 
-#### [URL](#url)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing.URL(URL, [fileURL]) -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table representing the URL specified.                                                                                         |
-| **Parameters**                                       | <ul><li>URL     - a string or table specifying the URL.</li><li>fileURL - an optional boolean, default `false`, specifying whether or not the URL is supposed to represent a file on the local computer.</li></ul> |
-| **Returns**                                          | <ul><li>a table containing the necessary labels for representing the specified URL as required by the macOS APIs.</li></ul>          |
-| **Notes**                                            | <ul><li>If the URL is specified as a table, it is expected to contain a `url` key with a string value specifying a proper schema and resource locator.</li></ul>                |
-
 #### [fileURL](#fileurl)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing.fileURL(path) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -86,6 +77,15 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Parameters**                                       | <ul><li>items - an array (table) or list of items separated by commas which you wish to share with this module.</li></ul> |
 | **Returns**                                          | <ul><li>an array (table) containing strings which identify sharing service identifiers which may be used by the [hs.sharing.newShare](#newShare) constructor to share the specified data.</li></ul>          |
 | **Notes**                                            | <ul><li>this function is intended to be used to determine the identifiers for sharing services available on your computer and that may not be included in the [hs.sharing.builtinSharingServices](#builtinSharingServices) table.</li></ul>                |
+
+#### [URL](#url)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing.URL(URL, [fileURL]) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a table representing the URL specified.                                                                                         |
+| **Parameters**                                       | <ul><li>URL     - a string or table specifying the URL.</li><li>fileURL - an optional boolean, default `false`, specifying whether or not the URL is supposed to represent a file on the local computer.</li></ul> |
+| **Returns**                                          | <ul><li>a table containing the necessary labels for representing the specified URL as required by the macOS APIs.</li></ul>          |
+| **Notes**                                            | <ul><li>If the URL is specified as a table, it is expected to contain a `url` key with a string value specifying a proper schema and resource locator.</li></ul>                |
 
 ### Constructors
 

@@ -34,8 +34,8 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
  * [fromRegisteredFiles](#fromregisteredfiles)
  * [help](#help)
  * [locateJSONFile](#locatejsonfile)
- * [registerJSONFile](#registerjsonfile)
  * [registeredFiles](#registeredfiles)
+ * [registerJSONFile](#registerjsonfile)
  * [unregisterJSONFile](#unregisterjsonfile)
  * [validateJSONFile](#validatejsonfile)
 
@@ -78,14 +78,6 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Returns**                                          | <ul><li>the path to the JSON file, or `false, error` if unable to locate a corresponding JSON file.</li></ul>          |
 | **Notes**                                            | <ul><li>The JSON should be named 'full.module.name.json' and located in the same directory as the `lua` or `so` file which is used when the module is loaded via `require`.</li></ul>                |
 
-#### [registerJSONFile](#registerjsonfile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registerJSONFile(jsonfile) -> status[, message]` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Register a JSON file for inclusion when Hammerspoon generates internal documentation.                                                                                         |
-| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file</li></ul> |
-| **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned.</li></ul>          |
-
 #### [registeredFiles](#registeredfiles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registeredFiles() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -94,6 +86,14 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>a table containing the list of registered JSON files</li></ul>          |
 | **Notes**                                            | <ul><li>The table returned by this function has a metatable including a __tostring method which allows you to see the list of registered files by simply typing `hs.doc.registeredFiles()` in the Hammerspoon Console.</li></ul>                |
+
+#### [registerJSONFile](#registerjsonfile)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registerJSONFile(jsonfile) -> status[, message]` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Register a JSON file for inclusion when Hammerspoon generates internal documentation.                                                                                         |
+| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file</li></ul> |
+| **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned.</li></ul>          |
 
 #### [unregisterJSONFile](#unregisterjsonfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.unregisterJSONFile(jsonfile) -> status[, message]` </span>                                                          |

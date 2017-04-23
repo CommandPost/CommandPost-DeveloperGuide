@@ -31,8 +31,8 @@ A discussion concerning the embedding of commands into the text to be spoken can
  * [reset](#reset)
  * [setCallback](#setcallback)
  * [speak](#speak)
- * [speakToFile](#speaktofile)
  * [speaking](#speaking)
+ * [speakToFile](#speaktofile)
  * [stop](#stop)
  * [usesFeedbackWindow](#usesfeedbackwindow)
  * [voice](#voice)
@@ -193,14 +193,6 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Parameters**                                       | <ul><li>textToSpeak - the text to speak with the synthesizer.</li></ul> |
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
 
-#### [speakToFile](#speaktofile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:speakToFile(textToSpeak, destination) -> synthesizerObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Starts speaking the provided text and saves the audio as an AIFF file.                                                                                         |
-| **Parameters**                                       | <ul><li>textToSpeak - the text to speak with the synthesizer.</li><li>destination - the path to the file to create and store the audio data in.</li></ul> |
-| **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
-
 #### [speaking](#speaking)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:speaking() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -209,6 +201,14 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A boolean value indicating whether or not this synthesizer is currently generating speech.</li></ul>          |
 | **Notes**                                            | <ul><li>See also `hs.speech.isAnyApplicationSpeaking`.</li></ul>                |
+
+#### [speakToFile](#speaktofile)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:speakToFile(textToSpeak, destination) -> synthesizerObject` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Starts speaking the provided text and saves the audio as an AIFF file.                                                                                         |
+| **Parameters**                                       | <ul><li>textToSpeak - the text to speak with the synthesizer.</li><li>destination - the path to the file to create and store the audio data in.</li></ul> |
+| **Returns**                                          | <ul><li>the synthesizer object</li></ul>          |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:stop([where]) -> synthesizerObject` </span>                                                          |

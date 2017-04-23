@@ -8,13 +8,13 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 
 ## API Overview
 * Constants - Useful values which cannot be changed
+ * [screensaverDidStart](#screensaverdidstart)
+ * [screensaverDidStop](#screensaverdidstop)
+ * [screensaverWillStop](#screensaverwillstop)
  * [screensDidLock](#screensdidlock)
  * [screensDidSleep](#screensdidsleep)
  * [screensDidUnlock](#screensdidunlock)
  * [screensDidWake](#screensdidwake)
- * [screensaverDidStart](#screensaverdidstart)
- * [screensaverDidStop](#screensaverdidstop)
- * [screensaverWillStop](#screensaverwillstop)
  * [sessionDidBecomeActive](#sessiondidbecomeactive)
  * [sessionDidResignActive](#sessiondidresignactive)
  * [systemDidWake](#systemdidwake)
@@ -29,6 +29,24 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ## API Documentation
 
 ### Constants
+
+#### [screensaverDidStart](#screensaverdidstart)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverDidStart` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver started                                                                                         |
+
+#### [screensaverDidStop](#screensaverdidstop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverDidStop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver stopped                                                                                         |
+
+#### [screensaverWillStop](#screensaverwillstop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverWillStop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver is about to stop                                                                                         |
 
 #### [screensDidLock](#screensdidlock)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensDidLock` </span>                                                          |
@@ -53,24 +71,6 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The displays have woken from sleep                                                                                         |
-
-#### [screensaverDidStart](#screensaverdidstart)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverDidStart` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The screensaver started                                                                                         |
-
-#### [screensaverDidStop](#screensaverdidstop)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverDidStop` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The screensaver stopped                                                                                         |
-
-#### [screensaverWillStop](#screensaverwillstop)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverWillStop` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The screensaver is about to stop                                                                                         |
 
 #### [sessionDidBecomeActive](#sessiondidbecomeactive)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.sessionDidBecomeActive` </span>                                                          |

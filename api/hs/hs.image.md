@@ -11,8 +11,8 @@ A module for capturing and manipulating image objects from other modules for use
 * Constructors - API calls which return an object, typically one that offers API methods
  * [iconForFile](#iconforfile)
  * [iconForFileType](#iconforfiletype)
- * [imageFromASCII](#imagefromascii)
  * [imageFromAppBundle](#imagefromappbundle)
+ * [imageFromASCII](#imagefromascii)
  * [imageFromMediaFile](#imagefrommediafile)
  * [imageFromName](#imagefromname)
  * [imageFromPath](#imagefrompath)
@@ -63,6 +63,14 @@ A module for capturing and manipulating image objects from other modules for use
 | **Parameters**                                       | <ul><li>fileType - the file type, specified as a filename extension or a universal type identifier (UTI).</li></ul> |
 | **Returns**                                          | <ul><li>An `hs.image` object or nil, if there was an error</li></ul>          |
 
+#### [imageFromAppBundle](#imagefromappbundle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.imageFromAppBundle(bundleID) -> object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates an `hs.image` object using the icon from an App                                                                                         |
+| **Parameters**                                       | <ul><li>bundleID - A string containing the bundle identifier of an application</li></ul> |
+| **Returns**                                          | <ul><li>An `hs.image` object or nil, if no app icon was found</li></ul>          |
+
 #### [imageFromASCII](#imagefromascii)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.imageFromASCII(ascii[, context]) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -71,14 +79,6 @@ A module for capturing and manipulating image objects from other modules for use
 | **Parameters**                                       | <ul><li>ascii - A string containing a representation of an image</li><li>context - An optional table containing the context for each shape in the image.  A shape is considered a single drawing element (point, ellipse, line, or polygon) as defined at https://github.com/cparnot/ASCIImage and http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring/.</li><li>  The context table is an optional (possibly sparse) array in which the index represents the order in which the shapes are defined.  The last (highest) numbered index in the sparse array specifies the default settings for any unspecified index and any settings which are not explicitly set in any other given index.</li><li>  Each index consists of a table which can contain one or more of the following keys:</li><li>    fillColor - the color with which the shape will be filled (defaults to black)  Color is defined in a table containing color component values between 0.0 and 1.0 for each of the keys:</li><li>      red (default 0.0)</li><li>      green (default 0.0)</li><li>      blue (default 0.0)</li><li>      alpha (default 1.0)</li><li>    strokeColor - the color with which the shape will be stroked (defaults to black)</li><li>    lineWidth - the line width (number) for the stroke of the shape (defaults to 1 if anti-aliasing is on or (√2)/2 if it is off -- approximately 0.7)</li><li>    shouldClose - a boolean indicating whether or not the shape should be closed (defaults to true)</li><li>    antialias - a boolean indicating whether or not the shape should be antialiased (defaults to true)</li></ul> |
 | **Returns**                                          | <ul><li>An `hs.image` object, or nil if an error occured</li></ul>          |
 | **Notes**                                            | <ul><li>To use the ASCII diagram image support, see https://github.com/cparnot/ASCIImage and http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring</li><li>The default for lineWidth, when antialiasing is off, is defined within the ASCIImage library. Geometrically it represents one half of the hypotenuse of the unit right-triangle and is a more accurate representation of a "real" point size when dealing with arbitrary angles and lines than 1.0 would be.</li></ul>                |
-
-#### [imageFromAppBundle](#imagefromappbundle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.imageFromAppBundle(bundleID) -> object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates an `hs.image` object using the icon from an App                                                                                         |
-| **Parameters**                                       | <ul><li>bundleID - A string containing the bundle identifier of an application</li></ul> |
-| **Returns**                                          | <ul><li>An `hs.image` object or nil, if no app icon was found</li></ul>          |
 
 #### [imageFromMediaFile](#imagefrommediafile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.imageFromMediaFile(file) -> object` </span>                                                          |

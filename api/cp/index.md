@@ -18,7 +18,6 @@
 | [cp](cp.md)                          | Core CommandPost functionality     |
 | [cp.apple.compressor](cp.apple.compressor.md)                          | Represents the Compressor application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.finalcutpro](cp.apple.finalcutpro.md)                          | Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.     |
-| [cp.apple.finalcutpro.MenuBar](cp.apple.finalcutpro.MenuBar.md)                          | Represents the Final Cut Pro menu bar, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.finalcutpro.axutils](cp.apple.finalcutpro.axutils.md)                          | Utility functions to support 'axuielement'     |
 | [cp.apple.finalcutpro.cmd.CommandEditor](cp.apple.finalcutpro.cmd.CommandEditor.md)                          | Command Editor Module.     |
 | [cp.apple.finalcutpro.destinations](cp.apple.finalcutpro.destinations.md)                          | Utility class to process custom User Destinations     |
@@ -48,6 +47,7 @@
 | [cp.apple.finalcutpro.main.TimelineContents](cp.apple.finalcutpro.main.TimelineContents.md)                          | Timeline Contents Module.     |
 | [cp.apple.finalcutpro.main.TimelineToolbar](cp.apple.finalcutpro.main.TimelineToolbar.md)                          | Timeline Toolbar     |
 | [cp.apple.finalcutpro.main.Viewer](cp.apple.finalcutpro.main.Viewer.md)                          | Viewer Module.     |
+| [cp.apple.finalcutpro.MenuBar](cp.apple.finalcutpro.MenuBar.md)                          | Represents the Final Cut Pro menu bar, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.finalcutpro.prefs.ImportPanel](cp.apple.finalcutpro.prefs.ImportPanel.md)                          | Import Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
@@ -79,6 +79,7 @@
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
 | [cp.plist.archiver](cp.plist.archiver.md)                          | Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.     |
 | [cp.plugins](cp.plugins.md)                          | This is a simple plugin manager.     |
+| [cp.plugins.env](cp.plugins.env.md)                          | Provides access to resources in the plugin environment. In generally, this will be files stored in a Complex Plugin's folder.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and      |
 | [cp.watcher](cp.watcher.md)                          | Watcher Module.     |
 | [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |

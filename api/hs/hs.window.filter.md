@@ -72,13 +72,13 @@ wf_timewaster:subscribe(wf.hasWindow,startAnnoyingMe):subscribe(wf.hasNoWindows,
  * [windowNotVisible](#windownotvisible)
  * [windowOnScreen](#windowonscreen)
  * [windowRejected](#windowrejected)
+ * [windowsChanged](#windowschanged)
  * [windowTitleChanged](#windowtitlechanged)
  * [windowUnfocused](#windowunfocused)
  * [windowUnfullscreened](#windowunfullscreened)
  * [windowUnhidden](#windowunhidden)
  * [windowUnminimized](#windowunminimized)
  * [windowVisible](#windowvisible)
- * [windowsChanged](#windowschanged)
 * Variables - Configurable values
  * [allowedWindowRoles](#allowedwindowroles)
  * [forceRefreshOnSpaceChange](#forcerefreshonspacechange)
@@ -265,6 +265,13 @@ wf_timewaster:subscribe(wf.hasWindow,startAnnoyingMe):subscribe(wf.hasNoWindows,
 | **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: a previously allowed window (or a window that's been destroyed) is now rejected                                                                                         |
 | **Notes**                                            | <ul><li>this pseudo-event will be emitted *after* the *actual* event(s) (e.g. `windowDestroyed`) that caused the window to be rejected</li></ul>                |
 
+#### [windowsChanged](#windowschanged)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowsChanged` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: the list of allowed windows (as per `windowfilter:getWindows()`) has changed                                                                                         |
+| **Notes**                                            | <ul><li>callbacks for this event will receive (as the first argument) either a random window among the currently allowed ones,</li><li>   or nil if the windowfilter is rejecting all windows</li><li>similarly, the second argument passed to callbacks (window's app name) will be nil if the windowfilter is rejecting all windows</li><li>this pseudo-event will be emitted *after* the *actual* event(s) that caused the list of allowed windows to change</li></ul>                |
+
 #### [windowTitleChanged](#windowtitlechanged)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowTitleChanged` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -300,13 +307,6 @@ wf_timewaster:subscribe(wf.hasWindow,startAnnoyingMe):subscribe(wf.hasNoWindows,
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Event for `hs.window.filter:subscribe()`: a window became "visible" (in *any* Mission Control Space, as per `hs.window:isVisible()`)                                                                                         |
-
-#### [windowsChanged](#windowschanged)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowsChanged` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: the list of allowed windows (as per `windowfilter:getWindows()`) has changed                                                                                         |
-| **Notes**                                            | <ul><li>callbacks for this event will receive (as the first argument) either a random window among the currently allowed ones,</li><li>   or nil if the windowfilter is rejecting all windows</li><li>similarly, the second argument passed to callbacks (window's app name) will be nil if the windowfilter is rejecting all windows</li><li>this pseudo-event will be emitted *after* the *actual* event(s) that caused the list of allowed windows to change</li></ul>                |
 
 ### Variables
 

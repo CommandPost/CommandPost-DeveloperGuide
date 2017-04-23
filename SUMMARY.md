@@ -118,6 +118,7 @@
 	* [plist](api/cp/cp.plist.md)
 		* [archiver](api/cp/cp.plist.archiver.md)
 	* [plugins](api/cp/cp.plugins.md)
+		* [env](api/cp/cp.plugins.env.md)
 	* [sourcewatcher](api/cp/cp.sourcewatcher.md)
 	* [watcher](api/cp/cp.watcher.md)
 	* web

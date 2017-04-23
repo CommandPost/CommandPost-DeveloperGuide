@@ -25,8 +25,8 @@ Functional programming utility functions
  * [cycle](#cycle)
  * [partial](#partial)
  * [sequence](#sequence)
- * [sortByKeyValues](#sortbykeyvalues)
  * [sortByKeys](#sortbykeys)
+ * [sortByKeyValues](#sortbykeyvalues)
 
 ## API Documentation
 
@@ -195,15 +195,6 @@ Functional programming utility functions
 | **Parameters**                                       | <ul><li>... - A number of functions, passed as different arguments. They should accept zero parameters, and return something</li></ul> |
 | **Returns**                                          | <ul><li>A function that, when called, will call all of the functions passed to this constructor. The output of these functions will be collected together and returned.</li></ul>          |
 
-#### [sortByKeyValues](#sortbykeyvalues)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sortByKeyValues(table[ , function]) -> function` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Iterator for retrieving elements from a table of key-value pairs in the order of the values.                                                                                         |
-| **Parameters**                                       | <ul><li>table - the table of key-value pairs to be iterated through</li><li>fn - an optional function which will be passed to `table.sort` to determine how the values are sorted.  If it is not present, then values will be sorted numerically/alphabetically.</li></ul> |
-| **Returns**                                          | <ul><li>function to be used as an iterator</li></ul>          |
-| **Notes**                                            | <ul><li>Similar to Perl's `sort { $hash{$a} <=> $hash{$b} } keys %hash`</li><li>Iterators are used in looping constructs like `for`:</li><li>  `for i,v in hs.fnutils.sortByKeyValues(t[, f]) do ... end`</li><li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.</li><li>  e.g. `function(m,n) return not (m < n) end` would result in reverse alphabetic order.</li><li>  See _Programming_In_Lua,_3rd_ed_, page 52 for a more complete discussion.</li><li>  The default sort is to compare values directly, if they are of the same type, or as their tostring() versions, if the value types differ:</li><li>    function(m,n) if type(m) ~= type(n) then return tostring(m) < tostring(n) else return m < n end</li></ul>                |
-
 #### [sortByKeys](#sortbykeys)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sortByKeys(table[ , function]) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -212,4 +203,13 @@ Functional programming utility functions
 | **Parameters**                                       | <ul><li>table - the table of key-value pairs to be iterated through</li><li>fn - an optional function which will be passed to `table.sort` to determine how the keys are sorted.  If it is not present, then keys will be sorted numerically/alphabetically.</li></ul> |
 | **Returns**                                          | <ul><li>function to be used as an iterator</li></ul>          |
 | **Notes**                                            | <ul><li>Similar to Perl's `sort(keys %hash)`</li><li>Iterators are used in looping constructs like `for`:</li><li>  `for i,v in hs.fnutils.sortByKeys(t[, f]) do ... end`</li><li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.</li><li>  e.g. `function(m,n) return not (m < n) end` would result in reverse alphabetic order.</li><li>  See _Programming_In_Lua,_3rd_ed_, page 52 for a more complete discussion.</li><li>  The default sort is to compare keys directly, if they are of the same type, or as their tostring() versions, if the key types differ:</li><li>    function(m,n) if type(m) ~= type(n) then return tostring(m) < tostring(n) else return m < n end</li></ul>                |
+
+#### [sortByKeyValues](#sortbykeyvalues)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sortByKeyValues(table[ , function]) -> function` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Iterator for retrieving elements from a table of key-value pairs in the order of the values.                                                                                         |
+| **Parameters**                                       | <ul><li>table - the table of key-value pairs to be iterated through</li><li>fn - an optional function which will be passed to `table.sort` to determine how the values are sorted.  If it is not present, then values will be sorted numerically/alphabetically.</li></ul> |
+| **Returns**                                          | <ul><li>function to be used as an iterator</li></ul>          |
+| **Notes**                                            | <ul><li>Similar to Perl's `sort { $hash{$a} <=> $hash{$b} } keys %hash`</li><li>Iterators are used in looping constructs like `for`:</li><li>  `for i,v in hs.fnutils.sortByKeyValues(t[, f]) do ... end`</li><li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.</li><li>  e.g. `function(m,n) return not (m < n) end` would result in reverse alphabetic order.</li><li>  See _Programming_In_Lua,_3rd_ed_, page 52 for a more complete discussion.</li><li>  The default sort is to compare values directly, if they are of the same type, or as their tostring() versions, if the value types differ:</li><li>    function(m,n) if type(m) ~= type(n) then return tostring(m) < tostring(n) else return m < n end</li></ul>                |
 

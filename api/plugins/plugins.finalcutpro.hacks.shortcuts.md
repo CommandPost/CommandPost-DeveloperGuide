@@ -8,8 +8,8 @@ via the Final Cut Pro Command Editor.
 * Functions - API calls offered directly by the extension
  * [disableHacksShortcuts](#disablehacksshortcuts)
  * [editCommands](#editcommands)
- * [enableHacksShortcuts](#enablehacksshortcuts)
  * [enabled](#enabled)
+ * [enableHacksShortcuts](#enablehacksshortcuts)
  * [init](#init)
  * [setEditable](#seteditable)
  * [toggleEditable](#toggleeditable)
@@ -36,14 +36,6 @@ via the Final Cut Pro Command Editor.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [enableHacksShortcuts](#enablehacksshortcuts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.enableHacksShortcuts() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Enable Hacks Shortcuts                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.enabled() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -51,6 +43,14 @@ via the Final Cut Pro Command Editor.
 | **Description**                                      | Are Hacks Shortcuts Enabled?                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`true` if Hacks Shortcuts are enabled otherwise `false`</li></ul>          |
+
+#### [enableHacksShortcuts](#enablehacksshortcuts)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.enableHacksShortcuts() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Enable Hacks Shortcuts                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.init() -> none` </span>                                                          |
