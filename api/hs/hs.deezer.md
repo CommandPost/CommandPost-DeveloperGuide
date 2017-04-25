@@ -116,6 +116,7 @@ Controls for Deezer music player
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the deezer volume setting                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the volume deezer is set to between 1 and 100</li></ul>          |
 
 #### [isPlaying](#isplaying)

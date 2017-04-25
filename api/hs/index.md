@@ -7,6 +7,7 @@
 | Website | [http://www.hammerspoon.org/](http://www.hammerspoon.org/) |
 | GitHub page | [https://github.com/Hammerspoon/hammerspoon](https://github.com/Hammerspoon/hammerspoon) |
 | Getting Started Guide | [http://www.hammerspoon.org/go/](http://www.hammerspoon.org/go/) |
+| Spoon Plugin Documentation | [https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md) |
 | Official Spoon repository | [http://www.hammerspoon.org/Spoons](http://www.hammerspoon.org/Spoons) |
 | IRC channel | [irc://chat.freenode.net/#hammerspoon](irc://chat.freenode.net/#hammerspoon) |
 | Mailing list | [https://groups.google.com/forum/#!forum/hammerspoon/](https://groups.google.com/forum/#!forum/hammerspoon/) |
@@ -39,8 +40,10 @@
 | [hs.deezer](hs.deezer.md)                          |      |
 | [hs.distributednotifications](hs.distributednotifications.md)                          | Interact with NSDistributedNotificationCenter     |
 | [hs.doc](hs.doc.md)                          | Create documentation objects for interactive help within Hammerspoon     |
+| [hs.doc.builder](hs.doc.builder.md)                          | Builds documentation support files.  Still experimental.     |
 | [hs.doc.hsdocs](hs.doc.hsdocs.md)                          | Manage the internal documentation web server.     |
 | [hs.doc.markdown](hs.doc.markdown.md)                          | Markdown to HTML and plaintext conversion support used by hs.doc     |
+| [hs.doc.spoonsupport](hs.doc.spoonsupport.md)                          | Provides run-time support for generating and including documentation for installed Hammerspoon Spoon bundles.     |
 | [hs.dockicon](hs.dockicon.md)                          | Control Hammerspoon's dock icon     |
 | [hs.drawing](hs.drawing.md)                          | Primitives for drawing on the screen in various ways     |
 | [hs.drawing.color](hs.drawing.color.md)                          | Additions to hs.drawing which provide access to the system color lists and a wider variety of ways to represent color within Hammerspoon.     |

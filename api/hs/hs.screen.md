@@ -198,6 +198,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a screen's unique ID                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the ID of the screen</li></ul>          |
 
 #### [localToAbsolute](#localtoabsolute)

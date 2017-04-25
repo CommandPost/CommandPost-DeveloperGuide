@@ -188,6 +188,7 @@ Controls for iTunes music player
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips the current playback backwards by 5 seconds                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setPosition](#setposition)

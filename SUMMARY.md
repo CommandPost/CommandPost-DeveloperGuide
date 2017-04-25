@@ -109,6 +109,7 @@
 		* [shortcut](api/cp/cp.commands.shortcut.md)
 			* [builder](api/cp/cp.commands.shortcut.builder.md)
 	* [config](api/cp/cp.config.md)
+		* [accessibilityStateCallback](api/cp/cp.config.accessibilityStateCallback.md)
 		* [dockIconClickCallback](api/cp/cp.config.dockIconClickCallback.md)
 		* [fileDroppedToDockIconCallback](api/cp/cp.config.fileDroppedToDockIconCallback.md)
 		* [shutdownCallback](api/cp/cp.config.shutdownCallback.md)
@@ -161,6 +162,8 @@
 		* [webapp](api/plugins/plugins.core.webapp.md)
 		* welcome
 			* [manager](api/plugins/plugins.core.welcome.manager.md)
+				* [disableInterfaceCallback](api/plugins/plugins.core.welcome.manager.disableInterfaceCallback.md)
+				* [enableInterfaceCallback](api/plugins/plugins.core.welcome.manager.enableInterfaceCallback.md)
 			* panels
 				* [accessibility](api/plugins/plugins.core.welcome.panels.accessibility.md)
 				* [complete](api/plugins/plugins.core.welcome.panels.complete.md)
@@ -268,8 +271,10 @@
 	* [deezer](api/hs/hs.deezer.md)
 	* [distributednotifications](api/hs/hs.distributednotifications.md)
 	* [doc](api/hs/hs.doc.md)
+		* [builder](api/hs/hs.doc.builder.md)
 		* [hsdocs](api/hs/hs.doc.hsdocs.md)
 		* [markdown](api/hs/hs.doc.markdown.md)
+		* [spoonsupport](api/hs/hs.doc.spoonsupport.md)
 	* [dockicon](api/hs/hs.dockicon.md)
 	* [drawing](api/hs/hs.drawing.md)
 		* [color](api/hs/hs.drawing.color.md)

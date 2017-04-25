@@ -30,6 +30,7 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends a distributed notification                                                                                         |
+| **Parameters**                                       | <ul><li>name - A string containing the name of the notification</li><li>sender - An optional string containing the name of the sender of the notification (in the form `com.domain.application.foo`). Defaults to nil.</li><li>userInfo - An optional table containing additional information to post with the notification. Defaults to nil.</li></ul> |
 
 ### Constructors
 

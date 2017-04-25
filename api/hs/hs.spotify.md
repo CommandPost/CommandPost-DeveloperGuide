@@ -124,6 +124,7 @@ Controls for Spotify music player
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Spotify volume setting                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the volume Spotify is set to between 1 and 100</li></ul>          |
 
 #### [isPlaying](#isplaying)

@@ -146,7 +146,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:stop() -> echoRequestObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Start listening for ICMP Echo Reply packets with this object.                                                                                         |
+| **Description**                                      | Stop listening for ICMP Echo Reply packets with this object.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the echoRequestObject</li></ul>          |
 

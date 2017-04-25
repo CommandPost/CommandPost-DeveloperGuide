@@ -20,6 +20,7 @@ The intent of this sub-module is to provide as close a rendering of the same doc
  * [forceExternalBrowser](#forceexternalbrowser)
  * [help](#help)
  * [interface](#interface)
+ * [moduleEntitiesInSidebar](#moduleentitiesinsidebar)
  * [port](#port)
  * [start](#start)
  * [stop](#stop)
@@ -34,6 +35,7 @@ The intent of this sub-module is to provide as close a rendering of the same doc
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get or set whether or not the Hammerspoon browser renders output in Dark mode.                                                                                         |
+| **Parameters**                                       | <ul><li>value - an optional boolean, number, or nil specifying whether or not the documentation browser renders in Dark mode.</li><li>  if value is `true`, then the HTML output will always be inverted</li><li>  if value is `false`, then the HTML output will never be inverted</li><li>  if value is `nil`, then the output will be inverted only when the OS X theme is set to Dark mode</li><li>  if the value is a number between 0 and 100, the number specifies the inversion ratio, where 0 means no inversion, 100 means full inversion, and 50 is completely unreadable because the foreground and background are equally adjusted.</li></ul> |
 | **Returns**                                          | <ul><li>the current, possibly new, value</li></ul>          |
 | **Notes**                                            | <ul><li>Inversion is applied through the use of CSS filtering, so while numeric values other than 0 (false) and 100 (true) are allowed, the result is generally not what is desired.</li></ul>                |
 
@@ -51,6 +53,7 @@ The intent of this sub-module is to provide as close a rendering of the same doc
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get or set whether or not [hs.doc.hsdocs.help](#help) uses an external browser.                                                                                         |
+| **Parameters**                                       | <ul><li>value - an optional boolean or string, default false, specifying whether or not documentation requests will be displayed in an external browser or the internal one handled by `hs.webview`.</li></ul> |
 | **Returns**                                          | <ul><li>the current, possibly new, value</li></ul>          |
 | **Notes**                                            | <ul><li>If this value is set to true, help requests invoked by [hs.doc.hsdocs.help](#help) will be invoked by your system's default handler for the `http` scheme.</li><li>If this value is set to a string, the string specifies the bundle ID of an application which will be used to handle the url request for the documentation.  The string should match one of the items returned by `hs.urlevent.getAllHandlersForScheme("http")`.</li></ul>                |
 
@@ -67,14 +70,25 @@ The intent of this sub-module is to provide as close a rendering of the same doc
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get or set the network interface that the Hammerspoon documentation web server will be served on                                                                                         |
+| **Parameters**                                       | <ul><li>interface - an optional string, or nil, specifying the network interface the Hammerspoon documentation web server will be served on.  An explicit nil specifies that the web server should listen on all active interfaces for the machine.  Defaults to "localhost".</li></ul> |
 | **Returns**                                          | <ul><li>the current, possibly new, value</li></ul>          |
 | **Notes**                                            | <ul><li>See `hs.httpserver.setInterface` for a description of valid values that can be specified as the `interface` argument to this function.</li><li>A change to the interface can only occur when the documentation server is not running. If the server is currently active when you call this function with an argument, the server will be temporarily stopped and then restarted after the interface has been changed.</li></ul>                |
+
+#### [moduleEntitiesInSidebar](#moduleentitiesinsidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.hsdocs.moduleEntitiesInSidebar([value]) -> currentValue` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get or set whether or not a module's entity list is displayed as a column on the left of the rendered page.                                                                                         |
+| **Parameters**                                       | <ul><li>value - an optional boolean specifying whether or not a module's entity list is displayed inline in the documentation (false) or in a sidebar on the left (true).</li></ul> |
+| **Returns**                                          | <ul><li>the current, possibly new, value</li></ul>          |
+| **Notes**                                            | <ul><li>This is experimental and is disabled by default. It was inspired by a Userscript written by krasnovpro.  The original can be found at https://openuserjs.org/scripts/krasnovpro/hammerspoon.org_Documentation/source.</li></ul>                |
 
 #### [port](#port)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.hsdocs.port([value]) -> currentValue` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get or set the Hammerspoon documentation server HTTP port.                                                                                         |
+| **Parameters**                                       | <ul><li>value - an optional number specifying the port for the Hammerspoon documentation web server</li></ul> |
 | **Returns**                                          | <ul><li>the current, possibly new, value</li></ul>          |
 | **Notes**                                            | <ul><li>The default port number is 12345.</li></ul>                |
 

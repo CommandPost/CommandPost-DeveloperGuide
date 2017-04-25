@@ -94,6 +94,7 @@ Various features/facilities for developers who are working on Hammerspoon itself
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Causes Hammerspoon to generate an Objective C exception                                                                                         |
+| **Parameters**                                       | <ul><li>name - A string containing the name of the exception</li><li>message - A human readabke string explaining the exception</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>Outside of a context of a Lua pcall() (or a C lua_pcall()), this will cause Hammerspoon to exit. We follow the safe behaviour of terminating the app on any unhandled Objective C exception.</li></ul>                |
 

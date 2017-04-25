@@ -45,6 +45,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Description**                                      | Installs the `hs` command line tool                                                                                         |
 | **Parameters**                                       | <ul><li>path - An optional string containing a path to install the tool in. Defaults to `/usr/local`</li><li>silent - An optional boolean indicating whether or not to print errors to the Hammerspoon Console</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the tool was successfully installed, otherwise false</li></ul>          |
+| **Notes**                                            | <ul><li>If this function fails, it is likely that you have some old/broken symlinks. You can use `hs.ipc.cliUninstall()` to forcibly tidy them up</li></ul>                |
 
 #### [cliResetColors](#cliresetcolors)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.ipc.cliResetColors()` </span>                                                          |
@@ -78,7 +79,7 @@ This module is based primarily on code from Mjolnir by [Steven Degutis](https://
 | **Description**                                      | Uninstalls the `hs` command line tool                                                                                         |
 | **Parameters**                                       | <ul><li>path - An optional string containing a path to remove the tool from. Defaults to `/usr/local`</li><li>silent - An optional boolean indicating whether or not to print errors to the Hammerspoon Console</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the tool was successfully removed, otherwise false</li></ul>          |
-| **Notes**                                            | <ul><li>This function is very conservative and will only remove the tool if it was installed by this instance of Hammerspoon. If you have more than one copy of Hammerspoon, this will be detected and they will not remove each others' tools.</li></ul>                |
+| **Notes**                                            | <ul><li>This function used to be very conservative and refuse to remove symlinks it wasn't sure about, but now it will unconditionally remove whatever it finds at `path/bin/hs` and `path/share/man/man1/hs.1`. This is more likely to be useful in situations where this command is actually needed (please open an Issue on GitHub if you disagree!)</li></ul>                |
 
 #### [handler](#handler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.ipc.handler(str) -> value` </span>                                                          |

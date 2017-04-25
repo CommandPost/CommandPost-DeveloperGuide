@@ -7,6 +7,7 @@
 | Website | [http://www.hammerspoon.org/](http://www.hammerspoon.org/) |
 | GitHub page | [https://github.com/Hammerspoon/hammerspoon](https://github.com/Hammerspoon/hammerspoon) |
 | Getting Started Guide | [http://www.hammerspoon.org/go/](http://www.hammerspoon.org/go/) |
+| Spoon Plugin Documentation | [https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md) |
 | Official Spoon repository | [http://www.hammerspoon.org/Spoons](http://www.hammerspoon.org/Spoons) |
 | IRC channel | [irc://chat.freenode.net/#hammerspoon](irc://chat.freenode.net/#hammerspoon) |
 | Mailing list | [https://groups.google.com/forum/#!forum/hammerspoon/](https://groups.google.com/forum/#!forum/hammerspoon/) |
@@ -70,6 +71,7 @@
 | [cp.commands.shortcut](cp.commands.shortcut.md)                          | Shortcut Commands     |
 | [cp.commands.shortcut.builder](cp.commands.shortcut.builder.md)                          | Shortcut Commands Builder Module.     |
 | [cp.config](cp.config.md)                          | Manage CommandPost's constants and settings.     |
+| [cp.config.accessibilityStateCallback](cp.config.accessibilityStateCallback.md)                          | Callback which triggers when the Accessibility State is changed     |
 | [cp.config.dockIconClickCallback](cp.config.dockIconClickCallback.md)                          | Callback which triggers when the CommandPost Dock Icon is clicked     |
 | [cp.config.fileDroppedToDockIconCallback](cp.config.fileDroppedToDockIconCallback.md)                          | File Dropped to Dock Icon Callback     |
 | [cp.config.shutdownCallback](cp.config.shutdownCallback.md)                          | Shutdown Callback Module.     |

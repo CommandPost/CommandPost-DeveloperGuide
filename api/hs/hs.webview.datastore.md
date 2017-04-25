@@ -80,6 +80,7 @@ The datastore for a webview contains various types of data including cookies, di
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns whether or not the datastore is persistent.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>a boolean value indicating whether or not the datastore is persistent (true) or private (false)</li></ul>          |
 | **Notes**                                            | <ul><li>Note that this value is the inverse of `hs.webview:privateBrowsing()`, since private browsing uses a non-persistent datastore.</li></ul>                |
 

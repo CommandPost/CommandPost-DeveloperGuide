@@ -7,7 +7,7 @@ The documentation object created is a table with tostring metamethods allowing a
 
 From the Hammerspoon console:
 
-      doc = require("hs.doc").fromRegisteredFiles()
+      doc = require("hs.doc")
       doc.hs.application
 
 Results in:
@@ -22,16 +22,16 @@ Results in:
           ...
       hs.application:visibleWindows() -> win[]
 
-By default, the internal core documentation and portions of the Lua 5.3 manual, located at http://www.lua.org/manual/5.3/manual.html, are already registered for inclusion within this documentation object, but you can register additional documentation from 3rd party modules with `hs.registerJSONFile(...)` or limit the documentation to a single specific file with `hs.fromJSONFile(...)`.
+By default, the internal core documentation and portions of the Lua 5.3 manual, located at http://www.lua.org/manual/5.3/manual.html, are already registered for inclusion within this documentation object, but you can register additional documentation from 3rd party modules with `hs.registerJSONFile(...)`.
 
 ## Submodules
+ * [hs.doc.builder](hs.doc.builder.md)
  * [hs.doc.hsdocs](hs.doc.hsdocs.md)
  * [hs.doc.markdown](hs.doc.markdown.md)
+ * [hs.doc.spoonsupport](hs.doc.spoonsupport.md)
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [fromJSONFile](#fromjsonfile)
- * [fromRegisteredFiles](#fromregisteredfiles)
  * [help](#help)
  * [locateJSONFile](#locatejsonfile)
  * [registeredFiles](#registeredfiles)
@@ -42,23 +42,6 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 ## API Documentation
 
 ### Functions
-
-#### [fromJSONFile](#fromjsonfile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.fromJSONFile(jsonfile) -> doc-array` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Builds a doc array construct from the JSON file provided.                                                                                         |
-| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the documentation data loaded from the JSON file</li></ul>          |
-
-#### [fromRegisteredFiles](#fromregisteredfiles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.fromRegisteredFiles() -> doc-array` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Builds a doc array construct from the registered JSON files.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the documentation data loaded from the registered JSON files</li></ul>          |
-| **Notes**                                            | <ul><li>By default, the internal core documentation is already registered.  If you wish to remove it from the list of registered sources, issue the command `hs.doc.unregisterJSONFile(hs.docstrings_json_file)`.</li><li>The documentation object is created from the sources that are registered at the time of its invocation. If you register additional files later, you will need to reissue this command to build the updated documentation object.</li></ul>                |
 
 #### [help](#help)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.help(identifier)` </span>                                                          |
@@ -76,7 +59,7 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Description**                                      | Locates the JSON file corresponding to the specified module by searching package.path and package.cpath.                                                                                         |
 | **Parameters**                                       | <ul><li>module - the name of the module to locate a JSON file for</li></ul> |
 | **Returns**                                          | <ul><li>the path to the JSON file, or `false, error` if unable to locate a corresponding JSON file.</li></ul>          |
-| **Notes**                                            | <ul><li>The JSON should be named 'full.module.name.json' and located in the same directory as the `lua` or `so` file which is used when the module is loaded via `require`.</li></ul>                |
+| **Notes**                                            | <ul><li>The JSON should be named 'docs.json' and located in the same directory as the `lua` or `so` file which is used when the module is loaded via `require`.</li></ul>                |
 
 #### [registeredFiles](#registeredfiles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registeredFiles() -> table` </span>                                                          |
@@ -96,11 +79,11 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 | **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned.</li></ul>          |
 
 #### [unregisterJSONFile](#unregisterjsonfile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.unregisterJSONFile(jsonfile) -> status[, message]` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.unregisterJSONFile(jsonfile, [isSpoon]) -> status[, message]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Remove a JSON file from the list of registered files.                                                                                         |
-| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file</li></ul> |
+| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file</li><li>isSpoon  - an optional boolean, default false, specifying that the documentation should be added to the `spoons` sub heading in the documentation hierarchy.</li></ul> |
 | **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was unregistered or not.  If the file was not unregistered, then a message indicating the error is also returned.</li></ul>          |
 
 #### [validateJSONFile](#validatejsonfile)

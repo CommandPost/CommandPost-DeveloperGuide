@@ -37,6 +37,7 @@ Any suggestions or updates to the code to address any of these or other limitati
  * [allowNewWindows](#allownewwindows)
  * [allowTextEntry](#allowtextentry)
  * [alpha](#alpha)
+ * [attachedToolbar](#attachedtoolbar)
  * [behavior](#behavior)
  * [behaviorAsLabels](#behavioraslabels)
  * [bringToFront](#bringtofront)
@@ -48,6 +49,7 @@ Any suggestions or updates to the code to address any of these or other limitati
  * [estimatedProgress](#estimatedprogress)
  * [evaluateJavaScript](#evaluatejavascript)
  * [examineInvalidCertificates](#examineinvalidcertificates)
+ * [frame](#frame)
  * [goBack](#goback)
  * [goForward](#goforward)
  * [hide](#hide)
@@ -69,10 +71,11 @@ Any suggestions or updates to the code to address any of these or other limitati
  * [sendToBack](#sendtoback)
  * [shadow](#shadow)
  * [show](#show)
+ * [size](#size)
  * [sslCallback](#sslcallback)
  * [stopLoading](#stoploading)
  * [title](#title)
- * [toolbar](#toolbar)
+ * [topLeft](#topleft)
  * [transparent](#transparent)
  * [url](#url)
  * [urlParts](#urlparts)
@@ -195,6 +198,15 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Parameters**                                       | <ul><li>`alpha` - an optional number between 0.0 and 1.0 specifying the new alpha level for the webview.</li></ul> |
 | **Returns**                                          | <ul><li>If a parameter is provided, returns the webview object; otherwise returns the current value.</li></ul>          |
 
+#### [attachedToolbar](#attachedtoolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:attachedToolbar([toolbar | nil]) -> webviewObject | currentValue` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or attach/detach a toolbar to/from the webview.                                                                                         |
+| **Parameters**                                       | <ul><li>`toolbar` - if an `hs.webview.toolbar` object is specified, it will be attached to the webview.  If an explicit nil is specified, the current toolbar will be removed from the webview.</li></ul> |
+| **Returns**                                          | <ul><li>if a toolbarObject or explicit nil is specified, returns the webviewObject; otherwise returns the current toolbarObject or nil, if no toolbar is attached to the webview.</li></ul>          |
+| **Notes**                                            | <ul><li>this method is a convenience wrapper for the `hs.webview.toolbar.attachToolbar` function.</li></ul>                |
+
 #### [behavior](#behavior)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:behavior([behavior]) -> webviewObject | currentValue` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -278,7 +290,7 @@ Any suggestions or updates to the code to address any of these or other limitati
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Execute JavaScript within the context of the current webview and optionally receive its result or error in a callback function.                                                                                         |
-| **Parameters**                                       | <ul><li>`script` - the JavaScript to execute within the context of the current webview's display</li><li>`callback` - an optional function which should accept two parameters as the result of the executed JavaScript.  The function paramaters are as follows:</li><li>  `result` - the result of the executed JavaScript code or nil if there was no result or an error occurred.</li><li>  `error`  - an NSError table describing any error that occurred during the JavaScript execution or nil if no error occurred.</li></ul> |
+| **Parameters**                                       | <ul><li>`script` - the JavaScript to execute within the context of the current webview's display</li><li>`callback` - an optional function which should accept two parameters as the result of the executed JavaScript.  The function parameters are as follows:</li><li>  `result` - the result of the executed JavaScript code or nil if there was no result or an error occurred.</li><li>  `error`  - an NSError table describing any error that occurred during the JavaScript execution or nil if no error occurred.</li></ul> |
 | **Returns**                                          | <ul><li>the webview object</li></ul>          |
 
 #### [examineInvalidCertificates](#examineinvalidcertificates)
@@ -289,6 +301,15 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Parameters**                                       | <ul><li>* `flag` - an optional boolean, default false, specifying whether or not an invalid SSL server certificate should be  accepted if it is approved by the ssl callback function.</li></ul> |
 | **Returns**                                          | <ul><li>If a value is provided, then this method returns the webview object; otherwise the current value</li></ul>          |
 | **Notes**                                            | <ul><li>In order for this setting to have any effect, you must also register an ssl callback function with [hs.webview:sslCallback](#sslCallback) which should return true if the certificate should be granted an exception or false if it should not.  For a certificate to be granted an exception, both this method and the result of the callback *must* be true.</li></ul>                |
+
+#### [frame](#frame)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:frame([rect]) -> webviewObject | currentValue` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or set the frame of the webview window.                                                                                         |
+| **Parameters**                                       | <ul><li>rect - An optional rect-table containing the co-ordinates and size the webview window should be moved and set to</li></ul> |
+| **Returns**                                          | <ul><li>If an argument is provided, the webview object; otherwise the current value.</li></ul>          |
+| **Notes**                                            | <ul><li>a rect-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the webview window (keys `x`  and `y`) and the new size (keys `h` and `w`).  The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.</li></ul>                |
 
 #### [goBack](#goback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:goBack() -> webviewObject` </span>                                                          |
@@ -467,6 +488,15 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Parameters**                                       | <ul><li>`fadeInTime` - An optional number of seconds over which to fade in the webview. Defaults to zero</li></ul> |
 | **Returns**                                          | <ul><li>The webview object</li></ul>          |
 
+#### [size](#size)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:size([size]) -> webviewObject | currentValue` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or set the size of a webview window                                                                                         |
+| **Parameters**                                       | <ul><li>`size` - An optional size-table specifying the width and height the webview window should be resized to</li></ul> |
+| **Returns**                                          | <ul><li>If an argument is provided, the webview object; otherwise the current value.</li></ul>          |
+| **Notes**                                            | <ul><li>a size-table is a table with key-value pairs specifying the size (keys `h` and `w`) the webview should be resized to. The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.</li></ul>                |
+
 #### [sslCallback](#sslcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:sslCallback(fn) -> webviewObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -492,14 +522,14 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the title</li></ul>          |
 
-#### [toolbar](#toolbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:toolbar([toolbar | nil]) -> webviewObject | currentValue` </span>                                                          |
+#### [topLeft](#topleft)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:topLeft([point]) -> webviewObject | currentValue` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get or attach/detach a toolbar to/from the webview.                                                                                         |
-| **Parameters**                                       | <ul><li>`toolbar` - if an `hs.webview.toolbar` object is specified, it will be attached to the webview.  If an explicit nil is specified, the current toolbar will be removed from the webview.</li></ul> |
-| **Returns**                                          | <ul><li>if a toolbarObject or explicit nil is specified, returns the webviewObject; otherwise returns the current toolbarObject or nil, if no toolbar is attached to the webview.</li></ul>          |
-| **Notes**                                            | <ul><li>this method is a convenience wrapper for the `hs.webview.toolbar.attachToolbar` function.</li></ul>                |
+| **Description**                                      | Get or set the top-left coordinate of the webview window                                                                                         |
+| **Parameters**                                       | <ul><li>`point` - An optional point-table specifying the new coordinate the top-left of the webview window should be moved to</li></ul> |
+| **Returns**                                          | <ul><li>If an argument is provided, the webview object; otherwise the current value.</li></ul>          |
+| **Notes**                                            | <ul><li>a point-table is a table with key-value pairs specifying the new top-left coordinate on the screen of the webview (keys `x`  and `y`). The table may be crafted by any method which includes these keys, including the use of an `hs.geometry` object.</li></ul>                |
 
 #### [transparent](#transparent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:transparent([value]) -> webviewObject | current value` </span>                                                          |

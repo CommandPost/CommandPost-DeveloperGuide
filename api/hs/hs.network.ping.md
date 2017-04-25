@@ -51,6 +51,7 @@ This module provides a basic ping function which can test host availability. Pin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Cancels an in progress ping process, terminating it immediately                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>the `didFinish` message will be sent to the callback function as its final message.</li></ul>                |
 
@@ -125,6 +126,7 @@ This module provides a basic ping function which can test host availability. Pin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or remoce the callback function for the pingObject.                                                                                         |
+| **Parameters**                                       | <ul><li>`fn` - the function to set as the callback, or nil if you wish use the default callback.</li></ul> |
 | **Returns**                                          | <ul><li>the pingObject</li></ul>          |
 | **Notes**                                            | <ul><li>Because the ping process begins immediately upon creation with the [hs.network.ping.ping](#ping) constructor, it is preferable to assign the callback with the constructor itself.</li><li>This method is provided as a means of changing the callback based on other events (a change in the current network or location, perhaps.)</li><li>If you truly wish to create a pingObject with no callback, you will need to do something like `hs.network.ping.ping(...):setCallback(function() end)`.</li></ul>                |
 

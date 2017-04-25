@@ -187,7 +187,7 @@ end
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the hs.application for Final Cut Pro.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The hs.application, or nil if the application is not installed.</li></ul>          |
+| **Returns**                                          | <ul><li>The hs.application, or nil if the application is not running.</li></ul>          |
 
 #### [browser](#browser)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:browser() -> Browser` </span>                                                          |
@@ -355,7 +355,7 @@ end
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Version of Final Cut Pro                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Version as string or nil if an error occurred</li></ul>          |
+| **Returns**                                          | <ul><li>Version as string or nil if Final Cut Pro cannot be found.</li></ul>          |
 | **Notes**                                            | <ul><li>If Final Cut Pro is running it will get the version of the active Final Cut Pro application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul>                |
 
 #### [hide](#hide)
@@ -396,7 +396,7 @@ end
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Is a supported version of Final Cut Pro Installed?                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if a supported version of Final Cut Pro is installed otherwise `false`</li></ul>          |
+| **Returns**                                          | <ul><li>`true` if a supported version of Final Cut Pro is installed otherwise `false`</li><li>Supported version refers to any version of Final Cut Pro equal or higher to cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION</li></ul>          |
 
 #### [isRunning](#isrunning)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isRunning() -> boolean` </span>                                                          |
@@ -460,7 +460,7 @@ end
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Path to Final Cut Pro Application                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A string containing Final Cut Pro's filesystem path, or nil if the bundle identifier could not be located</li></ul>          |
+| **Returns**                                          | <ul><li>A string containing Final Cut Pro's filesystem path, or nil if Final Cut Pro's path could not be determined.</li></ul>          |
 
 #### [performShortcut](#performshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.performShortcut() -> Boolean` </span>                                                          |

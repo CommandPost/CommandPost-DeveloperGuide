@@ -15,6 +15,7 @@ Manipulate running applications
  * [enableSpotlightForNameSearches](#enablespotlightfornamesearches)
  * [frontmostApplication](#frontmostapplication)
  * [infoForBundleID](#infoforbundleid)
+ * [infoForBundlePath](#infoforbundlepath)
  * [launchOrFocus](#launchorfocus)
  * [launchOrFocusByBundleID](#launchorfocusbybundleid)
  * [nameForBundleID](#nameforbundleid)
@@ -102,6 +103,14 @@ Manipulate running applications
 | **Description**                                      | Gets the metadata of an application from its bundle identifier                                                                                         |
 | **Parameters**                                       | <ul><li>bundleID - A string containing an application bundle identifier (e.g. "com.apple.Safari")</li></ul> |
 | **Returns**                                          | <ul><li>A table containing information about the application, or nil if the bundle identifier could not be located</li></ul>          |
+
+#### [infoForBundlePath](#infoforbundlepath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.infoForBundlePath(bundlePath) -> table or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the metadata of an application from its path on disk                                                                                         |
+| **Parameters**                                       | <ul><li>bundlePath - A string containing the path to an application bundle (e.g. "/Applications/Safari.app")</li></ul> |
+| **Returns**                                          | <ul><li>A table containing information about the application, or nil if the bundle could not be located</li></ul>          |
 
 #### [launchOrFocus](#launchorfocus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.launchOrFocus(name) -> boolean` </span>                                                          |

@@ -234,6 +234,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get or set the element default specified by keyName.                                                                                         |
+| **Parameters**                                       | <ul><li>`keyName` - the element default to examine or modify</li><li>`value`   - an optional new value to set as the default fot his canvas when not specified explicitly in an element declaration.</li></ul> |
 | **Returns**                                          | <ul><li>If an argument is provided, the canvas object; otherwise the current value.</li></ul>          |
 | **Notes**                                            | <ul><li>Not all keys will apply to all element types.</li><li>Currently set and built-in defaults may be retrieved in a table with [hs.canvas:canvasDefaults](#canvasDefaults).</li></ul>                |
 

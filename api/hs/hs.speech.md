@@ -122,6 +122,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the pitch modulation for the synthesizer's voice.                                                                                         |
+| **Parameters**                                       | <ul><li>modulation - an optional number indicating the pitch modulation for the synthesizer.</li></ul> |
 | **Returns**                                          | <ul><li>If no parameter is provided, returns the current value; otherwise returns the synthesizer object.  Returns nil if an error occurs.</li></ul>          |
 | **Notes**                                            | <ul><li>Pitch modulation is expressed as a floating-point value in the range of 0.000 to 127.000. These values correspond to MIDI note values, where 60.000 is equal to middle C on a piano scale. The most useful speech pitches fall in the range of 40.000 to 55.000. A pitch modulation value of 0.000 corresponds to a monotone in which all speech is generated at the frequency corresponding to the speech pitch. Given a speech pitch value of 46.000, a pitch modulation of 2.000 would mean that the widest possible range of pitches corresponding to the actual frequency of generated text would be 44.000 to 48.000.</li></ul>                |
 
@@ -156,6 +157,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the base pitch for the synthesizer's voice.                                                                                         |
+| **Parameters**                                       | <ul><li>pitch - an optional number indicating the pitch base for the synthesizer.</li></ul> |
 | **Returns**                                          | <ul><li>If no parameter is provided, returns the current value; otherwise returns the synthesizer object.  Returns nil if an error occurs.</li></ul>          |
 | **Notes**                                            | <ul><li>Typical voice frequencies range from around 90 hertz for a low-pitched male voice to perhaps 300 hertz for a high-pitched child’s voice. These frequencies correspond to approximate pitch values in the ranges of 30.000 to 40.000 and 55.000 to 65.000, respectively.</li></ul>                |
 
@@ -173,6 +175,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Reset a synthesizer back to its default state.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Returns the synthesizer object.  Returns nil if an error occurs.</li></ul>          |
 | **Notes**                                            | <ul><li>This method will reset a synthesizer to its default state, including pitch, modulation, volume, rate, etc.</li><li>The changes go into effect immediately, if queried, but will not affect a synthesis in progress.</li></ul>                |
 

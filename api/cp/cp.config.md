@@ -4,6 +4,7 @@
 Manage CommandPost's constants and settings.
 
 ## Submodules
+ * [cp.config.accessibilityStateCallback](cp.config.accessibilityStateCallback.md)
  * [cp.config.dockIconClickCallback](cp.config.dockIconClickCallback.md)
  * [cp.config.fileDroppedToDockIconCallback](cp.config.fileDroppedToDockIconCallback.md)
  * [cp.config.shutdownCallback](cp.config.shutdownCallback.md)
