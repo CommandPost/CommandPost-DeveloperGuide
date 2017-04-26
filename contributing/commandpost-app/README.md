@@ -16,4 +16,6 @@ However, if there is something missing from CommandPost-App that you want to add
 
 For more information on contributing to Hammerspoon, refer to their [Contribution Guide](https://github.com/Hammerspoon/hammerspoon/blob/master/CONTRIBUTING.md).
 
+There's also a fantastic Hammerspoon Module Walkthrough [here](https://github.com/asmagill/HS_ModuleWalkthrough), which includes examples of how to make Objective-C extensions.
+
 If you have any questions about this, feel free to [submit an issue](https://github.com/CommandPost/CommandPost-App/issues).
