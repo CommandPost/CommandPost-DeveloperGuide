@@ -5,7 +5,7 @@ Create and manage menubar icons
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [priorities[]](#priorities[])
+ * [priorities](#priorities)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
  * [newWithPriority](#newwithpriority)
@@ -30,7 +30,7 @@ Create and manage menubar icons
 
 ### Constants
 
-#### [priorities[]](#priorities[])
+#### [priorities](#priorities)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.menubar.priorities[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |

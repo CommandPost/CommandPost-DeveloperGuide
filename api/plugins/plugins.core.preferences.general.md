@@ -5,23 +5,13 @@ General Preferences Panel.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [getDisplayMenubarAsIcon](#getdisplaymenubarasicon)
  * [openPrivacyPolicy](#openprivacypolicy)
- * [toggleAutoLaunch](#toggleautolaunch)
- * [toggleDisplayMenubarAsIcon](#toggledisplaymenubarasicon)
- * [toggleUploadCrashData](#toggleuploadcrashdata)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [autoLaunch](#autolaunch)
 
 ## API Documentation
 
 ### Functions
-
-#### [getDisplayMenubarAsIcon](#getdisplaymenubarasicon)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.getDisplayMenubarAsIcon() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns whether the menubar is display as an icon or not.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if set to display the menubar as an icon other `false` if displaying menubar as text.</li></ul>          |
 
 #### [openPrivacyPolicy](#openprivacypolicy)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.openPrivacyPolicy() -> none` </span>                                                          |
@@ -31,27 +21,11 @@ General Preferences Panel.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [toggleAutoLaunch](#toggleautolaunch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.toggleAutoLaunch() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggles the "Launch on Login" status for CommandPost.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+### Fields
 
-#### [toggleDisplayMenubarAsIcon](#toggledisplaymenubarasicon)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.toggleDisplayMenubarAsIcon() -> none` </span>                                                          |
+#### [autoLaunch](#autolaunch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.autoLaunch <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggles the menubar display icon from icon to text value and vice versa.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [toggleUploadCrashData](#toggleuploadcrashdata)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.toggleUploadCrashData() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggles the "Upload Crash Data" status for CommandPost.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Controls if CommandPost will automatically upload crash data to the developer.                                                                                         |
 

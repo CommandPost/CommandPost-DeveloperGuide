@@ -15,6 +15,8 @@ Menu Manager Plugin.
  * [generateMenuTable](#generatemenutable)
  * [init](#init)
  * [updateMenubarIcon](#updatemenubaricon)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [displayMenubarAsIcon](#displaymenubarasicon)
 
 ## API Documentation
 
@@ -75,4 +77,12 @@ Menu Manager Plugin.
 | **Description**                                      | Updates the Menubar Icon                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
+
+### Fields
+
+#### [displayMenubarAsIcon](#displaymenubarasicon)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.displayMenubarAsIcon <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | If `true`, the menubar item will be the app icon. If not, it will be the app name.                                                                                         |
 

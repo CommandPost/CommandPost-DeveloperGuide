@@ -15,7 +15,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
  * [printHistory](#printhistory)
  * [setGlobalLogLevel](#setgloballoglevel)
  * [setModulesLogLevel](#setmodulesloglevel)
-* Fields - Variables which can only be access from an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [level](#level)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [d](#d)

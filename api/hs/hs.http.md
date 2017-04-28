@@ -5,7 +5,7 @@ Perform HTTP requests
 
 ## API Overview
 * Variables - Configurable values
- * [htmlEntities[]](#htmlentities[])
+ * [htmlEntities](#htmlentities)
 * Functions - API calls offered directly by the extension
  * [asyncGet](#asyncget)
  * [asyncPost](#asyncpost)
@@ -22,7 +22,7 @@ Perform HTTP requests
 
 ### Variables
 
-#### [htmlEntities[]](#htmlentities[])
+#### [htmlEntities](#htmlentities)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.htmlEntities[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |

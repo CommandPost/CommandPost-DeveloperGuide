@@ -62,6 +62,7 @@
 | [cp.apple.finalcutpro.ui.Table](cp.apple.finalcutpro.ui.Table.md)                          | Table Module.     |
 | [cp.apple.finalcutpro.ui.TextField](cp.apple.finalcutpro.ui.TextField.md)                          | Text Field Module.     |
 | [cp.apple.finalcutpro.ui.WindowWatcher](cp.apple.finalcutpro.ui.WindowWatcher.md)                          | Window Watcher Module.     |
+| [cp.apple.finalcutpro.windowfilter](cp.apple.finalcutpro.windowfilter.md)                          | Window Filter for Final Cut Pro.     |
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
 | [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
@@ -77,11 +78,13 @@
 | [cp.config.shutdownCallback](cp.config.shutdownCallback.md)                          | Shutdown Callback Module.     |
 | [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)                          | Text Dropped to Dock Icon Callback     |
 | [cp.developer](cp.developer.md)                          | Developer Tools     |
+| [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
 | [cp.plist.archiver](cp.plist.archiver.md)                          | Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.     |
 | [cp.plugins](cp.plugins.md)                          | This is a simple plugin manager.     |
 | [cp.plugins.env](cp.plugins.env.md)                          | Provides access to resources in the plugin environment. In generally, this will be files stored in a Complex Plugin's folder.     |
+| [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and      |
 | [cp.watcher](cp.watcher.md)                          | Watcher Module.     |
 | [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |

@@ -10,9 +10,8 @@ Registers itself with the `plugins.core.actions.actionmanager`.
  * [execute](#execute)
  * [id](#id)
  * [init](#init)
- * [isEnabled](#isenabled)
- * [setEnabled](#setenabled)
- * [toggleEnabled](#toggleenabled)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [enabled](#enabled)
 
 ## API Documentation
 
@@ -47,27 +46,11 @@ Registers itself with the `plugins.core.actions.actionmanager`.
 | **Parameters**                                       | <ul><li>`actionmanager` - the Action Manager plugin</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.isEnabled() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Enabled the Menu Action                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+### Fields
 
-#### [setEnabled](#setenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.setEnabled() -> none` </span>                                                          |
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets                                                                                         |
-| **Parameters**                                       | <ul><li>`value` - boolean value</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [toggleEnabled](#toggleenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.toggleEnabled() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggles whether or not a menu action is enabled.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | This will be `true` when menu actions are enabled.                                                                                         |
 

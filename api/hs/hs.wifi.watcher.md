@@ -5,7 +5,7 @@ Watch for changes to the associated wifi network
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [eventTypes[]](#eventtypes[])
+ * [eventTypes](#eventtypes)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -17,7 +17,7 @@ Watch for changes to the associated wifi network
 
 ### Constants
 
-#### [eventTypes[]](#eventtypes[])
+#### [eventTypes](#eventtypes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.wifi.watcher.eventTypes[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |

@@ -4,6 +4,8 @@
 Final Cut Pro HUD.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [position](#position)
 * Functions - API calls offered directly by the extension
  * [assignButton](#assignbutton)
  * [choices](#choices)
@@ -13,30 +15,30 @@ Final Cut Pro HUD.
  * [getButtonCommand](#getbuttoncommand)
  * [getButtonText](#getbuttontext)
  * [getButtonURL](#getbuttonurl)
- * [getPosition](#getposition)
  * [hide](#hide)
  * [init](#init)
- * [isButtonsShown](#isbuttonsshown)
- * [isDropTargetsShown](#isdroptargetsshown)
- * [isEnabled](#isenabled)
- * [isInspectorShown](#isinspectorshown)
  * [javaScriptCallback](#javascriptcallback)
  * [new](#new)
  * [refresh](#refresh)
  * [setButton](#setbutton)
- * [setButtonsShown](#setbuttonsshown)
- * [setDropTargetsShown](#setdroptargetsshown)
- * [setEnabled](#setenabled)
- * [setInspectorShown](#setinspectorshown)
- * [setOption](#setoption)
- * [setPosition](#setposition)
  * [show](#show)
- * [toggleEnabled](#toggleenabled)
- * [toggleInspectorShown](#toggleinspectorshown)
  * [updateVisibility](#updatevisibility)
  * [visible](#visible)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [buttonsShown](#buttonsshown)
+ * [dropTargetsShown](#droptargetsshown)
+ * [enabled](#enabled)
+ * [inspectorShown](#inspectorshown)
 
 ## API Documentation
+
+### Constants
+
+#### [position](#position)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.position <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Returns the last HUD frame saved in settings.                                                                                         |
 
 ### Functions
 
@@ -104,14 +106,6 @@ Final Cut Pro HUD.
 | **Parameters**                                       | <ul><li>index - Index of the Button</li></ul> |
 | **Returns**                                          | <ul><li>Button URL</li></ul>          |
 
-#### [getPosition](#getposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.getPosition() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the last HUD frame saved in settings.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The last HUD frame or {}.</li></ul>          |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.hide() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -127,38 +121,6 @@ Final Cut Pro HUD.
 | **Description**                                      | Initialise HUD Module.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [isButtonsShown](#isbuttonsshown)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.isButtonsShown() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Should Buttons in the HUD be shown?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` or `false`</li></ul>          |
-
-#### [isDropTargetsShown](#isdroptargetsshown)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.isDropTargetsShown() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Should Drop Targets in the HUD be shown?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` or `false`</li></ul>          |
-
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Is the HUD enabled in the settings?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if enabled otherwise false</li></ul>          |
-
-#### [isInspectorShown](#isinspectorshown)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.isInspectorShown() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Should the Inspector in the HUD be shown?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` or `false`</li></ul>          |
 
 #### [javaScriptCallback](#javascriptcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.javaScriptCallback() -> none` </span>                                                          |
@@ -192,75 +154,11 @@ Final Cut Pro HUD.
 | **Parameters**                                       | <ul><li>index - Index of the Button</li><li>value - Value you want to set the button to.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [setButtonsShown](#setbuttonsshown)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.setButtonsShown() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Set whether or not Buttons should be shown in the HUD.                                                                                         |
-| **Parameters**                                       | <ul><li>value - `true` or `false`</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [setDropTargetsShown](#setdroptargetsshown)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.setDropTargetsShown() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Set whether or not Drop Targets should be shown in the HUD.                                                                                         |
-| **Parameters**                                       | <ul><li>value - `true` or `false`</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [setEnabled](#setenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.setEnabled() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets whether or not the HUD is enabled.                                                                                         |
-| **Parameters**                                       | <ul><li>value - `true` if HUD should be enabled otherwise `false`</li></ul> |
-| **Returns**                                          | <ul><li>`true` if enabled otherwise false</li></ul>          |
-
-#### [setInspectorShown](#setinspectorshown)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.setInspectorShown() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Set whether or not the Inspector should be shown in the HUD.                                                                                         |
-| **Parameters**                                       | <ul><li>value - `true` or `false`</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [setOption](#setoption)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.setOption() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets a HUD option                                                                                         |
-| **Parameters**                                       | <ul><li>name - The name of the option</li><li>value - The value of the option</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [setPosition](#setposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.setPosition() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Saves the HUD position to settings.                                                                                         |
-| **Parameters**                                       | <ul><li>value - Position as table</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.show() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Show the HUD.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [toggleEnabled](#toggleenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.toggleEnabled() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggles the HUD                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [toggleInspectorShown](#toggleinspectorshown)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.toggleInspectorShown() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggles whether or not Buttons should be shown in the HUD.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -279,4 +177,30 @@ Final Cut Pro HUD.
 | **Description**                                      | Is the HUD visible?                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`true` or `false`</li></ul>          |
+
+### Fields
+
+#### [buttonsShown](#buttonsshown)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.buttonsShown <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Should Buttons in the HUD be shown?                                                                                         |
+
+#### [dropTargetsShown](#droptargetsshown)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.dropTargetsShown <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Should Drop Targets in the HUD be enabled?                                                                                         |
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is the HUD enabled in the settings?                                                                                         |
+
+#### [inspectorShown](#inspectorshown)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.inspectorShown <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Should the Inspector in the HUD be shown?                                                                                         |
 

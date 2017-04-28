@@ -4,10 +4,20 @@
 Export Dialog Module.
 
 ## API Overview
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [isShowing](#isshowing)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [watch](#watch)
 
 ## API Documentation
+
+### Fields
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is the window showing?                                                                                         |
 
 ### Methods
 

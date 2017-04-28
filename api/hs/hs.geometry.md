@@ -38,7 +38,7 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
  * [point](#point)
  * [rect](#rect)
  * [size](#size)
-* Fields - Variables which can only be access from an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [area](#area)
  * [aspect](#aspect)
  * [bottomright](#bottomright)

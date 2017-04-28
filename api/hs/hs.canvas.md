@@ -21,8 +21,8 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [compositeTypes[]](#compositetypes[])
- * [windowBehaviors[]](#windowbehaviors[])
+ * [compositeTypes](#compositetypes)
+ * [windowBehaviors](#windowbehaviors)
  * [windowLevels](#windowlevels)
 * Functions - API calls offered directly by the extension
  * [defaultTextStyle](#defaulttextstyle)
@@ -32,9 +32,9 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
  * [help](#help)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
-* Fields - Variables which can only be access from an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [attributes](#attributes)
- * [object[index]](#object[index])
+ * [object](#object)
  * [percentages](#percentages)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [alpha](#alpha)
@@ -81,13 +81,13 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 
 ### Constants
 
-#### [compositeTypes[]](#compositetypes[])
+#### [compositeTypes](#compositetypes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.compositeTypes[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing the possible compositing rules for elements within the canvas.                                                                                         |
 
-#### [windowBehaviors[]](#windowbehaviors[])
+#### [windowBehaviors](#windowbehaviors)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.windowBehaviors[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
@@ -165,7 +165,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Canvas Element Attributes                                                                                         |
 
-#### [object[index]](#object[index])
+#### [object](#object)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.object[index]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |

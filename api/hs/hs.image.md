@@ -6,8 +6,8 @@ A module for capturing and manipulating image objects from other modules for use
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [additionalImageNames[]](#additionalimagenames[])
- * [systemImageNames[]](#systemimagenames[])
+ * [additionalImageNames](#additionalimagenames)
+ * [systemImageNames](#systemimagenames)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [iconForFile](#iconforfile)
  * [iconForFileType](#iconforfiletype)
@@ -31,14 +31,14 @@ A module for capturing and manipulating image objects from other modules for use
 
 ### Constants
 
-#### [additionalImageNames[]](#additionalimagenames[])
+#### [additionalImageNames](#additionalimagenames)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.additionalImageNames[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Table of arrays containing the names of additional internal system images which may also be available for use with `hs.drawing.image` and [hs.image.imageFromName](#imageFromName).                                                                                         |
 | **Notes**                                            | <ul><li>The list of these images was pulled from a collection located in the repositories at https://github.com/hetima?tab=repositories.  As these image names are (for the most part) not formally listed in Apple's documentation or published APIs, their use cannot be guaranteed across all OS X versions.  If you identify any images which may be missing or could be added, please file an issue at https://github.com/Hammerspoon/hammerspoon.</li></ul>                |
 
-#### [systemImageNames[]](#systemimagenames[])
+#### [systemImageNames](#systemimagenames)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.systemImageNames[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |

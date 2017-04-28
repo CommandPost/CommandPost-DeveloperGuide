@@ -8,6 +8,8 @@ Registers itself with the `core.action.manager`.
 * Functions - API calls offered directly by the extension
  * [choices](#choices)
  * [execute](#execute)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [enabled](#enabled)
 
 ## API Documentation
 
@@ -25,4 +27,12 @@ Registers itself with the `core.action.manager`.
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Executes the action with the provided parameters.                                                                                         |
 | **Parameters**                                       | <ul><li>* `params`	- A table of parameters, matching the following:</li><li>		* `group`	- The Command Group ID</li><li>		* `id`		- The specific Command ID within the group.</li></ul> |
+
+### Fields
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.commands.commandaction.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | This will be `true` when the command actions are enabled.                                                                                         |
 

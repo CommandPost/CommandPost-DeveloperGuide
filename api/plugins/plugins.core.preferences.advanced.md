@@ -5,23 +5,16 @@ Advanced Preferences Panel.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [getDeveloperMode](#getdevelopermode)
  * [openErrorLog](#openerrorlog)
  * [toggleCommandLineTool](#togglecommandlinetool)
  * [toggleDeveloperMode](#toggledevelopermode)
  * [trashPreferences](#trashpreferences)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [developerMode](#developermode)
 
 ## API Documentation
 
 ### Functions
-
-#### [getDeveloperMode](#getdevelopermode)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.getDeveloperMode() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the Developer Mode status.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if developer mode is enabled otherwise `false`.</li></ul>          |
 
 #### [openErrorLog](#openerrorlog)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.openErrorLog() -> none` </span>                                                          |
@@ -54,4 +47,12 @@ Advanced Preferences Panel.
 | **Description**                                      | Resets all of the CommandPost Preferences to their default values.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
+
+### Fields
+
+#### [developerMode](#developermode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.developerMode <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Enables or disables developer mode.                                                                                         |
 

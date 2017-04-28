@@ -13,10 +13,10 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [activationTypes[]](#activationtypes[])
+ * [activationTypes](#activationtypes)
  * [defaultNotificationSound](#defaultnotificationsound)
 * Variables - Configurable values
- * [registry[]](#registry[])
+ * [registry](#registry)
  * [warnAboutMissingFunctionTag](#warnaboutmissingfunctiontag)
 * Functions - API calls offered directly by the extension
  * [register](#register)
@@ -53,7 +53,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 
 ### Constants
 
-#### [activationTypes[]](#activationtypes[])
+#### [activationTypes](#activationtypes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.activationTypes[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
@@ -68,7 +68,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 
 ### Variables
 
-#### [registry[]](#registry[])
+#### [registry](#registry)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.registry[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |

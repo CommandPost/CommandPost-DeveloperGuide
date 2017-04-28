@@ -8,7 +8,7 @@ Primitives for drawing on the screen in various ways
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [windowBehaviors[]](#windowbehaviors[])
+ * [windowBehaviors](#windowbehaviors)
  * [windowLevels](#windowlevels)
 * Functions - API calls offered directly by the extension
  * [defaultTextStyle](#defaulttextstyle)
@@ -75,7 +75,7 @@ Primitives for drawing on the screen in various ways
 
 ### Constants
 
-#### [windowBehaviors[]](#windowbehaviors[])
+#### [windowBehaviors](#windowbehaviors)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.windowBehaviors[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |

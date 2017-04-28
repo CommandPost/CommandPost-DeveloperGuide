@@ -26,7 +26,7 @@ Common item data types that can be shared with Sharing Services include (but are
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [builtinSharingServices[]](#builtinsharingservices[])
+ * [builtinSharingServices](#builtinsharingservices)
 * Functions - API calls offered directly by the extension
  * [fileURL](#fileurl)
  * [shareTypesFor](#sharetypesfor)
@@ -52,7 +52,7 @@ Common item data types that can be shared with Sharing Services include (but are
 
 ### Constants
 
-#### [builtinSharingServices[]](#builtinsharingservices[])
+#### [builtinSharingServices](#builtinsharingservices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing.builtinSharingServices[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |

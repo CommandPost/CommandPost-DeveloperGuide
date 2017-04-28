@@ -8,7 +8,6 @@ Batch Export Plugin
  * [batchExport](#batchexport)
  * [changeExportDestinationFolder](#changeexportdestinationfolder)
  * [changeExportDestinationPreset](#changeexportdestinationpreset)
- * [toggleReplaceExistingFiles](#togglereplaceexistingfiles)
 
 ## API Documentation
 
@@ -37,12 +36,4 @@ Batch Export Plugin
 | **Description**                                      | Change Export Destination Preset.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful otherwise `false`</li></ul>          |
-
-#### [toggleReplaceExistingFiles](#togglereplaceexistingfiles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.toggleReplaceExistingFiles() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggle Replace Existing Files                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if successful</li></ul>          |
 

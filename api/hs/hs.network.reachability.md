@@ -33,7 +33,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [flags[]](#flags[])
+ * [flags](#flags)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [forAddress](#foraddress)
  * [forAddressPair](#foraddresspair)
@@ -51,7 +51,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 
 ### Constants
 
-#### [flags[]](#flags[])
+#### [flags](#flags)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.flags[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |

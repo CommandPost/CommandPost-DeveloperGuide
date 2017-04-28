@@ -33,9 +33,11 @@ Manage CommandPost's constants and settings.
 * Functions - API calls offered directly by the extension
  * [application](#application)
  * [get](#get)
- * [isFrontmost](#isfrontmost)
+ * [prop](#prop)
  * [reset](#reset)
  * [set](#set)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [frontmost](#frontmost)
 
 ## API Documentation
 
@@ -160,20 +162,20 @@ Manage CommandPost's constants and settings.
 | **Returns**                                          | <ul><li>hs.application object</li></ul>          |
 
 #### [get](#get)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.get() -> string or boolean or number or nil or table or binary data` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.get(key[, defaultValue]) -> string or boolean or number or nil or table or binary data` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a setting                                                                                         |
 | **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li><li>defaultValue - A default value if the setting doesn't already exist</li></ul> |
 | **Returns**                                          | <ul><li>The value of the setting</li></ul>          |
 
-#### [isFrontmost](#isfrontmost)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.isFrontmost() -> boolean` </span>                                                          |
+#### [prop](#prop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.prop(key[, defaultValue]) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns whether or not the Application is front most                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if Application is front most otherwise `false`</li></ul>          |
+| **Description**                                      | Returns a `cp.prop` instance connected to the value of the specified key. When the value is modified, it will be notified.                                                                                         |
+| **Parameters**                                       | <ul><li>* `key`				- The configuration setting key.</li><li>* `defaultValue`	- The default value if the key has not been set.</li></ul> |
+| **Returns**                                          | <ul><li>* A `cp.prop` instance for the key.</li></ul>          |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.reset()` </span>                                                          |
@@ -191,4 +193,12 @@ Manage CommandPost's constants and settings.
 | **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li><li>val - An optional value for the setting. Valid datatypes are:</li><li>  string</li><li>  number</li><li>  boolean</li><li>  nil</li><li>  table (which may contain any of the same valid datatypes)</li><li>if no value is provided, it is assumed to be nil</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>This function cannot set dates or raw data types</li></ul>                |
+
+### Fields
+
+#### [frontmost](#frontmost)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.frontmost <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns whether or not the Application is frontmost.                                                                                         |
 

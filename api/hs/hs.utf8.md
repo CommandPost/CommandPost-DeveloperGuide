@@ -17,7 +17,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 
 ## API Overview
 * Variables - Configurable values
- * [registeredKeys[]](#registeredkeys[])
+ * [registeredKeys](#registeredkeys)
 * Functions - API calls offered directly by the extension
  * [asciiOnly](#asciionly)
  * [codepointToUTF8](#codepointtoutf8)
@@ -30,7 +30,7 @@ Additional functions that are specific to Hammerspoon which provide expanded sup
 
 ### Variables
 
-#### [registeredKeys[]](#registeredkeys[])
+#### [registeredKeys](#registeredkeys)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.utf8.registeredKeys[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |

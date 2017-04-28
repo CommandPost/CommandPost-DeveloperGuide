@@ -5,7 +5,7 @@ Simple on-screen alerts
 
 ## API Overview
 * Variables - Configurable values
- * [defaultStyle[]](#defaultstyle[])
+ * [defaultStyle](#defaultstyle)
 * Functions - API calls offered directly by the extension
  * [closeAll](#closeall)
  * [closeSpecific](#closespecific)
@@ -15,7 +15,7 @@ Simple on-screen alerts
 
 ### Variables
 
-#### [defaultStyle[]](#defaultstyle[])
+#### [defaultStyle](#defaultstyle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.alert.defaultStyle[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |

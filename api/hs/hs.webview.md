@@ -25,8 +25,8 @@ Any suggestions or updates to the code to address any of these or other limitati
  * [asHSWindow](#ashswindow)
  * [setLevel](#setlevel)
 * Constants - Useful values which cannot be changed
- * [certificateOIDs[]](#certificateoids[])
- * [windowMasks[]](#windowmasks[])
+ * [certificateOIDs](#certificateoids)
+ * [windowMasks](#windowmasks)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
  * [newBrowser](#newbrowser)
@@ -113,13 +113,13 @@ Any suggestions or updates to the code to address any of these or other limitati
 
 ### Constants
 
-#### [certificateOIDs[]](#certificateoids[])
+#### [certificateOIDs](#certificateoids)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.certificateOIDs[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table of common OID values found in SSL certificates.  SSL certificates provided to the callback function for [hs.webview:sslCallback](#sslCallback) or in the results of [hs.webview:certificateChain](#certificateChain) use OID strings as the keys which describe the properties of the certificate and this table can be used to get a more common name for the keys you are most likely to see.                                                                                         |
 
-#### [windowMasks[]](#windowmasks[])
+#### [windowMasks](#windowmasks)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.windowMasks[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |

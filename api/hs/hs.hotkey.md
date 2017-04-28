@@ -16,6 +16,7 @@ Create and manage global keyboard shortcuts
  * [showHotkeys](#showhotkeys)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [bind](#bind)
+ * [bindSpec](#bindspec)
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [delete](#delete)
@@ -76,6 +77,15 @@ Create and manage global keyboard shortcuts
 | **Parameters**                                       | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li><li>   which should be zero or more of the following:</li><li>  "cmd", "command" or "⌘"</li><li>  "ctrl", "control" or "⌃"</li><li>  "alt", "option" or "⌥"</li><li>  "shift" or "⇧"</li><li>key - A string containing the name of a keyboard key (as found in [hs.keycodes.map](hs.keycodes.html#map) ), or a raw keycode number</li><li>message - A string containing a message to be displayed via `hs.alert()` when the hotkey has been triggered, or nil for no alert</li><li>pressedfn - A function that will be called when the hotkey has been pressed, or nil</li><li>releasedfn - A function that will be called when the hotkey has been released, or nil</li><li>repeatfn - A function that will be called when a pressed hotkey is repeating, or nil</li></ul> |
 | **Returns**                                          | <ul><li>A new `hs.hotkey` object for method chaining</li></ul>          |
 | **Notes**                                            | <ul><li>This function is just a wrapper that performs `hs.hotkey.new(...):enable()`</li></ul>                |
+
+#### [bindSpec](#bindspec)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.bindSpec(keyspec, ...) -> hs.hotkey object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a hotkey and enables it immediately                                                                                         |
+| **Parameters**                                       | <ul><li>keyspec - A table containing two items:</li><li> first, a table containing keyboard modifiers, as specified in `hs.hotkey.bind()`</li><li> second, a string containing the name of a keyboard key, as specified in `hs.hotkey.bind()`</li><li>... - All remaining arguments are as specified in `hs.hotkey.bind()`</li></ul> |
+| **Returns**                                          | <ul><li>A new `hs.hotkey` object for method chaining</li></ul>          |
+| **Notes**                                            | <ul><li>This function is just a wrapper that performs `hs.hotkey.bind(keyspec[1], keyspec[2], ...)`</li></ul>                |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.new(mods, key, [message,] pressedfn, releasedfn, repeatfn) -> hs.hotkey object` </span>                                                          |
