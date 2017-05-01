@@ -216,7 +216,7 @@ end
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is Final Cut visible on screen?                                                                                          |
+| **Description**                                      | Is Final Cut visible on screen?                                                                                         |
 
 ### Methods
 

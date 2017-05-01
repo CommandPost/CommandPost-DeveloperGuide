@@ -88,6 +88,7 @@
 | [plugins.finalcutpro.preferences.panels.finalcutpro](plugins.finalcutpro.preferences.panels.finalcutpro.md)                          | Final Cut Pro Preferences Panel     |
 | [plugins.finalcutpro.preferences.scanfinalcutpro](plugins.finalcutpro.preferences.scanfinalcutpro.md)                          | Scan Final Cut Pro.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
+| [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
 | [plugins.finalcutpro.timeline.effects](plugins.finalcutpro.timeline.effects.md)                          | Controls Final Cut Pro's Effects.     |
 | [plugins.finalcutpro.timeline.generators](plugins.finalcutpro.timeline.generators.md)                          | Controls Final Cut Pro's Generators.     |

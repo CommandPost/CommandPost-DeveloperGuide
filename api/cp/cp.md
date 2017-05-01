@@ -24,6 +24,8 @@ Core CommandPost functionality
  * [heading](#heading)
  * [init](#init)
  * [javascript](#javascript)
+ * [modifierMaskToModifiers](#modifiermasktomodifiers)
+ * [modifierMatch](#modifiermatch)
  * [password](#password)
  * [select](#select)
  * [template](#template)
@@ -60,6 +62,23 @@ Core CommandPost functionality
 | **Description**                                      | Generates an HTML script element which will execute the provided                                                                                         |
 | **Parameters**                                       | <ul><li>script 	- String containing the JavaScript to execute.</li><li>context	- Table containing any values to inject into the script.</li></ul> |
 | **Returns**                                          | <ul><li>a `cp.web.html` element representing the JavaScript block.</li></ul>          |
+
+#### [modifierMaskToModifiers](#modifiermasktomodifiers)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.modifierMaskToModifiers() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Translate Keyboard Modifiers from Apple's Plist Format into Hammerspoon Format                                                                                         |
+| **Parameters**                                       | <ul><li>value - Modifiers String</li></ul> |
+| **Returns**                                          | <ul><li>table</li></ul>          |
+
+#### [modifierMatch](#modifiermatch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.modifierMatch(inputA, inputB) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Compares two modifier tables.                                                                                         |
+| **Parameters**                                       | <ul><li>inputA - table of modifiers</li><li>inputB - table of modifiers</li></ul> |
+| **Returns**                                          | <ul><li>`true` if there's a match otherwise `false`</li></ul>          |
+| **Notes**                                            | <ul><li>This function only takes into account 'ctrl', 'alt', 'cmd', 'shift'.</li></ul>                |
 
 #### [password](#password)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.password(params) -> hs.web.html` </span>                                                          |

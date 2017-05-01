@@ -53,7 +53,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is pressed.                                                                                         |
-| **Parameters**                                       | <ul><li>N/A</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [getShortcuts](#getshortcuts)
@@ -61,7 +61,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the set of shortcuts assigned to this command.                                                                                         |
-| **Parameters**                                       | <ul><li>N/A</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The associated shortcuts.</li></ul>          |
 
 #### [new](#new)
@@ -77,7 +77,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the 'pressed' function, if present.                                                                                         |
-| **Parameters**                                       | <ul><li>N/A</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the result of the function, or `nil` if none is present.</li></ul>          |
 
 #### [released](#released)
@@ -85,7 +85,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the 'released' function, if present.                                                                                         |
-| **Parameters**                                       | <ul><li>N/A</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the result of the function, or `nil` if none is present.</li></ul>          |
 
 #### [repeated](#repeated)

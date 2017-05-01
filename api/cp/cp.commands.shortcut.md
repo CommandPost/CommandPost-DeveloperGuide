@@ -11,6 +11,9 @@ Shortcut Commands
  * [bind](#bind)
  * [build](#build)
  * [enable](#enable)
+ * [getKeyCode](#getkeycode)
+ * [getModifiers](#getmodifiers)
+ * [isEnabled](#isenabled)
  * [new](#new)
  * [trigger](#trigger)
 
@@ -37,12 +40,36 @@ Shortcut Commands
 | **Notes**                                            | <ul><li>* If provided, the receiver function will be called when the shortcut has been configured, and passed the new</li><li>  shortcut. The result of that function will be returned to the next stage.</li><li>  If no `receiverFn` is provided, the shortcut will be returned directly.</li></ul>                |
 
 #### [enable](#enable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:enable() - > shortcut` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:enable() -> shortcut` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This enables the shortcut. If a hotkey has been bound, it will be enabled also.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`self`</li></ul>          |
+
+#### [getKeyCode](#getkeycode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:getKeyCode() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a string containing the keycode of the shortcut.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`string` containing the keycode of the shortcut.</li></ul>          |
+
+#### [getModifiers](#getmodifiers)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:getModifiers() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a table containing the modifiers for a shortcut.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`table` containing the modifiers of the shortcut.</li></ul>          |
+
+#### [isEnabled](#isenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:isEnabled() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Is the shortcut enabled?                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Returns `true` if the shortcut is enabled otherwise `false`</li></ul>          |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:new(command) -> shortcut` </span>                                                          |
