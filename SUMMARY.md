@@ -116,6 +116,7 @@
 		* [shutdownCallback](api/cp/cp.config.shutdownCallback.md)
 		* [textDroppedToDockIconCallback](api/cp/cp.config.textDroppedToDockIconCallback.md)
 	* [developer](api/cp/cp.developer.md)
+	* [dialog](api/cp/cp.dialog.md)
 	* [feedback](api/cp/cp.feedback.md)
 	* [just](api/cp/cp.just.md)
 	* [plist](api/cp/cp.plist.md)
@@ -124,6 +125,7 @@
 		* [env](api/cp/cp.plugins.env.md)
 	* [prop](api/cp/cp.prop.md)
 	* [sourcewatcher](api/cp/cp.sourcewatcher.md)
+	* [tools](api/cp/cp.tools.md)
 	* [watcher](api/cp/cp.watcher.md)
 	* web
 		* [generate](api/cp/cp.web.generate.md)

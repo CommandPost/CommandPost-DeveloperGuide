@@ -5,8 +5,11 @@ Text to Speech Plugin.
 
 ## API Overview
 * Variables - Configurable values
+ * [createRoleForVoice](#createroleforvoice)
+ * [insertIntoTimeline](#insertintotimeline)
  * [path](#path)
  * [recentText](#recenttext)
+ * [tag](#tag)
  * [voice](#voice)
 * Functions - API calls offered directly by the extension
  * [chooseFolder](#choosefolder)
@@ -15,6 +18,18 @@ Text to Speech Plugin.
 ## API Documentation
 
 ### Variables
+
+#### [createRoleForVoice](#createroleforvoice)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.createRoleForVoice` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Boolean that sets whether or not a tag should be added for the voice.                                                                                         |
+
+#### [insertIntoTimeline](#insertintotimeline)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.insertIntoTimeline` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Boolean that sets whether or not new generated voice file are automatically added to the timeline or not.                                                                                         |
 
 #### [path](#path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.path` </span>                                                          |
@@ -27,6 +42,12 @@ Text to Speech Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table of recent items in Text to Speech Search.                                                                                         |
+
+#### [tag](#tag)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.tag` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Tag that will be added to generated voice overs.                                                                                         |
 
 #### [voice](#voice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.voice` </span>                                                          |

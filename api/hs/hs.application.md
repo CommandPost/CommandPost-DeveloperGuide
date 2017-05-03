@@ -340,7 +340,7 @@ Manipulate running applications
 | **Returns**                                          | <ul><li>The UNIX process identifier of the application (i.e. a number)</li></ul>          |
 
 #### [selectMenuItem](#selectmenuitem)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:selectMenuItem(menuitem) -> true or nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:selectMenuItem(menuitem[, isRegex]) -> true or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects a menu item (i.e. simulates clicking on the menu item)                                                                                         |

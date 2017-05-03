@@ -13,6 +13,10 @@ These functions allow altering the behavior and display of the Hammerspoon conso
  * [alpha](#alpha)
  * [behaviorAsLabels](#behavioraslabels)
  * [clearConsole](#clearconsole)
+ * [consoleCommandColor](#consolecommandcolor)
+ * [consoleFont](#consolefont)
+ * [consolePrintColor](#consoleprintcolor)
+ * [consoleResultColor](#consoleresultcolor)
  * [getConsole](#getconsole)
  * [getHistory](#gethistory)
  * [hswindow](#hswindow)
@@ -74,6 +78,42 @@ These functions allow altering the behavior and display of the Hammerspoon conso
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>This is equivalent to `hs.console.setConsole()`</li></ul>                |
+
+#### [consoleCommandColor](#consolecommandcolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.consoleCommandColor([color]) -> color` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get or set the color that commands displayed in the Hammerspoon console are displayed with.                                                                                         |
+| **Parameters**                                       | <ul><li>* color - an optional table containing color keys as described in `hs.drawing.color`</li></ul> |
+| **Returns**                                          | <ul><li>* the current color setting as a table</li></ul>          |
+| **Notes**                                            | <ul><li>See the `hs.drawing.color` entry in the Dash documentation, or type `help.hs.drawing.color` in the Hammerspoon console to get more information on how to specify a color.</li><li>Note this only affects future output -- anything already in the console will remain its current color.</li></ul>                |
+
+#### [consoleFont](#consolefont)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.consoleFont([font]) -> fontTable` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get or set the font used in the Hammerspoon console.                                                                                         |
+| **Parameters**                                       | <ul><li>* font - an optional string or table describing the font to use in the console. If a string is specified, then the default system font size will be used.  If a table is specified, it should contain a `name` key-value pair and a `size` key-value pair describing the font to be used.</li></ul> |
+| **Returns**                                          | <ul><li>* the current font setting as a table containing a `name` key and a `size` key.</li></ul>          |
+| **Notes**                                            | <ul><li>See the `hs.drawing.color` entry in the Dash documentation, or type `help.hs.drawing.color` in the Hammerspoon console to get more information on how to specify a color.</li><li>Note this only affects future output -- anything already in the console will remain its current font.</li></ul>                |
+
+#### [consolePrintColor](#consoleprintcolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.consolePrintColor([color]) -> color` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get or set the color that regular output displayed in the Hammerspoon console is displayed with.                                                                                         |
+| **Parameters**                                       | <ul><li>* color - an optional table containing color keys as described in `hs.drawing.color`</li></ul> |
+| **Returns**                                          | <ul><li>* the current color setting as a table</li></ul>          |
+| **Notes**                                            | <ul><li>See the `hs.drawing.color` entry in the Dash documentation, or type `help.hs.drawing.color` in the Hammerspoon console to get more information on how to specify a color.</li><li>Note this only affects future output -- anything already in the console will remain its current color.</li></ul>                |
+
+#### [consoleResultColor](#consoleresultcolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.consoleResultColor([color]) -> color` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get or set the color that function results displayed in the Hammerspoon console are displayed with.                                                                                         |
+| **Parameters**                                       | <ul><li>* color - an optional table containing color keys as described in `hs.drawing.color`</li></ul> |
+| **Returns**                                          | <ul><li>* the current color setting as a table</li></ul>          |
+| **Notes**                                            | <ul><li>See the `hs.drawing.color` entry in the Dash documentation, or type `help.hs.drawing.color` in the Hammerspoon console to get more information on how to specify a color.</li><li>Note this only affects future output -- anything already in the console will remain its current color.</li></ul>                |
 
 #### [getConsole](#getconsole)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.getConsole([styled]) -> text | styledText` </span>                                                          |
