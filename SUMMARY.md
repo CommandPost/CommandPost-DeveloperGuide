@@ -18,8 +18,8 @@
 ## Control CommandPost
 
 * [AppleScript](control/applescript/README.md)
-* [URL Handler](control/urlhandler/README.md)
 * [Command Line Tool](control/commandline/README.md)
+* [URL Handler](control/urlhandler/README.md)
 
 ## Plugins
 
@@ -31,8 +31,9 @@
 
 ## Final Cut Pro
 
-* [Package Contents](final_cut_pro/package_contents/README.md)
 * [FCPXML](final_cut_pro/fcpxml/README.md)
+* [iXML](final_cut_pro/ixml/README.md)
+* [Package Contents](final_cut_pro/package_contents/README.md)
 
 ## Bundled Extensions
 
