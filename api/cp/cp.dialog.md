@@ -30,19 +30,19 @@ A collection of handy Dialog tools for CommandPost.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [displayChooseFile](#displaychoosefile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dialog.displayChooseFile(whatMessage, fileType) -> boolean or string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dialog.displayChooseFile(whatMessage, fileType[, defaultLocation]) -> boolean or string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Display a Choose File Dialog Box.                                                                                         |
-| **Parameters**                                       | <ul><li>whatMessage - The message you want to display as a string</li><li>fileType - The filetype you wish to display</li></ul> |
+| **Parameters**                                       | <ul><li>whatMessage - The message you want to display as a string</li><li>fileType - The filetype you wish to display</li><li>defaultLocation - Path to Default Location</li></ul> |
 | **Returns**                                          | <ul><li>`false` if cancelled if pressed otherwise the path to the file as a string</li></ul>          |
 
 #### [displayChooseFolder](#displaychoosefolder)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dialog.displayChooseFolder(whatMessage) -> boolean or string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dialog.displayChooseFolder(whatMessage[, defaultLocation]) -> boolean or string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Display a Choose Folder Dialog Box.                                                                                         |
-| **Parameters**                                       | <ul><li>whatMessage - The message you want to display as a string</li></ul> |
+| **Parameters**                                       | <ul><li>whatMessage - The message you want to display as a string</li><li>defaultLocation - Path to Default Location</li></ul> |
 | **Returns**                                          | <ul><li>`false` if cancelled if pressed otherwise the path to the folder as a string</li></ul>          |
 
 #### [displayChooseFromList](#displaychoosefromlist)

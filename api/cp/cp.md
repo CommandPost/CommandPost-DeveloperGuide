@@ -43,9 +43,9 @@ Core CommandPost functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a `cp.web.html` element for a heading with a specific level                                                                                         |
-| **Parameters**                                       | <ul><li>* `params`	- The parameters table. Details below.</li></ul> |
-| **Returns**                                          | <ul><li>* `cp.web.html` element representing the heading.</li></ul>          |
-| **Notes**                                            | <ul><li>* The `params` table has the following fields:</li><li>** `text`		- The string (or function) containing the text of the heading.</li><li>** `level` 		- The heading level (or function) (1-7). Defaults to 3.</li><li>** `class`		- The CSS class (or function) for the heading tag.</li></ul>                |
+| **Parameters**                                       | <ul><li>`params`	- The parameters table. Details below.</li></ul> |
+| **Returns**                                          | <ul><li>`cp.web.html` element representing the heading.</li></ul>          |
+| **Notes**                                            | <ul><li>The `params` table has the following fields:</li><li> ** `text`		- The string (or function) containing the text of the heading.</li><li> ** `level` 		- The heading level (or function) (1-7). Defaults to 3.</li><li> ** `class`		- The CSS class (or function) for the heading tag.</li></ul>                |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.init()` </span>                                                          |
@@ -68,9 +68,9 @@ Core CommandPost functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates an `html` element that will output a password text box.                                                                                         |
-| **Parameters**                                       | <ul><li>* `params`	- The parameters table. Details below.</li></ul> |
-| **Returns**                                          | <ul><li>* `cp.web.html` containing the textbox.</li></ul>          |
-| **Notes**                                            | <ul><li>* The `params` table has the following supported fields:</li><li>** `id`				- The unique ID for the textbox.</li><li>** `name`			- The name of the textbox field.</li><li>** `class`			- The CSS classname.</li><li>** `placeholder`	- Placeholder text</li></ul>                |
+| **Parameters**                                       | <ul><li>`params`	- The parameters table. Details below.</li></ul> |
+| **Returns**                                          | <ul><li>`cp.web.html` containing the textbox.</li></ul>          |
+| **Notes**                                            | <ul><li>The `params` table has the following supported fields:</li><li> ** `id`				- The unique ID for the textbox.</li><li> ** `name`			- The name of the textbox field.</li><li> ** `class`			- The CSS classname.</li><li> ** `placeholder`	- Placeholder text</li></ul>                |
 
 #### [select](#select)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.select(params) -> cp.web.html` </span>                                                          |
@@ -86,18 +86,18 @@ Core CommandPost functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a `html` element that will execute a Resty Template.                                                                                         |
-| **Parameters**                                       | <ul><li>* `params`	- The parameters table. Details below.</li></ul> |
-| **Returns**                                          | <ul><li>* `cp.web.html` containing the template.</li></ul>          |
-| **Notes**                                            | <ul><li>* The `params` table has the following supported fields:</li><li>** `view`		- The file path to the template, or the template content itself. Required.</li><li>** `context`	- The table containing the context to execute the template in.</li><li>** `unescaped`	- If true, the template will not be escaped before outputting.</li></ul>                |
+| **Parameters**                                       | <ul><li>`params`	- The parameters table. Details below.</li></ul> |
+| **Returns**                                          | <ul><li>`cp.web.html` containing the template.</li></ul>          |
+| **Notes**                                            | <ul><li>The `params` table has the following supported fields:</li><li> ** `view`		- The file path to the template, or the template content itself. Required.</li><li> ** `context`	- The table containing the context to execute the template in.</li><li> ** `unescaped`	- If true, the template will not be escaped before outputting.</li></ul>                |
 
 #### [textbox](#textbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.textbox(params) -> hs.web.html` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates an `html` element that will output a text box.                                                                                         |
-| **Parameters**                                       | <ul><li>* `params`	- The parameters table. Details below.</li></ul> |
-| **Returns**                                          | <ul><li>* `cp.web.html` containing the textbox.</li></ul>          |
-| **Notes**                                            | <ul><li>* The `params` table has the following supported fields:</li><li>** `id`				- The unique ID for the textbox.</li><li>** `name`			- The name of the textbox field.</li><li>** `class`			- The CSS classname.</li><li>** `placeholder`	- Placeholder text</li></ul>                |
+| **Parameters**                                       | <ul><li>`params`	- The parameters table. Details below.</li></ul> |
+| **Returns**                                          | <ul><li>`cp.web.html` containing the textbox.</li></ul>          |
+| **Notes**                                            | <ul><li>The `params` table has the following supported fields:</li><li> ** `id`				- The unique ID for the textbox.</li><li> ** `name`			- The name of the textbox field.</li><li> ** `class`			- The CSS classname.</li><li> ** `placeholder`	- Placeholder text.</li><li> ** `value`			- The default value of the textbox.</li></ul>                |
 
 ### Constructors
 
@@ -108,7 +108,7 @@ Core CommandPost functionality
 | **Description**                                      | Generates a HTML Button                                                                                         |
 | **Parameters**                                       | <ul><li>`params`		- Table containing the data you want to display on the button.</li></ul> |
 | **Returns**                                          | <ul><li>A `cp.web.ui` representing the button.</li></ul>          |
-| **Notes**                                            | <ul><li>* The `params` can contain the following fields:</li><li>** `value`		- The value of th button.</li><li>** `label`		- The text label for the button. Defaults to the `value` if not provided.</li><li>** `width`		- The width of the button in pixels.</li></ul>                |
+| **Notes**                                            | <ul><li>The `params` can contain the following fields:</li><li> ** `value`		- The value of th button.</li><li> ** `label`		- The text label for the button. Defaults to the `value` if not provided.</li><li> ** `width`		- The width of the button in pixels.</li></ul>                |
 
 #### [checkbox](#checkbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.checkbox(title, value[, id]) -> cp.web.ui` </span>                                                          |

@@ -10,6 +10,7 @@ A collection of handy Lua tools for CommandPost.
  * [doesFileExist](#doesfileexist)
  * [doubleLeftClick](#doubleleftclick)
  * [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
+ * [getFilenameFromPath](#getfilenamefrompath)
  * [incrementFilename](#incrementfilename)
  * [leftClick](#leftclick)
  * [lines](#lines)
@@ -21,8 +22,10 @@ A collection of handy Lua tools for CommandPost.
  * [ninjaMouseClick](#ninjamouseclick)
  * [numberToWord](#numbertoword)
  * [removeFilenameFromPath](#removefilenamefrompath)
+ * [removeFromTable](#removefromtable)
  * [safeFilename](#safefilename)
  * [stringMaxLength](#stringmaxlength)
+ * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
  * [trim](#trim)
 
@@ -69,6 +72,14 @@ A collection of handy Lua tools for CommandPost.
 | **Description**                                      | Executes a single or multiple shell commands with Administrator Privileges.                                                                                         |
 | **Parameters**                                       | <ul><li>input - either a string or a table of strings of commands you want to execute</li><li>stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful, `false` if cancelled and a string if there's an error.</li></ul>          |
+
+#### [getFilenameFromPath](#getfilenamefrompath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFilenameFromPath(input) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the filename component of a path.                                                                                         |
+| **Parameters**                                       | <ul><li>input - The path</li></ul> |
+| **Returns**                                          | <ul><li>A string of the filename.</li></ul>          |
 
 #### [incrementFilename](#incrementfilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.incrementFilename(value) -> string` </span>                                                          |
@@ -159,6 +170,14 @@ A collection of handy Lua tools for CommandPost.
 | **Parameters**                                       | <ul><li>string - The path</li></ul> |
 | **Returns**                                          | <ul><li>A string of the path without the filename.</li></ul>          |
 
+#### [removeFromTable](#removefromtable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.removeFromTable(table, element) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Removes a string from a table of strings                                                                                         |
+| **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the string you want to remove</li></ul> |
+| **Returns**                                          | <ul><li>A table</li></ul>          |
+
 #### [safeFilename](#safefilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.safeFilename(value[, defaultValue]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -175,6 +194,14 @@ A collection of handy Lua tools for CommandPost.
 | **Description**                                      | Trims a string based on a maximum length.                                                                                         |
 | **Parameters**                                       | <ul><li>maxLength - The length of the string as a number</li><li>optionalEnd - A string that is applied to the end of the input string if the input string is larger than the maximum length.</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul>          |
+
+#### [tableContains](#tablecontains)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableContains(table, element) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Does a element exist in a table?                                                                                         |
+| **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the element you want to check for</li></ul> |
+| **Returns**                                          | <ul><li>Boolean</li></ul>          |
 
 #### [tableCount](#tablecount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableCount(table) -> number` </span>                                                          |

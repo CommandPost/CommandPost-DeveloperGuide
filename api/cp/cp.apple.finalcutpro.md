@@ -81,6 +81,10 @@ end
 
 ## API Overview
 * Constants - Useful values which cannot be changed
+ * [ALLOWED_IMPORT_AUDIO_EXTENSIONS](#allowed_import_audio_extensions)
+ * [ALLOWED_IMPORT_EXTENSIONS](#allowed_import_extensions)
+ * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
+ * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
  * [BUNDLE_ID](#bundle_id)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
  * [FLEXO_LANGUAGES](#flexo_languages)
@@ -145,6 +149,30 @@ end
 ## API Documentation
 
 ### Constants
+
+#### [ALLOWED_IMPORT_AUDIO_EXTENSIONS](#allowed_import_audio_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_AUDIO_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of audio file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_EXTENSIONS](#allowed_import_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of all file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_IMAGE_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of image file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_VIDEO_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of video file extensions Final Cut Pro can import.                                                                                         |
 
 #### [BUNDLE_ID](#bundle_id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.BUNDLE_ID` </span>                                                          |

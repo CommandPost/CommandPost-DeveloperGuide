@@ -17,6 +17,7 @@
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
 | [core.preferences.panels.plugins](core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
+| [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.core.action.manager](plugins.core.action.manager.md)                          | Action Manager Module.     |
 | [plugins.core.commands.commandaction](plugins.core.commands.commandaction.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.core.commands.global](plugins.core.commands.global.md)                          | The 'global' command collection.     |
@@ -41,6 +42,8 @@
 | [plugins.core.preferences.panels.webapp](plugins.core.preferences.panels.webapp.md)                          | WebApp Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
 | [plugins.core.quit](plugins.core.quit.md)                          | Core CommandPost functionality     |
+| [plugins.core.watchfolders.manager](plugins.core.watchfolders.manager.md)                          | Manager for the CommandPost Watch Folders Panel.     |
+| [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | CommandPost Preferences Panel.     |
 | [plugins.core.webapp](plugins.core.webapp.md)                          | WebApp Plugin.     |
 | [plugins.core.welcome.manager](plugins.core.welcome.manager.md)                          | Manager for the CommandPost Welcome Screen.     |
 | [plugins.core.welcome.manager.disableInterfaceCallback](plugins.core.welcome.manager.disableInterfaceCallback.md)                          | Disable Interface Callback Module.     |
@@ -105,6 +108,8 @@
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.watchers.preferences](plugins.finalcutpro.watchers.preferences.md)                          | Final Cut Pro Preferences Watcher.     |
 | [plugins.finalcutpro.watchers.version](plugins.finalcutpro.watchers.version.md)                          | This plugin will compare the current version of Final Cut Pro to the last one run.     |
+| [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.finalcutpro.watchfolders.panels.media](plugins.finalcutpro.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.welcome.panels.appmissing](plugins.finalcutpro.welcome.panels.appmissing.md)                          | Final Cut Pro Missing Panel.     |
 | [plugins.finalcutpro.welcome.panels.commandset](plugins.finalcutpro.welcome.panels.commandset.md)                          | Command Set Panel Welcome Screen.     |
 | [plugins.finalcutpro.welcome.panels.scanfinalcutpro](plugins.finalcutpro.welcome.panels.scanfinalcutpro.md)                          | Scan Final Cut Pro Panel Welcome Screen.     |

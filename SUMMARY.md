@@ -164,6 +164,9 @@
 				* [webapp](api/plugins/plugins.core.preferences.panels.webapp.md)
 			* [updates](api/plugins/plugins.core.preferences.updates.md)
 		* [quit](api/plugins/plugins.core.quit.md)
+		* watchfolders
+			* [manager](api/plugins/plugins.core.watchfolders.manager.md)
+				* [panel](api/plugins/plugins.core.watchfolders.manager.panel.md)
 		* [webapp](api/plugins/plugins.core.webapp.md)
 		* welcome
 			* [manager](api/plugins/plugins.core.welcome.manager.md)
@@ -173,6 +176,10 @@
 				* [accessibility](api/plugins/plugins.core.welcome.panels.accessibility.md)
 				* [complete](api/plugins/plugins.core.welcome.panels.complete.md)
 				* [intro](api/plugins/plugins.core.welcome.panels.intro.md)
+	* compressor
+		* watchfolders
+			* panels
+				* [media](api/plugins/plugins.compressor.watchfolders.panels.media.md)
 	* finalcutpro
 		* browser
 			* [addnote](api/plugins/plugins.finalcutpro.browser.addnote.md)
@@ -242,6 +249,10 @@
 			* [selectalltimelineclips](api/plugins/plugins.finalcutpro.timeline.selectalltimelineclips.md)
 			* [titles](api/plugins/plugins.finalcutpro.timeline.titles.md)
 			* [transitions](api/plugins/plugins.finalcutpro.timeline.transitions.md)
+		* watchfolders
+			* panels
+				* [fcpxml](api/plugins/plugins.finalcutpro.watchfolders.panels.fcpxml.md)
+				* [media](api/plugins/plugins.finalcutpro.watchfolders.panels.media.md)
 		* watchers
 			* [preferences](api/plugins/plugins.finalcutpro.watchers.preferences.md)
 			* [version](api/plugins/plugins.finalcutpro.watchers.version.md)
