@@ -70,7 +70,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new mouse event                                                                                         |
-| **Parameters**                                       | <ul><li>eventtype - One of the values from `hs.eventtap.event.types`</li><li>point - A table with keys `{x, y}` indicating the location where the mouse event should occur</li><li>modifiers - An optional table containing zero or more of the following keys:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li></ul> |
+| **Parameters**                                       | <ul><li>eventtype - One of the values from `hs.eventtap.event.types`</li><li>point - An hs.geometry point table (i.e. of the form `{x=123, y=456}`) indicating the location where the mouse event should occur</li><li>modifiers - An optional table containing zero or more of the following keys:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li></ul> |
 | **Returns**                                          | <ul><li>An `hs.eventtap` object</li></ul>          |
 
 #### [newScrollEvent](#newscrollevent)

@@ -8,9 +8,11 @@ Final Cut Pro Media Watch Folder Plugin.
  * [automaticallyImport](#automaticallyimport)
  * [deleteAfterImport](#deleteafterimport)
  * [disableImport](#disableimport)
+ * [filesInTransit](#filesintransit)
  * [notifications](#notifications)
  * [savedNotifications](#savednotifications)
  * [watchFolders](#watchfolders)
+ * [watchFolderTableID](#watchfoldertableid)
 * Functions - API calls offered directly by the extension
  * [addFilesToCompressor](#addfilestocompressor)
  * [addWatchFolder](#addwatchfolder)
@@ -22,6 +24,7 @@ Final Cut Pro Media Watch Folder Plugin.
  * [removeWatcher](#removewatcher)
  * [setupWatchers](#setupwatchers)
  * [styleSheet](#stylesheet)
+ * [watchCompressorStatus](#watchcompressorstatus)
  * [watchFolderTriggered](#watchfoldertriggered)
 
 ## API Documentation
@@ -46,6 +49,12 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | When `true` Notifications will no longer be triggered.                                                                                         |
 
+#### [filesInTransit](#filesintransit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.filesInTransit` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Files currently being copied                                                                                         |
+
 #### [notifications](#notifications)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.notifications` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -63,6 +72,12 @@ Final Cut Pro Media Watch Folder Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table of the users watch folders.                                                                                         |
+
+#### [watchFolderTableID](#watchfoldertableid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.watchFolderTableID` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Watch Folder Table ID                                                                                         |
 
 ### Functions
 
@@ -145,6 +160,14 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Description**                                      | Generates Style Sheet                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Returns Style Sheet as a string</li></ul>          |
+
+#### [watchCompressorStatus](#watchcompressorstatus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.watchCompressorStatus(jobID) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks the Status of a Job in Compressor                                                                                         |
+| **Parameters**                                       | <ul><li>jobID - Job ID as string</li><li>file - File Path as string</li><li>destinationPath - Destination Path as string</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [watchFolderTriggered](#watchfoldertriggered)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.watchFolderTriggered(files) -> none` </span>                                                          |

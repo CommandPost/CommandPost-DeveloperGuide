@@ -5,50 +5,81 @@ Plugin that allows the user to customise the CommandPost shortcuts
 via the Final Cut Pro Command Editor.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [active](#active)
+ * [installed](#installed)
+ * [onboardingRequired](#onboardingrequired)
+ * [requiresActivation](#requiresactivation)
+ * [requiresDeactivation](#requiresdeactivation)
+ * [setupRequired](#setuprequired)
+ * [supported](#supported)
+ * [uninstalled](#uninstalled)
 * Functions - API calls offered directly by the extension
- * [disableHacksShortcuts](#disablehacksshortcuts)
  * [editCommands](#editcommands)
- * [enabled](#enabled)
- * [enableHacksShortcuts](#enablehacksshortcuts)
  * [init](#init)
- * [setEditable](#seteditable)
- * [toggleEditable](#toggleeditable)
+ * [install](#install)
+ * [uninstall](#uninstall)
  * [update](#update)
 
 ## API Documentation
 
-### Functions
+### Constants
 
-#### [disableHacksShortcuts](#disablehacksshortcuts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.disableHacksShortcuts() -> none` </span>                                                          |
+#### [active](#active)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.active <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Disable Hacks Shortcuts                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-| **Notes**                                            | <ul><li>Used by Trash Preferences menubar command.</li></ul>                |
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A property that returns `true` if the FCPX shortcuts are active.                                                                                         |
+
+#### [installed](#installed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.installed <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A property that returns `true` if the FCPX Hacks Shortcuts are currently installed in FCPX.                                                                                         |
+
+#### [onboardingRequired](#onboardingrequired)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.onboardingRequired <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | If `true`, the initial setup has been completed.                                                                                         |
+
+#### [requiresActivation](#requiresactivation)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.requiresActivation <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A property that returns `true` if the custom shortcuts are installed in FCPX but not active.                                                                                         |
+
+#### [requiresDeactivation](#requiresdeactivation)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.requiresDeactivation <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A property that returns `true` if the FCPX shortcuts are active but shortcuts are not installed.                                                                                         |
+
+#### [setupRequired](#setuprequired)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.setupRequired <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | If `true`, the user needs to configure Hacks Shortcuts.                                                                                         |
+
+#### [supported](#supported)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.supported <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A property that returns `true` if the a supported version of FCPX is installed.                                                                                         |
+
+#### [uninstalled](#uninstalled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.uninstalled <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A property that returns `true` if the shortcuts are neither original or installed correctly.                                                                                         |
+
+### Functions
 
 #### [editCommands](#editcommands)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.editCommands() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Launch the Final Cut Pro Command Editor                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [enabled](#enabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.enabled() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Are Hacks Shortcuts Enabled?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if Hacks Shortcuts are enabled otherwise `false`</li></ul>          |
-
-#### [enableHacksShortcuts](#enablehacksshortcuts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.enableHacksShortcuts() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Enable Hacks Shortcuts                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -60,21 +91,22 @@ via the Final Cut Pro Command Editor.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [setEditable](#seteditable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.setEditable() -> none` </span>                                                          |
+#### [install](#install)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.install(silently) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Enable Hacks Shortcuts                                                                                         |
-| **Parameters**                                       | <ul><li>enabled - True if you want to enable Hacks Shortcuts otherwise false</li><li>skipFCPXupdate - Whether or not you want to skip reloading Final Cut Pro</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Description**                                      | Installs the Hacks Shortcuts.                                                                                         |
+| **Parameters**                                       | <ul><li>`silently`	- (optional) If `true`, the user will not be prompted first.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if successful.</li></ul>          |
 
-#### [toggleEditable](#toggleeditable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.toggleEditable() -> none` </span>                                                          |
+#### [uninstall](#uninstall)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.uninstall(silently) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggle Editable                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Description**                                      | Uninstalls the Hacks Shortcuts, if they have been installed                                                                                         |
+| **Parameters**                                       | <ul><li>`silently`	- (optional) If `true`, the user will not be prompted first.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if successful.</li></ul>          |
+| **Notes**                                            | <ul><li>Used by Trash Preferences menubar command.</li></ul>                |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.update() -> none` </span>                                                          |

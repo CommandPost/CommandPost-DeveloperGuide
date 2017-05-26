@@ -63,6 +63,7 @@ Core Hammerspoon functionality
  * [hs.sound](hs.sound.md)
  * [hs.spaces](hs.spaces.md)
  * [hs.speech](hs.speech.md)
+ * [hs.spoons](hs.spoons.md)
  * [hs.spotify](hs.spotify.md)
  * [hs.spotlight](hs.spotlight.md)
  * [hs.sqlite3](hs.sqlite3.md)
@@ -109,6 +110,7 @@ Core Hammerspoon functionality
  * [hsdocs](#hsdocs)
  * [loadSpoon](#loadspoon)
  * [menuIcon](#menuicon)
+ * [open](#open)
  * [openAbout](#openabout)
  * [openConsole](#openconsole)
  * [openConsoleOnDockClick](#openconsoleondockclick)
@@ -327,6 +329,14 @@ Core Hammerspoon functionality
 | **Description**                                      | Set or display whether or not the Hammerspoon menu icon is visible.                                                                                         |
 | **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not the Hammerspoon menu icon should be visible.</li></ul> |
 | **Returns**                                          | <ul><li>True if the icon is currently set (or has just been) to be visible or False if it is not.</li></ul>          |
+
+#### [open](#open)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.open(filePath)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Opens a file as if it were opened with /usr/bin/open                                                                                         |
+| **Parameters**                                       | <ul><li>filePath - A string containing the path to a file/bundle to open</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if the file was opened successfully, otherwise false</li></ul>          |
 
 #### [openAbout](#openabout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.openAbout()` </span>                                                          |

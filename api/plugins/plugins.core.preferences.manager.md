@@ -13,7 +13,8 @@ Manager for the CommandPost Preferences Panel.
 * Functions - API calls offered directly by the extension
  * [addPanel](#addpanel)
  * [init](#init)
- * [showPreferences](#showpreferences)
+ * [maxPanelHeight](#maxpanelheight)
+ * [show](#show)
 
 ## API Documentation
 
@@ -50,8 +51,16 @@ Manager for the CommandPost Preferences Panel.
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* Nothing</li></ul>          |
 
-#### [showPreferences](#showpreferences)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.showPreferences() -> boolean` </span>                                                          |
+#### [maxPanelHeight](#maxpanelheight)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.maxPanelHeight() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the maximum size defined by a panel.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The maximum panel height.</li></ul>          |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.show() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the Preferences Window                                                                                         |

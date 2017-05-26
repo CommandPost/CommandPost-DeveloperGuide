@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finalcutpro.preferences.panels.finalcutpro
+# [docs](index.md) » plugins.finalcutpro.preferences.app
 ---
 
 Final Cut Pro Preferences Panel

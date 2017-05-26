@@ -8,9 +8,11 @@ Final Cut Pro Media Watch Folder Plugin.
  * [automaticallyImport](#automaticallyimport)
  * [deleteAfterImport](#deleteafterimport)
  * [disableImport](#disableimport)
+ * [filesInTransit](#filesintransit)
  * [notifications](#notifications)
  * [savedNotifications](#savednotifications)
  * [watchFolders](#watchfolders)
+ * [watchFolderTableID](#watchfoldertableid)
 * Functions - API calls offered directly by the extension
  * [addWatchFolder](#addwatchfolder)
  * [controllerCallback](#controllercallback)
@@ -48,6 +50,12 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | When `true` Notifications will no longer be triggered.                                                                                         |
 
+#### [filesInTransit](#filesintransit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.fcpxml.filesInTransit` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Files currently being copied                                                                                         |
+
 #### [notifications](#notifications)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.fcpxml.notifications` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -65,6 +73,12 @@ Final Cut Pro Media Watch Folder Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table of the users watch folders.                                                                                         |
+
+#### [watchFolderTableID](#watchfoldertableid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.fcpxml.watchFolderTableID` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Watch Folder Table ID                                                                                         |
 
 ### Functions
 

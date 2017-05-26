@@ -101,7 +101,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns all values in the first item on the pasteboard in a table that maps a UTI value to the raw data of the item                                                                                         |
 | **Parameters**                                       | <ul><li>name - an optional string indicating the pasteboard name.  If nil or not present, defaults to the system pasteboard.</li></ul> |
-| **Returns**                                          | <ul></ul>          |
+| **Returns**                                          | <ul><li>  a mapping from a UTI value to the raw data</li></ul>          |
 
 #### [readArchiverDataForUTI](#readarchiverdataforuti)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.pasteboard.readArchiverDataForUTI([name], uti) -> any` </span>                                                          |
@@ -212,7 +212,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stores in the pasteboard a given table of UTI to data mapping all at once                                                                                         |
 | **Parameters**                                       | <ul><li>name - an optional string indicating the pasteboard name.  If nil or not present, defaults to the system pasteboard.</li><li>a mapping from a UTI value to the raw data</li></ul> |
-| **Returns**                                          | <ul></ul>          |
+| **Returns**                                          | <ul><li> True if the operation succeeded, otherwise false (which most likely means ownership of the pasteboard has changed)</li></ul>          |
 
 #### [writeArchiverDataForUTI](#writearchiverdataforuti)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.pasteboard.writeArchiverDataForUTI([name], uti, data, [add]) -> boolean` </span>                                                          |

@@ -51,6 +51,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
  * [clickActivating](#clickactivating)
  * [copy](#copy)
  * [delete](#delete)
+ * [draggingCallback](#draggingcallback)
  * [elementAttribute](#elementattribute)
  * [elementBounds](#elementbounds)
  * [elementCount](#elementcount)
@@ -298,6 +299,15 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Parameters**                                       | <ul><li>`fadeOutTime` - An optional number of seconds over which to fade out the canvas object. Defaults to zero.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>This method is automatically called during garbage collection, notably during a Hammerspoon termination or reload, with a fade time of 0.</li></ul>                |
+
+#### [draggingCallback](#draggingcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:draggingCallback(fn | nil) -> canvasObject` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets or remove a callback for accepting dragging and dropping items onto the canvas.                                                                                         |
+| **Parameters**                                       | <ul><li>`fn`   - A function, can be nil, that will be called when an item is dragged onto the canvas.  An explicit nil, the default, disables drag-and-drop for this canvas.</li></ul> |
+| **Returns**                                          | <ul><li>The canvas object</li></ul>          |
+| **Notes**                                            | <ul><li>The callback function should expect 3 arguments and optionally return 1: the canvas object itself, a message specifying the type of dragging event, and a table containing details about the item(s) being dragged.  The key-value pairs of the details table will be the following:</li><li>  `pasteboard` - the name of the pasteboard that contains the items being dragged</li><li>  `sequence`   - an integer that uniquely identifies the dragging session.</li><li>  `mouse`      - a point table containing the location of the mouse pointer within the canvas corresponding to when the callback occurred.</li><li>  `operation`  - a table containing string descriptions of the type of dragging the source application supports. Potentially useful for determining if your callback function should accept the dragged item or not.</li></ul>                |
 
 #### [elementAttribute](#elementattribute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:elementAttribute(index, key, [value]) -> canvasObject | current value` </span>                                                          |

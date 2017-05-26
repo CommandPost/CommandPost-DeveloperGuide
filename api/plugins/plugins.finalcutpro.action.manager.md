@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.action.manager
+# [docs](index.md) » plugins.finalcutpro.action.manager
 ---
 
 Action Manager Module.

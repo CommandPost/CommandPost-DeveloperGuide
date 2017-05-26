@@ -4,11 +4,15 @@
 Commands Module.
 
 ## API Overview
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [isActive](#isactive)
+ * [isEnabled](#isenabled)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activated](#activated)
  * [activatedBy](#activatedby)
  * [addShortcut](#addshortcut)
  * [deleteShortcuts](#deleteshortcuts)
+ * [getFirstShortcut](#getfirstshortcut)
  * [getShortcuts](#getshortcuts)
  * [new](#new)
  * [pressed](#pressed)
@@ -21,6 +25,20 @@ Commands Module.
  * [whenRepeated](#whenrepeated)
 
 ## API Documentation
+
+### Fields
+
+#### [isActive](#isactive)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command.isActive <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Indicates if the command is active. To be active, both the command and the group it belongs to must be enabled.                                                                                         |
+
+#### [isEnabled](#isenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command.isEnabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | If set to `true`, the command is enabled.                                                                                         |
 
 ### Methods
 
@@ -56,6 +74,14 @@ Commands Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
+#### [getFirstShortcut](#getfirstshortcut)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getFirstShortcut() -> command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the first shortcut, or `nil` if none have been registered.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The first shortcut, or `nil`.</li></ul>          |
+
 #### [getShortcuts](#getshortcuts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getShortcuts() -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -68,8 +94,8 @@ Commands Module.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:new() -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new menu command, which can have items and sub-menus added to it.                                                                                         |
-| **Parameters**                                       | <ul><li>`id`	= the unique identifier for the command. E.g. 'FCPXHacksCustomCommand'</li></ul> |
+| **Description**                                      | Creates a new command, which can have keyboard shortcuts assigned to it.                                                                                         |
+| **Parameters**                                       | <ul><li>`id`	= the unique identifier for the command. E.g. 'cpCustomCommand'</li></ul> |
 | **Returns**                                          | <ul><li>command - The command that was created.</li></ul>          |
 
 #### [pressed](#pressed)

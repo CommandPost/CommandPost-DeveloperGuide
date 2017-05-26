@@ -4,10 +4,20 @@
 Secondary Window Module.
 
 ## API Overview
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [frame](#frame)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [watch](#watch)
 
 ## API Documentation
+
+### Fields
+
+#### [frame](#frame)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.frame <cp.prop: frame>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The current position (x, y, width, height) of the window.                                                                                         |
 
 ### Methods
 
@@ -16,6 +26,6 @@ Secondary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Watch for events that happen in the command editor                                                                                         |
-| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(CommandEditor)` - Triggered when the window is shown.</li><li>  `hide(CommandEditor)` - Triggered when the window is hidden.</li></ul> |
+| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(window)` - Triggered when the window is shown.</li><li>  `hide(window)` - Triggered when the window is hidden.</li><li>  `move(window)` - Triggered when the window is moved.</li></ul> |
 | **Returns**                                          | <ul><li>An ID which can be passed to `unwatch` to stop watching.</li></ul>          |
 

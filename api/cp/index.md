@@ -19,9 +19,9 @@
 | [cp](cp.md)                          | Core CommandPost functionality     |
 | [cp.apple.compressor](cp.apple.compressor.md)                          | Represents the Compressor application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.finalcutpro](cp.apple.finalcutpro.md)                          | Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.     |
-| [cp.apple.finalcutpro.axutils](cp.apple.finalcutpro.axutils.md)                          | Utility functions to support 'axuielement'     |
+| [cp.apple.finalcutpro.axutils](cp.apple.finalcutpro.axutils.md)                          | Utility functions to support `hs._asm.axuielement`     |
 | [cp.apple.finalcutpro.cmd.CommandEditor](cp.apple.finalcutpro.cmd.CommandEditor.md)                          | Command Editor Module.     |
-| [cp.apple.finalcutpro.destinations](cp.apple.finalcutpro.destinations.md)                          | Utility class to process custom User Destinations     |
+| [cp.apple.finalcutpro.export.destinations](cp.apple.finalcutpro.export.destinations.md)                          | Provides access to the list of Share Destinations configured for the user.     |
 | [cp.apple.finalcutpro.export.ExportDialog](cp.apple.finalcutpro.export.ExportDialog.md)                          | Export Dialog Module.     |
 | [cp.apple.finalcutpro.export.GoToPrompt](cp.apple.finalcutpro.export.GoToPrompt.md)                          | Go To Prompt.     |
 | [cp.apple.finalcutpro.export.ReplaceAlert](cp.apple.finalcutpro.export.ReplaceAlert.md)                          | Replace Alert     |
@@ -61,6 +61,7 @@
 | [cp.apple.finalcutpro.ui.Slider](cp.apple.finalcutpro.ui.Slider.md)                          | Slider Module.     |
 | [cp.apple.finalcutpro.ui.Table](cp.apple.finalcutpro.ui.Table.md)                          | Table Module.     |
 | [cp.apple.finalcutpro.ui.TextField](cp.apple.finalcutpro.ui.TextField.md)                          | Text Field Module.     |
+| [cp.apple.finalcutpro.ui.Window](cp.apple.finalcutpro.ui.Window.md)                          | A Window UI element.     |
 | [cp.apple.finalcutpro.ui.WindowWatcher](cp.apple.finalcutpro.ui.WindowWatcher.md)                          | Window Watcher Module.     |
 | [cp.apple.finalcutpro.windowfilter](cp.apple.finalcutpro.windowfilter.md)                          | Window Filter for Final Cut Pro.     |
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
@@ -72,7 +73,6 @@
 | [cp.commands.shortcut](cp.commands.shortcut.md)                          | Shortcut Commands     |
 | [cp.commands.shortcut.builder](cp.commands.shortcut.builder.md)                          | Shortcut Commands Builder Module.     |
 | [cp.config](cp.config.md)                          | Manage CommandPost's constants and settings.     |
-| [cp.config.accessibilityStateCallback](cp.config.accessibilityStateCallback.md)                          | Callback which triggers when the Accessibility State is changed     |
 | [cp.config.dockIconClickCallback](cp.config.dockIconClickCallback.md)                          | Callback which triggers when the CommandPost Dock Icon is clicked     |
 | [cp.config.fileDroppedToDockIconCallback](cp.config.fileDroppedToDockIconCallback.md)                          | File Dropped to Dock Icon Callback     |
 | [cp.config.shutdownCallback](cp.config.shutdownCallback.md)                          | Shutdown Callback Module.     |
@@ -88,6 +88,7 @@
 | [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and      |
 | [cp.tools](cp.tools.md)                          | A collection of handy Lua tools for CommandPost.     |
-| [cp.watcher](cp.watcher.md)                          | Watcher Module.     |
+| [cp.watcher](cp.watcher.md)                          | This extension provides support for setting up 'event watchers'.     |
 | [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |
 | [cp.web.html](cp.web.html.md)                          | Functions for Generating HTML markup.     |
+| [cp.web.ui](cp.web.ui.md)                          | This extension contains functions which simplify the creation of standard UI events     |

@@ -4,7 +4,6 @@
 Manage CommandPost's constants and settings.
 
 ## Submodules
- * [cp.config.accessibilityStateCallback](cp.config.accessibilityStateCallback.md)
  * [cp.config.dockIconClickCallback](cp.config.dockIconClickCallback.md)
  * [cp.config.fileDroppedToDockIconCallback](cp.config.fileDroppedToDockIconCallback.md)
  * [cp.config.shutdownCallback](cp.config.shutdownCallback.md)
@@ -19,6 +18,7 @@ Manage CommandPost's constants and settings.
  * [bundledPluginsPath](#bundledpluginspath)
  * [bundleID](#bundleid)
  * [configPrefix](#configprefix)
+ * [developerMode](#developermode)
  * [iconPath](#iconpath)
  * [languagePath](#languagepath)
  * [menubarIconPath](#menubariconpath)
@@ -36,6 +36,8 @@ Manage CommandPost's constants and settings.
  * [prop](#prop)
  * [reset](#reset)
  * [set](#set)
+ * [unwatch](#unwatch)
+ * [watch](#watch)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [frontmost](#frontmost)
 
@@ -84,6 +86,12 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Prefix used for Configuration Settings                                                                                         |
+
+#### [developerMode](#developermode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.developerMode <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | When `true`, the app is in developer mode.                                                                                         |
 
 #### [iconPath](#iconpath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.iconPath` </span>                                                          |
@@ -193,6 +201,23 @@ Manage CommandPost's constants and settings.
 | **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li><li>val - An optional value for the setting. Valid datatypes are:</li><li>  string</li><li>  number</li><li>  boolean</li><li>  nil</li><li>  table (which may contain any of the same valid datatypes)</li><li>if no value is provided, it is assumed to be nil</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>This function cannot set dates or raw data types</li></ul>                |
+
+#### [unwatch](#unwatch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.unwatch(id)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Unregisters the watcher with the specified ID.                                                                                         |
+| **Parameters**                                       | <ul><li>`id`		- The ID, originally returned from the `watch` function.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if a watcher with the ID existed and was successfully removed.</li></ul>          |
+
+#### [watch](#watch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.watch(events) -> id` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Watches for config events.                                                                                         |
+| **Parameters**                                       | <ul><li>`events`	- a table containing functions for each event to watch for.</li></ul> |
+| **Returns**                                          | <ul><li>a unique ID that can be used to `unwatch`.</li></ul>          |
+| **Notes**                                            | <ul><li>Supported events:</li><li> ** `reset()`	- occurs after CommandPost's settings are reset.</li></ul>                |
 
 ### Fields
 

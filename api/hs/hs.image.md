@@ -19,7 +19,8 @@ A module for capturing and manipulating image objects from other modules for use
  * [imageFromURL](#imagefromurl)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [copy](#copy)
- * [croppedImage](#croppedimage)
+ * [croppedCopy](#croppedcopy)
+ * [encodeAsURLString](#encodeasurlstring)
  * [name](#name)
  * [saveToFile](#savetofile)
  * [setName](#setname)
@@ -124,13 +125,22 @@ A module for capturing and manipulating image objects from other modules for use
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>a new hs.image object</li></ul>          |
 
-#### [croppedImage](#croppedimage)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:croppedImage(rectangle) -> object` </span>                                                          |
+#### [croppedCopy](#croppedcopy)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:croppedCopy(rectangle) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a copy of the portion of the image specified by the rectangle specified.                                                                                         |
 | **Parameters**                                       | <ul><li>rectangle - a table with 'x', 'y', 'h', and 'w' keys specifying the portion of the image to return in the new image.</li></ul> |
 | **Returns**                                          | <ul><li>a copy of the portion of the image specified</li></ul>          |
+
+#### [encodeAsURLString](#encodeasurlstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:encodeAsURLString([scale], [type]) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a bitmap representation of the image as a base64 encoded URL string                                                                                         |
+| **Parameters**                                       | <ul><li>scale - an optional boolean, default false, which indicates that the image size (which macOS represents as points) should be scaled to pixels.  For images that have Retina scale representations, this may result in an encoded image which is scaled down from the original source.</li><li>type  - optional case-insensitive string paramater specifying the bitmap image type for the encoded string (default PNG)</li><li>  PNG  - save in Portable Network Graphics (PNG) format</li><li>  TIFF - save in Tagged Image File Format (TIFF) format</li><li>  BMP  - save in Windows bitmap image (BMP) format</li><li>  GIF  - save in Graphics Image Format (GIF) format</li><li>  JPEG - save in Joint Photographic Experts Group (JPEG) format</li></ul> |
+| **Returns**                                          | <ul><li>the bitmap image representation as a Base64 encoded string</li></ul>          |
+| **Notes**                                            | <ul><li>You can convert the string back into an image object with [hs.image.imageFromURL](#URL), e.g. `hs.image.imageFromURL(string)`</li></ul>                |
 
 #### [name](#name)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:name([name]) -> imageObject | string` </span>                                                          |
@@ -142,13 +152,13 @@ A module for capturing and manipulating image objects from other modules for use
 | **Notes**                                            | <ul><li>see also [hs.image:setName](#setName) for a variant that returns a boolean instead.</li></ul>                |
 
 #### [saveToFile](#savetofile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:saveToFile(filename[, filetype]) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:saveToFile(filename, [scale], [filetype]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Save the hs.image object as an image of type `filetype` to the specified filename.                                                                                         |
-| **Parameters**                                       | <ul><li>filename - the path and name of the file to save.</li><li>filetype - optional case-insensitive string paramater specifying the file type to save (default PNG)</li><li>  PNG  - save in Portable Network Graphics (PNG) format</li><li>  TIFF - save in Tagged Image File Format (TIFF) format</li><li>  BMP  - save in Windows bitmap image (BMP) format</li><li>  GIF  - save in Graphics Image Format (GIF) format</li><li>  JPEG - save in Joint Photographic Experts Group (JPEG) format</li></ul> |
+| **Parameters**                                       | <ul><li>filename - the path and name of the file to save.</li><li>scale    - an optional boolean, default false, which indicates that the image size (which macOS represents as points) should be scaled to pixels.  For images that have Retina scale representations, this may result in a saved image which is scaled down from the original source.</li><li>filetype - optional case-insensitive string paramater specifying the file type to save (default PNG)</li><li>  PNG  - save in Portable Network Graphics (PNG) format</li><li>  TIFF - save in Tagged Image File Format (TIFF) format</li><li>  BMP  - save in Windows bitmap image (BMP) format</li><li>  GIF  - save in Graphics Image Format (GIF) format</li><li>  JPEG - save in Joint Photographic Experts Group (JPEG) format</li></ul> |
 | **Returns**                                          | <ul><li>Status - a boolean value indicating success (true) or failure (false)</li></ul>          |
-| **Notes**                                            | <ul><li>Saves image at its original size.</li></ul>                |
+| **Notes**                                            | <ul><li>Saves image at the size in points (or pixels, if `scale` is true) as reported by [hs.image:size()](#size) for the image object</li></ul>                |
 
 #### [setName](#setname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:setName(Name) -> boolean` </span>                                                          |

@@ -15,6 +15,7 @@ Notes:
  * [cpuUsage](#cpuusage)
  * [cpuUsageTicks](#cpuusageticks)
  * [globallyUniqueString](#globallyuniquestring)
+ * [idleTime](#idletime)
  * [interfaceStyle](#interfacestyle)
  * [localizedName](#localizedname)
  * [names](#names)
@@ -63,6 +64,15 @@ Notes:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>a newly generated global unique identifier as a string</li></ul>          |
 | **Notes**                                            | <ul><li>See also `hs.host.uuid`</li><li>The global unique identifier for a process includes the host name, process ID, and a time stamp, which ensures that the ID is unique for the network. This property generates a new string each time it is invoked, and it uses a counter to guarantee that strings are unique.</li><li>This is often used as a file or directory name in conjunction with `hs.host.temporaryDirectory()` when creating temporary files.</li></ul>                |
+
+#### [idleTime](#idletime)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.idleTime() -> seconds` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the number of seconds the computer has been idle.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the idle time in seconds</li></ul>          |
+| **Notes**                                            | <ul><li>Idle time is defined as no mouse move nor keyboard entry, etc. and is determined by querying the HID (Human Interface Device) subsystem.</li><li>This code is directly inspired by code found at http://www.xs-labs.com/en/archives/articles/iokit-idle-time</li></ul>                |
 
 #### [interfaceStyle](#interfacestyle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.interfaceStyle() -> string` </span>                                                          |

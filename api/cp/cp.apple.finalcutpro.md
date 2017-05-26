@@ -69,7 +69,6 @@ end
  * [cp.apple.finalcutpro.MenuBar](cp.apple.finalcutpro.MenuBar.md)
  * [cp.apple.finalcutpro.axutils](cp.apple.finalcutpro.axutils.md)
  * [cp.apple.finalcutpro.cmd](cp.apple.finalcutpro.cmd.md)
- * [cp.apple.finalcutpro.destinations](cp.apple.finalcutpro.destinations.md)
  * [cp.apple.finalcutpro.export](cp.apple.finalcutpro.export.md)
  * [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)
  * [cp.apple.finalcutpro.import](cp.apple.finalcutpro.import.md)
@@ -88,6 +87,7 @@ end
  * [BUNDLE_ID](#bundle_id)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
  * [FLEXO_LANGUAGES](#flexo_languages)
+ * [getVersion](#getversion)
  * [PASTEBOARD_UTI](#pasteboard_uti)
  * [PREFS_PLIST_PATH](#prefs_plist_path)
  * [SUPPORTED_LANGUAGES](#supported_languages)
@@ -96,8 +96,11 @@ end
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [isFrontmost](#isfrontmost)
  * [isInstalled](#isinstalled)
+ * [isModalDialogOpen](#ismodaldialogopen)
  * [isRunning](#isrunning)
  * [isShowing](#isshowing)
+ * [isSupported](#issupported)
+ * [isUnsupported](#isunsupported)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [application](#application)
  * [browser](#browser)
@@ -120,10 +123,10 @@ end
  * [getPreference](#getpreference)
  * [getPreferences](#getpreferences)
  * [getSupportedLanguages](#getsupportedlanguages)
- * [getVersion](#getversion)
  * [hide](#hide)
  * [importXML](#importxml)
  * [inspector](#inspector)
+ * [isSupportedLanguage](#issupportedlanguage)
  * [launch](#launch)
  * [libraries](#libraries)
  * [media](#media)
@@ -192,6 +195,15 @@ end
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Table of Final Cut Pro's supported Languages for the Flexo Framework                                                                                         |
 
+#### [getVersion](#getversion)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.getVersion <cp.prop: string; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Version of Final Cut Pro                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Version as string or nil if Final Cut Pro cannot be found.</li></ul>          |
+| **Notes**                                            | <ul><li>If Final Cut Pro is running it will get the version of the active Final Cut Pro application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul>                |
+
 #### [PASTEBOARD_UTI](#pasteboard_uti)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.PASTEBOARD_UTI` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -232,7 +244,13 @@ end
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isInstalled <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is a supported version of Final Cut Pro Installed?                                                                                         |
+| **Description**                                      | Is any version of Final Cut Pro Installed?                                                                                         |
+
+#### [isModalDialogOpen](#ismodaldialogopen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isModalDialogOpen <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is a modal dialog currently open?                                                                                         |
 
 #### [isRunning](#isrunning)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isRunning <cp.prop: boolean; read-only>` </span>                                                          |
@@ -246,15 +264,27 @@ end
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Is Final Cut visible on screen?                                                                                         |
 
+#### [isSupported](#issupported)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isSupported <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is a supported version of Final Cut Pro installed?                                                                                         |
+
+#### [isUnsupported](#isunsupported)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isUnsupported <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is an unsupported version of Final Cut Pro installed?                                                                                         |
+
 ### Methods
 
 #### [application](#application)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:application() -> hs.application` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the hs.application for Final Cut Pro.                                                                                         |
+| **Description**                                      | Returns the running `hs.application` for Final Cut Pro.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The hs.application, or nil if the application is not running.</li></ul>          |
+| **Returns**                                          | <ul><li>The hs.application, or `nil` if the application is not running.</li></ul>          |
 
 #### [browser](#browser)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:browser() -> Browser` </span>                                                          |
@@ -416,15 +446,6 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table of languages Final Cut Pro supports</li></ul>          |
 
-#### [getVersion](#getversion)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getVersion() -> string or nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Version of Final Cut Pro                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Version as string or nil if Final Cut Pro cannot be found.</li></ul>          |
-| **Notes**                                            | <ul><li>If Final Cut Pro is running it will get the version of the active Final Cut Pro application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul>                |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:hide() -> cp.apple.finalcutpro` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -448,6 +469,14 @@ end
 | **Description**                                      | Returns the Inspector instance from the primary window                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the Inspector</li></ul>          |
+
+#### [isSupportedLanguage](#issupportedlanguage)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isSupportedLanguage(language) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks if the provided `language` is supported by the app.                                                                                         |
+| **Parameters**                                       | <ul><li>`language`	- The language code to check. E.g. "en" or "zh_CN"</li></ul> |
+| **Returns**                                          | <ul><li>`true` if the language is supported.</li></ul>          |
 
 #### [launch](#launch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:launch() -> boolean` </span>                                                          |
@@ -487,7 +516,7 @@ end
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Final Cut Pro Menu Bar                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A menuBar object</li></ul>          |
+| **Returns**                                          | <ul><li>A MenuBar object</li></ul>          |
 
 #### [path](#path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:path() -> string or nil` </span>                                                          |
@@ -546,11 +575,11 @@ end
 | **Returns**                                          | <ul><li>The Secondary Window</li></ul>          |
 
 #### [selectMenu](#selectmenu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectMenu(...) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectMenu(path) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English.                                                                                         |
-| **Parameters**                                       | <ul><li>... - The list of menu items you'd like to activate, for example:</li><li>           select("View", "Browser", "as List")</li></ul> |
+| **Parameters**                                       | <ul><li>`path`	- The list of menu items you'd like to activate, for example:</li><li>           select("View", "Browser", "as List")</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the press was successful.</li></ul>          |
 
 #### [setPreference](#setpreference)
@@ -606,7 +635,7 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Watch for events that happen in the application.                                                                                         |
-| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>	* `active()`		- Triggered when the application is the active application.</li><li>	* `inactive()`		- Triggered when the application is no longer the active application.</li><li>   `move()` 	 		- Triggered when the application window is moved.</li><li>	* `preferences()`	- Triggered when the application preferences are updated.</li></ul> |
+| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>	* `active`		- Triggered when the application is the active application.</li><li>	* `inactive`	- Triggered when the application is no longer the active application.</li><li>   `launched		- Triggered when the application is launched.</li><li>   `terminated	- Triggered when the application has been closed.</li><li>	* `preferences`	- Triggered when the application preferences are updated.</li></ul> |
 | **Returns**                                          | <ul><li>An ID which can be passed to `unwatch` to stop watching.</li></ul>          |
 
 #### [windowsUI](#windowsui)

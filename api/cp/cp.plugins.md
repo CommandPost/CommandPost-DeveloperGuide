@@ -189,7 +189,7 @@ These modules will not be accessible to other plugins or to the main application
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Disabled the plugin with the specified ID and reloads the application.                                                                                         |
 | **Parameters**                                       | <ul><li>`id` - The plugin package ID.</li></ul> |
-| **Returns**                                          | <ul><li>nothing</li></ul>          |
+| **Returns**                                          | <ul><li>`true` if the plugin was disabled, or `false` if it could not be disabled.</li></ul>          |
 
 #### [enable](#enable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.enable(id) -> nothing` </span>                                                          |
@@ -197,7 +197,7 @@ These modules will not be accessible to other plugins or to the main application
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enables the plugin with the specified ID, and reloads the application.                                                                                         |
 | **Parameters**                                       | <ul><li>`id` - The plugin package ID.</li></ul> |
-| **Returns**                                          | <ul><li>nothing</li></ul>          |
+| **Returns**                                          | <ul><li>`true` if the plugin had been disabled and is now enabled.</li></ul>          |
 
 #### [getDependents](#getdependents)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getDependents(pluginId)` </span>                                                          |

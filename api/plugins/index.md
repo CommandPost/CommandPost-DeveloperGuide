@@ -18,8 +18,7 @@
 | ------------------------------------------------------------------ | --------------------- |
 | [core.preferences.panels.plugins](core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
-| [plugins.core.action.manager](plugins.core.action.manager.md)                          | Action Manager Module.     |
-| [plugins.core.commands.commandaction](plugins.core.commands.commandaction.md)                          | An `action` which will execute a command with matching group/id values.     |
+| [plugins.core.accessibility](plugins.core.accessibility.md)                          | Accessibility Plugin.     |
 | [plugins.core.commands.global](plugins.core.commands.global.md)                          | The 'global' command collection.     |
 | [plugins.core.helpandsupport.credits](plugins.core.helpandsupport.credits.md)                          | Credits Menu Item.     |
 | [plugins.core.helpandsupport.developerguide](plugins.core.helpandsupport.developerguide.md)                          | Developer Guide Menu Item.     |
@@ -42,15 +41,12 @@
 | [plugins.core.preferences.panels.webapp](plugins.core.preferences.panels.webapp.md)                          | WebApp Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
 | [plugins.core.quit](plugins.core.quit.md)                          | Core CommandPost functionality     |
+| [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
+| [plugins.core.setup.panel](plugins.core.setup.panel.md)                          | CommandPost Setup Window Panel.     |
 | [plugins.core.watchfolders.manager](plugins.core.watchfolders.manager.md)                          | Manager for the CommandPost Watch Folders Panel.     |
 | [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | CommandPost Preferences Panel.     |
 | [plugins.core.webapp](plugins.core.webapp.md)                          | WebApp Plugin.     |
-| [plugins.core.welcome.manager](plugins.core.welcome.manager.md)                          | Manager for the CommandPost Welcome Screen.     |
-| [plugins.core.welcome.manager.disableInterfaceCallback](plugins.core.welcome.manager.disableInterfaceCallback.md)                          | Disable Interface Callback Module.     |
-| [plugins.core.welcome.manager.enableInterfaceCallback](plugins.core.welcome.manager.enableInterfaceCallback.md)                          | Enable Interface Callback Module.     |
-| [plugins.core.welcome.panels.accessibility](plugins.core.welcome.panels.accessibility.md)                          | Accessibility Panel Welcome Screen.     |
-| [plugins.core.welcome.panels.complete](plugins.core.welcome.panels.complete.md)                          | Welcome Screen Completion Screen.     |
-| [plugins.core.welcome.panels.intro](plugins.core.welcome.panels.intro.md)                          | Intro Panel Welcome Screen.     |
+| [plugins.finalcutpro.action.manager](plugins.finalcutpro.action.manager.md)                          | Action Manager Module.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords     |
 | [plugins.finalcutpro.browser.playhead](plugins.finalcutpro.browser.playhead.md)                          | Browser Playhead Plugin.     |
@@ -58,6 +54,7 @@
 | [plugins.finalcutpro.clipboard.manager](plugins.finalcutpro.clipboard.manager.md)                          | Clipboard Manager.     |
 | [plugins.finalcutpro.clipboard.shared](plugins.finalcutpro.clipboard.shared.md)                          | Shared Clipboard Plugin.     |
 | [plugins.finalcutpro.commands](plugins.finalcutpro.commands.md)                          | The 'fcpx' command collection.     |
+| [plugins.finalcutpro.commands.action](plugins.finalcutpro.commands.action.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | CommandPost Console     |
 | [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Batch Export Plugin     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
@@ -88,7 +85,7 @@
 | [plugins.finalcutpro.open](plugins.finalcutpro.open.md)                          | Opens Final Cut Pro via Global Shortcut & Menubar.     |
 | [plugins.finalcutpro.os.touchbar](plugins.finalcutpro.os.touchbar.md)                          | Virtual Touch Bar Plugin.     |
 | [plugins.finalcutpro.os.voice](plugins.finalcutpro.os.voice.md)                          | Voice Command Plugin.     |
-| [plugins.finalcutpro.preferences.panels.finalcutpro](plugins.finalcutpro.preferences.panels.finalcutpro.md)                          | Final Cut Pro Preferences Panel     |
+| [plugins.finalcutpro.preferences.app](plugins.finalcutpro.preferences.app.md)                          | Final Cut Pro Preferences Panel     |
 | [plugins.finalcutpro.preferences.scanfinalcutpro](plugins.finalcutpro.preferences.scanfinalcutpro.md)                          | Scan Final Cut Pro.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
@@ -106,10 +103,9 @@
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
+| [plugins.finalcutpro.timeline.zoom](plugins.finalcutpro.timeline.zoom.md)                          | Allows you to zoom a timeline using your mouse scroll wheel (whilst holding down the OPTION key).     |
+| [plugins.finalcutpro.timeline.zoomtoselection](plugins.finalcutpro.timeline.zoomtoselection.md)                          | Zoom the Timeline to fit the currently-selected clips.     |
 | [plugins.finalcutpro.watchers.preferences](plugins.finalcutpro.watchers.preferences.md)                          | Final Cut Pro Preferences Watcher.     |
 | [plugins.finalcutpro.watchers.version](plugins.finalcutpro.watchers.version.md)                          | This plugin will compare the current version of Final Cut Pro to the last one run.     |
 | [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.panels.media](plugins.finalcutpro.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
-| [plugins.finalcutpro.welcome.panels.appmissing](plugins.finalcutpro.welcome.panels.appmissing.md)                          | Final Cut Pro Missing Panel.     |
-| [plugins.finalcutpro.welcome.panels.commandset](plugins.finalcutpro.welcome.panels.commandset.md)                          | Command Set Panel Welcome Screen.     |
-| [plugins.finalcutpro.welcome.panels.scanfinalcutpro](plugins.finalcutpro.welcome.panels.scanfinalcutpro.md)                          | Scan Final Cut Pro Panel Welcome Screen.     |

@@ -34,6 +34,6 @@ Window Watcher Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Watch for events that happen in the window                                                                                         |
-| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(CommandEditor)` - Triggered when the window is shown.</li><li>  `hide(window)` - Triggered when the window is hidden.</li></ul> |
+| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(window)` - Triggered when the window is shown.</li><li>  `hide(window)` - Triggered when the window is hidden.</li><li>  `open(window)` - Triggered when the window is opened.</li><li>  `close(window)` - Triggered when the window is closed.</li><li>  `move(window)` - Triggered when the window is moved.</li></ul> |
 | **Returns**                                          | <ul><li>An ID which can be passed to `unwatch` to stop watching.</li></ul>          |
 

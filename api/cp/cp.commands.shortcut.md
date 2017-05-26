@@ -7,17 +7,26 @@ Shortcut Commands
  * [cp.commands.shortcut.builder](cp.commands.shortcut.builder.md)
 
 ## API Overview
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [isEnabled](#isenabled)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bind](#bind)
  * [build](#build)
  * [enable](#enable)
  * [getKeyCode](#getkeycode)
  * [getModifiers](#getmodifiers)
- * [isEnabled](#isenabled)
  * [new](#new)
  * [trigger](#trigger)
 
 ## API Documentation
+
+### Fields
+
+#### [isEnabled](#isenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:isEnabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | If `true`, the shortcut is enabled.                                                                                         |
 
 ### Methods
 
@@ -63,16 +72,8 @@ Shortcut Commands
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`table` containing the modifiers of the shortcut.</li></ul>          |
 
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Is the shortcut enabled?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Returns `true` if the shortcut is enabled otherwise `false`</li></ul>          |
-
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:new(command) -> shortcut` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:new(modifiers, keyCode) -> shortcut` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new keyboard shortcut, attached to the specified `hs.commands.command`                                                                                         |

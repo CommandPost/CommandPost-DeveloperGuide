@@ -22,11 +22,11 @@ Most of this submodule should be considered at the "Proof of Concept" stage and 
 ### Functions
 
 #### [genComments](#gencomments)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.builder.genComments(path) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.builder.genComments(path, [recurse]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a documentation table for Hammerspoon modules or Spoon bundles from the source files located in the path(s) provided.                                                                                         |
-| **Parameters**                                       | <ul><li>where - a string specifying a single path, or a table containing multiple strings specifying paths where source files should be examined to generate the documentation table.</li></ul> |
+| **Parameters**                                       | <ul><li>where - a string specifying a single path, or a table containing multiple strings specifying paths where source files should be examined to generate the documentation table.</li><li>recurse - an optional boolean, default true, specifying whether or not files in sub-directories of the specified path should be examined for comment strings as well.</li></ul> |
 | **Returns**                                          | <ul><li>table - a table containing the documentation broken out into the key-value pairs used to generate documentation displayed by `hs.doc` and `hs.doc.hsdocs`.</li></ul>          |
 | **Notes**                                            | <ul><li>Because Hammerspoon and all known currently available modules are coded in Objective-C and/or Lua, only files with the .m or .lua extension are examined in the provided path(s).  Please submit an issue (or pull request, if you modify this submodule yourself) at https://github.com/Hammerspoon if you need this to be changed for your addition.</li></ul>                |
 

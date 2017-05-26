@@ -6,22 +6,16 @@ Registers itself with the `plugins.core.actions.actionmanager`.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [choices](#choices)
  * [execute](#execute)
  * [id](#id)
  * [init](#init)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [choices](#choices)
  * [enabled](#enabled)
 
 ## API Documentation
 
 ### Functions
-
-#### [choices](#choices)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.choices() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns an array of available choices                                                                                         |
 
 #### [execute](#execute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.execute(params) -> boolean` </span>                                                          |
@@ -47,6 +41,12 @@ Registers itself with the `plugins.core.actions.actionmanager`.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 ### Fields
+
+#### [choices](#choices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.choices <cp.prop: cp.choices; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns an array of available choices                                                                                         |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.enabled <cp.prop: boolean>` </span>                                                          |

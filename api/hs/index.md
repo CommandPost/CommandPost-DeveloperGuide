@@ -105,6 +105,7 @@
 | [hs.spaces.watcher](hs.spaces.watcher.md)                          | Watches for the current Space being changed     |
 | [hs.speech](hs.speech.md)                          | This module provides access to the Speech Synthesizer component of OS X.     |
 | [hs.speech.listener](hs.speech.listener.md)                          | This module provides access to the Speech Recognizer component of OS X.     |
+| [hs.spoons](hs.spoons.md)                          | Utility and management functions for Spoons     |
 | [hs.spotify](hs.spotify.md)                          | Controls for Spotify music player     |
 | [hs.spotlight](hs.spotlight.md)                          | This module allows Hammerspoon to preform Spotlight metadata queries.     |
 | [hs.spotlight.group](hs.spotlight.group.md)                          | This sub-module is used to access results to a spotlightObject query which have been grouped by one or more attribute values.     |

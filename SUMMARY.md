@@ -58,6 +58,7 @@
 				* [CommandEditor](api/cp/cp.finalcutpro.cmd.CommandEditor.md)
 			* [destinations](api/cp/cp.finalcutpro.destinations.md)
 			* export
+				* [destinations](api/cp/cp.finalcutpro.export.destinations.md)
 				* [ExportDialog](api/cp/cp.finalcutpro.export.ExportDialog.md)
 				* [GoToPrompt](api/cp/cp.finalcutpro.export.GoToPrompt.md)
 				* [ReplaceAlert](api/cp/cp.finalcutpro.export.ReplaceAlert.md)
@@ -100,6 +101,7 @@
 				* [Slider](api/cp/cp.finalcutpro.ui.Slider.md)
 				* [Table](api/cp/cp.finalcutpro.ui.Table.md)
 				* [TextField](api/cp/cp.finalcutpro.ui.TextField.md)
+				* [Window](api/cp/cp.finalcutpro.ui.Window.md)
 				* [WindowWatcher](api/cp/cp.finalcutpro.ui.WindowWatcher.md)
 	* [bench](api/cp/cp.bench.md)
 	* [choices](api/cp/cp.choices.md)
@@ -130,11 +132,13 @@
 	* web
 		* [generate](api/cp/cp.web.generate.md)
 		* [html](api/cp/cp.web.html.md)
+		* [ui](api/cp/cp.web.ui.md)
 
 ## Bundled Plugins API
 
 * plugins
 	* core
+		* [accessibility](api/plugins/plugins.core.accessibility.md)
 		* action
 			* [manager](api/plugins/plugins.core.action.manager.md)
 		* commands
@@ -164,18 +168,12 @@
 				* [webapp](api/plugins/plugins.core.preferences.panels.webapp.md)
 			* [updates](api/plugins/plugins.core.preferences.updates.md)
 		* [quit](api/plugins/plugins.core.quit.md)
+		* [setup](api/plugins/plugins.core.setup.md)
+			* [panel](api/plugins/plugins.core.setup.panel.md)
 		* watchfolders
 			* [manager](api/plugins/plugins.core.watchfolders.manager.md)
 				* [panel](api/plugins/plugins.core.watchfolders.manager.panel.md)
 		* [webapp](api/plugins/plugins.core.webapp.md)
-		* welcome
-			* [manager](api/plugins/plugins.core.welcome.manager.md)
-				* [disableInterfaceCallback](api/plugins/plugins.core.welcome.manager.disableInterfaceCallback.md)
-				* [enableInterfaceCallback](api/plugins/plugins.core.welcome.manager.enableInterfaceCallback.md)
-			* panels
-				* [accessibility](api/plugins/plugins.core.welcome.panels.accessibility.md)
-				* [complete](api/plugins/plugins.core.welcome.panels.complete.md)
-				* [intro](api/plugins/plugins.core.welcome.panels.intro.md)
 	* compressor
 		* watchfolders
 			* panels
@@ -249,6 +247,8 @@
 			* [selectalltimelineclips](api/plugins/plugins.finalcutpro.timeline.selectalltimelineclips.md)
 			* [titles](api/plugins/plugins.finalcutpro.timeline.titles.md)
 			* [transitions](api/plugins/plugins.finalcutpro.timeline.transitions.md)
+			* [zoom](api/plugins/plugins.finalcutpro.timeline.zoom.md)
+			* [zoomtoselection](api/plugins/plugins.finalcutpro.timeline.zoomtoselection.md)
 		* watchfolders
 			* panels
 				* [fcpxml](api/plugins/plugins.finalcutpro.watchfolders.panels.fcpxml.md)
@@ -256,11 +256,6 @@
 		* watchers
 			* [preferences](api/plugins/plugins.finalcutpro.watchers.preferences.md)
 			* [version](api/plugins/plugins.finalcutpro.watchers.version.md)
-		* welcome
-			* panels
-				* [appmissing](api/plugins/plugins.finalcutpro.welcome.panels.appmissing.md)
-				* [commandset](api/plugins/plugins.finalcutpro.welcome.panels.commandset.md)
-				* [scanfinalcutpro](api/plugins/plugins.finalcutpro.welcome.panels.scanfinalcutpro.md)
 
 ## Hammerspoon API
 
@@ -353,6 +348,7 @@
 	* [spaces.watcher](api/hs/hs.spaces.watcher.md)
 	* [speech](api/hs/hs.speech.md)
 		* [listener](api/hs/hs.speech.listener.md)
+	* [spoons](api/hs/hs.spoons.md)
 	* [spotify](api/hs/hs.spotify.md)
 	* [spotlight](api/hs/hs.spotlight.md)
 		* [group](api/hs/hs.spotlight.group.md)
