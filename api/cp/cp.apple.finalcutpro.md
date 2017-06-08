@@ -7,9 +7,8 @@ This module provides an API to work with the FCPX application. There are a coupl
 
 * `init.lua` - the main module that gets imported.
 * `axutils.lua` - some utility functions for working with `axuielement` objects.
-* `test.lua` - some support functions for testing. TODO: Make this better.
 
-Generally, you will `require` the `cp.finalcutpro` module to import it, like so:
+Generally, you will `require` the `cp.apple.finalcutpro` module to import it, like so:
 
 ```lua
 local fcp = require("cp.apple.finalcutpro")
@@ -67,15 +66,15 @@ end
 
 ## Submodules
  * [cp.apple.finalcutpro.MenuBar](cp.apple.finalcutpro.MenuBar.md)
- * [cp.apple.finalcutpro.axutils](cp.apple.finalcutpro.axutils.md)
+ * [cp.apple.finalcutpro.WindowWatcher](cp.apple.finalcutpro.WindowWatcher.md)
  * [cp.apple.finalcutpro.cmd](cp.apple.finalcutpro.cmd.md)
+ * [cp.apple.finalcutpro.content](cp.apple.finalcutpro.content.md)
  * [cp.apple.finalcutpro.export](cp.apple.finalcutpro.export.md)
  * [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)
  * [cp.apple.finalcutpro.import](cp.apple.finalcutpro.import.md)
  * [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)
  * [cp.apple.finalcutpro.main](cp.apple.finalcutpro.main.md)
  * [cp.apple.finalcutpro.prefs](cp.apple.finalcutpro.prefs.md)
- * [cp.apple.finalcutpro.ui](cp.apple.finalcutpro.ui.md)
  * [cp.apple.finalcutpro.windowfilter](cp.apple.finalcutpro.windowfilter.md)
 
 ## API Overview
@@ -127,6 +126,7 @@ end
  * [importXML](#importxml)
  * [inspector](#inspector)
  * [isSupportedLanguage](#issupportedlanguage)
+ * [keysWithString](#keyswithstring)
  * [launch](#launch)
  * [libraries](#libraries)
  * [media](#media)
@@ -140,8 +140,10 @@ end
  * [restart](#restart)
  * [secondaryWindow](#secondarywindow)
  * [selectMenu](#selectmenu)
+ * [setCurrentLanguage](#setcurrentlanguage)
  * [setPreference](#setpreference)
  * [show](#show)
+ * [string](#string)
  * [timeline](#timeline)
  * [transitions](#transitions)
  * [unwatch](#unwatch)
@@ -478,6 +480,15 @@ end
 | **Parameters**                                       | <ul><li>`language`	- The language code to check. E.g. "en" or "zh_CN"</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the language is supported.</li></ul>          |
 
+#### [keysWithString](#keyswithstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:keysWithString(string[, lang]) -> {string}` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Looks up an application string and returns an array of keys that match. It will take into account current language the app is running in, or use `lang` if provided.                                                                                         |
+| **Parameters**                                       | <ul><li>`key`	- The key to look up.</li><li>`lang`	- The language (defaults to current FCPX language).</li></ul> |
+| **Returns**                                          | <ul><li>The array of keys with a matching string.</li></ul>          |
+| **Notes**                                            | <ul><li>This method may be very inefficient, since it has to search through every possible key/value pair to find matches. It is not recommended that this is used in production.</li></ul>                |
+
 #### [launch](#launch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:launch() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -582,6 +593,13 @@ end
 | **Parameters**                                       | <ul><li>`path`	- The list of menu items you'd like to activate, for example:</li><li>           select("View", "Browser", "as List")</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the press was successful.</li></ul>          |
 
+#### [setCurrentLanguage](#setcurrentlanguage)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:setCurrentLanguage(language) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the langauge to the specified `language` and restarts FCPX if necessary.                                                                                         |
+| **Returns**                                          | <ul><li>`true` if the language was changed successfully.</li></ul>          |
+
 #### [setPreference](#setpreference)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:setPreference(key, value) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -597,6 +615,14 @@ end
 | **Description**                                      | Activate Final Cut Pro                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A cp.apple.finalcutpro otherwise nil</li></ul>          |
+
+#### [string](#string)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Looks up an application string with the specified `key`. It will take into account current language the app is running in.                                                                                         |
+| **Parameters**                                       | <ul><li>`key`	- The key to look up.</li></ul> |
+| **Returns**                                          | <ul><li>The requested string or `nil` if the application is not running.</li></ul>          |
 
 #### [timeline](#timeline)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:timeline() -> Timeline` </span>                                                          |

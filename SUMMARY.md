@@ -53,9 +53,10 @@
 	* apple
 		* [compressor](api/cp/cp.compressor.md)
 		* [finalcutpro](api/cp/cp.finalcutpro.md)
-			* [axutils](api/cp/cp.finalcutpro.axutils.md)
 			* cmd
 				* [CommandEditor](api/cp/cp.finalcutpro.cmd.CommandEditor.md)
+			* content
+				* [Clip](api/cp/cp.apple.finalcutpro.content.Clip.md)
 			* [destinations](api/cp/cp.finalcutpro.destinations.md)
 			* export
 				* [destinations](api/cp/cp.finalcutpro.export.destinations.md)
@@ -91,18 +92,7 @@
 				* [ImportPanel](api/cp/cp.finalcutpro.prefs.ImportPanel.md)
 				* [PlaybackPanel](api/cp/cp.finalcutpro.prefs.PlaybackPanel.md)
 				* [PreferencesWindow](api/cp/cp.finalcutpro.prefs.PreferencesWindow.md)
-			* ui
-				* [Alert](api/cp/cp.finalcutpro.ui.Alert.md)
-				* [Button](api/cp/cp.finalcutpro.ui.Button.md)
-				* [CheckBox](api/cp/cp.finalcutpro.ui.CheckBox.md)
-				* [PopUpButton](api/cp/cp.finalcutpro.ui.PopUpButton.md)
-				* [RadioButton](api/cp/cp.finalcutpro.ui.RadioButton.md)
-				* [ScrollArea](api/cp/cp.finalcutpro.ui.ScrollArea.md)
-				* [Slider](api/cp/cp.finalcutpro.ui.Slider.md)
-				* [Table](api/cp/cp.finalcutpro.ui.Table.md)
-				* [TextField](api/cp/cp.finalcutpro.ui.TextField.md)
-				* [Window](api/cp/cp.finalcutpro.ui.Window.md)
-				* [WindowWatcher](api/cp/cp.finalcutpro.ui.WindowWatcher.md)
+			* [WindowWatcher](api/cp/cp.finalcutpro.WindowWatcher.md)
 	* [bench](api/cp/cp.bench.md)
 	* [choices](api/cp/cp.choices.md)
 		* [builder](api/cp/cp.choices.builder.md)
@@ -127,7 +117,23 @@
 		* [env](api/cp/cp.plugins.env.md)
 	* [prop](api/cp/cp.prop.md)
 	* [sourcewatcher](api/cp/cp.sourcewatcher.md)
+	* [strings](api/cp/cp.strings.md)
+		* source
+			* [plist](api/cp/cp.strings.source.plist.md)
+			* [table](api/cp/cp.strings.source.table.md)
 	* [tools](api/cp/cp.tools.md)
+	* [ui](api/cp/cp.ui.md)
+		* [Alert](api/cp/cp.ui.Alert.md)
+		* [axutils](api/cp/cp.ui.axutils.md)
+		* [Button](api/cp/cp.ui.Button.md)
+		* [CheckBox](api/cp/cp.ui.CheckBox.md)
+		* [PopUpButton](api/cp/cp.ui.PopUpButton.md)
+		* [RadioButton](api/cp/cp.ui.RadioButton.md)
+		* [ScrollArea](api/cp/cp.ui.ScrollArea.md)
+		* [Slider](api/cp/cp.ui.Slider.md)
+		* [Table](api/cp/cp.ui.Table.md)
+		* [TextField](api/cp/cp.ui.TextField.md)
+		* [Window](api/cp/cp.ui.Window.md)
 	* [watcher](api/cp/cp.watcher.md)
 	* web
 		* [generate](api/cp/cp.web.generate.md)
@@ -199,7 +205,6 @@
 			* [playbackrendering](api/plugins/plugins.finalcutpro.hacks.playbackrendering.md)
 			* [shortcuts](api/plugins/plugins.finalcutpro.hacks.shortcuts.md)
 			* [smartcollectionslabel](api/plugins/plugins.finalcutpro.hacks.smartcollectionslabel.md)
-			* [timecodeoverlay](api/plugins/plugins.finalcutpro.hacks.timecodeoverlay.md)
 		* [hud](api/plugins/plugins.finalcutpro.hud.md)
 		* import
 			* [ignorecard](api/plugins/plugins.finalcutpro.import.ignorecard.md)
@@ -217,6 +222,8 @@
 				* [highlightplayhead](api/plugins/plugins.finalcutpro.menu.timeline.highlightplayhead.md)
 			* [tools](api/plugins/plugins.finalcutpro.menu.tools.md)
 				* [notifications](api/plugins/plugins.finalcutpro.menu.tools.notifications.md)
+			* [viewer](api/plugins/plugins.finalcutpro.menu.viewer.md)
+				* [showtimecode](api/plugins/plugins.finalcutpro.menu.viewer.showtimecode.md)
 		* notifications
 			* [imessage](api/plugins/plugins.finalcutpro.notifications.imessage.md)
 			* [manager](api/plugins/plugins.finalcutpro.notifications.manager.md)
@@ -249,6 +256,10 @@
 			* [transitions](api/plugins/plugins.finalcutpro.timeline.transitions.md)
 			* [zoom](api/plugins/plugins.finalcutpro.timeline.zoom.md)
 			* [zoomtoselection](api/plugins/plugins.finalcutpro.timeline.zoomtoselection.md)
+		* viewer
+			* [showtimecode](api/plugins/plugins.finalcutpro.viewer.showtimecode.md)
+			* [showtimelineinplayer](api/plugins/plugins.finalcutpro.viewer.showtimelineinplayer.md)
+			* [timecodeoverlay](api/plugins/plugins.finalcutpro.viewer.timecodeoverlay.md)
 		* watchfolders
 			* panels
 				* [fcpxml](api/plugins/plugins.finalcutpro.watchfolders.panels.fcpxml.md)

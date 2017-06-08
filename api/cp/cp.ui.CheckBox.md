@@ -1,7 +1,7 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.Slider
+# [docs](index.md) » cp.ui.CheckBox
 ---
 
-Slider Module.
+Check Box UI Module.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -12,8 +12,8 @@ Slider Module.
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.Slider:new(axuielement, function) -> Slider` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:new(axuielement, function) -> CheckBox` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new Slider                                                                                         |
+| **Description**                                      | Creates a new CheckBox                                                                                         |
 

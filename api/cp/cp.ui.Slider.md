@@ -1,7 +1,7 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.Button
+# [docs](index.md) » cp.ui.Slider
 ---
 
-Button Module.
+Slider Module.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -12,8 +12,8 @@ Button Module.
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.Button:new(axuielement, table) -> Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:new(axuielement, function) -> Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new Button                                                                                         |
+| **Description**                                      | Creates a new Slider                                                                                         |
 

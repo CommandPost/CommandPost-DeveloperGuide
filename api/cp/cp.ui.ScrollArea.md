@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.ScrollArea
+# [docs](index.md) » cp.ui.ScrollArea
 ---
 
 Scroll Area Module.

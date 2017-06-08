@@ -1,7 +1,7 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.CheckBox
+# [docs](index.md) » cp.ui.TextField
 ---
 
-Check Box UI Module.
+Text Field Module.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -12,8 +12,8 @@ Check Box UI Module.
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.CheckBox:new(axuielement, function) -> CheckBox` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:new(axuielement, function) -> TextField` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new CheckBox                                                                                         |
+| **Description**                                      | Creates a new TextField                                                                                         |
 

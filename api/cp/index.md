@@ -19,8 +19,8 @@
 | [cp](cp.md)                          | Core CommandPost functionality     |
 | [cp.apple.compressor](cp.apple.compressor.md)                          | Represents the Compressor application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.finalcutpro](cp.apple.finalcutpro.md)                          | Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.     |
-| [cp.apple.finalcutpro.axutils](cp.apple.finalcutpro.axutils.md)                          | Utility functions to support `hs._asm.axuielement`     |
 | [cp.apple.finalcutpro.cmd.CommandEditor](cp.apple.finalcutpro.cmd.CommandEditor.md)                          | Command Editor Module.     |
+| [cp.apple.finalcutpro.content.Clip](cp.apple.finalcutpro.content.Clip.md)                          | Represents a clip of media inside FCP.     |
 | [cp.apple.finalcutpro.export.destinations](cp.apple.finalcutpro.export.destinations.md)                          | Provides access to the list of Share Destinations configured for the user.     |
 | [cp.apple.finalcutpro.export.ExportDialog](cp.apple.finalcutpro.export.ExportDialog.md)                          | Export Dialog Module.     |
 | [cp.apple.finalcutpro.export.GoToPrompt](cp.apple.finalcutpro.export.GoToPrompt.md)                          | Go To Prompt.     |
@@ -52,18 +52,8 @@
 | [cp.apple.finalcutpro.prefs.ImportPanel](cp.apple.finalcutpro.prefs.ImportPanel.md)                          | Import Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
-| [cp.apple.finalcutpro.ui.Alert](cp.apple.finalcutpro.ui.Alert.md)                          | Alert UI Module.     |
-| [cp.apple.finalcutpro.ui.Button](cp.apple.finalcutpro.ui.Button.md)                          | Button Module.     |
-| [cp.apple.finalcutpro.ui.CheckBox](cp.apple.finalcutpro.ui.CheckBox.md)                          | Check Box UI Module.     |
-| [cp.apple.finalcutpro.ui.PopUpButton](cp.apple.finalcutpro.ui.PopUpButton.md)                          | Pop Up Button Module.     |
-| [cp.apple.finalcutpro.ui.RadioButton](cp.apple.finalcutpro.ui.RadioButton.md)                          | Radio Button Module.     |
-| [cp.apple.finalcutpro.ui.ScrollArea](cp.apple.finalcutpro.ui.ScrollArea.md)                          | Scroll Area Module.     |
-| [cp.apple.finalcutpro.ui.Slider](cp.apple.finalcutpro.ui.Slider.md)                          | Slider Module.     |
-| [cp.apple.finalcutpro.ui.Table](cp.apple.finalcutpro.ui.Table.md)                          | Table Module.     |
-| [cp.apple.finalcutpro.ui.TextField](cp.apple.finalcutpro.ui.TextField.md)                          | Text Field Module.     |
-| [cp.apple.finalcutpro.ui.Window](cp.apple.finalcutpro.ui.Window.md)                          | A Window UI element.     |
-| [cp.apple.finalcutpro.ui.WindowWatcher](cp.apple.finalcutpro.ui.WindowWatcher.md)                          | Window Watcher Module.     |
 | [cp.apple.finalcutpro.windowfilter](cp.apple.finalcutpro.windowfilter.md)                          | Window Filter for Final Cut Pro.     |
+| [cp.apple.finalcutpro.WindowWatcher](cp.apple.finalcutpro.WindowWatcher.md)                          | Window Watcher Module.     |
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
 | [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
@@ -87,7 +77,21 @@
 | [cp.plugins.env](cp.plugins.env.md)                          | Provides access to resources in the plugin environment. In generally, this will be files stored in a Complex Plugin's folder.     |
 | [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and      |
+| [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
+| [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
+| [cp.strings.source.table](cp.strings.source.table.md)                          | Loads strings from provided tables, allowing for a given language variation. Eg:     |
 | [cp.tools](cp.tools.md)                          | A collection of handy Lua tools for CommandPost.     |
+| [cp.ui.Alert](cp.ui.Alert.md)                          | Alert UI Module.     |
+| [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`     |
+| [cp.ui.Button](cp.ui.Button.md)                          | Button Module.     |
+| [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
+| [cp.ui.PopUpButton](cp.ui.PopUpButton.md)                          | Pop Up Button Module.     |
+| [cp.ui.RadioButton](cp.ui.RadioButton.md)                          | Radio Button Module.     |
+| [cp.ui.ScrollArea](cp.ui.ScrollArea.md)                          | Scroll Area Module.     |
+| [cp.ui.Slider](cp.ui.Slider.md)                          | Slider Module.     |
+| [cp.ui.Table](cp.ui.Table.md)                          | Represents an AXTable in the Apple Accessibility UX API.     |
+| [cp.ui.TextField](cp.ui.TextField.md)                          | Text Field Module.     |
+| [cp.ui.Window](cp.ui.Window.md)                          | A Window UI element.     |
 | [cp.watcher](cp.watcher.md)                          | This extension provides support for setting up 'event watchers'.     |
 | [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |
 | [cp.web.html](cp.web.html.md)                          | Functions for Generating HTML markup.     |

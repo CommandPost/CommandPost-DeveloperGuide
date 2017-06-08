@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.RadioButton
+# [docs](index.md) » cp.ui.RadioButton
 ---
 
 Radio Button Module.
@@ -12,7 +12,7 @@ Radio Button Module.
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.RadioButton:new(axuielement, function) -> RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:new(axuielement, function) -> RadioButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new RadioButton                                                                                         |

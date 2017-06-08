@@ -63,7 +63,6 @@
 | [plugins.finalcutpro.hacks.playbackrendering](plugins.finalcutpro.hacks.playbackrendering.md)                          | Playback Rendering Plugin.     |
 | [plugins.finalcutpro.hacks.shortcuts](plugins.finalcutpro.hacks.shortcuts.md)                          | Plugin that allows the user to customise the CommandPost shortcuts     |
 | [plugins.finalcutpro.hacks.smartcollectionslabel](plugins.finalcutpro.hacks.smartcollectionslabel.md)                          | Smart Collections Label.     |
-| [plugins.finalcutpro.hacks.timecodeoverlay](plugins.finalcutpro.hacks.timecodeoverlay.md)                          | Timecode Overlay.     |
 | [plugins.finalcutpro.hud](plugins.finalcutpro.hud.md)                          | Final Cut Pro HUD.     |
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
@@ -74,11 +73,13 @@
 | [plugins.finalcutpro.menu.mediaimport](plugins.finalcutpro.menu.mediaimport.md)                          | The Media Import menu section.     |
 | [plugins.finalcutpro.menu.menuaction](plugins.finalcutpro.menu.menuaction.md)                          | A `action` which will trigger an Final Cut Pro menu with a matching path, if available/enabled.     |
 | [plugins.finalcutpro.menu.proxyicon](plugins.finalcutpro.menu.proxyicon.md)                          | Final Cut Pro Proxy Icon Plugin.     |
-| [plugins.finalcutpro.menu.timeline](plugins.finalcutpro.menu.timeline.md)                          | The TIMEILNE menu section.     |
+| [plugins.finalcutpro.menu.timeline](plugins.finalcutpro.menu.timeline.md)                          | The TIMELINE menu section.     |
 | [plugins.finalcutpro.menu.timeline.assignshortcuts](plugins.finalcutpro.menu.timeline.assignshortcuts.md)                          | The AUTOMATION > 'Options' menu section.     |
 | [plugins.finalcutpro.menu.timeline.highlightplayhead](plugins.finalcutpro.menu.timeline.highlightplayhead.md)                          | Highlight Playhead Menu.     |
 | [plugins.finalcutpro.menu.tools](plugins.finalcutpro.menu.tools.md)                          | The TOOLS menu section.     |
 | [plugins.finalcutpro.menu.tools.notifications](plugins.finalcutpro.menu.tools.notifications.md)                          | The AUTOMATION > 'Options' > 'Mobile Notifications' menu section.     |
+| [plugins.finalcutpro.menu.viewer](plugins.finalcutpro.menu.viewer.md)                          | The VIEWER menu section.     |
+| [plugins.finalcutpro.menu.viewer.showtimecode](plugins.finalcutpro.menu.viewer.showtimecode.md)                          | Highlight Playhead Menu.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.manager](plugins.finalcutpro.notifications.manager.md)                          | Notifications Manager Plugin.     |
 | [plugins.finalcutpro.notifications.prowl](plugins.finalcutpro.notifications.prowl.md)                          | Prowl Notifications Plugin.     |
@@ -105,6 +106,9 @@
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.timeline.zoom](plugins.finalcutpro.timeline.zoom.md)                          | Allows you to zoom a timeline using your mouse scroll wheel (whilst holding down the OPTION key).     |
 | [plugins.finalcutpro.timeline.zoomtoselection](plugins.finalcutpro.timeline.zoomtoselection.md)                          | Zoom the Timeline to fit the currently-selected clips.     |
+| [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timeline In Player.     |
+| [plugins.finalcutpro.viewer.showtimelineinplayer](plugins.finalcutpro.viewer.showtimelineinplayer.md)                          | Show Timeline In Player.     |
+| [plugins.finalcutpro.viewer.timecodeoverlay](plugins.finalcutpro.viewer.timecodeoverlay.md)                          | Advanced Timecode Overlay.     |
 | [plugins.finalcutpro.watchers.preferences](plugins.finalcutpro.watchers.preferences.md)                          | Final Cut Pro Preferences Watcher.     |
 | [plugins.finalcutpro.watchers.version](plugins.finalcutpro.watchers.version.md)                          | This plugin will compare the current version of Final Cut Pro to the last one run.     |
 | [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro Media Watch Folder Plugin.     |

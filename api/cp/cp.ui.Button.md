@@ -1,7 +1,7 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.TextField
+# [docs](index.md) » cp.ui.Button
 ---
 
-Text Field Module.
+Button Module.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -12,8 +12,8 @@ Text Field Module.
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.TextField:new(axuielement, function) -> TextField` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:new(axuielement, table) -> Button` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new TextField                                                                                         |
+| **Description**                                      | Creates a new Button                                                                                         |
 

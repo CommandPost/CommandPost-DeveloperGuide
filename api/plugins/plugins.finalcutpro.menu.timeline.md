@@ -1,7 +1,7 @@
 # [docs](index.md) » plugins.finalcutpro.menu.timeline
 ---
 
-The TIMEILNE menu section.
+The TIMELINE menu section.
 
 ## Submodules
  * [plugins.finalcutpro.menu.timeline.assignshortcuts](plugins.finalcutpro.menu.timeline.assignshortcuts.md)

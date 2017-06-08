@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.WindowWatcher
+# [docs](index.md) » cp.apple.finalcutpro.WindowWatcher
 ---
 
 Window Watcher Module.
@@ -14,7 +14,7 @@ Window Watcher Module.
 ### Methods
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.WindowWatcher:new(windowFn) -> WindowWatcher` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.WindowWatcher:new(windowFn) -> WindowWatcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new WindowWatcher                                                                                         |
@@ -22,7 +22,7 @@ Window Watcher Module.
 | **Returns**                                          | <ul><li>`WindowWatcher`	- the new WindowWatcher instance.</li></ul>          |
 
 #### [unwatch](#unwatch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.WindowWatcher:unwatch() -> bool` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.WindowWatcher:unwatch() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes the watch with the specified ID                                                                                         |
@@ -30,7 +30,7 @@ Window Watcher Module.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [watch](#watch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.WindowWatcher:watch() -> bool` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.WindowWatcher:watch() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Watch for events that happen in the window                                                                                         |

@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.PopUpButton
+# [docs](index.md) » cp.ui.PopUpButton
 ---
 
 Pop Up Button Module.
@@ -12,7 +12,7 @@ Pop Up Button Module.
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ui.PopUpButton:new(axuielement, function) -> PopUpButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:new(axuielement, function) -> PopUpButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new PopUpButton                                                                                         |

@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.ui.Alert
+# [docs](index.md) » cp.ui.Alert
 ---
 
 Alert UI Module.
