@@ -15,10 +15,10 @@ To build your own version of CommandPost, you need to download both these reposi
 
 Once downloaded, these two repositories should be contained in the same folder, because when you build CommandPost-App, it will copy the Lua Scripts from the CommandPost folder.
 
-Other prerequisites:
+Other Prerequisites:
 
 * [Xcode](https://itunes.apple.com/au/app/xcode/id497799835?mt=12)
-* [brew](https://brew.sh) is useful to install some lua tools if you don't have them already.
+* [brew](https://brew.sh) is useful to install some Lua tools if you don't have them already.
 
 To build CommandPost-App:
 
