@@ -3,22 +3,22 @@
 
 ## Prerequisites
 
-* **Xcode**
-Xcode can downloaded for free from the [Mac App Store](https://itunes.apple.com/au/app/xcode/id497799835?mt=12).
+### Xcode
+[Xcode](https://developer.apple.com/xcode/) can be downloaded for free from the [Mac App Store](https://itunes.apple.com/au/app/xcode/id497799835?mt=12).
 
 You will need to launch it, and accept the Terms & Conditions before attempting to build CommandPost.
 
-* **Homebrew**
+### Homebrew
 [Homebrew](https://brew.sh) can be easily installed by executing the following command into Terminal:
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-* **greadlink**
+### greadlink
 Once `brew` is installed, `greadlink` can be installed by executing the following command into Terminal:
 
 `brew install coreutils`
 
-* **pip**
+### pip
 [pip](https://packaging.python.org/installing/#install-pip-setuptools-and-wheel) can be installed by downloading [get-pip.py](https://bootstrap.pypa.io/get-pip.py) to your desktop, then executing the following command in Terminal:
 
 `sudo python ~/Desktop/get-pip.py`

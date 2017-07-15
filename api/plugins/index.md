@@ -57,6 +57,7 @@
 | [plugins.finalcutpro.commands.action](plugins.finalcutpro.commands.action.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | CommandPost Console     |
 | [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Batch Export Plugin     |
+| [plugins.finalcutpro.feedback.bugreport](plugins.finalcutpro.feedback.bugreport.md)                          | Send Apple a bug report for Final Cut Pro.     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
 | [plugins.finalcutpro.hacks.backupinterval](plugins.finalcutpro.hacks.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
 | [plugins.finalcutpro.hacks.movingmarkers](plugins.finalcutpro.hacks.movingmarkers.md)                          | Moving Markers Plugin.     |
@@ -91,6 +92,7 @@
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
+| [plugins.finalcutpro.timeline.disablewaveforms](plugins.finalcutpro.timeline.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.timeline.effects](plugins.finalcutpro.timeline.effects.md)                          | Controls Final Cut Pro's Effects.     |
 | [plugins.finalcutpro.timeline.generators](plugins.finalcutpro.timeline.generators.md)                          | Controls Final Cut Pro's Generators.     |
 | [plugins.finalcutpro.timeline.height](plugins.finalcutpro.timeline.height.md)                          | Shortcut for changing Final Cut Pro's Timeline Height     |

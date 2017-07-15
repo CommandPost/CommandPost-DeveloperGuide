@@ -329,7 +329,7 @@ Manipulate running applications
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the filesystem path of the app.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A string containing the filesystem path of the application</li></ul>          |
+| **Returns**                                          | <ul><li>A string containing the filesystem path of the application or nil if the path could not be determined (e.g. if the application has terminated).</li></ul>          |
 
 #### [pid](#pid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:pid() -> number` </span>                                                          |

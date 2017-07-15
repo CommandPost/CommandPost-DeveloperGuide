@@ -21,6 +21,7 @@ Notes:
  * [names](#names)
  * [operatingSystemVersion](#operatingsystemversion)
  * [operatingSystemVersionString](#operatingsystemversionstring)
+ * [thermalState](#thermalstate)
  * [uuid](#uuid)
  * [vmStat](#vmstat)
  * [volumeInformation](#volumeinformation)
@@ -117,6 +118,14 @@ Notes:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The operating system version as a human readable string.</li></ul>          |
 | **Notes**                                            | <ul><li>According to the OS X Developer documentation, "The operating system version string is human readable, localized, and is appropriate for displaying to the user. This string is not appropriate for parsing."</li></ul>                |
+
+#### [thermalState](#thermalstate)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.thermalState() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | The current thermal state of the computer, as a human readable string                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The system's thermal state as a human readable string</li></ul>          |
 
 #### [uuid](#uuid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.uuid() -> string` </span>                                                          |

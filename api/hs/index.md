@@ -94,6 +94,7 @@
 | [hs.osascript](hs.osascript.md)                          | Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript     |
 | [hs.pasteboard](hs.pasteboard.md)                          | Inspect/manipulate pasteboards (more commonly called clipboards). Both the system default pasteboard and custom named pasteboards can be interacted with.     |
 | [hs.pathwatcher](hs.pathwatcher.md)                          | Watch paths recursively for changes     |
+| [hs.plist](hs.plist.md)                          | Read and write Property List files     |
 | [hs.redshift](hs.redshift.md)                          | Inverts and/or lowers the color temperature of the screen(s) on a schedule, for a more pleasant experience at night     |
 | [hs.screen](hs.screen.md)                          | Manipulate screens (i.e. monitors)     |
 | [hs.screen.watcher](hs.screen.watcher.md)                          | Watch for screen layout changes     |

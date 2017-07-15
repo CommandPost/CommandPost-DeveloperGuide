@@ -12,6 +12,7 @@ A collection of handy Lua tools for CommandPost.
  * [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
  * [getFilenameFromPath](#getfilenamefrompath)
  * [incrementFilename](#incrementfilename)
+ * [isOffScreen](#isoffscreen)
  * [leftClick](#leftclick)
  * [lines](#lines)
  * [macOSVersion](#macosversion)
@@ -23,6 +24,7 @@ A collection of handy Lua tools for CommandPost.
  * [numberToWord](#numbertoword)
  * [removeFilenameFromPath](#removefilenamefrompath)
  * [removeFromTable](#removefromtable)
+ * [round](#round)
  * [safeFilename](#safefilename)
  * [stringMaxLength](#stringmaxlength)
  * [tableContains](#tablecontains)
@@ -88,6 +90,14 @@ A collection of handy Lua tools for CommandPost.
 | **Description**                                      | Returns a table of file names for the given path.                                                                                         |
 | **Parameters**                                       | <ul><li>path - A path as string</li></ul> |
 | **Returns**                                          | <ul><li>A table containing filenames as strings.</li></ul>          |
+
+#### [isOffScreen](#isoffscreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.isOffScreen(rect) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Determines if the given rect is off screen or not.                                                                                         |
+| **Parameters**                                       | <ul><li>rect - the rect you want to check</li></ul> |
+| **Returns**                                          | <ul><li>`true` if offscreen otherwise `false`</li></ul>          |
 
 #### [leftClick](#leftclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.leftClick(point[, delay, clickNumber]) -> none` </span>                                                          |
@@ -177,6 +187,14 @@ A collection of handy Lua tools for CommandPost.
 | **Description**                                      | Removes a string from a table of strings                                                                                         |
 | **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the string you want to remove</li></ul> |
 | **Returns**                                          | <ul><li>A table</li></ul>          |
+
+#### [round](#round)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.round(num, numDecimalPlaces) -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Rounds a number to a set number of decimal places                                                                                         |
+| **Parameters**                                       | <ul><li>num - The number you want to round</li><li>numDecimalPlaces - How many numbers of decimal places (defaults to 0)</li></ul> |
+| **Returns**                                          | <ul><li>A rounded number</li></ul>          |
 
 #### [safeFilename](#safefilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.safeFilename(value[, defaultValue]) -> string` </span>                                                          |

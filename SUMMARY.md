@@ -197,6 +197,8 @@
 		* [console](api/plugins/plugins.finalcutpro.console.md)
 		* export
 			* [batch](api/plugins/plugins.finalcutpro.export.batch.md)
+		* feedback
+			* [bugreport](api/plugins/plugins.finalcutpro.feedback.bugreport.md)
 		* fullscreen
 			* [shortcuts](api/plugins/plugins.finalcutpro.fullscreen.shortcuts.md)
 		* hacks
@@ -241,6 +243,7 @@
 		* [text2speech](api/plugins/plugins.finalcutpro.text2speech.md)
 		* timeline
 			* [colorboard](api/plugins/plugins.finalcutpro.timeline.colorboard.md)
+			* [disablewaveforms](api/plugins/plugins.finalcutpro.timeline.disablewaveforms.md)
 			* [effects](api/plugins/plugins.finalcutpro.timeline.effects.md)
 			* [generators](api/plugins/plugins.finalcutpro.timeline.generators.md)
 			* [height](api/plugins/plugins.finalcutpro.timeline.height.md)
@@ -348,6 +351,7 @@
 	* [osascript](api/hs/hs.osascript.md)
 	* [pasteboard](api/hs/hs.pasteboard.md)
 	* [pathwatcher](api/hs/hs.pathwatcher.md)
+	* [plist](api/hs/hs.plist.md)
 	* [redshift](api/hs/hs.redshift.md)
 	* [screen](api/hs/hs.screen.md)
 		* [watcher](api/hs/hs.screen.watcher.md)

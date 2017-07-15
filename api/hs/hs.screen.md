@@ -26,6 +26,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
  * [absoluteToLocal](#absolutetolocal)
  * [availableModes](#availablemodes)
  * [currentMode](#currentmode)
+ * [desktopImageURL](#desktopimageurl)
  * [frame](#frame)
  * [fromUnitRect](#fromunitrect)
  * [fullFrame](#fullframe)
@@ -38,7 +39,6 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
  * [position](#position)
  * [previous](#previous)
  * [rotate](#rotate)
- * [screen_desktopImageURL](#screen_desktopimageurl)
  * [setBrightness](#setbrightness)
  * [setGamma](#setgamma)
  * [setMode](#setmode)
@@ -152,6 +152,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the current screen mode. The keys of the table are:</li><li> w - A number containing the width of the screen mode in points</li><li> h - A number containing the height of the screen mode in points</li><li> scale - A number containing the scaling factor of the screen mode (typically `1` for a native mode, `2` for a HiDPI mode)</li><li> desc - A string containing a representation of the mode as used in `hs.screen:availableModes()` - e.g. "1920x1080@2x"</li></ul>          |
 
+#### [desktopImageURL](#desktopimageurl)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:desktopImageURL([imageURL])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets/Sets the desktop background image for a screen                                                                                         |
+| **Parameters**                                       | <ul><li>imageURL - An optional file:// URL to an image file to set as the background. If omitted, the current file URL is returned</li></ul> |
+| **Returns**                                          | <ul><li>the `hs.screen` object if a new URL was set, otherwise a string containing the current URL</li></ul>          |
+
 #### [frame](#frame)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:frame() -> hs.geometry rect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -248,14 +256,6 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Description**                                      | Gets/Sets the rotation of a screen                                                                                         |
 | **Parameters**                                       | <ul><li>degrees - An optional number indicating how many degrees clockwise, to rotate. If no number is provided, the current rotation will be returned. This number must be one of:</li><li> 0</li><li> 90</li><li> 180</li><li> 270</li></ul> |
 | **Returns**                                          | <ul><li>If the rotation is being set, a boolean, true if the operation succeeded, otherwise false. If the rotation is being queried, a number will be returned</li></ul>          |
-
-#### [screen_desktopImageURL](#screen_desktopimageurl)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:screen_desktopImageURL([imageURL])` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets/Sets the desktop background image for a screen                                                                                         |
-| **Parameters**                                       | <ul><li>imageURL - An optional file:// URL to an image file to set as the background. If omitted, the current file URL is returned</li></ul> |
-| **Returns**                                          | <ul><li>the `hs.screen` object if a new URL was set, otherwise a string containing the current URL</li></ul>          |
 
 #### [setBrightness](#setbrightness)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:setBrightness(brightness) -> `hs.screen` object` </span>                                                          |

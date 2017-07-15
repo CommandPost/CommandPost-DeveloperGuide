@@ -55,6 +55,7 @@ Core Hammerspoon functionality
  * [hs.osascript](hs.osascript.md)
  * [hs.pasteboard](hs.pasteboard.md)
  * [hs.pathwatcher](hs.pathwatcher.md)
+ * [hs.plist](hs.plist.md)
  * [hs.redshift](hs.redshift.md)
  * [hs.screen](hs.screen.md)
  * [hs.settings](hs.settings.md)
