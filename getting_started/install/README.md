@@ -1,6 +1,28 @@
 # Installation and Setup
 ---
 
+## Prerequisites
+
+* **Xcode**
+Xcode can downloaded for free from the [Mac App Store](https://itunes.apple.com/au/app/xcode/id497799835?mt=12).
+
+You will need to launch it, and accept the Terms & Conditions before attempting to build CommandPost.
+
+* **Homebrew**
+[Homebrew](https://brew.sh) can be easily installed by executing the following command into Terminal:
+
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+* **greadlink**
+Once `brew` is installed, `greadlink` can be installed by executing the following command into Terminal:
+
+`brew install coreutils`
+
+* **pip**
+[pip](https://packaging.python.org/installing/#install-pip-setuptools-and-wheel) can be installed by downloading [get-pip.py](https://bootstrap.pypa.io/get-pip.py) to your desktop, then executing the following command in Terminal:
+
+`sudo python ~/Desktop/get-pip.py`
+
 ## Building CommandPost
 
 CommandPost is made up of two seperate components:
@@ -13,20 +35,16 @@ To build your own version of CommandPost, you need to download both these reposi
 * [CommandPost](https://github.com/CommandPost/CommandPost)
 * [CommandPost-App](https://github.com/CommandPost/CommandPost-App)
 
+We use [GitHub Desktop](https://desktop.github.com), for keeping everything in sync.
+
 Once downloaded, these two repositories should be contained in the same folder, because when you build CommandPost-App, it will copy the Lua Scripts from the CommandPost folder.
-
-Other Prerequisites:
-
-* [Xcode](https://itunes.apple.com/au/app/xcode/id497799835?mt=12)
-* [brew](https://brew.sh) is useful to install some Lua tools if you don't have them already.
 
 To build CommandPost-App:
 
 * Create a self-signed Code Signing certificate named **Internal Code Signing** as explained [here](http://bd808.com/blog/2013/10/21/creating-a-self-signed-code-certificate-for-xcode/) - however, please make sure you label the certificate "Internal Code Signing" and not "Self-signed Applications".
 * Open a Terminal window.
 * Navigate to the CommandPost-App project root directory.
-* Install `pip` by following [these instructions](https://packaging.python.org/installing/#install-pip-setuptools-and-wheel).
-* Execute `pip install -r requirements.txt`
+* Execute `sudo pip install -r requirements.txt`
 * Navigate to the CommandPost project root directory.
 * Execute `./scripts/build_commandpost_testing.sh`
 * Once complete, navigate to the CommandPost-App project root directory, and the application should be contained within the `build` folder.
