@@ -8,14 +8,20 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [properties](#properties)
+ * [rawFlagMasks](#rawflagmasks)
  * [types](#types)
+* Functions - API calls offered directly by the extension
+ * [newKeyEventSequence](#newkeyeventsequence)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [copy](#copy)
+ * [newEvent](#newevent)
+ * [newEventFromData](#neweventfromdata)
  * [newKeyEvent](#newkeyevent)
  * [newMouseEvent](#newmouseevent)
  * [newScrollEvent](#newscrollevent)
  * [newSystemKeyEvent](#newsystemkeyevent)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [asData](#asdata)
  * [getButtonState](#getbuttonstate)
  * [getCharacters](#getcharacters)
  * [getFlags](#getflags)
@@ -23,11 +29,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [getProperty](#getproperty)
  * [getRawEventData](#getraweventdata)
  * [getType](#gettype)
+ * [location](#location)
  * [post](#post)
+ * [rawFlags](#rawflags)
  * [setFlags](#setflags)
  * [setKeyCode](#setkeycode)
  * [setProperty](#setproperty)
+ * [setType](#settype)
  * [systemKey](#systemkey)
+ * [timestamp](#timestamp)
 
 ## API Documentation
 
@@ -40,12 +50,29 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | A table containing property types for use with `hs.eventtap.event:getProperty()` and `hs.eventtap.event:setProperty()`.  The table supports forward (label to number) and reverse (number to label) lookups to increase its flexibility.                                                                                         |
 | **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing `hs.eventtap.event.properties`.</li><li>In previous versions of Hammerspoon, property labels were defined with the labels in all lowercase.  This practice is deprecated, but an __index metamethod allows the lowercase labels to still be used; however a warning will be printed to the Hammerspoon console.  At some point, this may go away, so please update your code to follow the new format.</li></ul>                |
 
+#### [rawFlagMasks](#rawflagmasks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.rawFlagMasks[]` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A table containing key-value pairs describing the raw modifier flags which can be manipulated with [hs.eventtap.event:rawFlags](#rawFlags).                                                                                         |
+
 #### [types](#types)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.types -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing event types to be used with `hs.eventtap.new(...)` and returned by `hs.eventtap.event:type()`.  The table supports forward (label to number) and reverse (number to label) lookups to increase its flexibility.                                                                                         |
 | **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing `hs.eventtap.event.types`.</li><li>In previous versions of Hammerspoon, type labels were defined with the labels in all lowercase.  This practice is deprecated, but an __index metamethod allows the lowercase labels to still be used; however a warning will be printed to the Hammerspoon console.  At some point, this may go away, so please update your code to follow the new format.</li></ul>                |
+
+### Functions
+
+#### [newKeyEventSequence](#newkeyeventsequence)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newKeyEventSequence(modifiers, character) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates a table containing the keydown and keyup events to generate the keystroke with the specified modifiers.                                                                                         |
+| **Parameters**                                       | <ul><li>modifiers - A table containing the keyboard modifiers to apply ("cmd", "alt", "shift", "ctrl", "rightCmd", "rightAlt", "rightShift", "rightCtrl", or "fn")</li><li>character - A string containing a character to be emitted</li></ul> |
+| **Returns**                                          | <ul><li>a table with events which contains the individual events that Apple recommends for building up a keystroke combination (see [hs.eventtap.event.newKeyEvent](#newKeyEvents)) in the order that they should be posted (i.e. the first half will contain keyDown events and the second half will contain keyUp events)</li></ul>          |
+| **Notes**                                            | <ul><li>The `modifiers` table must contain the full name of the modifiers you wish used for the keystroke as defined in `hs.keycodes.map` -- the Unicode equivalents are not supported by this function.</li><li>The returned table will always contain an even number of events -- the first half will be the keyDown events and the second half will be the keyUp events.</li><li>The events have not been posted; the table can be used without change as the return value for a callback to a watcher defined with [hs.eventtap.new](#new).</li></ul>                |
 
 ### Constructors
 
@@ -57,13 +84,31 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A new `hs.eventtap.event` object</li></ul>          |
 
+#### [newEvent](#newevent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newEvent() -> event` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a blank event.  You will need to set its type with [hs.eventtap.event:setType](#setType)                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>a new `hs.eventtap.event` object</li></ul>          |
+| **Notes**                                            | <ul><li>this is an empty event that you should set a type for and whatever other properties may be appropriate before posting.</li></ul>                |
+
+#### [newEventFromData](#neweventfromdata)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newEventFromData(data) -> event` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates an event from the data encoded in the string provided.                                                                                         |
+| **Parameters**                                       | <ul><li>data - a string containing binary data provided by [hs.eventtap.event:asData](#asData) representing an event.</li></ul> |
+| **Returns**                                          | <ul><li>a new `hs.eventtap.event` object or nil if the string did not represent a valid event</li></ul>          |
+
 #### [newKeyEvent](#newkeyevent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newKeyEvent(mods, key, isdown) -> event` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newKeyEvent([mods], key, isdown) -> event` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a keyboard event                                                                                         |
-| **Parameters**                                       | <ul><li>mods - A table containing zero or more of the following:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li><li>key - A string containing the name of a key (see `hs.hotkey` for more information)</li><li>isdown - A boolean, true if the event should be a key-down, false if it should be a key-up</li></ul> |
+| **Parameters**                                       | <ul><li>mods - An optional table containing zero or more of the following:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li><li>key - A string containing the name of a key (see `hs.hotkey` for more information) or an integer specifying the virtual keycode for the key.</li><li>isdown - A boolean, true if the event should be a key-down, false if it should be a key-up</li></ul> |
 | **Returns**                                          | <ul><li>An `hs.eventtap.event` object</li></ul>          |
+| **Notes**                                            | <ul><li>The original version of this constructor utilized a shortcut which merged `flagsChanged` and `keyUp`/`keyDown` events into one.  This approach is still supported for backwards compatibility and because it *does* work in most cases.</li><li>According to Apple Documentation, the proper way to perform a keypress with modifiers is through multiple key events; for example to generate 'Å', you should do the following:</li><li>~~~lua</li><li>    hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, true):post()</li><li>    hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()</li><li>    hs.eventtap.event.newKeyEvent("a", true):post()</li><li>    hs.eventtap.event.newKeyEvent("a", false):post()</li><li>    hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()</li><li>    hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, false):post()</li><li>~~~</li><li>The shortcut method is still supported, though if you run into odd behavior or need to generate `flagsChanged` events without a corresponding `keyUp` or `keyDown`, please check out the syntax demonstrated above.</li><li>~~~lua</li><li>    hs.eventtap.event.newKeyEvent({"shift", "alt"}, "a", true):post()</li><li>    hs.eventtap.event.newKeyEvent({"shift", "alt"}, "a", false):post()</li><li>~~~</li></ul>                |
 
 #### [newMouseEvent](#newmouseevent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newMouseEvent(eventtype, point[, modifiers) -> event` </span>                                                          |
@@ -91,6 +136,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>To set modifiers on a system key event (e.g. cmd/ctrl/etc), see the `hs.eventtap.event:setFlags()` method</li><li>The event names are case sensitive</li></ul>                |
 
 ### Methods
+
+#### [asData](#asdata)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:asData() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a string containing binary data representing the event.  This can be used to record events for later use.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>a string representing the event or nil if the event cannot be represented as a string</li></ul>          |
+| **Notes**                                            | <ul><li>You can recreate the event for later posting with [hs.eventtap.event.newnEventFromData](#newEventFromData)</li></ul>                |
 
 #### [getButtonState](#getbuttonstate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getButtonState(button) -> bool` </span>                                                          |
@@ -153,6 +207,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the type of the event, taken from `hs.eventtap.event.types`</li></ul>          |
 
+#### [location](#location)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:location([pointTable]) -> event | table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or set the current mouse pointer location as defined for the event.                                                                                         |
+| **Parameters**                                       | <ul><li>pointTable - an optional point table specifying the x and y coordinates of the mouse pointer location for the event</li></ul> |
+| **Returns**                                          | <ul><li>if pointTable is provided, returns the `hs.eventtap.event` object; otherwise returns a point table containing x and y key-value pairs specifying the mouse pointer location as specified for this event.</li></ul>          |
+| **Notes**                                            | <ul><li>the use or effect of this method is undefined if the event is not a mouse type event.</li></ul>                |
+
 #### [post](#post)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:post([app])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -161,8 +224,17 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>app - An optional `hs.application` object. If specified, the event will only be sent to that application</li></ul> |
 | **Returns**                                          | <ul><li>The `hs.eventtap.event` object</li></ul>          |
 
+#### [rawFlags](#rawflags)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:rawFlags([flags]) -> event | integer` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Experimental method to get or set the modifier flags for an event directly.                                                                                         |
+| **Parameters**                                       | <ul><li>flags - an optional integer, made by logically combining values from [hs.eventtap.event.rawFlagMasks](#rawFlagMasks) specifying the modifier keys which should be set for this event</li></ul> |
+| **Returns**                                          | <ul><li>if flags is provided, returns the `hs.eventtap.event` object; otherwise returns the current flags set as an integer</li></ul>          |
+| **Notes**                                            | <ul><li>This method is experimental and may undergo changes or even removal in the future</li><li>See [hs.eventtap.event.rawFlagMasks](#rawFlagMasks) for more information</li></ul>                |
+
 #### [setFlags](#setflags)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:setFlags(table)` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:setFlags(table) -> event` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the keyboard modifiers of an event                                                                                         |
@@ -187,6 +259,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>The `hs.eventtap.event` object.</li></ul>          |
 | **Notes**                                            | <ul><li>The properties are `CGEventField` values, as documented at https://developer.apple.com/library/mac/documentation/Carbon/Reference/QuartzEventServicesRef/index.html#//apple_ref/c/tdef/CGEventField</li></ul>                |
 
+#### [setType](#settype)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:setType(type) -> event` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Set the type for this event.                                                                                         |
+| **Parameters**                                       | <ul><li>type - an integer matching one of the event types described in [hs.eventtap.event.types](#types)</li></ul> |
+| **Returns**                                          | <ul><li>the `hs.eventtap.event` object</li></ul>          |
+
 #### [systemKey](#systemkey)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:systemKey() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -195,4 +275,13 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>If the event is a NSSystemDefined event of subtype AUX_CONTROL_BUTTONS, a table with the following keys defined:</li><li>  key    -- a string containing one of the following labels indicating the key involved:</li><li>    SOUND_UP</li><li>    SOUND_DOWN</li><li>    MUTE</li><li>    BRIGHTNESS_UP</li><li>    BRIGHTNESS_DOWN</li><li>    CONTRAST_UP</li><li>    CONTRAST_DOWN</li><li>    POWER</li><li>    LAUNCH_PANEL</li><li>    VIDMIRROR</li><li>    PLAY</li><li>    EJECT</li><li>    NEXT</li><li>    PREVIOUS</li><li>    FAST</li><li>    REWIND</li><li>    ILLUMINATION_UP</li><li>    ILLUMINATION_DOWN</li><li>    ILLUMINATION_TOGGLE</li><li>    CAPS_LOCK</li><li>    HELP</li><li>    NUM_LOCK</li><li>     or "undefined" if the key detected is unrecognized.</li><li>  keyCode -- the numeric keyCode corresponding to the key specified in `key`.</li><li>  down   -- a boolean value indicating if the key is pressed down (true) or just released (false)</li><li>  repeat -- a boolean indicating if this event is because the keydown is repeating.  This will always be false for a key release.</li><li>If the event does not correspond to a NSSystemDefined event of subtype AUX_CONTROL_BUTTONS, then an empty table is returned.</li></ul>          |
 | **Notes**                                            | <ul><li>* CAPS_LOCK seems to sometimes generate 0 or 2 key release events (down == false), especially on builtin laptop keyboards, so it is probably safest (more reliable) to look for cases where down == true only.</li><li>* If the key field contains "undefined", you can use the number in keyCode to look it up in `/System/Library/Frameworks/IOKit.framework/Headers/hidsystem/ev_keymap.h`.  If you believe the numeric value is part of a new system update or was otherwise mistakenly left out, please submit the label (it will defined in the header file as `NX_KEYTYPE_something`) and number to the Hammerspoon maintainers at https://github.com/Hammerspoon/hammerspoon with a request for inclusion in the next Hammerspoon update.</li></ul>                |
+
+#### [timestamp](#timestamp)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:timestamp([absolutetime]) -> event | integer` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or set the timestamp of the event.                                                                                         |
+| **Parameters**                                       | <ul><li>absolutetime - an optional integer specifying the timestamp for the event.</li></ul> |
+| **Returns**                                          | <ul><li>if absolutetime is provided, returns the `hs.eventtap.event` object; otherwise returns the current timestamp for the event.</li></ul>          |
+| **Notes**                                            | <ul><li>Synthesized events have a timestamp of 0 by default.</li><li>The timestamp, if specified, is expressed as an integer representing the number of nanoseconds since the system was last booted.  See `hs.timer.absoluteTime`.</li><li>This field appears to be informational only and is not required when crafting your own events with this module.</li></ul>                |
 

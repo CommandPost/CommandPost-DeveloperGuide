@@ -69,7 +69,7 @@
 | [hs.httpserver.hsminweb.cgilua.urlcode](hs.httpserver.hsminweb.cgilua.urlcode.md)                          | Support functions for the CGILua compatibility module for encoding and decoding URL components in accordance with RFC 3986.     |
 | [hs.image](hs.image.md)                          | A module for capturing and manipulating image objects from other modules for use with hs.drawing.     |
 | [hs.inspect](hs.inspect.md)                          | Produce human-readable representations of Lua variables (particularly tables)     |
-| [hs.ipc](hs.ipc.md)                          | Provides the server portion of the Hammerspoon command line interface     |
+| [hs.ipc](hs.ipc.md)                          | Provides Hammerspoon with the ability to create both local and remote message ports for inter-process communication.     |
 | [hs.itunes](hs.itunes.md)                          | Controls for iTunes music player     |
 | [hs.javascript](hs.javascript.md)                          | Execute JavaScript code     |
 | [hs.json](hs.json.md)                          | JSON encoding and decoding     |
