@@ -23,6 +23,11 @@ Once `brew` is installed, `greadlink` can be installed by executing the followin
 
 `sudo python ~/Desktop/get-pip.py`
 
+### DMG Canvas
+If you wanting to build a DMG package as part of the CommandPost release, you'll need to buy and install [DMG Canvas](https://www.araelium.com/dmgcanvas).
+
+--- 
+
 ## Building CommandPost
 
 CommandPost is made up of two seperate components:
