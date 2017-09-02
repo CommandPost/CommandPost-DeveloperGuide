@@ -1,7 +1,7 @@
 # [docs](index.md) » cp.tools
 ---
 
-A collection of handy Lua tools for CommandPost.
+A collection of handy miscellaneous tools for Lua development.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -10,7 +10,18 @@ A collection of handy Lua tools for CommandPost.
  * [doesFileExist](#doesfileexist)
  * [doubleLeftClick](#doubleleftclick)
  * [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
+ * [getEmail](#getemail)
+ * [getExternalDevices](#getexternaldevices)
  * [getFilenameFromPath](#getfilenamefrompath)
+ * [getFullname](#getfullname)
+ * [getmacOSVersion](#getmacosversion)
+ * [getModelName](#getmodelname)
+ * [getRAMSize](#getramsize)
+ * [getScreenshotsAsBase64](#getscreenshotsasbase64)
+ * [getThunderboltDevices](#getthunderboltdevices)
+ * [getUSBDevices](#getusbdevices)
+ * [getVRAMSize](#getvramsize)
+ * [iconFallback](#iconfallback)
  * [incrementFilename](#incrementfilename)
  * [isOffScreen](#isoffscreen)
  * [leftClick](#leftclick)
@@ -24,12 +35,15 @@ A collection of handy Lua tools for CommandPost.
  * [numberToWord](#numbertoword)
  * [removeFilenameFromPath](#removefilenamefrompath)
  * [removeFromTable](#removefromtable)
+ * [rmdir](#rmdir)
  * [round](#round)
  * [safeFilename](#safefilename)
+ * [splitOnColumn](#splitoncolumn)
  * [stringMaxLength](#stringmaxlength)
  * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
  * [trim](#trim)
+ * [urlQueryStringDecode](#urlquerystringdecode)
 
 ## API Documentation
 
@@ -75,6 +89,22 @@ A collection of handy Lua tools for CommandPost.
 | **Parameters**                                       | <ul><li>input - either a string or a table of strings of commands you want to execute</li><li>stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful, `false` if cancelled and a string if there's an error.</li></ul>          |
 
+#### [getEmail](#getemail)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getEmail() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the current users Email, otherwise an empty string.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getExternalDevices](#getexternaldevices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getExternalDevices() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a string of USB & Thunderbolt Devices.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
 #### [getFilenameFromPath](#getfilenamefrompath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFilenameFromPath(input) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -82,6 +112,78 @@ A collection of handy Lua tools for CommandPost.
 | **Description**                                      | Gets the filename component of a path.                                                                                         |
 | **Parameters**                                       | <ul><li>input - The path</li></ul> |
 | **Returns**                                          | <ul><li>A string of the filename.</li></ul>          |
+
+#### [getFullname](#getfullname)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFullname() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the current users Full Name, otherwise an empty string.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getmacOSVersion](#getmacosversion)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getmacOSVersion() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns macOS Version.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getModelName](#getmodelname)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getModelName() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns Model Name of Hardware.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getRAMSize](#getramsize)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getRAMSize() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns RAM Size.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getScreenshotsAsBase64](#getscreenshotsasbase64)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getScreenshotsAsBase64() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Captures all available screens and saves them as base64 encodes in a table.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing base64 images of all available screens.</li></ul>          |
+
+#### [getThunderboltDevices](#getthunderboltdevices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getThunderboltDevices() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a string of Thunderbolt Devices.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getUSBDevices](#getusbdevices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getUSBDevices() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a string of USB Devices.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getVRAMSize](#getvramsize)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getVRAMSize() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns VRAM Size.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [iconFallback](#iconfallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.iconFallback(paths) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Excepts one or more paths to an icon, checks to see if they exist (in the order that they're given), and if none exist, returns the CommandPost icon path.                                                                                         |
+| **Parameters**                                       | <ul><li>paths - One or more paths to an icon</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul>          |
 
 #### [incrementFilename](#incrementfilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.incrementFilename(value) -> string` </span>                                                          |
@@ -188,6 +290,14 @@ A collection of handy Lua tools for CommandPost.
 | **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the string you want to remove</li></ul> |
 | **Returns**                                          | <ul><li>A table</li></ul>          |
 
+#### [rmdir](#rmdir)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.rmdir(path[, recursive]) -> true | nil, err` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Attempts to remove the directory at the specified path, optionally removing                                                                                         |
+| **Parameters**                                       | <ul><li>* `path`		- The absolute path to remove</li><li>* `recursive`	- If `true`, the contents of the directory will be removed first.</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if successful, or `nil, err` if there was a problem.</li></ul>          |
+
 #### [round](#round)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.round(num, numDecimalPlaces) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -204,6 +314,14 @@ A collection of handy Lua tools for CommandPost.
 | **Parameters**                                       | <ul><li>value - a string you want to make safe</li><li>defaultValue - the optional default filename to use if the value is not valid</li></ul> |
 | **Returns**                                          | <ul><li>A string of the safe filename</li></ul>          |
 | **Notes**                                            | <ul><li>Returns "filename" is both `value` and `defaultValue` are `nil`.</li></ul>                |
+
+#### [splitOnColumn](#splitoncolumn)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.splitOnColumn() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Splits a string on a column.                                                                                         |
+| **Parameters**                                       | <ul><li>Input</li></ul> |
+| **Returns**                                          | <ul><li>String</li></ul>          |
 
 #### [stringMaxLength](#stringmaxlength)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.stringMaxLength(string, maxLength[, optionalEnd]) -> string` </span>                                                          |
@@ -236,4 +354,12 @@ A collection of handy Lua tools for CommandPost.
 | **Description**                                      | Trims the whitespaces from a string                                                                                         |
 | **Parameters**                                       | <ul><li>string - the string you want to trim</li></ul> |
 | **Returns**                                          | <ul><li>A trimmed string</li></ul>          |
+
+#### [urlQueryStringDecode](#urlquerystringdecode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.urlQueryStringDecode() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Decodes a URL Query String                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Decoded URL Query String as string</li></ul>          |
 

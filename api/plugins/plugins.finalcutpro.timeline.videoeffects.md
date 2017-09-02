@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finalcutpro.timeline.effects
+# [docs](index.md) » plugins.finalcutpro.timeline.videoeffects
 ---
 
 Controls Final Cut Pro's Effects.

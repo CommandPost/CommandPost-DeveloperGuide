@@ -31,7 +31,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist.defaultCacheSeconds` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The default number of seconds to cache results.                                                                                          |
+| **Description**                                      | The default number of seconds to cache results.                                                                                         |
 
 ### Constructors
 

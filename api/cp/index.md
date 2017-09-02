@@ -49,6 +49,7 @@
 | [cp.apple.finalcutpro.main.TimelineToolbar](cp.apple.finalcutpro.main.TimelineToolbar.md)                          | Timeline Toolbar     |
 | [cp.apple.finalcutpro.main.Viewer](cp.apple.finalcutpro.main.Viewer.md)                          | Viewer Module.     |
 | [cp.apple.finalcutpro.MenuBar](cp.apple.finalcutpro.MenuBar.md)                          | Represents the Final Cut Pro menu bar, providing functions that allow different tasks to be accomplished.     |
+| [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scan Final Cut Pro bundle for Effects, Generators, Titles & Transitions.     |
 | [cp.apple.finalcutpro.prefs.ImportPanel](cp.apple.finalcutpro.prefs.ImportPanel.md)                          | Import Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
@@ -70,7 +71,9 @@
 | [cp.developer](cp.developer.md)                          | Developer Tools     |
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
+| [cp.idle](cp.idle.md)                          | This library allows tasks to be queue for execution when the computer has     |
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
+| [cp.localized](cp.localized.md)                          | Helps look up localized names for folders.     |
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
 | [cp.plist.archiver](cp.plist.archiver.md)                          | Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.     |
 | [cp.plugins](cp.plugins.md)                          | This is a simple plugin manager.     |
@@ -80,7 +83,9 @@
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
 | [cp.strings.source.table](cp.strings.source.table.md)                          | Loads strings from provided tables, allowing for a given language variation. Eg:     |
-| [cp.tools](cp.tools.md)                          | A collection of handy Lua tools for CommandPost.     |
+| [cp.text](cp.text.md)                          | This module provides support for loading, manipulating, and comparing unicode text data.     |
+| [cp.text.matcher](cp.text.matcher.md)                          | This module provides support for loading, manipulating, and comparing unicode text data.     |
+| [cp.tools](cp.tools.md)                          | A collection of handy miscellaneous tools for Lua development.     |
 | [cp.ui.Alert](cp.ui.Alert.md)                          | Alert UI Module.     |
 | [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`     |
 | [cp.ui.Button](cp.ui.Button.md)                          | Button Module.     |
@@ -92,7 +97,11 @@
 | [cp.ui.Table](cp.ui.Table.md)                          | Represents an AXTable in the Apple Accessibility UX API.     |
 | [cp.ui.TextField](cp.ui.TextField.md)                          | Text Field Module.     |
 | [cp.ui.Window](cp.ui.Window.md)                          | A Window UI element.     |
+| [cp.utf16](cp.utf16.md)                          | A pure-LUA implementation of UTF-16 decoding     |
+| [cp.utf16.be](cp.utf16.be.md)                          | A pure-LUA implementation of UTF-16 decoding with big-endian ordering.     |
+| [cp.utf16.le](cp.utf16.le.md)                          | A pure-LUA implementation of UTF-16 decoding with little-endian ordering.     |
 | [cp.watcher](cp.watcher.md)                          | This extension provides support for setting up 'event watchers'.     |
 | [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |
 | [cp.web.html](cp.web.html.md)                          | Functions for Generating HTML markup.     |
+| [cp.web.text](cp.web.text.md)                          | Functions for managing text on the web.     |
 | [cp.web.ui](cp.web.ui.md)                          | This extension contains functions which simplify the creation of standard UI events     |

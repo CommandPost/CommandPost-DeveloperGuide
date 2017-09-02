@@ -69,7 +69,7 @@ happy:toggle()
 You can also use non-boolean properties. Any non-`nil` value is considered to be `true`.
 
 ## 5. Immutable
-If appropriate, a `prop` may be immutable. Any `prop` with no `set` function defined is immutable. Examples are the `prop.AND` and `prop.OR` instances, since modifying combinations of values doesn't really make sense. 
+If appropriate, a `prop` may be immutable. Any `prop` with no `set` function defined is immutable. Examples are the `prop.AND` and `prop.OR` instances, since modifying combinations of values doesn't really make sense.
 
 Additionally, an immutable wrapper can be made from any `prop` value via either `prop.IMMUTABLE(...)` or calling the `myValue:IMMUTABLE()` method.
 
@@ -160,6 +160,83 @@ johnDoe.name() == "John Doe"
 
 The `prop.extend` function will set the `source` table as a metatable of the `target`, as well as binding any bound props that are in the `source` to `target`.
 
+# Tables
+
+Because tables are copied by reference rather than by value, changes made inside a table will not necessarily trigger an update when setting a value with an updated table value. By default, tables are simply passed in and out without modification. You can nominate for a property to make copies of tables (not userdata) when getting or setting, which effectively isolates the value being stored from outside modification. This can be done with the [deepTable](#deepTable) and[shallowTable](#shallowTable) methods. Below is an example of them in action:
+
+```lua
+local value = { a = 1, b = { c = 1 } }
+local valueProp = prop.THIS(value)
+local deepProp = prop.THIS(value):deepTable()
+local shallowProp = prop.THIS(value):shallowTable()
+
+-- print a message when the prop value is updated
+valueProp:watch(function(v) print("value: a = " .. v.a ..", b.c = ".. v.b.c ) end)
+deepProp:watch(function(v) print("deep: a = " .. v.a ..", b.c = ".. v.b.c ) end)
+shallowProp:watch(function(v) print("shallow: a = " .. v.a ..", b.c = ".. v.b.c ) end)
+
+-- change the original table:
+value.a				= 2
+value.b.c			= 2
+
+valueProp().a		== 2	-- modified
+valueProp().b.c		== 2	-- modified
+shallowProp().a		== 1	-- top level is copied
+shallowProp().b.c	== 2	-- child tables are referenced
+deepProp().a		== 1	-- top level is copied
+deepProp().b.c		== 1	-- child tables are copied as well
+
+-- get the 'value' property
+value = valueProp()			-- returns the original value table
+
+value.a				= 3		-- updates the original value table `a` value
+value.b.c			= 3		-- updates the original `b` table's `c` value
+
+valueProp(value)			-- nothing is printed, since it's still the same table
+
+valueProp().a		== 3	-- still referencing the original table
+valueProp().b.c		== 3	-- the child is still referenced too
+shallowProp().a		== 1	-- still unmodified after the initial copy
+shallowProp().b.c	== 3	-- still updated, since `b` was copied by reference
+deepProp().a		== 1	-- still unmodified after initial copy
+deepProp().b.c		== 1	-- still unmodified after initial copy
+
+-- get the 'deep copy' property
+value = deepProp()			-- returns a new table, with all child tables also copied.
+
+value.a				= 4		-- updates the new table's `a` value
+value.b.c			= 4		-- updates the new `b` table's `c` value
+
+deepProp(value)				-- prints "deep: a = 4, b.c = 4"
+
+valueProp().a		== 3	-- still referencing the original table
+valueProp().b.c		== 3	-- the child is still referenced too
+shallowProp().a		== 1	-- still unmodified after the initial copy
+shallowProp().b.c	== 3	-- still referencing the original `b` table.
+deepProp().a		== 4	-- updated to the new value
+deepProp().b.c		== 4	-- updated to the new value
+
+-- get the 'shallow' property
+value = shallowProp()		-- returns a new table with top-level keys copied.
+
+value.a				= 5		-- updates the new table's `a` value
+value.b.c			= 5		-- updates the original `b` table's `c` value.
+
+shallowProp(value)   		-- prints "shallow: a = 5, b.c = 5"
+
+valueProp().a		== 3	-- still referencing the original table
+valueProp().b.c		== 5	-- still referencing the original `b` table
+shallowProp().a		== 5	-- updated to the new value
+shallowProp().b.c	== 5	-- referencing the original `b` table, which was updated
+deepProp().a		== 4	-- unmodified after the last update
+deepProp().b.c		== 4	-- unmodified after the last update
+```
+
+So, a little bit tricky. The general rule of thumb is:
+1. If working with immutable objects, use the default 'value' value copy, which preserves the original.
+2. If working with an array of immutible objects, use the 'shallow' table copy.
+3. In most other cases, use a 'deep' table copy.
+
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [AND](#and)
@@ -182,6 +259,7 @@ The `prop.extend` function will set the `source` table as a metatable of the `ta
  * [bind](#bind)
  * [clear](#clear)
  * [clone](#clone)
+ * [deepTable](#deeptable)
  * [EQ](#eq)
  * [EQUALS](#equals)
  * [get](#get)
@@ -196,6 +274,7 @@ The `prop.extend` function will set the `source` table as a metatable of the `ta
  * [owner](#owner)
  * [preWatch](#prewatch)
  * [set](#set)
+ * [shallowTable](#shallowtable)
  * [toggle](#toggle)
  * [unwatch](#unwatch)
  * [update](#update)
@@ -288,7 +367,7 @@ The `prop.extend` function will set the `source` table as a metatable of the `ta
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `prop` value, with the provided `get` and `set` functions.                                                                                         |
-| **Parameters**                                       | <ul><li>* `getFn`		- The function that will get called to retrieve the current value.</li><li>* `setFn`		- (optional) The function that will get called to set the new value.</li><li>* `cloneFn`		- (optional) The function that will get called when cloning the property. </li></ul> |
+| **Parameters**                                       | <ul><li>* `getFn`		- The function that will get called to retrieve the current value.</li><li>* `setFn`		- (optional) The function that will get called to set the new value.</li><li>* `cloneFn`		- (optional) The function that will get called when cloning the property.</li></ul> |
 | **Returns**                                          | <ul><li>* The new `cp.prop` instance.</li></ul>          |
 | **Notes**                                            | <ul><li>* `getFn` signature: `function([owner]) -> anything`</li><li>** `owner`		- If this is attached as a method, the owner table is passed in.</li><li>* `setFn` signature: `function(newValue[, owner])`</li><li>** `newValue`	- The new value to store.</li><li>** `owner`		- If this is attached as a method, the owner table is passed in.</li><li>* `cloneFn` signature: `function(prop) -> new cp.prop`</li><li>* This can also be executed by calling the module directly. E.g. `require('cp.prop')(myGetFunction)`</li></ul>                |
 
@@ -360,6 +439,15 @@ The `prop.extend` function will set the `source` table as a metatable of the `ta
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* New `cp.prop`.</li></ul>          |
 
+#### [deepTable](#deeptable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:deepTable([skipMetatable]) -> prop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | This can be called once to enable deep copying of `table` values. By default,                                                                                         |
+| **Parameters**                                       | <ul><li>* `skipMetatable`	- If set to `true`, copies will _not_ copy the metatable into the new tables.</li></ul> |
+| **Returns**                                          | <ul><li>* The `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul><li>* See [shallowTable](#shallowTable).</li></ul>                |
+
 #### [EQ](#eq)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:EQ() -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -392,7 +480,7 @@ The `prop.extend` function will set the `source` table as a metatable of the `ta
 | **Returns**                                          | <ul><li>`true` if any watchers have been registered.</li></ul>          |
 
 #### [id](#id)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:id(newId) -> string or cp.prop` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:id(newId) -> string | cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | If `newId` is provided it is given a new ID and the `cp.prop` is returned.                                                                                         |
@@ -472,6 +560,15 @@ The `prop.extend` function will set the `source` table as a metatable of the `ta
 | **Description**                                      | Sets the property to the specified value. Watchers will be notified if the value has changed.                                                                                         |
 | **Parameters**                                       | <ul><li>* `newValue`	- The new value to set. May be `nil`.</li></ul> |
 | **Returns**                                          | <ul><li>* The new value.</li></ul>          |
+
+#### [shallowTable](#shallowtable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:shallowTable(skipMetatable) -> prop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | This can be called once to enable shallow cloning of `table` values. By default,                                                                                         |
+| **Parameters**                                       | <ul><li>* `skipMetatable`	- If set to `true`, the metatable will _not_ be copied to the new table.</li></ul> |
+| **Returns**                                          | <ul><li>* The `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul><li>* See [deepTable](#deepTable).</li></ul>                |
 
 #### [toggle](#toggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:toggle() -> boolean | nil` </span>                                                          |

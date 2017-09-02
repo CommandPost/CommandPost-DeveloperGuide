@@ -13,6 +13,7 @@ Reads & Writes plist data.
  * [binaryFileToXML](#binaryfiletoxml)
  * [binaryToTable](#binarytotable)
  * [fileToTable](#filetotable)
+ * [isBinaryPlist](#isbinaryplist)
  * [xmlFileToTable](#xmlfiletotable)
 
 ## API Documentation
@@ -58,6 +59,14 @@ Reads & Writes plist data.
 | **Description**                                      | Converts plist data from a binary or XML file into a LUA Table.                                                                                         |
 | **Parameters**                                       | <ul><li>plistFileName	- Path & Filename of the XML File</li></ul> |
 | **Returns**                                          | <ul><li>data				- A table of plist data, or `nil` if there was a problem.</li><li>err				- The error message, or `nil` if there were no problems.</li></ul>          |
+
+#### [isBinaryPlist](#isbinaryplist)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.isBinaryPlist(plistList) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns true if plistList is a binary plist file otherwise false                                                                                         |
+| **Parameters**                                       | <ul><li>plistList - Path to the file</li></ul> |
+| **Returns**                                          | <ul><li>Boolean</li></ul>          |
 
 #### [xmlFileToTable](#xmlfiletotable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.xmlFileToTable(plistFileName) -> table | nil` </span>                                                          |

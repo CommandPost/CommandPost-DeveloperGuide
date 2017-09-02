@@ -47,7 +47,7 @@ Represents the Final Cut Pro menu bar, providing functions that allow different 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds a specific Menu UI element for the provided path.                                                                                         |
-| **Parameters**                                       | <ul><li>`path`		- The path list to search for.</li><li>`language`	- The language code the path is in. E.g. "en" or "fr". Defaults to the </li><li> </li><li>Returns:</li><li>The Menu UI, or `nil` if it could not be found.</li></ul> |
+| **Parameters**                                       | <ul><li>`path`		- The path list to search for.</li><li>`language`	- The language code the path is in. E.g. "en" or "fr". Defaults to the</li></ul> |
 | **Returns**                                          | <ul><li>The Menu UI, or `nil` if it could not be found.</li></ul>          |
 
 #### [visitMenuItems](#visitmenuitems)

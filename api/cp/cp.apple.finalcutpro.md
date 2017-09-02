@@ -74,6 +74,7 @@ end
  * [cp.apple.finalcutpro.import](cp.apple.finalcutpro.import.md)
  * [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)
  * [cp.apple.finalcutpro.main](cp.apple.finalcutpro.main.md)
+ * [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)
  * [cp.apple.finalcutpro.prefs](cp.apple.finalcutpro.prefs.md)
  * [cp.apple.finalcutpro.windowfilter](cp.apple.finalcutpro.windowfilter.md)
 
@@ -84,6 +85,7 @@ end
  * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
  * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
  * [BUNDLE_ID](#bundle_id)
+ * [currentLanguage](#currentlanguage)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
  * [FLEXO_LANGUAGES](#flexo_languages)
  * [getVersion](#getversion)
@@ -91,6 +93,7 @@ end
  * [PREFS_PLIST_PATH](#prefs_plist_path)
  * [SUPPORTED_LANGUAGES](#supported_languages)
 * Functions - API calls offered directly by the extension
+ * [getMotionTheme](#getmotiontheme)
  * [init](#init)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [isFrontmost](#isfrontmost)
@@ -115,12 +118,12 @@ end
  * [getBundleID](#getbundleid)
  * [getCommandSet](#getcommandset)
  * [getCommandShortcuts](#getcommandshortcuts)
- * [getCurrentLanguage](#getcurrentlanguage)
  * [getDefaultCommandSetPath](#getdefaultcommandsetpath)
  * [getFlexoLanguages](#getflexolanguages)
  * [getPasteboardUTI](#getpasteboarduti)
  * [getPreference](#getpreference)
  * [getPreferences](#getpreferences)
+ * [getSupportedLanguage](#getsupportedlanguage)
  * [getSupportedLanguages](#getsupportedlanguages)
  * [hide](#hide)
  * [importXML](#importxml)
@@ -134,18 +137,20 @@ end
  * [menuBar](#menubar)
  * [path](#path)
  * [performShortcut](#performshortcut)
+ * [plugins](#plugins)
  * [preferencesWindow](#preferenceswindow)
  * [primaryWindow](#primarywindow)
  * [quit](#quit)
  * [restart](#restart)
+ * [scanPlugins](#scanplugins)
  * [secondaryWindow](#secondarywindow)
  * [selectMenu](#selectmenu)
- * [setCurrentLanguage](#setcurrentlanguage)
  * [setPreference](#setpreference)
  * [show](#show)
  * [string](#string)
  * [timeline](#timeline)
  * [transitions](#transitions)
+ * [UI](#ui)
  * [unwatch](#unwatch)
  * [viewer](#viewer)
  * [watch](#watch)
@@ -184,6 +189,12 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Final Cut Pro's Bundle ID                                                                                         |
+
+#### [currentLanguage](#currentlanguage)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLanguage <cp.prop:string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The current language the FCPX is displayed in.                                                                                         |
 
 #### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION` </span>                                                          |
@@ -225,6 +236,15 @@ end
 | **Description**                                      | Table of Final Cut Pro's supported Languages                                                                                         |
 
 ### Functions
+
+#### [getMotionTheme](#getmotiontheme)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.scannplugins.getMotionTheme(filename) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Process a plugin so that it's added to the current scan                                                                                         |
+| **Parameters**                                       | <ul><li>filename - Filename of the plugin</li></ul> |
+| **Returns**                                          | <ul><li>The theme name, or `nil` if not found.</li></ul>          |
+| **Notes**                                            | <ul><li>getMotionTheme("~/Movies/Motion Templates.localized/Effects.localized/3065D03D-92D7-4FD9-B472-E524B87B5012.localized/DAEB0CAD-E702-4BF9-94B5-AE89D7F8FB00.localized/DAEB0CAD-E702-4BF9-94B5-AE89D7F8FB00.moef")</li></ul>                |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:init() -> App` </span>                                                          |
@@ -392,14 +412,6 @@ end
 | **Parameters**                                       | <ul><li>id - The unique ID for the command.</li></ul> |
 | **Returns**                                          | <ul><li>The array of shortcuts, or `nil` if no command exists with the specified `id`.</li></ul>          |
 
-#### [getCurrentLanguage](#getcurrentlanguage)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getCurrentLanguage() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the language Final Cut Pro is currently using.                                                                                         |
-| **Parameters**                                       | <ul><li>none</li></ul> |
-| **Returns**                                          | <ul><li>Returns the current language as string (or 'en' if unknown).</li></ul>          |
-
 #### [getDefaultCommandSetPath](#getdefaultcommandsetpath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getDefaultCommandSetPath([langauge]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -417,12 +429,12 @@ end
 | **Returns**                                          | <ul><li>A table of languages Final Cut Pro supports</li></ul>          |
 
 #### [getPasteboardUTI](#getpasteboarduti)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getPasteboardUTI() -> axuielementObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getPasteboardUTI() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the Final Cut Pro axuielementObject                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Pasteboard UTI                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A axuielementObject of Final Cut Pro</li></ul>          |
+| **Returns**                                          | <ul><li>A string of the Final Cut Pro Pasteboard UTI</li></ul>          |
 
 #### [getPreference](#getpreference)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getPreference(value, default, forceReload) -> string or nil` </span>                                                          |
@@ -439,6 +451,14 @@ end
 | **Description**                                      | Gets Final Cut Pro's Preferences as a table. It checks if the preferences                                                                                         |
 | **Parameters**                                       | <ul><li>forceReload	- (optional) if true, a reload will be forced even if the file hasn't been modified.</li><li>preventMultipleReloads - (optional) if true, adds a 0.01 delay before reloading preferences (for use with the watcher)</li></ul> |
 | **Returns**                                          | <ul><li>A table with all of Final Cut Pro's preferences, or nil if an error occurred</li></ul>          |
+
+#### [getSupportedLanguage](#getsupportedlanguage)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getSupportedLanguage(language) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks if the provided `language` is supported by the app and returns the actual support code, or `nil` if there is no supported version of the language.                                                                                         |
+| **Parameters**                                       | <ul><li>`language`	- The language code to check. E.g. "en" or "zh_CN"</li></ul> |
+| **Returns**                                          | <ul><li>`true` if the language is supported.</li></ul>          |
 
 #### [getSupportedLanguages](#getsupportedlanguages)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getSupportedLanguages() -> table` </span>                                                          |
@@ -545,6 +565,14 @@ end
 | **Parameters**                                       | <ul><li>whichShortcut - As per the Command Set name</li></ul> |
 | **Returns**                                          | <ul><li>true if successful otherwise false</li></ul>          |
 
+#### [plugins](#plugins)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:plugins() -> cp.apple.finalcutpro.plugins` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the plugins manager for the app.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The plugins manager.</li></ul>          |
+
 #### [preferencesWindow](#preferenceswindow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:preferencesWindow() -> preferenceWindow object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -570,12 +598,20 @@ end
 | **Returns**                                          | <ul><li>A cp.apple.finalcutpro otherwise nil</li></ul>          |
 
 #### [restart](#restart)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:restart() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:restart(waitUntilRestarted) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Restart Final Cut Pro                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>`waitUntilRestarted`	- If `true`, the function will not return until the app has restarted.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if Final Cut Pro was running and restarted successfully.</li></ul>          |
+
+#### [scanPlugins](#scanplugins)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:scanPlugins() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Scan Final Cut Pro Plugins                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A MenuBar object</li></ul>          |
 
 #### [secondaryWindow](#secondarywindow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:secondaryWindow() -> secondaryWindow object` </span>                                                          |
@@ -592,13 +628,6 @@ end
 | **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English.                                                                                         |
 | **Parameters**                                       | <ul><li>`path`	- The list of menu items you'd like to activate, for example:</li><li>           select("View", "Browser", "as List")</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the press was successful.</li></ul>          |
-
-#### [setCurrentLanguage](#setcurrentlanguage)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:setCurrentLanguage(language) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the langauge to the specified `language` and restarts FCPX if necessary.                                                                                         |
-| **Returns**                                          | <ul><li>`true` if the language was changed successfully.</li></ul>          |
 
 #### [setPreference](#setpreference)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:setPreference(key, value) -> boolean` </span>                                                          |
@@ -617,11 +646,11 @@ end
 | **Returns**                                          | <ul><li>A cp.apple.finalcutpro otherwise nil</li></ul>          |
 
 #### [string](#string)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key[, lang]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Looks up an application string with the specified `key`. It will take into account current language the app is running in.                                                                                         |
-| **Parameters**                                       | <ul><li>`key`	- The key to look up.</li></ul> |
+| **Description**                                      | Looks up an application string with the specified `key`.                                                                                         |
+| **Parameters**                                       | <ul><li>`key`	- The key to look up.</li><li>`lang`	- The language code to use. Defaults to the current language.</li></ul> |
 | **Returns**                                          | <ul><li>The requested string or `nil` if the application is not running.</li></ul>          |
 
 #### [timeline](#timeline)
@@ -639,6 +668,14 @@ end
 | **Description**                                      | Returns the TransitionsBrowser instance, whether it is in the primary or secondary window.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the TransitionsBrowser</li></ul>          |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:UI() -> axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro axuielement                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A axuielementObject of Final Cut Pro</li></ul>          |
 
 #### [unwatch](#unwatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:unwatch() -> boolean` </span>                                                          |

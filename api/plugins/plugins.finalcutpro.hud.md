@@ -75,7 +75,7 @@ Final Cut Pro HUD.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [getButton](#getbutton)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.getButton() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.getButton() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the button values from settings.                                                                                         |
