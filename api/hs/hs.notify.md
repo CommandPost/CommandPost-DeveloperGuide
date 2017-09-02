@@ -73,13 +73,13 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A table containing the registered callback functions and their tags.                                                                                         |
-| **Notes**                                            | <ul><li>This table should not be modified directly. Use the `hs.notify.register(tag, fn)` and `hs.notify.unregister(id)` functions.</li><li>This table has a __tostring metamethod so you can see the list of registered function tags in the console by typing `hs.notify.registry`</li><li>If a notification attempts to perform a callback to a function tag which is not present in this table, a warning will be printed in the console.</li></ul>                |
+| **Notes**                                            | <ul><li>This table should not be modified directly. Use the `hs.notify.register(tag, fn)` and `hs.notify.unregister(id)` functions.</li><li>This table has a __tostring metamethod so you can see the list of registered function tags in the console by typing `hs.notify.registry`</li><li>See [hs.notify.warnAboutMissingFunctionTag](#warnAboutMissingFunctionTag) for determining the behavior when a notification attempts to perform a callback to a function tag which is not present in this table. This occurrence is most common with notifications which are acted upon by the user after Hammerspoon has been reloaded.</li></ul>                |
 
 #### [warnAboutMissingFunctionTag](#warnaboutmissingfunctiontag)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.warnAboutMissingFunctionTag` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
-| **Description**                                      | A boolean value indicating whether or not a missing notification function tag should cause a warning to be printed to the console during activation callback. Defaults to true.                                                                                         |
+| **Description**                                      | A value indicating whether or not a missing notification function tag should cause a warning.  Defaults to `true`.                                                                                         |
 
 ### Functions
 

@@ -138,8 +138,8 @@ This sub-module provides access to the current location set configuration settin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Switches to a new location                                                                                         |
-| **Parameters**                                       | <ul><li>location - string containing UUID or name of new location</li></ul> |
-| **Returns**                                          | <ul><li>bool</li></ul>          |
+| **Parameters**                                       | <ul><li>location - string containing name or UUID of new location</li></ul> |
+| **Returns**                                          | <ul><li>bool - true if the location was successfully changed, false if there was an error</li></ul>          |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.configuration:start() -> storeObject` </span>                                                          |

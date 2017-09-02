@@ -35,6 +35,7 @@ Notes:
  * [centerOnScreen](#centeronscreen)
  * [close](#close)
  * [focus](#focus)
+ * [focusTab](#focustab)
  * [focusWindowEast](#focuswindoweast)
  * [focusWindowNorth](#focuswindownorth)
  * [focusWindowSouth](#focuswindowsouth)
@@ -69,6 +70,7 @@ Notes:
  * [size](#size)
  * [snapshot](#snapshot)
  * [subrole](#subrole)
+ * [tabCount](#tabcount)
  * [title](#title)
  * [toggleFullScreen](#togglefullscreen)
  * [toggleZoom](#togglezoom)
@@ -228,6 +230,14 @@ Notes:
 | **Description**                                      | Focuses the window                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The `hs.window` object</li></ul>          |
+
+#### [focusTab](#focustab)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:focusTab(index) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Focuses the tab in the window's tab group at index, or the last tab if                                                                                         |
+| **Parameters**                                       | <ul><li>index - A number, a 1-based index of a tab to focus</li></ul> |
+| **Returns**                                          | <ul><li>true if the tab was successfully pressed, or false if there was a problem</li></ul>          |
 
 #### [focusWindowEast](#focuswindoweast)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:focusWindowEast([candidateWindows[, frontmost[, strict]]]) -> boolean` </span>                                                          |
@@ -497,6 +507,14 @@ Notes:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the subrole of the window</li></ul>          |
 | **Notes**                                            | <ul><li>This typically helps to determine if a window is a special kind of window - such as a modal window, or a floating window</li></ul>                |
+
+#### [tabCount](#tabcount)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:tabCount() -> number or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the number of tabs in the window has, or nil if the window doesn't have tabs.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A number containing the number of tabs, or nil if an error occurred</li></ul>          |
 
 #### [title](#title)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:title() -> string` </span>                                                          |

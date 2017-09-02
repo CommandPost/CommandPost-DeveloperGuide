@@ -21,7 +21,7 @@ Notes:
  * [setCallback](#setcallback)
  * [setEnvironment](#setenvironment)
  * [setInput](#setinput)
- * [setStreamCallback](#setstreamcallback)
+ * [setStreamingCallback](#setstreamingcallback)
  * [setWorkingDirectory](#setworkingdirectory)
  * [start](#start)
  * [terminate](#terminate)
@@ -132,8 +132,8 @@ Notes:
 | **Returns**                                          | <ul><li>The hs.task object</li></ul>          |
 | **Notes**                                            | <ul><li>This method can be called before the task has been started, to prepare some input for it (particularly if it is not a streaming task)</li><li>If this method is called multiple times, any input that has not been passed to the task already, is discarded (for streaming tasks, the data is generally consumed very quickly, but for now there is no way to syncronise this)</li></ul>                |
 
-#### [setStreamCallback](#setstreamcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:setStreamCallback(fn) -> hs.task object` </span>                                                          |
+#### [setStreamingCallback](#setstreamingcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:setStreamingCallback(fn) -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set a stream callback function for a task                                                                                         |

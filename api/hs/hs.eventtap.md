@@ -20,6 +20,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [keyStrokes](#keystrokes)
  * [leftClick](#leftclick)
  * [middleClick](#middleclick)
+ * [otherClick](#otherclick)
  * [rightClick](#rightclick)
  * [scrollWheel](#scrollwheel)
 * Constructors - API calls which return an object, typically one that offers API methods
@@ -107,9 +108,18 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a middle mouse click event at the specified point                                                                                         |
-| **Parameters**                                       | <ul><li>point - A table with keys `{x, y}` indicating the location where the mouse event should occur</li><li>delay - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li></ul> |
+| **Parameters**                                       | <ul><li>point  - A table with keys `{x, y}` indicating the location where the mouse event should occur</li><li>delay  - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
-| **Notes**                                            | <ul><li>This is a wrapper around `hs.eventtap.event.newMouseEvent` that sends `middlemousedown` and `middlemouseup` events)</li></ul>                |
+| **Notes**                                            | <ul><li>This function is just a wrapper which calls `hs.eventtap.otherClick(point, delay, 2)` and is included solely for backwards compatibility.</li></ul>                |
+
+#### [otherClick](#otherclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.otherClick(point[, delay][, button])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates an "other" mouse click event at the specified point                                                                                         |
+| **Parameters**                                       | <ul><li>point  - A table with keys `{x, y}` indicating the location where the mouse event should occur</li><li>delay  - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li><li>button - An optional integer, default 2, between 2 and 31 specifying the button number to be pressed.  If this parameter is specified then `delay` must also be specified, though you may specify it as `nil` to use the default.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Notes**                                            | <ul><li>This is a wrapper around `hs.eventtap.event.newMouseEvent` that sends `otherMouseDown` and `otherMouseUp` events)</li></ul>                |
 
 #### [rightClick](#rightclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.rightClick(point[, delay])` </span>                                                          |
