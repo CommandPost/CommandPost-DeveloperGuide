@@ -66,8 +66,8 @@ This module is based heavily on code from Mjolnir by [Steven Degutis](https://gi
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.ipc.cliInstall([path][,silent]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Installs the `hs` command line tool                                                                                         |
-| **Parameters**                                       | <ul><li>path - An optional string containing a path to install the tool in. Defaults to `/usr/local`</li><li>silent - An optional boolean indicating whether or not to print errors to the Hammerspoon Console</li></ul> |
+| **Description**                                      | Installs the `cmdpost` command line tool                                                                                         |
+| **Parameters**                                       | <ul><li>path - An optional string containing a path to install the tool in. Defaults to `/usr/local`</li><li>silent - An optional boolean indicating whether or not to print errors to the CommandPost Error Log</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the tool was successfully installed, otherwise false</li></ul>          |
 | **Notes**                                            | <ul><li>If this function fails, it is likely that you have some old/broken symlinks. You can use `hs.ipc.cliUninstall()` to forcibly tidy them up</li></ul>                |
 
@@ -102,9 +102,9 @@ This module is based heavily on code from Mjolnir by [Steven Degutis](https://gi
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Uninstalls the `hs` command line tool                                                                                         |
-| **Parameters**                                       | <ul><li>path - An optional string containing a path to remove the tool from. Defaults to `/usr/local`</li><li>silent - An optional boolean indicating whether or not to print errors to the Hammerspoon Console</li></ul> |
+| **Parameters**                                       | <ul><li>path - An optional string containing a path to remove the tool from. Defaults to `/usr/local`</li><li>silent - An optional boolean indicating whether or not to print errors to the CommandPost Error Log</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the tool was successfully removed, otherwise false</li></ul>          |
-| **Notes**                                            | <ul><li>This function used to be very conservative and refuse to remove symlinks it wasn't sure about, but now it will unconditionally remove whatever it finds at `path/bin/hs` and `path/share/man/man1/hs.1`. This is more likely to be useful in situations where this command is actually needed (please open an Issue on GitHub if you disagree!)</li></ul>                |
+| **Notes**                                            | <ul><li>This function used to be very conservative and refuse to remove symlinks it wasn't sure about, but now it will unconditionally remove whatever it finds at `path/bin/cmdpost` and `path/share/man/man1/cmdpost.1`. This is more likely to be useful in situations where this command is actually needed (please open an Issue on GitHub if you disagree!)</li></ul>                |
 
 ### Constructors
 
