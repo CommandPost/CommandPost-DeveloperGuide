@@ -228,6 +228,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Places the drawing object on top of normal windows                                                                                         |
 | **Parameters**                                       | <ul><li>aboveEverything - An optional boolean value that controls how far to the front the drawing should be placed. True to place the drawing on top of all windows (including the dock and menubar and fullscreen windows), false to place the drawing above normal windows, but below the dock, menubar and fullscreen windows. Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul>          |
+| **Notes**                                            | <ul><li>This may not be able to move a drawing above all full-screen windows. More recent versions of macOS have made significant changes to the way full-screen apps work, moving them outside our ability to interact with.</li></ul>                |
 
 #### [clickCallbackActivating](#clickcallbackactivating)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:clickCallbackActivating([false]) -> drawingObject or current value` </span>                                                          |
@@ -457,7 +458,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the window level more precisely than sendToBack and bringToFront.                                                                                         |
 | **Parameters**                                       | <ul><li>theLevel - the level specified as a number or as a string where this object should be drawn.  If it is a string, it must match one of the keys in `hs.drawing.windowLevels`.</li></ul> |
 | **Returns**                                          | <ul><li>the drawing object</li></ul>          |
-| **Notes**                                            | <ul><li>see the notes for `hs.drawing.windowLevels`</li></ul>                |
+| **Notes**                                            | <ul><li>see the notes for `hs.drawing.windowLevels`</li><li>These levels may be unable to explicitly place drawing objects around full-screen macOS windows</li></ul>                |
 
 #### [setRoundedRectRadii](#setroundedrectradii)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setRoundedRectRadii(xradius, yradius) -> drawingObject` </span>                                                          |

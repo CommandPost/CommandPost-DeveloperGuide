@@ -15,6 +15,7 @@ Notes:
  * [cpuUsage](#cpuusage)
  * [cpuUsageTicks](#cpuusageticks)
  * [globallyUniqueString](#globallyuniquestring)
+ * [gpuVRAM](#gpuvram)
  * [idleTime](#idletime)
  * [interfaceStyle](#interfacestyle)
  * [localizedName](#localizedname)
@@ -65,6 +66,15 @@ Notes:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>a newly generated global unique identifier as a string</li></ul>          |
 | **Notes**                                            | <ul><li>See also `hs.host.uuid`</li><li>The global unique identifier for a process includes the host name, process ID, and a time stamp, which ensures that the ID is unique for the network. This property generates a new string each time it is invoked, and it uses a counter to guarantee that strings are unique.</li><li>This is often used as a file or directory name in conjunction with `hs.host.temporaryDirectory()` when creating temporary files.</li></ul>                |
+
+#### [gpuVRAM](#gpuvram)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.gpuVRAM() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the model and VRAM size for the installed GPUs.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table whose key-value pairs represent the GPUs for the current system.  Each key is a string contining the name for an installed GPU and its value is the GPU's VRAM size in MB.  If the VRAM size cannot be determined for a specific GPU, its value will be -1.0.</li></ul>          |
+| **Notes**                                            | <ul><li>If your GPU reports -1.0 as the memory size, please submit an issue to the Hammerspoon github repository and include any information that you can which may be relevant, such as: Macintosh model, macOS version, is the GPU built in or a third party expansion card, the GPU model and VRAM as best you can determine (see the System Information application in the Utilities folder and look at the Graphics/Display section) and anything else that you think might be important.</li></ul>                |
 
 #### [idleTime](#idletime)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.host.idleTime() -> seconds` </span>                                                          |

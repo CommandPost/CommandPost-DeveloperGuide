@@ -22,6 +22,7 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
  * [bind](#bind)
  * [getAllHandlersForScheme](#getallhandlersforscheme)
  * [getDefaultHandler](#getdefaulthandler)
+ * [openURL](#openurl)
  * [openURLWithBundle](#openurlwithbundle)
  * [setDefaultHandler](#setdefaulthandler)
  * [setRestoreHandler](#setrestorehandler)
@@ -63,6 +64,14 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | **Description**                                      | Gets the application bundle identifier of the application currently registered to handle a URL scheme                                                                                         |
 | **Parameters**                                       | <ul><li>scheme - A string containing a URL scheme (e.g. 'http')</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the bundle identifier of the current default application</li></ul>          |
+
+#### [openURL](#openurl)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.openURL(url)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Opens a URL with the default application                                                                                         |
+| **Parameters**                                       | <ul><li>url - A string containing a URL, which must contain a scheme and '://'</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if the URL was opened successfully, otherwise false</li></ul>          |
 
 #### [openURLWithBundle](#openurlwithbundle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.openURLWithBundle(url, bundleID) -> boolean` </span>                                                          |

@@ -11,6 +11,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [getButtons](#getbuttons)
  * [getCurrentScreen](#getcurrentscreen)
  * [getRelativePosition](#getrelativeposition)
+ * [scrollDirection](#scrolldirection)
  * [setAbsolutePosition](#setabsoluteposition)
  * [setRelativePosition](#setrelativeposition)
  * [trackingSpeed](#trackingspeed)
@@ -53,6 +54,13 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A point-table containing the relative x and y co-ordinates of the mouse pointer, or nil if an error occured</li></ul>          |
 | **Notes**                                            | <ul><li>The co-ordinates returned by this function are relative to the top left pixel of the screen the mouse is on (see `hs.mouse.getAbsolutePosition` if you need the location in the full desktop space)</li></ul>                |
+
+#### [scrollDirection](#scrolldirection)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.scrollDirection() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the system-wide direction of scolling                                                                                         |
+| **Returns**                                          | <ul><li>A string, either "natural" or "normal"</li></ul>          |
 
 #### [setAbsolutePosition](#setabsoluteposition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.setAbsolutePosition(point)` </span>                                                          |

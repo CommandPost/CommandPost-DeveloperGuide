@@ -98,6 +98,7 @@
 | [plugins.finalcutpro.timeline.height](plugins.finalcutpro.timeline.height.md)                          | Shortcut for changing Final Cut Pro's Timeline Height     |
 | [plugins.finalcutpro.timeline.lanes](plugins.finalcutpro.timeline.lanes.md)                          | Controls Final Cut Pro's Lanes.     |
 | [plugins.finalcutpro.timeline.matchframe](plugins.finalcutpro.timeline.matchframe.md)                          | Match Frame Tools for Final Cut Pro.     |
+| [plugins.finalcutpro.timeline.mousezoom](plugins.finalcutpro.timeline.mousezoom.md)                          | Allows you to zoom in or out of a Final Cut Pro timeline using the mechanical scroll wheel on your mouse or the Touch Pad on the Magic Mouse when holding down the OPTION modifier key.     |
 | [plugins.finalcutpro.timeline.movetoplayhead](plugins.finalcutpro.timeline.movetoplayhead.md)                          | Move To Playhead.     |
 | [plugins.finalcutpro.timeline.multicam](plugins.finalcutpro.timeline.multicam.md)                          | Multicam Tools.     |
 | [plugins.finalcutpro.timeline.playback](plugins.finalcutpro.timeline.playback.md)                          | Playback Plugin.     |
@@ -109,7 +110,6 @@
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Effects.     |
-| [plugins.finalcutpro.timeline.zoom](plugins.finalcutpro.timeline.zoom.md)                          | Allows you to zoom a timeline using your mouse scroll wheel (whilst holding down the OPTION key).     |
 | [plugins.finalcutpro.timeline.zoomtoselection](plugins.finalcutpro.timeline.zoomtoselection.md)                          | Zoom the Timeline to fit the currently-selected clips.     |
 | [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.viewer.showtimelineinplayer](plugins.finalcutpro.viewer.showtimelineinplayer.md)                          | Show Timeline In Player.     |

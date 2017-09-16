@@ -18,6 +18,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
  * [set](#set)
  * [setData](#setdata)
  * [setDate](#setdate)
+ * [watchKey](#watchkey)
 
 ## API Documentation
 
@@ -88,4 +89,13 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li><li>val - A number representing seconds since `1970-01-01 00:00:00 +0000` (e.g. `os.time()`), or a string containing a date in RFC3339 format (`YYYY-MM-DD[T]HH:MM:SS[Z]`)</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>See `hs.settings.dateFormat` for a convenient representation of the RFC3339 format, to use with other time/date related functions</li></ul>                |
+
+#### [watchKey](#watchkey)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.settings.watchKey(identifier, key, [fn | nil]) -> identifier | current value` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get or set a watcher to invoke a callback when the specified settings key changes                                                                                         |
+| **Parameters**                                       | <ul><li>identifier - a required string used as an identifier for this callback</li><li>key        - the settings key to watch for changes to</li><li>fn         - the callback function to be invoked when the specified key changes.  If this is an explicit nil, removes the existing callback.</li></ul> |
+| **Returns**                                          | <ul><li>if a callback is set or removed, returns the identifier; otherwise returns the current callback function or nil if no callback function is currently defined.</li></ul>          |
+| **Notes**                                            | <ul><li>the identifier is required so that multiple callbacks for the same key can be registered by separate modules; it's value doesn't affect what is being watched but does need to be unique between multiple watchers of the same key.</li></ul>                |
 

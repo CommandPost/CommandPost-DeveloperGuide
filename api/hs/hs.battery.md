@@ -23,6 +23,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [isFinishingCharge](#isfinishingcharge)
  * [maxCapacity](#maxcapacity)
  * [name](#name)
+ * [otherBatteryInfo](#otherbatteryinfo)
  * [percentage](#percentage)
  * [powerSource](#powersource)
  * [psuSerial](#psuserial)
@@ -134,6 +135,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Returns the name of the battery                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the name of the battery</li></ul>          |
+
+#### [otherBatteryInfo](#otherbatteryinfo)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.otherBatteryInfo() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns information about non-PSU batteries (e.g. bluetooth accessories)                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing information about other batteries known to the system, or an empty table if no devices were found</li></ul>          |
 
 #### [percentage](#percentage)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.percentage() -> number` </span>                                                          |

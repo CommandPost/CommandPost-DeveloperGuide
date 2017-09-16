@@ -44,6 +44,7 @@ Any suggestions or updates to the code to address any of these or other limitati
  * [certificateChain](#certificatechain)
  * [children](#children)
  * [closeOnEscape](#closeonescape)
+ * [darkMode](#darkmode)
  * [delete](#delete)
  * [deleteOnClose](#deleteonclose)
  * [estimatedProgress](#estimatedprogress)
@@ -258,6 +259,14 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Parameters**                                       | <ul><li>`flag` - an optional boolean value which indicates whether a webview, when it's style includes Closable (see `hs.webview:windowStyle`), should allow the Escape key to be a shortcut for closing the webview window.  Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>If a value is provided, then this method returns the webview object; otherwise the current value</li></ul>          |
 | **Notes**                                            | <ul><li>If this is set to true, Escape will only close the window if no other element responds to the Escape key first (e.g. if you are editing a text input field, the Escape will be captured by the text field, not by the webview Window.)</li></ul>                |
+
+#### [darkMode](#darkmode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:darkMode([state]) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Set or display whether or not the `hs.webview` window should display in dark mode.                                                                                         |
+| **Parameters**                                       | <ul><li>`state` - an optional boolean which will set whether or not the `hs.webview` window should display in dark mode.</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, `true` if dark mode is enabled otherwise `false`.</li></ul>          |
 
 #### [delete](#delete)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:delete([propagate], [fadeOutTime]) -> none` </span>                                                          |

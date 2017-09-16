@@ -18,6 +18,7 @@ Core Hammerspoon functionality
  * [hs.console](hs.console.md)
  * [hs.crash](hs.crash.md)
  * [hs.deezer](hs.deezer.md)
+ * [hs.dialog](hs.dialog.md)
  * [hs.distributednotifications](hs.distributednotifications.md)
  * [hs.doc](hs.doc.md)
  * [hs.dockicon](hs.dockicon.md)
@@ -68,6 +69,7 @@ Core Hammerspoon functionality
  * [hs.spotify](hs.spotify.md)
  * [hs.spotlight](hs.spotlight.md)
  * [hs.sqlite3](hs.sqlite3.md)
+ * [hs.streamdeck](hs.streamdeck.md)
  * [hs.styledtext](hs.styledtext.md)
  * [hs.tabs](hs.tabs.md)
  * [hs.task](hs.task.md)
@@ -116,6 +118,7 @@ Core Hammerspoon functionality
  * [openConsole](#openconsole)
  * [openConsoleOnDockClick](#openconsoleondockclick)
  * [openPreferences](#openpreferences)
+ * [preferencesDarkMode](#preferencesdarkmode)
  * [printf](#printf)
  * [rawprint](#rawprint)
  * [reload](#reload)
@@ -207,10 +210,10 @@ Core Hammerspoon functionality
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.allowAppleScript([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Set or display whether or not external Hammerspoon AppleScript commands are allowed                                                                                         |
-| **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not external Hammerspoon's AppleScript commands are allowed</li></ul> |
-| **Returns**                                          | <ul><li>A boolean, true if Hammerspoon's AppleScript commands are (or has just been) allowed otherwise false</li></ul>          |
-| **Notes**                                            | <ul><li>AppleScript access is disallowed by default</li><li>Due to the way AppleScript support works, Hammerspoon will always allow AppleScript commands that are part of the "Standard Suite", such as `name, `quit`, `version`, etc. However, Hammerspoon will only allow commands from the "Hammerspoon Suite" if `hs.allowAppleScript()` is set to `true`</li><li>For a full list of AppleScript Commands:</li><li>     - Open `/Applications/Utilities/Script Editor.app`</li><li>     - Click `File > Open Dictionary...`</li><li>     - Select Hammerspoon from the list of Applications</li><li>     - This will now open a Dictionary containing all of the availible Hammerspoon AppleScript commands.</li><li>Note that strings within the Lua code you pass from AppleScript can be delimited by `[[` and `]]` rather than normal quotes</li></ul>                |
+| **Description**                                      | Set or display whether or not external Hammerspoon AppleScript commands are allowed.                                                                                         |
+| **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not external Hammerspoon's AppleScript commands are allowed.</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, `true` if Hammerspoon's AppleScript commands are (or has just been) allowed, otherwise `false`.</li></ul>          |
+| **Notes**                                            | <ul><li>AppleScript access is disallowed by default.</li><li>However due to the way AppleScript support works, Hammerspoon will always allow AppleScript commands that are part of the "Standard Suite", such as `name`, `quit`, `version`, etc. However, Hammerspoon will only allow commands from the "Hammerspoon Suite" if `hs.allowAppleScript()` is set to `true`.</li><li>For a full list of AppleScript Commands:</li><li>     - Open `/Applications/Utilities/Script Editor.app`</li><li>     - Click `File > Open Dictionary...`</li><li>     - Select Hammerspoon from the list of Applications</li><li>     - This will now open a Dictionary containing all of the availible Hammerspoon AppleScript commands.</li><li>Note that strings within the Lua code you pass from AppleScript can be delimited by `[[` and `]]` rather than normal quotes</li><li>Example:</li></ul>                |
 
 #### [autoLaunch](#autolaunch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.autoLaunch([state]) -> bool` </span>                                                          |
@@ -366,6 +369,14 @@ Core Hammerspoon functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays the Hammerspoon Preferences panel; implicitly focuses Hammerspoon.                                                                                         |
+
+#### [preferencesDarkMode](#preferencesdarkmode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.preferencesDarkMode([state]) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Set or display whether or not the Preferences panel should display in dark mode.                                                                                         |
+| **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not the Preferences panel should display in dark mode.</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if dark mode is enabled otherwise false.</li></ul>          |
 
 #### [printf](#printf)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.printf(format, ...)` </span>                                                          |

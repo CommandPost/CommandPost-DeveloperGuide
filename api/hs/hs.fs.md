@@ -9,6 +9,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 
 ## Submodules
  * [hs.fs.volume](hs.fs.volume.md)
+ * [hs.fs.xattr](hs.fs.xattr.md)
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -16,14 +17,17 @@ This module is produced by the Kepler Project under the name "Lua File System"
  * [chdir](#chdir)
  * [currentDir](#currentdir)
  * [dir](#dir)
+ * [displayName](#displayname)
  * [fileUTI](#fileuti)
  * [fileUTIalternate](#fileutialternate)
+ * [getFinderComments](#getfindercomments)
  * [link](#link)
  * [lock](#lock)
  * [lockDir](#lockdir)
  * [mkdir](#mkdir)
  * [pathToAbsolute](#pathtoabsolute)
  * [rmdir](#rmdir)
+ * [setFinderComments](#setfindercomments)
  * [symlinkAttributes](#symlinkattributes)
  * [tagsAdd](#tagsadd)
  * [tagsGet](#tagsget)
@@ -71,6 +75,14 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>An iterator function</li><li>A data object to pass to the iterator function</li></ul>          |
 | **Notes**                                            | <ul><li>The data object should be passed to the iterator function. Each call will return either a string containing the name of an entry in the directory, or nil if there are no more entries.</li><li>Iteration can also be performed by calling `:next()` on the data object. Note that if you do this, you must call `:close()` on the object when you have finished</li><li>This function will raise a Lua error if it cannot iterate the supplied path</li></ul>                |
 
+#### [displayName](#displayname)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.displayName(filepath) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the display name of the file or directory at a specified path.                                                                                         |
+| **Parameters**                                       | <ul><li>filepath - The path to the file or directory</li></ul> |
+| **Returns**                                          | <ul><li>a string containing the display name of the file or directory at a specified path; returns nil if no file with the specified path exists.</li></ul>          |
+
 #### [fileUTI](#fileuti)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.fileUTI(path) -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -86,6 +98,15 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Description**                                      | Returns the fileUTI's equivalent form in an alternate type specification format.                                                                                         |
 | **Parameters**                                       | <ul><li>a string containing a file UTI, such as one returned by `hs.fs.fileUTI`.</li><li>a string specifying the alternate format for the UTI.  This string may be one of the following:</li><li>   `extension`  - as a file extension, commonly used for platform independant file sharing when file metadata can't be guaranteed to be cross-platform compatible.  Generally considered unreliable when other file type identification methods are available.</li><li>  `mime`       - as a mime-type, commonly used by Internet applications like web browsers and email applications.</li><li>  `pasteboard` - as an NSPasteboard type (see `hs.pasteboard`).</li><li>  `ostype`     - four character file type, most common pre OS X, but still used in some legacy APIs.</li></ul> |
 | **Returns**                                          | <ul><li>the file UTI in the alternate format or nil if the UTI does not have an alternate of the specified type.</li></ul>          |
+
+#### [getFinderComments](#getfindercomments)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.getFinderComments(path) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get the Finder comments for the file or directory at the specified path                                                                                         |
+| **Parameters**                                       | <ul><li>path - the path to the file or directory you wish to get the comments of</li></ul> |
+| **Returns**                                          | <ul><li>a string containing the Finder comments for the file or directory specified.  If no comments have been set for the file, returns an empty string.  If an error occurs, most commonly an invalid path, this function will throw a Lua error.</li></ul>          |
+| **Notes**                                            | <ul><li>This function uses `hs.osascript` to access the file comments through AppleScript</li></ul>                |
 
 #### [link](#link)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.link(old, new[, symlink]) -> true or (nil,error)` </span>                                                          |
@@ -125,7 +146,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the absolute path of a given path                                                                                         |
-| **Parameters**                                       | <ul><li>filepath - Any kind of file or directory path, be it relative or not; or nil if an error occured</li></ul> |
+| **Parameters**                                       | <ul><li>filepath - Any kind of file or directory path, be it relative or not</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the absolute path of `filepath` (i.e. one that doesn't intolve `.`, `..` or symlinks)</li><li>Note that symlinks will be resolved to their target file</li></ul>          |
 
 #### [rmdir](#rmdir)
@@ -135,6 +156,15 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Description**                                      | Removes an existing directory                                                                                         |
 | **Parameters**                                       | <ul><li>dirname - A string containing the path to a directory to remove</li></ul> |
 | **Returns**                                          | <ul><li>True if the directory was removed, otherwise nil and an error string</li></ul>          |
+
+#### [setFinderComments](#setfindercomments)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.setFinderComments(path, comment) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Set the Finder comments for the file or directory at the specified path to the comment specified                                                                                         |
+| **Parameters**                                       | <ul><li>path    - the path to the file or directory you wish to set the comments of</li><li>comment - a string specifying the comment to set.  If this parameter is missing or is an explicit nil, the existing comment is cleared.</li></ul> |
+| **Returns**                                          | <ul><li>true on success; on error, most commonly an invalid path, this function will throw a Lua error.</li></ul>          |
+| **Notes**                                            | <ul><li>This function uses `hs.osascript` to access the file comments through AppleScript</li></ul>                |
 
 #### [symlinkAttributes](#symlinkattributes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.symlinkAttributes (filepath [, aname]) -> table or string or nil,error` </span>                                                          |
@@ -151,7 +181,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds one or more tags to the Finder tags of a file                                                                                         |
 | **Parameters**                                       | <ul><li>filepath - A string containing the path of a file</li><li>tags - A table containing one or more strings, each containing a tag name</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Returns**                                          | <ul><li>true if the tags were updated; throws a lua error if an error occurs updating the tags</li></ul>          |
 
 #### [tagsGet](#tagsget)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.tagsGet(filepath) -> table or nil` </span>                                                          |
@@ -159,7 +189,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Finder tags of a file                                                                                         |
 | **Parameters**                                       | <ul><li>filepath - A string containing the path of a file</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the list of the file's tags, or nil if an error occurred</li></ul>          |
+| **Returns**                                          | <ul><li>A table containing the list of the file's tags, or nil if the file has no tags assigned; throws a lua error if an error accessing the file occurs</li></ul>          |
 
 #### [tagsRemove](#tagsremove)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.tagsRemove(filepath, tags)` </span>                                                          |
@@ -167,7 +197,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes Finder tags from a file                                                                                         |
 | **Parameters**                                       | <ul><li>filepath - A string containing the path of a file</li><li>tags - A table containing one or more strings, each containing a tag name</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Returns**                                          | <ul><li>true if the tags were updated; throws a lua error if an error occurs updating the tags</li></ul>          |
 
 #### [tagsSet](#tagsset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.tagsSet(filepath, tags)` </span>                                                          |
@@ -175,7 +205,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the Finder tags of a file, removing any that are already set                                                                                         |
 | **Parameters**                                       | <ul><li>filepath - A string containing the path of a file</li><li>tags - A table containing zero or more strings, each containing a tag name</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Returns**                                          | <ul><li>true if the tags were set; throws a lua error if an error occurs setting the new tags</li></ul>          |
 
 #### [temporaryDirectory](#temporarydirectory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.temporaryDirectory() -> string` </span>                                                          |

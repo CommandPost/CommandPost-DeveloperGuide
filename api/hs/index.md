@@ -38,6 +38,8 @@
 | [hs.console](hs.console.md)                          | Some functions for manipulating the Hammerspoon console.     |
 | [hs.crash](hs.crash.md)                          | Various features/facilities for developers who are working on Hammerspoon itself, or writing extensions for it. It is extremely unlikely that you should need any part of this extension, in a normal user configuration.     |
 | [hs.deezer](hs.deezer.md)                          |      |
+| [hs.dialog](hs.dialog.md)                          | A collection of useful dialog boxes, alerts and panels for user interaction.     |
+| [hs.dialog.color](hs.dialog.color.md)                          | A panel that allows users to select a color.     |
 | [hs.distributednotifications](hs.distributednotifications.md)                          | Interact with NSDistributedNotificationCenter     |
 | [hs.doc](hs.doc.md)                          | Create documentation objects for interactive help within Hammerspoon     |
 | [hs.doc.builder](hs.doc.builder.md)                          | Builds documentation support files.  Still experimental.     |
@@ -53,6 +55,7 @@
 | [hs.fnutils](hs.fnutils.md)                          | Functional programming utility functions     |
 | [hs.fs](hs.fs.md)                          | Access/inspect the filesystem     |
 | [hs.fs.volume](hs.fs.volume.md)                          | Interact with OS X filesystem volumes     |
+| [hs.fs.xattr](hs.fs.xattr.md)                          | Get and manipulate extended attributes for files and directories     |
 | [hs.geometry](hs.geometry.md)                          | Utility object to represent points, sizes and rects in a bidimensional plane     |
 | [hs.grid](hs.grid.md)                          | Move/resize windows within a grid     |
 | [hs.hash](hs.hash.md)                          | Various hashing algorithms     |
@@ -112,6 +115,7 @@
 | [hs.spotlight.group](hs.spotlight.group.md)                          | This sub-module is used to access results to a spotlightObject query which have been grouped by one or more attribute values.     |
 | [hs.spotlight.item](hs.spotlight.item.md)                          | This sub-module is used to access the individual results of a spotlightObject or a spotlightGroupObject.     |
 | [hs.sqlite3](hs.sqlite3.md)                          | Interact with SQLite databases     |
+| [hs.streamdeck](hs.streamdeck.md)                          | Configure/control an Elgato Stream Deck     |
 | [hs.styledtext](hs.styledtext.md)                          | This module adds support for controlling the style of the text in Hammerspoon.     |
 | [hs.tabs](hs.tabs.md)                          | Place the windows of an application into tabs drawn on its titlebar     |
 | [hs.task](hs.task.md)                          | Execute processes in the background and capture their output     |

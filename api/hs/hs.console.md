@@ -17,6 +17,7 @@ These functions allow altering the behavior and display of the Hammerspoon conso
  * [consoleFont](#consolefont)
  * [consolePrintColor](#consoleprintcolor)
  * [consoleResultColor](#consoleresultcolor)
+ * [darkMode](#darkmode)
  * [getConsole](#getconsole)
  * [getHistory](#gethistory)
  * [hswindow](#hswindow)
@@ -114,6 +115,15 @@ These functions allow altering the behavior and display of the Hammerspoon conso
 | **Parameters**                                       | <ul><li>* color - an optional table containing color keys as described in `hs.drawing.color`</li></ul> |
 | **Returns**                                          | <ul><li>* the current color setting as a table</li></ul>          |
 | **Notes**                                            | <ul><li>See the `hs.drawing.color` entry in the Dash documentation, or type `help.hs.drawing.color` in the Hammerspoon console to get more information on how to specify a color.</li><li>Note this only affects future output -- anything already in the console will remain its current color.</li></ul>                |
+
+#### [darkMode](#darkmode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.darkMode([state]) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Set or display whether or not the Console window should display in dark mode.                                                                                         |
+| **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not the Console window should display in dark mode.</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if dark mode is enabled otherwise false.</li></ul>          |
+| **Notes**                                            | <ul><li>Enabling Dark Mode for the Console only affects the window background, and doesn't automatically change the Console's Background Color, so you will need to add something similar to:</li><li>   ```if hs.console.darkMode() then</li><li>       hs.console.outputBackgroundColor{ white = 0 }</li><li>       hs.console.consoleCommandColor{ white = 1 }</li><li>       hs.console.alpha(.8)</li><li>   end```</li></ul>                |
 
 #### [getConsole](#getconsole)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.getConsole([styled]) -> text | styledText` </span>                                                          |
