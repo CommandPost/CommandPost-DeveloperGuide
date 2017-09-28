@@ -12,11 +12,13 @@ Shortcut Commands
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bind](#bind)
  * [build](#build)
+ * [delete](#delete)
  * [enable](#enable)
  * [getKeyCode](#getkeycode)
  * [getModifiers](#getmodifiers)
  * [new](#new)
  * [trigger](#trigger)
+ * [unbind](#unbind)
 
 ## API Documentation
 
@@ -47,6 +49,14 @@ Shortcut Commands
 | **Parameters**                                       | <ul><li>`receiverFn`		- (optional) a function which will get passed the shortcut when the build is complete.</li></ul> |
 | **Returns**                                          | <ul><li>`shortcut.builder` which can be used to create the shortcut.</li></ul>          |
 | **Notes**                                            | <ul><li>* If provided, the receiver function will be called when the shortcut has been configured, and passed the new</li><li>  shortcut. The result of that function will be returned to the next stage.</li><li>  If no `receiverFn` is provided, the shortcut will be returned directly.</li></ul>                |
+
+#### [delete](#delete)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:delete() -> shortcut` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Delete's a shortcut.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`self`</li></ul>          |
 
 #### [enable](#enable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:enable() -> shortcut` </span>                                                          |
@@ -85,6 +95,14 @@ Shortcut Commands
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This will trigger the keystroke specified in the shortcut.                                                                                         |
-| **Parameters**                                       | <ul><li>N/A</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`self`</li></ul>          |
+
+#### [unbind](#unbind)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:unbind() -> shortcut` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Unbinds a shortcut.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`self`</li></ul>          |
 

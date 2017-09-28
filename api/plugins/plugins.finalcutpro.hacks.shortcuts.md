@@ -18,6 +18,7 @@ via the Final Cut Pro Command Editor.
  * [editCommands](#editcommands)
  * [init](#init)
  * [install](#install)
+ * [refresh](#refresh)
  * [uninstall](#uninstall)
  * [update](#update)
 
@@ -98,6 +99,14 @@ via the Final Cut Pro Command Editor.
 | **Description**                                      | Installs the Hacks Shortcuts.                                                                                         |
 | **Parameters**                                       | <ul><li>`silently`	- (optional) If `true`, the user will not be prompted first.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful.</li></ul>          |
+
+#### [refresh](#refresh)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.refresh() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Refresh Hacks Shortcuts if they're enabled.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [uninstall](#uninstall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.uninstall(silently) -> none` </span>                                                          |

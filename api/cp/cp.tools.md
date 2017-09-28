@@ -38,6 +38,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [rmdir](#rmdir)
  * [round](#round)
  * [safeFilename](#safefilename)
+ * [split](#split)
  * [splitOnColumn](#splitoncolumn)
  * [stringMaxLength](#stringmaxlength)
  * [tableContains](#tablecontains)
@@ -267,11 +268,11 @@ A collection of handy miscellaneous tools for Lua development.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [numberToWord](#numbertoword)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.numberToWord(number) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.numberToWord(str) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Converts a number to a string (i.e. 1 becomes "One").                                                                                         |
-| **Parameters**                                       | <ul><li>number - A whole number between 0 and 10</li></ul> |
+| **Description**                                      | Makes the first letter of a string uppercase.                                                                                         |
+| **Parameters**                                       | <ul><li>str - The string you want to manipulate</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul>          |
 
 #### [removeFilenameFromPath](#removefilenamefrompath)
@@ -314,6 +315,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>value - a string you want to make safe</li><li>defaultValue - the optional default filename to use if the value is not valid</li></ul> |
 | **Returns**                                          | <ul><li>A string of the safe filename</li></ul>          |
 | **Notes**                                            | <ul><li>Returns "filename" is both `value` and `defaultValue` are `nil`.</li></ul>                |
+
+#### [split](#split)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.split(str, pat) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Splits a string with a pattern.                                                                                         |
+| **Parameters**                                       | <ul><li>str - The string to split</li><li>pat - The pattern</li></ul> |
+| **Returns**                                          | <ul><li>Table</li></ul>          |
 
 #### [splitOnColumn](#splitoncolumn)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.splitOnColumn() -> string` </span>                                                          |

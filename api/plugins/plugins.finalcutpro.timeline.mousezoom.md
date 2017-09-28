@@ -3,10 +3,14 @@
 
 Allows you to zoom in or out of a Final Cut Pro timeline using the mechanical scroll wheel on your mouse or the Touch Pad on the Magic Mouse when holding down the OPTION modifier key.
 
+Special Thanks: Iain Anderson (@funwithstuff) for all his incredible testing!
+
 ## API Overview
 * Variables - Configurable values
  * [enabled](#enabled)
+ * [numberOfTouchDevices](#numberoftouchdevices)
  * [offset](#offset)
+ * [threshold](#threshold)
 * Functions - API calls offered directly by the extension
  * [findMagicMouses](#findmagicmouses)
  * [start](#start)
@@ -23,11 +27,23 @@ Allows you to zoom in or out of a Final Cut Pro timeline using the mechanical sc
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Toggles the Enable Proxy Menu Icon                                                                                         |
 
+#### [numberOfTouchDevices](#numberoftouchdevices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.mousezoom.numberOfTouchDevices -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Number of Touch Devices Detected.                                                                                         |
+
 #### [offset](#offset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.mousezoom.offset -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Offset Value used in difference calculations.                                                                                         |
+
+#### [threshold](#threshold)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.mousezoom.threshold -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Threshold Value used in difference calculations.                                                                                         |
 
 ### Functions
 

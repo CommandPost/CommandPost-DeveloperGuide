@@ -32,7 +32,7 @@
 | [plugins.core.menu.top](plugins.core.menu.top.md)                          | The top menu section.     |
 | [plugins.core.preferences.advanced](plugins.core.preferences.advanced.md)                          | Advanced Preferences Panel.     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
-| [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Panel.     |
+| [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
 | [plugins.core.preferences.manager.panel](plugins.core.preferences.manager.panel.md)                          | CommandPost Preferences Panel.     |
 | [plugins.core.preferences.panels.advanced](plugins.core.preferences.panels.advanced.md)                          | Advanced Preferences Panel     |
 | [plugins.core.preferences.panels.general](plugins.core.preferences.panels.general.md)                          | General Preferences Panel     |

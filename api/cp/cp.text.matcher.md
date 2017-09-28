@@ -21,7 +21,8 @@ This module provides support for loading, manipulating, and comparing unicode te
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a matcher for the specified pattern. This follows the conventions of the standard [LUA Patterns](https://www.lua.org/pil/20.2.html) API. This will return a reusable, compiled parser for the given pattern.                                                                                         |
-| **Parameters**                                       | <ul><li>`pattern`	- The pattern to parse</li><li>`plain`		- If `true`, the pattern is not parsed and the provided text must match exactly.</li></ul> |
+| **Parameters**                                       | <ul><li>`pattern`	- The pattern to parse</li><li>`plain`		- If `true`, the pattern is not parsed and the provided text must match exactly.</li><li>Returns:</li><li>* New `cp.text.matcher` for the pattern.</li></ul> |
+| **Returns**                                          | <ul><li>* New `cp.text.matcher` for the pattern.</li></ul>          |
 
 ### Methods
 
