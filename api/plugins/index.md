@@ -92,6 +92,7 @@
 | [plugins.finalcutpro.preferences.scanfinalcutpro](plugins.finalcutpro.preferences.scanfinalcutpro.md)                          | Scan Final Cut Pro.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
+| [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
 | [plugins.finalcutpro.timeline.disablewaveforms](plugins.finalcutpro.timeline.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.timeline.generators](plugins.finalcutpro.timeline.generators.md)                          | Controls Final Cut Pro's Generators.     |
@@ -109,7 +110,7 @@
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
-| [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Effects.     |
+| [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Video Effects.     |
 | [plugins.finalcutpro.timeline.zoomtoselection](plugins.finalcutpro.timeline.zoomtoselection.md)                          | Zoom the Timeline to fit the currently-selected clips.     |
 | [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.viewer.showtimelineinplayer](plugins.finalcutpro.viewer.showtimelineinplayer.md)                          | Show Timeline In Player.     |

@@ -257,6 +257,7 @@
 			* [xml](api/plugins/plugins.finalcutpro.sharing.xml.md)
 		* [text2speech](api/plugins/plugins.finalcutpro.text2speech.md)
 		* timeline
+			* [audioeffects](api/plugins/plugins.finalcutpro.timeline.audioeffects.md)
 			* [colorboard](api/plugins/plugins.finalcutpro.timeline.colorboard.md)
 			* [disablewaveforms](api/plugins/plugins.finalcutpro.timeline.disablewaveforms.md)
 			* [effects](api/plugins/plugins.finalcutpro.timeline.effects.md)
