@@ -257,6 +257,7 @@ So, a little bit tricky. The general rule of thumb is:
  * [ATMOST](#atmost)
  * [BELOW](#below)
  * [bind](#bind)
+ * [cached](#cached)
  * [clear](#clear)
  * [clone](#clone)
  * [deepTable](#deeptable)
@@ -422,6 +423,14 @@ So, a little bit tricky. The general rule of thumb is:
 | **Parameters**                                       | <ul><li>* `owner`	- The owner to attach to.</li></ul> |
 | **Returns**                                          | <ul><li>* the `cp.prop`</li></ul>          |
 | **Notes**                                            | <ul><li>* Throws an `error` if the new owner is `nil`.</li></ul>                |
+
+#### [cached](#cached)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:cached() -> prop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | This can be called once to enable caching of the result inside the `prop`.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The `cp.prop` instance.</li></ul>          |
 
 #### [clear](#clear)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:clear() -> nil` </span>                                                          |

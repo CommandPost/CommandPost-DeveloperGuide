@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finalcutpro.action.manager
+# [docs](index.md) » plugins.core.action.manager
 ---
 
 Action Manager Module.
@@ -17,13 +17,13 @@ Action Manager Module.
 ### Constants
 
 #### [handlerIds](#handlerids)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.manager.handlerIds <cp.prop: table of strings; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.handlerIds <cp.prop: table of strings; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Returns a list of registered handler IDs.                                                                                         |
 
 #### [handlers](#handlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.manager.handlers <cp.prop: table of handlers; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.handlers <cp.prop: table of handlers; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Provides access to the set of handlers registered with the manager. It                                                                                         |
@@ -31,7 +31,7 @@ Action Manager Module.
 ### Functions
 
 #### [addHandler](#addhandler)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.manager.addHandler(id) -> handler` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.addHandler(id) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a new action handler with the specified unique ID and returns it for further configuration.                                                                                         |
@@ -39,7 +39,7 @@ Action Manager Module.
 | **Returns**                                          | <ul><li>* The `handler` instance.</li></ul>          |
 
 #### [getActivator](#getactivator)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.manager.getActivator(id) -> activator` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.getActivator(id) -> activator` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an activator with the specified ID. If it doesn't exist, it will be created.                                                                                         |
@@ -47,7 +47,7 @@ Action Manager Module.
 | **Returns**                                          | <ul><li>* The activator with the specified ID.</li></ul>          |
 
 #### [getHandler](#gethandler)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.manager.getHandler(id) -> handler` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.getHandler(id) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an existing handler with the specified ID.                                                                                         |

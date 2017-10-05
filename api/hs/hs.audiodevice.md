@@ -43,7 +43,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [setInputVolume](#setinputvolume)
  * [setMuted](#setmuted)
  * [setOutputMuted](#setoutputmuted)
- * [setOutputtVolume](#setoutputtvolume)
+ * [setOutputVolume](#setoutputvolume)
  * [setVolume](#setvolume)
  * [supportsInputDataSources](#supportsinputdatasources)
  * [supportsOutputDataSources](#supportsoutputdatasources)
@@ -316,8 +316,8 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>state - A boolean value. True to mute the device, False to unmute it</li></ul> |
 | **Returns**                                          | <ul><li>True if the device's Output mutedness state was set, or False if it does not support muting</li></ul>          |
 
-#### [setOutputtVolume](#setoutputtvolume)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:setOutputtVolume(level) -> bool` </span>                                                          |
+#### [setOutputVolume](#setoutputvolume)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:setOutputVolume(level) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set the output volume of this audio device                                                                                         |

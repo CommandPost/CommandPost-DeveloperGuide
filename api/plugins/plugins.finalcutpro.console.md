@@ -1,7 +1,7 @@
 # [docs](index.md) » plugins.finalcutpro.console
 ---
 
-CommandPost Console
+Final Cut Pro Console
 
 ## API Overview
 

@@ -21,10 +21,10 @@ Shortcut Commands Builder Module.
 | **Returns**                                          | <ul><li>`self` if no `keyCode` is provided, or the original `command`.</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut.builder:new(receiverFn)` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut.builder:new([receiverFn]) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new shortcut builder. If provided, the receiver function                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Parameters**                                       | <ul><li>`receiverFn`	- The function which will be called with the new shortcut, when built.</li></ul> |
+| **Returns**                                          | <ul><li>The builder instance</li></ul>          |
 

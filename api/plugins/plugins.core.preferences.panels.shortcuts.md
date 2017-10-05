@@ -8,6 +8,8 @@ Shortcuts Preferences Panel
  * [getGroupEditor](#getgroupeditor)
  * [init](#init)
  * [setGroupEditor](#setgroupeditor)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [lastGroup](#lastgroup)
 
 ## API Documentation
 
@@ -36,4 +38,12 @@ Shortcuts Preferences Panel
 | **Description**                                      | Sets the Group Editor                                                                                         |
 | **Parameters**                                       | <ul><li>groupId - Group ID</li><li>editorFn - Editor Function</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
+
+### Fields
+
+#### [lastGroup](#lastgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.shortcuts.lastGroup <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Last group used in the Preferences Drop Down.                                                                                         |
 

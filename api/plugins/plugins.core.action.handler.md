@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finalcutpro.action.handler
+# [docs](index.md) » plugins.core.action.handler
 ---
 
 A support class for handler handlers. It is not used directly, rather
@@ -24,6 +24,7 @@ containing the details of the action to execute if the choice is selected.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [actionId](#actionid)
  * [execute](#execute)
+ * [group](#group)
  * [id](#id)
  * [onActionId](#onactionid)
  * [onChoices](#onchoices)
@@ -35,23 +36,23 @@ containing the details of the action to execute if the choice is selected.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler.new(id) -> handler` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler.new(id, group) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new handler with the specified ID.                                                                                         |
-| **Parameters**                                       | <ul><li>* `id`		- The unique ID of the action handler.</li></ul> |
+| **Parameters**                                       | <ul><li>* `id`		- The unique ID of the action handler.</li><li>* `group`	- The group the handler belongs to.</li></ul> |
 | **Returns**                                          | <ul><li>* The new action handler instance.</li></ul>          |
 
 ### Fields
 
 #### [cached](#cached)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler.cached <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler.cached <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | If set to `true` (the default), any choices created will be cached until [reset] is called.                                                                                         |
 
 #### [choices](#choices)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler.choices <cp.prop: cp.choices; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler.choices <cp.prop: cp.choices; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Provides `cp.choices` instance for the handler. May be watched/monitored/etc.                                                                                         |
@@ -59,21 +60,29 @@ containing the details of the action to execute if the choice is selected.
 ### Methods
 
 #### [actionId](#actionid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler:actionId(action) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:actionId(action) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a string that can be used as a unique ID for the action details.                                                                                         |
 
 #### [execute](#execute)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler:execute(action) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:execute(action) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the action, based on values in the table.                                                                                         |
 | **Parameters**                                       | <ul><li>* `action`		- A table of details about the action.</li></ul> |
 | **Returns**                                          | <ul><li>* `true` if the execution succeeded.</li></ul>          |
 
+#### [group](#group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:group() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the group for this handler.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* Group as string.</li></ul>          |
+
 #### [id](#id)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler:id() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:id() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ID for this handler.                                                                                         |
@@ -81,7 +90,7 @@ containing the details of the action to execute if the choice is selected.
 | **Returns**                                          | <ul><li>* The ID string.</li></ul>          |
 
 #### [onActionId](#onactionid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler:onActionId(actionFn) -> handler` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:onActionId(actionFn) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Configures a function to handle converting an action to unique ID.                                                                                         |
@@ -89,7 +98,7 @@ containing the details of the action to execute if the choice is selected.
 | **Returns**                                          | <ul><li>* This action handler.</li></ul>          |
 
 #### [onChoices](#onchoices)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler:onChoices(choicesFn) -> handler` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:onChoices(choicesFn) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a callback function which will receive the `cp.choices` instance to add                                                                                         |
@@ -97,7 +106,7 @@ containing the details of the action to execute if the choice is selected.
 | **Returns**                                          | <ul><li>* This action handler.</li></ul>          |
 
 #### [onExecute](#onexecute)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler:onExecute(executeFn) -> handler` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:onExecute(executeFn) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Configures the function to call when a choice is executed. This will be passed                                                                                         |
@@ -105,7 +114,7 @@ containing the details of the action to execute if the choice is selected.
 | **Returns**                                          | <ul><li>* This action handler.</li></ul>          |
 
 #### [reset](#reset)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.action.handler:reset() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:reset() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resets the handler, clearing any cached result and requesting new ones.                                                                                         |

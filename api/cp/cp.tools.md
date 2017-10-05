@@ -44,6 +44,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
  * [trim](#trim)
+ * [unescape](#unescape)
  * [urlQueryStringDecode](#urlquerystringdecode)
 
 ## API Documentation
@@ -363,6 +364,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Trims the whitespaces from a string                                                                                         |
 | **Parameters**                                       | <ul><li>string - the string you want to trim</li></ul> |
 | **Returns**                                          | <ul><li>A trimmed string</li></ul>          |
+
+#### [unescape](#unescape)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.unescape(str) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Removes any URL encoding in the provided string.                                                                                         |
+| **Parameters**                                       | <ul><li>str - the string to decode</li></ul> |
+| **Returns**                                          | <ul><li>A string with all "+" characters converted to spaces and all percent encoded sequences converted to their ASCII equivalents.</li></ul>          |
 
 #### [urlQueryStringDecode](#urlquerystringdecode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.urlQueryStringDecode() -> string` </span>                                                          |

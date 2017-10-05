@@ -13,6 +13,7 @@ Shortcut Commands
  * [bind](#bind)
  * [build](#build)
  * [delete](#delete)
+ * [disable](#disable)
  * [enable](#enable)
  * [getKeyCode](#getkeycode)
  * [getModifiers](#getmodifiers)
@@ -54,7 +55,15 @@ Shortcut Commands
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:delete() -> shortcut` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Delete's a shortcut.                                                                                         |
+| **Description**                                      | Deletes a shortcut.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`self`</li></ul>          |
+
+#### [disable](#disable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut:disable() -> shortcut` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | This disables the shortcut. If a hotkey has been bound, it will be disabled also.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`self`</li></ul>          |
 
