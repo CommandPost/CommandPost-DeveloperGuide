@@ -184,12 +184,15 @@
 				* [menubar](api/plugins/plugins.core.preferences.panels.menubar.md)
 				* [plugins](api/plugins/plugins.core.preferences.panels.plugins.md)
 				* [shortcuts](api/plugins/plugins.core.preferences.panels.shortcuts.md)
+				* [streamdeck](api/plugins/plugins.core.preferences.panels.streamdeck.md)
 				* [touchbar](api/plugins/plugins.core.preferences.panels.touchbar.md)
 				* [webapp](api/plugins/plugins.core.preferences.panels.webapp.md)
 			* [updates](api/plugins/plugins.core.preferences.updates.md)
 		* [quit](api/plugins/plugins.core.quit.md)
 		* [setup](api/plugins/plugins.core.setup.md)
 			* [panel](api/plugins/plugins.core.setup.panel.md)
+		* streamdeck
+			* [manager](api/plugins/plugins.core.streamdeck.manager.md)
 		* touchbar
 			* [manager](api/plugins/plugins.core.touchbar.manager.md)
 				* [virtual](api/plugins/plugins.core.touchbar.manager.virtual.md)
@@ -245,7 +248,6 @@
 			* [proxyicon](api/plugins/plugins.finalcutpro.menu.proxyicon.md)
 			* [timeline](api/plugins/plugins.finalcutpro.menu.timeline.md)
 				* [assignshortcuts](api/plugins/plugins.finalcutpro.menu.timeline.assignshortcuts.md)
-				* [highlightplayhead](api/plugins/plugins.finalcutpro.menu.timeline.highlightplayhead.md)
 			* [tools](api/plugins/plugins.finalcutpro.menu.tools.md)
 				* [notifications](api/plugins/plugins.finalcutpro.menu.tools.notifications.md)
 			* [viewer](api/plugins/plugins.finalcutpro.menu.viewer.md)
@@ -263,6 +265,7 @@
 			* [scanfinalcutpro](api/plugins/plugins.finalcutpro.preferences.scanfinalcutpro.md)
 		* sharing
 			* [xml](api/plugins/plugins.finalcutpro.sharing.xml.md)
+		* [streamdeck](api/plugins/plugins.finalcutpro.streamdeck.md)
 		* [text2speech](api/plugins/plugins.finalcutpro.text2speech.md)
 		* timeline
 			* [audioeffects](api/plugins/plugins.finalcutpro.timeline.audioeffects.md)
@@ -279,6 +282,7 @@
 			* [playback](api/plugins/plugins.finalcutpro.timeline.playback.md)
 			* [playhead](api/plugins/plugins.finalcutpro.timeline.playhead.md)
 			* [pluginactions](api/plugins/plugins.finalcutpro.timeline.pluginactions.md)
+			* [pluginshortcuts](api/plugins/plugins.finalcutpro.timeline.pluginshortcuts.md)
 			* [pluginshortcuts](api/plugins/plugins.finalcutpro.timeline.pluginshortcuts.md)
 			* [preferences](api/plugins/plugins.finalcutpro.timeline.preferences.md)
 			* [selectalltimelineclips](api/plugins/plugins.finalcutpro.timeline.selectalltimelineclips.md)

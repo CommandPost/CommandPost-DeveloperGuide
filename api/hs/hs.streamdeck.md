@@ -3,6 +3,8 @@
 
 Configure/control an Elgato Stream Deck
 
+Please note that in order for this module to work, the official Elgato Stream Deck app should not be running
+
 This module would not have been possible without standing on the shoulders of others:
  * https://github.com/OpenStreamDeck/StreamDeckSharp
  * https://github.com/Lange/node-elgato-stream-deck
@@ -50,6 +52,7 @@ This module would not have been possible without standing on the shoulders of ot
 | **Description**                                      | Initialises the Stream Deck driver and sets a discovery callback                                                                                         |
 | **Parameters**                                       | <ul><li>fn - A function that will be called when a Streaming Deck is connected or disconnected. It should take the following arguments:</li><li> A boolean, true if a device was connected, false if a device was disconnected</li><li> An hs.streamdeck object, being the device that was connected/disconnected</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
+| **Notes**                                            | <ul><li>This function must be called before any other parts of this module are used</li></ul>                |
 
 #### [numDevices](#numdevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.streamdeck.numDevices()` </span>                                                          |

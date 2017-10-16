@@ -46,6 +46,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [trim](#trim)
  * [unescape](#unescape)
  * [urlQueryStringDecode](#urlquerystringdecode)
+ * [volumeFormat](#volumeformat)
 
 ## API Documentation
 
@@ -380,4 +381,12 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Decodes a URL Query String                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Decoded URL Query String as string</li></ul>          |
+
+#### [volumeFormat](#volumeformat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.volumeFormat(path) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gives you the file system volume format of a path.                                                                                         |
+| **Parameters**                                       | <ul><li>path - the path you want to check as a string</li></ul> |
+| **Returns**                                          | <ul><li>The `NSURLVolumeLocalizedFormatDescriptionKey` as a string, otherwise `nil`.</li></ul>          |
 

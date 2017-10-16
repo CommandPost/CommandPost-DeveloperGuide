@@ -50,7 +50,7 @@ CommandPost Preferences Panel.
 | **Notes**                                            | <ul><li>* The `params` can contain the following fields:</li><li>** `id`			- (optional) The unique ID. If none is provided, one will be generated.</li><li>** `name`		- (optional) The name of the checkbox field.</li><li>** `label`		- (optional) The text label to display after the checkbox.</li><li>** `onchange`	- (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox.</li><li>** `class`		- (optional) the CSS class list to apply to the checkbox.</li></ul>                |
 
 #### [addContent](#addcontent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.panel:addContent(priority, content) -> panel` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.panel:addContent(priority, content, unescaped) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified `content` to the panel, with the specified `priority` order.                                                                                         |
