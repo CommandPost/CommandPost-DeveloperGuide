@@ -5,17 +5,17 @@ Credits Menu Item.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [openCredits](#opencredits)
+ * [show](#show)
 
 ## API Documentation
 
 ### Functions
 
-#### [openCredits](#opencredits)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.helpandsupport.credits.openCredits() -> nil` </span>                                                          |
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.helpandsupport.credits.show() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Opens CommandPost Credits Window                                                                                         |
+| **Description**                                      | Opens the CommandPost Credits in a browser                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

@@ -171,6 +171,7 @@
 		* menu
 			* [bottom](api/plugins/plugins.core.menu.bottom.md)
 			* [helpandsupport](api/plugins/plugins.core.menu.helpandsupport.md)
+				* [commandpost](api/plugins/plugins.core.menu.helpandsupport.commandpost.md)
 			* [manager](api/plugins/plugins.core.menu.manager.md)
 				* [section](api/plugins/plugins.core.menu.manager.section.md)
 			* [top](api/plugins/plugins.core.menu.top.md)
@@ -243,6 +244,8 @@
 			* [administrator](api/plugins/plugins.finalcutpro.menu.administrator.md)
 				* [advancedfeatures](api/plugins/plugins.finalcutpro.menu.administrator.advancedfeatures.md)
 			* [clipboard](api/plugins/plugins.finalcutpro.menu.clipboard.md)
+			* helpandsupport
+				* [finalcutpro](api/plugins/plugins.finalcutpro.menu.helpandsupport.finalcutpro.md)
 			* [mediaimport](api/plugins/plugins.finalcutpro.menu.mediaimport.md)
 			* [menuaction](api/plugins/plugins.finalcutpro.menu.menuaction.md)
 			* [proxyicon](api/plugins/plugins.finalcutpro.menu.proxyicon.md)
@@ -250,6 +253,7 @@
 				* [assignshortcuts](api/plugins/plugins.finalcutpro.menu.timeline.assignshortcuts.md)
 			* [tools](api/plugins/plugins.finalcutpro.menu.tools.md)
 				* [notifications](api/plugins/plugins.finalcutpro.menu.tools.notifications.md)
+			* [top](api/plugins/plugins.finalcutpro.menu.top.md)
 			* [viewer](api/plugins/plugins.finalcutpro.menu.viewer.md)
 				* [showtimecode](api/plugins/plugins.finalcutpro.menu.viewer.showtimecode.md)
 		* notifications

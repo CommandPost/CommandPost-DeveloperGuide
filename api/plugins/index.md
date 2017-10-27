@@ -31,7 +31,8 @@
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
 | [plugins.core.language](plugins.core.language.md)                          | Language Module.     |
 | [plugins.core.menu.bottom](plugins.core.menu.bottom.md)                          | The bottom menu section.     |
-| [plugins.core.menu.helpandsupport](plugins.core.menu.helpandsupport.md)                          | The 'Help & Support' menu section.     |
+| [plugins.core.menu.helpandsupport](plugins.core.menu.helpandsupport.md)                          | The Help & Support menu section.     |
+| [plugins.core.menu.helpandsupport.commandpost](plugins.core.menu.helpandsupport.commandpost.md)                          | The Help & Support > CommandPost menu section.     |
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
 | [plugins.core.menu.top](plugins.core.menu.top.md)                          | The top menu section.     |
@@ -84,12 +85,14 @@
 | [plugins.finalcutpro.menu.administrator](plugins.finalcutpro.menu.administrator.md)                          | Administrator Menu.     |
 | [plugins.finalcutpro.menu.administrator.advancedfeatures](plugins.finalcutpro.menu.administrator.advancedfeatures.md)                          | Advanced Features Menu.     |
 | [plugins.finalcutpro.menu.clipboard](plugins.finalcutpro.menu.clipboard.md)                          | The CLIPBOARD menu section.     |
+| [plugins.finalcutpro.menu.helpandsupport.finalcutpro](plugins.finalcutpro.menu.helpandsupport.finalcutpro.md)                          | The Help & Support > CommandPost menu section.     |
 | [plugins.finalcutpro.menu.mediaimport](plugins.finalcutpro.menu.mediaimport.md)                          | The Media Import menu section.     |
 | [plugins.finalcutpro.menu.menuaction](plugins.finalcutpro.menu.menuaction.md)                          | A `action` which will trigger an Final Cut Pro menu with a matching path, if available/enabled.     |
 | [plugins.finalcutpro.menu.proxyicon](plugins.finalcutpro.menu.proxyicon.md)                          | Final Cut Pro Proxy Icon Plugin.     |
 | [plugins.finalcutpro.menu.timeline](plugins.finalcutpro.menu.timeline.md)                          | The TIMELINE menu section.     |
 | [plugins.finalcutpro.menu.tools](plugins.finalcutpro.menu.tools.md)                          | The TOOLS menu section.     |
 | [plugins.finalcutpro.menu.tools.notifications](plugins.finalcutpro.menu.tools.notifications.md)                          | The AUTOMATION > 'Options' > 'Mobile Notifications' menu section.     |
+| [plugins.finalcutpro.menu.top](plugins.finalcutpro.menu.top.md)                          | The top menu section.     |
 | [plugins.finalcutpro.menu.viewer](plugins.finalcutpro.menu.viewer.md)                          | The VIEWER menu section.     |
 | [plugins.finalcutpro.menu.viewer.showtimecode](plugins.finalcutpro.menu.viewer.showtimecode.md)                          | Highlight Playhead Menu.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
