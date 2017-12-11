@@ -378,6 +378,7 @@
 	* [logger](api/hs/hs.logger.md)
 	* [menubar](api/hs/hs.menubar.md)
 	* [messages](api/hs/hs.messages.md)
+	* [midi](api/hs/hs.midi.md)
 	* [milight](api/hs/hs.milight.md)
 	* [mjomatic](api/hs/hs.mjomatic.md)
 	* [mouse](api/hs/hs.mouse.md)

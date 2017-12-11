@@ -13,8 +13,10 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
  * [closeBox](#closebox)
  * [defaultGroup](#defaultgroup)
  * [maxItems](#maxitems)
+ * [numberOfSubGroups](#numberofsubgroups)
 * Functions - API calls offered directly by the extension
  * [activeGroup](#activegroup)
+ * [activeSubGroup](#activesubgroup)
  * [clear](#clear)
  * [getAction](#getaction)
  * [getActionHandlerID](#getactionhandlerid)
@@ -22,6 +24,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
  * [getIcon](#geticon)
  * [getLabel](#getlabel)
  * [groupStatus](#groupstatus)
+ * [incrementActiveSubGroup](#incrementactivesubgroup)
  * [start](#start)
  * [stop](#stop)
  * [toggle](#toggle)
@@ -57,15 +60,29 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | The maximum number of Touch Bar items per group.                                                                                         |
 
+#### [numberOfSubGroups](#numberofsubgroups)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.numberOfSubGroups -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | The number of Sub Groups per Touch Bar Group.                                                                                         |
+
 ### Functions
 
 #### [activeGroup](#activegroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.activeGroup() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.activeGroup() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the active group.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Returns the active group or `manager.defaultGroup` as a string.</li></ul>          |
+
+#### [activeSubGroup](#activesubgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.activeSubGroup() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the active sub-group.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Returns the active sub group as string</li></ul>          |
 
 #### [clear](#clear)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.clear() -> none` </span>                                                          |
@@ -121,6 +138,14 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a group's visibility status.                                                                                         |
 | **Parameters**                                       | <ul><li>groupID - the group you want to update as a string.</li><li>status - the status of the group as a boolean.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [incrementActiveSubGroup](#incrementactivesubgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.incrementActiveSubGroup() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Increments the active sub-group                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [start](#start)

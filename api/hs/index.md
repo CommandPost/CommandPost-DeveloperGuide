@@ -83,6 +83,7 @@
 | [hs.logger](hs.logger.md)                          | Simple logger for debugging purposes     |
 | [hs.menubar](hs.menubar.md)                          | Create and manage menubar icons     |
 | [hs.messages](hs.messages.md)                          | Send messages via iMessage and SMS Relay (note, SMS Relay requires OS X 10.10 and an established SMS Relay pairing between your Mac and an iPhone running iOS8)     |
+| [hs.midi](hs.midi.md)                          | MIDI Extension for Hammerspoon.     |
 | [hs.milight](hs.milight.md)                          | Simple controls for the MiLight LED WiFi bridge (also known as LimitlessLED and EasyBulb)     |
 | [hs.mjomatic](hs.mjomatic.md)                          | tmuxomatic-like window management     |
 | [hs.mouse](hs.mouse.md)                          | Inspect/manipulate the position of the mouse pointer     |

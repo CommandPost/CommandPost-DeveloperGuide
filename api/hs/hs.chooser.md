@@ -181,11 +181,11 @@ Notes:
 | **Returns**                                          | <ul><li>a table containing whatever information was supplied for the row currently selected or an empty table if no row is selected or the specified row does not exist.</li></ul>          |
 
 #### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:show() -> hs.chooser object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:show([topLeftPoint]) -> hs.chooser object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Displays the chooser                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>An optional `hs.geometry` point object describing the absolute screen co-ordinates for the top left point of the chooser window. Defaults to centering the window on the primary screen</li></ul> |
 | **Returns**                                          | <ul><li>The hs.chooser object</li></ul>          |
 
 #### [showCallback](#showcallback)

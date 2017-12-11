@@ -1,15 +1,25 @@
 # [docs](index.md) » plugins.finalcutpro.touchbar.widgets.colorboard
 ---
 
-Final Cut Pro Color Board Widget for Touch Bar.
+A collection of Final Cut Pro Color Board Widgets for the Touch Bar.
 
 ## API Overview
+* Variables - Configurable values
+ * [updateInterval](#updateinterval)
 * Functions - API calls offered directly by the extension
  * [init](#init)
  * [start](#start)
  * [stop](#stop)
 
 ## API Documentation
+
+### Variables
+
+#### [updateInterval](#updateinterval)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.widgets.colorboard.updateInterval -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | How often the Touch Bar widgets should be refreshed in seconds                                                                                         |
 
 ### Functions
 

@@ -1,11 +1,88 @@
 # Final Cut Pro Package Contents
 ---
 
-This document is a random collection of notes, thoughts and comments as we start to experiment and play with the "insides" of Final Cut Pro.
+This document is a random collection of notes, thoughts and comments as we start to research the "inside workings" of Apple's Final Cut Pro package.
+
+To get an overview of how Final Cut Pro works, it's worth checking out the original parent as a [PDF with images](http://pimg-fpiw.uspto.gov/fdd/25/750/088/0.pdf) or as [searchable plain text](http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=8,875,025.PN.&OS=PN/8,875,025&RS=PN/8,875,025).
+
+Here's one of the screenshots from the patent:
+
+![Patent Screenshot](https://dev.commandpost.io/images/patent.png)
+
+---
+
+## Handy Tools
+
+Here are some handy "research" tools we use to explore Final Cut Pro:
+
+- [Hopper Disassembler](https://www.hopperapp.com)
+- [NibDecompiler](https://github.com/akahan/Nib-Decompiler)
+- [Asset Catalog Tinkerer](https://github.com/insidegui/AssetCatalogTinkerer)
+
+---
+
+## Plugins
+
+Internally, Final Cut Pro supports and contains a number of different plugin types and formats:
+
+---
+
+### Compressor
+
+Contains `CompressorKit.bundle` - which can also be found in Compressor and Motion - it's basically the Compressor engine.
+
+---
+
+### FCP-DAL
+
+Contains `ACD.plugin` - some kind of CoreMediaIO plugin - not exactly sure what it does.
+
+The CoreMediaIO Device Abstraction Layer (DAL) is analogous to CoreAudio’s Hardware Abstraction Layer (HAL). Just as the HAL deals with audio streams from audio hardware, the DAL handles video (and muxed) streams from video devices.
+
+You can download sample DAL code [here](https://developer.apple.com/library/content/samplecode/CoreMediaIO/Introduction/Intro.html).
+
+---
+
+### FxPlug
+
+[The FxPlug SDK is a compact yet powerful image processing plug-in architecture that lets you create new effects for Final Cut Pro and Motion. ](https://developer.apple.com/library/content/documentation/AppleApplications/Conceptual/FXPlug_overview/FXPlugSDKOverview/FXPlugSDKOverview.html)
+
+This folder contains two plugins:
+- `FiltersLegacyPath.bundle` - I believe this contains older Filters (such as the Primatte keyer) still used by Motion & Final Cut Pro.
+- `PAECIAdaptor.fxplug` - I have no idea what a PAECI is, or what this FxPlug does.
+
+---
+
+### InternalFiltersXPC.pluginkit
+
+Internal filters used by Final Cut Pro & Motion.
+
+---
+
+### MediaProviders
+
+`MotionEffect.fxp` - Contains Motion Particle Images, Materials and Text Styles.
+
+---
+
+### RADPlugins
+
+Plugins for 3rd Party codecs:
+
+- `Archive.RADPlug`
+- `AVCHD.RADPlug`
+- `MPEG2.RADPlug`
+- `MPEG4.RADPlug`
+- `P2.RADPlug`
+- `P2AVF.RADPlug`
+- `XDCAM.RADPlug`
+- `XDCAMFormat.RADPlug`
 
 ---
 
 ## Frameworks
+
+---
 
 ### Bloodhound
 
@@ -15,13 +92,19 @@ I'm not exactly sure what this is but I'm ASSUMING it has something to do with t
 
 I don't think this is much help to CommandPost.
 
+---
+
 ### CoreMedia
 
 [Represent time-based audio-visual assets with essential data types.](https://developer.apple.com/reference/coremedia)
 
+---
+
 ### CoreMediaIO
 
 The [CoreMediaIO](https://developer.apple.com/library/content/samplecode/CoreMediaIO/Introduction/Intro.html#//apple_ref/doc/uid/DTS40012293-Intro-DontLinkElementID_2) Device Abstraction Layer (DAL) is analogous to CoreAudio’s Hardware Abstraction Layer (HAL). Just as the HAL deals with audio streams from audio hardware, the DAL handles video (and muxed) streams from video devices.
+
+---
 
 ### Flexo
 
@@ -51,9 +134,13 @@ This framework seems to be the database engine for Final Cut Pro?
 
 FaceCore is Apple's Face Recognition framework, which was [acquired from Polar Rose](http://www.darkreading.com/risk-management/apple-to-acquire-polar-rose-face-recognition-firm/d/d-id/1092644?).
 
+---
+
 ### FxPlug
 
 [The FxPlug SDK is a compact yet powerful image processing plug-in architecture that lets you create new effects for Final Cut Pro and Motion. ](https://developer.apple.com/library/content/documentation/AppleApplications/Conceptual/FXPlug_overview/FXPlugSDKOverview/FXPlugSDKOverview.html)
+
+---
 
 ### Helium
 
@@ -63,10 +150,10 @@ It looks like it's using [OpenGL's ARB Vertex](http://www.nvidia.com/docs/IO/822
 
 It contains two "Plug-ins":
 
-- HCache
-- HConverter
+- `HCache`
+- `HConverter`
 
-It contains several Frameworks:
+It contains several internal Frameworks:
 
 #### HeliumFilters
 
@@ -88,14 +175,18 @@ Looks like more Optical Flow OpenGL functions.
 
 More Optical Flow code - but this looks less like OpenGL functions, and more like some kind of "interface"
 
+---
+
 ### Lithium
 
 Looks like another Framework for doing processing on the GPU using the [OpenGL Shading Language](https://en.wikipedia.org/wiki/OpenGL_Shading_Language). It has references to [Metal](https://developer.apple.com/metal/) as well. I'm ASSUMING that this the main Shader code.
 
 Has two .glsl files inside:
 
-- shadow.glsl
-- ShadowBlurFragShader.glsl
+- `shadow.glsl`
+- `ShadowBlurFragShader.glsl`
+
+---
 
 ### LunaKit
 
@@ -139,90 +230,185 @@ There are also localised files in LOTS of different languages. In the `English.l
 - **NSProCommandDescriptions.strings:** Binary plist containing a single key (`ChangeWindowLayout`).
 - **NSProCommandNames.strings:** Binary plist containing a single key (`ChangeWindowLayout`).
 
+---
+
 ### MediaToolbox
 
 [Contains interfaces for playing video and audio content.](https://developer.apple.com/library/content/releasenotes/General/APIDiffsMacOSX10_10_3/modules/MediaToolbox.html)
+
+---
 
 ### MIO
 
 Not sure what MIO stands for (maybe MediaIO or [CoreMediaIO](https://developer.apple.com/library/content/samplecode/CoreMediaIO/Introduction/Intro.html#//apple_ref/doc/uid/DTS40012293-Intro-DontLinkElementID_2)?) but seems to be something to do with the reading and processing of video & audio files. Possibly also has something to do with the controlling of FireWire DV devices?
 
+---
+
 ### Ozone
 
-TBC
+Ozone looks like it's the Apple Motion render engine. This Framework is identical in both Final Cut Pro & Motion.
+
+This framework is quite big in terms of file size as it contains things like Environment Map's and Physical Layer Assets (all in OpenEXR format).
+
+It contains one internal Framework:
+
+#### AudioMixEngine
+
+As the name suggests, this looks like a Framework that handles audio mixing.
+
+It also contains several internal Plugins:
+
+- `Behaviors.ozp`
+- `Navigator.ozp`
+- `Particles.ozp`
+- `Text.ozp`
+
+---
 
 ### PluginManager
 
-TBC
+As the name suggests, this looks like the Plugin Manager for Final Cut Pro.
+
+Interestingly, it contains a property list file called `6B9D8D3C-D3BF-4276-828F-2212D24B11CE.plist` which contains a list of 3rd party plugins that can only run certain versions of the plugin on certain versions of Final Cut Pro.
+
+---
 
 ### ProAppsFxSupport
 
-TBC
+I'm not exactly sure what this Framework is, but given it contains a whole bunch of files such as:
+
+- `BlueNoise1.tiff`, `BlueNoise2.tiff`, `BlueNoise3.tiff`
+- `GaussianNoise1.tiff`, `GaussianNoise2.tiff`, `GaussianNoise3.tiff`
+- `PinkNoise1.tiff`, `PinkNoise2.tiff`, `PinkNoise3.tiff`
+- `TVStatic1.tiff`, `TVStatic2.tiff`, `TVStatic3.tiff`
+- `WhiteNoise1.tiff`, `WhiteNoise2.tiff`, `WhiteNoise3.tiff`
+
+...and the fact it's called "ProAppsFxSupport", one can only assume it's a support library for some of the internal effects Apple's ProApp's take advantage of.
+
+This Framework also exists in Motion.
+
+---
 
 ### ProChannel
 
-TBC
+A shared Framework between Motion & Final Cut Pro, I assume this is something to do with colour processing.
+
+---
 
 ### ProCore
 
-TBC
+Another shared Framework between Motion & Final Cut Pro, I believe this Framework also has to do with colour processing - such as blend modes, and colour space conversion.
+
+---
 
 ### ProCurveEditor
 
-TBC
+I believe this Framework contains the Curve Editor used by Apple Motion.
+
+---
 
 ### ProGL
 
-TBC
+The Framework that handles the OpenGL processing. I believe this creates an [`NSOpenGLContext`](https://developer.apple.com/documentation/appkit/nsopenglcontext) (i.e. an object that represents an OpenGL graphics context, into which all OpenGL calls are rendered).
+
+---
 
 ### ProGraphics
 
-TBC
+A shared Framework between Motion & Final Cut Pro, I assume this is something to do with graphics processing.
+
+---
 
 ### ProInspector
 
-TBC
+The Inspector UI used by Motion.
 
-### ProKit
-
-TBC
+---
 
 ### ProMedia
 
-TBC
+This Framework looks like it handles support for things like RAW images and OpenEXR. It looks like it uses Metal 1.0.
+
+---
 
 ### ProOSC
 
-TBC
+This looks like Motion's Framework for handling On-screen Controls.
+
+It looks like it's doing processing on the GPU using the [OpenGL Shading Language](https://en.wikipedia.org/wiki/OpenGL_Shading_Language).
+
+It has several .glsl files inside:
+
+- `GammaLineFragment.glsl`
+- `RGBBackgroundFragment.glsl`
+- `RGBForegroundFragment.glsl`
+- `RGBMaskFillBackgroundFragment.glsl`
+- `RGBMaskFillForegroundFragment.glsl`
+- `RGBMaskFillVertex.glsl`
+- `RGBVertex.glsl`
+- `ShapeDashFragment.glsl`
+- `ShapeDashVertex.glsl`
+- `ShapeSmoothFragment.glsl`
+- `ShapeSmoothVertex.glsl`
+
+---
 
 ### ProShapes
 
-TBC
+Motion's framework for handling Shapes.
+
+Looks like it uses Metal 1.0, and makes uses of the Helium Renderer.
+
+---
 
 ### RetimingMath
 
-TBC
+Looks like it's used by Motion to do some kind of complex retiming algorithm's.
+
+---
 
 ### Stalgo
 
-TBC
+[STALGO](https://www.sthu.org/code/stalgo/) is an industrial-strength C++ software package for computing straight skeletons and mitered offset-curves.
+
+---
 
 ### StudioSharedResources
 
-TBC
+This Framework just looks like it's mainly a collection of UI images used by both Motion and Final Cut Pro.
+
+---
 
 ### TextFramework
 
-TBC
+Text Tools used by both Motion & Final Cut Pro.
+
+Looks like it uses Metal 1.0.
+
+---
 
 ### TLKEventDispatcher
 
-TBC
+TimeLineKit Event Dispatcher.
+
+This looks like it's the "backend" to the magnetic timeline - i.e. the framework that translates user interactions (such as mouse clicks and drags) to actions with Final Cut Pro's timeline.
+
+It looks like you register "events" for the timeline, and this Framework handles these requests.
+
+---
 
 ### TLKit
 
-TBC
+The TimeLineKit Framework. This is the Framework that makes up the Magnetic Timeline, and also the timelines for iMovie & Motion.
+
+It contains a bunch of `.caar` files, which are binary plists.
+
+The `CornerRadius.plist` file allows you to adjust the corner radius of clips in the timeline.
+
+I believe filenames that say "SimpleMode" refer to iMovie.
+
+---
 
 ### VideoToolbox
 
-TBC
+I think this is the Framework that communicates with AV Foundations, CoreMedia, and handles video decoding, codecs, etc.

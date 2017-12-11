@@ -47,6 +47,7 @@ Core Hammerspoon functionality
  * [hs.logger](hs.logger.md)
  * [hs.menubar](hs.menubar.md)
  * [hs.messages](hs.messages.md)
+ * [hs.midi](hs.midi.md)
  * [hs.milight](hs.milight.md)
  * [hs.mjomatic](hs.mjomatic.md)
  * [hs.mouse](hs.mouse.md)

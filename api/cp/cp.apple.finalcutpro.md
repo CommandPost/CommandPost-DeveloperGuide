@@ -93,7 +93,6 @@ end
  * [PREFS_PLIST_PATH](#prefs_plist_path)
  * [SUPPORTED_LANGUAGES](#supported_languages)
 * Functions - API calls offered directly by the extension
- * [getMotionTheme](#getmotiontheme)
  * [init](#init)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [isFrontmost](#isfrontmost)
@@ -236,15 +235,6 @@ end
 | **Description**                                      | Table of Final Cut Pro's supported Languages                                                                                         |
 
 ### Functions
-
-#### [getMotionTheme](#getmotiontheme)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.scannplugins.getMotionTheme(filename) -> string | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Process a plugin so that it's added to the current scan                                                                                         |
-| **Parameters**                                       | <ul><li>filename - Filename of the plugin</li></ul> |
-| **Returns**                                          | <ul><li>The theme name, or `nil` if not found.</li></ul>          |
-| **Notes**                                            | <ul><li>getMotionTheme("~/Movies/Motion Templates.localized/Effects.localized/3065D03D-92D7-4FD9-B472-E524B87B5012.localized/DAEB0CAD-E702-4BF9-94B5-AE89D7F8FB00.localized/DAEB0CAD-E702-4BF9-94B5-AE89D7F8FB00.moef")</li></ul>                |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:init() -> App` </span>                                                          |

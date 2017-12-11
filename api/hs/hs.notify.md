@@ -19,7 +19,9 @@ This module is based in part on code from the previous incarnation of Mjolnir by
  * [registry](#registry)
  * [warnAboutMissingFunctionTag](#warnaboutmissingfunctiontag)
 * Functions - API calls offered directly by the extension
+ * [deliveredNotifications](#deliverednotifications)
  * [register](#register)
+ * [scheduledNotifications](#schedulednotifications)
  * [unregister](#unregister)
  * [unregisterall](#unregisterall)
  * [withdrawAll](#withdrawall)
@@ -31,16 +33,21 @@ This module is based in part on code from the previous incarnation of Mjolnir by
  * [actionButtonTitle](#actionbuttontitle)
  * [activationType](#activationtype)
  * [actualDeliveryDate](#actualdeliverydate)
+ * [additionalActions](#additionalactions)
+ * [additionalActivationAction](#additionalactivationaction)
  * [alwaysPresent](#alwayspresent)
  * [autoWithdraw](#autowithdraw)
  * [contentImage](#contentimage)
  * [delivered](#delivered)
  * [getFunctionTag](#getfunctiontag)
  * [hasActionButton](#hasactionbutton)
+ * [hasReplyButton](#hasreplybutton)
  * [informativeText](#informativetext)
  * [otherButtonTitle](#otherbuttontitle)
  * [presented](#presented)
  * [release](#release)
+ * [response](#response)
+ * [responsePlaceholder](#responseplaceholder)
  * [schedule](#schedule)
  * [send](#send)
  * [setIdImage](#setidimage)
@@ -83,21 +90,39 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 
 ### Functions
 
+#### [deliveredNotifications](#deliverednotifications)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.deliveredNotifications() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a table containing notifications which have been delivered.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>a table containing the notification userdata objects for all Hammerspoon notifications currently in the notification center</li></ul>          |
+| **Notes**                                            | <ul><li>Only notifications which have been presented but not cleared, either by the user clicking on the [hs.notify:otherButtonTitle](#otherButtonTitle) or through auto-withdrawal (see [hs.notify:autoWithdraw](#autoWithdraw) for more details), will be in the array returned.</li></ul>                |
+
 #### [register](#register)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.register(tag, fn) -> id` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Registers a function callback with the specified tag for a notification. The callback function will be invoked when the user clicks on or interacts with a notification.                                                                                         |
-| **Parameters**                                       | <ul><li>tag - a string tag to identify the registered callback function. Use this as the function tag in `hs.notify.new` and `hs.notify.show`</li><li>fn  - the function which should be invoked when a notification with this tag is interacted with.</li></ul> |
-| **Returns**                                          | <ul><li>a numerical id representing the entry in `hs.notify.registry` for this function. This number can be used with `hs.notify.unregister` to unregister a function later if you wish.</li></ul>          |
+| **Parameters**                                       | <ul><li>tag - a string tag to identify the registered callback function. Use this as the function tag in [hs.notify.new](#new) and [hs.notify.show](#show)</li><li>fn  - the function which should be invoked when a notification with this tag is interacted with.</li></ul> |
+| **Returns**                                          | <ul><li>a numerical id representing the entry in [hs.notify.registry](#registry) for this function. This number can be used with [hs.notify.unregister](#unregister) to unregister a function later if you wish.</li></ul>          |
 | **Notes**                                            | <ul><li>If a function is already registered with the specified tag, it is replaced by with the new one.</li></ul>                |
+
+#### [scheduledNotifications](#schedulednotifications)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.scheduledNotifications() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a table containing notifications which are scheduled but have not yet been delivered.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>a table containing the notification userdata objects for all Hammerspoon notifications currently scheduled to be delivered.</li></ul>          |
+| **Notes**                                            | <ul><li>Once a notification has been delivered, it is moved to [hs.notify.deliveredNotifications](#deliveredNotifications) or removed, depending upon the users action.</li></ul>                |
 
 #### [unregister](#unregister)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.unregister(id|tag)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unregisters a function callback so that it is no longer available as a callback when notifications corresponding to the specified entry are interacted with.                                                                                         |
-| **Parameters**                                       | <ul><li>id or tag - the numerical id provided by `hs.notify.register` or string tag representing the callback function to be removed</li></ul> |
+| **Parameters**                                       | <ul><li>id or tag - the numerical id provided by [hs.notify.register](#register) or string tag representing the callback function to be removed</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [unregisterall](#unregisterall)
@@ -107,7 +132,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Description**                                      | Unregisters all functions registered as callbacks.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
-| **Notes**                                            | <ul><li>This does not remove the notifications from the User Notification Center, it just removes their callback function for when the user interacts with them. To remove all notifications, see `hs.notify.withdrawAll` and `hs.notify.withdrawAllScheduled`</li></ul>                |
+| **Notes**                                            | <ul><li>This does not remove the notifications from the User Notification Center, it just removes their callback function for when the user interacts with them. To remove all notifications, see [hs.notify.withdrawAll](#withdrawAll) and [hs.notify.withdrawAllScheduled](#withdrawAllScheduled)</li></ul>                |
 
 #### [withdrawAll](#withdrawall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.withdrawAll()` </span>                                                          |
@@ -135,14 +160,14 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Description**                                      | Creates a new notification object                                                                                         |
 | **Parameters**                                       | <ul><li>fn - An optional function or function-tag, which will be called when the user interacts with notifications. The notification object will be passed as an argument to the function. If you leave this parameter out or specify nil, then no callback will be attached to the notification.</li><li>attributes - An optional table for applying attributes to the notification. Possible keys are:</li></ul> |
 | **Returns**                                          | <ul><li>A notification object</li></ul>          |
-| **Notes**                                            | <ul><li>A function-tag is a string key which corresponds to a function stored in the `hs.notify.registry` table with the `hs.notify.register()` function.</li><li>If a notification does not have a `title` attribute set, OS X will not display it, so by default it will be set to "Notification". You can use the `title` key in the attributes table, or call `hs.notify:title()` before displaying the notification to change this.</li></ul>                |
+| **Notes**                                            | <ul><li>A function-tag is a string key which corresponds to a function stored in the [hs.notify.registry](#registry) table with the `hs.notify.register()` function.</li><li>If a notification does not have a `title` attribute set, OS X will not display it, so by default it will be set to "Notification". You can use the `title` key in the attributes table, or call `hs.notify:title()` before displaying the notification to change this.</li></ul>                |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify.show(title, subTitle, information[, tag]) -> notfication` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Shorthand constructor to create and show simple notifications                                                                                         |
-| **Parameters**                                       | <ul><li>title       - the title for the notification</li><li>subTitle    - the subtitle, or second line, of the notification</li><li>information - the main textual body of the notification</li><li>tag         - a function tag corresponding to a function registered with `hs.notify.register`</li></ul> |
+| **Parameters**                                       | <ul><li>title       - the title for the notification</li><li>subTitle    - the subtitle, or second line, of the notification</li><li>information - the main textual body of the notification</li><li>tag         - a function tag corresponding to a function registered with [hs.notify.register](#register)</li></ul> |
 | **Returns**                                          | <ul><li>a notification object</li></ul>          |
 | **Notes**                                            | <ul><li>All three textual parameters are required, though they can be empty strings</li><li>This function is really a shorthand for `hs.notify.new(...):send()`</li></ul>                |
 
@@ -155,7 +180,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Description**                                      | Get or set the label of a notification's action button                                                                                         |
 | **Parameters**                                       | <ul><li>buttonTitle - An optional string containing the title for the notification's action button.  If no parameter is provided, then the current setting is returned.</li></ul> |
 | **Returns**                                          | <ul><li>The notification object, if buttonTitle is present; otherwise the current setting.</li></ul>          |
-| **Notes**                                            | <ul><li>The affects of this method only apply if the user has set Hammerspoon notifications to `Alert` in the Notification Center pane of System Preferences</li></ul>                |
+| **Notes**                                            | <ul><li>The affects of this method only apply if the user has set Hammerspoon notifications to `Alert` in the Notification Center pane of System Preferences</li><li>This value is ignored if [hs.notify:hasReplyButton](#hasReplyButton) is true.</li></ul>                |
 
 #### [activationType](#activationtype)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:activationType() -> number` </span>                                                          |
@@ -173,6 +198,24 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the delivery date/time of the notification, in seconds since the epoch (i.e. 1970-01-01 00:00:00 +0000)</li></ul>          |
 | **Notes**                                            | <ul><li>You can turn epoch times into a human readable string or a table of date elements with the `os.date()` function.</li></ul>                |
+
+#### [additionalActions](#additionalactions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:additionalActions([actionsTable]) -> notificationObject | table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or set additional actions which will be displayed for an alert type notification when the user clicks and holds down the action button of the alert.                                                                                         |
+| **Parameters**                                       | <ul><li>an optional table containing an array of strings specifying the additional options to list for the user to select from the notification.</li></ul> |
+| **Returns**                                          | <ul><li>The notification object, if an argument is present; otherwise the current value</li></ul>          |
+| **Notes**                                            | <ul><li>The additional items will be listed in a pop-up menu when the user clicks and holds down the mouse button in the action button of the alert.</li><li>If the user selects one of the additional actions, [hs.notify:activationType](#activationType) will equal `hs.notify.activationTypes.additionalActionClicked`</li><li>See also [hs.notify:additionalActivationAction](#additionalActivationAction)</li></ul>                |
+
+#### [additionalActivationAction](#additionalactivationaction)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:additionalActivationAction() -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Return the additional action that the user selected from an alert type notification that has additional actions available.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>If the notification has additional actions assigned with [hs.notify:additionalActions](#additionalActions) and the user selects one, returns a string containing the selected action; otherwise returns nil.</li></ul>          |
+| **Notes**                                            | <ul><li>If the user selects one of the additional actions, [hs.notify:activationType](#activationType) will equal `hs.notify.activationTypes.additionalActionClicked`</li><li>See also [hs.notify:additionalActions](#additionalActions)</li></ul>                |
 
 #### [alwaysPresent](#alwayspresent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:alwaysPresent([alwaysPresent]) -> notificationObject | current-setting` </span>                                                          |
@@ -215,7 +258,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Description**                                      | Return the name of the function tag the notification will call when activated.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The function tag for this notification as a string.</li></ul>          |
-| **Notes**                                            | <ul><li>This tag should correspond to a function in `hs.notify.registry` and can be used to either add a replacement with `hs.notify.register(...)` or remove it with `hs.notify.unregister(...)`</li></ul>                |
+| **Notes**                                            | <ul><li>This tag should correspond to a function in [hs.notify.registry](#registry) and can be used to either add a replacement with `hs.notify.register(...)` or remove it with `hs.notify.unregister(...)`</li></ul>                |
 
 #### [hasActionButton](#hasactionbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:hasActionButton([hasButton]) -> notificationObject | current-setting` </span>                                                          |
@@ -225,6 +268,14 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Parameters**                                       | <ul><li>hasButton - An optional boolean indicating whether an action button should be present.  If no parameter is provided, then the current setting is returned.</li></ul> |
 | **Returns**                                          | <ul><li>The notification object, if hasButton is present; otherwise the current setting.</li></ul>          |
 | **Notes**                                            | <ul><li>The affects of this method only apply if the user has set Hammerspoon notifications to `Alert` in the Notification Center pane of System Preferences</li></ul>                |
+
+#### [hasReplyButton](#hasreplybutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:hasReplyButton([state]) -> notificationObject | boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or set whether an alert notification has a "Reply" button for additional user input.                                                                                         |
+| **Parameters**                                       | <ul><li>state - An optional boolean, default false, indicating whether the notification should include a reply button for additional user input.</li></ul> |
+| **Returns**                                          | <ul><li>The notification object, if an argument is present; otherwise the current value</li></ul>          |
 
 #### [informativeText](#informativetext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:informativeText([informativeText]) -> notificationObject | current-setting` </span>                                                          |
@@ -259,7 +310,25 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Description**                                      | This is a no-op included for backwards compatibility.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The notification object</li></ul>          |
-| **Notes**                                            | <ul><li>This is no longer required during garbage collection as function tags can be re-established after a reload.</li><li>The proper way to release a notifications callback is to remove its tag from the `hs.notify.registry` with `hs.notify.unregister`.</li><li>This is included for backwards compatibility.</li></ul>                |
+| **Notes**                                            | <ul><li>This is no longer required during garbage collection as function tags can be re-established after a reload.</li><li>The proper way to release a notifications callback is to remove its tag from the [hs.notify.registry](#registry) with [hs.notify.unregister](#unregister).</li><li>This is included for backwards compatibility.</li></ul>                |
+
+#### [response](#response)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:response() -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get the users input from an alert type notification with a reply button.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>If the notification has a reply button and the user clicks on it, returns a string containing the user input (may be an empty string); otherwise returns nil.</li></ul>          |
+| **Notes**                                            | <ul><li>[hs.notify:activationType](#activationType) will equal `hs.notify.activationTypes.replied` if the user clicked on the Reply button and then clicks on Send.</li><li>See also [hs.notify:hasReplyButton](#hasReplyButton)</li></ul>                |
+
+#### [responsePlaceholder](#responseplaceholder)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:responsePlaceholder([string]) -> notificationObject | string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Set a placeholder string for alert type notifications with a reply button.                                                                                         |
+| **Parameters**                                       | <ul><li>`string` - an optional string specifying placeholder text to display in the reply box before the user has types anything in an alert type notification with a reply button.</li></ul> |
+| **Returns**                                          | <ul><li>The notification object, if an argument is present; otherwise the current value</li></ul>          |
+| **Notes**                                            | <ul><li>In macOS 10.13, this text appears so light that it is almost unreadable; so far no workaround has been found.</li><li>See also [hs.notify:hasReplyButton](#hasReplyButton)</li></ul>                |
 
 #### [schedule](#schedule)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:schedule(date) -> notificationObject` </span>                                                          |

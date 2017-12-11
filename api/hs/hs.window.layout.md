@@ -21,11 +21,13 @@ A **command** acts on one or more of the windows, and is composed of:
   - `tile`, `fit`: tiles the windows onto a specified rect, using `hs.window.tiling.tileWindows()`; for `fit`, the
     `preserveRelativeArea` parameter will be set to true
   - `hide`, `unhide`: hides or unhides the window's application (like when using cmd-h)
+  - `noaction`: skip action on the window(s)
 * a **maxn** number, indicating how many windows from this rule's window pool will be affected (at most) by this command;
   if omitted (or if explicitly the string `all`) all the remaining windows will be processed by this command; processed
   windows are "consumed" and are excluded from the window pool for subsequent commands in this rule, and from subsequent rules
 * a **selector**, describing the sort order used to pick the first *maxn* windows from the window pool for this command;
-  it can be one of `focused` (pick *maxn* most recently focused windows), `newest` (most recently created), `oldest`
+  it can be one of `focused` (pick *maxn* most recently focused windows), `frontmost` (pick the recent focused window if its  
+  application is frontmost applicaion, otherwise the command will be skipped), `newest` (most recently created), `oldest`
   (least recently created), or `closest` (pick the *maxn* windows that are closest to the destination rect); if omitted,
   defaults to `closest` for move, tile and fit, and `newest` for everything else
 * an `hs.geometry` *size* (only valid for tile and fit) indicating the desired optimal aspect ratio for the tiled windows;
