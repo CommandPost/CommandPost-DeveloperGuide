@@ -54,6 +54,6 @@ CommandPost Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified `content` to the panel, with the specified `priority` order.                                                                                         |
-| **Parameters**                                       | <ul><li>* `priority`		- the priority order of the content.</li><li>* `content`			- a value that can be converted to a string.</li><li>* `unescaped`		- if `true`, the content will not be escaped. Defaults to true.</li></ul> |
+| **Parameters**                                       | <ul><li>* `priority`		- the priority order of the content.</li><li>* `content`			- a value that can be converted to a string.</li><li>* `unescaped`		- if `true`, the content will not be escaped. Defaults to `false`.</li></ul> |
 | **Returns**                                          | <ul><li>* The panel.</li></ul>          |
 

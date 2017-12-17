@@ -27,6 +27,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [leftClick](#leftclick)
  * [lines](#lines)
  * [macOSVersion](#macosversion)
+ * [mergeTable](#mergetable)
  * [modifierMaskToModifiers](#modifiermasktomodifiers)
  * [modifierMatch](#modifiermatch)
  * [ninjaDoubleClick](#ninjadoubleclick)
@@ -227,6 +228,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Returns a the macOS Version as a single string.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the macOS version</li></ul>          |
+
+#### [mergeTable](#mergetable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.mergeTable(target, ...) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gives you the file system volume format of a path.                                                                                         |
+| **Parameters**                                       | <ul><li>target 	- The target table</li><li>... 		- Any other tables you want to merge into target</li></ul> |
+| **Returns**                                          | <ul><li>Table</li></ul>          |
 
 #### [modifierMaskToModifiers](#modifiermasktomodifiers)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.modifierMaskToModifiers() -> table` </span>                                                          |

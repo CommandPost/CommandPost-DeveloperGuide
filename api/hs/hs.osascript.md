@@ -8,7 +8,9 @@ Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript
 * Functions - API calls offered directly by the extension
  * [_osascript](#_osascript)
  * [applescript](#applescript)
+ * [applescriptFromFile](#applescriptfromfile)
  * [javascript](#javascript)
+ * [javascriptFromFile](#javascriptfromfile)
 
 ## API Documentation
 
@@ -31,6 +33,15 @@ Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript
 | **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>          |
 | **Notes**                                            | <ul><li>Use hs.osascript._osascript(source, "AppleScript") if you always want the result as a string, even when a failure occurs</li></ul>                |
 
+#### [applescriptFromFile](#applescriptfromfile)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.applescriptFromFile(fileName) -> bool, object, descriptor` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Runs AppleScript code from a source file.                                                                                         |
+| **Parameters**                                       | <ul><li>fileName - A string containing the file name of an AppleScript file to execute.</li></ul> |
+| **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>          |
+| **Notes**                                            | <ul><li>This function uses hs.osascript.applescript for execution.</li><li>Use hs.osascript._osascript(source, "AppleScript") if you always want the result as a string, even when a failure occurs. However, this function can only take a string, and not a file name.</li></ul>                |
+
 #### [javascript](#javascript)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.javascript(source) -> bool, object, descriptor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -39,4 +50,13 @@ Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript
 | **Parameters**                                       | <ul><li>source - A string containing some JavaScript code to execute</li></ul> |
 | **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>          |
 | **Notes**                                            | <ul><li>Use hs.osascript._osascript(source, "JavaScript") if you always want the result as a string, even when a failure occurs</li></ul>                |
+
+#### [javascriptFromFile](#javascriptfromfile)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.javascriptFromFile(fileName) -> bool, object, descriptor` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Runs JavaScript code from a source file.                                                                                         |
+| **Parameters**                                       | <ul><li>fileName - A string containing the file name of an JavaScript file to execute.</li></ul> |
+| **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>          |
+| **Notes**                                            | <ul><li>This function uses hs.osascript.javascript for execution.</li><li>Use hs.osascript._osascript(source, "JavaScript") if you always want the result as a string, even when a failure occurs. However, this function can only take a string, and not a file name.</li></ul>                |
 

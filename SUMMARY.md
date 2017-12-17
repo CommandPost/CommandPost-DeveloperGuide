@@ -111,6 +111,7 @@
 	* [developer](api/cp/cp.developer.md)
 	* [dialog](api/cp/cp.dialog.md)
 	* [feedback](api/cp/cp.feedback.md)
+	* [ids](api/cp/cp.ids.md)
 	* [idle](api/cp/cp.idle.md)
 	* [just](api/cp/cp.just.md)
 	* [localized](api/cp/cp.localized.md)
@@ -151,7 +152,7 @@
 
 ## Bundled Plugins API
 
-* plugins
+* [plugins](api/plugins/index.md)
 	* core
 		* [accessibility](api/plugins/plugins.core.accessibility.md)
 		* action
@@ -175,6 +176,9 @@
 			* [manager](api/plugins/plugins.core.menu.manager.md)
 				* [section](api/plugins/plugins.core.menu.manager.section.md)
 			* [top](api/plugins/plugins.core.menu.top.md)
+		* midi
+			* [manager](api/plugins/plugins.core.midi.manager.md)
+				* [controls](api/plugins/plugins.core.midi.manager.controls.md)
 		* preferences
 			* [advanced](api/plugins/plugins.core.preferences.advanced.md)
 			* [general](api/plugins/plugins.core.preferences.general.md)
@@ -183,6 +187,8 @@
 				* [advanced](api/plugins/plugins.core.preferences.panels.advanced.md)
 				* [general](api/plugins/plugins.core.preferences.panels.general.md)
 				* [menubar](api/plugins/plugins.core.preferences.panels.menubar.md)
+				* [midi](api/plugins/plugins.core.preferences.panels.midi.md)
+				* [notifications](api/plugins/plugins.core.preferences.panels.notifications.md)
 				* [plugins](api/plugins/plugins.core.preferences.panels.plugins.md)
 				* [shortcuts](api/plugins/plugins.core.preferences.panels.shortcuts.md)
 				* [streamdeck](api/plugins/plugins.core.preferences.panels.streamdeck.md)
@@ -256,10 +262,16 @@
 			* [top](api/plugins/plugins.finalcutpro.menu.top.md)
 			* [viewer](api/plugins/plugins.finalcutpro.menu.viewer.md)
 				* [showtimecode](api/plugins/plugins.finalcutpro.menu.viewer.showtimecode.md)
+		* midi
+			* controls
+				* [colorboard](api/plugins/plugins.finalcutpro.midi.controls.colorboard.md)
+				* [zoom](api/plugins/plugins.finalcutpro.midi.controls.zoom.md)
+			* [manager](api/plugins/plugins.finalcutpro.midi.manager.md)
 		* notifications
 			* [imessage](api/plugins/plugins.finalcutpro.notifications.imessage.md)
 			* [manager](api/plugins/plugins.finalcutpro.notifications.manager.md)
 			* [prowl](api/plugins/plugins.finalcutpro.notifications.prowl.md)
+			* [pushover](api/plugins/plugins.finalcutpro.notifications.pushover.md)
 		* [open](api/plugins/plugins.finalcutpro.open.md)
 		* os
 			* [voice](api/plugins/plugins.finalcutpro.os.voice.md)
@@ -274,6 +286,7 @@
 		* timeline
 			* [audioeffects](api/plugins/plugins.finalcutpro.timeline.audioeffects.md)
 			* [colorboard](api/plugins/plugins.finalcutpro.timeline.colorboard.md)
+			* [commandsetactions](api/plugins/plugins.finalcutpro.timeline.commandsetactions.md)
 			* [disablewaveforms](api/plugins/plugins.finalcutpro.timeline.disablewaveforms.md)
 			* [effects](api/plugins/plugins.finalcutpro.timeline.effects.md)
 			* [generators](api/plugins/plugins.finalcutpro.timeline.generators.md)
@@ -290,6 +303,7 @@
 			* [pluginshortcuts](api/plugins/plugins.finalcutpro.timeline.pluginshortcuts.md)
 			* [preferences](api/plugins/plugins.finalcutpro.timeline.preferences.md)
 			* [selectalltimelineclips](api/plugins/plugins.finalcutpro.timeline.selectalltimelineclips.md)
+			* [stabilization](api/plugins/plugins.finalcutpro.timeline.stabilization.md)
 			* [titles](api/plugins/plugins.finalcutpro.timeline.titles.md)
 			* [transitions](api/plugins/plugins.finalcutpro.timeline.transitions.md)
 			* [videoeffects](api/plugins/plugins.finalcutpro.timeline.videoeffects.md)

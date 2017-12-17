@@ -3,9 +3,6 @@
 
 The TOOLS menu section.
 
-## Submodules
- * [plugins.finalcutpro.menu.tools.notifications](plugins.finalcutpro.menu.tools.notifications.md)
-
 ## API Overview
 
 ## API Documentation

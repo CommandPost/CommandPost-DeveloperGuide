@@ -36,6 +36,8 @@
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
 | [plugins.core.menu.top](plugins.core.menu.top.md)                          | The top menu section.     |
+| [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
+| [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)                          | MIDI Manager Controls.     |
 | [plugins.core.preferences.advanced](plugins.core.preferences.advanced.md)                          | Advanced Preferences Panel.     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
@@ -43,6 +45,8 @@
 | [plugins.core.preferences.panels.advanced](plugins.core.preferences.panels.advanced.md)                          | Advanced Preferences Panel     |
 | [plugins.core.preferences.panels.general](plugins.core.preferences.panels.general.md)                          | General Preferences Panel     |
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
+| [plugins.core.preferences.panels.midi](plugins.core.preferences.panels.midi.md)                          | MIDI Preferences Panel     |
+| [plugins.core.preferences.panels.notifications](plugins.core.preferences.panels.notifications.md)                          | Notifications Preferences Panel     |
 | [plugins.core.preferences.panels.shortcuts](plugins.core.preferences.panels.shortcuts.md)                          | Shortcuts Preferences Panel     |
 | [plugins.core.preferences.panels.streamdeck](plugins.core.preferences.panels.streamdeck.md)                          | Stream Deck Preferences Panel     |
 | [plugins.core.preferences.panels.touchbar](plugins.core.preferences.panels.touchbar.md)                          | Touch Bar Preferences Panel     |
@@ -91,13 +95,16 @@
 | [plugins.finalcutpro.menu.proxyicon](plugins.finalcutpro.menu.proxyicon.md)                          | Final Cut Pro Proxy Icon Plugin.     |
 | [plugins.finalcutpro.menu.timeline](plugins.finalcutpro.menu.timeline.md)                          | The TIMELINE menu section.     |
 | [plugins.finalcutpro.menu.tools](plugins.finalcutpro.menu.tools.md)                          | The TOOLS menu section.     |
-| [plugins.finalcutpro.menu.tools.notifications](plugins.finalcutpro.menu.tools.notifications.md)                          | The AUTOMATION > 'Options' > 'Mobile Notifications' menu section.     |
 | [plugins.finalcutpro.menu.top](plugins.finalcutpro.menu.top.md)                          | The top menu section.     |
 | [plugins.finalcutpro.menu.viewer](plugins.finalcutpro.menu.viewer.md)                          | The VIEWER menu section.     |
 | [plugins.finalcutpro.menu.viewer.showtimecode](plugins.finalcutpro.menu.viewer.showtimecode.md)                          | Highlight Playhead Menu.     |
+| [plugins.finalcutpro.midi.controls.colorboard](plugins.finalcutpro.midi.controls.colorboard.md)                          | Final Cut Pro MIDI Color Controls.     |
+| [plugins.finalcutpro.midi.controls.zoom](plugins.finalcutpro.midi.controls.zoom.md)                          | Final Cut Pro MIDI Zoom Control.     |
+| [plugins.finalcutpro.midi.manager](plugins.finalcutpro.midi.manager.md)                          | MIDI Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.manager](plugins.finalcutpro.notifications.manager.md)                          | Notifications Manager Plugin.     |
 | [plugins.finalcutpro.notifications.prowl](plugins.finalcutpro.notifications.prowl.md)                          | Prowl Notifications Plugin.     |
+| [plugins.finalcutpro.notifications.pushover](plugins.finalcutpro.notifications.pushover.md)                          | Pushover Notifications Plugin.     |
 | [plugins.finalcutpro.open](plugins.finalcutpro.open.md)                          | Opens Final Cut Pro via Global Shortcut & Menubar.     |
 | [plugins.finalcutpro.os.voice](plugins.finalcutpro.os.voice.md)                          | Voice Command Plugin.     |
 | [plugins.finalcutpro.preferences.app](plugins.finalcutpro.preferences.app.md)                          | Final Cut Pro Preferences Panel     |
@@ -107,6 +114,7 @@
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
+| [plugins.finalcutpro.timeline.commandsetactions](plugins.finalcutpro.timeline.commandsetactions.md)                          | Adds Actions to the Console for triggering Final Cut Pro shortcuts as defined in the Command Set files.     |
 | [plugins.finalcutpro.timeline.disablewaveforms](plugins.finalcutpro.timeline.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.timeline.generators](plugins.finalcutpro.timeline.generators.md)                          | Controls Final Cut Pro's Generators.     |
 | [plugins.finalcutpro.timeline.height](plugins.finalcutpro.timeline.height.md)                          | Shortcut for changing Final Cut Pro's Timeline Height     |
@@ -121,6 +129,7 @@
 | [plugins.finalcutpro.timeline.pluginshortcuts](plugins.finalcutpro.timeline.pluginshortcuts.md)                          | Controls for Final Cut Pro's Plugin Shortcuts (for use with Hack Shortcuts).     |
 | [plugins.finalcutpro.timeline.preferences](plugins.finalcutpro.timeline.preferences.md)                          | Final Cut Pro Timeline Preferences.     |
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
+| [plugins.finalcutpro.timeline.stabilization](plugins.finalcutpro.timeline.stabilization.md)                          | Stabilization Shortcut     |
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Video Effects.     |

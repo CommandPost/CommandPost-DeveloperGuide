@@ -21,12 +21,12 @@ Reads & Writes plist data.
 ### Functions
 
 #### [base64ToTable](#base64totable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.base64ToTable(base64Data) -> table | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.base64ToTable(base64Data) -> table | nil, errorMessage` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Converts base64 Data into a LUA Table.                                                                                         |
-| **Parameters**                                       | <ul><li>base64Data - Binary data encoded in base64</li></ul> |
-| **Returns**                                          | <ul><li>A table of the plist data</li></ul>          |
+| **Description**                                      | Converts base64 encoded Property List string into a Table.                                                                                         |
+| **Parameters**                                       | <ul><li>base64Data - Binary data encoded in base64 as a string</li></ul> |
+| **Returns**                                          | <ul><li>A table of the plist data</li><li>A error message as string if an error occurs</li></ul>          |
 
 #### [binaryFileToTable](#binaryfiletotable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.binaryFileToTable(plistFileName) -> table | nil` </span>                                                          |

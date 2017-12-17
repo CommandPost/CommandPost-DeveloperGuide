@@ -25,11 +25,11 @@ Utility functions to support `hs._asm.axuielement`
 ### Functions
 
 #### [cache](#cache)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.cache(source, key, finderFn, verifyFn) -> axuielement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.cache(source, key, finderFn, [verifyFn]) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the cached value at the `source[key]` is a valid axuielement. If not                                                                                         |
-| **Parameters**                                       | <ul><li>source	- the table containing the cache</li><li>key		- the key the value is cached under</li><li>finderFn	- the function which will return the element if not found.</li><li>verifyFn	- (optional) a function which will check the cached element to verify it is still valid.</li></ul> |
+| **Parameters**                                       | <ul><li>source		- the table containing the cache</li><li>key			- the key the value is cached under</li><li>finderFn		- the function which will return the element if not found.</li><li>[verifyFn]	- an optional function which will check the cached element to verify it is still valid.</li></ul> |
 | **Returns**                                          | <ul><li>The valid cached value.</li></ul>          |
 
 #### [childAtIndex](#childatindex)

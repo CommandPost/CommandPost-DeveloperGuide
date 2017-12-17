@@ -8,6 +8,9 @@ Batch Export Plugin
  * [batchExport](#batchexport)
  * [changeExportDestinationFolder](#changeexportdestinationfolder)
  * [changeExportDestinationPreset](#changeexportdestinationpreset)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [ignoreMissingEffects](#ignoremissingeffects)
+ * [replaceExistingFiles](#replaceexistingfiles)
 
 ## API Documentation
 
@@ -36,4 +39,18 @@ Batch Export Plugin
 | **Description**                                      | Change Export Destination Preset.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful otherwise `false`</li></ul>          |
+
+### Fields
+
+#### [ignoreMissingEffects](#ignoremissingeffects)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreMissingEffects <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Defines whether or not a Batch Export should Ignore Missing Effects.                                                                                         |
+
+#### [replaceExistingFiles](#replaceexistingfiles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.replaceExistingFiles <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Defines whether or not a Batch Export should Replace Existing Files.                                                                                         |
 

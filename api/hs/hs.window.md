@@ -20,6 +20,8 @@ Notes:
 * Functions - API calls offered directly by the extension
  * [allWindows](#allwindows)
  * [desktop](#desktop)
+ * [invisibleWindows](#invisiblewindows)
+ * [minimizedWindows](#minimizedwindows)
  * [orderedWindows](#orderedwindows)
  * [setShadows](#setshadows)
  * [snapshotForID](#snapshotforid)
@@ -117,6 +119,22 @@ Notes:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>An `hs.window` object representing the desktop</li></ul>          |
 | **Notes**                                            | <ul><li>The desktop belongs to Finder.app: when Finder is the active application, you can focus the desktop by cycling</li><li>   through windows via cmd-`</li><li>The desktop window has no id, a role of `AXScrollArea` and no subrole</li><li>The desktop is filtered out from `hs.window.allWindows()` (and downstream uses)</li></ul>                |
+
+#### [invisibleWindows](#invisiblewindows)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.invisibleWindows() -> list of hs.window objects` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets all invisible windows                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A list containing `hs.window` objects representing all windows that are not visible as per `hs.window:isVisible()`</li></ul>          |
+
+#### [minimizedWindows](#minimizedwindows)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.minimizedWindows() -> list of hs.window objects` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets all minimized windows                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A list containing `hs.window` objects representing all windows that are minimized as per `hs.window:isMinimized()`</li></ul>          |
 
 #### [orderedWindows](#orderedwindows)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.orderedWindows() -> list of hs.window objects` </span>                                                          |

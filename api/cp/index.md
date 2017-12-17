@@ -31,6 +31,7 @@
 | [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)                          | Keycodes Module     |
 | [cp.apple.finalcutpro.main.Browser](cp.apple.finalcutpro.main.Browser.md)                          | Browser Module.     |
 | [cp.apple.finalcutpro.main.ColorBoard](cp.apple.finalcutpro.main.ColorBoard.md)                          | Color Board Module.     |
+| [cp.apple.finalcutpro.main.ColorInspector](cp.apple.finalcutpro.main.ColorInspector.md)                          | Color Inspector Module.     |
 | [cp.apple.finalcutpro.main.ColorPucker](cp.apple.finalcutpro.main.ColorPucker.md)                          | Color Pucker Module.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
 | [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window     |
@@ -72,6 +73,7 @@
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
 | [cp.idle](cp.idle.md)                          | This library allows tasks to be queue for execution when the computer has     |
+| [cp.ids](cp.ids.md)                          | Allows managing values/IDs which can vary between versions.     |
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
 | [cp.localized](cp.localized.md)                          | Helps look up localized names for folders.     |
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |

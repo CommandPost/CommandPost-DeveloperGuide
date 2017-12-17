@@ -13,6 +13,7 @@ Core CommandPost functionality
  * [cp.dialog](cp.dialog.md)
  * [cp.feedback](cp.feedback.md)
  * [cp.idle](cp.idle.md)
+ * [cp.ids](cp.ids.md)
  * [cp.just](cp.just.md)
  * [cp.localized](cp.localized.md)
  * [cp.plist](cp.plist.md)
