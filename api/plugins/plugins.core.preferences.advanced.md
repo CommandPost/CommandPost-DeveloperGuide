@@ -8,6 +8,7 @@ Advanced Preferences Panel.
  * [openErrorLog](#openerrorlog)
  * [toggleCommandLineTool](#togglecommandlinetool)
  * [toggleDeveloperMode](#toggledevelopermode)
+ * [toggleEnableAutomaticScriptReloading](#toggleenableautomaticscriptreloading)
  * [trashPreferences](#trashpreferences)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [developerMode](#developermode)
@@ -37,6 +38,14 @@ Advanced Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the Developer Mode.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [toggleEnableAutomaticScriptReloading](#toggleenableautomaticscriptreloading)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.toggleEnableAutomaticScriptReloading() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Toggles the Automatic Script Reloading.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

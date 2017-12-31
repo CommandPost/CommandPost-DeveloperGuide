@@ -49,6 +49,7 @@
 | [plugins.core.preferences.panels.notifications](plugins.core.preferences.panels.notifications.md)                          | Notifications Preferences Panel     |
 | [plugins.core.preferences.panels.shortcuts](plugins.core.preferences.panels.shortcuts.md)                          | Shortcuts Preferences Panel     |
 | [plugins.core.preferences.panels.streamdeck](plugins.core.preferences.panels.streamdeck.md)                          | Stream Deck Preferences Panel     |
+| [plugins.core.preferences.panels.tangent](plugins.core.preferences.panels.tangent.md)                          | Tangent Preferences Panel     |
 | [plugins.core.preferences.panels.touchbar](plugins.core.preferences.panels.touchbar.md)                          | Touch Bar Preferences Panel     |
 | [plugins.core.preferences.panels.webapp](plugins.core.preferences.panels.webapp.md)                          | WebApp Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
@@ -111,6 +112,7 @@
 | [plugins.finalcutpro.preferences.scanfinalcutpro](plugins.finalcutpro.preferences.scanfinalcutpro.md)                          | Scan Final Cut Pro.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
+| [plugins.finalcutpro.tangent.manager](plugins.finalcutpro.tangent.manager.md)                          | Tangent Control Surface Manager     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |

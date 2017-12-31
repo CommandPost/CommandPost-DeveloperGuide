@@ -114,10 +114,10 @@ containing the details of the action to execute if the choice is selected.
 | **Returns**                                          | <ul><li>* This action handler.</li></ul>          |
 
 #### [reset](#reset)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:reset() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:reset([updateNow]) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resets the handler, clearing any cached result and requesting new ones.                                                                                         |
-| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Parameters**                                       | <ul><li>* `updateNow`	- (optional) If `true`, the choices will update immediately, otherwise they will update when the choices are next requested.</li></ul> |
 | **Returns**                                          | <ul><li>* Nothing</li></ul>          |
 

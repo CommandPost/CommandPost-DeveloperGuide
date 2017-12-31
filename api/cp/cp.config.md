@@ -30,6 +30,8 @@ Manage CommandPost's constants and settings.
  * [sourceWatcher](#sourcewatcher)
  * [userConfigRootPath](#userconfigrootpath)
  * [userPluginsPath](#userpluginspath)
+* Variables - Configurable values
+ * [automaticScriptReloading](#automaticscriptreloading)
 * Functions - API calls offered directly by the extension
  * [application](#application)
  * [get](#get)
@@ -158,6 +160,14 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to user plugins                                                                                         |
+
+### Variables
+
+#### [automaticScriptReloading](#automaticscriptreloading)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.automaticScriptReloading <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Automatic Script Reloading.                                                                                         |
 
 ### Functions
 

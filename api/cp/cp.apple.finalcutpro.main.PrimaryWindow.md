@@ -16,7 +16,6 @@ Primary Window Module.
  * [bottomGroupUI](#bottomgroupui)
  * [browserGroupUI](#browsergroupui)
  * [colorBoard](#colorboard)
- * [colorInspector](#colorinspector)
  * [inspector](#inspector)
  * [leftGroupUI](#leftgroupui)
  * [new](#new)
@@ -101,14 +100,6 @@ Primary Window Module.
 | **Description**                                      | Gets the ColorBoard object.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>ColorBoard</li></ul>          |
-
-#### [colorInspector](#colorinspector)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:colorInspector() -> ColorInspector` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets the ColorInspector object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>ColorInspector</li></ul>          |
 
 #### [inspector](#inspector)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:inspector() -> Inspector` </span>                                                          |

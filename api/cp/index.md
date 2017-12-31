@@ -31,12 +31,25 @@
 | [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)                          | Keycodes Module     |
 | [cp.apple.finalcutpro.main.Browser](cp.apple.finalcutpro.main.Browser.md)                          | Browser Module.     |
 | [cp.apple.finalcutpro.main.ColorBoard](cp.apple.finalcutpro.main.ColorBoard.md)                          | Color Board Module.     |
-| [cp.apple.finalcutpro.main.ColorInspector](cp.apple.finalcutpro.main.ColorInspector.md)                          | Color Inspector Module.     |
 | [cp.apple.finalcutpro.main.ColorPucker](cp.apple.finalcutpro.main.ColorPucker.md)                          | Color Pucker Module.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
 | [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window     |
 | [cp.apple.finalcutpro.main.GeneratorsBrowser](cp.apple.finalcutpro.main.GeneratorsBrowser.md)                          | Generators Browser Module.     |
 | [cp.apple.finalcutpro.main.Inspector](cp.apple.finalcutpro.main.Inspector.md)                          | Inspector     |
+| [cp.apple.finalcutpro.main.Inspector.AudioInspector](cp.apple.finalcutpro.main.Inspector.AudioInspector.md)                          | Audio Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.ColorInspector](cp.apple.finalcutpro.main.Inspector.ColorInspector.md)                          | Color Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorBoard](cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorBoard.md)                          | Color Board Module.     |
+| [cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorCurves](cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorCurves.md)                          | Color Curves Module.     |
+| [cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorWheels](cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorWheels.md)                          | Color Wheels Module.     |
+| [cp.apple.finalcutpro.main.Inspector.ColorInspector.HueSaturationCurves](cp.apple.finalcutpro.main.Inspector.ColorInspector.HueSaturationCurves.md)                          | Hue/Saturation Curves Module.     |
+| [cp.apple.finalcutpro.main.Inspector.EffectInspector](cp.apple.finalcutpro.main.Inspector.EffectInspector.md)                          | Effect Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.GeneratorInspector](cp.apple.finalcutpro.main.Inspector.GeneratorInspector.md)                          | Generator Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.InfoInspector](cp.apple.finalcutpro.main.Inspector.InfoInspector.md)                          | Video Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.ShareInspector](cp.apple.finalcutpro.main.Inspector.ShareInspector.md)                          | Share Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.TextInspector](cp.apple.finalcutpro.main.Inspector.TextInspector.md)                          | Text Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.TitleInspector](cp.apple.finalcutpro.main.Inspector.TitleInspector.md)                          | Title Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.TransitionInspector](cp.apple.finalcutpro.main.Inspector.TransitionInspector.md)                          | Transition Inspector Module.     |
+| [cp.apple.finalcutpro.main.Inspector.VideoInspector](cp.apple.finalcutpro.main.Inspector.VideoInspector.md)                          | Video Inspector Module.     |
 | [cp.apple.finalcutpro.main.LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md)                          | Libraries Browser Module.     |
 | [cp.apple.finalcutpro.main.LibrariesFilmstrip](cp.apple.finalcutpro.main.LibrariesFilmstrip.md)                          | Libraries Filmstrip Module.     |
 | [cp.apple.finalcutpro.main.LibrariesList](cp.apple.finalcutpro.main.LibrariesList.md)                          | Libraries List Module.     |
@@ -81,7 +94,7 @@
 | [cp.plugins](cp.plugins.md)                          | This is a simple plugin manager.     |
 | [cp.plugins.env](cp.plugins.env.md)                          | Provides access to resources in the plugin environment. In generally, this will be files stored in a Complex Plugin's folder.     |
 | [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
-| [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and      |
+| [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and     |
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
 | [cp.strings.source.table](cp.strings.source.table.md)                          | Loads strings from provided tables, allowing for a given language variation. Eg:     |

@@ -9,6 +9,8 @@ These functions allow altering the behavior and display of the Hammerspoon conso
 * Deprecateds - API features which will be removed in an future release
  * [asHSDrawing](#ashsdrawing)
  * [asHSWindow](#ashswindow)
+* Constants - Useful values which cannot be changed
+ * [defaultToolbar](#defaulttoolbar)
 * Functions - API calls offered directly by the extension
  * [alpha](#alpha)
  * [behaviorAsLabels](#behavioraslabels)
@@ -51,6 +53,15 @@ These functions allow altering the behavior and display of the Hammerspoon conso
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Deprecated                                                                                         |
 | **Description**                                      | Returns an hs.window object for the console so that you can use hs.window methods on it.                                                                                         |
+
+### Constants
+
+#### [defaultToolbar](#defaulttoolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.defaultToolbar` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Default toolbar for the Console window                                                                                         |
+| **Notes**                                            | <ul><li>This is an `hs.toolbar` object that is shown by default in the Hammerspoon Console</li><li>You can remove this toolbar by adding `hs.console.toolbar(nil)` to your config, or you can replace it with your own `hs.toolbar` object</li></ul>                |
 
 ### Functions
 

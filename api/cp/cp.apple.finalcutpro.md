@@ -85,10 +85,8 @@ end
  * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
  * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
  * [BUNDLE_ID](#bundle_id)
- * [currentLanguage](#currentlanguage)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
  * [FLEXO_LANGUAGES](#flexo_languages)
- * [getVersion](#getversion)
  * [PASTEBOARD_UTI](#pasteboard_uti)
  * [PREFS_PATH](#prefs_path)
  * [PREFS_PLIST_FILE](#prefs_plist_file)
@@ -98,6 +96,9 @@ end
  * [init](#init)
  * [reset](#reset)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [colorInspectorSupported](#colorinspectorsupported)
+ * [currentLanguage](#currentlanguage)
+ * [getVersion](#getversion)
  * [isFrontmost](#isfrontmost)
  * [isInstalled](#isinstalled)
  * [isModalDialogOpen](#ismodaldialogopen)
@@ -193,12 +194,6 @@ end
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Final Cut Pro's Bundle ID                                                                                         |
 
-#### [currentLanguage](#currentlanguage)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLanguage <cp.prop:string>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The current language the FCPX is displayed in.                                                                                         |
-
 #### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -210,15 +205,6 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Table of Final Cut Pro's supported Languages for the Flexo Framework                                                                                         |
-
-#### [getVersion](#getversion)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.getVersion <cp.prop: string; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Version of Final Cut Pro                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Version as string or nil if Final Cut Pro cannot be found.</li></ul>          |
-| **Notes**                                            | <ul><li>If Final Cut Pro is running it will get the version of the active Final Cut Pro application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul>                |
 
 #### [PASTEBOARD_UTI](#pasteboard_uti)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.PASTEBOARD_UTI` </span>                                                          |
@@ -269,6 +255,27 @@ end
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 ### Fields
+
+#### [colorInspectorSupported](#colorinspectorsupported)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:colorInspectorSupported <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is the Color Inspector supported in the installed version of Final Cut Pro?                                                                                         |
+
+#### [currentLanguage](#currentlanguage)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLanguage <cp.prop:string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The current language the FCPX is displayed in.                                                                                         |
+
+#### [getVersion](#getversion)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.getVersion <cp.prop: string; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Version of Final Cut Pro as string.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Version as string or `nil` if Final Cut Pro cannot be found.</li></ul>          |
+| **Notes**                                            | <ul><li>If Final Cut Pro is running it will get the version of the active Final Cut Pro application as a string, otherwise, it will use `hs.application.infoForBundleID()` to find the version.</li></ul>                |
 
 #### [isFrontmost](#isfrontmost)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isFrontmost <cp.prop: boolean; read-only>` </span>                                                          |

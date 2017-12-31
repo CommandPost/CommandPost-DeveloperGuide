@@ -12,12 +12,22 @@ Commands Module.
  * [activatedBy](#activatedby)
  * [addShortcut](#addshortcut)
  * [deleteShortcuts](#deleteshortcuts)
+ * [disable](#disable)
+ * [enable](#enable)
  * [getFirstShortcut](#getfirstshortcut)
+ * [getGroup](#getgroup)
  * [getShortcuts](#getshortcuts)
+ * [getSubtitle](#getsubtitle)
+ * [getTitle](#gettitle)
+ * [groupedBy](#groupedby)
+ * [id](#id)
  * [new](#new)
+ * [parent](#parent)
  * [pressed](#pressed)
  * [released](#released)
  * [repeated](#repeated)
+ * [setShortcuts](#setshortcuts)
+ * [subtitled](#subtitled)
  * [titled](#titled)
  * [whenActivated](#whenactivated)
  * [whenPressed](#whenpressed)
@@ -59,11 +69,11 @@ Commands Module.
 | **Returns**                                          | <ul><li>`command` if a `keyCode` was provided, or `modifier` if not.</li></ul>          |
 
 #### [addShortcut](#addshortcut)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:addShortcut() -> command` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:addShortcut(newShortcut) -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified shortcut to the command.                                                                                         |
-| **Parameters**                                       | <ul><li>`newShortcut`	- the shortcut</li></ul> |
+| **Parameters**                                       | <ul><li>`newShortcut`	- the shortcut to add.</li></ul> |
 | **Returns**                                          | <ul><li>`self`</li></ul>          |
 
 #### [deleteShortcuts](#deleteshortcuts)
@@ -74,6 +84,22 @@ Commands Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
+#### [disable](#disable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:disable() -> cp.commands.command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Disables the command.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The `cp.commands.command` instance.</li></ul>          |
+
+#### [enable](#enable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:enable() -> cp.commands.command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Enables the command.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The `cp.commands.command` instance.</li></ul>          |
+
 #### [getFirstShortcut](#getfirstshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getFirstShortcut() -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -81,6 +107,14 @@ Commands Module.
 | **Description**                                      | Returns the first shortcut, or `nil` if none have been registered.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The first shortcut, or `nil`.</li></ul>          |
+
+#### [getGroup](#getgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getGroup() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the group ID for the command.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The group ID.</li></ul>          |
 
 #### [getShortcuts](#getshortcuts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getShortcuts() -> command` </span>                                                          |
@@ -90,13 +124,51 @@ Commands Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The associated shortcuts.</li></ul>          |
 
+#### [getSubtitle](#getsubtitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getSubtitle() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the current subtitle, based on either the set subtitle, or the "<ID>_subtitle" value in the I18N files.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The subtitle value or `nil`.</li></ul>          |
+
+#### [getTitle](#gettitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getTitle() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the command title in the current language, if availalbe. If not, the ID is returned.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+
+#### [groupedBy](#groupedby)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:groupedBy(group) -> cp.commands.command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Specifies that the command is grouped by a specific value.                                                                                         |
+| **Parameters**                                       | <ul><li>* `group`	- The group ID.</li></ul> |
+| **Returns**                                          | <ul><li>* The `cp.commands.command` instance.</li></ul>          |
+
+#### [id](#id)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:id() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the ID for this command.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The ID.</li></ul>          |
+
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:new() -> command` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command.new() -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new command, which can have keyboard shortcuts assigned to it.                                                                                         |
-| **Parameters**                                       | <ul><li>`id`	= the unique identifier for the command. E.g. 'cpCustomCommand'</li></ul> |
+| **Parameters**                                       | <ul><li>`id`		- the unique identifier for the command. E.g. 'cpCustomCommand'</li><li>`parent`	- The parent group.</li></ul> |
 | **Returns**                                          | <ul><li>command - The command that was created.</li></ul>          |
+
+#### [parent](#parent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:parent() -> cp.commands` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the parent command group.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
 
 #### [pressed](#pressed)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:pressed() -> command` </span>                                                          |
@@ -122,6 +194,21 @@ Commands Module.
 | **Parameters**                                       | <ul><li>`repeats`	- the number of times to repeat. Defaults to 1.</li></ul> |
 | **Returns**                                          | <ul><li>the last result.</li></ul>          |
 
+#### [setShortcuts](#setshortcuts)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:setShortcuts(shortcuts) -> command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Deletes any existing shortcuts and applies the new set of shortcuts in the table.                                                                                         |
+| **Parameters**                                       | <ul><li>* shortcuts		- The set of `cp.commands.shortcuts` to apply to this command.</li></ul> |
+| **Returns**                                          | <ul><li>* The `cp.commands.command` instance.</li></ul>          |
+
+#### [subtitled](#subtitled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:subtitled(subtitle) -> cp.commands.command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the specified subtitle and returns the `cp.commands.command` instance.                                                                                         |
+| **Parameters**                                       | <ul><li>* `subtitle`	- The new subtitle.</li></ul> |
+
 #### [titled](#titled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:titled(title) -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -131,7 +218,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The command that was created.</li></ul>          |
 
 #### [whenActivated](#whenactivated)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenActivated(function) -> command` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenActivated(activatedFn) -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command is activated.                                                                                         |
@@ -139,7 +226,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [whenPressed](#whenpressed)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenPressed(function) -> command` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenPressed(pressedFn) -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is pressed.                                                                                         |
@@ -147,7 +234,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [whenReleased](#whenreleased)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenReleased(function) -> command` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenReleased(releasedFn) -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is released.                                                                                         |
@@ -155,7 +242,7 @@ Commands Module.
 | **Returns**                                          | <ul><li>command - The current command</li></ul>          |
 
 #### [whenRepeated](#whenrepeated)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenRepeated(function) -> command` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:whenRepeated(repeatedFn) -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the command key combo is repeated.                                                                                         |
