@@ -13,6 +13,7 @@ MIDI Manager Plugin.
 * Functions - API calls offered directly by the extension
  * [activeGroup](#activegroup)
  * [clear](#clear)
+ * [devices](#devices)
  * [getIcon](#geticon)
  * [groupStatus](#groupstatus)
  * [init](#init)
@@ -21,6 +22,7 @@ MIDI Manager Plugin.
  * [start](#start)
  * [update](#update)
  * [updateAction](#updateaction)
+ * [virtualDevices](#virtualdevices)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [buttons](#buttons)
  * [enabled](#enabled)
@@ -58,6 +60,14 @@ MIDI Manager Plugin.
 | **Description**                                      | Clears the Touch Bar items.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [devices](#devices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.devices() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets a table of Physical MIDI Device Names.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of Physical MIDI Device Names.</li></ul>          |
 
 #### [getIcon](#geticon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getIcon(button, group) -> string` </span>                                                          |
@@ -122,6 +132,14 @@ MIDI Manager Plugin.
 | **Description**                                      | Updates a Touch Bar action.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>action - Action as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [virtualDevices](#virtualdevices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.virtualDevices() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets a table of Virtual MIDI Source Names.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of Virtual MIDI Source Names.</li></ul>          |
 
 ### Fields
 

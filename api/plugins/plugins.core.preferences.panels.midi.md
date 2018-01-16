@@ -4,6 +4,8 @@
 MIDI Preferences Panel
 
 ## API Overview
+* Variables - Configurable values
+ * [_currentlyLearning](#_currentlylearning)
 * Functions - API calls offered directly by the extension
  * [getGroupEditor](#getgroupeditor)
  * [init](#init)
@@ -13,6 +15,14 @@ MIDI Preferences Panel
  * [lastGroup](#lastgroup)
 
 ## API Documentation
+
+### Variables
+
+#### [_currentlyLearning](#_currentlylearning)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi._currentlyLearning -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Are we in learning mode?                                                                                         |
 
 ### Functions
 
