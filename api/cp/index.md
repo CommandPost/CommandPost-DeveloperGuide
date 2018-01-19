@@ -94,7 +94,7 @@
 | [cp.plugins](cp.plugins.md)                          | This is a simple plugin manager.     |
 | [cp.plugins.env](cp.plugins.env.md)                          | Provides access to resources in the plugin environment. In generally, this will be files stored in a Complex Plugin's folder.     |
 | [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
-| [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and     |
+| [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and reloads the app if they change.     |
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
 | [cp.strings.source.table](cp.strings.source.table.md)                          | Loads strings from provided tables, allowing for a given language variation. Eg:     |

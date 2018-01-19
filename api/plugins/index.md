@@ -127,7 +127,7 @@
 | [plugins.finalcutpro.timeline.multicam](plugins.finalcutpro.timeline.multicam.md)                          | Multicam Tools.     |
 | [plugins.finalcutpro.timeline.playback](plugins.finalcutpro.timeline.playback.md)                          | Playback Plugin.     |
 | [plugins.finalcutpro.timeline.playhead](plugins.finalcutpro.timeline.playhead.md)                          | Manages features relating to the Timeline Playhead.     |
-| [plugins.finalcutpro.timeline.pluginactions](plugins.finalcutpro.timeline.pluginactions.md)                          | Controls Final Cut Pro's Titles.     |
+| [plugins.finalcutpro.timeline.pluginactions](plugins.finalcutpro.timeline.pluginactions.md)                          | Adds Final Cut Pro Plugins (i.e. Effects, Generators, Titles and Transitions) to CommandPost Actions.     |
 | [plugins.finalcutpro.timeline.pluginshortcuts](plugins.finalcutpro.timeline.pluginshortcuts.md)                          | Controls for Final Cut Pro's Plugin Shortcuts (for use with Hack Shortcuts).     |
 | [plugins.finalcutpro.timeline.preferences](plugins.finalcutpro.timeline.preferences.md)                          | Final Cut Pro Timeline Preferences.     |
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |

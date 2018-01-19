@@ -74,7 +74,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Touch Bar Icon.                                                                                         |
-| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>item - The item you want to get.</li><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Icon data as string</li></ul>          |
 
 #### [groupStatus](#groupstatus)
