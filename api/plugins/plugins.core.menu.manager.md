@@ -7,6 +7,9 @@ Menu Manager Plugin.
  * [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)
 
 ## API Overview
+* Variables - Configurable values
+ * [rootSection](#rootsection)
+ * [titleSuffix](#titlesuffix)
 * Functions - API calls offered directly by the extension
  * [addSection](#addsection)
  * [addTitleSuffix](#addtitlesuffix)
@@ -19,6 +22,20 @@ Menu Manager Plugin.
  * [displayMenubarAsIcon](#displaymenubarasicon)
 
 ## API Documentation
+
+### Variables
+
+#### [rootSection](#rootsection)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.rootSection() -> section` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | A new Root Section                                                                                         |
+
+#### [titleSuffix](#titlesuffix)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.titleSuffix() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Table of Title Suffix's                                                                                         |
 
 ### Functions
 

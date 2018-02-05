@@ -59,6 +59,7 @@
 | [hs.geometry](hs.geometry.md)                          | Utility object to represent points, sizes and rects in a bidimensional plane     |
 | [hs.grid](hs.grid.md)                          | Move/resize windows within a grid     |
 | [hs.hash](hs.hash.md)                          | Various hashing algorithms     |
+| [hs.hid](hs.hid.md)                          | HID interface for Hammerspoon, controls and queries caps lock state     |
 | [hs.hints](hs.hints.md)                          | Switch focus with a transient per-application keyboard shortcut     |
 | [hs.host](hs.host.md)                          | Inspect information about the machine Hammerspoon is running on     |
 | [hs.host.locale](hs.host.locale.md)                          | Retrieve information about the user's Language and Region settings.     |
@@ -119,6 +120,7 @@
 | [hs.streamdeck](hs.streamdeck.md)                          | Configure/control an Elgato Stream Deck     |
 | [hs.styledtext](hs.styledtext.md)                          | This module adds support for controlling the style of the text in Hammerspoon.     |
 | [hs.tabs](hs.tabs.md)                          | Place the windows of an application into tabs drawn on its titlebar     |
+| [hs.tangent](hs.tangent.md)                          | **Tangent Control Surface Extension**     |
 | [hs.task](hs.task.md)                          | Execute processes in the background and capture their output     |
 | [hs.timer](hs.timer.md)                          | Execute functions with various timing rules     |
 | [hs.timer.delayed](hs.timer.delayed.md)                          | Specialized timer objects to coalesce processing of unpredictable asynchronous events into a single callback     |

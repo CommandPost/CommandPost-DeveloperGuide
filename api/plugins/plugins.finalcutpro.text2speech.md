@@ -4,11 +4,17 @@
 Text to Speech Plugin.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [COPY_TO_MEDIA_FOLDER](#copy_to_media_folder)
+ * [DELETE_DELAY](#delete_delay)
 * Variables - Configurable values
+ * [addTextToNotesFieldAfterImport](#addtexttonotesfieldafterimport)
  * [createRoleForVoice](#createroleforvoice)
  * [currentIncrementalNumber](#currentincrementalnumber)
  * [customPrefix](#customprefix)
+ * [deleteFileAfterImport](#deletefileafterimport)
  * [enableCustomPrefix](#enablecustomprefix)
+ * [includeTextInFilename](#includetextinfilename)
  * [insertIntoTimeline](#insertintotimeline)
  * [path](#path)
  * [recentText](#recenttext)
@@ -18,11 +24,32 @@ Text to Speech Plugin.
  * [voice](#voice)
 * Functions - API calls offered directly by the extension
  * [chooseFolder](#choosefolder)
+ * [insertFromClipboard](#insertfromclipboard)
  * [show](#show)
 
 ## API Documentation
 
+### Constants
+
+#### [COPY_TO_MEDIA_FOLDER](#copy_to_media_folder)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.COPY_TO_MEDIA_FOLDER` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Copy to Media Folder Preferences Key.                                                                                         |
+
+#### [DELETE_DELAY](#delete_delay)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.DELETE_DELAY` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | How long before a file is deleted in seconds.                                                                                         |
+
 ### Variables
+
+#### [addTextToNotesFieldAfterImport](#addtexttonotesfieldafterimport)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.addTextToNotesFieldAfterImport` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Option to Add Text to Notes Field After Importing                                                                                         |
 
 #### [createRoleForVoice](#createroleforvoice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.createRoleForVoice` </span>                                                          |
@@ -42,11 +69,23 @@ Text to Speech Plugin.
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | String which contains the custom prefix.                                                                                         |
 
+#### [deleteFileAfterImport](#deletefileafterimport)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.deleteFileAfterImport` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Delete File After Import                                                                                         |
+
 #### [enableCustomPrefix](#enablecustomprefix)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.enableCustomPrefix` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Boolean that sets whether or not a custom prefix for the generated filename is enabled.                                                                                         |
+
+#### [includeTextInFilename](#includetextinfilename)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.includeTextInFilename` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Includes the entered text in the filename                                                                                         |
 
 #### [insertIntoTimeline](#insertintotimeline)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.insertIntoTimeline` </span>                                                          |
@@ -99,6 +138,14 @@ Text to Speech Plugin.
 | **Description**                                      | Prompts the user to choose a folder for the Text to Speech Tool.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string of the selected path or `false` if cancelled.</li></ul>          |
+
+#### [insertFromClipboard](#insertfromclipboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.insertFromClipboard() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Inserts Text to Speech by reading the Clipboard.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.show() -> none` </span>                                                          |

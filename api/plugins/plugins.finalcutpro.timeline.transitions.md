@@ -25,6 +25,6 @@ Controls Final Cut Pro's Transitions.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies the specified action as a transition. Expects action to be a table with the following structure:                                                                                         |
-| **Parameters**                                       | <ul><li>* `action`		- A table with the name/category/theme for the transition to apply, or a string with just the name.</li></ul> |
-| **Returns**                                          | <ul><li>* `true` if a matching transition was found and applied to the timeline.</li></ul>          |
+| **Parameters**                                       | <ul><li>`action`     - A table with the name/category/theme for the transition to apply, or a string with just the name.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if a matching transition was found and applied to the timeline.</li></ul>          |
 

@@ -30,6 +30,7 @@ Core Hammerspoon functionality
  * [hs.geometry](hs.geometry.md)
  * [hs.grid](hs.grid.md)
  * [hs.hash](hs.hash.md)
+ * [hs.hid](hs.hid.md)
  * [hs.hints](hs.hints.md)
  * [hs.host](hs.host.md)
  * [hs.hotkey](hs.hotkey.md)
@@ -73,6 +74,7 @@ Core Hammerspoon functionality
  * [hs.streamdeck](hs.streamdeck.md)
  * [hs.styledtext](hs.styledtext.md)
  * [hs.tabs](hs.tabs.md)
+ * [hs.tangent](hs.tangent.md)
  * [hs.task](hs.task.md)
  * [hs.timer](hs.timer.md)
  * [hs.uielement](hs.uielement.md)
@@ -437,5 +439,5 @@ Core Hammerspoon functionality
 | **Description**                                      | Get or set the "Upload Crash Data" preference for Hammerspoon                                                                                         |
 | **Parameters**                                       | <ul><li>state - An optional boolean, true to upload crash reports, false to not</li></ul> |
 | **Returns**                                          | <ul><li>True if Hammerspoon is currently (or has just been) set to upload crash data or False otherwise</li></ul>          |
-| **Notes**                                            | <ul><li>If at all possible, please do allow Hammerspoon to upload crash reports to us, it helps a great deal in keeping Hammerspoon stable</li><li>Our Privacy Policy can be found here: [http://www.hammerspoon.org/privacy.html](https://github.com/Hammerspoon/hammerspoon/pull/1286/files)</li></ul>                |
+| **Notes**                                            | <ul><li>If at all possible, please do allow Hammerspoon to upload crash reports to us, it helps a great deal in keeping Hammerspoon stable</li><li>Our Privacy Policy can be found here: [http://www.hammerspoon.org/privacy.html](http://www.hammerspoon.org/privacy.html)</li></ul>                |
 

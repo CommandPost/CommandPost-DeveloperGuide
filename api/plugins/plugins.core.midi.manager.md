@@ -14,7 +14,8 @@ MIDI Manager Plugin.
  * [activeGroup](#activegroup)
  * [clear](#clear)
  * [devices](#devices)
- * [getIcon](#geticon)
+ * [getItem](#getitem)
+ * [getItems](#getitems)
  * [groupStatus](#groupstatus)
  * [init](#init)
  * [midiCallback](#midicallback)
@@ -41,7 +42,7 @@ MIDI Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.maxItems -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The maximum number of Touch Bar items per group.                                                                                         |
+| **Description**                                      | The maximum number of MIDI items per group.                                                                                         |
 
 ### Functions
 
@@ -57,7 +58,7 @@ MIDI Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.clear() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Clears the Touch Bar items.                                                                                         |
+| **Description**                                      | Clears the MIDI items.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -69,13 +70,21 @@ MIDI Manager Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table of Physical MIDI Device Names.</li></ul>          |
 
-#### [getIcon](#geticon)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getIcon(button, group) -> string` </span>                                                          |
+#### [getItem](#getitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getItem(item, button, group) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a specific Touch Bar Icon.                                                                                         |
+| **Description**                                      | Gets a MIDI item from Preferences.                                                                                         |
 | **Parameters**                                       | <ul><li>item - The item you want to get.</li><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul><li>Icon data as string</li></ul>          |
+| **Returns**                                          | <ul><li>A table otherwise `nil`</li></ul>          |
+
+#### [getItems](#getitems)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getItems() -> tables` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets all the MIDI items in a table.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table</li></ul>          |
 
 #### [groupStatus](#groupstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.groupStatus(groupID, status) -> none` </span>                                                          |
@@ -105,7 +114,7 @@ MIDI Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.setItem(item, button, group, value) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Stores a MIDI value in Preferences.                                                                                         |
+| **Description**                                      | Stores a MIDI item in Preferences.                                                                                         |
 | **Parameters**                                       | <ul><li>item - The item you want to set.</li><li>button - Button ID as string</li><li>group - Group ID as string</li><li>value - The value of the item you want to set.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -126,11 +135,11 @@ MIDI Manager Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [updateAction](#updateaction)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.updateAction(button, group, action) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.updateAction(button, group, actionTitle, handlerID, action) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates a Touch Bar action.                                                                                         |
-| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>action - Action as string</li></ul> |
+| **Description**                                      | Updates a MIDI action.                                                                                         |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>actionTitle - Action Title as string</li><li>handlerID - Handler ID as string</li><li>action - Action in a table</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [virtualDevices](#virtualdevices)
@@ -147,7 +156,7 @@ MIDI Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.buttons <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Contains all the saved Touch Bar Buttons                                                                                         |
+| **Description**                                      | Contains all the saved MIDI items                                                                                         |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.enabled <cp.prop: boolean>` </span>                                                          |

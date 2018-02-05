@@ -1,7 +1,7 @@
 # [docs](index.md) » plugins.finalcutpro.watchfolders.panels.fcpxml
 ---
 
-Final Cut Pro Media Watch Folder Plugin.
+Final Cut Pro FCPXML Watch Folder Plugin.
 
 ## API Overview
 * Variables - Configurable values

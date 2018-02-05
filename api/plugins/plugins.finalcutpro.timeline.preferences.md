@@ -4,10 +4,20 @@
 Final Cut Pro Timeline Preferences.
 
 ## API Overview
+* Variables - Configurable values
+ * [backgroundRender](#backgroundrender)
 * Functions - API calls offered directly by the extension
  * [getAutoRenderDelay](#getautorenderdelay)
 
 ## API Documentation
+
+### Variables
+
+#### [backgroundRender](#backgroundrender)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.preferences.backgroundRender <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Is Background Render enabled?                                                                                         |
 
 ### Functions
 

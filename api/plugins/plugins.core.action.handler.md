@@ -40,7 +40,7 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new handler with the specified ID.                                                                                         |
-| **Parameters**                                       | <ul><li>* `id`		- The unique ID of the action handler.</li><li>* `group`	- The group the handler belongs to.</li></ul> |
+| **Parameters**                                       | <ul><li>* `id`      - The unique ID of the action handler.</li><li>* `group`   - The group the handler belongs to.</li></ul> |
 | **Returns**                                          | <ul><li>* The new action handler instance.</li></ul>          |
 
 ### Fields
@@ -70,7 +70,7 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the action, based on values in the table.                                                                                         |
-| **Parameters**                                       | <ul><li>* `action`		- A table of details about the action.</li></ul> |
+| **Parameters**                                       | <ul><li>* `action`      - A table of details about the action.</li></ul> |
 | **Returns**                                          | <ul><li>* `true` if the execution succeeded.</li></ul>          |
 
 #### [group](#group)
@@ -94,7 +94,7 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Configures a function to handle converting an action to unique ID.                                                                                         |
-| **Parameters**                                       | <ul><li>* `actionFn`	- The function with a signature of `function(action) -> string`</li></ul> |
+| **Parameters**                                       | <ul><li>* `actionFn`    - The function with a signature of `function(action) -> string`</li></ul> |
 | **Returns**                                          | <ul><li>* This action handler.</li></ul>          |
 
 #### [onChoices](#onchoices)
@@ -102,7 +102,7 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a callback function which will receive the `cp.choices` instance to add                                                                                         |
-| **Parameters**                                       | <ul><li>* `choicesFn`		- The function with the signature of `function(choices) -> nothing`</li></ul> |
+| **Parameters**                                       | <ul><li>* `choicesFn`       - The function with the signature of `function(choices) -> nothing`</li></ul> |
 | **Returns**                                          | <ul><li>* This action handler.</li></ul>          |
 
 #### [onExecute](#onexecute)
@@ -110,7 +110,7 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Configures the function to call when a choice is executed. This will be passed                                                                                         |
-| **Parameters**                                       | <ul><li>* `executeFn`		- The function to call when executing.</li></ul> |
+| **Parameters**                                       | <ul><li>* `executeFn`       - The function to call when executing.</li></ul> |
 | **Returns**                                          | <ul><li>* This action handler.</li></ul>          |
 
 #### [reset](#reset)
@@ -118,6 +118,6 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resets the handler, clearing any cached result and requesting new ones.                                                                                         |
-| **Parameters**                                       | <ul><li>* `updateNow`	- (optional) If `true`, the choices will update immediately, otherwise they will update when the choices are next requested.</li></ul> |
+| **Parameters**                                       | <ul><li>* `updateNow`   - (optional) If `true`, the choices will update immediately, otherwise they will update when the choices are next requested.</li></ul> |
 | **Returns**                                          | <ul><li>* Nothing</li></ul>          |
 

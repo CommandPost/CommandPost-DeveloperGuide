@@ -50,6 +50,8 @@
 | [cp.apple.finalcutpro.main.Inspector.TitleInspector](cp.apple.finalcutpro.main.Inspector.TitleInspector.md)                          | Title Inspector Module.     |
 | [cp.apple.finalcutpro.main.Inspector.TransitionInspector](cp.apple.finalcutpro.main.Inspector.TransitionInspector.md)                          | Transition Inspector Module.     |
 | [cp.apple.finalcutpro.main.Inspector.VideoInspector](cp.apple.finalcutpro.main.Inspector.VideoInspector.md)                          | Video Inspector Module.     |
+| [cp.apple.finalcutpro.main.KeywordEditor](cp.apple.finalcutpro.main.KeywordEditor.md)                          | Keyword Editor Module.     |
+| [cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts](cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.md)                          | Keyboard Shortcuts     |
 | [cp.apple.finalcutpro.main.LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md)                          | Libraries Browser Module.     |
 | [cp.apple.finalcutpro.main.LibrariesFilmstrip](cp.apple.finalcutpro.main.LibrariesFilmstrip.md)                          | Libraries Filmstrip Module.     |
 | [cp.apple.finalcutpro.main.LibrariesList](cp.apple.finalcutpro.main.LibrariesList.md)                          | Libraries List Module.     |

@@ -23,6 +23,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [getVRAMSize](#getvramsize)
  * [iconFallback](#iconfallback)
  * [incrementFilename](#incrementfilename)
+ * [isNumberString](#isnumberstring)
  * [isOffScreen](#isoffscreen)
  * [leftClick](#leftclick)
  * [lines](#lines)
@@ -196,6 +197,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Returns a table of file names for the given path.                                                                                         |
 | **Parameters**                                       | <ul><li>path - A path as string</li></ul> |
 | **Returns**                                          | <ul><li>A table containing filenames as strings.</li></ul>          |
+
+#### [isNumberString](#isnumberstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.isNumberString(value) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns whether or not value is a number string.                                                                                         |
+| **Parameters**                                       | <ul><li>value - the string you want to check</li></ul> |
+| **Returns**                                          | <ul><li>`true` if value is a number string, otherwise `false`.</li></ul>          |
 
 #### [isOffScreen](#isoffscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.isOffScreen(rect) -> boolean` </span>                                                          |

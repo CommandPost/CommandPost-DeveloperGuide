@@ -4,16 +4,36 @@
 Controls sections for the CommandPost menu.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_PRIORITY](#default_priority)
+ * [WARNING_LIMIT](#warning_limit)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [_addGenerator](#_addgenerator)
  * [addItem](#additem)
  * [addItems](#additems)
  * [addMenu](#addmenu)
  * [addSection](#addsection)
+ * [addSeparator](#addseparator)
  * [generateTable](#generatetable)
+ * [isDisabled](#isdisabled)
  * [new](#new)
+ * [setDisabledFn](#setdisabledfn)
 
 ## API Documentation
+
+### Constants
+
+#### [DEFAULT_PRIORITY](#default_priority)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section.DEFAULT_PRIORITY -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default priority                                                                                         |
+
+#### [WARNING_LIMIT](#warning_limit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section.WARNING_LIMIT -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The limit of how much time a menu item takes to load before we post warnings to the Error Log                                                                                         |
 
 ### Methods
 
@@ -57,6 +77,14 @@ Controls sections for the CommandPost menu.
 | **Parameters**                                       | <ul><li>`priority`	- The priority of the item within the section. Lower numbers appear first.</li></ul> |
 | **Returns**                                          | <ul><li>section - The new section that was created.</li></ul>          |
 
+#### [addSeparator](#addseparator)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addSeparator(priority) -> section` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Adds a new seperator with specified priority.                                                                                         |
+| **Parameters**                                       | <ul><li>`priority`	- The priority of the items within the section. Lower numbers appear first.</li></ul> |
+| **Returns**                                          | <ul><li>section - The new section that was created.</li></ul>          |
+
 #### [generateTable](#generatetable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:generateTable() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -65,10 +93,27 @@ Controls sections for the CommandPost menu.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`table`	- The menu table for this section. See `hs.menubar` for details on the format.</li></ul>          |
 
+#### [isDisabled](#isdisabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:isDisabled() -> voolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the disabled status                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`true` if the section is disabled, otherwise `false`</li></ul>          |
+
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:new() -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new menu section, which can have items and sub-menus added to it.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>section - The section that was created.</li></ul>          |
+
+#### [setDisabledFn](#setdisabledfn)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:setDisabledFn(disabledFn) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the Disabled Function                                                                                         |
+| **Parameters**                                       | <ul><li>disabledFn - The disabled function.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

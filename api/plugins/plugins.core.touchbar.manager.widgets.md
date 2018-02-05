@@ -32,7 +32,7 @@ Touch Bar Widgets Manager
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a Touch Bar widget                                                                                         |
-| **Parameters**                                       | <ul><li>* `id`		- The unique ID for the widget you want to return.</li></ul> |
+| **Parameters**                                       | <ul><li>* `id`      - The unique ID for the widget you want to return.</li></ul> |
 | **Returns**                                          | <ul><li>table containing the widget</li></ul>          |
 
 #### [getAll](#getall)
@@ -56,7 +56,7 @@ Touch Bar Widgets Manager
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new Touch Bar Widget.                                                                                         |
-| **Parameters**                                       | <ul><li>* `id`		- The unique ID for this widget.</li></ul> |
+| **Parameters**                                       | <ul><li>* `id`      - The unique ID for this widget.</li></ul> |
 | **Returns**                                          | <ul><li>table that has been created</li></ul>          |
 
 #### [params](#params)

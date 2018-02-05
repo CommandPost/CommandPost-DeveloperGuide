@@ -4,8 +4,6 @@
 Various features/facilities for developers who are working on Hammerspoon itself, or writing extensions for it. It is extremely unlikely that you should need any part of this extension, in a normal user configuration.
 
 ## API Overview
-* Variables - Configurable values
- * [crashLogToNSLog](#crashlogtonslog)
 * Functions - API calls offered directly by the extension
  * [attemptMemoryRelease](#attemptmemoryrelease)
  * [crash](#crash)
@@ -17,14 +15,6 @@ Various features/facilities for developers who are working on Hammerspoon itself
  * [throwObjCException](#throwobjcexception)
 
 ## API Documentation
-
-### Variables
-
-#### [crashLogToNSLog](#crashlogtonslog)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.crash.crashLogToNSLog` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | A boolean value of true will log Hammerspoon's crash log with NSLog, false will silently capture messages in case of a crash. Defaults to false.                                                                                         |
 
 ### Functions
 

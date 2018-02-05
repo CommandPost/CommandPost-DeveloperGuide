@@ -86,8 +86,10 @@ end
  * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
  * [BUNDLE_ID](#bundle_id)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
+ * [EVENT_DESCRIPTION_PATH](#event_description_path)
  * [FLEXO_LANGUAGES](#flexo_languages)
  * [PASTEBOARD_UTI](#pasteboard_uti)
+ * [PLAYER_QUALITY](#player_quality)
  * [PREFS_PATH](#prefs_path)
  * [PREFS_PLIST_FILE](#prefs_plist_file)
  * [PREFS_PLIST_PATH](#prefs_plist_path)
@@ -135,6 +137,7 @@ end
  * [inspector](#inspector)
  * [isSupportedLanguage](#issupportedlanguage)
  * [keysWithString](#keyswithstring)
+ * [keywordEditor](#keywordeditor)
  * [launch](#launch)
  * [libraries](#libraries)
  * [media](#media)
@@ -200,6 +203,12 @@ end
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The earliest version of Final Cut Pro supported by this module.                                                                                         |
 
+#### [EVENT_DESCRIPTION_PATH](#event_description_path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EVENT_DESCRIPTION_PATH` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The Event Description Path.                                                                                         |
+
 #### [FLEXO_LANGUAGES](#flexo_languages)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.FLEXO_LANGUAGES` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -211,6 +220,12 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Final Cut Pro's Pasteboard UTI                                                                                         |
+
+#### [PLAYER_QUALITY](#player_quality)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.PLAYER_QUALITY` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of Player Quality values used by the `FFPlayerQuality` preferences value:                                                                                         |
 
 #### [PREFS_PATH](#prefs_path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.PREFS_PATH` </span>                                                          |
@@ -545,6 +560,14 @@ end
 | **Parameters**                                       | <ul><li>`key`	- The key to look up.</li><li>`[lang]`	- The language (defaults to current FCPX language).</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys with a matching string.</li></ul>          |
 | **Notes**                                            | <ul><li>This method may be very inefficient, since it has to search through every possible key/value pair to find matches. It is not recommended that this is used in production.</li></ul>                |
+
+#### [keywordEditor](#keywordeditor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:keywordEditor() -> keywordEditor object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Keyword Editor                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The Final Cut Pro Keyword Editor</li></ul>          |
 
 #### [launch](#launch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:launch() -> boolean` </span>                                                          |

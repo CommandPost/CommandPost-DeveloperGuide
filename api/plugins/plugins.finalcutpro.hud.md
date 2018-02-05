@@ -22,6 +22,7 @@ Final Cut Pro HUD.
  * [refresh](#refresh)
  * [setButton](#setbutton)
  * [show](#show)
+ * [update](#update)
  * [updateVisibility](#updatevisibility)
  * [visible](#visible)
 * Fields - Variables which can only be accessed from an object returned by a constructor
@@ -159,6 +160,14 @@ Final Cut Pro HUD.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Show the HUD.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [update](#update)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.update() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Enables or Disables the HUD.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

@@ -17,8 +17,8 @@ Controls Final Cut Pro's Audio Effects.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies the specified action as a audio effect. Expects action to be a table with the following structure:                                                                                         |
-| **Parameters**                                       | <ul><li>* `action`		- A table with the name/category/theme for the audio effect to apply, or a string with just the name.</li></ul> |
-| **Returns**                                          | <ul><li>* `true` if a matching audio effect was found and applied to the timeline.</li></ul>          |
+| **Parameters**                                       | <ul><li>`action`		- A table with the name/category/theme for the audio effect to apply, or a string with just the name.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if a matching audio effect was found and applied to the timeline.</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.audioeffects.init() -> none` </span>                                                          |

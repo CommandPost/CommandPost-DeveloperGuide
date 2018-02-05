@@ -11,6 +11,8 @@ Action Manager Module.
  * [addHandler](#addhandler)
  * [getActivator](#getactivator)
  * [getHandler](#gethandler)
+ * [getURL](#geturl)
+ * [init](#init)
 
 ## API Documentation
 
@@ -53,4 +55,20 @@ Action Manager Module.
 | **Description**                                      | Returns an existing handler with the specified ID.                                                                                         |
 | **Parameters**                                       | <ul><li>* `id`			- The unique ID of the action handler.</li></ul> |
 | **Returns**                                          | <ul><li>* The action handler, or `nil`</li></ul>          |
+
+#### [getURL](#geturl)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.getURL(handlerId, action) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets a URL based on the Handler ID & Action Table.                                                                                         |
+| **Parameters**                                       | <ul><li>`handlerId` - The Handler ID</li><li>`action` The action table</li></ul> |
+| **Returns**                                          | <ul><li>* A string</li></ul>          |
+
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.init() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Initialises the module.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 

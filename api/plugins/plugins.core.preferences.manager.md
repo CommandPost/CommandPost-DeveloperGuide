@@ -8,15 +8,16 @@ Manager for the CommandPost Preferences Window.
 
 ## API Overview
 * Constants - Useful values which cannot be changed
+ * [DEFAULT_HEIGHT](#default_height)
+ * [DEFAULT_TITLE](#default_title)
+ * [DEFAULT_WIDTH](#default_width)
+ * [DEFAULT_WINDOW_STYLE](#default_window_style)
  * [lastTab](#lasttab)
  * [position](#position)
+ * [WEBVIEW_LABEL](#webview_label)
 * Variables - Configurable values
  * [_handlers](#_handlers)
  * [_panels](#_panels)
- * [defaultHeight](#defaultheight)
- * [defaultTitle](#defaulttitle)
- * [defaultWidth](#defaultwidth)
- * [defaultWindowStyle](#defaultwindowstyle)
 * Functions - API calls offered directly by the extension
  * [addHandler](#addhandler)
  * [addPanel](#addpanel)
@@ -38,6 +39,30 @@ Manager for the CommandPost Preferences Window.
 
 ### Constants
 
+#### [DEFAULT_HEIGHT](#default_height)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.DEFAULT_HEIGHT -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Default Height of Preferences Window                                                                                         |
+
+#### [DEFAULT_TITLE](#default_title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.DEFAULT_TITLE -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Default Title of Preferences Window                                                                                         |
+
+#### [DEFAULT_WIDTH](#default_width)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.DEFAULT_WIDTH -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Default Width of Preferences Window                                                                                         |
+
+#### [DEFAULT_WINDOW_STYLE](#default_window_style)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.DEFAULT_WINDOW_STYLE -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Default Webview Window Style of Preferences Window                                                                                         |
+
 #### [lastTab](#lasttab)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.lastTab` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -50,43 +75,25 @@ Manager for the CommandPost Preferences Window.
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Returns the last frame saved in settings.                                                                                         |
 
+#### [WEBVIEW_LABEL](#webview_label)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.WEBVIEW_LABEL -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The WebView Label                                                                                         |
+
 ### Variables
 
 #### [_handlers](#_handlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager._handlers` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager._handlers -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table containing handlers.                                                                                         |
 
 #### [_panels](#_panels)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager._panels` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager._panels -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table containing panels.                                                                                         |
-
-#### [defaultHeight](#defaultheight)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.defaultHeight` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Default Height of Preferences Window                                                                                         |
-
-#### [defaultTitle](#defaulttitle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.defaultTitle` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Default Title of Preferences Window                                                                                         |
-
-#### [defaultWidth](#defaultwidth)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.defaultWidth` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Default Width of Preferences Window                                                                                         |
-
-#### [defaultWindowStyle](#defaultwindowstyle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.defaultWindowStyle` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Default Webview Window Style of Preferences Window                                                                                         |
 
 ### Functions
 
@@ -94,7 +101,7 @@ Manager for the CommandPost Preferences Window.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.addHandler(id, handlerFn) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the Webview label.                                                                                         |
+| **Description**                                      | Adds a Handler                                                                                         |
 | **Parameters**                                       | <ul><li>id - The ID</li><li>handlerFn - the handler function</li></ul> |
 | **Returns**                                          | <ul><li>Nothing</li></ul>          |
 
@@ -103,9 +110,9 @@ Manager for the CommandPost Preferences Window.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a new panel with the specified `params` to the preferences manager.                                                                                         |
-| **Parameters**                                       | <ul><li>`params`	- The parameters table. Details below.</li></ul> |
+| **Parameters**                                       | <ul><li>`params` - The parameters table. Details below.</li></ul> |
 | **Returns**                                          | <ul><li>The new `panel` instance.</li></ul>          |
-| **Notes**                                            | <ul><li>The `params` can have the following properties. The `priority` and `id` and properties are **required**.</li><li> ** `priority`		- An integer value specifying the priority of the panel compared to others.</li><li> ** `id`			- A string containing the unique ID of the panel.</li><li> ** `label`			- The human-readable label for the panel icon.</li><li>	 ** `image`			- The `hs.image` for the panel icon.</li><li> ** `tooltip`		- The human-readable details for the toolbar icon when the mouse is hovering over it.</li><li> ** `closeFn`       - A callback function that's triggered when the Preferences window is closed.</li></ul>                |
+| **Notes**                                            | <ul><li>The `params` can have the following properties. The `priority` and `id` and properties are **required**.</li><li> ** `priority`      - An integer value specifying the priority of the panel compared to others.</li><li> ** `id`            - A string containing the unique ID of the panel.</li><li> ** `label`         - The human-readable label for the panel icon.</li><li> ** `image`         - The `hs.image` for the panel icon.</li><li> ** `tooltip`       - The human-readable details for the toolbar icon when the mouse is hovering over it.</li><li> ** `closeFn`       - A callback function that's triggered when the Preferences window is closed.</li></ul>                |
 
 #### [focus](#focus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.focus() -> boolean` </span>                                                          |

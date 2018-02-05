@@ -11,10 +11,8 @@ here: http://www.tangentwave.co.uk/developer-support
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [MODES](#modes)
-* Variables - Configurable values
- * [active](#active)
  * [customParameters](#customparameters)
+ * [MODES](#modes)
 * Functions - API calls offered directly by the extension
  * [callback](#callback)
  * [init](#init)
@@ -28,25 +26,17 @@ here: http://www.tangentwave.co.uk/developer-support
 
 ### Constants
 
+#### [customParameters](#customparameters)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.manager.customParameters` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table containing custom Tangent parameters.                                                                                         |
+
 #### [MODES](#modes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.manager.MODES() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The default Modes for CommandPost in the Tangent Mapper.                                                                                         |
-
-### Variables
-
-#### [active](#active)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.manager.active -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Returns `true` if plugin is active, otherwise `false`.                                                                                         |
-
-#### [customParameters](#customparameters)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.manager.customParameters` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Table containing custom Tangent parameters.                                                                                         |
 
 ### Functions
 

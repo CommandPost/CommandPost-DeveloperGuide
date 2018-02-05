@@ -4,12 +4,22 @@
 Language Module.
 
 ## API Overview
+* Variables - Configurable values
+ * [installedLanguages](#installedlanguages)
 * Functions - API calls offered directly by the extension
  * [getCommandPostLanguages](#getcommandpostlanguages)
- * [getCommandPostLanguagesMenu](#getcommandpostlanguagesmenu)
+ * [getUserLocale](#getuserlocale)
  * [loadCommandPostLanguages](#loadcommandpostlanguages)
 
 ## API Documentation
+
+### Variables
+
+#### [installedLanguages](#installedlanguages)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.language.installedLanguages() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | A table of installed languages.                                                                                         |
 
 ### Functions
 
@@ -21,13 +31,13 @@ Language Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>installedLanguages - table of Installed Languages</li></ul>          |
 
-#### [getCommandPostLanguagesMenu](#getcommandpostlanguagesmenu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.language.getCommandPostLanguagesMenu() -> nil` </span>                                                          |
+#### [getUserLocale](#getuserlocale)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.language.getUserLocale() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets a table for the Menubar creation of all the supported CommandPost Languages                                                                                         |
+| **Description**                                      | Gets a users locale.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>settingsLanguage - table of Supported Languages for CommandPost's Menubar</li></ul>          |
+| **Returns**                                          | <ul><li>The user locale as a string.</li></ul>          |
 
 #### [loadCommandPostLanguages](#loadcommandpostlanguages)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.language.loadCommandPostLanguages() -> nil` </span>                                                          |

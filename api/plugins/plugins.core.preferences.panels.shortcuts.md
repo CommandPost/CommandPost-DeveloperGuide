@@ -4,6 +4,8 @@
 Shortcuts Preferences Panel
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_SHORTCUTS](#default_shortcuts)
 * Functions - API calls offered directly by the extension
  * [getGroupEditor](#getgroupeditor)
  * [init](#init)
@@ -12,6 +14,14 @@ Shortcuts Preferences Panel
  * [lastGroup](#lastgroup)
 
 ## API Documentation
+
+### Constants
+
+#### [DEFAULT_SHORTCUTS](#default_shortcuts)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.shortcuts.DEFAULT_SHORTCUTS -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Default Shortcuts File Name                                                                                         |
 
 ### Functions
 

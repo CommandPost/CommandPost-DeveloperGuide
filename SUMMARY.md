@@ -89,6 +89,8 @@
 					* [TitleInspector](api/cp/cp.apple.finalcutpro.main.Inspector.TitleInspector.md)
 					* [TransitionInspector](api/cp/cp.apple.finalcutpro.main.Inspector.TransitionInspector.md)
 					* [VideoInspector](api/cp/cp.apple.finalcutpro.main.Inspector.AudioInspector.md)
+				* [KeywordEditor](api/cp/cp.apple.finalcutpro.main.KeywordEditor.md)
+					* [KeyboardShortcuts](api/cp/cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.md)
 				* [LibrariesBrowser](api/cp/cp.apple.finalcutpro.main.LibrariesBrowser.md)
 				* [LibrariesFilmstrip](api/cp/cp.apple.finalcutpro.main.LibrariesFilmstrip.md)
 				* [LibrariesList](api/cp/cp.apple.finalcutpro.main.LibrariesList.md)
@@ -197,6 +199,7 @@
 			* [advanced](api/plugins/plugins.core.preferences.advanced.md)
 			* [general](api/plugins/plugins.core.preferences.general.md)
 			* [manager](api/plugins/plugins.core.preferences.manager.md)
+			* [menuitem](api/plugins/plugins.core.preferences.menuitem.md)
 			* panels
 				* [advanced](api/plugins/plugins.core.preferences.panels.advanced.md)
 				* [general](api/plugins/plugins.core.preferences.panels.general.md)
@@ -226,6 +229,7 @@
 		* watchfolders
 			* [manager](api/plugins/plugins.core.watchfolders.manager.md)
 				* [panel](api/plugins/plugins.core.watchfolders.manager.panel.md)
+			* [menuitem](api/plugins/plugins.core.watchfolders.menuitem.md)
 		* [webapp](api/plugins/plugins.core.webapp.md)
 	* compressor
 		* watchfolders
@@ -294,6 +298,8 @@
 			* panels
 				* [finalcutpro](api/plugins/plugins.finalcutpro.preferences.panels.finalcutpro.md)
 			* [scanfinalcutpro](api/plugins/plugins.finalcutpro.preferences.scanfinalcutpro.md)
+		* setup
+			* [unsupportedversion](api/plugins/plugins.finalcutpro.setup.unsupportedversion.md)
 		* sharing
 			* [xml](api/plugins/plugins.finalcutpro.sharing.xml.md)
 		* [streamdeck](api/plugins/plugins.finalcutpro.streamdeck.md)
@@ -341,6 +347,9 @@
 		* watchers
 			* [preferences](api/plugins/plugins.finalcutpro.watchers.preferences.md)
 			* [version](api/plugins/plugins.finalcutpro.watchers.version.md)
+	* finder
+		* [texttools](api/plugins/plugins.finder.texttools.md)
+		* [window](api/plugins/plugins.finder.window.md)
 
 ## Hammerspoon API
 
@@ -385,6 +394,7 @@
 	* [geometry](api/hs/hs.geometry.md)
 	* [grid](api/hs/hs.grid.md)
 	* [hash](api/hs/hs.hash.md)
+	* [hid](api/hs/hs.hid.md)
 	* [hints](api/hs/hs.hints.md)
 	* [host](api/hs/hs.host.md)
 		* [locale](api/hs/hs.host.locale.md)
@@ -445,6 +455,7 @@
 	* [streamdeck](api/hs/hs.streamdeck.md)
 	* [styledtext](api/hs/hs.styledtext.md)
 	* [tabs](api/hs/hs.tabs.md)
+	* [tangent](api/hs/hs.tangent.md)
 	* [task](api/hs/hs.task.md)
 	* [timer](api/hs/hs.timer.md)
 		* [delayed](api/hs/hs.timer.delayed.md)

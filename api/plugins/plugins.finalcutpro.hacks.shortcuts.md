@@ -15,7 +15,6 @@ via the Final Cut Pro Command Editor.
  * [supported](#supported)
  * [uninstalled](#uninstalled)
 * Functions - API calls offered directly by the extension
- * [editCommands](#editcommands)
  * [init](#init)
  * [install](#install)
  * [refresh](#refresh)
@@ -76,14 +75,6 @@ via the Final Cut Pro Command Editor.
 
 ### Functions
 
-#### [editCommands](#editcommands)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.editCommands() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Launch the Final Cut Pro Command Editor                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -97,7 +88,7 @@ via the Final Cut Pro Command Editor.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Installs the Hacks Shortcuts.                                                                                         |
-| **Parameters**                                       | <ul><li>`silently`	- (optional) If `true`, the user will not be prompted first.</li></ul> |
+| **Parameters**                                       | <ul><li>`silently`   - (optional) If `true`, the user will not be prompted first.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful.</li></ul>          |
 
 #### [refresh](#refresh)
@@ -113,7 +104,7 @@ via the Final Cut Pro Command Editor.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Uninstalls the Hacks Shortcuts, if they have been installed                                                                                         |
-| **Parameters**                                       | <ul><li>`silently`	- (optional) If `true`, the user will not be prompted first.</li></ul> |
+| **Parameters**                                       | <ul><li>`silently`   - (optional) If `true`, the user will not be prompted first.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful.</li></ul>          |
 | **Notes**                                            | <ul><li>Used by Trash Preferences menubar command.</li></ul>                |
 

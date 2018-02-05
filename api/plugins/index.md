@@ -42,6 +42,7 @@
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
 | [plugins.core.preferences.manager.panel](plugins.core.preferences.manager.panel.md)                          | CommandPost Preferences Panel.     |
+| [plugins.core.preferences.menuitem](plugins.core.preferences.menuitem.md)                          | Adds a 'Preferences...' menu item to the menu.     |
 | [plugins.core.preferences.panels.advanced](plugins.core.preferences.panels.advanced.md)                          | Advanced Preferences Panel     |
 | [plugins.core.preferences.panels.general](plugins.core.preferences.panels.general.md)                          | General Preferences Panel     |
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
@@ -64,10 +65,11 @@
 | [plugins.core.touchbar.widgets.volume](plugins.core.touchbar.widgets.volume.md)                          | Volume Slider     |
 | [plugins.core.touchbar.widgets.windowSlide](plugins.core.touchbar.widgets.windowSlide.md)                          | Window Slide Widget for Touch Bar.     |
 | [plugins.core.watchfolders.manager](plugins.core.watchfolders.manager.md)                          | Manager for the CommandPost Watch Folders Panel.     |
-| [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | CommandPost Preferences Panel.     |
+| [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | Watch Folder Panel Manager.     |
+| [plugins.core.watchfolders.menuitem](plugins.core.watchfolders.menuitem.md)                          | Adds the "Setup Watch Folders" to the menu bar.     |
 | [plugins.core.webapp](plugins.core.webapp.md)                          | WebApp Plugin.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
-| [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords     |
+| [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
 | [plugins.finalcutpro.browser.playhead](plugins.finalcutpro.browser.playhead.md)                          | Browser Playhead Plugin.     |
 | [plugins.finalcutpro.clipboard.history](plugins.finalcutpro.clipboard.history.md)                          | Clipboard History     |
 | [plugins.finalcutpro.clipboard.manager](plugins.finalcutpro.clipboard.manager.md)                          | Clipboard Manager.     |
@@ -110,6 +112,7 @@
 | [plugins.finalcutpro.os.voice](plugins.finalcutpro.os.voice.md)                          | Voice Command Plugin.     |
 | [plugins.finalcutpro.preferences.app](plugins.finalcutpro.preferences.app.md)                          | Final Cut Pro Preferences Panel     |
 | [plugins.finalcutpro.preferences.scanfinalcutpro](plugins.finalcutpro.preferences.scanfinalcutpro.md)                          | Scan Final Cut Pro.     |
+| [plugins.finalcutpro.setup.unsupportedversion](plugins.finalcutpro.setup.unsupportedversion.md)                          | Unsupported version setup panel.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.tangent.manager](plugins.finalcutpro.tangent.manager.md)                          | Tangent Control Surface Manager     |
@@ -139,10 +142,12 @@
 | [plugins.finalcutpro.touchbar.virtual](plugins.finalcutpro.touchbar.virtual.md)                          | Virtual Touch Bar Plugin.     |
 | [plugins.finalcutpro.touchbar.widgets.colorboard](plugins.finalcutpro.touchbar.widgets.colorboard.md)                          | A collection of Final Cut Pro Color Board Widgets for the Touch Bar.     |
 | [plugins.finalcutpro.touchbar.widgets.zoom](plugins.finalcutpro.touchbar.widgets.zoom.md)                          | Final Cut Pro Zoom Control Widget for Touch Bar.     |
-| [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timeline In Player.     |
+| [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timecode.     |
 | [plugins.finalcutpro.viewer.showtimelineinplayer](plugins.finalcutpro.viewer.showtimelineinplayer.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.viewer.timecodeoverlay](plugins.finalcutpro.viewer.timecodeoverlay.md)                          | Advanced Timecode Overlay.     |
 | [plugins.finalcutpro.watchers.preferences](plugins.finalcutpro.watchers.preferences.md)                          | Final Cut Pro Preferences Watcher.     |
 | [plugins.finalcutpro.watchers.version](plugins.finalcutpro.watchers.version.md)                          | This plugin will compare the current version of Final Cut Pro to the last one run.     |
-| [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.panels.media](plugins.finalcutpro.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.finder.texttools](plugins.finder.texttools.md)                          | Handy text tools.     |
+| [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |
