@@ -54,11 +54,11 @@ Note: This will load the file on each request. To have values cached, use the `c
 | **Returns**                                          | <ul><li>The value of the key, or `nil` if not found.</li></ul>          |
 
 #### [findKeys](#findkeys)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist:findKeys(language, value) -> {string}` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist:findKeys(language, pattern) -> {string}` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Finds the array of keys with the matching value in the plist file for the specified `language`, if the plist can be found, and contains matching key.                                                                                         |
-| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`value`		- The value.</li></ul> |
+| **Description**                                      | Finds the array of keys who's value matches the pattern in this table. It will check that the pattern matches the beginning of the value.                                                                                         |
+| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`pattern		- The string pattern to match.</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys, or `{}` if none were fround</li></ul>          |
 
 #### [loadFile](#loadfile)

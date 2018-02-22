@@ -28,28 +28,32 @@
 | [cp.apple.finalcutpro.export.SaveSheet](cp.apple.finalcutpro.export.SaveSheet.md)                          | Save Sheet     |
 | [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)                          | Final Cut Pro IDs.     |
 | [cp.apple.finalcutpro.import.MediaImport](cp.apple.finalcutpro.import.MediaImport.md)                          | Media Import     |
+| [cp.apple.finalcutpro.inspector.audio.AudioInspector](cp.apple.finalcutpro.inspector.audio.AudioInspector.md)                          | Audio Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.color.ColorBoard](cp.apple.finalcutpro.inspector.color.ColorBoard.md)                          | Color Board Module.     |
+| [cp.apple.finalcutpro.inspector.color.ColorBoardAspect](cp.apple.finalcutpro.inspector.color.ColorBoardAspect.md)                          | Represents a particular aspect of the color board (Color/Saturation/Exposure).     |
+| [cp.apple.finalcutpro.inspector.color.ColorCurves](cp.apple.finalcutpro.inspector.color.ColorCurves.md)                          | Color Curves Module.     |
+| [cp.apple.finalcutpro.inspector.color.ColorInspector](cp.apple.finalcutpro.inspector.color.ColorInspector.md)                          | Color Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.color.ColorPuck](cp.apple.finalcutpro.inspector.color.ColorPuck.md)                          | Color Puck Module.     |
+| [cp.apple.finalcutpro.inspector.color.ColorWell](cp.apple.finalcutpro.inspector.color.ColorWell.md)                          | Represents a single Color Well in the Color Wheels Inspector.     |
+| [cp.apple.finalcutpro.inspector.color.ColorWheel](cp.apple.finalcutpro.inspector.color.ColorWheel.md)                          | Represents a single Color Well in the Color Wheels Inspector.     |
+| [cp.apple.finalcutpro.inspector.color.ColorWheels](cp.apple.finalcutpro.inspector.color.ColorWheels.md)                          | Color Wheels Module.     |
+| [cp.apple.finalcutpro.inspector.color.CorrectionsBar](cp.apple.finalcutpro.inspector.color.CorrectionsBar.md)                          | The Correction selection/management bar at the top of the ColorInspector     |
+| [cp.apple.finalcutpro.inspector.color.HueSaturationCurves](cp.apple.finalcutpro.inspector.color.HueSaturationCurves.md)                          | Hue/Saturation Curves Module.     |
+| [cp.apple.finalcutpro.inspector.color.ValueIndicator](cp.apple.finalcutpro.inspector.color.ValueIndicator.md)                          | ValueIndicator Module.     |
+| [cp.apple.finalcutpro.inspector.effect.EffectInspector](cp.apple.finalcutpro.inspector.effect.EffectInspector.md)                          | Effect Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.generator.GeneratorInspector](cp.apple.finalcutpro.inspector.generator.GeneratorInspector.md)                          | Generator Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.info.InfoInspector](cp.apple.finalcutpro.inspector.info.InfoInspector.md)                          | Video Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.Inspector](cp.apple.finalcutpro.inspector.Inspector.md)                          | Inspector     |
+| [cp.apple.finalcutpro.inspector.share.ShareInspector](cp.apple.finalcutpro.inspector.share.ShareInspector.md)                          | Share Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.text.TextInspector](cp.apple.finalcutpro.inspector.text.TextInspector.md)                          | Text Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.title.TitleInspector](cp.apple.finalcutpro.inspector.title.TitleInspector.md)                          | Title Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.transition.TransitionInspector](cp.apple.finalcutpro.inspector.transition.TransitionInspector.md)                          | Transition Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.video.VideoInspector](cp.apple.finalcutpro.inspector.video.VideoInspector.md)                          | Video Inspector Module.     |
 | [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)                          | Keycodes Module     |
 | [cp.apple.finalcutpro.main.Browser](cp.apple.finalcutpro.main.Browser.md)                          | Browser Module.     |
-| [cp.apple.finalcutpro.main.ColorBoard](cp.apple.finalcutpro.main.ColorBoard.md)                          | Color Board Module.     |
-| [cp.apple.finalcutpro.main.ColorPucker](cp.apple.finalcutpro.main.ColorPucker.md)                          | Color Pucker Module.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
 | [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window     |
 | [cp.apple.finalcutpro.main.GeneratorsBrowser](cp.apple.finalcutpro.main.GeneratorsBrowser.md)                          | Generators Browser Module.     |
-| [cp.apple.finalcutpro.main.Inspector](cp.apple.finalcutpro.main.Inspector.md)                          | Inspector     |
-| [cp.apple.finalcutpro.main.Inspector.AudioInspector](cp.apple.finalcutpro.main.Inspector.AudioInspector.md)                          | Audio Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.ColorInspector](cp.apple.finalcutpro.main.Inspector.ColorInspector.md)                          | Color Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorBoard](cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorBoard.md)                          | Color Board Module.     |
-| [cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorCurves](cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorCurves.md)                          | Color Curves Module.     |
-| [cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorWheels](cp.apple.finalcutpro.main.Inspector.ColorInspector.ColorWheels.md)                          | Color Wheels Module.     |
-| [cp.apple.finalcutpro.main.Inspector.ColorInspector.HueSaturationCurves](cp.apple.finalcutpro.main.Inspector.ColorInspector.HueSaturationCurves.md)                          | Hue/Saturation Curves Module.     |
-| [cp.apple.finalcutpro.main.Inspector.EffectInspector](cp.apple.finalcutpro.main.Inspector.EffectInspector.md)                          | Effect Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.GeneratorInspector](cp.apple.finalcutpro.main.Inspector.GeneratorInspector.md)                          | Generator Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.InfoInspector](cp.apple.finalcutpro.main.Inspector.InfoInspector.md)                          | Video Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.ShareInspector](cp.apple.finalcutpro.main.Inspector.ShareInspector.md)                          | Share Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.TextInspector](cp.apple.finalcutpro.main.Inspector.TextInspector.md)                          | Text Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.TitleInspector](cp.apple.finalcutpro.main.Inspector.TitleInspector.md)                          | Title Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.TransitionInspector](cp.apple.finalcutpro.main.Inspector.TransitionInspector.md)                          | Transition Inspector Module.     |
-| [cp.apple.finalcutpro.main.Inspector.VideoInspector](cp.apple.finalcutpro.main.Inspector.VideoInspector.md)                          | Video Inspector Module.     |
 | [cp.apple.finalcutpro.main.KeywordEditor](cp.apple.finalcutpro.main.KeywordEditor.md)                          | Keyword Editor Module.     |
 | [cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts](cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.md)                          | Keyboard Shortcuts     |
 | [cp.apple.finalcutpro.main.LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md)                          | Libraries Browser Module.     |
@@ -65,7 +69,7 @@
 | [cp.apple.finalcutpro.main.TimelineToolbar](cp.apple.finalcutpro.main.TimelineToolbar.md)                          | Timeline Toolbar     |
 | [cp.apple.finalcutpro.main.Viewer](cp.apple.finalcutpro.main.Viewer.md)                          | Viewer Module.     |
 | [cp.apple.finalcutpro.MenuBar](cp.apple.finalcutpro.MenuBar.md)                          | Represents the Final Cut Pro menu bar, providing functions that allow different tasks to be accomplished.     |
-| [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scan Final Cut Pro bundle for Effects, Generators, Titles & Transitions.     |
+| [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
 | [cp.apple.finalcutpro.prefs.ImportPanel](cp.apple.finalcutpro.prefs.ImportPanel.md)                          | Import Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
@@ -100,6 +104,7 @@
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
 | [cp.strings.source.table](cp.strings.source.table.md)                          | Loads strings from provided tables, allowing for a given language variation. Eg:     |
+| [cp.test](cp.test.md)                          | CommandPost Test Scripts.     |
 | [cp.text](cp.text.md)                          | This module provides support for loading, manipulating, and comparing unicode text data.     |
 | [cp.text.matcher](cp.text.matcher.md)                          | This module provides support for loading, manipulating, and comparing unicode text data.     |
 | [cp.tools](cp.tools.md)                          | A collection of handy miscellaneous tools for Lua development.     |
@@ -107,8 +112,11 @@
 | [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`     |
 | [cp.ui.Button](cp.ui.Button.md)                          | Button Module.     |
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
+| [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Pop Up Button Module.     |
 | [cp.ui.PopUpButton](cp.ui.PopUpButton.md)                          | Pop Up Button Module.     |
+| [cp.ui.PropertyRow](cp.ui.PropertyRow.md)                          | Represents a list of property rows, typically in a Property Inspector.     |
 | [cp.ui.RadioButton](cp.ui.RadioButton.md)                          | Radio Button Module.     |
+| [cp.ui.RadioGroup](cp.ui.RadioGroup.md)                          | Represents an `AXRadioGroup`, providing utility methods.     |
 | [cp.ui.ScrollArea](cp.ui.ScrollArea.md)                          | Scroll Area Module.     |
 | [cp.ui.Slider](cp.ui.Slider.md)                          | Slider Module.     |
 | [cp.ui.Table](cp.ui.Table.md)                          | Represents an AXTable in the Apple Accessibility UX API.     |

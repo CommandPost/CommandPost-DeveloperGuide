@@ -39,7 +39,7 @@ A Window UI element.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Window                                                                                         |
-| **Parameters**                                       | <ul><li>`finderFn`	- a function which will provide the `axuielement` for the window to work with.</li></ul> |
+| **Parameters**                                       | <ul><li>`finderFn`   - a function which will provide the `axuielement` for the window to work with.</li></ul> |
 | **Returns**                                          | <ul><li>A new `Window` instance.</li></ul>          |
 
 ### Fields

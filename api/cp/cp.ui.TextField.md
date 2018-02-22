@@ -4,16 +4,28 @@
 Text Field Module.
 
 ## API Overview
-* Functions - API calls offered directly by the extension
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [value](#value)
+* Methods - API calls which can only be made on an object returned by a constructor
  * [new](#new)
 
 ## API Documentation
 
-### Functions
+### Fields
+
+#### [value](#value)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField.value <cp.prop: anything>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The current value of the text field.                                                                                         |
+
+### Methods
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:new(axuielement, function) -> TextField` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:new(parent, finderFn[, convertFn]) -> TextField` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new TextField                                                                                         |
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Creates a new TextField. They have a parent and a finder function.                                                                                         |
+| **Parameters**                                       | <ul><li>* parent	- The parent object.</li><li>* finderFn	- The function will return the `axuielement` for the TextField.</li><li>* convertFn	- (optional) If provided, will be passed the `string` value when returning.</li></ul> |
+| **Returns**                                          | <ul><li>* The new `TextField`.</li></ul>          |
 

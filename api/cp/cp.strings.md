@@ -40,19 +40,19 @@ Note: This will load the file on each request. To have values cached, use the `c
 ### Methods
 
 #### [find](#find)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:find(language, key) -> string | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:find(language, key[, quiet]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches for the specified key in the specified language, caching the result when found.                                                                                         |
-| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`key`		- The key to retrieve from the file.</li></ul> |
+| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`key`		- The key to retrieve from the file.</li><li>`quiet`		- Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or `nil` if not found.</li></ul>          |
 
 #### [findInSources](#findinsources)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findInSources(language, key) -> string | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findInSources(language, key[, quiet]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches directly in the sources for the specified language/key combination.                                                                                         |
-| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`key`		- The key to retrieve from the file.</li></ul> |
+| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`key`		- The key to retrieve from the file.</li><li>`quiet`		- Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or `nil` if not found.</li></ul>          |
 
 #### [findKeysIn](#findkeysin)

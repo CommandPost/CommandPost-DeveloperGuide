@@ -1,7 +1,7 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.Inspector.TitleInspector
+# [docs](index.md) » cp.apple.finalcutpro.inspector.text.TextInspector
 ---
 
-Title Inspector Module.
+Text Inspector Module.
 
 ## API Overview
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -14,7 +14,7 @@ Title Inspector Module.
 ### Methods
 
 #### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.TitleInspector:app() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
@@ -22,18 +22,18 @@ Title Inspector Module.
 | **Returns**                                          | <ul><li>The application object as a table</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.TitleInspector:new(parent) -> TitleInspector object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:new(parent) -> TextInspector object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new TitleInspector object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`		- The parent</li></ul> |
-| **Returns**                                          | <ul><li>A TitleInspector object</li></ul>          |
+| **Description**                                      | Creates a new TextInspector object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A TextInspector object</li></ul>          |
 
 #### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.TitleInspector:parent() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the TitleInspector's parent table                                                                                         |
+| **Description**                                      | Returns the TextInspector's parent table                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
 

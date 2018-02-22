@@ -10,6 +10,7 @@ Batch Export Plugin
  * [changeExportDestinationPreset](#changeexportdestinationpreset)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [ignoreMissingEffects](#ignoremissingeffects)
+ * [ignoreProxies](#ignoreproxies)
  * [replaceExistingFiles](#replaceexistingfiles)
 
 ## API Documentation
@@ -47,6 +48,12 @@ Batch Export Plugin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Defines whether or not a Batch Export should Ignore Missing Effects.                                                                                         |
+
+#### [ignoreProxies](#ignoreproxies)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreProxies <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Defines whether or not a Batch Export should Ignore Proxies.                                                                                         |
 
 #### [replaceExistingFiles](#replaceexistingfiles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.replaceExistingFiles <cp.prop: boolean>` </span>                                                          |

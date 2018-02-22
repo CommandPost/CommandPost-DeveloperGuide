@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.Inspector.VideoInspector
+# [docs](index.md) » cp.apple.finalcutpro.inspector.video.VideoInspector
 ---
 
 Video Inspector Module.
@@ -17,7 +17,7 @@ Video Inspector Module.
 ### Methods
 
 #### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.VideoInspector:app() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
@@ -25,7 +25,7 @@ Video Inspector Module.
 | **Returns**                                          | <ul><li>The application object as a table</li></ul>          |
 
 #### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.VideoInspector:isShowing() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:isShowing() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns `true` if the Video Inspector is showing otherwise `false`                                                                                         |
@@ -33,7 +33,7 @@ Video Inspector Module.
 | **Returns**                                          | <ul><li>`true` if showing, otherwise `false`</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.VideoInspector:new(parent) -> VideoInspector object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:new(parent) -> VideoInspector object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new VideoInspector object                                                                                         |
@@ -41,7 +41,7 @@ Video Inspector Module.
 | **Returns**                                          | <ul><li>A VideoInspector object</li></ul>          |
 
 #### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.VideoInspector:parent() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the VideoInspector's parent table                                                                                         |
@@ -49,7 +49,7 @@ Video Inspector Module.
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
 
 #### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.VideoInspector:show() -> VideoInspector` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:show() -> VideoInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show's the Video Inspector                                                                                         |
@@ -57,7 +57,7 @@ Video Inspector Module.
 | **Returns**                                          | <ul><li>VideoInspector</li></ul>          |
 
 #### [stabilization](#stabilization)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.VideoInspector:stabilization([value]) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:stabilization([value]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or returns the stabilization setting for a clip.                                                                                         |

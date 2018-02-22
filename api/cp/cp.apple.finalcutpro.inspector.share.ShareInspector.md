@@ -1,7 +1,7 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.Inspector.TransitionInspector
+# [docs](index.md) » cp.apple.finalcutpro.inspector.share.ShareInspector
 ---
 
-Transition Inspector Module.
+Share Inspector Module.
 
 ## API Overview
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -14,7 +14,7 @@ Transition Inspector Module.
 ### Methods
 
 #### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.TransitionInspector:app() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.share.ShareInspector:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
@@ -22,18 +22,18 @@ Transition Inspector Module.
 | **Returns**                                          | <ul><li>The application object as a table</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.TransitionInspector:new(parent) -> TransitionInspector object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.share.ShareInspector:new(parent) -> ShareInspector object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new TransitionInspector object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`		- The parent</li></ul> |
-| **Returns**                                          | <ul><li>A TransitionInspector object</li></ul>          |
+| **Description**                                      | Creates a new ShareInspector object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A ShareInspector object</li></ul>          |
 
 #### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.TransitionInspector:parent() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.share.ShareInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the TransitionInspector's parent table                                                                                         |
+| **Description**                                      | Returns the ShareInspector's parent table                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
 

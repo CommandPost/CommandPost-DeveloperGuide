@@ -102,6 +102,7 @@
 | [plugins.finalcutpro.menu.viewer](plugins.finalcutpro.menu.viewer.md)                          | The VIEWER menu section.     |
 | [plugins.finalcutpro.menu.viewer.showtimecode](plugins.finalcutpro.menu.viewer.showtimecode.md)                          | Highlight Playhead Menu.     |
 | [plugins.finalcutpro.midi.controls.colorboard](plugins.finalcutpro.midi.controls.colorboard.md)                          | Final Cut Pro MIDI Color Controls.     |
+| [plugins.finalcutpro.midi.controls.colorwheels](plugins.finalcutpro.midi.controls.colorwheels.md)                          | Final Cut Pro MIDI Color Controls.     |
 | [plugins.finalcutpro.midi.controls.zoom](plugins.finalcutpro.midi.controls.zoom.md)                          | Final Cut Pro MIDI Zoom Control.     |
 | [plugins.finalcutpro.midi.manager](plugins.finalcutpro.midi.manager.md)                          | MIDI Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
@@ -139,6 +140,7 @@
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Video Effects.     |
 | [plugins.finalcutpro.timeline.zoomtoselection](plugins.finalcutpro.timeline.zoomtoselection.md)                          | Zoom the Timeline to fit the currently-selected clips.     |
+| [plugins.finalcutpro.touchbar.manager](plugins.finalcutpro.touchbar.manager.md)                          | Final Cut Pro Touch Bar Manager.     |
 | [plugins.finalcutpro.touchbar.virtual](plugins.finalcutpro.touchbar.virtual.md)                          | Virtual Touch Bar Plugin.     |
 | [plugins.finalcutpro.touchbar.widgets.colorboard](plugins.finalcutpro.touchbar.widgets.colorboard.md)                          | A collection of Final Cut Pro Color Board Widgets for the Touch Bar.     |
 | [plugins.finalcutpro.touchbar.widgets.zoom](plugins.finalcutpro.touchbar.widgets.zoom.md)                          | Final Cut Pro Zoom Control Widget for Touch Bar.     |

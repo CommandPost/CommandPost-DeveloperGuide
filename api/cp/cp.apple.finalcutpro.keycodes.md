@@ -4,12 +4,22 @@
 Keycodes Module
 
 ## API Overview
+* Variables - Configurable values
+ * [padKeys](#padkeys)
 * Functions - API calls offered directly by the extension
  * [characterStringToKeyCode](#characterstringtokeycode)
  * [fcpxModifiersToHsModifiers](#fcpxmodifierstohsmodifiers)
  * [keypadCharacterToKeyCode](#keypadcharactertokeycode)
 
 ## API Documentation
+
+### Variables
+
+#### [padKeys](#padkeys)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.keycodes.padKeys -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Table of Pad Keys                                                                                         |
 
 ### Functions
 

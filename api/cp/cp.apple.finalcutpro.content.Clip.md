@@ -39,7 +39,7 @@ Represents a clip of media inside FCP.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the specified `thing` is a `Clip` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>`thing`	- The thing to check.</li></ul> |
+| **Parameters**                                       | <ul><li>`thing`  - The thing to check.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the `thing` is a `Clip`, otherwise returns `false`.</li></ul>          |
 
 ### Constructors
@@ -49,9 +49,9 @@ Represents a clip of media inside FCP.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Clip` pointing at the specified element, with the specified options.                                                                                         |
-| **Parameters**                                       | <ul><li>`element`		- The `axuielement` the clip represents.</li><li>`options`		- A table containing the options for the clip.</li></ul> |
+| **Parameters**                                       | <ul><li>`element`        - The `axuielement` the clip represents.</li><li>`options`        - A table containing the options for the clip.</li></ul> |
 | **Returns**                                          | <ul><li>The new `Clip`.</li></ul>          |
-| **Notes**                                            | <ul><li>The options may be:</li><li> ** `columnIndex`	- A number which will be used to specify the column number to find the title in, if relevant.</li></ul>                |
+| **Notes**                                            | <ul><li>The options may be:</li><li> ** `columnIndex`   - A number which will be used to specify the column number to find the title in, if relevant.</li></ul>                |
 
 ### Methods
 

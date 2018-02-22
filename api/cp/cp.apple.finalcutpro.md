@@ -72,6 +72,7 @@ end
  * [cp.apple.finalcutpro.export](cp.apple.finalcutpro.export.md)
  * [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)
  * [cp.apple.finalcutpro.import](cp.apple.finalcutpro.import.md)
+ * [cp.apple.finalcutpro.inspector](cp.apple.finalcutpro.inspector.md)
  * [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)
  * [cp.apple.finalcutpro.main](cp.apple.finalcutpro.main.md)
  * [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)
@@ -98,7 +99,6 @@ end
  * [init](#init)
  * [reset](#reset)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [colorInspectorSupported](#colorinspectorsupported)
  * [currentLanguage](#currentlanguage)
  * [getVersion](#getversion)
  * [isFrontmost](#isfrontmost)
@@ -109,10 +109,12 @@ end
  * [isSupported](#issupported)
  * [isUnsupported](#isunsupported)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [alert](#alert)
  * [application](#application)
  * [browser](#browser)
+ * [closeLibrary](#closelibrary)
+ * [color](#color)
  * [colorBoard](#colorboard)
- * [colorInspector](#colorinspector)
  * [commandEditor](#commandeditor)
  * [effects](#effects)
  * [eventViewer](#eventviewer)
@@ -143,6 +145,7 @@ end
  * [media](#media)
  * [mediaImport](#mediaimport)
  * [menuBar](#menubar)
+ * [openLibrary](#openlibrary)
  * [performShortcut](#performshortcut)
  * [plugins](#plugins)
  * [preferencesWindow](#preferenceswindow)
@@ -151,6 +154,7 @@ end
  * [restart](#restart)
  * [scanPlugins](#scanplugins)
  * [secondaryWindow](#secondarywindow)
+ * [selectLibrary](#selectlibrary)
  * [selectMenu](#selectmenu)
  * [setPreference](#setpreference)
  * [show](#show)
@@ -271,12 +275,6 @@ end
 
 ### Fields
 
-#### [colorInspectorSupported](#colorinspectorsupported)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:colorInspectorSupported <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is the Color Inspector supported in the installed version of Final Cut Pro?                                                                                         |
-
 #### [currentLanguage](#currentlanguage)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLanguage <cp.prop:string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -336,6 +334,14 @@ end
 
 ### Methods
 
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:alert() -> cp.ui.Alert` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Provides basic access to any 'alert' dialog windows in the app.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the `Alert` instance</li></ul>          |
+
 #### [application](#application)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:application() -> hs.application` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -352,6 +358,22 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the Browser</li></ul>          |
 
+#### [closeLibrary](#closelibrary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:closeLibrary(title) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to close a library with the specified `title`.                                                                                         |
+| **Parameters**                                       | <ul><li>* title	- The title of the FCP Library to close.</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if successful, or `false` if not.</li></ul>          |
+
+#### [color](#color)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:color() -> ColorInspector` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the ColorInspector instance from the primary window                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the ColorInspector</li></ul>          |
+
 #### [colorBoard](#colorboard)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:colorBoard() -> ColorBoard` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -359,14 +381,6 @@ end
 | **Description**                                      | Returns the ColorBoard instance from the primary window                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the ColorBoard</li></ul>          |
-
-#### [colorInspector](#colorinspector)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:colorInspector() -> ColorInspector` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the ColorInspector instance from the primary window                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the ColorInspector</li></ul>          |
 
 #### [commandEditor](#commandeditor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:commandEditor() -> commandEditor object` </span>                                                          |
@@ -609,6 +623,14 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A MenuBar object</li></ul>          |
 
+#### [openLibrary](#openlibrary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:openLibrary(path) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to open a file at the specified absolute `path`.                                                                                         |
+| **Parameters**                                       | <ul><li>* path	- The path to the FCP Library to open.</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if successful, or `false` if not.</li></ul>          |
+
 #### [performShortcut](#performshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:performShortcut(whichShortcut) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -673,6 +695,14 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Secondary Window</li></ul>          |
 
+#### [selectLibrary](#selectlibrary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectLibrary(title) -> axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to select an open library with the specified title.                                                                                         |
+| **Parameters**                                       | <ul><li>* title - The title of the library to select.</li></ul> |
+| **Returns**                                          | <ul><li>* The library row `axuielement`.</li></ul>          |
+
 #### [selectMenu](#selectmenu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectMenu(path) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -698,11 +728,11 @@ end
 | **Returns**                                          | <ul><li>A cp.apple.finalcutpro otherwise nil</li></ul>          |
 
 #### [string](#string)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key[, lang]) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key[, lang[, quiet]]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Looks up an application string with the specified `key`.                                                                                         |
-| **Parameters**                                       | <ul><li>`key`	- The key to look up.</li><li>`[lang]` - The language code to use. Defaults to the current language.</li></ul> |
+| **Parameters**                                       | <ul><li>`key`	- The key to look up.</li><li>`lang`	- The language code to use. Defaults to the current language.</li><li>`quiet`	- Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The requested string or `nil` if the application is not running.</li></ul>          |
 
 #### [timeline](#timeline)

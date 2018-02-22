@@ -44,20 +44,20 @@ Allows managing values/IDs which can vary between versions.
 | **Returns**                                          | <ul><li>A table containing all the IDs</li></ul>          |
 
 #### [of](#of)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ids:of(version, subset) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ids:of(version, subset) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns a table of the IDs of the specified version and subset.                                                                                         |
+| **Description**                                      | Returns a function which can be called to retrieve a specific value for the specified version.                                                                                         |
 | **Parameters**                                       | <ul><li>version - The version number you want to load as a string (i.e. "10.4.0")</li><li>subset - A string containing the subset of data you want to load</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the subset of IDs for the selected version. Will never be `nil`.</li></ul>          |
+| **Returns**                                          | <ul><li>A function that will return the value of the specified `subset` ID for the specified version.</li></ul>          |
 
 #### [ofCurrent](#ofcurrent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ids:ofCurrent(subset) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ids:ofCurrent(subset) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns a table of IDs for a current version and specified subset                                                                                         |
+| **Description**                                      | Returns a function which can be called with an ID to retrieve a specific value for the current version.                                                                                         |
 | **Parameters**                                       | <ul><li>subset - A string containing the subset of data you want to load</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the subset of IDs for the current version</li></ul>          |
+| **Returns**                                          | <ul><li>A function that will return the value of the specified `subset` ID for the current version.</li></ul>          |
 
 #### [previousVersion](#previousversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ids:previousVersion([version]) -> semver` </span>                                                          |

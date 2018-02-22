@@ -6,9 +6,9 @@ Color Board Plugins.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [colorBoardMousePuckRelease](#colorboardmousepuckrelease)
- * [colorBoardSelectPuckRelease](#colorboardselectpuckrelease)
- * [mousePuck](#mousepuck)
- * [selectPuck](#selectpuck)
+ * [startMousePuck](#startmousepuck)
+ * [startShiftingPuck](#startshiftingpuck)
+ * [stopShiftingPuck](#stopshiftingpuck)
 
 ## API Documentation
 
@@ -22,27 +22,27 @@ Color Board Plugins.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [colorBoardSelectPuckRelease](#colorboardselectpuckrelease)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.colorboard.colorBoardSelectPuckRelease() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Color Board Release Keypress                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [mousePuck](#mousepuck)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.colorboard.mousePuck(aspect, property) -> none` </span>                                                          |
+#### [startMousePuck](#startmousepuck)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.colorboard.startMousePuck(aspect, property) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Color Board - Puck Control Via Mouse                                                                                         |
 | **Parameters**                                       | <ul><li>aspect - "global", "shadows", "midtones" or "highlights"</li><li>property - "Color", "Saturation" or "Exposure"</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [selectPuck](#selectpuck)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.colorboard.selectPuck(aspect, property, whichDirection) -> none` </span>                                                          |
+#### [startShiftingPuck](#startshiftingpuck)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.colorboard.startShiftingPuck(puck, percentShift, angleShift) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Color Board - Select Puck                                                                                         |
-| **Parameters**                                       | <ul><li>aspect - "global", "shadows", "midtones" or "highlights"</li><li>property - "Color", "Saturation" or "Exposure"</li><li>whichDirection - "up" or "down"</li></ul> |
+| **Description**                                      | Starts shifting the puck, repeating at the keyboard repeat rate. Runs until `stopShiftingPuck()` is called.                                                                                         |
+| **Parameters**                                       | <ul><li>puck			- The puck to shift</li><li>property		- The property to shift (typically the `percent` or `angle` value for the puck)</li><li>amount		- The amount to shift the property.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [stopShiftingPuck](#stopshiftingpuck)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.colorboard.stopShiftingPuck() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Stops the puck from shifting with the keyboard.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

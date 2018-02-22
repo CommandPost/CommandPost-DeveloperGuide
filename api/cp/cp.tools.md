@@ -10,6 +10,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [doesFileExist](#doesfileexist)
  * [doubleLeftClick](#doubleleftclick)
  * [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
+ * [firstToUpper](#firsttoupper)
  * [getEmail](#getemail)
  * [getExternalDevices](#getexternaldevices)
  * [getFilenameFromPath](#getfilenamefrompath)
@@ -93,6 +94,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Executes a single or multiple shell commands with Administrator Privileges.                                                                                         |
 | **Parameters**                                       | <ul><li>input - either a string or a table of strings of commands you want to execute</li><li>stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful, `false` if cancelled and a string if there's an error.</li></ul>          |
+
+#### [firstToUpper](#firsttoupper)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.firstToUpper(str) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Makes the first letter of a string uppercase.                                                                                         |
+| **Parameters**                                       | <ul><li>str - The string you want to manipulate</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul>          |
 
 #### [getEmail](#getemail)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getEmail() -> string` </span>                                                          |
@@ -243,7 +252,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gives you the file system volume format of a path.                                                                                         |
-| **Parameters**                                       | <ul><li>target 	- The target table</li><li>... 		- Any other tables you want to merge into target</li></ul> |
+| **Parameters**                                       | <ul><li>target   - The target table</li><li>...      - Any other tables you want to merge into target</li></ul> |
 | **Returns**                                          | <ul><li>Table</li></ul>          |
 
 #### [modifierMaskToModifiers](#modifiermasktomodifiers)
@@ -288,11 +297,11 @@ A collection of handy miscellaneous tools for Lua development.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [numberToWord](#numbertoword)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.numberToWord(str) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.numberToWord(number) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Makes the first letter of a string uppercase.                                                                                         |
-| **Parameters**                                       | <ul><li>str - The string you want to manipulate</li></ul> |
+| **Description**                                      | Converts a number to a string (i.e. 1 becomes "One").                                                                                         |
+| **Parameters**                                       | <ul><li>number - A whole number between 0 and 10</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul>          |
 
 #### [removeFilenameFromPath](#removefilenamefrompath)
@@ -316,7 +325,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Attempts to remove the directory at the specified path, optionally removing                                                                                         |
-| **Parameters**                                       | <ul><li>* `path`		- The absolute path to remove</li><li>* `recursive`	- If `true`, the contents of the directory will be removed first.</li></ul> |
+| **Parameters**                                       | <ul><li>* `path`        - The absolute path to remove</li><li>* `recursive`   - If `true`, the contents of the directory will be removed first.</li></ul> |
 | **Returns**                                          | <ul><li>* `true` if successful, or `nil, err` if there was a problem.</li></ul>          |
 
 #### [round](#round)

@@ -1,7 +1,7 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.Inspector.GeneratorInspector
+# [docs](index.md) » cp.apple.finalcutpro.inspector.audio.AudioInspector
 ---
 
-Generator Inspector Module.
+Audio Inspector Module.
 
 ## API Overview
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -14,7 +14,7 @@ Generator Inspector Module.
 ### Methods
 
 #### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.GeneratorInspector:app() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioInspector:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
@@ -22,18 +22,18 @@ Generator Inspector Module.
 | **Returns**                                          | <ul><li>The application object as a table</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.GeneratorInspector:new(parent) -> GeneratorInspector object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioInspector:new(parent) -> AudioInspector object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new GeneratorInspector object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`		- The parent</li></ul> |
-| **Returns**                                          | <ul><li>A GeneratorInspector object</li></ul>          |
+| **Description**                                      | Creates a new AudioInspector object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A AudioInspector object</li></ul>          |
 
 #### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Inspector.GeneratorInspector:parent() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the GeneratorInspector's parent table                                                                                         |
+| **Description**                                      | Returns the AudioInspector's parent table                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
 

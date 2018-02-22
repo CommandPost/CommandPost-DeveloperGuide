@@ -8,7 +8,6 @@ Fullscreen Shortcuts
  * [enabled](#enabled)
 * Functions - API calls offered directly by the extension
  * [checkCommand](#checkcommand)
- * [init](#init)
  * [ninjaKeyStroke](#ninjakeystroke)
  * [performCommand](#performcommand)
  * [update](#update)
@@ -31,14 +30,6 @@ Fullscreen Shortcuts
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if a shortcut has been pressed, then processes.                                                                                         |
 | **Parameters**                                       | <ul><li>whichModifier - Which modifier key to check.</li><li>whichKey - Which key to check.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.init() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [ninjaKeyStroke](#ninjakeystroke)

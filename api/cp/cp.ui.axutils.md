@@ -7,6 +7,7 @@ Utility functions to support `hs._asm.axuielement`
 * Functions - API calls offered directly by the extension
  * [cache](#cache)
  * [childAtIndex](#childatindex)
+ * [childFromBottom](#childfrombottom)
  * [childFromLeft](#childfromleft)
  * [childFromRight](#childfromright)
  * [childFromTop](#childfromtop)
@@ -18,6 +19,10 @@ Utility functions to support `hs._asm.axuielement`
  * [childWithDescription](#childwithdescription)
  * [childWithID](#childwithid)
  * [childWithRole](#childwithrole)
+ * [compareBottomToTop](#comparebottomtotop)
+ * [compareLeftToRight](#comparelefttoright)
+ * [compareRightToLeft](#comparerighttoleft)
+ * [compareTopToBottom](#comparetoptobottom)
  * [isValid](#isvalid)
 
 ## API Documentation
@@ -40,6 +45,14 @@ Utility functions to support `hs._asm.axuielement`
 | **Parameters**                                       | <ul><li>element		- the axuielement or array of axuielements</li><li>index		- the index number of the child to find.</li><li>compareFn	- a function to compare the elements.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or `nil` if the index is larger than the number of children.</li></ul>          |
 
+#### [childFromBottom](#childfrombottom)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childFromBottom(element, index) -> axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Searches for the child element which is at number `index` when sorted bottom-to-top.                                                                                         |
+| **Parameters**                                       | <ul><li>element		- the axuielement or array of axuielements</li><li>index		- the index number of the child to find.</li></ul> |
+| **Returns**                                          | <ul><li>The child, or `nil` if the index is larger than the number of children.</li></ul>          |
+
 #### [childFromLeft](#childfromleft)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childFromLeft(element, index) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -60,16 +73,16 @@ Utility functions to support `hs._asm.axuielement`
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childFromTop(element, index) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Searches for the child element which is at number `index` when sorted top-to-botom.                                                                                         |
+| **Description**                                      | Searches for the child element which is at number `index` when sorted top-to-bottom.                                                                                         |
 | **Parameters**                                       | <ul><li>element		- the axuielement or array of axuielements</li><li>index		- the index number of the child to find.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or `nil` if the index is larger than the number of children.</li></ul>          |
 
 #### [childMatching](#childmatching)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childMatching(element, matcherFn) -> axuielement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childMatching(element, matcherFn[, index]) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | This searches for the first child of the specified element for which the provided function returns `true`.                                                                                         |
-| **Parameters**                                       | <ul><li>element		- the axuielement</li><li>matcherFn	- the function which checks if the child matches the requirements.</li></ul> |
+| **Parameters**                                       | <ul><li>element		- the axuielement</li><li>matcherFn	- the function which checks if the child matches the requirements.</li><li>index		- the number of matching child to return. Defaults to `1`.</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul>          |
 
 #### [childrenMatching](#childrenmatching)
@@ -127,6 +140,34 @@ Utility functions to support `hs._asm.axuielement`
 | **Description**                                      | This searches for the first child of the specified element which has `AXRole` with the specified value.                                                                                         |
 | **Parameters**                                       | <ul><li>element	- the axuielement</li><li>value	- the value</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or `nil` if none was found</li></ul>          |
+
+#### [compareBottomToTop](#comparebottomtotop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.compareBottomToTop(a, b) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns `true` if element `a` is below element `b`. May be used with `table.sort`.                                                                                         |
+| **Returns**                                          | <ul><li>* `true` if `a` is below `b`.</li></ul>          |
+
+#### [compareLeftToRight](#comparelefttoright)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.compareLeftToRight(a, b) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns `true` if element `a` is left of element `b`. May be used with `table.sort`.                                                                                         |
+| **Returns**                                          | <ul><li>* `true` if `a` is left of `b`.</li></ul>          |
+
+#### [compareRightToLeft](#comparerighttoleft)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.compareRightToLeft(a, b) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns `true` if element `a` is right of element `b`. May be used with `table.sort`.                                                                                         |
+| **Returns**                                          | <ul><li>* `true` if `a` is right of `b`.</li></ul>          |
+
+#### [compareTopToBottom](#comparetoptobottom)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.compareTopToBottom(a, b) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns `true` if element `a` is above element `b`. May be used with `table.sort`.                                                                                         |
+| **Returns**                                          | <ul><li>* `true` if `a` is above `b`.</li></ul>          |
 
 #### [isValid](#isvalid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.isValid(element) -> boolean` </span>                                                          |

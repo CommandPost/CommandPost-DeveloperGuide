@@ -18,11 +18,11 @@ Window Watcher Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new WindowWatcher                                                                                         |
-| **Parameters**                                       | <ul><li>`window` 	- the window object (eg. CommandEditor)</li></ul> |
-| **Returns**                                          | <ul><li>`WindowWatcher`	- the new WindowWatcher instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>`window`     - the window object (eg. CommandEditor)</li></ul> |
+| **Returns**                                          | <ul><li>`WindowWatcher`  - the new WindowWatcher instance.</li></ul>          |
 
 #### [unwatch](#unwatch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.WindowWatcher:unwatch() -> bool` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.WindowWatcher:unwatch() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes the watch with the specified ID                                                                                         |

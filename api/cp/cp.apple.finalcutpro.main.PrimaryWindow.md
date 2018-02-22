@@ -12,6 +12,7 @@ Primary Window Module.
  * [isShowing](#isshowing)
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [alert](#alert)
  * [app](#app)
  * [bottomGroupUI](#bottomgroupui)
  * [browserGroupUI](#browsergroupui)
@@ -68,6 +69,14 @@ Primary Window Module.
 | **Description**                                      | The `axuielement` for the window.                                                                                         |
 
 ### Methods
+
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:alert() -> cp.ui.Alert` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Provides access to any 'Alert' windows on the PrimaryWindow.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A `cp.ui.Alert` object</li></ul>          |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:app() -> hs.application` </span>                                                          |
@@ -147,7 +156,7 @@ Primary Window Module.
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Attempts to focus the specified window.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if the window exists and</li></ul>          |
+| **Returns**                                          | <ul><li>The `PrimaryWindow` instance.</li></ul>          |
 
 #### [timelineGroupUI](#timelinegroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:timelineGroupUI() -> hs._asm.axuielement object` </span>                                                          |

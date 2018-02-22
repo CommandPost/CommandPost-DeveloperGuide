@@ -21,6 +21,7 @@ Core CommandPost functionality
  * [cp.prop](cp.prop.md)
  * [cp.sourcewatcher](cp.sourcewatcher.md)
  * [cp.strings](cp.strings.md)
+ * [cp.test](cp.test.md)
  * [cp.text](cp.text.md)
  * [cp.tools](cp.tools.md)
  * [cp.ui](cp.ui.md)
