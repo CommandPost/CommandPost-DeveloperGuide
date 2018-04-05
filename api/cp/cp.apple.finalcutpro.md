@@ -99,6 +99,8 @@ end
  * [init](#init)
  * [reset](#reset)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [application](#application)
+ * [contentUI](#contentui)
  * [currentLanguage](#currentlanguage)
  * [getVersion](#getversion)
  * [isFrontmost](#isfrontmost)
@@ -106,12 +108,14 @@ end
  * [isModalDialogOpen](#ismodaldialogopen)
  * [isRunning](#isrunning)
  * [isShowing](#isshowing)
+ * [isShowing](#isshowing)
  * [isSupported](#issupported)
  * [isUnsupported](#isunsupported)
+ * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [alert](#alert)
- * [application](#application)
  * [browser](#browser)
+ * [bundleID](#bundleid)
  * [closeLibrary](#closelibrary)
  * [color](#color)
  * [colorBoard](#colorboard)
@@ -123,7 +127,6 @@ end
  * [generators](#generators)
  * [getActiveCommandSet](#getactivecommandset)
  * [getActiveCommandSetPath](#getactivecommandsetpath)
- * [getBundleID](#getbundleid)
  * [getCommandSet](#getcommandset)
  * [getCommandShortcuts](#getcommandshortcuts)
  * [getDefaultCommandSetPath](#getdefaultcommandsetpath)
@@ -145,6 +148,7 @@ end
  * [media](#media)
  * [mediaImport](#mediaimport)
  * [menuBar](#menubar)
+ * [notifier](#notifier)
  * [openLibrary](#openlibrary)
  * [performShortcut](#performshortcut)
  * [plugins](#plugins)
@@ -160,9 +164,11 @@ end
  * [show](#show)
  * [string](#string)
  * [timeline](#timeline)
+ * [toolbar](#toolbar)
  * [transitions](#transitions)
  * [UI](#ui)
  * [unwatch](#unwatch)
+ * [userCommandSetPath](#usercommandsetpath)
  * [viewer](#viewer)
  * [watch](#watch)
  * [windowsUI](#windowsui)
@@ -275,6 +281,18 @@ end
 
 ### Fields
 
+#### [application](#application)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.application <cp.prop: hs.application; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the running `hs.application` for Final Cut Pro, or `nil` if it's not running.                                                                                         |
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` containing the properties rows, if available.                                                                                         |
+
 #### [currentLanguage](#currentlanguage)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLanguage <cp.prop:string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -320,6 +338,12 @@ end
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Is Final Cut visible on screen?                                                                                         |
 
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the VideoInspector is currently showing.                                                                                         |
+
 #### [isSupported](#issupported)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isSupported <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -332,6 +356,12 @@ end
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Is an unsupported version of Final Cut Pro installed?                                                                                         |
 
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Video Inspector.                                                                                         |
+
 ### Methods
 
 #### [alert](#alert)
@@ -342,14 +372,6 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the `Alert` instance</li></ul>          |
 
-#### [application](#application)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:application() -> hs.application` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the running `hs.application` for Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The hs.application, or `nil` if the application is not running.</li></ul>          |
-
 #### [browser](#browser)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:browser() -> Browser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -357,6 +379,14 @@ end
 | **Description**                                      | Returns the Browser instance, whether it is in the primary or secondary window.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the Browser</li></ul>          |
+
+#### [bundleID](#bundleid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:bundleID() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Bundle ID for the app.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The Bundle ID</li></ul>          |
 
 #### [closeLibrary](#closelibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:closeLibrary(title) -> boolean` </span>                                                          |
@@ -445,14 +475,6 @@ end
 | **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The 'Active Command Set' value, or the 'Default' command set if none is set.</li></ul>          |
-
-#### [getBundleID](#getbundleid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getBundleID() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the Final Cut Pro Bundle ID                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A string of the Final Cut Pro Bundle ID</li></ul>          |
 
 #### [getCommandSet](#getcommandset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getCommandSet(path) -> string` </span>                                                          |
@@ -623,6 +645,14 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A MenuBar object</li></ul>          |
 
+#### [notifier](#notifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:notifier() -> cp.ui.notifier` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a notifier that is tracking the application UI element. It has already been started.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The notifier.</li></ul>          |
+
 #### [openLibrary](#openlibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:openLibrary(path) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -743,6 +773,14 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the Timeline</li></ul>          |
 
+#### [toolbar](#toolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:toolbar() -> PrimaryToolbar` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Primary Toolbar - the toolbar at the top of the Primary Window.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the PrimaryToolbar</li></ul>          |
+
 #### [transitions](#transitions)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:transitions() -> TransitionsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -766,6 +804,14 @@ end
 | **Description**                                      | Stop watching for events that happen in the application for the specified ID.                                                                                         |
 | **Parameters**                                       | <ul><li>`id` 	- The ID object which was returned from the `watch(...)` function.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the ID was watching and has been removed.</li></ul>          |
+
+#### [userCommandSetPath](#usercommandsetpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.userCommandSetPath() -> string or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the path where User Command Set files are stored.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A path as a string or `nil` if the folder doesn't exist.</li></ul>          |
 
 #### [viewer](#viewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:viewer() -> Viewer` </span>                                                          |

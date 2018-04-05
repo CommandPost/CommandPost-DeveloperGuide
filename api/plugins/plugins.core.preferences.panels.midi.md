@@ -9,7 +9,6 @@ MIDI Preferences Panel
 * Functions - API calls offered directly by the extension
  * [init](#init)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [enabled](#enabled)
  * [lastGroup](#lastgroup)
 
 ## API Documentation
@@ -33,12 +32,6 @@ MIDI Preferences Panel
 | **Returns**                                          | <ul><li>The Module</li></ul>          |
 
 ### Fields
-
-#### [enabled](#enabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi.enabled <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Enable or disable Stream Deck Support.                                                                                         |
 
 #### [lastGroup](#lastgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi.lastGroup <cp.prop: string>` </span>                                                          |

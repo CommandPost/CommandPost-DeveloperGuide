@@ -30,8 +30,8 @@ Choices Builder Module.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:id(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Indicates the choice is a favorite.                                                                                         |
-| **Parameters**                                       | <ul><li>* `value`	- True or false.</li></ul> |
+| **Description**                                      | Sets the ID of the choice.                                                                                         |
+| **Parameters**                                       | <ul><li>* `value`	- The ID.</li></ul> |
 | **Returns**                                          | <ul><li>* The choice builder.</li></ul>          |
 
 #### [params](#params)

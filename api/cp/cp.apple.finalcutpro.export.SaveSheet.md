@@ -14,6 +14,7 @@ Save Sheet
  * [filename](#filename)
  * [getTitle](#gettitle)
  * [goToPrompt](#gotoprompt)
+ * [parent](#parent)
  * [pressCancel](#presscancel)
  * [pressSave](#presssave)
  * [setPath](#setpath)
@@ -80,6 +81,14 @@ Save Sheet
 | **Description**                                      | Gets the Go To Prompt object.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A `GoToPrompt` object.</li></ul>          |
+
+#### [parent](#parent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.SaveSheet:parent() -> object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Parent object.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The parent object.</li></ul>          |
 
 #### [pressCancel](#presscancel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.SaveSheet:pressCancel() -> cp.apple.finalcutpro.export.SaveSheet` </span>                                                          |

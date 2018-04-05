@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finder.texttools
+# [docs](index.md) » plugins.finder.pasteboard
 ---
 
 Handy text tools.
@@ -12,7 +12,7 @@ Handy text tools.
 ### Functions
 
 #### [processText](#processtext)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.texttools.processText(value, copyAndPaste) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.pasteboard.processText(value, copyAndPaste) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Processes Text                                                                                         |

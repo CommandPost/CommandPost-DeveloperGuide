@@ -21,6 +21,7 @@ A Window UI element.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [close](#close)
  * [focus](#focus)
+ * [snapshot](#snapshot)
 
 ## API Documentation
 
@@ -115,4 +116,11 @@ A Window UI element.
 | **Description**                                      | Attempts to focus the window.                                                                                         |
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* `true` if the window was successfully focused.</li></ul>          |
+
+#### [snapshot](#snapshot)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:snapshot([path]) -> hs.image | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it.                                                                                         |
+| **Parameters**                                       | <ul><li>* path		- (optional) The path to save the file. Should include the extension (should be `.png`).</li></ul> |
 

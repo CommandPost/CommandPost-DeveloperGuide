@@ -15,6 +15,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [getExternalDevices](#getexternaldevices)
  * [getFilenameFromPath](#getfilenamefrompath)
  * [getFullname](#getfullname)
+ * [getKeysSortedByValue](#getkeyssortedbyvalue)
  * [getmacOSVersion](#getmacosversion)
  * [getModelName](#getmodelname)
  * [getRAMSize](#getramsize)
@@ -41,6 +42,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [rmdir](#rmdir)
  * [round](#round)
  * [safeFilename](#safefilename)
+ * [spairs](#spairs)
  * [split](#split)
  * [splitOnColumn](#splitoncolumn)
  * [stringMaxLength](#stringmaxlength)
@@ -134,6 +136,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Returns the current users Full Name, otherwise an empty string.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>String</li></ul>          |
+
+#### [getKeysSortedByValue](#getkeyssortedbyvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getKeysSortedByValue(tbl, sortFunction) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sorts table keys by a value                                                                                         |
+| **Parameters**                                       | <ul><li>tbl - the table you want to sort</li><li>sortFunction - the function you want to use to sort the table</li></ul> |
+| **Returns**                                          | <ul><li>A sorted table</li></ul>          |
 
 #### [getmacOSVersion](#getmacosversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getmacOSVersion() -> string` </span>                                                          |
@@ -344,6 +354,15 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>value - a string you want to make safe</li><li>defaultValue - the optional default filename to use if the value is not valid</li></ul> |
 | **Returns**                                          | <ul><li>A string of the safe filename</li></ul>          |
 | **Notes**                                            | <ul><li>Returns "filename" is both `value` and `defaultValue` are `nil`.</li></ul>                |
+
+#### [spairs](#spairs)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.spairs(t, order) -> function` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | A customised version of pairs, called `spairs` because it iterates over the table in a sorted order.                                                                                         |
+| **Parameters**                                       | <ul><li>t     - The table to process</li><li>order - The function of how to sort the table.</li></ul> |
+| **Returns**                                          | <ul><li>A iterator function.</li></ul>          |
+| **Notes**                                            | <ul><li>Author: [Michal Kottman](https://stackoverflow.com/a/15706820)</li></ul>                |
 
 #### [split](#split)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.split(str, pat) -> table` </span>                                                          |

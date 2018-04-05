@@ -61,6 +61,7 @@
 | [cp.apple.finalcutpro.main.LibrariesList](cp.apple.finalcutpro.main.LibrariesList.md)                          | Libraries List Module.     |
 | [cp.apple.finalcutpro.main.MediaBrowser](cp.apple.finalcutpro.main.MediaBrowser.md)                          | Media Browser Module.     |
 | [cp.apple.finalcutpro.main.Playhead](cp.apple.finalcutpro.main.Playhead.md)                          | Playhead Module.     |
+| [cp.apple.finalcutpro.main.PrimaryToolbar](cp.apple.finalcutpro.main.PrimaryToolbar.md)                          | Timeline Toolbar     |
 | [cp.apple.finalcutpro.main.PrimaryWindow](cp.apple.finalcutpro.main.PrimaryWindow.md)                          | Primary Window Module.     |
 | [cp.apple.finalcutpro.main.SecondaryWindow](cp.apple.finalcutpro.main.SecondaryWindow.md)                          | Secondary Window Module.     |
 | [cp.apple.finalcutpro.main.Timeline](cp.apple.finalcutpro.main.Timeline.md)                          | Timeline Module.     |
@@ -88,11 +89,14 @@
 | [cp.config.fileDroppedToDockIconCallback](cp.config.fileDroppedToDockIconCallback.md)                          | File Dropped to Dock Icon Callback     |
 | [cp.config.shutdownCallback](cp.config.shutdownCallback.md)                          | Shutdown Callback Module.     |
 | [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)                          | Text Dropped to Dock Icon Callback     |
+| [cp.console.history](cp.console.history.md)                          | Console History Manager.     |
+| [cp.deferred](cp.deferred.md)                          | This extension makes it simple to defer multiple actions after a delay from the initial execution.     |
 | [cp.developer](cp.developer.md)                          | Developer Tools     |
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
 | [cp.idle](cp.idle.md)                          | This library allows tasks to be queue for execution when the computer has     |
 | [cp.ids](cp.ids.md)                          | Allows managing values/IDs which can vary between versions.     |
+| [cp.is](cp.is.md)                          | A simple class that lets you test if a value `is` a particular type.     |
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
 | [cp.localized](cp.localized.md)                          | Helps look up localized names for folders.     |
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
@@ -113,12 +117,14 @@
 | [cp.ui.Button](cp.ui.Button.md)                          | Button Module.     |
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
 | [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Pop Up Button Module.     |
+| [cp.ui.notifier](cp.ui.notifier.md)                          | Supports long-lived 'AX' notifiers. Configure the application to watch, the     |
 | [cp.ui.PopUpButton](cp.ui.PopUpButton.md)                          | Pop Up Button Module.     |
-| [cp.ui.PropertyRow](cp.ui.PropertyRow.md)                          | Represents a list of property rows, typically in a Property Inspector.     |
+| [cp.ui.PropertyRow](cp.ui.PropertyRow.md)                          | Represents a single property row, typically in a Property Inspector.     |
 | [cp.ui.RadioButton](cp.ui.RadioButton.md)                          | Radio Button Module.     |
 | [cp.ui.RadioGroup](cp.ui.RadioGroup.md)                          | Represents an `AXRadioGroup`, providing utility methods.     |
 | [cp.ui.ScrollArea](cp.ui.ScrollArea.md)                          | Scroll Area Module.     |
 | [cp.ui.Slider](cp.ui.Slider.md)                          | Slider Module.     |
+| [cp.ui.StaticText](cp.ui.StaticText.md)                          | Static Text Module.     |
 | [cp.ui.Table](cp.ui.Table.md)                          | Represents an AXTable in the Apple Accessibility UX API.     |
 | [cp.ui.TextField](cp.ui.TextField.md)                          | Text Field Module.     |
 | [cp.ui.Window](cp.ui.Window.md)                          | A Window UI element.     |
@@ -130,3 +136,4 @@
 | [cp.web.html](cp.web.html.md)                          | Functions for Generating HTML markup.     |
 | [cp.web.text](cp.web.text.md)                          | Functions for managing text on the web.     |
 | [cp.web.ui](cp.web.ui.md)                          | This extension contains functions which simplify the creation of standard UI events     |
+| [cp.web.xml](cp.web.xml.md)                          | Functions for Generating XML markup.     |

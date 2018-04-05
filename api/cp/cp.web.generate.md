@@ -50,7 +50,7 @@ Functions for Generating HTML UI Items
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul>          |
 
 #### [javascript](#javascript)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.javascript(script, context) -> cp.web.html.block` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.javascript(script, context) -> cp.web.html` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Heading                                                                                         |

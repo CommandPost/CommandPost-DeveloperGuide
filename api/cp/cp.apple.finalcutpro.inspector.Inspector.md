@@ -8,9 +8,17 @@ Inspector
  * [INSPECTOR_TABS](#inspector_tabs)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [bottomBarUI](#bottombarui)
  * [isFullHeight](#isfullheight)
  * [isShowing](#isshowing)
+ * [labelUI](#labelui)
+ * [panelUI](#panelui)
+ * [propertiesUI](#propertiesui)
+ * [topBarUI](#topbarui)
+ * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [audio](#audio)
@@ -19,7 +27,6 @@ Inspector
  * [generator](#generator)
  * [hide](#hide)
  * [info](#info)
- * [new](#new)
  * [parent](#parent)
  * [selectedTab](#selectedtab)
  * [selectTab](#selecttab)
@@ -28,7 +35,6 @@ Inspector
  * [text](#text)
  * [title](#title)
  * [transition](#transition)
- * [UI](#ui)
  * [video](#video)
 
 ## API Documentation
@@ -51,7 +57,23 @@ Inspector
 | **Parameters**                                       | <ul><li>element - axuielementObject</li></ul> |
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.new(parent) -> Inspector` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new Inspector.                                                                                         |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
+| **Returns**                                          | <ul><li>The Inspector object.</li></ul>          |
+
 ### Fields
+
+#### [bottomBarUI](#bottombarui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.bottomBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the bottom bar `axuielement` for the Inspector.                                                                                         |
 
 #### [isFullHeight](#isfullheight)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.isFullHeight <cp.prop: boolean>` </span>                                                          |
@@ -64,6 +86,36 @@ Inspector
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Returns `true` if the Inspector is showing otherwise `false`                                                                                         |
+
+#### [labelUI](#labelui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.labelUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `axuielement` for text label at the top of the Inspector.                                                                                         |
+
+#### [panelUI](#panelui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.panelUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the central panel `axuielement` for the Inspector.                                                                                         |
+
+#### [propertiesUI](#propertiesui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.propertiesUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the properties `axuielement` for the Inspector. This contains the rows of property values.                                                                                         |
+
+#### [topBarUI](#topbarui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.topBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the "top bar" `axuielement` for the Inspector.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `axuielement` for the Inspector.                                                                                         |
 
 ### Methods
 
@@ -122,14 +174,6 @@ Inspector
 | **Description**                                      | Gets the InfoInspector object.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>InfoInspector</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:new(parent) -> Inspector` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new Inspector.                                                                                         |
-| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
-| **Returns**                                          | <ul><li>The Inspector object.</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:parent() -> Parent` </span>                                                          |
@@ -197,14 +241,6 @@ Inspector
 | **Description**                                      | Gets the TransitionInspector object.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>TransitionInspector</li></ul>          |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:UI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the Inspectors Accessibility Object                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `axuielementObject` or `nil`</li></ul>          |
 
 #### [video](#video)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:video() -> VideoInspector` </span>                                                          |

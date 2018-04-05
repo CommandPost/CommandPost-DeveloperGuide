@@ -8,6 +8,7 @@ Primary Window Module.
  * [matches](#matches)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [frame](#frame)
+ * [hsWindow](#hswindow)
  * [isFullScreen](#isfullscreen)
  * [isShowing](#isshowing)
  * [UI](#ui)
@@ -24,6 +25,7 @@ Primary Window Module.
  * [rootGroupUI](#rootgroupui)
  * [show](#show)
  * [timelineGroupUI](#timelinegroupui)
+ * [toolbar](#toolbar)
  * [topGroupUI](#topgroupui)
  * [unwatch](#unwatch)
  * [viewerGroupUI](#viewergroupui)
@@ -49,6 +51,12 @@ Primary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | The current position (x, y, width, height) of the window.                                                                                         |
+
+#### [hsWindow](#hswindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.hsWindow <cp.prop: hs.window; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found.                                                                                         |
 
 #### [isFullScreen](#isfullscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.isFullScreen <cp.prop: boolean>` </span>                                                          |
@@ -165,6 +173,14 @@ Primary Window Module.
 | **Description**                                      | Returns the timeline group UI as a `hs._asm.axuielement` object                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>An `hs._asm.axuielement` object</li></ul>          |
+
+#### [toolbar](#toolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:toolbar() -> PrimaryToolbar` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the PrimaryToolbar element.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The `PrimaryToolbar`.</li></ul>          |
 
 #### [topGroupUI](#topgroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:topGroupUI() -> hs._asm.axuielement object` </span>                                                          |

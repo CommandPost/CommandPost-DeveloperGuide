@@ -125,11 +125,11 @@ Create and manage menubar icons
 | **Returns**                                          | <ul><li>the menubaritem</li></ul>          |
 
 #### [setClickCallback](#setclickcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.menubar:setClickCallback(fn) -> menubaritem` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.menubar:setClickCallback([fn]) -> menubaritem` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a function to be called when the menubar item is clicked                                                                                         |
-| **Parameters**                                       | <ul><li>`fn` - A function to be called when the menubar item is clicked. If the argument is `nil`, any existing function will be removed. The function can optionally accept a single argument, which will be a table containing boolean values indicating which keyboard modifiers were held down when the menubar item was clicked; The possible keys are:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li></ul> |
+| **Parameters**                                       | <ul><li>`fn` - An optional function to be called when the menubar item is clicked. If this argument is not provided, any existing function will be removed. The function can optionally accept a single argument, which will be a table containing boolean values indicating which keyboard modifiers were held down when the menubar item was clicked; The possible keys are:</li><li> cmd</li><li> alt</li><li> shift</li><li> ctrl</li><li> fn</li></ul> |
 | **Returns**                                          | <ul><li>the menubaritem</li></ul>          |
 | **Notes**                                            | <ul><li>If a menu has been attached to the menubar item, this callback will never be called</li><li>Has no affect on the display of a pop-up menu, but changes will be be in effect if hs.menubar:returnToMenuBar() is called on the menubaritem.</li></ul>                |
 

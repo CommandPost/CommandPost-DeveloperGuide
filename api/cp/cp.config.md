@@ -28,6 +28,7 @@ Manage CommandPost's constants and settings.
  * [scriptPath](#scriptpath)
  * [sourceExtensions](#sourceextensions)
  * [sourceWatcher](#sourcewatcher)
+ * [translationURL](#translationurl)
  * [userConfigRootPath](#userconfigrootpath)
  * [userPluginsPath](#userpluginspath)
 * Variables - Configurable values
@@ -48,43 +49,43 @@ Manage CommandPost's constants and settings.
 ### Constants
 
 #### [appName](#appname)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appName` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appName -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The name of the Application                                                                                         |
 
 #### [appVersion](#appversion)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appVersion` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appVersion -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Prefix used for Configuration Settings                                                                                         |
 
 #### [assetsPath](#assetspath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.assetsPath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.assetsPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where Application Assets are stored                                                                                         |
 
 #### [basePath](#basepath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.basePath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.basePath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where the Extensions & Plugins folders are stored.                                                                                         |
 
 #### [bundledPluginsPath](#bundledpluginspath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundledPluginsPath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundledPluginsPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to bundled plugins                                                                                         |
 
 #### [bundleID](#bundleid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundleID` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.bundleID -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Application's Bundle ID                                                                                         |
 
 #### [configPrefix](#configprefix)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.configPrefix` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.configPrefix -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Prefix used for Configuration Settings                                                                                         |
@@ -96,67 +97,73 @@ Manage CommandPost's constants and settings.
 | **Description**                                      | When `true`, the app is in developer mode.                                                                                         |
 
 #### [iconPath](#iconpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.iconPath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.iconPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to the Application Icon                                                                                         |
 
 #### [languagePath](#languagepath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.languagePath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.languagePath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to the Languages Folder                                                                                         |
 
 #### [menubarIconPath](#menubariconpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.menubarIconPath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.menubarIconPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to the Menubar Application Icon                                                                                         |
 
 #### [pluginPaths](#pluginpaths)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.pluginPaths` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.pluginPaths -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Table of Plugins Paths. Earlier entries take precedence.                                                                                         |
 
 #### [privacyPolicyURL](#privacypolicyurl)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.privacyPolicyURL` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.privacyPolicyURL -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | URL for Privacy Policy                                                                                         |
 
 #### [processID](#processid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.processID` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.processID -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Application's Process ID                                                                                         |
 
 #### [scriptPath](#scriptpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.scriptPath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.scriptPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Path to where Application Scripts are stored                                                                                         |
 
 #### [sourceExtensions](#sourceextensions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.sourceExtensions` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.sourceExtensions -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Extensions for files which will trigger a reload when modified.                                                                                         |
 
 #### [sourceWatcher](#sourcewatcher)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.sourceWatcher` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.sourceWatcher -> SourceWatcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A `cp.sourcewatcher` that will watch for source files and reload CommandPost if any change.                                                                                         |
 
+#### [translationURL](#translationurl)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.translationURL -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | URL for Translations                                                                                         |
+
 #### [userConfigRootPath](#userconfigrootpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.userConfigRootPath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.userConfigRootPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to user configuration folders                                                                                         |
 
 #### [userPluginsPath](#userpluginspath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.userPluginsPath` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.userPluginsPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The path to user plugins                                                                                         |

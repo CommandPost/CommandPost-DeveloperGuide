@@ -3,16 +3,77 @@
 
 Video Inspector Module.
 
+Header Rows (`compositing`, `transform`, etc.) have the following properties:
+* enabled   - (cp.ui.CheckBox) Indicates if the section is enabled.
+* toggle    - (cp.ui.Button) Will toggle the Hide/Show button.
+* reset     - (cp.ui.Button) Will reset the contents of the section.
+* expanded  - (cp.prop <boolean>) Get/sets whether the section is expanded.
+
+Property Rows depend on the type of property:
+
+Menu Property:
+* value     - (cp.ui.PopUpButton) The current value of the property.
+
+Slider Property:
+* value     - (cp.ui.Slider) The current value of the property.
+
+XY Property:
+* x         - (cp.ui.TextField) The current 'X' value.
+* y         - (cp.ui.TextField) The current 'Y' value.
+
+CheckBox Property:
+* value     - (cp.ui.CheckBox) The currently value.
+
+For example:
+```lua
+local video = fcp:inspector():video()
+-- Menu Property:
+video:compositing():blendMode():value("Subtract")
+-- Slider Property:
+video:compositing():opacity():value(50.0)
+-- XY Property:
+video:transform():position():x(-10.0)
+-- CheckBox property:
+video:stabilization():tripodMode():value(true)
+```
+
+You should also be able to show a specific property and it will be revealed:
+```lua
+video:stabilization():smoothing():show():value(1.5)
+```
+
 ## API Overview
+* Functions - API calls offered directly by the extension
+ * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
- * [isShowing](#isshowing)
- * [new](#new)
  * [parent](#parent)
+ * [row](#row)
  * [show](#show)
- * [stabilization](#stabilization)
 
 ## API Documentation
+
+### Functions
+
+#### [matches](#matches)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector.matches(element)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks if the provided element could be a VideoInspector.                                                                                         |
+| **Parameters**                                       | <ul><li>* element   - The element to check</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if it matches, `false` if not.</li></ul>          |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector.new(parent) -> cp.apple.finalcutpro.video.VideoInspector` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `VideoInspector` object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`		- The parent</li></ul> |
+| **Returns**                                          | <ul><li>A `VideoInspector` object</li></ul>          |
 
 ### Methods
 
@@ -24,22 +85,6 @@ Video Inspector Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The application object as a table</li></ul>          |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns `true` if the Video Inspector is showing otherwise `false`                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if showing, otherwise `false`</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:new(parent) -> VideoInspector object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new VideoInspector object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`		- The parent</li></ul> |
-| **Returns**                                          | <ul><li>A VideoInspector object</li></ul>          |
-
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -48,20 +93,19 @@ Video Inspector Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
 
+#### [row](#row)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:row(labelKey, index) -> PropertyRow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a `PropertyRow` for a row with the specified label key.                                                                                         |
+| **Parameters**                                       | <ul><li>* labelKey  - The key for the label (see FCP App `keysWithString` method).</li></ul> |
+| **Returns**                                          | <ul><li>* The `PropertyRow`.</li></ul>          |
+
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:show() -> VideoInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Show's the Video Inspector                                                                                         |
+| **Description**                                      | Shows the Video Inspector                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>VideoInspector</li></ul>          |
-
-#### [stabilization](#stabilization)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:stabilization([value]) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets or returns the stabilization setting for a clip.                                                                                         |
-| **Parameters**                                       | <ul><li>[value] - A boolean value you want to set the stabilization setting for the clip to.</li></ul> |
-| **Returns**                                          | <ul><li>The value of the stabilization settings, or `nil` if an error has occurred.</li></ul>          |
-| **Notes**                                            | <ul><li>This method will open the Inspector if it's closed, and close it again after adjusting the stablization settings.</li></ul>                |
 

@@ -93,11 +93,11 @@ CommandPost Setup Window Panel.
 | **Notes**                                            | <ul><li>The `params` can contain the following fields:</li><li> ** `id`        - (optional) The unique ID. If none is provided, one will be generated.</li><li> ** `name`      - (optional) The name of the checkbox field.</li><li> ** `label`     - (optional) The text label to display after the checkbox.</li><li> ** `onchange`  - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox.</li><li> ** `class`     - (optional) the CSS class list to apply to the checkbox.</li></ul>                |
 
 #### [addContent](#addcontent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addContent(content, unescaped) -> panel` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addContent(content[, escaped]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified `content` to the panel.                                                                                         |
-| **Parameters**                                       | <ul><li>* `content` - a value that can be converted to a string.</li><li>* `unescaped` - if `true`, the content will not be escaped. Defaults to true.</li></ul> |
+| **Parameters**                                       | <ul><li>* `content` - a value that can be converted to a string.</li><li>* `escaped` - if `true`, the content will not be escaped. Defaults to true.</li></ul> |
 | **Returns**                                          | <ul><li>* The panel.</li></ul>          |
 
 #### [addFooter](#addfooter)
@@ -133,11 +133,11 @@ CommandPost Setup Window Panel.
 | **Returns**                                          | <ul><li>* The panel object.</li></ul>          |
 
 #### [addParagraph](#addparagraph)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addParagraph(content, unescaped, class) -> panel` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addParagraph(content[, escaped[, class]]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a Paragraph to the panel                                                                                         |
-| **Parameters**                                       | <ul><li>content - The content as a string</li><li>unescaped - Whether or not the HTML should be escaped as a boolean</li><li>class - The class as a string</li></ul> |
+| **Parameters**                                       | <ul><li>content - The content as a string</li><li>escaped - Whether or not the HTML should be escaped as a boolean</li><li>class - The class as a string</li></ul> |
 | **Returns**                                          | <ul><li>* The panel object.</li></ul>          |
 
 #### [addPassword](#addpassword)

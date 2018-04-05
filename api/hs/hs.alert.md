@@ -28,7 +28,7 @@ Simple on-screen alerts
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Closes all alerts currently open on the screen                                                                                         |
-| **Parameters**                                       | <ul><li>seconds - Optional number specifying the fade out duration. Defaults to 0.15</li></ul> |
+| **Parameters**                                       | <ul><li>seconds - Optional number specifying the fade out duration. Defaults to `fadeOutDuration` value currently defined in the [hs.alert.defaultStyle](#defaultStyle)</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [closeSpecific](#closespecific)
@@ -36,7 +36,7 @@ Simple on-screen alerts
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Closes the alert with the specified identifier                                                                                         |
-| **Parameters**                                       | <ul><li>uuid    - the identifier of the alert to close</li><li>seconds - Optional number specifying the fade out duration. Defaults to 0.15</li></ul> |
+| **Parameters**                                       | <ul><li>uuid    - the identifier of the alert to close</li><li>seconds - Optional number specifying the fade out duration. Defaults to `fadeOutDuration` value currently defined in the [hs.alert.defaultStyle](#defaultStyle)</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 | **Notes**                                            | <ul><li>Use this function to close an alert which is indefinate or close an alert with a long duration early.</li></ul>                |
 

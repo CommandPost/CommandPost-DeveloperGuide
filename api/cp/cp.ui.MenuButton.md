@@ -4,16 +4,28 @@
 Pop Up Button Module.
 
 ## API Overview
-* Functions - API calls offered directly by the extension
+* Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [snapshot](#snapshot)
 
 ## API Documentation
 
-### Functions
+### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:new(axuielement, function) -> MenuButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton.new(parent, finderFn) -> MenuButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new MenuButton                                                                                         |
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new MenuButton.                                                                                         |
+| **Parameters**                                       | <ul><li>* parent		- The parent object. Should have an `isShowing` property.</li><li>* finderFn		- A function which will return a `hs._asm.axuielement`, or `nil` if it's not available.</li></ul> |
+
+### Methods
+
+#### [snapshot](#snapshot)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:snapshot([path]) -> hs.image | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it.                                                                                         |
+| **Parameters**                                       | <ul><li>* path		- (optional) The path to save the file. Should include the extension (should be `.png`).</li></ul> |
 

@@ -6,27 +6,29 @@ Color Wheels Module.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [contentUI](#contentui)
  * [hue](#hue)
+ * [isShowing](#isshowing)
  * [maxValue](#maxvalue)
  * [minValue](#minvalue)
  * [mix](#mix)
  * [temperature](#temperature)
  * [tint](#tint)
+ * [UI](#ui)
  * [value](#value)
  * [viewingAllWheels](#viewingallwheels)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
- * [contentUI](#contentui)
  * [highlights](#highlights)
  * [hueRow](#huerow)
- * [hueSlider](#hueslider)
- * [isShowing](#isshowing)
+ * [hueTextField](#huetextfield)
  * [master](#master)
  * [midtones](#midtones)
  * [mixRow](#mixrow)
  * [mixSlider](#mixslider)
- * [new](#new)
  * [parent](#parent)
  * [shadows](#shadows)
  * [show](#show)
@@ -34,7 +36,6 @@ Color Wheels Module.
  * [temperatureSlider](#temperatureslider)
  * [tintRow](#tintrow)
  * [tintSlider](#tintslider)
- * [UI](#ui)
  * [viewMode](#viewmode)
  * [wheelType](#wheeltype)
 
@@ -50,13 +51,35 @@ Color Wheels Module.
 | **Parameters**                                       | <ul><li>* element	- The element to check</li></ul> |
 | **Returns**                                          | <ul><li>* `true` if the element is the Color Wheels.</li></ul>          |
 
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.new(parent) -> ColorInspector` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new ColorWheels object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A new `ColorInspector` object</li></ul>          |
+
 ### Fields
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` representing the content element of the ColorWheels corrector.                                                                                         |
 
 #### [hue](#hue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.hue <cp.prop: number>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | The hue for the corrector. A number from `0` to `50`.                                                                                         |
+| **Description**                                      | The hue for the corrector. A number from `0` to `360`.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is the Color Wheels Corrector currently showing?                                                                                         |
 
 #### [maxValue](#maxvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.maxValue <cp.prop: number>` </span>                                                          |
@@ -88,6 +111,12 @@ Color Wheels Module.
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | The tint for the corrector. A number from `-50` to `50`.                                                                                         |
 
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` representing the ColorWheels corrector.                                                                                         |
+
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.value <cp.prop: number>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -95,7 +124,7 @@ Color Wheels Module.
 | **Description**                                      | The value of the value indicator as a number.                                                                                         |
 
 #### [viewingAllWheels](#viewingallwheels)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:viewingAllWheels <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.viewingAllWheels <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Reports and modifies whether the ColorWheels corrector is showing "All Wheels" (`true`) or "Single Wheels" (`false`).                                                                                         |
@@ -109,14 +138,6 @@ Color Wheels Module.
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The application object as a table</li></ul>          |
-
-#### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:contentUI() -> axuielement` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns  the the `axuielement` representing the content element of the ColorWheels corrector.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The ColorWheels content `axuielement`</li></ul>          |
 
 #### [highlights](#highlights)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:highlights() -> ColorWheel` </span>                                                          |
@@ -134,21 +155,13 @@ Color Wheels Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The `PropertyRow`.</li></ul>          |
 
-#### [hueSlider](#hueslider)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:hueSlider() -> cp.ui.Slider` </span>                                                          |
+#### [hueTextField](#huetextfield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:hueTextField() -> cp.ui.Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `Slider` that provides access to the 'Hue' slider.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Hue `Slider`.</li></ul>          |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Is the Color Wheels currently showing?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if showing, otherwise `false`</li></ul>          |
 
 #### [master](#master)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:master() -> ColorWheel` </span>                                                          |
@@ -181,14 +194,6 @@ Color Wheels Module.
 | **Description**                                      | Returns a `Slider` that provides access to the 'Mix' slider.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Mix `Slider`.</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:new(parent) -> ColorInspector object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new ColorWheels object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
-| **Returns**                                          | <ul><li>A ColorInspector object</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:parent() -> table` </span>                                                          |
@@ -245,14 +250,6 @@ Color Wheels Module.
 | **Description**                                      | Returns a `Slider` that provides access to the 'Tint' slider.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Tint `Slider`.</li></ul>          |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:UI() -> axuielement` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns  the the `axuielement` representing the ColorWheels corrector.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The ColorWheels `axuielement`</li></ul>          |
 
 #### [viewMode](#viewmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:viewMode() -> MenuButton` </span>                                                          |

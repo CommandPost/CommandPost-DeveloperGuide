@@ -11,6 +11,8 @@ Color Puck Module.
  * [RANGE](#range)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [skimming](#skimming)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -22,10 +24,10 @@ Color Puck Module.
  * [drawMarker](#drawmarker)
  * [getArc](#getarc)
  * [getBrightness](#getbrightness)
+ * [hasAngle](#hasangle)
  * [index](#index)
  * [isShowing](#isshowing)
  * [loop](#loop)
- * [new](#new)
  * [parent](#parent)
  * [reset](#reset)
  * [select](#select)
@@ -73,6 +75,16 @@ Color Puck Module.
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
 | **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck.new(parent, puckNumber, labelKeys, hasAngle) -> ColorPuck` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `ColorPuck` object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`     - The parent</li><li>`puckNumber` - The puck number</li><li>`labelKeys`  - Label Keys</li><li>`hasAngle`   - If `true`, the puck has an `angle` parameter.</li></ul> |
+| **Returns**                                          | <ul><li>A ColorInspector object</li></ul>          |
 
 ### Fields
 
@@ -148,6 +160,14 @@ Color Puck Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The brightness value as number.</li></ul>          |
 
+#### [hasAngle](#hasangle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:hasAngle() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Indicates if the puck has an `angle` parameter. The `angle` `cp.prop` will always                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if the puck has an `angle`.</li></ul>          |
+
 #### [index](#index)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:index() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -171,14 +191,6 @@ Color Puck Module.
 | **Description**                                      | Loops the Color Puck function.                                                                                         |
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* None</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:new(parent, puckNumber, labelKeys) -> ColorPuck object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new `ColorPuck` object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent` - The parent</li><li>`puckNumber` - The puck number</li><li>`labelKeys` - Label Keys</li></ul> |
-| **Returns**                                          | <ul><li>A ColorInspector object</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:parent() -> object` </span>                                                          |

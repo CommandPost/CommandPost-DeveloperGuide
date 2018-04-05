@@ -23,7 +23,7 @@ Color Board Module.
  * [backButton](#backbutton)
  * [childUI](#childui)
  * [color](#color)
- * [colorSatExpUI](#colorsatexpui)
+ * [contentUI](#contentui)
  * [current](#current)
  * [exposure](#exposure)
  * [hide](#hide)
@@ -131,9 +131,9 @@ Color Board Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `Button` to access the 'Back' button, if present.                                                                                         |
-| **Parameters**                                       | <ul><li>* None</li></ul> |
-| **Returns**                                          | <ul><li>* The `Button` for 'back'.</li></ul>          |
-| **Notes**                                            | <ul><li>* This no longer exists in FCP 10.4+, so will always be non-functional.</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The `Button` for 'back'.</li></ul>          |
+| **Notes**                                            | <ul><li>This no longer exists in FCP 10.4+, so will always be non-functional.</li></ul>                |
 
 #### [childUI](#childui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:childUI(id) -> hs._asm.axuielement object` </span>                                                          |
@@ -151,13 +151,13 @@ Color Board Module.
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* The `ColorBoardAspect`.</li></ul>          |
 
-#### [colorSatExpUI](#colorsatexpui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:colorSatExpUI() -> hs._asm.axuielement object` </span>                                                          |
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:contentUI() -> hs._asm.axuielement object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets the `hs._asm.axuielement` object for the `AXRadioGroup` which houses the "Color", "Saturation" and "Exposure" button                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Color Board's content.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `hs._asm.axuielement` object</li></ul>          |
+| **Returns**                                          | <ul><li>A `hs._asm.axuielement` object</li></ul>          |
 
 #### [current](#current)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:current() -> ColorBoardAspect` </span>                                                          |

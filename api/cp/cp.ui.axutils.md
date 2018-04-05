@@ -24,6 +24,7 @@ Utility functions to support `hs._asm.axuielement`
  * [compareRightToLeft](#comparerighttoleft)
  * [compareTopToBottom](#comparetoptobottom)
  * [isValid](#isvalid)
+ * [snapshot](#snapshot)
 
 ## API Documentation
 
@@ -176,4 +177,12 @@ Utility functions to support `hs._asm.axuielement`
 | **Description**                                      | Checks if the axuilelement is still valid - that is, still active in the UI.                                                                                         |
 | **Parameters**                                       | <ul><li>element	- the axuielement</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the element is valid.</li></ul>          |
+
+#### [snapshot](#snapshot)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.snapshot(element, [filename]) -> hs.image` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Takes a snapshot of the specified `axuielement` and returns it.                                                                                         |
+| **Parameters**                                       | <ul><li>* element		- The `axuielement` to snap.</li><li>* filename		- (optional) The path to save the image as a PNG file.</li></ul> |
+| **Returns**                                          | <ul><li>* An `hs.image` file, or `nil` if the element could not be snapped.</li></ul>          |
 

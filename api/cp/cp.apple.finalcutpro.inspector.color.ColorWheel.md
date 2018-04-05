@@ -8,22 +8,26 @@ Represents a single Color Well in the Color Wheels Inspector.
  * [TYPE](#type)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [brightnessValue](#brightnessvalue)
+ * [colorOrientation](#colororientation)
  * [colorPosition](#colorposition)
- * [colorScreenPosition](#colorscreenposition)
  * [colorValue](#colorvalue)
+ * [focused](#focused)
+ * [isShowing](#isshowing)
  * [puckPosition](#puckposition)
- * [puckScreenPosition](#puckscreenposition)
  * [saturationValue](#saturationvalue)
+ * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [brightness](#brightness)
  * [colorWell](#colorwell)
- * [new](#new)
  * [nudgeColor](#nudgecolor)
  * [reset](#reset)
  * [resetButton](#resetbutton)
  * [saturation](#saturation)
+ * [select](#select)
 
 ## API Documentation
 
@@ -45,6 +49,16 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Parameters**                                       | <ul><li>* element	- The element to check</li></ul> |
 | **Returns**                                          | <ul><li>* `true` if the element is a Color Well.</li></ul>          |
 
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.new(parent, type) -> ColorWheel` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `ColorWheel` instance, with the specified parent and type.                                                                                         |
+| **Parameters**                                       | <ul><li>* parent	- The parent object.</li><li>* type		- The type of color wheel. Must be one of the `ColorWheel.TYPE` values.</li></ul> |
+| **Returns**                                          | <ul><li>* A new `ColorWheel` instance.</li></ul>          |
+
 ### Fields
 
 #### [brightnessValue](#brightnessvalue)
@@ -53,14 +67,14 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | The current brightness value, as a number between -12 and 10.                                                                                         |
 
-#### [colorPosition](#colorposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.colorPosition <cp.prop: point>` </span>                                                          |
+#### [colorOrientation](#colororientation)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.colorOrientation <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Relative X/Y position for the current color value of the Color Well. This will be a `point` table,                                                                                         |
+| **Description**                                      | Provides the orientation of the color as a table containing an `up` and `right` value.                                                                                         |
 
-#### [colorScreenPosition](#colorscreenposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.colorScreenPosition <cp.prop: point>` </span>                                                          |
+#### [colorPosition](#colorposition)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.colorPosition <cp.prop: point>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | X/Y screen position for the current color value of the Color Well. This ignores the bounds of the                                                                                         |
@@ -71,14 +85,20 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | The current color value, as a `hs.drawing.color` table.                                                                                         |
 
-#### [puckPosition](#puckposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.puckPosition <cp.prop: point>` </span>                                                          |
+#### [focused](#focused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.focused <cp.pref: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | X/Y position for the puck in the Color Well. Colours outside the bounds are clamped inside the color well.                                                                                         |
+| **Description**                                      | Gets and sets whether the Color Well has focus.                                                                                         |
 
-#### [puckScreenPosition](#puckscreenposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.puckScreenPosition <cp.prop: point>` </span>                                                          |
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the ColorWheel is showing on screen.                                                                                         |
+
+#### [puckPosition](#puckposition)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.puckPosition <cp.prop: point>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Absolute X/Y screen position for the puck in the Color Well. Colours outside the bounds are clamped inside the color well.                                                                                         |
@@ -88,6 +108,12 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | The current saturation value, as a number between 0 and 10.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` for the ColorWheel.                                                                                         |
 
 ### Methods
 
@@ -107,20 +133,12 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* The `ColorWell` instance.</li></ul>          |
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:new(parent, type) -> ColorWheel` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new `ColorWheel` instance, with the specified parent and type.                                                                                         |
-| **Parameters**                                       | <ul><li>* parent	- The parent object.</li><li>* type		- The type of color wheel. Must be one of the `ColorWheel.TYPE` values.</li></ul> |
-| **Returns**                                          | <ul><li>* A new `ColorWheel` instance.</li></ul>          |
-
 #### [nudgeColor](#nudgecolor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:nudgeColor(x, y) -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:nudgeColor(right, up) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Nudges the `colorPosition` by `x`/`y` values. Positive `x` values shift right,                                                                                         |
-| **Parameters**                                       | <ul><li>* x		- The number of pixels to shift horizontally.</li><li>* y		- The number of pixels to shift vertically.</li></ul> |
+| **Description**                                      | Nudges the `colorPosition` by `right`/`up` values. Negative `right` values shift left,                                                                                         |
+| **Parameters**                                       | <ul><li>`right` - The number of steps to shift right. May be negative to shift left.</li><li>`up` - The number of pixels to shift down. May be negative to shift down.</li></ul> |
 | **Returns**                                          | <ul><li>* The `ColorWheel` instance.</li></ul>          |
 
 #### [reset](#reset)
@@ -146,4 +164,12 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Description**                                      | Returns the saturation `ValueIndicator` for this ColorWheel.                                                                                         |
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* The saturation `ValueIndicator` instance.</li></ul>          |
+
+#### [select](#select)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:select() -> cp.apple.finalcutpro.inspector.color.ColorWheel` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Shows and selects this color wheel.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The `ColorWheel` instance.</li></ul>          |
 

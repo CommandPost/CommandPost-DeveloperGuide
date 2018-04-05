@@ -17,15 +17,10 @@ Represents an AXTable in the Apple Accessibility UX API.
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [columnsUI](#columnsui)
- * [horizontalScrollBarUI](#horizontalscrollbarui)
- * [isFocused](#isfocused)
- * [isShowing](#isshowing)
  * [parent](#parent)
  * [rowsUI](#rowsui)
  * [topRowsUI](#toprowsui)
- * [UI](#ui)
  * [uncached](#uncached)
- * [verticalScrollBarUI](#verticalscrollbarui)
 
 ## API Documentation
 
@@ -114,30 +109,6 @@ Represents an AXTable in the Apple Accessibility UX API.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Table of column headers. If the table is visible but no column headers are defined, an empty table is returned. If it's not visible, `nil` is returned.</li></ul>          |
 
-#### [horizontalScrollBarUI](#horizontalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:horizontalScrollBarUI() -> axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Finds the horizontal scroll bar UI element, if present.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The UI element, or `nil`.</li></ul>          |
-
-#### [isFocused](#isfocused)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:isFocused() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Checks if the table is focused by the user.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if the element is focused.</li></ul>          |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Checks if the table is visible.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if the element is visible.</li></ul>          |
-
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:parent() -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -162,26 +133,10 @@ Represents an AXTable in the Apple Accessibility UX API.
 | **Parameters**                                       | <ul><li>`filterFn`	- An optional function that will be called to check if individual rows should be included. If not provided, all rows are returned.</li></ul> |
 | **Returns**                                          | <ul><li>Table of rows. If the table is visible but no rows match, it will be an empty table, otherwise it will be `nil`.</li></ul>          |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:UI() -> axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `axuielement` that contains the actual rows.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The content UI element, or `nil`.</li></ul>          |
-
 #### [uncached](#uncached)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:uncached() -> Table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Calling this will force the table to look up the `axuielement` on demand, rather than caching the result.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-
-#### [verticalScrollBarUI](#verticalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:verticalScrollBarUI() -> axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Finds the vertical scroll bar UI element, if present.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The UI element, or `nil`.</li></ul>          |
 

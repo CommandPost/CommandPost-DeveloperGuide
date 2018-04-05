@@ -9,9 +9,10 @@ Color Inspector Module.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [frame](#frame)
+ * [correctorUI](#correctorui)
  * [isSupported](#issupported)
- * [value](#value)
+ * [topBarUI](#topbarui)
+ * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activateCorrection](#activatecorrection)
  * [app](#app)
@@ -19,14 +20,12 @@ Color Inspector Module.
  * [colorCurves](#colorcurves)
  * [colorWheels](#colorwheels)
  * [corrections](#corrections)
- * [correctorUI](#correctorui)
  * [hide](#hide)
  * [hueSaturationCurves](#huesaturationcurves)
  * [isShowing](#isshowing)
  * [new](#new)
  * [parent](#parent)
  * [show](#show)
- * [UI](#ui)
 
 ## API Documentation
 
@@ -50,11 +49,11 @@ Color Inspector Module.
 
 ### Fields
 
-#### [frame](#frame)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.frame <cp.prop: string>` </span>                                                          |
+#### [correctorUI](#correctorui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.correctorUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Gets the Color Well Frame.                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object representing the currently-selected corrector panel.                                                                                         |
 
 #### [isSupported](#issupported)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.isSupported <cp.prop: boolean; read-only>` </span>                                                          |
@@ -62,11 +61,17 @@ Color Inspector Module.
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Is the Color Inspector supported in the installed version of Final Cut Pro?                                                                                         |
 
-#### [value](#value)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.value <cp.prop: string>` </span>                                                          |
+#### [topBarUI](#topbarui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.topBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Gets the Color Well Value.                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object representing the top bar.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Color Inspector. Prior to FCPX 10.4 this will be the Color Board.                                                                                         |
 
 ### Methods
 
@@ -118,14 +123,6 @@ Color Inspector Module.
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* The `CorrectionsBar` instance.</li></ul>          |
 
-#### [correctorUI](#correctorui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:correctorUI() -> hs._asm.axuielement object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `hs._asm.axuielement` object representing the currently-selected corrector panel.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `hs._asm.axuielement` object or `nil` if not running Final Cut Pro 10.4 (or later), or if an error occurs.</li></ul>          |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:hide() -> ColorInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -151,7 +148,7 @@ Color Inspector Module.
 | **Returns**                                          | <ul><li>`true` if the Color Inspector is showing, otherwise `false`</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:new(parent) -> ColorInspector object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.new(parent) -> ColorInspector object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new ColorInspector object                                                                                         |
@@ -173,12 +170,4 @@ Color Inspector Module.
 | **Description**                                      | Shows the Color Inspector.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>ColorInspector object</li></ul>          |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:UI() -> hs._asm.axuielement object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Final Cut Pro 10.4 Color Board Inspector.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `hs._asm.axuielement` object or `nil` if not running Final Cut Pro 10.4 (or later), or if an error occurs.</li></ul>          |
 

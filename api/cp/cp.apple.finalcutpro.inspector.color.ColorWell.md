@@ -5,38 +5,27 @@ Represents a single Color Well in the Color Wheels Inspector.
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [maxPosition](#maxposition)
- * [minPosition](#minposition)
+ * [KEY_PRESS](#key_press)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [centre](#centre)
- * [colorScreenPosition](#colorscreenposition)
- * [puckPosition](#puckposition)
- * [puckScreenPosition](#puckscreenposition)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
- * [isShowing](#isshowing)
- * [new](#new)
  * [nudge](#nudge)
  * [parent](#parent)
- * [UI](#ui)
+ * [reset](#reset)
+ * [select](#select)
 
 ## API Documentation
 
 ### Constants
 
-#### [maxPosition](#maxposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.maxPosition` </span>                                                          |
+#### [KEY_PRESS](#key_press)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.KEY_PRESS` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The maximum relative X or Y value for the well, for `colorPosition`.                                                                                         |
-
-#### [minPosition](#minposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.minPosition` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The minimum relative X or Y value for the well, for `colorPosition`.                                                                                         |
+| **Description**                                      | This can be used with `nudge` to shift by the same distance                                                                                         |
 
 ### Functions
 
@@ -48,31 +37,15 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Parameters**                                       | <ul><li>* element   - The element to check</li></ul> |
 | **Returns**                                          | <ul><li>* `true` if the element is a Color Well.</li></ul>          |
 
-### Fields
+### Constructors
 
-#### [centre](#centre)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.centre <cp.prop: point; read-only>` </span>                                                          |
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.new(parent, finderFn) -> ColorWell` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The center point of the ColorWell. A table with `{x=..., y=...}`.                                                                                         |
-
-#### [colorScreenPosition](#colorscreenposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.colorScreenPosition <cp.prop: hs.geometry.point>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Relative X/Y position for the current color value of the Color Well. This will be a `point` table,                                                                                         |
-
-#### [puckPosition](#puckposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.puckPosition <cp.prop: hs.geometry.point>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Relative X/Y position for the puck in the Color Well. Colours outside the bounds are clamped inside the color well.                                                                                         |
-
-#### [puckScreenPosition](#puckscreenposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell.puckScreenPosition <cp.prop: hs.geometry.point>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Absolute X/Y screen position for the puck in the Color Well. Colours outside the bounds are clamped inside the color well.                                                                                         |
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `ColorWell` instance, with the specified parent and finder function.                                                                                         |
+| **Parameters**                                       | <ul><li>* parent - The parent object</li><li>* finderFn - Returns the `axuielement` that represents the color well.</li></ul> |
+| **Returns**                                          | <ul><li>* A new `ColorWell` instance.</li></ul>          |
 
 ### Methods
 
@@ -84,28 +57,12 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Final Cut Pro object.</li></ul>          |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Is the Color Well currently showing?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if showing, otherwise `false`</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell:new(parent, finderFn) -> ColorWell` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new `ColorWell` instance, with the specified parent and finder function.                                                                                         |
-| **Parameters**                                       | <ul><li>* parent - The parent object</li><li>* finderFn - Returns the `axuielement` that represents the color well.</li></ul> |
-| **Returns**                                          | <ul><li>* A new `ColorWell` instance.</li></ul>          |
-
 #### [nudge](#nudge)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell:nudge(x, y) -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell:nudge(right, up) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Nudges the `colorPosition` by `x`/`y` values. Positive `x` values shift right,                                                                                         |
-| **Parameters**                                       | <ul><li>`x` - The number of pixels to shift horizontally.</li><li>`y` - The number of pixels to shift vertically.</li></ul> |
+| **Description**                                      | Nudges the `colorPosition` by `right`/`up` values. Negative `right` values shift left,                                                                                         |
+| **Parameters**                                       | <ul><li>`right` - The number of steps to shift right. May be negative to shift left.</li><li>`up` - The number of pixels to shift down. May be negative to shift down.</li></ul> |
 | **Returns**                                          | <ul><li>The `ColorWell` instance.</li></ul>          |
 
 #### [parent](#parent)
@@ -116,11 +73,19 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell:UI() -> hs._asm.axuielement | nil` </span>                                                          |
+#### [reset](#reset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell:reset() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `hs._asm.axuielement` object.                                                                                         |
+| **Description**                                      | Resets the color wheel.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The `ColorWell` instance.</li></ul>          |
+
+#### [select](#select)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWell:select() -> cp.apple.finalcutpro.inspector.color.ColorWell` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Selects this color well.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `hs._asm.axuielement` object or `nil`.</li></ul>          |
+| **Returns**                                          | <ul><li>The `ColorWell` instance.</li></ul>          |
 

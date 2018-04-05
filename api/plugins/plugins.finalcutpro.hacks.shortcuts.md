@@ -8,10 +8,8 @@ via the Final Cut Pro Command Editor.
 * Constants - Useful values which cannot be changed
  * [active](#active)
  * [installed](#installed)
- * [onboardingRequired](#onboardingrequired)
  * [requiresActivation](#requiresactivation)
  * [requiresDeactivation](#requiresdeactivation)
- * [setupRequired](#setuprequired)
  * [supported](#supported)
  * [uninstalled](#uninstalled)
 * Functions - API calls offered directly by the extension
@@ -37,12 +35,6 @@ via the Final Cut Pro Command Editor.
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A property that returns `true` if the FCPX Hacks Shortcuts are currently installed in FCPX.                                                                                         |
 
-#### [onboardingRequired](#onboardingrequired)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.onboardingRequired <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | If `true`, the initial setup has been completed.                                                                                         |
-
 #### [requiresActivation](#requiresactivation)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.requiresActivation <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -55,12 +47,6 @@ via the Final Cut Pro Command Editor.
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A property that returns `true` if the FCPX shortcuts are active but shortcuts are not installed.                                                                                         |
 
-#### [setupRequired](#setuprequired)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.setupRequired <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | If `true`, the user needs to configure Hacks Shortcuts.                                                                                         |
-
 #### [supported](#supported)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.supported <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -71,7 +57,7 @@ via the Final Cut Pro Command Editor.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.uninstalled <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
-| **Description**                                      | A property that returns `true` if the shortcuts are neither original or installed correctly.                                                                                         |
+| **Description**                                      | A property that returns `true` if shortcuts is working on something.                                                                                         |
 
 ### Functions
 

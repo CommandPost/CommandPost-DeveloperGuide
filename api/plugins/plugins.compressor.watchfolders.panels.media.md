@@ -154,12 +154,12 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [styleSheet](#stylesheet)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.styleSheet() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.styleSheet() -> cp.web.html` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates Style Sheet                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Returns Style Sheet as a string</li></ul>          |
+| **Returns**                                          | <ul><li>Returns Style Sheet as a `cp.web.html` block.</li></ul>          |
 
 #### [watchCompressorStatus](#watchcompressorstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.watchCompressorStatus(jobID) -> none` </span>                                                          |

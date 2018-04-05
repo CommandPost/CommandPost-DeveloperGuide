@@ -10,6 +10,7 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
+ * [hasAngle](#hasangle)
  * [highlights](#highlights)
  * [id](#id)
  * [index](#index)
@@ -36,11 +37,11 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:new(app) -> ColorBoardAspect` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:new(parent, index[, hasAngle]) -> ColorBoardAspect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `ColorBoardAspect` object.                                                                                         |
-| **Parameters**                                       | <ul><li>parent - The parent object.</li><li>index - The Color Board Aspect Index.</li></ul> |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li><li>index - The Color Board Aspect Index.</li><li>hasAngle - If `true`, the aspect has an `angle` parameter. Defaults to `false`</li></ul> |
 | **Returns**                                          | <ul><li>A new `ColorBoardAspect object.</li></ul>          |
 
 ### Methods
@@ -52,6 +53,14 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 | **Description**                                      | Returns the App instance representing Final Cut Pro.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul>          |
+
+#### [hasAngle](#hasangle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:hasAngle() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks if the aspect has an `angle` property.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if it has an `angle` propery.</li></ul>          |
 
 #### [highlights](#highlights)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:highlights() -> ColorPuck` </span>                                                          |

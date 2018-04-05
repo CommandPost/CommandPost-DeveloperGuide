@@ -9,9 +9,11 @@ Batch Export Plugin
  * [changeExportDestinationFolder](#changeexportdestinationfolder)
  * [changeExportDestinationPreset](#changeexportdestinationpreset)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [customFilename](#customfilename)
  * [ignoreMissingEffects](#ignoremissingeffects)
  * [ignoreProxies](#ignoreproxies)
  * [replaceExistingFiles](#replaceexistingfiles)
+ * [useCustomFilename](#usecustomfilename)
 
 ## API Documentation
 
@@ -43,6 +45,12 @@ Batch Export Plugin
 
 ### Fields
 
+#### [customFilename](#customfilename)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.customFilename <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Custom Filename for Batch Export.                                                                                         |
+
 #### [ignoreMissingEffects](#ignoremissingeffects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreMissingEffects <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -60,4 +68,10 @@ Batch Export Plugin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Defines whether or not a Batch Export should Replace Existing Files.                                                                                         |
+
+#### [useCustomFilename](#usecustomfilename)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.useCustomFilename <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Defines whether or not the Batch Export tool should override the clipname with a custom filename.                                                                                         |
 

@@ -16,6 +16,7 @@ Requires Final Cut Pro 10.4 or later.
  * [isShowing](#isshowing)
  * [menuButton](#menubutton)
  * [parent](#parent)
+ * [show](#show)
  * [UI](#ui)
 
 ## API Documentation
@@ -87,6 +88,14 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Returns the Corrections Bar's parent table                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:show() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to show the bar.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The `CorrectionsBar` instance.</li></ul>          |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:UI() -> hs._asm.axuielement | nil` </span>                                                          |

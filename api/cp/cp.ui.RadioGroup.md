@@ -16,6 +16,7 @@ Represents an `AXRadioGroup`, providing utility methods.
  * [nextOption](#nextoption)
  * [parent](#parent)
  * [previousOption](#previousoption)
+ * [snapshot](#snapshot)
  * [UI](#ui)
 
 ## API Documentation
@@ -93,6 +94,13 @@ Represents an `AXRadioGroup`, providing utility methods.
 | **Description**                                      | Selects the previous option in the group. Cycles from the first to the last item.                                                                                         |
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* The `RadioGroup`.</li></ul>          |
+
+#### [snapshot](#snapshot)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:snapshot([path]) -> hs.image | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it.                                                                                         |
+| **Parameters**                                       | <ul><li>* path		- (optional) The path to save the file. Should include the extension (should be `.png`).</li></ul> |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:UI() -> axuielement` </span>                                                          |

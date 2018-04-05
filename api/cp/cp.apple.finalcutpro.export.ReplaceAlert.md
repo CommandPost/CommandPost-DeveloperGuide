@@ -6,6 +6,7 @@ Replace Alert
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [isShowing](#isshowing)
@@ -30,10 +31,12 @@ Replace Alert
 | **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
+### Constructors
+
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ReplaceAlert:new(app) -> ReplaceAlert` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ReplaceAlert.new(app) -> ReplaceAlert` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
+| **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Replace Alert object.                                                                                         |
 | **Parameters**                                       | <ul><li>app - The `cp.apple.finalcutpro` object.</li></ul> |
 | **Returns**                                          | <ul><li>A new ReplaceAlert object.</li></ul>          |

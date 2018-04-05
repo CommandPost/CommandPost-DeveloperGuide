@@ -9,11 +9,14 @@ Core CommandPost functionality
  * [cp.choices](cp.choices.md)
  * [cp.commands](cp.commands.md)
  * [cp.config](cp.config.md)
+ * [cp.console](cp.console.md)
+ * [cp.deferred](cp.deferred.md)
  * [cp.developer](cp.developer.md)
  * [cp.dialog](cp.dialog.md)
  * [cp.feedback](cp.feedback.md)
  * [cp.idle](cp.idle.md)
  * [cp.ids](cp.ids.md)
+ * [cp.is](cp.is.md)
  * [cp.just](cp.just.md)
  * [cp.localized](cp.localized.md)
  * [cp.plist](cp.plist.md)
@@ -32,6 +35,7 @@ Core CommandPost functionality
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [init](#init)
+ * [is](#is)
 
 ## API Documentation
 
@@ -44,4 +48,12 @@ Core CommandPost functionality
 | **Description**                                      | Initialise CommandPost                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [is](#is)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.block.is(value) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks if the `value` is an `cp.web.block`.                                                                                         |
+| **Parameters**                                       | <ul><li>* value		- the value to check</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if it is an HTML block, or `false` otherwise.</li></ul>          |
 

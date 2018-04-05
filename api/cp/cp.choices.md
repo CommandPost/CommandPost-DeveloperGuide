@@ -21,7 +21,7 @@ Choices Module.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.new(type) -> choices` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new `cp.plugin.chooser.choices` instance for the specified type.                                                                                         |
+| **Description**                                      | Creates a new `cp.choices` instance for the specified type.                                                                                         |
 | **Parameters**                                       | <ul><li>* `type`	- The unique ID for the type.</li></ul> |
 | **Returns**                                          | <ul><li>* The new `choices` instance.</li></ul>          |
 

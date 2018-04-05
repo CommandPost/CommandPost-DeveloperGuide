@@ -171,7 +171,7 @@ Final Cut Pro FCPXML Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [styleSheet](#stylesheet)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.fcpxml.styleSheet() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.fcpxml.styleSheet() -> cp.web.html` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates Style Sheet                                                                                         |

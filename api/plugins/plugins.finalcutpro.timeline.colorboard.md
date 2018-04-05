@@ -6,6 +6,7 @@ Color Board Plugins.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [colorBoardMousePuckRelease](#colorboardmousepuckrelease)
+ * [nextAspect](#nextaspect)
  * [startMousePuck](#startmousepuck)
  * [startShiftingPuck](#startshiftingpuck)
  * [stopShiftingPuck](#stopshiftingpuck)
@@ -19,6 +20,14 @@ Color Board Plugins.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Color Board Mouse Puck Release                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
+
+#### [nextAspect](#nextaspect)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.colorboard.nextAspect() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Goes to the next Color Board aspect.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

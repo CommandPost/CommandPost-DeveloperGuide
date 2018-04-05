@@ -7,6 +7,7 @@ Special Thanks: Iain Anderson (@funwithstuff) for all his incredible testing!
 
 ## API Overview
 * Variables - Configurable values
+ * [customModifier](#custommodifier)
  * [enabled](#enabled)
  * [numberOfTouchDevices](#numberoftouchdevices)
  * [offset](#offset)
@@ -20,6 +21,12 @@ Special Thanks: Iain Anderson (@funwithstuff) for all his incredible testing!
 ## API Documentation
 
 ### Variables
+
+#### [customModifier](#custommodifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.mousezoom.customModifier <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Custom Modifier as string.                                                                                         |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.mousezoom.enabled <cp.prop: boolean>` </span>                                                          |

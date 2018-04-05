@@ -13,6 +13,7 @@ and if functions are provided, they are re-evaluated every time the element is g
  * [javascript](#javascript)
  * [password](#password)
  * [select](#select)
+ * [style](#style)
  * [template](#template)
  * [textbox](#textbox)
 * Constructors - API calls which return an object, typically one that offers API methods
@@ -42,11 +43,11 @@ and if functions are provided, they are re-evaluated every time the element is g
 | **Notes**                                            | <ul><li>The `params` table has the following supported fields:</li><li> ** `src`		- The source of the image. If this points to a local file, it will be encoded as Base64.</li><li> ** `class`		- A string, (or function returning a string) with the CSS class for the element.</li><li> ** `width`		- The width of the image.</li><li> ** `height`	- The height of the image.</li></ul>                |
 
 #### [javascript](#javascript)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.javascript(script, context) -> cp.web.html` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.javascript(script[, context]) -> cp.web.html` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates an HTML script element which will execute the provided                                                                                         |
-| **Parameters**                                       | <ul><li>script 	- String containing the JavaScript to execute.</li><li>context	- Table containing any values to inject into the script.</li></ul> |
+| **Parameters**                                       | <ul><li>script 	- String containing the JavaScript to execute.</li><li>context	- (optional) Table containing any values to inject into the script.</li></ul> |
 | **Returns**                                          | <ul><li>a `cp.web.html` element representing the JavaScript block.</li></ul>          |
 
 #### [password](#password)
@@ -66,6 +67,14 @@ and if functions are provided, they are re-evaluated every time the element is g
 | **Parameters**                                       | <ul><li>`params`		- A table or function returning a table with the checkbox data.</li></ul> |
 | **Returns**                                          | <ul><li>A `cp.web.html` with the select defined.</li></ul>          |
 | **Notes**                                            | <ul><li>The `params` table has the following supported fields:</li><li> ** `id`		- a string (or function) the unique ID for the select.</li><li> ** `value`		- a string, number, or boolean (or function) with the value of the select. May be `nil`.</li><li> ** `options`	- an array (or function returning an array) of option tables, with the following keys:</li><li> *** `value`	- the value of the option.</li><li> *** `label`	- (optional) the label for the option. If not set, the `value` is used.</li><li> ** `required`	- (optional) if `true`, there will not be a 'blank' option at the top of the list.</li><li> ** `blankLabel`	- (optional) if specified, the value will be used for the 'blank' option label.</li></ul>                |
+
+#### [style](#style)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.style(rules[, context]) -> cp.web.html` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates an HTML `style` element which will contain the provided rules.                                                                                         |
+| **Parameters**                                       | <ul><li>rules 	- String containing the CSS rules.</li><li>context	- (optional) Table containing any values to inject into the script.</li></ul> |
+| **Returns**                                          | <ul><li>a `cp.web.html` element representing the JavaScript block.</li></ul>          |
 
 #### [template](#template)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.template(params) -> hs.web.html` </span>                                                          |
