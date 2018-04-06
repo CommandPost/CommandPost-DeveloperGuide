@@ -7,7 +7,7 @@ To get an overview of how Final Cut Pro works, it's worth checking out the origi
 
 Here's one of the screenshots from the patent:
 
-![Patent Screenshot](https://dev.commandpost.io/images/patent.png)
+![Patent Screenshot](../../patent.png)
 
 ---
 
