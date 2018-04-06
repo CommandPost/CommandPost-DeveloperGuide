@@ -16,6 +16,7 @@ MIDI Manager Plugin.
  * [MTC_TIMECODE_TYPE](#mtc_timecode_type)
 * Variables - Configurable values
  * [defaultGroup](#defaultgroup)
+ * [learningMode](#learningmode)
  * [maxItems](#maxitems)
  * [numberOfSubGroups](#numberofsubgroups)
 * Functions - API calls offered directly by the extension
@@ -24,6 +25,7 @@ MIDI Manager Plugin.
  * [clear](#clear)
  * [devices](#devices)
  * [forcefullyWatchMIDIDevices](#forcefullywatchmididevices)
+ * [forceGroupChange](#forcegroupchange)
  * [getDevice](#getdevice)
  * [getItem](#getitem)
  * [getItems](#getitems)
@@ -104,6 +106,12 @@ MIDI Manager Plugin.
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | The default group.                                                                                         |
 
+#### [learningMode](#learningmode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.learningMode -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Whether or not the MIDI Manager is in learning mode.                                                                                         |
+
 #### [maxItems](#maxitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.maxItems -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -157,6 +165,14 @@ MIDI Manager Plugin.
 | **Description**                                      | Forces CommandPost to watch a table of MIDI devices.                                                                                         |
 | **Parameters**                                       | <ul><li>devices - A table containing all the device names you want to always watch.</li></ul> |
 | **Returns**                                          | <ul><li>A table of Virtual MIDI Source Names.</li></ul>          |
+
+#### [forceGroupChange](#forcegroupchange)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.forceGroupChange(combinedGroupAndSubGroupID) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Loads a specific sub-group.                                                                                         |
+| **Parameters**                                       | <ul><li>combinedGroupAndSubGroupID - The group and subgroup as a single string.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [getDevice](#getdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getDevice(deviceName, virtual) -> hs.midi object | nil` </span>                                                          |
