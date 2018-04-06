@@ -46,5 +46,5 @@
 ## API Reference
 
 * [cp](api/cp/cp.md)
-* [plugins](api/plugins.index.md)
+* [plugins](api/plugins/index.md)
 * [hs](api/hs/hs.md)
