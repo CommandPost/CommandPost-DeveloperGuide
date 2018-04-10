@@ -22,10 +22,14 @@ here: http://www.tangentwave.co.uk/developer-support
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [activeMode](#activemode)
+ * [FCP_KEYPRESS_APPS_PATH](#fcp_keypress_apps_path)
+ * [HIDE_FILE_PATH](#hide_file_path)
+ * [TANGENT_MAPPER_BUNDLE_ID](#tangent_mapper_bundle_id)
 * Variables - Configurable values
  * [connectable](#connectable)
  * [connected](#connected)
  * [enabled](#enabled)
+ * [interrupted](#interrupted)
  * [requiresConnection](#requiresconnection)
  * [requiresDisconnection](#requiresdisconnection)
  * [tangentHubInstalled](#tangenthubinstalled)
@@ -34,7 +38,9 @@ here: http://www.tangentwave.co.uk/developer-support
 * Functions - API calls offered directly by the extension
  * [addMode](#addmode)
  * [areMappingsInstalled](#aremappingsinstalled)
+ * [disableFinalCutProInTangentHub](#disablefinalcutprointangenthub)
  * [getMode](#getmode)
+ * [interruptWhen](#interruptwhen)
  * [launchTangentMapper](#launchtangentmapper)
  * [update](#update)
  * [updateControls](#updatecontrols)
@@ -50,13 +56,31 @@ here: http://www.tangentwave.co.uk/developer-support
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Represents the currently active `mode`.                                                                                         |
 
+#### [FCP_KEYPRESS_APPS_PATH](#fcp_keypress_apps_path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.FCP_KEYPRESS_APPS_PATH -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Final Cut Pro Keypress Apps Path for Tangent Mapper.                                                                                         |
+
+#### [HIDE_FILE_PATH](#hide_file_path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.HIDE_FILE_PATH -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Tangent Mapper Hide File Path.                                                                                         |
+
+#### [TANGENT_MAPPER_BUNDLE_ID](#tangent_mapper_bundle_id)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.TANGENT_MAPPER_BUNDLE_ID -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Tangent Mapper Bundle ID.                                                                                         |
+
 ### Variables
 
 #### [connectable](#connectable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.connectable <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Is the Tangent Enabled and the Tangent Hub Installed?                                                                                         |
+| **Description**                                      | Is the Tangent Enabled, Not Interrupted, and the Tangent Hub Installed?                                                                                         |
 
 #### [connected](#connected)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.connected <cp.prop: boolean>` </span>                                                          |
@@ -69,6 +93,12 @@ here: http://www.tangentwave.co.uk/developer-support
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Enable or disables the Tangent Manager.                                                                                         |
+
+#### [interrupted](#interrupted)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.interrupted <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | If this property is `true` it will temporarily interrupt the Tangent connection, if it is enabled.                                                                                         |
 
 #### [requiresConnection](#requiresconnection)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.requiresConnection <cp.prop: boolean; read-only>` </span>                                                          |
@@ -118,6 +148,14 @@ here: http://www.tangentwave.co.uk/developer-support
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>`true` if mapping files are installed otherwise `false`</li></ul>          |
 
+#### [disableFinalCutProInTangentHub](#disablefinalcutprointangenthub)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.disableFinalCutProInTangentHub() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Disables the Final Cut Pro preset in the Tangent Hub Application.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
+
 #### [getMode](#getmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.getMode(id) -> plugins.core.tangent.manager.mode` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -125,6 +163,14 @@ here: http://www.tangentwave.co.uk/developer-support
 | **Description**                                      | Returns the `mode` with the specified ID, or `nil`.                                                                                         |
 | **Parameters**                                       | <ul><li>* id    - The ID to find.</li></ul> |
 | **Returns**                                          | <ul><li>* The `mode`, or `nil`.</li></ul>          |
+
+#### [interruptWhen](#interruptwhen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.interruptWhen(aProp) -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Adds a `cp.prop` that will cause an interruption to the Tangent connection when it is `true`.                                                                                         |
+| **Parameters**                                       | <ul><li>* aProp     - The `cp.prop` that may interrupt the connection.</li></ul> |
+| **Returns**                                          | <ul><li>* Nothing.</li></ul>          |
 
 #### [launchTangentMapper](#launchtangentmapper)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.launchTangentMapper() -> none` </span>                                                          |

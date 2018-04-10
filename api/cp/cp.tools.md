@@ -6,6 +6,7 @@ A collection of handy miscellaneous tools for Lua development.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [cleanupButtonText](#cleanupbuttontext)
+ * [dirFiles](#dirfiles)
  * [doesDirectoryExist](#doesdirectoryexist)
  * [doesFileExist](#doesfileexist)
  * [doubleLeftClick](#doubleleftclick)
@@ -64,6 +65,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Removes the … symbol and multiple >'s from a string.                                                                                         |
 | **Parameters**                                       | <ul><li>value - A string</li></ul> |
 | **Returns**                                          | <ul><li>A cleaned string</li></ul>          |
+
+#### [dirFiles](#dirfiles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.dirFiles(path) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets all the files in a directory                                                                                         |
+| **Parameters**                                       | <ul><li>path - A path as string</li></ul> |
+| **Returns**                                          | <ul><li>A table containing filenames as strings.</li></ul>          |
 
 #### [doesDirectoryExist](#doesdirectoryexist)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.doesDirectoryExist(path) -> boolean` </span>                                                          |
@@ -213,9 +222,9 @@ A collection of handy miscellaneous tools for Lua development.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.incrementFilename(value) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table of file names for the given path.                                                                                         |
-| **Parameters**                                       | <ul><li>path - A path as string</li></ul> |
-| **Returns**                                          | <ul><li>A table containing filenames as strings.</li></ul>          |
+| **Description**                                      | Increments the filename.                                                                                         |
+| **Parameters**                                       | <ul><li>value - A string</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul>          |
 
 #### [isNumberString](#isnumberstring)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.isNumberString(value) -> boolean` </span>                                                          |
