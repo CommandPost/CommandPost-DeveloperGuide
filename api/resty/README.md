@@ -1,4 +1,4 @@
-{% raw %}# lua-resty-template
+# lua-resty-template
 
 **lua-resty-template** is a compiling (1) (HTML) templating engine for Lua and OpenResty.
 
