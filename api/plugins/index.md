@@ -91,10 +91,8 @@
 | [plugins.core.webapp](plugins.core.webapp.md)                          | WebApp Plugin.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
+| [plugins.finalcutpro.browser.pasteboardtomarkers](plugins.finalcutpro.browser.pasteboardtomarkers.md)                          | Take the contents of the Pasteboard and pastes it as clip markers on the     |
 | [plugins.finalcutpro.browser.playhead](plugins.finalcutpro.browser.playhead.md)                          | Browser Playhead Plugin.     |
-| [plugins.finalcutpro.clipboard.history](plugins.finalcutpro.clipboard.history.md)                          | Clipboard History     |
-| [plugins.finalcutpro.clipboard.manager](plugins.finalcutpro.clipboard.manager.md)                          | Clipboard Manager.     |
-| [plugins.finalcutpro.clipboard.shared](plugins.finalcutpro.clipboard.shared.md)                          | Shared Clipboard Plugin.     |
 | [plugins.finalcutpro.commands](plugins.finalcutpro.commands.md)                          | The 'fcpx' command collection.     |
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
@@ -112,10 +110,10 @@
 | [plugins.finalcutpro.language](plugins.finalcutpro.language.md)                          | Final Cut Pro Language Plugin.     |
 | [plugins.finalcutpro.menu.administrator](plugins.finalcutpro.menu.administrator.md)                          | Administrator Menu.     |
 | [plugins.finalcutpro.menu.administrator.advancedfeatures](plugins.finalcutpro.menu.administrator.advancedfeatures.md)                          | Advanced Features Menu.     |
-| [plugins.finalcutpro.menu.clipboard](plugins.finalcutpro.menu.clipboard.md)                          | The CLIPBOARD menu section.     |
 | [plugins.finalcutpro.menu.helpandsupport.finalcutpro](plugins.finalcutpro.menu.helpandsupport.finalcutpro.md)                          | The Help & Support > CommandPost menu section.     |
 | [plugins.finalcutpro.menu.mediaimport](plugins.finalcutpro.menu.mediaimport.md)                          | The Media Import menu section.     |
 | [plugins.finalcutpro.menu.menuaction](plugins.finalcutpro.menu.menuaction.md)                          | A `action` which will trigger an Final Cut Pro menu with a matching path, if available/enabled.     |
+| [plugins.finalcutpro.menu.pasteboard](plugins.finalcutpro.menu.pasteboard.md)                          | The Pasteboard menu section.     |
 | [plugins.finalcutpro.menu.proxyicon](plugins.finalcutpro.menu.proxyicon.md)                          | Final Cut Pro Proxy Icon Plugin.     |
 | [plugins.finalcutpro.menu.timeline](plugins.finalcutpro.menu.timeline.md)                          | The TIMELINE menu section.     |
 | [plugins.finalcutpro.menu.tools](plugins.finalcutpro.menu.tools.md)                          | The TOOLS menu section.     |
@@ -135,6 +133,9 @@
 | [plugins.finalcutpro.notifications.pushover](plugins.finalcutpro.notifications.pushover.md)                          | Pushover Notifications Plugin.     |
 | [plugins.finalcutpro.open](plugins.finalcutpro.open.md)                          | Opens Final Cut Pro via Global Shortcut & Menubar.     |
 | [plugins.finalcutpro.os.voice](plugins.finalcutpro.os.voice.md)                          | Voice Command Plugin.     |
+| [plugins.finalcutpro.pasteboard.history](plugins.finalcutpro.pasteboard.history.md)                          | Pasteboard History     |
+| [plugins.finalcutpro.pasteboard.manager](plugins.finalcutpro.pasteboard.manager.md)                          | Pasteboard Manager.     |
+| [plugins.finalcutpro.pasteboard.shared](plugins.finalcutpro.pasteboard.shared.md)                          | Shared Pasteboard Plugin.     |
 | [plugins.finalcutpro.preferences.app](plugins.finalcutpro.preferences.app.md)                          | Final Cut Pro Preferences Panel     |
 | [plugins.finalcutpro.preferences.clearcache](plugins.finalcutpro.preferences.clearcache.md)                          | Adds a "Clear Cache" button to the Final Cut Pro Preferences.     |
 | [plugins.finalcutpro.preferences.scanfinalcutpro](plugins.finalcutpro.preferences.scanfinalcutpro.md)                          | Scan Final Cut Pro.     |

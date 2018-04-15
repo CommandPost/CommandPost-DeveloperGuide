@@ -9,7 +9,7 @@ WebApp Plugin.
  * [DEFAULT_SETTING](#default_setting)
  * [PREFERENCE_NAME](#preference_name)
 * Functions - API calls offered directly by the extension
- * [copyLinkToClipboard](#copylinktoclipboard)
+ * [copyLinkToPasteboard](#copylinktopasteboard)
  * [start](#start)
  * [stop](#stop)
  * [update](#update)
@@ -40,11 +40,11 @@ WebApp Plugin.
 
 ### Functions
 
-#### [copyLinkToClipboard](#copylinktoclipboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.copyLinkToClipboard() -> None` </span>                                                          |
+#### [copyLinkToPasteboard](#copylinktopasteboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.copyLinkToPasteboard() -> None` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Copies the Hostname to the Clipboard.                                                                                         |
+| **Description**                                      | Copies the Hostname to the Pasteboard.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

@@ -15,6 +15,7 @@ Color Inspector Module.
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activateCorrection](#activatecorrection)
+ * [addCorrection](#addcorrection)
  * [app](#app)
  * [colorBoard](#colorboard)
  * [colorCurves](#colorcurves)
@@ -81,6 +82,14 @@ Color Inspector Module.
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Activates the named correction type and number, if present. If no corrector with the type/number combination exists, a new one is added.                                                                                         |
 | **Parameters**                                       | <ul><li>correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li><li>number           - The correction number for that type. Defaults to `1`.</li></ul> |
+| **Returns**                                          | <ul><li>ColorInspector object</li></ul>          |
+
+#### [addCorrection](#addcorrection)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:addCorrection(correctionType) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Adds the named correction type.                                                                                         |
+| **Parameters**                                       | <ul><li>correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li></ul> |
 | **Returns**                                          | <ul><li>ColorInspector object</li></ul>          |
 
 #### [app](#app)

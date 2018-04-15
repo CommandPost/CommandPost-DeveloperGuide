@@ -1,13 +1,13 @@
-# [docs](index.md) » plugins.finalcutpro.clipboard.shared
+# [docs](index.md) » plugins.finalcutpro.pasteboard.shared
 ---
 
-Shared Clipboard Plugin.
+Shared Pasteboard Plugin.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [copyWithCustomClipName](#copywithcustomclipname)
  * [copyWithCustomClipNameAndFolder](#copywithcustomclipnameandfolder)
- * [generateSharedClipboardMenu](#generatesharedclipboardmenu)
+ * [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
  * [getHistory](#gethistory)
  * [getHistoryPath](#gethistorypath)
  * [getLocalFolderName](#getlocalfoldername)
@@ -27,7 +27,7 @@ Shared Clipboard Plugin.
 ### Functions
 
 #### [copyWithCustomClipName](#copywithcustomclipname)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.copyWithCustomClipName() -> None` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.copyWithCustomClipName() -> None` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Triggers a copy with custom clip name action.                                                                                         |
@@ -35,23 +35,23 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [copyWithCustomClipNameAndFolder](#copywithcustomclipnameandfolder)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.copyWithCustomClipNameAndFolder() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.copyWithCustomClipNameAndFolder() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Copy with Custom Label & Folder.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
-#### [generateSharedClipboardMenu](#generatesharedclipboardmenu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.generateSharedClipboardMenu() -> table` </span>                                                          |
+#### [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.generateSharedPasteboardMenu() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Generates the shared clipboard menu.                                                                                         |
+| **Description**                                      | Generates the shared pasteboard menu.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The shared clipboard menu as a table.</li></ul>          |
+| **Returns**                                          | <ul><li>The shared pasteboard menu as a table.</li></ul>          |
 
 #### [getHistory](#gethistory)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.getHistory(folderName) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getHistory(folderName) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the history for a supplied folder name.                                                                                         |
@@ -59,7 +59,7 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>The history in a table.</li></ul>          |
 
 #### [getHistoryPath](#gethistorypath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.getHistoryPath(folderName, fileExtension) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getHistoryPath(folderName, fileExtension) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the History Path.                                                                                         |
@@ -67,7 +67,7 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>The history path as a string</li></ul>          |
 
 #### [getLocalFolderName](#getlocalfoldername)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.getLocalFolderName() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getLocalFolderName() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the local folder name.                                                                                         |
@@ -75,23 +75,23 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>The local folder name as a string.</li></ul>          |
 
 #### [getRootPath](#getrootpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.getRootPath() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getRootPath() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Get shared clipboard root path.                                                                                         |
+| **Description**                                      | Get shared pasteboard root path.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Shared Clipboard Path as string.</li></ul>          |
+| **Returns**                                          | <ul><li>Shared Pasteboard Path as string.</li></ul>          |
 
 #### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.init() -> sharedClipboard` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.init() -> sharedPasteboard` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><li>manager - The clipboard manager</li></ul> |
-| **Returns**                                          | <ul><li>The sharedClipboard object</li></ul>          |
+| **Parameters**                                       | <ul><li>manager - The pasteboard manager</li></ul> |
+| **Returns**                                          | <ul><li>The sharedPasteboard object</li></ul>          |
 
 #### [overrideNextFolderName](#overridenextfoldername)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.overrideNextFolderName(overrideFolder) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.overrideNextFolderName(overrideFolder) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Overrides the folder name for the next clip which is copied from Final Cut Pro to the                                                                                         |
@@ -99,7 +99,7 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>The local folder name as a string.</li></ul>          |
 
 #### [pasteHistoryItem](#pastehistoryitem)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.pasteHistoryItem(folderName, index) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.pasteHistoryItem(folderName, index) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Paste History Item.                                                                                         |
@@ -107,7 +107,7 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setHistory](#sethistory)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.setHistory(folderName, history) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.setHistory(folderName, history) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Clears the history.                                                                                         |
@@ -115,15 +115,15 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [setRootPath](#setrootpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.setRootPath(path) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.setRootPath(path) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the shared clipboard root path.                                                                                         |
+| **Description**                                      | Sets the shared pasteboard root path.                                                                                         |
 | **Parameters**                                       | <ul><li>path - The path you want to set as a string.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [update](#update)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.update() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.update() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the list of folder names as an array of strings.                                                                                         |
@@ -131,7 +131,7 @@ Shared Clipboard Plugin.
 | **Returns**                                          | <ul><li>A table of folder names.</li></ul>          |
 
 #### [validRootPath](#validrootpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.validRootPath() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.validRootPath() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets whether or not the current root path exists.                                                                                         |
@@ -141,8 +141,8 @@ Shared Clipboard Plugin.
 ### Fields
 
 #### [enabled](#enabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.clipboard.shared.enabled <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Gets whether or not the shared clipboard is enabled as a boolean.                                                                                         |
+| **Description**                                      | Gets whether or not the shared pasteboard is enabled as a boolean.                                                                                         |
 

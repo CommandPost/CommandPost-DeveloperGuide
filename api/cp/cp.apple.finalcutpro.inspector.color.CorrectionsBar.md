@@ -11,6 +11,7 @@ Requires Final Cut Pro 10.4 or later.
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activate](#activate)
+ * [add](#add)
  * [app](#app)
  * [findCorrectionLabel](#findcorrectionlabel)
  * [isShowing](#isshowing)
@@ -32,7 +33,7 @@ Requires Final Cut Pro 10.4 or later.
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:new(parent) -> CorrectionsBar` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar.new(parent) -> CorrectionsBar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new Media Import object.                                                                                         |
@@ -47,6 +48,14 @@ Requires Final Cut Pro 10.4 or later.
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Activates a correction type.                                                                                         |
 | **Parameters**                                       | <ul><li>`correctionType` - The correction type as string.</li><li>`number` - The number of the correction.</li></ul> |
+| **Returns**                                          | <ul><li> `cp.apple.finalcutpro.inspector.color.CorrectionsBar` object.</li></ul>          |
+
+#### [add](#add)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:add(correctionType) -> cp.apple.finalcutpro.inspector.color.CorrectionsBar` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Adds the specific correction type.                                                                                         |
+| **Parameters**                                       | <ul><li>`correctionType` - The correction type as string.</li></ul> |
 | **Returns**                                          | <ul><li> `cp.apple.finalcutpro.inspector.color.CorrectionsBar` object.</li></ul>          |
 
 #### [app](#app)

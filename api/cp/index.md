@@ -51,6 +51,7 @@
 | [cp.apple.finalcutpro.inspector.video.VideoInspector](cp.apple.finalcutpro.inspector.video.VideoInspector.md)                          | Video Inspector Module.     |
 | [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)                          | Keycodes Module     |
 | [cp.apple.finalcutpro.main.Browser](cp.apple.finalcutpro.main.Browser.md)                          | Browser Module.     |
+| [cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover](cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.md)                          | Browser Marker Popup.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
 | [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window     |
 | [cp.apple.finalcutpro.main.GeneratorsBrowser](cp.apple.finalcutpro.main.GeneratorsBrowser.md)                          | Generators Browser Module.     |
@@ -76,6 +77,7 @@
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
 | [cp.apple.finalcutpro.windowfilter](cp.apple.finalcutpro.windowfilter.md)                          | Window Filter for Final Cut Pro.     |
 | [cp.apple.finalcutpro.WindowWatcher](cp.apple.finalcutpro.WindowWatcher.md)                          | Window Watcher Module.     |
+| [cp.battery](cp.battery.md)                          | Provides access to various properties of the battery. Each of these properties     |
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
 | [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
@@ -93,6 +95,7 @@
 | [cp.deferred](cp.deferred.md)                          | This extension makes it simple to defer multiple actions after a delay from the initial execution.     |
 | [cp.developer](cp.developer.md)                          | Developer Tools     |
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
+| [cp.disk](cp.disk.md)                          | Provides provides details about disk devices attached to the system.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
 | [cp.idle](cp.idle.md)                          | This library allows tasks to be queue for execution when the computer has     |
 | [cp.ids](cp.ids.md)                          | Allows managing values/IDs which can vary between versions.     |

@@ -24,7 +24,7 @@ Text to Speech Plugin.
  * [voice](#voice)
 * Functions - API calls offered directly by the extension
  * [chooseFolder](#choosefolder)
- * [insertFromClipboard](#insertfromclipboard)
+ * [insertFromPasteboard](#insertfrompasteboard)
  * [show](#show)
 
 ## API Documentation
@@ -139,11 +139,11 @@ Text to Speech Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string of the selected path or `false` if cancelled.</li></ul>          |
 
-#### [insertFromClipboard](#insertfromclipboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.insertFromClipboard() -> none` </span>                                                          |
+#### [insertFromPasteboard](#insertfrompasteboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.insertFromPasteboard() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Inserts Text to Speech by reading the Clipboard.                                                                                         |
+| **Description**                                      | Inserts Text to Speech by reading the Pasteboard.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

@@ -5,6 +5,7 @@ Core CommandPost functionality
 
 ## Submodules
  * [cp.apple](cp.apple.md)
+ * [cp.battery](cp.battery.md)
  * [cp.bench](cp.bench.md)
  * [cp.choices](cp.choices.md)
  * [cp.commands](cp.commands.md)
@@ -13,6 +14,7 @@ Core CommandPost functionality
  * [cp.deferred](cp.deferred.md)
  * [cp.developer](cp.developer.md)
  * [cp.dialog](cp.dialog.md)
+ * [cp.disk](cp.disk.md)
  * [cp.feedback](cp.feedback.md)
  * [cp.idle](cp.idle.md)
  * [cp.ids](cp.ids.md)
