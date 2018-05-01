@@ -4,6 +4,8 @@
 Advanced Preferences Panel.
 
 ## API Overview
+* Variables - Configurable values
+ * [openErrorLogOnDockClick](#openerrorlogondockclick)
 * Functions - API calls offered directly by the extension
  * [openErrorLog](#openerrorlog)
  * [toggleCommandLineTool](#togglecommandlinetool)
@@ -14,6 +16,14 @@ Advanced Preferences Panel.
  * [developerMode](#developermode)
 
 ## API Documentation
+
+### Variables
+
+#### [openErrorLogOnDockClick](#openerrorlogondockclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.openErrorLogOnDockClick <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Open Error Log on Dock Icon Click.                                                                                         |
 
 ### Functions
 

@@ -99,6 +99,8 @@
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
 | [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Batch Export Plugin     |
+| [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)                          | Manager for the Batch Export Window.     |
+| [plugins.finalcutpro.export.batch.manager.panel](plugins.finalcutpro.export.batch.manager.panel.md)                          | CommandPost Batch Export Panel.     |
 | [plugins.finalcutpro.feedback.bugreport](plugins.finalcutpro.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Final Cut Pro.     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
 | [plugins.finalcutpro.hacks.backupinterval](plugins.finalcutpro.hacks.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
@@ -151,6 +153,7 @@
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
+| [plugins.finalcutpro.timeline.colorwheels](plugins.finalcutpro.timeline.colorwheels.md)                          | Color Wheel Enhancements.     |
 | [plugins.finalcutpro.timeline.commandsetactions](plugins.finalcutpro.timeline.commandsetactions.md)                          | Adds Actions to the Console for triggering Final Cut Pro shortcuts as defined in the Command Set files.     |
 | [plugins.finalcutpro.timeline.disablewaveforms](plugins.finalcutpro.timeline.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.timeline.generators](plugins.finalcutpro.timeline.generators.md)                          | Controls Final Cut Pro's Generators.     |
