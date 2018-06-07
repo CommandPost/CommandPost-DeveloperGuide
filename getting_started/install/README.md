@@ -1,6 +1,14 @@
 # Installation and Setup
 ---
 
+## Introduction
+
+If you're interested in modifying CommandPost-App (the Objective-C based "engine" that drives CommandPost), you can follow the instructions below to get setup.
+
+However, if you're less technical, and just want to play around with the Lua side of things, then there's no need to "build" CommandPost from scratch using Xcode - you can simply start writing your own Lua plugins, or modifying CommandPost's own Lua files. Skip to the "Developing CommandPost" section below to learn more.
+
+---
+
 ## Prerequisites
 
 ### Xcode
@@ -26,7 +34,7 @@ Once `brew` is installed, `greadlink` can be installed by executing the followin
 ### DMG Canvas
 If you wanting to build a DMG package as part of the CommandPost release, you'll need to buy and install [DMG Canvas](https://www.araelium.com/dmgcanvas).
 
---- 
+---
 
 ## Building CommandPost
 

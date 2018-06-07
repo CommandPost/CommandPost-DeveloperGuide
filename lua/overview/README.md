@@ -2,7 +2,7 @@
 ---
 ## What is Lua?
 
-What do Adobe Photoshop Lightroom, Angry Birds, Apache HTTP Server, Apache Traffic Server, the Firefox web browser, MediaWiki, and World of Warcraft all have in common?
+What do DaVinci Resolve, Adobe Photoshop Lightroom, Angry Birds, Apache HTTP Server, Apache Traffic Server, the Firefox web browser, MediaWiki, and World of Warcraft all have in common?
 
 They are all extensible using the cross-platform Lua programming language!
 

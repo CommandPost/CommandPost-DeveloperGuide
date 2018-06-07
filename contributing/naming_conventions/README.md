@@ -19,12 +19,12 @@ The format for docstrings should follow the standard described below.
       2. `my.modulename:foo(bar) -> string`
       3. `my.modulename.foo(bar, fn(int) -> int)`
       4. `my.modulename.foo = {}`
-   3. The second line is a single captitalized word, like "Variable" or "Function" or "Method" or "Constant" or "Field"
+   3. The second line is a single captitalized word, like "Variable", "Function", "Constructor", "Method", "Constant" or "Field".
    4. The remaining lines describe the item
 5. Any comment that starts with 4 comment-characters is ignored
 7. Only files ending in `.lua` or `.m` are scanned
 
-## Constants
+### Constants
 
 ```lua
 --- cp.foo.someConstant
@@ -32,7 +32,7 @@ The format for docstrings should follow the standard described below.
 --- This defines the value of a thing
 ```
 
-## Variables
+### Variables
 
 ```lua
 --- cp.foo.someVariable
@@ -40,7 +40,23 @@ The format for docstrings should follow the standard described below.
 --- This lets you influence the behaviour of this extension
 ```
 
-## Functions
+### Fields
+
+```lua
+--- foo.bar.field <boolean>
+--- Variable
+--- This is a one-line description of the field
+```
+
+For example:
+
+```lua
+--- plugins.finalcutpro.os.touchbar.supported <cp.prop: boolean; read-only>
+--- Field
+--- Returns `true` if the plugin is supported on this OS.
+```
+
+### Functions
 
 Note that a function is any API function provided by an extension, which doesn't relate to an object created by the extension.
 
@@ -63,7 +79,7 @@ The `Parameters` and `Returns` sections should always be present. If there is no
 ---  * Another important note
 ```
 
-## Methods
+### Methods
 
 Note that a method is any function provided by an extension which relates to an object created by that extension. They are still technically functions, but the signature is differentiated by the presence of a `:`
 
@@ -88,12 +104,6 @@ The `Parameters` and `Returns` sections should always be present. If there is no
 Here is an example of how plugins should be structured:
 
 ```lua
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---                               E X A M P L E                                --
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
 --- === plugins.core.example ===
 ---
 --- An example plugin.
@@ -102,6 +112,10 @@ Here is an example of how plugins should be structured:
 --
 -- EXTENSIONS:
 --
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- CommandPost Extensions:
 --------------------------------------------------------------------------------
 local config			= require("cp.config")
 local dialog			= require("cp.dialog")

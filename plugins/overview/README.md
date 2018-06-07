@@ -48,12 +48,6 @@ Below is a simple Plugin example that adds a button to the very bottom of the Co
 * You can learn more about `cp.config` [here](https://dev.commandpost.io/api/cp/cp.config.html).
 
 ```lua
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---                               E X A M P L E                                --
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
 --- === plugins.core.example ===
 ---
 --- An example plugin.
@@ -62,6 +56,10 @@ Below is a simple Plugin example that adds a button to the very bottom of the Co
 --
 -- EXTENSIONS:
 --
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- CommandPost Extensions:
 --------------------------------------------------------------------------------
 local config			= require("cp.config")
 local dialog			= require("cp.dialog")
@@ -120,12 +118,6 @@ return plugin
 Here's a more advanced example plugin for adding CINEMA 4D support to CommandPost:
 
 ```lua
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---                       C I N E M A 4 D     P L U G I N                      --
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
 --- === plugins.cinema4D ===
 ---
 --- Example Cinema4D Commands Plugin throw together for Sarah Kimberly Euschen.
@@ -142,7 +134,7 @@ Here's a more advanced example plugin for adding CINEMA 4D support to CommandPos
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
--- Load Hammerspoon Extensions:
+-- Hammerspoon Extensions:
 --------------------------------------------------------------------------------
 local log				= require("hs.logger").new("cinema4D")
 local application       = require("hs.application")
@@ -150,7 +142,7 @@ local eventtap          = require("hs.eventtap")
 local filter            = require("hs.window").filter
 
 --------------------------------------------------------------------------------
--- Load CommandPost Extensions:
+-- CommandPost Extensions:
 --------------------------------------------------------------------------------
 local commands			= require("cp.commands")
 
