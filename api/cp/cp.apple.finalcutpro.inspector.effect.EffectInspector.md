@@ -22,12 +22,12 @@ Effect Inspector Module.
 | **Returns**                                          | <ul><li>The application object as a table</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.effect.EffectInspector:new(parent) -> EffectInspector object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.effect.EffectInspector.new(parent) -> EffectInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new EffectInspector object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
-| **Returns**                                          | <ul><li>A EffectInspector object</li></ul>          |
+| **Description**                                      | Creates a new `EffectInspector` object                                                                                         |
+| **Parameters**                                       | <ul><li>parent - The parent object</li></ul> |
+| **Returns**                                          | <ul><li>A `EffectInspector` object</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.effect.EffectInspector:parent() -> table` </span>                                                          |

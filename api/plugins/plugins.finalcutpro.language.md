@@ -12,10 +12,10 @@ Final Cut Pro Language Plugin.
 ### Functions
 
 #### [change](#change)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.language.change(language) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.language.change(locale) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Changes the Final Cut Pro Language.                                                                                         |
-| **Parameters**                                       | <ul><li>language - The language you want to change to.</li></ul> |
+| **Description**                                      | Changes the Final Cut Pro Language to the specified locale, if supported.                                                                                         |
+| **Parameters**                                       | <ul><li>locale - The `cp.i18n.localeID` or locale string you want to change to.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if successful otherwise `false`</li></ul>          |
 

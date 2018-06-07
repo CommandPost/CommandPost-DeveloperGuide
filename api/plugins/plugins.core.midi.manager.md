@@ -8,14 +8,16 @@ MIDI Manager Plugin.
 
 ## API Overview
 * Constants - Useful values which cannot be changed
+ * [DEFAULT_GROUP](#default_group)
  * [DEFAULT_MIDI_CONTROLS](#default_midi_controls)
+ * [FILE_NAME](#file_name)
+ * [FOLDER_NAME](#folder_name)
  * [MMC_COMMAND_TYPE](#mmc_command_type)
  * [MMC_TIMECODE_TYPE](#mmc_timecode_type)
  * [MTC_COMMAND_TYPE](#mtc_command_type)
  * [MTC_MESSAGE_TYPE](#mtc_message_type)
  * [MTC_TIMECODE_TYPE](#mtc_timecode_type)
 * Variables - Configurable values
- * [defaultGroup](#defaultgroup)
  * [learningMode](#learningmode)
  * [maxItems](#maxitems)
  * [numberOfSubGroups](#numberofsubgroups)
@@ -62,11 +64,29 @@ MIDI Manager Plugin.
 
 ### Constants
 
+#### [DEFAULT_GROUP](#default_group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.DEFAULT_GROUP -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default group.                                                                                         |
+
 #### [DEFAULT_MIDI_CONTROLS](#default_midi_controls)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.DEFAULT_MIDI_CONTROLS -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The default MIDI controls, so that the user has a starting point.                                                                                         |
+
+#### [FILE_NAME](#file_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.FILE_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | File name of settings file.                                                                                         |
+
+#### [FOLDER_NAME](#folder_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.FOLDER_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Folder Name where settings file is contained.                                                                                         |
 
 #### [MMC_COMMAND_TYPE](#mmc_command_type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.MMC_COMMAND_TYPE -> table` </span>                                                          |
@@ -99,12 +119,6 @@ MIDI Manager Plugin.
 | **Description**                                      | MTC Timecode Type                                                                                         |
 
 ### Variables
-
-#### [defaultGroup](#defaultgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.defaultGroup -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The default group.                                                                                         |
 
 #### [learningMode](#learningmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.learningMode -> boolean` </span>                                                          |

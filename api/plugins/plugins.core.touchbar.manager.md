@@ -9,9 +9,12 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
  * [plugins.core.touchbar.manager.widgets](plugins.core.touchbar.manager.widgets.md)
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_GROUP](#default_group)
+ * [FILE_NAME](#file_name)
+ * [FOLDER_NAME](#folder_name)
 * Variables - Configurable values
  * [closeBox](#closebox)
- * [defaultGroup](#defaultgroup)
  * [maxItems](#maxitems)
  * [numberOfSubGroups](#numberofsubgroups)
 * Functions - API calls offered directly by the extension
@@ -40,6 +43,26 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 
 ## API Documentation
 
+### Constants
+
+#### [DEFAULT_GROUP](#default_group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.DEFAULT_GROUP -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default group.                                                                                         |
+
+#### [FILE_NAME](#file_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.FILE_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | File name of settings file.                                                                                         |
+
+#### [FOLDER_NAME](#folder_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.FOLDER_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Folder Name where settings file is contained.                                                                                         |
+
 ### Variables
 
 #### [closeBox](#closebox)
@@ -47,12 +70,6 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | An optional boolean, specifying whether or not the system                                                                                         |
-
-#### [defaultGroup](#defaultgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.defaultGroup -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The default group.                                                                                         |
 
 #### [maxItems](#maxitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.maxItems -> number` </span>                                                          |

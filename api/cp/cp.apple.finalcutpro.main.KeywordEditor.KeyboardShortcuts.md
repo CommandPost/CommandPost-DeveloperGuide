@@ -4,17 +4,28 @@
 Keyboard Shortcuts
 
 ## API Overview
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [apply](#apply)
  * [hide](#hide)
  * [isShowing](#isshowing)
  * [keyword](#keyword)
- * [new](#new)
  * [parent](#parent)
  * [removeAllKeywords](#removeallkeywords)
  * [show](#show)
 
 ## API Documentation
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.new(parent) -> KeyboardShortcuts` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `KeyboardShortcuts` object                                                                                         |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
+| **Returns**                                          | <ul><li>A `KeyboardShortcuts` object</li></ul>          |
 
 ### Methods
 
@@ -49,14 +60,6 @@ Keyboard Shortcuts
 | **Description**                                      | Sets or gets a specific Keyboard Shortcut Keyword Textbox value.                                                                                         |
 | **Parameters**                                       | <ul><li>item - The textbox you want to update. This can be a number between 1 and 9.</li><li>value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.</li></ul> |
 | **Returns**                                          | <ul><li>`value` if successful otherwise `false`</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts:new(parent) -> KeyboardShortcuts object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new KeyboardShortcuts object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent` - The parent</li></ul> |
-| **Returns**                                          | <ul><li>A KeyboardShortcuts object</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts:parent() -> table` </span>                                                          |

@@ -9,12 +9,13 @@ Keyword Editor Module.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [hide](#hide)
  * [isShowing](#isshowing)
  * [keyword](#keyword)
- * [new](#new)
  * [parent](#parent)
  * [removeKeyword](#removekeyword)
  * [show](#show)
@@ -32,6 +33,16 @@ Keyword Editor Module.
 | **Description**                                      | Checks to see if an `hs._asm.axuielement` object matches a Keyword Editor window                                                                                         |
 | **Parameters**                                       | <ul><li>element - the `hs._asm.axuielement` object you want to check</li></ul> |
 | **Returns**                                          | <ul><li>`true` if a match otherwise `false`</li></ul>          |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor.new(parent) -> KeywordEditor object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new KeywordEditor object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A KeywordEditor object</li></ul>          |
 
 ### Methods
 
@@ -66,14 +77,6 @@ Keyword Editor Module.
 | **Description**                                      | Sets or gets the main Keyword Textbox value.                                                                                         |
 | **Parameters**                                       | <ul><li>value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.</li></ul> |
 | **Returns**                                          | <ul><li>`value` if successful otherwise `false`</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:new(parent) -> KeywordEditor object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new KeywordEditor object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`     - The parent</li></ul> |
-| **Returns**                                          | <ul><li>A KeywordEditor object</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:parent() -> table` </span>                                                          |

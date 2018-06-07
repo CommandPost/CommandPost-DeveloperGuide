@@ -18,9 +18,10 @@ Note: This will load the file on each request. To have values cached, use the `c
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [context](#context)
  * [find](#find)
  * [findInSources](#findinsources)
- * [findKeysIn](#findkeysin)
+ * [findKeys](#findkeys)
  * [findKeysInSources](#findkeysinsources)
  * [from](#from)
  * [fromPlist](#fromplist)
@@ -30,45 +31,53 @@ Note: This will load the file on each request. To have values cached, use the `c
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.new() -> cp.strings` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.new(context) -> cp.strings` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `strings` instance. You should add sources with the [from](#from) or [fromPlist](#fromPlist) methods.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>context      - The initial context.</li></ul> |
 | **Returns**                                          | <ul><li>The new `cp.strings`</li></ul>          |
 
 ### Methods
 
-#### [find](#find)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:find(language, key[, quiet]) -> string | nil` </span>                                                          |
+#### [context](#context)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:context([context]) -> table | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Searches for the specified key in the specified language, caching the result when found.                                                                                         |
-| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`key`		- The key to retrieve from the file.</li><li>`quiet`		- Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
+| **Description**                                      | Gets or sets a context to be set for the strings. This typically includes a `language`, which                                                                                         |
+| **Parameters**                                       | <ul><li>* context   - A table with values which may be used by the source.</li></ul> |
+| **Returns**                                          | <ul><li>* If a new context is provided, the `cp.string.source` is returned, otherwise the current context table is returned.</li></ul>          |
+
+#### [find](#find)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:find(key[, context[, quiet]) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Searches for the specified key, caching the result when found.                                                                                         |
+| **Parameters**                                       | <ul><li>`key`        - The key to retrieve from the file.</li><li>`context`    - Optional table with additional/alternate context.</li><li>`quiet`      - Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or `nil` if not found.</li></ul>          |
 
 #### [findInSources](#findinsources)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findInSources(language, key[, quiet]) -> string | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findInSources(key[, context[, quiet]]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Searches directly in the sources for the specified language/key combination.                                                                                         |
-| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`key`		- The key to retrieve from the file.</li><li>`quiet`		- Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
+| **Description**                                      | Searches directly in the sources for the specified key.                                                                                         |
+| **Parameters**                                       | <ul><li>`key`        - The key to retrieve from the file.</li><li>`context`    - Optional table with additional/alternate context.</li><li>`quiet`      - Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or `nil` if not found.</li></ul>          |
 
-#### [findKeysIn](#findkeysin)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findKeysIn(language, value) -> string | nil` </span>                                                          |
+#### [findKeys](#findkeys)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findKeys(value[, context]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches for the list of keys with a matching value, in the specified language.                                                                                         |
-| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`value`		- The value to search for.</li></ul> |
+| **Parameters**                                       | <ul><li>`value`      - The value to search for.</li><li>`context`    - The language code to look for (e.g. `"en"`, or `"fr"`).</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys, or `{}` if not found.</li></ul>          |
 
 #### [findKeysInSources](#findkeysinsources)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findKeysInSources(language, value) -> string | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findKeysInSources(value[, context]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Searches directly in the sources for the specified language/value combination.                                                                                         |
-| **Parameters**                                       | <ul><li>`language`	- The language code to look for (e.g. `"en"`, or `"fr"`).</li><li>`value`		- The value to search for.</li></ul> |
+| **Description**                                      | Searches directly in the sources for the specified key value pattern.                                                                                         |
+| **Parameters**                                       | <ul><li>`value`      - The value to search for.</li><li>`context`    - Optional additional context for the request.</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys, or `{}` if not found.</li></ul>          |
 
 #### [from](#from)
@@ -83,7 +92,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:fromPlist(pathPattern) -> cp.strings` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Convenience method for addedn a `plist` source to the strings instance.                                                                                         |
+| **Description**                                      | Convenience method for adding a `plist` source to the strings instance.                                                                                         |
 | **Parameters**                                       | <ul><li>`pathPattern`	- The path to load from. May contain a special `${language}` marker which will be replace with the provided langauge when searching.</li></ul> |
 | **Returns**                                          | <ul><li>The current `cp.strings` instance.</li></ul>          |
 

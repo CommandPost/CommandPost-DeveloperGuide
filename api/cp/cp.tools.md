@@ -10,6 +10,8 @@ A collection of handy miscellaneous tools for Lua development.
  * [doesDirectoryExist](#doesdirectoryexist)
  * [doesFileExist](#doesfileexist)
  * [doubleLeftClick](#doubleleftclick)
+ * [endsWith](#endswith)
+ * [ensureDirectoryExists](#ensuredirectoryexists)
  * [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
  * [firstToUpper](#firsttoupper)
  * [getEmail](#getemail)
@@ -32,8 +34,6 @@ A collection of handy miscellaneous tools for Lua development.
  * [lines](#lines)
  * [macOSVersion](#macosversion)
  * [mergeTable](#mergetable)
- * [modifierMaskToModifiers](#modifiermasktomodifiers)
- * [modifierMatch](#modifiermatch)
  * [ninjaDoubleClick](#ninjadoubleclick)
  * [ninjaMouseAction](#ninjamouseaction)
  * [ninjaMouseClick](#ninjamouseclick)
@@ -98,6 +98,22 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
+#### [endsWith](#endswith)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.endsWith(str, ending) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks to see if `str` has the same ending as `ending`.                                                                                         |
+| **Parameters**                                       | <ul><li>str       - String to analysis</li><li>ending    - End of string to compare against</li></ul> |
+| **Returns**                                          | <ul><li>table</li></ul>          |
+
+#### [ensureDirectoryExists](#ensuredirectoryexists)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.ensureDirectoryExists(rootPath, ...) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Ensures all steps on a provided path exist. If not, attempts to create them.                                                                                         |
+| **Parameters**                                       | <ul><li>`rootPath` - The root path (should already exist).</li><li>`...`      - The list of path steps to create</li></ul> |
+| **Returns**                                          | <ul><li>The full path, if it exists, or `nil` if unable to create the directory for some reason.</li></ul>          |
+
 #### [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.executeWithAdministratorPrivileges(input[, stopOnError]) -> boolean or string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -158,9 +174,9 @@ A collection of handy miscellaneous tools for Lua development.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getmacOSVersion() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns macOS Version.                                                                                         |
+| **Description**                                      | Returns the macOS Version in the format that Apple's Feedback Form expects.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>String</li></ul>          |
+| **Returns**                                          | <ul><li>The macOS version as a string or "" if unknown.</li></ul>          |
 
 #### [getModelName](#getmodelname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getModelName() -> string` </span>                                                          |
@@ -174,9 +190,9 @@ A collection of handy miscellaneous tools for Lua development.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getRAMSize() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns RAM Size.                                                                                         |
+| **Description**                                      | Returns RAM Size in a format Apple's Feedback form expects.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>String</li></ul>          |
+| **Returns**                                          | <ul><li>The RAM size as a string, or "" if unknown.</li></ul>          |
 
 #### [getScreenshotsAsBase64](#getscreenshotsasbase64)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getScreenshotsAsBase64() -> table` </span>                                                          |
@@ -251,12 +267,12 @@ A collection of handy miscellaneous tools for Lua development.
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [lines](#lines)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.lines(string) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.lines(string) -> table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Splits a string containing multiple lines of text into a table.                                                                                         |
 | **Parameters**                                       | <ul><li>string - the string you want to process</li></ul> |
-| **Returns**                                          | <ul><li>A table</li></ul>          |
+| **Returns**                                          | <ul><li>A table or `nil` if the parameter is not a string.</li></ul>          |
 
 #### [macOSVersion](#macosversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.macOSVersion() -> string` </span>                                                          |
@@ -270,26 +286,9 @@ A collection of handy miscellaneous tools for Lua development.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.mergeTable(target, ...) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gives you the file system volume format of a path.                                                                                         |
+| **Description**                                      | Merges multiple tables into a target table.                                                                                         |
 | **Parameters**                                       | <ul><li>target   - The target table</li><li>...      - Any other tables you want to merge into target</li></ul> |
 | **Returns**                                          | <ul><li>Table</li></ul>          |
-
-#### [modifierMaskToModifiers](#modifiermasktomodifiers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.modifierMaskToModifiers() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Translate Keyboard Modifiers from Apple's Plist Format into Hammerspoon Format                                                                                         |
-| **Parameters**                                       | <ul><li>value - Modifiers String</li></ul> |
-| **Returns**                                          | <ul><li>table</li></ul>          |
-
-#### [modifierMatch](#modifiermatch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.modifierMatch(inputA, inputB) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Compares two modifier tables.                                                                                         |
-| **Parameters**                                       | <ul><li>inputA - table of modifiers</li><li>inputB - table of modifiers</li></ul> |
-| **Returns**                                          | <ul><li>`true` if there's a match otherwise `false`</li></ul>          |
-| **Notes**                                            | <ul><li>This function only takes into account 'ctrl', 'alt', 'cmd', 'shift'.</li></ul>                |
 
 #### [ninjaDoubleClick](#ninjadoubleclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.ninjaDoubleClick(point[, delay]) -> none` </span>                                                          |
@@ -344,8 +343,8 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Attempts to remove the directory at the specified path, optionally removing                                                                                         |
-| **Parameters**                                       | <ul><li>* `path`        - The absolute path to remove</li><li>* `recursive`   - If `true`, the contents of the directory will be removed first.</li></ul> |
-| **Returns**                                          | <ul><li>* `true` if successful, or `nil, err` if there was a problem.</li></ul>          |
+| **Parameters**                                       | <ul><li>`path`        - The absolute path to remove</li><li>`recursive`   - If `true`, the contents of the directory will be removed first.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if successful, or `nil, err` if there was a problem.</li></ul>          |
 
 #### [round](#round)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.round(num, numDecimalPlaces) -> number` </span>                                                          |

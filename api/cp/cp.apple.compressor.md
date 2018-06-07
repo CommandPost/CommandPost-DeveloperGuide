@@ -3,6 +3,9 @@
 
 Represents the Compressor application, providing functions that allow different tasks to be accomplished.
 
+## Submodules
+ * [cp.apple.compressor.app](cp.apple.compressor.app.md)
+
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [ALLOWED_IMPORT_ALL_EXTENSIONS](#allowed_import_all_extensions)
@@ -10,17 +13,13 @@ Represents the Compressor application, providing functions that allow different 
  * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
  * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
  * [BUNDLE_ID](#bundle_id)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [isFrontmost](#isfrontmost)
- * [isInstalled](#isinstalled)
- * [isRunning](#isrunning)
- * [isShowing](#isshowing)
+ * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [application](#application)
- * [getBundleID](#getbundleid)
+ * [bundleID](#bundleid)
  * [getVersion](#getversion)
  * [hide](#hide)
  * [launch](#launch)
+ * [notifier](#notifier)
  * [path](#path)
  * [quit](#quit)
  * [restart](#restart)
@@ -60,44 +59,16 @@ Represents the Compressor application, providing functions that allow different 
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Compressor's Bundle ID                                                                                         |
 
-### Fields
-
-#### [isFrontmost](#isfrontmost)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.isFrontmost <cp.prop: boolean; read-only>` </span>                                                          |
+#### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.EARLIEST_SUPPORTED_VERSION <semver>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is Compressor Frontmost?                                                                                         |
-
-#### [isInstalled](#isinstalled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.isInstalled <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is a supported version of Compressor Installed?                                                                                         |
-
-#### [isRunning](#isrunning)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.isRunning <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is the app is running?                                                                                         |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is Compressor Showing?                                                                                         |
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The earliest version this API supports.                                                                                         |
 
 ### Methods
 
-#### [application](#application)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:application() -> hs.application` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the hs.application for Compressor.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The hs.application, or nil if the application is not installed.</li></ul>          |
-
-#### [getBundleID](#getbundleid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:getBundleID() -> string` </span>                                                          |
+#### [bundleID](#bundleid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:bundleID() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Compressor Bundle ID                                                                                         |
@@ -114,20 +85,28 @@ Represents the Compressor application, providing functions that allow different 
 | **Notes**                                            | <ul><li>If Compressor is running it will get the version of the active Compressor application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul>                |
 
 #### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:hide() -> cp.apple.compressor object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides Compressor                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `cp.apple.compressor` object otherwise `nil`</li></ul>          |
+| **Returns**                                          | <ul><li>The compressor instance.</li></ul>          |
 
 #### [launch](#launch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:launch() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:launch([waitSeconds]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Launches Compressor, or brings it to the front if it was already running.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>waitSeconds      - if provided, we will wait for up to the specified seconds for the launch to complete.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if Compressor was either launched or focused, otherwise false (e.g. if Compressor doesn't exist)</li></ul>          |
+
+#### [notifier](#notifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:notifier() -> cp.ui.notifier` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a notifier that is tracking the application UI element. It has already been started.                                                                                         |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
+| **Returns**                                          | <ul><li>* The notifier.</li></ul>          |
 
 #### [path](#path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:path() -> string or nil` </span>                                                          |
@@ -138,26 +117,26 @@ Represents the Compressor application, providing functions that allow different 
 | **Returns**                                          | <ul><li>A string containing Compressor's filesystem path, or `nil` if the bundle identifier could not be located</li></ul>          |
 
 #### [quit](#quit)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:quit() -> cp.apple.compressor object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:quit([waitSeconds]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Quits Compressor                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `cp.apple.compressor` object otherwise `nil`</li></ul>          |
+| **Parameters**                                       | <ul><li>waitSeconds  - if provided, we will wait for the specified time for the quit to complete before returning.</li></ul> |
+| **Returns**                                          | <ul><li>The `compressor` instance.</li></ul>          |
 
 #### [restart](#restart)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:restart() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:restart([waitSeconds]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Restart the application.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>waitSeconds  - if provided, we will wait for up to the specified seconds for the restart to complete before returning.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if the application was running and restarted successfully.</li></ul>          |
 
 #### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:show() -> cp.apple.compressor object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:show() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Activate Compressor                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `cp.apple.compressor` object otherwise `nil`</li></ul>          |
+| **Returns**                                          | <ul><li>The compressor instance.</li></ul>          |
 

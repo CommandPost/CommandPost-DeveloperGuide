@@ -4,8 +4,11 @@
 Elgato Stream Deck Manager Plugin.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_GROUP](#default_group)
+ * [FILE_NAME](#file_name)
+ * [FOLDER_NAME](#folder_name)
 * Variables - Configurable values
- * [defaultGroup](#defaultgroup)
  * [maxItems](#maxitems)
 * Functions - API calls offered directly by the extension
  * [activeGroup](#activegroup)
@@ -31,19 +34,33 @@ Elgato Stream Deck Manager Plugin.
 
 ## API Documentation
 
-### Variables
+### Constants
 
-#### [defaultGroup](#defaultgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.defaultGroup -> string` </span>                                                          |
+#### [DEFAULT_GROUP](#default_group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.DEFAULT_GROUP -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
+| **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The default group.                                                                                         |
+
+#### [FILE_NAME](#file_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.FILE_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | File name of settings file.                                                                                         |
+
+#### [FOLDER_NAME](#folder_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.FOLDER_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Folder Name where settings file is contained.                                                                                         |
+
+### Variables
 
 #### [maxItems](#maxitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.maxItems -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The maximum number of Touch Bar items per group.                                                                                         |
+| **Description**                                      | The maximum number of Stream Deck items per group.                                                                                         |
 
 ### Functions
 
@@ -75,7 +92,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.clear() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Clears the Touch Bar items.                                                                                         |
+| **Description**                                      | Clears the Stream Deck items.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -91,7 +108,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getAction(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a specific Touch Bar Action.                                                                                         |
+| **Description**                                      | Returns a specific Stream Deck Action.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul>          |
 
@@ -99,7 +116,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getActionHandlerID(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a specific Touch Bar Action Handler ID.                                                                                         |
+| **Description**                                      | Returns a specific Stream Deck Action Handler ID.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul>          |
 
@@ -107,7 +124,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getActionTitle(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a specific Touch Bar Action Title.                                                                                         |
+| **Description**                                      | Returns a specific Stream Deck Action Title.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul>          |
 
@@ -115,7 +132,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getIcon(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a specific Touch Bar Icon.                                                                                         |
+| **Description**                                      | Returns a specific Stream Deck Icon.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Icon data as string</li></ul>          |
 
@@ -123,7 +140,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getLabel(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a specific Touch Bar Label.                                                                                         |
+| **Description**                                      | Returns a specific Stream Deck Label.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Label as string</li></ul>          |
 
@@ -155,7 +172,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates the Touch Bar.                                                                                         |
+| **Description**                                      | Updates the Stream Deck.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -163,7 +180,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.updateAction(button, group, action) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates a Touch Bar action.                                                                                         |
+| **Description**                                      | Updates a Stream Deck action.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>action - Action as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -171,7 +188,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.updateIcon(button, group, icon) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates a Touch Bar icon.                                                                                         |
+| **Description**                                      | Updates a Stream Deck icon.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>icon - Icon Data as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -179,7 +196,7 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.updateLabel(button, group, label) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates a Touch Bar action.                                                                                         |
+| **Description**                                      | Updates a Stream Deck action.                                                                                         |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>label - Label as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
@@ -189,11 +206,11 @@ Elgato Stream Deck Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.buttons <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Contains all the saved Touch Bar Buttons                                                                                         |
+| **Description**                                      | Contains all the saved Stream Deck Buttons                                                                                         |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Enable or disable Touch Bar Support.                                                                                         |
+| **Description**                                      | Enable or disable Stream Deck Support.                                                                                         |
 

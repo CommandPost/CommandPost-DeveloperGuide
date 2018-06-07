@@ -20,7 +20,6 @@ will not affect the "yadayada" activator.
 
 ## API Overview
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [allowedHandlers](#allowedhandlers)
  * [reducedTransparency](#reducedtransparency)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activate](#activate)
@@ -56,12 +55,6 @@ will not affect the "yadayada" activator.
 ## API Documentation
 
 ### Fields
-
-#### [allowedHandlers](#allowedhandlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:allowedHandlers <cp.prop: table of handlers; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Contains all handlers that are allowed in this activator.                                                                                         |
 
 #### [reducedTransparency](#reducedtransparency)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.reducedTransparency <cp.prop: boolean>` </span>                                                          |

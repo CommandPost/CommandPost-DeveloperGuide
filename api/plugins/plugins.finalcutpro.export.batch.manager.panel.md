@@ -18,6 +18,7 @@ CommandPost Batch Export Panel.
  * [addParagraph](#addparagraph)
  * [addPassword](#addpassword)
  * [addSelect](#addselect)
+ * [addStatus](#addstatus)
  * [addTextbox](#addtextbox)
  * [getToolbarItem](#gettoolbaritem)
 
@@ -113,6 +114,14 @@ CommandPost Batch Export Panel.
 | **Description**                                      | Adds a select to the panel.                                                                                         |
 | **Parameters**                                       | <ul><li>priority - Priority of the item as number.</li><li>params - A table of parameters</li></ul> |
 | **Returns**                                          | <ul><li>The panel object.</li></ul>          |
+
+#### [addStatus](#addstatus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addStatus(priority, content, default) -> panel` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Adds a Paragraph to the panel                                                                                         |
+| **Parameters**                                       | <ul><li>content - The content value</li><li>default - The default value to display if the `content` is `nil`. It will be displayed with a different style.</li></ul> |
+| **Returns**                                          | <ul><li>* The panel object.</li></ul>          |
 
 #### [addTextbox](#addtextbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addTextbox(params) -> panel` </span>                                                          |

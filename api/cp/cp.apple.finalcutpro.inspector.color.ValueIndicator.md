@@ -6,13 +6,14 @@ ValueIndicator Module.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [decrement](#decrement)
  * [increment](#increment)
  * [isEnabled](#isenabled)
  * [isShowing](#isshowing)
  * [loadLayout](#loadlayout)
- * [new](#new)
  * [parent](#parent)
  * [saveLayout](#savelayout)
  * [shiftValue](#shiftvalue)
@@ -29,6 +30,16 @@ ValueIndicator Module.
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
 | **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ValueIndicator.new(parent, finderFn, minValue, maxValue, toAXValueFn, fromAXValueFn) -> ValueIndicator` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new ValueIndicator.                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`         - The parent table.</li><li>`finderFn`       - The function which returns the `axuielement`.</li><li>`minValue`       - The minimum value allowed for the value.</li><li>`maxValue`       - The maximum value allowed for the value.</li><li>`toAXValueFn`    - The function which will convert the user value to the actual AXValue.</li><li>`fromAXValueFn`  - The function which will convert the current AXValue to a user value.</li></ul> |
+| **Returns**                                          | <ul><li>New `ValueIndicator` instance.</li></ul>          |
 
 ### Methods
 
@@ -71,14 +82,6 @@ ValueIndicator Module.
 | **Description**                                      | Loads a layout.                                                                                         |
 | **Parameters**                                       | <ul><li>`layout` - The layout table you want to load.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ValueIndicator:new(parent, finderFn, minValue, maxValue, toAXValueFn, fromAXValueFn) -> ValueIndicator` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new ValueIndicator.                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`         - The parent table.</li><li>`finderFn`       - The function which returns the `axuielement`.</li><li>`minValue`       - The minimum value allowed for the value.</li><li>`maxValue`       - The maximum value allowed for the value.</li><li>`toAXValueFn`    - The function which will convert the user value to the actual AXValue.</li><li>`fromAXValueFn`  - The function which will convert the current AXValue to a user value.</li></ul> |
-| **Returns**                                          | <ul><li>New `ValueIndicator` instance.</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ValueIndicator:parent() -> table` </span>                                                          |

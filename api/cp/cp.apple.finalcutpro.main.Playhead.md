@@ -49,12 +49,12 @@ Playhead Module.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:new(parent, skimming, containerFn) -> Playhead` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.new(parent, skimming, containerFn) -> Playhead` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Constructs a new Playhead                                                                                         |
-| **Parameters**                                       | <ul><li>* parent        - The parent object</li><li>* skimming      - (optional) if `true`, this links to the 'skimming' playhead created under the mouse, if present.</li><li>* containerFn   - (optional) a function which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element.</li></ul> |
-| **Returns**                                          | <ul><li>* The new `Playhead` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>parent        - The parent object</li><li>skimming      - (optional) if `true`, this links to the 'skimming' playhead created under the mouse, if present.</li><li>containerFn   - (optional) a function which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element.</li></ul> |
+| **Returns**                                          | <ul><li>The new `Playhead` instance.</li></ul>          |
 
 ### Fields
 
@@ -147,7 +147,7 @@ Playhead Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Moves the playhead to a specific timecode value.                                                                                         |
-| **Parameters**                                       | <ul><li>timecode - The timecode value you want to move to as a string in the following format: "hh:mm:ss:ff" (i.e. "01:00:00:00").</li></ul> |
+| **Parameters**                                       | <ul><li>timecode - The timecode value you want to move to as a string in the following format: "hh:mm:ss:ff" or "hh:mm:ss;ff" (i.e. "01:00:00:00").</li></ul> |
 | **Returns**                                          | <ul><li>Playhead object is successful otherwise `nil`</li></ul>          |
 
 #### [show](#show)

@@ -149,6 +149,7 @@ These modules will not be accessible to other plugins or to the main application
 
 ## Submodules
  * [cp.plugins.env](cp.plugins.env.md)
+ * [cp.plugins.plugin](cp.plugins.plugin.md)
 
 ## API Overview
 * Constants - Useful values which cannot be changed

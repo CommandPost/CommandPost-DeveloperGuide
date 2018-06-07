@@ -6,9 +6,14 @@ Command Editor Module.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [frame](#frame)
+ * [hsWindow](#hswindow)
+ * [isFullScreen](#isfullscreen)
  * [isShowing](#isshowing)
+ * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [getTitle](#gettitle)
@@ -16,9 +21,7 @@ Command Editor Module.
  * [save](#save)
  * [saveButton](#savebutton)
  * [show](#show)
- * [UI](#ui)
- * [unwatch](#unwatch)
- * [watch](#watch)
+ * [window](#window)
 
 ## API Documentation
 
@@ -32,21 +35,47 @@ Command Editor Module.
 | **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
+### Constructors
+
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:new(app) -> CommandEditor` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.new(app) -> CommandEditor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
+| **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Command Editor object.                                                                                         |
 | **Parameters**                                       | <ul><li>app - The `cp.apple.finalcutpro` object.</li></ul> |
-| **Returns**                                          | <ul><li>A new CommandEditor object.</li></ul>          |
+| **Returns**                                          | <ul><li>A new `CommandEditor` object.</li></ul>          |
 
 ### Fields
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+#### [frame](#frame)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.frame <cp.prop: frame; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is the Command Editor showing?                                                                                         |
+| **Description**                                      | The current position (x, y, width, height) of the window.                                                                                         |
+
+#### [hsWindow](#hswindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.hsWindow <cp.prop: hs.window; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found.                                                                                         |
+
+#### [isFullScreen](#isfullscreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.isFullScreen <cp.prop: boolean; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is `true` if the window is full-screen.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.isShowing <cp.prop: boolean; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is `true` if the window is visible.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.UI <cp.prop: axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` for the window.                                                                                         |
 
 ### Methods
 
@@ -98,27 +127,11 @@ Command Editor Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The `cp.apple.finalcutpro.cmd.CommandEditor` object for method chaining.</li></ul>          |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:UI() -> axuielementObject` </span>                                                          |
+#### [window](#window)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:window() -> cp.ui.Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the Command Editor Accessibility Object                                                                                         |
+| **Description**                                      | Returns the `Window` for the Command Editor.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `axuielementObject` or `nil`</li></ul>          |
-
-#### [unwatch](#unwatch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:unwatch(id) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Unwatches an event.                                                                                         |
-| **Parameters**                                       | <ul><li>id - An ID as a string of the event you want to unwatch.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [watch](#watch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:watch() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Watch for events that happen in the command editor. The optional functions will be called when the window is shown or hidden, respectively.                                                                                         |
-| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `open(window)` - Triggered when the window is shown.</li><li>  `close(window)` - Triggered when the window is hidden.</li><li>  `move(window)` - Triggered when the window is moved.</li></ul> |
-| **Returns**                                          | <ul><li>A table which contains an ID which can be passed to `unwatch` to stop watching.</li></ul>          |
+| **Returns**                                          | <ul><li>The `Window`.</li></ul>          |
 

@@ -3,7 +3,7 @@
 
 Video Inspector Module.
 
-Header Rows (`compositing`, `transform`, etc.) have the following properties:
+Section Rows (`compositing`, `transform`, etc.) have the following properties:
 * enabled   - (cp.ui.CheckBox) Indicates if the section is enabled.
 * toggle    - (cp.ui.Button) Will toggle the Hide/Show button.
 * reset     - (cp.ui.Button) Will reset the contents of the section.
@@ -50,7 +50,6 @@ video:stabilization():smoothing():show():value(1.5)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [parent](#parent)
- * [row](#row)
  * [show](#show)
 
 ## API Documentation
@@ -92,14 +91,6 @@ video:stabilization():smoothing():show():value(1.5)
 | **Description**                                      | Returns the VideoInspector's parent table                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent object as a table</li></ul>          |
-
-#### [row](#row)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:row(labelKey, index) -> PropertyRow` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns a `PropertyRow` for a row with the specified label key.                                                                                         |
-| **Parameters**                                       | <ul><li>* labelKey  - The key for the label (see FCP App `keysWithString` method).</li></ul> |
-| **Returns**                                          | <ul><li>* The `PropertyRow`.</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:show() -> VideoInspector` </span>                                                          |

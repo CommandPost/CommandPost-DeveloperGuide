@@ -5,6 +5,7 @@ Reads & Writes plist data.
 
 ## Submodules
  * [cp.plist.archiver](cp.plist.archiver.md)
+ * [cp.plist.plistParser](cp.plist.plistParser.md)
 
 ## API Overview
 * Functions - API calls offered directly by the extension

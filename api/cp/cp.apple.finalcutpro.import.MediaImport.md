@@ -6,8 +6,12 @@ Media Import
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [frame](#frame)
+ * [hsWindow](#hswindow)
+ * [isFullScreen](#isfullscreen)
  * [isShowing](#isshowing)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
@@ -15,8 +19,6 @@ Media Import
  * [hide](#hide)
  * [show](#show)
  * [UI](#ui)
- * [unwatch](#unwatch)
- * [watch](#watch)
 
 ## API Documentation
 
@@ -30,21 +32,41 @@ Media Import
 | **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
+### Constructors
+
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:new(app) -> MediaImport` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.new(app) -> MediaImport` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
+| **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Media Import object.                                                                                         |
 | **Parameters**                                       | <ul><li>app - The `cp.apple.finalcutpro` object.</li></ul> |
 | **Returns**                                          | <ul><li>A new MediaImport object.</li></ul>          |
 
 ### Fields
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+#### [frame](#frame)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.frame <cp.prop: frame>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is the Media Import window showing?                                                                                         |
+| **Description**                                      | The current position (x, y, width, height) of the window.                                                                                         |
+
+#### [hsWindow](#hswindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.hsWindow <cp.prop: hs.window; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found.                                                                                         |
+
+#### [isFullScreen](#isfullscreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.isFullScreen <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is `true` if the window is full-screen.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.isShowing <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is `true` if the window is visible.                                                                                         |
 
 ### Methods
 
@@ -87,20 +109,4 @@ Media Import
 | **Description**                                      | Returns the Media Import Accessibility Object                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>An `axuielementObject` or `nil`</li></ul>          |
-
-#### [unwatch](#unwatch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:unwatch() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Removes the watch with the specified ID.                                                                                         |
-| **Parameters**                                       | <ul><li>`id` - The ID returned from `watch` that wants to be removed.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [watch](#watch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:watch() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Watch for events that happen in the Media Import window. The optional functions will be called when the window is shown or hidden, respectively.                                                                                         |
-| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(window)` - Triggered when the window is shown.</li><li>  `hide(window)` - Triggered when the window is hidden.</li></ul> |
-| **Returns**                                          | <ul><li>An ID which can be passed to `unwatch` to stop watching.</li></ul>          |
 

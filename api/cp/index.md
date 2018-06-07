@@ -16,9 +16,15 @@
 ## API Documentation
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
-| [cp](cp.md)                          | Core CommandPost functionality     |
+| [cp](cp.md)                          | Core CommandPost functionality.     |
+| [cp.app](cp.app.md)                          | This class assists with working with macOS apps. It provides functions for     |
+| [cp.app.menu](cp.app.menu.md)                          | Represents an app's menu bar, providing multi-lingual access to find and     |
+| [cp.app.prefs](cp.app.prefs.md)                          | Provides access to application preferences, typically stored via `NSUserDefaults` or `CFProperties`.     |
+| [cp.apple.commandeditor](cp.apple.commandeditor.md)                          | Functions to control and manage Apple's Command Editor - used in Final Cut Pro,     |
 | [cp.apple.compressor](cp.apple.compressor.md)                          | Represents the Compressor application, providing functions that allow different tasks to be accomplished.     |
+| [cp.apple.compressor.app](cp.apple.compressor.app.md)                          | The `cp.app` for Apple's Compressor.     |
 | [cp.apple.finalcutpro](cp.apple.finalcutpro.md)                          | Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.     |
+| [cp.apple.finalcutpro.app](cp.apple.finalcutpro.app.md)                          | The `cp.app` for Final Cut Pro.     |
 | [cp.apple.finalcutpro.cmd.CommandEditor](cp.apple.finalcutpro.cmd.CommandEditor.md)                          | Command Editor Module.     |
 | [cp.apple.finalcutpro.content.Clip](cp.apple.finalcutpro.content.Clip.md)                          | Represents a clip of media inside FCP.     |
 | [cp.apple.finalcutpro.export.destinations](cp.apple.finalcutpro.export.destinations.md)                          | Provides access to the list of Share Destinations configured for the user.     |
@@ -44,12 +50,12 @@
 | [cp.apple.finalcutpro.inspector.generator.GeneratorInspector](cp.apple.finalcutpro.inspector.generator.GeneratorInspector.md)                          | Generator Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.info.InfoInspector](cp.apple.finalcutpro.inspector.info.InfoInspector.md)                          | Video Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.Inspector](cp.apple.finalcutpro.inspector.Inspector.md)                          | Inspector     |
+| [cp.apple.finalcutpro.inspector.InspectorProperty](cp.apple.finalcutpro.inspector.InspectorProperty.md)                          | `InspectorProperty` contains helper functions for handling common property     |
 | [cp.apple.finalcutpro.inspector.share.ShareInspector](cp.apple.finalcutpro.inspector.share.ShareInspector.md)                          | Share Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.text.TextInspector](cp.apple.finalcutpro.inspector.text.TextInspector.md)                          | Text Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.title.TitleInspector](cp.apple.finalcutpro.inspector.title.TitleInspector.md)                          | Title Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.transition.TransitionInspector](cp.apple.finalcutpro.inspector.transition.TransitionInspector.md)                          | Transition Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.video.VideoInspector](cp.apple.finalcutpro.inspector.video.VideoInspector.md)                          | Video Inspector Module.     |
-| [cp.apple.finalcutpro.keycodes](cp.apple.finalcutpro.keycodes.md)                          | Keycodes Module     |
 | [cp.apple.finalcutpro.main.Browser](cp.apple.finalcutpro.main.Browser.md)                          | Browser Module.     |
 | [cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover](cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.md)                          | Browser Marker Popup.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
@@ -62,7 +68,7 @@
 | [cp.apple.finalcutpro.main.LibrariesList](cp.apple.finalcutpro.main.LibrariesList.md)                          | Libraries List Module.     |
 | [cp.apple.finalcutpro.main.MediaBrowser](cp.apple.finalcutpro.main.MediaBrowser.md)                          | Media Browser Module.     |
 | [cp.apple.finalcutpro.main.Playhead](cp.apple.finalcutpro.main.Playhead.md)                          | Playhead Module.     |
-| [cp.apple.finalcutpro.main.PrimaryToolbar](cp.apple.finalcutpro.main.PrimaryToolbar.md)                          | Timeline Toolbar     |
+| [cp.apple.finalcutpro.main.PrimaryToolbar](cp.apple.finalcutpro.main.PrimaryToolbar.md)                          | Timeline Toolbar.     |
 | [cp.apple.finalcutpro.main.PrimaryWindow](cp.apple.finalcutpro.main.PrimaryWindow.md)                          | Primary Window Module.     |
 | [cp.apple.finalcutpro.main.SecondaryWindow](cp.apple.finalcutpro.main.SecondaryWindow.md)                          | Secondary Window Module.     |
 | [cp.apple.finalcutpro.main.Timeline](cp.apple.finalcutpro.main.Timeline.md)                          | Timeline Module.     |
@@ -70,13 +76,13 @@
 | [cp.apple.finalcutpro.main.TimelineContents](cp.apple.finalcutpro.main.TimelineContents.md)                          | Timeline Contents Module.     |
 | [cp.apple.finalcutpro.main.TimelineToolbar](cp.apple.finalcutpro.main.TimelineToolbar.md)                          | Timeline Toolbar     |
 | [cp.apple.finalcutpro.main.Viewer](cp.apple.finalcutpro.main.Viewer.md)                          | Viewer Module.     |
-| [cp.apple.finalcutpro.MenuBar](cp.apple.finalcutpro.MenuBar.md)                          | Represents the Final Cut Pro menu bar, providing functions that allow different tasks to be accomplished.     |
+| [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu.     |
 | [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
+| [cp.apple.finalcutpro.plugins.guiscan](cp.apple.finalcutpro.plugins.guiscan.md)                          | Final Cut Pro GUI Plugin Scanner.     |
 | [cp.apple.finalcutpro.prefs.ImportPanel](cp.apple.finalcutpro.prefs.ImportPanel.md)                          | Import Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
-| [cp.apple.finalcutpro.windowfilter](cp.apple.finalcutpro.windowfilter.md)                          | Window Filter for Final Cut Pro.     |
-| [cp.apple.finalcutpro.WindowWatcher](cp.apple.finalcutpro.WindowWatcher.md)                          | Window Watcher Module.     |
+| [cp.apple.finalcutpro.strings](cp.apple.finalcutpro.strings.md)                          | The `cp.strings` for I18N lookups related to Final Cut Pro.     |
 | [cp.battery](cp.battery.md)                          | Provides access to various properties of the battery. Each of these properties     |
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
@@ -93,32 +99,44 @@
 | [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)                          | Text Dropped to Dock Icon Callback     |
 | [cp.console.history](cp.console.history.md)                          | Console History Manager.     |
 | [cp.deferred](cp.deferred.md)                          | This extension makes it simple to defer multiple actions after a delay from the initial execution.     |
-| [cp.developer](cp.developer.md)                          | Developer Tools     |
+| [cp.developer](cp.developer.md)                          | Documentation Tools.     |
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
 | [cp.disk](cp.disk.md)                          | Provides provides details about disk devices attached to the system.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
+| [cp.font](cp.font.md)                          | Font Tools     |
+| [cp.i18n.language](cp.i18n.language.md)                          | Provides the set of ISO 693-1/2/3 language codes and names.     |
+| [cp.i18n.languageID](cp.i18n.languageID.md)                          | As per [Apple's documentation](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6),     |
+| [cp.i18n.localeID](cp.i18n.localeID.md)                          | As per [Apple's documentation](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6),     |
+| [cp.i18n.region](cp.i18n.region.md)                          | Provides the set of ISO 3166-1 region codes and names.     |
+| [cp.i18n.script](cp.i18n.script.md)                          | Provides the set of ISO 15924 language scripts.     |
 | [cp.idle](cp.idle.md)                          | This library allows tasks to be queue for execution when the computer has     |
 | [cp.ids](cp.ids.md)                          | Allows managing values/IDs which can vary between versions.     |
 | [cp.is](cp.is.md)                          | A simple class that lets you test if a value `is` a particular type.     |
+| [cp.json](cp.json.md)                          | A collection of handy JSON tools.     |
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
+| [cp.lazy](cp.lazy.md)                          | Lazy Extension.     |
 | [cp.localized](cp.localized.md)                          | Helps look up localized names for folders.     |
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
 | [cp.plist.archiver](cp.plist.archiver.md)                          | Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.     |
+| [cp.plist.plistParser](cp.plist.plistParser.md)                          | plistParser (https://codea.io/talk/discussion/1269/code-plist-parser)     |
 | [cp.plugins](cp.plugins.md)                          | This is a simple plugin manager.     |
 | [cp.plugins.env](cp.plugins.env.md)                          | Provides access to resources in the plugin environment. In generally, this will be files stored in a Complex Plugin's folder.     |
+| [cp.plugins.plugin](cp.plugins.plugin.md)                          | CommandPost Plugin.     |
 | [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
+| [cp.protect](cp.protect.md)                          | Utility function for protecting a table from being modified.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and reloads the app if they change.     |
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
 | [cp.strings.source.table](cp.strings.source.table.md)                          | Loads strings from provided tables, allowing for a given language variation. Eg:     |
 | [cp.test](cp.test.md)                          | CommandPost Test Scripts.     |
 | [cp.text](cp.text.md)                          | This module provides support for loading, manipulating, and comparing unicode text data.     |
-| [cp.text.matcher](cp.text.matcher.md)                          | This module provides support for loading, manipulating, and comparing unicode text data.     |
+| [cp.text.matcher](cp.text.matcher.md)                          | Adapted from 'utf8.lua' (https://github.com/Stepets/utf8.lua)     |
 | [cp.tools](cp.tools.md)                          | A collection of handy miscellaneous tools for Lua development.     |
 | [cp.ui.Alert](cp.ui.Alert.md)                          | Alert UI Module.     |
-| [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`     |
+| [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`.     |
 | [cp.ui.Button](cp.ui.Button.md)                          | Button Module.     |
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
+| [cp.ui.Group](cp.ui.Group.md)                          | UI Group.     |
 | [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Pop Up Button Module.     |
 | [cp.ui.notifier](cp.ui.notifier.md)                          | Supports long-lived 'AX' notifiers. Configure the application to watch, the     |
 | [cp.ui.PopUpButton](cp.ui.PopUpButton.md)                          | Pop Up Button Module.     |
@@ -127,6 +145,7 @@
 | [cp.ui.RadioGroup](cp.ui.RadioGroup.md)                          | Represents an `AXRadioGroup`, providing utility methods.     |
 | [cp.ui.ScrollArea](cp.ui.ScrollArea.md)                          | Scroll Area Module.     |
 | [cp.ui.Slider](cp.ui.Slider.md)                          | Slider Module.     |
+| [cp.ui.SplitGroup](cp.ui.SplitGroup.md)                          | Split Group UI.     |
 | [cp.ui.StaticText](cp.ui.StaticText.md)                          | Static Text Module.     |
 | [cp.ui.Table](cp.ui.Table.md)                          | Represents an AXTable in the Apple Accessibility UX API.     |
 | [cp.ui.TextField](cp.ui.TextField.md)                          | Text Field Module.     |
@@ -135,6 +154,7 @@
 | [cp.utf16.be](cp.utf16.be.md)                          | A pure-LUA implementation of UTF-16 decoding with big-endian ordering.     |
 | [cp.utf16.le](cp.utf16.le.md)                          | A pure-LUA implementation of UTF-16 decoding with little-endian ordering.     |
 | [cp.watcher](cp.watcher.md)                          | This extension provides support for setting up 'event watchers'.     |
+| [cp.web.block](cp.web.block.md)                          | Block.     |
 | [cp.web.generate](cp.web.generate.md)                          | Functions for Generating HTML UI Items     |
 | [cp.web.html](cp.web.html.md)                          | Functions for Generating HTML markup.     |
 | [cp.web.text](cp.web.text.md)                          | Functions for managing text on the web.     |

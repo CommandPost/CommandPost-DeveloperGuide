@@ -14,7 +14,9 @@ Button Module.
  * [title](#title)
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [app](#app)
  * [isEnabled](#isenabled)
+ * [parent](#parent)
  * [press](#press)
  * [snapshot](#snapshot)
 
@@ -27,8 +29,8 @@ Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `element` is a `Button`, returning `true` if so.                                                                                         |
-| **Parameters**                                       | <ul><li>* element		- The `hs._asm.axuielement` to check.</li></ul> |
-| **Returns**                                          | <ul><li>* `true` if the `element` is a `Button`, or `false` if not.</li></ul>          |
+| **Parameters**                                       | <ul><li>element		- The `hs._asm.axuielement` to check.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if the `element` is a `Button`, or `false` if not.</li></ul>          |
 
 ### Constructors
 
@@ -37,7 +39,7 @@ Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Button` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>* parent		- The parent object. Should have a `UI` and `isShowing` field.</li><li>* finderFn		- A function which will return the `hs._asm.axuielement` the button belongs to, or `nil` if not available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent		- The parent object. Should have a `UI` and `isShowing` field.</li><li>finderFn		- A function which will return the `hs._asm.axuielement` the button belongs to, or `nil` if not available.</li></ul> |
 | **Returns**                                          | <ul><li>The new `Button` instance.</li></ul>          |
 
 ### Fields
@@ -68,26 +70,42 @@ Button Module.
 
 ### Methods
 
+#### [app](#app)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:app() -> App` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the app instance.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>App</li></ul>          |
+
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:isEnabled() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns `true` if the button is visible and enabled.                                                                                         |
-| **Parameters**                                       | <ul><li>* None</li></ul> |
-| **Returns**                                          | <ul><li>* `true` if the button is visible and enabled.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>`true` if the button is visible and enabled.</li></ul>          |
+
+#### [parent](#parent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:parent() -> parent` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the parent object.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>parent</li></ul>          |
 
 #### [press](#press)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:press() -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:press() -> self, boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Performs a button press action, if the button is available.                                                                                         |
-| **Parameters**                                       | <ul><li>* None</li></ul> |
-| **Returns**                                          | <ul><li>* The `Button` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The `Button` instance.</li><li>`true` if the button was actually pressed successfully.</li></ul>          |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:snapshot([path]) -> hs.image | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Takes a snapshot of the button in its current state as a PNG and returns it.                                                                                         |
-| **Parameters**                                       | <ul><li>* path		- (optional) The path to save the file. Should include the extension (should be `.png`).</li></ul> |
+| **Parameters**                                       | <ul><li>path		- (optional) The path to save the file. Should include the extension (should be `.png`).</li></ul> |
 

@@ -32,6 +32,7 @@ Inspector
  * [selectTab](#selecttab)
  * [share](#share)
  * [show](#show)
+ * [tabAvailable](#tabavailable)
  * [text](#text)
  * [title](#title)
  * [transition](#transition)
@@ -193,11 +194,11 @@ Inspector
 | **Notes**                                            | <ul><li>The tab strings can be:</li><li>  Audio</li><li>  Color</li><li>  Effect</li><li>  Generator</li><li>  Info</li><li>  Share</li><li>  Text</li><li>  Title</li><li>  Transition</li><li>  Video</li></ul>                |
 
 #### [selectTab](#selecttab)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:selectTab([tab]) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:selectTab(tab) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects a tab in the inspector.                                                                                         |
-| **Parameters**                                       | <ul><li>[tab] - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table</li></ul> |
+| **Parameters**                                       | <ul><li>tab - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table</li></ul> |
 | **Returns**                                          | <ul><li>A string of the selected tab, otherwise `nil` if an error occurred.</li></ul>          |
 | **Notes**                                            | <ul><li>This method will open the Inspector if it's closed, and leave it open.</li><li>Valid strings for `value` are as follows:</li><li>  Audio</li><li>  Color</li><li>  Effect</li><li>  Generator</li><li>  Info</li><li>  Share</li><li>  Text</li><li>  Title</li><li>  Transition</li><li>  Video</li></ul>                |
 
@@ -216,6 +217,15 @@ Inspector
 | **Description**                                      | Shows the inspector.                                                                                         |
 | **Parameters**                                       | <ul><li>[tab] - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table</li></ul> |
 | **Returns**                                          | <ul><li>The `Inspector` instance.</li></ul>          |
+| **Notes**                                            | <ul><li>Valid strings for `value` are as follows:</li><li>  Audio</li><li>  Color</li><li>  Effect</li><li>  Generator</li><li>  Info</li><li>  Share</li><li>  Text</li><li>  Title</li><li>  Transition</li><li>  Video</li></ul>                |
+
+#### [tabAvailable](#tabavailable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:tabAvailable(tab) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks to see if a tab is currently available in the Inspector.                                                                                         |
+| **Parameters**                                       | <ul><li>tab - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table</li></ul> |
+| **Returns**                                          | <ul><li>`true` if available otherwise `false`.</li></ul>          |
 | **Notes**                                            | <ul><li>Valid strings for `value` are as follows:</li><li>  Audio</li><li>  Color</li><li>  Effect</li><li>  Generator</li><li>  Info</li><li>  Share</li><li>  Text</li><li>  Title</li><li>  Transition</li><li>  Video</li></ul>                |
 
 #### [text](#text)

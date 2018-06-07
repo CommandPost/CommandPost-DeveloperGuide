@@ -64,7 +64,7 @@ Represents an `AXRadioGroup`, providing utility methods.
 | **Returns**                                          | <ul><li>* `true` if the RadioGroup is visible.</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:new(parent, finderFn[, cached]) -> RadioGroup` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup.new(parent, finderFn[, cached]) -> RadioGroup` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new RadioGroup.                                                                                         |

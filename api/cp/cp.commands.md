@@ -9,6 +9,8 @@ Commands Module.
  * [cp.commands.shortcut](cp.commands.shortcut.md)
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_EXTENSION](#default_extension)
 * Functions - API calls offered directly by the extension
  * [getShortcutsPath](#getshortcutspath)
  * [group](#group)
@@ -36,6 +38,14 @@ Commands Module.
 
 ## API Documentation
 
+### Constants
+
+#### [DEFAULT_EXTENSION](#default_extension)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.DEFAULT_EXTENSION -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The menubar position priority.                                                                                         |
+
 ### Functions
 
 #### [getShortcutsPath](#getshortcutspath)
@@ -57,7 +67,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an array of IDs of command groups which have been created.                                                                                         |
-| **Parameters**                                       | <ul><li>* N/A</li></ul> |
+| **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>`table` - The array of group IDs.</li></ul>          |
 
 #### [groups](#groups)

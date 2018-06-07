@@ -8,6 +8,7 @@ Represents a Tangent Action
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [controls](#controls)
+ * [is](#is)
  * [onPress](#onpress)
  * [onRelease](#onrelease)
  * [parent](#parent)
@@ -34,6 +35,14 @@ Represents a Tangent Action
 | **Description**                                      | Returns the `controls` the action belongs to.                                                                                         |
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* The `controls`, or `nil` if not specified.</li></ul>          |
+
+#### [is](#is)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.action.is() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Is an object an action?                                                                                         |
+| **Parameters**                                       | <ul><li>* otherThing - Object to test.</li></ul> |
+| **Returns**                                          | <ul><li>* `true` if the object is an action otherwise `false`.</li></ul>          |
 
 #### [onPress](#onpress)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.action:onPress(pressFn) -> self` </span>                                                          |

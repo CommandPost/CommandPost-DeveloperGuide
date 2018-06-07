@@ -16,7 +16,6 @@
 ## API Documentation
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
-| [core.preferences.panels.plugins](core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.colorfinale.tangent](plugins.colorfinale.tangent.md)                          | This plugin basically just disables CP's Tangent Manager when ColorFinale is running.     |
 | [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.core.accessibility](plugins.core.accessibility.md)                          | Accessibility Plugin.     |
@@ -52,6 +51,7 @@
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
 | [plugins.core.preferences.panels.midi](plugins.core.preferences.panels.midi.md)                          | MIDI Preferences Panel     |
 | [plugins.core.preferences.panels.notifications](plugins.core.preferences.panels.notifications.md)                          | Notifications Preferences Panel     |
+| [plugins.core.preferences.panels.plugins](plugins.core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.core.preferences.panels.shortcuts](plugins.core.preferences.panels.shortcuts.md)                          | Shortcuts Preferences Panel     |
 | [plugins.core.preferences.panels.streamdeck](plugins.core.preferences.panels.streamdeck.md)                          | Stream Deck Preferences Panel     |
 | [plugins.core.preferences.panels.touchbar](plugins.core.preferences.panels.touchbar.md)                          | Touch Bar Preferences Panel     |
@@ -98,10 +98,12 @@
 | [plugins.finalcutpro.commands](plugins.finalcutpro.commands.md)                          | The 'fcpx' command collection.     |
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
+| [plugins.finalcutpro.console.font](plugins.finalcutpro.console.font.md)                          | Final Cut Pro Font Console     |
 | [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Batch Export Plugin     |
 | [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)                          | Manager for the Batch Export Window.     |
 | [plugins.finalcutpro.export.batch.manager.panel](plugins.finalcutpro.export.batch.manager.panel.md)                          | CommandPost Batch Export Panel.     |
 | [plugins.finalcutpro.feedback.bugreport](plugins.finalcutpro.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Final Cut Pro.     |
+| [plugins.finalcutpro.fullscreen.dockicon](plugins.finalcutpro.fullscreen.dockicon.md)                          | Manages the CommandPost dock icon when FCP is full-screen.     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
 | [plugins.finalcutpro.hacks.backupinterval](plugins.finalcutpro.hacks.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
 | [plugins.finalcutpro.hacks.movingmarkers](plugins.finalcutpro.hacks.movingmarkers.md)                          | Moving Markers Plugin.     |
@@ -142,7 +144,6 @@
 | [plugins.finalcutpro.pasteboard.shared](plugins.finalcutpro.pasteboard.shared.md)                          | Shared Pasteboard Plugin.     |
 | [plugins.finalcutpro.preferences.app](plugins.finalcutpro.preferences.app.md)                          | Final Cut Pro Preferences Panel     |
 | [plugins.finalcutpro.preferences.clearcache](plugins.finalcutpro.preferences.clearcache.md)                          | Adds a "Clear Cache" button to the Final Cut Pro Preferences.     |
-| [plugins.finalcutpro.preferences.scanfinalcutpro](plugins.finalcutpro.preferences.scanfinalcutpro.md)                          | Scan Final Cut Pro.     |
 | [plugins.finalcutpro.setup.unsupportedversion](plugins.finalcutpro.setup.unsupportedversion.md)                          | Unsupported version setup panel.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
@@ -152,6 +153,7 @@
 | [plugins.finalcutpro.tangent.video](plugins.finalcutpro.tangent.video.md)                          | Final Cut Pro Video Inspector for Tangent     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
+| [plugins.finalcutpro.timeline.captions](plugins.finalcutpro.timeline.captions.md)                          | Caption Tools     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
 | [plugins.finalcutpro.timeline.colorwheels](plugins.finalcutpro.timeline.colorwheels.md)                          | Color Wheel Enhancements.     |
 | [plugins.finalcutpro.timeline.commandsetactions](plugins.finalcutpro.timeline.commandsetactions.md)                          | Adds Actions to the Console for triggering Final Cut Pro shortcuts as defined in the Command Set files.     |
@@ -178,11 +180,11 @@
 | [plugins.finalcutpro.touchbar.virtual](plugins.finalcutpro.touchbar.virtual.md)                          | Virtual Touch Bar Plugin.     |
 | [plugins.finalcutpro.touchbar.widgets.colorboard](plugins.finalcutpro.touchbar.widgets.colorboard.md)                          | A collection of Final Cut Pro Color Board Widgets for the Touch Bar.     |
 | [plugins.finalcutpro.touchbar.widgets.zoom](plugins.finalcutpro.touchbar.widgets.zoom.md)                          | Final Cut Pro Zoom Control Widget for Touch Bar.     |
+| [plugins.finalcutpro.viewer.overlays](plugins.finalcutpro.viewer.overlays.md)                          | Final Cut Pro Viewer Overlays.     |
 | [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timecode.     |
 | [plugins.finalcutpro.viewer.showtimelineinplayer](plugins.finalcutpro.viewer.showtimelineinplayer.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.viewer.timecodeoverlay](plugins.finalcutpro.viewer.timecodeoverlay.md)                          | Advanced Timecode Overlay.     |
 | [plugins.finalcutpro.watchers.preferences](plugins.finalcutpro.watchers.preferences.md)                          | Final Cut Pro Preferences Watcher.     |
-| [plugins.finalcutpro.watchers.version](plugins.finalcutpro.watchers.version.md)                          | This plugin will compare the current version of Final Cut Pro to the last one run.     |
 | [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.panels.media](plugins.finalcutpro.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |

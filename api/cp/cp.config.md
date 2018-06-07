@@ -17,6 +17,7 @@ Manage CommandPost's constants and settings.
  * [basePath](#basepath)
  * [bundledPluginsPath](#bundledpluginspath)
  * [bundleID](#bundleid)
+ * [cachePath](#cachepath)
  * [configPrefix](#configprefix)
  * [developerMode](#developermode)
  * [iconPath](#iconpath)
@@ -83,6 +84,12 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Application's Bundle ID                                                                                         |
+
+#### [cachePath](#cachepath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.cachePath -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The path to the CommandPost Cache folder.                                                                                         |
 
 #### [configPrefix](#configprefix)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.configPrefix -> string` </span>                                                          |

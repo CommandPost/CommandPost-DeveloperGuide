@@ -5,6 +5,7 @@ Voice Command Plugin.
 
 ## API Overview
 * Variables - Configurable values
+ * [active](#active)
  * [announcementsEnabled](#announcementsenabled)
  * [commandsByTitle](#commandsbytitle)
  * [commandTitles](#commandtitles)
@@ -25,6 +26,12 @@ Voice Command Plugin.
 ## API Documentation
 
 ### Variables
+
+#### [active](#active)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.os.voice.active <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Are Voice Commands active? This will be true if they are both [enabled](#enabled) and FCP is frontmost.                                                                                         |
 
 #### [announcementsEnabled](#announcementsenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.os.voice.announcementsEnabled <cp.prop: boolean>` </span>                                                          |

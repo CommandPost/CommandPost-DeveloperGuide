@@ -16,7 +16,6 @@ A Window UI element.
  * [hsWindow](#hswindow)
  * [id](#id)
  * [minimized](#minimized)
- * [UI](#ui)
  * [visible](#visible)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [close](#close)
@@ -36,11 +35,11 @@ A Window UI element.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:new(finderFn) -> Window` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.new(uiProp) -> Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Window                                                                                         |
-| **Parameters**                                       | <ul><li>`finderFn`   - a function which will provide the `axuielement` for the window to work with.</li></ul> |
+| **Parameters**                                       | <ul><li>`uiProp`   - a `cp.prop` that returns the `hs._asm.axuielement` for the window.</li></ul> |
 | **Returns**                                          | <ul><li>A new `Window` instance.</li></ul>          |
 
 ### Fields
@@ -86,12 +85,6 @@ A Window UI element.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Returns `true` if the window exists and is minimised.                                                                                         |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.UI <cp.prop: axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the `axuielement` UI for the window, or `nil` if it can't be found.                                                                                         |
 
 #### [visible](#visible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.visible <cp.prop: boolean; read-only>` </span>                                                          |

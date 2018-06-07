@@ -3,6 +3,9 @@
 
 Final Cut Pro Console
 
+## Submodules
+ * [plugins.finalcutpro.console.font](plugins.finalcutpro.console.font.md)
+
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [show](#show)

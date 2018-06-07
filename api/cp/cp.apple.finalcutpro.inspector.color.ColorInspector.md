@@ -10,7 +10,8 @@ Color Inspector Module.
  * [matches](#matches)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [correctorUI](#correctorui)
- * [isSupported](#issupported)
+ * [isAdvanced](#isadvanced)
+ * [isShowing](#isshowing)
  * [topBarUI](#topbarui)
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -23,7 +24,6 @@ Color Inspector Module.
  * [corrections](#corrections)
  * [hide](#hide)
  * [hueSaturationCurves](#huesaturationcurves)
- * [isShowing](#isshowing)
  * [new](#new)
  * [parent](#parent)
  * [show](#show)
@@ -36,7 +36,7 @@ Color Inspector Module.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.CORRECTION_TYPES` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Table of Correction Types                                                                                         |
+| **Description**                                      | Table of Correction Types:                                                                                         |
 
 ### Functions
 
@@ -56,11 +56,17 @@ Color Inspector Module.
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Returns the `hs._asm.axuielement` object representing the currently-selected corrector panel.                                                                                         |
 
-#### [isSupported](#issupported)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.isSupported <cp.prop: boolean; read-only>` </span>                                                          |
+#### [isAdvanced](#isadvanced)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.isAdvanced <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is the Color Inspector supported in the installed version of Final Cut Pro?                                                                                         |
+| **Description**                                      | Is the Color Inspector the advanced version that was added in 10.4?                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the Color Inspector is visible.                                                                                         |
 
 #### [topBarUI](#topbarui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.topBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
@@ -147,14 +153,6 @@ Color Inspector Module.
 | **Description**                                      | Gets the HueSaturationCurves object.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A new HueSaturationCurves object</li></ul>          |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:isShowing([correctionType]) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns whether or not the Color Inspector is visible                                                                                         |
-| **Parameters**                                       | <ul><li>[correctionType] - A string containing the name of the Correction Type (see cp.apple.finalcutpro.inspector.color.ColorInspector.CORRECTION_TYPES).</li></ul> |
-| **Returns**                                          | <ul><li>`true` if the Color Inspector is showing, otherwise `false`</li></ul>          |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.new(parent) -> ColorInspector object` </span>                                                          |

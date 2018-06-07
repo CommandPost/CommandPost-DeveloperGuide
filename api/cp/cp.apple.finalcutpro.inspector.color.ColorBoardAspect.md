@@ -6,7 +6,7 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [ids](#ids)
-* Functions - API calls offered directly by the extension
+* Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
@@ -34,12 +34,12 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | A table containing the list of aspect IDs ("color", "saturation", "exposure").                                                                                         |
 
-### Functions
+### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:new(parent, index[, hasAngle]) -> ColorBoardAspect` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect.new(parent, index[, hasAngle]) -> ColorBoardAspect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
+| **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `ColorBoardAspect` object.                                                                                         |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li><li>index - The Color Board Aspect Index.</li><li>hasAngle - If `true`, the aspect has an `angle` parameter. Defaults to `false`</li></ul> |
 | **Returns**                                          | <ul><li>A new `ColorBoardAspect object.</li></ul>          |

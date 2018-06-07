@@ -6,9 +6,12 @@ Export Dialog Module.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [isShowing](#isshowing)
+ * [title](#title)
+ * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [getTitle](#gettitle)
@@ -17,9 +20,6 @@ Export Dialog Module.
  * [pressNext](#pressnext)
  * [saveSheet](#savesheet)
  * [show](#show)
- * [UI](#ui)
- * [unwatch](#unwatch)
- * [watch](#watch)
 
 ## API Documentation
 
@@ -33,10 +33,12 @@ Export Dialog Module.
 | **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
+### Constructors
+
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:new(app) -> ExportDialog` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.new(app) -> ExportDialog` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
+| **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Export Dialog object.                                                                                         |
 | **Parameters**                                       | <ul><li>app - The `cp.apple.finalcutpro` object.</li></ul> |
 | **Returns**                                          | <ul><li>A new ExportDialog object.</li></ul>          |
@@ -44,10 +46,22 @@ Export Dialog Module.
 ### Fields
 
 #### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field                                                                                         |
 | **Description**                                      | Is the window showing?                                                                                         |
+
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.title <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The window title, or `nil` if not available.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.UI <cp.prop: hs._asm.axuielement: read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the Export Dialog `axuielement`.                                                                                         |
 
 ### Methods
 
@@ -100,34 +114,11 @@ Export Dialog Module.
 | **Returns**                                          | <ul><li>The SaveSheet.</li></ul>          |
 
 #### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:show() -> cp.apple.finalcutpro.export.ExportDialog` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:show(destinationSelect, ignoreProxyWarning, ignoreMissingMedia, quiet) -> cp.apple.finalcutpro.export.ExportDialog, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Shows the Export Dialog                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The `cp.apple.finalcutpro.export.ExportDialog` object for method chaining.</li></ul>          |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:UI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the Export Dialog Accessibility Object                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `axuielementObject` or `nil`</li></ul>          |
-
-#### [unwatch](#unwatch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:unwatch(id) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Unwatches an event.                                                                                         |
-| **Parameters**                                       | <ul><li>id - An ID as a string of the event you want to unwatch.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [watch](#watch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:watch() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Watch for events that happen in the command editor. The optional functions will be called when the window is shown or hidden, respectively.                                                                                         |
-| **Parameters**                                       | <ul><li>`events` - A table of functions with to watch. These may be:</li><li>  `show(CommandEditor)` - Triggered when the window is shown.</li><li>  `hide(CommandEditor)` - Triggered when the window is hidden.</li></ul> |
-| **Returns**                                          | <ul><li>An ID which can be passed to `unwatch` to stop watching.</li></ul>          |
+| **Description**                                      | Shows the Export Dialog with the Destination that matches the `destinationSelect`.                                                                                         |
+| **Parameters**                                       | <ul><li>destinationSelect    - The name, number or match function of the destination to export with.</li><li>ignoreProxyWarning   - if `true`, the warning regarding exporting Proxies will be ignored.</li><li>ignoreMissingMedia   - if `true`, the warning regarding exporting with missing media will be ignored.</li><li>quiet                - if `true`, no dialogs will be shown if there is an error.</li></ul> |
+| **Returns**                                          | <ul><li>The `cp.apple.finalcutpro.export.ExportDialog` object for method chaining.</li><li>If an error occurred, the message is returned as the second value</li></ul>          |
+| **Notes**                                            | <ul><li>* If providing a function, it will be passed one item - the name of the destination, and should return `true` to indicate a match. The name will not contain " (default)" if present.</li></ul>                |
 

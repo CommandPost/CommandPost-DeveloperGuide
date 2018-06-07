@@ -652,9 +652,8 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes the specified watch method as a watcher, if present. An example of adding and removing a watch:                                                                                         |
-| **Parameters**                                       | <ul><li>`watchFn`        - The original watch function to remove. Must be the same instance that was added.</li><li>`notifyNow`  - The function will be triggered immediately with the current state.  Defaults to `false`.</li></ul> |
-| **Returns**                                          | <ul><li>`cp.prop`        - The same `cp.prop` instance</li><li>`function`   - The watch function, which can be passed to [unwatch](#unwatch) to stop watching.</li></ul>          |
-| **Notes**                                            | <ul><li>You can watch immutable values. Wrapped `cp.prop` instances may not be immutable, and any changes to them will cause watchers to be notified up the chain.</li></ul>                |
+| **Parameters**                                       | <ul><li>`watchFn`        - The original watch function to remove. Must be the same instance that was added.</li></ul> |
+| **Returns**                                          | <ul><li>`true` if the function was watching and successfully removed, otherwise `false`.</li></ul>          |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:update() -> value` </span>                                                          |

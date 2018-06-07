@@ -14,11 +14,9 @@ Requires Final Cut Pro 10.4 or later.
  * [add](#add)
  * [app](#app)
  * [findCorrectionLabel](#findcorrectionlabel)
- * [isShowing](#isshowing)
  * [menuButton](#menubutton)
  * [parent](#parent)
  * [show](#show)
- * [UI](#ui)
 
 ## API Documentation
 
@@ -74,14 +72,6 @@ Requires Final Cut Pro 10.4 or later.
 | **Parameters**                                       | <ul><li>correctionType - The correction type as string.</li></ul> |
 | **Returns**                                          | <ul><li>The correction label as string.</li></ul>          |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Is the Corrections Bar currently showing?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>`true` if showing, otherwise `false`</li></ul>          |
-
 #### [menuButton](#menubutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:menuButton() -> MenuButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -105,12 +95,4 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Attempts to show the bar.                                                                                         |
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* The `CorrectionsBar` instance.</li></ul>          |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:UI() -> hs._asm.axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `hs._asm.axuielement` object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `hs._asm.axuielement` object or `nil`.</li></ul>          |
 

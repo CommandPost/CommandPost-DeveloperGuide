@@ -156,10 +156,10 @@ Color Wheels Module.
 | **Returns**                                          | <ul><li>The `PropertyRow`.</li></ul>          |
 
 #### [hueTextField](#huetextfield)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:hueTextField() -> cp.ui.Slider` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:hueTextField() -> cp.ui.TextField` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns a `Slider` that provides access to the 'Hue' slider.                                                                                         |
+| **Description**                                      | Returns a `TextField` that provides access to the 'Hue' slider.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Hue `Slider`.</li></ul>          |
 

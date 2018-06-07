@@ -14,6 +14,7 @@ Save Sheet
  * [filename](#filename)
  * [getTitle](#gettitle)
  * [goToPrompt](#gotoprompt)
+ * [hide](#hide)
  * [parent](#parent)
  * [pressCancel](#presscancel)
  * [pressSave](#presssave)
@@ -33,7 +34,7 @@ Save Sheet
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.SaveSheet:new(app) -> SaveSheet` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.SaveSheet.new(app) -> SaveSheet` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new SaveSheet object.                                                                                         |
@@ -81,6 +82,14 @@ Save Sheet
 | **Description**                                      | Gets the Go To Prompt object.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A `GoToPrompt` object.</li></ul>          |
+
+#### [hide](#hide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.SaveSheet:hide() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Hides the Save Sheet                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.SaveSheet:parent() -> object` </span>                                                          |

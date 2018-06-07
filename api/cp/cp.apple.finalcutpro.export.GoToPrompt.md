@@ -32,7 +32,7 @@ Go To Prompt.
 | **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:new(app) -> GoToPrompt` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt.new(app) -> GoToPrompt` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new Go To Prompt object.                                                                                         |
@@ -58,12 +58,12 @@ Go To Prompt.
 | **Returns**                                          | <ul><li>App</li></ul>          |
 
 #### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:hide() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:hide() -> cp.apple.finalcutpro.export.GoToPrompt` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
-| **Description**                                      | Hides the Save Sheet                                                                                         |
+| **Description**                                      | Hides the Go To Prompt                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Returns**                                          | <ul><li>The `cp.apple.finalcutpro.export.GoToPrompt` object for method chaining.</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:parent() -> object` </span>                                                          |

@@ -9,11 +9,12 @@ Requires Final Cut Pro 10.4 or later.
 * Constants - Useful values which cannot be changed
  * [CURVES](#curves)
  * [VIEW_MODES](#view_modes)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [isShowing](#isshowing)
  * [mix](#mix)
- * [new](#new)
  * [parent](#parent)
  * [show](#show)
  * [viewMode](#viewmode)
@@ -34,6 +35,16 @@ Requires Final Cut Pro 10.4 or later.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | View Modes for Color Curves                                                                                         |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.new(parent) -> HueSaturationCurves object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new HueSaturationCurves object                                                                                         |
+| **Parameters**                                       | <ul><li>`parent`		- The parent</li></ul> |
+| **Returns**                                          | <ul><li>A HueSaturationCurves object</li></ul>          |
 
 ### Methods
 
@@ -60,14 +71,6 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Sets or gets the Hue/Saturation Curves mix value.                                                                                         |
 | **Parameters**                                       | <ul><li>[value] - An optional value you want to set the mix value to as number (0 to 1).</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the mix value or `nil` if an error occurs.</li></ul>          |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:new(parent) -> HueSaturationCurves object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new HueSaturationCurves object                                                                                         |
-| **Parameters**                                       | <ul><li>`parent`		- The parent</li></ul> |
-| **Returns**                                          | <ul><li>A HueSaturationCurves object</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:parent() -> table` </span>                                                          |

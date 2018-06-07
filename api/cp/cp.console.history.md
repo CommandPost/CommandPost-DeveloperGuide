@@ -3,6 +3,9 @@
 
 Console History Manager.
 
+Originally created by @asmagill
+https://github.com/asmagill/hammerspoon-config-take2/blob/master/utils/_actions/consoleHistory.lua
+
 ## API Overview
 * Variables - Configurable values
  * [autosaveHistory](#autosavehistory)

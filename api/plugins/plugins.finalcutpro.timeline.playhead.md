@@ -6,12 +6,12 @@ Manages features relating to the Timeline Playhead.
 ## API Overview
 * Variables - Configurable values
  * [playheadLocked](#playheadlocked)
+ * [playheadTracked](#playheadtracked)
  * [scrollingTimeline](#scrollingtimeline)
 * Functions - API calls offered directly by the extension
  * [checkScrollingTimeline](#checkscrollingtimeline)
  * [getScrollingTimelineWatcher](#getscrollingtimelinewatcher)
  * [update](#update)
- * [updateWatcher](#updatewatcher)
 
 ## API Documentation
 
@@ -22,6 +22,12 @@ Manages features relating to the Timeline Playhead.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Playhead Locked?                                                                                         |
+
+#### [playheadTracked](#playheadtracked)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.playheadTracked <cp.prop: boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Checks if the playhead is being actively tracked, either by scrolling timeline or the playhead lock.                                                                                         |
 
 #### [scrollingTimeline](#scrollingtimeline)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.scrollingTimeline <cp.prop: boolean>` </span>                                                          |
@@ -52,14 +58,6 @@ Manages features relating to the Timeline Playhead.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Ensures the Scrolling Timeline/Playhead Lock are in the correct mode                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [updateWatcher](#updatewatcher)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.updateWatcher() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates or destroys the Final Cut Pro watcher.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 

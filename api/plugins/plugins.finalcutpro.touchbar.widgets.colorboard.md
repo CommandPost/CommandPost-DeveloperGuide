@@ -5,6 +5,8 @@ A collection of Final Cut Pro Color Board Widgets for the Touch Bar.
 
 ## API Overview
 * Variables - Configurable values
+ * [active](#active)
+ * [hasWidgets](#haswidgets)
  * [updateInterval](#updateinterval)
 * Functions - API calls offered directly by the extension
  * [init](#init)
@@ -14,6 +16,18 @@ A collection of Final Cut Pro Color Board Widgets for the Touch Bar.
 ## API Documentation
 
 ### Variables
+
+#### [active](#active)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.widgets.colorboard.active <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Indicates if the widget is active.                                                                                         |
+
+#### [hasWidgets](#haswidgets)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.widgets.colorboard.hasWidgets <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Indicates if any widgests have been created.                                                                                         |
 
 #### [updateInterval](#updateinterval)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.widgets.colorboard.updateInterval -> number` </span>                                                          |

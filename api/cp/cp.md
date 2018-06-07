@@ -1,9 +1,10 @@
 # [docs](index.md) » cp
 ---
 
-Core CommandPost functionality
+Core CommandPost functionality.
 
 ## Submodules
+ * [cp.app](cp.app.md)
  * [cp.apple](cp.apple.md)
  * [cp.battery](cp.battery.md)
  * [cp.bench](cp.bench.md)
@@ -16,14 +17,19 @@ Core CommandPost functionality
  * [cp.dialog](cp.dialog.md)
  * [cp.disk](cp.disk.md)
  * [cp.feedback](cp.feedback.md)
+ * [cp.font](cp.font.md)
+ * [cp.i18n](cp.i18n.md)
  * [cp.idle](cp.idle.md)
  * [cp.ids](cp.ids.md)
  * [cp.is](cp.is.md)
+ * [cp.json](cp.json.md)
  * [cp.just](cp.just.md)
+ * [cp.lazy](cp.lazy.md)
  * [cp.localized](cp.localized.md)
  * [cp.plist](cp.plist.md)
  * [cp.plugins](cp.plugins.md)
  * [cp.prop](cp.prop.md)
+ * [cp.protect](cp.protect.md)
  * [cp.sourcewatcher](cp.sourcewatcher.md)
  * [cp.strings](cp.strings.md)
  * [cp.test](cp.test.md)
@@ -37,7 +43,6 @@ Core CommandPost functionality
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [init](#init)
- * [is](#is)
 
 ## API Documentation
 
@@ -50,12 +55,4 @@ Core CommandPost functionality
 | **Description**                                      | Initialise CommandPost                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [is](#is)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.block.is(value) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks if the `value` is an `cp.web.block`.                                                                                         |
-| **Parameters**                                       | <ul><li>* value		- the value to check</li></ul> |
-| **Returns**                                          | <ul><li>* `true` if it is an HTML block, or `false` otherwise.</li></ul>          |
 

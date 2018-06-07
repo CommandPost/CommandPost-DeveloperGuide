@@ -36,7 +36,6 @@ Color Puck Module.
  * [show](#show)
  * [start](#start)
  * [stop](#stop)
- * [UI](#ui)
 
 ## API Documentation
 
@@ -255,12 +254,4 @@ Color Puck Module.
 | **Description**                                      | Stops a Color Puck.                                                                                         |
 | **Parameters**                                       | <ul><li>* None</li></ul> |
 | **Returns**                                          | <ul><li>* None</li></ul>          |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:UI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the Color Puck Accessibility Object                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An `axuielementObject` or `nil`</li></ul>          |
 
