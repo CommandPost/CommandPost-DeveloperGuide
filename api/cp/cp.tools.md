@@ -147,11 +147,11 @@ A collection of handy miscellaneous tools for Lua development.
 | **Returns**                                          | <ul><li>String</li></ul>          |
 
 #### [getFilenameFromPath](#getfilenamefrompath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFilenameFromPath(input) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFilenameFromPath(input[, removeExtension]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the filename component of a path.                                                                                         |
-| **Parameters**                                       | <ul><li>input - The path</li></ul> |
+| **Parameters**                                       | <ul><li>input - The path</li><li>removeExtension - (optional) set to `true` if the file extension should be removed</li></ul> |
 | **Returns**                                          | <ul><li>A string of the filename.</li></ul>          |
 
 #### [getFullname](#getfullname)

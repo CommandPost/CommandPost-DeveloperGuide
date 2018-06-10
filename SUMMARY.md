@@ -8,6 +8,7 @@
 ## Lua
 
 * [Lua Overview](lua/overview/README.md)
+* [Memory Management](lua/memory/README.md)
 
 ## Contributing
 
@@ -131,6 +132,7 @@
 * [cp.developer](api/cp/cp.developer.md)
 * [cp.dialog](api/cp/cp.dialog.md)
 * [cp.disk](api/cp/cp.disk.md)
+* [cp.docs](api/cp/cp.docs.md)
 * [cp.feedback](api/cp/cp.feedback.md)
 * [cp.font](api/cp/cp.font.md)
 * [cp.i18n.language](api/cp/cp.i18n.language.md)

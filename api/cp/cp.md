@@ -16,6 +16,7 @@ Core CommandPost functionality.
  * [cp.developer](cp.developer.md)
  * [cp.dialog](cp.dialog.md)
  * [cp.disk](cp.disk.md)
+ * [cp.docs](cp.docs.md)
  * [cp.feedback](cp.feedback.md)
  * [cp.font](cp.font.md)
  * [cp.i18n](cp.i18n.md)

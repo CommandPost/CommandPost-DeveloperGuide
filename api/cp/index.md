@@ -99,9 +99,10 @@
 | [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)                          | Text Dropped to Dock Icon Callback     |
 | [cp.console.history](cp.console.history.md)                          | Console History Manager.     |
 | [cp.deferred](cp.deferred.md)                          | This extension makes it simple to defer multiple actions after a delay from the initial execution.     |
-| [cp.developer](cp.developer.md)                          | Documentation Tools.     |
+| [cp.developer](cp.developer.md)                          | Developer Tools     |
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
 | [cp.disk](cp.disk.md)                          | Provides provides details about disk devices attached to the system.     |
+| [cp.docs](cp.docs.md)                          | Documentation Tools.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
 | [cp.font](cp.font.md)                          | Font Tools     |
 | [cp.i18n.language](cp.i18n.language.md)                          | Provides the set of ISO 693-1/2/3 language codes and names.     |

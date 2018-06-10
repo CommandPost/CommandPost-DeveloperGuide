@@ -4,6 +4,8 @@
 Final Cut Pro Media Watch Folder Plugin.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [SECONDS_UNTIL_DELETE](#seconds_until_delete)
 * Variables - Configurable values
  * [audioTag](#audiotag)
  * [automaticallyImport](#automaticallyimport)
@@ -34,76 +36,84 @@ Final Cut Pro Media Watch Folder Plugin.
 
 ## API Documentation
 
+### Constants
+
+#### [SECONDS_UNTIL_DELETE](#seconds_until_delete)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.SECONDS_UNTIL_DELETE -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Seconds until a file is deleted.                                                                                         |
+
 ### Variables
 
 #### [audioTag](#audiotag)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.audioTag` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.audioTag <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | String which contains the audio tag.                                                                                         |
 
 #### [automaticallyImport](#automaticallyimport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.automaticallyImport` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.automaticallyImport <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Boolean that sets whether or not new generated voice file are automatically added to the timeline or not.                                                                                         |
 
 #### [deleteAfterImport](#deleteafterimport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.deleteAfterImport` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.deleteAfterImport <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Boolean that sets whether or not you want to delete file after they've been imported.                                                                                         |
 
 #### [disableImport](#disableimport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.disableImport` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.disableImport -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | When `true` Notifications will no longer be triggered.                                                                                         |
 
 #### [filesInTransit](#filesintransit)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.filesInTransit` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.filesInTransit -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Files currently being copied                                                                                         |
 
 #### [imageTag](#imagetag)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.imageTag` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.imageTag <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | String which contains the stills tag.                                                                                         |
 
 #### [insertIntoTimeline](#insertintotimeline)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.insertIntoTimeline` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.insertIntoTimeline <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Boolean that sets whether or not the files are automatically added to the timeline or not.                                                                                         |
 
 #### [notifications](#notifications)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.notifications` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.notifications -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table of Notifications                                                                                         |
 
 #### [savedNotifications](#savednotifications)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.savedNotifications` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.savedNotifications <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table of Notifications that are saved between restarts                                                                                         |
 
 #### [videoTag](#videotag)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.videoTag` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.videoTag <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | String which contains the video tag.                                                                                         |
 
 #### [watchFolders](#watchfolders)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.watchFolders` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.watchFolders <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Table of the users watch folders.                                                                                         |
 
 #### [watchFolderTableID](#watchfoldertableid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.watchFolderTableID` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.watchFolderTableID -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | Watch Folder Table ID                                                                                         |
@@ -162,8 +172,8 @@ Final Cut Pro Media Watch Folder Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.insertFilesIntoFinalCutPro(files) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
-| **Description**                                      | Imports a file into Final Cut Pro                                                                                         |
-| **Parameters**                                       | <ul><li>file - File name</li><li>tag - The notification tag</li></ul> |
+| **Description**                                      | Imports files into Final Cut Pro                                                                                         |
+| **Parameters**                                       | <ul><li>files - A table of file paths.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [newWatcher](#newwatcher)
@@ -207,10 +217,10 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>Returns Style Sheet as a string</li></ul>          |
 
 #### [watchFolderTriggered](#watchfoldertriggered)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.watchFolderTriggered(files) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.watchFolderTriggered(files, eventFlags, path) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Watch Folder Triggered                                                                                         |
-| **Parameters**                                       | <ul><li>files - A table of files</li></ul> |
+| **Parameters**                                       | <ul><li>files - A table containing a list of file paths that have changed.</li><li>eventFlags - A table containing a list of tables denoting how each corresponding file in paths has changed, each containing boolean values indicating which types of events occurred.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul>          |
 
