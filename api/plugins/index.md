@@ -147,10 +147,15 @@
 | [plugins.finalcutpro.setup.unsupportedversion](plugins.finalcutpro.setup.unsupportedversion.md)                          | Unsupported version setup panel.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
+| [plugins.finalcutpro.tangent.clip](plugins.finalcutpro.tangent.clip.md)                          | Final Cut Pro Tangent View Group     |
+| [plugins.finalcutpro.tangent.edit](plugins.finalcutpro.tangent.edit.md)                          | Final Cut Pro Tangent View Group     |
 | [plugins.finalcutpro.tangent.manager](plugins.finalcutpro.tangent.manager.md)                          | Final Cut Pro Tangent Manager.     |
+| [plugins.finalcutpro.tangent.new](plugins.finalcutpro.tangent.new.md)                          | Final Cut Pro Tangent View Group     |
 | [plugins.finalcutpro.tangent.playback](plugins.finalcutpro.tangent.playback.md)                          | Final Cut Pro Tangent Playback Group/Management     |
 | [plugins.finalcutpro.tangent.timeline](plugins.finalcutpro.tangent.timeline.md)                          | Final Cut Pro Tangent Timeline Group/Management     |
+| [plugins.finalcutpro.tangent.trim](plugins.finalcutpro.tangent.trim.md)                          | Final Cut Pro Tangent Trim Group     |
 | [plugins.finalcutpro.tangent.video](plugins.finalcutpro.tangent.video.md)                          | Final Cut Pro Video Inspector for Tangent     |
+| [plugins.finalcutpro.tangent.view](plugins.finalcutpro.tangent.view.md)                          | Final Cut Pro Tangent View Group     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
 | [plugins.finalcutpro.timeline.captions](plugins.finalcutpro.timeline.captions.md)                          | Caption Tools     |
