@@ -9,13 +9,11 @@ Static Text Module.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [clear](#clear)
- * [getValue](#getvalue)
  * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
  * [new](#new)
  * [parent](#parent)
  * [saveLayout](#savelayout)
- * [setValue](#setvalue)
  * [snapshot](#snapshot)
 
 ## API Documentation
@@ -47,14 +45,6 @@ Static Text Module.
 | **Description**                                      | Clears the value of a Static Text box.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul>          |
-
-#### [getValue](#getvalue)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.StaticText:getValue() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets the value of the Static Text.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The value of the Static Text as a string.</li></ul>          |
 
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.StaticText:isEnabled() -> boolean` </span>                                                          |
@@ -95,14 +85,6 @@ Static Text Module.
 | **Description**                                      | Saves the current Static Text layout to a table.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the current Static Text Layout.</li></ul>          |
-
-#### [setValue](#setvalue)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.StaticText:setValue(value) -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the value of the Static Text.                                                                                         |
-| **Parameters**                                       | <ul><li>value - The value you want to set the Static Text to as a string.</li></ul> |
-| **Returns**                                          | <ul><li>Self</li></ul>          |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.StaticText:snapshot([path]) -> hs.image | nil` </span>                                                          |

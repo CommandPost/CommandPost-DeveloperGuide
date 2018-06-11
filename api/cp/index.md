@@ -132,6 +132,7 @@
 | [cp.test](cp.test.md)                          | CommandPost Test Scripts.     |
 | [cp.text](cp.text.md)                          | This module provides support for loading, manipulating, and comparing unicode text data.     |
 | [cp.text.matcher](cp.text.matcher.md)                          | Adapted from 'utf8.lua' (https://github.com/Stepets/utf8.lua)     |
+| [cp.time.flicks](cp.time.flicks.md)                          | Provides support for measuring time in `flicks`, a base unit of time useful for     |
 | [cp.tools](cp.tools.md)                          | A collection of handy miscellaneous tools for Lua development.     |
 | [cp.ui.Alert](cp.ui.Alert.md)                          | Alert UI Module.     |
 | [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`.     |

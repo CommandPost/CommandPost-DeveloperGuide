@@ -35,6 +35,7 @@ Core CommandPost functionality.
  * [cp.strings](cp.strings.md)
  * [cp.test](cp.test.md)
  * [cp.text](cp.text.md)
+ * [cp.time](cp.time.md)
  * [cp.tools](cp.tools.md)
  * [cp.ui](cp.ui.md)
  * [cp.utf16](cp.utf16.md)

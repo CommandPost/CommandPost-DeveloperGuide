@@ -10,7 +10,6 @@ Timeline Module.
  * [STOPPED](#stopped)
  * [TRACKING](#tracking)
 * Variables - Configurable values
- * [isLockedPlayhead](#islockedplayhead)
  * [lockActive](#lockactive)
  * [lockInactive](#lockinactive)
  * [stopThreshold](#stopthreshold)
@@ -19,6 +18,8 @@ Timeline Module.
  * [matchesMain](#matchesmain)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [isLockedPlayhead](#islockedplayhead)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [contents](#contents)
@@ -63,12 +64,6 @@ Timeline Module.
 | **Description**                                      | Tracking ID.                                                                                         |
 
 ### Variables
-
-#### [isLockedPlayhead](#islockedplayhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline.isLockedPlayhead <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Is Playhead Locked?                                                                                         |
 
 #### [lockActive](#lockactive)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline.lockActive -> number` </span>                                                          |
@@ -115,6 +110,14 @@ Timeline Module.
 | **Description**                                      | Creates a new `Timeline` instance.                                                                                         |
 | **Parameters**                                       | <ul><li>app - The `cp.apple.finalcutpro` object.</li></ul> |
 | **Returns**                                          | <ul><li>A new `Timeline` object.</li></ul>          |
+
+### Fields
+
+#### [isLockedPlayhead](#islockedplayhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline.isLockedPlayhead <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is Playhead Locked?                                                                                         |
 
 ### Methods
 

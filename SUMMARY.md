@@ -162,6 +162,7 @@
 * [cp.test](api/cp/cp.test.md)
 * [cp.text](api/cp/cp.text.md)
 * [cp.text.matcher](api/cp/cp.text.matcher.md)
+* [cp.time.flicks](api/cp/cp.time.flicks.md)
 * [cp.tools](api/cp/cp.tools.md)
 * [cp.ui.Alert](api/cp/cp.ui.Alert.md)
 * [cp.ui.axutils](api/cp/cp.ui.axutils.md)
