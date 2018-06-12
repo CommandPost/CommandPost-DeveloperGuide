@@ -15,6 +15,7 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bind](#bind)
+ * [delete](#delete)
  * [enter](#enter)
  * [entered](#entered)
  * [exit](#exit)
@@ -42,6 +43,14 @@ k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pres
 | **Description**                                      | Creates a hotkey that is enabled/disabled as the modal is entered/exited                                                                                         |
 | **Parameters**                                       | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li><li>   which should be zero or more of the following:</li><li>  "cmd", "command" or "⌘"</li><li>  "ctrl", "control" or "⌃"</li><li>  "alt", "option" or "⌥"</li><li>  "shift" or "⇧"</li><li>key - A string containing the name of a keyboard key (as found in [hs.keycodes.map](hs.keycodes.html#map) ), or a raw keycode number</li><li>message - A string containing a message to be displayed via `hs.alert()` when the hotkey has been triggered, or nil for no alert</li><li>pressedfn - A function that will be called when the hotkey has been pressed, or nil</li><li>releasedfn - A function that will be called when the hotkey has been released, or nil</li><li>repeatfn - A function that will be called when a pressed hotkey is repeating, or nil</li></ul> |
 | **Returns**                                          | <ul><li>The `hs.hotkey.modal` object for method chaining</li></ul>          |
+
+#### [delete](#delete)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:delete()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Deletes a modal hotkey object without calling :exited()                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul>          |
 
 #### [enter](#enter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:enter() -> hs.hotkey.modal object` </span>                                                          |
