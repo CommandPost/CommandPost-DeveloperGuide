@@ -18,6 +18,7 @@ A module for capturing and manipulating image objects from other modules for use
  * [imageFromPath](#imagefrompath)
  * [imageFromURL](#imagefromurl)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [colorAt](#colorat)
  * [copy](#copy)
  * [croppedCopy](#croppedcopy)
  * [encodeAsURLString](#encodeasurlstring)
@@ -116,6 +117,14 @@ A module for capturing and manipulating image objects from other modules for use
 | **Returns**                                          | <ul><li>An `hs.image` object or nil, if the url does not specify image contents or is unreachable</li></ul>          |
 
 ### Methods
+
+#### [colorAt](#colorat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:colorAt(point) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Reads the color of the pixel at the specified location.                                                                                         |
+| **Parameters**                                       | <ul><li>`point` - a `hs.geometry.point`</li></ul> |
+| **Returns**                                          | <ul><li>A `hs.drawing.color` object</li></ul>          |
 
 #### [copy](#copy)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:copy() -> imageObject` </span>                                                          |

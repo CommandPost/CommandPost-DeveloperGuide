@@ -37,10 +37,10 @@ require("cp.docs").generate()
 | **Returns**                                          | <ul><li>The result as a string, otherwise `nil` if an error occurs.</li></ul>          |
 
 #### [updateDeveloperGuideSummary](#updatedeveloperguidesummary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.docs.updateDeveloperGuideSummary() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.docs.updateDeveloperGuideSummary() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Developer Guide Summary.                                                                                         |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
+| **Returns**                                          | <ul><li>`true` if successful otherwise `nil`</li></ul>          |
 
