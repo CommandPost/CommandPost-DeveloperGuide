@@ -37,8 +37,8 @@ Video Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - An `axuielementObject` to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
 
 ### Constructors
 
@@ -47,8 +47,8 @@ Video Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new InfoInspector object                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`     - The parent</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A InfoInspector object</li></ul>          |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul>   |
+| **Returns**                                          | <ul><li>A InfoInspector object</li></ul>            |
 
 ### Fields
 
@@ -65,46 +65,46 @@ Video Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul>            |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:isShowing() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Is the Info Inspector currently showing?                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if showing, otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if showing, otherwise <code>false</code></li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the InfoInspector's parent table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
 
 #### [propertiesUI](#propertiesui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:propertiesUI() -> hs._asm.axuielement object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Properties UI.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A `hs._asm.axuielement` object.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A <code>hs._asm.axuielement</code> object.</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:show() -> MenuButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Info Inspector Metadata View Button.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">An `MenuButton` object.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>MenuButton</code> object.</li></ul>            |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:UI() -> hs._asm.axuielement object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Info Inspector                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A `hs._asm.axuielement` object.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A <code>hs._asm.axuielement</code> object.</li></ul>            |
 

@@ -100,94 +100,94 @@ Final Cut Pro Viewer Overlays.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets an image from memory.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - The ID of the memory you want to retrieve.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The memory as a `hs.image` or `nil` if the memory could not be retrieved.</li></ul>          |
+| **Parameters**                                       | <ul><li>id - The ID of the memory you want to retrieve.</li></ul>   |
+| **Returns**                                          | <ul><li>The memory as a <code>hs.image</code> or <code>nil</code> if the memory could not be retrieved.</li></ul>            |
 
 #### [getStillsFolderPath](#getstillsfolderpath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getStillsFolderPath() -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the stills folder path.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The stills folder path as a string or `nil` if an error occurs.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The stills folder path as a string or <code>nil</code> if an error occurs.</li></ul>            |
 
 #### [getViewerUI](#getviewerui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getViewerUI() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Viewer UI.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.hide() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Hides the Viewer Grid.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [saveMemory](#savememory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.saveMemory() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves a still frame to file.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - An identifier in the form of a number.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>id - An identifier in the form of a number.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [setCustomGridColor](#setcustomgridcolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setCustomGridColor() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Pops up a Color Dialog box allowing the user to select a custom colour for grid lines.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [setGridAlpha](#setgridalpha)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setGridAlpha(value) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets Grid Alpha.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - The value you want to set.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>value - The value you want to set.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [setGridColor](#setgridcolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setGridColor(value) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets Grid Color.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - The value you want to set.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>value - The value you want to set.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [setGridSpacing](#setgridspacing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setGridSpacing(value) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets Grid Spacing.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - The value you want to set.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>value - The value you want to set.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.show() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Show's the Viewer Grid.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Viewer Grid.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [viewMemory](#viewmemory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.viewMemory(id) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | View a memory.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - The ID of the memory you want to retrieve.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>id - The ID of the memory you want to retrieve.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

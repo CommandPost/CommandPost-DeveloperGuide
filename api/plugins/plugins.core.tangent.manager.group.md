@@ -29,8 +29,8 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `otherThing` is a `group`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">otherThing    - The thing to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if it is a `group`, `false` otherwise.</li></ul>          |
+| **Parameters**                                       | <ul><li>otherThing    - The thing to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if it is a <code>group</code>, <code>false</code> otherwise.</li></ul>            |
 
 ### Constructors
 
@@ -39,7 +39,7 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Group` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">name      - The name of the group.</li><li markdown="1">parent    - The parent group.</li></ul> |
+| **Parameters**                                       | <ul><li>name      - The name of the group.</li></ul><ul><li>parent    - The parent group.</li></ul>   |
 
 ### Methods
 
@@ -48,65 +48,65 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an `action` to this group.                                                                                         |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `action`</li></ul>          |
+| **Returns**                                          | <ul><li>The new <code>action</code></li></ul>            |
 
 #### [binding](#binding)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:binding(id[, name]) -> binding` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an `binding` to this group.                                                                                         |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `binding`</li></ul>          |
+| **Returns**                                          | <ul><li>The new <code>binding</code></li></ul>            |
 
 #### [controls](#controls)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:controls() -> controls` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Retrieves the `controls` for this group. May be `nil` if the group was created independently.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `controls`, or `nil`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>controls</code>, or <code>nil</code>.</li></ul>            |
 
 #### [group](#group)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:group(name) -> group` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a subgroup to this group.                                                                                         |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `group`</li></ul>          |
+| **Returns**                                          | <ul><li>The new <code>group</code></li></ul>            |
 
 #### [menu](#menu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:menu(id[, name]) -> menu` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an `menu` to this group.                                                                                         |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `menu`</li></ul>          |
+| **Returns**                                          | <ul><li>The new <code>menu</code></li></ul>            |
 
 #### [parameter](#parameter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:parameter(id[, name]) -> parameter` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an `parameter` to this group.                                                                                         |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `parameter`</li></ul>          |
+| **Returns**                                          | <ul><li>The new <code>parameter</code></li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:parent() -> group | controls` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent of the group, which should be either a `group`, `controls` or `nil`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The group's parents.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The group's parents.</li></ul>            |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:reset() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This will remove all parameters, actions, menus and bindings from                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `group` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>group</code> instance.</li></ul>            |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:xml() -> cp.web.xml` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `xml` configuration for the Group, sorted alphabetically.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `xml` for the Group.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>xml</code> for the Group.</li></ul>            |
 

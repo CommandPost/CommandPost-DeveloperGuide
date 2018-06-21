@@ -41,8 +41,8 @@ o:start()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the list of `cp.ui.notifier` instances that have been created for the specified `Bundle ID`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">bundleID          - The application Bundle ID being observed. E.g. "com.apple.FinalCut".</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table of `cp.ui.notifier` instances.</li></ul>          |
+| **Parameters**                                       | <ul><li>bundleID          - The application Bundle ID being observed. E.g. "com.apple.FinalCut".</li></ul>   |
+| **Returns**                                          | <ul><li>A table of <code>cp.ui.notifier</code> instances.</li></ul>            |
 
 ### Constructors
 
@@ -51,8 +51,8 @@ o:start()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `cp.ui.notifier` instance with the specified bundle ID and                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">bundleID          - The application Bundle ID being observed. E.g. "com.apple.FinalCut".</li><li markdown="1">elementFinderFn   - The function that will return the `axuielement` to observe.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `cp.ui.notifier` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>bundleID          - The application Bundle ID being observed. E.g. "com.apple.FinalCut".</li></ul><ul><li>elementFinderFn   - The function that will return the <code>axuielement</code> to observe.</li></ul>   |
+| **Returns**                                          | <ul><li>A new <code>cp.ui.notifier</code> instance.</li></ul>            |
 
 ### Fields
 
@@ -69,41 +69,41 @@ o:start()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a function to get called whenever the specified notification type is triggered                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">notification      - The notification type to watch for (e.g. "AXValueChanged").</li><li markdown="1">callbackFn        - The function to call when the matching notification is happens.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.ui.notifier` instance.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:</li><li markdown="1"> ** the `hs._asm.axuielement` object for the accessibility element which generated the notification.</li><li markdown="1"> ** a string with the notification type.</li><li markdown="1"> ** A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul>                |
+| **Parameters**                                       | <ul><li>notification      - The notification type to watch for (e.g. "AXValueChanged").</li></ul><ul><li>callbackFn        - The function to call when the matching notification is happens.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul>            |
+| **Notes**                                            | <ul><li>The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:</li></ul><p>** the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification.</p><p>** a string with the notification type.</p><p>** A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</p>                 |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:app() -> hs.application` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current `hs.application` instance for the app this notifier tracks.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The running `hs.application` for the notifier's `bundleID`, or `nil`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The running <code>hs.application</code> for the notifier's <code>bundleID</code>, or <code>nil</code>.</li></ul>            |
 
 #### [bundleID](#bundleid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:bundleID()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the application 'bundle ID' that this notifier is tracking.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The application 'bundle ID' string (e.g. "com.apple.FinalCut")</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application 'bundle ID' string (e.g. "com.apple.FinalCut")</li></ul>            |
 
 #### [currentElement](#currentelement)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:currentElement() -> hs._asm.axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current `axuielement` being observed.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `axuielement`, or `nil` if not available.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>axuielement</code>, or <code>nil</code> if not available.</li></ul>            |
 
 #### [pid](#pid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:pid() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the PID for the application being observed, or `nil` if it's not running.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The PID, or `nil`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The PID, or <code>nil</code>.</li></ul>            |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:reset() -> self` </span>                                                          |
@@ -116,14 +116,14 @@ o:start()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops notifying watchers when events happen.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.ui.notifier` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul>            |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:update([force]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Updates any watchers to use the current `axuielement`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">force     - If `true`, the notifier will be updated even if the element has not changed since the last update. Defaults to `false`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.ui.notifier` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>force     - If <code>true</code>, the notifier will be updated even if the element has not changed since the last update. Defaults to <code>false</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul>            |
 

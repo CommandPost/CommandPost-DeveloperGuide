@@ -44,8 +44,8 @@ Requires Final Cut Pro 10.4 or later.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new ColorCurves object                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`     - The parent</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A ColorInspector object</li></ul>          |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul>   |
+| **Returns**                                          | <ul><li>A ColorInspector object</li></ul>            |
 
 ### Methods
 
@@ -54,64 +54,64 @@ Requires Final Cut Pro 10.4 or later.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul>            |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:isShowing() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Is the Color Curves panel currently showing?                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if showing, otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if showing, otherwise <code>false</code></li></ul>            |
 
 #### [mix](#mix)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:mix([value]) -> number | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or gets the color curves mix value.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">[value] - An optional value you want to set the mix value to as number (0 to 1).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A number containing the mix value or `nil` if an error occurs.</li></ul>          |
+| **Parameters**                                       | <ul><li>[value] - An optional value you want to set the mix value to as number (0 to 1).</li></ul>   |
+| **Returns**                                          | <ul><li>A number containing the mix value or <code>nil</code> if an error occurs.</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ColorCurves's parent table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
 
 #### [preserveLuma](#preserveluma)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:preserveLuma([value]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or gets whether or not Preserve Luma is active.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">[value] - An optional boolean value to set the Preserve Luma option.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if Preserve Luma is selected, otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>[value] - An optional boolean value to set the Preserve Luma option.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if Preserve Luma is selected, otherwise <code>false</code>.</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:show() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show's the Color Board within the Color Inspector.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorCurves object</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>ColorCurves object</li></ul>            |
 
 #### [viewMode](#viewmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:viewMode([value]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or gets the View Mode for the Color Curves.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">[value] - An optional value to set the View Mode, as defined in `cp.apple.finalcutpro.inspector.color.ColorCurves.VIEW_MODES`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A string containing the View Mode or `nil` if an error occurs.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">Value can be:</li><li markdown="1">  All Curves</li><li markdown="1">  Single Curves</li></ul>                |
+| **Parameters**                                       | <ul><li>[value] - An optional value to set the View Mode, as defined in <code>cp.apple.finalcutpro.inspector.color.ColorCurves.VIEW_MODES</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>A string containing the View Mode or <code>nil</code> if an error occurs.</li></ul>            |
+| **Notes**                                            | <ul><li>Value can be:</li></ul><ul><li>All Curves</li></ul><ul><li>Single Curves</li></ul>                 |
 
 #### [visibleCurve](#visiblecurve)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:visibleCurve([value]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or gets the selected color curve.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">[value] - An optional value to set the visible curve, as defined in `cp.apple.finalcutpro.inspector.color.ColorCurves.CURVES`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A string containing the selected color curve or `nil` if an error occurs.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">Value can be:</li><li markdown="1">  All Curves</li><li markdown="1">  Luma</li><li markdown="1">  Red</li><li markdown="1">  Green</li><li markdown="1">  Blue</li><li markdown="1">Example Usage:</li><li markdown="1">   `require("cp.apple.finalcutpro"):inspector():color():colorCurves():visibleCurve("Luma")`</li></ul>                |
+| **Parameters**                                       | <ul><li>[value] - An optional value to set the visible curve, as defined in <code>cp.apple.finalcutpro.inspector.color.ColorCurves.CURVES</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>A string containing the selected color curve or <code>nil</code> if an error occurs.</li></ul>            |
+| **Notes**                                            | <ul><li>Value can be:</li></ul><ul><li>All Curves</li></ul><ul><li>Luma</li></ul><ul><li>Red</li></ul><ul><li>Green</li></ul><ul><li>Blue</li></ul><ul><li>Example Usage:</li></ul><p><code>require("cp.apple.finalcutpro"):inspector():color():colorCurves():visibleCurve("Luma")</code></p>                 |
 

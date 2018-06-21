@@ -34,80 +34,80 @@ Libraries List Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets clips using a custom filter.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">filterFn - A function to filter the UI results.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table of `Clip` objects or `nil` if no clip UI could be found.</li></ul>          |
+| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul>   |
+| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clip UI could be found.</li></ul>            |
 
 #### [clipsUI](#clipsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:clipsUI(filterFn) -> table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets clip UIs using a custom filter.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">filterFn - A function to filter the UI results.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table of `axuielementObject` objects or `nil` if no clip UI could be found.</li></ul>          |
+| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul>   |
+| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clip UI could be found.</li></ul>            |
 
 #### [deselectAll](#deselectall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:deselectAll() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Deselect all clips.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
 
 #### [selectAll](#selectall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectAll([clips]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Select all clips.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">clips - A optional table of `Clip` objects.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>clips - A optional table of <code>Clip</code> objects.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
 
 #### [selectClip](#selectclip)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectClip(clip) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Selects a clip.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">clip - The `Clip` you want to select.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to select.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
 
 #### [selectClipAt](#selectclipat)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectClipAt(index) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Select clip at a specific index.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - A number of where the clip appears in the list.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>index - A number of where the clip appears in the list.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
 
 #### [selectClipTitled](#selectcliptitled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectClipTitled(title) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Select clip with a specific title.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">title - The title of a clip.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>title - The title of a clip.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
 
 #### [selectedClips](#selectedclips)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectedClips() -> table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets selected clips.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table of `Clip` objects or `nil` if no clips are selected.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clips are selected.</li></ul>            |
 
 #### [selectedClipsUI](#selectedclipsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectedClipsUI() -> table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets selected clips UI's.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table of `axuielementObject` objects or `nil` if no clips are selected.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clips are selected.</li></ul>            |
 
 #### [showClip](#showclip)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:showClip(clip) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows a clip.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">clip - The `Clip` you want to show.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to show.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
 
 ### Constructors
 
@@ -116,8 +116,8 @@ Libraries List Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `LibrariesList` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent - The parent object.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `LibrariesList` object.</li></ul>          |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul>   |
+| **Returns**                                          | <ul><li>A new <code>LibrariesList</code> object.</li></ul>            |
 
 ### Methods
 
@@ -126,46 +126,46 @@ Libraries List Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>App</li></ul>            |
 
 #### [contents](#contents)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:contents() -> Table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the Libraries List Contents UI.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`Table` object</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>Table</code> object</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">parent</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>parent</li></ul>            |
 
 #### [playhead](#playhead)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:playhead() -> Playhead` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the Libraries List Playhead.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`Playhead` object</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:show() -> LibrariesList` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show the Libraries List.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`LibrariesList` object</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>LibrariesList</code> object</li></ul>            |
 
 #### [skimmingPlayhead](#skimmingplayhead)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:skimmingPlayhead() -> Playhead` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the Libraries List Skimming Playhead.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`Playhead` object</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul>            |
 

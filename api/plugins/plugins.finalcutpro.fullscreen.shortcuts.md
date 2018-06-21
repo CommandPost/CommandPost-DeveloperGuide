@@ -29,30 +29,30 @@ Fullscreen Shortcuts
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if a shortcut has been pressed, then processes.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">whichModifier - Which modifier key to check.</li><li markdown="1">whichKey - Which key to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>whichModifier - Which modifier key to check.</li></ul><ul><li>whichKey - Which key to check.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [ninjaKeyStroke](#ninjakeystroke)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.ninjaKeyStroke(whichModifier, whichKey) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a Ninja Key Stoke.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">whichModifier - Modifier Key</li><li markdown="1">whichKey - Key</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>whichModifier - Modifier Key</li></ul><ul><li>whichKey - Key</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [performCommand](#performcommand)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.performCommand(cmd, whichModifier, whichKey) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a command.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">cmd - The Command.</li><li markdown="1">whichModifier - Which modifier key to check.</li><li markdown="1">whichKey - Which key to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>cmd - The Command.</li></ul><ul><li>whichModifier - Which modifier key to check.</li></ul><ul><li>whichKey - Which key to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul>            |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the watches for monitoring fullscreen playback.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

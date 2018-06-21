@@ -99,94 +99,94 @@ Manager for the CommandPost Setup Screen.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds the new panel to the manager. Panels are created via the                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`newPanel`   - The panel to add.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The manager.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>newPanel</code>   - The panel to add.</li></ul>   |
+| **Returns**                                          | <ul><li>The manager.</li></ul>            |
 
 #### [currentPanel](#currentpanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.currentPanel() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The Current Panel                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The current panel as a string</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The current panel as a string</li></ul>            |
 
 #### [delete](#delete)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.delete() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Deletes the Setup Panels.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [focus](#focus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.focus() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Focuses on the Setup Panels window.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [getLabel](#getlabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.getLabel() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Webview label.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Webview label as a string.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The Webview label as a string.</li></ul>            |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.init(env) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">env - The plugin environment table</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Module</li></ul>          |
+| **Parameters**                                       | <ul><li>env - The plugin environment table</li></ul>   |
+| **Returns**                                          | <ul><li>The Module</li></ul>            |
 
 #### [injectScript](#injectscript)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.injectScript(script) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Injects JavaScript into the Setup Panels.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">script - The JavaScript you want to inject as a string.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>script - The JavaScript you want to inject as a string.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.new() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates the Setup Panels.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [nextPanel](#nextpanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.nextPanel() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Moves to the next panel. If the window is visible, the panel will be updated.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if there was another panel to move to, or `false` if no panels remain.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if there was another panel to move to, or <code>false</code> if no panels remain.</li></ul>            |
 
 #### [setPanelRenderer](#setpanelrenderer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.setPanelRenderer(renderer) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets a Panel Renderer                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">renderer - The renderer</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>renderer - The renderer</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.show() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the Setup Panels.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Setup Panels.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

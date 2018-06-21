@@ -21,16 +21,16 @@ For convenience, metamethods have been added to the spotlightItemObjects as a sh
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a list of attributes associated with the spotlightItemObject                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">an array table containing a list of attributes associated with the result item.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">This list of attributes is usually not a complete list of the attributes available for a given spotlightItemObject. Many of the known attribute names are included in the `hs.spotlight.commonAttributeKeys` constant array, but even this is not an exhaustive list -- an application may create and assign any key it wishes to an entity for inclusion in the Spotlight metadata database.</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>an array table containing a list of attributes associated with the result item.</li></ul>            |
+| **Notes**                                            | <ul><li>This list of attributes is usually not a complete list of the attributes available for a given spotlightItemObject. Many of the known attribute names are included in the <code>hs.spotlight.commonAttributeKeys</code> constant array, but even this is not an exhaustive list -- an application may create and assign any key it wishes to an entity for inclusion in the Spotlight metadata database.</li></ul>                 |
 
 #### [valueForAttribute](#valueforattribute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.item:valueForAttribute(attribute) -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the value for the specified attribute of the spotlightItemObject                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`attribute` - a string specifying the attribute to get the value of for the spotlightItemObject</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">the attribute value as an appropriate data type or nil if the attribute does not exist or contains no value</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">See [hs.spotlight.item:attributes](#attributes) for information about possible attribute names.</li></ul>                |
+| **Parameters**                                       | <ul><li><code>attribute</code> - a string specifying the attribute to get the value of for the spotlightItemObject</li></ul>   |
+| **Returns**                                          | <ul><li>the attribute value as an appropriate data type or nil if the attribute does not exist or contains no value</li></ul>            |
+| **Notes**                                            | <ul><li>See <a href="#attributes">hs.spotlight.item:attributes</a> for information about possible attribute names.</li></ul>                 |
 

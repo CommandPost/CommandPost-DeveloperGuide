@@ -19,8 +19,8 @@ Generator Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new GeneratorInspector object                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`     - The parent</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A GeneratorInspector object</li></ul>          |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul>   |
+| **Returns**                                          | <ul><li>A GeneratorInspector object</li></ul>            |
 
 ### Methods
 
@@ -29,14 +29,14 @@ Generator Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.generator.GeneratorInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the GeneratorInspector's parent table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
 

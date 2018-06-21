@@ -17,14 +17,14 @@ Final Cut Pro Zoom Control Widget for Touch Bar.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [widget](#widget)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.widgets.zoom.widget() -> `hs._asm.undocumented.touchbar.item`` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The Widget                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A `hs._asm.undocumented.touchbar.item`</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A <code>hs._asm.undocumented.touchbar.item</code></li></ul>            |
 

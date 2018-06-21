@@ -39,9 +39,9 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new hs.task object                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">launchPath - A string containing the path to an executable file.  This must be the full path to an executable and not just an executable which is in your environment's path (e.g. `/bin/ls` rather than just `ls`).</li><li markdown="1">callbackFn - A callback function to be called when the task terminates, or nil if no callback should be called. The function should accept three arguments:</li><li markdown="1"> exitCode - An integer containing the exit code of the process</li><li markdown="1"> stdOut - A string containing the standard output of the process</li><li markdown="1"> stdErr - A string containing the standard error output of the process</li><li markdown="1">streamCallbackFn - A optional callback function to be called whenever the task outputs data to stdout or stderr. The function must return a boolean value - true to continue calling the streaming callback, false to stop calling it. The function should accept three arguments:</li><li markdown="1"> task - The hs.task object</li><li markdown="1"> stdOut - A string containing the standard output received since the last call to this callback</li><li markdown="1"> stdErr - A string containing the standard error output received since the last call to this callback</li><li markdown="1">arguments - An optional table of command line argument strings for the executable</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">An `hs.task` object</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The arguments are not processed via a shell, so you do not need to do any quoting or escaping. They are passed to the executable exactly as provided.</li></ul>                |
+| **Parameters**                                       | <ul><li>launchPath - A string containing the path to an executable file.  This must be the full path to an executable and not just an executable which is in your environment's path (e.g. <code>/bin/ls</code> rather than just <code>ls</code>).</li></ul><ul><li>callbackFn - A callback function to be called when the task terminates, or nil if no callback should be called. The function should accept three arguments:</li></ul><ul><li>exitCode - An integer containing the exit code of the process</li></ul><ul><li>stdOut - A string containing the standard output of the process</li></ul><ul><li>stdErr - A string containing the standard error output of the process</li></ul><ul><li>streamCallbackFn - A optional callback function to be called whenever the task outputs data to stdout or stderr. The function must return a boolean value - true to continue calling the streaming callback, false to stop calling it. The function should accept three arguments:</li></ul><ul><li>task - The hs.task object</li></ul><ul><li>stdOut - A string containing the standard output received since the last call to this callback</li></ul><ul><li>stdErr - A string containing the standard error output received since the last call to this callback</li></ul><ul><li>arguments - An optional table of command line argument strings for the executable</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>hs.task</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>The arguments are not processed via a shell, so you do not need to do any quoting or escaping. They are passed to the executable exactly as provided.</li></ul>                 |
 
 ### Methods
 
@@ -50,155 +50,155 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Closes the task's stdin                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The hs.task object</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">This should only be called on tasks with a streaming callback - tasks without it will automatically close stdin when any data supplied via `hs.task:setInput()` has been written</li><li markdown="1">This is primarily useful for sending EOF to long-running tasks</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.task object</li></ul>            |
+| **Notes**                                            | <ul><li>This should only be called on tasks with a streaming callback - tasks without it will automatically close stdin when any data supplied via <code>hs.task:setInput()</code> has been written</li></ul><ul><li>This is primarily useful for sending EOF to long-running tasks</li></ul>                 |
 
 #### [environment](#environment)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:environment() -> environment` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the environment variables as a table for the task.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">a table of the environment variables for the task where each key is the environment variable name.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>a table of the environment variables for the task where each key is the environment variable name.</li></ul>            |
 
 #### [interrupt](#interrupt)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:interrupt() -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Interrupts the task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `hs.task` object</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">This will send SIGINT to the process</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.task</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>This will send SIGINT to the process</li></ul>                 |
 
 #### [isRunning](#isrunning)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:isRunning() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Test if a task is still running.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">true if the task is running or false if it is not.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">A task which has not yet been started yet will also return false.</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>true if the task is running or false if it is not.</li></ul>            |
+| **Notes**                                            | <ul><li>A task which has not yet been started yet will also return false.</li></ul>                 |
 
 #### [pause](#pause)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:pause() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Pauses the task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1"> If the task was paused successfully, returns the task object; otherwise returns false</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">If the task is not paused, the error message will be printed to the Hammerspoon Console</li><li markdown="1">This method can be called multiple times, but a matching number of `hs.task:resume()` calls will be required to allow the process to continue</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>If the task was paused successfully, returns the task object; otherwise returns false</li></ul>            |
+| **Notes**                                            | <ul><li>If the task is not paused, the error message will be printed to the Hammerspoon Console</li></ul><ul><li>This method can be called multiple times, but a matching number of <code>hs.task:resume()</code> calls will be required to allow the process to continue</li></ul>                 |
 
 #### [pid](#pid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:pid() -> integer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the PID of a running/finished task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">An integer containing the PID of the task</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The PID will still be returned if the task has already completed and the process terminated</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>An integer containing the PID of the task</li></ul>            |
+| **Notes**                                            | <ul><li>The PID will still be returned if the task has already completed and the process terminated</li></ul>                 |
 
 #### [resume](#resume)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:resume() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resumes the task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1"> If the task was resumed successfully, returns the task object; otherwise returns false</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">If the task is not resumed successfully, the error message will be printed to the Hammerspoon Console</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>If the task was resumed successfully, returns the task object; otherwise returns false</li></ul>            |
+| **Notes**                                            | <ul><li>If the task is not resumed successfully, the error message will be printed to the Hammerspoon Console</li></ul>                 |
 
 #### [setCallback](#setcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:setCallback(fn) -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set or remove a callback function for a task.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">fn - A function to be called when the task completes or is terminated, or nil to remove an existing callback</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">the hs.task object</li></ul>          |
+| **Parameters**                                       | <ul><li>fn - A function to be called when the task completes or is terminated, or nil to remove an existing callback</li></ul>   |
+| **Returns**                                          | <ul><li>the hs.task object</li></ul>            |
 
 #### [setEnvironment](#setenvironment)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:setEnvironment(environment) -> hs.task object | false` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the environment variables for the task.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">environment - a table of key-value pairs representing the environment variables that will be set for the task.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The hs.task object, or false if the table was not set (usually because the task is already running or has completed)</li></ul>          |
+| **Parameters**                                       | <ul><li>environment - a table of key-value pairs representing the environment variables that will be set for the task.</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.task object, or false if the table was not set (usually because the task is already running or has completed)</li></ul>            |
 
 #### [setInput](#setinput)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:setInput(inputData) -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the standard input data for a task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">inputData - Data, in string form, to pass to the task as its standard input</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The hs.task object</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">This method can be called before the task has been started, to prepare some input for it (particularly if it is not a streaming task)</li><li markdown="1">If this method is called multiple times, any input that has not been passed to the task already, is discarded (for streaming tasks, the data is generally consumed very quickly, but for now there is no way to syncronise this)</li></ul>                |
+| **Parameters**                                       | <ul><li>inputData - Data, in string form, to pass to the task as its standard input</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.task object</li></ul>            |
+| **Notes**                                            | <ul><li>This method can be called before the task has been started, to prepare some input for it (particularly if it is not a streaming task)</li></ul><ul><li>If this method is called multiple times, any input that has not been passed to the task already, is discarded (for streaming tasks, the data is generally consumed very quickly, but for now there is no way to syncronise this)</li></ul>                 |
 
 #### [setStreamingCallback](#setstreamingcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:setStreamingCallback(fn) -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Set a stream callback function for a task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">fn - A function to be called when the task outputs to stdout or stderr, or nil to remove a callback</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The hs.task object</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">For information about the requirements of the callback function, see `hs.task.new()`</li><li markdown="1">If a callback is removed without it previously having returned false, any further stdout/stderr output from the task will be silently discarded</li></ul>                |
+| **Parameters**                                       | <ul><li>fn - A function to be called when the task outputs to stdout or stderr, or nil to remove a callback</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.task object</li></ul>            |
+| **Notes**                                            | <ul><li>For information about the requirements of the callback function, see <code>hs.task.new()</code></li></ul><ul><li>If a callback is removed without it previously having returned false, any further stdout/stderr output from the task will be silently discarded</li></ul>                 |
 
 #### [setWorkingDirectory](#setworkingdirectory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:setWorkingDirectory(path) -> hs.task object | false` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the working directory for the task.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - a string containing the path you wish to be the working directory for the task.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The hs.task object, or false if the working directory was not set (usually because the task is already running or has completed)</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">You can only set the working directory if the task has not already been started.</li><li markdown="1">This will only set the directory that the task starts in.  The task itself can change the directory while it is running.</li></ul>                |
+| **Parameters**                                       | <ul><li>path - a string containing the path you wish to be the working directory for the task.</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.task object, or false if the working directory was not set (usually because the task is already running or has completed)</li></ul>            |
+| **Notes**                                            | <ul><li>You can only set the working directory if the task has not already been started.</li></ul><ul><li>This will only set the directory that the task starts in.  The task itself can change the directory while it is running.</li></ul>                 |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:start() -> hs.task object | false` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1"> If the task was started successfully, returns the task object; otherwise returns false</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">If the task does not start successfully, the error message will be printed to the Hammerspoon Console</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>If the task was started successfully, returns the task object; otherwise returns false</li></ul>            |
+| **Notes**                                            | <ul><li>If the task does not start successfully, the error message will be printed to the Hammerspoon Console</li></ul>                 |
 
 #### [terminate](#terminate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:terminate() -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Terminates the task                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `hs.task` object</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">This will send SIGTERM to the process</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.task</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>This will send SIGTERM to the process</li></ul>                 |
 
 #### [terminationReason](#terminationreason)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:terminationReason() -> exitCode | false` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the termination reason for a task, or false if the task is still running.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">a string value of "exit" if the process exited normally or "interrupt" if it was killed by a signal.  Returns false if the termination reason is unavailable (the task is still running, or has not yet been started).</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>a string value of "exit" if the process exited normally or "interrupt" if it was killed by a signal.  Returns false if the termination reason is unavailable (the task is still running, or has not yet been started).</li></ul>            |
 
 #### [terminationStatus](#terminationstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:terminationStatus() -> exitCode | false` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the termination status of a task, or false if the task is still running.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">the numeric exitCode of the task, or the boolean false if the task has not yet exited (either because it has not yet been started or because it is still running).</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the numeric exitCode of the task, or the boolean false if the task has not yet exited (either because it has not yet been started or because it is still running).</li></ul>            |
 
 #### [waitUntilExit](#waituntilexit)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:waitUntilExit() -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Blocks Hammerspoon until the task exits                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `hs.task` object</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">All Lua and Hammerspoon activity will be blocked by this method. Its use is highly discouraged.</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.task</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>All Lua and Hammerspoon activity will be blocked by this method. Its use is highly discouraged.</li></ul>                 |
 
 #### [workingDirectory](#workingdirectory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task:workingDirectory() -> path` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the working directory for the task.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">a string containing the working directory for the task.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">This only returns the directory that the task starts in.  If the task changes the directory itself, this value will not reflect that change.</li></ul>                |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>a string containing the working directory for the task.</li></ul>            |
+| **Notes**                                            | <ul><li>This only returns the directory that the task starts in.  If the task changes the directory itself, this value will not reflect that change.</li></ul>                 |
 

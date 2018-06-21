@@ -46,8 +46,8 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the specified element is a Color Well.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* element	- The element to check</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if the element is a Color Well.</li></ul>          |
+| **Parameters**                                       | <ul><li>element   - The element to check</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the element is a Color Well.</li></ul>            |
 
 ### Constructors
 
@@ -56,8 +56,8 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `ColorWheel` instance, with the specified parent and type.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* parent	- The parent object.</li><li markdown="1">* type		- The type of color wheel. Must be one of the `ColorWheel.TYPE` values.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* A new `ColorWheel` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>parent    - The parent object.</li></ul><ul><li>type      - The type of color wheel. Must be one of the <code>ColorWheel.TYPE</code> values.</li></ul>   |
+| **Returns**                                          | <ul><li>A new <code>ColorWheel</code> instance.</li></ul>            |
 
 ### Fields
 
@@ -122,54 +122,54 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the brightness `ValueIndicator` for this ColorWheel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The brightness `ValueIndicator` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The brightness <code>ValueIndicator</code> instance.</li></ul>            |
 
 #### [colorWell](#colorwell)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:colorWell() -> ColorWell` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `ColorWell` for this ColorWheel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorWell` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>ColorWell</code> instance.</li></ul>            |
 
 #### [nudgeColor](#nudgecolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:nudgeColor(right, up) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Nudges the `colorPosition` by `right`/`up` values. Negative `right` values shift left,                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`right` - The number of steps to shift right. May be negative to shift left.</li><li markdown="1">`up` - The number of pixels to shift down. May be negative to shift down.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorWheel` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>right</code> - The number of steps to shift right. May be negative to shift left.</li></ul><ul><li><code>up</code> - The number of pixels to shift down. May be negative to shift down.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>ColorWheel</code> instance.</li></ul>            |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:reset() -> ColorWheel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resets the color wheel values, if the ColorWheel is showing.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The ColorWheel instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The ColorWheel instance.</li></ul>            |
 
 #### [resetButton](#resetbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:resetButton() -> Button` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `Button` that triggers a value reset.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The reset `Button` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The reset <code>Button</code> instance.</li></ul>            |
 
 #### [saturation](#saturation)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:saturation() -> ValueIndicator` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the saturation `ValueIndicator` for this ColorWheel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The saturation `ValueIndicator` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The saturation <code>ValueIndicator</code> instance.</li></ul>            |
 
 #### [select](#select)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:select() -> cp.apple.finalcutpro.inspector.color.ColorWheel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows and selects this color wheel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `ColorWheel` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>ColorWheel</code> instance.</li></ul>            |
 

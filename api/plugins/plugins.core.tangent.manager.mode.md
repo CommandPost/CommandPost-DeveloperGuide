@@ -23,8 +23,8 @@ Represents a Tangent Mode
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if other is a mode or not.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">other - The item to check</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if is a mode otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>other - The item to check</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if is a mode otherwise <code>false</code></li></ul>            |
 
 ### Constructors
 
@@ -33,8 +33,8 @@ Represents a Tangent Mode
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Mode` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">id        - The ID number of the mode.</li><li markdown="1">name      - The name of the mode.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1"> *</li></ul>          |
+| **Parameters**                                       | <ul><li>id        - The ID number of the mode.</li></ul><ul><li>name      - The name of the mode.</li></ul>   |
+| **Returns**                                          | <p>*</p>            |
 
 ### Methods
 
@@ -43,30 +43,30 @@ Represents a Tangent Mode
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `activate` function, if present.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`nil`</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>nil</code></li></ul>            |
 
 #### [onActivate](#onactivate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.mode:onActivate(activateFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a 'mode change' request.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">activateFn     - The function to call when the Tangent requests the mode change.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `parameter` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>activateFn     - The function to call when the Tangent requests the mode change.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>parameter</code> instance.</li></ul>            |
 
 #### [onDeactivate](#ondeactivate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.mode:onDeactivate(deactivateFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a 'mode change' request and switche to a different mode.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">deactivateFn     - The function to call when the Tangent requests the mode change.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `parameter` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>deactivateFn     - The function to call when the Tangent requests the mode change.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>parameter</code> instance.</li></ul>            |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.mode:xml() -> cp.web.xml` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `xml` configuration for the Mode.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `xml` for the Mode.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>xml</code> for the Mode.</li></ul>            |
 

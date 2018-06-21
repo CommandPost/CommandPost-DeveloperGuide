@@ -39,8 +39,8 @@ Represents a clip of media inside FCP.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the specified `thing` is a `Clip` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`thing`  - The thing to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the `thing` is a `Clip`, otherwise returns `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>thing</code>  - The thing to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the <code>thing</code> is a <code>Clip</code>, otherwise returns <code>false</code>.</li></ul>            |
 
 ### Constructors
 
@@ -49,9 +49,9 @@ Represents a clip of media inside FCP.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Clip` pointing at the specified element, with the specified options.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`element`        - The `axuielement` the clip represents.</li><li markdown="1">`options`        - A table containing the options for the clip.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `Clip`.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The options may be:</li><li markdown="1"> ** `columnIndex`   - A number which will be used to specify the column number to find the title in, if relevant.</li></ul>                |
+| **Parameters**                                       | <ul><li><code>element</code>        - The <code>axuielement</code> the clip represents.</li></ul><ul><li><code>options</code>        - A table containing the options for the clip.</li></ul>   |
+| **Returns**                                          | <ul><li>The new <code>Clip</code>.</li></ul>            |
+| **Notes**                                            | <ul><li>The options may be:</li></ul><p>** <code>columnIndex</code>   - A number which will be used to specify the column number to find the title in, if relevant.</p>                 |
 
 ### Methods
 
@@ -60,22 +60,22 @@ Represents a clip of media inside FCP.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the title of the clip.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The clip title.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The clip title.</li></ul>            |
 
 #### [getType](#gettype)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.content.Clip:getType() -> Clip.type` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the type of clip (one of the `Clip.type` values)                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `Clip.type` value (e.g. `Clip.type.row` or Clip.type.filmstrip`)</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>Clip.type</code> value (e.g. <code>Clip.type.row</code> or Clip.type.filmstrip`)</li></ul>            |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.content.Clip:UI() -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `axuielement` for the clip.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `axuielement` for the clip.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>axuielement</code> for the clip.</li></ul>            |
 

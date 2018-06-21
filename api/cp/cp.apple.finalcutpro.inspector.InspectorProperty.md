@@ -31,86 +31,86 @@ other properties.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [hasProperties](#hasproperties)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.hasProperties(parent, uiFinder) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | This will prepare the `parent` to handle containing `PropertyRow` children, and returns                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* parent    - The parent table.</li><li markdown="1">* uiFinder  - The function or cp.prop which will be called to find the parent UI element. Functions will be passed the `parent` when being executed.</li></ul> |
-| **Returns**                                          | <ul markdown="1"></ul>          |
+| **Parameters**                                       | <ul><li>parent    - The parent table.</li></ul><ul><li>uiFinder  - The function or cp.prop which will be called to find the parent UI element. Functions will be passed the <code>parent</code> when being executed.</li></ul>   |
+| **Returns**                                          |             |
 
 #### [menuButton](#menubutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.menuButton(labelKey[, index]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [numberField](#numberfield)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.numberField(labelKey[, index]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [popUpButton](#popupbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.popUpButton(labelKey[, index]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [section](#section)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.section(labelKey[, index]) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a 'section row' factory function that can be called to create a section row that contains other `PropertyRow' `cp.prop`s.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N lookup key to find the row with.</li><li markdown="1">* index         - (optional) The occurrence of the key value in the parent. Sometimes multiple rows have the same title. Defaults to `1`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* A function which will create the section row when called.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N lookup key to find the row with.</li></ul><ul><li>index         - (optional) The occurrence of the key value in the parent. Sometimes multiple rows have the same title. Defaults to <code>1</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>A function which will create the section row when called.</li></ul>            |
 
 #### [simple](#simple)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.simple(labelKey[, prepareFn][, index]]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* prepareFn     - The function to call to perform additional preparations on the row.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>prepareFn     - The function to call to perform additional preparations on the row.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [slider](#slider)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.slider(labelKey[, index]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [staticText](#statictext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.staticText(labelKey[, index]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [textField](#textfield)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.textField(labelKey[, index]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 
 #### [xy](#xy)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.InspectorProperty.xy(labelKey[, index]) -> cp.prop <cp.ui.PropertyRow; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.prop` that contains a `PropertyRow`  matching the `labelKey`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* labelKey      - The I18N key that the row lable matches.</li><li markdown="1">* index         - The instance number of that label (defaults to `1`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` that returns the `PropertyRow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>labelKey      - The I18N key that the row lable matches.</li></ul><ul><li>index         - The instance number of that label (defaults to <code>1</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> that returns the <code>PropertyRow</code>.</li></ul>            |
 

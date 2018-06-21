@@ -19,14 +19,14 @@ Note: This extension works by controlling the OS X "Messages" app via AppleScrip
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an iMessage                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to</li><li markdown="1">message - A string containing the message to send</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to</li></ul><ul><li>message - A string containing the message to send</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [SMS](#sms)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.messages.SMS(targetNumber, message)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends an SMS using SMS Relay                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">targetNumber - A string containing a phone number to send an SMS to</li><li markdown="1">message - A string containing the message to send</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>targetNumber - A string containing a phone number to send an SMS to</li></ul><ul><li>message - A string containing the message to send</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

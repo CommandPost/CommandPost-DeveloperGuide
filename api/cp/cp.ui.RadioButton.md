@@ -45,8 +45,8 @@ myButton(false) == false	-- now false
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the provided `hs._asm.axuielement` is a RadioButton.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* element		- The `axuielement` to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if it's a match, or `false` if not.</li></ul>          |
+| **Parameters**                                       | <ul><li>element       - The <code>axuielement</code> to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if it's a match, or <code>false</code> if not.</li></ul>            |
 
 ### Fields
 
@@ -69,60 +69,60 @@ myButton(false) == false	-- now false
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the application object, via the `parent()`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The application object.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application object.</li></ul>            |
 
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:isEnabled() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns `true` if the radio button exists and is enabled.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` or `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <p><code>true</code> or <code>false</code>.</p>            |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton.new(axuielement, function) -> RadioButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new RadioButton.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* parent		- The parent object.</li><li markdown="1">* finderFn		- A function which will return the `hs._asm.axuielement` when available.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `RadioButton`.</li></ul>          |
+| **Parameters**                                       | <ul><li>parent        - The parent object.</li></ul><ul><li>finderFn      - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul>   |
+| **Returns**                                          | <ul><li>The new <code>RadioButton</code>.</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The parent object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The parent object.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The parent object.</li></ul>            |
 
 #### [press](#press)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:press() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Attempts to press the button. May fail if the `UI` is not available.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `RadioButton` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <p>The <code>RadioButton</code> instance.</p>            |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:snapshot([path]) -> hs.image | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* path		- (optional) The path to save the file. Should include the extension (should be `.png`).</li></ul> |
+| **Parameters**                                       | <ul><li>path      - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul>   |
 
 #### [toggle](#toggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:toggle() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Toggles the `checked` status of the button.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `RadioButton` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>RadioButton</code> instance.</li></ul>            |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:UI() -> hs._asm.axuielement | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `axuielement` representing the RadioButton, or `nil` if not available.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
 

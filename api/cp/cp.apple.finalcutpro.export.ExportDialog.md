@@ -30,8 +30,8 @@ Export Dialog Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - An `axuielementObject` to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
 
 ### Constructors
 
@@ -40,8 +40,8 @@ Export Dialog Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Export Dialog object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">app - The `cp.apple.finalcutpro` object.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A new ExportDialog object.</li></ul>          |
+| **Parameters**                                       | <ul><li>app - The <code>cp.apple.finalcutpro</code> object.</li></ul>   |
+| **Returns**                                          | <ul><li>A new ExportDialog object.</li></ul>            |
 
 ### Fields
 
@@ -70,55 +70,55 @@ Export Dialog Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>App</li></ul>            |
 
 #### [getTitle](#gettitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:getTitle() -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The title of the Go To Prompt window or `nil`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The title of the Go To Prompt window as a string or `nil`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The title of the Go To Prompt window as a string or <code>nil</code>.</li></ul>            |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:hide() -> cp.apple.finalcutpro.export.ExportDialog` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the Export Dialog                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.export.ExportDialog` object for method chaining.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.ExportDialog</code> object for method chaining.</li></ul>            |
 
 #### [pressCancel](#presscancel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:pressCancel() -> cp.apple.finalcutpro.export.ExportDialog` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Presses the Cancel Button.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.export.ExportDialog` object for method chaining.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.ExportDialog</code> object for method chaining.</li></ul>            |
 
 #### [pressNext](#pressnext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:pressNext() -> cp.apple.finalcutpro.export.ExportDialog` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Presses the Next Button.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.export.ExportDialog` object for method chaining.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.ExportDialog</code> object for method chaining.</li></ul>            |
 
 #### [saveSheet](#savesheet)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:saveSheet() -> SaveSheet` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new Save Sheet.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The SaveSheet.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The SaveSheet.</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:show(destinationSelect, ignoreProxyWarning, ignoreMissingMedia, quiet) -> cp.apple.finalcutpro.export.ExportDialog, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Export Dialog with the Destination that matches the `destinationSelect`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">destinationSelect    - The name, number or match function of the destination to export with.</li><li markdown="1">ignoreProxyWarning   - if `true`, the warning regarding exporting Proxies will be ignored.</li><li markdown="1">ignoreMissingMedia   - if `true`, the warning regarding exporting with missing media will be ignored.</li><li markdown="1">quiet                - if `true`, no dialogs will be shown if there is an error.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.export.ExportDialog` object for method chaining.</li><li markdown="1">If an error occurred, the message is returned as the second value</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">* If providing a function, it will be passed one item - the name of the destination, and should return `true` to indicate a match. The name will not contain " (default)" if present.</li></ul>                |
+| **Parameters**                                       | <ul><li>destinationSelect    - The name, number or match function of the destination to export with.</li></ul><ul><li>ignoreProxyWarning   - if <code>true</code>, the warning regarding exporting Proxies will be ignored.</li></ul><ul><li>ignoreMissingMedia   - if <code>true</code>, the warning regarding exporting with missing media will be ignored.</li></ul><ul><li>quiet                - if <code>true</code>, no dialogs will be shown if there is an error.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.ExportDialog</code> object for method chaining.</li></ul><ul><li>If an error occurred, the message is returned as the second value</li></ul>            |
+| **Notes**                                            | <ul><li>If providing a function, it will be passed one item - the name of the destination, and should return <code>true</code> to indicate a match. The name will not contain " (default)" if present.</li></ul>                 |
 

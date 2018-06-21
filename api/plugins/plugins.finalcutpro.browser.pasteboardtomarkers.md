@@ -36,14 +36,14 @@ If a # is place before the timecode, it will create a "To Do" marker.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">deps - Plugin Dependencies</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>deps - Plugin Dependencies</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [process](#process)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.browser.pasteboardtomarkers.process() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Processes Pasteboard to Markers                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

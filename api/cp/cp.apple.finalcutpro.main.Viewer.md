@@ -27,8 +27,8 @@ Viewer Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - An `axuielementObject` to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
 
 ### Constructors
 
@@ -37,8 +37,8 @@ Viewer Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Viewer` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* app           - The FCP application.</li><li markdown="1">* eventViewer   - If `true`, the viewer is the Event Viewer.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `Viewer` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>app           - The FCP application.</li></ul><ul><li>eventViewer   - If <code>true</code>, the viewer is the Event Viewer.</li></ul>   |
+| **Returns**                                          | <ul><li>The new <code>Viewer</code> instance.</li></ul>            |
 
 ### Methods
 
@@ -47,62 +47,62 @@ Viewer Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the application.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The application.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application.</li></ul>            |
 
 #### [currentWindow](#currentwindow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:currentWindow() -> PrimaryWindow | SecondaryWindow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the current window object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `PrimaryWindow` or the `SecondaryWindow`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>PrimaryWindow</code> or the <code>SecondaryWindow</code>.</li></ul>            |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the Viewer.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* Self</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Self</li></ul>            |
 
 #### [isEventViewer](#iseventviewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:isEventViewer() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns `true` if this is the Event Viewer.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if this is the Event Viewer.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if this is the Event Viewer.</li></ul>            |
 
 #### [isMainViewer](#ismainviewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:isMainViewer() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns `true` if this is the main Viewer.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if this is the main Viewer.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if this is the main Viewer.</li></ul>            |
 
 #### [playButton](#playbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:playButton() -> Button` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Play Button object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* A Button</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A Button</li></ul>            |
 
 #### [showOnPrimary](#showonprimary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:showOnPrimary() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Viewer on the Primary display.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* Self</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Self</li></ul>            |
 
 #### [showOnSecondary](#showonsecondary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:showOnSecondary() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Viewer on the Seconary display.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* Self</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Self</li></ul>            |
 

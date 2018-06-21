@@ -47,8 +47,8 @@ trigger menu items.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Constructs a new menu for the specified App.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">app - The `cp.app` instance the menu belongs to.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">a new menu instance</li></ul>          |
+| **Parameters**                                       | <ul><li>app - The <code>cp.app</code> instance the menu belongs to.</li></ul>   |
+| **Returns**                                          | <ul><li>a new menu instance</li></ul>            |
 
 ### Methods
 
@@ -57,97 +57,97 @@ trigger menu items.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers an `AXMenuItem` finder function. The finder's job is to take an individual 'find' step and return either the matching child, or nil if it can't be found. It is used by the [addMenuFinder](#addMenuFinder) function. The `finder` should have the following signature:                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`finder`     - The finder function</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `AXMenuItem` found, or `nil`.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>finder</code>     - The finder function</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>AXMenuItem</code> found, or <code>nil</code>.</li></ul>            |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:app() -> cp.app` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.app` instance this belongs to.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.app`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.app</code>.</li></ul>            |
 
 #### [findMenuItems](#findmenuitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:findMenuItems(path[, options]) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an `Observable` that will emit each of the menu items along the path.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path         - the table of path items.</li><li markdown="1">options      - (optional) table of additional configuration options.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `Observable` instance.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">This will not act until something `subscribes` to the returned `Observable`.</li></ul>                |
+| **Parameters**                                       | <ul><li>path         - the table of path items.</li></ul><ul><li>options      - (optional) table of additional configuration options.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>Observable</code> instance.</li></ul>            |
+| **Notes**                                            | <ul><li>This will not act until something <code>subscribes</code> to the returned <code>Observable</code>.</li></ul>                 |
 
 #### [findMenuItemsUI](#findmenuitemsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:findMenuItemsUI(path[, locale]) -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the set of menu items in the provided path. If the path contains a menu, the                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - A table containing the path to the menu.</li><li markdown="1">locale - The locale the path is in. Defaults to "en".</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">An `axuielementObject` for the menu items.</li></ul>          |
+| **Parameters**                                       | <ul><li>path - A table containing the path to the menu.</li></ul><ul><li>locale - The locale the path is in. Defaults to "en".</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>axuielementObject</code> for the menu items.</li></ul>            |
 
 #### [findMenuUI](#findmenuui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:findMenuUI(path[, options]) -> Menu UI, table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds a specific Menu UI element for the provided path.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path         - The path list to search for.</li><li markdown="1">options      - (Optional) The table of options.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Menu UI, or `nil` if it could not be found.</li><li markdown="1">The full list of Menu UIs for the path in a table.</li></ul>          |
+| **Parameters**                                       | <ul><li>path         - The path list to search for.</li></ul><ul><li>options      - (Optional) The table of options.</li></ul>   |
+| **Returns**                                          | <ul><li>The Menu UI, or <code>nil</code> if it could not be found.</li></ul><ul><li>The full list of Menu UIs for the path in a table.</li></ul>            |
 
 #### [findUI](#findui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:findUI([timeout]) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns an `Observable` that will emit the next available instance of                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">timeout - (optional) the number of seconds to wait for the UI. It not provided, defaults to forever.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">An `Observer` that emits the UI.</li></ul>          |
+| **Parameters**                                       | <ul><li>timeout - (optional) the number of seconds to wait for the UI. It not provided, defaults to forever.</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>Observer</code> that emits the UI.</li></ul>            |
 
 #### [getMenuTitles](#getmenutitles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:getMenuTitles([locales]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a table with the available menus, items and sub-menu, in the specified locales (if available).                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">locales       - An optional single `localeID` or a list of `localeID`s to ensure are loaded.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table of Menu Bar Values</li></ul>          |
+| **Parameters**                                       | <ul><li>locales       - An optional single <code>localeID</code> or a list of <code>localeID</code>s to ensure are loaded.</li></ul>   |
+| **Returns**                                          | <ul><li>A table of Menu Bar Values</li></ul>            |
 
 #### [isChecked](#ischecked)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:isChecked(path[, options]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Is a menu item checked?                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - At table containing the path to the menu bar item.</li><li markdown="1">options - The locale the path is in. Defaults to "en".</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if checked otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>path - At table containing the path to the menu bar item.</li></ul><ul><li>options - The locale the path is in. Defaults to "en".</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if checked otherwise <code>false</code>.</li></ul>            |
 
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:isEnabled(path[, options]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Is a menu item enabled?                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - At table containing the path to the menu bar item.</li><li markdown="1">options - The optional table of options.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if enabled otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>path - At table containing the path to the menu bar item.</li></ul><ul><li>options - The optional table of options.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if enabled otherwise <code>false</code>.</li></ul>            |
 
 #### [selectMenu](#selectmenu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:selectMenu(path[, options]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects a Menu Item based on the list of menu titles in English.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - The list of menu items you'd like to activate.</li><li markdown="1">options - (optional) The table of options to apply.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the press was successful.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">Example usage:</li><li markdown="1">   `require("cp.app").forBundleID("com.apple.FinalCut"):menu():selectMenu({"View", "Browser", "Toggle Filmstrip/List View"})`</li></ul>                |
+| **Parameters**                                       | <ul><li>path - The list of menu items you'd like to activate.</li></ul><ul><li>options - (optional) The table of options to apply.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the press was successful.</li></ul>            |
+| **Notes**                                            | <ul><li>Example usage:</li></ul><p><code>require("cp.app").forBundleID("com.apple.FinalCut"):menu():selectMenu({"View", "Browser", "Toggle Filmstrip/List View"})</code></p>                 |
 
 #### [selectMenuItem](#selectmenuitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:selectMenuItem(path, options) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects a Menu Item based on the provided menu path.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - The list of menu items you'd like to activate.</li><li markdown="1">options - (optional) The table of options to apply.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">An `Observable` which emits the final menu item, or an error if the selection failed.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The returned `Observable` will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.</li></ul>                |
+| **Parameters**                                       | <ul><li>path - The list of menu items you'd like to activate.</li></ul><ul><li>options - (optional) The table of options to apply.</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>Observable</code> which emits the final menu item, or an error if the selection failed.</li></ul>            |
+| **Notes**                                            | <ul><li>The returned <code>Observable</code> will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.</li></ul>                 |
 
 #### [visitMenuItems](#visitmenuitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu:visitMenuItems(visitFn[, options]]) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Walks the menu tree, calling the `visitFn` on all the 'item' values - that is,                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">visitFn - The function called for each menu item.</li><li markdown="1">options - (optional) The table of options.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Nothing</li></ul>          |
+| **Parameters**                                       | <ul><li>visitFn - The function called for each menu item.</li></ul><ul><li>options - (optional) The table of options.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing</li></ul>            |
 

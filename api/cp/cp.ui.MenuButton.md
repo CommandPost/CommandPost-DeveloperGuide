@@ -31,8 +31,8 @@ Pop Up Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - An `axuielementObject` to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
 
 ### Constructors
 
@@ -41,7 +41,7 @@ Pop Up Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new MenuButton.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* parent		- The parent object. Should have an `isShowing` property.</li><li markdown="1">* finderFn		- A `cp.prop` or function which will return a `hs._asm.axuielement`, or `nil` if it's not available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent        - The parent object. Should have an <code>isShowing</code> property.</li></ul><ul><li>finderFn      - A <code>cp.prop</code> or function which will return a <code>hs._asm.axuielement</code>, or <code>nil</code> if it's not available.</li></ul>   |
 
 ### Methods
 
@@ -50,93 +50,93 @@ Pop Up Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the `MenuButton` title.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `MenuButton` title as string, or `nil` if the title cannot be determined.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>MenuButton</code> title as string, or <code>nil</code> if the title cannot be determined.</li></ul>            |
 
 #### [getValue](#getvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:getValue() -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the `MenuButton` value.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `MenuButton` value as string, or `nil` if the value cannot be determined.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>MenuButton</code> value as string, or <code>nil</code> if the value cannot be determined.</li></ul>            |
 
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:isEnabled() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Is the `MenuButton` enabled?                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if enabled otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if enabled otherwise <code>false</code>.</li></ul>            |
 
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Loads a `MenuButton` layout.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">layout - A table containing the `MenuButton` layout settings - created using `cp.ui.MenuButton:saveLayout()`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>layout - A table containing the <code>MenuButton</code> layout settings - created using <code>cp.ui.MenuButton:saveLayout()</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">parent</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>parent</li></ul>            |
 
 #### [press](#press)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:press() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Presses the MenuButton.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">self</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>self</li></ul>            |
 
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Saves the current `MenuButton` layout to a table.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table containing the current `MenuButton` Layout.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A table containing the current <code>MenuButton</code> Layout.</li></ul>            |
 
 #### [selectItem](#selectitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:selectItem(index) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Select an item on the `MenuButton` by index.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - The index of the item you want to select.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successfully selected, otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>index - The index of the item you want to select.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successfully selected, otherwise <code>false</code>.</li></ul>            |
 
 #### [selectItemMatching](#selectitemmatching)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:selectItemMatching(pattern) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Select an item on the `MenuButton` by pattern.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">pattern - A pattern used to select the `MenuButton` item.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successfully selected, otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>pattern - A pattern used to select the <code>MenuButton</code> item.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if successfully selected, otherwise <code>false</code>.</li></ul>            |
 
 #### [setValue](#setvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:setValue(value) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the `MenuButton` value.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - The value you want to set the `MenuButton` to.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">self</li></ul>          |
+| **Parameters**                                       | <ul><li>value - The value you want to set the <code>MenuButton</code> to.</li></ul>   |
+| **Returns**                                          | <ul><li>self</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:show() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show's the MenuButton.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">self</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>self</li></ul>            |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:snapshot([path]) -> hs.image | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* path		- (optional) The path to save the file. Should include the extension (should be `.png`).</li></ul> |
+| **Parameters**                                       | <ul><li>path      - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul>   |
 

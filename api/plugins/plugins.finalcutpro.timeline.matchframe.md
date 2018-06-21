@@ -18,22 +18,22 @@ Match Frame Tools for Final Cut Pro.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get Multicam Angle From Selected Clip                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Angle or `false` on error</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Angle or <code>false</code> on error</li></ul>            |
 
 #### [matchFrame](#matchframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.matchframe.matchFrame() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a Single Match Frame.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`focus`  - If set to `true`, the library will search for the matched clip title</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li><code>focus</code>  - If set to <code>true</code>, the library will search for the matched clip title</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [multicamMatchFrame](#multicammatchframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.matchframe.multicamMatchFrame(goBackToTimeline) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Multicam Match Frame                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">goBackToTimeline - `true` if you want to go back to the timeline after opening the clip in the Multicam Editor</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>goBackToTimeline - <code>true</code> if you want to go back to the timeline after opening the clip in the Multicam Editor</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

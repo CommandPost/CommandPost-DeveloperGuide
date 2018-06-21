@@ -16,7 +16,7 @@ tmuxomatic-like window management
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies a configuration to the currently open windows                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">cfg - A table containing a series of strings, representing the desired window layout</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">An example use:</li></ul>                |
+| **Parameters**                                       | <ul><li>cfg - A table containing a series of strings, representing the desired window layout</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>An example use:</li></ul>                 |
 

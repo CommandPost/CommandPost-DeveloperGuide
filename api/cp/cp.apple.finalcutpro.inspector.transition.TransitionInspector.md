@@ -19,8 +19,8 @@ Transition Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `TransitionInspector` object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent - The parent</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A `TransitionInspector` object</li></ul>          |
+| **Parameters**                                       | <ul><li>parent - The parent</li></ul>   |
+| **Returns**                                          | <ul><li>A <code>TransitionInspector</code> object</li></ul>            |
 
 ### Methods
 
@@ -29,14 +29,14 @@ Transition Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application object</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.transition.TransitionInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the TransitionInspector's parent table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
 

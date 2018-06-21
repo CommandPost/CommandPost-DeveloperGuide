@@ -33,6 +33,6 @@ Tangent Display Functions.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">osGroup - The Tangent Sound Group.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>osGroup - The Tangent Sound Group.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

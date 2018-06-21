@@ -23,32 +23,32 @@ Prowl Notifications Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the plugin.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [sendNotification](#sendnotification)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.prowl.sendNotification(message, [title]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends a notification.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">message - The message you want to send as a string.</li><li markdown="1">[title] - An optional Title for the message as a string.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">success - `true` if successful otherwise `false`</li><li markdown="1">errorMessage - a string containing any error messages</li></ul>          |
+| **Parameters**                                       | <ul><li>message - The message you want to send as a string.</li></ul><ul><li>[title] - An optional Title for the message as a string.</li></ul>   |
+| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code></li></ul><ul><li>errorMessage - a string containing any error messages</li></ul>            |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.prowl.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enables or disables Prowl Notifications depending on the user's preferences.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [validateAPIKey](#validateapikey)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.prowl.validateAPIKey(key) -> success, errorMessage` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Validates a Growl API Key                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">key - The API key as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">success - `true` if successful otherwise `false`</li><li markdown="1">errorMessage - a string containing any error messages</li></ul>          |
+| **Parameters**                                       | <ul><li>key - The API key as string</li></ul>   |
+| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code></li></ul><ul><li>errorMessage - a string containing any error messages</li></ul>            |
 
 ### Fields
 

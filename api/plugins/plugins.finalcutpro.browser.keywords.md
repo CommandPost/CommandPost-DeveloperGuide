@@ -34,14 +34,14 @@ Browser Keywords Presets.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Restores a Keyword preset.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">preset - A preset number between 1 and the value of `plugins.finalcutpro.browser.keywords.NUMBER_OF_PRESETS`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>preset - A preset number between 1 and the value of <code>plugins.finalcutpro.browser.keywords.NUMBER_OF_PRESETS</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [save](#save)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.browser.keywords.save(preset) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves a Keyword preset.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">preset - A preset number between 1 and the value of `plugins.finalcutpro.browser.keywords.NUMBER_OF_PRESETS`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>preset - A preset number between 1 and the value of <code>plugins.finalcutpro.browser.keywords.NUMBER_OF_PRESETS</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

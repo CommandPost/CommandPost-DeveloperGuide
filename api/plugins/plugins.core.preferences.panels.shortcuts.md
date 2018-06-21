@@ -30,24 +30,24 @@ Shortcuts Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Group Editor                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">groupId - Group ID</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Group Editor</li></ul>          |
+| **Parameters**                                       | <ul><li>groupId - Group ID</li></ul>   |
+| **Returns**                                          | <ul><li>Group Editor</li></ul>            |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.shortcuts.init(deps, env) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the Module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">deps - Dependancies Table</li><li markdown="1">env - Environment Table</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Module</li></ul>          |
+| **Parameters**                                       | <ul><li>deps - Dependancies Table</li></ul><ul><li>env - Environment Table</li></ul>   |
+| **Returns**                                          | <ul><li>The Module</li></ul>            |
 
 #### [setGroupEditor](#setgroupeditor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.shortcuts.setGroupEditor(groupId, editorFn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the Group Editor                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">groupId - Group ID</li><li markdown="1">editorFn - Editor Function</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>groupId - Group ID</li></ul><ul><li>editorFn - Editor Function</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 ### Fields
 

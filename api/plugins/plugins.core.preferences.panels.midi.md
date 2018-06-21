@@ -28,8 +28,8 @@ MIDI Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the Module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">deps - Dependancies Table</li><li markdown="1">env - Environment Table</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Module</li></ul>          |
+| **Parameters**                                       | <ul><li>deps - Dependancies Table</li></ul><ul><li>env - Environment Table</li></ul>   |
+| **Returns**                                          | <ul><li>The Module</li></ul>            |
 
 ### Fields
 

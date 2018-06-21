@@ -16,6 +16,6 @@ Handy text tools.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Processes Text                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - The type of text manipulation you want to do. Current values are: `uppercase`, `lowercase` or `camelcase`.</li><li markdown="1">copyAndPaste - A boolean that defines whether or not we should trigger copy and paste.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>value - The type of text manipulation you want to do. Current values are: <code>uppercase</code>, <code>lowercase</code> or <code>camelcase</code>.</li></ul><ul><li>copyAndPaste - A boolean that defines whether or not we should trigger copy and paste.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

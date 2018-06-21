@@ -35,32 +35,32 @@ Represents a single property row, typically in a Property Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `parent` has been prepared via [prepareParent](#prepareParent).                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the parent is prepared.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the parent is prepared.</li></ul>            |
 
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the provided `axuielement` could be a property row.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">element   - The element to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the element could be a property row.</li></ul>          |
+| **Parameters**                                       | <ul><li>element   - The element to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the element could be a property row.</li></ul>            |
 
 #### [parentUIFinder](#parentuifinder)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.parentUIFinder(parent) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the `cp.prop` which finds the `hs._asm.axuielement` that contains property rows from the parent.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent        - The parent which has a finder assigned.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.prop` which provides access to the finder, or `nil`.</li></ul>          |
+| **Parameters**                                       | <ul><li>parent        - The parent which has a finder assigned.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> which provides access to the finder, or <code>nil</code>.</li></ul>            |
 
 #### [prepareParent](#prepareparent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.prepareParent(parent, uiFinder) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Call this to make `parent` table ready to be a parent of `PropertyRow`s.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent    - The parent table.</li><li markdown="1">uiFinder  - The function or cp.prop which will be called to find the parent UI element. Functions will be passed the `parent` when being executed.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>parent    - The parent table.</li></ul><ul><li>uiFinder  - The function or cp.prop which will be called to find the parent UI element. Functions will be passed the <code>parent</code> when being executed.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 ### Constructors
 
@@ -69,8 +69,8 @@ Represents a single property row, typically in a Property Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `PropertyRow` with the specified parent and label key.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent        - The parent object.</li><li markdown="1">labelKey      - The key of the label that the row will map to.</li><li markdown="1">index         - The row number with the same label to get. Defaults to `1`.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `PropertyRow` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>parent        - The parent object.</li></ul><ul><li>labelKey      - The key of the label that the row will map to.</li></ul><ul><li>index         - The row number with the same label to get. Defaults to <code>1</code>.</li></ul>   |
+| **Returns**                                          | <ul><li>The new <code>PropertyRow</code> instance.</li></ul>            |
 
 ### Fields
 
@@ -117,46 +117,46 @@ Represents a single property row, typically in a Property Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>App</li></ul>            |
 
 #### [children](#children)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:children() -> table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a table of children for the Property Row.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A table of children or `nil`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A table of children or <code>nil</code>.</li></ul>            |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the `PropertyRow`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">self</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>self</li></ul>            |
 
 #### [labelKeys](#labelkeys)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:labelKeys() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the key of the label that the row will map to.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">string</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>string</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">parent</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>parent</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:show() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the `PropertyRow`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">self</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>self</li></ul>            |
 

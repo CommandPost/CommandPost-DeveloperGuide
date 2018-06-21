@@ -35,8 +35,8 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `strings` instance. You should add sources with the [from](#from) or [fromPlist](#fromPlist) methods.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">context      - The initial context.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `cp.strings`</li></ul>          |
+| **Parameters**                                       | <ul><li>context      - The initial context.</li></ul>   |
+| **Returns**                                          | <ul><li>The new <code>cp.strings</code></li></ul>            |
 
 ### Methods
 
@@ -45,54 +45,54 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets a context to be set for the strings. This typically includes a `language`, which                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* context   - A table with values which may be used by the source.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* If a new context is provided, the `cp.string.source` is returned, otherwise the current context table is returned.</li></ul>          |
+| **Parameters**                                       | <ul><li>context   - A table with values which may be used by the source.</li></ul>   |
+| **Returns**                                          | <ul><li>If a new context is provided, the <code>cp.string.source</code> is returned, otherwise the current context table is returned.</li></ul>            |
 
 #### [find](#find)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:find(key[, context[, quiet]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches for the specified key, caching the result when found.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`key`        - The key to retrieve from the file.</li><li markdown="1">`context`    - Optional table with additional/alternate context.</li><li markdown="1">`quiet`      - Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The value of the key, or `nil` if not found.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file.</li></ul><ul><li><code>context</code>    - Optional table with additional/alternate context.</li></ul><ul><li><code>quiet</code>      - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul>   |
+| **Returns**                                          | <ul><li>The value of the key, or <code>nil</code> if not found.</li></ul>            |
 
 #### [findInSources](#findinsources)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findInSources(key[, context[, quiet]]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches directly in the sources for the specified key.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`key`        - The key to retrieve from the file.</li><li markdown="1">`context`    - Optional table with additional/alternate context.</li><li markdown="1">`quiet`      - Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The value of the key, or `nil` if not found.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file.</li></ul><ul><li><code>context</code>    - Optional table with additional/alternate context.</li></ul><ul><li><code>quiet</code>      - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul>   |
+| **Returns**                                          | <ul><li>The value of the key, or <code>nil</code> if not found.</li></ul>            |
 
 #### [findKeys](#findkeys)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findKeys(value[, context]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches for the list of keys with a matching value, in the specified language.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`value`      - The value to search for.</li><li markdown="1">`context`    - The language code to look for (e.g. `"en"`, or `"fr"`).</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The array of keys, or `{}` if not found.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>value</code>      - The value to search for.</li></ul><ul><li><code>context</code>    - The language code to look for (e.g. <code>"en"</code>, or <code>"fr"</code>).</li></ul>   |
+| **Returns**                                          | <ul><li>The array of keys, or <code>{}</code> if not found.</li></ul>            |
 
 #### [findKeysInSources](#findkeysinsources)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:findKeysInSources(value[, context]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Searches directly in the sources for the specified key value pattern.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`value`      - The value to search for.</li><li markdown="1">`context`    - Optional additional context for the request.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The array of keys, or `{}` if not found.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>value</code>      - The value to search for.</li></ul><ul><li><code>context</code>    - Optional additional context for the request.</li></ul>   |
+| **Returns**                                          | <ul><li>The array of keys, or <code>{}</code> if not found.</li></ul>            |
 
 #### [from](#from)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:from(source) -> cp.strings` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the source to the strings sources.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`source`		- The source to add.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The current `cp.strings` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>source</code>     - The source to add.</li></ul>   |
+| **Returns**                                          | <ul><li>The current <code>cp.strings</code> instance.</li></ul>            |
 
 #### [fromPlist](#fromplist)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings:fromPlist(pathPattern) -> cp.strings` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Convenience method for adding a `plist` source to the strings instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`pathPattern`	- The path to load from. May contain a special `${language}` marker which will be replace with the provided langauge when searching.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The current `cp.strings` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>pathPattern</code>    - The path to load from. May contain a special <code>${language}</code> marker which will be replace with the provided langauge when searching.</li></ul>   |
+| **Returns**                                          | <ul><li>The current <code>cp.strings</code> instance.</li></ul>            |
 

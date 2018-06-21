@@ -16,6 +16,6 @@ Multicam Tools.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Cut & Switch Multicam.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">whichMode - "Audio", "Video" or "Both" as string</li><li markdown="1">whichAngle - Number of Angle</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>whichMode - "Audio", "Video" or "Both" as string</li></ul><ul><li>whichAngle - Number of Angle</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

@@ -36,16 +36,16 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `thing` is a languageID instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">thing     - the thing to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the `thing` is a `languageID`, otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>thing     - the thing to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the <code>thing</code> is a <code>languageID</code>, otherwise <code>false</code>.</li></ul>            |
 
 #### [parse](#parse)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.i18n.languageID.parse(code) -> string, string, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Parses a `language ID` into three possible string components:                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">code      - The `language ID` code. Eg. "en-AU".</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">language  - The two-character lower-case alpha language code.</li><li markdown="1">script    - the four-character mixed-case alpha script code.</li><li markdown="1">region    - The two-character upper-case alpha region code.</li></ul>          |
+| **Parameters**                                       | <ul><li>code      - The <code>language ID</code> code. Eg. "en-AU".</li></ul>   |
+| **Returns**                                          | <ul><li>language  - The two-character lower-case alpha language code.</li></ul><ul><li>script    - the four-character mixed-case alpha script code.</li></ul><ul><li>region    - The two-character upper-case alpha region code.</li></ul>            |
 
 ### Constructors
 
@@ -54,24 +54,24 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates, or retrieves from the cache, a `languageID` instance for the specified `code`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">code      - The language ID code.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The matching `languageID`, or `nil` if the language ID couldn't be found.</li><li markdown="1">The error message, or `nil` if there was no problem.</li></ul>          |
+| **Parameters**                                       | <ul><li>code      - The language ID code.</li></ul>   |
+| **Returns**                                          | <ul><li>The matching <code>languageID</code>, or <code>nil</code> if the language ID couldn't be found.</li></ul><ul><li>The error message, or <code>nil</code> if there was no problem.</li></ul>            |
 
 #### [forLocaleID](#forlocaleid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.i18n.languageID.forLocaleID(code[, prioritiseScript]) -> cp.i18n.languageID, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates, or retrieves from the cache, a `languageID` instance for the specified `cp.i18n.localeID`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">locale            - The `localeID` to convert</li><li markdown="1">prioritiseScript  - If set to `true` and the locale has both a region and script then the script code will be used.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The `languageID` for the `locale`, or `nil`</li><li markdown="1">The error message if there was a problem.</li></ul>          |
+| **Parameters**                                       | <ul><li>locale            - The <code>localeID</code> to convert</li></ul><ul><li>prioritiseScript  - If set to <code>true</code> and the locale has both a region and script then the script code will be used.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>languageID</code> for the <code>locale</code>, or <code>nil</code></li></ul><ul><li>The error message if there was a problem.</li></ul>            |
 
 #### [forParts](#forparts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.i18n.languageID.forParts(languageCode[, scriptCode[, regionCode]]) -> cp.i18n.languageID` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a `languageID` with the specified parts.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">languageCode - Language code</li><li markdown="1">scriptCode - Optional Script code</li><li markdown="1">regionCode - Optional Region Code</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A `cp.i18n.languageID` object.</li></ul>          |
+| **Parameters**                                       | <ul><li>languageCode - Language code</li></ul><ul><li>scriptCode - Optional Script code</li></ul><ul><li>regionCode - Optional Region Code</li></ul>   |
+| **Returns**                                          | <ul><li>A <code>cp.i18n.languageID</code> object.</li></ul>            |
 
 ### Fields
 
@@ -106,6 +106,6 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.i18n.localeID` equivalent for this `languageID`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The matching `localeID`.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The matching <code>localeID</code>.</li></ul>            |
 

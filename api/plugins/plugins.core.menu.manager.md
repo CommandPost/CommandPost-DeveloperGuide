@@ -44,56 +44,56 @@ Menu Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new menu section, which can have items and sub-menus added to it.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">priority - The priority order of menu items created in the section relative to other sections.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The section that was created.</li></ul>          |
+| **Parameters**                                       | <ul><li>priority - The priority order of menu items created in the section relative to other sections.</li></ul>   |
+| **Returns**                                          | <ul><li>section - The section that was created.</li></ul>            |
 
 #### [addTitleSuffix](#addtitlesuffix)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.addTitleSuffix(fnTitleSuffix)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Allows you to add a custom Suffix to the Menubar Title                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">fnTitleSuffix - A function that returns a single string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>fnTitleSuffix - A function that returns a single string</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [disable](#disable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.disable(priority) -> menubaritem` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes the menu from the system menu bar.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">the menubaritem</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the menubaritem</li></ul>            |
 
 #### [enable](#enable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.enable(priority) -> menubaritem` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the previously removed menu back to the system menu bar.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">the menubaritem</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the menubaritem</li></ul>            |
 
 #### [generateMenuTable](#generatemenutable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.generateMenuTable()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates the Menu Table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Menu Table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The Menu Table</li></ul>            |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [updateMenubarIcon](#updatemenubaricon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.updateMenubarIcon(priority) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Menubar Icon                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 ### Fields
 

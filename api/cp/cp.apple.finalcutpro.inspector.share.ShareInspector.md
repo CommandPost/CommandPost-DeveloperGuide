@@ -61,8 +61,8 @@ share:stabilization():smoothing():show():value(1.5)
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the provided element could be a ShareInspector.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* element   - The element to check</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if it matches, `false` if not.</li></ul>          |
+| **Parameters**                                       | <ul><li>element   - The element to check</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if it matches, <code>false</code> if not.</li></ul>            |
 
 ### Constructors
 
@@ -71,8 +71,8 @@ share:stabilization():smoothing():show():value(1.5)
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `ShareInspector` object                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`		- The parent</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A `ShareInspector` object</li></ul>          |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul>   |
+| **Returns**                                          | <ul><li>A <code>ShareInspector</code> object</li></ul>            |
 
 ### Methods
 
@@ -81,22 +81,22 @@ share:stabilization():smoothing():show():value(1.5)
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.share.ShareInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ShareInspector's parent table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.share.ShareInspector:show() -> ShareInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Share Inspector                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">ShareInspector</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>ShareInspector</li></ul>            |
 

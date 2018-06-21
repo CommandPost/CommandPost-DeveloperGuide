@@ -74,87 +74,87 @@ Manager for the CommandPost Watch Folders Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a Handler                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - The ID</li><li markdown="1">handlerFn - the handler function</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Nothing</li></ul>          |
+| **Parameters**                                       | <ul><li>id - The ID</li></ul><ul><li>handlerFn - the handler function</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing</li></ul>            |
 
 #### [addPanel](#addpanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.addPanel(params) -> plugins.core.watchfolders.manager.panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a new panel with the specified `params` to the preferences manager.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`params` - The parameters table. Details below.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `panel` instance.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The `params` can have the following properties. The `priority` and `id` and properties are **required**.</li><li markdown="1"> ** `priority`      - An integer value specifying the priority of the panel compared to others.</li><li markdown="1"> ** `id`            - A string containing the unique ID of the panel.</li><li markdown="1"> ** `label`         - The human-readable label for the panel icon.</li><li markdown="1"> ** `image`         - The `hs.image` for the panel icon.</li><li markdown="1"> ** `tooltip`       - The human-readable details for the toolbar icon when the mouse is hovering over it.</li></ul>                |
+| **Parameters**                                       | <ul><li><code>params</code> - The parameters table. Details below.</li></ul>   |
+| **Returns**                                          | <ul><li>The new <code>panel</code> instance.</li></ul>            |
+| **Notes**                                            | <ul><li>The <code>params</code> can have the following properties. The <code>priority</code> and <code>id</code> and properties are <strong>required</strong>.</li></ul><p>** <code>priority</code>      - An integer value specifying the priority of the panel compared to others.</p><p>** <code>id</code>            - A string containing the unique ID of the panel.</p><p>** <code>label</code>         - The human-readable label for the panel icon.</p><p>** <code>image</code>         - The <code>hs.image</code> for the panel icon.</p><p>** <code>tooltip</code>       - The human-readable details for the toolbar icon when the mouse is hovering over it.</p>                 |
 
 #### [getHandler](#gethandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.getHandler(id) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the handler for a given ID.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - The ID</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Table</li></ul>          |
+| **Parameters**                                       | <ul><li>id - The ID</li></ul>   |
+| **Returns**                                          | <ul><li>Table</li></ul>            |
 
 #### [getLabel](#getlabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.getLabel() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Webview label.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Webview label as a string.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The Webview label as a string.</li></ul>            |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.hide() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Hides the Watch Folders Window                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">True if successful or nil if an error occurred</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>True if successful or nil if an error occurred</li></ul>            |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the Watch Folder Manager.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Nothing</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing</li></ul>            |
 
 #### [injectScript](#injectscript)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.injectScript(script) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Injects JavaScript into the Watch Folders Webview.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">script - The JavaScript code you want to inject in the form of a string.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>script - The JavaScript code you want to inject in the form of a string.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [maxPanelHeight](#maxpanelheight)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.maxPanelHeight() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the maximum panel height as a number                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* A number</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A number</li></ul>            |
 
 #### [selectPanel](#selectpanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.selectPanel(id) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Selects a Preferences Panel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - the ID of the panel you want to select.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>id - the ID of the panel you want to select.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [setPanelRenderer](#setpanelrenderer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.setPanelRenderer(renderer) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets a Panel Renderer                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">renderer - The renderer</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>renderer - The renderer</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.show() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the Watch Folders Window                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">True if successful or nil if an error occurred</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>True if successful or nil if an error occurred</li></ul>            |
 

@@ -42,78 +42,78 @@ Controls sections for the CommandPost menu.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | A private method for registering a generator. This should not be called directly.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`generator`	- The generator being added.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The section.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>generator</code>  - The generator being added.</li></ul>   |
+| **Returns**                                          | <ul><li>section - The section.</li></ul>            |
 
 #### [addItem](#additem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addItem(priority, itemFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a function which will generate a single table item.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`	- The priority of the item within the section. Lower numbers appear first.</li><li markdown="1">`itemFn`		- A function which will return a table representing a single menu item. See `hs.menubar` for details.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The section the item was added to.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the item within the section. Lower numbers appear first.</li></ul><ul><li><code>itemFn</code>     - A function which will return a table representing a single menu item. See <code>hs.menubar</code> for details.</li></ul>   |
+| **Returns**                                          | <ul><li>section - The section the item was added to.</li></ul>            |
 
 #### [addItems](#additems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addItems(priority, itemsFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a function which will generate multiple table items.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`	- The priority of the items within the section. Lower numbers appear first.</li><li markdown="1">`itemsFn`	- A function which will return a table containing multiple table items. See `hs.menubar` for details.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The section the item was added to.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the items within the section. Lower numbers appear first.</li></ul><ul><li><code>itemsFn</code>    - A function which will return a table containing multiple table items. See <code>hs.menubar</code> for details.</li></ul>   |
+| **Returns**                                          | <ul><li>section - The section the item was added to.</li></ul>            |
 
 #### [addMenu](#addmenu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addMenu(priority, titleFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new sub-menu with the specified priority. The section that will contain                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`	- The priority of the item within the section. Lower numbers appear first.</li><li markdown="1">`titleFn`	- The function which will return the menu title.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The new section that was created.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the item within the section. Lower numbers appear first.</li></ul><ul><li><code>titleFn</code>    - The function which will return the menu title.</li></ul>   |
+| **Returns**                                          | <ul><li>section - The new section that was created.</li></ul>            |
 
 #### [addSection](#addsection)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addSection(priority, itemFn) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new sub-section with the specified priority. The new sub-section is returned.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`	- The priority of the item within the section. Lower numbers appear first.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The new section that was created.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the item within the section. Lower numbers appear first.</li></ul>   |
+| **Returns**                                          | <ul><li>section - The new section that was created.</li></ul>            |
 
 #### [addSeparator](#addseparator)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addSeparator(priority) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new seperator with specified priority.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`	- The priority of the items within the section. Lower numbers appear first.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The new section that was created.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the items within the section. Lower numbers appear first.</li></ul>   |
+| **Returns**                                          | <ul><li>section - The new section that was created.</li></ul>            |
 
 #### [generateTable](#generatetable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:generateTable() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Generates a new menu table based on the registered items and sections inside this section.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`table`	- The menu table for this section. See `hs.menubar` for details on the format.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>table</code>  - The menu table for this section. See <code>hs.menubar</code> for details on the format.</li></ul>            |
 
 #### [isDisabled](#isdisabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:isDisabled() -> voolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the disabled status                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the section is disabled, otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the section is disabled, otherwise <code>false</code></li></ul>            |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:new() -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new menu section, which can have items and sub-menus added to it.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">section - The section that was created.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>section - The section that was created.</li></ul>            |
 
 #### [setDisabledFn](#setdisabledfn)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:setDisabledFn(disabledFn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the Disabled Function                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">disabledFn - The disabled function.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>disabledFn - The disabled function.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

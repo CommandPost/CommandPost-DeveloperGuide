@@ -16,6 +16,6 @@ Block.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `value` is an `cp.web.block`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* value		- the value to check</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if it is an HTML block, or `false` otherwise.</li></ul>          |
+| **Parameters**                                       | <ul><li>value     - the value to check</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if it is an HTML block, or <code>false</code> otherwise.</li></ul>            |
 

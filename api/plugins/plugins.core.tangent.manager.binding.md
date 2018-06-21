@@ -20,8 +20,8 @@ Represents a Tangent Binding
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Binding` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* id        - The ID number of the binding.</li><li markdown="1">* name      - The name of the binding.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* the new `binding`.</li></ul>          |
+| **Parameters**                                       | <ul><li>id        - The ID number of the binding.</li></ul><ul><li>name      - The name of the binding.</li></ul>   |
+| **Returns**                                          | <ul><li>the new <code>binding</code>.</li></ul>            |
 
 ### Methods
 
@@ -30,22 +30,22 @@ Represents a Tangent Binding
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a `parameter` as a member of the Binding group. The order is significant                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* param     - The `parameter` to add to the binding.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `binding` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>param     - The <code>parameter</code> to add to the binding.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>binding</code> instance.</li></ul>            |
 
 #### [members](#members)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.binding:members(...) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the list of parameters to this binding.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* ...   - the list of parameters to bind.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `binding` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>...   - the list of parameters to bind.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>binding</code> instance.</li></ul>            |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.binding:xml() -> cp.web.xml` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `xml` configuration for the Binding.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `xml` for the Binding.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>xml</code> for the Binding.</li></ul>            |
 

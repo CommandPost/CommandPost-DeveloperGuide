@@ -18,6 +18,6 @@ or mouse movement.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds an action to the idle queue, which will be run after the the computer has been idle                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `idleSeconds`		- The number of seconds of idle time must have elapsed run the action</li><li markdown="1">* `actionFn`		- The function to execute</li><li markdown="1">* `retryOnError`	- Optional. If set to `true`, the action will try running again if there is an error.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* Nothing</li></ul>          |
+| **Parameters**                                       | <ul><li><code>idleSeconds</code>     - The number of seconds of idle time must have elapsed run the action</li></ul><ul><li><code>actionFn</code>        - The function to execute</li></ul><ul><li><code>retryOnError</code>    - Optional. If set to <code>true</code>, the action will try running again if there is an error.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing</li></ul>            |
 

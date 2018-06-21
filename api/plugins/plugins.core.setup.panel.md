@@ -44,24 +44,24 @@ CommandPost Setup Window Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The number of panels currently being processed in this session.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The number of panels.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The number of panels.</li></ul>            |
 
 #### [panelNumber](#panelnumber)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panelNumber() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The number of the panel currently being viewed.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">the current panel number, or `0` if no panels are registered.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the current panel number, or <code>0</code> if no panels are registered.</li></ul>            |
 
 #### [panelQueue](#panelqueue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panelQueue() -> table of panels` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The table of panels remaining to be processed. Panels are removed from the queue                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The table of panels remaining to be processed.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The table of panels remaining to be processed.</li></ul>            |
 
 ### Constructors
 
@@ -70,7 +70,7 @@ CommandPost Setup Window Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Constructs a new panel with the specified priority and ID.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">priority - Defines the order in which the panel appears.</li><li markdown="1">id       - The unique ID for the panel.</li></ul> |
+| **Parameters**                                       | <ul><li>priority - Defines the order in which the panel appears.</li></ul><ul><li>id       - The unique ID for the panel.</li></ul>   |
 
 ### Methods
 
@@ -79,104 +79,104 @@ CommandPost Setup Window Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a button to the panel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">params - The list of parameters.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The same panel.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The `params` table may contain:</li><li markdown="1"> ** `id`        - (optional) the unique ID for the button. If none is provided, one is generated.</li><li markdown="1"> ** `value`     - The value of the button. This is sent to the `onclick` function.</li><li markdown="1"> ** `label`     - The text label for the button. Defaults to the `value` if not provided.</li><li markdown="1"> ** `width`     - The width of the button in pixels.</li><li markdown="1"> ** `onclick`   - the function to execute when the button is clicked. The function should have the signature of `function(id, value)`, where `id` is the id of the button that was clicked, and `value` is the value of the button.</li></ul>                |
+| **Parameters**                                       | <ul><li>params - The list of parameters.</li></ul>   |
+| **Returns**                                          | <ul><li>The same panel.</li></ul>            |
+| **Notes**                                            | <ul><li>The <code>params</code> table may contain:</li></ul><p>** <code>id</code>        - (optional) the unique ID for the button. If none is provided, one is generated.</p><p>** <code>value</code>     - The value of the button. This is sent to the <code>onclick</code> function.</p><p>** <code>label</code>     - The text label for the button. Defaults to the <code>value</code> if not provided.</p><p>** <code>width</code>     - The width of the button in pixels.</p><p>** <code>onclick</code>   - the function to execute when the button is clicked. The function should have the signature of <code>function(id, value)</code>, where <code>id</code> is the id of the button that was clicked, and <code>value</code> is the value of the button.</p>                 |
 
 #### [addCheckbox](#addcheckbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addCheckbox(params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a checkbox to the panel with the specified `priority` and `params`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`   - The priority number for the checkbox.</li><li markdown="1">`params`     - The set of parameters for the checkbox.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
-| **Notes**                                            | <ul markdown="1"><li markdown="1">The `params` can contain the following fields:</li><li markdown="1"> ** `id`        - (optional) The unique ID. If none is provided, one will be generated.</li><li markdown="1"> ** `name`      - (optional) The name of the checkbox field.</li><li markdown="1"> ** `label`     - (optional) The text label to display after the checkbox.</li><li markdown="1"> ** `onchange`  - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox.</li><li markdown="1"> ** `class`     - (optional) the CSS class list to apply to the checkbox.</li></ul>                |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the checkbox.</li></ul><ul><li><code>params</code>     - The set of parameters for the checkbox.</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
+| **Notes**                                            | <ul><li>The <code>params</code> can contain the following fields:</li></ul><p>** <code>id</code>        - (optional) The unique ID. If none is provided, one will be generated.</p><p>** <code>name</code>      - (optional) The name of the checkbox field.</p><p>** <code>label</code>     - (optional) The text label to display after the checkbox.</p><p>** <code>onchange</code>  - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, <code>id</code> and <code>params</code>, the latter of which is a table containing the <code>value</code> and <code>checked</code> values of the checkbox.</p><p>** <code>class</code>     - (optional) the CSS class list to apply to the checkbox.</p>                 |
 
 #### [addContent](#addcontent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addContent(content[, escaped]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified `content` to the panel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `content` - a value that can be converted to a string.</li><li markdown="1">* `escaped` - if `true`, the content will not be escaped. Defaults to true.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>content</code> - a value that can be converted to a string.</li></ul><ul><li><code>escaped</code> - if <code>true</code>, the content will not be escaped. Defaults to true.</li></ul>   |
+| **Returns**                                          | <ul><li>The panel.</li></ul>            |
 
 #### [addFooter](#addfooter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addFooter(content, unescaped) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified `content` to the panel's footer.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `content` - a value that can be converted to a string.</li><li markdown="1">* `unescaped` - if `true`, the content will not be escaped. Defaults to true.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>content</code> - a value that can be converted to a string.</li></ul><ul><li><code>unescaped</code> - if <code>true</code>, the content will not be escaped. Defaults to true.</li></ul>   |
+| **Returns**                                          | <ul><li>The panel.</li></ul>            |
 
 #### [addHandler](#addhandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addHandler(event, id, handlerFn, keys) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a handler from an Handler ID                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">event - The event</li><li markdown="1">id - the Handler ID</li><li markdown="1">handlerFn - The Handler function</li><li markdown="1">keys - Keys</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>event - The event</li></ul><ul><li>id - the Handler ID</li></ul><ul><li>handlerFn - The Handler function</li></ul><ul><li>keys - Keys</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [addHeading](#addheading)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addHeading(text) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a heading to the panel                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">text - The text of the heading as a string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
+| **Parameters**                                       | <ul><li>text - The text of the heading as a string</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
 
 #### [addIcon](#addicon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addIcon(src) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an icon to the panel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">src - Location of the icon.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
+| **Parameters**                                       | <ul><li>src - Location of the icon.</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
 
 #### [addParagraph](#addparagraph)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addParagraph(content[, escaped[, class]]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a Paragraph to the panel                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">content - The content as a string</li><li markdown="1">escaped - Whether or not the HTML should be escaped as a boolean</li><li markdown="1">class - The class as a string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
+| **Parameters**                                       | <ul><li>content - The content as a string</li></ul><ul><li>escaped - Whether or not the HTML should be escaped as a boolean</li></ul><ul><li>class - The class as a string</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
 
 #### [addPassword](#addpassword)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addPassword(params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a password text-box to the panel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">params - A table of parameters</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
+| **Parameters**                                       | <ul><li>params - A table of parameters</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
 
 #### [addSelect](#addselect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addSelect(params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a select to the panel.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">params - A table of parameters</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
+| **Parameters**                                       | <ul><li>params - A table of parameters</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
 
 #### [addSubHeading](#addsubheading)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addSubHeading(text) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a sub-heading to the panel                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">text - The text of the sub-heading as a string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
+| **Parameters**                                       | <ul><li>text - The text of the sub-heading as a string</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
 
 #### [addTextbox](#addtextbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:addTextbox(params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a text-box to the panel                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">params - A table of parameters</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
+| **Parameters**                                       | <ul><li>params - A table of parameters</li></ul>   |
+| **Returns**                                          | <ul><li>The panel object.</li></ul>            |
 
 #### [getHandler](#gethandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.panel:getHandler(id) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a handler from an Handler ID                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `id` - the Handler ID</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* A handler.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>id</code> - the Handler ID</li></ul>   |
+| **Returns**                                          | <ul><li>A handler.</li></ul>            |
 

@@ -17,14 +17,14 @@ Controls Final Cut Pro's Transitions.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the Module                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Module</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The Module</li></ul>            |
 
 #### [transitions](#transitions)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.transitions(action) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies the specified action as a transition. Expects action to be a table with the following structure:                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`action`     - A table with the name/category/theme for the transition to apply, or a string with just the name.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if a matching transition was found and applied to the timeline.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>action</code>     - A table with the name/category/theme for the transition to apply, or a string with just the name.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if a matching transition was found and applied to the timeline.</li></ul>            |
 

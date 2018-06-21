@@ -90,144 +90,144 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the active group.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Returns the active group or `manager.defaultGroup` as a string.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Returns the active group or <code>manager.defaultGroup</code> as a string.</li></ul>            |
 
 #### [activeSubGroup](#activesubgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.activeSubGroup() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the active sub-group.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Returns the active sub group as string</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Returns the active sub group as string</li></ul>            |
 
 #### [clear](#clear)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.clear() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Clears the Touch Bar items.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [getAction](#getaction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getAction(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Touch Bar Action.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Action as string</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul>   |
+| **Returns**                                          | <ul><li>Action as string</li></ul>            |
 
 #### [getActionHandlerID](#getactionhandlerid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getActionHandlerID(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Touch Bar Action Handler ID.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Action as string</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul>   |
+| **Returns**                                          | <ul><li>Action as string</li></ul>            |
 
 #### [getActionTitle](#getactiontitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getActionTitle(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Touch Bar Action Title.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Action as string</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul>   |
+| **Returns**                                          | <ul><li>Action as string</li></ul>            |
 
 #### [getIcon](#geticon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getIcon(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Touch Bar Icon.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Icon data as string</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul>   |
+| **Returns**                                          | <ul><li>Icon data as string</li></ul>            |
 
 #### [getLabel](#getlabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getLabel(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Touch Bar Label.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Label as string</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul>   |
+| **Returns**                                          | <ul><li>Label as string</li></ul>            |
 
 #### [groupStatus](#groupstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.groupStatus(groupID, status) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a group's visibility status.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">groupID - the group you want to update as a string.</li><li markdown="1">status - the status of the group as a boolean.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string.</li></ul><ul><li>status - the status of the group as a boolean.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [incrementActiveSubGroup](#incrementactivesubgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.incrementActiveSubGroup() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Increments the active sub-group                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.start() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Starts the CommandPost Touch Bar module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.stop() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stops the CommandPost Touch Bar module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [toggle](#toggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.toggle() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles the CommandPost Touch Bar module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [touchBar](#touchbar)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.touchBar() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the `hs._asm.undocumented.touchbar` object if it exists.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`hs._asm.undocumented.touchbar`</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>hs._asm.undocumented.touchbar</code></li></ul>            |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Touch Bar.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [updateAction](#updateaction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateAction(button, group, action) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a Touch Bar action.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li><li markdown="1">action - Action as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul><ul><li>action - Action as string</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [updateIcon](#updateicon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateIcon(button, group, icon) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a Touch Bar icon.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li><li markdown="1">icon - Icon Data as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul><ul><li>icon - Icon Data as string</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [updateLabel](#updatelabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateLabel(button, group, label) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a Touch Bar action.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li><li markdown="1">label - Label as string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li></ul><ul><li>group - Group ID as string</li></ul><ul><li>label - Label as string</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 ### Fields
 

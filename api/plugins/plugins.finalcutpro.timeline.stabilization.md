@@ -16,6 +16,6 @@ Stabilization Shortcut
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enables or disables Stabilisation.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - `true` to enable, `false` to disable, `nil` to toggle.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>value - <code>true</code> to enable, <code>false</code> to disable, <code>nil</code> to toggle.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 

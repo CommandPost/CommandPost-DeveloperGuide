@@ -27,16 +27,16 @@ Requires Final Cut Pro 10.4 or later.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - An `axuielementObject` to check.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
+| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar.new(parent) -> CorrectionsBar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new Media Import object.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent - The parent object.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A new CorrectionsBar object.</li></ul>          |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul>   |
+| **Returns**                                          | <ul><li>A new CorrectionsBar object.</li></ul>            |
 
 ### Methods
 
@@ -45,54 +45,54 @@ Requires Final Cut Pro 10.4 or later.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Activates a correction type.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`correctionType` - The correction type as string.</li><li markdown="1">`number` - The number of the correction.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1"> `cp.apple.finalcutpro.inspector.color.CorrectionsBar` object.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>correctionType</code> - The correction type as string.</li></ul><ul><li><code>number</code> - The number of the correction.</li></ul>   |
+| **Returns**                                          | <ul><li><code>cp.apple.finalcutpro.inspector.color.CorrectionsBar</code> object.</li></ul>            |
 
 #### [add](#add)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:add(correctionType) -> cp.apple.finalcutpro.inspector.color.CorrectionsBar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specific correction type.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`correctionType` - The correction type as string.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1"> `cp.apple.finalcutpro.inspector.color.CorrectionsBar` object.</li></ul>          |
+| **Parameters**                                       | <ul><li><code>correctionType</code> - The correction type as string.</li></ul>   |
+| **Returns**                                          | <ul><li><code>cp.apple.finalcutpro.inspector.color.CorrectionsBar</code> object.</li></ul>            |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul>            |
 
 #### [findCorrectionLabel](#findcorrectionlabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:findCorrectionLabel(correctionType) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns Correction Label.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">correctionType - The correction type as string.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The correction label as string.</li></ul>          |
+| **Parameters**                                       | <ul><li>correctionType - The correction type as string.</li></ul>   |
+| **Returns**                                          | <ul><li>The correction label as string.</li></ul>            |
 
 #### [menuButton](#menubutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:menuButton() -> MenuButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the menu button.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A `menuButton` object.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A <code>menuButton</code> object.</li></ul>            |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Corrections Bar's parent table                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:show() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Attempts to show the bar.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `CorrectionsBar` instance.</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>CorrectionsBar</code> instance.</li></ul>            |
 

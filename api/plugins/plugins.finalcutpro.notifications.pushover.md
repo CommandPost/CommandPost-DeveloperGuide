@@ -24,32 +24,32 @@ Pushover Notifications Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the plugin.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [sendNotification](#sendnotification)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.pushover.sendNotification(message, [title]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sends a notification.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">message - The message you want to send as a string.</li><li markdown="1">[title] - An optional Title for the message as a string.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">success - `true` if successful otherwise `false`</li><li markdown="1">errorMessage - a string containing any error messages</li></ul>          |
+| **Parameters**                                       | <ul><li>message - The message you want to send as a string.</li></ul><ul><li>[title] - An optional Title for the message as a string.</li></ul>   |
+| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code></li></ul><ul><li>errorMessage - a string containing any error messages</li></ul>            |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.pushover.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enables or disables Pushover Notifications depending on the user's preferences.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [validateAPIKeys](#validateapikeys)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.pushover.validateAPIKeys(userKey, appKey) -> success, errorMessage` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Validates a Pushover User & Application API Key                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">userKey - The User API Key as a string</li><li markdown="1">appKey - The Application API Key as a string</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">success - `true` if successful otherwise `false`</li><li markdown="1">errorMessage - a string containing any error messages</li></ul>          |
+| **Parameters**                                       | <ul><li>userKey - The User API Key as a string</li></ul><ul><li>appKey - The Application API Key as a string</li></ul>   |
+| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code></li></ul><ul><li>errorMessage - a string containing any error messages</li></ul>            |
 
 ### Fields
 

@@ -37,48 +37,48 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves the `bundleID` associated with the `cp.app.prefs` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">prefs     - the `prefs` object to query</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The Bundle ID string, or `nil` if it's not a `cp.app.prefs`.</li></ul>          |
+| **Parameters**                                       | <ul><li>prefs     - the <code>prefs</code> object to query</li></ul>   |
+| **Returns**                                          | <ul><li>The Bundle ID string, or <code>nil</code> if it's not a <code>cp.app.prefs</code>.</li></ul>            |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.get(prefs, key[, defaultValue])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves the specifed `key` from the provided `prefs`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* prefs         - The `prefs` instance.</li><li markdown="1">* key           - The key to retrieve.</li><li markdown="1">* defaultValue  - The value to return if none is currentl set.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The current value, or `defaultValue` if not set.</li></ul>          |
+| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.</li></ul><ul><li>key           - The key to retrieve.</li></ul><ul><li>defaultValue  - The value to return if none is currentl set.</li></ul>   |
+| **Returns**                                          | <ul><li>The current value, or <code>defaultValue</code> if not set.</li></ul>            |
 
 #### [is](#is)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.is(thing) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `thing` is a `cp.app.prefs` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">thing     - The value to check</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if if's a `prefs`, otherwise `false`.</li></ul>          |
+| **Parameters**                                       | <ul><li>thing     - The value to check</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if if's a <code>prefs</code>, otherwise <code>false</code>.</li></ul>            |
 
 #### [prop](#prop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.prop(prefs, key[, defaultValue]) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves the `cp.prop` for the specified key. It can be `watched` for changes.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* prefs         - The `prefs` instance.</li><li markdown="1">* key           - The key to get/set.</li><li markdown="1">* defaultValue  - The value if no default values is currently set.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.prop` for the key.</li></ul>          |
+| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.</li></ul><ul><li>key           - The key to get/set.</li></ul><ul><li>defaultValue  - The value if no default values is currently set.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> for the key.</li></ul>            |
 
 #### [set](#set)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.set(prefs, key, value) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the key/value for the specified `prefs` instance.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">* prefs     - The `prefs` instance.</li><li markdown="1">* key       - The key to set.</li><li markdown="1">* value     - the new value.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">* Nothing.</li></ul>          |
+| **Parameters**                                       | <ul><li>prefs     - The <code>prefs</code> instance.</li></ul><ul><li>key       - The key to set.</li></ul><ul><li>value     - the new value.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
 
 #### [watch](#watch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.watch(prefs, watchFn) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a watch function which will be notified when the preferences change.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">prefs     - The `prefs` instance to watch.</li><li markdown="1">watchFn   - The function that will get called.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">Nothing</li></ul>          |
+| **Parameters**                                       | <ul><li>prefs     - The <code>prefs</code> instance to watch.</li></ul><ul><li>watchFn   - The function that will get called.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing</li></ul>            |
 
 ### Constructors
 
@@ -87,6 +87,6 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `cp.app.prefs` instance, pointing at the specified `bundleID`.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">bundleID      The Bundle ID to access preferences for.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `cp.app.prefs` with read/write access to the application's preferences.</li></ul>          |
+| **Parameters**                                       | <ul><li>bundleID      The Bundle ID to access preferences for.</li></ul>   |
+| **Returns**                                          | <ul><li>A new <code>cp.app.prefs</code> with read/write access to the application's preferences.</li></ul>            |
 

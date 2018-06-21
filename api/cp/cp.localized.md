@@ -16,6 +16,6 @@ Helps look up localized names for folders.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the localized name for the `path` in the specified `locale`. If all else fails, the                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`path`			- The full path to the folder</li><li markdown="1">`locale`		    - The locale to retrieve the name for.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The localized name, or `name` if not available.</li><li markdown="1">The original name, minus `.localized`</li></ul>          |
+| **Parameters**                                       | <ul><li><code>path</code>           - The full path to the folder</li></ul><ul><li><code>locale</code>         - The locale to retrieve the name for.</li></ul>   |
+| **Returns**                                          | <ul><li>The localized name, or <code>name</code> if not available.</li></ul><ul><li>The original name, minus <code>.localized</code></li></ul>            |
 

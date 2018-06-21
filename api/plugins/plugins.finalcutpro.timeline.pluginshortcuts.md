@@ -30,38 +30,38 @@ Controls for Final Cut Pro's Plugin Shortcuts (for use with Hack Shortcuts).
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies a shortcut.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`handlerId`      - The action handler ID.</li><li markdown="1">`shortcutNumber` - The shortcut number, between 1 and 5, which is being assigned.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [assignShortcut](#assignshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.assignShortcut(shortcutNumber, handlerId) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Asks the user to assign the specified video effect shortcut number to a selected effect.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`handlerId`      - The action handler ID.</li><li markdown="1">`shortcutNumber` - The shortcut number, between 1 and 5, which is being assigned.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
 #### [getShortcut](#getshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.getShortcut(handlerId, shortcutNumber) -> shortcut` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a shortcut.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`handlerId`      - The action handler ID.</li><li markdown="1">`shortcutNumber` - The shortcut number, between 1 and 5, which is being assigned.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The shortcut</li></ul>          |
+| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
+| **Returns**                                          | <ul><li>The shortcut</li></ul>            |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.init(handlerId, action, shortcutNumber) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`deps` - Dependancies</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">The module</li></ul>          |
+| **Parameters**                                       | <ul><li><code>deps</code> - Dependancies</li></ul>   |
+| **Returns**                                          | <ul><li>The module</li></ul>            |
 
 #### [setShortcut](#setshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.setShortcut(handlerId, action, shortcutNumber) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets a shortcut.                                                                                         |
-| **Parameters**                                       | <ul markdown="1"><li markdown="1">`handlerId`      - The action handler ID.</li><li markdown="1">`action`         - The action.</li><li markdown="1">`shortcutNumber` - The shortcut number, between 1 and 5, which is being assigned.</li></ul> |
-| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>action</code>         - The action.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
 
