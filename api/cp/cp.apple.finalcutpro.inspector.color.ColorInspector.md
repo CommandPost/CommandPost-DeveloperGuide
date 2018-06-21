@@ -45,8 +45,8 @@ Color Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the specified element is the Color Inspector element.                                                                                         |
-| **Parameters**                                       | * element   - The element to check                                       |
-| **Returns**                                          | * `true` if the element is the Color Inspector.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* element   - The element to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if the element is the Color Inspector.</li></ul>          |
 
 ### Fields
 
@@ -87,94 +87,94 @@ Color Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Activates the named correction type and number, if present. If no corrector with the type/number combination exists, a new one is added.                                                                                         |
-| **Parameters**                                       |  * correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc. * number           - The correction number for that type. Defaults to `1`.                                       |
-| **Returns**                                          |  * ColorInspector object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li><li markdown="1">number           - The correction number for that type. Defaults to `1`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorInspector object</li></ul>          |
 
 #### [addCorrection](#addcorrection)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:addCorrection(correctionType) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the named correction type.                                                                                         |
-| **Parameters**                                       |  * correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.                                       |
-| **Returns**                                          |  * ColorInspector object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorInspector object</li></ul>          |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The application object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
 
 #### [colorBoard](#colorboard)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:colorBoard() -> ColorBoard` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the ColorBoard object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A new ColorBoard object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new ColorBoard object</li></ul>          |
 
 #### [colorCurves](#colorcurves)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:colorCurves() -> ColorCurves` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the ColorCurves object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A new ColorCurves object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new ColorCurves object</li></ul>          |
 
 #### [colorWheels](#colorwheels)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:colorWheels() -> ColorWheels` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the ColorWheels object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A new ColorWheels object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new ColorWheels object</li></ul>          |
 
 #### [corrections](#corrections)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:corrections() -> CorrectionsBar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `CorrectionsBar` instance representing the available corrections,                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `CorrectionsBar` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `CorrectionsBar` instance.</li></ul>          |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:hide() -> ColorInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the Color Inspector                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * ColorInspector object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorInspector object</li></ul>          |
 
 #### [hueSaturationCurves](#huesaturationcurves)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:hueSaturationCurves() -> HueSaturationCurves` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the HueSaturationCurves object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A new HueSaturationCurves object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new HueSaturationCurves object</li></ul>          |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.new(parent) -> ColorInspector object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new ColorInspector object                                                                                         |
-| **Parameters**                                       |  * `parent`     - The parent                                       |
-| **Returns**                                          |  * A ColorInspector object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A ColorInspector object</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ColorInspector's parent table.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The parent object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:show() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Color Inspector.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * ColorInspector object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorInspector object</li></ul>          |
 

@@ -42,30 +42,30 @@ local externalDrives = battery.devices({physical = true, ejectable = true})
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unmounts and ejects (where appropriate) all disks matching the provided `options`.                                                                                         |
-| **Parameters**                                       | * options   - The table of filter options.                                       |
-| **Returns**                                          | * Nothing.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* options   - The table of filter options.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* Nothing.</li></ul>          |
 
 #### [mount](#mount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.mount(options) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Mounts all disks matching the provided `options`.                                                                                         |
-| **Parameters**                                       | * options   - The table of filter options.                                       |
-| **Returns**                                          | * Nothing.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* options   - The table of filter options.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* Nothing.</li></ul>          |
 
 #### [unmount](#unmount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.unmount(options) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unmounts all disks matching the provided `options`.                                                                                         |
-| **Parameters**                                       | * options   - The table of filter options.                                       |
-| **Returns**                                          | * Nothing.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* options   - The table of filter options.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* Nothing.</li></ul>          |
 
 #### [visit](#visit)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.visit(options, fn) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Visits all drives matching the `options` and executes the                                                                                         |
-| **Parameters**                                       | * options   - The table of filter options.* fn        - The function to execute.                                       |
-| **Returns**                                          | * Nothing.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* options   - The table of filter options.</li><li markdown="1">* fn        - The function to execute.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* Nothing.</li></ul>          |
 

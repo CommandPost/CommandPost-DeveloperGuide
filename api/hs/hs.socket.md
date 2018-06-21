@@ -102,9 +102,9 @@ The document has moved
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Parses a binary socket address structure into a readable table                                                                                         |
-| **Parameters**                                       |  * sockaddr - A binary socket address structure, usually obtained from the [`info`](#info) method or in [`hs.socket.udp`](./hs.socket.udp.html)'s [read callback](./hs.socket.udp.html#setCallback)                                       |
-| **Returns**                                          |  * A table describing the address with the following keys or `nil`:  * host - A string containing the host IP  * port - A number containing the port  * addressFamily - A number containing the address family                                                |
-| **Notes**                                            |  * Some address family definitions from `<sys/socket.h>`:                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">sockaddr - A binary socket address structure, usually obtained from the [`info`](#info) method or in [`hs.socket.udp`](./hs.socket.udp.html)'s [read callback](./hs.socket.udp.html#setCallback)</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A table describing the address with the following keys or `nil`:</li><li markdown="1"> host - A string containing the host IP</li><li markdown="1"> port - A number containing the port</li><li markdown="1"> addressFamily - A number containing the address family</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Some address family definitions from `<sys/socket.h>`:</li></ul>                |
 
 ### Constructors
 
@@ -113,16 +113,16 @@ The document has moved
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates an unconnected asynchronous TCP socket object                                                                                         |
-| **Parameters**                                       |  * fn - An optional [callback function](#setCallback) for reading data from the socket, settable here for convenience                                       |
-| **Returns**                                          |  * An [`hs.socket`](#new) object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">fn - An optional [callback function](#setCallback) for reading data from the socket, settable here for convenience</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An [`hs.socket`](#new) object</li></ul>          |
 
 #### [server](#server)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.server(port|path[, fn]) -> hs.socket object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates and binds an [`hs.socket`](#new) instance to a port or path (Unix domain socket) for listening                                                                                         |
-| **Parameters**                                       |  * port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port * path - A string containing the path to the Unix domain socket * fn - An optional [callback function](#setCallback) for reading data from the socket, settable here for convenience                                       |
-| **Returns**                                          |  * An [`hs.socket`](#new) object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port</li><li markdown="1">path - A string containing the path to the Unix domain socket</li><li markdown="1">fn - An optional [callback function](#setCallback) for reading data from the socket, settable here for convenience</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An [`hs.socket`](#new) object</li></ul>          |
 
 ### Methods
 
@@ -131,59 +131,59 @@ The document has moved
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Connects an unconnected [`hs.socket`](#new) instance                                                                                         |
-| **Parameters**                                       |  * host - A string containing the hostname or IP address * port - A port number [1-65535] * path - A string containing the path to the Unix domain socket * fn - An optional single-use callback function to execute after establishing the connection. Receives no parameters                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object or `nil` if an error occurred                                                |
-| **Notes**                                            |  * Either a host/port pair OR a Unix domain socket path must be supplied. If no port is passed, the first param is assumed to be a path to the socket file                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">host - A string containing the hostname or IP address</li><li markdown="1">port - A port number [1-65535]</li><li markdown="1">path - A string containing the path to the Unix domain socket</li><li markdown="1">fn - An optional single-use callback function to execute after establishing the connection. Receives no parameters</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object or `nil` if an error occurred</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Either a host/port pair OR a Unix domain socket path must be supplied. If no port is passed, the first param is assumed to be a path to the socket file</li></ul>                |
 
 #### [connected](#connected)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:connected() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the connection status of the [`hs.socket`](#new) instance                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` if connected, otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if connected, otherwise `false`</li></ul>          |
 
 #### [connections](#connections)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:connections() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the number of connections to the socket, which is at most 1 for default (non-listening) sockets                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The number of connections to the socket                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The number of connections to the socket</li></ul>          |
 
 #### [disconnect](#disconnect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:disconnect() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Disconnects the [`hs.socket`](#new) instance, freeing it for reuse                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object                                                |
-| **Notes**                                            |  * If called on a listening socket with multiple connections, each client is disconnected                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">If called on a listening socket with multiple connections, each client is disconnected</li></ul>                |
 
 #### [info](#info)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:info() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns information on the [`hs.socket`](#new) instance                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A table containing the following keys:  * connectedAddress - `string` (`sockaddr` struct)  * connectedHost - `string`  * connectedPort - `number`  * connectedURL - `string`  * connections - `number`  * isConnected - `boolean`  * isDisconnected - `boolean`  * isIPv4 - `boolean`  * isIPv4Enabled - `boolean`  * isIPv4PreferredOverIPv6 - `boolean`  * isIPv6 - `boolean`  * isIPv6Enabled - `boolean`  * isSecure - `boolean`  * localAddress - `string` (`sockaddr` struct)  * localHost - `string`  * localPort - `number`  * timeout - `number`  * unixSocketPath - `string`  * userData - `string`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A table containing the following keys:</li><li markdown="1"> connectedAddress - `string` (`sockaddr` struct)</li><li markdown="1"> connectedHost - `string`</li><li markdown="1"> connectedPort - `number`</li><li markdown="1"> connectedURL - `string`</li><li markdown="1"> connections - `number`</li><li markdown="1"> isConnected - `boolean`</li><li markdown="1"> isDisconnected - `boolean`</li><li markdown="1"> isIPv4 - `boolean`</li><li markdown="1"> isIPv4Enabled - `boolean`</li><li markdown="1"> isIPv4PreferredOverIPv6 - `boolean`</li><li markdown="1"> isIPv6 - `boolean`</li><li markdown="1"> isIPv6Enabled - `boolean`</li><li markdown="1"> isSecure - `boolean`</li><li markdown="1"> localAddress - `string` (`sockaddr` struct)</li><li markdown="1"> localHost - `string`</li><li markdown="1"> localPort - `number`</li><li markdown="1"> timeout - `number`</li><li markdown="1"> unixSocketPath - `string`</li><li markdown="1"> userData - `string`</li></ul>          |
 
 #### [listen](#listen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:listen(port|path) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Binds an unconnected [`hs.socket`](#new) instance to a port or path (Unix domain socket) for listening                                                                                         |
-| **Parameters**                                       |  * port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port * path - A string containing the path to the Unix domain socket                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object or `nil` if an error occurred                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port</li><li markdown="1">path - A string containing the path to the Unix domain socket</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object or `nil` if an error occurred</li></ul>          |
 
 #### [read](#read)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:read(delimiter[, tag]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Read data from the socket. Results are passed to the [callback function](#setCallback), which must be set to use this method                                                                                         |
-| **Parameters**                                       |  * delimiter - Either a number of bytes to read, or a string delimiter such as "&#92;n" or "&#92;r&#92;n". Data is read up to and including the delimiter * tag - An optional integer to assist with labeling reads. It is passed to the callback to assist with implementing [state machines](https://github.com/robbiehanson/CocoaAsyncSocket/wiki/Intro_GCDAsyncSocket#reading--writing) for processing complex protocols                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object or `nil` if an error occured                                                |
-| **Notes**                                            |  * If called on a listening socket with multiple connections, data is read from each of them                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">delimiter - Either a number of bytes to read, or a string delimiter such as "&#92;n" or "&#92;r&#92;n". Data is read up to and including the delimiter</li><li markdown="1">tag - An optional integer to assist with labeling reads. It is passed to the callback to assist with implementing [state machines](https://github.com/robbiehanson/CocoaAsyncSocket/wiki/Intro_GCDAsyncSocket#reading--writing) for processing complex protocols</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object or `nil` if an error occured</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">If called on a listening socket with multiple connections, data is read from each of them</li></ul>                |
 
 #### [receive](#receive)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:receive(delimiter[, tag]) -> self` </span>                                                          |
@@ -202,32 +202,32 @@ The document has moved
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the read callback for the [`hs.socket`](#new) instance. Must be set to read data from the socket                                                                                         |
-| **Parameters**                                       |  * fn - An optional callback function to process data read from the socket. `nil` or no argument clears the callback                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">fn - An optional callback function to process data read from the socket. `nil` or no argument clears the callback</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object</li></ul>          |
 
 #### [setTimeout](#settimeout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:setTimeout(timeout) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the timeout for the socket operations. If the timeout value is negative, the operations will not use a timeout, which is the default                                                                                         |
-| **Parameters**                                       |  * timeout - A number containing the timeout duration, in seconds                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">timeout - A number containing the timeout duration, in seconds</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object</li></ul>          |
 
 #### [startTLS](#starttls)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:startTLS([verify][, peerName]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Secures the socket with TLS. The socket will disconnect immediately if TLS negotiation fails                                                                                         |
-| **Parameters**                                       |  * verify - An optional boolean that, if `false`, allows TLS handshaking with servers with self-signed certificates and does not evaluate the chain of trust. Defaults to `true` and omitted if `peerName` is supplied * peerName - An optional string containing the fully qualified domain name of the peer to validate against — for example, `store.apple.com`. It should match the name in the X.509 certificate given by the remote party. See notes below                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object                                                |
-| **Notes**                                            | * IMPORTANT SECURITY NOTE:The default settings will check to make sure the remote party's certificate is signed by atrusted 3rd party certificate agency (e.g. verisign) and that the certificate is not expired.However it will not verify the name on the certificate unless yougive it a name to verify against via `peerName`.The security implications of this are important to understand.Imagine you are attempting to create a secure connection to MySecureServer.com,but your socket gets directed to MaliciousServer.com because of a hacked DNS server.If you simply use the default settings, and MaliciousServer.com has a valid certificate,the default settings will not detect any problems since the certificate is valid.To properly secure your connection in this particular scenario youshould set `peerName` to "MySecureServer.com".                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">verify - An optional boolean that, if `false`, allows TLS handshaking with servers with self-signed certificates and does not evaluate the chain of trust. Defaults to `true` and omitted if `peerName` is supplied</li><li markdown="1">peerName - An optional string containing the fully qualified domain name of the peer to validate against — for example, `store.apple.com`. It should match the name in the X.509 certificate given by the remote party. See notes below</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">* IMPORTANT SECURITY NOTE:</li><li markdown="1">The default settings will check to make sure the remote party's certificate is signed by a</li><li markdown="1">trusted 3rd party certificate agency (e.g. verisign) and that the certificate is not expired.</li><li markdown="1">However it will not verify the name on the certificate unless you</li><li markdown="1">give it a name to verify against via `peerName`.</li><li markdown="1">The security implications of this are important to understand.</li><li markdown="1">Imagine you are attempting to create a secure connection to MySecureServer.com,</li><li markdown="1">but your socket gets directed to MaliciousServer.com because of a hacked DNS server.</li><li markdown="1">If you simply use the default settings, and MaliciousServer.com has a valid certificate,</li><li markdown="1">the default settings will not detect any problems since the certificate is valid.</li><li markdown="1">To properly secure your connection in this particular scenario you</li><li markdown="1">should set `peerName` to "MySecureServer.com".</li></ul>                |
 
 #### [write](#write)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket:write(message[, tag][, fn]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Write data to the socket                                                                                         |
-| **Parameters**                                       |  * message - A string containing data to be sent on the socket * tag - An optional integer to assist with labeling writes * fn - An optional single-use callback function to execute after writing data to the socket. Receives the tag parameter                                       |
-| **Returns**                                          |  * The [`hs.socket`](#new) object                                                |
-| **Notes**                                            |  * If called on a listening socket with multiple connections, data is broadcasted to all connected sockets                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">message - A string containing data to be sent on the socket</li><li markdown="1">tag - An optional integer to assist with labeling writes</li><li markdown="1">fn - An optional single-use callback function to execute after writing data to the socket. Receives the tag parameter</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The [`hs.socket`](#new) object</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">If called on a listening socket with multiple connections, data is broadcasted to all connected sockets</li></ul>                |
 

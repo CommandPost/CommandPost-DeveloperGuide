@@ -16,6 +16,6 @@ Move To Playhead.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Move to Playhead                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` if successful otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`</li></ul>          |
 

@@ -73,8 +73,8 @@ Color Puck Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       |  * element - An `axuielementObject` to check.                                       |
-| **Returns**                                          |  * `true` if matches otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - An `axuielementObject` to check.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
 
 ### Constructors
 
@@ -83,8 +83,8 @@ Color Puck Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `ColorPuck` object                                                                                         |
-| **Parameters**                                       |  * `parent`     - The parent * `puckNumber` - The puck number * `labelKeys`  - Label Keys * `hasAngle`   - If `true`, the puck has an `angle` parameter.                                       |
-| **Returns**                                          |  * A ColorInspector object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`     - The parent</li><li markdown="1">`puckNumber` - The puck number</li><li markdown="1">`labelKeys`  - Label Keys</li><li markdown="1">`hasAngle`   - If `true`, the puck has an `angle` parameter.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A ColorInspector object</li></ul>          |
 
 ### Fields
 
@@ -101,166 +101,166 @@ Color Puck Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Accumulate's the Shift Values.                                                                                         |
-| **Parameters**                                       | * `xShift` - `x` value as number* `yShift` - `y` value as number                                       |
-| **Returns**                                          | * `x` - Accumulated `x` value as number* `y` - Accumulated `y` value as number                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `xShift` - `x` value as number</li><li markdown="1">* `yShift` - `y` value as number</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `x` - Accumulated `x` value as number</li><li markdown="1">* `y` - Accumulated `y` value as number</li></ul>          |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:app() -> App` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the App instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * App                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
 
 #### [cleanup](#cleanup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:cleanup() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Cleans up the Color Puck drawings.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* None</li></ul>          |
 
 #### [colorMarker](#colormarker)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:colorMarker(pct, angle) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Draws a Color Marker.                                                                                         |
-| **Parameters**                                       |  * pct - Percentage                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">pct - Percentage</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:contentUI() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Content Accessibility Object                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * An `axuielementObject` or `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An `axuielementObject` or `nil`</li></ul>          |
 
 #### [drawMarker](#drawmarker)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:drawMarker() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Draws a marker.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [getArc](#getarc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:getArc() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the arc value.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The arc value as number.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The arc value as number.</li></ul>          |
 
 #### [getBrightness](#getbrightness)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:getBrightness() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the brightness value.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The brightness value as number.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The brightness value as number.</li></ul>          |
 
 #### [hasAngle](#hasangle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:hasAngle() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Indicates if the puck has an `angle` parameter. The `angle` `cp.prop` will always                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `true` if the puck has an `angle`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if the puck has an `angle`.</li></ul>          |
 
 #### [index](#index)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:index() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the puck number (1 through 4).                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The puck number.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The puck number.</li></ul>          |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:isShowing() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets whether or not the Color Puck is showing.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` if showing or `false` if not.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if showing or `false` if not.</li></ul>          |
 
 #### [loop](#loop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:loop() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Loops the Color Puck function.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* None</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:parent() -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Parent object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The parent object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object.</li></ul>          |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:reset() -> cp.apple.finalcutpro.inspector.color.ColorPuck` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resets the puck to its default settings.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `ColorPuck` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorPuck` instance.</li></ul>          |
 
 #### [select](#select)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:select() -> cp.apple.finalcutpro.inspector.color.ColorPuck` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects this puck.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `ColorPuck` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `ColorPuck` instance.</li></ul>          |
 
 #### [shiftAngle](#shiftangle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:shiftAngle(amount) -> cp.apple.finalcutpro.inspector.color.ColorPuck` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shifts the angle value by the provide amount.                                                                                         |
-| **Parameters**                                       | * amount - The amount to shift the angle value.                                       |
-| **Returns**                                          | * The `ColorPuck` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* amount - The amount to shift the angle value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorPuck` instance.</li></ul>          |
 
 #### [shiftPercent](#shiftpercent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:shiftPercent(amount) -> cp.apple.finalcutpro.inspector.color.ColorPuck` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shifts the percent value by the provide amount.                                                                                         |
-| **Parameters**                                       |  * `amount` - The amount to shift the percent value.                                       |
-| **Returns**                                          |  * The updated value.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`amount` - The amount to shift the percent value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The updated value.</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:show() -> cp.apple.finalcutpro.inspector.color.ColorPuck` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Color Puck                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `cp.apple.finalcutpro.inspector.color.ColorPuck` object for method chaining.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.inspector.color.ColorPuck` object for method chaining.</li></ul>          |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:start() -> cp.apple.finalcutpro.inspector.color.ColorPuck` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts a Color Puck.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `ColorPuck` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorPuck` instance.</li></ul>          |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:stop() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops a Color Puck.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* None</li></ul>          |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:UI() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Color Puck Accessibility Object                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * An `axuielementObject` or `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An `axuielementObject` or `nil`</li></ul>          |
 

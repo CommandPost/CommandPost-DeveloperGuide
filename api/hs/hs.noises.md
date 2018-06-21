@@ -41,8 +41,8 @@ The only false positives I've ever had with this detector are various rare throa
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new listener for mouth noise recognition                                                                                         |
-| **Parameters**                                       |  * A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs).                                       |
-| **Returns**                                          |  * An `hs.noises` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs).</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An `hs.noises` object</li></ul>          |
 
 ### Methods
 
@@ -51,14 +51,14 @@ The only false positives I've ever had with this detector are various rare throa
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts listening to the microphone and passing the audio to the recognizer.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `hs.noises` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `hs.noises` object</li></ul>          |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.noises:stop() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the listener from recording and analyzing microphone input.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `hs.noises` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `hs.noises` object</li></ul>          |
 

@@ -72,8 +72,8 @@ Note that `text` values are not in any specific encoding, since they are stored 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the provided value is a `text` instance.                                                                                         |
-| **Parameters**                                       |  * `value`	- The value to check                                       |
-| **Returns**                                          |  * `true` if the value is a `text` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`value`	- The value to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the value is a `text` instance.</li></ul>          |
 
 ### Constructors
 
@@ -82,34 +82,34 @@ Note that `text` values are not in any specific encoding, since they are stored 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns the list of one or more codepoint items into a text value, concatenating the results.                                                                                         |
-| **Parameters**                                       |  * `...`	- The list of codepoint integers.                                       |
-| **Returns**                                          |  * The `cp.text` value for the list of codepoint values.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`...`	- The list of codepoint integers.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.text` value for the list of codepoint values.</li></ul>          |
 
 #### [fromCodepoints](#fromcodepoints)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.text.fromCodepoints(codepoints[, i[, j]]) -> text` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a new `text` instance representing the specified array of codepoints. Since `i` and `j` default to the first                                                                                         |
-| **Parameters**                                       |  * `codepoints`	- The array of codepoint integers. * `i`			- The starting index to read from codepoints. Defaults to `1`. * `j`			- The ending index to read from codepoints. Default to `-1`.                                       |
-| **Returns**                                          |  * A new `text` instance.                                                |
-| **Notes**                                            |  * You can use a *negative* value for `i` and `j`. If so, it will count back from then end of the `codepoints` array. * If the codepoint array begins with a Byte-Order Marker (BOM), the BOM is skipped in the resulting text.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`codepoints`	- The array of codepoint integers.</li><li markdown="1">`i`			- The starting index to read from codepoints. Defaults to `1`.</li><li markdown="1">`j`			- The ending index to read from codepoints. Default to `-1`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `text` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">You can use a *negative* value for `i` and `j`. If so, it will count back from then end of the `codepoints` array.</li><li markdown="1">If the codepoint array begins with a Byte-Order Marker (BOM), the BOM is skipped in the resulting text.</li></ul>                |
 
 #### [fromFile](#fromfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.text.fromFile(path[, encoding]) -> text` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a new `text` instance representing the text loaded from the specified path. If no encoding is specified,                                                                                         |
-| **Parameters**                                       |  * `value`		- The value to turn into a unicode text instance. * `encoding`	- One of the falues from `text.encoding`: `utf8`, `utf16le`, or `utf16be`. Defaults to `utf8`.                                       |
-| **Returns**                                          |  * A new `text` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`value`		- The value to turn into a unicode text instance.</li><li markdown="1">`encoding`	- One of the falues from `text.encoding`: `utf8`, `utf16le`, or `utf16be`. Defaults to `utf8`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `text` instance.</li></ul>          |
 
 #### [fromString](#fromstring)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.text.fromString(value[, encoding]) -> text` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns a new `text` instance representing the string value of the specified value. If no encoding is specified,                                                                                         |
-| **Parameters**                                       |  * `value`		- The value to turn into a unicode text instance. * `encoding`	- One of the falues from `text.encoding`: `utf8`, `utf16le`, or `utf16be`. Defaults to `utf8`.                                       |
-| **Returns**                                          |  * A new `text` instance.                                                |
-| **Notes**                                            |  * Calling `text(value)` is the same as calling `text.fromString(value, text.encoding.utf8)`, so simple text can be initialized via `local x = text "foo"` when the `.lua` file's encoding is UTF-8.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`value`		- The value to turn into a unicode text instance.</li><li markdown="1">`encoding`	- One of the falues from `text.encoding`: `utf8`, `utf16le`, or `utf16be`. Defaults to `utf8`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `text` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Calling `text(value)` is the same as calling `text.fromString(value, text.encoding.utf8)`, so simple text can be initialized via `local x = text "foo"` when the `.lua` file's encoding is UTF-8.</li></ul>                |
 
 ### Methods
 
@@ -118,30 +118,30 @@ Note that `text` values are not in any specific encoding, since they are stored 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the text as an encoded `string` value.                                                                                         |
-| **Parameters**                                       |  * `encoding`	- The encoding to use when converting. Defaults to `cp.text.encoding.utf8`.                                       |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`encoding`	- The encoding to use when converting. Defaults to `cp.text.encoding.utf8`.</li></ul> |
 
 #### [find](#find)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.text:find(pattern [, init [, plain]])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Looks for the first match of pattern in the string `value`. If it finds a match, then find returns the indices of `value` where this occurrence starts and ends; otherwise, it returns `nil`. A third, optional numerical argument `init` specifies where to start the search; its default value is `1` and can be negative. A value of `true` as a fourth, optional argument plain turns off the pattern matching facilities, so the function does a plain "find substring" operation, with no characters in pattern being considered "magic". Note that if plain is given, then `init` must be given as well.                                                                                         |
-| **Returns**                                          |  * the start index, the end index, followed by any captures                                                |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the start index, the end index, followed by any captures</li></ul>          |
 
 #### [len](#len)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.text:len() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the number of codepoints in the text.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The number of codepoints.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The number of codepoints.</li></ul>          |
 
 #### [match](#match)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.text:match(pattern[, start]) -> ...` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Looks for the first match of the `pattern` in the text value. If it finds one, then match returns the captures from the pattern; otherwise it returns `nil`. If pattern specifies no captures, then the whole match is returned. A third, optional numerical argument `init` specifies where to start the search; its default value is `1` and can be negative.                                                                                         |
-| **Parameters**                                       |  * `pattern`	- The text pattern to process. * `start`		- If specified, indicates the starting position to process from. Defaults to `1`.                                       |
-| **Returns**                                          |  * The capture results, the whole match, or `nil`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`pattern`	- The text pattern to process.</li><li markdown="1">`start`		- If specified, indicates the starting position to process from. Defaults to `1`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The capture results, the whole match, or `nil`.</li></ul>          |
 
 #### [sub](#sub)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.text:sub(i [, j]) -> cp.text` </span>                                                          |

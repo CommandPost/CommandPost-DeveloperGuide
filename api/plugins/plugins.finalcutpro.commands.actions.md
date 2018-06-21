@@ -23,53 +23,53 @@ Registers itself with the `core.action.manager`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Executes the action with the provided parameters.                                                                                         |
-| **Parameters**                                       | * `action`  - A table representing the action, matching the following:    * `id`      - The specific Command ID within the group.                                       |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `action`  - A table representing the action, matching the following:</li><li markdown="1">   `id`      - The specific Command ID within the group.</li></ul> |
 
 #### [getId](#getid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.getId(action) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Get ID.                                                                                         |
-| **Parameters**                                       | * action - The action table.                                       |
-| **Returns**                                          | * The ID as a string.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* action - The action table.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The ID as a string.</li></ul>          |
 
 #### [getId](#getid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actionss.getId(action) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the ID from an action.                                                                                         |
-| **Parameters**                                       | * action - The action table.                                       |
-| **Returns**                                          | * The ID as a string.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* action - The action table.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The ID as a string.</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.init(actionmanager, cmds) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       |  * actionmanager - The action manager object * cmds - Final Cut Pro commands manager                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">actionmanager - The action manager object</li><li markdown="1">cmds - Final Cut Pro commands manager</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [onChoices](#onchoices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.onChoices([choices]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds available choices to the selection.                                                                                         |
-| **Parameters**                                       | * `choices` - The optional `cp.choices` to add choices to.                                       |
-| **Returns**                                          | * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `choices` - The optional `cp.choices` to add choices to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* None</li></ul>          |
 
 #### [onExecute](#onexecute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.onExecute(action) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | On Execute.                                                                                         |
-| **Parameters**                                       | * action - The action table.                                       |
-| **Returns**                                          | * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* action - The action table.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* None</li></ul>          |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.reset() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Reset the Font Handler Cache.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* None</li></ul>          |
 

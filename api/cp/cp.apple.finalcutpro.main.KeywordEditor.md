@@ -31,8 +31,8 @@ Keyword Editor Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an `hs._asm.axuielement` object matches a Keyword Editor window                                                                                         |
-| **Parameters**                                       |  * element - the `hs._asm.axuielement` object you want to check                                       |
-| **Returns**                                          |  * `true` if a match otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - the `hs._asm.axuielement` object you want to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if a match otherwise `false`</li></ul>          |
 
 ### Constructors
 
@@ -41,8 +41,8 @@ Keyword Editor Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new KeywordEditor object                                                                                         |
-| **Parameters**                                       |  * `parent`     - The parent                                       |
-| **Returns**                                          |  * A KeywordEditor object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A KeywordEditor object</li></ul>          |
 
 ### Methods
 
@@ -51,70 +51,70 @@ Keyword Editor Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The application object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:hide() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the Keyword Editor.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * KeywordEditor object * `true` if successful otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">KeywordEditor object</li><li markdown="1">`true` if successful otherwise `false`</li></ul>          |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:isShowing() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets whether or not the Keyword Editor is currently showing.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` if showing otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if showing otherwise `false`</li></ul>          |
 
 #### [keyword](#keyword)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:keyword(value) -> string | table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets or gets the main Keyword Textbox value.                                                                                         |
-| **Parameters**                                       |  * value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.                                       |
-| **Returns**                                          |  * `value` if successful otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`value` if successful otherwise `false`</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the KeywordEditor's parent table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The parent object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
 
 #### [removeKeyword](#removekeyword)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:removeKeyword(keyword) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes a keyword from the main Keyword Textbox.                                                                                         |
-| **Parameters**                                       |  * keyword - The keyword you want to remove as a string.                                       |
-| **Returns**                                          |  * `true` if successful otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">keyword - The keyword you want to remove as a string.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:show() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Keyword Editor.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * KeywordEditor object * `true` if successful otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">KeywordEditor object</li><li markdown="1">`true` if successful otherwise `false`</li></ul>          |
 
 #### [toolbarCheckBoxUI](#toolbarcheckboxui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:toolbarCheckBoxUI() -> hs._asm.axuielement object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Keyword Editor button in the toolbar                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `hs._asm.axuielement` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `hs._asm.axuielement` object</li></ul>          |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:UI() -> hs._asm.axuielement object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Keyword Editor window                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `hs._asm.axuielement` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `hs._asm.axuielement` object</li></ul>          |
 

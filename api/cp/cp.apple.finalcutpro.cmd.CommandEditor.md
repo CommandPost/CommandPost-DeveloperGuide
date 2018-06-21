@@ -32,8 +32,8 @@ Command Editor Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       |  * element - An `axuielementObject` to check.                                       |
-| **Returns**                                          |  * `true` if matches otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - An `axuielementObject` to check.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
 
 ### Constructors
 
@@ -42,8 +42,8 @@ Command Editor Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Command Editor object.                                                                                         |
-| **Parameters**                                       |  * app - The `cp.apple.finalcutpro` object.                                       |
-| **Returns**                                          |  * A new `CommandEditor` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">app - The `cp.apple.finalcutpro` object.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `CommandEditor` object.</li></ul>          |
 
 ### Fields
 
@@ -84,54 +84,54 @@ Command Editor Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * App                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
 
 #### [getTitle](#gettitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:getTitle() -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The title of the Command Editor window or `nil`.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The title of the Command Editor window as a string or `nil`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The title of the Command Editor window as a string or `nil`.</li></ul>          |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:hide() -> cp.apple.finalcutpro.cmd.CommandEditor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the Command Editor.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `cp.apple.finalcutpro.cmd.CommandEditor` object for method chaining.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.cmd.CommandEditor` object for method chaining.</li></ul>          |
 
 #### [save](#save)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:save() -> cp.apple.finalcutpro.cmd.CommandEditor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Triggers the Save button in the Command Editor.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `cp.apple.finalcutpro.cmd.CommandEditor` object for method chaining.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.cmd.CommandEditor` object for method chaining.</li></ul>          |
 
 #### [saveButton](#savebutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:saveButton() -> axuielementObject | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Command Editor Save Button AX item.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `axuielementObject` of the Save Button or nil.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `axuielementObject` of the Save Button or nil.</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:show() -> cp.apple.finalcutpro.cmd.CommandEditor` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Command Editor.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `cp.apple.finalcutpro.cmd.CommandEditor` object for method chaining.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.apple.finalcutpro.cmd.CommandEditor` object for method chaining.</li></ul>          |
 
 #### [window](#window)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:window() -> cp.ui.Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `Window` for the Command Editor.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `Window`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `Window`.</li></ul>          |
 

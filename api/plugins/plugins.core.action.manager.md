@@ -37,38 +37,38 @@ Action Manager Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a new action handler with the specified unique ID and returns it for further configuration.                                                                                         |
-| **Parameters**                                       | * `id`		- The unique ID                                       |
-| **Returns**                                          | * The `handler` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `id`		- The unique ID</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `handler` instance.</li></ul>          |
 
 #### [getActivator](#getactivator)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.getActivator(id) -> activator` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an activator with the specified ID. If it doesn't exist, it will be created.                                                                                         |
-| **Parameters**                                       | * `activatorId`		- The unique ID of the activator.                                       |
-| **Returns**                                          | * The activator with the specified ID.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `activatorId`		- The unique ID of the activator.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The activator with the specified ID.</li></ul>          |
 
 #### [getHandler](#gethandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.getHandler(id) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an existing handler with the specified ID.                                                                                         |
-| **Parameters**                                       | * `id`			- The unique ID of the action handler.                                       |
-| **Returns**                                          | * The action handler, or `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `id`			- The unique ID of the action handler.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The action handler, or `nil`</li></ul>          |
 
 #### [getURL](#geturl)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.getURL(handlerId, action) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a URL based on the Handler ID & Action Table.                                                                                         |
-| **Parameters**                                       |  * `handlerId` - The Handler ID * `action` The action table                                       |
-| **Returns**                                          | * A string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`handlerId` - The Handler ID</li><li markdown="1">`action` The action table</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* A string</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.manager.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 

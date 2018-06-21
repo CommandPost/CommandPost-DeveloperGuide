@@ -48,8 +48,8 @@ Color Wheels Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the specified element is the Color Wheels element.                                                                                         |
-| **Parameters**                                       | * element	- The element to check                                       |
-| **Returns**                                          | * `true` if the element is the Color Wheels.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* element	- The element to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if the element is the Color Wheels.</li></ul>          |
 
 ### Constructors
 
@@ -58,8 +58,8 @@ Color Wheels Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new ColorWheels object                                                                                         |
-| **Parameters**                                       |  * `parent`     - The parent                                       |
-| **Returns**                                          |  * A new `ColorInspector` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`     - The parent</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `ColorInspector` object</li></ul>          |
 
 ### Fields
 
@@ -136,134 +136,134 @@ Color Wheels Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The application object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
 
 #### [highlights](#highlights)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:highlights() -> ColorWheel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `ColorWheel` that allows control of the 'highlights' color settings.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `ColorWheel`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorWheel`.</li></ul>          |
 
 #### [hueRow](#huerow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:hueRow() -> cp.ui.PropertyRow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `PropertyRow` that provides access to the 'Hue' parameter, and `axuielement`                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `PropertyRow`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `PropertyRow`.</li></ul>          |
 
 #### [hueTextField](#huetextfield)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:hueTextField() -> cp.ui.TextField` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `TextField` that provides access to the 'Hue' slider.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The Hue `Slider`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The Hue `Slider`.</li></ul>          |
 
 #### [master](#master)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:master() -> ColorWheel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `ColorWheel` that allows control of the 'master' color settings.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `ColorWheel`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorWheel`.</li></ul>          |
 
 #### [midtones](#midtones)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:midtones() -> ColorWheel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `ColorWheel` that allows control of the 'midtones' color settings.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `ColorWheel`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorWheel`.</li></ul>          |
 
 #### [mixRow](#mixrow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:mixRow() -> cp.ui.PropertyRow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `PropertyRow` that provides access to the 'Mix' parameter, and `axuielement`                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `PropertyRow`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `PropertyRow`.</li></ul>          |
 
 #### [mixSlider](#mixslider)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:mixSlider() -> cp.ui.Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `Slider` that provides access to the 'Mix' slider.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The Mix `Slider`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The Mix `Slider`.</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ColorWheels's parent table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The parent object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
 
 #### [shadows](#shadows)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:shadows() -> ColorWheel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `ColorWheel` that allows control of the 'shadows' color settings.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `ColorWheel`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `ColorWheel`.</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:show() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show's the Color Board within the Color Inspector.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * ColorWheels object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorWheels object</li></ul>          |
 
 #### [temperatureRow](#temperaturerow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:temperatureRow() -> cp.ui.PropertyRow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `PropertyRow` that provides access to the 'Temperatures' parameter, and `axuielement`                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `PropertyRow`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `PropertyRow`.</li></ul>          |
 
 #### [temperatureSlider](#temperatureslider)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:temperatureSlider() -> cp.ui.Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `Slider` that provides access to the 'Temperatures' slider.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The Temperatures `Slider`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The Temperatures `Slider`.</li></ul>          |
 
 #### [tintRow](#tintrow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:tintRow() -> cp.ui.PropertyRow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `PropertyRow` that provides access to the 'Tint' parameter, and `axuielement`                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `PropertyRow`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `PropertyRow`.</li></ul>          |
 
 #### [tintSlider](#tintslider)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:tintSlider() -> cp.ui.Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `Slider` that provides access to the 'Tint' slider.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The Tint `Slider`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The Tint `Slider`.</li></ul>          |
 
 #### [viewMode](#viewmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:viewMode() -> MenuButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `MenuButton` for the View menu button.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `MenuButton` for the View mode.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `MenuButton` for the View mode.</li></ul>          |
 
 #### [wheelType](#wheeltype)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels:wheelType() -> RadioGroup` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `RadioGroup` that allows selection of the wheel type. Only available when                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `RadioGroup`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `RadioGroup`.</li></ul>          |
 

@@ -28,8 +28,8 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Constructs a new panel with the specified priority and ID.                                                                                         |
-| **Parameters**                                       |  * priority - Defines the order in which the panel appears. * id       - The unique ID for the panel. * webview  - The webview the panel is attached to.                                       |
-| **Returns**                                          |  * A panel object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">priority - Defines the order in which the panel appears.</li><li markdown="1">id       - The unique ID for the panel.</li><li markdown="1">webview  - The webview the panel is attached to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A panel object</li></ul>          |
 
 ### Methods
 
@@ -38,87 +38,87 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a button to the panel with the specified `priority` and `params`.                                                                                         |
-| **Parameters**                                       |  * `priority` - The priority number for the button. * `params` - The set of parameters for the button.                                       |
-| **Returns**                                          |  * The panel.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority` - The priority number for the button.</li><li markdown="1">`params` - The set of parameters for the button.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel.</li></ul>          |
 
 #### [addCheckbox](#addcheckbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addCheckbox(priority, params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a checkbox to the panel with the specified `priority` and `params`.                                                                                         |
-| **Parameters**                                       |  * `priority`   - The priority number for the checkbox. * `params`     - The set of parameters for the checkbox.                                       |
-| **Returns**                                          |  * The panel.                                                |
-| **Notes**                                            |  * The `params` can contain the following fields: ** `id`        - (optional) The unique ID. If none is provided, one will be generated. ** `name`      - (optional) The name of the checkbox field. ** `label`     - (optional) The text label to display after the checkbox. ** `onchange`  - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox. ** `class`     - (optional) the CSS class list to apply to the checkbox.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`   - The priority number for the checkbox.</li><li markdown="1">`params`     - The set of parameters for the checkbox.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">The `params` can contain the following fields:</li><li markdown="1"> ** `id`        - (optional) The unique ID. If none is provided, one will be generated.</li><li markdown="1"> ** `name`      - (optional) The name of the checkbox field.</li><li markdown="1"> ** `label`     - (optional) The text label to display after the checkbox.</li><li markdown="1"> ** `onchange`  - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox.</li><li markdown="1"> ** `class`     - (optional) the CSS class list to apply to the checkbox.</li></ul>                |
 
 #### [addContent](#addcontent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addContent(priority, content[, escaped]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified `content` to the panel, with the specified `priority` order.                                                                                         |
-| **Parameters**                                       |  * `priority` - the priority order of the content. * `content` - a value that can be converted to a string. * `escaped` - if `true`, the content will be escaped.                                       |
-| **Returns**                                          |  * The panel object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority` - the priority order of the content.</li><li markdown="1">`content` - a value that can be converted to a string.</li><li markdown="1">`escaped` - if `true`, the content will be escaped.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel object</li></ul>          |
 
 #### [addHandler](#addhandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addHandler(event, id, handlerFn, keys) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a handler                                                                                         |
-| **Parameters**                                       |  * event - The JavaScript event as string * id - The ID as string * handlerFn - The handler function * keys - Table of keys                                       |
-| **Returns**                                          |  * The panel object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">event - The JavaScript event as string</li><li markdown="1">id - The ID as string</li><li markdown="1">handlerFn - The handler function</li><li markdown="1">keys - Table of keys</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel object</li></ul>          |
 
 #### [addHeading](#addheading)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addHeading(priority, text, level) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a heading to the panel with the specified `priority` and `text`.                                                                                         |
-| **Parameters**                                       |  * `priority` - The priority number for the heading. * `text` - The content of the heading as a string. * `level` - The level of the heading.                                       |
-| **Returns**                                          |  * The panel object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority` - The priority number for the heading.</li><li markdown="1">`text` - The content of the heading as a string.</li><li markdown="1">`level` - The level of the heading.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel object</li></ul>          |
 
 #### [addParagraph](#addparagraph)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addParagraph(priority, content[, escaped[, class]]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a paragraph to the panel with the specified `priority` and `content`.                                                                                         |
-| **Parameters**                                       |  * `priority` - The priority number for the paragraph. * `content` - The content you want to include as a string. * `escaped` - Whether or not the HTML is escaped as a boolean. * `class` - The class name as a string.                                       |
-| **Returns**                                          |  * The panel object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority` - The priority number for the paragraph.</li><li markdown="1">`content` - The content you want to include as a string.</li><li markdown="1">`escaped` - Whether or not the HTML is escaped as a boolean.</li><li markdown="1">`class` - The class name as a string.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel object</li></ul>          |
 
 #### [addPassword](#addpassword)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addPassword(priority, params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a password textbox to the panel with the specified `priority` and `params`.                                                                                         |
-| **Parameters**                                       |  * `priority`   - The priority number for the password. * `params`     - The set of parameters for the password.                                       |
-| **Returns**                                          |  * The panel.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`   - The priority number for the password.</li><li markdown="1">`params`     - The set of parameters for the password.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel.</li></ul>          |
 
 #### [addSelect](#addselect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addSelect(priority, params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a select to the panel with the specified `priority` and `params`.                                                                                         |
-| **Parameters**                                       |  * `priority` - The priority number for the select. * `params` - The set of parameters for the select.                                       |
-| **Returns**                                          |  * The panel.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority` - The priority number for the select.</li><li markdown="1">`params` - The set of parameters for the select.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel.</li></ul>          |
 
 #### [addTextbox](#addtextbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:addTextbox(priority, params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a textbox to the panel with the specified `priority` and `params`.                                                                                         |
-| **Parameters**                                       |  * `priority`   - The priority number for the textbox. * `params`     - The set of parameters for the textbox.                                       |
-| **Returns**                                          |  * The panel.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`   - The priority number for the textbox.</li><li markdown="1">`params`     - The set of parameters for the textbox.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel.</li></ul>          |
 
 #### [generateContent](#generatecontent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:generateContent() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets generated toolbar content                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A string of generated content                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string of generated content</li></ul>          |
 
 #### [getToolbarItem](#gettoolbaritem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.watchfolders.manager.panel:getToolbarItem() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a Toolbar Item                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * Table of Toolbar Item Values                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Table of Toolbar Item Values</li></ul>          |
 

@@ -16,6 +16,6 @@ Select All Timeline Clips
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Selects all timeline clips to the left or right of the timeline playhead in Final Cut Pro.                                                                                         |
-| **Parameters**                                       |  * forwards - `true` if you want to select forwards                                       |
-| **Returns**                                          |  * `true` if successful otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">forwards - `true` if you want to select forwards</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `false`</li></ul>          |
 

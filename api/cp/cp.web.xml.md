@@ -52,6 +52,6 @@ There are two 'special' tag names:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `value` is an `cp.web.xml` block.                                                                                         |
-| **Parameters**                                       | * value		- the value to check                                       |
-| **Returns**                                          | * `true` if it is an HTML block, or `false` otherwise.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* value		- the value to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if it is an HTML block, or `false` otherwise.</li></ul>          |
 

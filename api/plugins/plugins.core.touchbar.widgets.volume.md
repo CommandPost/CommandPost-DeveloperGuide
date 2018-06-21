@@ -17,14 +17,14 @@ Volume Slider
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [widget](#widget)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.widgets.volume.widget() -> `hs._asm.undocumented.touchbar.item`` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | The Widget                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `hs._asm.undocumented.touchbar.item`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `hs._asm.undocumented.touchbar.item`</li></ul>          |
 

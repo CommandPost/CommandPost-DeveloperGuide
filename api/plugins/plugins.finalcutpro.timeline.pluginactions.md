@@ -16,6 +16,6 @@ Adds Final Cut Pro Plugins (i.e. Effects, Generators, Titles and Transitions) to
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       |  * `actionmanager` - Action Manager Plugin * `generators` - Generators Plugin * `titles` - Titles Plugin * `transitions` - Transitions Plugin * `audioeffects` - Audio Effects Plugin * `videoeffects` - Video Effects Plugin                                       |
-| **Returns**                                          |  * The module                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`actionmanager` - Action Manager Plugin</li><li markdown="1">`generators` - Generators Plugin</li><li markdown="1">`titles` - Titles Plugin</li><li markdown="1">`transitions` - Transitions Plugin</li><li markdown="1">`audioeffects` - Audio Effects Plugin</li><li markdown="1">`videoeffects` - Video Effects Plugin</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The module</li></ul>          |
 

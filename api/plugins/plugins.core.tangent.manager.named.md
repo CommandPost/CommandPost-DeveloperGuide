@@ -23,16 +23,16 @@ as described below.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Check if the `thing` is a `named` table.                                                                                         |
-| **Parameters**                                       | * thing     - The thing to check.                                       |
-| **Returns**                                          | * `true` if it is `named.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* thing     - The thing to check.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if it is `named.</li></ul>          |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.named.xml(thing) -> cp.web.xml` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the `xml` configuration for the Action.                                                                                         |
-| **Parameters**                                       | * thing     - The thing to retrieve the names from.                                       |
-| **Returns**                                          | * The `xml` for the Action.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* thing     - The thing to retrieve the names from.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `xml` for the Action.</li></ul>          |
 
 ### Methods
 
@@ -41,14 +41,14 @@ as described below.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the full name.                                                                                         |
-| **Parameters**                                       | * value - The new name value.                                       |
-| **Returns**                                          | * `self`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* value - The new name value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `self`</li></ul>          |
 
 #### [nameX](#namex)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.named:nameX(value) -> string | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the name `X`, where `X` is a number as defined when the `named` was creted.                                                                                         |
-| **Parameters**                                       | * value - The new name value.                                       |
-| **Returns**                                          | * The current value, or `self` if a new value was provided.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* value - The new name value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The current value, or `self` if a new value was provided.</li></ul>          |
 

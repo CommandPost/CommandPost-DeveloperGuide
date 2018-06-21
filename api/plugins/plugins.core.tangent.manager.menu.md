@@ -31,8 +31,8 @@ list of options.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `other` is a `menu` instance.                                                                                         |
-| **Parameters**                                       | * other     - The other object to test.                                       |
-| **Returns**                                          | * `true` if it is a `menu`, `false` if not.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* other     - The other object to test.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if it is a `menu`, `false` if not.</li></ul>          |
 
 ### Constructors
 
@@ -41,8 +41,8 @@ list of options.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Action` instance.                                                                                         |
-| **Parameters**                                       | * id        - The ID number of the menu.* name      - The name of the menu.* parent    - The parent of the menu.                                       |
-| **Returns**                                          | * the new `menu`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* id        - The ID number of the menu.</li><li markdown="1">* name      - The name of the menu.</li><li markdown="1">* parent    - The parent of the menu.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* the new `menu`.</li></ul>          |
 
 ### Methods
 
@@ -51,78 +51,78 @@ list of options.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `controls` the menu belongs to.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `controls`, or `nil` if not specified.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `controls`, or `nil` if not specified.</li></ul>          |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:get() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `get` function, if present, returning the string value for the current menu.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `nil`</li></ul>          |
 
 #### [next](#next)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:next() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `next` function, if present.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `nil`</li></ul>          |
 
 #### [onGet](#onget)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:onGet(getFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a `menu string request`.                                                                                         |
-| **Parameters**                                       | * getFn     - The function to call when the Tangent requests the `menu string`.                                       |
-| **Returns**                                          | * The `parameter` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* getFn     - The function to call when the Tangent requests the `menu string`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `parameter` instance.</li></ul>          |
 
 #### [onNext](#onnext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:onNext(nextFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a `menu change +1` request.                                                                                         |
-| **Parameters**                                       | * nextFn     - The function to call when the Tangent requests the `menu change +1`.                                       |
-| **Returns**                                          | * The `parameter` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* nextFn     - The function to call when the Tangent requests the `menu change +1`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `parameter` instance.</li></ul>          |
 
 #### [onPrev](#onprev)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:onPrev(prevFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a `menu change -1` request.                                                                                         |
-| **Parameters**                                       | * prevFn     - The function to call when the Tangent requests the `menu change -1`.                                       |
-| **Returns**                                          | * The `parameter` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* prevFn     - The function to call when the Tangent requests the `menu change -1`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `parameter` instance.</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:parent() -> group | controls` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `group` or `controls` that contains this menu.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The parent.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The parent.</li></ul>          |
 
 #### [prev](#prev)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:prev() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `prev` function, if present.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `nil`</li></ul>          |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:update() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Updates the Tangent panel with the current value.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `true` if the update was sent.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if the update was sent.</li></ul>          |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:xml() -> cp.web.xml` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `xml` configuration for the Action.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `xml` for the Action.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `xml` for the Action.</li></ul>          |
 

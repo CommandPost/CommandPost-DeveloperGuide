@@ -42,22 +42,22 @@ Provides access to the list of Share Destinations configured for the user.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the full details of the current Share Destinations as a table.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The table of Share Destinations.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The table of Share Destinations.</li></ul>          |
 
 #### [indexOf](#indexof)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.indexOf(name) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the index of the Destination with the specified name, or `nil` if not found.                                                                                         |
-| **Parameters**                                       |  * `name`   - The name of the Destination                                       |
-| **Returns**                                          |  * The index of the named Destination, or `nil`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`name`   - The name of the Destination</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The index of the named Destination, or `nil`.</li></ul>          |
 
 #### [names](#names)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.names() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an array of the names of destinations, in their current order.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The table of Share Destination names.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The table of Share Destination names.</li></ul>          |
 

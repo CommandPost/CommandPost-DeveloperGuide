@@ -17,14 +17,14 @@ Functions for managing text on the web.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Escapes a string                                                                                         |
-| **Parameters**                                       |  * s - The string you want to escape                                       |
-| **Returns**                                          |  * The string, escaped for XML.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">s - The string you want to escape</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The string, escaped for XML.</li></ul>          |
 
 #### [unescapeXML](#unescapexml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.text.unescapeXML(s) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unescapes a string from XML encoding.                                                                                         |
-| **Parameters**                                       |  * s - The string you want to unescape                                       |
-| **Returns**                                          |  * The string, unescaped.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">s - The string you want to unescape</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The string, unescaped.</li></ul>          |
 

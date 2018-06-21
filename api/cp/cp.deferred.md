@@ -37,8 +37,8 @@ update()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `defer` instance, which will trigger any added `action`s by a set delay after                                                                                         |
-| **Parameters**                                       | * delay     - The number of seconds to delay when `run()` is initally called.                                       |
-| **Returns**                                          | * The new `cp.deferred` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* delay     - The number of seconds to delay when `run()` is initally called.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `cp.deferred` instance.</li></ul>          |
 
 ### Methods
 
@@ -47,45 +47,45 @@ update()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the `action` the the list that will be called when the timer goes off.                                                                                         |
-| **Parameters**                                       | * The callable action.                                       |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* The callable action.</li></ul> |
 
 #### [delay](#delay)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.deferred:delay([value]) -> self | number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets/gets the delay period. If no `value` is provided, the current delay is returned.                                                                                         |
-| **Parameters**                                       | * value     - the new delay value.                                       |
-| **Returns**                                          | * The `cp.deferred` instance if a new value is provided, or the current delay if not.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* value     - the new delay value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.deferred` instance if a new value is provided, or the current delay if not.</li></ul>          |
 
 #### [run](#run)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.deferred:run() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Ensures that the actions will run after the `delay`.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `cp.deferred` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `cp.deferred` instance.</li></ul>          |
 
 #### [secondsRemaining](#secondsremaining)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.deferred:secondsRemaining() -> number | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the number of seconds until the next execution, or `nil` if it's not running.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The number of seconds until execution.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The number of seconds until execution.</li></ul>          |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.deferred:stop() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops any execution of any deferred actions, if it is currently running.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The deferred timer.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The deferred timer.</li></ul>          |
 
 #### [waiting](#waiting)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.deferred:waiting() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if the defer is currently waiting to run.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `true` if the deferred action is waiting to execute.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if the deferred action is waiting to execute.</li></ul>          |
 

@@ -60,166 +60,166 @@ Controls for iTunes music player
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays information for current track on screen                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [ff](#ff)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.ff()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips the current playback forwards by 5 seconds                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [getCurrentAlbum](#getcurrentalbum)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getCurrentAlbum() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of the current Album                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A string containing the Album of the current track, or nil if an error occurred                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string containing the Album of the current track, or nil if an error occurred</li></ul>          |
 
 #### [getCurrentArtist](#getcurrentartist)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getCurrentArtist() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of the current Artist                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A string containing the Artist of the current track, or nil if an error occurred                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string containing the Artist of the current track, or nil if an error occurred</li></ul>          |
 
 #### [getCurrentTrack](#getcurrenttrack)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getCurrentTrack() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the name of the current track                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A string containing the name of the current track, or nil if an error occurred                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string containing the name of the current track, or nil if an error occurred</li></ul>          |
 
 #### [getDuration](#getduration)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getDuration()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the duration (in seconds) of the current song                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The number of seconds long the current song is, 0 if no song is playing                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The number of seconds long the current song is, 0 if no song is playing</li></ul>          |
 
 #### [getPlaybackState](#getplaybackstate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getPlaybackState()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the current playback state of iTunes                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A string containing one of the following constants:   - `hs.itunes.state_stopped`   - `hs.itunes.state_paused`   - `hs.itunes.state_playing`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string containing one of the following constants:</li><li markdown="1">   - `hs.itunes.state_stopped`</li><li markdown="1">   - `hs.itunes.state_paused`</li><li markdown="1">   - `hs.itunes.state_playing`</li></ul>          |
 
 #### [getPosition](#getposition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getPosition()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the playback position (in seconds) of the current song                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A number indicating the current position in the song                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A number indicating the current position in the song</li></ul>          |
 
 #### [getVolume](#getvolume)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getVolume()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the current iTunes volume setting                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A number, between 1 and 100, containing the current iTunes playback volume                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A number, between 1 and 100, containing the current iTunes playback volume</li></ul>          |
 
 #### [isPlaying](#isplaying)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.isPlaying()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether iTunes is currently playing                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A boolean value indicating whether iTunes is currently playing a track, or nil if an error occurred (unknown player state). Also returns false if the application is not running                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A boolean value indicating whether iTunes is currently playing a track, or nil if an error occurred (unknown player state). Also returns false if the application is not running</li></ul>          |
 
 #### [isRunning](#isrunning)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.isRunning()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether iTunes is currently open. Most other functions in hs.itunes will automatically start the application, so this function can be used to guard against that.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A boolean value indicating whether the iTunes application is running.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A boolean value indicating whether the iTunes application is running.</li></ul>          |
 
 #### [next](#next)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.next()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips to the next itunes track                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [pause](#pause)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.pause()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Pauses the current iTunes track                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [play](#play)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.play()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Plays the current iTunes track                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [playpause](#playpause)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.playpause()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Toggles play/pause of current iTunes track                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [previous](#previous)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.previous()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips to previous itunes track                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [rw](#rw)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.rw()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Skips the current playback backwards by 5 seconds                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [setPosition](#setposition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.setPosition(pos)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the playback position of the current song                                                                                         |
-| **Parameters**                                       |  * pos - A number indicating the playback position (in seconds) to skip to                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">pos - A number indicating the playback position (in seconds) to skip to</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [setVolume](#setvolume)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.setVolume(vol)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the iTunes playback volume                                                                                         |
-| **Parameters**                                       |  * vol - A number, between 1 and 100                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">vol - A number, between 1 and 100</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [volumeDown](#volumedown)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.volumeDown()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Decreases the iTunes playback volume by 5                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [volumeUp](#volumeup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.volumeUp()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Increases the iTunes playback volume by 5                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 

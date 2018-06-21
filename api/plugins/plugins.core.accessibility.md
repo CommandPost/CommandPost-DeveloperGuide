@@ -38,22 +38,22 @@ Accessibility Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Called when the setup panel for accessibility was shown and is ready to complete.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.init(setup) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       |  * setup - Dependancies setup                                       |
-| **Returns**                                          |  * The module as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">setup - Dependancies setup</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The module as a table</li></ul>          |
 
 #### [showSetupPanel](#showsetuppanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.showSetupPanel() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Called when the Setup Panel should be shown to prompt the user about enabling Accessbility.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 

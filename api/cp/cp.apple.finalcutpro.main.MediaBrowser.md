@@ -76,8 +76,8 @@ Media Browser Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Browser` instance.                                                                                         |
-| **Parameters**                                       |  * parent - The parent object.                                       |
-| **Returns**                                          |  * A new `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent - The parent object.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `MediaBrowser` object.</li></ul>          |
 
 ### Methods
 
@@ -86,110 +86,110 @@ Media Browser Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * App                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
 
 #### [group](#group)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:group() -> PopUpButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the group PopUpButton.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `PopUpButton` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`PopUpButton` object.</li></ul>          |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:hide() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hide the Media Browser.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `MediaBrowser` object.</li></ul>          |
 
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Loads a Media Browser layout.                                                                                         |
-| **Parameters**                                       |  * layout - A table containing the Media Browser layout settings - created using `cp.apple.finalcutpro.main.MediaBrowser:saveLayout()`.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">layout - A table containing the Media Browser layout settings - created using `cp.apple.finalcutpro.main.MediaBrowser:saveLayout()`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * parent                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">parent</li></ul>          |
 
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Saves the current Media Browser layout to a table.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A table containing the current Media Browser Layout.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A table containing the current Media Browser Layout.</li></ul>          |
 
 #### [search](#search)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:search() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the Top Categories UI.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `axuielementObject` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`axuielementObject` object.</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:show() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show the Media Browser.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `MediaBrowser` object.</li></ul>          |
 
 #### [showGarageBand](#showgarageband)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:showGarageBand() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show Garage Band Section.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`MediaBrowser` object.</li></ul>          |
 
 #### [showITunes](#showitunes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:showITunes() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show iTunes Section.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`MediaBrowser` object.</li></ul>          |
 
 #### [showPhotos](#showphotos)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:showPhotos() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show Photos Section.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`MediaBrowser` object.</li></ul>          |
 
 #### [showSection](#showsection)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:showSection(index) -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show a specific section.                                                                                         |
-| **Parameters**                                       |  * index - The index ID of the section you want to show as a number.                                       |
-| **Returns**                                          |  * `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - The index ID of the section you want to show as a number.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`MediaBrowser` object.</li></ul>          |
 
 #### [showSoundEffects](#showsoundeffects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:showSoundEffects() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show Sound Effects Section.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `MediaBrowser` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`MediaBrowser` object.</li></ul>          |
 
 #### [sidebar](#sidebar)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:sidebar() -> Table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the Sidebar Table.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `Table` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`Table` object.</li></ul>          |
 

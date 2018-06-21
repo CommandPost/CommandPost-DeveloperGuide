@@ -55,8 +55,8 @@ Inspector
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       |  * element - axuielementObject                                       |
-| **Returns**                                          |  * `true` if matches otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - axuielementObject</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if matches otherwise `false`</li></ul>          |
 
 ### Constructors
 
@@ -65,8 +65,8 @@ Inspector
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Inspector.                                                                                         |
-| **Parameters**                                       |  * parent - The parent object.                                       |
-| **Returns**                                          |  * The Inspector object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">parent - The parent object.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The Inspector object.</li></ul>          |
 
 ### Fields
 
@@ -125,138 +125,138 @@ Inspector
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * App                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
 
 #### [audio](#audio)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:audio() -> AudioInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the AudioInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * AudioInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">AudioInspector</li></ul>          |
 
 #### [color](#color)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:color() -> ColorInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the ColorInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * ColorInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorInspector</li></ul>          |
 
 #### [effect](#effect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:effect() -> EffectInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the EffectInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * EffectInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">EffectInspector</li></ul>          |
 
 #### [generator](#generator)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:generator() -> GeneratorInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the GeneratorInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * GeneratorInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">GeneratorInspector</li></ul>          |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:hide() -> Inspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the inspector.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `Inspector` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `Inspector` instance.</li></ul>          |
 
 #### [info](#info)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:info() -> InfoInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the InfoInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * InfoInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">InfoInspector</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:parent() -> Parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent of the Inspector.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * App                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">App</li></ul>          |
 
 #### [selectedTab](#selectedtab)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:selectedTab() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the name of the selected inspector tab otherwise `nil`.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A string of the selected tab, otherwise `nil` if the Inspector is closed or an error occurred.                                                |
-| **Notes**                                            |  * The tab strings can be:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string of the selected tab, otherwise `nil` if the Inspector is closed or an error occurred.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">The tab strings can be:</li><li markdown="1">  Audio</li><li markdown="1">  Color</li><li markdown="1">  Effect</li><li markdown="1">  Generator</li><li markdown="1">  Info</li><li markdown="1">  Share</li><li markdown="1">  Text</li><li markdown="1">  Title</li><li markdown="1">  Transition</li><li markdown="1">  Video</li></ul>                |
 
 #### [selectTab](#selecttab)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:selectTab(tab) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects a tab in the inspector.                                                                                         |
-| **Parameters**                                       |  * tab - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table                                       |
-| **Returns**                                          |  * A string of the selected tab, otherwise `nil` if an error occurred.                                                |
-| **Notes**                                            |  * This method will open the Inspector if it's closed, and leave it open. * Valid strings for `value` are as follows:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">tab - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string of the selected tab, otherwise `nil` if an error occurred.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">This method will open the Inspector if it's closed, and leave it open.</li><li markdown="1">Valid strings for `value` are as follows:</li><li markdown="1">  Audio</li><li markdown="1">  Color</li><li markdown="1">  Effect</li><li markdown="1">  Generator</li><li markdown="1">  Info</li><li markdown="1">  Share</li><li markdown="1">  Text</li><li markdown="1">  Title</li><li markdown="1">  Transition</li><li markdown="1">  Video</li></ul>                |
 
 #### [share](#share)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:share() -> ShareInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the ShareInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * ShareInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ShareInspector</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:show([tab]) -> Inspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the inspector.                                                                                         |
-| **Parameters**                                       |  * [tab] - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table                                       |
-| **Returns**                                          |  * The `Inspector` instance.                                                |
-| **Notes**                                            |  * Valid strings for `value` are as follows:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">[tab] - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `Inspector` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Valid strings for `value` are as follows:</li><li markdown="1">  Audio</li><li markdown="1">  Color</li><li markdown="1">  Effect</li><li markdown="1">  Generator</li><li markdown="1">  Info</li><li markdown="1">  Share</li><li markdown="1">  Text</li><li markdown="1">  Title</li><li markdown="1">  Transition</li><li markdown="1">  Video</li></ul>                |
 
 #### [tabAvailable](#tabavailable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:tabAvailable(tab) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks to see if a tab is currently available in the Inspector.                                                                                         |
-| **Parameters**                                       |  * tab - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table                                       |
-| **Returns**                                          |  * `true` if available otherwise `false`.                                                |
-| **Notes**                                            |  * Valid strings for `value` are as follows:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">tab - A string from the `cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS` table</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if available otherwise `false`.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Valid strings for `value` are as follows:</li><li markdown="1">  Audio</li><li markdown="1">  Color</li><li markdown="1">  Effect</li><li markdown="1">  Generator</li><li markdown="1">  Info</li><li markdown="1">  Share</li><li markdown="1">  Text</li><li markdown="1">  Title</li><li markdown="1">  Transition</li><li markdown="1">  Video</li></ul>                |
 
 #### [text](#text)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:text() -> TextInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the TextInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * TextInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">TextInspector</li></ul>          |
 
 #### [title](#title)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:title() -> TitleInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the TitleInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * TitleInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">TitleInspector</li></ul>          |
 
 #### [transition](#transition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:transition() -> TransitionInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the TransitionInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * TransitionInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">TransitionInspector</li></ul>          |
 
 #### [video](#video)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:video() -> VideoInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the VideoInspector object.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * ColorInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">ColorInspector</li></ul>          |
 

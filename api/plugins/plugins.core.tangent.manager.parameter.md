@@ -33,8 +33,8 @@ Represents a Tangent Parameter
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `other` is a `parameter` instance.                                                                                         |
-| **Parameters**                                       |  * other     - The other object to test.                                       |
-| **Returns**                                          |  * `true` if it is a `parameter`, `false` if not.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">other     - The other object to test.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if it is a `parameter`, `false` if not.</li></ul>          |
 
 ### Constructors
 
@@ -43,8 +43,8 @@ Represents a Tangent Parameter
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Parameter` instance.                                                                                         |
-| **Parameters**                                       |  * id        - The ID number of the parameter. * name      - The name of the parameter. * parent    - The parent of the parameter.                                       |
-| **Returns**                                          |  * the new `parameter`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">id        - The ID number of the parameter.</li><li markdown="1">name      - The name of the parameter.</li><li markdown="1">parent    - The parent of the parameter.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the new `parameter`.</li></ul>          |
 
 ### Methods
 
@@ -53,110 +53,110 @@ Represents a Tangent Parameter
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `change` function if present, and returns the new result. If                                                                                         |
-| **Parameters**                                       |  * amount    - The amount to change the parameter.                                       |
-| **Returns**                                          |  * The current value, or `nil` if it can't be accessed.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">amount    - The amount to change the parameter.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The current value, or `nil` if it can't be accessed.</li></ul>          |
 
 #### [controls](#controls)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:controls()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `controls` the parameter belongs to.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `controls`, or `nil` if not specified.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `controls`, or `nil` if not specified.</li></ul>          |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:get() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `get` function if present, and returns the result. If                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The current value, or `nil` if it can't be accessed.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The current value, or `nil` if it can't be accessed.</li></ul>          |
 
 #### [maxValue](#maxvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:maxValue([value]) -> number | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the maximum value for the parameter.                                                                                         |
-| **Parameters**                                       |  * value     - The new value.                                       |
-| **Returns**                                          |  * If `value` is `nil`, the current value is returned, otherwise returns `self`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value     - The new value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">If `value` is `nil`, the current value is returned, otherwise returns `self`.</li></ul>          |
 
 #### [minValue](#minvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:minValue([value]) -> number | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the minimum value for the parameter.                                                                                         |
-| **Parameters**                                       |  * value     - The new value.                                       |
-| **Returns**                                          |  * If `value` is `nil`, the current value is returned, otherwise returns `self`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value     - The new value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">If `value` is `nil`, the current value is returned, otherwise returns `self`.</li></ul>          |
 
 #### [onChange](#onchange)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:onChange(changeFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a 'parameter change' request.                                                                                         |
-| **Parameters**                                       |  * getFn     - The function to call when the Tangent requests the parameter change.                                       |
-| **Returns**                                          |  * The `parameter` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">getFn     - The function to call when the Tangent requests the parameter change.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `parameter` instance.</li></ul>          |
 
 #### [onGet](#onget)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:onGet(getFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a 'parameter value' request.                                                                                         |
-| **Parameters**                                       |  * getFn     - The function to call when the Tangent requests the parameter value.                                       |
-| **Returns**                                          |  * The `parameter` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">getFn     - The function to call when the Tangent requests the parameter value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `parameter` instance.</li></ul>          |
 
 #### [onReset](#onreset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:onReset(resetFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the function that will be called when the Tangent sends a 'parameter reset' request.                                                                                         |
-| **Parameters**                                       |  * resetFn     - The function to call when the Tangent requests the parameter reset.                                       |
-| **Returns**                                          |  * The `parameter` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">resetFn     - The function to call when the Tangent requests the parameter reset.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `parameter` instance.</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:parent() -> group | controls` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `group` or `controls` that contains this parameter.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The parent.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent.</li></ul>          |
 
 #### [press](#press)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:press() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `press` function, if present.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `nil`</li></ul>          |
 
 #### [release](#release)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:release() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `release` function, if present.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `nil`</li></ul>          |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:reset() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the `reset` function if present. Returns the current value of the parameter after reset.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The current value, or `nil` if it can't be accessed.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The current value, or `nil` if it can't be accessed.</li></ul>          |
 
 #### [stepSize](#stepsize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:stepSize([value]) -> number | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets the step size for the parameter.                                                                                         |
-| **Parameters**                                       |  * value     - The new value.                                       |
-| **Returns**                                          |  * If `value` is `nil`, the current value is returned, otherwise returns `self`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value     - The new value.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">If `value` is `nil`, the current value is returned, otherwise returns `self`.</li></ul>          |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.parameter:xml() -> cp.web.xml` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `xml` configuration for the Parameter.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `xml` for the Parameter.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `xml` for the Parameter.</li></ul>          |
 

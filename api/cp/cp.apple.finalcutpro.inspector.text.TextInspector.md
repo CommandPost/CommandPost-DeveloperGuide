@@ -61,8 +61,8 @@ text:stabilization():smoothing():show():value(1.5)
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the provided element could be a TextInspector.                                                                                         |
-| **Parameters**                                       |  * element   - The element to check                                       |
-| **Returns**                                          |  * `true` if it matches, `false` if not.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">element   - The element to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if it matches, `false` if not.</li></ul>          |
 
 ### Constructors
 
@@ -71,8 +71,8 @@ text:stabilization():smoothing():show():value(1.5)
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `TextInspector` object                                                                                         |
-| **Parameters**                                       |  * `parent`		- The parent                                       |
-| **Returns**                                          |  * A `TextInspector` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`parent`		- The parent</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `TextInspector` object</li></ul>          |
 
 ### Methods
 
@@ -81,22 +81,22 @@ text:stabilization():smoothing():show():value(1.5)
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The application object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the TextInspector's parent table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The parent object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:show() -> TextInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Text Inspector                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * TextInspector                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">TextInspector</li></ul>          |
 

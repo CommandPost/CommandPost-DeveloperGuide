@@ -16,6 +16,6 @@ Feedback Form.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays the Feedback Screen.                                                                                         |
-| **Parameters**                                       |  * quitOnComplete - `true` if you want CommandPost to quit after the Feedback is complete otherwise `false`                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">quitOnComplete - `true` if you want CommandPost to quit after the Feedback is complete otherwise `false`</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 

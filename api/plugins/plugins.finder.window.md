@@ -35,62 +35,62 @@ Inspired by [WinWin](http://www.hammerspoon.org/Spoons/WinWin.html) for [Hammers
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Center the cursor on the focused window.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [grid](#grid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.window.grid() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows a modal keyboard driven interface for interactive window resizing.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [hints](#hints)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.window.hints() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Displays a keyboard hint for switching focus to each window.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [moveAndResize](#moveandresize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.window.moveAndResize(option)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Move and resize the focused window.                                                                                         |
-| **Parameters**                                       |  * option - A string specifying the option, valid strings are: `halfleft`, `halfright`, `halfup`, `halfdown`, `cornerNW`, `cornerSW`, `cornerNE`, `cornerSE`, `center`, `fullscreen`, `expand`, `shrink`.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">option - A string specifying the option, valid strings are: `halfleft`, `halfright`, `halfup`, `halfdown`, `cornerNW`, `cornerSW`, `cornerNE`, `cornerSE`, `center`, `fullscreen`, `expand`, `shrink`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [moveToScreen](#movetoscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.window.moveToScreen(direction)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Move the focused window between all of the screens in the `direction`.                                                                                         |
-| **Parameters**                                       |  * direction - A string specifying the direction, valid strings are: `left`, `right`, `up`, `down`, `next`.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">direction - A string specifying the direction, valid strings are: `left`, `right`, `up`, `down`, `next`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [stepMove](#stepmove)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.window.stepMove(direction)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Move the focused window in the `direction` by one step. The step scale equals to the width/height of one gridpart.                                                                                         |
-| **Parameters**                                       |  * direction - A string specifying the direction, valid strings are: `left`, `right`, `up`, `down`.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">direction - A string specifying the direction, valid strings are: `left`, `right`, `up`, `down`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [stepResize](#stepresize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.window.stepResize(direction)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resize the focused window in the `direction` by on step.                                                                                         |
-| **Parameters**                                       |  * direction - A string specifying the direction, valid strings are: `left`, `right`, `up`, `down`.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">direction - A string specifying the direction, valid strings are: `left`, `right`, `up`, `down`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [undo](#undo)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finder.window.undo()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Undo the last window manipulation. Only those "moveAndResize" manipulations can be undone.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 

@@ -49,18 +49,18 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the switcher (if not yet visible) and selects the next window                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
-| **Notes**                                            |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">the switcher will be dismissed (and the selected window focused) when all modifier keys are released</li></ul>                |
 
 #### [previousWindow](#previouswindow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher.previousWindow()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Shows the switcher (if not yet visible) and selects the previous window                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
-| **Notes**                                            |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">the switcher will be dismissed (and the selected window focused) when all modifier keys are released</li></ul>                |
 
 ### Constructors
 
@@ -69,8 +69,8 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new switcher instance; it can use a windowfilter to determine which windows to show                                                                                         |
-| **Parameters**                                       |  * windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter   instance or constructor table * uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values   must follow the conventions described in `hs.window.switcher.ui`; this parameter allows you to have multiple   switcher instances with different behaviour (for example, with and without thumbnails and/or titles)   using different hotkeys * logname - (optional) name of the `hs.logger` instance for the new switcher; if omitted, the class logger will be used * loglevel - (optional) log level for the `hs.logger` instance for the new switcher                                       |
-| **Returns**                                          |  * the new instance                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">windowfilter - (optional) if omitted or nil, use the default windowfilter; otherwise it must be a windowfilter</li><li markdown="1">   instance or constructor table</li><li markdown="1">uiPrefs - (optional) a table to override UI preferences for this instance; its keys and values</li><li markdown="1">   must follow the conventions described in `hs.window.switcher.ui`; this parameter allows you to have multiple</li><li markdown="1">   switcher instances with different behaviour (for example, with and without thumbnails and/or titles)</li><li markdown="1">   using different hotkeys</li><li markdown="1">logname - (optional) name of the `hs.logger` instance for the new switcher; if omitted, the class logger will be used</li><li markdown="1">loglevel - (optional) log level for the `hs.logger` instance for the new switcher</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the new instance</li></ul>          |
 
 ### Methods
 
@@ -79,16 +79,16 @@ hs.hotkey.bind('alt-shift','tab','Prev window',hs.window.switcher.previousWindow
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the switcher instance (if not yet visible) and selects the next window                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
-| **Notes**                                            |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">the switcher will be dismissed (and the selected window focused) when all modifier keys are released</li></ul>                |
 
 #### [previous](#previous)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.switcher:previous()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the switcher instance (if not yet visible) and selects the previous window                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
-| **Notes**                                            |  * the switcher will be dismissed (and the selected window focused) when all modifier keys are released                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">the switcher will be dismissed (and the selected window focused) when all modifier keys are released</li></ul>                |
 

@@ -40,8 +40,8 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new handler with the specified ID.                                                                                         |
-| **Parameters**                                       | * `id`      - The unique ID of the action handler.* `group`   - The group the handler belongs to.                                       |
-| **Returns**                                          | * The new action handler instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `id`      - The unique ID of the action handler.</li><li markdown="1">* `group`   - The group the handler belongs to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new action handler instance.</li></ul>          |
 
 ### Fields
 
@@ -70,54 +70,54 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Executes the action, based on values in the table.                                                                                         |
-| **Parameters**                                       | * `action`      - A table of details about the action.                                       |
-| **Returns**                                          | * `true` if the execution succeeded.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `action`      - A table of details about the action.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if the execution succeeded.</li></ul>          |
 
 #### [group](#group)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:group() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the group for this handler.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * Group as string.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* Group as string.</li></ul>          |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:id() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ID for this handler.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The ID string.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The ID string.</li></ul>          |
 
 #### [onActionId](#onactionid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:onActionId(actionFn) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Configures a function to handle converting an action to unique ID.                                                                                         |
-| **Parameters**                                       | * `actionFn`    - The function with a signature of `function(action) -> string`                                       |
-| **Returns**                                          | * This action handler.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `actionFn`    - The function with a signature of `function(action) -> string`</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* This action handler.</li></ul>          |
 
 #### [onChoices](#onchoices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:onChoices(choicesFn) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a callback function which will receive the `cp.choices` instance to add                                                                                         |
-| **Parameters**                                       | * `choicesFn`       - The function with the signature of `function(choices) -> nothing`                                       |
-| **Returns**                                          | * This action handler.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `choicesFn`       - The function with the signature of `function(choices) -> nothing`</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* This action handler.</li></ul>          |
 
 #### [onExecute](#onexecute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:onExecute(executeFn) -> handler` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Configures the function to call when a choice is executed. This will be passed                                                                                         |
-| **Parameters**                                       | * `executeFn`       - The function to call when executing.                                       |
-| **Returns**                                          | * This action handler.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `executeFn`       - The function to call when executing.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* This action handler.</li></ul>          |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:reset([updateNow]) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resets the handler, clearing any cached result and requesting new ones.                                                                                         |
-| **Parameters**                                       | * `updateNow`   - (optional) If `true`, the choices will update immediately, otherwise they will update when the choices are next requested.                                       |
-| **Returns**                                          | * Nothing                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `updateNow`   - (optional) If `true`, the choices will update immediately, otherwise they will update when the choices are next requested.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* Nothing</li></ul>          |
 

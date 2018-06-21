@@ -17,14 +17,14 @@ Change Final Cut Pro's Backup Interval.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Periodic Backup Interval.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The periodic backup interval as number                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The periodic backup interval as number</li></ul>          |
 
 #### [set](#set)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.backupinterval.set() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the Periodic Backup Interval via a dialog box.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The periodic backup interval as number                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The periodic backup interval as number</li></ul>          |
 

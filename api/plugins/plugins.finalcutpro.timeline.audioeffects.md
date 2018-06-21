@@ -17,14 +17,14 @@ Controls Final Cut Pro's Audio Effects.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies the specified action as a audio effect. Expects action to be a table with the following structure:                                                                                         |
-| **Parameters**                                       |  * `action`		- A table with the name/category/theme for the audio effect to apply, or a string with just the name.                                       |
-| **Returns**                                          |  * `true` if a matching audio effect was found and applied to the timeline.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`action`		- A table with the name/category/theme for the audio effect to apply, or a string with just the name.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if a matching audio effect was found and applied to the timeline.</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.audioeffects.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the Module                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The Module                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The Module</li></ul>          |
 

@@ -25,22 +25,22 @@ require("cp.docs").generate()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates the CommandPost Developers Guide.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [generateExtensionLinks](#generateextensionlinks)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.docs.generateExtensionLinks(folder) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns markup of all of the API links for a specific group of extensions.                                                                                         |
-| **Parameters**                                       |  * folder - The folder you want to process (i.e. "cp", "plugins" or "hs").                                       |
-| **Returns**                                          |  * The result as a string, otherwise `nil` if an error occurs.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">folder - The folder you want to process (i.e. "cp", "plugins" or "hs").</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The result as a string, otherwise `nil` if an error occurs.</li></ul>          |
 
 #### [updateDeveloperGuideSummary](#updatedeveloperguidesummary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.docs.updateDeveloperGuideSummary() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Developer Guide Summary.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` if successful otherwise `nil`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful otherwise `nil`</li></ul>          |
 

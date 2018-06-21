@@ -29,8 +29,8 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `cp.strings` source that loads strings from a plist file.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The new plist `source` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The new plist `source` instance.</li></ul>          |
 
 ### Methods
 
@@ -39,22 +39,22 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified table of key values in the specified language code.                                                                                         |
-| **Parameters**                                       |  * `keyValues`  - The table of key/value pairs to define.                                       |
-| **Returns**                                          |  * The `cp.string.source`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`keyValues`  - The table of key/value pairs to define.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.string.source`.</li></ul>          |
 
 #### [context](#context)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.table:context([context]) -> table | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets a context to be set for the source. This typically includes a `language`, which                                                                                         |
-| **Parameters**                                       | * context   - A table with values which may be used by the source.                                       |
-| **Returns**                                          | * If a new context is provided, the `cp.string.source` is returned, otherwise the current context table is returned.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* context   - A table with values which may be used by the source.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* If a new context is provided, the `cp.string.source` is returned, otherwise the current context table is returned.</li></ul>          |
 
 #### [find](#find)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.table:find(key) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds the specified `key` value in the plist file for the specified optional `context`,                                                                                         |
-| **Parameters**                                       |  * `key`        - The key to retrieve the value for. * `context`    - An optional table with additional context.                                       |
-| **Returns**                                          |  * The value of the key, or `nil` if not found.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`key`        - The key to retrieve the value for.</li><li markdown="1">`context`    - An optional table with additional context.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The value of the key, or `nil` if not found.</li></ul>          |
 

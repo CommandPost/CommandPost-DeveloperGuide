@@ -68,136 +68,136 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the active group.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * Returns the active group or `manager.defaultGroup` as a string.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Returns the active group or `manager.defaultGroup` as a string.</li></ul>          |
 
 #### [appWatcherCallback](#appwatchercallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.appWatcherCallback(name, event, app) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stream Deck App Watcher Callback                                                                                         |
-| **Parameters**                                       |  * name - A string containing the name of the application * event - An event type * app - An `hs.application` object representing the application, or `nil` if the application couldn't be found                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">name - A string containing the name of the application</li><li markdown="1">event - An event type</li><li markdown="1">app - An `hs.application` object representing the application, or `nil` if the application couldn't be found</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [buttonCallback](#buttoncallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.buttonCallback(object, buttonID, pressed) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stream Deck Button Callback                                                                                         |
-| **Parameters**                                       |  * object - The `hs.streamdeck` userdata object * buttonID - A number containing the button that was pressed/released * pressed - A boolean indicating whether the button was pressed (`true`) or released (`false`)                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">object - The `hs.streamdeck` userdata object</li><li markdown="1">buttonID - A number containing the button that was pressed/released</li><li markdown="1">pressed - A boolean indicating whether the button was pressed (`true`) or released (`false`)</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [clear](#clear)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.clear() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Clears the Stream Deck items.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [discoveryCallback](#discoverycallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.discoveryCallback(connected, object) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stream Deck Discovery Callback                                                                                         |
-| **Parameters**                                       |  * connected - A boolean, `true` if a device was connected, `false` if a device was disconnected * object - An `hs.streamdeck` object, being the device that was connected/disconnected                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">connected - A boolean, `true` if a device was connected, `false` if a device was disconnected</li><li markdown="1">object - An `hs.streamdeck` object, being the device that was connected/disconnected</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [getAction](#getaction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getAction(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Stream Deck Action.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
-| **Returns**                                          |  * Action as string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Action as string</li></ul>          |
 
 #### [getActionHandlerID](#getactionhandlerid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getActionHandlerID(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Stream Deck Action Handler ID.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
-| **Returns**                                          |  * Action as string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Action as string</li></ul>          |
 
 #### [getActionTitle](#getactiontitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getActionTitle(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Stream Deck Action Title.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
-| **Returns**                                          |  * Action as string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Action as string</li></ul>          |
 
 #### [getIcon](#geticon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getIcon(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Stream Deck Icon.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
-| **Returns**                                          |  * Icon data as string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Icon data as string</li></ul>          |
 
 #### [getLabel](#getlabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.getLabel(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a specific Stream Deck Label.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
-| **Returns**                                          |  * Label as string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Label as string</li></ul>          |
 
 #### [groupStatus](#groupstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.groupStatus(groupID, status) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a group's visibility status.                                                                                         |
-| **Parameters**                                       |  * groupID - the group you want to update as a string. * status - the status of the group as a boolean.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">groupID - the group you want to update as a string.</li><li markdown="1">status - the status of the group as a boolean.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.init(deps, env) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the Stream Deck Plugin                                                                                         |
-| **Parameters**                                       |  * deps - Dependencies Table * env - Environment Table                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">deps - Dependencies Table</li><li markdown="1">env - Environment Table</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.start() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stops the Stream Deck Plugin                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Stream Deck.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [updateAction](#updateaction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.updateAction(button, group, action) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a Stream Deck action.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string * action - Action as string                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li><li markdown="1">action - Action as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [updateIcon](#updateicon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.updateIcon(button, group, icon) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a Stream Deck icon.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string * icon - Icon Data as string                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li><li markdown="1">icon - Icon Data as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [updateLabel](#updatelabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.manager.updateLabel(button, group, label) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates a Stream Deck action.                                                                                         |
-| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string * label - Label as string                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - Button ID as string</li><li markdown="1">group - Group ID as string</li><li markdown="1">label - Label as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 ### Fields
 

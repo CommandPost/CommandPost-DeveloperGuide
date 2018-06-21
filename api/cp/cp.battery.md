@@ -43,21 +43,21 @@ power supply changes.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Returns the amount of current flowing through the battery, in mAh.                                                                                         |
-| **Notes**                                            | * A number containing the amount of current flowing through the battery. The value may be:** Less than zero if the battery is being discharged (i.e. the computer is running on battery power)** Zero if the battery is being neither charged nor discharded** Greater than zero if the bettery is being charged                                                      |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">* A number containing the amount of current flowing through the battery. The value may be:</li><li markdown="1">** Less than zero if the battery is being discharged (i.e. the computer is running on battery power)</li><li markdown="1">** Zero if the battery is being neither charged nor discharded</li><li markdown="1">** Greater than zero if the bettery is being charged</li></ul>                |
 
 #### [capacity](#capacity)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery.capacity <cp.prop: number; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Returns the current capacity of the battery in mAh.                                                                                         |
-| **Notes**                                            | * This is the measure of how charged the battery is, vs the value of `cp.battery.maxCapacity()`.                                                      |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">* This is the measure of how charged the battery is, vs the value of `cp.battery.maxCapacity()`.</li></ul>                |
 
 #### [cycles](#cycles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery.cycles <cp.prop: number; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Returns the number of discharge cycles of the battery.                                                                                         |
-| **Notes**                                            | * One cycle is a full discharge of the battery, followed by a full charge. This may also be an aggregate of many smaller discharge-then-charge cycles (e.g. 10 iterations of discharging the battery from 100% to 90% and then charging back to 100% each time, is considered to be one cycle).                                                      |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">* One cycle is a full discharge of the battery, followed by a full charge. This may also be an aggregate of many smaller discharge-then-charge cycles (e.g. 10 iterations of discharging the battery from 100% to 90% and then charging back to 100% each time, is considered to be one cycle).</li></ul>                |
 
 #### [designCapacity](#designcapacity)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery.designCapacity <cp.prop: number; read-only>` </span>                                                          |
@@ -100,7 +100,7 @@ power supply changes.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Returns the maximum capacity of the battery in mAh.                                                                                         |
-| **Notes**                                            | * This may exceed the value of `cp.battery.designCapacity()` due to small variations in the production chemistry vs the design.                                                      |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">* This may exceed the value of `cp.battery.designCapacity()` due to small variations in the production chemistry vs the design.</li></ul>                |
 
 #### [otherBatteryInfo](#otherbatteryinfo)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery.otherBatteryInfo <cp.prop: table | nil; read-only>` </span>                                                          |
@@ -125,7 +125,7 @@ power supply changes.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | The amount of battery life remaining, in minuges.                                                                                         |
-| **Notes**                                            | * The return value may be:** Greater than zero to indicate the number of minutes remaining.** `-1` if the remaining batttery life is being calculated.** `-2` if there is unlimited time remaining (i.e. the system is on AC power).                                                      |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">* The return value may be:</li><li markdown="1">** Greater than zero to indicate the number of minutes remaining.</li><li markdown="1">** `-1` if the remaining batttery life is being calculated.</li><li markdown="1">** `-2` if there is unlimited time remaining (i.e. the system is on AC power).</li></ul>                |
 
 #### [timeToFullCharge](#timetofullcharge)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery.timeToFullCharge <cp.prop; number; read-only>` </span>                                                          |

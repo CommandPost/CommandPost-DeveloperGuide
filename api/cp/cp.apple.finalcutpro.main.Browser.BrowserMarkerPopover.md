@@ -33,8 +33,8 @@ Browser Marker Popup.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if a GUI element is the Browser Marker Popover or not                                                                                         |
-| **Parameters**                                       |  * element - The element you want to check                                       |
-| **Returns**                                          |  * `true` if the `element` is the Browser Marker Popover otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">element - The element you want to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the `element` is the Browser Marker Popover otherwise `false`</li></ul>          |
 
 ### Constructors
 
@@ -43,8 +43,8 @@ Browser Marker Popup.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Constructs a new Browser Marker Popover                                                                                         |
-| **Parameters**                                       | * parent - The parent object                                       |
-| **Returns**                                          | * The new `BrowserMarkerPopover` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* parent - The parent object</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `BrowserMarkerPopover` instance.</li></ul>          |
 
 ### Fields
 
@@ -61,94 +61,94 @@ Browser Marker Popup.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The application object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The application object as a table</li></ul>          |
 
 #### [chapter](#chapter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:chapter() -> RadioButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the "Chapter" Marker button.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `RadioButton` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `RadioButton` object.</li></ul>          |
 
 #### [completed](#completed)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:completed() -> CheckBox` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the "Completed" checkbox. This only available if you have a "To Do" marker selected.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `Button` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `Button` object.</li></ul>          |
 
 #### [delete](#delete)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:delete() -> Button` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the "Delete" button.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `Button` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `Button` object.</li></ul>          |
 
 #### [done](#done)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:done() -> Button` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the "Done" button.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `Button` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `Button` object.</li></ul>          |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:hide() -> BrowserMarkerPopover` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the Browser Marker Popover by clicking "Done" on the popover.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * BrowserMarkerPopover object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">BrowserMarkerPopover object</li></ul>          |
 
 #### [name](#name)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:name() -> TextField` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Marker Name text field.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `TextField` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `TextField` object.</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Browser Marker Popover's parent table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The parent object as a table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The parent object as a table</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:show() -> BrowserMarkerPopover` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Browser Marker Popover by triggering "Add Marker and Modify" from the menu bar.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * BrowserMarkerPopover object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">BrowserMarkerPopover object</li></ul>          |
 
 #### [standard](#standard)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:standard() -> RadioButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the "Standard" Marker button.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `RadioButton` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `RadioButton` object.</li></ul>          |
 
 #### [toDo](#todo)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:toDo() -> RadioButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the "To Do" Marker button.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `RadioButton` object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `RadioButton` object.</li></ul>          |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:UI() -> hs._asm.axuielement object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Browser Marker Popover                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A `hs._asm.axuielement` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A `hs._asm.axuielement` object</li></ul>          |
 

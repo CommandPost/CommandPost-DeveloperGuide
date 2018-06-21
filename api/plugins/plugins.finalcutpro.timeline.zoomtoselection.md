@@ -42,8 +42,8 @@ Zoom the Timeline to fit the currently-selected clips.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 ### Methods
 
@@ -52,6 +52,6 @@ Zoom the Timeline to fit the currently-selected clips.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Zooms the view to fit the currently-selected clips.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `true` if there is selected content in the timeline and zooming was successful.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `true` if there is selected content in the timeline and zooming was successful.</li></ul>          |
 

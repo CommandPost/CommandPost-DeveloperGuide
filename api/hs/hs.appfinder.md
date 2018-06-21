@@ -23,40 +23,40 @@ This module is *deprecated*; you can use `hs.window.find()`, `hs.window.get()`, 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds an application by its name (e.g. "Safari")                                                                                         |
-| **Parameters**                                       |  * name - A string containing the name of the application to search for                                       |
-| **Returns**                                          |  * An hs.application object if one can be found, otherwise nil                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">name - A string containing the name of the application to search for</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An hs.application object if one can be found, otherwise nil</li></ul>          |
 
 #### [appFromWindowTitle](#appfromwindowtitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.appfinder.appFromWindowTitle(title) -> app or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds an application by its window title (e.g. "Activity Monitor (All Processes)")                                                                                         |
-| **Parameters**                                       |  * title - A string containing a window title of the application to search for                                       |
-| **Returns**                                          |  * An hs.application object if one can be found, otherwise nil                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">title - A string containing a window title of the application to search for</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An hs.application object if one can be found, otherwise nil</li></ul>          |
 
 #### [appFromWindowTitlePattern](#appfromwindowtitlepattern)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.appfinder.appFromWindowTitlePattern(pattern) -> app or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds an application by Lua pattern in its window title (e.g."Inbox %(%d+ messages.*)")                                                                                         |
-| **Parameters**                                       |  * pattern - a Lua pattern describing a window title of the application to search for                                       |
-| **Returns**                                          |  * An hs.application object if one can be found, otherwise nil                                                |
-| **Notes**                                            |  * For more about Lua patterns, see http://lua-users.org/wiki/PatternsTutorial and http://www.lua.org/manual/5.2/manual.html#6.4.1                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">pattern - a Lua pattern describing a window title of the application to search for</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An hs.application object if one can be found, otherwise nil</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">For more about Lua patterns, see http://lua-users.org/wiki/PatternsTutorial and http://www.lua.org/manual/5.2/manual.html#6.4.1</li></ul>                |
 
 #### [windowFromWindowTitle](#windowfromwindowtitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.appfinder.windowFromWindowTitle(title) -> win or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds a window by its title (e.g. "Activity Monitor (All Processes)")                                                                                         |
-| **Parameters**                                       |  * title - A string containing the title of the window to search for                                       |
-| **Returns**                                          |  * An hs.window object if one can be found, otherwise nil                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">title - A string containing the title of the window to search for</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An hs.window object if one can be found, otherwise nil</li></ul>          |
 
 #### [windowFromWindowTitlePattern](#windowfromwindowtitlepattern)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.appfinder.windowFromWindowTitlePattern(pattern) -> app or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds a window by Lua pattern in its title (e.g."Inbox %(%d+ messages.*)")                                                                                         |
-| **Parameters**                                       |  * pattern - a Lua pattern describing a window title of the window to search for                                       |
-| **Returns**                                          |  * An hs.window object if one can be found, otherwise nil                                                |
-| **Notes**                                            |  * For more about Lua patterns, see http://lua-users.org/wiki/PatternsTutorial and http://www.lua.org/manual/5.2/manual.html#6.4.1                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">pattern - a Lua pattern describing a window title of the window to search for</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">An hs.window object if one can be found, otherwise nil</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">For more about Lua patterns, see http://lua-users.org/wiki/PatternsTutorial and http://www.lua.org/manual/5.2/manual.html#6.4.1</li></ul>                |
 

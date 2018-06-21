@@ -309,8 +309,8 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant                                                                                         |
 | **Description**                                      | Returns a `cp.prop` which will always be `nil`.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * a new `cp.prop` instance with a value of `nil`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a new `cp.prop` instance with a value of `nil`.</li></ul>          |
 
 ### Functions
 
@@ -319,84 +319,84 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which will be `true` if all `cp.prop` instances passed into the function return a `truthy` value.                                                                                         |
-| **Parameters**                                       |  * `...`        - The list of `cp.prop` instances to 'AND' together.                                       |
-| **Returns**                                          |  * a `cp.prop` instance.                                                |
-| **Notes**                                            |  * The value of this instance will resolve by lazily checking the `value` of the contained `cp.prop` instances in the order provided. The first `falsy` value will be returned. Otherwise the last `truthy` value is returned. * The instance is **immutable**. * Once you have created an 'AND', you cannot 'OR' as a method. Eg, this will fail: `prop.TRUE():AND(prop:FALSE()):OR(prop.TRUE())`. This is to avoid ambiguity as to whether the 'AND' or 'OR' takes precedence. Is it `(true and false) or true` or `true and (false or true)`?. * To combine 'AND' and 'OR' values, group them together when combining. Eg: ** `(true and false) or true`: `prop.OR( prop.TRUE():AND(prop.FALSE()), prop.TRUE() )` ** `true and (false or true)`: `prop.TRUE():AND( prop.FALSE():OR(prop.TRUE()) )`                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`...`        - The list of `cp.prop` instances to 'AND' together.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">The value of this instance will resolve by lazily checking the `value` of the contained `cp.prop` instances in the order provided. The first `falsy` value will be returned. Otherwise the last `truthy` value is returned.</li><li markdown="1">The instance is **immutable**.</li><li markdown="1">Once you have created an 'AND', you cannot 'OR' as a method. Eg, this will fail: `prop.TRUE():AND(prop:FALSE()):OR(prop.TRUE())`. This is to avoid ambiguity as to whether the 'AND' or 'OR' takes precedence. Is it `(true and false) or true` or `true and (false or true)`?.</li><li markdown="1">To combine 'AND' and 'OR' values, group them together when combining. Eg:</li><li markdown="1"> ** `(true and false) or true`: `prop.OR( prop.TRUE():AND(prop.FALSE()), prop.TRUE() )`</li><li markdown="1"> ** `true and (false or true)`: `prop.TRUE():AND( prop.FALSE():OR(prop.TRUE()) )`</li></ul>                |
 
 #### [bind](#bind)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.bind(owner[, relaxed]) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | This provides a utility function for binding multiple properties to a single owner in                                                                                         |
-| **Parameters**                                       | * owner     - The owner table to bind the properties to.* relaxed   - If `true`, then non-`cp.prop` fields will be ignored. Otherwise they generate an error.                                       |
-| **Returns**                                          | * A function which should be called, passing in a table of key/value pairs which are `string`/`cp.prop` value.                                                |
-| **Notes**                                            | * If you are binding multiple `cp.prop` values that are dependent on other `cp.prop` values on the same owner (e.g. via `mutate` or a boolean join), you  will have to break it up into multiple `prop.bind(...) {...}` calls, so that the dependent property can access the bound property.* If a `cp.prop` provided as bindings already has a bound owner, it will be wrapped instead of bound directly.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* owner     - The owner table to bind the properties to.</li><li markdown="1">* relaxed   - If `true`, then non-`cp.prop` fields will be ignored. Otherwise they generate an error.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* A function which should be called, passing in a table of key/value pairs which are `string`/`cp.prop` value.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">* If you are binding multiple `cp.prop` values that are dependent on other `cp.prop` values on the same owner (e.g. via `mutate` or a boolean join), you</li><li markdown="1">  will have to break it up into multiple `prop.bind(...) {...}` calls, so that the dependent property can access the bound property.</li><li markdown="1">* If a `cp.prop` provided as bindings already has a bound owner, it will be wrapped instead of bound directly.</li></ul>                |
 
 #### [extend](#extend)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.extend(target, source) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Makes the `target` extend the `source`. It will copy all bound properties on the source table into the target, rebinding it to the target table. Other keys are inherited via the metatable.                                                                                         |
-| **Parameters**                                       |  * `target` - The target to extend * `source` - The source to extend from                                       |
-| **Returns**                                          |  * The `target`, now extending the `source`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`target` - The target to extend</li><li markdown="1">`source` - The source to extend from</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `target`, now extending the `source`.</li></ul>          |
 
 #### [FALSE](#false)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.FALSE() -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which will cache internally, initially set to `false`.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * a `cp.prop` instance defaulting to `false`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance defaulting to `false`.</li></ul>          |
 
 #### [IMMUTABLE](#immutable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.IMMUTABLE(propValue) -- cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` instance which will not allow the wrapped value to be modified.                                                                                         |
-| **Parameters**                                       |  * `propValue`      - The `cp.prop` value to wrap.                                       |
-| **Returns**                                          |  * a new `cp.prop` instance which cannot be modified.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`propValue`      - The `cp.prop` value to wrap.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a new `cp.prop` instance which cannot be modified.</li></ul>          |
 
 #### [is](#is)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.is(value) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `value` is an instance of a `cp.prop`.                                                                                         |
-| **Parameters**                                       |  * `value`  - The value to check.                                       |
-| **Returns**                                          |  * `true` if the value is an instance of `cp.prop`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`value`  - The value to check.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the value is an instance of `cp.prop`.</li></ul>          |
 
 #### [NOT](#not)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.NOT(propValue) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which negates the provided `propValue`. Values are negated as follows:                                                                                         |
-| **Parameters**                                       |  * `propValue`      - Another `cp.prop` instance.                                       |
-| **Returns**                                          |  * a `cp.prop` instance negating the `propValue`.                                                |
-| **Notes**                                            |  * If the `propValue` is mutable, you can set the `NOT` property value and the underlying value will be set to the negated value. Be aware that the same negation rules apply when setting as when getting.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`propValue`      - Another `cp.prop` instance.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance negating the `propValue`.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">If the `propValue` is mutable, you can set the `NOT` property value and the underlying value will be set to the negated value. Be aware that the same negation rules apply when setting as when getting.</li></ul>                |
 
 #### [OR](#or)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.OR(...) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which will return the first 'truthy' value provided by one of the provided properties. Otherwise, returns the last 'falsy' value.                                                                                         |
-| **Parameters**                                       |  * `...`        - The list of `cp.prop` instances to 'OR' together.                                       |
-| **Returns**                                          |  * a `cp.prop` instance.                                                |
-| **Notes**                                            |  * The value of this instance will resolve by lazily checking the `value` of the contained `cp.prop` instances in the order provided. If any return `true`, no further instances will be checked. * The instance is immutable, since there is no realy way to flip the component values of an 'OR' in a way that makes sense. * Once you have created an 'OR', you cannot 'AND' as a method. Eg, this will fail: `prop.TRUE():OR(prop:FALSE()):AND(prop.TRUE())`. This is to avoid ambiguity as to whether the 'OR' or 'AND' takes precedence. Is it `(true or false) and true` or `true or (false and true)`?. * To combine 'AND' and 'OR' values, group them together when combining. Eg: ** `(true or false) and true`: `prop.AND( prop.TRUE():OR(prop.FALSE()), prop.TRUE() )` ** `true or (false and true)`: `prop.TRUE():OR( prop.FALSE():AND(prop.TRUE()) )`                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`...`        - The list of `cp.prop` instances to 'OR' together.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">The value of this instance will resolve by lazily checking the `value` of the contained `cp.prop` instances in the order provided. If any return `true`, no further instances will be checked.</li><li markdown="1">The instance is immutable, since there is no realy way to flip the component values of an 'OR' in a way that makes sense.</li><li markdown="1">Once you have created an 'OR', you cannot 'AND' as a method. Eg, this will fail: `prop.TRUE():OR(prop:FALSE()):AND(prop.TRUE())`. This is to avoid ambiguity as to whether the 'OR' or 'AND' takes precedence. Is it `(true or false) and true` or `true or (false and true)`?.</li><li markdown="1">To combine 'AND' and 'OR' values, group them together when combining. Eg:</li><li markdown="1"> ** `(true or false) and true`: `prop.AND( prop.TRUE():OR(prop.FALSE()), prop.TRUE() )`</li><li markdown="1"> ** `true or (false and true)`: `prop.TRUE():OR( prop.FALSE():AND(prop.TRUE()) )`</li></ul>                |
 
 #### [THIS](#this)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.THIS([initialValue]) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` instance which will cache a value internally. It will default to the value of the `initialValue`, if provided.                                                                                         |
-| **Parameters**                                       |  * `initialValue`   - The initial value to set it to (optional).                                       |
-| **Returns**                                          |  * a new `cp.prop` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`initialValue`   - The initial value to set it to (optional).</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a new `cp.prop` instance.</li></ul>          |
 
 #### [TRUE](#true)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.TRUE() -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which will cache internally, initially set to `true`.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * a `cp.prop` instance defaulting to `true`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance defaulting to `true`.</li></ul>          |
 
 ### Constructors
 
@@ -405,9 +405,9 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `prop` value, with the provided `get` and `set` functions.                                                                                         |
-| **Parameters**                                       |  * `getFn`      - The function that will get called to retrieve the current value. * `setFn`      - (optional) The function that will get called to set the new value. * `cloneFn`        - (optional) The function that will get called when cloning the property.                                       |
-| **Returns**                                          |  * The new `cp.prop` instance.                                                |
-| **Notes**                                            |  * `getFn` signature: `function([owner]) -> anything` ** `owner`     - If this is attached as a method, the owner table is passed in. * `setFn` signature: `function(newValue[, owner])` ** `newValue`  - The new value to store. ** `owner`     - If this is attached as a method, the owner table is passed in. * `cloneFn` signature: `function(prop) -> new cp.prop` * This can also be executed by calling the module directly. E.g. `require('cp.prop')(myGetFunction)`                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`getFn`      - The function that will get called to retrieve the current value.</li><li markdown="1">`setFn`      - (optional) The function that will get called to set the new value.</li><li markdown="1">`cloneFn`        - (optional) The function that will get called when cloning the property.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The new `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">`getFn` signature: `function([owner]) -> anything`</li><li markdown="1"> ** `owner`     - If this is attached as a method, the owner table is passed in.</li><li markdown="1">`setFn` signature: `function(newValue[, owner])`</li><li markdown="1"> ** `newValue`  - The new value to store.</li><li markdown="1"> ** `owner`     - If this is attached as a method, the owner table is passed in.</li><li markdown="1">`cloneFn` signature: `function(prop) -> new cp.prop`</li><li markdown="1">This can also be executed by calling the module directly. E.g. `require('cp.prop')(myGetFunction)`</li></ul>                |
 
 ### Methods
 
@@ -416,294 +416,294 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property comparing this property to `something`.                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is greater than `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is greater than `something`.</li></ul>          |
 
 #### [AND](#and)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:AND(...) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which will be `true` if this and all other `cp.prop` instances passed into the function return `true`.                                                                                         |
-| **Parameters**                                       |  * `...`        - The list of `cp.prop` instances to 'AND' together.                                       |
-| **Returns**                                          |  * a `cp.prop` instance.                                                |
-| **Notes**                                            |  * See the [AND Function](#and) for more details                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`...`        - The list of `cp.prop` instances to 'AND' together.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">See the [AND Function](#and) for more details</li></ul>                |
 
 #### [ATLEAST](#atleast)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:ATLEAST() -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property comparing this property to `something`.                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is less than or equal to `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is less than or equal to `something`.</li></ul>          |
 
 #### [ATMOST](#atmost)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:ATMOST() -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property comparing this property to `something`.                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is less than or equal to `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is less than or equal to `something`.</li></ul>          |
 
 #### [BELOW](#below)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:BELOW() -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property comparing this property to `something`.                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is less than `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is less than `something`.</li></ul>          |
 
 #### [bind](#bind)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:bind(owner, [key]) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Binds the property to the specified owner. Once bound, it cannot be changed.                                                                                         |
-| **Parameters**                                       |  * `owner`  - The owner to attach to. * `key`    - If provided, the property will be bound to the specified key.                                       |
-| **Returns**                                          |  * the `cp.prop`                                                |
-| **Notes**                                            |  * Throws an `error` if the new owner is `nil`. * Throws an `error` if the owner already has a property with the name provided in `key`. * Throws an `error` if the `key` is not a string value.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`owner`  - The owner to attach to.</li><li markdown="1">`key`    - If provided, the property will be bound to the specified key.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the `cp.prop`</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Throws an `error` if the new owner is `nil`.</li><li markdown="1">Throws an `error` if the owner already has a property with the name provided in `key`.</li><li markdown="1">Throws an `error` if the `key` is not a string value.</li></ul>                |
 
 #### [cached](#cached)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:cached() -> prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This can be called once to enable caching of the result inside the `prop`.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `cp.prop` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.prop` instance.</li></ul>          |
 
 #### [clear](#clear)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:clear() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Clears the property. Watchers will be notified if the value has changed.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * nil                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">nil</li></ul>          |
 
 #### [clone](#clone)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:clone() -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new copy of the property.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * New `cp.prop`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New `cp.prop`.</li></ul>          |
 
 #### [deepTable](#deeptable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:deepTable([skipMetatable]) -> prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This can be called once to enable deep copying of `table` values. By default,                                                                                         |
-| **Parameters**                                       |  * `skipMetatable`  - If set to `true`, copies will _not_ copy the metatable into the new tables.                                       |
-| **Returns**                                          |  * The `cp.prop` instance.                                                |
-| **Notes**                                            |  * See [shallowTable](#shallowTable).                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`skipMetatable`  - If set to `true`, copies will _not_ copy the metatable into the new tables.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">See [shallowTable](#shallowTable).</li></ul>                |
 
 #### [EQ](#eq)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:EQ(something) -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Synonym for [IS](#is).                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is equal to `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is equal to `something`.</li></ul>          |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:get() -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current value of the property.                                                                                         |
-| **Parameters**                                       |  * None                                       |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
 
 #### [hasWatchers](#haswatchers)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:hasWatchers() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns `true` if the property has any watchers.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` if any watchers have been registered.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if any watchers have been registered.</li></ul>          |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:id() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current ID.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The ID value.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The ID value.</li></ul>          |
 
 #### [IMMUTABLE](#immutable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:IMMUTABLE() -- cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` instance wrapping this property which will not allow it to be modified.                                                                                         |
-| **Parameters**                                       |  * `propValue`      - The `cp.prop` value to wrap.                                       |
-| **Returns**                                          |  * a new `cp.prop` instance which cannot be modified.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`propValue`      - The `cp.prop` value to wrap.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a new `cp.prop` instance which cannot be modified.</li></ul>          |
 
 #### [IS](#is)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:IS(something) -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property returning `true` if the value is equal to `something`.                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is equal to `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is equal to `something`.</li></ul>          |
 
 #### [ISNOT](#isnot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:ISNOT(something) -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property returning `true` when this property is not equal to `something`.                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is NOT equal to `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is NOT equal to `something`.</li></ul>          |
 
 #### [label](#label)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:label([newLabel]) -> string | cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets and sets the property label. This is human-readable text describing the `cp.prop`.                                                                                         |
-| **Parameters**                                       | * newLabel      - (optional) if provided, this will be the new label.                                       |
-| **Returns**                                          | * Either the existing label, or the `cp.prop` itself if a new label was provided.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* newLabel      - (optional) if provided, this will be the new label.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* Either the existing label, or the `cp.prop` itself if a new label was provided.</li></ul>          |
 
 #### [mirror](#mirror)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:mirror(otherProp) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Configures this prop and the other prop to mirror each other's values.                                                                                         |
-| **Parameters**                                       | * `otherProp`   - The other prop to mirror.                                       |
-| **Returns**                                          | The same property.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `otherProp`   - The other prop to mirror.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The same property.</li></ul>          |
 
 #### [monitor](#monitor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:monitor(...) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an uncloned watch to the `otherProp` which will trigger an [update](#update) check in this property.                                                                                         |
-| **Parameters**                                       |  * `...`  - a list of other `cp.prop` values to monitor.                                       |
-| **Returns**                                          |  * `cp.prop`    - This prop value.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`...`  - a list of other `cp.prop` values to monitor.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`cp.prop`    - This prop value.</li></ul>          |
 
 #### [mutable](#mutable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:mutable() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if the `cp.prop` can be modified.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` if the value can be modified.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the value can be modified.</li></ul>          |
 
 #### [mutate](#mutate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:mutate(getFn[, setFn]) -> cp.prop <anything; read-only>, function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property that is a mutation of the current one.                                                                                         |
-| **Parameters**                                       |  * `mutateFn`   - The function which will mutate the value of the current property.                                       |
-| **Returns**                                          |  * A new `cp.prop` which will return a mutation of the property value.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`mutateFn`   - The function which will mutate the value of the current property.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `cp.prop` which will return a mutation of the property value.</li></ul>          |
 
 #### [NEQ](#neq)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:NEQ(something) -> cp.prop <boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | A synonym for [ISNOT](#isnot)                                                                                         |
-| **Parameters**                                       |  * `something`  - A value, a function or a `cp.prop` to compare to.                                       |
-| **Returns**                                          |  * New, read-only `cp.prop` which will be `true` if this property is NOT equal to `something`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`something`  - A value, a function or a `cp.prop` to compare to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">New, read-only `cp.prop` which will be `true` if this property is NOT equal to `something`.</li></ul>          |
 
 #### [NOT](#not)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:NOT() -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which negates the current value. Values are negated as follows:                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * a `cp.prop` instance negating the current instance.                                                |
-| **Notes**                                            |  * If this property is mutable, you can set the `NOT` property value and this property will be set to the negated value. Be aware that the same negation rules apply when setting as when getting.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance negating the current instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">If this property is mutable, you can set the `NOT` property value and this property will be set to the negated value. Be aware that the same negation rules apply when setting as when getting.</li></ul>                |
 
 #### [observe](#observe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:observe() -> cp.rx.Observable` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.rx.Observable` for the property. This will emit                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `Observable` instance for the property.                                                |
-| **Notes**                                            |  * It will only emit `onNext` events, never an `onError` or `onCompleted` event.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `Observable` instance for the property.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">It will only emit `onNext` events, never an `onError` or `onCompleted` event.</li></ul>                |
 
 #### [OR](#or)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:OR(...) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new `cp.prop` which will be `true` if this or any `cp.prop` instance passed into the function returns `true`.                                                                                         |
-| **Parameters**                                       |  * `...`        - The list of `cp.prop` instances to 'OR' together.                                       |
-| **Returns**                                          |  * a `cp.prop` instance.                                                |
-| **Notes**                                            |  * See [OR Function](#or) for more details.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`...`        - The list of `cp.prop` instances to 'OR' together.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">See [OR Function](#or) for more details.</li></ul>                |
 
 #### [owner](#owner)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:owner() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | If this is a 'method', return the table instance the method is attached to.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The owner table, or `nil`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The owner table, or `nil`.</li></ul>          |
 
 #### [preWatch](#prewatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:preWatch(preWatchFn) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a function which will be called once if any watchers are added to this prop.                                                                                         |
-| **Parameters**                                       |  * `preWatchFn`     - The function to call once when the prop is watched. Has the signature `function(owner, prop)`.                                       |
-| **Returns**                                          |  * Nothing                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`preWatchFn`     - The function to call once when the prop is watched. Has the signature `function(owner, prop)`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Nothing</li></ul>          |
 
 #### [set](#set)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:set(newValue) -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the property to the specified value. Watchers will be notified if the value has changed.                                                                                         |
-| **Parameters**                                       |  * `newValue`   - The new value to set. May be `nil`.                                       |
-| **Returns**                                          |  * The current value of the prop. May not be the same as `newValue`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`newValue`   - The new value to set. May be `nil`.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The current value of the prop. May not be the same as `newValue`.</li></ul>          |
 
 #### [shallowTable](#shallowtable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:shallowTable(skipMetatable) -> prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This can be called once to enable shallow cloning of `table` values. By default,                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The `cp.prop` instance.                                                |
-| **Notes**                                            |  * See [deepTable](#deepTable).                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `cp.prop` instance.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">See [deepTable](#deepTable).</li></ul>                |
 
 #### [toggle](#toggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:toggle() -> boolean | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Toggles the current value. Values are modified as follows:                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The new value.                                                |
-| **Notes**                                            |  * If the value is immutable, an error will be thrown. * If you toggle a non-boolean parameter twice, it will end up set to `true`.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The new value.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">If the value is immutable, an error will be thrown.</li><li markdown="1">If you toggle a non-boolean parameter twice, it will end up set to `true`.</li></ul>                |
 
 #### [unwatch](#unwatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:unwatch(watchFn) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes the specified watch method as a watcher, if present. An example of adding and removing a watch:                                                                                         |
-| **Parameters**                                       |  * `watchFn`        - The original watch function to remove. Must be the same instance that was added.                                       |
-| **Returns**                                          |  * `true` if the function was watching and successfully removed, otherwise `false`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`watchFn`        - The original watch function to remove. Must be the same instance that was added.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the function was watching and successfully removed, otherwise `false`.</li></ul>          |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:update() -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Forces an update of the property and notifies any watchers if it has changed.                                                                                         |
-| **Parameters**                                       |  * None                                       |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
 
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:value([newValue]) -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the current value of the `cp.prop` instance. If a `newValue` is provided, and the instance is mutable, the value will be updated and the new value is returned. If it is not mutable, an error will be thrown.                                                                                         |
-| **Parameters**                                       |  * `newValue`   - The new value to set the instance to.                                       |
-| **Returns**                                          |  * The current boolean value.                                                |
-| **Notes**                                            |  * If you need to set the property to `nil`, use the [set method](#set), otherwise it will be ignored.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`newValue`   - The new value to set the instance to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The current boolean value.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">If you need to set the property to `nil`, use the [set method](#set), otherwise it will be ignored.</li></ul>                |
 
 #### [watch](#watch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:watch(watchFn[, notifyNow]) -> cp.prop, function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the watch function to the value. When the value changes, watchers are notified by calling the function. The function should have the following signature:                                                                                         |
-| **Parameters**                                       |  * `watchFn`        - The watch function, with the signature `function(newValue, owner)`. * `notifyNow`  - The function will be triggered immediately with the current state.  Defaults to `false`. * `uncloned`   - If `true`, the watch function will not be attached to any clones of this prop.                                       |
-| **Returns**                                          |  * `cp.prop`        - The same `cp.prop` instance * `function`   - The watch function, which can be passed to [unwatch](#unwatch) to stop watching.                                                |
-| **Notes**                                            |  * You can watch immutable values. Wrapped `cp.prop` instances may not be immutable, and any changes to them will cause watchers to be notified up the chain.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`watchFn`        - The watch function, with the signature `function(newValue, owner)`.</li><li markdown="1">`notifyNow`  - The function will be triggered immediately with the current state.  Defaults to `false`.</li><li markdown="1">`uncloned`   - If `true`, the watch function will not be attached to any clones of this prop.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`cp.prop`        - The same `cp.prop` instance</li><li markdown="1">`function`   - The watch function, which can be passed to [unwatch](#unwatch) to stop watching.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">You can watch immutable values. Wrapped `cp.prop` instances may not be immutable, and any changes to them will cause watchers to be notified up the chain.</li></ul>                |
 
 #### [wrap](#wrap)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:wrap([owner[, key]]) -> cp.prop <anything>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a new property that wraps this one. It will be able to get and set the same as this, and changes                                                                                         |
-| **Parameters**                                       |  * `owner`  -    (optional) If provided, the wrapper will be bound to the specified owner. * `key`    -    (optional) If provided, the wrapper will be assigned to the owner with the specified key.                                       |
-| **Returns**                                          |  * A new `cp.prop` which wraps this property.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`owner`  -    (optional) If provided, the wrapper will be bound to the specified owner.</li><li markdown="1">`key`    -    (optional) If provided, the wrapper will be assigned to the owner with the specified key.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A new `cp.prop` which wraps this property.</li></ul>          |
 

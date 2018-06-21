@@ -21,8 +21,8 @@ Choices Builder Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new choice builder instance.                                                                                         |
-| **Parameters**                                       | * `choice`	- The choice instance to configure.                                       |
-| **Returns**                                          | * The new choice builder.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `choice`	- The choice instance to configure.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new choice builder.</li></ul>          |
 
 ### Methods
 
@@ -31,30 +31,30 @@ Choices Builder Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the ID of the choice.                                                                                         |
-| **Parameters**                                       | * `value`	- The ID.                                       |
-| **Returns**                                          | * The choice builder.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `value`	- The ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The choice builder.</li></ul>          |
 
 #### [params](#params)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:params(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies a table of parameter values for the choice. These                                                                                         |
-| **Parameters**                                       | * `value`	- The table of parameters.                                       |
-| **Returns**                                          | * The choice builder, added to the choices set.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `value`	- The table of parameters.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The choice builder, added to the choices set.</li></ul>          |
 
 #### [subText](#subtext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:subText(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies the `subText` value for the choice being built.                                                                                         |
-| **Parameters**                                       | * `value`	- The subText title for the choice.                                       |
-| **Returns**                                          | * The choice builder.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `value`	- The subText title for the choice.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The choice builder.</li></ul>          |
 
 #### [text](#text)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:text(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies the text value for the choice being built.                                                                                         |
-| **Parameters**                                       | * `value`	- The text title for the choice.                                       |
-| **Returns**                                          | * The choice builder, added to the choices set.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `value`	- The text title for the choice.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The choice builder, added to the choices set.</li></ul>          |
 

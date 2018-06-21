@@ -41,8 +41,8 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `cp.strings` source that loads strings from a plist file.                                                                                         |
-| **Parameters**                                       |  * `pathPattern`	- The path to load from. May contain a special `${language}` marker which will be replace with the provided langauge when searching. * `cacheSeconds`	- (optional) How long in seconds to keep the loaded values cached in memory. Defaults to [defaultCacheSeconds](#defaultCacheSeconds)                                       |
-| **Returns**                                          |  * The new plist `source` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`pathPattern`	- The path to load from. May contain a special `${language}` marker which will be replace with the provided langauge when searching.</li><li markdown="1">`cacheSeconds`	- (optional) How long in seconds to keep the loaded values cached in memory. Defaults to [defaultCacheSeconds](#defaultCacheSeconds)</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The new plist `source` instance.</li></ul>          |
 
 ### Methods
 
@@ -51,46 +51,46 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets or sets a context to be set for the source. This typically includes a `language`, which                                                                                         |
-| **Parameters**                                       | * context   - A table with values which may be used by the source.                                       |
-| **Returns**                                          | * If a new context is provided, the `cp.string.source` is returned, otherwise the current context table is returned.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* context   - A table with values which may be used by the source.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* If a new context is provided, the `cp.string.source` is returned, otherwise the current context table is returned.</li></ul>          |
 
 #### [find](#find)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist:find(key[, context]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds the specified `key` value in the plist, if the plist can be found, and contains matching key value.                                                                                         |
-| **Parameters**                                       |  * `key`		- The key to retrieve from the file. * `context`	- Optional table with additional/alternate context. It will be added to the current context temporarily.                                       |
-| **Returns**                                          |  * The value of the key, or `nil` if not found.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`key`		- The key to retrieve from the file.</li><li markdown="1">`context`	- Optional table with additional/alternate context. It will be added to the current context temporarily.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The value of the key, or `nil` if not found.</li></ul>          |
 
 #### [findKeys](#findkeys)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist:findKeys(pattern) -> {string}` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds the array of keys who's value matches the pattern in this table. It will check that the pattern matches the beginning of the value.                                                                                         |
-| **Parameters**                                       |  * `pattern		- The string pattern to match. * `context`	- An optional additional context for the source.                                       |
-| **Returns**                                          |  * The array of keys, or `{}` if none were fround                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`pattern		- The string pattern to match.</li><li markdown="1">`context`	- An optional additional context for the source.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The array of keys, or `{}` if none were fround</li></ul>          |
 
 #### [loadFile](#loadfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist:loadFile([context]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Loads the plist file for the specified context, returning the value as a table.                                                                                         |
-| **Parameters**                                       |  * `context`	- The context to determine the absolute path with. This will be added to any values provided in the default [context](#context).                                       |
-| **Returns**                                          |  * The table for the specified language, or `nil` if the file doesn't exist.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`context`	- The context to determine the absolute path with. This will be added to any values provided in the default [context](#context).</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The table for the specified language, or `nil` if the file doesn't exist.</li></ul>          |
 
 #### [pathToAbsolute](#pathtoabsolute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist:pathToAbsolute([context]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds the abolute path to the `plist` represented by this source for the specified langauge, or `nil` if it does not exist.                                                                                         |
-| **Parameters**                                       |  * `context`	- The context to determine the absolute path with. This will be added to any values provided in the default [context](#context).                                       |
-| **Returns**                                          |  * The path to the file, or `nil` if not found.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`context`	- The context to determine the absolute path with. This will be added to any values provided in the default [context](#context).</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The path to the file, or `nil` if not found.</li></ul>          |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.plist:reset() -> cp.strings` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Clears any stored key values.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The current `cp.strings` instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The current `cp.strings` instance.</li></ul>          |
 

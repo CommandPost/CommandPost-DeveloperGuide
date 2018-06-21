@@ -37,14 +37,14 @@ Notifications Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Start Watchers                                                                                         |
-| **Parameters**                                       |  * id - The ID of the watcher to unwatch as string                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - The ID of the watcher to unwatch as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [watch](#watch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.manager.watch(event) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Start Watchers                                                                                         |
-| **Parameters**                                       |  * events - Events to watch                                       |
-| **Returns**                                          |  * The ID of the watcher as string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">events - Events to watch</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The ID of the watcher as string</li></ul>          |
 

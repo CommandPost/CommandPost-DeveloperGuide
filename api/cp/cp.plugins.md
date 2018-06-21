@@ -216,150 +216,150 @@ These modules will not be accessible to other plugins or to the main application
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds the `dependentPlugin` as a dependent of the plugin with the specified id.                                                                                         |
-| **Parameters**                                       |  * `id`                 - The plugin package ID. * `dependentPlugin`    - The plugin which is a dependent                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`id`                 - The plugin package ID.</li><li markdown="1">`dependentPlugin`    - The plugin which is a dependent</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [disable](#disable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.disable(id) -> nothing` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Disabled the plugin with the specified ID and reloads the application.                                                                                         |
-| **Parameters**                                       |  * `id` - The plugin package ID.                                       |
-| **Returns**                                          |  * `true` if the plugin was disabled, or `false` if it could not be disabled.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`id` - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the plugin was disabled, or `false` if it could not be disabled.</li></ul>          |
 
 #### [enable](#enable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.enable(id) -> nothing` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enables the plugin with the specified ID, and reloads the application.                                                                                         |
-| **Parameters**                                       |  * `id` - The plugin package ID.                                       |
-| **Returns**                                          |  * `true` if the plugin had been disabled and is now enabled.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`id` - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the plugin had been disabled and is now enabled.</li></ul>          |
 
 #### [getDependents](#getdependents)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getDependents(pluginId)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves the list of dependent plugins for the specified plugin id.                                                                                         |
-| **Parameters**                                       | * `id`      - The plugin ID.                                       |
-| **Returns**                                          |  * The table of dependents.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `id`      - The plugin ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The table of dependents.</li></ul>          |
 
 #### [getPlugin](#getplugin)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getPlugin(id) -> plugin` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves a plugin from the cache by ID.                                                                                         |
-| **Parameters**                                       |  * id - The ID of the plugin you want to get                                       |
-| **Returns**                                          |  * The plugin                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">id - The ID of the plugin you want to get</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The plugin</li></ul>          |
 
 #### [getPluginIds](#getpluginids)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getPluginIds() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves an array of the loaded plugin IDs.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * the list of plugin IDs.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the list of plugin IDs.</li></ul>          |
 
 #### [getPluginModule](#getpluginmodule)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getPluginModule(id) -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an initialised plugin result with the specified `id`.                                                                                         |
-| **Parameters**                                       |  * `id` - The plugin package ID.                                       |
-| **Returns**                                          |  * the result of the plugin's `init(...)` function call.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`id` - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the result of the plugin's `init(...)` function call.</li></ul>          |
 
 #### [getPlugins](#getplugins)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getPlugins() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Retrieves an array of details about the set of loaded plugins.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * the list of plugins.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the list of plugins.</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.init(paths) -> cp.plugins` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the plugin loader to look in the specified file paths for plugins.                                                                                         |
-| **Parameters**                                       |  * `paths` - An array of paths to search for plugins in.                                       |
-| **Returns**                                          |  * `cp.plugins` - The module.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`paths` - An array of paths to search for plugins in.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`cp.plugins` - The module.</li></ul>          |
 
 #### [initPlugin](#initplugin)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.initPlugin(id) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises a specific plugin with the specified path.                                                                                         |
-| **Parameters**                                       |  * `id` - The LUA package to look in                                       |
-| **Returns**                                          |  * the result of the plugin's `init(...)` function call.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`id` - The LUA package to look in</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the result of the plugin's `init(...)` function call.</li></ul>          |
 
 #### [initPlugins](#initplugins)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.initPlugins() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises all registered plugins.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [isDisabled](#isdisabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.isDisabled(id) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the specified plugin ID is disabled.                                                                                         |
-| **Parameters**                                       |  * `id` - The plugin package ID.                                       |
-| **Returns**                                          |  * `true` if the plugin is disabled.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`id` - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the plugin is disabled.</li></ul>          |
 
 #### [loadComplexPlugin](#loadcomplexplugin)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.loadComplexPlugin(path) -> plugin` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a 'complex' plugin, which is a folder containing an `init.lua` file.                                                                                         |
-| **Parameters**                                       |  * `path` - The plugin package ID.                                       |
-| **Returns**                                          |  * `true` if the plugin is successfully post-initialised.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`path` - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the plugin is successfully post-initialised.</li></ul>          |
 
 #### [loadDependencies](#loaddependencies)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.loadDependencies(plugin) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads the list of dependencies for the provided plugin.                                                                                         |
-| **Parameters**                                       |  * `plugin` - The plugin object                                       |
-| **Returns**                                          |  * an array of the dependencies required by the plugin, or `nil` if any could not be loaded.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`plugin` - The plugin object</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">an array of the dependencies required by the plugin, or `nil` if any could not be loaded.</li></ul>          |
 
 #### [loadSimplePlugin](#loadsimpleplugin)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.loadSimplePlugin(id) -> plugin` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a 'simple' plugin, where it is defined by a single LUA script.                                                                                         |
-| **Parameters**                                       |  * `path` - The plugin package ID.                                       |
-| **Returns**                                          |  * `true` if the plugin is successfully post-initialised.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`path` - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the plugin is successfully post-initialised.</li></ul>          |
 
 #### [postInitPlugin](#postinitplugin)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.postInitPlugin(id) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Runs any post-initialisation functions declared for the specified plugin ID.                                                                                         |
-| **Parameters**                                       |  * `id` - The plugin package ID.                                       |
-| **Returns**                                          |  * `true` if the plugin is successfully post-initialised.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`id` - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the plugin is successfully post-initialised.</li></ul>          |
 
 #### [postInitPlugins](#postinitplugins)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.postInitPlugins() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs any post-initialisation required for plugins.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [scanDirectory](#scandirectory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.scanDirectory(directoryPath) -> cp.plugins` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Scans the specified directory and loads any plugins in the directory,                                                                                         |
-| **Parameters**                                       |  * `directoryPath` - The path to the directory to scan.                                       |
-| **Returns**                                          |  * boolean - `true` if the path was loaded successfully, false if there were any issues.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`directoryPath` - The path to the directory to scan.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">boolean - `true` if the path was loaded successfully, false if there were any issues.</li></ul>          |
 
 #### [watchPluginPaths](#watchpluginpaths)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.watchPluginPaths() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Watches the plugin paths for changes and reloads the  application if any change.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 

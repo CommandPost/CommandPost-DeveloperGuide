@@ -45,7 +45,7 @@ CommandPost Batch Export Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Constructs a new panel with the specified priority and ID.                                                                                         |
-| **Parameters**                                       | * priority  - Defines the order in which the panel appears.* id        - The unique ID for the panel.* webview   - The webview the panel is attached to.                                       |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* priority  - Defines the order in which the panel appears.</li><li markdown="1">* id        - The unique ID for the panel.</li><li markdown="1">* webview   - The webview the panel is attached to.</li></ul> |
 
 ### Methods
 
@@ -54,88 +54,88 @@ CommandPost Batch Export Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a button to the panel.                                                                                         |
-| **Parameters**                                       |  * params - The list of parameters.                                       |
-| **Returns**                                          |  * The same panel.                                                |
-| **Notes**                                            |  * The `params` table may contain: ** `id`        - (optional) the unique ID for the button. If none is provided, one is generated. ** `value`     - The value of the button. This is sent to the `onclick` function. ** `label`     - The text label for the button. Defaults to the `value` if not provided. ** `width`     - The width of the button in pixels. ** `onclick`   - the function to execute when the button is clicked. The function should have the signature of `function(id, value)`, where `id` is the id of the button that was clicked, and `value` is the value of the button.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">params - The list of parameters.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The same panel.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">The `params` table may contain:</li><li markdown="1"> ** `id`        - (optional) the unique ID for the button. If none is provided, one is generated.</li><li markdown="1"> ** `value`     - The value of the button. This is sent to the `onclick` function.</li><li markdown="1"> ** `label`     - The text label for the button. Defaults to the `value` if not provided.</li><li markdown="1"> ** `width`     - The width of the button in pixels.</li><li markdown="1"> ** `onclick`   - the function to execute when the button is clicked. The function should have the signature of `function(id, value)`, where `id` is the id of the button that was clicked, and `value` is the value of the button.</li></ul>                |
 
 #### [addCheckbox](#addcheckbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addCheckbox(priority, params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a checkbox to the panel with the specified `priority` and `params`.                                                                                         |
-| **Parameters**                                       |  * `priority`   - The priority number for the checkbox. * `params`     - The set of parameters for the checkbox.                                       |
-| **Returns**                                          |  * The panel.Notes: * The `params` can contain the following fields: ** `id`         - (optional) The unique ID. If none is provided, one will be generated. ** `name`       - (optional) The name of the checkbox field. ** `label`      - (optional) The text label to display after the checkbox. ** `onchange`   - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox. ** `class`      - (optional) the CSS class list to apply to the checkbox.                                                |
-| **Notes**                                            |  * The `params` can contain the following fields: ** `id`         - (optional) The unique ID. If none is provided, one will be generated. ** `name`       - (optional) The name of the checkbox field. ** `label`      - (optional) The text label to display after the checkbox. ** `onchange`   - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox. ** `class`      - (optional) the CSS class list to apply to the checkbox.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`priority`   - The priority number for the checkbox.</li><li markdown="1">`params`     - The set of parameters for the checkbox.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel.</li><li markdown="1">Notes:</li><li markdown="1">The `params` can contain the following fields:</li><li markdown="1"> ** `id`         - (optional) The unique ID. If none is provided, one will be generated.</li><li markdown="1"> ** `name`       - (optional) The name of the checkbox field.</li><li markdown="1"> ** `label`      - (optional) The text label to display after the checkbox.</li><li markdown="1"> ** `onchange`   - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox.</li><li markdown="1"> ** `class`      - (optional) the CSS class list to apply to the checkbox.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">The `params` can contain the following fields:</li><li markdown="1"> ** `id`         - (optional) The unique ID. If none is provided, one will be generated.</li><li markdown="1"> ** `name`       - (optional) The name of the checkbox field.</li><li markdown="1"> ** `label`      - (optional) The text label to display after the checkbox.</li><li markdown="1"> ** `onchange`   - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, `id` and `params`, the latter of which is a table containing the `value` and `checked` values of the checkbox.</li><li markdown="1"> ** `class`      - (optional) the CSS class list to apply to the checkbox.</li></ul>                |
 
 #### [addContent](#addcontent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addContent(priority, content[, escaped]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds the specified `content` to the panel, with the specified `priority` order.                                                                                         |
-| **Parameters**                                       | * `priority`        - the priority order of the content.* `content`         - a value that can be converted to a string.* `escaped`         - if `true`, the content will be escaped.                                       |
-| **Returns**                                          | * The panel.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* `priority`        - the priority order of the content.</li><li markdown="1">* `content`         - a value that can be converted to a string.</li><li markdown="1">* `escaped`         - if `true`, the content will be escaped.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel.</li></ul>          |
 
 #### [addHandler](#addhandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addHandler(event, id, handlerFn, keys) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a handler from an Handler ID                                                                                         |
-| **Parameters**                                       |  * event - The event * id - the Handler ID * handlerFn - The Handler function * keys - Keys                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">event - The event</li><li markdown="1">id - the Handler ID</li><li markdown="1">handlerFn - The Handler function</li><li markdown="1">keys - Keys</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [addHeading](#addheading)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addHeading(text) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a heading to the panel                                                                                         |
-| **Parameters**                                       |  * text - The text of the heading as a string                                       |
-| **Returns**                                          | * The panel object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">text - The text of the heading as a string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
 
 #### [addParagraph](#addparagraph)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addParagraph(content[, escaped[, class]]) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a Paragraph to the panel                                                                                         |
-| **Parameters**                                       |  * content - The content as a string * escaped - Whether or not the HTML should be escaped as a boolean. Defaults to `true` for simple text. * class - The class as a string                                       |
-| **Returns**                                          | * The panel object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">content - The content as a string</li><li markdown="1">escaped - Whether or not the HTML should be escaped as a boolean. Defaults to `true` for simple text.</li><li markdown="1">class - The class as a string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
 
 #### [addPassword](#addpassword)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addPassword(params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a password text-box to the panel.                                                                                         |
-| **Parameters**                                       |  * params - A table of parameters                                       |
-| **Returns**                                          | * The panel object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">params - A table of parameters</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
 
 #### [addSelect](#addselect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addSelect(params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a select to the panel.                                                                                         |
-| **Parameters**                                       |  * priority - Priority of the item as number. * params - A table of parameters                                       |
-| **Returns**                                          |  * The panel object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">priority - Priority of the item as number.</li><li markdown="1">params - A table of parameters</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The panel object.</li></ul>          |
 
 #### [addStatus](#addstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addStatus(priority, content, default) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a Paragraph to the panel                                                                                         |
-| **Parameters**                                       |  * content - The content value * default - The default value to display if the `content` is `nil`. It will be displayed with a different style.                                       |
-| **Returns**                                          | * The panel object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">content - The content value</li><li markdown="1">default - The default value to display if the `content` is `nil`. It will be displayed with a different style.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
 
 #### [addTextbox](#addtextbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:addTextbox(params) -> panel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a text-box to the panel                                                                                         |
-| **Parameters**                                       |  * params - A table of parameters                                       |
-| **Returns**                                          | * The panel object.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">params - A table of parameters</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The panel object.</li></ul>          |
 
 #### [getToolbarItem](#gettoolbaritem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.panel:getToolbarItem() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Tool Bar as a table                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The toolbar item as a table.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The toolbar item as a table.</li></ul>          |
 

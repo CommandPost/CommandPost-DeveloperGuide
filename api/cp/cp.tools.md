@@ -64,392 +64,392 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes the … symbol and multiple >'s from a string.                                                                                         |
-| **Parameters**                                       |  * value - A string                                       |
-| **Returns**                                          |  * A cleaned string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - A string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A cleaned string</li></ul>          |
 
 #### [dirFiles](#dirfiles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.dirFiles(path) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets all the files in a directory                                                                                         |
-| **Parameters**                                       |  * path - A path as string                                       |
-| **Returns**                                          |  * A table containing filenames as strings.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - A path as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A table containing filenames as strings.</li></ul>          |
 
 #### [doesDirectoryExist](#doesdirectoryexist)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.doesDirectoryExist(path) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether or not a directory exists.                                                                                         |
-| **Parameters**                                       |  * path - Path to the directory                                       |
-| **Returns**                                          |  * `true` if the directory exists otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - Path to the directory</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the directory exists otherwise `false`</li></ul>          |
 
 #### [doesFileExist](#doesfileexist)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.doesFileExist(path) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether or not a file exists.                                                                                         |
-| **Parameters**                                       |  * path - Path to the file                                       |
-| **Returns**                                          |  * `true` if the file exists otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - Path to the file</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if the file exists otherwise `false`</li></ul>          |
 
 #### [doubleLeftClick](#doubleleftclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.doubleLeftClick(point[, delay]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a Left Mouse Double Click.                                                                                         |
-| **Parameters**                                       |  * point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li markdown="1">delay - The optional delay between multiple mouse clicks</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [endsWith](#endswith)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.endsWith(str, ending) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if `str` has the same ending as `ending`.                                                                                         |
-| **Parameters**                                       |  * str       - String to analysis * ending    - End of string to compare against                                       |
-| **Returns**                                          |  * table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">str       - String to analysis</li><li markdown="1">ending    - End of string to compare against</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">table</li></ul>          |
 
 #### [ensureDirectoryExists](#ensuredirectoryexists)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.ensureDirectoryExists(rootPath, ...) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Ensures all steps on a provided path exist. If not, attempts to create them.                                                                                         |
-| **Parameters**                                       |  * `rootPath` - The root path (should already exist). * `...`      - The list of path steps to create                                       |
-| **Returns**                                          |  * The full path, if it exists, or `nil` if unable to create the directory for some reason.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`rootPath` - The root path (should already exist).</li><li markdown="1">`...`      - The list of path steps to create</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The full path, if it exists, or `nil` if unable to create the directory for some reason.</li></ul>          |
 
 #### [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.executeWithAdministratorPrivileges(input[, stopOnError]) -> boolean or string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Executes a single or multiple shell commands with Administrator Privileges.                                                                                         |
-| **Parameters**                                       |  * input - either a string or a table of strings of commands you want to execute * stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error                                       |
-| **Returns**                                          |  * `true` if successful, `false` if cancelled and a string if there's an error.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">input - either a string or a table of strings of commands you want to execute</li><li markdown="1">stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful, `false` if cancelled and a string if there's an error.</li></ul>          |
 
 #### [firstToUpper](#firsttoupper)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.firstToUpper(str) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Makes the first letter of a string uppercase.                                                                                         |
-| **Parameters**                                       |  * str - The string you want to manipulate                                       |
-| **Returns**                                          |  * A string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">str - The string you want to manipulate</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string</li></ul>          |
 
 #### [getEmail](#getemail)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getEmail() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the current users Email, otherwise an empty string.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [getExternalDevices](#getexternaldevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getExternalDevices() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a string of USB & Thunderbolt Devices.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [getFilenameFromPath](#getfilenamefrompath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFilenameFromPath(input[, removeExtension]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the filename component of a path.                                                                                         |
-| **Parameters**                                       |  * input - The path * removeExtension - (optional) set to `true` if the file extension should be removed                                       |
-| **Returns**                                          |  * A string of the filename.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">input - The path</li><li markdown="1">removeExtension - (optional) set to `true` if the file extension should be removed</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string of the filename.</li></ul>          |
 
 #### [getFullname](#getfullname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFullname() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the current users Full Name, otherwise an empty string.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [getKeysSortedByValue](#getkeyssortedbyvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getKeysSortedByValue(tbl, sortFunction) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sorts table keys by a value                                                                                         |
-| **Parameters**                                       |  * tbl - the table you want to sort * sortFunction - the function you want to use to sort the table                                       |
-| **Returns**                                          |  * A sorted table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">tbl - the table you want to sort</li><li markdown="1">sortFunction - the function you want to use to sort the table</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A sorted table</li></ul>          |
 
 #### [getmacOSVersion](#getmacosversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getmacOSVersion() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the macOS Version in the format that Apple's Feedback Form expects.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The macOS version as a string or "" if unknown.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The macOS version as a string or "" if unknown.</li></ul>          |
 
 #### [getModelName](#getmodelname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getModelName() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns Model Name of Hardware.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [getRAMSize](#getramsize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getRAMSize() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns RAM Size in a format Apple's Feedback form expects.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * The RAM size as a string, or "" if unknown.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The RAM size as a string, or "" if unknown.</li></ul>          |
 
 #### [getScreenshotsAsBase64](#getscreenshotsasbase64)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getScreenshotsAsBase64() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Captures all available screens and saves them as base64 encodes in a table.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A table containing base64 images of all available screens.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A table containing base64 images of all available screens.</li></ul>          |
 
 #### [getThunderboltDevices](#getthunderboltdevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getThunderboltDevices() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a string of Thunderbolt Devices.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [getUSBDevices](#getusbdevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getUSBDevices() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a string of USB Devices.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [getVRAMSize](#getvramsize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getVRAMSize() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the VRAM size in format suitable for Apple's Final Cut Pro feedback form or "" if unknown.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [iconFallback](#iconfallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.iconFallback(paths) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Excepts one or more paths to an icon, checks to see if they exist (in the order that they're given), and if none exist, returns the CommandPost icon path.                                                                                         |
-| **Parameters**                                       |  * paths - One or more paths to an icon                                       |
-| **Returns**                                          |  * A string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">paths - One or more paths to an icon</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string</li></ul>          |
 
 #### [incrementFilename](#incrementfilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.incrementFilename(value) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Increments the filename.                                                                                         |
-| **Parameters**                                       |  * value - A string                                       |
-| **Returns**                                          |  * A string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - A string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string</li></ul>          |
 
 #### [isNumberString](#isnumberstring)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.isNumberString(value) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns whether or not value is a number string.                                                                                         |
-| **Parameters**                                       |  * value - the string you want to check                                       |
-| **Returns**                                          |  * `true` if value is a number string, otherwise `false`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - the string you want to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if value is a number string, otherwise `false`.</li></ul>          |
 
 #### [isOffScreen](#isoffscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.isOffScreen(rect) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Determines if the given rect is off screen or not.                                                                                         |
-| **Parameters**                                       |  * rect - the rect you want to check                                       |
-| **Returns**                                          |  * `true` if offscreen otherwise `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">rect - the rect you want to check</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if offscreen otherwise `false`</li></ul>          |
 
 #### [leftClick](#leftclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.leftClick(point[, delay, clickNumber]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a Left Mouse Click.                                                                                         |
-| **Parameters**                                       |  * point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks * clickNumber - The optional number of times you want to perform the click.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li markdown="1">delay - The optional delay between multiple mouse clicks</li><li markdown="1">clickNumber - The optional number of times you want to perform the click.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [lines](#lines)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.lines(string) -> table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Splits a string containing multiple lines of text into a table.                                                                                         |
-| **Parameters**                                       |  * string - the string you want to process                                       |
-| **Returns**                                          |  * A table or `nil` if the parameter is not a string.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">string - the string you want to process</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A table or `nil` if the parameter is not a string.</li></ul>          |
 
 #### [macOSVersion](#macosversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.macOSVersion() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a the macOS Version as a single string.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * A string containing the macOS version                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string containing the macOS version</li></ul>          |
 
 #### [mergeTable](#mergetable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.mergeTable(target, ...) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Merges multiple tables into a target table.                                                                                         |
-| **Parameters**                                       |  * target   - The target table * ...      - Any other tables you want to merge into target                                       |
-| **Returns**                                          |  * Table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">target   - The target table</li><li markdown="1">...      - Any other tables you want to merge into target</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Table</li></ul>          |
 
 #### [ninjaDoubleClick](#ninjadoubleclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.ninjaDoubleClick(point[, delay]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a mouse double click, but returns the mouse to the original position without the users knowledge.                                                                                         |
-| **Parameters**                                       |  * point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li markdown="1">delay - The optional delay between multiple mouse clicks</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [ninjaMouseAction](#ninjamouseaction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.ninjaMouseAction(point, fn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Moves the mouse to a point, performs a function, then returns the mouse to the original point.                                                                                         |
-| **Parameters**                                       |  * point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * fn - A function you want to perform                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li markdown="1">fn - A function you want to perform</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [ninjaMouseClick](#ninjamouseclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.ninjaMouseClick(point[, delay]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Performs a mouse click, but returns the mouse to the original position without the users knowledge.                                                                                         |
-| **Parameters**                                       |  * point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li markdown="1">delay - The optional delay between multiple mouse clicks</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [numberToWord](#numbertoword)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.numberToWord(number) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Converts a number to a string (i.e. 1 becomes "One").                                                                                         |
-| **Parameters**                                       |  * number - A whole number between 0 and 10                                       |
-| **Returns**                                          |  * A string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">number - A whole number between 0 and 10</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string</li></ul>          |
 
 #### [playErrorSound](#playerrorsound)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.playErrorSound() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Plays the "Funk" error sound.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [removeFilenameFromPath](#removefilenamefrompath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.removeFilenameFromPath(string) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes the filename from a path.                                                                                         |
-| **Parameters**                                       |  * string - The path                                       |
-| **Returns**                                          |  * A string of the path without the filename.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">string - The path</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string of the path without the filename.</li></ul>          |
 
 #### [removeFromTable](#removefromtable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.removeFromTable(table, element) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes a string from a table of strings                                                                                         |
-| **Parameters**                                       |  * table - the table you want to check * element - the string you want to remove                                       |
-| **Returns**                                          |  * A table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">table - the table you want to check</li><li markdown="1">element - the string you want to remove</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A table</li></ul>          |
 
 #### [rmdir](#rmdir)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.rmdir(path[, recursive]) -> true | nil, err` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Attempts to remove the directory at the specified path, optionally removing                                                                                         |
-| **Parameters**                                       |  * `path`        - The absolute path to remove * `recursive`   - If `true`, the contents of the directory will be removed first.                                       |
-| **Returns**                                          |  * `true` if successful, or `nil, err` if there was a problem.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">`path`        - The absolute path to remove</li><li markdown="1">`recursive`   - If `true`, the contents of the directory will be removed first.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` if successful, or `nil, err` if there was a problem.</li></ul>          |
 
 #### [round](#round)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.round(num, numDecimalPlaces) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Rounds a number to a set number of decimal places                                                                                         |
-| **Parameters**                                       |  * num - The number you want to round * numDecimalPlaces - How many numbers of decimal places (defaults to 0)                                       |
-| **Returns**                                          |  * A rounded number                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">num - The number you want to round</li><li markdown="1">numDecimalPlaces - How many numbers of decimal places (defaults to 0)</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A rounded number</li></ul>          |
 
 #### [safeFilename](#safefilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.safeFilename(value[, defaultValue]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a Safe Filename.                                                                                         |
-| **Parameters**                                       |  * value - a string you want to make safe * defaultValue - the optional default filename to use if the value is not valid                                       |
-| **Returns**                                          |  * A string of the safe filename                                                |
-| **Notes**                                            |  * Returns "filename" is both `value` and `defaultValue` are `nil`.                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - a string you want to make safe</li><li markdown="1">defaultValue - the optional default filename to use if the value is not valid</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string of the safe filename</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Returns "filename" is both `value` and `defaultValue` are `nil`.</li></ul>                |
 
 #### [spairs](#spairs)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.spairs(t, order) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | A customised version of pairs, called `spairs` because it iterates over the table in a sorted order.                                                                                         |
-| **Parameters**                                       |  * t     - The table to process * order - The function of how to sort the table.                                       |
-| **Returns**                                          |  * A iterator function.                                                |
-| **Notes**                                            |  * Author: [Michal Kottman](https://stackoverflow.com/a/15706820)                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">t     - The table to process</li><li markdown="1">order - The function of how to sort the table.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A iterator function.</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">Author: [Michal Kottman](https://stackoverflow.com/a/15706820)</li></ul>                |
 
 #### [split](#split)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.split(str, pat) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Splits a string with a pattern.                                                                                         |
-| **Parameters**                                       |  * str - The string to split * pat - The pattern                                       |
-| **Returns**                                          |  * Table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">str - The string to split</li><li markdown="1">pat - The pattern</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Table</li></ul>          |
 
 #### [splitOnColumn](#splitoncolumn)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.splitOnColumn() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Splits a string on a column.                                                                                         |
-| **Parameters**                                       |  * Input                                       |
-| **Returns**                                          |  * String                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">Input</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String</li></ul>          |
 
 #### [stringMaxLength](#stringmaxlength)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.stringMaxLength(string, maxLength[, optionalEnd]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Trims a string based on a maximum length.                                                                                         |
-| **Parameters**                                       |  * maxLength - The length of the string as a number * optionalEnd - A string that is applied to the end of the input string if the input string is larger than the maximum length.                                       |
-| **Returns**                                          |  * A string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">maxLength - The length of the string as a number</li><li markdown="1">optionalEnd - A string that is applied to the end of the input string if the input string is larger than the maximum length.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string</li></ul>          |
 
 #### [tableContains](#tablecontains)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableContains(table, element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Does a element exist in a table?                                                                                         |
-| **Parameters**                                       |  * table - the table you want to check * element - the element you want to check for                                       |
-| **Returns**                                          |  * Boolean                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">table - the table you want to check</li><li markdown="1">element - the element you want to check for</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Boolean</li></ul>          |
 
 #### [tableCount](#tablecount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableCount(table) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns how many items are in a table.                                                                                         |
-| **Parameters**                                       |  * table - The table you want to count.                                       |
-| **Returns**                                          |  * The number of items in the table.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">table - The table you want to count.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The number of items in the table.</li></ul>          |
 
 #### [trim](#trim)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.trim(string) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Trims the whitespaces from a string                                                                                         |
-| **Parameters**                                       |  * string - the string you want to trim                                       |
-| **Returns**                                          |  * A trimmed string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">string - the string you want to trim</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A trimmed string</li></ul>          |
 
 #### [unescape](#unescape)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.unescape(str) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Removes any URL encoding in the provided string.                                                                                         |
-| **Parameters**                                       |  * str - the string to decode                                       |
-| **Returns**                                          |  * A string with all "+" characters converted to spaces and all percent encoded sequences converted to their ASCII equivalents.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">str - the string to decode</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">A string with all "+" characters converted to spaces and all percent encoded sequences converted to their ASCII equivalents.</li></ul>          |
 
 #### [urlQueryStringDecode](#urlquerystringdecode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.urlQueryStringDecode() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Decodes a URL Query String                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * Decoded URL Query String as string                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Decoded URL Query String as string</li></ul>          |
 
 #### [volumeFormat](#volumeformat)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.volumeFormat(path) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gives you the file system volume format of a path.                                                                                         |
-| **Parameters**                                       |  * path - the path you want to check as a string                                       |
-| **Returns**                                          |  * The `NSURLVolumeLocalizedFormatDescriptionKey` as a string, otherwise `nil`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">path - the path you want to check as a string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">The `NSURLVolumeLocalizedFormatDescriptionKey` as a string, otherwise `nil`.</li></ul>          |
 

@@ -110,25 +110,25 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies a layout                                                                                         |
-| **Parameters**                                       |  * rules - see `hs.window.layout.new()`                                       |
-| **Returns**                                          |  * None                                                |
-| **Notes**                                            |  * this is a convenience wrapper for "passive mode" use that creates, applies, and deletes a windowlayout object;   do *not* use shared windowfilters in `rules`, as they'll be deleted; you can just use constructor argument maps instead                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">rules - see `hs.window.layout.new()`</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">this is a convenience wrapper for "passive mode" use that creates, applies, and deletes a windowlayout object;</li><li markdown="1">   do *not* use shared windowfilters in `rules`, as they'll be deleted; you can just use constructor argument maps instead</li></ul>                |
 
 #### [pauseAllInstances](#pauseallinstances)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.pauseAllInstances()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Pauses all active windowlayout instances                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [resumeAllInstances](#resumeallinstances)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout.resumeAllInstances()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resumes all active windowlayout instances                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 ### Constructors
 
@@ -137,8 +137,8 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new hs.window.layout instance                                                                                         |
-| **Parameters**                                       |  * rules - a table containing the rules for this windowlayout (see the module description); additionally, if a special key `screens`   is present, its value must be a valid screen configuration as per `hs.window.layout:setScreenConfiguration()` * logname - (optional) name of the `hs.logger` instance for the new windowlayout; if omitted, the class logger will be used * loglevel - (optional) log level for the `hs.logger` instance for the new windowlayout                                       |
-| **Returns**                                          |  * a new windowlayout instance                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">rules - a table containing the rules for this windowlayout (see the module description); additionally, if a special key `screens`</li><li markdown="1">   is present, its value must be a valid screen configuration as per `hs.window.layout:setScreenConfiguration()`</li><li markdown="1">logname - (optional) name of the `hs.logger` instance for the new windowlayout; if omitted, the class logger will be used</li><li markdown="1">loglevel - (optional) log level for the `hs.logger` instance for the new windowlayout</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a new windowlayout instance</li></ul>          |
 
 ### Methods
 
@@ -147,58 +147,58 @@ arrangement satisfies it; see `hs.window.layout:setScreenConfiguration()` for mo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Applies the layout                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * the `hs.window.layout` object                                                |
-| **Notes**                                            |  * if a screen configuration is defined for this windowfilter, and currently not satisfied, this method will do nothing                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the `hs.window.layout` object</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">if a screen configuration is defined for this windowfilter, and currently not satisfied, this method will do nothing</li></ul>                |
 
 #### [getRules](#getrules)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:getRules() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Return a table with all the rules (and the screen configuration, if present) defined for this windowlayout                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * a table containing the rules of this windowlayout; you can pass this table (optionally   after performing valid manipulations) to `hs.window.layout.new()`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">a table containing the rules of this windowlayout; you can pass this table (optionally</li><li markdown="1">   after performing valid manipulations) to `hs.window.layout.new()`</li></ul>          |
 
 #### [pause](#pause)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:pause() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Pauses an active windowlayout instance; while paused no automatic window management will occur                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * the `hs.window.layout` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the `hs.window.layout` object</li></ul>          |
 
 #### [resume](#resume)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:resume() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Resumes an active windowlayout instance after it was paused                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * the `hs.window.layout` object                                                |
-| **Notes**                                            |  * if a screen configuration is defined for this windowfilter, and currently not satisfied, this method will do nothing                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the `hs.window.layout` object</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">if a screen configuration is defined for this windowfilter, and currently not satisfied, this method will do nothing</li></ul>                |
 
 #### [setScreenConfiguration](#setscreenconfiguration)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:setScreenConfiguration(screens) -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Determines the screen configuration that permits applying this windowlayout                                                                                         |
-| **Parameters**                                       |  * screens - a map, where each *key* must be a valid "hint" for `hs.screen.find()`, and the corresponding   value can be:   * `true` - the screen must be currently present (attached and enabled)   * `false` - the screen must be currently absent   * an `hs.geometry` point (or constructor argument) - the screen must be present and in this specific     position in the current arragement (as per `hs.screen:position()`)                                       |
-| **Returns**                                          |  * the `hs.window.layout` object                                                |
-| **Notes**                                            |  * if `screens` is `nil`, any previous screen configuration is removed, and this windowlayout will be always allowed * for "active" windowlayouts, call this method *before* calling `hs.window.layout:start()` * by using `hs.geometry` size objects as hints you can define separate layouts for the same physical   screen at different resolutions                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">screens - a map, where each *key* must be a valid "hint" for `hs.screen.find()`, and the corresponding</li><li markdown="1">   value can be:</li><li markdown="1">  `true` - the screen must be currently present (attached and enabled)</li><li markdown="1">  `false` - the screen must be currently absent</li><li markdown="1">  an `hs.geometry` point (or constructor argument) - the screen must be present and in this specific</li><li markdown="1">     position in the current arragement (as per `hs.screen:position()`)</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the `hs.window.layout` object</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">if `screens` is `nil`, any previous screen configuration is removed, and this windowlayout will be always allowed</li><li markdown="1">for "active" windowlayouts, call this method *before* calling `hs.window.layout:start()`</li><li markdown="1">by using `hs.geometry` size objects as hints you can define separate layouts for the same physical</li><li markdown="1">   screen at different resolutions</li></ul>                |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:start() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Puts a windowlayout instance in "active mode"                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * the `hs.window.layout` object                                                |
-| **Notes**                                            |  * if a screen configuration is defined for this windowfilter, and currently not satisfied, this   windowfilter will be put in "active mode" but will remain paused until the screen configuration   requirements are met                                                      |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the `hs.window.layout` object</li></ul>          |
+| **Notes**                                            | <ul markdown="1"><li markdown="1">if a screen configuration is defined for this windowfilter, and currently not satisfied, this</li><li markdown="1">   windowfilter will be put in "active mode" but will remain paused until the screen configuration</li><li markdown="1">   requirements are met</li></ul>                |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.layout:stop() -> hs.window.layout object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops a windowlayout instance (i.e. not in "active mode" anymore)                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * the `hs.window.layout` object                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">the `hs.window.layout` object</li></ul>          |
 

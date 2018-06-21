@@ -22,54 +22,54 @@ Functions for Generating HTML UI Items
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Button                                                                                         |
-| **Parameters**                                       |  * data - Table containing the data you want to display on the Checkbox * customTrigger - Custom label used for JavaScript Callback * customWidth - Number to set the width of the button to * customID - Overrides the random HTML ID                                       |
-| **Returns**                                          |  * String containing the HTML                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">data - Table containing the data you want to display on the Checkbox</li><li markdown="1">customTrigger - Custom label used for JavaScript Callback</li><li markdown="1">customWidth - Number to set the width of the button to</li><li markdown="1">customID - Overrides the random HTML ID</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String containing the HTML</li></ul>          |
 
 #### [checkbox](#checkbox)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.checkbox() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Checkbox                                                                                         |
-| **Parameters**                                       |  * data - Table containing the data you want to display on the Checkbox * customTrigger - Custom label used for JavaScript Callback * customID - Custom ID used for the HTML objects                                       |
-| **Returns**                                          |  * String containing the HTML                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">data - Table containing the data you want to display on the Checkbox</li><li markdown="1">customTrigger - Custom label used for JavaScript Callback</li><li markdown="1">customID - Custom ID used for the HTML objects</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String containing the HTML</li></ul>          |
 
 #### [dropdown](#dropdown)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.dropdown() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Dropdown                                                                                         |
-| **Parameters**                                       |  * title - Title to put in front of the Dropdown. Can be "". * data - Table containing the data you want to display on the Checkbox * customTrigger - Custom label used for JavaScript Callback                                       |
-| **Returns**                                          |  * String containing the HTML                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">title - Title to put in front of the Dropdown. Can be "".</li><li markdown="1">data - Table containing the data you want to display on the Checkbox</li><li markdown="1">customTrigger - Custom label used for JavaScript Callback</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String containing the HTML</li></ul>          |
 
 #### [heading](#heading)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.heading() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Heading                                                                                         |
-| **Parameters**                                       |  * data - Table containing the data you want to display on the Checkbox                                       |
-| **Returns**                                          |  * String containing the HTML                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">data - Table containing the data you want to display on the Checkbox</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String containing the HTML</li></ul>          |
 
 #### [javascript](#javascript)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.javascript(script, context) -> cp.web.html` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a HTML Heading                                                                                         |
-| **Parameters**                                       |  * data - Table containing the data you want to display on the Checkbox                                       |
-| **Returns**                                          |  * String containing the HTML                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">data - Table containing the data you want to display on the Checkbox</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String containing the HTML</li></ul>          |
 
 #### [setWebviewLabel](#setwebviewlabel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.setWebviewLabel() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the WebView Label                                                                                         |
-| **Parameters**                                       |  * value - WebView Label as string                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">value - WebView Label as string</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [text](#text)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.generate.text() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generates a blank HTML                                                                                         |
-| **Parameters**                                       |  * data - Table containing the data you want to display.                                       |
-| **Returns**                                          |  * String containing the HTML                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">data - Table containing the data you want to display.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">String containing the HTML</li></ul>          |
 

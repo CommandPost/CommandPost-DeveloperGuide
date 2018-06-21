@@ -48,144 +48,144 @@ Final Cut Pro HUD.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Assigns a HUD button.                                                                                         |
-| **Parameters**                                       |  * button - which button you want to assign.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">button - which button you want to assign.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [choices](#choices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.choices() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Choices for the Assign HUD Button chooser.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * Table                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Table</li></ul>          |
 
 #### [delete](#delete)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.delete()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Deletes the existing HUD if it exists                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [generateHTML](#generatehtml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.generateHTML() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Generate the HTML for the HUD.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [getButton](#getbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.getButton() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the button values from settings.                                                                                         |
-| **Parameters**                                       |  * index - Index of the Button * defaultValue - Default Value of the Button                                       |
-| **Returns**                                          |  * Button value                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - Index of the Button</li><li markdown="1">defaultValue - Default Value of the Button</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Button value</li></ul>          |
 
 #### [getButtonCommand](#getbuttoncommand)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.getButtonCommand() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the button command.                                                                                         |
-| **Parameters**                                       |  * index - Index of the Button                                       |
-| **Returns**                                          |  * Button Command                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - Index of the Button</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Button Command</li></ul>          |
 
 #### [getButtonText](#getbuttontext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.getButtonText() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the button text.                                                                                         |
-| **Parameters**                                       |  * index - Index of the Button                                       |
-| **Returns**                                          |  * Button Label or Unassigned Value                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - Index of the Button</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Button Label or Unassigned Value</li></ul>          |
 
 #### [getButtonURL](#getbuttonurl)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.getButtonURL() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the button URL.                                                                                         |
-| **Parameters**                                       |  * index - Index of the Button                                       |
-| **Returns**                                          |  * Button URL                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - Index of the Button</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">Button URL</li></ul>          |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.hide() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Hide the HUD.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise HUD Module.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [javaScriptCallback](#javascriptcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.javaScriptCallback() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Javascript Callback                                                                                         |
-| **Parameters**                                       |  * message - the message for the callback                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">message - the message for the callback</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.new()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new HUD                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [refresh](#refresh)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.refresh() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Refresh the HUD's content.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [setButton](#setbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.setButton() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the button.                                                                                         |
-| **Parameters**                                       |  * index - Index of the Button * value - Value you want to set the button to.                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">index - Index of the Button</li><li markdown="1">value - Value you want to set the button to.</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.show() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Show the HUD.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Enables or Disables the HUD.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [updateVisibility](#updatevisibility)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.updateVisibility() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Update the visibility of the HUD.                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * None                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">None</li></ul>          |
 
 #### [visible](#visible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.visible() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Is the HUD visible?                                                                                         |
-| **Parameters**                                       |  * None                                       |
-| **Returns**                                          |  * `true` or `false`                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">`true` or `false`</li></ul>          |
 
 ### Fields
 

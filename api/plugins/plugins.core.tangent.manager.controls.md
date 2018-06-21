@@ -37,7 +37,7 @@ Represents a Tangent Group
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `Group` instance.                                                                                         |
-| **Parameters**                                       | * name      - The name of the controls.                                       |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* name      - The name of the controls.</li></ul> |
 
 ### Methods
 
@@ -46,74 +46,74 @@ Represents a Tangent Group
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an `action` to this controls.                                                                                         |
-| **Returns**                                          | * The new `action`                                                |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `action`</li></ul>          |
 
 #### [controls](#controls)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:controls() -> controls` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns this `controls` instance.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `controls instance.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `controls instance.</li></ul>          |
 
 #### [findByID](#findbyid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:findByID(id) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds a control (Action/Parameter/Mode) by its unique ID.                                                                                         |
-| **Parameters**                                       | * id        - the ID to search by                                       |
-| **Returns**                                          | * The control, or `nil` if not found.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* id        - the ID to search by</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The control, or `nil` if not found.</li></ul>          |
 
 #### [group](#group)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:group(name) -> group` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a subgroup to this group.                                                                                         |
-| **Returns**                                          | * The new `group`                                                |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `group`</li></ul>          |
 
 #### [menu](#menu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:menu(id[, name]) -> menu` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an `menu` to this controls.                                                                                         |
-| **Returns**                                          | * The new `menu`                                                |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `menu`</li></ul>          |
 
 #### [parameter](#parameter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:parameter(id[, name]) -> parameter` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an `parameter` to this controls.                                                                                         |
-| **Returns**                                          | * The new `parameter`                                                |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The new `parameter`</li></ul>          |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:parent() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Always returns `nil`, sinces `controls` have no parent.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * `nil`.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* `nil`.</li></ul>          |
 
 #### [register](#register)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:register(control) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Registers a control (Action/Parameter/Menu) with it's ID                                                                                         |
-| **Parameters**                                       | * control       - The Action/Parameter/Menu to register                                       |
-| **Returns**                                          | * self                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* control       - The Action/Parameter/Menu to register</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* self</li></ul>          |
 
 #### [unregister](#unregister)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:unregister(control) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Unregisters a control (Action/Parameter/Menu) with it's ID                                                                                         |
-| **Parameters**                                       | * control       - The Action/Parameter/Menu to unregister                                       |
-| **Returns**                                          | * self                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* control       - The Action/Parameter/Menu to unregister</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* self</li></ul>          |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:xml() -> cp.web.xml` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `xml` configuration for the Group.                                                                                         |
-| **Parameters**                                       | * None                                       |
-| **Returns**                                          | * The `xml` for the Group.                                                |
+| **Parameters**                                       | <ul markdown="1"><li markdown="1">* None</li></ul> |
+| **Returns**                                          | <ul markdown="1"><li markdown="1">* The `xml` for the Group.</li></ul>          |
 
