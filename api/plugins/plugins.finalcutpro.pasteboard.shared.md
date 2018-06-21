@@ -1,442 +1,148 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="plugins.finalcutpro.pasteboard.shared.md">docs</a> &raquo; plugins.finalcutpro.pasteboard.shared</h1>
-      <p>Shared Pasteboard Plugin.</p>
+# [docs](index.md) » plugins.finalcutpro.pasteboard.shared
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#copyWithCustomClipName">copyWithCustomClipName</a></li>
-            <li><a href="#copyWithCustomClipNameAndFolder">copyWithCustomClipNameAndFolder</a></li>
-            <li><a href="#generateSharedPasteboardMenu">generateSharedPasteboardMenu</a></li>
-            <li><a href="#getHistory">getHistory</a></li>
-            <li><a href="#getHistoryPath">getHistoryPath</a></li>
-            <li><a href="#getLocalFolderName">getLocalFolderName</a></li>
-            <li><a href="#getRootPath">getRootPath</a></li>
-            <li><a href="#init">init</a></li>
-            <li><a href="#overrideNextFolderName">overrideNextFolderName</a></li>
-            <li><a href="#pasteHistoryItem">pasteHistoryItem</a></li>
-            <li><a href="#setHistory">setHistory</a></li>
-            <li><a href="#setRootPath">setRootPath</a></li>
-            <li><a href="#update">update</a></li>
-            <li><a href="#validRootPath">validRootPath</a></li>
-          </ul>
-        <li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
-          <ul>
-            <li><a href="#enabled">enabled</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="copyWithCustomClipName">
-            <a name="//apple_ref/cpp/Function/copyWithCustomClipName" class="dashAnchor"></a>
-            <h5><a href="#copyWithCustomClipName">copyWithCustomClipName</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.copyWithCustomClipName() -&gt; None</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Triggers a copy with custom clip name action.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="copyWithCustomClipNameAndFolder">
-            <a name="//apple_ref/cpp/Function/copyWithCustomClipNameAndFolder" class="dashAnchor"></a>
-            <h5><a href="#copyWithCustomClipNameAndFolder">copyWithCustomClipNameAndFolder</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.copyWithCustomClipNameAndFolder() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Copy with Custom Label &amp; Folder.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="generateSharedPasteboardMenu">
-            <a name="//apple_ref/cpp/Function/generateSharedPasteboardMenu" class="dashAnchor"></a>
-            <h5><a href="#generateSharedPasteboardMenu">generateSharedPasteboardMenu</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.generateSharedPasteboardMenu() -&gt; table</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Generates the shared pasteboard menu.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The shared pasteboard menu as a table.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getHistory">
-            <a name="//apple_ref/cpp/Function/getHistory" class="dashAnchor"></a>
-            <h5><a href="#getHistory">getHistory</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.getHistory(folderName) -&gt; table</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the history for a supplied folder name.</p>
-<p>Parameters:</p>
-<ul>
-<li>folderName - The folder name</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The history in a table.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getHistoryPath">
-            <a name="//apple_ref/cpp/Function/getHistoryPath" class="dashAnchor"></a>
-            <h5><a href="#getHistoryPath">getHistoryPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.getHistoryPath(folderName, fileExtension) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the History Path.</p>
-<p>Parameters:</p>
-<ul>
-<li>folderName - The folder name</li>
-<li>fileExtension - The file extension</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The history path as a string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getLocalFolderName">
-            <a name="//apple_ref/cpp/Function/getLocalFolderName" class="dashAnchor"></a>
-            <h5><a href="#getLocalFolderName">getLocalFolderName</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.getLocalFolderName() -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the local folder name.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The local folder name as a string.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getRootPath">
-            <a name="//apple_ref/cpp/Function/getRootPath" class="dashAnchor"></a>
-            <h5><a href="#getRootPath">getRootPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.getRootPath() -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Get shared pasteboard root path.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Shared Pasteboard Path as string.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="init">
-            <a name="//apple_ref/cpp/Function/init" class="dashAnchor"></a>
-            <h5><a href="#init">init</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.init() -&gt; sharedPasteboard</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Initialises the module.</p>
-<p>Parameters:</p>
-<ul>
-<li>manager - The pasteboard manager</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The sharedPasteboard object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="overrideNextFolderName">
-            <a name="//apple_ref/cpp/Function/overrideNextFolderName" class="dashAnchor"></a>
-            <h5><a href="#overrideNextFolderName">overrideNextFolderName</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.overrideNextFolderName(overrideFolder) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Overrides the folder name for the next clip which is copied from Final Cut Pro to the
-specified value. Once the override has been used, the standard folder name via
-<code>mod.getLocalFolderName()</code> will be used for subsequent copy operations.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The local folder name as a string.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="pasteHistoryItem">
-            <a name="//apple_ref/cpp/Function/pasteHistoryItem" class="dashAnchor"></a>
-            <h5><a href="#pasteHistoryItem">pasteHistoryItem</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.pasteHistoryItem(folderName, index) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Paste History Item.</p>
-<p>Parameters:</p>
-<ul>
-<li>folderName - The folder name</li>
-<li>index - The index of the item you want to paste</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="setHistory">
-            <a name="//apple_ref/cpp/Function/setHistory" class="dashAnchor"></a>
-            <h5><a href="#setHistory">setHistory</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.setHistory(folderName, history) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Clears the history.</p>
-<p>Parameters:</p>
-<ul>
-<li>folderName - The folder name</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="setRootPath">
-            <a name="//apple_ref/cpp/Function/setRootPath" class="dashAnchor"></a>
-            <h5><a href="#setRootPath">setRootPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.setRootPath(path) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Sets the shared pasteboard root path.</p>
-<p>Parameters:</p>
-<ul>
-<li>path - The path you want to set as a string.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="update">
-            <a name="//apple_ref/cpp/Function/update" class="dashAnchor"></a>
-            <h5><a href="#update">update</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.update() -&gt; table</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the list of folder names as an array of strings.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A table of folder names.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="validRootPath">
-            <a name="//apple_ref/cpp/Function/validRootPath" class="dashAnchor"></a>
-            <h5><a href="#validRootPath">validRootPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.validRootPath() -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets whether or not the current root path exists.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if it exists otherwise <code>false</code>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Fields</h4>
-          <section id="enabled">
-            <a name="//apple_ref/cpp/Field/enabled" class="dashAnchor"></a>
-            <h5><a href="#enabled">enabled</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.pasteboard.shared.enabled &lt;cp.prop: boolean&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets whether or not the shared pasteboard is enabled as a boolean.</p>
-</td>
-              </tr>
-            </table>
-          </section>
+Shared Pasteboard Plugin.
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [copyWithCustomClipName](#copywithcustomclipname)
+ * [copyWithCustomClipNameAndFolder](#copywithcustomclipnameandfolder)
+ * [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
+ * [getHistory](#gethistory)
+ * [getHistoryPath](#gethistorypath)
+ * [getLocalFolderName](#getlocalfoldername)
+ * [getRootPath](#getrootpath)
+ * [init](#init)
+ * [overrideNextFolderName](#overridenextfoldername)
+ * [pasteHistoryItem](#pastehistoryitem)
+ * [setHistory](#sethistory)
+ * [setRootPath](#setrootpath)
+ * [update](#update)
+ * [validRootPath](#validrootpath)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [enabled](#enabled)
+
+## API Documentation
+
+### Functions
+
+#### [copyWithCustomClipName](#copywithcustomclipname)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.copyWithCustomClipName() -> None` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Triggers a copy with custom clip name action.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [copyWithCustomClipNameAndFolder](#copywithcustomclipnameandfolder)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.copyWithCustomClipNameAndFolder() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Copy with Custom Label & Folder.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.generateSharedPasteboardMenu() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates the shared pasteboard menu.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The shared pasteboard menu as a table.                                                |
+
+#### [getHistory](#gethistory)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getHistory(folderName) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the history for a supplied folder name.                                                                                         |
+| **Parameters**                                       |  * folderName - The folder name                                       |
+| **Returns**                                          |  * The history in a table.                                                |
+
+#### [getHistoryPath](#gethistorypath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getHistoryPath(folderName, fileExtension) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the History Path.                                                                                         |
+| **Parameters**                                       |  * folderName - The folder name * fileExtension - The file extension                                       |
+| **Returns**                                          |  * The history path as a string                                                |
+
+#### [getLocalFolderName](#getlocalfoldername)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getLocalFolderName() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the local folder name.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The local folder name as a string.                                                |
+
+#### [getRootPath](#getrootpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getRootPath() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get shared pasteboard root path.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * Shared Pasteboard Path as string.                                                |
+
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.init() -> sharedPasteboard` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Initialises the module.                                                                                         |
+| **Parameters**                                       |  * manager - The pasteboard manager                                       |
+| **Returns**                                          |  * The sharedPasteboard object                                                |
+
+#### [overrideNextFolderName](#overridenextfoldername)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.overrideNextFolderName(overrideFolder) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Overrides the folder name for the next clip which is copied from Final Cut Pro to the                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The local folder name as a string.                                                |
+
+#### [pasteHistoryItem](#pastehistoryitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.pasteHistoryItem(folderName, index) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Paste History Item.                                                                                         |
+| **Parameters**                                       |  * folderName - The folder name * index - The index of the item you want to paste                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [setHistory](#sethistory)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.setHistory(folderName, history) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Clears the history.                                                                                         |
+| **Parameters**                                       |  * folderName - The folder name                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [setRootPath](#setrootpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.setRootPath(path) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets the shared pasteboard root path.                                                                                         |
+| **Parameters**                                       |  * path - The path you want to set as a string.                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [update](#update)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.update() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the list of folder names as an array of strings.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * A table of folder names.                                                |
+
+#### [validRootPath](#validrootpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.validRootPath() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets whether or not the current root path exists.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * `true` if it exists otherwise `false`.                                                |
+
+### Fields
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Gets whether or not the shared pasteboard is enabled as a boolean.                                                                                         |
+

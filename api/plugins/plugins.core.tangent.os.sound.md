@@ -1,94 +1,38 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="plugins.core.tangent.os.sound.md">docs</a> &raquo; plugins.core.tangent.os.sound</h1>
-      <p>Tangent Display Functions.</p>
+# [docs](index.md) » plugins.core.tangent.os.sound
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Variables - Configurable values</li>
-          <ul>
-            <li><a href="#currentOutputDevice">currentOutputDevice</a></li>
-            <li><a href="#group">group</a></li>
-          </ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#init">init</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Variables</h4>
-          <section id="currentOutputDevice">
-            <a name="//apple_ref/cpp/Variable/currentOutputDevice" class="dashAnchor"></a>
-            <h5><a href="#currentOutputDevice">currentOutputDevice</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.tangent.os.sound.currentOutputDevice &lt;cp.prop: audio&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Current Output Device.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="group">
-            <a name="//apple_ref/cpp/Variable/group" class="dashAnchor"></a>
-            <h5><a href="#group">group</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.tangent.os.sound.group &lt;cp.prop: audio&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Tangent Sound Group.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="init">
-            <a name="//apple_ref/cpp/Function/init" class="dashAnchor"></a>
-            <h5><a href="#init">init</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.tangent.os.sound.init() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Initialise the module.</p>
-<p>Parameters:</p>
-<ul>
-<li>osGroup - The Tangent Sound Group.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Tangent Display Functions.
+
+## API Overview
+* Variables - Configurable values
+ * [currentOutputDevice](#currentoutputdevice)
+ * [group](#group)
+* Functions - API calls offered directly by the extension
+ * [init](#init)
+
+## API Documentation
+
+### Variables
+
+#### [currentOutputDevice](#currentoutputdevice)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.currentOutputDevice <cp.prop: audio>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Current Output Device.                                                                                         |
+
+#### [group](#group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.group <cp.prop: audio>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Tangent Sound Group.                                                                                         |
+
+### Functions
+
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.init() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Initialise the module.                                                                                         |
+| **Parameters**                                       |  * osGroup - The Tangent Sound Group.                                       |
+| **Returns**                                          |  * None                                                |
+

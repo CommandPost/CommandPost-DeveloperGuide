@@ -1,22 +1,12 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="plugins.finalcutpro.menu.administrator.md">docs</a> &raquo; plugins.finalcutpro.menu.administrator</h1>
-      <p>Administrator Menu.</p>
+# [docs](index.md) » plugins.finalcutpro.menu.administrator
+---
 
-      </header>
-        <h3>Submodules</h3>
-        <ul>
-        <li><a href="plugins.finalcutpro.menu.administrator.advancedfeatures.html">plugins.finalcutpro.menu.administrator.advancedfeatures</a></li>
-        </ul>
-      <h3>API Overview</h3>
-      <ul>
-      </ul>
-      <h3>API Documentation</h3>
+Administrator Menu.
+
+## Submodules
+ * [plugins.finalcutpro.menu.administrator.advancedfeatures](plugins.finalcutpro.menu.administrator.advancedfeatures.md)
+
+## API Overview
+
+## API Documentation
+

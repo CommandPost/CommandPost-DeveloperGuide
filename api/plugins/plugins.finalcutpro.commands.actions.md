@@ -1,222 +1,75 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="plugins.finalcutpro.commands.actions.md">docs</a> &raquo; plugins.finalcutpro.commands.actions</h1>
-      <p>An <code>action</code> which will execute a command with matching group/id values.
-Registers itself with the <code>core.action.manager</code>.</p>
+# [docs](index.md) » plugins.finalcutpro.commands.actions
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#execute">execute</a></li>
-            <li><a href="#getId">getId</a></li>
-            <li><a href="#getId">getId</a></li>
-            <li><a href="#init">init</a></li>
-            <li><a href="#onChoices">onChoices</a></li>
-            <li><a href="#onExecute">onExecute</a></li>
-            <li><a href="#reset">reset</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="execute">
-            <a name="//apple_ref/cpp/Function/execute" class="dashAnchor"></a>
-            <h5><a href="#execute">execute</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.commands.actions.execute(action) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Executes the action with the provided parameters.</p>
-<p>Parameters:</p>
-<ul>
-<li><p><code>action</code>  - A table representing the action, matching the following:</p>
-<ul>
-<li><code>id</code>      - The specific Command ID within the group.</li>
-</ul>
-</li>
-<li><p><code>true</code> if the action was executed successfully.</p>
-</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getId">
-            <a name="//apple_ref/cpp/Function/getId" class="dashAnchor"></a>
-            <h5><a href="#getId">getId</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.commands.actions.getId(action) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Get ID.</p>
-<p>Parameters:</p>
-<ul>
-<li>action - The action table.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The ID as a string.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getId">
-            <a name="//apple_ref/cpp/Function/getId" class="dashAnchor"></a>
-            <h5><a href="#getId">getId</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.commands.actionss.getId(action) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the ID from an action.</p>
-<p>Parameters:</p>
-<ul>
-<li>action - The action table.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The ID as a string.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="init">
-            <a name="//apple_ref/cpp/Function/init" class="dashAnchor"></a>
-            <h5><a href="#init">init</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.commands.actions.init(actionmanager, cmds) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Initialises the module.</p>
-<p>Parameters:</p>
-<ul>
-<li>actionmanager - The action manager object</li>
-<li>cmds - Final Cut Pro commands manager</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="onChoices">
-            <a name="//apple_ref/cpp/Function/onChoices" class="dashAnchor"></a>
-            <h5><a href="#onChoices">onChoices</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.commands.actions.onChoices([choices]) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Adds available choices to the selection.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>choices</code> - The optional <code>cp.choices</code> to add choices to.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="onExecute">
-            <a name="//apple_ref/cpp/Function/onExecute" class="dashAnchor"></a>
-            <h5><a href="#onExecute">onExecute</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.commands.actions.onExecute(action) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>On Execute.</p>
-<p>Parameters:</p>
-<ul>
-<li>action - The action table.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="reset">
-            <a name="//apple_ref/cpp/Function/reset" class="dashAnchor"></a>
-            <h5><a href="#reset">reset</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.commands.actions.reset() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Reset the Font Handler Cache.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+An `action` which will execute a command with matching group/id values.
+Registers itself with the `core.action.manager`.
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [execute](#execute)
+ * [getId](#getid)
+ * [getId](#getid)
+ * [init](#init)
+ * [onChoices](#onchoices)
+ * [onExecute](#onexecute)
+ * [reset](#reset)
+
+## API Documentation
+
+### Functions
+
+#### [execute](#execute)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.execute(action) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Executes the action with the provided parameters.                                                                                         |
+| **Parameters**                                       | * `action`  - A table representing the action, matching the following:    * `id`      - The specific Command ID within the group.                                       |
+
+#### [getId](#getid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.getId(action) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Get ID.                                                                                         |
+| **Parameters**                                       | * action - The action table.                                       |
+| **Returns**                                          | * The ID as a string.                                                |
+
+#### [getId](#getid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actionss.getId(action) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the ID from an action.                                                                                         |
+| **Parameters**                                       | * action - The action table.                                       |
+| **Returns**                                          | * The ID as a string.                                                |
+
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.init(actionmanager, cmds) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Initialises the module.                                                                                         |
+| **Parameters**                                       |  * actionmanager - The action manager object * cmds - Final Cut Pro commands manager                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [onChoices](#onchoices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.onChoices([choices]) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Adds available choices to the selection.                                                                                         |
+| **Parameters**                                       | * `choices` - The optional `cp.choices` to add choices to.                                       |
+| **Returns**                                          | * None                                                |
+
+#### [onExecute](#onexecute)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.onExecute(action) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | On Execute.                                                                                         |
+| **Parameters**                                       | * action - The action table.                                       |
+| **Returns**                                          | * None                                                |
+
+#### [reset](#reset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.reset() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Reset the Font Handler Cache.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * None                                                |
+

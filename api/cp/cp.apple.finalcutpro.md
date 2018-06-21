@@ -1,2037 +1,722 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="cp.apple.finalcutpro.md">docs</a> &raquo; cp.apple.finalcutpro</h1>
-      <p>Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.</p>
-<p>Generally, you will <code>require</code> the <code>cp.apple.finalcutpro</code> module to import it, like so:</p>
-<div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">fcp</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;cp.apple.finalcutpro&quot;</span><span class="p">)</span>
-</pre></div>
-<p>Then, there are the <code>UpperCase</code> files, which represent the application itself:</p>
-<ul>
-<li><code>MenuBar</code>                 - The main menu bar.</li>
-<li><code>prefs/PreferencesWindow</code> - The preferences window.</li>
-<li>etc...</li>
-</ul>
-<p>The <code>fcp</code> variable is the root application. It has functions which allow you to perform tasks or access parts of the UI. For example, to open the <code>Preferences</code> window, you can do this:</p>
-<div class="highlight"><pre><span></span><span class="n">fcp</span><span class="p">:</span><span class="n">preferencesWindow</span><span class="p">():</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-<p>In general, as long as Final Cut Pro is running, actions can be performed directly, and the API will perform the required operations to achieve it. For example, to toggle the 'Create Optimized Media' checkbox in the 'Import' section of the 'Preferences' window, you can simply do this:</p>
-<div class="highlight"><pre><span></span><span class="n">fcp</span><span class="p">:</span><span class="n">preferencesWindow</span><span class="p">():</span><span class="n">importPanel</span><span class="p">():</span><span class="n">toggleCreateOptimizedMedia</span><span class="p">()</span>
-</pre></div>
-<p>The API will automatically open the <code>Preferences</code> window, navigate to the 'Import' panel and toggle the checkbox.</p>
-<p>The <code>UpperCase</code> classes also have a variety of <code>UI</code> methods. These will return the <code>axuielement</code> for the relevant GUI element, if it is accessible. If not, it will return <code>nil</code>. These allow direct interaction with the GUI if necessary. It's most useful when adding new functions to <code>UpperCase</code> files for a particular element.</p>
-<p>This can also be used to 'wait' for an element to be visible before performing a task. For example, if you need to wait for the <code>Preferences</code> window to finish loading before doing something else, you can do this with the <code>cp.just</code> library:</p>
-<div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">just</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;cp.just&quot;</span><span class="p">)</span>
+# [docs](index.md) » cp.apple.finalcutpro
+---
 
-<span class="kd">local</span> <span class="n">prefsWindow</span> <span class="o">=</span> <span class="n">fcp</span><span class="p">:</span><span class="n">preferencesWindow</span><span class="p">()</span>
+Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.
 
-<span class="kd">local</span> <span class="n">prefsUI</span> <span class="o">=</span> <span class="n">just</span><span class="p">.</span><span class="n">doUntil</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span> <span class="kr">return</span> <span class="n">prefsWindow</span><span class="p">:</span><span class="n">UI</span><span class="p">()</span> <span class="kr">end</span><span class="p">)</span>
+Generally, you will `require` the `cp.apple.finalcutpro` module to import it, like so:
 
-<span class="kr">if</span> <span class="n">prefsUI</span> <span class="kr">then</span>
-    <span class="c1">-- it&#39;s open!</span>
-<span class="kr">else</span>
-    <span class="c1">-- it&#39;s closed!</span>
-<span class="kr">end</span>
-</pre></div>
-<p>By using the <code>just</code> library, we can do a loop waiting until the function returns a result that will give up after a certain time period (10 seconds by default).</p>
-<p>Of course, we have a specific support function for that already, so you could do this instead:</p>
-<div class="highlight"><pre><span></span><span class="kr">if</span> <span class="n">fcp</span><span class="p">:</span><span class="n">preferencesWindow</span><span class="p">():</span><span class="n">isShowing</span><span class="p">()</span> <span class="kr">then</span>
-    <span class="c1">-- it&#39;s open!</span>
-<span class="kr">else</span>
-    <span class="c1">-- it&#39;s closed!</span>
-<span class="kr">end</span>
-</pre></div>
+```lua
+local fcp = require("cp.apple.finalcutpro")
+```
 
-      </header>
-        <h3>Submodules</h3>
-        <ul>
-        <li><a href="cp.apple.finalcutpro.app.html">cp.apple.finalcutpro.app</a></li>
-        <li><a href="cp.apple.finalcutpro.cmd.html">cp.apple.finalcutpro.cmd</a></li>
-        <li><a href="cp.apple.finalcutpro.content.html">cp.apple.finalcutpro.content</a></li>
-        <li><a href="cp.apple.finalcutpro.export.html">cp.apple.finalcutpro.export</a></li>
-        <li><a href="cp.apple.finalcutpro.ids.html">cp.apple.finalcutpro.ids</a></li>
-        <li><a href="cp.apple.finalcutpro.import.html">cp.apple.finalcutpro.import</a></li>
-        <li><a href="cp.apple.finalcutpro.inspector.html">cp.apple.finalcutpro.inspector</a></li>
-        <li><a href="cp.apple.finalcutpro.main.html">cp.apple.finalcutpro.main</a></li>
-        <li><a href="cp.apple.finalcutpro.menu.html">cp.apple.finalcutpro.menu</a></li>
-        <li><a href="cp.apple.finalcutpro.plugins.html">cp.apple.finalcutpro.plugins</a></li>
-        <li><a href="cp.apple.finalcutpro.prefs.html">cp.apple.finalcutpro.prefs</a></li>
-        <li><a href="cp.apple.finalcutpro.strings.html">cp.apple.finalcutpro.strings</a></li>
-        </ul>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Constants - Useful values which cannot be changed</li>
-          <ul>
-            <li><a href="#ALLOWED_IMPORT_AUDIO_EXTENSIONS">ALLOWED_IMPORT_AUDIO_EXTENSIONS</a></li>
-            <li><a href="#ALLOWED_IMPORT_EXTENSIONS">ALLOWED_IMPORT_EXTENSIONS</a></li>
-            <li><a href="#ALLOWED_IMPORT_IMAGE_EXTENSIONS">ALLOWED_IMPORT_IMAGE_EXTENSIONS</a></li>
-            <li><a href="#ALLOWED_IMPORT_VIDEO_EXTENSIONS">ALLOWED_IMPORT_VIDEO_EXTENSIONS</a></li>
-            <li><a href="#BUNDLE_ID">BUNDLE_ID</a></li>
-            <li><a href="#EARLIEST_SUPPORTED_VERSION">EARLIEST_SUPPORTED_VERSION</a></li>
-            <li><a href="#EVENT_DESCRIPTION_PATH">EVENT_DESCRIPTION_PATH</a></li>
-            <li><a href="#FLEXO_LANGUAGES">FLEXO_LANGUAGES</a></li>
-            <li><a href="#PASTEBOARD_UTI">PASTEBOARD_UTI</a></li>
-          </ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#commandSet">commandSet</a></li>
-            <li><a href="#init">init</a></li>
-            <li><a href="#matches">matches</a></li>
-            <li><a href="#reset">reset</a></li>
-          </ul>
-        <li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
-          <ul>
-            <li><a href="#contentUI">contentUI</a></li>
-            <li><a href="#contentUI">contentUI</a></li>
-            <li><a href="#contentUI">contentUI</a></li>
-            <li><a href="#contentUI">contentUI</a></li>
-            <li><a href="#isShowing">isShowing</a></li>
-            <li><a href="#isShowing">isShowing</a></li>
-            <li><a href="#isShowing">isShowing</a></li>
-            <li><a href="#isShowing">isShowing</a></li>
-            <li><a href="#isShowing">isShowing</a></li>
-            <li><a href="#UI">UI</a></li>
-            <li><a href="#UI">UI</a></li>
-            <li><a href="#UI">UI</a></li>
-            <li><a href="#UI">UI</a></li>
-            <li><a href="#UI">UI</a></li>
-          </ul>
-        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
-          <ul>
-            <li><a href="#activeCommandSet">activeCommandSet</a></li>
-            <li><a href="#activeCommandSetPath">activeCommandSetPath</a></li>
-            <li><a href="#alert">alert</a></li>
-            <li><a href="#browser">browser</a></li>
-            <li><a href="#bundleID">bundleID</a></li>
-            <li><a href="#closeLibrary">closeLibrary</a></li>
-            <li><a href="#color">color</a></li>
-            <li><a href="#colorBoard">colorBoard</a></li>
-            <li><a href="#commandEditor">commandEditor</a></li>
-            <li><a href="#defaultCommandSetPath">defaultCommandSetPath</a></li>
-            <li><a href="#effects">effects</a></li>
-            <li><a href="#eventViewer">eventViewer</a></li>
-            <li><a href="#exportDialog">exportDialog</a></li>
-            <li><a href="#fullScreenWindow">fullScreenWindow</a></li>
-            <li><a href="#generators">generators</a></li>
-            <li><a href="#getCommandShortcuts">getCommandShortcuts</a></li>
-            <li><a href="#getPath">getPath</a></li>
-            <li><a href="#hide">hide</a></li>
-            <li><a href="#importXML">importXML</a></li>
-            <li><a href="#inspector">inspector</a></li>
-            <li><a href="#isSupportedLocale">isSupportedLocale</a></li>
-            <li><a href="#keysWithString">keysWithString</a></li>
-            <li><a href="#keywordEditor">keywordEditor</a></li>
-            <li><a href="#launch">launch</a></li>
-            <li><a href="#libraries">libraries</a></li>
-            <li><a href="#media">media</a></li>
-            <li><a href="#mediaImport">mediaImport</a></li>
-            <li><a href="#menu">menu</a></li>
-            <li><a href="#notifier">notifier</a></li>
-            <li><a href="#openLibrary">openLibrary</a></li>
-            <li><a href="#performShortcut">performShortcut</a></li>
-            <li><a href="#plugins">plugins</a></li>
-            <li><a href="#preferencesWindow">preferencesWindow</a></li>
-            <li><a href="#primaryWindow">primaryWindow</a></li>
-            <li><a href="#quit">quit</a></li>
-            <li><a href="#restart">restart</a></li>
-            <li><a href="#scanPlugins">scanPlugins</a></li>
-            <li><a href="#secondaryWindow">secondaryWindow</a></li>
-            <li><a href="#selectLibrary">selectLibrary</a></li>
-            <li><a href="#selectMenu">selectMenu</a></li>
-            <li><a href="#selectMenuItem">selectMenuItem</a></li>
-            <li><a href="#show">show</a></li>
-            <li><a href="#string">string</a></li>
-            <li><a href="#timeline">timeline</a></li>
-            <li><a href="#toolbar">toolbar</a></li>
-            <li><a href="#transitions">transitions</a></li>
-            <li><a href="#userCommandSetPath">userCommandSetPath</a></li>
-            <li><a href="#viewer">viewer</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Constants</h4>
-          <section id="ALLOWED_IMPORT_AUDIO_EXTENSIONS">
-            <a name="//apple_ref/cpp/Constant/ALLOWED_IMPORT_AUDIO_EXTENSIONS" class="dashAnchor"></a>
-            <h5><a href="#ALLOWED_IMPORT_AUDIO_EXTENSIONS">ALLOWED_IMPORT_AUDIO_EXTENSIONS</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.ALLOWED_IMPORT_AUDIO_EXTENSIONS</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Table of audio file extensions Final Cut Pro can import.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="ALLOWED_IMPORT_EXTENSIONS">
-            <a name="//apple_ref/cpp/Constant/ALLOWED_IMPORT_EXTENSIONS" class="dashAnchor"></a>
-            <h5><a href="#ALLOWED_IMPORT_EXTENSIONS">ALLOWED_IMPORT_EXTENSIONS</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.ALLOWED_IMPORT_EXTENSIONS</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Table of all file extensions Final Cut Pro can import.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="ALLOWED_IMPORT_IMAGE_EXTENSIONS">
-            <a name="//apple_ref/cpp/Constant/ALLOWED_IMPORT_IMAGE_EXTENSIONS" class="dashAnchor"></a>
-            <h5><a href="#ALLOWED_IMPORT_IMAGE_EXTENSIONS">ALLOWED_IMPORT_IMAGE_EXTENSIONS</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.ALLOWED_IMPORT_IMAGE_EXTENSIONS</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Table of image file extensions Final Cut Pro can import.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="ALLOWED_IMPORT_VIDEO_EXTENSIONS">
-            <a name="//apple_ref/cpp/Constant/ALLOWED_IMPORT_VIDEO_EXTENSIONS" class="dashAnchor"></a>
-            <h5><a href="#ALLOWED_IMPORT_VIDEO_EXTENSIONS">ALLOWED_IMPORT_VIDEO_EXTENSIONS</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.ALLOWED_IMPORT_VIDEO_EXTENSIONS</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Table of video file extensions Final Cut Pro can import.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="BUNDLE_ID">
-            <a name="//apple_ref/cpp/Constant/BUNDLE_ID" class="dashAnchor"></a>
-            <h5><a href="#BUNDLE_ID">BUNDLE_ID</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.BUNDLE_ID</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Final Cut Pro's Bundle ID as a <code>semver</code>.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="EARLIEST_SUPPORTED_VERSION">
-            <a name="//apple_ref/cpp/Constant/EARLIEST_SUPPORTED_VERSION" class="dashAnchor"></a>
-            <h5><a href="#EARLIEST_SUPPORTED_VERSION">EARLIEST_SUPPORTED_VERSION</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The earliest version of Final Cut Pro supported by this module.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="EVENT_DESCRIPTION_PATH">
-            <a name="//apple_ref/cpp/Constant/EVENT_DESCRIPTION_PATH" class="dashAnchor"></a>
-            <h5><a href="#EVENT_DESCRIPTION_PATH">EVENT_DESCRIPTION_PATH</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.EVENT_DESCRIPTION_PATH</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The Event Description Path.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="FLEXO_LANGUAGES">
-            <a name="//apple_ref/cpp/Constant/FLEXO_LANGUAGES" class="dashAnchor"></a>
-            <h5><a href="#FLEXO_LANGUAGES">FLEXO_LANGUAGES</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.FLEXO_LANGUAGES</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Table of Final Cut Pro's supported Languages for the Flexo Framework</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="PASTEBOARD_UTI">
-            <a name="//apple_ref/cpp/Constant/PASTEBOARD_UTI" class="dashAnchor"></a>
-            <h5><a href="#PASTEBOARD_UTI">PASTEBOARD_UTI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.PASTEBOARD_UTI</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Final Cut Pro's Pasteboard UTI</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="commandSet">
-            <a name="//apple_ref/cpp/Function/commandSet" class="dashAnchor"></a>
-            <h5><a href="#commandSet">commandSet</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.commandSet(path) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the Command Set at the specified path as a table.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>path</code>   - The path to the Command Set.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Command Set as a table, or <code>nil</code> if there was a problem.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="init">
-            <a name="//apple_ref/cpp/Function/init" class="dashAnchor"></a>
-            <h5><a href="#init">init</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:init() -&gt; App</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Initialises the app instance representing Final Cut Pro.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The app.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="matches">
-            <a name="//apple_ref/cpp/Function/matches" class="dashAnchor"></a>
-            <h5><a href="#matches">matches</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.CommandEditor.matches(element) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks to see if an element matches what we think it should be.</p>
-<p>Parameters:</p>
-<ul>
-<li>element - An <code>axuielementObject</code> to check.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if matches otherwise <code>false</code></li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="reset">
-            <a name="//apple_ref/cpp/Function/reset" class="dashAnchor"></a>
-            <h5><a href="#reset">reset</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:reset() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Resets the language cache</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Fields</h4>
-          <section id="contentUI">
-            <a name="//apple_ref/cpp/Field/contentUI" class="dashAnchor"></a>
-            <h5><a href="#contentUI">contentUI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.ShareInspector.contentUI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The <code>axuielement</code> containing the properties rows, if available.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="contentUI">
-            <a name="//apple_ref/cpp/Field/contentUI" class="dashAnchor"></a>
-            <h5><a href="#contentUI">contentUI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.TextInspector.contentUI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The <code>axuielement</code> containing the properties rows, if available.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="contentUI">
-            <a name="//apple_ref/cpp/Field/contentUI" class="dashAnchor"></a>
-            <h5><a href="#contentUI">contentUI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.TitleInspector.contentUI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The <code>axuielement</code> containing the properties rows, if available.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="contentUI">
-            <a name="//apple_ref/cpp/Field/contentUI" class="dashAnchor"></a>
-            <h5><a href="#contentUI">contentUI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The <code>axuielement</code> containing the properties rows, if available.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isShowing">
-            <a name="//apple_ref/cpp/Field/isShowing" class="dashAnchor"></a>
-            <h5><a href="#isShowing">isShowing</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.TitleInspector.isShowing &lt;cp.prop: boolean; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the TitleInspector is currently showing.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isShowing">
-            <a name="//apple_ref/cpp/Field/isShowing" class="dashAnchor"></a>
-            <h5><a href="#isShowing">isShowing</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.AudioInspector.isShowing &lt;cp.prop: boolean; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the AudioInspector is currently showing.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isShowing">
-            <a name="//apple_ref/cpp/Field/isShowing" class="dashAnchor"></a>
-            <h5><a href="#isShowing">isShowing</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.ShareInspector.isShowing &lt;cp.prop: boolean; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the ShareInspector is currently showing.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isShowing">
-            <a name="//apple_ref/cpp/Field/isShowing" class="dashAnchor"></a>
-            <h5><a href="#isShowing">isShowing</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.VideoInspector.isShowing &lt;cp.prop: boolean; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the VideoInspector is currently showing.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isShowing">
-            <a name="//apple_ref/cpp/Field/isShowing" class="dashAnchor"></a>
-            <h5><a href="#isShowing">isShowing</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.TextInspector.isShowing &lt;cp.prop: boolean; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the TextInspector is currently showing.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="UI">
-            <a name="//apple_ref/cpp/Field/UI" class="dashAnchor"></a>
-            <h5><a href="#UI">UI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.AudioInspector.UI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>hs._asm.axuielement</code> object for the Audio Inspector.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="UI">
-            <a name="//apple_ref/cpp/Field/UI" class="dashAnchor"></a>
-            <h5><a href="#UI">UI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.VideoInspector.UI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>hs._asm.axuielement</code> object for the Video Inspector.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="UI">
-            <a name="//apple_ref/cpp/Field/UI" class="dashAnchor"></a>
-            <h5><a href="#UI">UI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.TitleInspector.UI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>hs._asm.axuielement</code> object for the Title Inspector.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="UI">
-            <a name="//apple_ref/cpp/Field/UI" class="dashAnchor"></a>
-            <h5><a href="#UI">UI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.ShareInspector.UI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>hs._asm.axuielement</code> object for the Share Inspector.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="UI">
-            <a name="//apple_ref/cpp/Field/UI" class="dashAnchor"></a>
-            <h5><a href="#UI">UI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.color.TextInspector.UI &lt;cp.prop: hs._asm.axuielement; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>hs._asm.axuielement</code> object for the Text Inspector.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Methods</h4>
-          <section id="activeCommandSet">
-            <a name="//apple_ref/cpp/Method/activeCommandSet" class="dashAnchor"></a>
-            <h5><a href="#activeCommandSet">activeCommandSet</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:activeCommandSet([forceReload]) -&gt; table or nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the 'Active Command Set' as a Table. The result is cached, so pass in
-<code>true</code> for <code>forceReload</code> if you want to reload it.</p>
-<p>Parameters:</p>
-<ul>
-<li>[forceReload]    - If <code>true</code>, require the Command Set to be reloaded.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A table of the Active Command Set's contents, or <code>nil</code> if an error occurred</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="activeCommandSetPath">
-            <a name="//apple_ref/cpp/Method/activeCommandSetPath" class="dashAnchor"></a>
-            <h5><a href="#activeCommandSetPath">activeCommandSetPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:activeCommandSetPath() -&gt; string or nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the 'Active Command Set' value from the Final Cut Pro preferences</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The 'Active Command Set' value, or the 'Default' Command Set if this is the first time Final Cut Pro has been run.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="alert">
-            <a name="//apple_ref/cpp/Method/alert" class="dashAnchor"></a>
-            <h5><a href="#alert">alert</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:alert() -&gt; cp.ui.Alert</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Provides basic access to any 'alert' dialog windows in the app.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>Alert</code> instance</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="browser">
-            <a name="//apple_ref/cpp/Method/browser" class="dashAnchor"></a>
-            <h5><a href="#browser">browser</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:browser() -&gt; Browser</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Browser instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the Browser</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="bundleID">
-            <a name="//apple_ref/cpp/Method/bundleID" class="dashAnchor"></a>
-            <h5><a href="#bundleID">bundleID</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:bundleID() -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Bundle ID for the app.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Bundle ID</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="closeLibrary">
-            <a name="//apple_ref/cpp/Method/closeLibrary" class="dashAnchor"></a>
-            <h5><a href="#closeLibrary">closeLibrary</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:closeLibrary(title) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Attempts to close a library with the specified <code>title</code>.</p>
-<p>Parameters:</p>
-<ul>
-<li>title - The title of the FCP Library to close.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if successful, or <code>false</code> if not.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="color">
-            <a name="//apple_ref/cpp/Method/color" class="dashAnchor"></a>
-            <h5><a href="#color">color</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:color() -&gt; ColorInspector</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the ColorInspector instance from the primary window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the ColorInspector</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="colorBoard">
-            <a name="//apple_ref/cpp/Method/colorBoard" class="dashAnchor"></a>
-            <h5><a href="#colorBoard">colorBoard</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:colorBoard() -&gt; ColorBoard</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the ColorBoard instance from the primary window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the ColorBoard</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="commandEditor">
-            <a name="//apple_ref/cpp/Method/commandEditor" class="dashAnchor"></a>
-            <h5><a href="#commandEditor">commandEditor</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:commandEditor() -&gt; commandEditor object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Command Editor</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Final Cut Pro Command Editor</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="defaultCommandSetPath">
-            <a name="//apple_ref/cpp/Method/defaultCommandSetPath" class="dashAnchor"></a>
-            <h5><a href="#defaultCommandSetPath">defaultCommandSetPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:defaultCommandSetPath([locale]) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the path to the 'Default' Command Set.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>locale</code> - The optional locale to use. Defaults to the <a href="#currentLocale">current locale</a>.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The 'Default' Command Set path, or <code>nil</code> if an error occurred</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="effects">
-            <a name="//apple_ref/cpp/Method/effects" class="dashAnchor"></a>
-            <h5><a href="#effects">effects</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:effects() -&gt; EffectsBrowser</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the EffectsBrowser instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the EffectsBrowser</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="eventViewer">
-            <a name="//apple_ref/cpp/Method/eventViewer" class="dashAnchor"></a>
-            <h5><a href="#eventViewer">eventViewer</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:eventViewer() -&gt; Event Viewer</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Event Viewer instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the Event Viewer</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="exportDialog">
-            <a name="//apple_ref/cpp/Method/exportDialog" class="dashAnchor"></a>
-            <h5><a href="#exportDialog">exportDialog</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:exportDialog() -&gt; exportDialog object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Export Dialog Box</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Final Cut Pro Export Dialog Box</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="fullScreenWindow">
-            <a name="//apple_ref/cpp/Method/fullScreenWindow" class="dashAnchor"></a>
-            <h5><a href="#fullScreenWindow">fullScreenWindow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:fullScreenWindow() -&gt; fullScreenWindow object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Full Screen Window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Full Screen Playback Window</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="generators">
-            <a name="//apple_ref/cpp/Method/generators" class="dashAnchor"></a>
-            <h5><a href="#generators">generators</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:generators() -&gt; GeneratorsBrowser</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the GeneratorsBrowser instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the GeneratorsBrowser</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getCommandShortcuts">
-            <a name="//apple_ref/cpp/Method/getCommandShortcuts" class="dashAnchor"></a>
-            <h5><a href="#getCommandShortcuts">getCommandShortcuts</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.getCommandShortcuts(id) -&gt; table of hs.commands.shortcut</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Finds a shortcut from the Active Command Set with the specified ID and returns a table
-of <code>hs.commands.shortcut</code>s for the specified command, or <code>nil</code> if it doesn't exist.</p>
-<p>Parameters:</p>
-<ul>
-<li>id - The unique ID for the command.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The array of shortcuts, or <code>nil</code> if no command exists with the specified <code>id</code>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getPath">
-            <a name="//apple_ref/cpp/Method/getPath" class="dashAnchor"></a>
-            <h5><a href="#getPath">getPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:getPath() -&gt; string or nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Path to Final Cut Pro Application</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A string containing Final Cut Pro's filesystem path, or nil if Final Cut Pro's path could not be determined.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="hide">
-            <a name="//apple_ref/cpp/Method/hide" class="dashAnchor"></a>
-            <h5><a href="#hide">hide</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:hide() -&gt; self</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Hides Final Cut Pro</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The FCP instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="importXML">
-            <a name="//apple_ref/cpp/Method/importXML" class="dashAnchor"></a>
-            <h5><a href="#importXML">importXML</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:importXML(path) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Imports an XML file into Final Cut Pro</p>
-<p>Parameters:</p>
-<ul>
-<li>path = Path to XML File</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A boolean value indicating whether the AppleScript succeeded or not</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="inspector">
-            <a name="//apple_ref/cpp/Method/inspector" class="dashAnchor"></a>
-            <h5><a href="#inspector">inspector</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:inspector() -&gt; Inspector</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Inspector instance from the primary window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the Inspector</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isSupportedLocale">
-            <a name="//apple_ref/cpp/Method/isSupportedLocale" class="dashAnchor"></a>
-            <h5><a href="#isSupportedLocale">isSupportedLocale</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:isSupportedLocale(locale) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the provided <code>locale</code> is supported by the app.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>language</code>   - The <code>cp.i18n.localeID</code> or string code. E.g. "en" or "zh_CN"</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if the locale is supported.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="keysWithString">
-            <a name="//apple_ref/cpp/Method/keysWithString" class="dashAnchor"></a>
-            <h5><a href="#keysWithString">keysWithString</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:keysWithString(string[, lang]) -&gt; {string}</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Looks up an application string and returns an array of keys that match. It will take into account current language the app is running in, or use <code>lang</code> if provided.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>string</code> - The string to look up.</li>
-<li><code>lang</code>   - The language (defaults to current FCPX language).</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The array of keys with a matching string.</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This method may be very inefficient, since it has to search through every possible key/value pair to find matches. It is not recommended that this is used in production.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="keywordEditor">
-            <a name="//apple_ref/cpp/Method/keywordEditor" class="dashAnchor"></a>
-            <h5><a href="#keywordEditor">keywordEditor</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:keywordEditor() -&gt; keywordEditor object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Keyword Editor</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Final Cut Pro Keyword Editor</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="launch">
-            <a name="//apple_ref/cpp/Method/launch" class="dashAnchor"></a>
-            <h5><a href="#launch">launch</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:launch([waitSeconds]) -&gt; self</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Launches Final Cut Pro, or brings it to the front if it was already running.</p>
-<p>Parameters:</p>
-<ul>
-<li>waitSeconds  - if provided, we will wait for up to the specified seconds for the launch to complete.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The FCP instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="libraries">
-            <a name="//apple_ref/cpp/Method/libraries" class="dashAnchor"></a>
-            <h5><a href="#libraries">libraries</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:libraries() -&gt; LibrariesBrowser</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the LibrariesBrowser instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the LibrariesBrowser</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="media">
-            <a name="//apple_ref/cpp/Method/media" class="dashAnchor"></a>
-            <h5><a href="#media">media</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:media() -&gt; MediaBrowser</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the MediaBrowser instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the MediaBrowser</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="mediaImport">
-            <a name="//apple_ref/cpp/Method/mediaImport" class="dashAnchor"></a>
-            <h5><a href="#mediaImport">mediaImport</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:mediaImport() -&gt; mediaImport object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Media Import Window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Final Cut Pro Media Import Window</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="menu">
-            <a name="//apple_ref/cpp/Method/menu" class="dashAnchor"></a>
-            <h5><a href="#menu">menu</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:menu() -&gt; cp.app.menu</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>cp.app.menu</code> for FCP.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>cp.app.menu</code> for the app.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="notifier">
-            <a name="//apple_ref/cpp/Method/notifier" class="dashAnchor"></a>
-            <h5><a href="#notifier">notifier</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:notifier() -&gt; cp.ui.notifier</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns a notifier that is tracking the application UI element. It has already been started.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The notifier.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="openLibrary">
-            <a name="//apple_ref/cpp/Method/openLibrary" class="dashAnchor"></a>
-            <h5><a href="#openLibrary">openLibrary</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:openLibrary(path) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Attempts to open a file at the specified absolute <code>path</code>.</p>
-<p>Parameters:</p>
-<ul>
-<li>path  - The path to the FCP Library to open.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if successful, or <code>false</code> if not.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="performShortcut">
-            <a name="//apple_ref/cpp/Method/performShortcut" class="dashAnchor"></a>
-            <h5><a href="#performShortcut">performShortcut</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:performShortcut(whichShortcut) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Performs a Final Cut Pro Shortcut</p>
-<p>Parameters:</p>
-<ul>
-<li>whichShortcut - As per the Command Set name</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>true if successful otherwise false</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="plugins">
-            <a name="//apple_ref/cpp/Method/plugins" class="dashAnchor"></a>
-            <h5><a href="#plugins">plugins</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:plugins() -&gt; cp.apple.finalcutpro.plugins</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the plugins manager for the app.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The plugins manager.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="preferencesWindow">
-            <a name="//apple_ref/cpp/Method/preferencesWindow" class="dashAnchor"></a>
-            <h5><a href="#preferencesWindow">preferencesWindow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:preferencesWindow() -&gt; preferenceWindow object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Preferences Window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Preferences Window</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="primaryWindow">
-            <a name="//apple_ref/cpp/Method/primaryWindow" class="dashAnchor"></a>
-            <h5><a href="#primaryWindow">primaryWindow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:primaryWindow() -&gt; primaryWindow object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Preferences Window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Primary Window</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="quit">
-            <a name="//apple_ref/cpp/Method/quit" class="dashAnchor"></a>
-            <h5><a href="#quit">quit</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:quit([waitSeconds]) -&gt; self</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Quits Final Cut Pro, if it's running.</p>
-<p>Parameters:</p>
-<ul>
-<li>waitSeconds      - The number of seconds to wait for the quit to complete.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The FCP instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="restart">
-            <a name="//apple_ref/cpp/Method/restart" class="dashAnchor"></a>
-            <h5><a href="#restart">restart</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:restart([waitSeconds]) -&gt; self</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Restart Final Cut Pro, if it is running. If not, nothing happens.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>waitSeconds</code>    - If provided, the number of seconds to wait for the restart to complete.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The FCP instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="scanPlugins">
-            <a name="//apple_ref/cpp/Method/scanPlugins" class="dashAnchor"></a>
-            <h5><a href="#scanPlugins">scanPlugins</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:scanPlugins() -&gt; table</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Scan Final Cut Pro Plugins</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A MenuBar object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="secondaryWindow">
-            <a name="//apple_ref/cpp/Method/secondaryWindow" class="dashAnchor"></a>
-            <h5><a href="#secondaryWindow">secondaryWindow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:secondaryWindow() -&gt; secondaryWindow object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Final Cut Pro Preferences Window</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Secondary Window</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="selectLibrary">
-            <a name="//apple_ref/cpp/Method/selectLibrary" class="dashAnchor"></a>
-            <h5><a href="#selectLibrary">selectLibrary</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:selectLibrary(title) -&gt; axuielement</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Attempts to select an open library with the specified title.</p>
-<p>Parameters:</p>
-<ul>
-<li>title - The title of the library to select.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The library row <code>axuielement</code>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="selectMenu">
-            <a name="//apple_ref/cpp/Method/selectMenu" class="dashAnchor"></a>
-            <h5><a href="#selectMenu">selectMenu</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:selectMenu(path[, options]) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Selects a Final Cut Pro Menu Item based on the list of menu titles in English.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>path</code>       - The list of menu items you'd like to activate, for example:
-<pre><code>    select("View", "Browser", "as List")</code></pre>
-</li>
-<li><code>options</code>    - (optional) The table of options. See <code>cp.app.menu:selectMenu(...)</code> for details.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if the press was successful.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="selectMenuItem">
-            <a name="//apple_ref/cpp/Method/selectMenuItem" class="dashAnchor"></a>
-            <h5><a href="#selectMenuItem">selectMenuItem</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:selectMenuItem(path, options) -&gt; cp.rx.Observable &lt;hs._asm.axuielement&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Selects a Menu Item based on the provided menu path.</p>
-<p>Each step on the path can be either one of:</p>
-<ul>
-<li>a string     - The exact name of the menu item.</li>
-<li>a number     - The menu item number, starting from 1.</li>
-<li>a function   - Passed one argument - the Menu UI to check - returning <code>true</code> if it matches.</li>
-</ul>
-<p>Options supported include:</p>
-<ul>
-<li>locale - The <code>localeID</code> or <code>string</code> for the locale that the path values are in.</li>
-<li>pressAll - If <code>true</code>, all menu items will be pressed on the way to the final destination.</li>
-<li>timeout - The maximum time to wait for the menu to be available before producing an error. Defaults to 10 seconds.</li>
-</ul>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">preview</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;cp.app&quot;</span><span class="p">).</span><span class="n">forBundleID</span><span class="p">(</span><span class="s2">&quot;com.apple.Preview&quot;</span><span class="p">)</span>
-<span class="n">preview</span><span class="p">:</span><span class="n">launch</span><span class="p">():</span><span class="n">menu</span><span class="p">():</span><span class="n">selectMenuItem</span><span class="p">({</span><span class="s2">&quot;File&quot;</span><span class="p">,</span> <span class="s2">&quot;Take Screenshot&quot;</span><span class="p">,</span> <span class="s2">&quot;From Entire Screen&quot;</span><span class="p">})</span>
-</pre></div>
-<p>Parameters:</p>
-<ul>
-<li>path - The list of menu items you'd like to activate.</li>
-<li>options - (optional) The table of options to apply.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>Observable</code> which emits the final menu item, or an error if the selection failed.</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>The returned <code>Observable</code> will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="show">
-            <a name="//apple_ref/cpp/Method/show" class="dashAnchor"></a>
-            <h5><a href="#show">show</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:show() -&gt; cp.apple.finalcutpro</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Activate Final Cut Pro, if it is running.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The FCP instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="string">
-            <a name="//apple_ref/cpp/Method/string" class="dashAnchor"></a>
-            <h5><a href="#string">string</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:string(key[, locale][, quiet]]) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Looks up an application string with the specified <code>key</code>.
-If no <code>context</code> value is provided, the <a href="#context">current context</a> is used.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>key</code>    - The key to look up.</li>
-<li><code>locale</code> - Optional locale to retrieve the key for, if available. May be a <code>string</code> or <code>cp.i18n.localeID</code>.</li>
-<li><code>quiet</code>  - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The requested string or <code>nil</code> if the application is not running.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="timeline">
-            <a name="//apple_ref/cpp/Method/timeline" class="dashAnchor"></a>
-            <h5><a href="#timeline">timeline</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:timeline() -&gt; Timeline</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Timeline instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the Timeline</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="toolbar">
-            <a name="//apple_ref/cpp/Method/toolbar" class="dashAnchor"></a>
-            <h5><a href="#toolbar">toolbar</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:toolbar() -&gt; PrimaryToolbar</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Primary Toolbar - the toolbar at the top of the Primary Window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the PrimaryToolbar</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="transitions">
-            <a name="//apple_ref/cpp/Method/transitions" class="dashAnchor"></a>
-            <h5><a href="#transitions">transitions</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:transitions() -&gt; TransitionsBrowser</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the TransitionsBrowser instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the TransitionsBrowser</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="userCommandSetPath">
-            <a name="//apple_ref/cpp/Method/userCommandSetPath" class="dashAnchor"></a>
-            <h5><a href="#userCommandSetPath">userCommandSetPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.userCommandSetPath() -&gt; string or nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the path where User Command Set files are stored.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A path as a string or <code>nil</code> if the folder doesn't exist.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="viewer">
-            <a name="//apple_ref/cpp/Method/viewer" class="dashAnchor"></a>
-            <h5><a href="#viewer">viewer</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro:viewer() -&gt; Viewer</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the Viewer instance, whether it is in the primary or secondary window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the Viewer</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Then, there are the `UpperCase` files, which represent the application itself:
+
+* `MenuBar` 	            - The main menu bar.
+* `prefs/PreferencesWindow` - The preferences window.
+* etc...
+
+The `fcp` variable is the root application. It has functions which allow you to perform tasks or access parts of the UI. For example, to open the `Preferences` window, you can do this:
+
+```lua
+fcp:preferencesWindow():show()
+```
+
+In general, as long as Final Cut Pro is running, actions can be performed directly, and the API will perform the required operations to achieve it. For example, to toggle the 'Create Optimized Media' checkbox in the 'Import' section of the 'Preferences' window, you can simply do this:
+
+```lua
+fcp:preferencesWindow():importPanel():toggleCreateOptimizedMedia()
+```
+
+The API will automatically open the `Preferences` window, navigate to the 'Import' panel and toggle the checkbox.
+
+The `UpperCase` classes also have a variety of `UI` methods. These will return the `axuielement` for the relevant GUI element, if it is accessible. If not, it will return `nil`. These allow direct interaction with the GUI if necessary. It's most useful when adding new functions to `UpperCase` files for a particular element.
+
+This can also be used to 'wait' for an element to be visible before performing a task. For example, if you need to wait for the `Preferences` window to finish loading before doing something else, you can do this with the `cp.just` library:
+
+```lua
+local just = require("cp.just")
+
+local prefsWindow = fcp:preferencesWindow()
+
+local prefsUI = just.doUntil(function() return prefsWindow:UI() end)
+
+if prefsUI then
+	-- it's open!
+else
+	-- it's closed!
+end
+```
+
+By using the `just` library, we can do a loop waiting until the function returns a result that will give up after a certain time period (10 seconds by default).
+
+Of course, we have a specific support function for that already, so you could do this instead:
+
+```lua
+if fcp:preferencesWindow():isShowing() then
+	-- it's open!
+else
+	-- it's closed!
+end
+```
+
+## Submodules
+ * [cp.apple.finalcutpro.app](cp.apple.finalcutpro.app.md)
+ * [cp.apple.finalcutpro.cmd](cp.apple.finalcutpro.cmd.md)
+ * [cp.apple.finalcutpro.content](cp.apple.finalcutpro.content.md)
+ * [cp.apple.finalcutpro.export](cp.apple.finalcutpro.export.md)
+ * [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)
+ * [cp.apple.finalcutpro.import](cp.apple.finalcutpro.import.md)
+ * [cp.apple.finalcutpro.inspector](cp.apple.finalcutpro.inspector.md)
+ * [cp.apple.finalcutpro.main](cp.apple.finalcutpro.main.md)
+ * [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)
+ * [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)
+ * [cp.apple.finalcutpro.prefs](cp.apple.finalcutpro.prefs.md)
+ * [cp.apple.finalcutpro.strings](cp.apple.finalcutpro.strings.md)
+
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [ALLOWED_IMPORT_AUDIO_EXTENSIONS](#allowed_import_audio_extensions)
+ * [ALLOWED_IMPORT_EXTENSIONS](#allowed_import_extensions)
+ * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
+ * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
+ * [BUNDLE_ID](#bundle_id)
+ * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
+ * [EVENT_DESCRIPTION_PATH](#event_description_path)
+ * [FLEXO_LANGUAGES](#flexo_languages)
+ * [PASTEBOARD_UTI](#pasteboard_uti)
+* Functions - API calls offered directly by the extension
+ * [commandSet](#commandset)
+ * [init](#init)
+ * [matches](#matches)
+ * [reset](#reset)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [contentUI](#contentui)
+ * [contentUI](#contentui)
+ * [contentUI](#contentui)
+ * [contentUI](#contentui)
+ * [isShowing](#isshowing)
+ * [isShowing](#isshowing)
+ * [isShowing](#isshowing)
+ * [isShowing](#isshowing)
+ * [isShowing](#isshowing)
+ * [UI](#ui)
+ * [UI](#ui)
+ * [UI](#ui)
+ * [UI](#ui)
+ * [UI](#ui)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [activeCommandSet](#activecommandset)
+ * [activeCommandSetPath](#activecommandsetpath)
+ * [alert](#alert)
+ * [browser](#browser)
+ * [bundleID](#bundleid)
+ * [closeLibrary](#closelibrary)
+ * [color](#color)
+ * [colorBoard](#colorboard)
+ * [commandEditor](#commandeditor)
+ * [defaultCommandSetPath](#defaultcommandsetpath)
+ * [effects](#effects)
+ * [eventViewer](#eventviewer)
+ * [exportDialog](#exportdialog)
+ * [fullScreenWindow](#fullscreenwindow)
+ * [generators](#generators)
+ * [getCommandShortcuts](#getcommandshortcuts)
+ * [getPath](#getpath)
+ * [hide](#hide)
+ * [importXML](#importxml)
+ * [inspector](#inspector)
+ * [isSupportedLocale](#issupportedlocale)
+ * [keysWithString](#keyswithstring)
+ * [keywordEditor](#keywordeditor)
+ * [launch](#launch)
+ * [libraries](#libraries)
+ * [media](#media)
+ * [mediaImport](#mediaimport)
+ * [menu](#menu)
+ * [notifier](#notifier)
+ * [openLibrary](#openlibrary)
+ * [performShortcut](#performshortcut)
+ * [plugins](#plugins)
+ * [preferencesWindow](#preferenceswindow)
+ * [primaryWindow](#primarywindow)
+ * [quit](#quit)
+ * [restart](#restart)
+ * [scanPlugins](#scanplugins)
+ * [secondaryWindow](#secondarywindow)
+ * [selectLibrary](#selectlibrary)
+ * [selectMenu](#selectmenu)
+ * [selectMenuItem](#selectmenuitem)
+ * [show](#show)
+ * [string](#string)
+ * [timeline](#timeline)
+ * [toolbar](#toolbar)
+ * [transitions](#transitions)
+ * [userCommandSetPath](#usercommandsetpath)
+ * [viewer](#viewer)
+
+## API Documentation
+
+### Constants
+
+#### [ALLOWED_IMPORT_AUDIO_EXTENSIONS](#allowed_import_audio_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_AUDIO_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of audio file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_EXTENSIONS](#allowed_import_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of all file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_IMAGE_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of image file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_VIDEO_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of video file extensions Final Cut Pro can import.                                                                                         |
+
+#### [BUNDLE_ID](#bundle_id)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.BUNDLE_ID` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Final Cut Pro's Bundle ID as a `semver`.                                                                                         |
+
+#### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The earliest version of Final Cut Pro supported by this module.                                                                                         |
+
+#### [EVENT_DESCRIPTION_PATH](#event_description_path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EVENT_DESCRIPTION_PATH` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The Event Description Path.                                                                                         |
+
+#### [FLEXO_LANGUAGES](#flexo_languages)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.FLEXO_LANGUAGES` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of Final Cut Pro's supported Languages for the Flexo Framework                                                                                         |
+
+#### [PASTEBOARD_UTI](#pasteboard_uti)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.PASTEBOARD_UTI` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Final Cut Pro's Pasteboard UTI                                                                                         |
+
+### Functions
+
+#### [commandSet](#commandset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.commandSet(path) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the Command Set at the specified path as a table.                                                                                         |
+| **Parameters**                                       |  * `path`	- The path to the Command Set.                                       |
+| **Returns**                                          |  * The Command Set as a table, or `nil` if there was a problem.                                                |
+
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:init() -> App` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Initialises the app instance representing Final Cut Pro.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The app.                                                |
+
+#### [matches](#matches)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.CommandEditor.matches(element) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
+| **Parameters**                                       |  * element - An `axuielementObject` to check.                                       |
+| **Returns**                                          |  * `true` if matches otherwise `false`                                                |
+
+#### [reset](#reset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:reset() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Resets the language cache                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+### Fields
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` containing the properties rows, if available.                                                                                         |
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` containing the properties rows, if available.                                                                                         |
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` containing the properties rows, if available.                                                                                         |
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The `axuielement` containing the properties rows, if available.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the TitleInspector is currently showing.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.AudioInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the AudioInspector is currently showing.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the ShareInspector is currently showing.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the VideoInspector is currently showing.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the TextInspector is currently showing.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.AudioInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Audio Inspector.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Video Inspector.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Title Inspector.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Share Inspector.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Text Inspector.                                                                                         |
+
+### Methods
+
+#### [activeCommandSet](#activecommandset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:activeCommandSet([forceReload]) -> table or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the 'Active Command Set' as a Table. The result is cached, so pass in                                                                                         |
+| **Parameters**                                       |  * [forceReload]	- If `true`, require the Command Set to be reloaded.                                       |
+| **Returns**                                          |  * A table of the Active Command Set's contents, or `nil` if an error occurred                                                |
+
+#### [activeCommandSetPath](#activecommandsetpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:activeCommandSetPath() -> string or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The 'Active Command Set' value, or the 'Default' Command Set if this is the first time Final Cut Pro has been run.                                                |
+
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:alert() -> cp.ui.Alert` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Provides basic access to any 'alert' dialog windows in the app.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the `Alert` instance                                                |
+
+#### [browser](#browser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:browser() -> Browser` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Browser instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the Browser                                                |
+
+#### [bundleID](#bundleid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:bundleID() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Bundle ID for the app.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * The Bundle ID                                                |
+
+#### [closeLibrary](#closelibrary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:closeLibrary(title) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to close a library with the specified `title`.                                                                                         |
+| **Parameters**                                       | * title	- The title of the FCP Library to close.                                       |
+| **Returns**                                          | * `true` if successful, or `false` if not.                                                |
+
+#### [color](#color)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:color() -> ColorInspector` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the ColorInspector instance from the primary window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the ColorInspector                                                |
+
+#### [colorBoard](#colorboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:colorBoard() -> ColorBoard` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the ColorBoard instance from the primary window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the ColorBoard                                                |
+
+#### [commandEditor](#commandeditor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:commandEditor() -> commandEditor object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Command Editor                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Final Cut Pro Command Editor                                                |
+
+#### [defaultCommandSetPath](#defaultcommandsetpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:defaultCommandSetPath([locale]) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the path to the 'Default' Command Set.                                                                                         |
+| **Parameters**                                       |  * `locale`	- The optional locale to use. Defaults to the [current locale](#currentLocale).                                       |
+| **Returns**                                          |  * The 'Default' Command Set path, or `nil` if an error occurred                                                |
+
+#### [effects](#effects)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:effects() -> EffectsBrowser` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the EffectsBrowser instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the EffectsBrowser                                                |
+
+#### [eventViewer](#eventviewer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:eventViewer() -> Event Viewer` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Event Viewer instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the Event Viewer                                                |
+
+#### [exportDialog](#exportdialog)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:exportDialog() -> exportDialog object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Export Dialog Box                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Final Cut Pro Export Dialog Box                                                |
+
+#### [fullScreenWindow](#fullscreenwindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:fullScreenWindow() -> fullScreenWindow object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Full Screen Window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Full Screen Playback Window                                                |
+
+#### [generators](#generators)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:generators() -> GeneratorsBrowser` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the GeneratorsBrowser instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the GeneratorsBrowser                                                |
+
+#### [getCommandShortcuts](#getcommandshortcuts)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.getCommandShortcuts(id) -> table of hs.commands.shortcut` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Finds a shortcut from the Active Command Set with the specified ID and returns a table                                                                                         |
+| **Parameters**                                       |  * id - The unique ID for the command.                                       |
+| **Returns**                                          |  * The array of shortcuts, or `nil` if no command exists with the specified `id`.                                                |
+
+#### [getPath](#getpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:getPath() -> string or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Path to Final Cut Pro Application                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * A string containing Final Cut Pro's filesystem path, or nil if Final Cut Pro's path could not be determined.                                                |
+
+#### [hide](#hide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:hide() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Hides Final Cut Pro                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The FCP instance.                                                |
+
+#### [importXML](#importxml)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:importXML(path) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Imports an XML file into Final Cut Pro                                                                                         |
+| **Parameters**                                       |  * path = Path to XML File                                       |
+| **Returns**                                          |  * A boolean value indicating whether the AppleScript succeeded or not                                                |
+
+#### [inspector](#inspector)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:inspector() -> Inspector` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Inspector instance from the primary window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the Inspector                                                |
+
+#### [isSupportedLocale](#issupportedlocale)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isSupportedLocale(locale) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks if the provided `locale` is supported by the app.                                                                                         |
+| **Parameters**                                       |  * `language`	- The `cp.i18n.localeID` or string code. E.g. "en" or "zh_CN"                                       |
+| **Returns**                                          |  * `true` if the locale is supported.                                                |
+
+#### [keysWithString](#keyswithstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:keysWithString(string[, lang]) -> {string}` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Looks up an application string and returns an array of keys that match. It will take into account current language the app is running in, or use `lang` if provided.                                                                                         |
+| **Parameters**                                       |  * `string`	- The string to look up. * `lang`	- The language (defaults to current FCPX language).                                       |
+| **Returns**                                          |  * The array of keys with a matching string.                                                |
+| **Notes**                                            |  * This method may be very inefficient, since it has to search through every possible key/value pair to find matches. It is not recommended that this is used in production.                                                      |
+
+#### [keywordEditor](#keywordeditor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:keywordEditor() -> keywordEditor object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Keyword Editor                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Final Cut Pro Keyword Editor                                                |
+
+#### [launch](#launch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:launch([waitSeconds]) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Launches Final Cut Pro, or brings it to the front if it was already running.                                                                                         |
+| **Parameters**                                       |  * waitSeconds  - if provided, we will wait for up to the specified seconds for the launch to complete.                                       |
+| **Returns**                                          |  * The FCP instance.                                                |
+
+#### [libraries](#libraries)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:libraries() -> LibrariesBrowser` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the LibrariesBrowser instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the LibrariesBrowser                                                |
+
+#### [media](#media)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:media() -> MediaBrowser` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the MediaBrowser instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the MediaBrowser                                                |
+
+#### [mediaImport](#mediaimport)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:mediaImport() -> mediaImport object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Media Import Window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Final Cut Pro Media Import Window                                                |
+
+#### [menu](#menu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:menu() -> cp.app.menu` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the `cp.app.menu` for FCP.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The `cp.app.menu` for the app.                                                |
+
+#### [notifier](#notifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:notifier() -> cp.ui.notifier` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a notifier that is tracking the application UI element. It has already been started.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * The notifier.                                                |
+
+#### [openLibrary](#openlibrary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:openLibrary(path) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to open a file at the specified absolute `path`.                                                                                         |
+| **Parameters**                                       | * path	- The path to the FCP Library to open.                                       |
+| **Returns**                                          | * `true` if successful, or `false` if not.                                                |
+
+#### [performShortcut](#performshortcut)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:performShortcut(whichShortcut) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Performs a Final Cut Pro Shortcut                                                                                         |
+| **Parameters**                                       |  * whichShortcut - As per the Command Set name                                       |
+| **Returns**                                          |  * true if successful otherwise false                                                |
+
+#### [plugins](#plugins)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:plugins() -> cp.apple.finalcutpro.plugins` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the plugins manager for the app.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The plugins manager.                                                |
+
+#### [preferencesWindow](#preferenceswindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:preferencesWindow() -> preferenceWindow object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Preferences Window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Preferences Window                                                |
+
+#### [primaryWindow](#primarywindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:primaryWindow() -> primaryWindow object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Preferences Window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Primary Window                                                |
+
+#### [quit](#quit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:quit([waitSeconds]) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Quits Final Cut Pro, if it's running.                                                                                         |
+| **Parameters**                                       |  * waitSeconds      - The number of seconds to wait for the quit to complete.                                       |
+| **Returns**                                          |  * The FCP instance.                                                |
+
+#### [restart](#restart)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:restart([waitSeconds]) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Restart Final Cut Pro, if it is running. If not, nothing happens.                                                                                         |
+| **Parameters**                                       |  * `waitSeconds`	- If provided, the number of seconds to wait for the restart to complete.                                       |
+| **Returns**                                          |  * The FCP instance.                                                |
+
+#### [scanPlugins](#scanplugins)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:scanPlugins() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Scan Final Cut Pro Plugins                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * A MenuBar object                                                |
+
+#### [secondaryWindow](#secondarywindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:secondaryWindow() -> secondaryWindow object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Final Cut Pro Preferences Window                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The Secondary Window                                                |
+
+#### [selectLibrary](#selectlibrary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectLibrary(title) -> axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to select an open library with the specified title.                                                                                         |
+| **Parameters**                                       | * title - The title of the library to select.                                       |
+| **Returns**                                          | * The library row `axuielement`.                                                |
+
+#### [selectMenu](#selectmenu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectMenu(path[, options]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English.                                                                                         |
+| **Parameters**                                       |  * `path`	    - The list of menu items you'd like to activate, for example:           select("View", "Browser", "as List") * `options`    - (optional) The table of options. See `cp.app.menu:selectMenu(...)` for details.                                       |
+| **Returns**                                          |  * `true` if the press was successful.                                                |
+
+#### [selectMenuItem](#selectmenuitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectMenuItem(path, options) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Selects a Menu Item based on the provided menu path.                                                                                         |
+| **Parameters**                                       |  * path - The list of menu items you'd like to activate. * options - (optional) The table of options to apply.                                       |
+| **Returns**                                          |  * An `Observable` which emits the final menu item, or an error if the selection failed.                                                |
+| **Notes**                                            |  * The returned `Observable` will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.                                                      |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:show() -> cp.apple.finalcutpro` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Activate Final Cut Pro, if it is running.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The FCP instance.                                                |
+
+#### [string](#string)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key[, locale][, quiet]]) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Looks up an application string with the specified `key`.                                                                                         |
+| **Parameters**                                       |  * `key`	- The key to look up. * `locale` - Optional locale to retrieve the key for, if available. May be a `string` or `cp.i18n.localeID`. * `quiet`	- Optional boolean, defaults to `false`. If `true`, no warnings are logged for missing keys.                                       |
+| **Returns**                                          |  * The requested string or `nil` if the application is not running.                                                |
+
+#### [timeline](#timeline)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:timeline() -> Timeline` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Timeline instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the Timeline                                                |
+
+#### [toolbar](#toolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:toolbar() -> PrimaryToolbar` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Primary Toolbar - the toolbar at the top of the Primary Window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the PrimaryToolbar                                                |
+
+#### [transitions](#transitions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:transitions() -> TransitionsBrowser` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the TransitionsBrowser instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the TransitionsBrowser                                                |
+
+#### [userCommandSetPath](#usercommandsetpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.userCommandSetPath() -> string or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the path where User Command Set files are stored.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * A path as a string or `nil` if the folder doesn't exist.                                                |
+
+#### [viewer](#viewer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:viewer() -> Viewer` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Viewer instance, whether it is in the primary or secondary window.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * the Viewer                                                |
+

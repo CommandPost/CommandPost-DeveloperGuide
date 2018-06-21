@@ -1,274 +1,86 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="hs.spoons.md">docs</a> &raquo; hs.spoons</h1>
-      <p>Utility and management functions for Spoons
-Spoons are Lua plugins for Hammerspoon.
-See <a href="http://www.hammerspoon.org/Spoons/">http://www.hammerspoon.org/Spoons/</a> for more information</p>
+# [docs](index.md) » hs.spoons
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
-          <ul>
-            <li><a href="#bindHotkeysToSpec">bindHotkeysToSpec</a></li>
-            <li><a href="#isInstalled">isInstalled</a></li>
-            <li><a href="#isLoaded">isLoaded</a></li>
-            <li><a href="#list">list</a></li>
-            <li><a href="#newSpoon">newSpoon</a></li>
-            <li><a href="#resourcePath">resourcePath</a></li>
-            <li><a href="#scriptPath">scriptPath</a></li>
-            <li><a href="#use">use</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Methods</h4>
-          <section id="bindHotkeysToSpec">
-            <a name="//apple_ref/cpp/Method/bindHotkeysToSpec" class="dashAnchor"></a>
-            <h5><a href="#bindHotkeysToSpec">bindHotkeysToSpec</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.bindHotkeysToSpec(def, map) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Map a number of hotkeys according to a definition table</p>
-<p>Parameters:</p>
-<ul>
-<li>def - table containing name-to-function definitions for the hotkeys supported by the Spoon. Each key is a hotkey name, and its value must be a function that will be called when the hotkey is invoked.</li>
-<li>map - table containing name-to-hotkey definitions, as supported by <a href="https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md#hotkeys">bindHotkeys in the Spoon API</a>. Not all the entries in <code>def</code> must be bound, but if any keys in <code>map</code> don't have a definition, an error will be produced.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isInstalled">
-            <a name="//apple_ref/cpp/Method/isInstalled" class="dashAnchor"></a>
-            <h5><a href="#isInstalled">isInstalled</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.isInstalled(name) -&gt; table | nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Check if a given Spoon is installed.</p>
-<p>Parameters:</p>
-<ul>
-<li>name - Name of the Spoon to check.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>If the Spoon is installed, it returns a table with the Spoon information as returned by <code>list()</code>. Returns <code>nil</code> if the Spoon is not installed.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isLoaded">
-            <a name="//apple_ref/cpp/Method/isLoaded" class="dashAnchor"></a>
-            <h5><a href="#isLoaded">isLoaded</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.isLoaded(name) -&gt; boolean | nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Check if a given Spoon is loaded.</p>
-<p>Parameters:</p>
-<ul>
-<li>name - Name of the Spoon to check.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if the Spoon is loaded, <code>nil</code> otherwise.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="list">
-            <a name="//apple_ref/cpp/Method/list" class="dashAnchor"></a>
-            <h5><a href="#list">list</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.list() -&gt; table</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Return a list of installed/loaded Spoons</p>
-<p>Parameters:</p>
-<ul>
-<li>onlyLoaded - only return loaded Spoons (skips those that are installed but not loaded). Defaults to <code>false</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Table with a list of installed/loaded spoons (depending on the value of <code>onlyLoaded</code>). Each entry is a table with the following entries:<ul>
-<li><code>name</code> - Spoon name</li>
-<li><code>loaded</code> - boolean indication of whether the Spoon is loaded (<code>true</code>) or only installed (<code>false</code>)</li>
-<li><code>version</code> - Spoon version number. Available only for loaded Spoons.</li>
-</ul>
-</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="newSpoon">
-            <a name="//apple_ref/cpp/Method/newSpoon" class="dashAnchor"></a>
-            <h5><a href="#newSpoon">newSpoon</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.newSpoon(name, basedir, metadata) -&gt; string | nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Create a skeleton for a new Spoon</p>
-<p>Parameters:</p>
-<ul>
-<li>name: name of the new spoon, without the <code>.spoon</code> extension</li>
-<li>basedir: (optional) directory where to create the template. Defaults to <code>~/.hammerspoon/Spoons</code></li>
-<li>metadata: (optional) table containing metadata values to be inserted in the template. Provided values are merged with the defaults. Defaults to:
-<pre><code>{
-  version = "0.1",
-  author = "Your Name &lt;your@email.org&gt;",
-  homepage = "https://github.com/Hammerspoon/Spoons",
-  license = "MIT - https://opensource.org/licenses/MIT",
-  download_url = "https://github.com/Hammerspoon/Spoons/raw/master/Spoons/"..name..".spoon.zip"
-}</code></pre>
-</li>
-<li>template: (optional) absolute path of the template to use for the <code>init.lua</code> file of the new Spoon. Defaults to the <code>templates/init.tpl</code> file included with Hammerspoon.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The full directory path where the template was created, or <code>nil</code> if there was an error.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="resourcePath">
-            <a name="//apple_ref/cpp/Method/resourcePath" class="dashAnchor"></a>
-            <h5><a href="#resourcePath">resourcePath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.resourcePath(partial) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Return full path of an object within a spoon directory, given its partial path.</p>
-<p>Parameters:</p>
-<ul>
-<li>partial - path of a file relative to the Spoon directory. For example <code>images/img1.png</code> will refer to a file within the <code>images</code> directory of the Spoon.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Absolute path of the file. Note: no existence or other checks are done on the path.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="scriptPath">
-            <a name="//apple_ref/cpp/Method/scriptPath" class="dashAnchor"></a>
-            <h5><a href="#scriptPath">scriptPath</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.scriptPath([n]) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Return path of the current spoon.</p>
-<p>Parameters:</p>
-<ul>
-<li>n - (optional) stack level for which to get the path. Defaults to 2, which will return the path of the spoon which called <code>scriptPath()</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>String with the path from where the calling code was loaded.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="use">
-            <a name="//apple_ref/cpp/Method/use" class="dashAnchor"></a>
-            <h5><a href="#use">use</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.spoons.use(name, arg) -&gt; boolean | nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Declaratively load and configure a Spoon</p>
-<p>Parameters:</p>
-<ul>
-<li>name - the name of the Spoon to load (without the <code>.spoon</code> extension).</li>
-<li>arg - if provided, can be used to specify the configuration of the Spoon. The following keys are recognized (all are optional):<ul>
-<li>config - a table containing variables to be stored in the Spoon object to configure it. For example, <code>config = { answer = 42 }</code> will result in <code>spoon.&lt;LoadedSpoon&gt;.answer</code> being set to 42.</li>
-<li>hotkeys - a table containing hotkey bindings. If provided, will be passed as-is to the Spoon's <code>bindHotkeys()</code> method. The special string <code>"default"</code> can be given to use the Spoons <code>defaultHotkeys</code> variable, if it exists.</li>
-<li>fn - a function which will be called with the freshly-loaded Spoon object as its first argument.</li>
-<li>loglevel - if the Spoon has a variable called <code>logger</code>, its <code>setLogLevel()</code> method will be called with this value.</li>
-<li>start - if <code>true</code>, call the Spoon's <code>start()</code> method after configuring everything else.</li>
-</ul>
-</li>
-<li>noerror - if <code>true</code>, don't log an error if the Spoon is not installed, simply return <code>nil</code>.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if the spoon was loaded, <code>nil</code> otherwise</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Utility and management functions for Spoons
+Spoons are Lua plugins for Hammerspoon.
+See http://www.hammerspoon.org/Spoons/ for more information
+
+## API Overview
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [bindHotkeysToSpec](#bindhotkeystospec)
+ * [isInstalled](#isinstalled)
+ * [isLoaded](#isloaded)
+ * [list](#list)
+ * [newSpoon](#newspoon)
+ * [resourcePath](#resourcepath)
+ * [scriptPath](#scriptpath)
+ * [use](#use)
+
+## API Documentation
+
+### Methods
+
+#### [bindHotkeysToSpec](#bindhotkeystospec)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.bindHotkeysToSpec(def, map) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Map a number of hotkeys according to a definition table                                                                                         |
+| **Parameters**                                       |  * def - table containing name-to-function definitions for the hotkeys supported by the Spoon. Each key is a hotkey name, and its value must be a function that will be called when the hotkey is invoked. * map - table containing name-to-hotkey definitions, as supported by [bindHotkeys in the Spoon API](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md#hotkeys). Not all the entries in `def` must be bound, but if any keys in `map` don't have a definition, an error will be produced.                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [isInstalled](#isinstalled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.isInstalled(name) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Check if a given Spoon is installed.                                                                                         |
+| **Parameters**                                       |  * name - Name of the Spoon to check.                                       |
+| **Returns**                                          |  * If the Spoon is installed, it returns a table with the Spoon information as returned by `list()`. Returns `nil` if the Spoon is not installed.                                                |
+
+#### [isLoaded](#isloaded)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.isLoaded(name) -> boolean | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Check if a given Spoon is loaded.                                                                                         |
+| **Parameters**                                       |  * name - Name of the Spoon to check.                                       |
+| **Returns**                                          |  * `true` if the Spoon is loaded, `nil` otherwise.                                                |
+
+#### [list](#list)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.list() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Return a list of installed/loaded Spoons                                                                                         |
+| **Parameters**                                       |  * onlyLoaded - only return loaded Spoons (skips those that are installed but not loaded). Defaults to `false`                                       |
+| **Returns**                                          |  * Table with a list of installed/loaded spoons (depending on the value of `onlyLoaded`). Each entry is a table with the following entries:   * `name` - Spoon name   * `loaded` - boolean indication of whether the Spoon is loaded (`true`) or only installed (`false`)   * `version` - Spoon version number. Available only for loaded Spoons.                                                |
+
+#### [newSpoon](#newspoon)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.newSpoon(name, basedir, metadata) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Create a skeleton for a new Spoon                                                                                         |
+| **Parameters**                                       |  * name: name of the new spoon, without the `.spoon` extension * basedir: (optional) directory where to create the template. Defaults to `~/.hammerspoon/Spoons` * metadata: (optional) table containing metadata values to be inserted in the template. Provided values are merged with the defaults. Defaults to:   ```   {     version = "0.1",     author = "Your Name <your@email.org>",     homepage = "https://github.com/Hammerspoon/Spoons",     license = "MIT - https://opensource.org/licenses/MIT",     download_url = "https://github.com/Hammerspoon/Spoons/raw/master/Spoons/"..name..".spoon.zip"   }   ``` * template: (optional) absolute path of the template to use for the `init.lua` file of the new Spoon. Defaults to the `templates/init.tpl` file included with Hammerspoon.                                       |
+| **Returns**                                          |  * The full directory path where the template was created, or `nil` if there was an error.                                                |
+
+#### [resourcePath](#resourcepath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.resourcePath(partial) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Return full path of an object within a spoon directory, given its partial path.                                                                                         |
+| **Parameters**                                       |  * partial - path of a file relative to the Spoon directory. For example `images/img1.png` will refer to a file within the `images` directory of the Spoon.                                       |
+| **Returns**                                          |  * Absolute path of the file. Note: no existence or other checks are done on the path.                                                |
+
+#### [scriptPath](#scriptpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.scriptPath([n]) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Return path of the current spoon.                                                                                         |
+| **Parameters**                                       |  * n - (optional) stack level for which to get the path. Defaults to 2, which will return the path of the spoon which called `scriptPath()`                                       |
+| **Returns**                                          |  * String with the path from where the calling code was loaded.                                                |
+
+#### [use](#use)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.use(name, arg) -> boolean | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Declaratively load and configure a Spoon                                                                                         |
+| **Parameters**                                       |  * name - the name of the Spoon to load (without the `.spoon` extension). * arg - if provided, can be used to specify the configuration of the Spoon. The following keys are recognized (all are optional):   * config - a table containing variables to be stored in the Spoon object to configure it. For example, `config = { answer = 42 }` will result in `spoon.<LoadedSpoon>.answer` being set to 42.   * hotkeys - a table containing hotkey bindings. If provided, will be passed as-is to the Spoon's `bindHotkeys()` method. The special string `"default"` can be given to use the Spoons `defaultHotkeys` variable, if it exists.   * fn - a function which will be called with the freshly-loaded Spoon object as its first argument.   * loglevel - if the Spoon has a variable called `logger`, its `setLogLevel()` method will be called with this value.   * start - if `true`, call the Spoon's `start()` method after configuring everything else. * noerror - if `true`, don't log an error if the Spoon is not installed, simply return `nil`.                                       |
+| **Returns**                                          |  * `true` if the spoon was loaded, `nil` otherwise                                                |
+

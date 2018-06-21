@@ -1,311 +1,108 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="cp.apple.finalcutpro.main.Viewer.md">docs</a> &raquo; cp.apple.finalcutpro.main.Viewer</h1>
-      <p>Viewer Module.</p>
+# [docs](index.md) » cp.apple.finalcutpro.main.Viewer
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#matches">matches</a></li>
-          </ul>
-        <li>Constructors - API calls which return an object, typically one that offers API methods</li>
-          <ul>
-            <li><a href="#new">new</a></li>
-          </ul>
-        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
-          <ul>
-            <li><a href="#app">app</a></li>
-            <li><a href="#currentWindow">currentWindow</a></li>
-            <li><a href="#hide">hide</a></li>
-            <li><a href="#isEventViewer">isEventViewer</a></li>
-            <li><a href="#isMainViewer">isMainViewer</a></li>
-            <li><a href="#playButton">playButton</a></li>
-            <li><a href="#showOnPrimary">showOnPrimary</a></li>
-            <li><a href="#showOnSecondary">showOnSecondary</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="matches">
-            <a name="//apple_ref/cpp/Function/matches" class="dashAnchor"></a>
-            <h5><a href="#matches">matches</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer.matches(element) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks to see if an element matches what we think it should be.</p>
-<p>Parameters:</p>
-<ul>
-<li>element - An <code>axuielementObject</code> to check.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if matches otherwise <code>false</code></li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Constructors</h4>
-          <section id="new">
-            <a name="//apple_ref/cpp/Constructor/new" class="dashAnchor"></a>
-            <h5><a href="#new">new</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer.new(app, eventViewer) -&gt; Viewer</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constructor</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Creates a new <code>Viewer</code> instance.</p>
-<p>Parameters:</p>
-<ul>
-<li>app           - The FCP application.</li>
-<li>eventViewer   - If <code>true</code>, the viewer is the Event Viewer.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The new <code>Viewer</code> instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Methods</h4>
-          <section id="app">
-            <a name="//apple_ref/cpp/Method/app" class="dashAnchor"></a>
-            <h5><a href="#app">app</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:app() -&gt; application</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the application.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The application.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="currentWindow">
-            <a name="//apple_ref/cpp/Method/currentWindow" class="dashAnchor"></a>
-            <h5><a href="#currentWindow">currentWindow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:currentWindow() -&gt; PrimaryWindow | SecondaryWindow</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the current window object.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>PrimaryWindow</code> or the <code>SecondaryWindow</code>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="hide">
-            <a name="//apple_ref/cpp/Method/hide" class="dashAnchor"></a>
-            <h5><a href="#hide">hide</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:hide() -&gt; self</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Hides the Viewer.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Self</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isEventViewer">
-            <a name="//apple_ref/cpp/Method/isEventViewer" class="dashAnchor"></a>
-            <h5><a href="#isEventViewer">isEventViewer</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:isEventViewer() -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns <code>true</code> if this is the Event Viewer.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if this is the Event Viewer.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isMainViewer">
-            <a name="//apple_ref/cpp/Method/isMainViewer" class="dashAnchor"></a>
-            <h5><a href="#isMainViewer">isMainViewer</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:isMainViewer() -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns <code>true</code> if this is the main Viewer.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if this is the main Viewer.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="playButton">
-            <a name="//apple_ref/cpp/Method/playButton" class="dashAnchor"></a>
-            <h5><a href="#playButton">playButton</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:playButton() -&gt; Button</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the Play Button object.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A Button</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="showOnPrimary">
-            <a name="//apple_ref/cpp/Method/showOnPrimary" class="dashAnchor"></a>
-            <h5><a href="#showOnPrimary">showOnPrimary</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:showOnPrimary() -&gt; self</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Shows the Viewer on the Primary display.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Self</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="showOnSecondary">
-            <a name="//apple_ref/cpp/Method/showOnSecondary" class="dashAnchor"></a>
-            <h5><a href="#showOnSecondary">showOnSecondary</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.Viewer:showOnSecondary() -&gt; self</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Shows the Viewer on the Seconary display.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Self</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Viewer Module.
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [app](#app)
+ * [currentWindow](#currentwindow)
+ * [hide](#hide)
+ * [isEventViewer](#iseventviewer)
+ * [isMainViewer](#ismainviewer)
+ * [playButton](#playbutton)
+ * [showOnPrimary](#showonprimary)
+ * [showOnSecondary](#showonsecondary)
+
+## API Documentation
+
+### Functions
+
+#### [matches](#matches)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.matches(element) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
+| **Parameters**                                       |  * element - An `axuielementObject` to check.                                       |
+| **Returns**                                          |  * `true` if matches otherwise `false`                                                |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.new(app, eventViewer) -> Viewer` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `Viewer` instance.                                                                                         |
+| **Parameters**                                       | * app           - The FCP application.* eventViewer   - If `true`, the viewer is the Event Viewer.                                       |
+| **Returns**                                          | * The new `Viewer` instance.                                                |
+
+### Methods
+
+#### [app](#app)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:app() -> application` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the application.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * The application.                                                |
+
+#### [currentWindow](#currentwindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:currentWindow() -> PrimaryWindow | SecondaryWindow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the current window object.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * The `PrimaryWindow` or the `SecondaryWindow`.                                                |
+
+#### [hide](#hide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:hide() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Hides the Viewer.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * Self                                                |
+
+#### [isEventViewer](#iseventviewer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:isEventViewer() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns `true` if this is the Event Viewer.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * `true` if this is the Event Viewer.                                                |
+
+#### [isMainViewer](#ismainviewer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:isMainViewer() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns `true` if this is the main Viewer.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * `true` if this is the main Viewer.                                                |
+
+#### [playButton](#playbutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:playButton() -> Button` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the Play Button object.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * A Button                                                |
+
+#### [showOnPrimary](#showonprimary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:showOnPrimary() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Shows the Viewer on the Primary display.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * Self                                                |
+
+#### [showOnSecondary](#showonsecondary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:showOnSecondary() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Shows the Viewer on the Seconary display.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * Self                                                |
+

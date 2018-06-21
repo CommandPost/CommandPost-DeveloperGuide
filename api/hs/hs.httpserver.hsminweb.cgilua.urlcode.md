@@ -1,183 +1,61 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="hs.httpserver.hsminweb.cgilua.urlcode.md">docs</a> &raquo; hs.httpserver.hsminweb.cgilua.urlcode</h1>
-      <p>Support functions for the CGILua compatibility module for encoding and decoding URL components in accordance with RFC 3986.</p>
+# [docs](index.md) » hs.httpserver.hsminweb.cgilua.urlcode
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#encodetable">encodetable</a></li>
-            <li><a href="#escape">escape</a></li>
-            <li><a href="#insertfield">insertfield</a></li>
-            <li><a href="#parsequery">parsequery</a></li>
-            <li><a href="#unescape">unescape</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="encodetable">
-            <a name="//apple_ref/cpp/Function/encodetable" class="dashAnchor"></a>
-            <h5><a href="#encodetable">encodetable</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.httpserver.hsminweb.cgilua.urlcode.encodetable(table) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Encodes the table of key-value pairs as a query string suitable for inclusion in a URL.</p>
-<p>Parameters:</p>
-<ul>
-<li>table - a table of key-value pairs to be converted into a query string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a query string as specified in RFC 3986.</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>the string will be of the form: "key1=value1&amp;key2=value2..." where all of the keys and values are properly escaped using <a href="#escape">cgilua.urlcode.escape</a>.  If you are crafting a URL by hand, the result of this function should be appended to the end of the URL after a "?" character to specify where the query string begins.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="escape">
-            <a name="//apple_ref/cpp/Function/escape" class="dashAnchor"></a>
-            <h5><a href="#escape">escape</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.httpserver.hsminweb.cgilua.urlcode.escape(string) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>URL encodes the provided string, making it safe as a component within a URL.</p>
-<p>Parameters:</p>
-<ul>
-<li>string - the string to encode</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a string with non-alphanumeric characters percent encoded and spaces converted into "+" as per RFC 3986.</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>this function assumes that the provided string is a single component and URL encodes <em>all</em> non-alphanumeric characters.  Do not use this function to generate a URL query string -- use <a href="#encodetable">cgilua.urlcode.encodetable</a>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="insertfield">
-            <a name="//apple_ref/cpp/Function/insertfield" class="dashAnchor"></a>
-            <h5><a href="#insertfield">insertfield</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.httpserver.hsminweb.cgilua.urlcode.insertfield(table, key, value) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Inserts the specified key and value into the table of key-value pairs.</p>
-<p>Parameters:</p>
-<ul>
-<li>table - the table of arguments being built</li>
-<li>key   - the key name</li>
-<li>value - the value to assign to the key specified</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If the key already exists in the table, its value is converted to a table (if it isn't already) and the new value is added to the end of the array of values for the key.</li>
-<li>This function is used internally by <a href="#parsequery">cgilua.urlcode.parsequery</a> or can be used to prepare a table of key-value pairs for <a href="#encodetable">cgilua.urlcode.encodetable</a>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="parsequery">
-            <a name="//apple_ref/cpp/Function/parsequery" class="dashAnchor"></a>
-            <h5><a href="#parsequery">parsequery</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.httpserver.hsminweb.cgilua.urlcode.parsequery(query, table) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Parse the query string and store the key-value pairs in the provided table.</p>
-<p>Parameters:</p>
-<ul>
-<li>query - a URL encoded query string, either from a URL or from the body of a POST request encoded in the "x-www-form-urlencoded" format.</li>
-<li>table - the table to add the key-value pairs to</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>The specification allows for the same key to be assigned multiple values in an encoded string, but does not specify the behavior; by convention, web servers assign these multiple values to the same key in an array (table).  This function follows that convention.  This is most commonly used by forms which allow selecting multiple options via check boxes or in a selection list.</li>
-<li>This function uses <a href="#insertfield">cgilua.urlcode.insertfield</a> to build the key-value table.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="unescape">
-            <a name="//apple_ref/cpp/Function/unescape" class="dashAnchor"></a>
-            <h5><a href="#unescape">unescape</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.httpserver.hsminweb.cgilua.urlcode.unescape(string) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Removes any URL encoding in the provided string.</p>
-<p>Parameters:</p>
-<ul>
-<li>string - the string to decode</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a string with all "+" characters converted to spaces and all percent encoded sequences converted to their ascii equivalents.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Support functions for the CGILua compatibility module for encoding and decoding URL components in accordance with RFC 3986.
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [encodetable](#encodetable)
+ * [escape](#escape)
+ * [insertfield](#insertfield)
+ * [parsequery](#parsequery)
+ * [unescape](#unescape)
+
+## API Documentation
+
+### Functions
+
+#### [encodetable](#encodetable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.urlcode.encodetable(table) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Encodes the table of key-value pairs as a query string suitable for inclusion in a URL.                                                                                         |
+| **Parameters**                                       |  * table - a table of key-value pairs to be converted into a query string                                       |
+| **Returns**                                          |  * a query string as specified in RFC 3986.                                                |
+| **Notes**                                            |  * the string will be of the form: "key1=value1&key2=value2..." where all of the keys and values are properly escaped using [cgilua.urlcode.escape](#escape).  If you are crafting a URL by hand, the result of this function should be appended to the end of the URL after a "?" character to specify where the query string begins.                                                      |
+
+#### [escape](#escape)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.urlcode.escape(string) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | URL encodes the provided string, making it safe as a component within a URL.                                                                                         |
+| **Parameters**                                       |  * string - the string to encode                                       |
+| **Returns**                                          |  * a string with non-alphanumeric characters percent encoded and spaces converted into "+" as per RFC 3986.                                                |
+| **Notes**                                            |  * this function assumes that the provided string is a single component and URL encodes *all* non-alphanumeric characters.  Do not use this function to generate a URL query string -- use [cgilua.urlcode.encodetable](#encodetable).                                                      |
+
+#### [insertfield](#insertfield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.urlcode.insertfield(table, key, value) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Inserts the specified key and value into the table of key-value pairs.                                                                                         |
+| **Parameters**                                       |  * table - the table of arguments being built * key   - the key name * value - the value to assign to the key specified                                       |
+| **Returns**                                          |  * None                                                |
+| **Notes**                                            |  * If the key already exists in the table, its value is converted to a table (if it isn't already) and the new value is added to the end of the array of values for the key. * This function is used internally by [cgilua.urlcode.parsequery](#parsequery) or can be used to prepare a table of key-value pairs for [cgilua.urlcode.encodetable](#encodetable).                                                      |
+
+#### [parsequery](#parsequery)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.urlcode.parsequery(query, table) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Parse the query string and store the key-value pairs in the provided table.                                                                                         |
+| **Parameters**                                       |  * query - a URL encoded query string, either from a URL or from the body of a POST request encoded in the "x-www-form-urlencoded" format. * table - the table to add the key-value pairs to                                       |
+| **Returns**                                          |  * None                                                |
+| **Notes**                                            |  * The specification allows for the same key to be assigned multiple values in an encoded string, but does not specify the behavior; by convention, web servers assign these multiple values to the same key in an array (table).  This function follows that convention.  This is most commonly used by forms which allow selecting multiple options via check boxes or in a selection list. * This function uses [cgilua.urlcode.insertfield](#insertfield) to build the key-value table.                                                      |
+
+#### [unescape](#unescape)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.urlcode.unescape(string) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Removes any URL encoding in the provided string.                                                                                         |
+| **Parameters**                                       |  * string - the string to decode                                       |
+| **Returns**                                          |  * a string with all "+" characters converted to spaces and all percent encoded sequences converted to their ascii equivalents.                                                |
+

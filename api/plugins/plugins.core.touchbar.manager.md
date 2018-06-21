@@ -1,738 +1,251 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="plugins.core.touchbar.manager.md">docs</a> &raquo; plugins.core.touchbar.manager</h1>
-      <p>Touch Bar Manager Plugin.
-This handles both the Virtual Touch Bar and adding items to the physical Touch Bar.</p>
+# [docs](index.md) » plugins.core.touchbar.manager
+---
 
-      </header>
-        <h3>Submodules</h3>
-        <ul>
-        <li><a href="plugins.core.touchbar.manager.virtual.html">plugins.core.touchbar.manager.virtual</a></li>
-        <li><a href="plugins.core.touchbar.manager.widgets.html">plugins.core.touchbar.manager.widgets</a></li>
-        </ul>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Constants - Useful values which cannot be changed</li>
-          <ul>
-            <li><a href="#DEFAULT_GROUP">DEFAULT_GROUP</a></li>
-            <li><a href="#FILE_NAME">FILE_NAME</a></li>
-            <li><a href="#FOLDER_NAME">FOLDER_NAME</a></li>
-          </ul>
-        <li>Variables - Configurable values</li>
-          <ul>
-            <li><a href="#closeBox">closeBox</a></li>
-            <li><a href="#maxItems">maxItems</a></li>
-            <li><a href="#numberOfSubGroups">numberOfSubGroups</a></li>
-          </ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#activeGroup">activeGroup</a></li>
-            <li><a href="#activeSubGroup">activeSubGroup</a></li>
-            <li><a href="#clear">clear</a></li>
-            <li><a href="#getAction">getAction</a></li>
-            <li><a href="#getActionHandlerID">getActionHandlerID</a></li>
-            <li><a href="#getActionTitle">getActionTitle</a></li>
-            <li><a href="#getIcon">getIcon</a></li>
-            <li><a href="#getLabel">getLabel</a></li>
-            <li><a href="#groupStatus">groupStatus</a></li>
-            <li><a href="#incrementActiveSubGroup">incrementActiveSubGroup</a></li>
-            <li><a href="#start">start</a></li>
-            <li><a href="#stop">stop</a></li>
-            <li><a href="#toggle">toggle</a></li>
-            <li><a href="#touchBar">touchBar</a></li>
-            <li><a href="#update">update</a></li>
-            <li><a href="#updateAction">updateAction</a></li>
-            <li><a href="#updateIcon">updateIcon</a></li>
-            <li><a href="#updateLabel">updateLabel</a></li>
-          </ul>
-        <li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
-          <ul>
-            <li><a href="#buttons">buttons</a></li>
-            <li><a href="#enabled">enabled</a></li>
-            <li><a href="#supported">supported</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Constants</h4>
-          <section id="DEFAULT_GROUP">
-            <a name="//apple_ref/cpp/Constant/DEFAULT_GROUP" class="dashAnchor"></a>
-            <h5><a href="#DEFAULT_GROUP">DEFAULT_GROUP</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.DEFAULT_GROUP -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The default group.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="FILE_NAME">
-            <a name="//apple_ref/cpp/Constant/FILE_NAME" class="dashAnchor"></a>
-            <h5><a href="#FILE_NAME">FILE_NAME</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.FILE_NAME -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>File name of settings file.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="FOLDER_NAME">
-            <a name="//apple_ref/cpp/Constant/FOLDER_NAME" class="dashAnchor"></a>
-            <h5><a href="#FOLDER_NAME">FOLDER_NAME</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.FOLDER_NAME -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Folder Name where settings file is contained.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Variables</h4>
-          <section id="closeBox">
-            <a name="//apple_ref/cpp/Variable/closeBox" class="dashAnchor"></a>
-            <h5><a href="#closeBox">closeBox</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.closeBox -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>An optional boolean, specifying whether or not the system
-escape (or its current replacement) button should be replaced by a button
-to remove the modal bar from the touch bar display when pressed.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="maxItems">
-            <a name="//apple_ref/cpp/Variable/maxItems" class="dashAnchor"></a>
-            <h5><a href="#maxItems">maxItems</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.maxItems -&gt; number</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The maximum number of Touch Bar items per group.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="numberOfSubGroups">
-            <a name="//apple_ref/cpp/Variable/numberOfSubGroups" class="dashAnchor"></a>
-            <h5><a href="#numberOfSubGroups">numberOfSubGroups</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.numberOfSubGroups -&gt; number</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The number of Sub Groups per Touch Bar Group.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="activeGroup">
-            <a name="//apple_ref/cpp/Function/activeGroup" class="dashAnchor"></a>
-            <h5><a href="#activeGroup">activeGroup</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.activeGroup() -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the active group.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Returns the active group or <code>manager.defaultGroup</code> as a string.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="activeSubGroup">
-            <a name="//apple_ref/cpp/Function/activeSubGroup" class="dashAnchor"></a>
-            <h5><a href="#activeSubGroup">activeSubGroup</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.activeSubGroup() -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the active sub-group.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Returns the active sub group as string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="clear">
-            <a name="//apple_ref/cpp/Function/clear" class="dashAnchor"></a>
-            <h5><a href="#clear">clear</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.clear() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Clears the Touch Bar items.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getAction">
-            <a name="//apple_ref/cpp/Function/getAction" class="dashAnchor"></a>
-            <h5><a href="#getAction">getAction</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.getAction(button, group) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns a specific Touch Bar Action.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Action as string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getActionHandlerID">
-            <a name="//apple_ref/cpp/Function/getActionHandlerID" class="dashAnchor"></a>
-            <h5><a href="#getActionHandlerID">getActionHandlerID</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.getActionHandlerID(button, group) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns a specific Touch Bar Action Handler ID.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Action as string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getActionTitle">
-            <a name="//apple_ref/cpp/Function/getActionTitle" class="dashAnchor"></a>
-            <h5><a href="#getActionTitle">getActionTitle</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.getActionTitle(button, group) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns a specific Touch Bar Action Title.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Action as string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getIcon">
-            <a name="//apple_ref/cpp/Function/getIcon" class="dashAnchor"></a>
-            <h5><a href="#getIcon">getIcon</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.getIcon(button, group) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns a specific Touch Bar Icon.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Icon data as string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getLabel">
-            <a name="//apple_ref/cpp/Function/getLabel" class="dashAnchor"></a>
-            <h5><a href="#getLabel">getLabel</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.getLabel(button, group) -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns a specific Touch Bar Label.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Label as string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="groupStatus">
-            <a name="//apple_ref/cpp/Function/groupStatus" class="dashAnchor"></a>
-            <h5><a href="#groupStatus">groupStatus</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.groupStatus(groupID, status) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Updates a group's visibility status.</p>
-<p>Parameters:</p>
-<ul>
-<li>groupID - the group you want to update as a string.</li>
-<li>status - the status of the group as a boolean.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="incrementActiveSubGroup">
-            <a name="//apple_ref/cpp/Function/incrementActiveSubGroup" class="dashAnchor"></a>
-            <h5><a href="#incrementActiveSubGroup">incrementActiveSubGroup</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.incrementActiveSubGroup() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Increments the active sub-group</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="start">
-            <a name="//apple_ref/cpp/Function/start" class="dashAnchor"></a>
-            <h5><a href="#start">start</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.start() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Starts the CommandPost Touch Bar module.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="stop">
-            <a name="//apple_ref/cpp/Function/stop" class="dashAnchor"></a>
-            <h5><a href="#stop">stop</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.stop() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Stops the CommandPost Touch Bar module.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="toggle">
-            <a name="//apple_ref/cpp/Function/toggle" class="dashAnchor"></a>
-            <h5><a href="#toggle">toggle</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.toggle() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Toggles the CommandPost Touch Bar module.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="touchBar">
-            <a name="//apple_ref/cpp/Function/touchBar" class="dashAnchor"></a>
-            <h5><a href="#touchBar">touchBar</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.touchBar() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>hs._asm.undocumented.touchbar</code> object if it exists.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>hs._asm.undocumented.touchbar</code></li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="update">
-            <a name="//apple_ref/cpp/Function/update" class="dashAnchor"></a>
-            <h5><a href="#update">update</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.update() -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Updates the Touch Bar.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="updateAction">
-            <a name="//apple_ref/cpp/Function/updateAction" class="dashAnchor"></a>
-            <h5><a href="#updateAction">updateAction</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.updateAction(button, group, action) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Updates a Touch Bar action.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-<li>action - Action as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="updateIcon">
-            <a name="//apple_ref/cpp/Function/updateIcon" class="dashAnchor"></a>
-            <h5><a href="#updateIcon">updateIcon</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.updateIcon(button, group, icon) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Updates a Touch Bar icon.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-<li>icon - Icon Data as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="updateLabel">
-            <a name="//apple_ref/cpp/Function/updateLabel" class="dashAnchor"></a>
-            <h5><a href="#updateLabel">updateLabel</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.updateLabel(button, group, label) -&gt; none</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Updates a Touch Bar action.</p>
-<p>Parameters:</p>
-<ul>
-<li>button - Button ID as string</li>
-<li>group - Group ID as string</li>
-<li>label - Label as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Fields</h4>
-          <section id="buttons">
-            <a name="//apple_ref/cpp/Field/buttons" class="dashAnchor"></a>
-            <h5><a href="#buttons">buttons</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.buttons &lt;cp.prop: table&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Contains all the saved Touch Bar Buttons</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="enabled">
-            <a name="//apple_ref/cpp/Field/enabled" class="dashAnchor"></a>
-            <h5><a href="#enabled">enabled</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.enabled &lt;cp.prop: boolean&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Enable or disable Touch Bar Support.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="supported">
-            <a name="//apple_ref/cpp/Field/supported" class="dashAnchor"></a>
-            <h5><a href="#supported">supported</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.core.touchbar.manager.supported &lt;cp.prop: boolean; read-only&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Is <code>true</code> if the Touch Bar is supported on this version of macOS.</p>
-</td>
-              </tr>
-            </table>
-          </section>
+Touch Bar Manager Plugin.
+This handles both the Virtual Touch Bar and adding items to the physical Touch Bar.
+
+## Submodules
+ * [plugins.core.touchbar.manager.virtual](plugins.core.touchbar.manager.virtual.md)
+ * [plugins.core.touchbar.manager.widgets](plugins.core.touchbar.manager.widgets.md)
+
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_GROUP](#default_group)
+ * [FILE_NAME](#file_name)
+ * [FOLDER_NAME](#folder_name)
+* Variables - Configurable values
+ * [closeBox](#closebox)
+ * [maxItems](#maxitems)
+ * [numberOfSubGroups](#numberofsubgroups)
+* Functions - API calls offered directly by the extension
+ * [activeGroup](#activegroup)
+ * [activeSubGroup](#activesubgroup)
+ * [clear](#clear)
+ * [getAction](#getaction)
+ * [getActionHandlerID](#getactionhandlerid)
+ * [getActionTitle](#getactiontitle)
+ * [getIcon](#geticon)
+ * [getLabel](#getlabel)
+ * [groupStatus](#groupstatus)
+ * [incrementActiveSubGroup](#incrementactivesubgroup)
+ * [start](#start)
+ * [stop](#stop)
+ * [toggle](#toggle)
+ * [touchBar](#touchbar)
+ * [update](#update)
+ * [updateAction](#updateaction)
+ * [updateIcon](#updateicon)
+ * [updateLabel](#updatelabel)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [buttons](#buttons)
+ * [enabled](#enabled)
+ * [supported](#supported)
+
+## API Documentation
+
+### Constants
+
+#### [DEFAULT_GROUP](#default_group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.DEFAULT_GROUP -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default group.                                                                                         |
+
+#### [FILE_NAME](#file_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.FILE_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | File name of settings file.                                                                                         |
+
+#### [FOLDER_NAME](#folder_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.FOLDER_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Folder Name where settings file is contained.                                                                                         |
+
+### Variables
+
+#### [closeBox](#closebox)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.closeBox -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | An optional boolean, specifying whether or not the system                                                                                         |
+
+#### [maxItems](#maxitems)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.maxItems -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | The maximum number of Touch Bar items per group.                                                                                         |
+
+#### [numberOfSubGroups](#numberofsubgroups)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.numberOfSubGroups -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | The number of Sub Groups per Touch Bar Group.                                                                                         |
+
+### Functions
+
+#### [activeGroup](#activegroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.activeGroup() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the active group.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * Returns the active group or `manager.defaultGroup` as a string.                                                |
+
+#### [activeSubGroup](#activesubgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.activeSubGroup() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the active sub-group.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * Returns the active sub group as string                                                |
+
+#### [clear](#clear)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.clear() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Clears the Touch Bar items.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [getAction](#getaction)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getAction(button, group) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a specific Touch Bar Action.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
+| **Returns**                                          |  * Action as string                                                |
+
+#### [getActionHandlerID](#getactionhandlerid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getActionHandlerID(button, group) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a specific Touch Bar Action Handler ID.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
+| **Returns**                                          |  * Action as string                                                |
+
+#### [getActionTitle](#getactiontitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getActionTitle(button, group) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a specific Touch Bar Action Title.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
+| **Returns**                                          |  * Action as string                                                |
+
+#### [getIcon](#geticon)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getIcon(button, group) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a specific Touch Bar Icon.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
+| **Returns**                                          |  * Icon data as string                                                |
+
+#### [getLabel](#getlabel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getLabel(button, group) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a specific Touch Bar Label.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string                                       |
+| **Returns**                                          |  * Label as string                                                |
+
+#### [groupStatus](#groupstatus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.groupStatus(groupID, status) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Updates a group's visibility status.                                                                                         |
+| **Parameters**                                       |  * groupID - the group you want to update as a string. * status - the status of the group as a boolean.                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [incrementActiveSubGroup](#incrementactivesubgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.incrementActiveSubGroup() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Increments the active sub-group                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.start() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Starts the CommandPost Touch Bar module.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.stop() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Stops the CommandPost Touch Bar module.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [toggle](#toggle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.toggle() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Toggles the CommandPost Touch Bar module.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [touchBar](#touchbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.touchBar() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the `hs._asm.undocumented.touchbar` object if it exists.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * `hs._asm.undocumented.touchbar`                                                |
+
+#### [update](#update)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.update() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Updates the Touch Bar.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [updateAction](#updateaction)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateAction(button, group, action) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Updates a Touch Bar action.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string * action - Action as string                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [updateIcon](#updateicon)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateIcon(button, group, icon) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Updates a Touch Bar icon.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string * icon - Icon Data as string                                       |
+| **Returns**                                          |  * None                                                |
+
+#### [updateLabel](#updatelabel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateLabel(button, group, label) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Updates a Touch Bar action.                                                                                         |
+| **Parameters**                                       |  * button - Button ID as string * group - Group ID as string * label - Label as string                                       |
+| **Returns**                                          |  * None                                                |
+
+### Fields
+
+#### [buttons](#buttons)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.buttons <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Contains all the saved Touch Bar Buttons                                                                                         |
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Enable or disable Touch Bar Support.                                                                                         |
+
+#### [supported](#supported)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.supported <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is `true` if the Touch Bar is supported on this version of macOS.                                                                                         |
+

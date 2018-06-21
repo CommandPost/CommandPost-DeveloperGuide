@@ -1,193 +1,73 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="hs.fs.xattr.md">docs</a> &raquo; hs.fs.xattr</h1>
-      <p>Get and manipulate extended attributes for files and directories</p>
-<p>This submodule provides functions for getting and setting the extended attributes for files and directories.  Access to extended attributes is provided through the Darwin xattr functions defined in the /usr/include/sys/xattr.h header. Attribute names are expected to conform to proper UTF-8 strings and values are represented as raw data -- in Lua raw data is presented as bytes in a string object but the bytes are not required to conform to peroper UTF-8 byte code sequences. This module does not perform any encoding or decoding of the raw data.</p>
-<p>All of the functions provided by this module can take an options table. Note that not all options are valid for all functions. The options table should be a Lua table containing an array of zero or more of the following strings:</p>
-<ul>
-<li>"noFollow"       - do not follow symbolic links; this can be used to access the attributes of the link itself.</li>
-<li>"hfsCompression" - access HFS Plus Compression extended attributes for the file or directory, if present</li>
-<li>"createOnly"     - when setting an attribute value, fail if the attribute already exists</li>
-<li>"replaceOnly"    - when setting an attribute value, fail if the attribute does not already exist</li>
-</ul>
-<p>Note that the following options did not seem to be valid for the initial tests performed when developing this module and may refer the kernel level features not available to Hammerspoon; they are included here for full compatibility with the library as defined in its header. If you have more information about these options or can provide examples or documentation about their use, please submit an issue to the Hammerspoon github repository so we can provide better documentation here.</p>
-<ul>
-<li>"noSecurity"      - bypass authorization checking</li>
-<li>"noDefault"       - bypass the default extended attribute file (dot-underscore file)</li>
-</ul>
+# [docs](index.md) » hs.fs.xattr
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#get">get</a></li>
-            <li><a href="#getHumanReadable">getHumanReadable</a></li>
-            <li><a href="#list">list</a></li>
-            <li><a href="#remove">remove</a></li>
-            <li><a href="#set">set</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="get">
-            <a name="//apple_ref/cpp/Function/get" class="dashAnchor"></a>
-            <h5><a href="#get">get</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.fs.xattr.get(path, attribute, [options], [position]) -&gt; string | true | nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Set the extended attribute to the value provided for the path specified.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>path</code>      - A string specifying the path to the file or directory to get the extended attribute from</li>
-<li><code>attribute</code> - A string specifying the name of the extended attribute to get the value of</li>
-<li><code>options</code>   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array).</li>
-<li><code>position</code>  - An optional integer specifying the offset within the extended attribute. Defaults to 0. Setting this argument to a value other than 0 is only valid when <code>attribute</code> is "com.apple.ResourceFork".</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><p>If the attribute exists for the file or directory and contains data, returns the value of the attribute as a string of raw bytes which are not guaranteed to conform to proper UTF-8 byte sequences. If the attribute exist but does not have a value, returns the Lua boolean <code>true</code>.  If the attribute does not exist, returns nil. Throws a Lua error on failure with a description of the reason for the failure.</p>
-</li>
-<li><p>See also <a href="#getHumanReadable">hs.fs.xattr.getHumanReadable</a>.</p>
-</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getHumanReadable">
-            <a name="//apple_ref/cpp/Function/getHumanReadable" class="dashAnchor"></a>
-            <h5><a href="#getHumanReadable">getHumanReadable</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.fs.xattr.getHumanReadable(path, attribute, [options], [position]) -&gt; string | true | nil</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>A wrapper to <a href="#get">hs.fs.xattr.get</a> which returns non UTF-8 data as a hexadecimal dump provided by <code>hs.utf8.hexDump</code>.</p>
-<p>Parameters:</p>
-<ul>
-<li>see <a href="#get">hs.fs.xattr.get</a></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>if the returned data does not conform to proper UTF-8 byte sequences, passes the string through <code>hs.utf8.hexDump</code> first.  Otherwise the return values follow the description for <a href="#get">hs.fs.xattr.get</a> .</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is provided for testing and debugging purposes; in general you probably want <a href="#get">hs.fs.xattr.get</a> once you know how to properly understand the data returned for the attribute.</li>
-<li>This is similar to the long format option in the command line <code>xattr</code> command.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="list">
-            <a name="//apple_ref/cpp/Function/list" class="dashAnchor"></a>
-            <h5><a href="#list">list</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.fs.xattr.list(path, [options]) -&gt; table</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns a list of the extended attributes currently defined for the specified file or directory</p>
-<p>Parameters:</p>
-<ul>
-<li><code>path</code>      - A string specifying the path to the file or directory to get the list of extended attributes for</li>
-<li><code>options</code>   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array).</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a table containing an array of strings identifying the extended attributes currently defined for the file or directory; note that the order of the attributes is nondeterministic and is not guaranteed to be the same for future queries.  Throws a Lua error on failure with a description of the reason for the failure.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="remove">
-            <a name="//apple_ref/cpp/Function/remove" class="dashAnchor"></a>
-            <h5><a href="#remove">remove</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.fs.xattr.remove(path, attribute, [options]) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Removes the specified extended attribute from the file or directory at the path specified.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>path</code>      - A string specifying the path to the file or directory to remove the extended attribute from</li>
-<li><code>attribute</code> - A string specifying the name of the extended attribute to remove</li>
-<li><code>options</code>   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array).</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>True if the operation succeeds; otherwise throws a Lua error with a description of reason for failure.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="set">
-            <a name="//apple_ref/cpp/Function/set" class="dashAnchor"></a>
-            <h5><a href="#set">set</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.fs.xattr.set(path, attribute, value, [options], [position]) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Set the extended attribute to the value provided for the path specified.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>path</code>      - A string specifying the path to the file or directory to set the extended attribute for</li>
-<li><code>attribute</code> - A string specifying the name of the extended attribute to set</li>
-<li><code>value</code>     - A string containing the value to set the extended attribute to. This value is treated as a raw sequence of bytes and does not have to conform to propert UTF-8 byte sequences.</li>
-<li><code>options</code>   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array).</li>
-<li><code>position</code>  - An optional integer specifying the offset within the extended attribute. Defaults to 0. Setting this argument to a value other than 0 is only valid when <code>attribute</code> is "com.apple.ResourceFork".</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>True if the operation succeeds; otherwise throws a Lua error with a description of reason for failure.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Get and manipulate extended attributes for files and directories
+
+This submodule provides functions for getting and setting the extended attributes for files and directories.  Access to extended attributes is provided through the Darwin xattr functions defined in the /usr/include/sys/xattr.h header. Attribute names are expected to conform to proper UTF-8 strings and values are represented as raw data -- in Lua raw data is presented as bytes in a string object but the bytes are not required to conform to peroper UTF-8 byte code sequences. This module does not perform any encoding or decoding of the raw data.
+
+All of the functions provided by this module can take an options table. Note that not all options are valid for all functions. The options table should be a Lua table containing an array of zero or more of the following strings:
+
+ * "noFollow"       - do not follow symbolic links; this can be used to access the attributes of the link itself.
+ * "hfsCompression" - access HFS Plus Compression extended attributes for the file or directory, if present
+ * "createOnly"     - when setting an attribute value, fail if the attribute already exists
+ * "replaceOnly"    - when setting an attribute value, fail if the attribute does not already exist
+
+Note that the following options did not seem to be valid for the initial tests performed when developing this module and may refer the kernel level features not available to Hammerspoon; they are included here for full compatibility with the library as defined in its header. If you have more information about these options or can provide examples or documentation about their use, please submit an issue to the Hammerspoon github repository so we can provide better documentation here.
+
+ * "noSecurity"      - bypass authorization checking
+ * "noDefault"       - bypass the default extended attribute file (dot-underscore file)
+
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [get](#get)
+ * [getHumanReadable](#gethumanreadable)
+ * [list](#list)
+ * [remove](#remove)
+ * [set](#set)
+
+## API Documentation
+
+### Functions
+
+#### [get](#get)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.xattr.get(path, attribute, [options], [position]) -> string | true | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Set the extended attribute to the value provided for the path specified.                                                                                         |
+| **Parameters**                                       |  * `path`      - A string specifying the path to the file or directory to get the extended attribute from * `attribute` - A string specifying the name of the extended attribute to get the value of * `options`   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array). * `position`  - An optional integer specifying the offset within the extended attribute. Defaults to 0. Setting this argument to a value other than 0 is only valid when `attribute` is "com.apple.ResourceFork".                                       |
+| **Returns**                                          |  * If the attribute exists for the file or directory and contains data, returns the value of the attribute as a string of raw bytes which are not guaranteed to conform to proper UTF-8 byte sequences. If the attribute exist but does not have a value, returns the Lua boolean `true`.  If the attribute does not exist, returns nil. Throws a Lua error on failure with a description of the reason for the failure.                                                |
+
+#### [getHumanReadable](#gethumanreadable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.xattr.getHumanReadable(path, attribute, [options], [position]) -> string | true | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | A wrapper to [hs.fs.xattr.get](#get) which returns non UTF-8 data as a hexadecimal dump provided by `hs.utf8.hexDump`.                                                                                         |
+| **Parameters**                                       |  * see [hs.fs.xattr.get](#get)                                       |
+| **Returns**                                          |  * if the returned data does not conform to proper UTF-8 byte sequences, passes the string through `hs.utf8.hexDump` first.  Otherwise the return values follow the description for [hs.fs.xattr.get](#get) .                                                |
+| **Notes**                                            |  * This is provided for testing and debugging purposes; in general you probably want [hs.fs.xattr.get](#get) once you know how to properly understand the data returned for the attribute. * This is similar to the long format option in the command line `xattr` command.                                                      |
+
+#### [list](#list)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.xattr.list(path, [options]) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a list of the extended attributes currently defined for the specified file or directory                                                                                         |
+| **Parameters**                                       |  * `path`      - A string specifying the path to the file or directory to get the list of extended attributes for * `options`   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array).                                       |
+| **Returns**                                          |  * a table containing an array of strings identifying the extended attributes currently defined for the file or directory; note that the order of the attributes is nondeterministic and is not guaranteed to be the same for future queries.  Throws a Lua error on failure with a description of the reason for the failure.                                                |
+
+#### [remove](#remove)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.xattr.remove(path, attribute, [options]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Removes the specified extended attribute from the file or directory at the path specified.                                                                                         |
+| **Parameters**                                       |  * `path`      - A string specifying the path to the file or directory to remove the extended attribute from * `attribute` - A string specifying the name of the extended attribute to remove * `options`   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array).                                       |
+| **Returns**                                          |  * True if the operation succeeds; otherwise throws a Lua error with a description of reason for failure.                                                |
+
+#### [set](#set)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.xattr.set(path, attribute, value, [options], [position]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Set the extended attribute to the value provided for the path specified.                                                                                         |
+| **Parameters**                                       |  * `path`      - A string specifying the path to the file or directory to set the extended attribute for * `attribute` - A string specifying the name of the extended attribute to set * `value`     - A string containing the value to set the extended attribute to. This value is treated as a raw sequence of bytes and does not have to conform to propert UTF-8 byte sequences. * `options`   - An optional table containing options as described in this module's documentation header. Defaults to {} (an empty array). * `position`  - An optional integer specifying the offset within the extended attribute. Defaults to 0. Setting this argument to a value other than 0 is only valid when `attribute` is "com.apple.ResourceFork".                                       |
+| **Returns**                                          |  * True if the operation succeeds; otherwise throws a Lua error with a description of reason for failure.                                                |
+

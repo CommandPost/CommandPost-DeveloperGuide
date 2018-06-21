@@ -1,74 +1,31 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="plugins.finalcutpro.menu.proxyicon.md">docs</a> &raquo; plugins.finalcutpro.menu.proxyicon</h1>
-      <p>Final Cut Pro Proxy Icon Plugin.</p>
+# [docs](index.md) » plugins.finalcutpro.menu.proxyicon
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Constants - Useful values which cannot be changed</li>
-          <ul>
-            <li><a href="#procyMenuIconEnabled">procyMenuIconEnabled</a></li>
-          </ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#generateProxyTitle">generateProxyTitle</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Constants</h4>
-          <section id="procyMenuIconEnabled">
-            <a name="//apple_ref/cpp/Constant/procyMenuIconEnabled" class="dashAnchor"></a>
-            <h5><a href="#procyMenuIconEnabled">procyMenuIconEnabled</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.menu.proxyicon.procyMenuIconEnabled &lt;cp.prop: boolean&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Toggles the Enable Proxy Menu Icon</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="generateProxyTitle">
-            <a name="//apple_ref/cpp/Function/generateProxyTitle" class="dashAnchor"></a>
-            <h5><a href="#generateProxyTitle">generateProxyTitle</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>plugins.finalcutpro.menu.proxyicon.generateProxyTitle() -&gt; string</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Generates the Proxy Title</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>String containing the Proxy Title</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Final Cut Pro Proxy Icon Plugin.
+
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [procyMenuIconEnabled](#procymenuiconenabled)
+* Functions - API calls offered directly by the extension
+ * [generateProxyTitle](#generateproxytitle)
+
+## API Documentation
+
+### Constants
+
+#### [procyMenuIconEnabled](#procymenuiconenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.proxyicon.procyMenuIconEnabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Toggles the Enable Proxy Menu Icon                                                                                         |
+
+### Functions
+
+#### [generateProxyTitle](#generateproxytitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.proxyicon.generateProxyTitle() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates the Proxy Title                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * String containing the Proxy Title                                                |
+

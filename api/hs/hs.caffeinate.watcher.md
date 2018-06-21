@@ -1,359 +1,132 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="hs.caffeinate.watcher.md">docs</a> &raquo; hs.caffeinate.watcher</h1>
-      <p>Watch for display and system sleep/wake/power events
-and for fast user switching session events.</p>
-<p>This module is based primarily on code from the previous incarnation of Mjolnir by <a href="https://github.com/sdegutis/">Steven Degutis</a>.</p>
+# [docs](index.md) » hs.caffeinate.watcher
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Constants - Useful values which cannot be changed</li>
-          <ul>
-            <li><a href="#screensaverDidStart">screensaverDidStart</a></li>
-            <li><a href="#screensaverDidStop">screensaverDidStop</a></li>
-            <li><a href="#screensaverWillStop">screensaverWillStop</a></li>
-            <li><a href="#screensDidLock">screensDidLock</a></li>
-            <li><a href="#screensDidSleep">screensDidSleep</a></li>
-            <li><a href="#screensDidUnlock">screensDidUnlock</a></li>
-            <li><a href="#screensDidWake">screensDidWake</a></li>
-            <li><a href="#sessionDidBecomeActive">sessionDidBecomeActive</a></li>
-            <li><a href="#sessionDidResignActive">sessionDidResignActive</a></li>
-            <li><a href="#systemDidWake">systemDidWake</a></li>
-            <li><a href="#systemWillPowerOff">systemWillPowerOff</a></li>
-            <li><a href="#systemWillSleep">systemWillSleep</a></li>
-          </ul>
-        <li>Constructors - API calls which return an object, typically one that offers API methods</li>
-          <ul>
-            <li><a href="#new">new</a></li>
-          </ul>
-        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
-          <ul>
-            <li><a href="#start">start</a></li>
-            <li><a href="#stop">stop</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Constants</h4>
-          <section id="screensaverDidStart">
-            <a name="//apple_ref/cpp/Constant/screensaverDidStart" class="dashAnchor"></a>
-            <h5><a href="#screensaverDidStart">screensaverDidStart</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.screensaverDidStart</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The screensaver started</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="screensaverDidStop">
-            <a name="//apple_ref/cpp/Constant/screensaverDidStop" class="dashAnchor"></a>
-            <h5><a href="#screensaverDidStop">screensaverDidStop</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.screensaverDidStop</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The screensaver stopped</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="screensaverWillStop">
-            <a name="//apple_ref/cpp/Constant/screensaverWillStop" class="dashAnchor"></a>
-            <h5><a href="#screensaverWillStop">screensaverWillStop</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.screensaverWillStop</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The screensaver is about to stop</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="screensDidLock">
-            <a name="//apple_ref/cpp/Constant/screensDidLock" class="dashAnchor"></a>
-            <h5><a href="#screensDidLock">screensDidLock</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.screensDidLock</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The screen was locked</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="screensDidSleep">
-            <a name="//apple_ref/cpp/Constant/screensDidSleep" class="dashAnchor"></a>
-            <h5><a href="#screensDidSleep">screensDidSleep</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.screensDidSleep</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The displays have gone to sleep</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="screensDidUnlock">
-            <a name="//apple_ref/cpp/Constant/screensDidUnlock" class="dashAnchor"></a>
-            <h5><a href="#screensDidUnlock">screensDidUnlock</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.screensDidUnlock</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The screen was unlocked</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="screensDidWake">
-            <a name="//apple_ref/cpp/Constant/screensDidWake" class="dashAnchor"></a>
-            <h5><a href="#screensDidWake">screensDidWake</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.screensDidWake</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The displays have woken from sleep</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="sessionDidBecomeActive">
-            <a name="//apple_ref/cpp/Constant/sessionDidBecomeActive" class="dashAnchor"></a>
-            <h5><a href="#sessionDidBecomeActive">sessionDidBecomeActive</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.sessionDidBecomeActive</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The session became active, due to fast user switching</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="sessionDidResignActive">
-            <a name="//apple_ref/cpp/Constant/sessionDidResignActive" class="dashAnchor"></a>
-            <h5><a href="#sessionDidResignActive">sessionDidResignActive</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.sessionDidResignActive</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The session is no longer active, due to fast user switching</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="systemDidWake">
-            <a name="//apple_ref/cpp/Constant/systemDidWake" class="dashAnchor"></a>
-            <h5><a href="#systemDidWake">systemDidWake</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.systemDidWake</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The system woke from sleep</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="systemWillPowerOff">
-            <a name="//apple_ref/cpp/Constant/systemWillPowerOff" class="dashAnchor"></a>
-            <h5><a href="#systemWillPowerOff">systemWillPowerOff</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.systemWillPowerOff</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The user requested a logout or shutdown</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="systemWillSleep">
-            <a name="//apple_ref/cpp/Constant/systemWillSleep" class="dashAnchor"></a>
-            <h5><a href="#systemWillSleep">systemWillSleep</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.systemWillSleep</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constant</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The system is preparing to sleep</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Constructors</h4>
-          <section id="new">
-            <a name="//apple_ref/cpp/Constructor/new" class="dashAnchor"></a>
-            <h5><a href="#new">new</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher.new(fn) -&gt; watcher</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constructor</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Creates a watcher object for system and display sleep/wake/power events</p>
-<p>Parameters:</p>
-<ul>
-<li>fn - A function that will be called when system/display events happen. It should accept one parameter:<ul>
-<li>An event type (see the constants defined above)</li>
-</ul>
-</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.caffeinate.watcher</code> object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Methods</h4>
-          <section id="start">
-            <a name="//apple_ref/cpp/Method/start" class="dashAnchor"></a>
-            <h5><a href="#start">start</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher:start()</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Starts the sleep/wake watcher</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.caffeinate.watcher</code> object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="stop">
-            <a name="//apple_ref/cpp/Method/stop" class="dashAnchor"></a>
-            <h5><a href="#stop">stop</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.caffeinate.watcher:stop()</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Stops the sleep/wake watcher</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.caffeinate.watcher</code> object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Watch for display and system sleep/wake/power events
+and for fast user switching session events.
+
+This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
+
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [screensaverDidStart](#screensaverdidstart)
+ * [screensaverDidStop](#screensaverdidstop)
+ * [screensaverWillStop](#screensaverwillstop)
+ * [screensDidLock](#screensdidlock)
+ * [screensDidSleep](#screensdidsleep)
+ * [screensDidUnlock](#screensdidunlock)
+ * [screensDidWake](#screensdidwake)
+ * [sessionDidBecomeActive](#sessiondidbecomeactive)
+ * [sessionDidResignActive](#sessiondidresignactive)
+ * [systemDidWake](#systemdidwake)
+ * [systemWillPowerOff](#systemwillpoweroff)
+ * [systemWillSleep](#systemwillsleep)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [start](#start)
+ * [stop](#stop)
+
+## API Documentation
+
+### Constants
+
+#### [screensaverDidStart](#screensaverdidstart)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverDidStart` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver started                                                                                         |
+
+#### [screensaverDidStop](#screensaverdidstop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverDidStop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver stopped                                                                                         |
+
+#### [screensaverWillStop](#screensaverwillstop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensaverWillStop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screensaver is about to stop                                                                                         |
+
+#### [screensDidLock](#screensdidlock)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensDidLock` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screen was locked                                                                                         |
+
+#### [screensDidSleep](#screensdidsleep)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensDidSleep` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The displays have gone to sleep                                                                                         |
+
+#### [screensDidUnlock](#screensdidunlock)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensDidUnlock` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The screen was unlocked                                                                                         |
+
+#### [screensDidWake](#screensdidwake)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.screensDidWake` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The displays have woken from sleep                                                                                         |
+
+#### [sessionDidBecomeActive](#sessiondidbecomeactive)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.sessionDidBecomeActive` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The session became active, due to fast user switching                                                                                         |
+
+#### [sessionDidResignActive](#sessiondidresignactive)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.sessionDidResignActive` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The session is no longer active, due to fast user switching                                                                                         |
+
+#### [systemDidWake](#systemdidwake)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.systemDidWake` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The system woke from sleep                                                                                         |
+
+#### [systemWillPowerOff](#systemwillpoweroff)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.systemWillPowerOff` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The user requested a logout or shutdown                                                                                         |
+
+#### [systemWillSleep](#systemwillsleep)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.systemWillSleep` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The system is preparing to sleep                                                                                         |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher.new(fn) -> watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a watcher object for system and display sleep/wake/power events                                                                                         |
+| **Parameters**                                       |  * fn - A function that will be called when system/display events happen. It should accept one parameter:  * An event type (see the constants defined above)                                       |
+| **Returns**                                          |  * An `hs.caffeinate.watcher` object                                                |
+
+### Methods
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher:start()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Starts the sleep/wake watcher                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * An `hs.caffeinate.watcher` object                                                |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher:stop()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Stops the sleep/wake watcher                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * An `hs.caffeinate.watcher` object                                                |
+

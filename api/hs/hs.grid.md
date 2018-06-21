@@ -1,781 +1,245 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="hs.grid.md">docs</a> &raquo; hs.grid</h1>
-      <p>Move/resize windows within a grid</p>
-<p>The grid partitions your screens for the purposes of window management. The default layout of the grid is 3 columns by 3 rows.
-You can specify different grid layouts for different screens and/or screen resolutions.</p>
-<p>Windows that are aligned with the grid have their location and size described as a <code>cell</code>. Each cell is an <code>hs.geometry</code> rect with these fields:</p>
-<ul>
-<li>x - The column of the left edge of the window</li>
-<li>y - The row of the top edge of the window</li>
-<li>w - The number of columns the window occupies</li>
-<li>h - The number of rows the window occupies</li>
-</ul>
-<p>For a grid of 3x3:</p>
-<ul>
-<li>a cell <code>'0,0 1x1'</code> will be in the upper-left corner</li>
-<li>a cell <code>'2,0 1x1'</code> will be in the upper-right corner</li>
-<li>and so on...</li>
-</ul>
-<p>Additionally, a modal keyboard driven interface for interactive resizing is provided via <code>hs.grid.show()</code>;
+# [docs](index.md) » hs.grid
+---
+
+Move/resize windows within a grid
+
+The grid partitions your screens for the purposes of window management. The default layout of the grid is 3 columns by 3 rows.
+You can specify different grid layouts for different screens and/or screen resolutions.
+
+Windows that are aligned with the grid have their location and size described as a `cell`. Each cell is an `hs.geometry` rect with these fields:
+ * x - The column of the left edge of the window
+ * y - The row of the top edge of the window
+ * w - The number of columns the window occupies
+ * h - The number of rows the window occupies
+
+For a grid of 3x3:
+ * a cell `'0,0 1x1'` will be in the upper-left corner
+ * a cell `'2,0 1x1'` will be in the upper-right corner
+ * and so on...
+
+Additionally, a modal keyboard driven interface for interactive resizing is provided via `hs.grid.show()`;
 The grid will be overlaid on the focused or frontmost window's screen with keyboard hints.
 To resize/move the window, you can select the corner cells of the desired position.
 For a move-only, you can select a cell and confirm with 'return'. The celected cell will become the new upper-left of the window.
 You can also use the arrow keys to move the window onto adjacent screens, and the tab/shift-tab keys to cycle to the next/previous window.
 Once you selected a cell, you can use the arrow keys to navigate through the grid. In this case, the grid will highlight the selected cells.
-After highlighting enough cells, press enter to move/resize the window to the highlighted area.</p>
+After highlighting enough cells, press enter to move/resize the window to the highlighted area.
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Variables - Configurable values</li>
-          <ul>
-            <li><a href="#HINTS">HINTS</a></li>
-            <li><a href="#ui">ui</a></li>
-          </ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#adjustWindow">adjustWindow</a></li>
-            <li><a href="#get">get</a></li>
-            <li><a href="#getCell">getCell</a></li>
-            <li><a href="#getGrid">getGrid</a></li>
-            <li><a href="#getGridFrame">getGridFrame</a></li>
-            <li><a href="#hide">hide</a></li>
-            <li><a href="#maximizeWindow">maximizeWindow</a></li>
-            <li><a href="#pushWindowDown">pushWindowDown</a></li>
-            <li><a href="#pushWindowLeft">pushWindowLeft</a></li>
-            <li><a href="#pushWindowRight">pushWindowRight</a></li>
-            <li><a href="#pushWindowUp">pushWindowUp</a></li>
-            <li><a href="#resizeWindowShorter">resizeWindowShorter</a></li>
-            <li><a href="#resizeWindowTaller">resizeWindowTaller</a></li>
-            <li><a href="#resizeWindowThinner">resizeWindowThinner</a></li>
-            <li><a href="#resizeWindowWider">resizeWindowWider</a></li>
-            <li><a href="#set">set</a></li>
-            <li><a href="#setGrid">setGrid</a></li>
-            <li><a href="#setMargins">setMargins</a></li>
-            <li><a href="#show">show</a></li>
-            <li><a href="#snap">snap</a></li>
-            <li><a href="#toggleShow">toggleShow</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Variables</h4>
-          <section id="HINTS">
-            <a name="//apple_ref/cpp/Variable/HINTS" class="dashAnchor"></a>
-            <h5><a href="#HINTS">HINTS</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.HINTS</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>A bidimensional array (table of tables of strings) holding the keyboard hints (as per <code>hs.keycodes.map</code>) to be used for the interactive resizing interface.
-Change this if you don't use a QWERTY layout; you need to provide 5 valid rows of hints (even if you're not going to use all 5 rows)</p>
-<p>Default <code>HINTS</code> is an array to 5 rows and 10 columns.</p>
-<p>Notes:</p>
-<ul>
-<li><code>hs.inspect(hs.grid.HINTS)</code> from the console will show you how the table is built</li>
-<li><code>hs.grid.show()</code>
- When displaying interactive grid, if gird dimensions (<code>hs.grid.setGrid()</code>) are greater than <code>HINTS</code> dimensions,
- then Hammerspoon merges few cells such that interactive grid dimensions do not exceed <code>HINTS</code> dimensions.
- This is done to make sure interactive grid cells do not run out of hints. The interactive grid ends up with
- cells of varying height and width.
- The actual grid is not affected. If you use API methods like <code>hs.grid.pushWindowDown()</code>, you will not face this
- issue at all.
- If you have a grid of higher dimensions and require an interactive gird that accurately models underlying grid
- then set <code>HINTS</code> variable to a table that has same dimensions as your grid.
- Following is an example of grid that has 16 columns</li>
-</ul>
+## API Overview
+* Variables - Configurable values
+ * [HINTS](#hints)
+ * [ui](#ui)
+* Functions - API calls offered directly by the extension
+ * [adjustWindow](#adjustwindow)
+ * [get](#get)
+ * [getCell](#getcell)
+ * [getGrid](#getgrid)
+ * [getGridFrame](#getgridframe)
+ * [hide](#hide)
+ * [maximizeWindow](#maximizewindow)
+ * [pushWindowDown](#pushwindowdown)
+ * [pushWindowLeft](#pushwindowleft)
+ * [pushWindowRight](#pushwindowright)
+ * [pushWindowUp](#pushwindowup)
+ * [resizeWindowShorter](#resizewindowshorter)
+ * [resizeWindowTaller](#resizewindowtaller)
+ * [resizeWindowThinner](#resizewindowthinner)
+ * [resizeWindowWider](#resizewindowwider)
+ * [set](#set)
+ * [setGrid](#setgrid)
+ * [setMargins](#setmargins)
+ * [show](#show)
+ * [snap](#snap)
+ * [toggleShow](#toggleshow)
 
-<pre><code>hs.grid.setGrid('16x4')
-hs.grid.HINTS={
-    {'f1', 'f2' , 'f3' , 'f4' , 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12', 'f13', 'f14', 'f15', 'f16'},
-    {'1' , 'f11', 'f15', 'f19', 'f3', '=' , ']' , '2' , '3' , '4'  , '5'  , '6'  , '7'  , '8'  , '9'  , '0'  },
-    {'Q' , 'f12', 'f16', 'f20', 'f4', '-' , '[' , 'W' , 'E' , 'R'  , 'T'  , 'Y'  , 'U'  , 'I'  , 'O'  , 'P'  },
-    {'A' , 'f13', 'f17', 'f1' , 'f5', 'f7', '\\', 'S' , 'D' , 'F'  , 'G'  , 'H'  , 'J'  , 'K'  , 'L'  , ','  },
-    {'X' , 'f14', 'f18', 'f2' , 'f6', 'f8', ';' , '/' , '.' , 'Z'  , 'X'  , 'C'  , 'V'  , 'B'  , 'N'  , 'M'  }
-}</code></pre>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="ui">
-            <a name="//apple_ref/cpp/Variable/ui" class="dashAnchor"></a>
-            <h5><a href="#ui">ui</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.ui</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Variable</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Allows customization of the modal resizing grid user interface</p>
-<p>This table contains variables that you can change to customize the look of the modal resizing grid.
-The default values are shown in the right hand side of the assignements below.</p>
-<p>To represent color values, you can use:</p>
-<ul>
-<li>a table {red=redN, green=greenN, blue=blueN, alpha=alphaN}</li>
-<li>a table {redN,greenN,blueN[,alphaN]} - if omitted alphaN defaults to 1.0
-where redN, greenN etc. are the desired value for the color component between 0.0 and 1.0</li>
-</ul>
-<p>The following variables must be color values:</p>
-<ul>
-<li><code>hs.grid.ui.textColor = {1,1,1}</code></li>
-<li><code>hs.grid.ui.cellColor = {0,0,0,0.25}</code></li>
-<li><code>hs.grid.ui.cellStrokeColor = {0,0,0}</code></li>
-<li><code>hs.grid.ui.selectedColor = {0.2,0.7,0,0.4}</code> -- for the first selected cell during a modal resize</li>
-<li><code>hs.grid.ui.highlightColor = {0.8,0.8,0,0.5}</code> -- to highlight the frontmost window behind the grid</li>
-<li><code>hs.grid.ui.highlightStrokeColor = {0.8,0.8,0,1}</code></li>
-<li><code>hs.grid.ui.cyclingHighlightColor = {0,0.8,0.8,0.5}</code> -- to highlight the window to be resized, when cycling among windows</li>
-<li><code>hs.grid.ui.cyclingHighlightStrokeColor = {0,0.8,0.8,1}</code></li>
-</ul>
-<p>The following variables must be numbers (in screen points):</p>
-<ul>
-<li><code>hs.grid.ui.textSize = 200</code></li>
-<li><code>hs.grid.ui.cellStrokeWidth = 5</code></li>
-<li><code>hs.grid.ui.highlightStrokeWidth = 30</code></li>
-</ul>
-<p>The following variables must be strings:</p>
-<ul>
-<li><code>hs.grid.ui.fontName = 'Lucida Grande'</code></li>
-</ul>
-<p>The following variables must be booleans:</p>
-<ul>
-<li><code>hs.grid.ui.showExtraKeys = true</code> -- show non-grid keybindings in the center of the grid</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="adjustWindow">
-            <a name="//apple_ref/cpp/Function/adjustWindow" class="dashAnchor"></a>
-            <h5><a href="#adjustWindow">adjustWindow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.adjustWindow(fn, window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Calls a user specified function to adjust a window's cell</p>
-<p>Parameters:</p>
-<ul>
-<li>fn - a function that accepts a cell object as its only argument. The function should modify it as needed and return nothing</li>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="get">
-            <a name="//apple_ref/cpp/Function/get" class="dashAnchor"></a>
-            <h5><a href="#get">get</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.get(win) -&gt; cell</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the cell describing a window</p>
-<p>Parameters:</p>
-<ul>
-<li>an <code>hs.window</code> object to get the cell of</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a cell object (i.e. an <code>hs.geometry</code> rect), or nil if an error occurred</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getCell">
-            <a name="//apple_ref/cpp/Function/getCell" class="dashAnchor"></a>
-            <h5><a href="#getCell">getCell</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.getCell(cell, screen) -&gt; hs.geometry</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the <code>hs.geometry</code> rect for a cell on a particular screen</p>
-<p>Parameters:</p>
-<ul>
-<li>cell - a cell object, i.e. an <code>hs.geometry</code> rect or argument to construct one</li>
-<li>screen - an <code>hs.screen</code> object or argument to <code>hs.screen.find()</code> where the cell is located</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.geometry</code> rect for a cell on a particular screen or nil if the screen isn't found</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getGrid">
-            <a name="//apple_ref/cpp/Function/getGrid" class="dashAnchor"></a>
-            <h5><a href="#getGrid">getGrid</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.getGrid(screen) -&gt; hs.geometry size</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the defined grid size for a given screen or screen resolution</p>
-<p>Parameters:</p>
-<ul>
-<li>screen - an <code>hs.screen</code> object, or a valid argument to <code>hs.screen.find()</code>, indicating the screen to get the grid of;
-if omitted or nil, gets the default grid, which is used when no specific grid is found for any given screen/resolution</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>an <code>hs.geometry</code> size object indicating the number of columns and rows in the grid</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>if a grid was not set for the specified screen or geometry, the default grid will be returned</li>
-</ul>
-<p>Usage:
-local mygrid = hs.grid.getGrid('1920x1080') -- gets the defined grid for all screens with a 1920x1080 resolution
-local defgrid=hs.grid.getGrid() defgrid.w=defgrid.w+2 -- increases the number of columns in the default grid by 2</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="getGridFrame">
-            <a name="//apple_ref/cpp/Function/getGridFrame" class="dashAnchor"></a>
-            <h5><a href="#getGridFrame">getGridFrame</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.getGridFrame(screen) -&gt; hs.geometry rect</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Gets the defined grid frame for a given screen or screen resolution.</p>
-<p>Parameters:</p>
-<ul>
-<li>screen - an <code>hs.screen</code> object, or a valid argument to <code>hs.screen.find()</code>, indicating the screen to get the grid frame of</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>an <code>hs.geometry</code> rect object indicating the frame used by the grid for the given screen; if no custom frame
-was given via <code>hs.grid.setGrid()</code>, returns the screen's frame</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="hide">
-            <a name="//apple_ref/cpp/Function/hide" class="dashAnchor"></a>
-            <h5><a href="#hide">hide</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.hide()</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Hides the grid, if visible, and exits the modal resizing mode.
-Call this function if you need to make sure the modal is exited without waiting for the user to press <code>esc</code>.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If an exit callback was provided when invoking the modal interface, calling <code>.hide()</code> will call it</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="maximizeWindow">
-            <a name="//apple_ref/cpp/Function/maximizeWindow" class="dashAnchor"></a>
-            <h5><a href="#maximizeWindow">maximizeWindow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.maximizeWindow(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Moves and resizes a window to fill the entire grid</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="pushWindowDown">
-            <a name="//apple_ref/cpp/Function/pushWindowDown" class="dashAnchor"></a>
-            <h5><a href="#pushWindowDown">pushWindowDown</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.pushWindowDown(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Moves a window one grid cell down the screen, or onto the adjacent screen's grid when necessary</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="pushWindowLeft">
-            <a name="//apple_ref/cpp/Function/pushWindowLeft" class="dashAnchor"></a>
-            <h5><a href="#pushWindowLeft">pushWindowLeft</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.pushWindowLeft(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Moves a window one grid cell to the left, or onto the adjacent screen's grid when necessary</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="pushWindowRight">
-            <a name="//apple_ref/cpp/Function/pushWindowRight" class="dashAnchor"></a>
-            <h5><a href="#pushWindowRight">pushWindowRight</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.pushWindowRight(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Moves a window one cell to the right, or onto the adjacent screen's grid when necessary</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="pushWindowUp">
-            <a name="//apple_ref/cpp/Function/pushWindowUp" class="dashAnchor"></a>
-            <h5><a href="#pushWindowUp">pushWindowUp</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.pushWindowUp(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Moves a window one grid cell up the screen, or onto the adjacent screen's grid when necessary</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="resizeWindowShorter">
-            <a name="//apple_ref/cpp/Function/resizeWindowShorter" class="dashAnchor"></a>
-            <h5><a href="#resizeWindowShorter">resizeWindowShorter</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.resizeWindowShorter(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Resizes a window so its bottom edge moves one grid cell higher</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="resizeWindowTaller">
-            <a name="//apple_ref/cpp/Function/resizeWindowTaller" class="dashAnchor"></a>
-            <h5><a href="#resizeWindowTaller">resizeWindowTaller</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.resizeWindowTaller(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Resizes a window so its bottom edge moves one grid cell lower</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>if the window hits the bottom edge of the screen and is asked to become taller, its top edge will shift further up</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="resizeWindowThinner">
-            <a name="//apple_ref/cpp/Function/resizeWindowThinner" class="dashAnchor"></a>
-            <h5><a href="#resizeWindowThinner">resizeWindowThinner</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.resizeWindowThinner(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Resizes a window to be one cell thinner</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="resizeWindowWider">
-            <a name="//apple_ref/cpp/Function/resizeWindowWider" class="dashAnchor"></a>
-            <h5><a href="#resizeWindowWider">resizeWindowWider</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.resizeWindowWider(window) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Resizes a window to be one cell wider</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to act on; if omitted, the focused or frontmost window will be used</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>if the window hits the right edge of the screen and is asked to become wider, its left edge will shift further left</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="set">
-            <a name="//apple_ref/cpp/Function/set" class="dashAnchor"></a>
-            <h5><a href="#set">set</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.set(win, cell, screen) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Sets the cell for a window on a particular screen</p>
-<p>Parameters:</p>
-<ul>
-<li>win - an <code>hs.window</code> object representing the window to operate on</li>
-<li>cell - a cell object, i.e. an <code>hs.geometry</code> rect or argument to construct one, to apply to the window</li>
-<li>screen - (optional) an <code>hs.screen</code> object or argument to <code>hs.screen.find()</code> representing the screen to place the window on; if omitted
-<pre><code>     the window's current screen will be used</code></pre>
-</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="setGrid">
-            <a name="//apple_ref/cpp/Function/setGrid" class="dashAnchor"></a>
-            <h5><a href="#setGrid">setGrid</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.setGrid(grid,screen,frame) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Sets the grid size for a given screen or screen resolution</p>
-<p>Parameters:</p>
-<ul>
-<li>grid - an <code>hs.geometry</code> size, or argument to construct one, indicating the number of columns and rows for the grid</li>
-<li>screen - an <code>hs.screen</code> object, or a valid argument to <code>hs.screen.find()</code>, indicating the screen(s) to apply the grid to;
-if omitted or nil, sets the default grid, which is used when no specific grid is found for any given screen/resolution</li>
-<li>frame - an <code>hs.geometry</code> rect object indicating the frame that the grid will occupy for the given screen;
-if omitted or nil, the screen's <code>:frame()</code> will be used; use this argument if you want e.g. to leave
-a strip of the desktop unoccluded when using GeekTool or similar. The <code>screen</code> argument <em>must</em> be non-nil when setting a
-custom grid frame.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-<p>Usage:
-hs.grid.setGrid('5x3','Color LCD') -- sets the grid to 5x3 for any screen named "Color LCD"
-hs.grid.setGrid('8x5','1920x1080') -- sets the grid to 8x5 for all screens with a 1920x1080 resolution
-hs.grid.setGrid'4x4' -- sets the default grid to 4x4</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="setMargins">
-            <a name="//apple_ref/cpp/Function/setMargins" class="dashAnchor"></a>
-            <h5><a href="#setMargins">setMargins</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.setMargins(margins) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Sets the margins between windows</p>
-<p>Parameters:</p>
-<ul>
-<li>margins - an <code>hs.geometry</code> point or size, or argument to construct one, indicating the desired margins between windows in screen points</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="show">
-            <a name="//apple_ref/cpp/Function/show" class="dashAnchor"></a>
-            <h5><a href="#show">show</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.show([exitedCallback][, multipleWindows])</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Shows the grid and starts the modal interactive resizing process for the focused or frontmost window.
-In most cases this function should be invoked via <code>hs.hotkey.bind</code> with some keyboard shortcut.</p>
-<p>Parameters:</p>
-<ul>
-<li>exitedCallback - (optional) a function that will be called after the user dismisses the modal interface</li>
-<li>multipleWindows - (optional) if <code>true</code>, the resizing grid won't automatically go away after selecting the desired cells
-for the frontmost window; instead, it'll switch to the next window</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>In the modal interface, press the arrow keys to jump to adjacent screens; spacebar to maximize/unmaximize; esc to quit without any effect</li>
-<li>Pressing <code>tab</code> or <code>shift-tab</code> in the modal interface will cycle to the next or previous window; if <code>multipleWindows</code>
-is false or omitted, the first press will just enable the multiple windows behaviour</li>
-<li>The keyboard hints assume a QWERTY layout; if you use a different layout, change <code>hs.grid.HINTS</code> accordingly</li>
-<li>If grid dimensions are greater than 10x10 then you may have to change <code>hs.grid.HINTS</code> depending on your
-requirements. See note in <code>HINTS</code>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="snap">
-            <a name="//apple_ref/cpp/Function/snap" class="dashAnchor"></a>
-            <h5><a href="#snap">snap</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.snap(win) -&gt; hs.grid</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Snaps a window into alignment with the nearest grid lines</p>
-<p>Parameters:</p>
-<ul>
-<li>win - an <code>hs.window</code> object to snap</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.grid</code> module for method chaining</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="toggleShow">
-            <a name="//apple_ref/cpp/Function/toggleShow" class="dashAnchor"></a>
-            <h5><a href="#toggleShow">toggleShow</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.grid.toggleShow([exitedCallback][, multipleWindows])</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Toggles the grid and modal resizing mode - see <code>hs.grid.show()</code> and <code>hs.grid.hide()</code></p>
-<p>Parameters: see <code>hs.grid.show()</code></p>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+## API Documentation
+
+### Variables
+
+#### [HINTS](#hints)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.HINTS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | A bidimensional array (table of tables of strings) holding the keyboard hints (as per `hs.keycodes.map`) to be used for the interactive resizing interface.                                                                                         |
+| **Notes**                                            |  * `hs.inspect(hs.grid.HINTS)` from the console will show you how the table is built * `hs.grid.show()`    When displaying interactive grid, if gird dimensions (`hs.grid.setGrid()`) are greater than `HINTS` dimensions,    then Hammerspoon merges few cells such that interactive grid dimensions do not exceed `HINTS` dimensions.    This is done to make sure interactive grid cells do not run out of hints. The interactive grid ends up with    cells of varying height and width.    The actual grid is not affected. If you use API methods like `hs.grid.pushWindowDown()`, you will not face this    issue at all.    If you have a grid of higher dimensions and require an interactive gird that accurately models underlying grid    then set `HINTS` variable to a table that has same dimensions as your grid.    Following is an example of grid that has 16 columns                                                      |
+
+#### [ui](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.ui` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Allows customization of the modal resizing grid user interface                                                                                         |
+
+### Functions
+
+#### [adjustWindow](#adjustwindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.adjustWindow(fn, window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Calls a user specified function to adjust a window's cell                                                                                         |
+| **Parameters**                                       |  * fn - a function that accepts a cell object as its only argument. The function should modify it as needed and return nothing * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [get](#get)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.get(win) -> cell` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the cell describing a window                                                                                         |
+| **Parameters**                                       | * an `hs.window` object to get the cell of                                       |
+| **Returns**                                          | * a cell object (i.e. an `hs.geometry` rect), or nil if an error occurred                                                |
+
+#### [getCell](#getcell)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.getCell(cell, screen) -> hs.geometry` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the `hs.geometry` rect for a cell on a particular screen                                                                                         |
+| **Parameters**                                       |  * cell - a cell object, i.e. an `hs.geometry` rect or argument to construct one * screen - an `hs.screen` object or argument to `hs.screen.find()` where the cell is located                                       |
+| **Returns**                                          |  * the `hs.geometry` rect for a cell on a particular screen or nil if the screen isn't found                                                |
+
+#### [getGrid](#getgrid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.getGrid(screen) -> hs.geometry size` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the defined grid size for a given screen or screen resolution                                                                                         |
+| **Parameters**                                       |  * screen - an `hs.screen` object, or a valid argument to `hs.screen.find()`, indicating the screen to get the grid of;   if omitted or nil, gets the default grid, which is used when no specific grid is found for any given screen/resolution                                       |
+| **Returns**                                          |   * an `hs.geometry` size object indicating the number of columns and rows in the grid                                                |
+| **Notes**                                            |   * if a grid was not set for the specified screen or geometry, the default grid will be returned                                                      |
+
+#### [getGridFrame](#getgridframe)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.getGridFrame(screen) -> hs.geometry rect` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the defined grid frame for a given screen or screen resolution.                                                                                         |
+| **Parameters**                                       |  * screen - an `hs.screen` object, or a valid argument to `hs.screen.find()`, indicating the screen to get the grid frame of                                       |
+| **Returns**                                          |   * an `hs.geometry` rect object indicating the frame used by the grid for the given screen; if no custom frame    was given via `hs.grid.setGrid()`, returns the screen's frame                                                |
+
+#### [hide](#hide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.hide()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Hides the grid, if visible, and exits the modal resizing mode.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * None                                                |
+| **Notes**                                            |  * If an exit callback was provided when invoking the modal interface, calling `.hide()` will call it                                                      |
+
+#### [maximizeWindow](#maximizewindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.maximizeWindow(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Moves and resizes a window to fill the entire grid                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [pushWindowDown](#pushwindowdown)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowDown(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Moves a window one grid cell down the screen, or onto the adjacent screen's grid when necessary                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [pushWindowLeft](#pushwindowleft)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowLeft(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Moves a window one grid cell to the left, or onto the adjacent screen's grid when necessary                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [pushWindowRight](#pushwindowright)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowRight(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Moves a window one cell to the right, or onto the adjacent screen's grid when necessary                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [pushWindowUp](#pushwindowup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.pushWindowUp(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Moves a window one grid cell up the screen, or onto the adjacent screen's grid when necessary                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [resizeWindowShorter](#resizewindowshorter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowShorter(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Resizes a window so its bottom edge moves one grid cell higher                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [resizeWindowTaller](#resizewindowtaller)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowTaller(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Resizes a window so its bottom edge moves one grid cell lower                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+| **Notes**                                            |  * if the window hits the bottom edge of the screen and is asked to become taller, its top edge will shift further up                                                      |
+
+#### [resizeWindowThinner](#resizewindowthinner)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowThinner(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Resizes a window to be one cell thinner                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [resizeWindowWider](#resizewindowwider)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.resizeWindowWider(window) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Resizes a window to be one cell wider                                                                                         |
+| **Parameters**                                       |  * window - an `hs.window` object to act on; if omitted, the focused or frontmost window will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+| **Notes**                                            |  * if the window hits the right edge of the screen and is asked to become wider, its left edge will shift further left                                                      |
+
+#### [set](#set)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.set(win, cell, screen) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets the cell for a window on a particular screen                                                                                         |
+| **Parameters**                                       |  * win - an `hs.window` object representing the window to operate on * cell - a cell object, i.e. an `hs.geometry` rect or argument to construct one, to apply to the window * screen - (optional) an `hs.screen` object or argument to `hs.screen.find()` representing the screen to place the window on; if omitted            the window's current screen will be used                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [setGrid](#setgrid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.setGrid(grid,screen,frame) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets the grid size for a given screen or screen resolution                                                                                         |
+| **Parameters**                                       |  * grid - an `hs.geometry` size, or argument to construct one, indicating the number of columns and rows for the grid * screen - an `hs.screen` object, or a valid argument to `hs.screen.find()`, indicating the screen(s) to apply the grid to;   if omitted or nil, sets the default grid, which is used when no specific grid is found for any given screen/resolution * frame - an `hs.geometry` rect object indicating the frame that the grid will occupy for the given screen;   if omitted or nil, the screen's `:frame()` will be used; use this argument if you want e.g. to leave   a strip of the desktop unoccluded when using GeekTool or similar. The `screen` argument *must* be non-nil when setting a   custom grid frame.                                       |
+| **Returns**                                          |   * the `hs.grid` module for method chaining                                                |
+
+#### [setMargins](#setmargins)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.setMargins(margins) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets the margins between windows                                                                                         |
+| **Parameters**                                       |  * margins - an `hs.geometry` point or size, or argument to construct one, indicating the desired margins between windows in screen points                                       |
+| **Returns**                                          |   * the `hs.grid` module for method chaining                                                |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.show([exitedCallback][, multipleWindows])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Shows the grid and starts the modal interactive resizing process for the focused or frontmost window.                                                                                         |
+| **Parameters**                                       |  * exitedCallback - (optional) a function that will be called after the user dismisses the modal interface * multipleWindows - (optional) if `true`, the resizing grid won't automatically go away after selecting the desired cells   for the frontmost window; instead, it'll switch to the next window                                       |
+| **Returns**                                          |  * None                                                |
+| **Notes**                                            |  * In the modal interface, press the arrow keys to jump to adjacent screens; spacebar to maximize/unmaximize; esc to quit without any effect * Pressing `tab` or `shift-tab` in the modal interface will cycle to the next or previous window; if `multipleWindows`   is false or omitted, the first press will just enable the multiple windows behaviour * The keyboard hints assume a QWERTY layout; if you use a different layout, change `hs.grid.HINTS` accordingly * If grid dimensions are greater than 10x10 then you may have to change `hs.grid.HINTS` depending on your   requirements. See note in `HINTS`.                                                      |
+
+#### [snap](#snap)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.snap(win) -> hs.grid` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Snaps a window into alignment with the nearest grid lines                                                                                         |
+| **Parameters**                                       |  * win - an `hs.window` object to snap                                       |
+| **Returns**                                          |  * the `hs.grid` module for method chaining                                                |
+
+#### [toggleShow](#toggleshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.grid.toggleShow([exitedCallback][, multipleWindows])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Toggles the grid and modal resizing mode - see `hs.grid.show()` and `hs.grid.hide()`                                                                                         |
+| **Returns**                                          |  * None                                                |
+

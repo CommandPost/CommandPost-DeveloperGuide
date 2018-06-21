@@ -1,80 +1,32 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="hs.base64.md">docs</a> &raquo; hs.base64</h1>
-      <p>Base64 encoding and decoding</p>
-<p>Portions sourced from (<a href="https://gist.github.com/shpakovski/1902994">https://gist.github.com/shpakovski/1902994</a>).</p>
+# [docs](index.md) » hs.base64
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#decode">decode</a></li>
-            <li><a href="#encode">encode</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="decode">
-            <a name="//apple_ref/cpp/Function/decode" class="dashAnchor"></a>
-            <h5><a href="#decode">decode</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.base64.decode(str) -&gt; val</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Decodes a given base64 string</p>
-<p>Parameters:</p>
-<ul>
-<li>str - A base64 encoded string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A string containing the decoded data</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="encode">
-            <a name="//apple_ref/cpp/Function/encode" class="dashAnchor"></a>
-            <h5><a href="#encode">encode</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.base64.encode(val[,width]) -&gt; str</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Encodes a given string to base64</p>
-<p>Parameters:</p>
-<ul>
-<li>val - A string to encode as base64</li>
-<li>width - Optional line width to split the string into (usually 64 or 76)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A string containing the base64 representation of the input string</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Base64 encoding and decoding
+
+Portions sourced from (https://gist.github.com/shpakovski/1902994).
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [decode](#decode)
+ * [encode](#encode)
+
+## API Documentation
+
+### Functions
+
+#### [decode](#decode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.base64.decode(str) -> val` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Decodes a given base64 string                                                                                         |
+| **Parameters**                                       |  * str - A base64 encoded string                                       |
+| **Returns**                                          |  * A string containing the decoded data                                                |
+
+#### [encode](#encode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.base64.encode(val[,width]) -> str` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Encodes a given string to base64                                                                                         |
+| **Parameters**                                       |  * val - A string to encode as base64 * width - Optional line width to split the string into (usually 64 or 76)                                       |
+| **Returns**                                          |  * A string containing the base64 representation of the input string                                                |
+

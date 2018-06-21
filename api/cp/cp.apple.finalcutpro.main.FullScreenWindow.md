@@ -1,274 +1,101 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="cp.apple.finalcutpro.main.FullScreenWindow.md">docs</a> &raquo; cp.apple.finalcutpro.main.FullScreenWindow</h1>
-      <p>Full Screen Window</p>
+# [docs](index.md) » cp.apple.finalcutpro.main.FullScreenWindow
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#matches">matches</a></li>
-          </ul>
-        <li>Constructors - API calls which return an object, typically one that offers API methods</li>
-          <ul>
-            <li><a href="#new">new</a></li>
-          </ul>
-        <li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
-          <ul>
-            <li><a href="#isFullScreen">isFullScreen</a></li>
-            <li><a href="#isShowing">isShowing</a></li>
-            <li><a href="#rootGroupUI">rootGroupUI</a></li>
-            <li><a href="#UI">UI</a></li>
-            <li><a href="#viewerGroupUI">viewerGroupUI</a></li>
-          </ul>
-        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
-          <ul>
-            <li><a href="#app">app</a></li>
-            <li><a href="#show">show</a></li>
-            <li><a href="#window">window</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="matches">
-            <a name="//apple_ref/cpp/Function/matches" class="dashAnchor"></a>
-            <h5><a href="#matches">matches</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow.matches(element) -&gt; boolean</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks to see if an element matches what we think it should be.</p>
-<p>Parameters:</p>
-<ul>
-<li>element - An <code>axuielementObject</code> to check.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if matches otherwise <code>false</code></li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Constructors</h4>
-          <section id="new">
-            <a name="//apple_ref/cpp/Constructor/new" class="dashAnchor"></a>
-            <h5><a href="#new">new</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow.new(app) -&gt; FullScreenWindow</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constructor</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Creates a new FCPX <code>FullScreenWindow</code> instance.</p>
-<p>Parameters:</p>
-<ul>
-<li>app       - The FCP app instance.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The new <code>FullScreenWindow</code>.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Fields</h4>
-          <section id="isFullScreen">
-            <a name="//apple_ref/cpp/Field/isFullScreen" class="dashAnchor"></a>
-            <h5><a href="#isFullScreen">isFullScreen</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow.isFullScreen &lt;cp.prop; boolean; read-only; live&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the window is full-screen.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="isShowing">
-            <a name="//apple_ref/cpp/Field/isShowing" class="dashAnchor"></a>
-            <h5><a href="#isShowing">isShowing</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow.isShowing &lt;cp.prop; boolean; read-only; live&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Checks if the window is currently showing.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="rootGroupUI">
-            <a name="//apple_ref/cpp/Field/rootGroupUI" class="dashAnchor"></a>
-            <h5><a href="#rootGroupUI">rootGroupUI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow.rootGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The root <code>AXGroup</code>.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="UI">
-            <a name="//apple_ref/cpp/Field/UI" class="dashAnchor"></a>
-            <h5><a href="#UI">UI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow.UI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The core <code>axuielement</code> for the window.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="viewerGroupUI">
-            <a name="//apple_ref/cpp/Field/viewerGroupUI" class="dashAnchor"></a>
-            <h5><a href="#viewerGroupUI">viewerGroupUI</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow.viewerGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Field</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>The Viewer's group UI element.</p>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Methods</h4>
-          <section id="app">
-            <a name="//apple_ref/cpp/Method/app" class="dashAnchor"></a>
-            <h5><a href="#app">app</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow:app() -&gt; cp.apple.finalcutpro</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the FCPX app.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The FCPX app.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="show">
-            <a name="//apple_ref/cpp/Method/show" class="dashAnchor"></a>
-            <h5><a href="#show">show</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow:show() -&gt; cp.apple.finalcutpro</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Attempts to show the full screen window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The window instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="window">
-            <a name="//apple_ref/cpp/Method/window" class="dashAnchor"></a>
-            <h5><a href="#window">window</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.main.FullScreenWindow:window() -&gt; cp.ui.Window</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>Window</code> instance for the full-screen window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>Window</code> instance.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Full Screen Window
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [isFullScreen](#isfullscreen)
+ * [isShowing](#isshowing)
+ * [rootGroupUI](#rootgroupui)
+ * [UI](#ui)
+ * [viewerGroupUI](#viewergroupui)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [app](#app)
+ * [show](#show)
+ * [window](#window)
+
+## API Documentation
+
+### Functions
+
+#### [matches](#matches)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.matches(element) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
+| **Parameters**                                       |  * element - An `axuielementObject` to check.                                       |
+| **Returns**                                          |  * `true` if matches otherwise `false`                                                |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.new(app) -> FullScreenWindow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new FCPX `FullScreenWindow` instance.                                                                                         |
+| **Parameters**                                       | * app       - The FCP app instance.                                       |
+| **Returns**                                          | * The new `FullScreenWindow`.                                                |
+
+### Fields
+
+#### [isFullScreen](#isfullscreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.isFullScreen <cp.prop; boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the window is full-screen.                                                                                         |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.isShowing <cp.prop; boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Checks if the window is currently showing.                                                                                         |
+
+#### [rootGroupUI](#rootgroupui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.rootGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The root `AXGroup`.                                                                                         |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The core `axuielement` for the window.                                                                                         |
+
+#### [viewerGroupUI](#viewergroupui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.viewerGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | The Viewer's group UI element.                                                                                         |
+
+### Methods
+
+#### [app](#app)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:app() -> cp.apple.finalcutpro` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the FCPX app.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * The FCPX app.                                                |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:show() -> cp.apple.finalcutpro` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Attempts to show the full screen window.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * The window instance.                                                |
+
+#### [window](#window)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:window() -> cp.ui.Window` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the `Window` instance for the full-screen window.                                                                                         |
+| **Parameters**                                       | * None                                       |
+| **Returns**                                          | * The `Window` instance.                                                |
+

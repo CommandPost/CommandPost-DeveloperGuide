@@ -1,110 +1,42 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="cp.apple.finalcutpro.inspector.transition.TransitionInspector.md">docs</a> &raquo; cp.apple.finalcutpro.inspector.transition.TransitionInspector</h1>
-      <p>Transition Inspector Module.</p>
+# [docs](index.md) » cp.apple.finalcutpro.inspector.transition.TransitionInspector
+---
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Constructors - API calls which return an object, typically one that offers API methods</li>
-          <ul>
-            <li><a href="#new">new</a></li>
-          </ul>
-        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
-          <ul>
-            <li><a href="#app">app</a></li>
-            <li><a href="#parent">parent</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Constructors</h4>
-          <section id="new">
-            <a name="//apple_ref/cpp/Constructor/new" class="dashAnchor"></a>
-            <h5><a href="#new">new</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.transition.TransitionInspector.new(parent) -&gt; TransitionInspector</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constructor</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Creates a new <code>TransitionInspector</code> object.</p>
-<p>Parameters:</p>
-<ul>
-<li>parent - The parent</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A <code>TransitionInspector</code> object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Methods</h4>
-          <section id="app">
-            <a name="//apple_ref/cpp/Method/app" class="dashAnchor"></a>
-            <h5><a href="#app">app</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.transition.TransitionInspector:app() -&gt; App</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the <code>cp.apple.finalcutpro</code> object.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The application object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="parent">
-            <a name="//apple_ref/cpp/Method/parent" class="dashAnchor"></a>
-            <h5><a href="#parent">parent</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>cp.apple.finalcutpro.inspector.transition.TransitionInspector:parent() -&gt; table</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Returns the TransitionInspector's parent table</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The parent object as a table</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+Transition Inspector Module.
+
+## API Overview
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [app](#app)
+ * [parent](#parent)
+
+## API Documentation
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.transition.TransitionInspector.new(parent) -> TransitionInspector` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `TransitionInspector` object.                                                                                         |
+| **Parameters**                                       |  * parent - The parent                                       |
+| **Returns**                                          |  * A `TransitionInspector` object                                                |
+
+### Methods
+
+#### [app](#app)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.transition.TransitionInspector:app() -> App` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the `cp.apple.finalcutpro` object.                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The application object                                                |
+
+#### [parent](#parent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.transition.TransitionInspector:parent() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the TransitionInspector's parent table                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The parent object as a table                                                |
+

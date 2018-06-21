@@ -1,151 +1,62 @@
-    <style type="text/css">
-      a { text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-      table { width: 100% ; border: 1px solid #0; text-align: left; }
-      section > table table td { width: 0; }
-    </style>
-    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-    <header>
-      <h1><a href="hs.distributednotifications.md">docs</a> &raquo; hs.distributednotifications</h1>
-      <p>Interact with NSDistributedNotificationCenter
-There are many notifications posted by parts of OS X, and third party apps, which may be interesting to react to using this module.</p>
-<p>You can discover the notifications that are being posted on your system with some code like this:</p>
+# [docs](index.md) » hs.distributednotifications
+---
 
-<pre><code>foo = hs.distributednotifications.new(function(name, object, userInfo) print(string.format("name: %s\nobject: %s\nuserInfo: %s\n", name, object, hs.inspect(userInfo))) end)
-foo:start()</code></pre>
-<p>Note that distributed notifications are expensive - they involve lots of IPC. Also note that they are not guaranteed to be delivered, particularly if the system is very busy.</p>
+Interact with NSDistributedNotificationCenter
+There are many notifications posted by parts of OS X, and third party apps, which may be interesting to react to using this module.
 
-      </header>
-      <h3>API Overview</h3>
-      <ul>
-        <li>Functions - API calls offered directly by the extension</li>
-          <ul>
-            <li><a href="#post">post</a></li>
-          </ul>
-        <li>Constructors - API calls which return an object, typically one that offers API methods</li>
-          <ul>
-            <li><a href="#new">new</a></li>
-          </ul>
-        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
-          <ul>
-            <li><a href="#start">start</a></li>
-            <li><a href="#stop">stop</a></li>
-          </ul>
-      </ul>
-      <h3>API Documentation</h3>
-        <h4 class="documentation-section">Functions</h4>
-          <section id="post">
-            <a name="//apple_ref/cpp/Function/post" class="dashAnchor"></a>
-            <h5><a href="#post">post</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.distributednotifications.post(name[, sender[, userInfo]])</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Function</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Sends a distributed notification</p>
-<p>Parameters:</p>
-<ul>
-<li>name - A string containing the name of the notification</li>
-<li>sender - An optional string containing the name of the sender of the notification (in the form <code>com.domain.application.foo</code>). Defaults to nil.</li>
-<li>userInfo - An optional table containing additional information to post with the notification. Defaults to nil.</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Constructors</h4>
-          <section id="new">
-            <a name="//apple_ref/cpp/Constructor/new" class="dashAnchor"></a>
-            <h5><a href="#new">new</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.distributednotifications.new(callback[, name[, object]]) -&gt; object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Constructor</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Creates a new NSDistributedNotificationCenter watcher</p>
-<p>Parameters:</p>
-<ul>
-<li>callback - A function to be called when a matching notification arrives. The function should accept one argument:<ul>
-<li>notificationName - A string containing the name of the notification</li>
-</ul>
-</li>
-<li>name - An optional string containing the name of notifications to watch for. A value of <code>nil</code> will cause all notifications to be watched. Defaults to <code>nil</code>.</li>
-<li>object - An optional string containing the name of sending objects to watch for. A value of <code>nil</code> will cause all sending objects to be watched. Defaults to <code>nil</code>.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.distributednotifications</code> object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-        <h4 class="documentation-section">Methods</h4>
-          <section id="start">
-            <a name="//apple_ref/cpp/Method/start" class="dashAnchor"></a>
-            <h5><a href="#start">start</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.distributednotifications:start() -&gt; object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Starts a NSDistributedNotificationCenter watcher</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.distributednotifications</code> object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
-          <section id="stop">
-            <a name="//apple_ref/cpp/Method/stop" class="dashAnchor"></a>
-            <h5><a href="#stop">stop</a></h5>
-            <table>
-              <tr>
-                <th>Signature</th>
-                <td><code>hs.distributednotifications:stop() -&gt; object</code></td>
-              </tr>
-              <tr>
-                <th>Type</th>
-                <td>Method</td>
-              </tr>
-              <tr>
-                <th>Description</th>
-                <td><p>Stops a NSDistributedNotificationCenter watcher</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.distributednotifications</code> object</li>
-</ul>
-</td>
-              </tr>
-            </table>
-          </section>
+You can discover the notifications that are being posted on your system with some code like this:
+```
+foo = hs.distributednotifications.new(function(name, object, userInfo) print(string.format("name: %s\nobject: %s\nuserInfo: %s\n", name, object, hs.inspect(userInfo))) end)
+foo:start()
+```
+
+Note that distributed notifications are expensive - they involve lots of IPC. Also note that they are not guaranteed to be delivered, particularly if the system is very busy.
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [post](#post)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [start](#start)
+ * [stop](#stop)
+
+## API Documentation
+
+### Functions
+
+#### [post](#post)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications.post(name[, sender[, userInfo]])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sends a distributed notification                                                                                         |
+| **Parameters**                                       |  * name - A string containing the name of the notification * sender - An optional string containing the name of the sender of the notification (in the form `com.domain.application.foo`). Defaults to nil. * userInfo - An optional table containing additional information to post with the notification. Defaults to nil.                                       |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications.new(callback[, name[, object]]) -> object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new NSDistributedNotificationCenter watcher                                                                                         |
+| **Parameters**                                       |  * callback - A function to be called when a matching notification arrives. The function should accept one argument:  * notificationName - A string containing the name of the notification * name - An optional string containing the name of notifications to watch for. A value of `nil` will cause all notifications to be watched. Defaults to `nil`. * object - An optional string containing the name of sending objects to watch for. A value of `nil` will cause all sending objects to be watched. Defaults to `nil`.                                       |
+| **Returns**                                          |  * An `hs.distributednotifications` object                                                |
+
+### Methods
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications:start() -> object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Starts a NSDistributedNotificationCenter watcher                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The `hs.distributednotifications` object                                                |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.distributednotifications:stop() -> object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Stops a NSDistributedNotificationCenter watcher                                                                                         |
+| **Parameters**                                       |  * None                                       |
+| **Returns**                                          |  * The `hs.distributednotifications` object                                                |
+
