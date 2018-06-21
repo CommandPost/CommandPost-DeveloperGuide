@@ -1,42 +1,121 @@
-# [docs](index.md) » hs.doc.spoonsupport
----
+    <style type="text/css">
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+      table { width: 100% ; border: 1px solid #0; text-align: left; }
+      section > table table td { width: 0; }
+    </style>
+    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+    <header>
+      <h1><a href="hs.doc.spoonsupport.md">docs</a> &raquo; hs.doc.spoonsupport</h1>
+      <p>Provides run-time support for generating and including documentation for installed Hammerspoon Spoon bundles.</p>
+<p>This module provides support for building (if necessary) and loading the documentation for installed Spoon bundles.  In general, it is not expected that most users will have a need to access these functions directly.</p>
 
-Provides run-time support for generating and including documentation for installed Hammerspoon Spoon bundles.
-
-This module provides support for building (if necessary) and loading the documentation for installed Spoon bundles.  In general, it is not expected that most users will have a need to access these functions directly.
-
-## API Overview
-* Functions - API calls offered directly by the extension
- * [findSpoons](#findspoons)
- * [makeDocsFile](#makedocsfile)
- * [updateDocFiles](#updatedocfiles)
-
-## API Documentation
-
-### Functions
-
-#### [findSpoons](#findspoons)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.spoonsupport.findSpoons() -> pathTable, spoonsTable` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns tables describing where spoons are installed and what spoons are currently available.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>two tables:</li><li>  an array containing the paths from `package.path` which can contain Hammerspoon Spoon bundles.</li><li>  a table with key-value pairs where the key matches an installed (but not necessarily loaded) spoon name and the value is a table containing the following keys:</li><li>    path    - the path to the directory which contains the contents of the Spoon bundle</li><li>    docPath - the expected path for documentation for this Spoon bundle</li><li>    hasDocs - a boolean indicating whether or not the file referred to by `docPath` exists and is readable</li></ul>          |
-
-#### [makeDocsFile](#makedocsfile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.spoonsupport.makeDocsFile(spoonPath, [force]) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Create the docs.json file for the Spoon bundle at the specified path.                                                                                         |
-| **Parameters**                                       | <ul><li>spoonPath - the path of the Spoon bundle to generate the documentation for</li><li>force     - an optional boolean, default false, indicating whether or not an existing `docs.json` file within the Spoon bundle should be overwritten.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [updateDocFiles](#updatedocfiles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.spoonsupport.updateDocFiles() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates and updates the included documentation for the installed Spoon bundles if the documentation file is not present or the init.lua file for the Spoon has been modified more recently then the documentation file.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-| **Notes**                                            | <ul><li>The Spoon documentation is expected to be in a file named `docs.json` at the root level of the Spoon bundle.</li></ul>                |
-
+      </header>
+      <h3>API Overview</h3>
+      <ul>
+        <li>Functions - API calls offered directly by the extension</li>
+          <ul>
+            <li><a href="#findSpoons">findSpoons</a></li>
+            <li><a href="#makeDocsFile">makeDocsFile</a></li>
+            <li><a href="#updateDocFiles">updateDocFiles</a></li>
+          </ul>
+      </ul>
+      <h3>API Documentation</h3>
+        <h4 class="documentation-section">Functions</h4>
+          <section id="findSpoons">
+            <a name="//apple_ref/cpp/Function/findSpoons" class="dashAnchor"></a>
+            <h5><a href="#findSpoons">findSpoons</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>hs.doc.spoonsupport.findSpoons() -&gt; pathTable, spoonsTable</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Function</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Returns tables describing where spoons are installed and what spoons are currently available.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>two tables:<ul>
+<li>an array containing the paths from <code>package.path</code> which can contain Hammerspoon Spoon bundles.</li>
+<li>a table with key-value pairs where the key matches an installed (but not necessarily loaded) spoon name and the value is a table containing the following keys:<ul>
+<li>path    - the path to the directory which contains the contents of the Spoon bundle</li>
+<li>docPath - the expected path for documentation for this Spoon bundle</li>
+<li>hasDocs - a boolean indicating whether or not the file referred to by <code>docPath</code> exists and is readable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="makeDocsFile">
+            <a name="//apple_ref/cpp/Function/makeDocsFile" class="dashAnchor"></a>
+            <h5><a href="#makeDocsFile">makeDocsFile</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>hs.doc.spoonsupport.makeDocsFile(spoonPath, [force]) -&gt; none</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Function</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Create the docs.json file for the Spoon bundle at the specified path.</p>
+<p>Parameters:</p>
+<ul>
+<li>spoonPath - the path of the Spoon bundle to generate the documentation for</li>
+<li>force     - an optional boolean, default false, indicating whether or not an existing <code>docs.json</code> file within the Spoon bundle should be overwritten.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="updateDocFiles">
+            <a name="//apple_ref/cpp/Function/updateDocFiles" class="dashAnchor"></a>
+            <h5><a href="#updateDocFiles">updateDocFiles</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>hs.doc.spoonsupport.updateDocFiles() -&gt; none</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Function</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Creates and updates the included documentation for the installed Spoon bundles if the documentation file is not present or the init.lua file for the Spoon has been modified more recently then the documentation file.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The Spoon documentation is expected to be in a file named <code>docs.json</code> at the root level of the Spoon bundle.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>

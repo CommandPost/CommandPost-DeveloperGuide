@@ -1,156 +1,454 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.Browser
----
+    <style type="text/css">
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+      table { width: 100% ; border: 1px solid #0; text-align: left; }
+      section > table table td { width: 0; }
+    </style>
+    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+    <header>
+      <h1><a href="cp.apple.finalcutpro.main.Browser.md">docs</a> &raquo; cp.apple.finalcutpro.main.Browser</h1>
+      <p>Browser Module.</p>
 
-Browser Module.
-
-## Submodules
- * [cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover](cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.md)
-
-## API Overview
-* Functions - API calls offered directly by the extension
- * [matches](#matches)
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [generators](#generators)
- * [hide](#hide)
- * [libraries](#libraries)
- * [loadLayout](#loadlayout)
- * [markerPopover](#markerpopover)
- * [media](#media)
- * [saveLayout](#savelayout)
- * [showGenerators](#showgenerators)
- * [showLibraries](#showlibraries)
- * [showMedia](#showmedia)
- * [showOnPrimary](#showonprimary)
- * [showOnSecondary](#showonsecondary)
-
-## API Documentation
-
-### Functions
-
-#### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.matches(element) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
-| **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.new(app) -> Browser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `Browser` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>app - The Final Cut Pro app instance.</li></ul> |
-| **Returns**                                          | <ul><li>The new `Browser`.</li></ul>          |
-
-### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul>          |
-
-#### [generators](#generators)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:generators() -> GeneratorsBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get Generators Browser object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `GeneratorsBrowser` object.</li></ul>          |
-
-#### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:hide() -> Browser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Hides the Browser.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The `Browser` object.</li></ul>          |
-
-#### [libraries](#libraries)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:libraries() -> LibrariesBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get Libraries Browser object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `LibrariesBrowser` object.</li></ul>          |
-
-#### [loadLayout](#loadlayout)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:loadLayout(layout) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Loads a Browser layout.                                                                                         |
-| **Parameters**                                       | <ul><li>layout - A table containing the Browser layout settings - created using `cp.apple.finalcutpro.main.Browser:saveLayout()`.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul>          |
-
-#### [markerPopover](#markerpopover)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:markerPopover() -> BrowserMarkerPopover` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get Browser Marker Popover object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `BrowserMarkerPopover` object.</li></ul>          |
-
-#### [media](#media)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:media() -> MediaBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get Media Browser object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `MediaBrowser` object.</li></ul>          |
-
-#### [saveLayout](#savelayout)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:saveLayout() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Saves the current Browser layout to a table.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the current Browser Layout.</li></ul>          |
-
-#### [showGenerators](#showgenerators)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showGenerators() -> CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Show Media.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `CheckBox` object.</li></ul>          |
-
-#### [showLibraries](#showlibraries)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showLibraries() -> CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Shows Libraries.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `CheckBox` object.</li></ul>          |
-
-#### [showMedia](#showmedia)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showMedia() -> CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Show Media.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A `CheckBox` object.</li></ul>          |
-
-#### [showOnPrimary](#showonprimary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showOnPrimary() -> Browser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Show Browser on Primary Screen.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The `Browser` object.</li></ul>          |
-
-#### [showOnSecondary](#showonsecondary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showOnSecondary() -> Browser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Show Browser on Secondary Screen.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The `Browser` object.</li></ul>          |
-
+      </header>
+        <h3>Submodules</h3>
+        <ul>
+        <li><a href="cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.html">cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover</a></li>
+        </ul>
+      <h3>API Overview</h3>
+      <ul>
+        <li>Functions - API calls offered directly by the extension</li>
+          <ul>
+            <li><a href="#matches">matches</a></li>
+          </ul>
+        <li>Constructors - API calls which return an object, typically one that offers API methods</li>
+          <ul>
+            <li><a href="#new">new</a></li>
+          </ul>
+        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
+          <ul>
+            <li><a href="#app">app</a></li>
+            <li><a href="#generators">generators</a></li>
+            <li><a href="#hide">hide</a></li>
+            <li><a href="#libraries">libraries</a></li>
+            <li><a href="#loadLayout">loadLayout</a></li>
+            <li><a href="#markerPopover">markerPopover</a></li>
+            <li><a href="#media">media</a></li>
+            <li><a href="#saveLayout">saveLayout</a></li>
+            <li><a href="#showGenerators">showGenerators</a></li>
+            <li><a href="#showLibraries">showLibraries</a></li>
+            <li><a href="#showMedia">showMedia</a></li>
+            <li><a href="#showOnPrimary">showOnPrimary</a></li>
+            <li><a href="#showOnSecondary">showOnSecondary</a></li>
+          </ul>
+      </ul>
+      <h3>API Documentation</h3>
+        <h4 class="documentation-section">Functions</h4>
+          <section id="matches">
+            <a name="//apple_ref/cpp/Function/matches" class="dashAnchor"></a>
+            <h5><a href="#matches">matches</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser.matches(element) -&gt; boolean</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Function</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Checks to see if an element matches what we think it should be.</p>
+<p>Parameters:</p>
+<ul>
+<li>element - An <code>axuielementObject</code> to check.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if matches otherwise <code>false</code></li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+        <h4 class="documentation-section">Constructors</h4>
+          <section id="new">
+            <a name="//apple_ref/cpp/Constructor/new" class="dashAnchor"></a>
+            <h5><a href="#new">new</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser.new(app) -&gt; Browser</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Constructor</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Creates a new <code>Browser</code> instance.</p>
+<p>Parameters:</p>
+<ul>
+<li>app - The Final Cut Pro app instance.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The new <code>Browser</code>.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+        <h4 class="documentation-section">Methods</h4>
+          <section id="app">
+            <a name="//apple_ref/cpp/Method/app" class="dashAnchor"></a>
+            <h5><a href="#app">app</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:app() -&gt; App</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Returns the app instance representing Final Cut Pro.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>App</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="generators">
+            <a name="//apple_ref/cpp/Method/generators" class="dashAnchor"></a>
+            <h5><a href="#generators">generators</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:generators() -&gt; GeneratorsBrowser</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Get Generators Browser object.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>GeneratorsBrowser</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="hide">
+            <a name="//apple_ref/cpp/Method/hide" class="dashAnchor"></a>
+            <h5><a href="#hide">hide</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:hide() -&gt; Browser</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Hides the Browser.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>Browser</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="libraries">
+            <a name="//apple_ref/cpp/Method/libraries" class="dashAnchor"></a>
+            <h5><a href="#libraries">libraries</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:libraries() -&gt; LibrariesBrowser</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Get Libraries Browser object.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>LibrariesBrowser</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="loadLayout">
+            <a name="//apple_ref/cpp/Method/loadLayout" class="dashAnchor"></a>
+            <h5><a href="#loadLayout">loadLayout</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:loadLayout(layout) -&gt; none</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Loads a Browser layout.</p>
+<p>Parameters:</p>
+<ul>
+<li>layout - A table containing the Browser layout settings - created using <code>cp.apple.finalcutpro.main.Browser:saveLayout()</code>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="markerPopover">
+            <a name="//apple_ref/cpp/Method/markerPopover" class="dashAnchor"></a>
+            <h5><a href="#markerPopover">markerPopover</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:markerPopover() -&gt; BrowserMarkerPopover</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Get Browser Marker Popover object.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>BrowserMarkerPopover</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="media">
+            <a name="//apple_ref/cpp/Method/media" class="dashAnchor"></a>
+            <h5><a href="#media">media</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:media() -&gt; MediaBrowser</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Get Media Browser object.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>MediaBrowser</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="saveLayout">
+            <a name="//apple_ref/cpp/Method/saveLayout" class="dashAnchor"></a>
+            <h5><a href="#saveLayout">saveLayout</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:saveLayout() -&gt; table</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Saves the current Browser layout to a table.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table containing the current Browser Layout.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="showGenerators">
+            <a name="//apple_ref/cpp/Method/showGenerators" class="dashAnchor"></a>
+            <h5><a href="#showGenerators">showGenerators</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:showGenerators() -&gt; CheckBox</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Show Media.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>CheckBox</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="showLibraries">
+            <a name="//apple_ref/cpp/Method/showLibraries" class="dashAnchor"></a>
+            <h5><a href="#showLibraries">showLibraries</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:showLibraries() -&gt; CheckBox</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Shows Libraries.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>CheckBox</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="showMedia">
+            <a name="//apple_ref/cpp/Method/showMedia" class="dashAnchor"></a>
+            <h5><a href="#showMedia">showMedia</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:showMedia() -&gt; CheckBox</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Show Media.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>CheckBox</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="showOnPrimary">
+            <a name="//apple_ref/cpp/Method/showOnPrimary" class="dashAnchor"></a>
+            <h5><a href="#showOnPrimary">showOnPrimary</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:showOnPrimary() -&gt; Browser</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Show Browser on Primary Screen.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>Browser</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="showOnSecondary">
+            <a name="//apple_ref/cpp/Method/showOnSecondary" class="dashAnchor"></a>
+            <h5><a href="#showOnSecondary">showOnSecondary</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.Browser:showOnSecondary() -&gt; Browser</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Show Browser on Secondary Screen.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>Browser</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>

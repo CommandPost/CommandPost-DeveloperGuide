@@ -1,117 +1,322 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.SecondaryWindow
----
+    <style type="text/css">
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+      table { width: 100% ; border: 1px solid #0; text-align: left; }
+      section > table table td { width: 0; }
+    </style>
+    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+    <header>
+      <h1><a href="cp.apple.finalcutpro.main.SecondaryWindow.md">docs</a> &raquo; cp.apple.finalcutpro.main.SecondaryWindow</h1>
+      <p>Secondary Window Module.</p>
 
-Secondary Window Module.
-
-## API Overview
-* Functions - API calls offered directly by the extension
- * [matches](#matches)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [browserGroupUI](#browsergroupui)
- * [frame](#frame)
- * [hsWindow](#hswindow)
- * [isFullScreen](#isfullscreen)
- * [isShowing](#isshowing)
- * [rootGroupUI](#rootgroupui)
- * [timelineGroupUI](#timelinegroupui)
- * [UI](#ui)
- * [viewerGroupUI](#viewergroupui)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [show](#show)
- * [window](#window)
-
-## API Documentation
-
-### Functions
-
-#### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.matches(element) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul><li>element - An `axuielementObject` to check.</li></ul> |
-| **Returns**                                          | <ul><li>`true` if matches otherwise `false`</li></ul>          |
-
-### Fields
-
-#### [browserGroupUI](#browsergroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.browserGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The UI element that will contain the `Browser` if it's on the Secondary Window.                                                                                         |
-
-#### [frame](#frame)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.frame <cp.prop: frame>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The current position (x, y, width, height) of the window.                                                                                         |
-
-#### [hsWindow](#hswindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.hsWindow <cp.prop: hs.window; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found.                                                                                         |
-
-#### [isFullScreen](#isfullscreen)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.isFullScreen <cp.prop: boolean; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is `true` if the window is full-screen.                                                                                         |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is `true` if the window is visible.                                                                                         |
-
-#### [rootGroupUI](#rootgroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.rootGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The root UI element on the window.                                                                                         |
-
-#### [timelineGroupUI](#timelinegroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.timelineGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The UI element that will contain the `Timeline` if it's on the Secondary Window.                                                                                         |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.UI <cp.prop: axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The `axuielement` for the window.                                                                                         |
-
-#### [viewerGroupUI](#viewergroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.viewerGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The UI element that will contain the `Viewer` if it's on the Secondary Window.                                                                                         |
-
-### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul>          |
-
-#### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:show() -> SecondaryWindow` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Show the Secondary Window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The `SecondaryWindow` object.</li></ul>          |
-
-#### [window](#window)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:window() -> cp.ui.Window` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `Window` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The `Window` instance.</li></ul>          |
-
+      </header>
+      <h3>API Overview</h3>
+      <ul>
+        <li>Functions - API calls offered directly by the extension</li>
+          <ul>
+            <li><a href="#matches">matches</a></li>
+          </ul>
+        <li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
+          <ul>
+            <li><a href="#browserGroupUI">browserGroupUI</a></li>
+            <li><a href="#frame">frame</a></li>
+            <li><a href="#hsWindow">hsWindow</a></li>
+            <li><a href="#isFullScreen">isFullScreen</a></li>
+            <li><a href="#isShowing">isShowing</a></li>
+            <li><a href="#rootGroupUI">rootGroupUI</a></li>
+            <li><a href="#timelineGroupUI">timelineGroupUI</a></li>
+            <li><a href="#UI">UI</a></li>
+            <li><a href="#viewerGroupUI">viewerGroupUI</a></li>
+          </ul>
+        <li>Methods - API calls which can only be made on an object returned by a constructor</li>
+          <ul>
+            <li><a href="#app">app</a></li>
+            <li><a href="#show">show</a></li>
+            <li><a href="#window">window</a></li>
+          </ul>
+      </ul>
+      <h3>API Documentation</h3>
+        <h4 class="documentation-section">Functions</h4>
+          <section id="matches">
+            <a name="//apple_ref/cpp/Function/matches" class="dashAnchor"></a>
+            <h5><a href="#matches">matches</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.matches(element) -&gt; boolean</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Function</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Checks to see if an element matches what we think it should be.</p>
+<p>Parameters:</p>
+<ul>
+<li>element - An <code>axuielementObject</code> to check.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if matches otherwise <code>false</code></li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+        <h4 class="documentation-section">Fields</h4>
+          <section id="browserGroupUI">
+            <a name="//apple_ref/cpp/Field/browserGroupUI" class="dashAnchor"></a>
+            <h5><a href="#browserGroupUI">browserGroupUI</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.browserGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>The UI element that will contain the <code>Browser</code> if it's on the Secondary Window.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="frame">
+            <a name="//apple_ref/cpp/Field/frame" class="dashAnchor"></a>
+            <h5><a href="#frame">frame</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.frame &lt;cp.prop: frame&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>The current position (x, y, width, height) of the window.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="hsWindow">
+            <a name="//apple_ref/cpp/Field/hsWindow" class="dashAnchor"></a>
+            <h5><a href="#hsWindow">hsWindow</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.hsWindow &lt;cp.prop: hs.window; read-only; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>The <code>hs.window</code> instance for the window, or <code>nil</code> if it can't be found.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="isFullScreen">
+            <a name="//apple_ref/cpp/Field/isFullScreen" class="dashAnchor"></a>
+            <h5><a href="#isFullScreen">isFullScreen</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.isFullScreen &lt;cp.prop: boolean; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Is <code>true</code> if the window is full-screen.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="isShowing">
+            <a name="//apple_ref/cpp/Field/isShowing" class="dashAnchor"></a>
+            <h5><a href="#isShowing">isShowing</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.isShowing &lt;cp.prop: boolean; read-only; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Is <code>true</code> if the window is visible.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="rootGroupUI">
+            <a name="//apple_ref/cpp/Field/rootGroupUI" class="dashAnchor"></a>
+            <h5><a href="#rootGroupUI">rootGroupUI</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.rootGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>The root UI element on the window.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="timelineGroupUI">
+            <a name="//apple_ref/cpp/Field/timelineGroupUI" class="dashAnchor"></a>
+            <h5><a href="#timelineGroupUI">timelineGroupUI</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.timelineGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>The UI element that will contain the <code>Timeline</code> if it's on the Secondary Window.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="UI">
+            <a name="//apple_ref/cpp/Field/UI" class="dashAnchor"></a>
+            <h5><a href="#UI">UI</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.UI &lt;cp.prop: axuielement; read-only; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>The <code>axuielement</code> for the window.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="viewerGroupUI">
+            <a name="//apple_ref/cpp/Field/viewerGroupUI" class="dashAnchor"></a>
+            <h5><a href="#viewerGroupUI">viewerGroupUI</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow.viewerGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Field</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>The UI element that will contain the <code>Viewer</code> if it's on the Secondary Window.</p>
+</td>
+              </tr>
+            </table>
+          </section>
+        <h4 class="documentation-section">Methods</h4>
+          <section id="app">
+            <a name="//apple_ref/cpp/Method/app" class="dashAnchor"></a>
+            <h5><a href="#app">app</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow:app() -&gt; App</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Returns the app instance representing Final Cut Pro.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>App</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="show">
+            <a name="//apple_ref/cpp/Method/show" class="dashAnchor"></a>
+            <h5><a href="#show">show</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow:show() -&gt; SecondaryWindow</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Show the Secondary Window.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>SecondaryWindow</code> object.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>
+          <section id="window">
+            <a name="//apple_ref/cpp/Method/window" class="dashAnchor"></a>
+            <h5><a href="#window">window</a></h5>
+            <table>
+              <tr>
+                <th>Signature</th>
+                <td><code>cp.apple.finalcutpro.main.SecondaryWindow:window() -&gt; cp.ui.Window</code></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>Method</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td><p>Returns the <code>Window</code> instance.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>Window</code> instance.</li>
+</ul>
+</td>
+              </tr>
+            </table>
+          </section>

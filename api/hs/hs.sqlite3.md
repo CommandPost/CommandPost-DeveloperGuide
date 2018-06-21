@@ -1,14 +1,24 @@
-# [docs](index.md) » hs.sqlite3
----
+    <style type="text/css">
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+      td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+      table { width: 100% ; border: 1px solid #0; text-align: left; }
+      section > table table td { width: 0; }
+    </style>
+    <link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+    <header>
+      <h1><a href="hs.sqlite3.md">docs</a> &raquo; hs.sqlite3</h1>
+      <p>Interact with SQLite databases</p>
+<p>Notes:</p>
+<ul>
+<li>This module is LSQLite 0.9.4 as found at <a href="http://lua.sqlite.org/index.cgi/index">http://lua.sqlite.org/index.cgi/index</a></li>
+<li>It is unmodified apart from removing <code>db:load_extension()</code> as this feature is not available in Apple's libsqlite3.dylib</li>
+<li>For API documentation please see <a href="http://lua.sqlite.org">http://lua.sqlite.org</a></li>
+</ul>
 
-Interact with SQLite databases
-
-Notes:
- * This module is LSQLite 0.9.4 as found at http://lua.sqlite.org/index.cgi/index
- * It is unmodified apart from removing `db:load_extension()` as this feature is not available in Apple's libsqlite3.dylib
- * For API documentation please see [http://lua.sqlite.org](http://lua.sqlite.org)
-
-## API Overview
-
-## API Documentation
-
+      </header>
+      <h3>API Overview</h3>
+      <ul>
+      </ul>
+      <h3>API Documentation</h3>
