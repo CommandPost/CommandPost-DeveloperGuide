@@ -11,20 +11,66 @@ Tile windows
 The `tileWindows` function in this module is primarily meant for use by `hs.window.layout`; however you can call it manually
 (e.g. for your custom layout engine).
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [tileWindows](#tilewindows)
-
-## API Documentation
-
-### Functions
-
-#### [tileWindows](#tilewindows)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.tiling.tileWindows(windows,rect[,desiredAspect[,processInOrder[,preserveRelativeArea[,animationDuration]]]])` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Tile (or fit) windows into a rect                                                                                         |
-| **Parameters**                                       | <ul><li>windows - a list of <code>hs.window</code> objects indicating the windows to tile or fit</li></ul><ul><li>rect - an <code>hs.geometry</code> rect (or constructor argument), indicating the desired onscreen region that the windows will be tiled within</li></ul><ul><li>desiredAspect - (optional) an <code>hs.geometry</code> size (or constructor argument) or a number, indicating the desired optimal aspect ratio (width/height) of the tiled</li></ul><pre><code>windows; the tiling engine will decide how to subdivide the rect among windows by trying to maintain every window's aspect ratio</code></pre><pre><code>as close as possible to this; if omitted, defaults to 1 (i.e. try to keep the windows as close to square as possible)</code></pre><ul><li>processInOrder - (optional) if <code>true</code>, windows will be placed left-to-right and top-to-bottom following the list order in <code>windows</code>;</li></ul><pre><code>if `false` or omitted, the tiling engine will try to maintain the spatial distribution of windows, i.e. (roughly speaking) pick</code></pre><pre><code>the closest window for each destination "tile"; note that in some cases this isn't possible and the windows might get "reshuffled" around in unexpected ways</code></pre><ul><li>preserveRelativeArea - (optional) if <code>true</code>, preserve the relative area among windows; that is, if window A is currently twice as large</li></ul><pre><code>as window B, the same will be true after both windows have been processed and placed into the rect; if `false` or omitted, all windows</code></pre><pre><code>will have the same area (= area of the rect / number of windows) after processing</code></pre><ul><li>animationDuration - (optional) the number of seconds to animate the move/resize operations of the windows; if omitted, defaults to</li></ul><pre><code>the value of `hs.window.animationDuration`</code></pre>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>To ensure all windows are placed in a row (side by side), use a very small aspect ratio (for "tall and narrow" windows) like 0.01;</li></ul><pre><code>similarly, to have all windows in a column, use a very large aspect ratio (for "short and wide") like 100</code></pre><ul><li>Hidden and minimized windows will be processed as well: the rect will have "gaps" where the invisible windows</li></ul><pre><code>would lie, that will get filled as the windows get unhidden/unminimized</code></pre>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#tileWindows">tileWindows</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="tileWindows">
+	<h5><a href="#tileWindows">tileWindows</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.window.tiling.tileWindows(windows,rect[,desiredAspect[,processInOrder[,preserveRelativeArea[,animationDuration]]]])</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Tile (or fit) windows into a rect</p>
+<p>Parameters:</p>
+<ul>
+<li>windows - a list of <code>hs.window</code> objects indicating the windows to tile or fit</li>
+<li>rect - an <code>hs.geometry</code> rect (or constructor argument), indicating the desired onscreen region that the windows will be tiled within</li>
+<li>desiredAspect - (optional) an <code>hs.geometry</code> size (or constructor argument) or a number, indicating the desired optimal aspect ratio (width/height) of the tiled
+windows; the tiling engine will decide how to subdivide the rect among windows by trying to maintain every window's aspect ratio
+as close as possible to this; if omitted, defaults to 1 (i.e. try to keep the windows as close to square as possible)</li>
+<li>processInOrder - (optional) if <code>true</code>, windows will be placed left-to-right and top-to-bottom following the list order in <code>windows</code>;
+if <code>false</code> or omitted, the tiling engine will try to maintain the spatial distribution of windows, i.e. (roughly speaking) pick
+the closest window for each destination "tile"; note that in some cases this isn't possible and the windows might get "reshuffled" around in unexpected ways</li>
+<li>preserveRelativeArea - (optional) if <code>true</code>, preserve the relative area among windows; that is, if window A is currently twice as large
+as window B, the same will be true after both windows have been processed and placed into the rect; if <code>false</code> or omitted, all windows
+will have the same area (= area of the rect / number of windows) after processing</li>
+<li>animationDuration - (optional) the number of seconds to animate the move/resize operations of the windows; if omitted, defaults to
+the value of <code>hs.window.animationDuration</code></li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>To ensure all windows are placed in a row (side by side), use a very small aspect ratio (for "tall and narrow" windows) like 0.01;
+similarly, to have all windows in a column, use a very large aspect ratio (for "short and wide") like 100</li>
+<li>Hidden and minimized windows will be processed as well: the rect will have "gaps" where the invisible windows
+would lie, that will get filled as the windows get unhidden/unminimized</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

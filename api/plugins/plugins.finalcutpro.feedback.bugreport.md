@@ -3,50 +3,127 @@
 
 Sends Apple a Bug Report or Feature Request for Final Cut Pro.
 
-## API Overview
-* Constants - Useful values which cannot be changed
- * [DEFAULT_HEIGHT](#default_height)
- * [DEFAULT_TITLE](#default_title)
- * [DEFAULT_WIDTH](#default_width)
- * [DEFAULT_WINDOW_STYLE](#default_window_style)
-* Functions - API calls offered directly by the extension
- * [open](#open)
-
-## API Documentation
-
-### Constants
-
-#### [DEFAULT_HEIGHT](#default_height)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_HEIGHT -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Height                                                                                         |
-
-#### [DEFAULT_TITLE](#default_title)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_TITLE -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Title                                                                                         |
-
-#### [DEFAULT_WIDTH](#default_width)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_WIDTH -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Width                                                                                         |
-
-#### [DEFAULT_WINDOW_STYLE](#default_window_style)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_WINDOW_STYLE -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Style                                                                                         |
-
-### Functions
-
-#### [open](#open)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.open(bugReport) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Opens Final Cut Pro Feedback Screen                                                                                         |
-| **Parameters**                                       | <ul><li>bugReport - Is it a bug report or an enhancement request?</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Constants - Useful values which cannot be changed</li>
+  <ul>
+	<li><a href="#DEFAULT_HEIGHT">DEFAULT_HEIGHT</a></li>
+	<li><a href="#DEFAULT_TITLE">DEFAULT_TITLE</a></li>
+	<li><a href="#DEFAULT_WIDTH">DEFAULT_WIDTH</a></li>
+	<li><a href="#DEFAULT_WINDOW_STYLE">DEFAULT_WINDOW_STYLE</a></li>
+  </ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#open">open</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Constants</h4>
+  <section id="DEFAULT_HEIGHT">
+	<h5><a href="#DEFAULT_HEIGHT">DEFAULT_HEIGHT</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.feedback.bugreport.DEFAULT_HEIGHT -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Default Window Height</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="DEFAULT_TITLE">
+	<h5><a href="#DEFAULT_TITLE">DEFAULT_TITLE</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.feedback.bugreport.DEFAULT_TITLE -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Default Window Title</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="DEFAULT_WIDTH">
+	<h5><a href="#DEFAULT_WIDTH">DEFAULT_WIDTH</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.feedback.bugreport.DEFAULT_WIDTH -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Default Window Width</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="DEFAULT_WINDOW_STYLE">
+	<h5><a href="#DEFAULT_WINDOW_STYLE">DEFAULT_WINDOW_STYLE</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.feedback.bugreport.DEFAULT_WINDOW_STYLE -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Default Window Style</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Functions</h4>
+  <section id="open">
+	<h5><a href="#open">open</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.feedback.bugreport.open(bugReport) -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Opens Final Cut Pro Feedback Screen</p>
+<p>Parameters:</p>
+<ul>
+<li>bugReport - Is it a bug report or an enhancement request?</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

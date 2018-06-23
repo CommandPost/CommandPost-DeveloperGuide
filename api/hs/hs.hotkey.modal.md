@@ -10,81 +10,256 @@ function k:exited()  hs.alert'Exited mode'  end
 k:bind('', 'escape', function() k:exit() end)
 k:bind('', 'J', 'Pressed J',function() print'let the record show that J was pressed' end)
 
-## API Overview
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [bind](#bind)
- * [delete](#delete)
- * [enter](#enter)
- * [entered](#entered)
- * [exit](#exit)
- * [exited](#exited)
-
-## API Documentation
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal.new(mods, key, message) -> hs.hotkey.modal object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new modal state, optionally with a global keyboard combination to trigger it                                                                                         |
-| **Parameters**                                       | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li></ul><p>which should be zero or more of the following:</p><ul><li>"cmd", "command" or "⌘"</li></ul><ul><li>"ctrl", "control" or "⌃"</li></ul><ul><li>"alt", "option" or "⌥"</li></ul><ul><li>"shift" or "⇧"</li></ul><ul><li>key - A string containing the name of a keyboard key (as found in <a href="hs.keycodes.html#map">hs.keycodes.map</a> ), or a raw keycode number</li></ul><ul><li>message - A string containing a message to be displayed via <code>hs.alert()</code> when the hotkey has been triggered, or nil for no alert</li></ul>   |
-| **Returns**                                          | <ul><li>A new <code>hs.hotkey.modal</code> object</li></ul>            |
-| **Notes**                                            | <ul><li>If <code>key</code> is nil, no global hotkey will be registered (all other parameters will be ignored)</li></ul>                 |
-
-### Methods
-
-#### [bind](#bind)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:bind(mods, key, message, pressedfn, releasedfn, repeatfn) -> hs.hotkey.modal object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a hotkey that is enabled/disabled as the modal is entered/exited                                                                                         |
-| **Parameters**                                       | <ul><li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,</li></ul><p>which should be zero or more of the following:</p><ul><li>"cmd", "command" or "⌘"</li></ul><ul><li>"ctrl", "control" or "⌃"</li></ul><ul><li>"alt", "option" or "⌥"</li></ul><ul><li>"shift" or "⇧"</li></ul><ul><li>key - A string containing the name of a keyboard key (as found in <a href="hs.keycodes.html#map">hs.keycodes.map</a> ), or a raw keycode number</li></ul><ul><li>message - A string containing a message to be displayed via <code>hs.alert()</code> when the hotkey has been triggered, or nil for no alert</li></ul><ul><li>pressedfn - A function that will be called when the hotkey has been pressed, or nil</li></ul><ul><li>releasedfn - A function that will be called when the hotkey has been released, or nil</li></ul><ul><li>repeatfn - A function that will be called when a pressed hotkey is repeating, or nil</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.hotkey.modal</code> object for method chaining</li></ul>            |
-
-#### [delete](#delete)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:delete()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Deletes a modal hotkey object without calling :exited()                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [enter](#enter)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:enter() -> hs.hotkey.modal object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Enters a modal state                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.hotkey.modal</code> object for method chaining</li></ul>            |
-| **Notes**                                            | <ul><li>This method will enable all of the hotkeys defined in the modal state via <code>hs.hotkey.modal:bind()</code>,</li></ul><p>and disable the hotkey that entered the modal state (if one was defined)</p><ul><li>If the modal state was created with a keyboard combination, this method will be called automatically</li></ul>                 |
-
-#### [entered](#entered)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:entered()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Optional callback for when a modal is entered                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>This is a pre-existing function that you should override if you need to use it; the default implementation does nothing.</li></ul>                 |
-
-#### [exit](#exit)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:exit() -> hs.hotkey.modal object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Exits a modal state                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.hotkey.modal</code> object for method chaining</li></ul>            |
-| **Notes**                                            | <ul><li>This method will disable all of the hotkeys defined in the modal state, and enable the hotkey for entering the modal state (if one was defined)</li></ul>                 |
-
-#### [exited](#exited)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hotkey.modal:exited()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Optional callback for when a modal is exited                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>This is a pre-existing function that you should override if you need to use it; the default implementation does nothing.</li></ul>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Constructors - API calls which return an object, typically one that offers API methods</li>
+  <ul>
+	<li><a href="#new">new</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#bind">bind</a></li>
+	<li><a href="#delete">delete</a></li>
+	<li><a href="#enter">enter</a></li>
+	<li><a href="#entered">entered</a></li>
+	<li><a href="#exit">exit</a></li>
+	<li><a href="#exited">exited</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Constructors</h4>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.hotkey.modal.new(mods, key, message) -&gt; hs.hotkey.modal object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constructor</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a new modal state, optionally with a global keyboard combination to trigger it</p>
+<p>Parameters:</p>
+<ul>
+<li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,
+which should be zero or more of the following:<ul>
+<li>"cmd", "command" or "⌘"</li>
+<li>"ctrl", "control" or "⌃"</li>
+<li>"alt", "option" or "⌥"</li>
+<li>"shift" or "⇧"</li>
+</ul>
+</li>
+<li>key - A string containing the name of a keyboard key (as found in <a href="hs.keycodes.html#map">hs.keycodes.map</a> ), or a raw keycode number</li>
+<li>message - A string containing a message to be displayed via <code>hs.alert()</code> when the hotkey has been triggered, or nil for no alert</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A new <code>hs.hotkey.modal</code> object</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>If <code>key</code> is nil, no global hotkey will be registered (all other parameters will be ignored)</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="bind">
+	<h5><a href="#bind">bind</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.hotkey.modal:bind(mods, key, message, pressedfn, releasedfn, repeatfn) -&gt; hs.hotkey.modal object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a hotkey that is enabled/disabled as the modal is entered/exited</p>
+<p>Parameters:</p>
+<ul>
+<li>mods - A table or a string containing (as elements, or as substrings with any separator) the keyboard modifiers required,
+which should be zero or more of the following:<ul>
+<li>"cmd", "command" or "⌘"</li>
+<li>"ctrl", "control" or "⌃"</li>
+<li>"alt", "option" or "⌥"</li>
+<li>"shift" or "⇧"</li>
+</ul>
+</li>
+<li>key - A string containing the name of a keyboard key (as found in <a href="hs.keycodes.html#map">hs.keycodes.map</a> ), or a raw keycode number</li>
+<li>message - A string containing a message to be displayed via <code>hs.alert()</code> when the hotkey has been triggered, or nil for no alert</li>
+<li>pressedfn - A function that will be called when the hotkey has been pressed, or nil</li>
+<li>releasedfn - A function that will be called when the hotkey has been released, or nil</li>
+<li>repeatfn - A function that will be called when a pressed hotkey is repeating, or nil</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.hotkey.modal</code> object for method chaining</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="delete">
+	<h5><a href="#delete">delete</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.hotkey.modal:delete()</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Deletes a modal hotkey object without calling :exited()</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="enter">
+	<h5><a href="#enter">enter</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.hotkey.modal:enter() -&gt; hs.hotkey.modal object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Enters a modal state</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.hotkey.modal</code> object for method chaining</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This method will enable all of the hotkeys defined in the modal state via <code>hs.hotkey.modal:bind()</code>,
+and disable the hotkey that entered the modal state (if one was defined)</li>
+<li>If the modal state was created with a keyboard combination, this method will be called automatically</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="entered">
+	<h5><a href="#entered">entered</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.hotkey.modal:entered()</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Optional callback for when a modal is entered</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This is a pre-existing function that you should override if you need to use it; the default implementation does nothing.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="exit">
+	<h5><a href="#exit">exit</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.hotkey.modal:exit() -&gt; hs.hotkey.modal object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Exits a modal state</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.hotkey.modal</code> object for method chaining</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This method will disable all of the hotkeys defined in the modal state, and enable the hotkey for entering the modal state (if one was defined)</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="exited">
+	<h5><a href="#exited">exited</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.hotkey.modal:exited()</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Optional callback for when a modal is exited</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This is a pre-existing function that you should override if you need to use it; the default implementation does nothing.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

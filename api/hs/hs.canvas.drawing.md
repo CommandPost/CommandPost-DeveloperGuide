@@ -13,20 +13,55 @@ The intention is for this wrapper to provide all of the same functionality that 
 
 The wrapper is not enabled by default.  See the `hs.canvas.drawingWrapper` function for details on how to enable or disable this wrapper.
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [drawingWrapper](#drawingwrapper)
-
-## API Documentation
-
-### Functions
-
-#### [drawingWrapper](#drawingwrapper)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.drawingWrapper([state]) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Get or set whether or not `hs.drawing` is replaced by a wrapper which uses this module.                                                                                         |
-| **Parameters**                                       | <ul><li><code>state</code> - an optional boolean specifying whether or not <code>hs.drawing</code> should be replaced with a wrapper using this module.</li></ul>   |
-| **Returns**                                          | <ul><li>the current, possibly newly changed, state.</li></ul>            |
-| **Notes**                                            | <ul><li>This module was designed to address some of the limitations found with the <code>hs.drawing</code> module.  It is expected that at some point this module may completely replace the existing <code>hs.drawing</code> as it provides more flexibility and will be easier to extend with future additions. This function allows you to choose whether or not you wish to migrate fully to this new drawing model now to facilitate the testing of the wrapper or not.</li></ul><ul><li>This wrapper was designed to fully mimic the current <code>hs.drawing</code> functions and methods -- you should not need to change your existing code in any way once this wrapper is enabled.  If you find that you do need to make adjustments or that something in the wrapper does not work as expected, please log an issue at https://github.com/Hammerspoon/hammerspoon/issues.</li></ul>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#drawingWrapper">drawingWrapper</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="drawingWrapper">
+	<h5><a href="#drawingWrapper">drawingWrapper</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.canvas.drawingWrapper([state]) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Get or set whether or not <code>hs.drawing</code> is replaced by a wrapper which uses this module.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>state</code> - an optional boolean specifying whether or not <code>hs.drawing</code> should be replaced with a wrapper using this module.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the current, possibly newly changed, state.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This module was designed to address some of the limitations found with the <code>hs.drawing</code> module.  It is expected that at some point this module may completely replace the existing <code>hs.drawing</code> as it provides more flexibility and will be easier to extend with future additions. This function allows you to choose whether or not you wish to migrate fully to this new drawing model now to facilitate the testing of the wrapper or not.</li>
+<li><p>This wrapper was designed to fully mimic the current <code>hs.drawing</code> functions and methods -- you should not need to change your existing code in any way once this wrapper is enabled.  If you find that you do need to make adjustments or that something in the wrapper does not work as expected, please log an issue at <a href="https://github.com/Hammerspoon/hammerspoon/issues">https://github.com/Hammerspoon/hammerspoon/issues</a>.</p>
+</li>
+<li><p>When you change the wrapper state with this function, you must reload or restart your Hammerspoon application for the changes to go into effect.  It is expected that you will run this command from the Hammerspoon console like <code>hs.canvas.drawingWrapper(true)</code> and then reload your Hammerspoon configuration.  You will not need to do this again unless you wish to change back to the original <code>hs.drawing</code> module.</p>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

@@ -3,114 +3,343 @@
 
 Simple controls for the MiLight LED WiFi bridge (also known as LimitlessLED and EasyBulb)
 
-## API Overview
-* Constants - Useful values which cannot be changed
- * [maxBrightness](#maxbrightness)
- * [minBrightness](#minbrightness)
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [delete](#delete)
- * [disco](#disco)
- * [send](#send)
- * [zoneBrightness](#zonebrightness)
- * [zoneColor](#zonecolor)
- * [zoneOff](#zoneoff)
- * [zoneOn](#zoneon)
- * [zoneWhite](#zonewhite)
-
-## API Documentation
-
-### Constants
-
-#### [maxBrightness](#maxbrightness)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight.maxBrightness` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Specifies the maximum brightness value that can be used. Defaults to 25                                                                                         |
-
-#### [minBrightness](#minbrightness)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight.minBrightness` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Specifies the minimum brightness value that can be used. Defaults to 0                                                                                         |
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight.new(ip[, port]) -> bridge` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new bridge object, which will be connected to the supplied IP address and port                                                                                         |
-| **Parameters**                                       | <ul><li>ip - A string containing the IP address of the MiLight WiFi bridge device. For convenience this can be the broadcast address of your network (e.g. 192.168.0.255)</li></ul><ul><li>port - An optional number containing the UDP port to talk to the bridge on. Defaults to 8899</li></ul>   |
-| **Returns**                                          | <ul><li>An <code>hs.milight</code> object</li></ul>            |
-| **Notes**                                            | <ul><li>You can not use 255.255.255.255 as the IP address, to do so requires elevated privileges for the Hammerspoon process</li></ul>                 |
-
-### Methods
-
-#### [delete](#delete)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:delete()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Deletes an `hs.milight` object                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [disco](#disco)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:disco() -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Cycles through the disco modes                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>True if the command was sent correctly, otherwise false</li></ul>            |
-
-#### [send](#send)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:send(cmd[, value]) -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sends a command to the bridge                                                                                         |
-| **Parameters**                                       | <ul><li>cmd - A command from the <code>hs.milight.cmd</code> table</li></ul><ul><li>value - An optional value, if appropriate for the command (defaults to 0x00)</li></ul>   |
-| **Returns**                                          | <ul><li>True if the command was sent, otherwise false</li></ul>            |
-| **Notes**                                            | <ul><li>This is a low level command, you typically should use a specific method for the operation you want to perform</li></ul>                 |
-
-#### [zoneBrightness](#zonebrightness)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:zoneBrightness(zone, value) -> integer` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets brightness for the specified zone                                                                                         |
-| **Parameters**                                       | <ul><li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li></ul><ul><li>value - A number containing the brightness level to set, between <code>hs.milight.minBrightness</code> and <code>hs.milight.maxBrightness</code></li></ul>   |
-| **Returns**                                          | <ul><li>A number containing the value that was sent to the WiFi bridge, or -1 if an error occurred</li></ul>            |
-
-#### [zoneColor](#zonecolor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:zoneColor(zone, value) -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets RGB color for the specified zone                                                                                         |
-| **Parameters**                                       | <ul><li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li></ul><ul><li>value - A number between 0 and 255 that represents a color</li></ul>   |
-| **Returns**                                          | <ul><li>True if the command was sent correctly, otherwise false</li></ul>            |
-| **Notes**                                            | <ul><li>The color value is not a normal RGB colour, but rather a lookup in an internal table in the light hardware. While any number between 0 and 255 is valid, there are some useful values worth knowing:</li></ul><ul><li>00 - Violet</li></ul><ul><li>16 - Royal Blue</li></ul><ul><li>32 - Baby Blue</li></ul><ul><li>48 - Aqua</li></ul><ul><li>64 - Mint Green</li></ul><ul><li>80 - Seafoam Green</li></ul><ul><li>96 - Green</li></ul><ul><li>112 - Lime Green</li></ul><ul><li>128 - Yellow</li></ul><ul><li>144 - Yellowy Orange</li></ul><ul><li>160 - Orange</li></ul><ul><li>176 - Red</li></ul><ul><li>194 - Pink</li></ul><ul><li>210 - Fuscia</li></ul><ul><li>226 - Lilac</li></ul><ul><li>240 - Lavendar</li></ul>                 |
-
-#### [zoneOff](#zoneoff)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:zoneOff(zone) -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Turns off the specified zone                                                                                         |
-| **Parameters**                                       | <ul><li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li></ul>   |
-| **Returns**                                          | <ul><li>True if the command was sent correctly, otherwise false</li></ul>            |
-
-#### [zoneOn](#zoneon)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:zoneOn(zone) -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Turns on the specified zone                                                                                         |
-| **Parameters**                                       | <ul><li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li></ul>   |
-| **Returns**                                          | <ul><li>True if the command was sent correctly, otherwise false</li></ul>            |
-
-#### [zoneWhite](#zonewhite)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.milight:zoneWhite(zone) -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the specified zone to white                                                                                         |
-| **Parameters**                                       | <ul><li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li></ul>   |
-| **Returns**                                          | <ul><li>True if the command was sent correctly, otherwise false</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Constants - Useful values which cannot be changed</li>
+  <ul>
+	<li><a href="#maxBrightness">maxBrightness</a></li>
+	<li><a href="#minBrightness">minBrightness</a></li>
+  </ul>
+<li>Constructors - API calls which return an object, typically one that offers API methods</li>
+  <ul>
+	<li><a href="#new">new</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#delete">delete</a></li>
+	<li><a href="#disco">disco</a></li>
+	<li><a href="#send">send</a></li>
+	<li><a href="#zoneBrightness">zoneBrightness</a></li>
+	<li><a href="#zoneColor">zoneColor</a></li>
+	<li><a href="#zoneOff">zoneOff</a></li>
+	<li><a href="#zoneOn">zoneOn</a></li>
+	<li><a href="#zoneWhite">zoneWhite</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Constants</h4>
+  <section id="maxBrightness">
+	<h5><a href="#maxBrightness">maxBrightness</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight.maxBrightness</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Specifies the maximum brightness value that can be used. Defaults to 25</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="minBrightness">
+	<h5><a href="#minBrightness">minBrightness</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight.minBrightness</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Specifies the minimum brightness value that can be used. Defaults to 0</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Constructors</h4>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight.new(ip[, port]) -&gt; bridge</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constructor</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a new bridge object, which will be connected to the supplied IP address and port</p>
+<p>Parameters:</p>
+<ul>
+<li>ip - A string containing the IP address of the MiLight WiFi bridge device. For convenience this can be the broadcast address of your network (e.g. 192.168.0.255)</li>
+<li>port - An optional number containing the UDP port to talk to the bridge on. Defaults to 8899</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>An <code>hs.milight</code> object</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>You can not use 255.255.255.255 as the IP address, to do so requires elevated privileges for the Hammerspoon process</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="delete">
+	<h5><a href="#delete">delete</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:delete()</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Deletes an <code>hs.milight</code> object</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="disco">
+	<h5><a href="#disco">disco</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:disco() -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Cycles through the disco modes</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if the command was sent correctly, otherwise false</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="send">
+	<h5><a href="#send">send</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:send(cmd[, value]) -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sends a command to the bridge</p>
+<p>Parameters:</p>
+<ul>
+<li>cmd - A command from the <code>hs.milight.cmd</code> table</li>
+<li>value - An optional value, if appropriate for the command (defaults to 0x00)</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if the command was sent, otherwise false</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This is a low level command, you typically should use a specific method for the operation you want to perform</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="zoneBrightness">
+	<h5><a href="#zoneBrightness">zoneBrightness</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:zoneBrightness(zone, value) -&gt; integer</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets brightness for the specified zone</p>
+<p>Parameters:</p>
+<ul>
+<li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li>
+<li>value - A number containing the brightness level to set, between <code>hs.milight.minBrightness</code> and <code>hs.milight.maxBrightness</code></li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A number containing the value that was sent to the WiFi bridge, or -1 if an error occurred</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="zoneColor">
+	<h5><a href="#zoneColor">zoneColor</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:zoneColor(zone, value) -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets RGB color for the specified zone</p>
+<p>Parameters:</p>
+<ul>
+<li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li>
+<li>value - A number between 0 and 255 that represents a color</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if the command was sent correctly, otherwise false</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The color value is not a normal RGB colour, but rather a lookup in an internal table in the light hardware. While any number between 0 and 255 is valid, there are some useful values worth knowing:<ul>
+<li>00 - Violet</li>
+<li>16 - Royal Blue</li>
+<li>32 - Baby Blue</li>
+<li>48 - Aqua</li>
+<li>64 - Mint Green</li>
+<li>80 - Seafoam Green</li>
+<li>96 - Green</li>
+<li>112 - Lime Green</li>
+<li>128 - Yellow</li>
+<li>144 - Yellowy Orange</li>
+<li>160 - Orange</li>
+<li>176 - Red</li>
+<li>194 - Pink</li>
+<li>210 - Fuscia</li>
+<li>226 - Lilac</li>
+<li>240 - Lavendar</li>
+</ul>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="zoneOff">
+	<h5><a href="#zoneOff">zoneOff</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:zoneOff(zone) -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Turns off the specified zone</p>
+<p>Parameters:</p>
+<ul>
+<li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if the command was sent correctly, otherwise false</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="zoneOn">
+	<h5><a href="#zoneOn">zoneOn</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:zoneOn(zone) -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Turns on the specified zone</p>
+<p>Parameters:</p>
+<ul>
+<li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if the command was sent correctly, otherwise false</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="zoneWhite">
+	<h5><a href="#zoneWhite">zoneWhite</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.milight:zoneWhite(zone) -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the specified zone to white</p>
+<p>Parameters:</p>
+<ul>
+<li>zone - A number specifying which zone to operate on. 0 for all zones, 1-4 for zones one through four</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if the command was sent correctly, otherwise false</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

@@ -29,213 +29,670 @@ The following labels are used to describe tables which are used by functions and
    * `notifyOnEntry` - a boolean specifying whether or not a callback with the "didEnterRegion" message should be generated when the machine enters the region. When not specified in a table being used as an argument, this defaults to true.
    * `notifyOnExit`  - a boolean specifying whether or not a callback with the "didExitRegion" message should be generated when the machine exits the region. When not specified in a table being used as an argument, this defaults to true.
 
-## Submodules
- * [hs.location.geocoder](hs.location.geocoder.md)
-
-## API Overview
-* Functions - API calls offered directly by the extension
- * [authorizationStatus](#authorizationstatus)
- * [distance](#distance)
- * [get](#get)
- * [register](#register)
- * [servicesEnabled](#servicesenabled)
- * [start](#start)
- * [stop](#stop)
- * [sunrise](#sunrise)
- * [sunset](#sunset)
- * [unregister](#unregister)
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [addMonitoredRegion](#addmonitoredregion)
- * [callback](#callback)
- * [currentRegion](#currentregion)
- * [distanceFrom](#distancefrom)
- * [location](#location)
- * [monitoredRegions](#monitoredregions)
- * [removeMonitoredRegion](#removemonitoredregion)
- * [startTracking](#starttracking)
- * [stopTracking](#stoptracking)
-
-## API Documentation
-
-### Functions
-
-#### [authorizationStatus](#authorizationstatus)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.authorizationStatus() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a string describing the authorization status of Hammerspoon's use of Location Services.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>a string matching one of the following:</li></ul><ul><li>"undefined"  - The user has not yet made a choice regarding whether Hammerspoon can use location services.</li></ul><ul><li>"restricted" - Hammerspoon is not authorized to use location services. The user cannot change this status, possibly due to active restrictions such as parental controls being in place.</li></ul><ul><li>"denied"     - The user explicitly denied the use of location services for Hammerspoon or location services are currently disabled in System Preferences.</li></ul><ul><li>"authorized" - Hammerspoon is authorized to use location services.</li></ul>            |
-| **Notes**                                            | <ul><li>The first time you use a function which requires Location Services, you will be prompted to grant Hammerspoon access. If you wish to change this permission after the initial prompt, you may do so from the Location Services section of the Security &amp; Privacy section in the System Preferences application.</li></ul>                 |
-
-#### [distance](#distance)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.distance(from, to) -> meters` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Measures the distance between two points of latitude and longitude                                                                                         |
-| **Parameters**                                       | <ul><li><code>from</code> - A locationTable as described in the module header</li></ul><ul><li><code>to</code>   - A locationTable as described in the module header</li></ul>   |
-| **Returns**                                          | <ul><li>A number containing the distance between <code>from</code> and <code>to</code> in meters. The measurement is made by tracing a line that follows an idealised curvature of the earth</li></ul>            |
-| **Notes**                                            | <ul><li>This function does not require Location Services to be enabled for Hammerspoon.</li></ul>                 |
-
-#### [get](#get)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.get() -> locationTable or nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table representing the current location                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>If successful, a locationTable as described in the module header, otherwise nil.</li></ul>            |
-| **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul><ul><li>If access to Location Services is enabled for Hammerspoon, this function will return the most recent cached data for the computer's location.</li></ul><ul><li>Internally, the Location Services cache is updated whenever additional WiFi networks are detected or lost (not necessarily joined). When update tracking is enabled with the <a href="#start">hs.location.start</a> function, calculations based upon the RSSI of all currently seen networks are preformed more often to provide a more precise fix, but it's still based on the WiFi networks near you.</li></ul>                 |
-
-#### [register](#register)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.register(tag, fn[, distance])` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Registers a callback function to be called when the system location is updated                                                                                         |
-| **Parameters**                                       | <ul><li><code>tag</code>      - A string containing a unique tag, used to identify the callback later</li></ul><ul><li><code>fn</code>       - A function to be called when the system location is updated. The function should expect a single argument which will be a locationTable as described in the module header.</li></ul><ul><li><code>distance</code> - An optional number containing the minimum distance in meters that the system should have moved, before calling the callback. Defaults to 0</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [servicesEnabled](#servicesenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.servicesEnabled() -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets the state of OS X Location Services                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>True if Location Services are enabled, otherwise false</li></ul>            |
-
-#### [start](#start)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.start() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Begins location tracking using OS X's Location Services so that registered callback functions can be invoked as the computer location changes.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>True if the operation succeeded, otherwise false</li></ul>            |
-| **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                 |
-
-#### [stop](#stop)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.stop()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Stops location tracking.  Registered callback functions will cease to receive notification of location changes.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [sunrise](#sunrise)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.sunrise(latitude, longitude, offset[, date]) -> number or string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the time of official sunrise for the supplied location                                                                                         |
-| **Parameters**                                       | <ul><li><code>latitude</code>  - A number containing a latitude</li></ul><ul><li><code>longitude</code> - A number containing a longitude</li></ul><ul><li><code>offset</code>    - A number containing the offset from UTC (in hours) for the given latitude/longitude</li></ul><ul><li><code>date</code>      - An optional table containing date information (equivalent to the output of <code>os.date("*t")</code>). Defaults to the current date</li></ul>   |
-| **Returns**                                          | <ul><li>A number containing the time of sunrise (represented as seconds since the epoch) for the given date. If no date is given, the current date is used. If the sun doesn't rise on the given day, the string "N/R" is returned.</li></ul>            |
-| **Notes**                                            | <ul><li>You can turn the return value into a more useful structure, with <code>os.date("*t", returnvalue)</code></li></ul><ul><li>For compatibility with the locationTable object returned by <a href="#get">hs.location.get</a>, this function can also be invoked as <code>hs.location.sunrise(locationTable, offset[, date])</code>.</li></ul>                 |
-
-#### [sunset](#sunset)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.sunset(latitude, longitude, offset[, date]) -> number or string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the time of official sunset for the supplied location                                                                                         |
-| **Parameters**                                       | <ul><li><code>latitude</code>  - A number containing a latitude</li></ul><ul><li><code>longitude</code> - A number containing a longitude</li></ul><ul><li><code>offset</code>    - A number containing the offset from UTC (in hours) for the given latitude/longitude</li></ul><ul><li><code>date</code>      - An optional table containing date information (equivalent to the output of <code>os.date("*t")</code>). Defaults to the current date</li></ul>   |
-| **Returns**                                          | <ul><li>A number containing the time of sunset (represented as seconds since the epoch) for the given date. If no date is given, the current date is used. If the sun doesn't set on the given day, the string "N/S" is returned.</li></ul>            |
-| **Notes**                                            | <ul><li>You can turn the return value into a more useful structure, with <code>os.date("*t", returnvalue)</code></li></ul><ul><li>For compatibility with the locationTable object returned by <a href="#get">hs.location.get</a>, this function can also be invoked as <code>hs.location.sunset(locationTable, offset[, date])</code>.</li></ul>                 |
-
-#### [unregister](#unregister)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.unregister(tag)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Unregisters a callback                                                                                         |
-| **Parameters**                                       | <ul><li><code>tag</code> - A string containing the unique tag a callback was registered with</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.new() -> locationObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Create a new location object which can receive callbacks independant of other Hammerspoon use of Location Services.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>a locationObject</li></ul>            |
-| **Notes**                                            | <ul><li>The locationObject created will receive callbacks independant of all other locationObjects and the legacy callback functions created with <a href="#register">hs.location.register</a>.  It can also receive callbacks for region changes which are not available through the legacy callback mechanism.</li></ul>                 |
-
-### Methods
-
-#### [addMonitoredRegion](#addmonitoredregion)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:addMonitoredRegion(regionTable) -> locationObject | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Adds a region to be monitored by Location Services                                                                                         |
-| **Parameters**                                       | <ul><li><code>regionTable</code> - a region table as described in the module header</li></ul>   |
-| **Returns**                                          | <ul><li>if the region table was able to be added to Location Services for monitoring, returns the locationObject; otherwise returns nil</li></ul>            |
-| **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul><ul><li>If the <code>identifier</code> key is not provided, a new UUID string is generated and used as the identifier.</li></ul><ul><li>If the <code>identifier</code> key matches an already monitored region, this region will replace the existing one.</li></ul>                 |
-
-#### [callback](#callback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:callback(fn | nil) -> locationObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets or removes the callback function for this locationObject                                                                                         |
-| **Parameters**                                       | <ul><li>a function, or nil to remove the current function, which will be invoked as a callback for messages generated by this locationObject.  The callback function should expect 3 or 4 arguments as follows:</li></ul><ul><li>the locationObject itself</li></ul><ul><li>a string specifying the message generated by the locationObject:</li></ul><pre><code> * "didChangeAuthorizationStatus" - the user has changed the authorization status for Hammerspoon's use of Location Services.  The third argument will be a string as described in the [hs.location.authorizationStatus](#authorizationStatus) function.</code></pre><pre><code> * "didUpdateLocations"           - the current location has changed or been refined.  This message will only occur if location tracking has been enabled with [hs.location:startTracking](#startTracking). The third argument will be a table containing one or more locationTables as array elements.  The most recent location update is contained in the last element of the array.</code></pre><pre><code> * "didFailWithError"             - there was an error retrieving location information. The third argument will be a string describing the error that occurred.</code></pre><pre><code> * "didStartMonitoringForRegion"  - a new region has successfully been added to the regions being monitored.  The third argument will be the regionTable for the region which was just added.</code></pre><pre><code> * "monitoringDidFailForRegion"   - an error occurred while trying to add a new region to the list of monitored regions. The third argument will be the regionTable for the region that could not be added, and the fourth argument will be a string containing an error message describing why monitoring for the region failed.</code></pre><pre><code> * "didEnterRegion"               - the current location has entered a region with the `notifyOnEntry` field set to true specified with the [hs.location:addMonitoredRegion](#addMonitoredRegion) method. The third argument will be the regionTable for the region entered.</code></pre><pre><code> * "didExitRegion"                - the current location has exited a region with the `notifyOnExit` field set to true specified with the [hs.location:addMonitoredRegion](#addMonitoredRegion) method. The third argument will be the regionTable for the region exited.</code></pre>   |
-| **Returns**                                          | <ul><li>the locationObject</li></ul>            |
-
-#### [currentRegion](#currentregion)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:currentRegion() -> identifier | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the string identifier for the current region                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>the string identifier for the region that the current location is within, or nil if the current location is not within a currently monitored region or location services cannot be enabled for Hammerspoon.</li></ul>            |
-| **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                 |
-
-#### [distanceFrom](#distancefrom)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:distanceFrom(locationTable) -> distance | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Enable callbacks for location changes/refinements for this locationObject                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>the distance the specified location is from the current location in meters or nil if Location Services cannot be enabled for Hammerspoon. The measurement is made by tracing a line that follows an idealised curvature of the earth</li></ul>            |
-| **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                 |
-
-#### [location](#location)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:location() -> locationTable | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the current location                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>If successful, a locationTable as described in the module header, otherwise nil.</li></ul>            |
-| **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul><ul><li>If access to Location Services is enabled for Hammerspoon, this function will return the most recent cached data for the computer's location.</li></ul><ul><li>Internally, the Location Services cache is updated whenever additional WiFi networks are detected or lost (not necessarily joined). When update tracking is enabled with the <a href="#start">hs.location.start</a> function, calculations based upon the RSSI of all currently seen networks are preformed more often to provide a more precise fix, but it's still based on the WiFi networks near you.</li></ul>                 |
-
-#### [monitoredRegions](#monitoredregions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:monitoredRegions() -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns a table containing the regionTables for the regions currently being monitored for this locationObject                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>if Location Services can be enabled for Hammerspoon, returns a table containing regionTables for each region which is being monitored for this locationObject; otherwise nil</li></ul>            |
-| **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                 |
-
-#### [removeMonitoredRegion](#removemonitoredregion)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:removeMonitoredRegion(identifier) -> locationObject | false | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Removes a monitored region from Location Services                                                                                         |
-| **Parameters**                                       | <ul><li><code>identifier</code> - a string which should contain the identifier of the region to remove from monitoring</li></ul>   |
-| **Returns**                                          | <ul><li>if the region identifier matches a currently monitored region, returns the locationObject; if it does not match a currently monitored region, returns false; returns nil if an error occurs or if Location Services is not currently active (no function or method which activates Location Services has been invoked yet) or enabled for Hammerspoon.</li></ul>            |
-| **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul><ul><li>If the <code>identifier</code> key is not provided, a new UUID string is generated and used as the identifier.</li></ul><ul><li>If the <code>identifier</code> key matches an already monitored region, this region will replace the existing one.</li></ul>                 |
-
-#### [startTracking](#starttracking)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:startTracking() -> locationObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Enable callbacks for location changes/refinements for this locationObject                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>the locationObject</li></ul>            |
-| **Notes**                                            | <ul><li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li></ul>                 |
-
-#### [stopTracking](#stoptracking)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:stopTracking() -> locationObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Disable callbacks for location changes/refinements for this locationObject                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>the locationObject</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>Submodules</h3>
+<ul>
+<li><a href="hs.location.geocoder.md">hs.location.geocoder</a></li>
+</ul>
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#authorizationStatus">authorizationStatus</a></li>
+	<li><a href="#distance">distance</a></li>
+	<li><a href="#get">get</a></li>
+	<li><a href="#register">register</a></li>
+	<li><a href="#servicesEnabled">servicesEnabled</a></li>
+	<li><a href="#start">start</a></li>
+	<li><a href="#stop">stop</a></li>
+	<li><a href="#sunrise">sunrise</a></li>
+	<li><a href="#sunset">sunset</a></li>
+	<li><a href="#unregister">unregister</a></li>
+  </ul>
+<li>Constructors - API calls which return an object, typically one that offers API methods</li>
+  <ul>
+	<li><a href="#new">new</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#addMonitoredRegion">addMonitoredRegion</a></li>
+	<li><a href="#callback">callback</a></li>
+	<li><a href="#currentRegion">currentRegion</a></li>
+	<li><a href="#distanceFrom">distanceFrom</a></li>
+	<li><a href="#location">location</a></li>
+	<li><a href="#monitoredRegions">monitoredRegions</a></li>
+	<li><a href="#removeMonitoredRegion">removeMonitoredRegion</a></li>
+	<li><a href="#startTracking">startTracking</a></li>
+	<li><a href="#stopTracking">stopTracking</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="authorizationStatus">
+	<h5><a href="#authorizationStatus">authorizationStatus</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.authorizationStatus() -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a string describing the authorization status of Hammerspoon's use of Location Services.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>a string matching one of the following:<ul>
+<li>"undefined"  - The user has not yet made a choice regarding whether Hammerspoon can use location services.</li>
+<li>"restricted" - Hammerspoon is not authorized to use location services. The user cannot change this status, possibly due to active restrictions such as parental controls being in place.</li>
+<li>"denied"     - The user explicitly denied the use of location services for Hammerspoon or location services are currently disabled in System Preferences.</li>
+<li>"authorized" - Hammerspoon is authorized to use location services.</li>
+</ul>
+</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The first time you use a function which requires Location Services, you will be prompted to grant Hammerspoon access. If you wish to change this permission after the initial prompt, you may do so from the Location Services section of the Security &amp; Privacy section in the System Preferences application.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="distance">
+	<h5><a href="#distance">distance</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.distance(from, to) -&gt; meters</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Measures the distance between two points of latitude and longitude</p>
+<p>Parameters:</p>
+<ul>
+<li><code>from</code> - A locationTable as described in the module header</li>
+<li><code>to</code>   - A locationTable as described in the module header</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A number containing the distance between <code>from</code> and <code>to</code> in meters. The measurement is made by tracing a line that follows an idealised curvature of the earth</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function does not require Location Services to be enabled for Hammerspoon.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="get">
+	<h5><a href="#get">get</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.get() -&gt; locationTable or nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a table representing the current location</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>If successful, a locationTable as described in the module header, otherwise nil.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+<li>If access to Location Services is enabled for Hammerspoon, this function will return the most recent cached data for the computer's location.<ul>
+<li>Internally, the Location Services cache is updated whenever additional WiFi networks are detected or lost (not necessarily joined). When update tracking is enabled with the <a href="#start">hs.location.start</a> function, calculations based upon the RSSI of all currently seen networks are preformed more often to provide a more precise fix, but it's still based on the WiFi networks near you.</li>
+</ul>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="register">
+	<h5><a href="#register">register</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.register(tag, fn[, distance])</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Registers a callback function to be called when the system location is updated</p>
+<p>Parameters:</p>
+<ul>
+<li><code>tag</code>      - A string containing a unique tag, used to identify the callback later</li>
+<li><code>fn</code>       - A function to be called when the system location is updated. The function should expect a single argument which will be a locationTable as described in the module header.</li>
+<li><code>distance</code> - An optional number containing the minimum distance in meters that the system should have moved, before calling the callback. Defaults to 0</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="servicesEnabled">
+	<h5><a href="#servicesEnabled">servicesEnabled</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.servicesEnabled() -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the state of OS X Location Services</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if Location Services are enabled, otherwise false</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="start">
+	<h5><a href="#start">start</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.start() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Begins location tracking using OS X's Location Services so that registered callback functions can be invoked as the computer location changes.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>True if the operation succeeded, otherwise false</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="stop">
+	<h5><a href="#stop">stop</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.stop()</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Stops location tracking.  Registered callback functions will cease to receive notification of location changes.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sunrise">
+	<h5><a href="#sunrise">sunrise</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.sunrise(latitude, longitude, offset[, date]) -&gt; number or string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the time of official sunrise for the supplied location</p>
+<p>Parameters:</p>
+<ul>
+<li><code>latitude</code>  - A number containing a latitude</li>
+<li><code>longitude</code> - A number containing a longitude</li>
+<li><code>offset</code>    - A number containing the offset from UTC (in hours) for the given latitude/longitude</li>
+<li><code>date</code>      - An optional table containing date information (equivalent to the output of <code>os.date("*t")</code>). Defaults to the current date</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A number containing the time of sunrise (represented as seconds since the epoch) for the given date. If no date is given, the current date is used. If the sun doesn't rise on the given day, the string "N/R" is returned.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>You can turn the return value into a more useful structure, with <code>os.date("*t", returnvalue)</code></li>
+<li>For compatibility with the locationTable object returned by <a href="#get">hs.location.get</a>, this function can also be invoked as <code>hs.location.sunrise(locationTable, offset[, date])</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sunset">
+	<h5><a href="#sunset">sunset</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.sunset(latitude, longitude, offset[, date]) -&gt; number or string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the time of official sunset for the supplied location</p>
+<p>Parameters:</p>
+<ul>
+<li><code>latitude</code>  - A number containing a latitude</li>
+<li><code>longitude</code> - A number containing a longitude</li>
+<li><code>offset</code>    - A number containing the offset from UTC (in hours) for the given latitude/longitude</li>
+<li><code>date</code>      - An optional table containing date information (equivalent to the output of <code>os.date("*t")</code>). Defaults to the current date</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A number containing the time of sunset (represented as seconds since the epoch) for the given date. If no date is given, the current date is used. If the sun doesn't set on the given day, the string "N/S" is returned.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>You can turn the return value into a more useful structure, with <code>os.date("*t", returnvalue)</code></li>
+<li>For compatibility with the locationTable object returned by <a href="#get">hs.location.get</a>, this function can also be invoked as <code>hs.location.sunset(locationTable, offset[, date])</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="unregister">
+	<h5><a href="#unregister">unregister</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.unregister(tag)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Unregisters a callback</p>
+<p>Parameters:</p>
+<ul>
+<li><code>tag</code> - A string containing the unique tag a callback was registered with</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Constructors</h4>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location.new() -&gt; locationObject</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constructor</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Create a new location object which can receive callbacks independant of other Hammerspoon use of Location Services.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>a locationObject</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The locationObject created will receive callbacks independant of all other locationObjects and the legacy callback functions created with <a href="#register">hs.location.register</a>.  It can also receive callbacks for region changes which are not available through the legacy callback mechanism.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="addMonitoredRegion">
+	<h5><a href="#addMonitoredRegion">addMonitoredRegion</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:addMonitoredRegion(regionTable) -&gt; locationObject | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Adds a region to be monitored by Location Services</p>
+<p>Parameters:</p>
+<ul>
+<li><code>regionTable</code> - a region table as described in the module header</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>if the region table was able to be added to Location Services for monitoring, returns the locationObject; otherwise returns nil</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+<li>If the <code>identifier</code> key is not provided, a new UUID string is generated and used as the identifier.</li>
+<li>If the <code>identifier</code> key matches an already monitored region, this region will replace the existing one.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="callback">
+	<h5><a href="#callback">callback</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:callback(fn | nil) -&gt; locationObject</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets or removes the callback function for this locationObject</p>
+<p>Parameters:</p>
+<ul>
+<li>a function, or nil to remove the current function, which will be invoked as a callback for messages generated by this locationObject.  The callback function should expect 3 or 4 arguments as follows:<ul>
+<li>the locationObject itself</li>
+<li>a string specifying the message generated by the locationObject:<ul>
+<li>"didChangeAuthorizationStatus" - the user has changed the authorization status for Hammerspoon's use of Location Services.  The third argument will be a string as described in the <a href="#authorizationStatus">hs.location.authorizationStatus</a> function.</li>
+<li>"didUpdateLocations"           - the current location has changed or been refined.  This message will only occur if location tracking has been enabled with <a href="#startTracking">hs.location:startTracking</a>. The third argument will be a table containing one or more locationTables as array elements.  The most recent location update is contained in the last element of the array.</li>
+<li>"didFailWithError"             - there was an error retrieving location information. The third argument will be a string describing the error that occurred.</li>
+<li>"didStartMonitoringForRegion"  - a new region has successfully been added to the regions being monitored.  The third argument will be the regionTable for the region which was just added.</li>
+<li>"monitoringDidFailForRegion"   - an error occurred while trying to add a new region to the list of monitored regions. The third argument will be the regionTable for the region that could not be added, and the fourth argument will be a string containing an error message describing why monitoring for the region failed.</li>
+<li>"didEnterRegion"               - the current location has entered a region with the <code>notifyOnEntry</code> field set to true specified with the <a href="#addMonitoredRegion">hs.location:addMonitoredRegion</a> method. The third argument will be the regionTable for the region entered.</li>
+<li>"didExitRegion"                - the current location has exited a region with the <code>notifyOnExit</code> field set to true specified with the <a href="#addMonitoredRegion">hs.location:addMonitoredRegion</a> method. The third argument will be the regionTable for the region exited.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the locationObject</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="currentRegion">
+	<h5><a href="#currentRegion">currentRegion</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:currentRegion() -&gt; identifier | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the string identifier for the current region</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the string identifier for the region that the current location is within, or nil if the current location is not within a currently monitored region or location services cannot be enabled for Hammerspoon.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="distanceFrom">
+	<h5><a href="#distanceFrom">distanceFrom</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:distanceFrom(locationTable) -&gt; distance | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Enable callbacks for location changes/refinements for this locationObject</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the distance the specified location is from the current location in meters or nil if Location Services cannot be enabled for Hammerspoon. The measurement is made by tracing a line that follows an idealised curvature of the earth</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="location">
+	<h5><a href="#location">location</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:location() -&gt; locationTable | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the current location</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>If successful, a locationTable as described in the module header, otherwise nil.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+<li>If access to Location Services is enabled for Hammerspoon, this function will return the most recent cached data for the computer's location.<ul>
+<li>Internally, the Location Services cache is updated whenever additional WiFi networks are detected or lost (not necessarily joined). When update tracking is enabled with the <a href="#start">hs.location.start</a> function, calculations based upon the RSSI of all currently seen networks are preformed more often to provide a more precise fix, but it's still based on the WiFi networks near you.</li>
+</ul>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="monitoredRegions">
+	<h5><a href="#monitoredRegions">monitoredRegions</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:monitoredRegions() -&gt; table | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a table containing the regionTables for the regions currently being monitored for this locationObject</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>if Location Services can be enabled for Hammerspoon, returns a table containing regionTables for each region which is being monitored for this locationObject; otherwise nil</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="removeMonitoredRegion">
+	<h5><a href="#removeMonitoredRegion">removeMonitoredRegion</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:removeMonitoredRegion(identifier) -&gt; locationObject | false | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Removes a monitored region from Location Services</p>
+<p>Parameters:</p>
+<ul>
+<li><code>identifier</code> - a string which should contain the identifier of the region to remove from monitoring</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>if the region identifier matches a currently monitored region, returns the locationObject; if it does not match a currently monitored region, returns false; returns nil if an error occurs or if Location Services is not currently active (no function or method which activates Location Services has been invoked yet) or enabled for Hammerspoon.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+<li>If the <code>identifier</code> key is not provided, a new UUID string is generated and used as the identifier.</li>
+<li>If the <code>identifier</code> key matches an already monitored region, this region will replace the existing one.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="startTracking">
+	<h5><a href="#startTracking">startTracking</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:startTracking() -&gt; locationObject</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Enable callbacks for location changes/refinements for this locationObject</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the locationObject</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="stopTracking">
+	<h5><a href="#stopTracking">stopTracking</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.location:stopTracking() -&gt; locationObject</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Disable callbacks for location changes/refinements for this locationObject</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the locationObject</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

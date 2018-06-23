@@ -5,198 +5,595 @@ Simple logger for debugging purposes
 
 Note: "methods" in this module are actually "static" functions - see `hs.logger.new()`
 
-## API Overview
-* Variables - Configurable values
- * [defaultLogLevel](#defaultloglevel)
-* Functions - API calls offered directly by the extension
- * [history](#history)
- * [historySize](#historysize)
- * [new](#new)
- * [printHistory](#printhistory)
- * [setGlobalLogLevel](#setgloballoglevel)
- * [setModulesLogLevel](#setmodulesloglevel)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [level](#level)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [d](#d)
- * [df](#df)
- * [e](#e)
- * [ef](#ef)
- * [f](#f)
- * [getLogLevel](#getloglevel)
- * [i](#i)
- * [setLogLevel](#setloglevel)
- * [v](#v)
- * [vf](#vf)
- * [w](#w)
- * [wf](#wf)
-
-## API Documentation
-
-### Variables
-
-#### [defaultLogLevel](#defaultloglevel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.defaultLogLevel` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Default log level for new logger instances.                                                                                         |
-
-### Functions
-
-#### [history](#history)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.history() -> list of log entries` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the global log history                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>a list of (at most <code>hs.logger.historySize()</code>) log entries produced by all the logger instances, in chronological order;</li></ul><p>each entry is a table with the following fields:</p><ul><li>time - timestamp in seconds since the epoch</li></ul><ul><li>level - a number between 1 (error) and 5 (verbose)</li></ul><ul><li>id - a string containing the id of the logger instance that produced this entry</li></ul><ul><li>message - a string containing the logged message</li></ul>            |
-
-#### [historySize](#historysize)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.historySize([size]) -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets or gets the global log history size                                                                                         |
-| **Parameters**                                       | <ul><li>size - (optional) the desired number of log entries to keep in the history;</li></ul><p>if omitted, will return the current size; the starting value is 0 (disabled)</p>   |
-| **Returns**                                          | <ul><li>the current or new history size</li></ul>            |
-| **Notes**                                            | <ul><li>if you change history size (other than from 0) after creating any logger instances, things will likely break</li></ul>                 |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.new(id, loglevel) -> logger` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a new logger instance                                                                                         |
-| **Parameters**                                       | <ul><li>id - a string identifier for the instance (usually the module name)</li></ul><ul><li>loglevel - (optional) can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose', or a corresponding number</li></ul><p>between 0 and 5; uses <code>hs.logger.defaultLogLevel</code> if omitted</p>   |
-| **Returns**                                          | <ul><li>the new logger instance</li></ul>            |
-| **Notes**                                            | <ul><li>the logger instance created by this method is not a regular object, but a plain table with "static" functions;</li></ul><p>therefore, do not use the colon syntax for so-called "methods" in this module (as in <code>mylogger:setLogLevel(3)</code>);</p><p>you must instead use the regular dot syntax: <code>mylogger.setLogLevel(3)</code></p>                 |
-
-#### [printHistory](#printhistory)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.printHistory([entries[, level[, filter[, caseSensitive]]]])` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Prints the global log history to the console                                                                                         |
-| **Parameters**                                       | <ul><li>entries - (optional) the maximum number of entries to print; if omitted, all entries in the history will be printed</li></ul><ul><li>level - (optional) the desired log level (see <code>hs.logger:setLogLevel()</code>); if omitted, defaults to <code>verbose</code></li></ul><ul><li>filter - (optional) a string to filter the entries (by logger id or message) via <code>string.find</code> plain matching</li></ul><ul><li>caseSensitive - (optional) if true, filtering is case sensitive</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [setGlobalLogLevel](#setgloballoglevel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.setGlobalLogLevel(lvl)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the log level for all logger instances (including objects' loggers)                                                                                         |
-| **Parameters**                                       | <ul><li>lvl</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [setModulesLogLevel](#setmodulesloglevel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.setModulesLogLevel(lvl)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the log level for all currently loaded modules                                                                                         |
-| **Parameters**                                       | <ul><li>lvl</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>This function only affects <em>module</em>-level loggers, object instances with their own loggers (e.g. windowfilters) won't be affected;</li></ul><p>you can use <code>hs.logger.setGlobalLogLevel()</code> for those</p>                 |
-
-### Fields
-
-#### [level](#level)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.level` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The log level of the logger instance, as a number between 0 and 5                                                                                         |
-
-### Methods
-
-#### [d](#d)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:d(...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs debug info to the console                                                                                         |
-| **Parameters**                                       | <ul><li>... - one or more message strings</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [df](#df)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:df(fmt,...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs formatted debug info to the console                                                                                         |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li></ul><ul><li>... - arguments to fmt</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [e](#e)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:e(...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs an error to the console                                                                                         |
-| **Parameters**                                       | <ul><li>... - one or more message strings</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [ef](#ef)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:ef(fmt,...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs a formatted error to the console                                                                                         |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li></ul><ul><li>... - arguments to fmt</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [f](#f)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:f(fmt,...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs formatted info to the console                                                                                         |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li></ul><ul><li>... - arguments to fmt</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [getLogLevel](#getloglevel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:getLogLevel() -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets the log level of the logger instance                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The log level of this logger as a number between 0 and 5</li></ul>            |
-
-#### [i](#i)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:i(...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs info to the console                                                                                         |
-| **Parameters**                                       | <ul><li>... - one or more message strings</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [setLogLevel](#setloglevel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:setLogLevel(loglevel)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the log level of the logger instance                                                                                         |
-| **Parameters**                                       | <ul><li>loglevel - can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose'; or a corresponding number between 0 and 5</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [v](#v)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:v(...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs verbose info to the console                                                                                         |
-| **Parameters**                                       | <ul><li>... - one or more message strings</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [vf](#vf)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:vf(fmt,...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs formatted verbose info to the console                                                                                         |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li></ul><ul><li>... - arguments to fmt</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [w](#w)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:w(...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs a warning to the console                                                                                         |
-| **Parameters**                                       | <ul><li>... - one or more message strings</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [wf](#wf)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger:wf(fmt,...)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Logs a formatted warning to the console                                                                                         |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li></ul><ul><li>... - arguments to fmt</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Variables - Configurable values</li>
+  <ul>
+	<li><a href="#defaultLogLevel">defaultLogLevel</a></li>
+  </ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#history">history</a></li>
+	<li><a href="#historySize">historySize</a></li>
+	<li><a href="#new">new</a></li>
+	<li><a href="#printHistory">printHistory</a></li>
+	<li><a href="#setGlobalLogLevel">setGlobalLogLevel</a></li>
+	<li><a href="#setModulesLogLevel">setModulesLogLevel</a></li>
+  </ul>
+<li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
+  <ul>
+	<li><a href="#level">level</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#d">d</a></li>
+	<li><a href="#df">df</a></li>
+	<li><a href="#e">e</a></li>
+	<li><a href="#ef">ef</a></li>
+	<li><a href="#f">f</a></li>
+	<li><a href="#getLogLevel">getLogLevel</a></li>
+	<li><a href="#i">i</a></li>
+	<li><a href="#setLogLevel">setLogLevel</a></li>
+	<li><a href="#v">v</a></li>
+	<li><a href="#vf">vf</a></li>
+	<li><a href="#w">w</a></li>
+	<li><a href="#wf">wf</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Variables</h4>
+  <section id="defaultLogLevel">
+	<h5><a href="#defaultLogLevel">defaultLogLevel</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.defaultLogLevel</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Default log level for new logger instances.</p>
+<p>The starting value is 'warning'; set this (to e.g. 'info') at the top of your <code>init.lua</code> to affect
+all logger instances created without specifying a <code>loglevel</code> parameter</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Functions</h4>
+  <section id="history">
+	<h5><a href="#history">history</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.history() -&gt; list of log entries</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the global log history</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>a list of (at most <code>hs.logger.historySize()</code>) log entries produced by all the logger instances, in chronological order;
+each entry is a table with the following fields:<ul>
+<li>time - timestamp in seconds since the epoch</li>
+<li>level - a number between 1 (error) and 5 (verbose)</li>
+<li>id - a string containing the id of the logger instance that produced this entry</li>
+<li>message - a string containing the logged message</li>
+</ul>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="historySize">
+	<h5><a href="#historySize">historySize</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.historySize([size]) -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets or gets the global log history size</p>
+<p>Parameters:</p>
+<ul>
+<li>size - (optional) the desired number of log entries to keep in the history;
+if omitted, will return the current size; the starting value is 0 (disabled)</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the current or new history size</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>if you change history size (other than from 0) after creating any logger instances, things will likely break</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.new(id, loglevel) -&gt; logger</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a new logger instance</p>
+<p>Parameters:</p>
+<ul>
+<li>id - a string identifier for the instance (usually the module name)</li>
+<li>loglevel - (optional) can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose', or a corresponding number
+between 0 and 5; uses <code>hs.logger.defaultLogLevel</code> if omitted</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the new logger instance</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>the logger instance created by this method is not a regular object, but a plain table with "static" functions;
+therefore, do not use the colon syntax for so-called "methods" in this module (as in <code>mylogger:setLogLevel(3)</code>);
+you must instead use the regular dot syntax: <code>mylogger.setLogLevel(3)</code></li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">log</span> <span class="o">=</span> <span class="n">hs</span><span class="p">.</span><span class="n">logger</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;mymodule&#39;</span><span class="p">,</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span>
+<span class="n">log</span><span class="p">.</span><span class="n">i</span><span class="p">(</span><span class="s1">&#39;Initializing&#39;</span><span class="p">)</span> <span class="c1">-- will print &quot;[mymodule] Initializing&quot; to the console</span>
+</pre></div>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="printHistory">
+	<h5><a href="#printHistory">printHistory</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.printHistory([entries[, level[, filter[, caseSensitive]]]])</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Prints the global log history to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>entries - (optional) the maximum number of entries to print; if omitted, all entries in the history will be printed</li>
+<li>level - (optional) the desired log level (see <code>hs.logger:setLogLevel()</code>); if omitted, defaults to <code>verbose</code></li>
+<li>filter - (optional) a string to filter the entries (by logger id or message) via <code>string.find</code> plain matching</li>
+<li>caseSensitive - (optional) if true, filtering is case sensitive</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setGlobalLogLevel">
+	<h5><a href="#setGlobalLogLevel">setGlobalLogLevel</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.setGlobalLogLevel(lvl)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the log level for all logger instances (including objects' loggers)</p>
+<p>Parameters:</p>
+<ul>
+<li>lvl</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setModulesLogLevel">
+	<h5><a href="#setModulesLogLevel">setModulesLogLevel</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.setModulesLogLevel(lvl)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the log level for all currently loaded modules</p>
+<p>Parameters:</p>
+<ul>
+<li>lvl</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function only affects <em>module</em>-level loggers, object instances with their own loggers (e.g. windowfilters) won't be affected;
+you can use <code>hs.logger.setGlobalLogLevel()</code> for those</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Fields</h4>
+  <section id="level">
+	<h5><a href="#level">level</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger.level</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The log level of the logger instance, as a number between 0 and 5</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="d">
+	<h5><a href="#d">d</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:d(...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs debug info to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>... - one or more message strings</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="df">
+	<h5><a href="#df">df</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:df(fmt,...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs formatted debug info to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>fmt - formatting string as per string.format</li>
+<li>... - arguments to fmt</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="e">
+	<h5><a href="#e">e</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:e(...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs an error to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>... - one or more message strings</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="ef">
+	<h5><a href="#ef">ef</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:ef(fmt,...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs a formatted error to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>fmt - formatting string as per string.format</li>
+<li>... - arguments to fmt</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="f">
+	<h5><a href="#f">f</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:f(fmt,...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs formatted info to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>fmt - formatting string as per string.format</li>
+<li>... - arguments to fmt</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="getLogLevel">
+	<h5><a href="#getLogLevel">getLogLevel</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:getLogLevel() -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the log level of the logger instance</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The log level of this logger as a number between 0 and 5</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="i">
+	<h5><a href="#i">i</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:i(...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs info to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>... - one or more message strings</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setLogLevel">
+	<h5><a href="#setLogLevel">setLogLevel</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:setLogLevel(loglevel)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the log level of the logger instance</p>
+<p>Parameters:</p>
+<ul>
+<li>loglevel - can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose'; or a corresponding number between 0 and 5</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="v">
+	<h5><a href="#v">v</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:v(...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs verbose info to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>... - one or more message strings</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="vf">
+	<h5><a href="#vf">vf</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:vf(fmt,...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs formatted verbose info to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>fmt - formatting string as per string.format</li>
+<li>... - arguments to fmt</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="w">
+	<h5><a href="#w">w</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:w(...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs a warning to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>... - one or more message strings</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="wf">
+	<h5><a href="#wf">wf</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.logger:wf(fmt,...)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Logs a formatted warning to the console</p>
+<p>Parameters:</p>
+<ul>
+<li>fmt - formatting string as per string.format</li>
+<li>... - arguments to fmt</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

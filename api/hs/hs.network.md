@@ -3,65 +3,193 @@
 
 This module provides functions for inquiring about and monitoring changes to the network.
 
-## Submodules
- * [hs.network.configuration](hs.network.configuration.md)
- * [hs.network.host](hs.network.host.md)
- * [hs.network.ping](hs.network.ping.md)
- * [hs.network.reachability](hs.network.reachability.md)
-
-## API Overview
-* Functions - API calls offered directly by the extension
- * [addresses](#addresses)
- * [interfaceDetails](#interfacedetails)
- * [interfaceName](#interfacename)
- * [interfaces](#interfaces)
- * [primaryInterfaces](#primaryinterfaces)
-
-## API Documentation
-
-### Functions
-
-#### [addresses](#addresses)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.addresses([interface, ...]) -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a list of the IPv4 and IPv6 addresses for the specified interfaces, or all interfaces if no arguments are given.                                                                                         |
-| **Parameters**                                       | <ul><li>interface, ... - The interface names to return the IP addresses for. It should be specified as one of the following:</li></ul><ul><li>one or more interface names, separated by a comma</li></ul><ul><li>if the first argument is a table, it is assumes to be a table containing a list of interfaces and this list is used instead, ignoring any additional arguments that may be provided</li></ul><ul><li>if no arguments are specified, then the results of <a href="#interfaces">hs.network.interfaces</a> is used.</li></ul>   |
-| **Returns**                                          | <ul><li>A table containing a list of the IP addresses for the interfaces as determined by the arguments provided.</li></ul>            |
-| **Notes**                                            | <ul><li>The order of the IP addresses returned is undefined.</li></ul><ul><li>If no arguments are provided, then this function returns the same results as <code>hs.host.addresses</code>, but does not block.</li></ul>                 |
-
-#### [interfaceDetails](#interfacedetails)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.interfaceDetails([interface | favorIPv6]) -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns details about the specified interface or the primary interface if no interface is specified.                                                                                         |
-| **Parameters**                                       | <ul><li>interface - an optional string specifying the interface to retrieve details about.  Defaults to the primary interface if not specified.</li></ul><ul><li>favorIPv6 - an optional boolean specifying whether or not to prefer the primary IPv6 or the primary IPv4 interface if <code>interface</code> is not specified.  Defaults to false.</li></ul>   |
-| **Returns**                                          | <ul><li>A table containing key-value pairs describing interface details.  Returns an empty table if no primary interface can be determined. Logs an error and returns nil if there was a problem retrieving this information.</li></ul>            |
-| **Notes**                                            | <ul><li>When determining the primary interface, the <code>favorIPv6</code> flag only determines interface search order.  If you specify true for this flag, but no primary IPv6 interface exists (i.e. your DHCP server only provides an IPv4 address an IPv6 is limited to local only traffic), then the primary IPv4 interface will be used instead.</li></ul>                 |
-
-#### [interfaceName](#interfacename)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.interfaceName([interface | favorIPv6]) -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the user defined name for the specified interface or the primary interface if no interface is specified.                                                                                         |
-| **Returns**                                          | <ul><li>A string containing the user defined name for the interface, if one exists, or false if the interface does not have a user defined name. Logs an error and returns nil if there was a problem retrieving this information.</li></ul>            |
-| **Notes**                                            | <ul><li>Only interfaces which show up in the System Preferences Network panel will have a user defined name.</li></ul>                 |
-
-#### [interfaces](#interfaces)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.interfaces() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a list of interfaces currently active for the system.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A table containing a list of the interfaces active for the system.  Logs an error and returns nil if there was a problem retrieving this information.</li></ul>            |
-| **Notes**                                            | <ul><li>The names of the interfaces returned by this function correspond to the interface's BSD name, not the user defined name that shows up in the System Preferences's Network panel.</li></ul><ul><li>This function returns <em>all</em> interfaces, even ones used by the system that are not directly manageable by the user.</li></ul>                 |
-
-#### [primaryInterfaces](#primaryinterfaces)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.primaryInterfaces() -> ipv4Interface, ipv6Interface` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the names of the primary IPv4 and IPv6 interfaces.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The name of the primary IPv4 interface or false if there isn't one, and the name of the IPv6 interface or false if there isn't one. Logs an error and returns a single nil if there was a problem retrieving this information.</li></ul>            |
-| **Notes**                                            | <ul><li>The IPv4 and IPv6 interface names are often, but not always, the same.</li></ul>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>Submodules</h3>
+<ul>
+<li><a href="hs.network.configuration.md">hs.network.configuration</a></li>
+<li><a href="hs.network.host.md">hs.network.host</a></li>
+<li><a href="hs.network.ping.md">hs.network.ping</a></li>
+<li><a href="hs.network.reachability.md">hs.network.reachability</a></li>
+</ul>
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#addresses">addresses</a></li>
+	<li><a href="#interfaceDetails">interfaceDetails</a></li>
+	<li><a href="#interfaceName">interfaceName</a></li>
+	<li><a href="#interfaces">interfaces</a></li>
+	<li><a href="#primaryInterfaces">primaryInterfaces</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="addresses">
+	<h5><a href="#addresses">addresses</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.network.addresses([interface, ...]) -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a list of the IPv4 and IPv6 addresses for the specified interfaces, or all interfaces if no arguments are given.</p>
+<p>Parameters:</p>
+<ul>
+<li>interface, ... - The interface names to return the IP addresses for. It should be specified as one of the following:<ul>
+<li>one or more interface names, separated by a comma</li>
+<li>if the first argument is a table, it is assumes to be a table containing a list of interfaces and this list is used instead, ignoring any additional arguments that may be provided</li>
+<li>if no arguments are specified, then the results of <a href="#interfaces">hs.network.interfaces</a> is used.</li>
+</ul>
+</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table containing a list of the IP addresses for the interfaces as determined by the arguments provided.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The order of the IP addresses returned is undefined.</li>
+<li>If no arguments are provided, then this function returns the same results as <code>hs.host.addresses</code>, but does not block.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="interfaceDetails">
+	<h5><a href="#interfaceDetails">interfaceDetails</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.network.interfaceDetails([interface | favorIPv6]) -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns details about the specified interface or the primary interface if no interface is specified.</p>
+<p>Parameters:</p>
+<ul>
+<li>interface - an optional string specifying the interface to retrieve details about.  Defaults to the primary interface if not specified.</li>
+<li>favorIPv6 - an optional boolean specifying whether or not to prefer the primary IPv6 or the primary IPv4 interface if <code>interface</code> is not specified.  Defaults to false.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table containing key-value pairs describing interface details.  Returns an empty table if no primary interface can be determined. Logs an error and returns nil if there was a problem retrieving this information.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>When determining the primary interface, the <code>favorIPv6</code> flag only determines interface search order.  If you specify true for this flag, but no primary IPv6 interface exists (i.e. your DHCP server only provides an IPv4 address an IPv6 is limited to local only traffic), then the primary IPv4 interface will be used instead.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="interfaceName">
+	<h5><a href="#interfaceName">interfaceName</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.network.interfaceName([interface | favorIPv6]) -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the user defined name for the specified interface or the primary interface if no interface is specified.</p>
+<ul>
+<li>interface - an optional string specifying the interface to retrieve the name for.  Defaults to the primary interface if not specified.</li>
+<li>favorIPv6 - an optional boolean specifying whether or not to prefer the primary IPv6 or the primary IPv4 interface if <code>interface</code> is not specified.  Defaults to false.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A string containing the user defined name for the interface, if one exists, or false if the interface does not have a user defined name. Logs an error and returns nil if there was a problem retrieving this information.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li><p>Only interfaces which show up in the System Preferences Network panel will have a user defined name.</p>
+</li>
+<li><p>When determining the primary interface, the <code>favorIPv6</code> flag only determines interface search order.  If you specify true for this flag, but no primary IPv6 interface exists (i.e. your DHCP server only provides an IPv4 address an IPv6 is limited to local only traffic), then the primary IPv4 interface will be used instead.</p>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="interfaces">
+	<h5><a href="#interfaces">interfaces</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.network.interfaces() -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a list of interfaces currently active for the system.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table containing a list of the interfaces active for the system.  Logs an error and returns nil if there was a problem retrieving this information.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The names of the interfaces returned by this function correspond to the interface's BSD name, not the user defined name that shows up in the System Preferences's Network panel.</li>
+<li>This function returns <em>all</em> interfaces, even ones used by the system that are not directly manageable by the user.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="primaryInterfaces">
+	<h5><a href="#primaryInterfaces">primaryInterfaces</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.network.primaryInterfaces() -&gt; ipv4Interface, ipv6Interface</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the names of the primary IPv4 and IPv6 interfaces.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The name of the primary IPv4 interface or false if there isn't one, and the name of the IPv6 interface or false if there isn't one. Logs an error and returns a single nil if there was a problem retrieving this information.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The IPv4 and IPv6 interface names are often, but not always, the same.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

@@ -39,42 +39,119 @@ There are two 'special' tag names:
  * `CDATA`	- will generate a `&lt;![CDATA[ ... ]]&gt;` section with the content contained.
  * `__`		- (double underscore) will generate a `&lt!-- ... --&gt` comment block.
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [is](#is)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [append](#append)
- * [prepend](#prepend)
-
-## API Documentation
-
-### Functions
-
-#### [is](#is)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.html.is(value) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks if the `value` is an `cp.web.html` block.                                                                                         |
-| **Parameters**                                       | <ul><li>value     - the value to check</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if it is an HTML block, or <code>false</code> otherwise.</li></ul>            |
-
-### Methods
-
-#### [append](#append)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.html:append(newContent[, escaped]) -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Appends the content. If specified, the `escaped` value will override any default escaping for the content type.                                                                                         |
-| **Parameters**                                       | <ul><li>newContent        - The content to append to the contents of the HTML block.</li></ul><ul><li>escaped           - May be set to override default escaping for the content.</li></ul>   |
-| **Returns**                                          | <ul><li>The same HTML block instance.</li></ul>            |
-| **Notes**                                            | <ul><li>The <code>newContent</code> may be almost any value. The default handling is below:</li></ul><p>** <code>cp.web.html</code> instance: Any other HTML block can be added. Default escaping: <code>false</code>.</p><p>** <code>function</code>: Functions will be executed every time the HTML block is converted to a string. Default escaping: whatever the default is for the returned value.</p><p>** <code>list</code>: Tables which are lists will be iterrated and each item will be evaluated each time the HTML block is converted to a string. Default escaping: the default for each item.</p><p>** <em>everything else</em>: Converted to a string via the <code>tostring</code> function. Default escaping: <code>true</code>.</p>                 |
-
-#### [prepend](#prepend)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.html:prepend(newContent[, escaped]) -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Prepends the content. If specified, the `escaped` value will override any default escaping for the content type.                                                                                         |
-| **Parameters**                                       | <ul><li>newContent        - The content to prepend to the contents of the HTML block.</li></ul><ul><li>escaped           - May be set to override default escaping for the content.</li></ul>   |
-| **Returns**                                          | <ul><li>The same HTML block instance.</li></ul>            |
-| **Notes**                                            | <ul><li>The <code>newContent</code> may be almost any value. The default handling is below:</li></ul><p>** <code>cp.web.html</code> instance: Any other HTML block can be added. Default escaping: <code>false</code>.</p><p>** <code>function</code>: Functions will be executed every time the HTML block is converted to a string. Default escaping: whatever the default is for the returned value.</p><p>** <code>list</code>: Tables which are lists will be iterrated and each item will be evaluated each time the HTML block is converted to a string. Default escaping: the default for each item.</p><p>** <em>everything else</em>: Converted to a string via the <code>tostring</code> function. Default escaping: <code>true</code>.</p>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#is">is</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#append">append</a></li>
+	<li><a href="#prepend">prepend</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="is">
+	<h5><a href="#is">is</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.web.html.is(value) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Checks if the <code>value</code> is an <code>cp.web.html</code> block.</p>
+<p>Parameters:</p>
+<ul>
+<li>value     - the value to check</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if it is an HTML block, or <code>false</code> otherwise.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="append">
+	<h5><a href="#append">append</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.web.html:append(newContent[, escaped]) -&gt; self</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Appends the content. If specified, the <code>escaped</code> value will override any default escaping for the content type.</p>
+<p>Parameters:</p>
+<ul>
+<li>newContent        - The content to append to the contents of the HTML block.</li>
+<li>escaped           - May be set to override default escaping for the content.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The same HTML block instance.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The <code>newContent</code> may be almost any value. The default handling is below:
+<strong> <code>cp.web.html</code> instance: Any other HTML block can be added. Default escaping: <code>false</code>.</strong> <code>function</code>: Functions will be executed every time the HTML block is converted to a string. Default escaping: whatever the default is for the returned value.
+<strong> <code>list</code>: Tables which are lists will be iterrated and each item will be evaluated each time the HTML block is converted to a string. Default escaping: the default for each item.</strong> <em>everything else</em>: Converted to a string via the <code>tostring</code> function. Default escaping: <code>true</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="prepend">
+	<h5><a href="#prepend">prepend</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.web.html:prepend(newContent[, escaped]) -&gt; self</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Prepends the content. If specified, the <code>escaped</code> value will override any default escaping for the content type.</p>
+<p>Parameters:</p>
+<ul>
+<li>newContent        - The content to prepend to the contents of the HTML block.</li>
+<li>escaped           - May be set to override default escaping for the content.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The same HTML block instance.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The <code>newContent</code> may be almost any value. The default handling is below:
+<strong> <code>cp.web.html</code> instance: Any other HTML block can be added. Default escaping: <code>false</code>.</strong> <code>function</code>: Functions will be executed every time the HTML block is converted to a string. Default escaping: whatever the default is for the returned value.
+<strong> <code>list</code>: Tables which are lists will be iterrated and each item will be evaluated each time the HTML block is converted to a string. Default escaping: the default for each item.</strong> <em>everything else</em>: Converted to a string via the <code>tostring</code> function. Default escaping: <code>true</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

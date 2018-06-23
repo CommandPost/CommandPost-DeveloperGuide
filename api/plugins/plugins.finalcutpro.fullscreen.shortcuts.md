@@ -3,56 +3,155 @@
 
 Fullscreen Shortcuts
 
-## API Overview
-* Variables - Configurable values
- * [enabled](#enabled)
-* Functions - API calls offered directly by the extension
- * [checkCommand](#checkcommand)
- * [ninjaKeyStroke](#ninjakeystroke)
- * [performCommand](#performcommand)
- * [update](#update)
-
-## API Documentation
-
-### Variables
-
-#### [enabled](#enabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.enabled <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Is the module enabled?                                                                                         |
-
-### Functions
-
-#### [checkCommand](#checkcommand)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.checkCommand(whichModifier, whichKey) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see if a shortcut has been pressed, then processes.                                                                                         |
-| **Parameters**                                       | <ul><li>whichModifier - Which modifier key to check.</li></ul><ul><li>whichKey - Which key to check.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [ninjaKeyStroke](#ninjakeystroke)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.ninjaKeyStroke(whichModifier, whichKey) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Performs a Ninja Key Stoke.                                                                                         |
-| **Parameters**                                       | <ul><li>whichModifier - Modifier Key</li></ul><ul><li>whichKey - Key</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [performCommand](#performcommand)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.performCommand(cmd, whichModifier, whichKey) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Performs a command.                                                                                         |
-| **Parameters**                                       | <ul><li>cmd - The Command.</li></ul><ul><li>whichModifier - Which modifier key to check.</li></ul><ul><li>whichKey - Which key to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul>            |
-
-#### [update](#update)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.shortcuts.update() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Toggles the watches for monitoring fullscreen playback.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Variables - Configurable values</li>
+  <ul>
+	<li><a href="#enabled">enabled</a></li>
+  </ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#checkCommand">checkCommand</a></li>
+	<li><a href="#ninjaKeyStroke">ninjaKeyStroke</a></li>
+	<li><a href="#performCommand">performCommand</a></li>
+	<li><a href="#update">update</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Variables</h4>
+  <section id="enabled">
+	<h5><a href="#enabled">enabled</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.fullscreen.shortcuts.enabled &lt;cp.prop: boolean&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Is the module enabled?</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Functions</h4>
+  <section id="checkCommand">
+	<h5><a href="#checkCommand">checkCommand</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.fullscreen.shortcuts.checkCommand(whichModifier, whichKey) -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Checks to see if a shortcut has been pressed, then processes.</p>
+<p>Parameters:</p>
+<ul>
+<li>whichModifier - Which modifier key to check.</li>
+<li>whichKey - Which key to check.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="ninjaKeyStroke">
+	<h5><a href="#ninjaKeyStroke">ninjaKeyStroke</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.fullscreen.shortcuts.ninjaKeyStroke(whichModifier, whichKey) -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Performs a Ninja Key Stoke.</p>
+<p>Parameters:</p>
+<ul>
+<li>whichModifier - Modifier Key</li>
+<li>whichKey - Key</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="performCommand">
+	<h5><a href="#performCommand">performCommand</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.fullscreen.shortcuts.performCommand(cmd, whichModifier, whichKey) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Performs a command.</p>
+<p>Parameters:</p>
+<ul>
+<li>cmd - The Command.</li>
+<li>whichModifier - Which modifier key to check.</li>
+<li>whichKey - Which key to check.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="update">
+	<h5><a href="#update">update</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>plugins.finalcutpro.fullscreen.shortcuts.update() -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Toggles the watches for monitoring fullscreen playback.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

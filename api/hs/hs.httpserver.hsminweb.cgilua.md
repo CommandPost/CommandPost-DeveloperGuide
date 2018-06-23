@@ -9,231 +9,727 @@ The goal of this file is to provide most of the same functionality that CGILua d
 
 **Do not include this file directly in your Lua templates.**  This library is provided automatically in the `cgilua` table (module) in Lua template web server files.  This submodule will only work from within that environment and should not be used in any other code.
 
-## Submodules
- * [hs.httpserver.hsminweb.cgilua.lp](hs.httpserver.hsminweb.cgilua.lp.md)
- * [hs.httpserver.hsminweb.cgilua.urlcode](hs.httpserver.hsminweb.cgilua.urlcode.md)
-
-## API Overview
-* Variables - Configurable values
- * [script_file](#script_file)
- * [script_path](#script_path)
- * [script_pdir](#script_pdir)
- * [script_vdir](#script_vdir)
- * [script_vpath](#script_vpath)
- * [tmp_path](#tmp_path)
- * [urlpath](#urlpath)
-* Functions - API calls offered directly by the extension
- * [contentheader](#contentheader)
- * [doif](#doif)
- * [doscript](#doscript)
- * [errorlog](#errorlog)
- * [header](#header)
- * [htmlheader](#htmlheader)
- * [mkabsoluteurl](#mkabsoluteurl)
- * [mkurlpath](#mkurlpath)
- * [print](#print)
- * [put](#put)
- * [redirect](#redirect)
- * [servervariable](#servervariable)
- * [splitfirst](#splitfirst)
- * [splitonlast](#splitonlast)
- * [tmpfile](#tmpfile)
- * [tmpname](#tmpname)
-
-## API Documentation
-
-### Variables
-
-#### [script_file](#script_file)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.script_file` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The file name of the running script. Obtained from cgilua.script_path.                                                                                         |
-| **Notes**                                            | <ul><li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li></ul>                 |
-
-#### [script_path](#script_path)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.script_path` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The system path of the running script. Equivalent to the CGI environment variable SCRIPT_FILENAME.                                                                                         |
-| **Notes**                                            | <ul><li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li></ul>                 |
-
-#### [script_pdir](#script_pdir)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.script_pdir` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The directory of the running script. Obtained from cgilua.script_path.                                                                                         |
-| **Notes**                                            | <ul><li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li></ul>                 |
-
-#### [script_vdir](#script_vdir)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.script_vdir` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | If PATH_INFO represents a directory (i.e. ends with "/"), then this is equal to `cgilua.script_vpath`.  Otherwise, this contains the directory portion of `cgilua.script_vpath`.                                                                                         |
-| **Notes**                                            | <ul><li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li></ul>                 |
-
-#### [script_vpath](#script_vpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.script_vpath` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Equivalent to the CGI environment variable PATH_INFO or "/", if no PATH_INFO is set.                                                                                         |
-| **Notes**                                            | <ul><li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li></ul>                 |
-
-#### [tmp_path](#tmp_path)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.tmp_path` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The directory used by `cgilua.tmpfile`                                                                                         |
-
-#### [urlpath](#urlpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.urlpath` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The name of the script as requested in the URL. Equivalent to the CGI environment variable SCRIPT_NAME.                                                                                         |
-| **Notes**                                            | <ul><li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li></ul>                 |
-
-### Functions
-
-#### [contentheader](#contentheader)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.contentheader(maintype, subtype) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the HTTP response type for the content being generated to maintype/subtype.                                                                                         |
-| **Parameters**                                       | <ul><li>maintype - the primary content type (e.g. "text")</li></ul><ul><li>subtype  - the sub-type for the content (e.g. "plain")</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>This sets the <code>Content-Type</code> header field for the HTTP response being generated.  This will override any previous setting, including the default of "text/html".</li></ul>                 |
-
-#### [doif](#doif)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.doif(filename) -> results` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Executes a lua file (given by filepath) if it exists.                                                                                         |
-| **Parameters**                                       | <ul><li>filepath - the file to interpret as Lua code</li></ul>   |
-| **Returns**                                          | <ul><li>the values returned by the execution, or nil followed by an error message if the file does not exists.</li></ul>            |
-| **Notes**                                            | <ul><li>This function only interprets the file if it exists; if the file does not exist, it returns an error to the calling code (not the web client)</li></ul><ul><li>During the processing of a web request, the local directory is temporarily changed to match the local directory of the path of the file being served, as determined by the URL of the request.  This is usually different than the Hammerspoon default directory which corresponds to the directory which contains the <code>init.lua</code> file for Hammerspoon.</li></ul>                 |
-
-#### [doscript](#doscript)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.doscript(filename) -> results` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Executes a lua file (given by filepath).                                                                                         |
-| **Parameters**                                       | <ul><li>filepath - the file to interpret as Lua code</li></ul>   |
-| **Returns**                                          | <ul><li>the values returned by the execution, or nil followed by an error message if the file does not exists.</li></ul>            |
-| **Notes**                                            | <ul><li>If the file does not exist, an Internal Server error is returned to the client and an error is logged to the Hammerspoon console.</li></ul><ul><li>During the processing of a web request, the local directory is temporarily changed to match the local directory of the path of the file being served, as determined by the URL of the request.  This is usually different than the Hammerspoon default directory which corresponds to the directory which contains the <code>init.lua</code> file for Hammerspoon.</li></ul>                 |
-
-#### [errorlog](#errorlog)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.errorlog(msg) -> nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sends the message to the `hs.httpserver.hsminweb` log, tagged as an error.                                                                                         |
-| **Parameters**                                       | <ul><li>msg - the message to send to the module's error log</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>Available within a lua template file as <code>cgilua.errorlog</code></li></ul><ul><li>By default, messages logged with this method will appear in the Hammerspoon console and are available in the <code>hs.logger</code> history.</li></ul>                 |
-
-#### [header](#header)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.header(key, value) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the HTTP response header `key` to `value`                                                                                         |
-| **Parameters**                                       | <ul><li>key - the HTTP response header to set a value to.  This should be a string.</li></ul><ul><li>value - the value for the header.  This should be a string or a value representable as a string.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>You should not use this function to set the value for the "Content-Type" key; instead use <a href="#contentheader">cgilua.contentheader</a> or <a href="#htmlheader">cgilua.htmlheader</a>.</li></ul>                 |
-
-#### [htmlheader](#htmlheader)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.htmlheader() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the HTTP response type to "text/html"                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>This sets the <code>Content-Type</code> header field for the HTTP response being generated to "text/html".  This is the default value, so generally you should not need to call this function unless you have previously changed it with the <a href="#contentheader">cgilua.contentheader</a> function.</li></ul>                 |
-
-#### [mkabsoluteurl](#mkabsoluteurl)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.mkabsoluteurl(uri) -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns an absolute URL for the given URI by prepending the path with the scheme, hostname, and port of this web server.                                                                                         |
-| **Parameters**                                       | <ul><li>URI - A path to a resource served by this web server.  A "/" will be prepended to the path if it is not present.</li></ul>   |
-| **Returns**                                          | <ul><li>An absolute URL for the given path of the form "scheme://hostname:port/path" where <code>scheme</code> will be either "http" or "https", and the hostname and port will match that of this web server.</li></ul>            |
-| **Notes**                                            | <ul><li>If you wish to append query items to the path or expand a relative path into it's full path, see <a href="#mkurlpath">cgilua.mkurlpath</a>.</li></ul>                 |
-
-#### [mkurlpath](#mkurlpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.mkurlpath(uri, [args]) -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Creates a full document URI from a partial URI, including query arguments if present.                                                                                         |
-| **Parameters**                                       | <ul><li>uri  - the full or partial URI (path and file component of a URL) of the document</li></ul><ul><li>args - an optional table which should have key-value pairs that will be encoded to form a valid query at the end of the URI (see <a href="#encodetable">cgilua.urlcode.encodetable</a>.</li></ul>   |
-| **Returns**                                          | <ul><li>A full URI including any query arguments, if present.</li></ul>            |
-| **Notes**                                            | <ul><li>This function is intended to be used in conjunction with <a href="#mkabsoluteurl">cgilua.mkabsoluteurl</a> to generate a full URL.  If the <code>uri</code> provided does not begin with a "/", then the current directory path is prepended to the uri and any query arguments are appended.</li></ul><ul><li>e.g. <code>cgilua.mkabsoluteurl(cgiurl.mkurlpath("file.lp", { key = value, ... }))</code> will return a full URL specifying the file <code>file.lp</code> in the current directory with the specified key-value pairs as query arguments.</li></ul>                 |
-
-#### [print](#print)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.print(...) -> nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Appends the given arguments to the response body.                                                                                         |
-| **Parameters**                                       | <ul><li>... - a list of comma separated arguments to add to the response body</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>Available within a lua template file as <code>cgilua.print</code></li></ul><ul><li>This function works like the lua builtin <code>print</code> command in that it converts all its arguments to strings, separates them with tabs (<code>\t</code>), and ends the line with a newline (<code>\n</code>) before appending them to the current response body.</li></ul>                 |
-
-#### [put](#put)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.put(...) -> nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Appends the given arguments to the response body.                                                                                         |
-| **Parameters**                                       | <ul><li>... - a list of comma separated arguments to add to the response body</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>Available within a lua template file as <code>cgilua.put</code></li></ul><ul><li>This function works by flattening tables and converting all values except for <code>nil</code> and <code>false</code> to their string representation and then appending them in order to the response body. Unlike <code>cgilua.print</code>, it does not separate values with a tab character or terminate the line with a newline character.</li></ul>                 |
-
-#### [redirect](#redirect)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.redirect(url, [args]) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sends the headers to force a redirection to the given URL adding the parameters in table args to the new URL.                                                                                         |
-| **Parameters**                                       | <ul><li>url  - the URL the client should be redirected to</li></ul><ul><li>args - an optional table which should have key-value pairs that will be encoded to form a valid query at the end of the URL (see <a href="#encodetable">cgilua.urlcode.encodetable</a>.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>This function should generally be followed by a <code>return</code> in your lua template page as no additional processing or output should occur when a request is to be redirected.</li></ul>                 |
-
-#### [servervariable](#servervariable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.servervariable(varname) -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a string with the value of the CGI environment variable correspoding to varname.                                                                                         |
-| **Parameters**                                       | <ul><li>varname - the name of the CGI variable to get the value of.</li></ul>   |
-| **Returns**                                          | <ul><li>the value of the CGI variable as a string, or nil if no such variable exists.</li></ul>            |
-| **Notes**                                            | <ul><li>CGI Variables include server defined values commonly shared with CGI scripts and the HTTP request headers from the web request.  The server variables include the following (note that depending upon the request and type of resource the URL refers to, not all values may exist for every request):</li></ul><ul><li>"AUTH_TYPE"         - If the server supports user authentication, and the script is protected, this is the protocol-specific authentication method used to validate the user.</li></ul><ul><li>"CONTENT_LENGTH"    - The length of the content itself as given by the client.</li></ul><ul><li>"CONTENT_TYPE"      - For queries which have attached information, such as HTTP POST and PUT, this is the content type of the data.</li></ul><ul><li>"DOCUMENT_ROOT"     - the real directory on the server that corresponds to a DOCUMENT_URI of "/".  This is the first directory which contains files or sub-directories which are served by the web server.</li></ul><ul><li>"DOCUMENT_URI"      - the path portion of the HTTP URL requested</li></ul><ul><li>"GATEWAY_INTERFACE" - The revision of the CGI specification to which this server complies. Format: CGI/revision</li></ul><ul><li>"PATH_INFO"         - The extra path information, as given by the client. In other words, scripts can be accessed by their virtual pathname, followed by extra information at the end of this path. The extra information is sent as PATH_INFO. This information should be decoded by the server if it comes from a URL before it is passed to the CGI script.</li></ul><ul><li>"PATH_TRANSLATED"   - The server provides a translated version of PATH_INFO, which takes the path and does any virtual-to-physical mapping to it.</li></ul><ul><li>"QUERY_STRING"      - The information which follows the "?" in the URL which referenced this script. This is the query information. It should not be decoded in any fashion. This variable should always be set when there is query information, regardless of command line decoding.</li></ul><ul><li>"REMOTE_ADDR"       - The IP address of the remote host making the request.</li></ul><ul><li>"REMOTE_HOST"       - The hostname making the request. If the server does not have this information, it should set REMOTE_ADDR and leave this unset.</li></ul><ul><li>"REMOTE_IDENT"      - If the HTTP server supports RFC 931 identification, then this variable will be set to the remote user name retrieved from the server. Usage of this variable should be limited to logging only.</li></ul><ul><li>"REMOTE_USER"       - If the server supports user authentication, and the script is protected, this is the username they have authenticated as.</li></ul><ul><li>"REQUEST_METHOD"    - The method with which the request was made. For HTTP, this is "GET", "HEAD", "POST", etc.</li></ul><ul><li>"REQUEST_TIME"      - the time the server received the request represented as the number of seconds since 00:00:00 UTC on 1 January 1970.  Usable with <code>os.date</code> to provide the date and time in whatever format you require.</li></ul><ul><li>"REQUEST_URI"       - the DOCUMENT_URI with any query string present in the request appended.  Usually this corresponds to the URL without the scheme or host information.</li></ul><ul><li>"SCRIPT_FILENAME"   - the actual path to the script being executed.</li></ul><ul><li>"SCRIPT_NAME"       - A virtual path to the script being executed, used for self-referencing URLs.</li></ul><ul><li>"SERVER_NAME"       - The server's hostname, DNS alias, or IP address as it would appear in self-referencing URLs.</li></ul><ul><li>"SERVER_PORT"       - The port number to which the request was sent.</li></ul><ul><li>"SERVER_PROTOCOL"   - The name and revision of the information protcol this request came in with. Format: protocol/revision</li></ul><ul><li>"SERVER_SOFTWARE"   - The name and version of the web server software answering the request (and running the gateway). Format: name/version</li></ul>                 |
-
-#### [splitfirst](#splitfirst)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.splitfirst(path) -> path component, path remainder` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns two strings with the "first directory" and the "remaining paht" of the given path string splitted on the first separator ("/" or "\").                                                                                         |
-| **Parameters**                                       | <ul><li>path - the path to split</li></ul>   |
-| **Returns**                                          | <ul><li>the first directory component, the remainder of the path</li></ul>            |
-
-#### [splitonlast](#splitonlast)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.splitonlast(path) -> directory, file` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns two strings with the "directory path" and "file" parts of the given path string splitted on the last separator ("/" or "\").                                                                                         |
-| **Parameters**                                       | <ul><li>path - the path to split</li></ul>   |
-| **Returns**                                          | <ul><li>the directory path, the file</li></ul>            |
-| **Notes**                                            | <ul><li>This function used to be called cgilua.splitpath and still can be accessed by this name for compatibility reasons. cgilua.splitpath may be deprecated in future versions.</li></ul>                 |
-
-#### [tmpfile](#tmpfile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.tmpfile([dir], [namefunction]) -> file[, err]` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the file handle to a temporary file for writing, or nil and an error message if the file could not be created for any reason.                                                                                         |
-| **Parameters**                                       | <ul><li>dir          - the system directory where the temporary file should be created.  Defaults to <code>cgilua.tmp_path</code>.</li></ul><ul><li>namefunction - an optional function used to generate unique file names for use as temporary files.  Defaults to <code>cgilua.tmpname</code>.</li></ul>   |
-| **Returns**                                          | <ul><li>the created file's handle and the filename or nil and an error message if the file could not be created.</li></ul>            |
-| **Notes**                                            | <ul><li>The file is automatically deleted when the HTTP request has been completed, so if you need for the data to persist, make sure to <code>io.flush</code> or <code>io.close</code> the file handle yourself and copy the file to a more permanent location.</li></ul>                 |
-
-#### [tmpname](#tmpname)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver.hsminweb.cgilua.tmpname() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a temporary file name used by `cgilua.tmpfile`.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>a temporary filename, without the path.</li></ul>            |
-| **Notes**                                            | <ul><li>This function uses <code>hs.host.globallyUniqueString</code> to generate a unique file name.</li></ul>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>Submodules</h3>
+<ul>
+<li><a href="hs.httpserver.hsminweb.cgilua.lp.md">hs.httpserver.hsminweb.cgilua.lp</a></li>
+<li><a href="hs.httpserver.hsminweb.cgilua.urlcode.md">hs.httpserver.hsminweb.cgilua.urlcode</a></li>
+</ul>
+<h3>API Overview</h3>
+<ul>
+<li>Variables - Configurable values</li>
+  <ul>
+	<li><a href="#script_file">script_file</a></li>
+	<li><a href="#script_path">script_path</a></li>
+	<li><a href="#script_pdir">script_pdir</a></li>
+	<li><a href="#script_vdir">script_vdir</a></li>
+	<li><a href="#script_vpath">script_vpath</a></li>
+	<li><a href="#tmp_path">tmp_path</a></li>
+	<li><a href="#urlpath">urlpath</a></li>
+  </ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#contentheader">contentheader</a></li>
+	<li><a href="#doif">doif</a></li>
+	<li><a href="#doscript">doscript</a></li>
+	<li><a href="#errorlog">errorlog</a></li>
+	<li><a href="#header">header</a></li>
+	<li><a href="#htmlheader">htmlheader</a></li>
+	<li><a href="#mkabsoluteurl">mkabsoluteurl</a></li>
+	<li><a href="#mkurlpath">mkurlpath</a></li>
+	<li><a href="#print">print</a></li>
+	<li><a href="#put">put</a></li>
+	<li><a href="#redirect">redirect</a></li>
+	<li><a href="#servervariable">servervariable</a></li>
+	<li><a href="#splitfirst">splitfirst</a></li>
+	<li><a href="#splitonlast">splitonlast</a></li>
+	<li><a href="#tmpfile">tmpfile</a></li>
+	<li><a href="#tmpname">tmpname</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Variables</h4>
+  <section id="script_file">
+	<h5><a href="#script_file">script_file</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.script_file</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The file name of the running script. Obtained from cgilua.script_path.</p>
+<p>Notes:</p>
+<ul>
+<li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="script_path">
+	<h5><a href="#script_path">script_path</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.script_path</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The system path of the running script. Equivalent to the CGI environment variable SCRIPT_FILENAME.</p>
+<p>Notes:</p>
+<ul>
+<li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="script_pdir">
+	<h5><a href="#script_pdir">script_pdir</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.script_pdir</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The directory of the running script. Obtained from cgilua.script_path.</p>
+<p>Notes:</p>
+<ul>
+<li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="script_vdir">
+	<h5><a href="#script_vdir">script_vdir</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.script_vdir</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>If PATH_INFO represents a directory (i.e. ends with "/"), then this is equal to <code>cgilua.script_vpath</code>.  Otherwise, this contains the directory portion of <code>cgilua.script_vpath</code>.</p>
+<p>Notes:</p>
+<ul>
+<li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="script_vpath">
+	<h5><a href="#script_vpath">script_vpath</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.script_vpath</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Equivalent to the CGI environment variable PATH_INFO or "/", if no PATH_INFO is set.</p>
+<p>Notes:</p>
+<ul>
+<li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="tmp_path">
+	<h5><a href="#tmp_path">tmp_path</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.tmp_path</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The directory used by <code>cgilua.tmpfile</code></p>
+<p>This variable contains the location where temporary files should be created.  Defaults to the user's temporary directory as returned by <code>hs.fs.temporaryDirectory</code>.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="urlpath">
+	<h5><a href="#urlpath">urlpath</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.urlpath</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The name of the script as requested in the URL. Equivalent to the CGI environment variable SCRIPT_NAME.</p>
+<p>Notes:</p>
+<ul>
+<li>CGILua supports being invoked through a URL that amounts to set of chained paths and script names; this is not necessary for this module, so these variables may differ somewhat from a true CGILua installation; the intent of the variable has been maintained as closely as I can determine at present.  If this changes, so will this documentation.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Functions</h4>
+  <section id="contentheader">
+	<h5><a href="#contentheader">contentheader</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.contentheader(maintype, subtype) -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the HTTP response type for the content being generated to maintype/subtype.</p>
+<p>Parameters:</p>
+<ul>
+<li>maintype - the primary content type (e.g. "text")</li>
+<li>subtype  - the sub-type for the content (e.g. "plain")</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This sets the <code>Content-Type</code> header field for the HTTP response being generated.  This will override any previous setting, including the default of "text/html".</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="doif">
+	<h5><a href="#doif">doif</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.doif(filename) -&gt; results</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Executes a lua file (given by filepath) if it exists.</p>
+<p>Parameters:</p>
+<ul>
+<li>filepath - the file to interpret as Lua code</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the values returned by the execution, or nil followed by an error message if the file does not exists.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function only interprets the file if it exists; if the file does not exist, it returns an error to the calling code (not the web client)</li>
+<li>During the processing of a web request, the local directory is temporarily changed to match the local directory of the path of the file being served, as determined by the URL of the request.  This is usually different than the Hammerspoon default directory which corresponds to the directory which contains the <code>init.lua</code> file for Hammerspoon.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="doscript">
+	<h5><a href="#doscript">doscript</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.doscript(filename) -&gt; results</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Executes a lua file (given by filepath).</p>
+<p>Parameters:</p>
+<ul>
+<li>filepath - the file to interpret as Lua code</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the values returned by the execution, or nil followed by an error message if the file does not exists.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>If the file does not exist, an Internal Server error is returned to the client and an error is logged to the Hammerspoon console.</li>
+<li>During the processing of a web request, the local directory is temporarily changed to match the local directory of the path of the file being served, as determined by the URL of the request.  This is usually different than the Hammerspoon default directory which corresponds to the directory which contains the <code>init.lua</code> file for Hammerspoon.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="errorlog">
+	<h5><a href="#errorlog">errorlog</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.errorlog(msg) -&gt; nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sends the message to the <code>hs.httpserver.hsminweb</code> log, tagged as an error.</p>
+<p>Parameters:</p>
+<ul>
+<li>msg - the message to send to the module's error log</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Available within a lua template file as <code>cgilua.errorlog</code></li>
+<li>By default, messages logged with this method will appear in the Hammerspoon console and are available in the <code>hs.logger</code> history.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="header">
+	<h5><a href="#header">header</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.header(key, value) -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the HTTP response header <code>key</code> to <code>value</code></p>
+<p>Parameters:</p>
+<ul>
+<li>key - the HTTP response header to set a value to.  This should be a string.</li>
+<li>value - the value for the header.  This should be a string or a value representable as a string.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>You should not use this function to set the value for the "Content-Type" key; instead use <a href="#contentheader">cgilua.contentheader</a> or <a href="#htmlheader">cgilua.htmlheader</a>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="htmlheader">
+	<h5><a href="#htmlheader">htmlheader</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.htmlheader() -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the HTTP response type to "text/html"</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This sets the <code>Content-Type</code> header field for the HTTP response being generated to "text/html".  This is the default value, so generally you should not need to call this function unless you have previously changed it with the <a href="#contentheader">cgilua.contentheader</a> function.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="mkabsoluteurl">
+	<h5><a href="#mkabsoluteurl">mkabsoluteurl</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.mkabsoluteurl(uri) -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns an absolute URL for the given URI by prepending the path with the scheme, hostname, and port of this web server.</p>
+<p>Parameters:</p>
+<ul>
+<li>URI - A path to a resource served by this web server.  A "/" will be prepended to the path if it is not present.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>An absolute URL for the given path of the form "scheme://hostname:port/path" where <code>scheme</code> will be either "http" or "https", and the hostname and port will match that of this web server.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>If you wish to append query items to the path or expand a relative path into it's full path, see <a href="#mkurlpath">cgilua.mkurlpath</a>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="mkurlpath">
+	<h5><a href="#mkurlpath">mkurlpath</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.mkurlpath(uri, [args]) -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a full document URI from a partial URI, including query arguments if present.</p>
+<p>Parameters:</p>
+<ul>
+<li>uri  - the full or partial URI (path and file component of a URL) of the document</li>
+<li>args - an optional table which should have key-value pairs that will be encoded to form a valid query at the end of the URI (see <a href="#encodetable">cgilua.urlcode.encodetable</a>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A full URI including any query arguments, if present.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function is intended to be used in conjunction with <a href="#mkabsoluteurl">cgilua.mkabsoluteurl</a> to generate a full URL.  If the <code>uri</code> provided does not begin with a "/", then the current directory path is prepended to the uri and any query arguments are appended.</li>
+<li>e.g. <code>cgilua.mkabsoluteurl(cgiurl.mkurlpath("file.lp", { key = value, ... }))</code> will return a full URL specifying the file <code>file.lp</code> in the current directory with the specified key-value pairs as query arguments.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="print">
+	<h5><a href="#print">print</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.print(...) -&gt; nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Appends the given arguments to the response body.</p>
+<p>Parameters:</p>
+<ul>
+<li>... - a list of comma separated arguments to add to the response body</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Available within a lua template file as <code>cgilua.print</code></li>
+<li>This function works like the lua builtin <code>print</code> command in that it converts all its arguments to strings, separates them with tabs (<code>\t</code>), and ends the line with a newline (<code>\n</code>) before appending them to the current response body.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="put">
+	<h5><a href="#put">put</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.put(...) -&gt; nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Appends the given arguments to the response body.</p>
+<p>Parameters:</p>
+<ul>
+<li>... - a list of comma separated arguments to add to the response body</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Available within a lua template file as <code>cgilua.put</code></li>
+<li>This function works by flattening tables and converting all values except for <code>nil</code> and <code>false</code> to their string representation and then appending them in order to the response body. Unlike <code>cgilua.print</code>, it does not separate values with a tab character or terminate the line with a newline character.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="redirect">
+	<h5><a href="#redirect">redirect</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.redirect(url, [args]) -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sends the headers to force a redirection to the given URL adding the parameters in table args to the new URL.</p>
+<p>Parameters:</p>
+<ul>
+<li>url  - the URL the client should be redirected to</li>
+<li>args - an optional table which should have key-value pairs that will be encoded to form a valid query at the end of the URL (see <a href="#encodetable">cgilua.urlcode.encodetable</a>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function should generally be followed by a <code>return</code> in your lua template page as no additional processing or output should occur when a request is to be redirected.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="servervariable">
+	<h5><a href="#servervariable">servervariable</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.servervariable(varname) -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a string with the value of the CGI environment variable correspoding to varname.</p>
+<p>Parameters:</p>
+<ul>
+<li>varname - the name of the CGI variable to get the value of.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the value of the CGI variable as a string, or nil if no such variable exists.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>CGI Variables include server defined values commonly shared with CGI scripts and the HTTP request headers from the web request.  The server variables include the following (note that depending upon the request and type of resource the URL refers to, not all values may exist for every request):<ul>
+<li>"AUTH_TYPE"         - If the server supports user authentication, and the script is protected, this is the protocol-specific authentication method used to validate the user.</li>
+<li>"CONTENT_LENGTH"    - The length of the content itself as given by the client.</li>
+<li>"CONTENT_TYPE"      - For queries which have attached information, such as HTTP POST and PUT, this is the content type of the data.</li>
+<li>"DOCUMENT_ROOT"     - the real directory on the server that corresponds to a DOCUMENT_URI of "/".  This is the first directory which contains files or sub-directories which are served by the web server.</li>
+<li>"DOCUMENT_URI"      - the path portion of the HTTP URL requested</li>
+<li>"GATEWAY_INTERFACE" - The revision of the CGI specification to which this server complies. Format: CGI/revision</li>
+<li>"PATH_INFO"         - The extra path information, as given by the client. In other words, scripts can be accessed by their virtual pathname, followed by extra information at the end of this path. The extra information is sent as PATH_INFO. This information should be decoded by the server if it comes from a URL before it is passed to the CGI script.</li>
+<li>"PATH_TRANSLATED"   - The server provides a translated version of PATH_INFO, which takes the path and does any virtual-to-physical mapping to it.</li>
+<li>"QUERY_STRING"      - The information which follows the "?" in the URL which referenced this script. This is the query information. It should not be decoded in any fashion. This variable should always be set when there is query information, regardless of command line decoding.</li>
+<li>"REMOTE_ADDR"       - The IP address of the remote host making the request.</li>
+<li>"REMOTE_HOST"       - The hostname making the request. If the server does not have this information, it should set REMOTE_ADDR and leave this unset.</li>
+<li>"REMOTE_IDENT"      - If the HTTP server supports RFC 931 identification, then this variable will be set to the remote user name retrieved from the server. Usage of this variable should be limited to logging only.</li>
+<li>"REMOTE_USER"       - If the server supports user authentication, and the script is protected, this is the username they have authenticated as.</li>
+<li>"REQUEST_METHOD"    - The method with which the request was made. For HTTP, this is "GET", "HEAD", "POST", etc.</li>
+<li>"REQUEST_TIME"      - the time the server received the request represented as the number of seconds since 00:00:00 UTC on 1 January 1970.  Usable with <code>os.date</code> to provide the date and time in whatever format you require.</li>
+<li>"REQUEST_URI"       - the DOCUMENT_URI with any query string present in the request appended.  Usually this corresponds to the URL without the scheme or host information.</li>
+<li>"SCRIPT_FILENAME"   - the actual path to the script being executed.</li>
+<li>"SCRIPT_NAME"       - A virtual path to the script being executed, used for self-referencing URLs.</li>
+<li>"SERVER_NAME"       - The server's hostname, DNS alias, or IP address as it would appear in self-referencing URLs.</li>
+<li>"SERVER_PORT"       - The port number to which the request was sent.</li>
+<li>"SERVER_PROTOCOL"   - The name and revision of the information protcol this request came in with. Format: protocol/revision</li>
+<li>"SERVER_SOFTWARE"   - The name and version of the web server software answering the request (and running the gateway). Format: name/version</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>The HTTP Request header names are prefixed with "HTTP_", converted to all uppercase, and have all hyphens converted into underscores.  Common headers (converted to their CGI format) might include, but are not limited to:<ul>
+<li>HTTP_ACCEPT, HTTP_ACCEPT_ENCODING, HTTP_ACCEPT_LANGUAGE, HTTP_CACHE_CONTROL, HTTP_CONNECTION, HTTP_DNT, HTTP_HOST, HTTP_USER_AGENT<ul>
+<li>This server also defines the following (which are replicated in the CGI variables above, so those should be used for portability):</li>
+</ul>
+</li>
+<li>HTTP_X_REMOTE_ADDR, HTTP_X_REMOTE_PORT, HTTP_X_SERVER_ADDR, HTTP_X_SERVER_PORT<ul>
+<li>A list of common request headers and their definitions can be found at <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">https://en.wikipedia.org/wiki/List_of_HTTP_header_fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="splitfirst">
+	<h5><a href="#splitfirst">splitfirst</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.splitfirst(path) -&gt; path component, path remainder</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns two strings with the "first directory" and the "remaining paht" of the given path string splitted on the first separator ("/" or "\").</p>
+<p>Parameters:</p>
+<ul>
+<li>path - the path to split</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the first directory component, the remainder of the path</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="splitonlast">
+	<h5><a href="#splitonlast">splitonlast</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.splitonlast(path) -&gt; directory, file</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns two strings with the "directory path" and "file" parts of the given path string splitted on the last separator ("/" or "\").</p>
+<p>Parameters:</p>
+<ul>
+<li>path - the path to split</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the directory path, the file</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function used to be called cgilua.splitpath and still can be accessed by this name for compatibility reasons. cgilua.splitpath may be deprecated in future versions.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="tmpfile">
+	<h5><a href="#tmpfile">tmpfile</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.tmpfile([dir], [namefunction]) -&gt; file[, err]</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the file handle to a temporary file for writing, or nil and an error message if the file could not be created for any reason.</p>
+<p>Parameters:</p>
+<ul>
+<li>dir          - the system directory where the temporary file should be created.  Defaults to <code>cgilua.tmp_path</code>.</li>
+<li>namefunction - an optional function used to generate unique file names for use as temporary files.  Defaults to <code>cgilua.tmpname</code>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>the created file's handle and the filename or nil and an error message if the file could not be created.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The file is automatically deleted when the HTTP request has been completed, so if you need for the data to persist, make sure to <code>io.flush</code> or <code>io.close</code> the file handle yourself and copy the file to a more permanent location.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="tmpname">
+	<h5><a href="#tmpname">tmpname</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.httpserver.hsminweb.cgilua.tmpname() -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a temporary file name used by <code>cgilua.tmpfile</code>.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>a temporary filename, without the path.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function uses <code>hs.host.globallyUniqueString</code> to generate a unique file name.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

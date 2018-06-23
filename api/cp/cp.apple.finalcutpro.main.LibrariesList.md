@@ -3,169 +3,487 @@
 
 Libraries List Module.
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [clips](#clips)
- * [clipsUI](#clipsui)
- * [deselectAll](#deselectall)
- * [selectAll](#selectall)
- * [selectClip](#selectclip)
- * [selectClipAt](#selectclipat)
- * [selectClipTitled](#selectcliptitled)
- * [selectedClips](#selectedclips)
- * [selectedClipsUI](#selectedclipsui)
- * [showClip](#showclip)
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [contents](#contents)
- * [parent](#parent)
- * [playhead](#playhead)
- * [show](#show)
- * [skimmingPlayhead](#skimmingplayhead)
-
-## API Documentation
-
-### Functions
-
-#### [clips](#clips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:clips(filterFn) -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets clips using a custom filter.                                                                                         |
-| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul>   |
-| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clip UI could be found.</li></ul>            |
-
-#### [clipsUI](#clipsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:clipsUI(filterFn) -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets clip UIs using a custom filter.                                                                                         |
-| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul>   |
-| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clip UI could be found.</li></ul>            |
-
-#### [deselectAll](#deselectall)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:deselectAll() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Deselect all clips.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
-
-#### [selectAll](#selectall)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectAll([clips]) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Select all clips.                                                                                         |
-| **Parameters**                                       | <ul><li>clips - A optional table of <code>Clip</code> objects.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
-
-#### [selectClip](#selectclip)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectClip(clip) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Selects a clip.                                                                                         |
-| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to select.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
-
-#### [selectClipAt](#selectclipat)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectClipAt(index) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Select clip at a specific index.                                                                                         |
-| **Parameters**                                       | <ul><li>index - A number of where the clip appears in the list.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
-
-#### [selectClipTitled](#selectcliptitled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectClipTitled(title) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Select clip with a specific title.                                                                                         |
-| **Parameters**                                       | <ul><li>title - The title of a clip.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
-
-#### [selectedClips](#selectedclips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectedClips() -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets selected clips.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clips are selected.</li></ul>            |
-
-#### [selectedClipsUI](#selectedclipsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectedClipsUI() -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets selected clips UI's.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clips are selected.</li></ul>            |
-
-#### [showClip](#showclip)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:showClip(clip) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Shows a clip.                                                                                         |
-| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to show.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.new(app) -> LibrariesList` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `LibrariesList` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul>   |
-| **Returns**                                          | <ul><li>A new <code>LibrariesList</code> object.</li></ul>            |
-
-### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>App</li></ul>            |
-
-#### [contents](#contents)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:contents() -> Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get the Libraries List Contents UI.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>Table</code> object</li></ul>            |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>parent</li></ul>            |
-
-#### [playhead](#playhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:playhead() -> Playhead` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get the Libraries List Playhead.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul>            |
-
-#### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:show() -> LibrariesList` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Show the Libraries List.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>LibrariesList</code> object</li></ul>            |
-
-#### [skimmingPlayhead](#skimmingplayhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:skimmingPlayhead() -> Playhead` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Get the Libraries List Skimming Playhead.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#clips">clips</a></li>
+	<li><a href="#clipsUI">clipsUI</a></li>
+	<li><a href="#deselectAll">deselectAll</a></li>
+	<li><a href="#selectAll">selectAll</a></li>
+	<li><a href="#selectClip">selectClip</a></li>
+	<li><a href="#selectClipAt">selectClipAt</a></li>
+	<li><a href="#selectClipTitled">selectClipTitled</a></li>
+	<li><a href="#selectedClips">selectedClips</a></li>
+	<li><a href="#selectedClipsUI">selectedClipsUI</a></li>
+	<li><a href="#showClip">showClip</a></li>
+  </ul>
+<li>Constructors - API calls which return an object, typically one that offers API methods</li>
+  <ul>
+	<li><a href="#new">new</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#app">app</a></li>
+	<li><a href="#contents">contents</a></li>
+	<li><a href="#parent">parent</a></li>
+	<li><a href="#playhead">playhead</a></li>
+	<li><a href="#show">show</a></li>
+	<li><a href="#skimmingPlayhead">skimmingPlayhead</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="clips">
+	<h5><a href="#clips">clips</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:clips(filterFn) -&gt; table | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets clips using a custom filter.</p>
+<p>Parameters:</p>
+<ul>
+<li>filterFn - A function to filter the UI results.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table of <code>Clip</code> objects or <code>nil</code> if no clip UI could be found.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="clipsUI">
+	<h5><a href="#clipsUI">clipsUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:clipsUI(filterFn) -&gt; table | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets clip UIs using a custom filter.</p>
+<p>Parameters:</p>
+<ul>
+<li>filterFn - A function to filter the UI results.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clip UI could be found.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="deselectAll">
+	<h5><a href="#deselectAll">deselectAll</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:deselectAll() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Deselect all clips.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="selectAll">
+	<h5><a href="#selectAll">selectAll</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:selectAll([clips]) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Select all clips.</p>
+<p>Parameters:</p>
+<ul>
+<li>clips - A optional table of <code>Clip</code> objects.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="selectClip">
+	<h5><a href="#selectClip">selectClip</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:selectClip(clip) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Selects a clip.</p>
+<p>Parameters:</p>
+<ul>
+<li>clip - The <code>Clip</code> you want to select.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="selectClipAt">
+	<h5><a href="#selectClipAt">selectClipAt</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:selectClipAt(index) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Select clip at a specific index.</p>
+<p>Parameters:</p>
+<ul>
+<li>index - A number of where the clip appears in the list.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="selectClipTitled">
+	<h5><a href="#selectClipTitled">selectClipTitled</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:selectClipTitled(title) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Select clip with a specific title.</p>
+<p>Parameters:</p>
+<ul>
+<li>title - The title of a clip.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="selectedClips">
+	<h5><a href="#selectedClips">selectedClips</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:selectedClips() -&gt; table | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets selected clips.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table of <code>Clip</code> objects or <code>nil</code> if no clips are selected.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="selectedClipsUI">
+	<h5><a href="#selectedClipsUI">selectedClipsUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:selectedClipsUI() -&gt; table | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets selected clips UI's.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clips are selected.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="showClip">
+	<h5><a href="#showClip">showClip</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:showClip(clip) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Shows a clip.</p>
+<p>Parameters:</p>
+<ul>
+<li>clip - The <code>Clip</code> you want to show.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Constructors</h4>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList.new(app) -&gt; LibrariesList</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constructor</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a new <code>LibrariesList</code> instance.</p>
+<p>Parameters:</p>
+<ul>
+<li>parent - The parent object.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A new <code>LibrariesList</code> object.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="app">
+	<h5><a href="#app">app</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:app() -&gt; App</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the app instance representing Final Cut Pro.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>App</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="contents">
+	<h5><a href="#contents">contents</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:contents() -&gt; Table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Get the Libraries List Contents UI.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>Table</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="parent">
+	<h5><a href="#parent">parent</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:parent() -&gt; parent</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the parent object.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>parent</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="playhead">
+	<h5><a href="#playhead">playhead</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:playhead() -&gt; Playhead</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Get the Libraries List Playhead.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>Playhead</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="show">
+	<h5><a href="#show">show</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:show() -&gt; LibrariesList</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Show the Libraries List.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>LibrariesList</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="skimmingPlayhead">
+	<h5><a href="#skimmingPlayhead">skimmingPlayhead</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.LibrariesList:skimmingPlayhead() -&gt; Playhead</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Get the Libraries List Skimming Playhead.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>Playhead</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

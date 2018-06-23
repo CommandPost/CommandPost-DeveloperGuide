@@ -4,59 +4,184 @@
 Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript
 
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [_osascript](#_osascript)
- * [applescript](#applescript)
- * [applescriptFromFile](#applescriptfromfile)
- * [javascript](#javascript)
- * [javascriptFromFile](#javascriptfromfile)
-
-## API Documentation
-
-### Functions
-
-#### [_osascript](#_osascript)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript._osascript(source, language) -> bool, object, descriptor` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Runs osascript code                                                                                         |
-| **Parameters**                                       | <ul><li>source - Some osascript code to execute</li></ul><ul><li>language - A string containing the OSA language, either 'AppleScript' or 'JavaScript'. Defaults to AppleScript if invalid language</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li></ul><ul><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li></ul><ul><li>A string containing the raw output of the code and/or its errors</li></ul>            |
-
-#### [applescript](#applescript)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.applescript(source) -> bool, object, descriptor` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Runs AppleScript code                                                                                         |
-| **Parameters**                                       | <ul><li>source - A string containing some AppleScript code to execute</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li></ul><ul><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li></ul><ul><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>            |
-| **Notes**                                            | <ul><li>Use hs.osascript._osascript(source, "AppleScript") if you always want the result as a string, even when a failure occurs</li></ul>                 |
-
-#### [applescriptFromFile](#applescriptfromfile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.applescriptFromFile(fileName) -> bool, object, descriptor` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Runs AppleScript code from a source file.                                                                                         |
-| **Parameters**                                       | <ul><li>fileName - A string containing the file name of an AppleScript file to execute.</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li></ul><ul><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li></ul><ul><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>            |
-| **Notes**                                            | <ul><li>This function uses hs.osascript.applescript for execution.</li></ul><ul><li>Use hs.osascript._osascript(source, "AppleScript") if you always want the result as a string, even when a failure occurs. However, this function can only take a string, and not a file name.</li></ul>                 |
-
-#### [javascript](#javascript)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.javascript(source) -> bool, object, descriptor` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Runs JavaScript code                                                                                         |
-| **Parameters**                                       | <ul><li>source - A string containing some JavaScript code to execute</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li></ul><ul><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li></ul><ul><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>            |
-| **Notes**                                            | <ul><li>Use hs.osascript._osascript(source, "JavaScript") if you always want the result as a string, even when a failure occurs</li></ul>                 |
-
-#### [javascriptFromFile](#javascriptfromfile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.osascript.javascriptFromFile(fileName) -> bool, object, descriptor` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Runs JavaScript code from a source file.                                                                                         |
-| **Parameters**                                       | <ul><li>fileName - A string containing the file name of an JavaScript file to execute.</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean value indicating whether the code succeeded or not</li></ul><ul><li>An object containing the parsed output that can be any type, or nil if unsuccessful</li></ul><ul><li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li></ul>            |
-| **Notes**                                            | <ul><li>This function uses hs.osascript.javascript for execution.</li></ul><ul><li>Use hs.osascript._osascript(source, "JavaScript") if you always want the result as a string, even when a failure occurs. However, this function can only take a string, and not a file name.</li></ul>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#_osascript">_osascript</a></li>
+	<li><a href="#applescript">applescript</a></li>
+	<li><a href="#applescriptFromFile">applescriptFromFile</a></li>
+	<li><a href="#javascript">javascript</a></li>
+	<li><a href="#javascriptFromFile">javascriptFromFile</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="_osascript">
+	<h5><a href="#_osascript">_osascript</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.osascript._osascript(source, language) -&gt; bool, object, descriptor</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Runs osascript code</p>
+<p>Parameters:</p>
+<ul>
+<li>source - Some osascript code to execute</li>
+<li>language - A string containing the OSA language, either 'AppleScript' or 'JavaScript'. Defaults to AppleScript if invalid language</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean value indicating whether the code succeeded or not</li>
+<li>An object containing the parsed output that can be any type, or nil if unsuccessful</li>
+<li>A string containing the raw output of the code and/or its errors</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="applescript">
+	<h5><a href="#applescript">applescript</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.osascript.applescript(source) -&gt; bool, object, descriptor</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Runs AppleScript code</p>
+<p>Parameters:</p>
+<ul>
+<li>source - A string containing some AppleScript code to execute</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean value indicating whether the code succeeded or not</li>
+<li>An object containing the parsed output that can be any type, or nil if unsuccessful</li>
+<li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Use hs.osascript._osascript(source, "AppleScript") if you always want the result as a string, even when a failure occurs</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="applescriptFromFile">
+	<h5><a href="#applescriptFromFile">applescriptFromFile</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.osascript.applescriptFromFile(fileName) -&gt; bool, object, descriptor</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Runs AppleScript code from a source file.</p>
+<p>Parameters:</p>
+<ul>
+<li>fileName - A string containing the file name of an AppleScript file to execute.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean value indicating whether the code succeeded or not</li>
+<li>An object containing the parsed output that can be any type, or nil if unsuccessful</li>
+<li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function uses hs.osascript.applescript for execution.</li>
+<li>Use hs.osascript._osascript(source, "AppleScript") if you always want the result as a string, even when a failure occurs. However, this function can only take a string, and not a file name.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="javascript">
+	<h5><a href="#javascript">javascript</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.osascript.javascript(source) -&gt; bool, object, descriptor</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Runs JavaScript code</p>
+<p>Parameters:</p>
+<ul>
+<li>source - A string containing some JavaScript code to execute</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean value indicating whether the code succeeded or not</li>
+<li>An object containing the parsed output that can be any type, or nil if unsuccessful</li>
+<li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Use hs.osascript._osascript(source, "JavaScript") if you always want the result as a string, even when a failure occurs</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="javascriptFromFile">
+	<h5><a href="#javascriptFromFile">javascriptFromFile</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.osascript.javascriptFromFile(fileName) -&gt; bool, object, descriptor</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Runs JavaScript code from a source file.</p>
+<p>Parameters:</p>
+<ul>
+<li>fileName - A string containing the file name of an JavaScript file to execute.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean value indicating whether the code succeeded or not</li>
+<li>An object containing the parsed output that can be any type, or nil if unsuccessful</li>
+<li>If the code succeeded, the raw output of the code string. If the code failed, a table containing an error dictionary</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function uses hs.osascript.javascript for execution.</li>
+<li>Use hs.osascript._osascript(source, "JavaScript") if you always want the result as a string, even when a failure occurs. However, this function can only take a string, and not a file name.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

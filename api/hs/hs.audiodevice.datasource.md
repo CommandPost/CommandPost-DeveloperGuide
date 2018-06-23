@@ -5,28 +5,74 @@ Inspect/manipulate the data sources of an audio device
 
 Note: These objects are obtained from the methods on an `hs.audiodevice` object
 
-## API Overview
-* Methods - API calls which can only be made on an object returned by a constructor
- * [name](#name)
- * [setDefault](#setdefault)
-
-## API Documentation
-
-### Methods
-
-#### [name](#name)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice.datasource:name() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets the name of an audio device datasource                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A string containing the name of the datasource</li></ul>            |
-
-#### [setDefault](#setdefault)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice.datasource:setDefault() -> hs.audiodevice.datasource` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the audio device datasource as the default                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.audiodevice.datasource</code> object</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#name">name</a></li>
+	<li><a href="#setDefault">setDefault</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Methods</h4>
+  <section id="name">
+	<h5><a href="#name">name</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.audiodevice.datasource:name() -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the name of an audio device datasource</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A string containing the name of the datasource</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setDefault">
+	<h5><a href="#setDefault">setDefault</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.audiodevice.datasource:setDefault() -&gt; hs.audiodevice.datasource</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the audio device datasource as the default</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.audiodevice.datasource</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

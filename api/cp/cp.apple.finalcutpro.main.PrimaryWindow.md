@@ -3,188 +3,518 @@
 
 Primary Window Module.
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [matches](#matches)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [bottomGroupUI](#bottomgroupui)
- * [browserGroupUI](#browsergroupui)
- * [frame](#frame)
- * [hsWindow](#hswindow)
- * [isFullScreen](#isfullscreen)
- * [isShowing](#isshowing)
- * [leftGroupUI](#leftgroupui)
- * [rightGroupUI](#rightgroupui)
- * [rootGroupUI](#rootgroupui)
- * [timelineGroupUI](#timelinegroupui)
- * [topGroupUI](#topgroupui)
- * [UI](#ui)
- * [viewerGroupUI](#viewergroupui)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [alert](#alert)
- * [app](#app)
- * [colorBoard](#colorboard)
- * [inspector](#inspector)
- * [new](#new)
- * [show](#show)
- * [toolbar](#toolbar)
- * [window](#window)
-
-## API Documentation
-
-### Functions
-
-#### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.matches(w) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see if a window matches the PrimaryWindow requirements                                                                                         |
-| **Parameters**                                       | <ul><li>w - The window to check</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if matched otherwise <code>false</code></li></ul>            |
-
-### Fields
-
-#### [bottomGroupUI](#bottomgroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:bottomGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the bottom group UI as a `hs._asm.axuielement` object.                                                                                         |
-
-#### [browserGroupUI](#browsergroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.browserGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the UI which contains the Browser.                                                                                         |
-
-#### [frame](#frame)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.frame <cp.prop: frame>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The current position (x, y, width, height) of the window.                                                                                         |
-
-#### [hsWindow](#hswindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.hsWindow <cp.prop: hs.window; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found.                                                                                         |
-
-#### [isFullScreen](#isfullscreen)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.isFullScreen <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is `true` if the window is full-screen.                                                                                         |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.isShowing <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is `true` if the window is visible.                                                                                         |
-
-#### [leftGroupUI](#leftgroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.leftGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the left group UI as a `hs._asm.axuielement` object                                                                                         |
-
-#### [rightGroupUI](#rightgroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.rightGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the right group UI as a `hs._asm.axuielement` object.                                                                                         |
-
-#### [rootGroupUI](#rootgroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.rootGroupUI() <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the top AXSplitGroup as a `hs._asm.axuielement` object                                                                                         |
-
-#### [timelineGroupUI](#timelinegroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.timelineGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the UI that contains the `Timeline`.                                                                                         |
-
-#### [topGroupUI](#topgroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.topGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the top group UI as a `hs._asm.axuielement` object.                                                                                         |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.UI <cp.prop: axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The `axuielement` for the window.                                                                                         |
-
-#### [viewerGroupUI](#viewergroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.viewerGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the UI that contains the `Viewer`.                                                                                         |
-
-### Methods
-
-#### [alert](#alert)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:alert() -> cp.ui.Alert` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Provides access to any 'Alert' windows on the PrimaryWindow.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>cp.ui.Alert</code> object</li></ul>            |
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:app() -> hs.application` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the application the display belongs to.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The app instance.</li></ul>            |
-
-#### [colorBoard](#colorboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:colorBoard() -> ColorBoard` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets the ColorBoard object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>ColorBoard</li></ul>            |
-
-#### [inspector](#inspector)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:inspector() -> Inspector` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets the Inspector object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>Inspector</li></ul>            |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.new(app) -> PrimaryWindow object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new PrimaryWindow.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>PrimaryWindow</li></ul>            |
-
-#### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:show() -> PrimaryWindow` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Shows the Primary Window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>PrimaryWindow</code> instance.</li></ul>            |
-
-#### [toolbar](#toolbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:toolbar() -> PrimaryToolbar` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the PrimaryToolbar element.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>PrimaryToolbar</code>.</li></ul>            |
-
-#### [window](#window)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:window() -> cp.ui.Window` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `Window` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>Window</code> instance.</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#matches">matches</a></li>
+  </ul>
+<li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
+  <ul>
+	<li><a href="#bottomGroupUI">bottomGroupUI</a></li>
+	<li><a href="#browserGroupUI">browserGroupUI</a></li>
+	<li><a href="#frame">frame</a></li>
+	<li><a href="#hsWindow">hsWindow</a></li>
+	<li><a href="#isFullScreen">isFullScreen</a></li>
+	<li><a href="#isShowing">isShowing</a></li>
+	<li><a href="#leftGroupUI">leftGroupUI</a></li>
+	<li><a href="#rightGroupUI">rightGroupUI</a></li>
+	<li><a href="#rootGroupUI">rootGroupUI</a></li>
+	<li><a href="#timelineGroupUI">timelineGroupUI</a></li>
+	<li><a href="#topGroupUI">topGroupUI</a></li>
+	<li><a href="#UI">UI</a></li>
+	<li><a href="#viewerGroupUI">viewerGroupUI</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#alert">alert</a></li>
+	<li><a href="#app">app</a></li>
+	<li><a href="#colorBoard">colorBoard</a></li>
+	<li><a href="#inspector">inspector</a></li>
+	<li><a href="#new">new</a></li>
+	<li><a href="#show">show</a></li>
+	<li><a href="#toolbar">toolbar</a></li>
+	<li><a href="#window">window</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="matches">
+	<h5><a href="#matches">matches</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.matches(w) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Checks to see if a window matches the PrimaryWindow requirements</p>
+<p>Parameters:</p>
+<ul>
+<li>w - The window to check</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if matched otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Fields</h4>
+  <section id="bottomGroupUI">
+	<h5><a href="#bottomGroupUI">bottomGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:bottomGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the bottom group UI as a <code>hs._asm.axuielement</code> object.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="browserGroupUI">
+	<h5><a href="#browserGroupUI">browserGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.browserGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the UI which contains the Browser.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="frame">
+	<h5><a href="#frame">frame</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.frame &lt;cp.prop: frame&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The current position (x, y, width, height) of the window.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="hsWindow">
+	<h5><a href="#hsWindow">hsWindow</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.hsWindow &lt;cp.prop: hs.window; read-only&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The <code>hs.window</code> instance for the window, or <code>nil</code> if it can't be found.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="isFullScreen">
+	<h5><a href="#isFullScreen">isFullScreen</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.isFullScreen &lt;cp.prop: boolean&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Is <code>true</code> if the window is full-screen.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="isShowing">
+	<h5><a href="#isShowing">isShowing</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.isShowing &lt;cp.prop: boolean&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Is <code>true</code> if the window is visible.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="leftGroupUI">
+	<h5><a href="#leftGroupUI">leftGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.leftGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the left group UI as a <code>hs._asm.axuielement</code> object</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="rightGroupUI">
+	<h5><a href="#rightGroupUI">rightGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.rightGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the right group UI as a <code>hs._asm.axuielement</code> object.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="rootGroupUI">
+	<h5><a href="#rootGroupUI">rootGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.rootGroupUI() &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the top AXSplitGroup as a <code>hs._asm.axuielement</code> object</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="timelineGroupUI">
+	<h5><a href="#timelineGroupUI">timelineGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.timelineGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the UI that contains the <code>Timeline</code>.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="topGroupUI">
+	<h5><a href="#topGroupUI">topGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.topGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the top group UI as a <code>hs._asm.axuielement</code> object.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="UI">
+	<h5><a href="#UI">UI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.UI &lt;cp.prop: axuielement; read-only&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The <code>axuielement</code> for the window.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="viewerGroupUI">
+	<h5><a href="#viewerGroupUI">viewerGroupUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.viewerGroupUI &lt;cp.prop: hs._asm.axuielement; read-only; live&gt;</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Field</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the UI that contains the <code>Viewer</code>.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="alert">
+	<h5><a href="#alert">alert</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:alert() -&gt; cp.ui.Alert</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Provides access to any 'Alert' windows on the PrimaryWindow.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>cp.ui.Alert</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="app">
+	<h5><a href="#app">app</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:app() -&gt; hs.application</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the application the display belongs to.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The app instance.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="colorBoard">
+	<h5><a href="#colorBoard">colorBoard</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:colorBoard() -&gt; ColorBoard</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the ColorBoard object.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>ColorBoard</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="inspector">
+	<h5><a href="#inspector">inspector</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:inspector() -&gt; Inspector</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the Inspector object.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>Inspector</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow.new(app) -&gt; PrimaryWindow object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a new PrimaryWindow.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>PrimaryWindow</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="show">
+	<h5><a href="#show">show</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:show() -&gt; PrimaryWindow</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Shows the Primary Window.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>PrimaryWindow</code> instance.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="toolbar">
+	<h5><a href="#toolbar">toolbar</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:toolbar() -&gt; PrimaryToolbar</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the PrimaryToolbar element.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>PrimaryToolbar</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="window">
+	<h5><a href="#window">window</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.PrimaryWindow:window() -&gt; cp.ui.Window</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the <code>Window</code> instance.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>Window</code> instance.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

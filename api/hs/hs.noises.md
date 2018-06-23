@@ -25,40 +25,105 @@ This detector has an almost zero false positive rate in my experience and a very
 Personally I use this to scroll up by a large increment in case I scroll down too far with "sss", and when my RSS reader is focused it moves to the next article.
 The only false positives I've ever had with this detector are various rare throat clearing noises that make a pop sound very much like a lip pop.
 
-## API Overview
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [start](#start)
- * [stop](#stop)
-
-## API Documentation
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.noises.new(fn) -> listener` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new listener for mouth noise recognition                                                                                         |
-| **Parameters**                                       | <ul><li>A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs).</li></ul>   |
-| **Returns**                                          | <ul><li>An <code>hs.noises</code> object</li></ul>            |
-
-### Methods
-
-#### [start](#start)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.noises:start() -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Starts listening to the microphone and passing the audio to the recognizer.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.noises</code> object</li></ul>            |
-
-#### [stop](#stop)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.noises:stop() -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Stops the listener from recording and analyzing microphone input.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.noises</code> object</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Constructors - API calls which return an object, typically one that offers API methods</li>
+  <ul>
+	<li><a href="#new">new</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#start">start</a></li>
+	<li><a href="#stop">stop</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Constructors</h4>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.noises.new(fn) -&gt; listener</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constructor</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a new listener for mouth noise recognition</p>
+<p>Parameters:</p>
+<ul>
+<li>A function that is called when a mouth noise is recognized. It should accept a single parameter which will be a number representing the event type (see module docs).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>An <code>hs.noises</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="start">
+	<h5><a href="#start">start</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.noises:start() -&gt; self</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Starts listening to the microphone and passing the audio to the recognizer.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.noises</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="stop">
+	<h5><a href="#stop">stop</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.noises:stop() -&gt; self</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Stops the listener from recording and analyzing microphone input.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.noises</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

@@ -1,7 +1,7 @@
 # [docs](index.md) » hs.tangent
 ---
 
-**Tangent Control Surface Extension**
+Tangent Control Surface Extension
 
 **API Version:** TUBE Version 3.2 - TIPC Rev 4 (22nd February 2017)
 
@@ -13,132 +13,956 @@ future panels produced by Tangent via the TUBE Hub.
 
 You can download the Tangent Developer Support Pack & Tangent Hub Installer for Mac [here](http://www.tangentwave.co.uk/developer-support/).
 
-This extension was thrown together by [Chris Hocking](http://latenitefilms.com) for [CommandPost](http://commandpost.io).
+This extension was thrown together by [Chris Hocking](https://github.com/latenitefilms), then dramatically improved by [David Peterson](https://github.com/randomeizer) for [CommandPost](http://commandpost.io).
 
-## API Overview
-* Constants - Useful values which cannot be changed
- * [APP_MESSAGE](#app_message)
- * [HUB_MESSAGE](#hub_message)
- * [PANEL_TYPE](#panel_type)
-* Variables - Configurable values
- * [automaticallySendApplicationDefinition](#automaticallysendapplicationdefinition)
- * [interval](#interval)
- * [ipAddress](#ipaddress)
- * [port](#port)
-* Functions - API calls offered directly by the extension
- * [callback](#callback)
- * [connect](#connect)
- * [connected](#connected)
- * [disconnect](#disconnect)
- * [isTangentHubInstalled](#istangenthubinstalled)
- * [send](#send)
- * [setLogLevel](#setloglevel)
-
-## API Documentation
-
-### Constants
-
-#### [APP_MESSAGE](#app_message)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.APP_MESSAGE -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Definitions for IPC Commands from Hammerspoon to the HUB.                                                                                         |
-
-#### [HUB_MESSAGE](#hub_message)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.HUB_MESSAGE -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Definitions for IPC Commands from the HUB to Hammerspoon.                                                                                         |
-
-#### [PANEL_TYPE](#panel_type)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.PANEL_TYPE -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Tangent Panel Types.                                                                                         |
-
-### Variables
-
-#### [automaticallySendApplicationDefinition](#automaticallysendapplicationdefinition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.automaticallySendApplicationDefinition -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Automatically send the "Application Definition" response. Defaults to `true`.                                                                                         |
-
-#### [interval](#interval)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.interval -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | How often we check for new socket messages. Defaults to 0.001.                                                                                         |
-
-#### [ipAddress](#ipaddress)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.ipAddress -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | IP Address that the Tangent Hub is located at. Defaults to 127.0.0.1.                                                                                         |
-
-#### [port](#port)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.port -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The port that Tangent Hub monitors. Defaults to 64246.                                                                                         |
-
-### Functions
-
-#### [callback](#callback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.callback() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets a callback when new messages are received.                                                                                         |
-| **Parameters**                                       | <ul><li>callbackFn - a function to set as the callback for <code>hs.tangent</code>. If the value provided is <code>nil</code>, any currently existing callback function is removed.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul>            |
-| **Notes**                                            | <ul><li>Full documentation for the Tangent API can be downloaded <a href="http://www.tangentwave.co.uk/download/developer-support-pack/">here</a>.</li></ul><ul><li>The callback function should expect 2 arguments and should not return anything:</li></ul><ul><li>id - the message ID of the incoming message</li></ul><ul><li>metadata - A table of data for the Tangent command (see below).</li></ul><ul><li>The metadata table will return the following, depending on the <code>id</code> for the callback:</li></ul><ul><li><code>CONNECTED</code> - Connection To Tangent Hub successfully established.</li></ul><ul><li><code>INITIATE_COMMS</code> - Initiates communication between the Hub and the application.</li></ul><pre><code> * `protocolRev` - The revision number of the protocol.</code></pre><pre><code> * `numPanels` - The number of panels connected.</code></pre><pre><code> * `panels`</code></pre><pre><code>   * `panelID` - The ID of the panel.</code></pre><pre><code>   * `panelType` - The type of panel connected.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>PARAMETER_CHANGE</code> - Requests that the application increment a parameter.</li></ul><pre><code> * `paramID` - The ID value of the parameter.</code></pre><pre><code> * `increment` - The incremental value which should be applied to the parameter.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>PARAMETER_RESET</code> - Requests that the application changes a parameter to its reset value.</li></ul><pre><code> * `paramID` - The ID value of the parameter.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>PARAMETER_VALUE_REQUEST</code> - Requests that the application sends a <code>ParameterValue (0x82)</code> command to the Hub.</li></ul><pre><code> * `paramID` - The ID value of the parameter.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>MENU_CHANGE</code> - Requests the application change a menu index by +1 or -1.</li></ul><pre><code> * `menuID` - The ID value of the menu.</code></pre><pre><code> * `increment` - The incremental amount by which the menu index should be changed which will always be an integer value of +1 or -1.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>MENU_RESET</code> - Requests that the application changes a menu to its reset value.</li></ul><pre><code> * `menuID` - The ID value of the menu.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>MENU_STRING_REQUEST</code> - Requests that the application sends a <code>MenuString (0x83)</code> command to the Hub.</li></ul><pre><code> * `menuID` - The ID value of the menu.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>ACTION_ON</code> - Requests that the application performs the specified action.</li></ul><pre><code> * `actionID` - The ID value of the action.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>MODE_CHANGE</code> - Requests that the application changes to the specified mode.</li></ul><pre><code> * `modeID` - The ID value of the mode.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>TRANSPORT</code> - Requests the application to move the currently active transport.</li></ul><pre><code> * `jogValue` - The number of jog steps to move the transport.</code></pre><pre><code> * `shuttleValue` - An incremental value to add to the shuttle speed.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>ACTION_OFF</code> - Requests that the application cancels the specified action.</li></ul><pre><code> * `actionID` - The ID value of the action.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>UNMANAGED_PANEL_CAPABILITIES</code> - Only used when working in Unmanaged panel mode. Sent in response to a <code>UnmanagedPanelCapabilitiesRequest (0xA0)</code> command.</li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><pre><code> * `numButtons` - The number of buttons on the panel.</code></pre><pre><code> * `numEncoders` - The number of encoders on the panel.</code></pre><pre><code> * `numDisplays` - The number of displays on the panel.</code></pre><pre><code> * `numDisplayLines` - The number of lines for each display on the panel.</code></pre><pre><code> * `numDisplayChars` - The number of characters on each line of each display on the panel.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>UNMANAGED_BUTTON_DOWN</code> - Only used when working in Unmanaged panel mode. Issued when a button has been pressed.</li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><pre><code> * `buttonID` - The hardware ID of the button</code></pre><pre><code> * `data` - The raw data from the Tangent Hub.</code></pre><ul><li><code>UNMANAGED_BUTTON_UP</code> - Only used when working in Unmanaged panel mode. Issued when a button has been released.</li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><pre><code> * `buttonID` - The hardware ID of the button.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>UNMANAGED_ENCODER_CHANGE</code> - Only used when working in Unmanaged panel mode. Issued when an encoder has been moved.</li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><pre><code> * `paramID` - The hardware ID of the encoder.</code></pre><pre><code> * `increment` - The incremental value.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>UNMANAGED_DISPLAY_REFRESH</code> - Only used when working in Unmanaged panel mode. Issued when a panel has been connected or the focus of the panel has been returned to your application.</li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre><ul><li><code>PANEL_CONNECTION_STATE</code></li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><pre><code> * `state` - The connected state of the panel, `true` if connected, `false` if disconnected.</code></pre><pre><code> * `data` - The raw data from the Tangent Hub</code></pre>                 |
-
-#### [connect](#connect)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.connect(applicationName, systemPath[, userPath]) -> boolean, errorMessage` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Connects to the Tangent Hub.                                                                                         |
-| **Parameters**                                       | <ul><li>applicationName - Your application name as a string</li></ul><ul><li>systemPath - A string containing the absolute path of the directory that contains the Controls and Default Map XML files.</li></ul><ul><li>[userPath] - An optional string containing the absolute path of the directory that contains the User’s Default Map XML files.</li></ul>   |
-| **Returns**                                          | <ul><li>success - <code>true</code> on success, otherwise <code>nil</code></li></ul><ul><li>errorMessage - The error messages as a string or <code>nil</code> if <code>success</code> is <code>true</code>.</li></ul>            |
-
-#### [connected](#connected)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.connected() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see whether or not you're successfully connected to the Tangent Hub.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if connected, otherwise <code>false</code></li></ul>            |
-
-#### [disconnect](#disconnect)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.disconnect() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Disconnects from the Tangent Hub.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [isTangentHubInstalled](#istangenthubinstalled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.isTangentHubInstalled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see whether or not the Tangent Hub software is installed.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if Tangent Hub is installed otherwise <code>false</code>.</li></ul>            |
-
-#### [send](#send)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.send(id, metadata) -> boolean, string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sends a message to the Tangent Hub.                                                                                         |
-| **Parameters**                                       | <ul><li>id - The ID of the message you want to send as defined in <code>hs.tangent.APP_MESSAGE</code></li></ul><ul><li>metadata - A table of values as explained below.</li></ul>   |
-| **Returns**                                          | <ul><li>success - <code>true</code> if connected, otherwise <code>false</code></li></ul><ul><li>errorMessage - An error message if an error occurs, as a string</li></ul>            |
-| **Notes**                                            | <ul><li>Full documentation for the Tangent API can be downloaded <a href="http://www.tangentwave.co.uk/download/developer-support-pack/">here</a>.</li></ul><ul><li>The metadata table will accept the following, depending on the <code>id</code> provided:</li></ul><ul><li><code>APPLICATION_DEFINITION</code> - This is sent in response to the <code>InitiateComms (0x01)</code> command and establishes communication between the application and the hub.</li></ul><pre><code> * `applicationName` - An string containing the name of the application.</code></pre><pre><code> * `systemPath` - A string containing the absolute path of the directory that contains the Controls and Default Map XML files.</code></pre><pre><code> * `userPath` - A string containing the absolute path of the directory that contains the User’s Default Map XML files.</code></pre><ul><li><code>PARAMETER_VALUE</code> - Updates the Hub with a parameter value.</li></ul><pre><code> * `paramID` - The ID value of the parameter.</code></pre><pre><code> * `value` - The current value of the parameter.</code></pre><pre><code> * `atDefault` - `true` if the value represents the default, otherwise `false`.</code></pre><ul><li><code>MENU_STRING</code> - Updates the Hub with a menu value.</li></ul><pre><code> * `menuID` - The ID value of the menu.</code></pre><pre><code> * `valueStr` - The current ‘value’ of the parameter represented as a string.</code></pre><pre><code> * `atDefault` - `true` if the value represents the default, otherwise `false`.</code></pre><ul><li><code>ALL_CHANGE</code> - Tells the Hub that a large number of software-controls have changed.</li></ul><ul><li><code>MODE_VALUE</code></li></ul><pre><code> * `modeID` - The ID value of the mode.</code></pre><ul><li><code>DISPLAY_TEXT</code></li></ul><pre><code> * `stringOne` - A line of status text.</code></pre><pre><code> * `stringOneDoubleHeight` - `true` if the string is to be printed double height, otherwise `false`.</code></pre><pre><code> * [`stringTwo`] - An optional line of status text.</code></pre><pre><code> * [`stringTwoDoubleHeight`] - `true` if the string is to be printed double height, otherwise `false` (required if `stringTwo` is supplied).</code></pre><pre><code> * [`stringThree`] - An optional line of status text.</code></pre><pre><code> * [`stringThreeDoubleHeight`] - `true` if the string is to be printed double height, otherwise `false` (required if `stringThree` is supplied).</code></pre><ul><li><code>UNMANAGED_PANEL_CAPABILITIES_REQUEST</code></li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><ul><li><code>UNMANAGED_DISPLAY_WRITE</code></li></ul><pre><code> * `panelID` - The ID of the panel as reported in the `InitiateComms` command.</code></pre><pre><code> * `displayID` - The ID of the display to be written to.</code></pre><pre><code> * `lineNum` - The line number of the display to be written to with 0 as the top line.</code></pre><pre><code> * `pos` - The position on the line to start writing from with 0 as the first column.</code></pre><pre><code> * `dispStr` - A line of text.</code></pre><ul><li><code>RENAME_CONTROL</code></li></ul><pre><code> * `targetID` - The id of any application defined Parameter, Menu, Action or Mode.</code></pre><pre><code> * `nameStr` - The new name string.</code></pre><ul><li><code>HIGHLIGHT_CONTROL</code></li></ul><pre><code> * `targetID` - The id of any application defined Parameter, Menu, Action or Mode.</code></pre><pre><code> * `state` - The state to set, `true` for highlighted, `false` for clear.</code></pre><ul><li><code>INDICATE_CONTROL</code></li></ul><pre><code> * `targetID` - The id of any application defined Action or Mode.</code></pre><pre><code> * `state` - The state to set, `true` for indicated, `false` for clear.</code></pre><ul><li><code>REQUEST_PANEL_CONNECTION_STATES</code> - Requests the Hub to respond with a sequence of PanelConnectionState (0x35) commands to report the connected/disconnected status of each configured panel.</li></ul>                 |
-
-#### [setLogLevel](#setloglevel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.setLogLevel(loglevel) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the Log Level.                                                                                         |
-| **Parameters**                                       | <ul><li>loglevel - can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose'; or a corresponding number between 0 and 5</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Constants - Useful values which cannot be changed</li>
+  <ul>
+	<li><a href="#action">action</a></li>
+	<li><a href="#fromHub">fromHub</a></li>
+	<li><a href="#panelType">panelType</a></li>
+	<li><a href="#parameter">parameter</a></li>
+	<li><a href="#toHub">toHub</a></li>
+  </ul>
+<li>Variables - Configurable values</li>
+  <ul>
+	<li><a href="#automaticallySendApplicationDefinition">automaticallySendApplicationDefinition</a></li>
+	<li><a href="#interval">interval</a></li>
+	<li><a href="#ipAddress">ipAddress</a></li>
+	<li><a href="#port">port</a></li>
+  </ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#callback">callback</a></li>
+	<li><a href="#connect">connect</a></li>
+	<li><a href="#connected">connected</a></li>
+	<li><a href="#disconnect">disconnect</a></li>
+	<li><a href="#isTangentHubInstalled">isTangentHubInstalled</a></li>
+	<li><a href="#send">send</a></li>
+	<li><a href="#sendAllChange">sendAllChange</a></li>
+	<li><a href="#sendApplicationDefinition">sendApplicationDefinition</a></li>
+	<li><a href="#sendDisplayText">sendDisplayText</a></li>
+	<li><a href="#sendHighlightControl">sendHighlightControl</a></li>
+	<li><a href="#sendIndicateControl">sendIndicateControl</a></li>
+	<li><a href="#sendMenuString">sendMenuString</a></li>
+	<li><a href="#sendModeValue">sendModeValue</a></li>
+	<li><a href="#sendPanelConnectionStatesRequest">sendPanelConnectionStatesRequest</a></li>
+	<li><a href="#sendRenameControl">sendRenameControl</a></li>
+	<li><a href="#sendUnmanagedDisplayWrite">sendUnmanagedDisplayWrite</a></li>
+	<li><a href="#sendUnmanagedPanelCapabilitiesRequest">sendUnmanagedPanelCapabilitiesRequest</a></li>
+	<li><a href="#setLogLevel">setLogLevel</a></li>
+	<li><a href="#setParameterValue">setParameterValue</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Constants</h4>
+  <section id="action">
+	<h5><a href="#action">action</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.reserved.action -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Definitions for reserved action IDs.</p>
+<p>Notes:</p>
+<ul>
+<li><code>alt</code>                     - toggles the 'ALT' function.</li>
+<li><code>nextKnobBank</code>            - switches to the next knob bank.</li>
+<li><code>prevKnobBank</code>            - switches to the previous knob bank.</li>
+<li><code>nextButtonBank</code>          - switches to the next button bank.</li>
+<li><code>prevBasketBank</code>          - switches to the previous button bank.</li>
+<li><code>nextTrackerballBank</code>     - switches to the next trackerball bank.</li>
+<li><code>prevTrackerballBank</code>     - switches to the previous trackerball bank.</li>
+<li><code>nextMode</code>                - switches to the next mode.</li>
+<li><code>prevMode</code>                - switches to the previous mode.</li>
+<li><code>goToMode</code>                - switches to the specified mode, requiring a Argument with the mode ID.</li>
+<li><code>toggleJogShuttle</code>        - toggles jog/shuttle mode.</li>
+<li><code>toggleMouseEmulation</code>    - toggles mouse emulation.</li>
+<li><code>fakeKeypress</code>            - generates a keypress, requiring an Argument with the key code.</li>
+<li><code>showHUD</code>                 - shows the HUD on screen.</li>
+<li><code>goToKnobBank</code>            - goes to the specific knob bank, requiring an Argument with the bank number.</li>
+<li><code>goToButtonBank</code>          - goes to the specific button bank, requiring an Argument with the bank number.</li>
+<li><code>goToTrackerballBank</code>     - goes to the specific trackerball bank, requiring an Argument with the bank number.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="fromHub">
+	<h5><a href="#fromHub">fromHub</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.fromHub -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Definitions for IPC Commands from the HUB to Hammerspoon.</p>
+<p>Notes:</p>
+<ul>
+<li><code>connected</code>                       - a connection is established with the Hub.</li>
+<li><code>disconnected</code>                    - the connection is dropped with the Hub.</li>
+<li><code>initiateComms</code>                   - sent when the Hub wants to initiate communications.</li>
+<li><code>parameterChange</code>                 - a parameter was incremented.</li>
+<li><code>parameterReset</code>                  - a parameter was reset.</li>
+<li><code>parameterValueRequest</code>           - the Hub wants the current value of the parameter.</li>
+<li><code>menuChange</code>                      - The menu was changed, <code>+1</code> or <code>-1</code>.</li>
+<li><code>menuReset</code>                       - The menu was reset.</li>
+<li><code>menuStringRequest</code>               - The application should send a <code>menuString</code> with the current value.</li>
+<li><code>actionOn</code>                        - An action button was pressed.</li>
+<li><code>actionOff</code>                       - An action button was released.</li>
+<li><code>modeChange</code>                      - The current mode was changed.</li>
+<li><code>transport</code>                       - The transport.</li>
+<li><code>unmanagedPanelCapabilities</code>      - Send by the Hub to advertise an unmanaged panel.</li>
+<li><code>unmanagedButtonDown</code>             - A button on an unmanaged panel was pressed.</li>
+<li><code>unmanagedButtonUp</code>               - A button on an unmanaged panel was released.</li>
+<li><code>unmanagedEncoderChange</code>          - An encoder (dial/wheel) on an unmanaged panel changed.</li>
+<li><code>unmanagedDisplayRefresh</code>         - Triggered when an unmanaged panel's display needs to update.</li>
+<li><code>panelConnectionState</code>            - A panel's connection state changed.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="panelType">
+	<h5><a href="#panelType">panelType</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.panelType -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Tangent Panel Types.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="parameter">
+	<h5><a href="#parameter">parameter</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.reserved.parameter -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>A table of reserved parameter IDs.</p>
+<p>Notes:</p>
+<ul>
+<li><code>transportRing</code>           - transport ring.</li>
+<li><code>fakeKeypress</code>            - sends a fake keypress.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="toHub">
+	<h5><a href="#toHub">toHub</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.toHub -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constant</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Definitions for IPC Commands from Hammerspoon to the HUB.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Variables</h4>
+  <section id="automaticallySendApplicationDefinition">
+	<h5><a href="#automaticallySendApplicationDefinition">automaticallySendApplicationDefinition</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.automaticallySendApplicationDefinition -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Automatically send the "Application Definition" response. Defaults to <code>true</code>.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="interval">
+	<h5><a href="#interval">interval</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.interval -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>How often we check for new socket messages. Defaults to 0.001.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="ipAddress">
+	<h5><a href="#ipAddress">ipAddress</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.ipAddress -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>IP Address that the Tangent Hub is located at. Defaults to 127.0.0.1.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="port">
+	<h5><a href="#port">port</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.port -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Variable</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>The port that Tangent Hub monitors. Defaults to 64246.</p>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Functions</h4>
+  <section id="callback">
+	<h5><a href="#callback">callback</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.callback() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets a callback when new messages are received.</p>
+<p>Parameters:</p>
+<ul>
+<li>callbackFn - a function to set as the callback for <code>hs.tangent</code>. If the value provided is <code>nil</code>, any currently existing callback function is removed.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Full documentation for the Tangent API can be downloaded <a href="http://www.tangentwave.co.uk/download/developer-support-pack/">here</a>.</li>
+<li>The callback function should expect 1 argument and should not return anything.</li>
+<li>The 1 argument will be a table, which can contain one or many commands. Each command is it's own table with the following contents:<ul>
+<li>id - the message ID of the incoming message</li>
+<li>metadata - A table of data for the Tangent command (see below).</li>
+</ul>
+</li>
+<li>The metadata table will return the following, depending on the <code>id</code> for the callback:<ul>
+<li><code>connected</code> - Connection to Tangent Hub successfully established.</li>
+<li><code>disconnected</code> - The connection to Tangent Hub was dropped.</li>
+<li><code>initiateComms</code> - Initiates communication between the Hub and the application.<ul>
+<li><code>protocolRev</code> - The revision number of the protocol.</li>
+<li><code>numPanels</code> - The number of panels connected.</li>
+<li><code>panels</code><ul>
+<li><code>panelID</code> - The ID of the panel.</li>
+<li><code>panelType</code> - The type of panel connected.</li>
+</ul>
+</li>
+<li><code>data</code> - The raw data from the Tangent Hub</li>
+</ul>
+</li>
+<li><code>parameterChange</code> - Requests that the application increment a parameter.<ul>
+<li><code>paramID</code> - The ID value of the parameter.</li>
+<li><code>increment</code> - The incremental value which should be applied to the parameter.</li>
+</ul>
+</li>
+<li><code>parameterReset</code> - Requests that the application changes a parameter to its reset value.<ul>
+<li><code>paramID</code> - The ID value of the parameter.</li>
+</ul>
+</li>
+<li><code>parameterValueRequest</code> - Requests that the application sends a <code>ParameterValue (0x82)</code> command to the Hub.<ul>
+<li><code>paramID</code> - The ID value of the parameter.</li>
+</ul>
+</li>
+<li><code>menuChange</code> - Requests the application change a menu index by +1 or -1.<ul>
+<li><code>menuID</code> - The ID value of the menu.</li>
+<li><code>increment</code> - The incremental amount by which the menu index should be changed which will always be an integer value of +1 or -1.</li>
+</ul>
+</li>
+<li><code>menuReset</code> - Requests that the application changes a menu to its reset value.<ul>
+<li><code>menuID</code> - The ID value of the menu.</li>
+</ul>
+</li>
+<li><code>menuStringRequest</code> - Requests that the application sends a <code>MenuString (0x83)</code> command to the Hub.<ul>
+<li><code>menuID</code> - The ID value of the menu.</li>
+</ul>
+</li>
+<li><code>actionOn</code> - Requests that the application performs the specified action.<ul>
+<li><code>actionID</code> - The ID value of the action.</li>
+</ul>
+</li>
+<li><code>modeChange</code> - Requests that the application changes to the specified mode.<ul>
+<li><code>modeID</code> - The ID value of the mode.</li>
+</ul>
+</li>
+<li><code>transport</code> - Requests the application to move the currently active transport.<ul>
+<li><code>jogValue</code> - The number of jog steps to move the transport.</li>
+<li><code>shuttleValue</code> - An incremental value to add to the shuttle speed.</li>
+</ul>
+</li>
+<li><code>actionOff</code> - Requests that the application cancels the specified action.<ul>
+<li><code>actionID</code> - The ID value of the action.</li>
+</ul>
+</li>
+<li><code>unmanagedPanelCapabilities</code> - Only used when working in Unmanaged panel mode. Sent in response to a <code>UnmanagedPanelCapabilitiesRequest (0xA0)</code> command.<ul>
+<li><code>panelID</code> - The ID of the panel as reported in the <code>InitiateComms</code> command.</li>
+<li><code>numButtons</code> - The number of buttons on the panel.</li>
+<li><code>numEncoders</code> - The number of encoders on the panel.</li>
+<li><code>numDisplays</code> - The number of displays on the panel.</li>
+<li><code>numDisplayLines</code> - The number of lines for each display on the panel.</li>
+<li><code>numDisplayChars</code> - The number of characters on each line of each display on the panel.</li>
+</ul>
+</li>
+<li><code>unmanagedButtonDown</code> - Only used when working in Unmanaged panel mode. Issued when a button has been pressed.<ul>
+<li><code>panelID</code> - The ID of the panel as reported in the <code>InitiateComms</code> command.</li>
+<li><code>buttonID</code> - The hardware ID of the button</li>
+</ul>
+</li>
+<li><code>unmanagedButtonUp</code> - Only used when working in Unmanaged panel mode. Issued when a button has been released.<ul>
+<li><code>panelID</code> - The ID of the panel as reported in the <code>InitiateComms</code> command.</li>
+<li><code>buttonID</code> - The hardware ID of the button.</li>
+</ul>
+</li>
+<li><code>unmanagedEncoderChange</code> - Only used when working in Unmanaged panel mode. Issued when an encoder has been moved.<ul>
+<li><code>panelID</code> - The ID of the panel as reported in the <code>InitiateComms</code> command.</li>
+<li><code>paramID</code> - The hardware ID of the encoder.</li>
+<li><code>increment</code> - The incremental value.</li>
+</ul>
+</li>
+<li><code>unmanagedDisplayRefresh</code> - Only used when working in Unmanaged panel mode. Issued when a panel has been connected or the focus of the panel has been returned to your application.<ul>
+<li><code>panelID</code> - The ID of the panel as reported in the <code>InitiateComms</code> command.</li>
+</ul>
+</li>
+<li><code>panelConnectionState</code><ul>
+<li><code>panelID</code> - The ID of the panel as reported in the <code>InitiateComms</code> command.</li>
+<li><code>state</code> - The connected state of the panel, <code>true</code> if connected, <code>false</code> if disconnected.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="connect">
+	<h5><a href="#connect">connect</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.connect(applicationName, systemPath[, userPath]) -&gt; boolean, errorMessage</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Connects to the Tangent Hub.</p>
+<p>Parameters:</p>
+<ul>
+<li>applicationName - Your application name as a string</li>
+<li>systemPath - A string containing the absolute path of the directory that contains the Controls and Default Map XML files.</li>
+<li>[userPath] - An optional string containing the absolute path of the directory that contains the User’s Default Map XML files.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>success - <code>true</code> on success, otherwise <code>nil</code></li>
+<li>errorMessage - The error messages as a string or <code>nil</code> if <code>success</code> is <code>true</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="connected">
+	<h5><a href="#connected">connected</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.connected() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Checks to see whether or not you're successfully connected to the Tangent Hub.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if connected, otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="disconnect">
+	<h5><a href="#disconnect">disconnect</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.disconnect() -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Disconnects from the Tangent Hub.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="isTangentHubInstalled">
+	<h5><a href="#isTangentHubInstalled">isTangentHubInstalled</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.isTangentHubInstalled() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Checks to see whether or not the Tangent Hub software is installed.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if Tangent Hub is installed otherwise <code>false</code>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="send">
+	<h5><a href="#send">send</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.send(byteString) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sends a "bytestring" message to the Tangent Hub. This should be a full
+encoded string for the command you want to send, withouth the leading 'size' section,
+which the function will calculate automatically.</p>
+<p>In general, you should use the more specific functions that package the command for you,
+such as <code>sendParameterValue(...)</code>. This function can be used to send a message that
+this API doesn't yet support.</p>
+<p>Parameters:</p>
+<ul>
+<li>byteString   - The string of bytes to send to tangent.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>success - <code>true</code> if connected, otherwise <code>false</code></li>
+<li>errorMessage - An error message if an error occurs, as a string</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Full documentation for the Tangent API can be downloaded <a href="http://www.tangentwave.co.uk/download/developer-support-pack/">here</a>.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendAllChange">
+	<h5><a href="#sendAllChange">sendAllChange</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendAllChange() -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Tells the Hub that a large number of software-controls have changed.
+The Hub responds by requesting all the current values of
+software-controls it is currently controlling.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, or <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendApplicationDefinition">
+	<h5><a href="#sendApplicationDefinition">sendApplicationDefinition</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendApplicationDefinition([appName, systemPath, userPath]) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sends the application details to the Tangent Hub.
+If no details are provided the ones stored in the module are used.</p>
+<p>Parameters:</p>
+<ul>
+<li>appName       - The human-readable name of the application.</li>
+<li>systemPath    - A string containing the absolute path of the directory that contains the Controls and Default Map XML files (Path String)</li>
+<li>userPath      - A string containing the absolute path of the directory that contains the User’s Default Map XML files (Path String)</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, <code>false</code> and an error message if there was a problem.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendDisplayText">
+	<h5><a href="#sendDisplayText">sendDisplayText</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendDisplayText(messages[, doubleHeight]) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><ul>
+<li>Updates the Hub with a number of character strings that will be displayed
+on connected panels if there is space.</li>
+<li>Strings may either be 32 character, single height or 16 character
+double-height. They will be displayed in the order received; the first
+string displayed at the top of the display.</li>
+<li>If a string is not defined as double-height then it will occupy the
+next line.</li>
+<li>If a string is defined as double-height then it will occupy the next
+2 lines.</li>
+<li>The maximum number of lines which will be used by the application
+must be indicated in the Controls XML file.</li>
+<li>Text which exceeds 32 (single-height) or 16 (double-height) characters will be truncated.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><span class="n">hs</span><span class="p">.</span><span class="n">tangent</span><span class="p">.</span><span class="n">sendDisplayText</span><span class="p">(</span>
+    <span class="p">{</span> <span class="s2">&quot;Single Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Double Height&quot;</span> <span class="p">},</span> <span class="p">{</span><span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+<p>If all text is single-height, the <code>doubleHeight</code> table can be omitted.</p>
+<p>Parameters:</p>
+<ul>
+<li>messages      - A list of messages to send.</li>
+<li>doubleHeight  - An optional list of <code>boolean</code>s indicating if the corresponding message is double-height.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, or <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendHighlightControl">
+	<h5><a href="#sendHighlightControl">sendHighlightControl</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendHighlightControl(targetID, active) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><ul>
+<li>Highlights the control on any panel where this feature is available.</li>
+<li>When applied to Modes, buttons which are mapped to the reserved "Go To
+Mode" action for this particular mode will highlight.</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li>targetID      - The id of any application defined Parameter, Menu, Action or Mode (Unsigned Int)</li>
+<li>active        - If <code>true</code>, the control is highlighted, otherwise it is not.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if sent successfully, <code>false</code> and an error message if no.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendIndicateControl">
+	<h5><a href="#sendIndicateControl">sendIndicateControl</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendIndicateControl(targetID, indicated) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><ul>
+<li>Sets the Indicator of the control on any panel where this feature is
+available.</li>
+<li>This indicator is driven by the <code>atDefault</code> argument for Parameters and
+Menus. This command therefore only applies to controls mapped to Actions
+and Modes.</li>
+<li>When applied to Modes, buttons which are mapped to the reserved "Go To
+Mode" action for this particular mode will have their indicator set.</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li>targetID      - The id of any application defined Parameter, Menu, Action or Mode</li>
+<li>active        - If <code>true</code>, the control is indicated, otherwise it is not.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if sent successfully, <code>false</code> and an error message if no.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendMenuString">
+	<h5><a href="#sendMenuString">sendMenuString</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendMenuString(menuID, value[, atDefault]) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Updates the Hub with a menu value.
+The Hub then updates the displays of any panels which are currently
+  showing the menu.
+If a value of <code>nil</code> is sent then the Hub will not attempt to display a
+value for the menu. However the <code>atDefault</code> flag will still be recognised.</p>
+<p>Parameters:</p>
+<ul>
+<li>menuID - The ID value of the menu (Unsigned Int)</li>
+<li>value - The current ‘value’ of the parameter represented as a string</li>
+<li>atDefault - if <code>true</code> the value represents the default. Otherwise <code>false</code>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, or <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendModeValue">
+	<h5><a href="#sendModeValue">sendModeValue</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendModeValue(modeID) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Updates the Hub with a mode value.
+The Hub then changes mode and requests all the current values of
+software-controls it is controlling.</p>
+<p>Parameters:</p>
+<ul>
+<li>modeID - The ID value of the mode (Unsigned Int)</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, or <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendPanelConnectionStatesRequest">
+	<h5><a href="#sendPanelConnectionStatesRequest">sendPanelConnectionStatesRequest</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendPanelConnectionStatesRequest())</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><ul>
+<li>Requests the Hub to respond with a sequence of PanelConnectionState
+(0x35) commands to report the connected/disconnected status of each
+configured panel.</li>
+<li>A single request may result in multiple state responses.</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if sent successfully, <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendRenameControl">
+	<h5><a href="#sendRenameControl">sendRenameControl</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendRenameControl(targetID, newName) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><ul>
+<li>Renames a control dynamically.</li>
+<li>The string supplied will replace the normal text which has been
+derived from the Controls XML file.</li>
+<li>To remove any existing replacement name set <code>newName</code> to <code>""</code>,
+this will remove any renaming and return the system to the normal
+display text</li>
+<li>When applied to Modes, the string displayed on buttons which mapped to
+the reserved "Go To Mode" action for this particular mode will also change.</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li>targetID  - The id of any application defined Parameter, Menu, Action or Mode (Unsigned Int)</li>
+<li>newName   - The new name to apply.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendUnmanagedDisplayWrite">
+	<h5><a href="#sendUnmanagedDisplayWrite">sendUnmanagedDisplayWrite</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendUnmanagedDisplayWrite(panelID, displayID, lineNum, pos, message) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><ul>
+<li>Only used when working in Unmanaged panel mode.</li>
+<li>Updates the Hub with text that will be displayed on a specific panel at
+the given line and starting position where supported by the panel capabilities.</li>
+<li>If the most significant bit of any individual text character in <code>message</code>
+is set it will be displayed as inversed with dark text on a light background.</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li>panelID       - The ID of the panel as reported in the InitiateComms command (Unsigned Int)</li>
+<li>displayID     - The ID of the display to be written to (Unsigned Int)</li>
+<li>lineNum       - The line number of the display to be written to with <code>1</code> as the top line (Unsigned Int)</li>
+<li>pos           - The position on the line to start writing from with <code>1</code> as the first column (Unsigned Int)</li>
+<li>message       - A line of text (Character String)</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, or <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="sendUnmanagedPanelCapabilitiesRequest">
+	<h5><a href="#sendUnmanagedPanelCapabilitiesRequest">sendUnmanagedPanelCapabilitiesRequest</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.sendUnmanagedPanelCapabilitiesRequest(panelID) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><ul>
+<li>Only used when working in Unmanaged panel mode</li>
+<li>Requests the Hub to respond with an UnmanagedPanelCapabilities (0x30) command.</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li>panelID - The ID of the panel as reported in the InitiateComms command (Unsigned Int)</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, or <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setLogLevel">
+	<h5><a href="#setLogLevel">setLogLevel</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.setLogLevel(loglevel) -&gt; none</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the Log Level.</p>
+<p>Parameters:</p>
+<ul>
+<li>loglevel - can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose'; or a corresponding number between 0 and 5</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setParameterValue">
+	<h5><a href="#setParameterValue">setParameterValue</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.tangent.setParameterValue(paramID, value[, atDefault]) -&gt; boolean, string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Updates the Hub with a parameter value.
+The Hub then updates the displays of any panels which are currently
+showing the parameter value.</p>
+<p>Parameters:</p>
+<ul>
+<li>paramID - The ID value of the parameter (Unsigned Int)</li>
+<li>value - The current value of the parameter (Float)</li>
+<li>atDefault - if <code>true</code> the value represents the default. Defaults to <code>false</code>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful, or <code>false</code> and an error message if not.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

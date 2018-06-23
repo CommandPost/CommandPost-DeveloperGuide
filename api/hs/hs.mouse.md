@@ -5,86 +5,259 @@ Inspect/manipulate the position of the mouse pointer
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [getAbsolutePosition](#getabsoluteposition)
- * [getButtons](#getbuttons)
- * [getCurrentScreen](#getcurrentscreen)
- * [getRelativePosition](#getrelativeposition)
- * [scrollDirection](#scrolldirection)
- * [setAbsolutePosition](#setabsoluteposition)
- * [setRelativePosition](#setrelativeposition)
- * [trackingSpeed](#trackingspeed)
-
-## API Documentation
-
-### Functions
-
-#### [getAbsolutePosition](#getabsoluteposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getAbsolutePosition() -> point` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets the absolute co-ordinates of the mouse pointer                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A point-table containing the absolute x and y co-ordinates of the mouse pointer</li></ul>            |
-| **Notes**                                            | <ul><li>The co-ordinates returned by this function are in relation to the full size of your desktop. If you have multiple monitors, the desktop is a large virtual rectangle that contains them all (e.g. if you have two 1920x1080 monitors and the mouse is in the middle of the second monitor, the returned table would be <code>{ x=2879, y=540 }</code>)</li></ul><ul><li>Multiple monitors of different sizes can cause the co-ordinates of some areas of the desktop to be negative. This is perfectly normal. 0,0 in the co-ordinates of the desktop is the top left of the primary monitor</li></ul>                 |
-
-#### [getButtons](#getbuttons)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getButtons() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table containing the current mouse buttons being pressed *at this instant*.                                                                                         |
-| **Parameters**                                       | <p>None</p>   |
-| **Returns**                                          | <ul><li>Returns an array containing indicies starting from 1 up to the highest numbered button currently being pressed where the index is <code>true</code> if the button is currently pressed or <code>false</code> if it is not.</li></ul><ul><li>Special hash tag synonyms for <code>left</code> (button 1), <code>right</code> (button 2), and <code>middle</code> (button 3) are also set to true if these buttons are currently being pressed.</li></ul>            |
-| **Notes**                                            | <ul><li>This function is a wrapper to <code>hs.eventtap.checkMouseButtons</code></li></ul><ul><li>This is an instantaneous poll of the current mouse buttons, not a callback.</li></ul>                 |
-
-#### [getCurrentScreen](#getcurrentscreen)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getCurrentScreen() -> screen or nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets the screen the mouse pointer is on                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>An <code>hs.screen</code> object that the mouse pointer is on, or nil if an error occurred</li></ul>            |
-
-#### [getRelativePosition](#getrelativeposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getRelativePosition() -> point or nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets the co-ordinates of the mouse pointer, relative to the screen it is on                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A point-table containing the relative x and y co-ordinates of the mouse pointer, or nil if an error occured</li></ul>            |
-| **Notes**                                            | <ul><li>The co-ordinates returned by this function are relative to the top left pixel of the screen the mouse is on (see <code>hs.mouse.getAbsolutePosition</code> if you need the location in the full desktop space)</li></ul>                 |
-
-#### [scrollDirection](#scrolldirection)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.scrollDirection() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets the system-wide direction of scolling                                                                                         |
-| **Returns**                                          | <ul><li>A string, either "natural" or "normal"</li></ul>            |
-
-#### [setAbsolutePosition](#setabsoluteposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.setAbsolutePosition(point)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the absolute co-ordinates of the mouse pointer                                                                                         |
-| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>The co-ordinates given to this function must be in relation to the full size of your desktop. See the notes for <code>hs.mouse.getAbsolutePosition</code> for more information</li></ul>                 |
-
-#### [setRelativePosition](#setrelativeposition)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.setRelativePosition(point[, screen])` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sets the co-ordinates of the mouse pointer, relative to a screen                                                                                         |
-| **Parameters**                                       | <ul><li>point - A point-table containing the relative x and y co-ordinates to move the mouse pointer to</li></ul><ul><li>screen - An optional <code>hs.screen</code> object. Defaults to the screen the mouse pointer is currently on</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [trackingSpeed](#trackingspeed)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.trackingSpeed([speed]) -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets/Sets the current system mouse tracking speed setting                                                                                         |
-| **Parameters**                                       | <ul><li>speed - An optional number containing the new tracking speed to set. If this is ommitted, the current setting is returned</li></ul>   |
-| **Returns**                                          | <ul><li>A number (currently between 0.0 and 3.0) indicating the current tracking speed setting for mice, or -1 if an error occurred</li></ul>            |
-| **Notes**                                            | <ul><li>This is represented in the System Preferences as the "Tracking speed" setting for mice</li></ul><ul><li>Note that not all values will work, they should map to the steps defined in the System Preferences app</li></ul>                 |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#getAbsolutePosition">getAbsolutePosition</a></li>
+	<li><a href="#getButtons">getButtons</a></li>
+	<li><a href="#getCurrentScreen">getCurrentScreen</a></li>
+	<li><a href="#getRelativePosition">getRelativePosition</a></li>
+	<li><a href="#scrollDirection">scrollDirection</a></li>
+	<li><a href="#setAbsolutePosition">setAbsolutePosition</a></li>
+	<li><a href="#setRelativePosition">setRelativePosition</a></li>
+	<li><a href="#trackingSpeed">trackingSpeed</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="getAbsolutePosition">
+	<h5><a href="#getAbsolutePosition">getAbsolutePosition</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.getAbsolutePosition() -&gt; point</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the absolute co-ordinates of the mouse pointer</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A point-table containing the absolute x and y co-ordinates of the mouse pointer</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The co-ordinates returned by this function are in relation to the full size of your desktop. If you have multiple monitors, the desktop is a large virtual rectangle that contains them all (e.g. if you have two 1920x1080 monitors and the mouse is in the middle of the second monitor, the returned table would be <code>{ x=2879, y=540 }</code>)</li>
+<li>Multiple monitors of different sizes can cause the co-ordinates of some areas of the desktop to be negative. This is perfectly normal. 0,0 in the co-ordinates of the desktop is the top left of the primary monitor</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="getButtons">
+	<h5><a href="#getButtons">getButtons</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.getButtons() -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns a table containing the current mouse buttons being pressed <em>at this instant</em>.</p>
+<p>Parameters:
+ None</p>
+<p>Returns:</p>
+<ul>
+<li>Returns an array containing indicies starting from 1 up to the highest numbered button currently being pressed where the index is <code>true</code> if the button is currently pressed or <code>false</code> if it is not.</li>
+<li>Special hash tag synonyms for <code>left</code> (button 1), <code>right</code> (button 2), and <code>middle</code> (button 3) are also set to true if these buttons are currently being pressed.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This function is a wrapper to <code>hs.eventtap.checkMouseButtons</code></li>
+<li>This is an instantaneous poll of the current mouse buttons, not a callback.</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="getCurrentScreen">
+	<h5><a href="#getCurrentScreen">getCurrentScreen</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.getCurrentScreen() -&gt; screen or nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the screen the mouse pointer is on</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>An <code>hs.screen</code> object that the mouse pointer is on, or nil if an error occurred</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="getRelativePosition">
+	<h5><a href="#getRelativePosition">getRelativePosition</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.getRelativePosition() -&gt; point or nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the co-ordinates of the mouse pointer, relative to the screen it is on</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A point-table containing the relative x and y co-ordinates of the mouse pointer, or nil if an error occured</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The co-ordinates returned by this function are relative to the top left pixel of the screen the mouse is on (see <code>hs.mouse.getAbsolutePosition</code> if you need the location in the full desktop space)</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="scrollDirection">
+	<h5><a href="#scrollDirection">scrollDirection</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.scrollDirection() -&gt; string</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets the system-wide direction of scolling</p>
+<p>Paramters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A string, either "natural" or "normal"</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setAbsolutePosition">
+	<h5><a href="#setAbsolutePosition">setAbsolutePosition</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.setAbsolutePosition(point)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the absolute co-ordinates of the mouse pointer</p>
+<p>Parameters:</p>
+<ul>
+<li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The co-ordinates given to this function must be in relation to the full size of your desktop. See the notes for <code>hs.mouse.getAbsolutePosition</code> for more information</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setRelativePosition">
+	<h5><a href="#setRelativePosition">setRelativePosition</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.setRelativePosition(point[, screen])</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets the co-ordinates of the mouse pointer, relative to a screen</p>
+<p>Parameters:</p>
+<ul>
+<li>point - A point-table containing the relative x and y co-ordinates to move the mouse pointer to</li>
+<li>screen - An optional <code>hs.screen</code> object. Defaults to the screen the mouse pointer is currently on</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="trackingSpeed">
+	<h5><a href="#trackingSpeed">trackingSpeed</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.mouse.trackingSpeed([speed]) -&gt; number</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets/Sets the current system mouse tracking speed setting</p>
+<p>Parameters:</p>
+<ul>
+<li>speed - An optional number containing the new tracking speed to set. If this is ommitted, the current setting is returned</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A number (currently between 0.0 and 3.0) indicating the current tracking speed setting for mice, or -1 if an error occurred</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>This is represented in the System Preferences as the "Tracking speed" setting for mice</li>
+<li>Note that not all values will work, they should map to the steps defined in the System Preferences app</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

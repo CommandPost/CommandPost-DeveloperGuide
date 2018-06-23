@@ -5,41 +5,109 @@ Watch for battery/power state changes
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
-## API Overview
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [start](#start)
- * [stop](#stop)
-
-## API Documentation
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.watcher.new(fn) -> watcher` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a battery watcher                                                                                         |
-| **Parameters**                                       | <ul><li>A function that will be called when the battery state changes. The function should accept no arguments.</li></ul>   |
-| **Returns**                                          | <ul><li>An <code>hs.battery.watcher</code> object</li></ul>            |
-| **Notes**                                            | <ul><li>Because the callback function accepts no arguments, tracking of state of changing battery attributes is the responsibility of the user (see https://github.com/Hammerspoon/hammerspoon/issues/166 for discussion)</li></ul>                 |
-
-### Methods
-
-#### [start](#start)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.watcher:start() -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Starts the battery watcher                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.battery.watcher</code> object</li></ul>            |
-
-#### [stop](#stop)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.watcher:stop() -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Stops the battery watcher                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.battery.watcher</code> object</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Constructors - API calls which return an object, typically one that offers API methods</li>
+  <ul>
+	<li><a href="#new">new</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#start">start</a></li>
+	<li><a href="#stop">stop</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Constructors</h4>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.battery.watcher.new(fn) -&gt; watcher</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constructor</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a battery watcher</p>
+<p>Parameters:</p>
+<ul>
+<li>A function that will be called when the battery state changes. The function should accept no arguments.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>An <code>hs.battery.watcher</code> object</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Because the callback function accepts no arguments, tracking of state of changing battery attributes is the responsibility of the user (see <a href="https://github.com/Hammerspoon/hammerspoon/issues/166">https://github.com/Hammerspoon/hammerspoon/issues/166</a> for discussion)</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="start">
+	<h5><a href="#start">start</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.battery.watcher:start() -&gt; self</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Starts the battery watcher</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.battery.watcher</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="stop">
+	<h5><a href="#stop">stop</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.battery.watcher:stop() -&gt; self</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Stops the battery watcher</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The <code>hs.battery.watcher</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

@@ -3,118 +3,331 @@
 
 Keyword Editor Module.
 
-## Submodules
- * [cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts](cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.md)
-
-## API Overview
-* Functions - API calls offered directly by the extension
- * [matches](#matches)
-* Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [hide](#hide)
- * [isShowing](#isshowing)
- * [keyword](#keyword)
- * [parent](#parent)
- * [removeKeyword](#removekeyword)
- * [show](#show)
- * [toolbarCheckBoxUI](#toolbarcheckboxui)
- * [UI](#ui)
-
-## API Documentation
-
-### Functions
-
-#### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor.matches(element) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see if an `hs._asm.axuielement` object matches a Keyword Editor window                                                                                         |
-| **Parameters**                                       | <ul><li>element - the <code>hs._asm.axuielement</code> object you want to check</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if a match otherwise <code>false</code></li></ul>            |
-
-### Constructors
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor.new(parent) -> KeywordEditor object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new KeywordEditor object                                                                                         |
-| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul>   |
-| **Returns**                                          | <ul><li>A KeywordEditor object</li></ul>            |
-
-### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:app() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The application object as a table</li></ul>            |
-
-#### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:hide() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Hides the Keyword Editor.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>KeywordEditor object</li></ul><ul><li><code>true</code> if successful otherwise <code>false</code></li></ul>            |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets whether or not the Keyword Editor is currently showing.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if showing otherwise <code>false</code></li></ul>            |
-
-#### [keyword](#keyword)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:keyword(value) -> string | table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets or gets the main Keyword Textbox value.                                                                                         |
-| **Parameters**                                       | <ul><li>value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.</li></ul>   |
-| **Returns**                                          | <ul><li><code>value</code> if successful otherwise <code>false</code></li></ul>            |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the KeywordEditor's parent table                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
-
-#### [removeKeyword](#removekeyword)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:removeKeyword(keyword) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Removes a keyword from the main Keyword Textbox.                                                                                         |
-| **Parameters**                                       | <ul><li>keyword - The keyword you want to remove as a string.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul>            |
-
-#### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:show() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Shows the Keyword Editor.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>KeywordEditor object</li></ul><ul><li><code>true</code> if successful otherwise <code>false</code></li></ul>            |
-
-#### [toolbarCheckBoxUI](#toolbarcheckboxui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:toolbarCheckBoxUI() -> hs._asm.axuielement object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Keyword Editor button in the toolbar                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>hs._asm.axuielement</code> object</li></ul>            |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:UI() -> hs._asm.axuielement object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Keyword Editor window                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>hs._asm.axuielement</code> object</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>Submodules</h3>
+<ul>
+<li><a href="cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.md">cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts</a></li>
+</ul>
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#matches">matches</a></li>
+  </ul>
+<li>Constructors - API calls which return an object, typically one that offers API methods</li>
+  <ul>
+	<li><a href="#new">new</a></li>
+  </ul>
+<li>Methods - API calls which can only be made on an object returned by a constructor</li>
+  <ul>
+	<li><a href="#app">app</a></li>
+	<li><a href="#hide">hide</a></li>
+	<li><a href="#isShowing">isShowing</a></li>
+	<li><a href="#keyword">keyword</a></li>
+	<li><a href="#parent">parent</a></li>
+	<li><a href="#removeKeyword">removeKeyword</a></li>
+	<li><a href="#show">show</a></li>
+	<li><a href="#toolbarCheckBoxUI">toolbarCheckBoxUI</a></li>
+	<li><a href="#UI">UI</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="matches">
+	<h5><a href="#matches">matches</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor.matches(element) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Checks to see if an <code>hs._asm.axuielement</code> object matches a Keyword Editor window</p>
+<p>Parameters:</p>
+<ul>
+<li>element - the <code>hs._asm.axuielement</code> object you want to check</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if a match otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Constructors</h4>
+  <section id="new">
+	<h5><a href="#new">new</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor.new(parent) -&gt; KeywordEditor object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Constructor</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Creates a new KeywordEditor object</p>
+<p>Parameters:</p>
+<ul>
+<li><code>parent</code>     - The parent</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A KeywordEditor object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+<h4 class="documentation-section">Methods</h4>
+  <section id="app">
+	<h5><a href="#app">app</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:app() -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the <code>cp.apple.finalcutpro</code> app table</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The application object as a table</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="hide">
+	<h5><a href="#hide">hide</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:hide() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Hides the Keyword Editor.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>KeywordEditor object</li>
+<li><code>true</code> if successful otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="isShowing">
+	<h5><a href="#isShowing">isShowing</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:isShowing() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Gets whether or not the Keyword Editor is currently showing.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if showing otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="keyword">
+	<h5><a href="#keyword">keyword</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:keyword(value) -&gt; string | table | nil</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Sets or gets the main Keyword Textbox value.</p>
+<p>Parameters:</p>
+<ul>
+<li>value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>value</code> if successful otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="parent">
+	<h5><a href="#parent">parent</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:parent() -&gt; table</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the KeywordEditor's parent table</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The parent object as a table</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="removeKeyword">
+	<h5><a href="#removeKeyword">removeKeyword</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:removeKeyword(keyword) -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Removes a keyword from the main Keyword Textbox.</p>
+<p>Parameters:</p>
+<ul>
+<li>keyword - The keyword you want to remove as a string.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><code>true</code> if successful otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="show">
+	<h5><a href="#show">show</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:show() -&gt; boolean</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Shows the Keyword Editor.</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>KeywordEditor object</li>
+<li><code>true</code> if successful otherwise <code>false</code></li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="toolbarCheckBoxUI">
+	<h5><a href="#toolbarCheckBoxUI">toolbarCheckBoxUI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:toolbarCheckBoxUI() -&gt; hs._asm.axuielement object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the <code>hs._asm.axuielement</code> object for the Keyword Editor button in the toolbar</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>hs._asm.axuielement</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="UI">
+	<h5><a href="#UI">UI</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>cp.apple.finalcutpro.main.KeywordEditor:UI() -&gt; hs._asm.axuielement object</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Method</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Returns the <code>hs._asm.axuielement</code> object for the Keyword Editor window</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>hs._asm.axuielement</code> object</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>

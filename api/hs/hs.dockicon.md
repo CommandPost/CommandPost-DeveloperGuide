@@ -5,53 +5,147 @@ Control Hammerspoon's dock icon
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
-## API Overview
-* Functions - API calls offered directly by the extension
- * [bounce](#bounce)
- * [hide](#hide)
- * [setBadge](#setbadge)
- * [show](#show)
- * [visible](#visible)
-
-## API Documentation
-
-### Functions
-
-#### [bounce](#bounce)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.bounce(indefinitely)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Bounce Hammerspoon's dock icon                                                                                         |
-| **Parameters**                                       | <ul><li>indefinitely - A boolean value, true if the dock icon should bounce until the dock icon is clicked, false if the dock icon should only bounce briefly</li></ul>   |
-
-#### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.hide()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Hide Hammerspoon's dock icon                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [setBadge](#setbadge)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.setBadge(badge)` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Set Hammerspoon's dock icon badge                                                                                         |
-| **Parameters**                                       | <ul><li>badge - A string containing the label to place inside the dock icon badge. If the string is empty, the badge will be cleared</li></ul>   |
-
-#### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.show()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Make Hammerspoon's dock icon visible                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-
-#### [visible](#visible)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.visible() -> bool` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Determine whether Hammerspoon's dock icon is visible                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean, true if the dock icon is visible, false if not</li></ul>            |
-
+<style type="text/css">
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
+	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
+	table { width: 100% ; border: 1px solid #0; text-align: left; }
+	section > table table td { width: 0; }
+</style>
+<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
+<h3>API Overview</h3>
+<ul>
+<li>Functions - API calls offered directly by the extension</li>
+  <ul>
+	<li><a href="#bounce">bounce</a></li>
+	<li><a href="#hide">hide</a></li>
+	<li><a href="#setBadge">setBadge</a></li>
+	<li><a href="#show">show</a></li>
+	<li><a href="#visible">visible</a></li>
+  </ul>
+</ul>
+<h3>API Documentation</h3>
+<h4 class="documentation-section">Functions</h4>
+  <section id="bounce">
+	<h5><a href="#bounce">bounce</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.dockicon.bounce(indefinitely)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Bounce Hammerspoon's dock icon</p>
+<p>Parameters:</p>
+<ul>
+<li>indefinitely - A boolean value, true if the dock icon should bounce until the dock icon is clicked, false if the dock icon should only bounce briefly</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="hide">
+	<h5><a href="#hide">hide</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.dockicon.hide()</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Hide Hammerspoon's dock icon</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="setBadge">
+	<h5><a href="#setBadge">setBadge</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.dockicon.setBadge(badge)</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Set Hammerspoon's dock icon badge</p>
+<p>Parameters:</p>
+<ul>
+<li>badge - A string containing the label to place inside the dock icon badge. If the string is empty, the badge will be cleared</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="show">
+	<h5><a href="#show">show</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.dockicon.show()</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Make Hammerspoon's dock icon visible</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>None</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
+  <section id="visible">
+	<h5><a href="#visible">visible</a></h5>
+	<table>
+	  <tr>
+		<th>Signature</th>
+		<td><code>hs.dockicon.visible() -&gt; bool</code></td>
+	  </tr>
+	  <tr>
+		<th>Type</th>
+		<td>Function</td>
+	  </tr>
+	  <tr>
+		<th>Description</th>
+		<td><p>Determine whether Hammerspoon's dock icon is visible</p>
+<p>Parameters:</p>
+<ul>
+<li>None</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean, true if the dock icon is visible, false if not</li>
+</ul>
+</td>
+	  </tr>
+	</table>
+  </section>
