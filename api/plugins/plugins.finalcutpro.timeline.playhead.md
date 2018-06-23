@@ -3,77 +3,31 @@
 
 Manages features relating to the Timeline Playhead.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Variables - Configurable values</li>
-  <ul>
-	<li><a href="#alwaysCentered">alwaysCentered</a></li>
-	<li><a href="#scrollingTimeline">scrollingTimeline</a></li>
-	<li><a href="#tracking">tracking</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Variables</h4>
-  <section id="alwaysCentered">
-	<h5><a href="#alwaysCentered">alwaysCentered</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.timeline.playhead.alwaysCentered &lt;cp.prop: boolean&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>If <code>true</code>, the playhead will be centered in the view while scrolling.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="scrollingTimeline">
-	<h5><a href="#scrollingTimeline">scrollingTimeline</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.timeline.playhead.scrollingTimeline &lt;cp.prop: boolean&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Enables or disables the scrolling timeline.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="tracking">
-	<h5><a href="#tracking">tracking</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.timeline.playhead.tracking &lt;cp.prop: boolean; read-only; live&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>If <code>true</code>, we are tracking the playhead position.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Variables - Configurable values
+ * [alwaysCentered](#alwayscentered)
+ * [scrollingTimeline](#scrollingtimeline)
+ * [tracking](#tracking)
+
+## API Documentation
+
+### Variables
+
+#### [alwaysCentered](#alwayscentered)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.alwaysCentered <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | If `true`, the playhead will be centered in the view while scrolling.                                                                                         |
+
+#### [scrollingTimeline](#scrollingtimeline)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.scrollingTimeline <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Enables or disables the scrolling timeline.                                                                                         |
+
+#### [tracking](#tracking)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.tracking <cp.prop: boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | If `true`, we are tracking the playhead position.                                                                                         |
+

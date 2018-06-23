@@ -28,195 +28,62 @@ A `placemarkTable` is returned to the callback functions used by the constructor
  * `subThoroughfare`       - a string containing additional street-level information for the placemark
  * `timeZone`              - a string containing the time zone associated with the placemark
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Constructors - API calls which return an object, typically one that offers API methods</li>
-  <ul>
-	<li><a href="#lookupAddress">lookupAddress</a></li>
-	<li><a href="#lookupAddressNear">lookupAddressNear</a></li>
-	<li><a href="#lookupLocation">lookupLocation</a></li>
-  </ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#cancel">cancel</a></li>
-	<li><a href="#geocoding">geocoding</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constructors</h4>
-  <section id="lookupAddress">
-	<h5><a href="#lookupAddress">lookupAddress</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.location.geocoder.lookupAddress(address, fn) -&gt; geocoderObject</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Look up geocoding information for the specified address.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>address</code> - a string containing address information as commonly expressed in your locale.</li>
-<li><code>fn</code>      - A callback function which should expect 2 arguments and return none:<ul>
-<li><code>state</code>  - a boolean indicating whether or not geocoding data was provided</li>
-<li><code>result</code> - if <code>state</code> is true indicating that geocoding was successful, this argument will be a table containing one or more placemarkTables (as described in the module header) containing the geocoding data available for the location.  If <code>state</code> is false, this argument will be a string containing an error message describing the problem encountered.</li>
-</ul>
-</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a geocodingObject</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This constructor requires internet access and the callback will be invoked with an error message if the internet is not currently accessible.</li>
-<li>This constructor does not require Location Services to be enabled for Hammerspoon.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="lookupAddressNear">
-	<h5><a href="#lookupAddressNear">lookupAddressNear</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.location.geocoder.lookupAddressNear(address, [regionTable], fn) -&gt; geocoderObject</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Look up geocoding information for the specified address.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>address</code>     - a string containing address information as commonly expressed in your locale.</li>
-<li><code>regionTable</code> - an optional regionTable as described in the <code>hs.location</code> header used to prioritize the order of the results found.  If this parameter is not provided and Location Services is enabled for Hammerspoon, a region containing current location is used.</li>
-<li><code>fn</code>          - A callback function which should expect 2 arguments and return none:<ul>
-<li><code>state</code>  - a boolean indicating whether or not geocoding data was provided</li>
-<li><code>result</code> - if <code>state</code> is true indicating that geocoding was successful, this argument will be a table containing one or more placemarkTables (as described in the module header) containing the geocoding data available for the location.  If <code>state</code> is false, this argument will be a string containing an error message describing the problem encountered.</li>
-</ul>
-</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a geocodingObject</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This constructor requires internet access and the callback will be invoked with an error message if the internet is not currently accessible.</li>
-<li>This constructor does not require Location Services to be enabled for Hammerspoon.</li>
-<li>While a partial address can be given, the more information you provide, the more likely the results will be useful.  The <code>regionTable</code> only determines sort order if multiple entries are returned, it does not constrain the search.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="lookupLocation">
-	<h5><a href="#lookupLocation">lookupLocation</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.location.geocoder.lookupLocation(locationTable, fn) -&gt; geocoderObject</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Look up geocoding information for the specified location.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>locationTable</code> - a locationTable as described in the <code>hs.location</code> header specifying a location to obtain geocoding information about.</li>
-<li><code>fn</code>            - A callback function which should expect 2 arguments and return none:<ul>
-<li><code>state</code>  - a boolean indicating whether or not geocoding data was provided</li>
-<li><code>result</code> - if <code>state</code> is true indicating that geocoding was successful, this argument will be a table containing one or more placemarkTables (as described in the module header) containing the geocoding data available for the location.  If <code>state</code> is false, this argument will be a string containing an error message describing the problem encountered.</li>
-</ul>
-</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a geocodingObject</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This constructor requires internet access and the callback will be invoked with an error message if the internet is not currently accessible.</li>
-<li>This constructor does not require Location Services to be enabled for Hammerspoon.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Methods</h4>
-  <section id="cancel">
-	<h5><a href="#cancel">cancel</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.location.geocoder:cancel() -&gt; nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Cancels the pending or in progress geocoding request.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>nil to facilitate garbage collection by assigning this result to the geocodeObject</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This method has no effect if the geocoding process has already completed.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="geocoding">
-	<h5><a href="#geocoding">geocoding</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.location.geocoder:geocoding() -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns a boolean indicating whether or not the geocoding process is still active.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a boolean indicating if the geocoding process is still active.  If false, then the callback function either has already been called or will be as soon as the main thread of Hammerspoon becomes idle again.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [lookupAddress](#lookupaddress)
+ * [lookupAddressNear](#lookupaddressnear)
+ * [lookupLocation](#lookuplocation)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [cancel](#cancel)
+ * [geocoding](#geocoding)
+
+## API Documentation
+
+### Constructors
+
+#### [lookupAddress](#lookupaddress)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.geocoder.lookupAddress(address, fn) -> geocoderObject` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Look up geocoding information for the specified address.                                                                                         |
+| **Parameters**                                       | <ul><li><code>address</code> - a string containing address information as commonly expressed in your locale.</li></ul><ul><li><code>fn</code>      - A callback function which should expect 2 arguments and return none:</li></ul><ul><li><code>state</code>  - a boolean indicating whether or not geocoding data was provided</li></ul><ul><li><code>result</code> - if <code>state</code> is true indicating that geocoding was successful, this argument will be a table containing one or more placemarkTables (as described in the module header) containing the geocoding data available for the location.  If <code>state</code> is false, this argument will be a string containing an error message describing the problem encountered.</li></ul>   |
+| **Returns**                                          | <ul><li>a geocodingObject</li></ul>            |
+| **Notes**                                            | <ul><li>This constructor requires internet access and the callback will be invoked with an error message if the internet is not currently accessible.</li></ul><ul><li>This constructor does not require Location Services to be enabled for Hammerspoon.</li></ul>                 |
+
+#### [lookupAddressNear](#lookupaddressnear)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.geocoder.lookupAddressNear(address, [regionTable], fn) -> geocoderObject` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Look up geocoding information for the specified address.                                                                                         |
+| **Parameters**                                       | <ul><li><code>address</code>     - a string containing address information as commonly expressed in your locale.</li></ul><ul><li><code>regionTable</code> - an optional regionTable as described in the <code>hs.location</code> header used to prioritize the order of the results found.  If this parameter is not provided and Location Services is enabled for Hammerspoon, a region containing current location is used.</li></ul><ul><li><code>fn</code>          - A callback function which should expect 2 arguments and return none:</li></ul><ul><li><code>state</code>  - a boolean indicating whether or not geocoding data was provided</li></ul><ul><li><code>result</code> - if <code>state</code> is true indicating that geocoding was successful, this argument will be a table containing one or more placemarkTables (as described in the module header) containing the geocoding data available for the location.  If <code>state</code> is false, this argument will be a string containing an error message describing the problem encountered.</li></ul>   |
+| **Returns**                                          | <ul><li>a geocodingObject</li></ul>            |
+| **Notes**                                            | <ul><li>This constructor requires internet access and the callback will be invoked with an error message if the internet is not currently accessible.</li></ul><ul><li>This constructor does not require Location Services to be enabled for Hammerspoon.</li></ul><ul><li>While a partial address can be given, the more information you provide, the more likely the results will be useful.  The <code>regionTable</code> only determines sort order if multiple entries are returned, it does not constrain the search.</li></ul>                 |
+
+#### [lookupLocation](#lookuplocation)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.geocoder.lookupLocation(locationTable, fn) -> geocoderObject` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Look up geocoding information for the specified location.                                                                                         |
+| **Parameters**                                       | <ul><li><code>locationTable</code> - a locationTable as described in the <code>hs.location</code> header specifying a location to obtain geocoding information about.</li></ul><ul><li><code>fn</code>            - A callback function which should expect 2 arguments and return none:</li></ul><ul><li><code>state</code>  - a boolean indicating whether or not geocoding data was provided</li></ul><ul><li><code>result</code> - if <code>state</code> is true indicating that geocoding was successful, this argument will be a table containing one or more placemarkTables (as described in the module header) containing the geocoding data available for the location.  If <code>state</code> is false, this argument will be a string containing an error message describing the problem encountered.</li></ul>   |
+| **Returns**                                          | <ul><li>a geocodingObject</li></ul>            |
+| **Notes**                                            | <ul><li>This constructor requires internet access and the callback will be invoked with an error message if the internet is not currently accessible.</li></ul><ul><li>This constructor does not require Location Services to be enabled for Hammerspoon.</li></ul>                 |
+
+### Methods
+
+#### [cancel](#cancel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.geocoder:cancel() -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Cancels the pending or in progress geocoding request.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>nil to facilitate garbage collection by assigning this result to the geocodeObject</li></ul>            |
+| **Notes**                                            | <ul><li>This method has no effect if the geocoding process has already completed.</li></ul>                 |
+
+#### [geocoding](#geocoding)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.geocoder:geocoding() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a boolean indicating whether or not the geocoding process is still active.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>a boolean indicating if the geocoding process is still active.  If false, then the callback function either has already been called or will be as soon as the main thread of Hammerspoon becomes idle again.</li></ul>            |
+

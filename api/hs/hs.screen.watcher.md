@@ -8,147 +8,51 @@ Note that screen events which happen while your Mac is suspended, may not trigge
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Constructors - API calls which return an object, typically one that offers API methods</li>
-  <ul>
-	<li><a href="#new">new</a></li>
-	<li><a href="#newWithActiveScreen">newWithActiveScreen</a></li>
-  </ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#start">start</a></li>
-	<li><a href="#stop">stop</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constructors</h4>
-  <section id="new">
-	<h5><a href="#new">new</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.screen.watcher.new(fn) -&gt; watcher</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates a new screen-watcher.</p>
-<p>Parameters:</p>
-<ul>
-<li>The function to be called when a change in the screen layout occurs.  This function should take no arguments.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.screen.watcher</code> object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>A screen layout change usually involves a change that is made from the Displays Preferences Panel or when a monitor is attached or removed.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="newWithActiveScreen">
-	<h5><a href="#newWithActiveScreen">newWithActiveScreen</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.screen.watcher.newWithActiveScreen(fn) -&gt; watcher</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates a new screen-watcher that is also called when the active screen changes.</p>
-<p>Parameters:</p>
-<ul>
-<li>The function to be called when a change in the screen layout or active screen occurs.  This function can optionally take one argument, a boolean which will indicate if the change was due to a screen layout change (nil) or because the active screen changed (true).</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.screen.watcher</code> object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>A screen layout change usually involves a change that is made from the Displays Preferences Panel or when a monitor is attached or removed.<ul>
-<li><code>nil</code> was chosen instead of <code>falase</code> for the argument type when this type of change occurs to more closely match the previous behavior of having no argument passed to the callback function.</li>
-</ul>
-</li>
-<li>An active screen change indicates that the focused or main screen has changed when the user has "Displays have separate spaces" checked in the Mission Control Preferences Panel (the focused display is the display which has the active window and active menubar).<ul>
-<li>Detecting a change in the active display relies on watching for the <code>NSWorkspaceActiveDisplayDidChangeNotification</code> message which is not documented by Apple.  While this message has been around at least since OS X 10.9, because it is undocumented, we cannot be positive that Apple won't remove it in a future OS X update.  Because this watcher works by listening for posted messages, should Apple remove this notification, your callback function will no longer receive messages about this change -- it won't crash or change behavior in any other way.  This documentation will be updated if this status changes.</li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Methods</h4>
-  <section id="start">
-	<h5><a href="#start">start</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.screen.watcher:start() -&gt; watcher</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Starts the screen watcher, making it so fn is called each time the screen arrangement changes</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.screen.watcher</code> object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="stop">
-	<h5><a href="#stop">stop</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.screen.watcher:stop() -&gt; watcher</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Stops the screen watcher's fn from getting called until started again</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.screen.watcher</code> object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+ * [newWithActiveScreen](#newwithactivescreen)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [start](#start)
+ * [stop](#stop)
+
+## API Documentation
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher.new(fn) -> watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new screen-watcher.                                                                                         |
+| **Parameters**                                       | <ul><li>The function to be called when a change in the screen layout occurs.  This function should take no arguments.</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>hs.screen.watcher</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>A screen layout change usually involves a change that is made from the Displays Preferences Panel or when a monitor is attached or removed.</li></ul>                 |
+
+#### [newWithActiveScreen](#newwithactivescreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher.newWithActiveScreen(fn) -> watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new screen-watcher that is also called when the active screen changes.                                                                                         |
+| **Parameters**                                       | <ul><li>The function to be called when a change in the screen layout or active screen occurs.  This function can optionally take one argument, a boolean which will indicate if the change was due to a screen layout change (nil) or because the active screen changed (true).</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>hs.screen.watcher</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>A screen layout change usually involves a change that is made from the Displays Preferences Panel or when a monitor is attached or removed.</li></ul><ul><li><code>nil</code> was chosen instead of <code>falase</code> for the argument type when this type of change occurs to more closely match the previous behavior of having no argument passed to the callback function.</li></ul><ul><li>An active screen change indicates that the focused or main screen has changed when the user has "Displays have separate spaces" checked in the Mission Control Preferences Panel (the focused display is the display which has the active window and active menubar).</li></ul><ul><li>Detecting a change in the active display relies on watching for the <code>NSWorkspaceActiveDisplayDidChangeNotification</code> message which is not documented by Apple.  While this message has been around at least since OS X 10.9, because it is undocumented, we cannot be positive that Apple won't remove it in a future OS X update.  Because this watcher works by listening for posted messages, should Apple remove this notification, your callback function will no longer receive messages about this change -- it won't crash or change behavior in any other way.  This documentation will be updated if this status changes.</li></ul>                 |
+
+### Methods
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher:start() -> watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Starts the screen watcher, making it so fn is called each time the screen arrangement changes                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.screen.watcher</code> object</li></ul>            |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.watcher:stop() -> watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Stops the screen watcher's fn from getting called until started again                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.screen.watcher</code> object</li></ul>            |
+

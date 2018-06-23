@@ -3,532 +3,190 @@
 
 Manager for the CommandPost Setup Screen.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>Submodules</h3>
-<ul>
-<li><a href="plugins.core.setup.panel.md">plugins.core.setup.panel</a></li>
-</ul>
-<h3>API Overview</h3>
-<ul>
-<li>Constants - Useful values which cannot be changed</li>
-  <ul>
-	<li><a href="#DEFAULT_HEIGHT">DEFAULT_HEIGHT</a></li>
-	<li><a href="#DEFAULT_TITLE">DEFAULT_TITLE</a></li>
-	<li><a href="#DEFAULT_WIDTH">DEFAULT_WIDTH</a></li>
-	<li><a href="#enabled">enabled</a></li>
-	<li><a href="#FIRST_PRIORITY">FIRST_PRIORITY</a></li>
-	<li><a href="#LAST_PRIORITY">LAST_PRIORITY</a></li>
-	<li><a href="#visible">visible</a></li>
-  </ul>
-<li>Variables - Configurable values</li>
-  <ul>
-	<li><a href="#onboardingRequired">onboardingRequired</a></li>
-	<li><a href="#position">position</a></li>
-  </ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#addPanel">addPanel</a></li>
-	<li><a href="#currentPanel">currentPanel</a></li>
-	<li><a href="#delete">delete</a></li>
-	<li><a href="#focus">focus</a></li>
-	<li><a href="#getLabel">getLabel</a></li>
-	<li><a href="#init">init</a></li>
-	<li><a href="#injectScript">injectScript</a></li>
-	<li><a href="#new">new</a></li>
-	<li><a href="#nextPanel">nextPanel</a></li>
-	<li><a href="#setPanelRenderer">setPanelRenderer</a></li>
-	<li><a href="#show">show</a></li>
-	<li><a href="#update">update</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constants</h4>
-  <section id="DEFAULT_HEIGHT">
-	<h5><a href="#DEFAULT_HEIGHT">DEFAULT_HEIGHT</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.DEFAULT_HEIGHT -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The default panel height.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="DEFAULT_TITLE">
-	<h5><a href="#DEFAULT_TITLE">DEFAULT_TITLE</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.DEFAULT_TITLE -&gt; string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The default panel title.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="DEFAULT_WIDTH">
-	<h5><a href="#DEFAULT_WIDTH">DEFAULT_WIDTH</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.DEFAULT_WIDTH -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The default panel width.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="enabled">
-	<h5><a href="#enabled">enabled</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.enabled &lt;cp.prop: boolean&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Set to <code>true</code> if the manager is enabled. Defaults to <code>false</code>.
-Panels can be added while disabled. Once enabled, the window will appear and display the panels.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="FIRST_PRIORITY">
-	<h5><a href="#FIRST_PRIORITY">FIRST_PRIORITY</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.FIRST_PRIORITY -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The first panel priority.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="LAST_PRIORITY">
-	<h5><a href="#LAST_PRIORITY">LAST_PRIORITY</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.LAST_PRIORITY -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The last panel priority.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="visible">
-	<h5><a href="#visible">visible</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.visible &lt;cp.prop: boolean; read-only&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>A property indicating if the welcome window is visible on screen.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Variables</h4>
-  <section id="onboardingRequired">
-	<h5><a href="#onboardingRequired">onboardingRequired</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.onboardingRequired &lt;cp.prop: boolean&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Set to <code>true</code> if on-boarding is required otherwise <code>false</code>. Defaults to <code>true</code>.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="position">
-	<h5><a href="#position">position</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.position &lt;cp.prop: table&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The last known position of the Setup Window as a frame.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Functions</h4>
-  <section id="addPanel">
-	<h5><a href="#addPanel">addPanel</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.addPanel(newPanel) -&gt; panel</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Adds the new panel to the manager. Panels are created via the
-<code>plugins.core.setup.panel.new(...)</code> function.</p>
-<p>If the Setup Manager is <code>enabled</code>, the window will be displayed
-immediately when a panel is added.</p>
-<p>Parameters:</p>
-<ul>
-<li><code>newPanel</code>   - The panel to add.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The manager.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="currentPanel">
-	<h5><a href="#currentPanel">currentPanel</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.currentPanel() -&gt; string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The Current Panel</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The current panel as a string</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="delete">
-	<h5><a href="#delete">delete</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.delete() -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Deletes the Setup Panels.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focus">
-	<h5><a href="#focus">focus</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.focus() -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Focuses on the Setup Panels window.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="getLabel">
-	<h5><a href="#getLabel">getLabel</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.getLabel() -&gt; string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the Webview label.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Webview label as a string.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="init">
-	<h5><a href="#init">init</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.init(env) -&gt; module</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Initialises the module.</p>
-<p>Parameters:</p>
-<ul>
-<li>env - The plugin environment table</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The Module</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="injectScript">
-	<h5><a href="#injectScript">injectScript</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.injectScript(script) -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Injects JavaScript into the Setup Panels.</p>
-<p>Parameters:</p>
-<ul>
-<li>script - The JavaScript you want to inject as a string.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="new">
-	<h5><a href="#new">new</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.new() -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates the Setup Panels.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="nextPanel">
-	<h5><a href="#nextPanel">nextPanel</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.nextPanel() -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Moves to the next panel. If the window is visible, the panel will be updated.
-If no panels are left in the queue, the window will be closed.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if there was another panel to move to, or <code>false</code> if no panels remain.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setPanelRenderer">
-	<h5><a href="#setPanelRenderer">setPanelRenderer</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.setPanelRenderer(renderer) -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets a Panel Renderer</p>
-<p>Parameters:</p>
-<ul>
-<li>renderer - The renderer</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="show">
-	<h5><a href="#show">show</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.show() -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Shows the Setup Panels.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="update">
-	<h5><a href="#update">update</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.setup.update() -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Updates the Setup Panels.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## Submodules
+ * [plugins.core.setup.panel](plugins.core.setup.panel.md)
+
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_HEIGHT](#default_height)
+ * [DEFAULT_TITLE](#default_title)
+ * [DEFAULT_WIDTH](#default_width)
+ * [enabled](#enabled)
+ * [FIRST_PRIORITY](#first_priority)
+ * [LAST_PRIORITY](#last_priority)
+ * [visible](#visible)
+* Variables - Configurable values
+ * [onboardingRequired](#onboardingrequired)
+ * [position](#position)
+* Functions - API calls offered directly by the extension
+ * [addPanel](#addpanel)
+ * [currentPanel](#currentpanel)
+ * [delete](#delete)
+ * [focus](#focus)
+ * [getLabel](#getlabel)
+ * [init](#init)
+ * [injectScript](#injectscript)
+ * [new](#new)
+ * [nextPanel](#nextpanel)
+ * [setPanelRenderer](#setpanelrenderer)
+ * [show](#show)
+ * [update](#update)
+
+## API Documentation
+
+### Constants
+
+#### [DEFAULT_HEIGHT](#default_height)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.DEFAULT_HEIGHT -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default panel height.                                                                                         |
+
+#### [DEFAULT_TITLE](#default_title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.DEFAULT_TITLE -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default panel title.                                                                                         |
+
+#### [DEFAULT_WIDTH](#default_width)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.DEFAULT_WIDTH -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default panel width.                                                                                         |
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Set to `true` if the manager is enabled. Defaults to `false`.                                                                                         |
+
+#### [FIRST_PRIORITY](#first_priority)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.FIRST_PRIORITY -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The first panel priority.                                                                                         |
+
+#### [LAST_PRIORITY](#last_priority)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.LAST_PRIORITY -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The last panel priority.                                                                                         |
+
+#### [visible](#visible)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.visible <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A property indicating if the welcome window is visible on screen.                                                                                         |
+
+### Variables
+
+#### [onboardingRequired](#onboardingrequired)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.onboardingRequired <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Set to `true` if on-boarding is required otherwise `false`. Defaults to `true`.                                                                                         |
+
+#### [position](#position)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.position <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | The last known position of the Setup Window as a frame.                                                                                         |
+
+### Functions
+
+#### [addPanel](#addpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.addPanel(newPanel) -> panel` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Adds the new panel to the manager. Panels are created via the                                                                                         |
+| **Parameters**                                       | <ul><li><code>newPanel</code>   - The panel to add.</li></ul>   |
+| **Returns**                                          | <ul><li>The manager.</li></ul>            |
+
+#### [currentPanel](#currentpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.currentPanel() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | The Current Panel                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The current panel as a string</li></ul>            |
+
+#### [delete](#delete)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.delete() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Deletes the Setup Panels.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [focus](#focus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.focus() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Focuses on the Setup Panels window.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [getLabel](#getlabel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.getLabel() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the Webview label.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The Webview label as a string.</li></ul>            |
+
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.init(env) -> module` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Initialises the module.                                                                                         |
+| **Parameters**                                       | <ul><li>env - The plugin environment table</li></ul>   |
+| **Returns**                                          | <ul><li>The Module</li></ul>            |
+
+#### [injectScript](#injectscript)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.injectScript(script) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Injects JavaScript into the Setup Panels.                                                                                         |
+| **Parameters**                                       | <ul><li>script - The JavaScript you want to inject as a string.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.new() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Creates the Setup Panels.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [nextPanel](#nextpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.nextPanel() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Moves to the next panel. If the window is visible, the panel will be updated.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if there was another panel to move to, or <code>false</code> if no panels remain.</li></ul>            |
+
+#### [setPanelRenderer](#setpanelrenderer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.setPanelRenderer(renderer) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets a Panel Renderer                                                                                         |
+| **Parameters**                                       | <ul><li>renderer - The renderer</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.show() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Shows the Setup Panels.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [update](#update)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.update() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Updates the Setup Panels.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+

@@ -3,57 +3,22 @@
 
 Inspect USB devices
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>Submodules</h3>
-<ul>
-<li><a href="hs.usb.watcher.md">hs.usb.watcher</a></li>
-</ul>
-<h3>API Overview</h3>
-<ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#attachedDevices">attachedDevices</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Functions</h4>
-  <section id="attachedDevices">
-	<h5><a href="#attachedDevices">attachedDevices</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.usb.attachedDevices() -&gt; table or nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets details about currently attached USB devices</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A table containing information about currently attached USB devices, or nil if an error occurred. The table contains a sub-table for each USB device, the keys of which are:<ul>
-<li>productName - A string containing the name of the device</li>
-<li>vendorName - A string containing the name of the device vendor</li>
-<li>vendorID - A number containing the Vendor ID of the device</li>
-<li>productID - A number containing the Product ID of the device</li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## Submodules
+ * [hs.usb.watcher](hs.usb.watcher.md)
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [attachedDevices](#attacheddevices)
+
+## API Documentation
+
+### Functions
+
+#### [attachedDevices](#attacheddevices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.usb.attachedDevices() -> table or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets details about currently attached USB devices                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A table containing information about currently attached USB devices, or nil if an error occurred. The table contains a sub-table for each USB device, the keys of which are:</li></ul><ul><li>productName - A string containing the name of the device</li></ul><ul><li>vendorName - A string containing the name of the device vendor</li></ul><ul><li>vendorID - A number containing the Vendor ID of the device</li></ul><ul><li>productID - A number containing the Product ID of the device</li></ul>            |
+

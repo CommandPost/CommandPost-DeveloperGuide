@@ -3,97 +3,38 @@
 
 Ignore Final Cut Pro's Media Import Window.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Variables - Configurable values</li>
-  <ul>
-	<li><a href="#enabled">enabled</a></li>
-  </ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#getDeviceWatcher">getDeviceWatcher</a></li>
-	<li><a href="#update">update</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Variables</h4>
-  <section id="enabled">
-	<h5><a href="#enabled">enabled</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.import.ignorecard.enabled &lt;cp.prop: boolean&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Toggles the Ignore Card Plugin</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Functions</h4>
-  <section id="getDeviceWatcher">
-	<h5><a href="#getDeviceWatcher">getDeviceWatcher</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.import.ignorecard.getDeviceWatcher() -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Media Import Window Watcher</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.fs.volume</code> object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="update">
-	<h5><a href="#update">update</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.import.ignorecard.update() -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Starts to stops the Ignore Card device watcher.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Variables - Configurable values
+ * [enabled](#enabled)
+* Functions - API calls offered directly by the extension
+ * [getDeviceWatcher](#getdevicewatcher)
+ * [update](#update)
+
+## API Documentation
+
+### Variables
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.import.ignorecard.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Toggles the Ignore Card Plugin                                                                                         |
+
+### Functions
+
+#### [getDeviceWatcher](#getdevicewatcher)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.import.ignorecard.getDeviceWatcher() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Media Import Window Watcher                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>hs.fs.volume</code> object</li></ul>            |
+
+#### [update](#update)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.import.ignorecard.update() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Starts to stops the Ignore Card device watcher.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+

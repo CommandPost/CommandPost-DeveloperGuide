@@ -3,708 +3,213 @@
 
 Functional programming utility functions
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#concat">concat</a></li>
-	<li><a href="#contains">contains</a></li>
-	<li><a href="#copy">copy</a></li>
-	<li><a href="#each">each</a></li>
-	<li><a href="#every">every</a></li>
-	<li><a href="#filter">filter</a></li>
-	<li><a href="#find">find</a></li>
-	<li><a href="#ieach">ieach</a></li>
-	<li><a href="#ifilter">ifilter</a></li>
-	<li><a href="#imap">imap</a></li>
-	<li><a href="#indexOf">indexOf</a></li>
-	<li><a href="#map">map</a></li>
-	<li><a href="#mapCat">mapCat</a></li>
-	<li><a href="#reduce">reduce</a></li>
-	<li><a href="#some">some</a></li>
-	<li><a href="#split">split</a></li>
-  </ul>
-<li>Constructors - API calls which return an object, typically one that offers API methods</li>
-  <ul>
-	<li><a href="#cycle">cycle</a></li>
-	<li><a href="#partial">partial</a></li>
-	<li><a href="#sequence">sequence</a></li>
-	<li><a href="#sortByKeys">sortByKeys</a></li>
-	<li><a href="#sortByKeyValues">sortByKeyValues</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Functions</h4>
-  <section id="concat">
-	<h5><a href="#concat">concat</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.concat(table1, table2)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Join two tables together</p>
-<p>Parameters:</p>
-<ul>
-<li>table1 - A table containing some sort of data</li>
-<li>table2 - A table containing some sort of data</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>table1, with all of table2's elements added to the end of it</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>table2 cannot be a sparse table, see <a href="http://www.luafaq.org/gotchas.html#T6.4">http://www.luafaq.org/gotchas.html#T6.4</a></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="contains">
-	<h5><a href="#contains">contains</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.contains(table, element) -&gt; bool</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Determine if a table contains a given object</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-<li>element - An object to search the table for</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A boolean, true if the element could be found in the table, otherwise false</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="copy">
-	<h5><a href="#copy">copy</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.copy(table) -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Copy a table using <code>pairs()</code></p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A new table containing the same data as the input table</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="each">
-	<h5><a href="#each">each</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.each(table, fn)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Execute a function across a table (in arbitrary order), and discard the results</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table; it can have both a list (or array) part and a hash (or dict) part</li>
-<li>fn - A function that accepts a single parameter (a table element)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="every">
-	<h5><a href="#every">every</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.every(table, fn) -&gt; bool</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns true if the application of fn on every entry in table is true.</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-<li>fn - A function that accepts a single parameter and returns a "true" value (any value except the boolean <code>false</code> or nil) if the parameter was accepted, or a "false" value (the boolean false or nil) if the parameter was rejected.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>True if the application of fn on every element of the table is true</li>
-<li>False if the function returns <code>false</code> for any element of the table.  Note that testing stops when the first false return is detected.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="filter">
-	<h5><a href="#filter">filter</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.filter(table, fn) -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Filter a table by running a predicate function on its elements (in arbitrary order)</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table; it can have both a list (or array) part and a hash (or dict) part</li>
-<li>fn - A function that accepts a single parameter (a table element) and returns a boolean
-value: true if the parameter should be kept, false if it should be discarded</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A table containing the elements of the table for which fn(element) returns true</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If <code>table</code> is a pure array table (list-like) without "holes", use <code>hs.fnutils.ifilter()</code> if you need guaranteed in-order
-processing and for better performance.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="find">
-	<h5><a href="#find">find</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.find(table, fn) -&gt; element</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Execute a function across a table and return the first element where that function returns true</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-<li>fn - A function that takes one parameter and returns a boolean value</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The element of the supplied table that first caused fn to return true</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="ieach">
-	<h5><a href="#ieach">ieach</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.ieach(list, fn)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Execute a function across a list-like table in order, and discard the results</p>
-<p>Parameters:</p>
-<ul>
-<li>list - A list-like table, i.e. one whose keys are sequential integers starting from 1</li>
-<li>fn - A function that accepts a single parameter (a table element)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="ifilter">
-	<h5><a href="#ifilter">ifilter</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.ifilter(list, fn) -&gt; list</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Filter a list-like table by running a predicate function on its elements in order</p>
-<p>Parameters:</p>
-<ul>
-<li>list - A list-like table, i.e. one whose keys are sequential integers starting from 1</li>
-<li>fn - A function that accepts a single parameter (a table element) and returns a boolean
-value: true if the parameter should be kept, false if it should be discarded</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A list-like table containing the elements of the table for which fn(element) returns true</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If <code>list</code> has "holes", all elements after the first hole will be lost, as the table is iterated over with <code>ipairs</code>;
-use <code>hs.fnutils.map()</code> if your table has holes</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="imap">
-	<h5><a href="#imap">imap</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.imap(list, fn) -&gt; list</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Execute a function across a list-like table in order, and collect the results</p>
-<p>Parameters:</p>
-<ul>
-<li>list - A list-like table, i.e. one whose keys are sequential integers starting from 1</li>
-<li>fn - A function that accepts a single parameter (a table element). The values returned from this function
-will be collected into the result list; when <code>nil</code> is returned the relevant element is discarded - the
-result list won't have any "holes".</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A list-like table containing the results of calling the function on every element in the table</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If <code>list</code> has "holes", all elements after the first hole will be lost, as the table is iterated over with <code>ipairs</code>;
-use <code>hs.fnutils.map()</code> if your table has holes</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="indexOf">
-	<h5><a href="#indexOf">indexOf</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.indexOf(table, element) -&gt; number or nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Determine the location in a table of a given object</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-<li>element - An object to search the table for</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A number containing the index of the element in the table, or nil if it could not be found</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="map">
-	<h5><a href="#map">map</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.map(table, fn) -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Execute a function across a table (in arbitrary order) and collect the results</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table; it can have both a list (or array) part and a hash (or dict) part</li>
-<li>fn - A function that accepts a single parameter (a table element). For the hash part, the values returned
-from this function (if non-nil) will be assigned to the same key in the result list. For the array part, this function
-behaves like <code>hs.fnutils.imap()</code> (i.e. <code>nil</code> results are discarded); however all keys, including integer keys after
-a "hole" in <code>table</code>, will be iterated over.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A table containing the results of calling the function on every element in the table</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If <code>table</code> is a pure array table (list-like) without "holes", use <code>hs.fnutils.imap()</code> if you need guaranteed in-order
-processing and for better performance.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="mapCat">
-	<h5><a href="#mapCat">mapCat</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.mapCat(table, fn) -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Execute, across a table, a function that outputs tables, and concatenate all of those tables together</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-<li>fn - A function that takes a single parameter and returns a table</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A table containing the concatenated results of calling fn(element) for every element in the supplied table</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="reduce">
-	<h5><a href="#reduce">reduce</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.reduce(table, fn) -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Reduce a table to a single element, using a function</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-<li>fn - A function that takes two parameters, which will be elements of the supplied table. It should choose one of these elements and return it</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The element of the supplied table that was chosen by the iterative reducer function</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>table cannot be a sparse table, see <a href="http://www.luafaq.org/gotchas.html#T6.4">http://www.luafaq.org/gotchas.html#T6.4</a></li>
-<li>The first iteration of the reducer will call fn with the first and second elements of the table. The second iteration will call fn with the result of the first iteration, and the third element. This repeats until there is only one element left</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="some">
-	<h5><a href="#some">some</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.some(table, fn) -&gt; bool</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns true if the application of fn on entries in table are true for at least one of the members.</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-<li>fn - A function that accepts a single parameter and returns a "true" value (any value except the boolean <code>false</code> or nil) if the parameter was accepted, or a "false" value (the boolean false or nil) if the parameter was rejected.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>True if the application of fn on any element of the table is true.  Note that testing stops when the first true return is detected.</li>
-<li>False if the function returns <code>false</code> for all elements of the table.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="split">
-	<h5><a href="#split">split</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.split(sString, sSeparator [, nMax] [, bPlain]) -&gt; { array }</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Convert string to an array of strings, breaking at the specified separator.</p>
-<p>Parameters:</p>
-<ul>
-<li>sString    -- the string to split into substrings</li>
-<li>sSeparator -- the separator.  If <code>bPlain</code> is false or not provided, this is treated as a Lua pattern.</li>
-<li>nMax       -- optional parameter specifying the maximum number (or all if <code>nMax</code> is nil) of substrings to split from <code>sString</code>.</li>
-<li>bPlain     -- optional boolean parameter, defaulting to false, specifying if <code>sSeparator</code> should be treated as plain text (true) or a Lua pattern (false)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An array of substrings.  The last element of the array will be the remaining portion of <code>sString</code> that remains after <code>nMax</code> (or all, if <code>nMax</code> is not provided or is nil) substrings have been identified.</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>Similar to "split" in Perl or "string.split" in Python.</li>
-<li>Optional parameters <code>nMax</code> and <code>bPlain</code> are identified by their type -- if parameter 3 or 4 is a number or nil, it will be considered a value for <code>nMax</code>; if parameter 3 or 4 is a boolean value, it will be considered a value for <code>bPlain</code>.</li>
-<li>Lua patterns are more flexible for pattern matching, but can also be slower if the split point is simple. See §6.4.1 of the _Lua_Reference<em>Manual</em> at <a href="http://www.lua.org/manual/5.3/manual.html#6.4.1">http://www.lua.org/manual/5.3/manual.html#6.4.1</a> for more information on Lua patterns.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Constructors</h4>
-  <section id="cycle">
-	<h5><a href="#cycle">cycle</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.cycle(table) -&gt; fn()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates a function that repeatedly iterates a table</p>
-<p>Parameters:</p>
-<ul>
-<li>table - A table containing some sort of data</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A function that, when called repeatedly, will return all of the elements of the supplied table, repeating indefinitely</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>table cannot be a sparse table, see <a href="http://www.luafaq.org/gotchas.html#T6.4">http://www.luafaq.org/gotchas.html#T6.4</a></li>
-<li>An example usage:<div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">({</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">})</span>
- <span class="p">{</span><span class="n">f</span><span class="p">(),</span> <span class="n">f</span><span class="p">(),</span> <span class="n">f</span><span class="p">(),</span> <span class="n">f</span><span class="p">(),</span> <span class="n">f</span><span class="p">(),</span> <span class="n">f</span><span class="p">(),</span> <span class="n">f</span><span class="p">()}</span> <span class="o">==</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
-</pre></div>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="partial">
-	<h5><a href="#partial">partial</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.partial(fn, ...) -&gt; fn'</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns a new function which takes the provided arguments and pre-applies them as the initial arguments to the provided function.  When the new function is later invoked with additional arguments, they are appended to the end of the initial list given and the complete list of arguments is finally passed into the provided function and its result returned.</p>
-<p>Parameters:</p>
-<ul>
-<li>fn - The function which will act on all of the arguments provided now and when the result is invoked later.</li>
-<li>... - The initial arguments to pre-apply to the resulting new function.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A function</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li><p>This is best understood with an example which you can test in the Hammerspoon console:</p>
-<p>Create the function <code>a</code> which has it's initial arguments set to <code>1,2,3</code>:
-   a = hs.fnutils.partial(function(...) return table.pack(...) end, 1, 2, 3)</p>
-<p>Now some examples of using the new function, <code>a(...)</code>:
-   hs.inspect(a("a","b","c")) will return: { 1, 2, 3, "a", "b", "c", n = 6 }
-   hs.inspect(a(4,5,6,7))     will return: { 1, 2, 3, 4, 5, 6, 7, n = 7 }
-   hs.inspect(a(1))           will return: { 1, 2, 3, 1, n = 4 }</p>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="sequence">
-	<h5><a href="#sequence">sequence</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.sequence(...) -&gt; fn</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates a function that will collect the result of a series of functions into a table</p>
-<p>Parameters:</p>
-<ul>
-<li>... - A number of functions, passed as different arguments. They should accept zero parameters, and return something</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A function that, when called, will call all of the functions passed to this constructor. The output of these functions will be collected together and returned.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="sortByKeys">
-	<h5><a href="#sortByKeys">sortByKeys</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.sortByKeys(table[ , function]) -&gt; function</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Iterator for retrieving elements from a table of key-value pairs in the order of the keys.</p>
-<p>Parameters:</p>
-<ul>
-<li>table - the table of key-value pairs to be iterated through</li>
-<li>fn - an optional function which will be passed to <code>table.sort</code> to determine how the keys are sorted.  If it is not present, then keys will be sorted numerically/alphabetically.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>function to be used as an iterator</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>Similar to Perl's <code>sort(keys %hash)</code></li>
-<li>Iterators are used in looping constructs like <code>for</code>:<ul>
-<li><code>for i,v in hs.fnutils.sortByKeys(t[, f]) do ... end</code></li>
-</ul>
-</li>
-<li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.<ul>
-<li>e.g. <code>function(m,n) return not (m &lt; n) end</code> would result in reverse alphabetic order.</li>
-<li>See _Programming_In_Lua,_3rd<em>ed</em>, page 52 for a more complete discussion.</li>
-<li>The default sort is to compare keys directly, if they are of the same type, or as their tostring() versions, if the key types differ:<ul>
-<li>function(m,n) if type(m) ~= type(n) then return tostring(m) &lt; tostring(n) else return m &lt; n end</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="sortByKeyValues">
-	<h5><a href="#sortByKeyValues">sortByKeyValues</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.fnutils.sortByKeyValues(table[ , function]) -&gt; function</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Iterator for retrieving elements from a table of key-value pairs in the order of the values.</p>
-<p>Parameters:</p>
-<ul>
-<li>table - the table of key-value pairs to be iterated through</li>
-<li>fn - an optional function which will be passed to <code>table.sort</code> to determine how the values are sorted.  If it is not present, then values will be sorted numerically/alphabetically.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>function to be used as an iterator</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>Similar to Perl's <code>sort { $hash{$a} &lt;=&gt; $hash{$b} } keys %hash</code></li>
-<li>Iterators are used in looping constructs like <code>for</code>:<ul>
-<li><code>for i,v in hs.fnutils.sortByKeyValues(t[, f]) do ... end</code></li>
-</ul>
-</li>
-<li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.<ul>
-<li>e.g. <code>function(m,n) return not (m &lt; n) end</code> would result in reverse alphabetic order.</li>
-<li>See _Programming_In_Lua,_3rd<em>ed</em>, page 52 for a more complete discussion.</li>
-<li>The default sort is to compare values directly, if they are of the same type, or as their tostring() versions, if the value types differ:<ul>
-<li>function(m,n) if type(m) ~= type(n) then return tostring(m) &lt; tostring(n) else return m &lt; n end</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [concat](#concat)
+ * [contains](#contains)
+ * [copy](#copy)
+ * [each](#each)
+ * [every](#every)
+ * [filter](#filter)
+ * [find](#find)
+ * [ieach](#ieach)
+ * [ifilter](#ifilter)
+ * [imap](#imap)
+ * [indexOf](#indexof)
+ * [map](#map)
+ * [mapCat](#mapcat)
+ * [reduce](#reduce)
+ * [some](#some)
+ * [split](#split)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [cycle](#cycle)
+ * [partial](#partial)
+ * [sequence](#sequence)
+ * [sortByKeys](#sortbykeys)
+ * [sortByKeyValues](#sortbykeyvalues)
+
+## API Documentation
+
+### Functions
+
+#### [concat](#concat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.concat(table1, table2)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Join two tables together                                                                                         |
+| **Parameters**                                       | <ul><li>table1 - A table containing some sort of data</li></ul><ul><li>table2 - A table containing some sort of data</li></ul>   |
+| **Returns**                                          | <ul><li>table1, with all of table2's elements added to the end of it</li></ul>            |
+| **Notes**                                            | <ul><li>table2 cannot be a sparse table, see <a href="http://www.luafaq.org/gotchas.html#T6.4">http://www.luafaq.org/gotchas.html#T6.4</a></li></ul>                 |
+
+#### [contains](#contains)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.contains(table, element) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Determine if a table contains a given object                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul><ul><li>element - An object to search the table for</li></ul>   |
+| **Returns**                                          | <ul><li>A boolean, true if the element could be found in the table, otherwise false</li></ul>            |
+
+#### [copy](#copy)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.copy(table) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Copy a table using `pairs()`                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul>   |
+| **Returns**                                          | <ul><li>A new table containing the same data as the input table</li></ul>            |
+
+#### [each](#each)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.each(table, fn)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Execute a function across a table (in arbitrary order), and discard the results                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table; it can have both a list (or array) part and a hash (or dict) part</li></ul><ul><li>fn - A function that accepts a single parameter (a table element)</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [every](#every)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.every(table, fn) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns true if the application of fn on every entry in table is true.                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul><ul><li>fn - A function that accepts a single parameter and returns a "true" value (any value except the boolean <code>false</code> or nil) if the parameter was accepted, or a "false" value (the boolean false or nil) if the parameter was rejected.</li></ul>   |
+| **Returns**                                          | <ul><li>True if the application of fn on every element of the table is true</li></ul><ul><li>False if the function returns <code>false</code> for any element of the table.  Note that testing stops when the first false return is detected.</li></ul>            |
+
+#### [filter](#filter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.filter(table, fn) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Filter a table by running a predicate function on its elements (in arbitrary order)                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table; it can have both a list (or array) part and a hash (or dict) part</li></ul><ul><li>fn - A function that accepts a single parameter (a table element) and returns a boolean</li></ul>   |
+| **Returns**                                          | <ul><li>A table containing the elements of the table for which fn(element) returns true</li></ul>            |
+| **Notes**                                            | <ul><li>If <code>table</code> is a pure array table (list-like) without "holes", use <code>hs.fnutils.ifilter()</code> if you need guaranteed in-order</li></ul><p>processing and for better performance.</p>                 |
+
+#### [find](#find)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.find(table, fn) -> element` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Execute a function across a table and return the first element where that function returns true                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul><ul><li>fn - A function that takes one parameter and returns a boolean value</li></ul>   |
+| **Returns**                                          | <ul><li>The element of the supplied table that first caused fn to return true</li></ul>            |
+
+#### [ieach](#ieach)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.ieach(list, fn)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Execute a function across a list-like table in order, and discard the results                                                                                         |
+| **Parameters**                                       | <ul><li>list - A list-like table, i.e. one whose keys are sequential integers starting from 1</li></ul><ul><li>fn - A function that accepts a single parameter (a table element)</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [ifilter](#ifilter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.ifilter(list, fn) -> list` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Filter a list-like table by running a predicate function on its elements in order                                                                                         |
+| **Parameters**                                       | <ul><li>list - A list-like table, i.e. one whose keys are sequential integers starting from 1</li></ul><ul><li>fn - A function that accepts a single parameter (a table element) and returns a boolean</li></ul>   |
+| **Returns**                                          | <ul><li>A list-like table containing the elements of the table for which fn(element) returns true</li></ul>            |
+| **Notes**                                            | <ul><li>If <code>list</code> has "holes", all elements after the first hole will be lost, as the table is iterated over with <code>ipairs</code>;</li></ul><p>use <code>hs.fnutils.map()</code> if your table has holes</p>                 |
+
+#### [imap](#imap)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.imap(list, fn) -> list` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Execute a function across a list-like table in order, and collect the results                                                                                         |
+| **Parameters**                                       | <ul><li>list - A list-like table, i.e. one whose keys are sequential integers starting from 1</li></ul><ul><li>fn - A function that accepts a single parameter (a table element). The values returned from this function</li></ul><p>will be collected into the result list; when <code>nil</code> is returned the relevant element is discarded - the</p><p>result list won't have any "holes".</p>   |
+| **Returns**                                          | <ul><li>A list-like table containing the results of calling the function on every element in the table</li></ul>            |
+| **Notes**                                            | <ul><li>If <code>list</code> has "holes", all elements after the first hole will be lost, as the table is iterated over with <code>ipairs</code>;</li></ul><p>use <code>hs.fnutils.map()</code> if your table has holes</p>                 |
+
+#### [indexOf](#indexof)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.indexOf(table, element) -> number or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Determine the location in a table of a given object                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul><ul><li>element - An object to search the table for</li></ul>   |
+| **Returns**                                          | <ul><li>A number containing the index of the element in the table, or nil if it could not be found</li></ul>            |
+
+#### [map](#map)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.map(table, fn) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Execute a function across a table (in arbitrary order) and collect the results                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table; it can have both a list (or array) part and a hash (or dict) part</li></ul><ul><li>fn - A function that accepts a single parameter (a table element). For the hash part, the values returned</li></ul><p>from this function (if non-nil) will be assigned to the same key in the result list. For the array part, this function</p><p>behaves like <code>hs.fnutils.imap()</code> (i.e. <code>nil</code> results are discarded); however all keys, including integer keys after</p><p>a "hole" in <code>table</code>, will be iterated over.</p>   |
+| **Returns**                                          | <ul><li>A table containing the results of calling the function on every element in the table</li></ul>            |
+| **Notes**                                            | <ul><li>If <code>table</code> is a pure array table (list-like) without "holes", use <code>hs.fnutils.imap()</code> if you need guaranteed in-order</li></ul><p>processing and for better performance.</p>                 |
+
+#### [mapCat](#mapcat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.mapCat(table, fn) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Execute, across a table, a function that outputs tables, and concatenate all of those tables together                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul><ul><li>fn - A function that takes a single parameter and returns a table</li></ul>   |
+| **Returns**                                          | <ul><li>A table containing the concatenated results of calling fn(element) for every element in the supplied table</li></ul>            |
+
+#### [reduce](#reduce)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.reduce(table, fn) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Reduce a table to a single element, using a function                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul><ul><li>fn - A function that takes two parameters, which will be elements of the supplied table. It should choose one of these elements and return it</li></ul>   |
+| **Returns**                                          | <ul><li>The element of the supplied table that was chosen by the iterative reducer function</li></ul>            |
+| **Notes**                                            | <ul><li>table cannot be a sparse table, see <a href="http://www.luafaq.org/gotchas.html#T6.4">http://www.luafaq.org/gotchas.html#T6.4</a></li></ul><ul><li>The first iteration of the reducer will call fn with the first and second elements of the table. The second iteration will call fn with the result of the first iteration, and the third element. This repeats until there is only one element left</li></ul>                 |
+
+#### [some](#some)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.some(table, fn) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns true if the application of fn on entries in table are true for at least one of the members.                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul><ul><li>fn - A function that accepts a single parameter and returns a "true" value (any value except the boolean <code>false</code> or nil) if the parameter was accepted, or a "false" value (the boolean false or nil) if the parameter was rejected.</li></ul>   |
+| **Returns**                                          | <ul><li>True if the application of fn on any element of the table is true.  Note that testing stops when the first true return is detected.</li></ul><ul><li>False if the function returns <code>false</code> for all elements of the table.</li></ul>            |
+
+#### [split](#split)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.split(sString, sSeparator [, nMax] [, bPlain]) -> { array }` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Convert string to an array of strings, breaking at the specified separator.                                                                                         |
+| **Parameters**                                       | <ul><li>sString    -- the string to split into substrings</li></ul><ul><li>sSeparator -- the separator.  If <code>bPlain</code> is false or not provided, this is treated as a Lua pattern.</li></ul><ul><li>nMax       -- optional parameter specifying the maximum number (or all if <code>nMax</code> is nil) of substrings to split from <code>sString</code>.</li></ul><ul><li>bPlain     -- optional boolean parameter, defaulting to false, specifying if <code>sSeparator</code> should be treated as plain text (true) or a Lua pattern (false)</li></ul>   |
+| **Returns**                                          | <ul><li>An array of substrings.  The last element of the array will be the remaining portion of <code>sString</code> that remains after <code>nMax</code> (or all, if <code>nMax</code> is not provided or is nil) substrings have been identified.</li></ul>            |
+| **Notes**                                            | <ul><li>Similar to "split" in Perl or "string.split" in Python.</li></ul><ul><li>Optional parameters <code>nMax</code> and <code>bPlain</code> are identified by their type -- if parameter 3 or 4 is a number or nil, it will be considered a value for <code>nMax</code>; if parameter 3 or 4 is a boolean value, it will be considered a value for <code>bPlain</code>.</li></ul><ul><li>Lua patterns are more flexible for pattern matching, but can also be slower if the split point is simple. See §6.4.1 of the <em>Lua_Reference_Manual</em> at http://www.lua.org/manual/5.3/manual.html#6.4.1 for more information on Lua patterns.</li></ul>                 |
+
+### Constructors
+
+#### [cycle](#cycle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.cycle(table) -> fn()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a function that repeatedly iterates a table                                                                                         |
+| **Parameters**                                       | <ul><li>table - A table containing some sort of data</li></ul>   |
+| **Returns**                                          | <ul><li>A function that, when called repeatedly, will return all of the elements of the supplied table, repeating indefinitely</li></ul>            |
+| **Notes**                                            | <ul><li>table cannot be a sparse table, see <a href="http://www.luafaq.org/gotchas.html#T6.4">http://www.luafaq.org/gotchas.html#T6.4</a></li></ul><ul><li>An example usage:</li></ul><pre><code>```lua</code></pre><pre><code>f = cycle({4, 5, 6})</code></pre><pre><code>{f(), f(), f(), f(), f(), f(), f()} == {4, 5, 6, 4, 5, 6, 4}</code></pre><pre><code>```</code></pre>                 |
+
+#### [partial](#partial)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.partial(fn, ...) -> fn'` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Returns a new function which takes the provided arguments and pre-applies them as the initial arguments to the provided function.  When the new function is later invoked with additional arguments, they are appended to the end of the initial list given and the complete list of arguments is finally passed into the provided function and its result returned.                                                                                         |
+| **Parameters**                                       | <ul><li>fn - The function which will act on all of the arguments provided now and when the result is invoked later.</li></ul><ul><li>... - The initial arguments to pre-apply to the resulting new function.</li></ul>   |
+| **Returns**                                          | <ul><li>A function</li></ul>            |
+| **Notes**                                            | <ul><li>This is best understood with an example which you can test in the Hammerspoon console:</li></ul>                 |
+
+#### [sequence](#sequence)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sequence(...) -> fn` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a function that will collect the result of a series of functions into a table                                                                                         |
+| **Parameters**                                       | <ul><li>... - A number of functions, passed as different arguments. They should accept zero parameters, and return something</li></ul>   |
+| **Returns**                                          | <ul><li>A function that, when called, will call all of the functions passed to this constructor. The output of these functions will be collected together and returned.</li></ul>            |
+
+#### [sortByKeys](#sortbykeys)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sortByKeys(table[ , function]) -> function` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Iterator for retrieving elements from a table of key-value pairs in the order of the keys.                                                                                         |
+| **Parameters**                                       | <ul><li>table - the table of key-value pairs to be iterated through</li></ul><ul><li>fn - an optional function which will be passed to <code>table.sort</code> to determine how the keys are sorted.  If it is not present, then keys will be sorted numerically/alphabetically.</li></ul>   |
+| **Returns**                                          | <ul><li>function to be used as an iterator</li></ul>            |
+| **Notes**                                            | <ul><li>Similar to Perl's <code>sort(keys %hash)</code></li></ul><ul><li>Iterators are used in looping constructs like <code>for</code>:</li></ul><ul><li><code>for i,v in hs.fnutils.sortByKeys(t[, f]) do ... end</code></li></ul><ul><li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.</li></ul><ul><li>e.g. <code>function(m,n) return not (m &lt; n) end</code> would result in reverse alphabetic order.</li></ul><ul><li>See <em>Programming_In_Lua,_3rd_ed</em>, page 52 for a more complete discussion.</li></ul><ul><li>The default sort is to compare keys directly, if they are of the same type, or as their tostring() versions, if the key types differ:</li></ul><pre><code> * function(m,n) if type(m) ~= type(n) then return tostring(m) &lt; tostring(n) else return m &lt; n end</code></pre>                 |
+
+#### [sortByKeyValues](#sortbykeyvalues)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fnutils.sortByKeyValues(table[ , function]) -> function` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Iterator for retrieving elements from a table of key-value pairs in the order of the values.                                                                                         |
+| **Parameters**                                       | <ul><li>table - the table of key-value pairs to be iterated through</li></ul><ul><li>fn - an optional function which will be passed to <code>table.sort</code> to determine how the values are sorted.  If it is not present, then values will be sorted numerically/alphabetically.</li></ul>   |
+| **Returns**                                          | <ul><li>function to be used as an iterator</li></ul>            |
+| **Notes**                                            | <ul><li>Similar to Perl's <code>sort { $hash{$a} &lt;=&gt; $hash{$b} } keys %hash</code></li></ul><ul><li>Iterators are used in looping constructs like <code>for</code>:</li></ul><ul><li><code>for i,v in hs.fnutils.sortByKeyValues(t[, f]) do ... end</code></li></ul><ul><li>A sort function should accept two arguments and return true if the first argument should appear before the second, or false otherwise.</li></ul><ul><li>e.g. <code>function(m,n) return not (m &lt; n) end</code> would result in reverse alphabetic order.</li></ul><ul><li>See <em>Programming_In_Lua,_3rd_ed</em>, page 52 for a more complete discussion.</li></ul><ul><li>The default sort is to compare values directly, if they are of the same type, or as their tostring() versions, if the value types differ:</li></ul><pre><code> * function(m,n) if type(m) ~= type(n) then return tostring(m) &lt; tostring(n) else return m &lt; n end</code></pre>                 |
+

@@ -69,563 +69,197 @@ approximations, and leave it at that!
 * 60 * 1000/1001 (~59.94) fps frame: 11771760 flicks
 * 120 * 1000/1001 (~119.88) fps frame: 5885880 flicks
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Constants - Useful values which cannot be changed</li>
-  <ul>
-	<li><a href="#perFrame100">perFrame100</a></li>
-	<li><a href="#perFrame120">perFrame120</a></li>
-	<li><a href="#perFrame120NTSC">perFrame120NTSC</a></li>
-	<li><a href="#perFrame24">perFrame24</a></li>
-	<li><a href="#perFrame24NTSC">perFrame24NTSC</a></li>
-	<li><a href="#perFrame25">perFrame25</a></li>
-	<li><a href="#perFrame30">perFrame30</a></li>
-	<li><a href="#perFrame30NTSC">perFrame30NTSC</a></li>
-	<li><a href="#perFrame44100">perFrame44100</a></li>
-	<li><a href="#perFrame48">perFrame48</a></li>
-	<li><a href="#perFrame48000">perFrame48000</a></li>
-	<li><a href="#perFrame50">perFrame50</a></li>
-	<li><a href="#perFrame60">perFrame60</a></li>
-	<li><a href="#perFrame60NTSC">perFrame60NTSC</a></li>
-	<li><a href="#perFrame90">perFrame90</a></li>
-	<li><a href="#perHour">perHour</a></li>
-	<li><a href="#perMinutes">perMinutes</a></li>
-	<li><a href="#perSecond">perSecond</a></li>
-  </ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#is">is</a></li>
-  </ul>
-<li>Constructors - API calls which return an object, typically one that offers API methods</li>
-  <ul>
-	<li><a href="#new">new</a></li>
-	<li><a href="#parse">parse</a></li>
-  </ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#toFrames">toFrames</a></li>
-	<li><a href="#toSeconds">toSeconds</a></li>
-	<li><a href="#toTimecode">toTimecode</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constants</h4>
-  <section id="perFrame100">
-	<h5><a href="#perFrame100">perFrame100</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame100</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 100 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame120">
-	<h5><a href="#perFrame120">perFrame120</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame120</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 120 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame120NTSC">
-	<h5><a href="#perFrame120NTSC">perFrame120NTSC</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame120NTSC</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>An approximate for flicks in 1 frame at 120 fps in NTSC, a.k.a. ~119.88 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame24">
-	<h5><a href="#perFrame24">perFrame24</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame24</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 24 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame24NTSC">
-	<h5><a href="#perFrame24NTSC">perFrame24NTSC</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame24NTSC</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>An approximate for flicks in 1 frame at 24 fps in NTSC, a.k.a. 23.976 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame25">
-	<h5><a href="#perFrame25">perFrame25</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame25</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 25 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame30">
-	<h5><a href="#perFrame30">perFrame30</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame30</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 30 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame30NTSC">
-	<h5><a href="#perFrame30NTSC">perFrame30NTSC</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame30NTSC</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>An approximate for flicks in 1 frame at 30 fps in NTSC, a.k.a. 29.97 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame44100">
-	<h5><a href="#perFrame44100">perFrame44100</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame44100</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 44100 fps, a.k.a. 44.1 Hz.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame48">
-	<h5><a href="#perFrame48">perFrame48</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame48</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 48 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame48000">
-	<h5><a href="#perFrame48000">perFrame48000</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame48000</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 44100 fps, a.k.a. 48 Hz.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame50">
-	<h5><a href="#perFrame50">perFrame50</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame50</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 50 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame60">
-	<h5><a href="#perFrame60">perFrame60</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame60</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 60 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame60NTSC">
-	<h5><a href="#perFrame60NTSC">perFrame60NTSC</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame60NTSC</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>An approximate for flicks in 1 frame at 60 fps in NTSC, a.k.a. 59.94 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perFrame90">
-	<h5><a href="#perFrame90">perFrame90</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perFrame90</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 frame at 90 fps.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perHour">
-	<h5><a href="#perHour">perHour</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perHour</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 hour.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perMinutes">
-	<h5><a href="#perMinutes">perMinutes</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perMinutes</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 minute.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="perSecond">
-	<h5><a href="#perSecond">perSecond</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.perSecond</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The number of flicks in 1 second.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Functions</h4>
-  <section id="is">
-	<h5><a href="#is">is</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.is(thing) -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Checks if the <code>thing</code> is a <code>flicks</code> instance.</p>
-<p>Parameters:</p>
-<ul>
-<li>thing - the thing to check</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if the thingis a flicks instance, otherwise <code>false</code>.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Constructors</h4>
-  <section id="new">
-	<h5><a href="#new">new</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.new(value) -&gt; flicks</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates a new <code>flicks</code> instance. By default, the unit is in flicks<code>, but can be set as a
-different unit using the</code>flicks.perXXX` constants. For example:</p>
-<div class="highlight"><pre><span></span><span class="kd">local</span> <span class="n">oneFlick</span> <span class="o">=</span> <span class="n">flicks</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">oneSecond</span> <span class="o">=</span> <span class="n">flicks</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">flicks</span><span class="p">.</span><span class="n">perSecond</span><span class="p">)</span>
-</pre></div>
-<p>Parameters:</p>
-<ul>
-<li>value - the base value to set to</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the new <code>flicks</code> instance</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="parse">
-	<h5><a href="#parse">parse</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks.parse(timecodeString, framerate) -&gt; flicks</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Attempts to parse the timecode string value with the specified framerate.
-The timecode can match the folowing patterns:</p>
-<ul>
-<li><code>"HH:MM:SS:FF"</code></li>
-<li><code>"HH:MM:SS;FF"</code></li>
-<li><code>"HHMMSSFF"</code></li>
-</ul>
-<p>The characters above match to <code>H</code>ours, <code>M</code>inutes <code>S</code>econds and <code>F</code>rames, respectively. For example,
-a timecode of 1 hour, 23 minutes, 45 seconds and 12 frames could be expressed as:</p>
-<ul>
-<li><code>"01:23:45:12"</code></li>
-<li><code>"01:23:45;12"</code></li>
-<li><code>"01234512"</code></li>
-</ul>
-<p>Times with a value of zero from left to right may be omitted. After the first non-zero value, all
-other numbers including framesmust always be expressed, even if they are zero.
-So, if your timecode is 1 minute 30 seconds, you could use:</p>
-<ul>
-<li><code>"1:30:00"</code></li>
-<li><code>"1:30;00"</code></li>
-<li><code>"13000"</code></li>
-</ul>
-<p>You can also put numbers up to <code>99</code> in each block. So, another way of expressing 1 minute 30 seconds is:</p>
-<ul>
-<li><code>"90:00"</code></li>
-<li><code>"90;00"</code></li>
-<li><code>"9000"</code></li>
-</ul>
-<p>Parameters:</p>
-<ul>
-<li>timecodeString   - The timecode as a string.</li>
-<li>framerate        - The number of frames per second.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a new <code>flicks</code> instance for the timecode.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Methods</h4>
-  <section id="toFrames">
-	<h5><a href="#toFrames">toFrames</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks:toFrames(framerate) --&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Converts the flicks into a number for the specific framerate.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="toSeconds">
-	<h5><a href="#toSeconds">toSeconds</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks:toSeconds() -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Converts the flicks into a decimal value of the number of seconds it represents.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the number of seconds</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="toTimecode">
-	<h5><a href="#toTimecode">toTimecode</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.time.flicks:toTimecode(framerate[, delimeter]) -&gt; string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Converts the flicks into a string of the format "HH[:]MM[:]SS[:;]FF", with hours, minutes and frames listed respectively.
-By default, there will be no delimiter. If you provide ":" then all delimiters will be colons. If you provide
-";" then the final delimiter will be a semic-colon, all others will be colons.</p>
-<p>Parameters:</p>
-<ul>
-<li>framerate    - the framerate to use when calculating frames per second.</li>
-<li>delimeter    - either <code>nil</code> (default), ":", or ";".</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>String of the timecode.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [perFrame100](#perframe100)
+ * [perFrame120](#perframe120)
+ * [perFrame120NTSC](#perframe120ntsc)
+ * [perFrame24](#perframe24)
+ * [perFrame24NTSC](#perframe24ntsc)
+ * [perFrame25](#perframe25)
+ * [perFrame30](#perframe30)
+ * [perFrame30NTSC](#perframe30ntsc)
+ * [perFrame44100](#perframe44100)
+ * [perFrame48](#perframe48)
+ * [perFrame48000](#perframe48000)
+ * [perFrame50](#perframe50)
+ * [perFrame60](#perframe60)
+ * [perFrame60NTSC](#perframe60ntsc)
+ * [perFrame90](#perframe90)
+ * [perHour](#perhour)
+ * [perMinutes](#perminutes)
+ * [perSecond](#persecond)
+* Functions - API calls offered directly by the extension
+ * [is](#is)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+ * [parse](#parse)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [toFrames](#toframes)
+ * [toSeconds](#toseconds)
+ * [toTimecode](#totimecode)
+
+## API Documentation
+
+### Constants
+
+#### [perFrame100](#perframe100)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame100` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 100 fps.                                                                                         |
+
+#### [perFrame120](#perframe120)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame120` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 120 fps.                                                                                         |
+
+#### [perFrame120NTSC](#perframe120ntsc)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame120NTSC` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | An approximate for flicks in 1 frame at 120 fps in NTSC, a.k.a. ~119.88 fps.                                                                                         |
+
+#### [perFrame24](#perframe24)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame24` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 24 fps.                                                                                         |
+
+#### [perFrame24NTSC](#perframe24ntsc)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame24NTSC` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | An approximate for flicks in 1 frame at 24 fps in NTSC, a.k.a. 23.976 fps.                                                                                         |
+
+#### [perFrame25](#perframe25)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame25` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 25 fps.                                                                                         |
+
+#### [perFrame30](#perframe30)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame30` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 30 fps.                                                                                         |
+
+#### [perFrame30NTSC](#perframe30ntsc)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame30NTSC` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | An approximate for flicks in 1 frame at 30 fps in NTSC, a.k.a. 29.97 fps.                                                                                         |
+
+#### [perFrame44100](#perframe44100)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame44100` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 44100 fps, a.k.a. 44.1 Hz.                                                                                         |
+
+#### [perFrame48](#perframe48)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame48` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 48 fps.                                                                                         |
+
+#### [perFrame48000](#perframe48000)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame48000` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 44100 fps, a.k.a. 48 Hz.                                                                                         |
+
+#### [perFrame50](#perframe50)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame50` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 50 fps.                                                                                         |
+
+#### [perFrame60](#perframe60)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame60` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 60 fps.                                                                                         |
+
+#### [perFrame60NTSC](#perframe60ntsc)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame60NTSC` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | An approximate for flicks in 1 frame at 60 fps in NTSC, a.k.a. 59.94 fps.                                                                                         |
+
+#### [perFrame90](#perframe90)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perFrame90` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 frame at 90 fps.                                                                                         |
+
+#### [perHour](#perhour)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perHour` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 hour.                                                                                         |
+
+#### [perMinutes](#perminutes)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perMinutes` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 minute.                                                                                         |
+
+#### [perSecond](#persecond)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.perSecond` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The number of flicks in 1 second.                                                                                         |
+
+### Functions
+
+#### [is](#is)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.is(thing) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks if the `thing` is a `flicks` instance.                                                                                         |
+| **Parameters**                                       | <ul><li>thing - the thing to check</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the thingis a flicks instance, otherwise <code>false</code>.</li></ul>            |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.new(value) -> flicks` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new `flicks` instance. By default, the unit is in flicks`, but can be set as a                                                                                         |
+| **Parameters**                                       | <ul><li>value - the base value to set to</li></ul>   |
+| **Returns**                                          | <ul><li>the new <code>flicks</code> instance</li></ul>            |
+
+#### [parse](#parse)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.parse(timecodeString, framerate) -> flicks` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Attempts to parse the timecode string value with the specified framerate.                                                                                         |
+| **Parameters**                                       | <ul><li>timecodeString   - The timecode as a string.</li></ul><ul><li>framerate        - The number of frames per second.</li></ul>   |
+| **Returns**                                          | <ul><li>a new <code>flicks</code> instance for the timecode.</li></ul>            |
+
+### Methods
+
+#### [toFrames](#toframes)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks:toFrames(framerate) --> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Converts the flicks into a number for the specific framerate.                                                                                         |
+
+#### [toSeconds](#toseconds)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks:toSeconds() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Converts the flicks into a decimal value of the number of seconds it represents.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the number of seconds</li></ul>            |
+
+#### [toTimecode](#totimecode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks:toTimecode(framerate[, delimeter]) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Converts the flicks into a string of the format "HH[:]MM[:]SS[:;]FF", with hours, minutes and frames listed respectively.                                                                                         |
+| **Parameters**                                       | <ul><li>framerate    - the framerate to use when calculating frames per second.</li></ul><ul><li>delimeter    - either <code>nil</code> (default), ":", or ";".</li></ul>   |
+| **Returns**                                          | <ul><li>String of the timecode.</li></ul>            |
+

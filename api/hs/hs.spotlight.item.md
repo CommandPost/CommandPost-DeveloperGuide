@@ -7,91 +7,30 @@ Each Spotlight item contains attributes which you can access with the [hs.spotli
 
 For convenience, metamethods have been added to the spotlightItemObjects as a shortcut to the [hs.spotlight.item:valueForAttribute](#valueForAttribute) method; e.g. you can access the value of a specific attribute by treating the attribute as a key name: `spotlightItemObject.kMDItemPath` will return the path to the entity the spotlightItemObject refers to.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#attributes">attributes</a></li>
-	<li><a href="#valueForAttribute">valueForAttribute</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Methods</h4>
-  <section id="attributes">
-	<h5><a href="#attributes">attributes</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.spotlight.item:attributes() -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns a list of attributes associated with the spotlightItemObject</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>an array table containing a list of attributes associated with the result item.</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This list of attributes is usually not a complete list of the attributes available for a given spotlightItemObject. Many of the known attribute names are included in the <code>hs.spotlight.commonAttributeKeys</code> constant array, but even this is not an exhaustive list -- an application may create and assign any key it wishes to an entity for inclusion in the Spotlight metadata database.</li>
-</ul>
-<ul>
-<li>A common attribute, which is not usually included in the results of this method is the "kMDItemPath" attribute which specifies the local path to the file the entity represents. This is included here for reference, as it is a commonly desired value that is not obviously available for almost all Spotlight entries.<ul>
-<li>It is believed that only those keys which are explicitly set when an item is added to the Spotlight database are included in the array returned by this method. Any attribute which is calculated or restricted in a sandboxed application appears to require an explicit request. This is, however, conjecture, and when in doubt you should explicitly check for the attributes you require with <a href="#valueForAttribute">hs.spotlight.item:valueForAttribute</a> and not rely solely on the results from this method.</li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="valueForAttribute">
-	<h5><a href="#valueForAttribute">valueForAttribute</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.spotlight.item:valueForAttribute(attribute) -&gt; value</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the value for the specified attribute of the spotlightItemObject</p>
-<p>Parameters:</p>
-<ul>
-<li><code>attribute</code> - a string specifying the attribute to get the value of for the spotlightItemObject</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the attribute value as an appropriate data type or nil if the attribute does not exist or contains no value</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li><p>See <a href="#attributes">hs.spotlight.item:attributes</a> for information about possible attribute names.</p>
-</li>
-<li><p>For convenience, metamethods have been added to the spotlightItemObject which allow you to use <code>spotlightItemObject.attribute</code> as a shortcut for <code>spotlightItemObject:valueForAttribute(attribute)</code>.</p>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [attributes](#attributes)
+ * [valueForAttribute](#valueforattribute)
+
+## API Documentation
+
+### Methods
+
+#### [attributes](#attributes)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.item:attributes() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a list of attributes associated with the spotlightItemObject                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>an array table containing a list of attributes associated with the result item.</li></ul>            |
+| **Notes**                                            | <ul><li>This list of attributes is usually not a complete list of the attributes available for a given spotlightItemObject. Many of the known attribute names are included in the <code>hs.spotlight.commonAttributeKeys</code> constant array, but even this is not an exhaustive list -- an application may create and assign any key it wishes to an entity for inclusion in the Spotlight metadata database.</li></ul>                 |
+
+#### [valueForAttribute](#valueforattribute)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.item:valueForAttribute(attribute) -> value` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the value for the specified attribute of the spotlightItemObject                                                                                         |
+| **Parameters**                                       | <ul><li><code>attribute</code> - a string specifying the attribute to get the value of for the spotlightItemObject</li></ul>   |
+| **Returns**                                          | <ul><li>the attribute value as an appropriate data type or nil if the attribute does not exist or contains no value</li></ul>            |
+| **Notes**                                            | <ul><li>See <a href="#attributes">hs.spotlight.item:attributes</a> for information about possible attribute names.</li></ul>                 |
+

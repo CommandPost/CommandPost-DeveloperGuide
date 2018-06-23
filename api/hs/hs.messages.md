@@ -5,76 +5,28 @@ Send messages via iMessage and SMS Relay (note, SMS Relay requires OS X 10.10 an
 
 Note: This extension works by controlling the OS X "Messages" app via AppleScript, so you will need that app to be signed into an iMessage account
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#iMessage">iMessage</a></li>
-	<li><a href="#SMS">SMS</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Functions</h4>
-  <section id="iMessage">
-	<h5><a href="#iMessage">iMessage</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.messages.iMessage(targetAddress, message)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sends an iMessage</p>
-<p>Parameters:</p>
-<ul>
-<li>targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to</li>
-<li>message - A string containing the message to send</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="SMS">
-	<h5><a href="#SMS">SMS</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.messages.SMS(targetNumber, message)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sends an SMS using SMS Relay</p>
-<p>Parameters:</p>
-<ul>
-<li>targetNumber - A string containing a phone number to send an SMS to</li>
-<li>message - A string containing the message to send</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [iMessage](#imessage)
+ * [SMS](#sms)
+
+## API Documentation
+
+### Functions
+
+#### [iMessage](#imessage)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.messages.iMessage(targetAddress, message)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sends an iMessage                                                                                         |
+| **Parameters**                                       | <ul><li>targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to</li></ul><ul><li>message - A string containing the message to send</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [SMS](#sms)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.messages.SMS(targetNumber, message)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sends an SMS using SMS Relay                                                                                         |
+| **Parameters**                                       | <ul><li>targetNumber - A string containing a phone number to send an SMS to</li></ul><ul><li>message - A string containing the message to send</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+

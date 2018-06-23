@@ -7,106 +7,38 @@ Home: https://github.com/asmagill/mjolnir_asm.sys
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#ambient">ambient</a></li>
-	<li><a href="#get">get</a></li>
-	<li><a href="#set">set</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Functions</h4>
-  <section id="ambient">
-	<h5><a href="#ambient">ambient</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.brightness.ambient() -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets the current ambient brightness</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A number containing the current ambient brightness, measured in lux. If an error occurred, the number will be -1</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>Even though external Apple displays include an ambient light sensor, their data is typically not available, so this function will likely only be useful to MacBook users</li>
-<li>The raw sensor data is converted to lux via an algorithm used by Mozilla Firefox and is not guaranteed to give an accurate lux value</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="get">
-	<h5><a href="#get">get</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.brightness.get() -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the current brightness of the display</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A number containing the brightness of the display, between 0 and 100</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="set">
-	<h5><a href="#set">set</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.brightness.set(brightness) -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the display brightness</p>
-<p>Parameters:</p>
-<ul>
-<li>brightness - A number between 0 and 100</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>True if the brightness was set, false if not</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [ambient](#ambient)
+ * [get](#get)
+ * [set](#set)
+
+## API Documentation
+
+### Functions
+
+#### [ambient](#ambient)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.brightness.ambient() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Gets the current ambient brightness                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A number containing the current ambient brightness, measured in lux. If an error occurred, the number will be -1</li></ul>            |
+| **Notes**                                            | <ul><li>Even though external Apple displays include an ambient light sensor, their data is typically not available, so this function will likely only be useful to MacBook users</li></ul><ul><li>The raw sensor data is converted to lux via an algorithm used by Mozilla Firefox and is not guaranteed to give an accurate lux value</li></ul>                 |
+
+#### [get](#get)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.brightness.get() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the current brightness of the display                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A number containing the brightness of the display, between 0 and 100</li></ul>            |
+
+#### [set](#set)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.brightness.set(brightness) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Sets the display brightness                                                                                         |
+| **Parameters**                                       | <ul><li>brightness - A number between 0 and 100</li></ul>   |
+| **Returns**                                          | <ul><li>True if the brightness was set, false if not</li></ul>            |
+

@@ -26,130 +26,46 @@ local battery = require("cp.battery")
 local externalDrives = battery.devices({physical = true, ejectable = true})
 ```
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#eject">eject</a></li>
-	<li><a href="#mount">mount</a></li>
-	<li><a href="#unmount">unmount</a></li>
-	<li><a href="#visit">visit</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Functions</h4>
-  <section id="eject">
-	<h5><a href="#eject">eject</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.disk.eject(options) -&gt; nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Unmounts and ejects (where appropriate) all disks matching the provided <code>options</code>.</p>
-<p>Parameters:</p>
-<ul>
-<li>options   - The table of filter options.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Nothing.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="mount">
-	<h5><a href="#mount">mount</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.disk.mount(options) -&gt; nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Mounts all disks matching the provided <code>options</code>.</p>
-<p>Parameters:</p>
-<ul>
-<li>options   - The table of filter options.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Nothing.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="unmount">
-	<h5><a href="#unmount">unmount</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.disk.unmount(options) -&gt; nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Unmounts all disks matching the provided <code>options</code>.</p>
-<p>Parameters:</p>
-<ul>
-<li>options   - The table of filter options.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Nothing.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="visit">
-	<h5><a href="#visit">visit</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.disk.visit(options, fn) -&gt; nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Visits all drives matching the <code>options</code> and executes the
-<code>fn</code> function with the <code>deviceID</code> string (e.g. "disk0" or "disk2s1") and a table of additional data about the drive.</p>
-<p>Parameters:</p>
-<ul>
-<li>options   - The table of filter options.</li>
-<li>fn        - The function to execute.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Nothing.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [eject](#eject)
+ * [mount](#mount)
+ * [unmount](#unmount)
+ * [visit](#visit)
+
+## API Documentation
+
+### Functions
+
+#### [eject](#eject)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.eject(options) -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Unmounts and ejects (where appropriate) all disks matching the provided `options`.                                                                                         |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
+
+#### [mount](#mount)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.mount(options) -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Mounts all disks matching the provided `options`.                                                                                         |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
+
+#### [unmount](#unmount)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.unmount(options) -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Unmounts all disks matching the provided `options`.                                                                                         |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
+
+#### [visit](#visit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.visit(options, fn) -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Visits all drives matching the `options` and executes the                                                                                         |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li></ul><ul><li>fn        - The function to execute.</li></ul>   |
+| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
+

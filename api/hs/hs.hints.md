@@ -3,180 +3,65 @@
 
 Switch focus with a transient per-application keyboard shortcut
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Variables - Configurable values</li>
-  <ul>
-	<li><a href="#fontName">fontName</a></li>
-	<li><a href="#fontSize">fontSize</a></li>
-	<li><a href="#hintChars">hintChars</a></li>
-	<li><a href="#showTitleThresh">showTitleThresh</a></li>
-	<li><a href="#style">style</a></li>
-	<li><a href="#titleMaxSize">titleMaxSize</a></li>
-  </ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#windowHints">windowHints</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Variables</h4>
-  <section id="fontName">
-	<h5><a href="#fontName">fontName</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hints.fontName</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>A fully specified family-face name, preferrably the PostScript name, such as Helvetica-BoldOblique or Times-Roman. (The Font Book app displays PostScript names of fonts in the Font Info panel.)
-The default value is the system font</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="fontSize">
-	<h5><a href="#fontSize">fontSize</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hints.fontSize</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The size of font that should be used. A value of 0.0 will use the default size.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="hintChars">
-	<h5><a href="#hintChars">hintChars</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hints.hintChars</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>This controls the set of characters that will be used for window hints. They must be characters found in hs.keycodes.map
-The default is the letters A-Z. Note that if <code>hs.hints.style</code> is set to "vimperator", this variable will be ignored.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="showTitleThresh">
-	<h5><a href="#showTitleThresh">showTitleThresh</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hints.showTitleThresh</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>If there are less than or equal to this many windows on screen their titles will be shown in the hints.
-The default is 4. Setting to 0 will disable this feature.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="style">
-	<h5><a href="#style">style</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hints.style</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>If this is set to "vimperator", every window hint starts with the first character
-of the parent application's title</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="titleMaxSize">
-	<h5><a href="#titleMaxSize">titleMaxSize</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hints.titleMaxSize</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>If the title is longer than maxSize, the string is truncated, -1 to disable, valid value is &gt;= 6</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Functions</h4>
-  <section id="windowHints">
-	<h5><a href="#windowHints">windowHints</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hints.windowHints([windows, callback, allowNonStandard])</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Displays a keyboard hint for switching focus to each window</p>
-<p>Parameters:</p>
-<ul>
-<li>windows - An optional table containing some <code>hs.window</code> objects. If this value is nil, all windows will be hinted</li>
-<li>callback - An optional function that will be called when a window has been selected by the user. The function will be called with a single argument containing the <code>hs.window</code> object of the window chosen by the user</li>
-<li>allowNonStandard - An optional boolean.  If true, all windows will be included, not just standard windows</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If there are more windows open than there are characters available in hs.hints.hintChars, multiple characters will be used</li>
-<li>If hints.style is set to "vimperator", every window hint is prefixed with the first character of the parent application's name</li>
-<li>To display hints only for the currently focused application, try something like:<ul>
-<li><code>hs.hints.windowHints(hs.window.focusedWindow():application():allWindows())</code></li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Variables - Configurable values
+ * [fontName](#fontname)
+ * [fontSize](#fontsize)
+ * [hintChars](#hintchars)
+ * [showTitleThresh](#showtitlethresh)
+ * [style](#style)
+ * [titleMaxSize](#titlemaxsize)
+* Functions - API calls offered directly by the extension
+ * [windowHints](#windowhints)
+
+## API Documentation
+
+### Variables
+
+#### [fontName](#fontname)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.fontName` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | A fully specified family-face name, preferrably the PostScript name, such as Helvetica-BoldOblique or Times-Roman. (The Font Book app displays PostScript names of fonts in the Font Info panel.)                                                                                         |
+
+#### [fontSize](#fontsize)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.fontSize` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | The size of font that should be used. A value of 0.0 will use the default size.                                                                                         |
+
+#### [hintChars](#hintchars)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.hintChars` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | This controls the set of characters that will be used for window hints. They must be characters found in hs.keycodes.map                                                                                         |
+
+#### [showTitleThresh](#showtitlethresh)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.showTitleThresh` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | If there are less than or equal to this many windows on screen their titles will be shown in the hints.                                                                                         |
+
+#### [style](#style)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.style` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | If this is set to "vimperator", every window hint starts with the first character                                                                                         |
+
+#### [titleMaxSize](#titlemaxsize)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.titleMaxSize` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | If the title is longer than maxSize, the string is truncated, -1 to disable, valid value is >= 6                                                                                         |
+
+### Functions
+
+#### [windowHints](#windowhints)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.windowHints([windows, callback, allowNonStandard])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Displays a keyboard hint for switching focus to each window                                                                                         |
+| **Parameters**                                       | <ul><li>windows - An optional table containing some <code>hs.window</code> objects. If this value is nil, all windows will be hinted</li></ul><ul><li>callback - An optional function that will be called when a window has been selected by the user. The function will be called with a single argument containing the <code>hs.window</code> object of the window chosen by the user</li></ul><ul><li>allowNonStandard - An optional boolean.  If true, all windows will be included, not just standard windows</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>If there are more windows open than there are characters available in hs.hints.hintChars, multiple characters will be used</li></ul><ul><li>If hints.style is set to "vimperator", every window hint is prefixed with the first character of the parent application's name</li></ul><ul><li>To display hints only for the currently focused application, try something like:</li></ul><ul><li><code>hs.hints.windowHints(hs.window.focusedWindow():application():allWindows())</code></li></ul>                 |
+

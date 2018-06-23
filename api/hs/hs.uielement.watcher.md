@@ -29,110 +29,39 @@ These work on all UI elements, including windows.
 * hs.uielement.watcher.elementDestroyed: The element was destroyed.
 * hs.uielement.watcher.titleChanged: The element's title was changed.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#element">element</a></li>
-	<li><a href="#start">start</a></li>
-	<li><a href="#stop">stop</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Methods</h4>
-  <section id="element">
-	<h5><a href="#element">element</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.uielement.watcher:element() -&gt; object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the element the watcher is watching.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The element the watcher is watching.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="start">
-	<h5><a href="#start">start</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.uielement.watcher:start(events) -&gt; hs.uielement.watcher</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Tells the watcher to start watching for the given list of events.</p>
-<p>Parameters:</p>
-<ul>
-<li>An array of events to be watched for.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>hs.uielement.watcher</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>See hs.uielement.watcher for a list of events. You may also specify arbitrary event names as strings.</li>
-<li>Does nothing if the watcher has already been started. To start with different events, stop it first.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="stop">
-	<h5><a href="#stop">stop</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.uielement.watcher:stop() -&gt; hs.uielement.watcher</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Tells the watcher to stop listening for events.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>hs.uielement.watcher</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is automatically called if the element is destroyed.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [element](#element)
+ * [start](#start)
+ * [stop](#stop)
+
+## API Documentation
+
+### Methods
+
+#### [element](#element)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.uielement.watcher:element() -> object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the element the watcher is watching.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The element the watcher is watching.</li></ul>            |
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.uielement.watcher:start(events) -> hs.uielement.watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Tells the watcher to start watching for the given list of events.                                                                                         |
+| **Parameters**                                       | <ul><li>An array of events to be watched for.</li></ul>   |
+| **Returns**                                          | <ul><li>hs.uielement.watcher</li></ul>            |
+| **Notes**                                            | <ul><li>See hs.uielement.watcher for a list of events. You may also specify arbitrary event names as strings.</li></ul><ul><li>Does nothing if the watcher has already been started. To start with different events, stop it first.</li></ul>                 |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.uielement.watcher:stop() -> hs.uielement.watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Tells the watcher to stop listening for events.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>hs.uielement.watcher</li></ul>            |
+| **Notes**                                            | <ul><li>This is automatically called if the element is destroyed.</li></ul>                 |
+

@@ -3,120 +3,48 @@
 
 Notifications Manager Plugin.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Constants - Useful values which cannot be changed</li>
-  <ul>
-	<li><a href="#manager">manager</a></li>
-  </ul>
-<li>Variables - Configurable values</li>
-  <ul>
-	<li><a href="#watchers">watchers</a></li>
-  </ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#unwatch">unwatch</a></li>
-	<li><a href="#watch">watch</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constants</h4>
-  <section id="manager">
-	<h5><a href="#manager">manager</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.notifications.manager</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event Types</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Variables</h4>
-  <section id="watchers">
-	<h5><a href="#watchers">watchers</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.notifications.manager.watchers -&gt; watcher</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Watchers</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Functions</h4>
-  <section id="unwatch">
-	<h5><a href="#unwatch">unwatch</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.notifications.manager.unwatch(id) -&gt; none</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Start Watchers</p>
-<p>Parameters:</p>
-<ul>
-<li>id - The ID of the watcher to unwatch as string</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="watch">
-	<h5><a href="#watch">watch</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.finalcutpro.notifications.manager.watch(event) -&gt; string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Start Watchers</p>
-<p>Parameters:</p>
-<ul>
-<li>events - Events to watch</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The ID of the watcher as string</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [manager](#manager)
+* Variables - Configurable values
+ * [watchers](#watchers)
+* Functions - API calls offered directly by the extension
+ * [unwatch](#unwatch)
+ * [watch](#watch)
+
+## API Documentation
+
+### Constants
+
+#### [manager](#manager)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.manager` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event Types                                                                                         |
+
+### Variables
+
+#### [watchers](#watchers)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.manager.watchers -> watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Watchers                                                                                         |
+
+### Functions
+
+#### [unwatch](#unwatch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.manager.unwatch(id) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Start Watchers                                                                                         |
+| **Parameters**                                       | <ul><li>id - The ID of the watcher to unwatch as string</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [watch](#watch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.manager.watch(event) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Start Watchers                                                                                         |
+| **Parameters**                                       | <ul><li>events - Events to watch</li></ul>   |
+| **Returns**                                          | <ul><li>The ID of the watcher as string</li></ul>            |
+

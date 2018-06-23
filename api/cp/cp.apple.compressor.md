@@ -3,389 +3,140 @@
 
 Represents the Compressor application, providing functions that allow different tasks to be accomplished.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>Submodules</h3>
-<ul>
-<li><a href="cp.apple.compressor.app.md">cp.apple.compressor.app</a></li>
-</ul>
-<h3>API Overview</h3>
-<ul>
-<li>Constants - Useful values which cannot be changed</li>
-  <ul>
-	<li><a href="#ALLOWED_IMPORT_ALL_EXTENSIONS">ALLOWED_IMPORT_ALL_EXTENSIONS</a></li>
-	<li><a href="#ALLOWED_IMPORT_AUDIO_EXTENSIONS">ALLOWED_IMPORT_AUDIO_EXTENSIONS</a></li>
-	<li><a href="#ALLOWED_IMPORT_IMAGE_EXTENSIONS">ALLOWED_IMPORT_IMAGE_EXTENSIONS</a></li>
-	<li><a href="#ALLOWED_IMPORT_VIDEO_EXTENSIONS">ALLOWED_IMPORT_VIDEO_EXTENSIONS</a></li>
-	<li><a href="#BUNDLE_ID">BUNDLE_ID</a></li>
-	<li><a href="#EARLIEST_SUPPORTED_VERSION">EARLIEST_SUPPORTED_VERSION</a></li>
-  </ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#bundleID">bundleID</a></li>
-	<li><a href="#getVersion">getVersion</a></li>
-	<li><a href="#hide">hide</a></li>
-	<li><a href="#launch">launch</a></li>
-	<li><a href="#notifier">notifier</a></li>
-	<li><a href="#path">path</a></li>
-	<li><a href="#quit">quit</a></li>
-	<li><a href="#restart">restart</a></li>
-	<li><a href="#show">show</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constants</h4>
-  <section id="ALLOWED_IMPORT_ALL_EXTENSIONS">
-	<h5><a href="#ALLOWED_IMPORT_ALL_EXTENSIONS">ALLOWED_IMPORT_ALL_EXTENSIONS</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor.ALLOWED_IMPORT_ALL_EXTENSIONS</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Table of all file extensions Final Cut Pro can import.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="ALLOWED_IMPORT_AUDIO_EXTENSIONS">
-	<h5><a href="#ALLOWED_IMPORT_AUDIO_EXTENSIONS">ALLOWED_IMPORT_AUDIO_EXTENSIONS</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor.ALLOWED_IMPORT_AUDIO_EXTENSIONS</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Table of audio file extensions Final Cut Pro can import.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="ALLOWED_IMPORT_IMAGE_EXTENSIONS">
-	<h5><a href="#ALLOWED_IMPORT_IMAGE_EXTENSIONS">ALLOWED_IMPORT_IMAGE_EXTENSIONS</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor.ALLOWED_IMPORT_IMAGE_EXTENSIONS</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Table of image file extensions Final Cut Pro can import.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="ALLOWED_IMPORT_VIDEO_EXTENSIONS">
-	<h5><a href="#ALLOWED_IMPORT_VIDEO_EXTENSIONS">ALLOWED_IMPORT_VIDEO_EXTENSIONS</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor.ALLOWED_IMPORT_VIDEO_EXTENSIONS</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Table of video file extensions Final Cut Pro can import.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="BUNDLE_ID">
-	<h5><a href="#BUNDLE_ID">BUNDLE_ID</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor.BUNDLE_ID</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Compressor's Bundle ID</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="EARLIEST_SUPPORTED_VERSION">
-	<h5><a href="#EARLIEST_SUPPORTED_VERSION">EARLIEST_SUPPORTED_VERSION</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor.EARLIEST_SUPPORTED_VERSION <semver></code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The earliest version this API supports.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Methods</h4>
-  <section id="bundleID">
-	<h5><a href="#bundleID">bundleID</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:bundleID() -&gt; string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the Compressor Bundle ID</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A string of the Compressor Bundle ID</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="getVersion">
-	<h5><a href="#getVersion">getVersion</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:getVersion() -&gt; string | nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Version of Compressor</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Version as string or nil if an error occurred</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If Compressor is running it will get the version of the active Compressor application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="hide">
-	<h5><a href="#hide">hide</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:hide() -&gt; self</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Hides Compressor</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The compressor instance.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="launch">
-	<h5><a href="#launch">launch</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:launch([waitSeconds]) -&gt; self</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Launches Compressor, or brings it to the front if it was already running.</p>
-<p>Parameters:</p>
-<ul>
-<li>waitSeconds      - if provided, we will wait for up to the specified seconds for the launch to complete.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if Compressor was either launched or focused, otherwise false (e.g. if Compressor doesn't exist)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="notifier">
-	<h5><a href="#notifier">notifier</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:notifier() -&gt; cp.ui.notifier</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns a notifier that is tracking the application UI element. It has already been started.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The notifier.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="path">
-	<h5><a href="#path">path</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:path() -&gt; string or nil</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Path to Compressor Application</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A string containing Compressor's filesystem path, or <code>nil</code> if the bundle identifier could not be located</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="quit">
-	<h5><a href="#quit">quit</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:quit([waitSeconds]) -&gt; self</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Quits Compressor</p>
-<p>Parameters:</p>
-<ul>
-<li>waitSeconds  - if provided, we will wait for the specified time for the quit to complete before returning.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>compressor</code> instance.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="restart">
-	<h5><a href="#restart">restart</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:restart([waitSeconds]) -&gt; self</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Restart the application.</p>
-<p>Parameters:</p>
-<ul>
-<li>waitSeconds  - if provided, we will wait for up to the specified seconds for the restart to complete before returning.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if the application was running and restarted successfully.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="show">
-	<h5><a href="#show">show</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>cp.apple.compressor:show() -&gt; self</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Activate Compressor</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The compressor instance.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## Submodules
+ * [cp.apple.compressor.app](cp.apple.compressor.app.md)
+
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [ALLOWED_IMPORT_ALL_EXTENSIONS](#allowed_import_all_extensions)
+ * [ALLOWED_IMPORT_AUDIO_EXTENSIONS](#allowed_import_audio_extensions)
+ * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
+ * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
+ * [BUNDLE_ID](#bundle_id)
+ * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [bundleID](#bundleid)
+ * [getVersion](#getversion)
+ * [hide](#hide)
+ * [launch](#launch)
+ * [notifier](#notifier)
+ * [path](#path)
+ * [quit](#quit)
+ * [restart](#restart)
+ * [show](#show)
+
+## API Documentation
+
+### Constants
+
+#### [ALLOWED_IMPORT_ALL_EXTENSIONS](#allowed_import_all_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.ALLOWED_IMPORT_ALL_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of all file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_AUDIO_EXTENSIONS](#allowed_import_audio_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.ALLOWED_IMPORT_AUDIO_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of audio file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.ALLOWED_IMPORT_IMAGE_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of image file extensions Final Cut Pro can import.                                                                                         |
+
+#### [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.ALLOWED_IMPORT_VIDEO_EXTENSIONS` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Table of video file extensions Final Cut Pro can import.                                                                                         |
+
+#### [BUNDLE_ID](#bundle_id)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.BUNDLE_ID` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Compressor's Bundle ID                                                                                         |
+
+#### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor.EARLIEST_SUPPORTED_VERSION <semver>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The earliest version this API supports.                                                                                         |
+
+### Methods
+
+#### [bundleID](#bundleid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:bundleID() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the Compressor Bundle ID                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A string of the Compressor Bundle ID</li></ul>            |
+
+#### [getVersion](#getversion)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:getVersion() -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Version of Compressor                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>Version as string or nil if an error occurred</li></ul>            |
+| **Notes**                                            | <ul><li>If Compressor is running it will get the version of the active Compressor application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul>                 |
+
+#### [hide](#hide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:hide() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Hides Compressor                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The compressor instance.</li></ul>            |
+
+#### [launch](#launch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:launch([waitSeconds]) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Launches Compressor, or brings it to the front if it was already running.                                                                                         |
+| **Parameters**                                       | <ul><li>waitSeconds      - if provided, we will wait for up to the specified seconds for the launch to complete.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if Compressor was either launched or focused, otherwise false (e.g. if Compressor doesn't exist)</li></ul>            |
+
+#### [notifier](#notifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:notifier() -> cp.ui.notifier` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns a notifier that is tracking the application UI element. It has already been started.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The notifier.</li></ul>            |
+
+#### [path](#path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:path() -> string or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Path to Compressor Application                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A string containing Compressor's filesystem path, or <code>nil</code> if the bundle identifier could not be located</li></ul>            |
+
+#### [quit](#quit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:quit([waitSeconds]) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Quits Compressor                                                                                         |
+| **Parameters**                                       | <ul><li>waitSeconds  - if provided, we will wait for the specified time for the quit to complete before returning.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>compressor</code> instance.</li></ul>            |
+
+#### [restart](#restart)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:restart([waitSeconds]) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Restart the application.                                                                                         |
+| **Parameters**                                       | <ul><li>waitSeconds  - if provided, we will wait for up to the specified seconds for the restart to complete before returning.</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the application was running and restarted successfully.</li></ul>            |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:show() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Activate Compressor                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The compressor instance.</li></ul>            |
+

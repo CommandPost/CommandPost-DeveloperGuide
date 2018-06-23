@@ -6,693 +6,222 @@ Graphical, interactive tool for choosing/searching data
 Notes:
  * This module was influenced heavily by Choose, by Steven Degutis (https://github.com/sdegutis/choose)
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Variables - Configurable values</li>
-  <ul>
-	<li><a href="#globalCallback">globalCallback</a></li>
-  </ul>
-<li>Constructors - API calls which return an object, typically one that offers API methods</li>
-  <ul>
-	<li><a href="#new">new</a></li>
-  </ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#bgDark">bgDark</a></li>
-	<li><a href="#cancel">cancel</a></li>
-	<li><a href="#choices">choices</a></li>
-	<li><a href="#delete">delete</a></li>
-	<li><a href="#fgColor">fgColor</a></li>
-	<li><a href="#hide">hide</a></li>
-	<li><a href="#isVisible">isVisible</a></li>
-	<li><a href="#query">query</a></li>
-	<li><a href="#queryChangedCallback">queryChangedCallback</a></li>
-	<li><a href="#refreshChoicesCallback">refreshChoicesCallback</a></li>
-	<li><a href="#rightClickCallback">rightClickCallback</a></li>
-	<li><a href="#rows">rows</a></li>
-	<li><a href="#searchSubText">searchSubText</a></li>
-	<li><a href="#select">select</a></li>
-	<li><a href="#selectedRow">selectedRow</a></li>
-	<li><a href="#selectedRowContents">selectedRowContents</a></li>
-	<li><a href="#show">show</a></li>
-	<li><a href="#showCallback">showCallback</a></li>
-	<li><a href="#subTextColor">subTextColor</a></li>
-	<li><a href="#width">width</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Variables</h4>
-  <section id="globalCallback">
-	<h5><a href="#globalCallback">globalCallback</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser.globalCallback</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>A global callback function used for various hs.chooser events</p>
-<p>Notes:</p>
-<ul>
-<li>This callback should accept two parameters:<ul>
-<li>An <code>hs.chooser</code> object</li>
-<li>A string containing the name of the event to handle. Possible values are:</li>
-<li><code>willOpen</code> - An hs.chooser is about to be shown on screen</li>
-<li><code>didClose</code> - An hs.chooser has just been removed from the screen</li>
-</ul>
-</li>
-<li>There is a default global callback that uses the <code>willOpen</code> event to remember which window has focus, and the <code>didClose</code> event to restore focus back to the original window. If you want to use this in addition to your own callback, you can call it as <code>hs.chooser._defaultGlobalCallback(event)</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Constructors</h4>
-  <section id="new">
-	<h5><a href="#new">new</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser.new(completionFn) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates a new chooser object</p>
-<p>Parameters:</p>
-<ul>
-<li>completionFn - A function that will be called when the chooser is dismissed. It should accept one parameter, which will be nil if the user dismissed the chooser window, otherwise it will be a table containing whatever information you supplied for the item the user chose.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An <code>hs.chooser</code> object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Methods</h4>
-  <section id="bgDark">
-	<h5><a href="#bgDark">bgDark</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:bgDark([beDark]) -&gt; hs.chooser object or boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the background of the chooser between light and dark</p>
-<p>Parameters:</p>
-<ul>
-<li>beDark - A optional boolean, true to be dark, false to be light. If this parameter is omitted, the current setting will be returned</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object or a boolean, true if the window is dark, false if it is light</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>The text colors will not automatically change when you toggle the darkness of the chooser window, you should also set appropriate colors with <code>hs.chooser:fgColor()</code> and <code>hs.chooser:subTextColor()</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="cancel">
-	<h5><a href="#cancel">cancel</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:cancel() -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Cancels the chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="choices">
-	<h5><a href="#choices">choices</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:choices(choices) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the choices for a chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>choices - Either a function to call when the list of choices is needed, or nil to remove any existing choices/callback, or a table containing static choices.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>The table of choices (be it provided statically, or returned by the callback) must contain at least the following keys for each choice:<ul>
-<li>text - A string or hs.styledtext object that will be shown as the main text of the choice</li>
-</ul>
-</li>
-<li>Each choice may also optionally contain the following keys:<ul>
-<li>subText - A string or hs.styledtext object that will be shown underneath the main text of the choice</li>
-<li>image - An <code>hs.image</code> image object that will be displayed next to the choice</li>
-</ul>
-</li>
-<li>Any other keys/values in each choice table will be retained by the chooser and returned to the completion callback when a choice is made. This is useful for storing UUIDs or other non-user-facing information, however, it is important to note that you should not store userdata objects in the table - it is run through internal conversion functions, so only basic Lua types should be stored.</li>
-<li>If a function is given, it will be called once, when the chooser window is displayed. The results are then cached until this method is called again, or <code>hs.chooser:refreshChoicesCallback()</code> is called.</li>
-</ul>
-<p>Example:</p>
+## API Overview
+* Variables - Configurable values
+ * [globalCallback](#globalcallback)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [bgDark](#bgdark)
+ * [cancel](#cancel)
+ * [choices](#choices)
+ * [delete](#delete)
+ * [fgColor](#fgcolor)
+ * [hide](#hide)
+ * [isVisible](#isvisible)
+ * [query](#query)
+ * [queryChangedCallback](#querychangedcallback)
+ * [refreshChoicesCallback](#refreshchoicescallback)
+ * [rightClickCallback](#rightclickcallback)
+ * [rows](#rows)
+ * [searchSubText](#searchsubtext)
+ * [select](#select)
+ * [selectedRow](#selectedrow)
+ * [selectedRowContents](#selectedrowcontents)
+ * [show](#show)
+ * [showCallback](#showcallback)
+ * [subTextColor](#subtextcolor)
+ * [width](#width)
 
-<pre><code>local choices = {
- {
-  ["text"] = "First Choice",
-  ["subText"] = "This is the subtext of the first choice",
-  ["uuid"] = "0001"
- },
- { ["text"] = "Second Option",
-   ["subText"] = "I wonder what I should type here?",
-   ["uuid"] = "Bbbb"
- },
- { ["text"] = "Third Possibility",
-   ["subText"] = "What a lot of choosing there is going on here!",
-   ["uuid"] = "III3"
- },
-}</code></pre>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="delete">
-	<h5><a href="#delete">delete</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:delete()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Deletes a chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="fgColor">
-	<h5><a href="#fgColor">fgColor</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:fgColor(color) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the foreground color of the chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>color - An optional table containing a color specification (see <code>hs.drawing.color</code>), or nil to restore the default color. If this parameter is omitted, the existing color will be returned</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object or a color table</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="hide">
-	<h5><a href="#hide">hide</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:hide() -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Hides the chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="isVisible">
-	<h5><a href="#isVisible">isVisible</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:isVisible() -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Checks if the chooser is currently displayed</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A boolean, true if the chooser is displayed on screen, false if not</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="query">
-	<h5><a href="#query">query</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:query([queryString]) -&gt; hs.chooser object or string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets/gets the search string</p>
-<p>Parameters:</p>
-<ul>
-<li>queryString - An optional string to search for, or an explicit nil to clear the query. If omitted, the current contents of the search box are returned</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object or a string</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>You can provide an explicit nil or empty string to clear the current query string.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="queryChangedCallback">
-	<h5><a href="#queryChangedCallback">queryChangedCallback</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:queryChangedCallback([fn]) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets/clears a callback for when the search query changes</p>
-<p>Parameters:</p>
-<ul>
-<li>fn - An optional function that will be called whenever the search query changes. If this parameter is omitted, the existing callback will be removed.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The hs.chooser object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>As the user is typing, the callback function will be called for every keypress. You may wish to do filtering on each call, or you may wish to use a delayed <code>hs.timer</code> object to only react when they have finished typing.</li>
-<li>The callback function should accept a single argument:<ul>
-<li>A string containing the new search query</li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="refreshChoicesCallback">
-	<h5><a href="#refreshChoicesCallback">refreshChoicesCallback</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:refreshChoicesCallback() -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Refreshes the choices data from a callback</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This method will do nothing if you have not set a function with <code>hs.chooser:choices()</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="rightClickCallback">
-	<h5><a href="#rightClickCallback">rightClickCallback</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:rightClickCallback([fn]) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets/clears a callback for right clicking on choices</p>
-<p>Parameters:</p>
-<ul>
-<li>fn - An optional function that will be called whenever the user right clicks on a choice. If this parameter is omitted, the existing callback will be removed.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>The callback may accept one argument, the row the right click occurred in or 0 if there is currently no selectable row where the right click occurred. To determine the location of the mouse pointer at the right click, see <code>hs.mouse</code>.</li>
-<li>To display a context menu, see <code>hs.menubar</code>, specifically the <code>:popupMenu()</code> method</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="rows">
-	<h5><a href="#rows">rows</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:rows([numRows]) -&gt; hs.chooser object or number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets/Sets the number of rows that will be shown</p>
-<p>Parameters:</p>
-<ul>
-<li>numRows - An optional number of choices to show (i.e. the vertical height of the chooser window). If this parameter is omitted, the current value will be returned</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object or a number</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="searchSubText">
-	<h5><a href="#searchSubText">searchSubText</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:searchSubText([searchSubText]) -&gt; hs.chooser object or boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets/Sets whether the chooser should search in the sub-text of each item</p>
-<p>Parameters:</p>
-<ul>
-<li>searchSubText - An optional boolean, true to search sub-text, false to not search sub-text. If this parameter is omitted, the current configuration value will be returned</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object if a value was set, or a boolean if no parameter was passed</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This should be used before a chooser has been displayed</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="select">
-	<h5><a href="#select">select</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:select([row]) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Closes the chooser by selecting the specified row, or the currently selected row if not given</p>
-<p>Parameters:</p>
-<ul>
-<li><code>row</code> - an optional integer specifying the row to select.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="selectedRow">
-	<h5><a href="#selectedRow">selectedRow</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:selectedRow([row]) -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Get or set the currently selected row</p>
-<p>Parameters:</p>
-<ul>
-<li><code>row</code> - an optional integer specifying the row to select.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>If an argument is provided, returns the hs.chooser object; otherwise returns a number containing the row currently selected (i.e. the one highlighted in the UI)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="selectedRowContents">
-	<h5><a href="#selectedRowContents">selectedRowContents</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:selectedRowContents([row]) -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the contents of the currently selected or specified row</p>
-<p>Parameters:</p>
-<ul>
-<li><code>row</code> - an optional integer specifying the specific row to return the contents of</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a table containing whatever information was supplied for the row currently selected or an empty table if no row is selected or the specified row does not exist.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="show">
-	<h5><a href="#show">show</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:show([topLeftPoint]) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Displays the chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>An optional <code>hs.geometry</code> point object describing the absolute screen co-ordinates for the top left point of the chooser window. Defaults to centering the window on the primary screen</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The hs.chooser object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="showCallback">
-	<h5><a href="#showCallback">showCallback</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:showCallback([fn]) -&gt; hs.chooser object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets/clears a callback for when the chooser window is shown</p>
-<p>Parameters:</p>
-<ul>
-<li>fn - An optional function that will be called when the chooser window is shown. If this parameter is omitted, the existing callback will be removed.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The hs.chooser object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This callback is called <em>after</em> the chooser is shown. To execute code just before it's shown (and/or after it's removed) see <code>hs.chooser.globalCallback</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="subTextColor">
-	<h5><a href="#subTextColor">subTextColor</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:subTextColor(color) -&gt; hs.chooser object or hs.color object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the sub-text color of the chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>color - An optional table containing a color specification (see <code>hs.drawing.color</code>), or nil to restore the default color. If this parameter is omitted, the existing color will be returned</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object or a color table</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="width">
-	<h5><a href="#width">width</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.chooser:width([percent]) -&gt; hs.chooser object or number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets/Sets the width of the chooser</p>
-<p>Parameters:</p>
-<ul>
-<li>percent - An optional number indicating the percentage of the width of the screen that the chooser should occupy. If this parameter is omitted, the current width will be returned</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The <code>hs.chooser</code> object or a number</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This should be used before a chooser has been displayed</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Documentation
+
+### Variables
+
+#### [globalCallback](#globalcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser.globalCallback` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | A global callback function used for various hs.chooser events                                                                                         |
+| **Notes**                                            | <ul><li>This callback should accept two parameters:</li></ul><ul><li>An <code>hs.chooser</code> object</li></ul><ul><li>A string containing the name of the event to handle. Possible values are:</li></ul><ul><li><code>willOpen</code> - An hs.chooser is about to be shown on screen</li></ul><ul><li><code>didClose</code> - An hs.chooser has just been removed from the screen</li></ul><ul><li>There is a default global callback that uses the <code>willOpen</code> event to remember which window has focus, and the <code>didClose</code> event to restore focus back to the original window. If you want to use this in addition to your own callback, you can call it as <code>hs.chooser._defaultGlobalCallback(event)</code></li></ul>                 |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser.new(completionFn) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new chooser object                                                                                         |
+| **Parameters**                                       | <ul><li>completionFn - A function that will be called when the chooser is dismissed. It should accept one parameter, which will be nil if the user dismissed the chooser window, otherwise it will be a table containing whatever information you supplied for the item the user chose.</li></ul>   |
+| **Returns**                                          | <ul><li>An <code>hs.chooser</code> object</li></ul>            |
+
+### Methods
+
+#### [bgDark](#bgdark)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:bgDark([beDark]) -> hs.chooser object or boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the background of the chooser between light and dark                                                                                         |
+| **Parameters**                                       | <ul><li>beDark - A optional boolean, true to be dark, false to be light. If this parameter is omitted, the current setting will be returned</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object or a boolean, true if the window is dark, false if it is light</li></ul>            |
+| **Notes**                                            | <ul><li>The text colors will not automatically change when you toggle the darkness of the chooser window, you should also set appropriate colors with <code>hs.chooser:fgColor()</code> and <code>hs.chooser:subTextColor()</code></li></ul>                 |
+
+#### [cancel](#cancel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:cancel() -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Cancels the chooser                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul>            |
+
+#### [choices](#choices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:choices(choices) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the choices for a chooser                                                                                         |
+| **Parameters**                                       | <ul><li>choices - Either a function to call when the list of choices is needed, or nil to remove any existing choices/callback, or a table containing static choices.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>The table of choices (be it provided statically, or returned by the callback) must contain at least the following keys for each choice:</li></ul><ul><li>text - A string or hs.styledtext object that will be shown as the main text of the choice</li></ul><ul><li>Each choice may also optionally contain the following keys:</li></ul><ul><li>subText - A string or hs.styledtext object that will be shown underneath the main text of the choice</li></ul><ul><li>image - An <code>hs.image</code> image object that will be displayed next to the choice</li></ul><ul><li>Any other keys/values in each choice table will be retained by the chooser and returned to the completion callback when a choice is made. This is useful for storing UUIDs or other non-user-facing information, however, it is important to note that you should not store userdata objects in the table - it is run through internal conversion functions, so only basic Lua types should be stored.</li></ul><ul><li>If a function is given, it will be called once, when the chooser window is displayed. The results are then cached until this method is called again, or <code>hs.chooser:refreshChoicesCallback()</code> is called.</li></ul>                 |
+
+#### [delete](#delete)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:delete()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Deletes a chooser                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [fgColor](#fgcolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:fgColor(color) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the foreground color of the chooser                                                                                         |
+| **Parameters**                                       | <ul><li>color - An optional table containing a color specification (see <code>hs.drawing.color</code>), or nil to restore the default color. If this parameter is omitted, the existing color will be returned</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object or a color table</li></ul>            |
+
+#### [hide](#hide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:hide() -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Hides the chooser                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul>            |
+
+#### [isVisible](#isvisible)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:isVisible() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks if the chooser is currently displayed                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A boolean, true if the chooser is displayed on screen, false if not</li></ul>            |
+
+#### [query](#query)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:query([queryString]) -> hs.chooser object or string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets/gets the search string                                                                                         |
+| **Parameters**                                       | <ul><li>queryString - An optional string to search for, or an explicit nil to clear the query. If omitted, the current contents of the search box are returned</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object or a string</li></ul>            |
+| **Notes**                                            | <ul><li>You can provide an explicit nil or empty string to clear the current query string.</li></ul>                 |
+
+#### [queryChangedCallback](#querychangedcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:queryChangedCallback([fn]) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets/clears a callback for when the search query changes                                                                                         |
+| **Parameters**                                       | <ul><li>fn - An optional function that will be called whenever the search query changes. If this parameter is omitted, the existing callback will be removed.</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.chooser object</li></ul>            |
+| **Notes**                                            | <ul><li>As the user is typing, the callback function will be called for every keypress. You may wish to do filtering on each call, or you may wish to use a delayed <code>hs.timer</code> object to only react when they have finished typing.</li></ul><ul><li>The callback function should accept a single argument:</li></ul><ul><li>A string containing the new search query</li></ul>                 |
+
+#### [refreshChoicesCallback](#refreshchoicescallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:refreshChoicesCallback() -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Refreshes the choices data from a callback                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>This method will do nothing if you have not set a function with <code>hs.chooser:choices()</code></li></ul>                 |
+
+#### [rightClickCallback](#rightclickcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:rightClickCallback([fn]) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets/clears a callback for right clicking on choices                                                                                         |
+| **Parameters**                                       | <ul><li>fn - An optional function that will be called whenever the user right clicks on a choice. If this parameter is omitted, the existing callback will be removed.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul>            |
+| **Notes**                                            | <ul><li>The callback may accept one argument, the row the right click occurred in or 0 if there is currently no selectable row where the right click occurred. To determine the location of the mouse pointer at the right click, see <code>hs.mouse</code>.</li></ul><ul><li>To display a context menu, see <code>hs.menubar</code>, specifically the <code>:popupMenu()</code> method</li></ul>                 |
+
+#### [rows](#rows)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:rows([numRows]) -> hs.chooser object or number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets/Sets the number of rows that will be shown                                                                                         |
+| **Parameters**                                       | <ul><li>numRows - An optional number of choices to show (i.e. the vertical height of the chooser window). If this parameter is omitted, the current value will be returned</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object or a number</li></ul>            |
+
+#### [searchSubText](#searchsubtext)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:searchSubText([searchSubText]) -> hs.chooser object or boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets/Sets whether the chooser should search in the sub-text of each item                                                                                         |
+| **Parameters**                                       | <ul><li>searchSubText - An optional boolean, true to search sub-text, false to not search sub-text. If this parameter is omitted, the current configuration value will be returned</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object if a value was set, or a boolean if no parameter was passed</li></ul>            |
+| **Notes**                                            | <ul><li>This should be used before a chooser has been displayed</li></ul>                 |
+
+#### [select](#select)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:select([row]) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Closes the chooser by selecting the specified row, or the currently selected row if not given                                                                                         |
+| **Parameters**                                       | <ul><li><code>row</code> - an optional integer specifying the row to select.</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul>            |
+
+#### [selectedRow](#selectedrow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:selectedRow([row]) -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Get or set the currently selected row                                                                                         |
+| **Parameters**                                       | <ul><li><code>row</code> - an optional integer specifying the row to select.</li></ul>   |
+| **Returns**                                          | <ul><li>If an argument is provided, returns the hs.chooser object; otherwise returns a number containing the row currently selected (i.e. the one highlighted in the UI)</li></ul>            |
+
+#### [selectedRowContents](#selectedrowcontents)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:selectedRowContents([row]) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Returns the contents of the currently selected or specified row                                                                                         |
+| **Parameters**                                       | <ul><li><code>row</code> - an optional integer specifying the specific row to return the contents of</li></ul>   |
+| **Returns**                                          | <ul><li>a table containing whatever information was supplied for the row currently selected or an empty table if no row is selected or the specified row does not exist.</li></ul>            |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:show([topLeftPoint]) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Displays the chooser                                                                                         |
+| **Parameters**                                       | <ul><li>An optional <code>hs.geometry</code> point object describing the absolute screen co-ordinates for the top left point of the chooser window. Defaults to centering the window on the primary screen</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.chooser object</li></ul>            |
+
+#### [showCallback](#showcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:showCallback([fn]) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets/clears a callback for when the chooser window is shown                                                                                         |
+| **Parameters**                                       | <ul><li>fn - An optional function that will be called when the chooser window is shown. If this parameter is omitted, the existing callback will be removed.</li></ul>   |
+| **Returns**                                          | <ul><li>The hs.chooser object</li></ul>            |
+| **Notes**                                            | <ul><li>This callback is called <em>after</em> the chooser is shown. To execute code just before it's shown (and/or after it's removed) see <code>hs.chooser.globalCallback</code></li></ul>                 |
+
+#### [subTextColor](#subtextcolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:subTextColor(color) -> hs.chooser object or hs.color object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the sub-text color of the chooser                                                                                         |
+| **Parameters**                                       | <ul><li>color - An optional table containing a color specification (see <code>hs.drawing.color</code>), or nil to restore the default color. If this parameter is omitted, the existing color will be returned</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object or a color table</li></ul>            |
+
+#### [width](#width)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:width([percent]) -> hs.chooser object or number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets/Sets the width of the chooser                                                                                         |
+| **Parameters**                                       | <ul><li>percent - An optional number indicating the percentage of the width of the screen that the chooser should occupy. If this parameter is omitted, the current width will be returned</li></ul>   |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object or a number</li></ul>            |
+| **Notes**                                            | <ul><li>This should be used before a chooser has been displayed</li></ul>                 |
+

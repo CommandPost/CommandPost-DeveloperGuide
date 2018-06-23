@@ -48,1902 +48,595 @@ wf_terminal:subscribe(wf.windowFocused,some_fn) -- run a function whenever a ter
 wf_timewaster:subscribe(wf.hasWindow,startAnnoyingMe):subscribe(wf.hasNoWindows,stopAnnoyingMe) -- fight procrastination :)
 ```
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Constants - Useful values which cannot be changed</li>
-  <ul>
-	<li><a href="#default">default</a></li>
-	<li><a href="#defaultCurrentSpace">defaultCurrentSpace</a></li>
-	<li><a href="#hasNoWindows">hasNoWindows</a></li>
-	<li><a href="#hasWindow">hasWindow</a></li>
-	<li><a href="#sortByCreated">sortByCreated</a></li>
-	<li><a href="#sortByCreatedLast">sortByCreatedLast</a></li>
-	<li><a href="#sortByFocused">sortByFocused</a></li>
-	<li><a href="#sortByFocusedLast">sortByFocusedLast</a></li>
-	<li><a href="#windowAllowed">windowAllowed</a></li>
-	<li><a href="#windowCreated">windowCreated</a></li>
-	<li><a href="#windowDestroyed">windowDestroyed</a></li>
-	<li><a href="#windowFocused">windowFocused</a></li>
-	<li><a href="#windowFullscreened">windowFullscreened</a></li>
-	<li><a href="#windowHidden">windowHidden</a></li>
-	<li><a href="#windowInCurrentSpace">windowInCurrentSpace</a></li>
-	<li><a href="#windowMinimized">windowMinimized</a></li>
-	<li><a href="#windowMoved">windowMoved</a></li>
-	<li><a href="#windowNotInCurrentSpace">windowNotInCurrentSpace</a></li>
-	<li><a href="#windowNotOnScreen">windowNotOnScreen</a></li>
-	<li><a href="#windowNotVisible">windowNotVisible</a></li>
-	<li><a href="#windowOnScreen">windowOnScreen</a></li>
-	<li><a href="#windowRejected">windowRejected</a></li>
-	<li><a href="#windowsChanged">windowsChanged</a></li>
-	<li><a href="#windowTitleChanged">windowTitleChanged</a></li>
-	<li><a href="#windowUnfocused">windowUnfocused</a></li>
-	<li><a href="#windowUnfullscreened">windowUnfullscreened</a></li>
-	<li><a href="#windowUnhidden">windowUnhidden</a></li>
-	<li><a href="#windowUnminimized">windowUnminimized</a></li>
-	<li><a href="#windowVisible">windowVisible</a></li>
-  </ul>
-<li>Variables - Configurable values</li>
-  <ul>
-	<li><a href="#allowedWindowRoles">allowedWindowRoles</a></li>
-	<li><a href="#forceRefreshOnSpaceChange">forceRefreshOnSpaceChange</a></li>
-	<li><a href="#ignoreAlways">ignoreAlways</a></li>
-  </ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#focusEast">focusEast</a></li>
-	<li><a href="#focusNorth">focusNorth</a></li>
-	<li><a href="#focusSouth">focusSouth</a></li>
-	<li><a href="#focusWest">focusWest</a></li>
-	<li><a href="#isGuiApp">isGuiApp</a></li>
-	<li><a href="#switchedToSpace">switchedToSpace</a></li>
-  </ul>
-<li>Constructors - API calls which return an object, typically one that offers API methods</li>
-  <ul>
-	<li><a href="#copy">copy</a></li>
-	<li><a href="#new">new</a></li>
-  </ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#allowApp">allowApp</a></li>
-	<li><a href="#focusWindowEast">focusWindowEast</a></li>
-	<li><a href="#focusWindowNorth">focusWindowNorth</a></li>
-	<li><a href="#focusWindowSouth">focusWindowSouth</a></li>
-	<li><a href="#focusWindowWest">focusWindowWest</a></li>
-	<li><a href="#getFilters">getFilters</a></li>
-	<li><a href="#getWindows">getWindows</a></li>
-	<li><a href="#isAppAllowed">isAppAllowed</a></li>
-	<li><a href="#isWindowAllowed">isWindowAllowed</a></li>
-	<li><a href="#pause">pause</a></li>
-	<li><a href="#rejectApp">rejectApp</a></li>
-	<li><a href="#resume">resume</a></li>
-	<li><a href="#setAppFilter">setAppFilter</a></li>
-	<li><a href="#setCurrentSpace">setCurrentSpace</a></li>
-	<li><a href="#setDefaultFilter">setDefaultFilter</a></li>
-	<li><a href="#setFilters">setFilters</a></li>
-	<li><a href="#setOverrideFilter">setOverrideFilter</a></li>
-	<li><a href="#setRegions">setRegions</a></li>
-	<li><a href="#setScreens">setScreens</a></li>
-	<li><a href="#setSortOrder">setSortOrder</a></li>
-	<li><a href="#subscribe">subscribe</a></li>
-	<li><a href="#unsubscribe">unsubscribe</a></li>
-	<li><a href="#unsubscribeAll">unsubscribeAll</a></li>
-	<li><a href="#windowsToEast">windowsToEast</a></li>
-	<li><a href="#windowsToNorth">windowsToNorth</a></li>
-	<li><a href="#windowsToSouth">windowsToSouth</a></li>
-	<li><a href="#windowsToWest">windowsToWest</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constants</h4>
-  <section id="default">
-	<h5><a href="#default">default</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.default</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The default windowfilter; it filters apps whose windows are transient in nature so that you're unlikely (and often
-unable) to do anything with them, such as launchers, menulets, preference pane apps, screensavers, etc. It also
-filters nonstandard and invisible windows.</p>
-<p>Notes:</p>
-<ul>
-<li>While you can customize the default windowfilter, it's usually advisable to make your customizations on a local copy via <code>mywf=hs.window.filter.new()</code>;
-the default windowfilter can potentially be used in several Hammerspoon modules and changing it might have unintended consequences.
-Common customizations:<ul>
-<li>to exclude fullscreen windows: <code>nofs_wf=hs.window.filter.new():setOverrideFilter{fullscreen=false}</code></li>
-<li>to include invisible windows: <code>inv_wf=windowfilter.new():setDefaultFilter{}</code></li>
-</ul>
-</li>
-<li>If you still want to alter the default windowfilter:<ul>
-<li>you should probably apply your customizations at the top of your <code>init.lua</code>, or at any rate before instantiating any other windowfilter; this
-way copies created via <code>hs.window.filter.new(nil,...)</code> will inherit your modifications</li>
-<li>to list the known exclusions: <code>hs.inspect(hs.window.filter.default:getFilters())</code> from the console</li>
-<li>to add an exclusion: <code>hs.window.filter.default:rejectApp'Cool New Launcher'</code></li>
-<li>to add an app-specific rule: <code>hs.window.filter.default:setAppFilter('My IDE',1)</code>; ignore tooltips/code completion (empty title) in My IDE</li>
-<li>to remove an exclusion (e.g. if you want to have access to Spotlight windows): <code>hs.window.filter.default:allowApp'Spotlight'</code>;
-for specialized uses you can make a specific windowfilter with <code>myfilter=hs.window.filter.new'Spotlight'</code></li>
-</ul>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="defaultCurrentSpace">
-	<h5><a href="#defaultCurrentSpace">defaultCurrentSpace</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.defaultCurrentSpace</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>A copy of the default windowfilter (see <code>hs.window.filter.default</code>) that only allows windows in the current
-Mission Control Space</p>
-<p>Notes:</p>
-<ul>
-<li>This windowfilter will inherit customizations to the default windowfilter if they're performed <em>before</em> referencing this</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="hasNoWindows">
-	<h5><a href="#hasNoWindows">hasNoWindows</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.hasNoWindows</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Pseudo-event for <code>hs.window.filter:subscribe()</code>: the windowfilter now rejects all windows</p>
-<p>Notes:</p>
-<ul>
-<li>callbacks for this event will receive (as the first argument) the last window that was allowed (and is now rejected)</li>
-<li>this pseudo-event won't trigger again until after the windowfilter allows at least one window</li>
-<li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) (e.g. <code>windowDestroyed</code>) that caused the window to be rejected</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="hasWindow">
-	<h5><a href="#hasWindow">hasWindow</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.hasWindow</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Pseudo-event for <code>hs.window.filter:subscribe()</code>: the windowfilter now allows one window</p>
-<p>Notes:</p>
-<ul>
-<li>callbacks for this event will receive (as the first argument) the window that is now allowed</li>
-<li>this pseudo-event won't trigger again until after the windowfilter reverts to rejecting all windows</li>
-<li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) (e.g. <code>windowCreated</code>) that caused a window to be allowed</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="sortByCreated">
-	<h5><a href="#sortByCreated">sortByCreated</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.sortByCreated</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sort order for <code>hs.window.filter:getWindows()</code>: windows are sorted in order of creation, oldest first (see also <code>hs.window.filter:setSortOrder()</code>)</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="sortByCreatedLast">
-	<h5><a href="#sortByCreatedLast">sortByCreatedLast</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.sortByCreatedLast</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sort order for <code>hs.window.filter:getWindows()</code>: windows are sorted in order of creation, newest first (see also <code>hs.window.filter:setSortOrder()</code>)</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="sortByFocused">
-	<h5><a href="#sortByFocused">sortByFocused</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.sortByFocused</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sort order for <code>hs.window.filter:getWindows()</code>: windows are sorted in order of focus received, least recently first (see also <code>hs.window.filter:setSortOrder()</code>)</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="sortByFocusedLast">
-	<h5><a href="#sortByFocusedLast">sortByFocusedLast</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.sortByFocusedLast</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sort order for <code>hs.window.filter:getWindows()</code>: windows are sorted in order of focus received, most recently first (see also <code>hs.window.filter:setSortOrder()</code>)</p>
-<p>Notes:</p>
-<ul>
-<li>This is the default sort order for all windowfilters</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowAllowed">
-	<h5><a href="#windowAllowed">windowAllowed</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowAllowed</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Pseudo-event for <code>hs.window.filter:subscribe()</code>: a previously rejected window (or a newly created one) is now allowed</p>
-<p>Notes:</p>
-<ul>
-<li>this pseudo-event will be emitted <em>before</em> the <em>actual</em> event(s) (e.g. <code>windowCreated</code>) that caused the window to be allowed</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowCreated">
-	<h5><a href="#windowCreated">windowCreated</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowCreated</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a new window was created</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowDestroyed">
-	<h5><a href="#windowDestroyed">windowDestroyed</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowDestroyed</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was destroyed</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowFocused">
-	<h5><a href="#windowFocused">windowFocused</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowFocused</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window received focus</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowFullscreened">
-	<h5><a href="#windowFullscreened">windowFullscreened</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowFullscreened</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was expanded to fullscreen</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowHidden">
-	<h5><a href="#windowHidden">windowHidden</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowHidden</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was hidden (its app was hidden, e.g. via <code>cmd-h</code>)</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowInCurrentSpace">
-	<h5><a href="#windowInCurrentSpace">windowInCurrentSpace</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowInCurrentSpace</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window is now in the current Mission Control Space, due to
-a Space switch or because it was hidden or minimized (hidden and minimized windows belong to all Spaces)</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowMinimized">
-	<h5><a href="#windowMinimized">windowMinimized</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowMinimized</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was minimized</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowMoved">
-	<h5><a href="#windowMoved">windowMoved</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowMoved</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was moved or resized, including toggling fullscreen/maximize</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowNotInCurrentSpace">
-	<h5><a href="#windowNotInCurrentSpace">windowNotInCurrentSpace</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowNotInCurrentSpace</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window that used to be in the current Mission Control Space isn't anymore,
-due to a Space switch or because it was unhidden or unminimized onto another Space</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowNotOnScreen">
-	<h5><a href="#windowNotOnScreen">windowNotOnScreen</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowNotOnScreen</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window is no longer <em>actually</em> visible on any screen because it was minimized, closed,
-its application was hidden (e.g. via cmd-h) or closed, or because it's not in the current Mission Control Space anymore</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowNotVisible">
-	<h5><a href="#windowNotVisible">windowNotVisible</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowNotVisible</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window is no longer "visible" (in <em>any</em> Mission Control Space, as per <code>hs.window:isVisible()</code>)
-because it was minimized or closed, or its application was hidden (e.g. via <code>cmd-h</code>) or closed</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowOnScreen">
-	<h5><a href="#windowOnScreen">windowOnScreen</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowOnScreen</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window became <em>actually</em> visible on screen (i.e. it's "visible" as per <code>hs.window:isVisible()</code>
-<em>and</em> in the current Mission Control Space) after having been not visible, or when created</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowRejected">
-	<h5><a href="#windowRejected">windowRejected</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowRejected</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Pseudo-event for <code>hs.window.filter:subscribe()</code>: a previously allowed window (or a window that's been destroyed) is now rejected</p>
-<p>Notes:</p>
-<ul>
-<li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) (e.g. <code>windowDestroyed</code>) that caused the window to be rejected</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowsChanged">
-	<h5><a href="#windowsChanged">windowsChanged</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowsChanged</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Pseudo-event for <code>hs.window.filter:subscribe()</code>: the list of allowed windows (as per <code>windowfilter:getWindows()</code>) has changed</p>
-<p>Notes:</p>
-<ul>
-<li>callbacks for this event will receive (as the first argument) either a random window among the currently allowed ones,
-or nil if the windowfilter is rejecting all windows</li>
-<li>similarly, the second argument passed to callbacks (window's app name) will be nil if the windowfilter is rejecting all windows</li>
-<li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) that caused the list of allowed windows to change</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowTitleChanged">
-	<h5><a href="#windowTitleChanged">windowTitleChanged</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowTitleChanged</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window's title changed</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowUnfocused">
-	<h5><a href="#windowUnfocused">windowUnfocused</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowUnfocused</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window lost focus</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowUnfullscreened">
-	<h5><a href="#windowUnfullscreened">windowUnfullscreened</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowUnfullscreened</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was reverted back from fullscreen</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowUnhidden">
-	<h5><a href="#windowUnhidden">windowUnhidden</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowUnhidden</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was unhidden (its app was unhidden, e.g. via <code>cmd-h</code>)</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowUnminimized">
-	<h5><a href="#windowUnminimized">windowUnminimized</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowUnminimized</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window was unminimized</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowVisible">
-	<h5><a href="#windowVisible">windowVisible</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.windowVisible</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Event for <code>hs.window.filter:subscribe()</code>: a window became "visible" (in <em>any</em> Mission Control Space, as per <code>hs.window:isVisible()</code>)
-after having been hidden or minimized, or if it was just created</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Variables</h4>
-  <section id="allowedWindowRoles">
-	<h5><a href="#allowedWindowRoles">allowedWindowRoles</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.allowedWindowRoles</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>A table for window roles (as per <code>hs.window:subrole()</code>) that are allowed by default.</p>
-<p>Set the desired window roles as <em>keys</em> in this table, like this: <code>hs.window.filter.allowedWindowRoles = {AXStandardWindow=true,AXDialog=true}</code></p>
-<p>Notes:</p>
-<ul>
-<li>You can have fine grained control of allowed window roles via the <code>setAppFilter</code>, <code>setDefaultFilter</code>, <code>setOverrideFilter</code> methods.</li>
-<li>If you know what you're doing you can override the allowed window roles globally by changing this variable, but this is discouraged.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="forceRefreshOnSpaceChange">
-	<h5><a href="#forceRefreshOnSpaceChange">forceRefreshOnSpaceChange</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.forceRefreshOnSpaceChange</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Tells all windowfilters whether to refresh all windows when the user switches to a different Mission Control Space.</p>
-<p>Due to OS X limitations Hammerspoon cannot directly query for windows in Spaces other than the current one;
-therefore when a windowfilter is initially instantiated, it doesn't know about many of these windows.</p>
-<p>If this variable is set to <code>true</code>, windowfilters will re-query applications for all their windows whenever a Space change
-by the user is detected, therefore any existing windows in that Space that were not yet being tracked will become known at that point;
-if <code>false</code> (the default) this won't happen, but the windowfilters will <em>eventually</em> learn about these windows
-anyway, as soon as they're interacted with.</p>
-<p>If you need your windowfilters to become aware of windows across all Spaces as soon as possible, you can set this to <code>true</code>,
-but you'll incur a modest performance penalty on every Space change. If possible, use the <code>hs.window.filter.switchedToSpace()</code>
-callback instead.</p>
-<p>Notes:</p>
-<ul>
-<li>If you defined one or more Spaces-aware windowfilters (i.e. when the <code>currentSpace</code> field of a filter is present), windows need refreshing at every space change anyway, so this variable is ignored</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="ignoreAlways">
-	<h5><a href="#ignoreAlways">ignoreAlways</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.ignoreAlways</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Variable</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>A table of application names (as per <code>hs.application:name()</code>) that are always ignored by this module.
-These are apps with no windows or any visible GUI, such as system services, background daemons and "helper" apps.</p>
-<p>You can add an app to this table with <code>hs.window.filter.ignoreAlways['Background App Title'] = true</code></p>
-<p>Notes:</p>
-<ul>
-<li>As the name implies, even the empty, "allow all" windowfilter will ignore these apps.</li>
-<li>You don't <em>need</em> to keep this table up to date, since non GUI apps will simply never show up anywhere; this table is just used as a "root" filter to gain a (very small) performance improvement.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Functions</h4>
-  <section id="focusEast">
-	<h5><a href="#focusEast">focusEast</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.focusEast()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Convenience function to focus the nearest window to the east</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowEast(nil,nil,true)</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focusNorth">
-	<h5><a href="#focusNorth">focusNorth</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.focusNorth()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Convenience function to focus the nearest window to the north</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowNorth(nil,nil,true)</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focusSouth">
-	<h5><a href="#focusSouth">focusSouth</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.focusSouth()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Convenience function to focus the nearest window to the south</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowSouth(nil,nil,true)</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focusWest">
-	<h5><a href="#focusWest">focusWest</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.focusWest()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Convenience function to focus the nearest window to the west</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowWest(nil,nil,true)</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="isGuiApp">
-	<h5><a href="#isGuiApp">isGuiApp</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.isGuiApp(appname) -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Checks whether an app is a known non-GUI app, as per <code>hs.window.filter.ignoreAlways</code></p>
-<p>Parameters:</p>
-<ul>
-<li>appname - name of the app to check as per <code>hs.application:name()</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>false</code> if the app is a known non-GUI (or not accessible) app; <code>true</code> otherwise</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="switchedToSpace">
-	<h5><a href="#switchedToSpace">switchedToSpace</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.switchedToSpace(space)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Callback to inform all windowfilters that the user initiated a switch to a (numbered) Mission Control Space.</p>
-<p>See <code>hs.window.filter.forceRefreshOnSpaceChange</code> for an overview of Spaces limitations in Hammerspoon. If you
-often (or always) change Space via the "numbered" Mission Control keyboard shortcuts (by default, <code>ctrl-1</code> etc.), you
-can call this function from your <code>init.lua</code> when intercepting these shortcuts; for example:</p>
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [default](#default)
+ * [defaultCurrentSpace](#defaultcurrentspace)
+ * [hasNoWindows](#hasnowindows)
+ * [hasWindow](#haswindow)
+ * [sortByCreated](#sortbycreated)
+ * [sortByCreatedLast](#sortbycreatedlast)
+ * [sortByFocused](#sortbyfocused)
+ * [sortByFocusedLast](#sortbyfocusedlast)
+ * [windowAllowed](#windowallowed)
+ * [windowCreated](#windowcreated)
+ * [windowDestroyed](#windowdestroyed)
+ * [windowFocused](#windowfocused)
+ * [windowFullscreened](#windowfullscreened)
+ * [windowHidden](#windowhidden)
+ * [windowInCurrentSpace](#windowincurrentspace)
+ * [windowMinimized](#windowminimized)
+ * [windowMoved](#windowmoved)
+ * [windowNotInCurrentSpace](#windownotincurrentspace)
+ * [windowNotOnScreen](#windownotonscreen)
+ * [windowNotVisible](#windownotvisible)
+ * [windowOnScreen](#windowonscreen)
+ * [windowRejected](#windowrejected)
+ * [windowsChanged](#windowschanged)
+ * [windowTitleChanged](#windowtitlechanged)
+ * [windowUnfocused](#windowunfocused)
+ * [windowUnfullscreened](#windowunfullscreened)
+ * [windowUnhidden](#windowunhidden)
+ * [windowUnminimized](#windowunminimized)
+ * [windowVisible](#windowvisible)
+* Variables - Configurable values
+ * [allowedWindowRoles](#allowedwindowroles)
+ * [forceRefreshOnSpaceChange](#forcerefreshonspacechange)
+ * [ignoreAlways](#ignorealways)
+* Functions - API calls offered directly by the extension
+ * [focusEast](#focuseast)
+ * [focusNorth](#focusnorth)
+ * [focusSouth](#focussouth)
+ * [focusWest](#focuswest)
+ * [isGuiApp](#isguiapp)
+ * [switchedToSpace](#switchedtospace)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [copy](#copy)
+ * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [allowApp](#allowapp)
+ * [focusWindowEast](#focuswindoweast)
+ * [focusWindowNorth](#focuswindownorth)
+ * [focusWindowSouth](#focuswindowsouth)
+ * [focusWindowWest](#focuswindowwest)
+ * [getFilters](#getfilters)
+ * [getWindows](#getwindows)
+ * [isAppAllowed](#isappallowed)
+ * [isWindowAllowed](#iswindowallowed)
+ * [pause](#pause)
+ * [rejectApp](#rejectapp)
+ * [resume](#resume)
+ * [setAppFilter](#setappfilter)
+ * [setCurrentSpace](#setcurrentspace)
+ * [setDefaultFilter](#setdefaultfilter)
+ * [setFilters](#setfilters)
+ * [setOverrideFilter](#setoverridefilter)
+ * [setRegions](#setregions)
+ * [setScreens](#setscreens)
+ * [setSortOrder](#setsortorder)
+ * [subscribe](#subscribe)
+ * [unsubscribe](#unsubscribe)
+ * [unsubscribeAll](#unsubscribeall)
+ * [windowsToEast](#windowstoeast)
+ * [windowsToNorth](#windowstonorth)
+ * [windowsToSouth](#windowstosouth)
+ * [windowsToWest](#windowstowest)
 
-<pre><code>hs.hotkey.bind('ctrl','1',nil,function()hs.window.filter.switchedToSpace(1)end)
-hs.hotkey.bind('ctrl','2',nil,function()hs.window.filter.switchedToSpace(2)end)
--- etc.</code></pre>
-<p>Using this callback results in slightly better performance than setting <code>forceRefreshOnSpaceChange</code> to <code>true</code>, since
-already visited Spaces are remembered and no refreshing is necessary when switching back to those.</p>
-<p>Parameters:</p>
-<ul>
-<li>space - the Space number the user is switching to</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>Only use this function if "Displays have separate Spaces" and "Automatically rearrange Spaces" are OFF in System Preferences&gt;Mission Control</li>
-<li>Calling this function will set <code>hs.window.filter.forceRefreshOnSpaceChange</code> to <code>false</code></li>
-<li>If you defined one or more Spaces-aware windowfilters (i.e. when the <code>currentSpace</code> field of a filter is present), windows need refreshing at every space change anyway, so using this callback will not result in improved performance</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Constructors</h4>
-  <section id="copy">
-	<h5><a href="#copy">copy</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.copy(windowfilter[,logname[,loglevel]]) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns a copy of an hs.window.filter object that you can further restrict or expand</p>
-<p>Parameters:</p>
-<ul>
-<li>windowfilter - an <code>hs.window.filter</code> object to copy</li>
-<li>logname - (optional) name of the <code>hs.logger</code> instance for the new windowfilter; if omitted, the class logger will be used</li>
-<li>loglevel - (optional) log level for the <code>hs.logger</code> instance for the new windowfilter</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="new">
-	<h5><a href="#new">new</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter.new(fn[,logname[,loglevel]]) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Creates a new hs.window.filter instance</p>
-<p>Parameters:</p>
-<ul>
-<li>fn<ul>
-<li>if <code>nil</code>, returns a copy of the default windowfilter, including any customizations you might have applied to it
-so far; you can then further restrict or expand it</li>
-<li>if <code>true</code>, returns an empty windowfilter that allows every window</li>
-<li>if <code>false</code>, returns a windowfilter with a default rule to reject every window</li>
-<li>if a string or table of strings, returns a windowfilter that only allows visible windows of the specified apps
-as per <code>hs.application:name()</code></li>
-<li>if a table, you can fully define a windowfilter without having to call any methods after construction; the
-table must be structured as per <code>hs.window.filter:setFilters()</code>; if not specified in the table, the
-default filter in the new windowfilter will reject all windows</li>
-<li>otherwise it must be a function that accepts an <code>hs.window</code> object and returns <code>true</code> if the window is allowed
-or <code>false</code> otherwise; this way you can define a fully custom windowfilter</li>
-</ul>
-</li>
-<li>logname - (optional) name of the <code>hs.logger</code> instance for the new windowfilter; if omitted, the class logger will be used</li>
-<li>loglevel - (optional) log level for the <code>hs.logger</code> instance for the new windowfilter</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a new windowfilter instance</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Methods</h4>
-  <section id="allowApp">
-	<h5><a href="#allowApp">allowApp</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:allowApp(appname) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the windowfilter to allow all visible windows belonging to a specific app</p>
-<p>Parameters:</p>
-<ul>
-<li>appname - app name as per <code>hs.application:name()</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>this is just a convenience wrapper for <code>windowfilter:setAppFilter(appname,{visible=true})</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focusWindowEast">
-	<h5><a href="#focusWindowEast">focusWindowEast</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:focusWindowEast(window, frontmost, strict)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Focuses the nearest window to the east of a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the
-eastward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.focusWindowEast(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focusWindowNorth">
-	<h5><a href="#focusWindowNorth">focusWindowNorth</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:focusWindowNorth(window, frontmost, strict)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Focuses the nearest window to the south of a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the
-southward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.focusWindowNorth(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focusWindowSouth">
-	<h5><a href="#focusWindowSouth">focusWindowSouth</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:focusWindowSouth(window, frontmost, strict)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Focuses the nearest window to the north of a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the
-northward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.focusWindowSouth(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="focusWindowWest">
-	<h5><a href="#focusWindowWest">focusWindowWest</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:focusWindowWest(window, frontmost, strict)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Focuses the nearest window to the west of a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the westward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that performs <code>hs.window.focusWindowWest(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="getFilters">
-	<h5><a href="#getFilters">getFilters</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:getFilters() -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Return a table with all the filtering rules defined for this windowfilter</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a table containing the filtering rules of this windowfilter; you can pass this table (optionally
-after performing valid manipulations) to <code>hs.window.filter:setFilters()</code> and <code>hs.window.filter.new()</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="getWindows">
-	<h5><a href="#getWindows">getWindows</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:getWindows([sortOrder]) -&gt; list of hs.window objects</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets the current windows allowed by this windowfilter</p>
-<p>Parameters:</p>
-<ul>
-<li>sortOrder - (optional) one of the <code>hs.window.filter.sortBy...</code> constants to determine the sort order
-of the returned list; if omitted, uses the windowfilter's sort order as per <code>hs.window.filter:setSortOrder()</code>
-(defaults to <code>sortByFocusedLast</code>)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>a list of <code>hs.window</code> objects</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="isAppAllowed">
-	<h5><a href="#isAppAllowed">isAppAllowed</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:isAppAllowed(appname) -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Checks if an app is allowed by the windowfilter</p>
-<p>Parameters:</p>
-<ul>
-<li>appname - app name as per <code>hs.application:name()</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>false</code> if the app is rejected by the windowfilter; <code>true</code> otherwise</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="isWindowAllowed">
-	<h5><a href="#isWindowAllowed">isWindowAllowed</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:isWindowAllowed(window) -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Checks if a window is allowed by the windowfilter</p>
-<p>Parameters:</p>
-<ul>
-<li>window - an <code>hs.window</code> object to check</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li><code>true</code> if the window is allowed by the windowfilter, <code>false</code> otherwise; <code>nil</code> if an invalid object was passed</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="pause">
-	<h5><a href="#pause">pause</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:pause() -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Stops the windowfilter event subscriptions; no more event callbacks will be triggered, but the subscriptions remain intact for a subsequent call to <code>hs.window.filter:resume()</code></p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="rejectApp">
-	<h5><a href="#rejectApp">rejectApp</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:rejectApp(appname) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the windowfilter to outright reject any windows belonging to a specific app</p>
-<p>Parameters:</p>
-<ul>
-<li>appname - app name as per <code>hs.application:name()</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>this is just a convenience wrapper for <code>windowfilter:setAppFilter(appname,false)</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="resume">
-	<h5><a href="#resume">resume</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:resume() -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Resumes the windowfilter event subscriptions</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setAppFilter">
-	<h5><a href="#setAppFilter">setAppFilter</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setAppFilter(appname, filter) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the detailed filtering rules for the windows of a specific app</p>
-<p>Parameters:</p>
-<ul>
-<li>appname - app name as per <code>hs.application:name()</code></li>
-<li>filter - if <code>false</code>, reject the app; if <code>true</code>, <code>nil</code>, or omitted, allow all visible windows (in any Space) for the app; otherwise it must be a table describing the filtering rules for the app, via the following fields:<ul>
-<li>visible - if <code>true</code>, only allow visible windows (in any Space); if <code>false</code>, reject visible windows; if omitted, this rule is ignored</li>
-<li>currentSpace - if <code>true</code>, only allow windows in the current Mission Control Space (minimized and hidden windows are included, as they're considered to belong to all Spaces); if <code>false</code>, reject windows in the current Space (including all minimized and hidden windows); if omitted, this rule is ignored</li>
-<li>fullscreen - if <code>true</code>, only allow fullscreen windows; if <code>false</code>, reject fullscreen windows; if omitted, this rule is ignored</li>
-<li>hasTitlebar - if <code>true</code>, only allow windows with titlebar; if <code>false</code>, reject window with titlebar; if omitted, this rule is ignored</li>
-<li>focused - if <code>true</code>, only allow a window while focused; if <code>false</code>, reject the focused window; if omitted, this rule is ignored</li>
-<li>activeApplication - only allow any of this app's windows while it is (if <code>true</code>) or it's not (if <code>false</code>) the active application; if omitted, this rule is ignored</li>
-<li>allowTitles<ul>
-<li>if a number, only allow windows whose title is at least as many characters long; e.g. pass <code>1</code> to filter windows with an empty title</li>
-<li>if a string or table of strings, only allow windows whose title matches (one of) the pattern(s) as per <code>string.match</code></li>
-<li>if omitted, this rule is ignored</li>
-</ul>
-</li>
-<li>rejectTitles - if a string or table of strings, reject windows whose titles matches (one of) the pattern(s) as per <code>string.match</code>; if omitted, this rule is ignored</li>
-<li>allowRegions - an <code>hs.geometry</code> rect or constructor argument, or a list of them, designating (a) screen "region(s)" in absolute coordinates: only allow windows that "cover" at least 50% of (one of) the region(s), and/or windows that have at least 50% of their surface inside (one of) the region(s); if omitted, this rule is ignored</li>
-<li>rejectRegions - an <code>hs.geometry</code> rect or constructor argument, or a list of them, designating (a) screen "region(s)" in absolute coordinates: reject windows that "cover" at least 50% of (one of) the region(s), and/or windows that have at least 50% of their surface inside (one of) the region(s); if omitted, this rule is ignored</li>
-<li>allowScreens - a valid argument for <code>hs.screen.find()</code>, or a list of them, indicating one (or more) screen(s): only allow windows that (mostly) lie on (one of) the screen(s); if omitted, this rule is ignored</li>
-<li>rejectScreens - a valid argument for <code>hs.screen.find()</code>, or a list of them, indicating one (or more) screen(s): reject windows that (mostly) lie on (one of) the screen(s); if omitted, this rule is ignored</li>
-<li>allowRoles<ul>
-<li>if a string or table of strings, only allow these window roles as per <code>hs.window:subrole()</code></li>
-<li>if the special string <code>'*'</code>, this rule is ignored (i.e. all window roles, including empty ones, are allowed)</li>
-<li>if omitted, use the default allowed roles (defined in <code>hs.window.filter.allowedWindowRoles</code>)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>Passing <code>focused=true</code> in <code>filter</code> will (naturally) result in the windowfilter ever allowing 1 window at most</li>
-<li>If you want to allow <em>all</em> windows for an app, including invisible ones, pass an empty table for <code>filter</code></li>
-<li>Spaces-aware windowfilters might experience a (sometimes significant) delay after every Space switch, since (due to OS X limitations) they must re-query for the list of all windows in the current Space every time.</li>
-<li>If System Preferences&gt;Mission Control&gt;Displays have separate Spaces is <em>on</em>, the <em>current Space</em> is defined as the union of all the Spaces that are currently visible</li>
-<li>This table explains the effects of different combinations of <code>visible</code> and <code>currentSpace</code>, showing which windows will be allowed:
-<pre><code>          |visible=         nil                      |             true             |     false    |
-|currentSpace|------------------------------------------|------------------------------|--------------|
-|     nil    |all                                       |visible in ANY space          |min and hidden|
-|    true    |visible in CURRENT space+min and hidden   |visible in CURRENT space      |min and hidden|
-|    false   |visible in OTHER space only+min and hidden|visible in OTHER space only   |none          |</code></pre>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setCurrentSpace">
-	<h5><a href="#setCurrentSpace">setCurrentSpace</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setCurrentSpace(val) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets whether the windowfilter should only allow (or reject) windows in the current Mission Control Space</p>
-<p>Parameters:</p>
-<ul>
-<li>val - boolean; if <code>true</code>, only allow windows in the current Mission Control Space, plus minimized and hidden windows;
-if <code>false</code>, reject them; if <code>nil</code>, ignore Mission Control Spaces</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is just a convenience wrapper for setting the <code>currentSpace</code> field in the <code>override</code> filter (other
-fields will be left untouched); per-app filters will maintain their <code>currentSpace</code> field, if present, as is</li>
-<li>Spaces-aware windowfilters might experience a (sometimes significant) delay after every Space switch, since
-(due to OS X limitations) they must re-query for the list of all windows in the current Space every time.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setDefaultFilter">
-	<h5><a href="#setDefaultFilter">setDefaultFilter</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setDefaultFilter(filter) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Set the default filtering rules to be used for apps without app-specific rules</p>
-<p>Parameters:</p>
-<ul>
-<li>filter - see <code>hs.window.filter:setAppFilter</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setFilters">
-	<h5><a href="#setFilters">setFilters</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setFilters(filters) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets multiple filtering rules</p>
-<p>Parameters:</p>
-<ul>
-<li>filters - table, every element will set an application filter; these elements must:<ul>
-<li>have a <em>key</em> of type string, denoting an application name as per <code>hs.application:name()</code></li>
-<li>if the <em>value</em> is a boolean, the app will be allowed or rejected accordingly - see <code>hs.window.filter:allowApp()</code>
-and <code>hs.window.filter:rejectApp()</code></li>
-<li>if the <em>value</em> is a table, it must contain the accept/reject rules for the app <em>as key/value pairs</em>; valid keys
-and values are described in <code>hs.window.filter:setAppFilter()</code></li>
-<li>the key can be one of the special strings <code>"default"</code> and <code>"override"</code>, which will will set the default and override
-filter respectively</li>
-<li>the key can be the special string <code>"sortOrder"</code>; the value must be one of the <code>sortBy...</code> constants as per
-<code>hs.window.filter:setSortOrder()</code></li>
-</ul>
-</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>every filter definition in <code>filters</code> will overwrite the pre-existing one for the relevant application, if present;
-this also applies to the special default and override filters, if included</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setOverrideFilter">
-	<h5><a href="#setOverrideFilter">setOverrideFilter</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setOverrideFilter(filter) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Set overriding filtering rules that will be applied for all apps before any app-specific rules</p>
-<p>Parameters:</p>
-<ul>
-<li>filter - see <code>hs.window.filter:setAppFilter</code></li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setRegions">
-	<h5><a href="#setRegions">setRegions</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setRegions(regions) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the allowed screen regions for this windowfilter</p>
-<p>Parameters:</p>
-<ul>
-<li>regions - an <code>hs.geometry</code> rect or constructor argument, or a list of them, indicating the allowed region(s) for this windowfilter</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is just a convenience wrapper for setting the <code>allowRegions</code> field in the <code>override</code> filter (other fields will be left untouched); per-app filters will maintain their <code>allowRegions</code> and <code>rejectRegions</code> fields, if present</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setScreens">
-	<h5><a href="#setScreens">setScreens</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setScreens(screens) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the allowed screens for this windowfilter</p>
-<p>Parameters:</p>
-<ul>
-<li>regions - a valid argument for <code>hs.screen.find()</code>, or a list of them, indicating the allowed screen(s) for this windowfilter</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is just a convenience wrapper for setting the <code>allowScreens</code> field in the <code>override</code> filter (other
-fields will be left untouched); per-app filters will maintain their <code>allowScreens</code> and <code>rejectScreens</code> fields, if present</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="setSortOrder">
-	<h5><a href="#setSortOrder">setSortOrder</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:setSortOrder(sortOrder) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Sets the sort order for this windowfilter's <code>:getWindows()</code> method</p>
-<p>Parameters:</p>
-<ul>
-<li>sortOrder - one of the <code>hs.window.filter.sortBy...</code> constants</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>The default sort order for all windowfilters (that is, until changed by this method) is <code>hs.window.filter.sortByFocusedLast</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="subscribe">
-	<h5><a href="#subscribe">subscribe</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:subscribe(event, fn[, immediate]) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Subscribe to one or more events on the allowed windows</p>
-<p>Parameters:</p>
-<ul>
-<li>event - string or list of strings, the event(s) to subscribe to (see the <code>hs.window.filter</code> constants); alternatively, this can be a map <code>{event1=fn1,event2=fn2,...}</code>: fnN will be subscribed to eventN, and the parameter <code>fn</code> will be ignored</li>
-<li>fn - function or list of functions, the callback(s) to add for the event(s); each will be passed 3 parameters<ul>
-<li>a <code>hs.window</code> object referring to the event's window</li>
-<li>a string containing the application name (<code>window:application():name()</code>) for convenience</li>
-<li>a string containing the event that caused the callback, i.e. (one of) the event(s) you subscribed to</li>
-</ul>
-</li>
-<li>immediate - (optional) if <code>true</code>, also call all the callbacks immediately for windows that satisfy the event(s) criteria</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>Passing lists means that <em>all</em> the <code>fn</code>s will be called when <em>any</em> of the <code>event</code>s fires, so it's <em>not</em> a shortcut for subscribing distinct callbacks to distinct events; use a map or chained <code>:subscribe</code> calls for that.</li>
-<li>Use caution with <code>immediate</code>: if for example you're subscribing to <code>hs.window.filter.windowUnfocused</code>, <code>fn</code>(s) will be called for <em>all</em> the windows except the currently focused one.</li>
-<li>If the windowfilter was paused with <code>hs.window.filter:pause()</code>, calling this will resume it.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="unsubscribe">
-	<h5><a href="#unsubscribe">unsubscribe</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:unsubscribe([event][, fn]) -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Removes one or more event subscriptions</p>
-<p>Parameters:</p>
-<ul>
-<li>event - string or list of strings, the event(s) to unsubscribe; if omitted, <code>fn</code>(s) will be unsubscribed from all events;
-alternatively, this can be a map <code>{event1=fn1,event2=fn2,...}</code>: fnN will be unsubscribed from eventN, and the parameter <code>fn</code> will be ignored</li>
-<li>fn - function or list of functions, the callback(s) to remove; if omitted, all callbacks will be unsubscribed from <code>event</code>(s)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>You must pass at least one of <code>event</code> or <code>fn</code></li>
-<li>If calling this on the default (or any other shared use) windowfilter, do not pass events, as that would remove
-<em>all</em> the callbacks for the events including ones subscribed elsewhere that you might not be aware of. You should
-instead keep references to your functions and pass in those.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="unsubscribeAll">
-	<h5><a href="#unsubscribeAll">unsubscribeAll</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:unsubscribeAll() -&gt; hs.window.filter object</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Removes all event subscriptions</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>the <code>hs.window.filter</code> object for method chaining</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>You should not use this on the default windowfilter or other shared-use windowfilters</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowsToEast">
-	<h5><a href="#windowsToEast">windowsToEast</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:windowsToEast(window, frontmost, strict) -&gt; list of <code>hs.window</code> objects</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets all visible windows allowed by this windowfilter that lie to the east a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the
-eastward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A list of <code>hs.window</code> objects representing all windows positioned east (i.e. right) of the window, in ascending order of distance</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that returns <code>hs.window.windowsToEast(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use
-<code>hs.window.filter.defaultCurrentSpace</code>)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowsToNorth">
-	<h5><a href="#windowsToNorth">windowsToNorth</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:windowsToNorth(window, frontmost, strict) -&gt; list of <code>hs.window</code> objects</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets all visible windows allowed by this windowfilter that lie to the north a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the
-northward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A list of <code>hs.window</code> objects representing all windows positioned north (i.e. up) of the window, in ascending order of distance</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that returns <code>hs.window.windowsToNorth(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use
-<code>hs.window.filter.defaultCurrentSpace</code>)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowsToSouth">
-	<h5><a href="#windowsToSouth">windowsToSouth</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:windowsToSouth(window, frontmost, strict) -&gt; list of <code>hs.window</code> objects</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets all visible windows allowed by this windowfilter that lie to the south a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the
-southward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A list of <code>hs.window</code> objects representing all windows positioned south (i.e. down) of the window, in ascending order of distance</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that returns <code>hs.window.windowsToSouth(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use
-<code>hs.window.filter.defaultCurrentSpace</code>)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="windowsToWest">
-	<h5><a href="#windowsToWest">windowsToWest</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.window.filter:windowsToWest(window, frontmost, strict) -&gt; list of <code>hs.window</code> objects</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Gets all visible windows allowed by this windowfilter that lie to the west a given window</p>
-<p>Parameters:</p>
-<ul>
-<li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li>
-<li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li>
-<li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the westward axis</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A list of <code>hs.window</code> objects representing all windows positioned west (i.e. left) of the window, in ascending order of distance</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a convenience wrapper that returns <code>hs.window.windowsToWest(window,self:getWindows(),...)</code></li>
-<li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use <code>hs.window.filter.defaultCurrentSpace</code>)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Documentation
+
+### Constants
+
+#### [default](#default)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.default` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The default windowfilter; it filters apps whose windows are transient in nature so that you're unlikely (and often                                                                                         |
+| **Notes**                                            | <ul><li>While you can customize the default windowfilter, it's usually advisable to make your customizations on a local copy via <code>mywf=hs.window.filter.new()</code>;</li></ul><p>the default windowfilter can potentially be used in several Hammerspoon modules and changing it might have unintended consequences.</p><p>Common customizations:</p><ul><li>to exclude fullscreen windows: <code>nofs_wf=hs.window.filter.new():setOverrideFilter{fullscreen=false}</code></li></ul><ul><li>to include invisible windows: <code>inv_wf=windowfilter.new():setDefaultFilter{}</code></li></ul><ul><li>If you still want to alter the default windowfilter:</li></ul><ul><li>you should probably apply your customizations at the top of your <code>init.lua</code>, or at any rate before instantiating any other windowfilter; this</li></ul><pre><code> way copies created via `hs.window.filter.new(nil,...)` will inherit your modifications</code></pre><ul><li>to list the known exclusions: <code>hs.inspect(hs.window.filter.default:getFilters())</code> from the console</li></ul><ul><li>to add an exclusion: <code>hs.window.filter.default:rejectApp'Cool New Launcher'</code></li></ul><ul><li>to add an app-specific rule: <code>hs.window.filter.default:setAppFilter('My IDE',1)</code>; ignore tooltips/code completion (empty title) in My IDE</li></ul><ul><li>to remove an exclusion (e.g. if you want to have access to Spotlight windows): <code>hs.window.filter.default:allowApp'Spotlight'</code>;</li></ul><pre><code> for specialized uses you can make a specific windowfilter with `myfilter=hs.window.filter.new'Spotlight'`</code></pre>                 |
+
+#### [defaultCurrentSpace](#defaultcurrentspace)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.defaultCurrentSpace` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | A copy of the default windowfilter (see `hs.window.filter.default`) that only allows windows in the current                                                                                         |
+| **Notes**                                            | <ul><li>This windowfilter will inherit customizations to the default windowfilter if they're performed <em>before</em> referencing this</li></ul>                 |
+
+#### [hasNoWindows](#hasnowindows)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.hasNoWindows` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: the windowfilter now rejects all windows                                                                                         |
+| **Notes**                                            | <ul><li>callbacks for this event will receive (as the first argument) the last window that was allowed (and is now rejected)</li></ul><ul><li>this pseudo-event won't trigger again until after the windowfilter allows at least one window</li></ul><ul><li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) (e.g. <code>windowDestroyed</code>) that caused the window to be rejected</li></ul>                 |
+
+#### [hasWindow](#haswindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.hasWindow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: the windowfilter now allows one window                                                                                         |
+| **Notes**                                            | <ul><li>callbacks for this event will receive (as the first argument) the window that is now allowed</li></ul><ul><li>this pseudo-event won't trigger again until after the windowfilter reverts to rejecting all windows</li></ul><ul><li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) (e.g. <code>windowCreated</code>) that caused a window to be allowed</li></ul>                 |
+
+#### [sortByCreated](#sortbycreated)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.sortByCreated` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Sort order for `hs.window.filter:getWindows()`: windows are sorted in order of creation, oldest first (see also `hs.window.filter:setSortOrder()`)                                                                                         |
+
+#### [sortByCreatedLast](#sortbycreatedlast)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.sortByCreatedLast` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Sort order for `hs.window.filter:getWindows()`: windows are sorted in order of creation, newest first (see also `hs.window.filter:setSortOrder()`)                                                                                         |
+
+#### [sortByFocused](#sortbyfocused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.sortByFocused` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Sort order for `hs.window.filter:getWindows()`: windows are sorted in order of focus received, least recently first (see also `hs.window.filter:setSortOrder()`)                                                                                         |
+
+#### [sortByFocusedLast](#sortbyfocusedlast)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.sortByFocusedLast` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Sort order for `hs.window.filter:getWindows()`: windows are sorted in order of focus received, most recently first (see also `hs.window.filter:setSortOrder()`)                                                                                         |
+| **Notes**                                            | <ul><li>This is the default sort order for all windowfilters</li></ul>                 |
+
+#### [windowAllowed](#windowallowed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowAllowed` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: a previously rejected window (or a newly created one) is now allowed                                                                                         |
+| **Notes**                                            | <ul><li>this pseudo-event will be emitted <em>before</em> the <em>actual</em> event(s) (e.g. <code>windowCreated</code>) that caused the window to be allowed</li></ul>                 |
+
+#### [windowCreated](#windowcreated)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowCreated` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a new window was created                                                                                         |
+
+#### [windowDestroyed](#windowdestroyed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowDestroyed` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was destroyed                                                                                         |
+
+#### [windowFocused](#windowfocused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowFocused` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window received focus                                                                                         |
+
+#### [windowFullscreened](#windowfullscreened)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowFullscreened` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was expanded to fullscreen                                                                                         |
+
+#### [windowHidden](#windowhidden)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowHidden` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was hidden (its app was hidden, e.g. via `cmd-h`)                                                                                         |
+
+#### [windowInCurrentSpace](#windowincurrentspace)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowInCurrentSpace` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window is now in the current Mission Control Space, due to                                                                                         |
+
+#### [windowMinimized](#windowminimized)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowMinimized` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was minimized                                                                                         |
+
+#### [windowMoved](#windowmoved)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowMoved` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was moved or resized, including toggling fullscreen/maximize                                                                                         |
+
+#### [windowNotInCurrentSpace](#windownotincurrentspace)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowNotInCurrentSpace` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window that used to be in the current Mission Control Space isn't anymore,                                                                                         |
+
+#### [windowNotOnScreen](#windownotonscreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowNotOnScreen` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window is no longer *actually* visible on any screen because it was minimized, closed,                                                                                         |
+
+#### [windowNotVisible](#windownotvisible)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowNotVisible` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window is no longer "visible" (in *any* Mission Control Space, as per `hs.window:isVisible()`)                                                                                         |
+
+#### [windowOnScreen](#windowonscreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowOnScreen` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window became *actually* visible on screen (i.e. it's "visible" as per `hs.window:isVisible()`                                                                                         |
+
+#### [windowRejected](#windowrejected)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowRejected` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: a previously allowed window (or a window that's been destroyed) is now rejected                                                                                         |
+| **Notes**                                            | <ul><li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) (e.g. <code>windowDestroyed</code>) that caused the window to be rejected</li></ul>                 |
+
+#### [windowsChanged](#windowschanged)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowsChanged` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Pseudo-event for `hs.window.filter:subscribe()`: the list of allowed windows (as per `windowfilter:getWindows()`) has changed                                                                                         |
+| **Notes**                                            | <ul><li>callbacks for this event will receive (as the first argument) either a random window among the currently allowed ones,</li></ul><p>or nil if the windowfilter is rejecting all windows</p><ul><li>similarly, the second argument passed to callbacks (window's app name) will be nil if the windowfilter is rejecting all windows</li></ul><ul><li>this pseudo-event will be emitted <em>after</em> the <em>actual</em> event(s) that caused the list of allowed windows to change</li></ul>                 |
+
+#### [windowTitleChanged](#windowtitlechanged)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowTitleChanged` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window's title changed                                                                                         |
+
+#### [windowUnfocused](#windowunfocused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowUnfocused` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window lost focus                                                                                         |
+
+#### [windowUnfullscreened](#windowunfullscreened)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowUnfullscreened` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was reverted back from fullscreen                                                                                         |
+
+#### [windowUnhidden](#windowunhidden)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowUnhidden` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was unhidden (its app was unhidden, e.g. via `cmd-h`)                                                                                         |
+
+#### [windowUnminimized](#windowunminimized)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowUnminimized` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window was unminimized                                                                                         |
+
+#### [windowVisible](#windowvisible)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.windowVisible` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Event for `hs.window.filter:subscribe()`: a window became "visible" (in *any* Mission Control Space, as per `hs.window:isVisible()`)                                                                                         |
+
+### Variables
+
+#### [allowedWindowRoles](#allowedwindowroles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.allowedWindowRoles` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | A table for window roles (as per `hs.window:subrole()`) that are allowed by default.                                                                                         |
+| **Notes**                                            | <ul><li>You can have fine grained control of allowed window roles via the <code>setAppFilter</code>, <code>setDefaultFilter</code>, <code>setOverrideFilter</code> methods.</li></ul><ul><li>If you know what you're doing you can override the allowed window roles globally by changing this variable, but this is discouraged.</li></ul>                 |
+
+#### [forceRefreshOnSpaceChange](#forcerefreshonspacechange)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.forceRefreshOnSpaceChange` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | Tells all windowfilters whether to refresh all windows when the user switches to a different Mission Control Space.                                                                                         |
+| **Notes**                                            | <ul><li>If you defined one or more Spaces-aware windowfilters (i.e. when the <code>currentSpace</code> field of a filter is present), windows need refreshing at every space change anyway, so this variable is ignored</li></ul>                 |
+
+#### [ignoreAlways](#ignorealways)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.ignoreAlways` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable                                                                                         |
+| **Description**                                      | A table of application names (as per `hs.application:name()`) that are always ignored by this module.                                                                                         |
+| **Notes**                                            | <ul><li>As the name implies, even the empty, "allow all" windowfilter will ignore these apps.</li></ul><ul><li>You don't <em>need</em> to keep this table up to date, since non GUI apps will simply never show up anywhere; this table is just used as a "root" filter to gain a (very small) performance improvement.</li></ul>                 |
+
+### Functions
+
+#### [focusEast](#focuseast)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.focusEast()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Convenience function to focus the nearest window to the east                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowEast(nil,nil,true)</code></li></ul>                 |
+
+#### [focusNorth](#focusnorth)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.focusNorth()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Convenience function to focus the nearest window to the north                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowNorth(nil,nil,true)</code></li></ul>                 |
+
+#### [focusSouth](#focussouth)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.focusSouth()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Convenience function to focus the nearest window to the south                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowSouth(nil,nil,true)</code></li></ul>                 |
+
+#### [focusWest](#focuswest)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.focusWest()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Convenience function to focus the nearest window to the west                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.filter.defaultCurrentSpace:focusWindowWest(nil,nil,true)</code></li></ul>                 |
+
+#### [isGuiApp](#isguiapp)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.isGuiApp(appname) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks whether an app is a known non-GUI app, as per `hs.window.filter.ignoreAlways`                                                                                         |
+| **Parameters**                                       | <ul><li>appname - name of the app to check as per <code>hs.application:name()</code></li></ul>   |
+| **Returns**                                          | <ul><li><code>false</code> if the app is a known non-GUI (or not accessible) app; <code>true</code> otherwise</li></ul>            |
+
+#### [switchedToSpace](#switchedtospace)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.switchedToSpace(space)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Callback to inform all windowfilters that the user initiated a switch to a (numbered) Mission Control Space.                                                                                         |
+| **Parameters**                                       | <ul><li>space - the Space number the user is switching to</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>Only use this function if "Displays have separate Spaces" and "Automatically rearrange Spaces" are OFF in System Preferences&gt;Mission Control</li></ul><ul><li>Calling this function will set <code>hs.window.filter.forceRefreshOnSpaceChange</code> to <code>false</code></li></ul><ul><li>If you defined one or more Spaces-aware windowfilters (i.e. when the <code>currentSpace</code> field of a filter is present), windows need refreshing at every space change anyway, so using this callback will not result in improved performance</li></ul>                 |
+
+### Constructors
+
+#### [copy](#copy)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.copy(windowfilter[,logname[,loglevel]]) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Returns a copy of an hs.window.filter object that you can further restrict or expand                                                                                         |
+| **Parameters**                                       | <ul><li>windowfilter - an <code>hs.window.filter</code> object to copy</li></ul><ul><li>logname - (optional) name of the <code>hs.logger</code> instance for the new windowfilter; if omitted, the class logger will be used</li></ul><ul><li>loglevel - (optional) log level for the <code>hs.logger</code> instance for the new windowfilter</li></ul>   |
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter.new(fn[,logname[,loglevel]]) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Creates a new hs.window.filter instance                                                                                         |
+| **Parameters**                                       | <ul><li>fn</li></ul><ul><li>if <code>nil</code>, returns a copy of the default windowfilter, including any customizations you might have applied to it</li></ul><pre><code> so far; you can then further restrict or expand it</code></pre><ul><li>if <code>true</code>, returns an empty windowfilter that allows every window</li></ul><ul><li>if <code>false</code>, returns a windowfilter with a default rule to reject every window</li></ul><ul><li>if a string or table of strings, returns a windowfilter that only allows visible windows of the specified apps</li></ul><pre><code> as per `hs.application:name()`</code></pre><ul><li>if a table, you can fully define a windowfilter without having to call any methods after construction; the</li></ul><pre><code> table must be structured as per `hs.window.filter:setFilters()`; if not specified in the table, the</code></pre><pre><code> default filter in the new windowfilter will reject all windows</code></pre><ul><li>otherwise it must be a function that accepts an <code>hs.window</code> object and returns <code>true</code> if the window is allowed</li></ul><pre><code> or `false` otherwise; this way you can define a fully custom windowfilter</code></pre><ul><li>logname - (optional) name of the <code>hs.logger</code> instance for the new windowfilter; if omitted, the class logger will be used</li></ul><ul><li>loglevel - (optional) log level for the <code>hs.logger</code> instance for the new windowfilter</li></ul>   |
+| **Returns**                                          | <ul><li>a new windowfilter instance</li></ul>            |
+
+### Methods
+
+#### [allowApp](#allowapp)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:allowApp(appname) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the windowfilter to allow all visible windows belonging to a specific app                                                                                         |
+| **Parameters**                                       | <ul><li>appname - app name as per <code>hs.application:name()</code></li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>this is just a convenience wrapper for <code>windowfilter:setAppFilter(appname,{visible=true})</code></li></ul>                 |
+
+#### [focusWindowEast](#focuswindoweast)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:focusWindowEast(window, frontmost, strict)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Focuses the nearest window to the east of a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the</li></ul><p>eastward axis</p>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.focusWindowEast(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li></ul>                 |
+
+#### [focusWindowNorth](#focuswindownorth)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:focusWindowNorth(window, frontmost, strict)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Focuses the nearest window to the south of a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the</li></ul><p>southward axis</p>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.focusWindowNorth(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li></ul>                 |
+
+#### [focusWindowSouth](#focuswindowsouth)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:focusWindowSouth(window, frontmost, strict)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Focuses the nearest window to the north of a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the</li></ul><p>northward axis</p>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.focusWindowSouth(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li></ul>                 |
+
+#### [focusWindowWest](#focuswindowwest)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:focusWindowWest(window, frontmost, strict)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Focuses the nearest window to the west of a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window in this windowfilter</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the westward axis</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that performs <code>hs.window.focusWindowWest(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call</li></ul>                 |
+
+#### [getFilters](#getfilters)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:getFilters() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Return a table with all the filtering rules defined for this windowfilter                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>a table containing the filtering rules of this windowfilter; you can pass this table (optionally</li></ul><p>after performing valid manipulations) to <code>hs.window.filter:setFilters()</code> and <code>hs.window.filter.new()</code></p>            |
+
+#### [getWindows](#getwindows)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:getWindows([sortOrder]) -> list of hs.window objects` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets the current windows allowed by this windowfilter                                                                                         |
+| **Parameters**                                       | <ul><li>sortOrder - (optional) one of the <code>hs.window.filter.sortBy...</code> constants to determine the sort order</li></ul><p>of the returned list; if omitted, uses the windowfilter's sort order as per <code>hs.window.filter:setSortOrder()</code></p><p>(defaults to <code>sortByFocusedLast</code>)</p>   |
+| **Returns**                                          | <ul><li>a list of <code>hs.window</code> objects</li></ul>            |
+
+#### [isAppAllowed](#isappallowed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:isAppAllowed(appname) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks if an app is allowed by the windowfilter                                                                                         |
+| **Parameters**                                       | <ul><li>appname - app name as per <code>hs.application:name()</code></li></ul>   |
+| **Returns**                                          | <ul><li><code>false</code> if the app is rejected by the windowfilter; <code>true</code> otherwise</li></ul>            |
+
+#### [isWindowAllowed](#iswindowallowed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:isWindowAllowed(window) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Checks if a window is allowed by the windowfilter                                                                                         |
+| **Parameters**                                       | <ul><li>window - an <code>hs.window</code> object to check</li></ul>   |
+| **Returns**                                          | <ul><li><code>true</code> if the window is allowed by the windowfilter, <code>false</code> otherwise; <code>nil</code> if an invalid object was passed</li></ul>            |
+
+#### [pause](#pause)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:pause() -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Stops the windowfilter event subscriptions; no more event callbacks will be triggered, but the subscriptions remain intact for a subsequent call to `hs.window.filter:resume()`                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+
+#### [rejectApp](#rejectapp)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:rejectApp(appname) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the windowfilter to outright reject any windows belonging to a specific app                                                                                         |
+| **Parameters**                                       | <ul><li>appname - app name as per <code>hs.application:name()</code></li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>this is just a convenience wrapper for <code>windowfilter:setAppFilter(appname,false)</code></li></ul>                 |
+
+#### [resume](#resume)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:resume() -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Resumes the windowfilter event subscriptions                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+
+#### [setAppFilter](#setappfilter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setAppFilter(appname, filter) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the detailed filtering rules for the windows of a specific app                                                                                         |
+| **Parameters**                                       | <ul><li>appname - app name as per <code>hs.application:name()</code></li></ul><ul><li>filter - if <code>false</code>, reject the app; if <code>true</code>, <code>nil</code>, or omitted, allow all visible windows (in any Space) for the app; otherwise it must be a table describing the filtering rules for the app, via the following fields:</li></ul><ul><li>visible - if <code>true</code>, only allow visible windows (in any Space); if <code>false</code>, reject visible windows; if omitted, this rule is ignored</li></ul><ul><li>currentSpace - if <code>true</code>, only allow windows in the current Mission Control Space (minimized and hidden windows are included, as they're considered to belong to all Spaces); if <code>false</code>, reject windows in the current Space (including all minimized and hidden windows); if omitted, this rule is ignored</li></ul><ul><li>fullscreen - if <code>true</code>, only allow fullscreen windows; if <code>false</code>, reject fullscreen windows; if omitted, this rule is ignored</li></ul><ul><li>hasTitlebar - if <code>true</code>, only allow windows with titlebar; if <code>false</code>, reject window with titlebar; if omitted, this rule is ignored</li></ul><ul><li>focused - if <code>true</code>, only allow a window while focused; if <code>false</code>, reject the focused window; if omitted, this rule is ignored</li></ul><ul><li>activeApplication - only allow any of this app's windows while it is (if <code>true</code>) or it's not (if <code>false</code>) the active application; if omitted, this rule is ignored</li></ul><ul><li>allowTitles</li></ul><pre><code> * if a number, only allow windows whose title is at least as many characters long; e.g. pass `1` to filter windows with an empty title</code></pre><pre><code> * if a string or table of strings, only allow windows whose title matches (one of) the pattern(s) as per `string.match`</code></pre><pre><code> * if omitted, this rule is ignored</code></pre><ul><li>rejectTitles - if a string or table of strings, reject windows whose titles matches (one of) the pattern(s) as per <code>string.match</code>; if omitted, this rule is ignored</li></ul><ul><li>allowRegions - an <code>hs.geometry</code> rect or constructor argument, or a list of them, designating (a) screen "region(s)" in absolute coordinates: only allow windows that "cover" at least 50% of (one of) the region(s), and/or windows that have at least 50% of their surface inside (one of) the region(s); if omitted, this rule is ignored</li></ul><ul><li>rejectRegions - an <code>hs.geometry</code> rect or constructor argument, or a list of them, designating (a) screen "region(s)" in absolute coordinates: reject windows that "cover" at least 50% of (one of) the region(s), and/or windows that have at least 50% of their surface inside (one of) the region(s); if omitted, this rule is ignored</li></ul><ul><li>allowScreens - a valid argument for <code>hs.screen.find()</code>, or a list of them, indicating one (or more) screen(s): only allow windows that (mostly) lie on (one of) the screen(s); if omitted, this rule is ignored</li></ul><ul><li>rejectScreens - a valid argument for <code>hs.screen.find()</code>, or a list of them, indicating one (or more) screen(s): reject windows that (mostly) lie on (one of) the screen(s); if omitted, this rule is ignored</li></ul><ul><li>allowRoles</li></ul><pre><code> * if a string or table of strings, only allow these window roles as per `hs.window:subrole()`</code></pre><pre><code> * if the special string `'*'`, this rule is ignored (i.e. all window roles, including empty ones, are allowed)</code></pre><pre><code> * if omitted, use the default allowed roles (defined in `hs.window.filter.allowedWindowRoles`)</code></pre>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>Passing <code>focused=true</code> in <code>filter</code> will (naturally) result in the windowfilter ever allowing 1 window at most</li></ul><ul><li>If you want to allow <em>all</em> windows for an app, including invisible ones, pass an empty table for <code>filter</code></li></ul><ul><li>Spaces-aware windowfilters might experience a (sometimes significant) delay after every Space switch, since (due to OS X limitations) they must re-query for the list of all windows in the current Space every time.</li></ul><ul><li>If System Preferences&gt;Mission Control&gt;Displays have separate Spaces is <em>on</em>, the <em>current Space</em> is defined as the union of all the Spaces that are currently visible</li></ul><ul><li>This table explains the effects of different combinations of <code>visible</code> and <code>currentSpace</code>, showing which windows will be allowed:</li></ul><p>```</p><pre><code>         |visible=         nil                      |             true             |     false    |</code></pre><p>|currentSpace|------------------------------------------|------------------------------|--------------|</p><p>|     nil    |all                                       |visible in ANY space          |min and hidden|</p><p>|    true    |visible in CURRENT space+min and hidden   |visible in CURRENT space      |min and hidden|</p><p>|    false   |visible in OTHER space only+min and hidden|visible in OTHER space only   |none          |</p><p>```</p>                 |
+
+#### [setCurrentSpace](#setcurrentspace)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setCurrentSpace(val) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets whether the windowfilter should only allow (or reject) windows in the current Mission Control Space                                                                                         |
+| **Parameters**                                       | <ul><li>val - boolean; if <code>true</code>, only allow windows in the current Mission Control Space, plus minimized and hidden windows;</li></ul><p>if <code>false</code>, reject them; if <code>nil</code>, ignore Mission Control Spaces</p>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>This is just a convenience wrapper for setting the <code>currentSpace</code> field in the <code>override</code> filter (other</li></ul><p>fields will be left untouched); per-app filters will maintain their <code>currentSpace</code> field, if present, as is</p><ul><li>Spaces-aware windowfilters might experience a (sometimes significant) delay after every Space switch, since</li></ul><p>(due to OS X limitations) they must re-query for the list of all windows in the current Space every time.</p>                 |
+
+#### [setDefaultFilter](#setdefaultfilter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setDefaultFilter(filter) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Set the default filtering rules to be used for apps without app-specific rules                                                                                         |
+| **Parameters**                                       | <ul><li>filter - see <code>hs.window.filter:setAppFilter</code></li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+
+#### [setFilters](#setfilters)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setFilters(filters) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets multiple filtering rules                                                                                         |
+| **Parameters**                                       | <ul><li>filters - table, every element will set an application filter; these elements must:</li></ul><ul><li>have a <em>key</em> of type string, denoting an application name as per <code>hs.application:name()</code></li></ul><ul><li>if the <em>value</em> is a boolean, the app will be allowed or rejected accordingly - see <code>hs.window.filter:allowApp()</code></li></ul><pre><code> and `hs.window.filter:rejectApp()`</code></pre><ul><li>if the <em>value</em> is a table, it must contain the accept/reject rules for the app <em>as key/value pairs</em>; valid keys</li></ul><pre><code> and values are described in `hs.window.filter:setAppFilter()`</code></pre><ul><li>the key can be one of the special strings <code>"default"</code> and <code>"override"</code>, which will will set the default and override</li></ul><pre><code> filter respectively</code></pre><ul><li>the key can be the special string <code>"sortOrder"</code>; the value must be one of the <code>sortBy...</code> constants as per</li></ul><pre><code> `hs.window.filter:setSortOrder()`</code></pre>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>every filter definition in <code>filters</code> will overwrite the pre-existing one for the relevant application, if present;</li></ul><p>this also applies to the special default and override filters, if included</p>                 |
+
+#### [setOverrideFilter](#setoverridefilter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setOverrideFilter(filter) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Set overriding filtering rules that will be applied for all apps before any app-specific rules                                                                                         |
+| **Parameters**                                       | <ul><li>filter - see <code>hs.window.filter:setAppFilter</code></li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+
+#### [setRegions](#setregions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setRegions(regions) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the allowed screen regions for this windowfilter                                                                                         |
+| **Parameters**                                       | <ul><li>regions - an <code>hs.geometry</code> rect or constructor argument, or a list of them, indicating the allowed region(s) for this windowfilter</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>This is just a convenience wrapper for setting the <code>allowRegions</code> field in the <code>override</code> filter (other fields will be left untouched); per-app filters will maintain their <code>allowRegions</code> and <code>rejectRegions</code> fields, if present</li></ul>                 |
+
+#### [setScreens](#setscreens)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setScreens(screens) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the allowed screens for this windowfilter                                                                                         |
+| **Parameters**                                       | <ul><li>regions - a valid argument for <code>hs.screen.find()</code>, or a list of them, indicating the allowed screen(s) for this windowfilter</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>This is just a convenience wrapper for setting the <code>allowScreens</code> field in the <code>override</code> filter (other</li></ul><p>fields will be left untouched); per-app filters will maintain their <code>allowScreens</code> and <code>rejectScreens</code> fields, if present</p>                 |
+
+#### [setSortOrder](#setsortorder)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:setSortOrder(sortOrder) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Sets the sort order for this windowfilter's `:getWindows()` method                                                                                         |
+| **Parameters**                                       | <ul><li>sortOrder - one of the <code>hs.window.filter.sortBy...</code> constants</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>The default sort order for all windowfilters (that is, until changed by this method) is <code>hs.window.filter.sortByFocusedLast</code></li></ul>                 |
+
+#### [subscribe](#subscribe)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:subscribe(event, fn[, immediate]) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Subscribe to one or more events on the allowed windows                                                                                         |
+| **Parameters**                                       | <ul><li>event - string or list of strings, the event(s) to subscribe to (see the <code>hs.window.filter</code> constants); alternatively, this can be a map <code>{event1=fn1,event2=fn2,...}</code>: fnN will be subscribed to eventN, and the parameter <code>fn</code> will be ignored</li></ul><ul><li>fn - function or list of functions, the callback(s) to add for the event(s); each will be passed 3 parameters</li></ul><ul><li>a <code>hs.window</code> object referring to the event's window</li></ul><ul><li>a string containing the application name (<code>window:application():name()</code>) for convenience</li></ul><ul><li>a string containing the event that caused the callback, i.e. (one of) the event(s) you subscribed to</li></ul><ul><li>immediate - (optional) if <code>true</code>, also call all the callbacks immediately for windows that satisfy the event(s) criteria</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>Passing lists means that <em>all</em> the <code>fn</code>s will be called when <em>any</em> of the <code>event</code>s fires, so it's <em>not</em> a shortcut for subscribing distinct callbacks to distinct events; use a map or chained <code>:subscribe</code> calls for that.</li></ul><ul><li>Use caution with <code>immediate</code>: if for example you're subscribing to <code>hs.window.filter.windowUnfocused</code>, <code>fn</code>(s) will be called for <em>all</em> the windows except the currently focused one.</li></ul><ul><li>If the windowfilter was paused with <code>hs.window.filter:pause()</code>, calling this will resume it.</li></ul>                 |
+
+#### [unsubscribe](#unsubscribe)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:unsubscribe([event][, fn]) -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Removes one or more event subscriptions                                                                                         |
+| **Parameters**                                       | <ul><li>event - string or list of strings, the event(s) to unsubscribe; if omitted, <code>fn</code>(s) will be unsubscribed from all events;</li></ul><p>alternatively, this can be a map <code>{event1=fn1,event2=fn2,...}</code>: fnN will be unsubscribed from eventN, and the parameter <code>fn</code> will be ignored</p><ul><li>fn - function or list of functions, the callback(s) to remove; if omitted, all callbacks will be unsubscribed from <code>event</code>(s)</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>You must pass at least one of <code>event</code> or <code>fn</code></li></ul><ul><li>If calling this on the default (or any other shared use) windowfilter, do not pass events, as that would remove</li></ul><p><em>all</em> the callbacks for the events including ones subscribed elsewhere that you might not be aware of. You should</p><p>instead keep references to your functions and pass in those.</p>                 |
+
+#### [unsubscribeAll](#unsubscribeall)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:unsubscribeAll() -> hs.window.filter object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Removes all event subscriptions                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>the <code>hs.window.filter</code> object for method chaining</li></ul>            |
+| **Notes**                                            | <ul><li>You should not use this on the default windowfilter or other shared-use windowfilters</li></ul>                 |
+
+#### [windowsToEast](#windowstoeast)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:windowsToEast(window, frontmost, strict) -> list of `hs.window` objects` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets all visible windows allowed by this windowfilter that lie to the east a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the</li></ul><p>eastward axis</p>   |
+| **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned east (i.e. right) of the window, in ascending order of distance</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that returns <code>hs.window.windowsToEast(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use</li></ul><p><code>hs.window.filter.defaultCurrentSpace</code>)</p>                 |
+
+#### [windowsToNorth](#windowstonorth)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:windowsToNorth(window, frontmost, strict) -> list of `hs.window` objects` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets all visible windows allowed by this windowfilter that lie to the north a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the</li></ul><p>northward axis</p>   |
+| **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned north (i.e. up) of the window, in ascending order of distance</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that returns <code>hs.window.windowsToNorth(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use</li></ul><p><code>hs.window.filter.defaultCurrentSpace</code>)</p>                 |
+
+#### [windowsToSouth](#windowstosouth)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:windowsToSouth(window, frontmost, strict) -> list of `hs.window` objects` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets all visible windows allowed by this windowfilter that lie to the south a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the</li></ul><p>southward axis</p>   |
+| **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned south (i.e. down) of the window, in ascending order of distance</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that returns <code>hs.window.windowsToSouth(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use</li></ul><p><code>hs.window.filter.defaultCurrentSpace</code>)</p>                 |
+
+#### [windowsToWest](#windowstowest)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.filter:windowsToWest(window, frontmost, strict) -> list of `hs.window` objects` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Gets all visible windows allowed by this windowfilter that lie to the west a given window                                                                                         |
+| **Parameters**                                       | <ul><li>window - (optional) an <code>hs.window</code> object; if nil, <code>hs.window.frontmostWindow()</code> will be used</li></ul><ul><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li></ul><ul><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the westward axis</li></ul>   |
+| **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned west (i.e. left) of the window, in ascending order of distance</li></ul>            |
+| **Notes**                                            | <ul><li>This is a convenience wrapper that returns <code>hs.window.windowsToWest(window,self:getWindows(),...)</code></li></ul><ul><li>You'll likely want to add <code>:setCurrentSpace(true)</code> to the windowfilter used for this method call (or just use <code>hs.window.filter.defaultCurrentSpace</code>)</li></ul>                 |
+

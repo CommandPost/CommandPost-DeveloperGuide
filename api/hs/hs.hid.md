@@ -5,93 +5,35 @@ HID interface for Hammerspoon, controls and queries caps lock state
 
 Portions sourced from (https://discussions.apple.com/thread/7094207).
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#get">get</a></li>
-	<li><a href="#set">set</a></li>
-	<li><a href="#toggle">toggle</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Functions</h4>
-  <section id="get">
-	<h5><a href="#get">get</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hid.capslock.get() -&gt; bool</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Checks the state of the caps lock via HID</p>
-<p>Returns:</p>
-<ul>
-<li>true if on, false if off</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="set">
-	<h5><a href="#set">set</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hid.capslock.set(state) -&gt; bool</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Assigns capslock to the desired state</p>
-<p>Parameters:</p>
-<ul>
-<li>state - A boolean indicating desired state</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>true if on, false if off</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="toggle">
-	<h5><a href="#toggle">toggle</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.hid.capslock.toggle() -&gt; bool</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Toggles the state of caps lock via HID</p>
-<p>Returns:</p>
-<ul>
-<li>true if on, false if off</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [get](#get)
+ * [set](#set)
+ * [toggle](#toggle)
+
+## API Documentation
+
+### Functions
+
+#### [get](#get)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hid.capslock.get() -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Checks the state of the caps lock via HID                                                                                         |
+| **Returns**                                          | <ul><li>true if on, false if off</li></ul>            |
+
+#### [set](#set)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hid.capslock.set(state) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Assigns capslock to the desired state                                                                                         |
+| **Parameters**                                       | <ul><li>state - A boolean indicating desired state</li></ul>   |
+| **Returns**                                          | <ul><li>true if on, false if off</li></ul>            |
+
+#### [toggle](#toggle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hid.capslock.toggle() -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Toggles the state of caps lock via HID                                                                                         |
+| **Returns**                                          | <ul><li>true if on, false if off</li></ul>            |
+

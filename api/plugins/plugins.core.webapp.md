@@ -3,212 +3,80 @@
 
 WebApp Plugin.
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>API Overview</h3>
-<ul>
-<li>Constants - Useful values which cannot be changed</li>
-  <ul>
-	<li><a href="#DEFAULT_PORT">DEFAULT_PORT</a></li>
-	<li><a href="#DEFAULT_SETTING">DEFAULT_SETTING</a></li>
-	<li><a href="#PREFERENCE_NAME">PREFERENCE_NAME</a></li>
-  </ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#copyLinkToPasteboard">copyLinkToPasteboard</a></li>
-	<li><a href="#start">start</a></li>
-	<li><a href="#stop">stop</a></li>
-	<li><a href="#update">update</a></li>
-  </ul>
-<li>Fields - Variables which can only be accessed from an object returned by a constructor</li>
-  <ul>
-	<li><a href="#enabled">enabled</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Constants</h4>
-  <section id="DEFAULT_PORT">
-	<h5><a href="#DEFAULT_PORT">DEFAULT_PORT</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.DEFAULT_PORT -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The Default Port.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="DEFAULT_SETTING">
-	<h5><a href="#DEFAULT_SETTING">DEFAULT_SETTING</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.DEFAULT_SETTING -&gt; boolean</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Whether or not the WebApp should be enabled by default.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="PREFERENCE_NAME">
-	<h5><a href="#PREFERENCE_NAME">PREFERENCE_NAME</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.PREFERENCE_NAME -&gt; string</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constant</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>The Preference Name</p>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Functions</h4>
-  <section id="copyLinkToPasteboard">
-	<h5><a href="#copyLinkToPasteboard">copyLinkToPasteboard</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.copyLinkToPasteboard() -&gt; None</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Copies the Hostname to the Pasteboard.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="start">
-	<h5><a href="#start">start</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.start() -&gt; WebApp</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Starts the WebApp.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The WebApp object.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="stop">
-	<h5><a href="#stop">stop</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.stop() -&gt; WebApp</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Stops the WebApp.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The WebApp object.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="update">
-	<h5><a href="#update">update</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.update() -&gt; None</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Starts or Stops the WebApp.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Fields</h4>
-  <section id="enabled">
-	<h5><a href="#enabled">enabled</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>plugins.core.webapp.enabled &lt;cp.prop: boolean&gt;</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Field</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Is <code>true</code> if the plugin is enabled.</p>
-</td>
-	  </tr>
-	</table>
-  </section>
+## API Overview
+* Constants - Useful values which cannot be changed
+ * [DEFAULT_PORT](#default_port)
+ * [DEFAULT_SETTING](#default_setting)
+ * [PREFERENCE_NAME](#preference_name)
+* Functions - API calls offered directly by the extension
+ * [copyLinkToPasteboard](#copylinktopasteboard)
+ * [start](#start)
+ * [stop](#stop)
+ * [update](#update)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [enabled](#enabled)
+
+## API Documentation
+
+### Constants
+
+#### [DEFAULT_PORT](#default_port)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.DEFAULT_PORT -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The Default Port.                                                                                         |
+
+#### [DEFAULT_SETTING](#default_setting)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.DEFAULT_SETTING -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | Whether or not the WebApp should be enabled by default.                                                                                         |
+
+#### [PREFERENCE_NAME](#preference_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.PREFERENCE_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant                                                                                         |
+| **Description**                                      | The Preference Name                                                                                         |
+
+### Functions
+
+#### [copyLinkToPasteboard](#copylinktopasteboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.copyLinkToPasteboard() -> None` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Copies the Hostname to the Pasteboard.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.start() -> WebApp` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Starts the WebApp.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The WebApp object.</li></ul>            |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.stop() -> WebApp` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Stops the WebApp.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The WebApp object.</li></ul>            |
+
+#### [update](#update)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.update() -> None` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Starts or Stops the WebApp.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+### Fields
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field                                                                                         |
+| **Description**                                      | Is `true` if the plugin is enabled.                                                                                         |
+

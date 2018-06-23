@@ -6,534 +6,172 @@ It also provides convenience wrappers for sending mouse and keyboard events. If 
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
-<style type="text/css">
-	a { text-decoration: none; }
-	a:hover { text-decoration: underline; }
-	th { background-color: #DDDDDD; vertical-align: top; padding: 3px; }
-	td { width: 100%; background-color: #EEEEEE; vertical-align: top; padding: 3px; }
-	table { width: 100% ; border: 1px solid #0; text-align: left; }
-	section > table table td { width: 0; }
-</style>
-<link rel="stylesheet" href="../../css/docs.css" type="text/css" media="screen" />
-<h3>Submodules</h3>
-<ul>
-<li><a href="hs.eventtap.event.md">hs.eventtap.event</a></li>
-</ul>
-<h3>API Overview</h3>
-<ul>
-<li>Functions - API calls offered directly by the extension</li>
-  <ul>
-	<li><a href="#checkKeyboardModifiers">checkKeyboardModifiers</a></li>
-	<li><a href="#checkMouseButtons">checkMouseButtons</a></li>
-	<li><a href="#doubleClickInterval">doubleClickInterval</a></li>
-	<li><a href="#keyRepeatDelay">keyRepeatDelay</a></li>
-	<li><a href="#keyRepeatInterval">keyRepeatInterval</a></li>
-	<li><a href="#keyStroke">keyStroke</a></li>
-	<li><a href="#keyStrokes">keyStrokes</a></li>
-	<li><a href="#leftClick">leftClick</a></li>
-	<li><a href="#middleClick">middleClick</a></li>
-	<li><a href="#otherClick">otherClick</a></li>
-	<li><a href="#rightClick">rightClick</a></li>
-	<li><a href="#scrollWheel">scrollWheel</a></li>
-  </ul>
-<li>Constructors - API calls which return an object, typically one that offers API methods</li>
-  <ul>
-	<li><a href="#new">new</a></li>
-  </ul>
-<li>Methods - API calls which can only be made on an object returned by a constructor</li>
-  <ul>
-	<li><a href="#isEnabled">isEnabled</a></li>
-	<li><a href="#start">start</a></li>
-	<li><a href="#stop">stop</a></li>
-  </ul>
-</ul>
-<h3>API Documentation</h3>
-<h4 class="documentation-section">Functions</h4>
-  <section id="checkKeyboardModifiers">
-	<h5><a href="#checkKeyboardModifiers">checkKeyboardModifiers</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.checkKeyboardModifiers([raw]) -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns a table containing the current key modifiers being pressed or in effect <em>at this instant</em> for the keyboard most recently used.</p>
-<p>Parameters:</p>
-<ul>
-<li>raw - an optional boolean value which, if true, includes the _raw key containing the numeric representation of all of the keyboard/modifier flags.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>Returns a table containing boolean values indicating which keyboard modifiers were held down when the function was invoked; The possible keys are:<ul>
-<li>cmd (or ⌘)</li>
-<li>alt (or ⌥)</li>
-<li>shift (or ⇧)</li>
-<li>ctrl (or ⌃)</li>
-<li>capslock</li>
-<li>fn
-and optionally</li>
-<li>_raw - a numeric representation of the numeric representation of all of the keyboard/modifier flags.</li>
-</ul>
-</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is an instantaneous poll of the current keyboard modifiers for the most recently used keyboard, not a callback.  This is useful primarily in conjuction with other modules, such as <code>hs.menubar</code>, when a callback is already in progress or waiting for an event callback is not practical or possible.</li>
-<li>the numeric value returned is useful if you need to detect device dependent flags or flags which we normally ignore because they are not present (or are accessible another way) on most keyboards.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="checkMouseButtons">
-	<h5><a href="#checkMouseButtons">checkMouseButtons</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.checkMouseButtons() -&gt; table</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns a table containing the current mouse buttons being pressed <em>at this instant</em>.</p>
-<p>Parameters:
- None</p>
-<p>Returns:</p>
-<ul>
-<li>Returns an array containing indicies starting from 1 up to the highest numbered button currently being pressed where the index is <code>true</code> if the button is currently pressed or <code>false</code> if it is not.</li>
-<li>Special hash tag synonyms for <code>left</code> (button 1), <code>right</code> (button 2), and <code>middle</code> (button 3) are also set to true if these buttons are currently being pressed.</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is an instantaneous poll of the current mouse buttons, not a callback.  This is useful primarily in conjuction with other modules, such as <code>hs.menubar</code>, when a callback is already in progress or waiting for an event callback is not practical or possible.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="doubleClickInterval">
-	<h5><a href="#doubleClickInterval">doubleClickInterval</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.doubleClickInterval() -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the system-wide setting for the delay between two clicks, to register a double click event</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A number containing the maximum number of seconds between two mouse click events, for a double click event to be registered</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="keyRepeatDelay">
-	<h5><a href="#keyRepeatDelay">keyRepeatDelay</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.keyRepeatDelay() -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the system-wide setting for the delay before keyboard repeat events begin</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A number containing the number of seconds before repeat events begin, after a key is held down</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="keyRepeatInterval">
-	<h5><a href="#keyRepeatInterval">keyRepeatInterval</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.keyRepeatInterval() -&gt; number</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Returns the system-wide setting for the interval between repeated keyboard events</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>A number containing the number of seconds between keyboard events, if a key is held down</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="keyStroke">
-	<h5><a href="#keyStroke">keyStroke</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.keyStroke(modifiers, character[, delay])</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Generates and emits a single keystroke event pair for the supplied keyboard modifiers and character</p>
-<p>Parameters:</p>
-<ul>
-<li>modifiers - A table containing the keyboard modifiers to apply ("fn", "ctrl", "alt", "cmd", "shift", or their Unicode equivalents)</li>
-<li>character - A string containing a character to be emitted</li>
-<li>delay - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li><p>This function is ideal for sending single keystrokes with a modifier applied (e.g. sending ⌘-v to paste, with <code>hs.eventtap.keyStroke({"cmd"}, "v")</code>). If you want to emit multiple keystrokes for typing strings of text, see <code>hs.eventtap.keyStrokes()</code></p>
-</li>
-<li><p>Note that invoking this function with a table (empty or otherwise) for the <code>modifiers</code> argument will force the release of any modifier keys which have been explicitly created by <a href="#newKeyEvent">hs.eventtap.event.newKeyEvent</a> and posted that are still in the "down" state. An explicit <code>nil</code> for this argument will not (i.e. the keystroke will inherit any currently "down" modifiers)</p>
-</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="keyStrokes">
-	<h5><a href="#keyStrokes">keyStrokes</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.keyStrokes(text)</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Generates and emits keystroke events for the supplied text</p>
-<p>Parameters:</p>
-<ul>
-<li>text - A string containing the text to be typed</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If you want to send a single keystroke with keyboard modifiers (e.g. sending ⌘-v to paste), see <code>hs.eventtap.keyStroke()</code></li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="leftClick">
-	<h5><a href="#leftClick">leftClick</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.leftClick(point[, delay])</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Generates a left mouse click event at the specified point</p>
-<p>Parameters:</p>
-<ul>
-<li>point - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li>
-<li>delay - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a wrapper around <code>hs.eventtap.event.newMouseEvent</code> that sends <code>leftmousedown</code> and <code>leftmouseup</code> events)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="middleClick">
-	<h5><a href="#middleClick">middleClick</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.middleClick(point[, delay])</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Generates a middle mouse click event at the specified point</p>
-<p>Parameters:</p>
-<ul>
-<li>point  - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li>
-<li>delay  - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This function is just a wrapper which calls <code>hs.eventtap.otherClick(point, delay, 2)</code> and is included solely for backwards compatibility.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="otherClick">
-	<h5><a href="#otherClick">otherClick</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.otherClick(point[, delay][, button])</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Generates an "other" mouse click event at the specified point</p>
-<p>Parameters:</p>
-<ul>
-<li>point  - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li>
-<li>delay  - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li>
-<li>button - An optional integer, default 2, between 2 and 31 specifying the button number to be pressed.  If this parameter is specified then <code>delay</code> must also be specified, though you may specify it as <code>nil</code> to use the default.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li><p>This is a wrapper around <code>hs.eventtap.event.newMouseEvent</code> that sends <code>otherMouseDown</code> and <code>otherMouseUp</code> events)</p>
-</li>
-<li><p>macOS recognizes up to 32 distinct mouse buttons, though few mouse devices have more than 3.  The left mouse button corresponds to button number 0 and the right mouse button corresponds to 1;  distinct events are used for these mouse buttons, so you should use <code>hs.eventtap.leftClick</code> and <code>hs.eventtap.rightClick</code> respectively.  All other mouse buttons are coalesced into the <code>otherMouse</code> events and are distinguished by specifying the specific button with the <code>mouseEventButtonNumber</code> property, which this function does for you.</p>
-</li>
-<li>The specific purpose of mouse buttons greater than 2 varies by hardware and application (typically they are not present on a mouse and have no effect in an application)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="rightClick">
-	<h5><a href="#rightClick">rightClick</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.rightClick(point[, delay])</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Generates a right mouse click event at the specified point</p>
-<p>Parameters:</p>
-<ul>
-<li>point - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li>
-<li>delay - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>This is a wrapper around <code>hs.eventtap.event.newMouseEvent</code> that sends <code>rightmousedown</code> and <code>rightmouseup</code> events)</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="scrollWheel">
-	<h5><a href="#scrollWheel">scrollWheel</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.scrollWheel(offsets, modifiers, unit) -&gt; event</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Function</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Generates and emits a scroll wheel event</p>
-<p>Parameters:</p>
-<ul>
-<li>offsets - A table containing the {horizontal, vertical} amount to scroll. Positive values scroll up or left, negative values scroll down or right.</li>
-<li>mods - A table containing zero or more of the following:<ul>
-<li>cmd</li>
-<li>alt</li>
-<li>shift</li>
-<li>ctrl</li>
-<li>fn</li>
-</ul>
-</li>
-<li>unit - An optional string containing the name of the unit for scrolling. Either "line" (the default) or "pixel"</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>None</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Constructors</h4>
-  <section id="new">
-	<h5><a href="#new">new</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap.new(types, fn) -&gt; eventtap</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Constructor</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Create a new event tap object</p>
-<p>Parameters:</p>
-<ul>
-<li>types - A table that should contain values from <code>hs.eventtap.event.types</code></li>
-<li>fn - A function that will be called when the specified event types occur. The function should take a single parameter, which will be an event object. It can optionally return two values. Firstly, a boolean, true if the event should be deleted, false if it should propagate to any other applications watching for that event. Secondly, a table of events to post.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>An event tap object</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>If you specify the argument <code>types</code> as the special table {"all"[, events to ignore]}, then <em>all</em> events (except those you optionally list <em>after</em> the "all" string) will trigger a callback, even events which are not defined in the <a href="https://developer.apple.com/library/mac/documentation/Carbon/Reference/QuartzEventServicesRef/Reference/reference.html">Quartz Event Reference</a>.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-<h4 class="documentation-section">Methods</h4>
-  <section id="isEnabled">
-	<h5><a href="#isEnabled">isEnabled</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap:isEnabled() -&gt; bool</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Determine whether or not an event tap object is enabled.</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>True if the event tap is enabled or false if it is not.</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="start">
-	<h5><a href="#start">start</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap:start()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Starts an event tap</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The event tap object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
-  <section id="stop">
-	<h5><a href="#stop">stop</a></h5>
-	<table>
-	  <tr>
-		<th>Signature</th>
-		<td><code>hs.eventtap:stop()</code></td>
-	  </tr>
-	  <tr>
-		<th>Type</th>
-		<td>Method</td>
-	  </tr>
-	  <tr>
-		<th>Description</th>
-		<td><p>Stops an event tap</p>
-<p>Parameters:</p>
-<ul>
-<li>None</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The event tap object</li>
-</ul>
-</td>
-	  </tr>
-	</table>
-  </section>
+## Submodules
+ * [hs.eventtap.event](hs.eventtap.event.md)
+
+## API Overview
+* Functions - API calls offered directly by the extension
+ * [checkKeyboardModifiers](#checkkeyboardmodifiers)
+ * [checkMouseButtons](#checkmousebuttons)
+ * [doubleClickInterval](#doubleclickinterval)
+ * [keyRepeatDelay](#keyrepeatdelay)
+ * [keyRepeatInterval](#keyrepeatinterval)
+ * [keyStroke](#keystroke)
+ * [keyStrokes](#keystrokes)
+ * [leftClick](#leftclick)
+ * [middleClick](#middleclick)
+ * [otherClick](#otherclick)
+ * [rightClick](#rightclick)
+ * [scrollWheel](#scrollwheel)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [new](#new)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [isEnabled](#isenabled)
+ * [start](#start)
+ * [stop](#stop)
+
+## API Documentation
+
+### Functions
+
+#### [checkKeyboardModifiers](#checkkeyboardmodifiers)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.checkKeyboardModifiers([raw]) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a table containing the current key modifiers being pressed or in effect *at this instant* for the keyboard most recently used.                                                                                         |
+| **Parameters**                                       | <ul><li>raw - an optional boolean value which, if true, includes the _raw key containing the numeric representation of all of the keyboard/modifier flags.</li></ul>   |
+| **Returns**                                          | <ul><li>Returns a table containing boolean values indicating which keyboard modifiers were held down when the function was invoked; The possible keys are:</li></ul><pre><code>* cmd (or ⌘)</code></pre><pre><code>* alt (or ⌥)</code></pre><pre><code>* shift (or ⇧)</code></pre><pre><code>* ctrl (or ⌃)</code></pre><pre><code>* capslock</code></pre><pre><code>* fn</code></pre><p>and optionally</p><pre><code>* _raw - a numeric representation of the numeric representation of all of the keyboard/modifier flags.</code></pre>            |
+| **Notes**                                            | <ul><li>This is an instantaneous poll of the current keyboard modifiers for the most recently used keyboard, not a callback.  This is useful primarily in conjuction with other modules, such as <code>hs.menubar</code>, when a callback is already in progress or waiting for an event callback is not practical or possible.</li></ul><ul><li>the numeric value returned is useful if you need to detect device dependent flags or flags which we normally ignore because they are not present (or are accessible another way) on most keyboards.</li></ul>                 |
+
+#### [checkMouseButtons](#checkmousebuttons)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.checkMouseButtons() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns a table containing the current mouse buttons being pressed *at this instant*.                                                                                         |
+| **Parameters**                                       | <p>None</p>   |
+| **Returns**                                          | <ul><li>Returns an array containing indicies starting from 1 up to the highest numbered button currently being pressed where the index is <code>true</code> if the button is currently pressed or <code>false</code> if it is not.</li></ul><ul><li>Special hash tag synonyms for <code>left</code> (button 1), <code>right</code> (button 2), and <code>middle</code> (button 3) are also set to true if these buttons are currently being pressed.</li></ul>            |
+| **Notes**                                            | <ul><li>This is an instantaneous poll of the current mouse buttons, not a callback.  This is useful primarily in conjuction with other modules, such as <code>hs.menubar</code>, when a callback is already in progress or waiting for an event callback is not practical or possible.</li></ul>                 |
+
+#### [doubleClickInterval](#doubleclickinterval)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.doubleClickInterval() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the system-wide setting for the delay between two clicks, to register a double click event                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A number containing the maximum number of seconds between two mouse click events, for a double click event to be registered</li></ul>            |
+
+#### [keyRepeatDelay](#keyrepeatdelay)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyRepeatDelay() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the system-wide setting for the delay before keyboard repeat events begin                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A number containing the number of seconds before repeat events begin, after a key is held down</li></ul>            |
+
+#### [keyRepeatInterval](#keyrepeatinterval)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyRepeatInterval() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Returns the system-wide setting for the interval between repeated keyboard events                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>A number containing the number of seconds between keyboard events, if a key is held down</li></ul>            |
+
+#### [keyStroke](#keystroke)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStroke(modifiers, character[, delay])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates and emits a single keystroke event pair for the supplied keyboard modifiers and character                                                                                         |
+| **Parameters**                                       | <ul><li>modifiers - A table containing the keyboard modifiers to apply ("fn", "ctrl", "alt", "cmd", "shift", or their Unicode equivalents)</li></ul><ul><li>character - A string containing a character to be emitted</li></ul><ul><li>delay - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This function is ideal for sending single keystrokes with a modifier applied (e.g. sending ⌘-v to paste, with <code>hs.eventtap.keyStroke({"cmd"}, "v")</code>). If you want to emit multiple keystrokes for typing strings of text, see <code>hs.eventtap.keyStrokes()</code></li></ul>                 |
+
+#### [keyStrokes](#keystrokes)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStrokes(text)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates and emits keystroke events for the supplied text                                                                                         |
+| **Parameters**                                       | <ul><li>text - A string containing the text to be typed</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>If you want to send a single keystroke with keyboard modifiers (e.g. sending ⌘-v to paste), see <code>hs.eventtap.keyStroke()</code></li></ul>                 |
+
+#### [leftClick](#leftclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.leftClick(point[, delay])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates a left mouse click event at the specified point                                                                                         |
+| **Parameters**                                       | <ul><li>point - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li></ul><ul><li>delay - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a wrapper around <code>hs.eventtap.event.newMouseEvent</code> that sends <code>leftmousedown</code> and <code>leftmouseup</code> events)</li></ul>                 |
+
+#### [middleClick](#middleclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.middleClick(point[, delay])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates a middle mouse click event at the specified point                                                                                         |
+| **Parameters**                                       | <ul><li>point  - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li></ul><ul><li>delay  - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This function is just a wrapper which calls <code>hs.eventtap.otherClick(point, delay, 2)</code> and is included solely for backwards compatibility.</li></ul>                 |
+
+#### [otherClick](#otherclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.otherClick(point[, delay][, button])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates an "other" mouse click event at the specified point                                                                                         |
+| **Parameters**                                       | <ul><li>point  - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li></ul><ul><li>delay  - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li></ul><ul><li>button - An optional integer, default 2, between 2 and 31 specifying the button number to be pressed.  If this parameter is specified then <code>delay</code> must also be specified, though you may specify it as <code>nil</code> to use the default.</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a wrapper around <code>hs.eventtap.event.newMouseEvent</code> that sends <code>otherMouseDown</code> and <code>otherMouseUp</code> events)</li></ul>                 |
+
+#### [rightClick](#rightclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.rightClick(point[, delay])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates a right mouse click event at the specified point                                                                                         |
+| **Parameters**                                       | <ul><li>point - A table with keys <code>{x, y}</code> indicating the location where the mouse event should occur</li></ul><ul><li>delay - An optional delay (in microseconds) between mouse down and up event. Defaults to 200000 (i.e. 200ms)</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Notes**                                            | <ul><li>This is a wrapper around <code>hs.eventtap.event.newMouseEvent</code> that sends <code>rightmousedown</code> and <code>rightmouseup</code> events)</li></ul>                 |
+
+#### [scrollWheel](#scrollwheel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.scrollWheel(offsets, modifiers, unit) -> event` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function                                                                                         |
+| **Description**                                      | Generates and emits a scroll wheel event                                                                                         |
+| **Parameters**                                       | <ul><li>offsets - A table containing the {horizontal, vertical} amount to scroll. Positive values scroll up or left, negative values scroll down or right.</li></ul><ul><li>mods - A table containing zero or more of the following:</li></ul><ul><li>cmd</li></ul><ul><li>alt</li></ul><ul><li>shift</li></ul><ul><li>ctrl</li></ul><ul><li>fn</li></ul><ul><li>unit - An optional string containing the name of the unit for scrolling. Either "line" (the default) or "pixel"</li></ul>   |
+| **Returns**                                          | <ul><li>None</li></ul>            |
+
+### Constructors
+
+#### [new](#new)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.new(types, fn) -> eventtap` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor                                                                                         |
+| **Description**                                      | Create a new event tap object                                                                                         |
+| **Parameters**                                       | <ul><li>types - A table that should contain values from <code>hs.eventtap.event.types</code></li></ul><ul><li>fn - A function that will be called when the specified event types occur. The function should take a single parameter, which will be an event object. It can optionally return two values. Firstly, a boolean, true if the event should be deleted, false if it should propagate to any other applications watching for that event. Secondly, a table of events to post.</li></ul>   |
+| **Returns**                                          | <ul><li>An event tap object</li></ul>            |
+| **Notes**                                            | <ul><li>If you specify the argument <code>types</code> as the special table {"all"[, events to ignore]}, then <em>all</em> events (except those you optionally list <em>after</em> the "all" string) will trigger a callback, even events which are not defined in the <a href="https://developer.apple.com/library/mac/documentation/Carbon/Reference/QuartzEventServicesRef/Reference/reference.html">Quartz Event Reference</a>.</li></ul>                 |
+
+### Methods
+
+#### [isEnabled](#isenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap:isEnabled() -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Determine whether or not an event tap object is enabled.                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>True if the event tap is enabled or false if it is not.</li></ul>            |
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap:start()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Starts an event tap                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The event tap object</li></ul>            |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap:stop()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method                                                                                         |
+| **Description**                                      | Stops an event tap                                                                                         |
+| **Parameters**                                       | <ul><li>None</li></ul>   |
+| **Returns**                                          | <ul><li>The event tap object</li></ul>            |
+
