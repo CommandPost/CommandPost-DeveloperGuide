@@ -17,16 +17,16 @@ Note: This extension works by controlling the OS X "Messages" app via AppleScrip
 #### [iMessage](#imessage)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.messages.iMessage(targetAddress, message)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sends an iMessage                                                                                         |
-| **Parameters**                                       | <ul><br /><li>targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to * message - A string containing the message to send</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Sends an iMessage |
+| **Parameters**                                       | <ul><li>targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to * message - A string containing the message to send</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [SMS](#sms)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.messages.SMS(targetNumber, message)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sends an SMS using SMS Relay                                                                                         |
-| **Parameters**                                       | <ul><br /><li>targetNumber - A string containing a phone number to send an SMS to * message - A string containing the message to send</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Sends an SMS using SMS Relay |
+| **Parameters**                                       | <ul><li>targetNumber - A string containing a phone number to send an SMS to * message - A string containing the message to send</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

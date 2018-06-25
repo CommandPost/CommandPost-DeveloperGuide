@@ -14,8 +14,8 @@ Feedback Form.
 #### [showFeedback](#showfeedback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.feedback.showFeedback(quitOnComplete) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Displays the Feedback Screen.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>quitOnComplete - <code>true</code> if you want CommandPost to quit after the Feedback is complete otherwise <code>false</code></li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Displays the Feedback Screen. |
+| **Parameters**                                       | <ul><li>quitOnComplete - <code>true</code> if you want CommandPost to quit after the Feedback is complete otherwise <code>false</code></li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

@@ -20,38 +20,38 @@ making a selection of multiple clips using your mouse as a "lasso".
 #### [active](#active)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.bugfix.clipselection.active <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Checks if the plugin is currently active, depending on `enabled` and which                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Checks if the plugin is currently active, depending on `enabled` and which |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.bugfix.clipselection.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Allows the fix to be enabled/disabled by setting the `bugfix_clipselection'                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Allows the fix to be enabled/disabled by setting the `bugfix_clipselection' |
 
 ### Functions
 
 #### [activate](#activate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.bugfix.clipselection.activate() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Activates the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Activates the module. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [deactivate](#deactivate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.bugfix.clipselection.deactivate() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Deactivates the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Deactivates the module. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.bugfix.clipselection.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialises the module. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

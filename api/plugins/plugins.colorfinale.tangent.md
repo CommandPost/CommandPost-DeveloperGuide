@@ -19,34 +19,34 @@ This plugin basically just disables CP's Tangent Manager when ColorFinale is run
 #### [colorFinaleActive](#colorfinaleactive)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.colorFinaleActive <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Checks to see if ColorFinale is active.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Checks to see if ColorFinale is active. |
 
 #### [colorFinaleInstalled](#colorfinaleinstalled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.colorFinaleInstalled <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Checks to see if ColorFinale is installed.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Checks to see if ColorFinale is installed. |
 
 #### [colorFinaleVisible](#colorfinalevisible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.colorFinaleVisible <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Checks to see if an object is a Color Finale window.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Checks to see if an object is a Color Finale window. |
 
 #### [colorFinaleWindowUI](#colorfinalewindowui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.colorFinaleWindowUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Returns the `axuielement` for the ColorFinale window, if present.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Returns the `axuielement` for the ColorFinale window, if present. |
 
 ### Functions
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.init(tangentManager) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>tangentManager - The Tangent Manager</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The ColorFinale Tangent Module.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialise the module. |
+| **Parameters**                                       | <ul><li>tangentManager - The Tangent Manager</li></ul> |
+| **Returns**                                          | <ul><li>The ColorFinale Tangent Module.</li></ul> |
 

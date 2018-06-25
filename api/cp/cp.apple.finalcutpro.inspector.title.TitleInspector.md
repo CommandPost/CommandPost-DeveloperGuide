@@ -59,44 +59,44 @@ title:stabilization():smoothing():show():value(1.5)
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.title.TitleInspector.matches(element)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks if the provided element could be a TitleInspector.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>element   - The element to check</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if it matches, <code>false</code> if not.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the provided element could be a TitleInspector. |
+| **Parameters**                                       | <ul><li>element   - The element to check</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if it matches, <code>false</code> if not.</li></ul> |
 
 ### Constructors
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.title.TitleInspector.new(parent) -> cp.apple.finalcutpro.title.TitleInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `TitleInspector` object                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>parent</code>     - The parent</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A <code>TitleInspector</code> object</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `TitleInspector` object |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A <code>TitleInspector</code> object</li></ul> |
 
 ### Methods
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.title.TitleInspector:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The application object as a table</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.title.TitleInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the TitleInspector's parent table                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The parent object as a table</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the TitleInspector's parent table |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.title.TitleInspector:show() -> TitleInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Shows the Title Inspector                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>TitleInspector</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Shows the Title Inspector |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>TitleInspector</li></ul> |
 

@@ -23,54 +23,54 @@ Virtual Touch Bar Plugin.
 #### [LOCATION_TIMELINE](#location_timeline)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.LOCATION_TIMELINE -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Virtual Touch Bar is displayed in the top centre of the Final Cut Pro timeline                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Virtual Touch Bar is displayed in the top centre of the Final Cut Pro timeline |
 
 #### [VISIBILITY_ALWAYS](#visibility_always)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.VISIBILITY_ALWAYS -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Virtual Touch Bar is Always Visible                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Virtual Touch Bar is Always Visible |
 
 #### [VISIBILITY_DEFAULT](#visibility_default)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.VISIBILITY_DEFAULT -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The default visibility.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | The default visibility. |
 
 #### [VISIBILITY_FCP](#visibility_fcp)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.VISIBILITY_FCP -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Virtual Touch Bar is only visible when Final Cut Pro is active.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Virtual Touch Bar is only visible when Final Cut Pro is active. |
 
 ### Functions
 
 #### [updateLocation](#updatelocation)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.updateLocation() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates the Location of the Virtual Touch Bar                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Updates the Location of the Virtual Touch Bar |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is `true` if the plugin is enabled.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Is `true` if the plugin is enabled. |
 
 #### [location](#location)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.location <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The Virtual Touch Bar Location Setting                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | The Virtual Touch Bar Location Setting |
 
 #### [visibility](#visibility)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.touchbar.virtual.visibility <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | When should the Virtual Touch Bar be visible?                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | When should the Virtual Touch Bar be visible? |
 

@@ -16,16 +16,16 @@ Add Note Plugin.
 #### [addNoteToSelectedClip](#addnotetoselectedclip)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.browser.addnote.addNoteToSelectedClip() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Add Note to Selected Clip.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Add Note to Selected Clip. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields
 
 #### [recentNotes](#recentnotes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.browser.addnote.recentNotes <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Table of recent notes.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Table of recent notes. |
 

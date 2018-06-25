@@ -67,348 +67,348 @@ MIDI Manager Plugin.
 #### [DEFAULT_GROUP](#default_group)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.DEFAULT_GROUP -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The default group.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | The default group. |
 
 #### [DEFAULT_MIDI_CONTROLS](#default_midi_controls)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.DEFAULT_MIDI_CONTROLS -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The default MIDI controls, so that the user has a starting point.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | The default MIDI controls, so that the user has a starting point. |
 
 #### [FILE_NAME](#file_name)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.FILE_NAME -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | File name of settings file.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | File name of settings file. |
 
 #### [FOLDER_NAME](#folder_name)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.FOLDER_NAME -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Folder Name where settings file is contained.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Folder Name where settings file is contained. |
 
 #### [MMC_COMMAND_TYPE](#mmc_command_type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.MMC_COMMAND_TYPE -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | MMC Command Types                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | MMC Command Types |
 
 #### [MMC_TIMECODE_TYPE](#mmc_timecode_type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.MMC_TIMECODE_TYPE -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | MMC Timecode Type                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | MMC Timecode Type |
 
 #### [MTC_COMMAND_TYPE](#mtc_command_type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.MTC_COMMAND_TYPE -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | MTC Command Type                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | MTC Command Type |
 
 #### [MTC_MESSAGE_TYPE](#mtc_message_type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.MTC_MESSAGE_TYPE -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | MTC Message Types                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | MTC Message Types |
 
 #### [MTC_TIMECODE_TYPE](#mtc_timecode_type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.MTC_TIMECODE_TYPE -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | MTC Timecode Type                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | MTC Timecode Type |
 
 ### Variables
 
 #### [learningMode](#learningmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.learningMode -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Whether or not the MIDI Manager is in learning mode.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Whether or not the MIDI Manager is in learning mode. |
 
 #### [maxItems](#maxitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.maxItems -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The maximum number of MIDI items per group.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | The maximum number of MIDI items per group. |
 
 #### [numberOfSubGroups](#numberofsubgroups)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.numberOfSubGroups -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | The number of Sub Groups per Touch Bar Group.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | The number of Sub Groups per Touch Bar Group. |
 
 ### Functions
 
 #### [activeGroup](#activegroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeGroup() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the active group.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Returns the active group or <code>manager.defaultGroup</code> as a string.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Returns the active group. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Returns the active group or <code>manager.defaultGroup</code> as a string.</li></ul> |
 
 #### [activeSubGroup](#activesubgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeSubGroup() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the active sub-group.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Returns the active sub group as string</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Returns the active sub-group. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Returns the active sub group as string</li></ul> |
 
 #### [clear](#clear)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.clear() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Clears the MIDI items.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Clears the MIDI items. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [devices](#devices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.devices() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets a table of Physical MIDI Device Names.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table of Physical MIDI Device Names.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Gets a table of Physical MIDI Device Names. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of Physical MIDI Device Names.</li></ul> |
 
 #### [forcefullyWatchMIDIDevices](#forcefullywatchmididevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.forcefullyWatchMIDIDevices(devices) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Forces CommandPost to watch a table of MIDI devices.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>devices - A table containing all the device names you want to always watch.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table of Virtual MIDI Source Names.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Forces CommandPost to watch a table of MIDI devices. |
+| **Parameters**                                       | <ul><li>devices - A table containing all the device names you want to always watch.</li></ul> |
+| **Returns**                                          | <ul><li>A table of Virtual MIDI Source Names.</li></ul> |
 
 #### [forceGroupChange](#forcegroupchange)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.forceGroupChange(combinedGroupAndSubGroupID) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Loads a specific sub-group.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>combinedGroupAndSubGroupID - The group and subgroup as a single string.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Loads a specific sub-group. |
+| **Parameters**                                       | <ul><li>combinedGroupAndSubGroupID - The group and subgroup as a single string.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [getDevice](#getdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getDevice(deviceName, virtual) -> hs.midi object | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets a MIDI Device.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>deviceName - The device name. * virtual - A boolean that defines whether or not the device is virtual.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A <code>hs.midi</code> object or nil if no MIDI device by that name exists.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Gets a MIDI Device. |
+| **Parameters**                                       | <ul><li>deviceName - The device name. * virtual - A boolean that defines whether or not the device is virtual.</li></ul> |
+| **Returns**                                          | <ul><li>A <code>hs.midi</code> object or nil if no MIDI device by that name exists.</li></ul> |
 
 #### [getItem](#getitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getItem(item, button, group) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets a MIDI item from Preferences.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>item - The item you want to get. * button - Button ID as string * group - Group ID as string</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table otherwise <code>nil</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Gets a MIDI item from Preferences. |
+| **Parameters**                                       | <ul><li>item - The item you want to get. * button - Button ID as string * group - Group ID as string</li></ul> |
+| **Returns**                                          | <ul><li>A table otherwise <code>nil</code></li></ul> |
 
 #### [getItems](#getitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getItems() -> tables` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets all the MIDI items in a table.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Gets all the MIDI items in a table. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table</li></ul> |
 
 #### [gotoSubGroup](#gotosubgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.gotoSubGroup() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Loads a specific sub-group.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>id - The ID of the sub-group.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Loads a specific sub-group. |
+| **Parameters**                                       | <ul><li>id - The ID of the sub-group.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [groupStatus](#groupstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.groupStatus(groupID, status) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates a group's visibility status.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>groupID - the group you want to update as a string. * status - the status of the group as a boolean.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Updates a group's visibility status. |
+| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string. * status - the status of the group as a boolean.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.init(deps, env) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialises the MIDI Plugin                                                                                         |
-| **Parameters**                                       | <ul><br /><li>deps - Dependencies Table * env - Environment Table</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialises the MIDI Plugin |
+| **Parameters**                                       | <ul><li>deps - Dependencies Table * env - Environment Table</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [midiCallback](#midicallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.midiCallback(object, deviceName, commandType, description, metadata) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | MIDI Callback                                                                                         |
-| **Parameters**                                       | <ul><br /><li>object - The <code>hs.midi</code> userdata object * deviceName - Device name as string * commandType - Command Type as string * description - Description as string * metadata - A table containing metadata for the MIDI command</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | MIDI Callback |
+| **Parameters**                                       | <ul><li>object - The <code>hs.midi</code> userdata object * deviceName - Device name as string * commandType - Command Type as string * description - Description as string * metadata - A table containing metadata for the MIDI command</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [nextSubGroup](#nextsubgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.nextSubGroup() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Goes to the next sub-group for the active group.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Goes to the next sub-group for the active group. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [previousSubGroup](#previoussubgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.previousSubGroup() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Goes to the previous sub-group for the active group.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Goes to the previous sub-group for the active group. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [processMMC](#processmmc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.processMMC(sysexData) -> string, ...` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Process MMC Data                                                                                         |
-| **Parameters**                                       | <ul><br /><li>sysexData - Sysex Data as Hex String</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A string with the MMC command, and any additional parameters as per below notes.</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>The possible MMC commands are:   * STOP   * PLAY   * DEFERRED_PLAY   * FAST_FORWARD   * REWIND   * RECORD_STROBE   * RECORD_EXIT   * RECORD_PAUSE   * PAUSE   * EJECT   * CHASE   * MMC_RESET   * WRITE   * GOTO     * timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").     * frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".     * subframe - Subframe as string.   * ERROR   * SHUTTLE</li><br /></ul>                                             |
+| **Type**                                             | Function |
+| **Description**                                      | Process MMC Data |
+| **Parameters**                                       | <ul><li>sysexData - Sysex Data as Hex String</li></ul> |
+| **Returns**                                          | <ul><li>A string with the MMC command, and any additional parameters as per below notes.</li></ul> |
+| **Notes**                                            | <ul><li>The possible MMC commands are:   * STOP   * PLAY   * DEFERRED_PLAY   * FAST_FORWARD   * REWIND   * RECORD_STROBE   * RECORD_EXIT   * RECORD_PAUSE   * PAUSE   * EJECT   * CHASE   * MMC_RESET   * WRITE   * GOTO     * timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").     * frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".     * subframe - Subframe as string.   * ERROR   * SHUTTLE</li></ul> |
 
 #### [processMTC](#processmtc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.processMTC(mtcData) -> string, ...` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Process MTC Data                                                                                         |
-| **Parameters**                                       | <ul><br /><li>mtcData - MTC Data as Hex String</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A string with the MTC command, and any additional parameters.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Process MTC Data |
+| **Parameters**                                       | <ul><li>mtcData - MTC Data as Hex String</li></ul> |
+| **Returns**                                          | <ul><li>A string with the MTC command, and any additional parameters.</li></ul> |
 
 #### [registerCallback](#registercallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.registerCallback(id, fn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Registers a MIDI Callback.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>id - The ID as a string. * fn - The function you want to trigger.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Registers a MIDI Callback. |
+| **Parameters**                                       | <ul><li>id - The ID as a string. * fn - The function you want to trigger.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [registerListenMMCFunction](#registerlistenmmcfunction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.registerListenMMCFunction(id, fn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Registers a MMC Listening Function                                                                                         |
-| **Parameters**                                       | <ul><br /><li>id - The group ID as a string. * fn - The function you want to trigger.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Registers a MMC Listening Function |
+| **Parameters**                                       | <ul><li>id - The group ID as a string. * fn - The function you want to trigger.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [registerListenMTCFunction](#registerlistenmtcfunction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.registerListenMTCFunction(id, fn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Registers a MTC Listening Function                                                                                         |
-| **Parameters**                                       | <ul><br /><li>id - The group ID as a string. * fn - The function you want to trigger.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Registers a MTC Listening Function |
+| **Parameters**                                       | <ul><li>id - The group ID as a string. * fn - The function you want to trigger.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [sendMMC](#sendmmc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.sendMMC(deviceName, virtual, commandType, parameters) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Sends MMC Data to a MIDI Device.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>deviceName - The MIDI Device name. * virtual - Is this MIDI Device virtual as boolean? * channelNumber - "00" to "7F", where "7F" is all devices. * commandType - Command Type as string (see possible options in Notes below) * parameters - Optional parameters in a table.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successfully sent otherwise <code>false</code>.</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>The possible MMC commands are:   * STOP   * PLAY   * DEFERRED_PLAY   * FAST_FORWARD   * REWIND   * RECORD_STROBE   * RECORD_EXIT   * RECORD_PAUSE   * PAUSE   * EJECT   * CHASE   * MMC_RESET   * WRITE   * GOTO     * timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").     * frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".     * subFrame - Subframe as string.   * ERROR   * SHUTTLE* Example Usage:  <code>lua    _plugins("core.midi.manager").sendMMC("CommandPost", false, "7F", "GOTO", {timecode="01:02:03:04", frameRate="25", subFrame="00"})</code></li><br /></ul>                                             |
+| **Type**                                             | Function |
+| **Description**                                      | Sends MMC Data to a MIDI Device. |
+| **Parameters**                                       | <ul><li>deviceName - The MIDI Device name. * virtual - Is this MIDI Device virtual as boolean? * channelNumber - "00" to "7F", where "7F" is all devices. * commandType - Command Type as string (see possible options in Notes below) * parameters - Optional parameters in a table.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successfully sent otherwise <code>false</code>.</li></ul> |
+| **Notes**                                            | <ul><li>The possible MMC commands are:   * STOP   * PLAY   * DEFERRED_PLAY   * FAST_FORWARD   * REWIND   * RECORD_STROBE   * RECORD_EXIT   * RECORD_PAUSE   * PAUSE   * EJECT   * CHASE   * MMC_RESET   * WRITE   * GOTO     * timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").     * frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".     * subFrame - Subframe as string.   * ERROR   * SHUTTLE* Example Usage:  <code>lua    _plugins("core.midi.manager").sendMMC("CommandPost", false, "7F", "GOTO", {timecode="01:02:03:04", frameRate="25", subFrame="00"})</code></li></ul> |
 
 #### [setItem](#setitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.setItem(item, button, group, value) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Stores a MIDI item in Preferences.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>item - The item you want to set. * button - Button ID as string * group - Group ID as string * value - The value of the item you want to set.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Stores a MIDI item in Preferences. |
+| **Parameters**                                       | <ul><li>item - The item you want to set. * button - Button ID as string * group - Group ID as string * value - The value of the item you want to set.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.start() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Stops the MIDI Plugin                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Stops the MIDI Plugin |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates the MIDI Watchers.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Updates the MIDI Watchers. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateAction](#updateaction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.updateAction(button, group, actionTitle, handlerID, action) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Updates a MIDI action.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>button - Button ID as string * group - Group ID as string * actionTitle - Action Title as string * handlerID - Handler ID as string * action - Action in a table</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Updates a MIDI action. |
+| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * actionTitle - Action Title as string * handlerID - Handler ID as string * action - Action in a table</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [virtualDevices](#virtualdevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.virtualDevices() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets a table of Virtual MIDI Source Names.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table of Virtual MIDI Source Names.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Gets a table of Virtual MIDI Source Names. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of Virtual MIDI Source Names.</li></ul> |
 
 ### Fields
 
 #### [buttons](#buttons)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.buttons <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Contains all the saved MIDI items                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Contains all the saved MIDI items |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Enable or disable MIDI Support.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Enable or disable MIDI Support. |
 
 #### [listenMMC](#listenmmc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.listenMMC <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Enable or disable Listen MMC Support.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Enable or disable Listen MMC Support. |
 
 #### [listenMMCDevice](#listenmmcdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.listenMMCDevice <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | MIDI Device                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | MIDI Device |
 
 #### [listenMTC](#listenmtc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.listenMTC <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Enable or disable Listen MTC Support.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Enable or disable Listen MTC Support. |
 
 #### [listenMTCDevice](#listenmtcdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.listenMTCDevice <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | MIDI Device                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | MIDI Device |
 
 #### [transmitMMC](#transmitmmc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.transmitMMC <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Enable or disable Transmit MMC Support.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Enable or disable Transmit MMC Support. |
 
 #### [transmitMMCDevice](#transmitmmcdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.transmitMMCDevice <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | MIDI Device                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | MIDI Device |
 
 #### [transmitMTC](#transmitmtc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.transmitMTC <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Enable or disable Transmit MTC Support.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Enable or disable Transmit MTC Support. |
 
 #### [transmitMTCDevice](#transmitmtcdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.transmitMTCDevice <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | MIDI Device                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | MIDI Device |
 

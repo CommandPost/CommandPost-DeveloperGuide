@@ -34,16 +34,16 @@ If a # is place before the timecode, it will create a "To Do" marker.
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.browser.pasteboardtomarkers.init() -> deps` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>deps - Plugin Dependencies</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialise the module. |
+| **Parameters**                                       | <ul><li>deps - Plugin Dependencies</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [process](#process)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.browser.pasteboardtomarkers.process() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Processes Pasteboard to Markers                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Processes Pasteboard to Markers |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

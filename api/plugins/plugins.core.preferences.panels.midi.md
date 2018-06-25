@@ -18,24 +18,24 @@ MIDI Preferences Panel
 #### [_currentlyLearning](#_currentlylearning)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi._currentlyLearning -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Are we in learning mode?                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Are we in learning mode? |
 
 ### Functions
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi.init(deps, env) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialise the Module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>deps - Dependancies Table * env - Environment Table</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The Module</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialise the Module. |
+| **Parameters**                                       | <ul><li>deps - Dependancies Table * env - Environment Table</li></ul> |
+| **Returns**                                          | <ul><li>The Module</li></ul> |
 
 ### Fields
 
 #### [lastGroup](#lastgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi.lastGroup <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Last group used in the Preferences Drop Down.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Last group used in the Preferences Drop Down. |
 

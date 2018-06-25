@@ -27,71 +27,71 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 #### [activated](#activated)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.activated` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | An application has been activated (i.e. given keyboard/mouse focus)                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | An application has been activated (i.e. given keyboard/mouse focus) |
 
 #### [deactivated](#deactivated)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.deactivated` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | An application has been deactivated (i.e. lost keyboard/mouse focus)                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | An application has been deactivated (i.e. lost keyboard/mouse focus) |
 
 #### [hidden](#hidden)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.hidden` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | An application has been hidden                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | An application has been hidden |
 
 #### [launched](#launched)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.launched` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | An application has been launched                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | An application has been launched |
 
 #### [launching](#launching)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.launching` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | An application is in the process of being launched                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | An application is in the process of being launched |
 
 #### [terminated](#terminated)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.terminated` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | An application has been terminated                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | An application has been terminated |
 
 #### [unhidden](#unhidden)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.unhidden` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | An application has been unhidden                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | An application has been unhidden |
 
 ### Constructors
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher.new(fn) -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates an application event watcher                                                                                         |
-| **Parameters**                                       | <ul><br /><li>fn - A function that will be called when application events happen. It should accept three parameters:  * A string containing the name of the application  * An event type (see the constants defined above)  * An <code>hs.application</code> object representing the application, or nil if the application couldn't be found</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>An <code>hs.application.watcher</code> object</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>If the function is called with an event type of <code>hs.application.watcher.terminated</code> then the application name parameter will be <code>nil</code> and the <code>hs.application</code> parameter, will only be useful for getting the UNIX process ID (i.e. the PID) of the application</li><br /></ul>                                             |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates an application event watcher |
+| **Parameters**                                       | <ul><li>fn - A function that will be called when application events happen. It should accept three parameters:  * A string containing the name of the application  * An event type (see the constants defined above)  * An <code>hs.application</code> object representing the application, or nil if the application couldn't be found</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.application.watcher</code> object</li></ul> |
+| **Notes**                                            | <ul><li>If the function is called with an event type of <code>hs.application.watcher.terminated</code> then the application name parameter will be <code>nil</code> and the <code>hs.application</code> parameter, will only be useful for getting the UNIX process ID (i.e. the PID) of the application</li></ul> |
 
 ### Methods
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher:start()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Starts the application watcher                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <code>hs.application.watcher</code> object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Starts the application watcher |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.application.watcher</code> object</li></ul> |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.watcher:stop()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Stops the application watcher                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <code>hs.application.watcher</code> object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Stops the application watcher |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.application.watcher</code> object</li></ul> |
 

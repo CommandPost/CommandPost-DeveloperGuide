@@ -16,16 +16,16 @@ Final Cut Pro Tangent Viewer Overlay Group
 #### [group](#group)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.overlay.group` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The `core.tangent.manager.group` that collects Final Cut Pro New actions/parameters/etc.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | The `core.tangent.manager.group` that collects Final Cut Pro New actions/parameters/etc. |
 
 ### Functions
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.overlay.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialises the module. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

@@ -14,6 +14,6 @@ Moving Markers Plugin.
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.movingmarkers.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Gets whether or not moving markers are enabled.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Gets whether or not moving markers are enabled. |
 

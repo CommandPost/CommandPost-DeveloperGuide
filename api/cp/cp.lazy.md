@@ -15,12 +15,12 @@ Lazy Extension.
 #### [fn](#fn)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.lazy.fn(target) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Prepares the `target` to assign factory functions.                                                                                         |
+| **Type**                                             | Function |
+| **Description**                                      | Prepares the `target` to assign factory functions. |
 
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.lazy.value(target) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Prepares the `target` to assign factory functions.                                                                                         |
+| **Type**                                             | Function |
+| **Description**                                      | Prepares the `target` to assign factory functions. |
 

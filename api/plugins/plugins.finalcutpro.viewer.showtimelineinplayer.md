@@ -14,6 +14,6 @@ Show Timeline In Player.
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.showtimelineinplayer.enabled <cp.prop: boolean; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Show Timeline in Player Enabled?                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Show Timeline in Player Enabled? |
 

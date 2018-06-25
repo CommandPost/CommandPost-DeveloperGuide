@@ -27,84 +27,84 @@ Timeline Contents Module.
 #### [clipsUI](#clipsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:clipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table containing the list of clips in the Timeline.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The table of axuielements that match the conditions</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Returns a table containing the list of clips in the Timeline. |
+| **Parameters**                                       | <ul><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li></ul> |
+| **Returns**                                          | <ul><li>The table of axuielements that match the conditions</li></ul> |
 
 #### [playheadClipsUI](#playheadclipsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:playheadClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table array containing the list of clips in the Timeline under the playhead, ordered with the                                                                                         |
-| **Parameters**                                       | <ul><br /><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The table of axuielements that match the conditions</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Returns a table array containing the list of clips in the Timeline under the playhead, ordered with the |
+| **Parameters**                                       | <ul><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li></ul> |
+| **Returns**                                          | <ul><li>The table of axuielements that match the conditions</li></ul> |
 
 ### Fields
 
 #### [horizontalScrollBarUI](#horizontalscrollbarui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.horizontalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The `AXHorizontalScrolLbar` for the Timeline Contents area.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | The `AXHorizontalScrolLbar` for the Timeline Contents area. |
 
 #### [isFocused](#isfocused)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.isFocused <cp.prop: booelan; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Checks if the Timeline is currently the focused panel.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the Timeline is currently the focused panel. |
 
 #### [isLoaded](#isloaded)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.isLoaded <cp.prop: booelan; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Checks if the Timeline has content loaded.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the Timeline has content loaded. |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.isShowing <cp.prop: booelan; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Checks if the Timeline is currently showing.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the Timeline is currently showing. |
 
 #### [scrollAreaUI](#scrollareaui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.scrollAreaUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The parent `ScrollArea` UI of the Timeline Contents area.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | The parent `ScrollArea` UI of the Timeline Contents area. |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The main UI of the Timeline Contents area.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | The main UI of the Timeline Contents area. |
 
 #### [verticalScrollBarUI](#verticalscrollbarui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.verticalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The `AXVerticalScrollBar` for the Timeline Contents area.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | The `AXVerticalScrollBar` for the Timeline Contents area. |
 
 #### [viewFrame](#viewframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.viewFrame <cp.prop: table; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | The current 'frame' of the internal timeline content,  or `nil` if not available.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | The current 'frame' of the internal timeline content,  or `nil` if not available. |
 
 ### Methods
 
 #### [rangeSelectionUI](#rangeselectionui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:rangeSelectionUI() -> axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the UI for the current 'Range Selection', if present.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The 'Range Selection' UI or <code>nil</code></li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the UI for the current 'Range Selection', if present. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The 'Range Selection' UI or <code>nil</code></li></ul> |
 
 #### [selectedClipsUI](#selectedclipsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:selectedClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns a table containing the list of selected clips.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The table of selected axuielements that match the conditions</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns a table containing the list of selected clips. |
+| **Parameters**                                       | <ul><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li></ul> |
+| **Returns**                                          | <ul><li>The table of selected axuielements that match the conditions</li></ul> |
 

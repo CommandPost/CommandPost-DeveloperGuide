@@ -14,8 +14,8 @@ Controls Final Cut Pro's Lanes.
 #### [selectClipAtLane](#selectclipatlane)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.lanes.selectClipAtLane(whichLane) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Select Clip at Lane in Final Cut Pro                                                                                         |
-| **Parameters**                                       | <ul><br /><li>whichLane - Lane Number</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Select Clip at Lane in Final Cut Pro |
+| **Parameters**                                       | <ul><li>whichLane - Lane Number</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 

@@ -40,32 +40,32 @@ local externalDrives = battery.devices({physical = true, ejectable = true})
 #### [eject](#eject)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.eject(options) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Unmounts and ejects (where appropriate) all disks matching the provided `options`.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>options   - The table of filter options.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Nothing.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Unmounts and ejects (where appropriate) all disks matching the provided `options`. |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li></ul> |
+| **Returns**                                          | <ul><li>Nothing.</li></ul> |
 
 #### [mount](#mount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.mount(options) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Mounts all disks matching the provided `options`.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>options   - The table of filter options.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Nothing.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Mounts all disks matching the provided `options`. |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li></ul> |
+| **Returns**                                          | <ul><li>Nothing.</li></ul> |
 
 #### [unmount](#unmount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.unmount(options) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Unmounts all disks matching the provided `options`.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>options   - The table of filter options.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Nothing.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Unmounts all disks matching the provided `options`. |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li></ul> |
+| **Returns**                                          | <ul><li>Nothing.</li></ul> |
 
 #### [visit](#visit)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.disk.visit(options, fn) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Visits all drives matching the `options` and executes the                                                                                         |
-| **Parameters**                                       | <ul><br /><li>options   - The table of filter options.* fn        - The function to execute.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Nothing.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Visits all drives matching the `options` and executes the |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.* fn        - The function to execute.</li></ul> |
+| **Returns**                                          | <ul><li>Nothing.</li></ul> |
 

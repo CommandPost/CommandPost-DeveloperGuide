@@ -27,34 +27,34 @@ Note: This will load the file on each request. To have values cached, use the `c
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.table.new(context) -> source` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `cp.strings` source that loads strings from a plist file.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The new plist <code>source</code> instance.</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `cp.strings` source that loads strings from a plist file. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The new plist <code>source</code> instance.</li></ul> |
 
 ### Methods
 
 #### [add](#add)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.table:add(keyValues) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Adds the specified table of key values in the specified language code.                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>keyValues</code>  - The table of key/value pairs to define.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <code>cp.string.source</code>.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Adds the specified table of key values in the specified language code. |
+| **Parameters**                                       | <ul><li><code>keyValues</code>  - The table of key/value pairs to define.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>cp.string.source</code>.</li></ul> |
 
 #### [context](#context)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.table:context([context]) -> table | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Gets or sets a context to be set for the source. This typically includes a `language`, which                                                                                         |
-| **Parameters**                                       | <ul><br /><li>context   - A table with values which may be used by the source.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>If a new context is provided, the <code>cp.string.source</code> is returned, otherwise the current context table is returned.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Gets or sets a context to be set for the source. This typically includes a `language`, which |
+| **Parameters**                                       | <ul><li>context   - A table with values which may be used by the source.</li></ul> |
+| **Returns**                                          | <ul><li>If a new context is provided, the <code>cp.string.source</code> is returned, otherwise the current context table is returned.</li></ul> |
 
 #### [find](#find)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.strings.source.table:find(key) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Finds the specified `key` value in the plist file for the specified optional `context`,                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>key</code>        - The key to retrieve the value for. * <code>context</code>    - An optional table with additional context.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The value of the key, or <code>nil</code> if not found.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Finds the specified `key` value in the plist file for the specified optional `context`, |
+| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve the value for. * <code>context</code>    - An optional table with additional context.</li></ul> |
+| **Returns**                                          | <ul><li>The value of the key, or <code>nil</code> if not found.</li></ul> |
 

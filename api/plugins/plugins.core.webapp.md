@@ -23,60 +23,60 @@ WebApp Plugin.
 #### [DEFAULT_PORT](#default_port)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.DEFAULT_PORT -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The Default Port.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | The Default Port. |
 
 #### [DEFAULT_SETTING](#default_setting)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.DEFAULT_SETTING -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Whether or not the WebApp should be enabled by default.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Whether or not the WebApp should be enabled by default. |
 
 #### [PREFERENCE_NAME](#preference_name)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.PREFERENCE_NAME -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The Preference Name                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | The Preference Name |
 
 ### Functions
 
 #### [copyLinkToPasteboard](#copylinktopasteboard)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.copyLinkToPasteboard() -> None` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Copies the Hostname to the Pasteboard.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Copies the Hostname to the Pasteboard. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.start() -> WebApp` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Starts the WebApp.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The WebApp object.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Starts the WebApp. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The WebApp object.</li></ul> |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.stop() -> WebApp` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Stops the WebApp.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The WebApp object.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Stops the WebApp. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The WebApp object.</li></ul> |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.update() -> None` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Starts or Stops the WebApp.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Starts or Stops the WebApp. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.webapp.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is `true` if the plugin is enabled.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Is `true` if the plugin is enabled. |
 

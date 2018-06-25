@@ -19,36 +19,36 @@ UI Group.
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>element - An <code>axuielementObject</code> to check.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if matches otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Checks to see if an element matches what we think it should be. |
+| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
 
 ### Constructors
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group.new(parent, finderFn) -> Alert` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `Group` instance.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>parent - The parent object. * finderFn - A function which will return the <code>hs._asm.axuielement</code> when available.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A new <code>Group</code> object.</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `Group` instance. |
+| **Parameters**                                       | <ul><li>parent - The parent object. * finderFn - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
+| **Returns**                                          | <ul><li>A new <code>Group</code> object.</li></ul> |
 
 ### Methods
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group:app() -> App` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the app instance.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>App</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the app instance. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>App</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>parent</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the parent object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>parent</li></ul> |
 

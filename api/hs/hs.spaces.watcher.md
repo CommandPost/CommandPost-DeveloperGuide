@@ -18,26 +18,26 @@ NOTE: This extension determines the number of a Space, using OS X APIs that have
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spaces.watcher.new(handler) -> watcher` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new watcher for Space change events                                                                                         |
-| **Parameters**                                       | <ul><br /><li>handler - A function to be called when the active Space changes. It should accept one argument, which will be the number of the new Space (or -1 if the number cannot be determined)</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>An <code>hs.spaces.watcher</code> object</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new watcher for Space change events |
+| **Parameters**                                       | <ul><li>handler - A function to be called when the active Space changes. It should accept one argument, which will be the number of the new Space (or -1 if the number cannot be determined)</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.spaces.watcher</code> object</li></ul> |
 
 ### Methods
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spaces.watcher:start()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Starts the Spaces watcher                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The watcher object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Starts the Spaces watcher |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The watcher object</li></ul> |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spaces.watcher:stop()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Stops the Spaces watcher                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The watcher object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Stops the Spaces watcher |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The watcher object</li></ul> |
 

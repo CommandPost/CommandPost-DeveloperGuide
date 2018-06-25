@@ -14,8 +14,8 @@ Smart Collections Label.
 #### [change](#change)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.smartcollectionslabel.change() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Triggers the Change Smart Collections Label Dialog Boxes.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code>.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Triggers the Change Smart Collections Label Dialog Boxes. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
 

@@ -18,30 +18,30 @@ Automatic Disk Mounting & Unmounting.
 #### [autoMountOnAC](#automountonac)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.disk.automount.autoMountOnAC <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Automatically mount on connection to mains power.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Automatically mount on connection to mains power. |
 
 #### [autoUnmountOnBattery](#autounmountonbattery)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.disk.automount.autoUnmountOnBattery <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Automatically Unmount on disconnection from battery.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Automatically Unmount on disconnection from battery. |
 
 ### Functions
 
 #### [mountPhysicalDrives](#mountphysicaldrives)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.disk.automount.mountPhysicalDrives() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Mount Physical Drives                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Mount Physical Drives |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [unmountPhysicalDrives](#unmountphysicaldrives)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.disk.automount.unmountPhysicalDrives() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Unmount Physical Drives                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Unmount Physical Drives |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

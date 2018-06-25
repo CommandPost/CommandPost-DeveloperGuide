@@ -59,44 +59,44 @@ text:stabilization():smoothing():show():value(1.5)
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector.matches(element)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks if the provided element could be a TextInspector.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>element   - The element to check</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if it matches, <code>false</code> if not.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the provided element could be a TextInspector. |
+| **Parameters**                                       | <ul><li>element   - The element to check</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if it matches, <code>false</code> if not.</li></ul> |
 
 ### Constructors
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector.new(parent) -> cp.apple.finalcutpro.text.TextInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `TextInspector` object                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>parent</code>     - The parent</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A <code>TextInspector</code> object</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `TextInspector` object |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A <code>TextInspector</code> object</li></ul> |
 
 ### Methods
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The application object as a table</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the TextInspector's parent table                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The parent object as a table</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the TextInspector's parent table |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:show() -> TextInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Shows the Text Inspector                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>TextInspector</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Shows the Text Inspector |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>TextInspector</li></ul> |
 

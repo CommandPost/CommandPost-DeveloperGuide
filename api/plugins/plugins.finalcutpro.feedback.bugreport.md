@@ -19,34 +19,34 @@ Sends Apple a Bug Report or Feature Request for Final Cut Pro.
 #### [DEFAULT_HEIGHT](#default_height)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_HEIGHT -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Height                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Default Window Height |
 
 #### [DEFAULT_TITLE](#default_title)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_TITLE -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Title                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Default Window Title |
 
 #### [DEFAULT_WIDTH](#default_width)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_WIDTH -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Width                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Default Window Width |
 
 #### [DEFAULT_WINDOW_STYLE](#default_window_style)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.DEFAULT_WINDOW_STYLE -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Window Style                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Default Window Style |
 
 ### Functions
 
 #### [open](#open)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.feedback.bugreport.open(bugReport) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Opens Final Cut Pro Feedback Screen                                                                                         |
-| **Parameters**                                       | <ul><br /><li>bugReport - Is it a bug report or an enhancement request?</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Opens Final Cut Pro Feedback Screen |
+| **Parameters**                                       | <ul><li>bugReport - Is it a bug report or an enhancement request?</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

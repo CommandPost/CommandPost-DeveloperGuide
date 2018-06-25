@@ -16,8 +16,8 @@ or mouse movement.
 #### [queue](#queue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.idle.queue(idleSeconds, actionFn[, retryOnError]) -> nothing` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Adds an action to the idle queue, which will be run after the the computer has been idle                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>idleSeconds</code>     - The number of seconds of idle time must have elapsed run the action<em> <code>actionFn</code>       - The function to execute</em> <code>retryOnError</code>   - Optional. If set to <code>true</code>, the action will try running again if there is an error.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Nothing</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Adds an action to the idle queue, which will be run after the the computer has been idle |
+| **Parameters**                                       | <ul><li><code>idleSeconds</code>     - The number of seconds of idle time must have elapsed run the action<em> <code>actionFn</code>       - The function to execute</em> <code>retryOnError</code>   - Optional. If set to <code>true</code>, the action will try running again if there is an error.</li></ul> |
+| **Returns**                                          | <ul><li>Nothing</li></ul> |
 

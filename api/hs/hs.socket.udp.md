@@ -123,199 +123,199 @@ from host: 192.168.0.3 port: 53057
 #### [timeout](#timeout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp.timeout` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Timeout for the socket operations, in seconds. New [`hs.socket.udp`](#new) objects will be created with this timeout value, but can individually change it with the [`setTimeout`](#setTimeout) method                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Timeout for the socket operations, in seconds. New [`hs.socket.udp`](#new) objects will be created with this timeout value, but can individually change it with the [`setTimeout`](#setTimeout) method |
 
 ### Functions
 
 #### [parseAddress](#parseaddress)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp.parseAddress(sockaddr) -> table or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Alias for [`hs.socket.parseAddress`](./hs.socket.html#parseAddress)                                                                                         |
+| **Type**                                             | Function |
+| **Description**                                      | Alias for [`hs.socket.parseAddress`](./hs.socket.html#parseAddress) |
 
 ### Constructors
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp.new([fn]) -> hs.socket.udp object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates an unconnected asynchronous UDP socket object                                                                                         |
-| **Parameters**                                       | <ul><br /><li>fn - An optional <a href="#setCallback">callback function</a> for reading data from the socket, settable here for convenience</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>An <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates an unconnected asynchronous UDP socket object |
+| **Parameters**                                       | <ul><li>fn - An optional <a href="#setCallback">callback function</a> for reading data from the socket, settable here for convenience</li></ul> |
+| **Returns**                                          | <ul><li>An <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
 
 #### [server](#server)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp.server(port[, fn]) -> hs.socket.udp object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates and binds an [`hs.socket.udp`](#new) instance to a port for listening                                                                                         |
-| **Parameters**                                       | <ul><br /><li>port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port * fn - An optional <a href="#setCallback">callback function</a> for reading data from the socket, settable here for convenience</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>An <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates and binds an [`hs.socket.udp`](#new) instance to a port for listening |
+| **Parameters**                                       | <ul><li>port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port * fn - An optional <a href="#setCallback">callback function</a> for reading data from the socket, settable here for convenience</li></ul> |
+| **Returns**                                          | <ul><li>An <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
 
 ### Methods
 
 #### [broadcast](#broadcast)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:broadcast([flag]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Enables broadcasting on the underlying socket                                                                                         |
-| **Parameters**                                       | <ul><br /><li>flag - An optional boolean: <code>true</code> to enable broadcasting, <code>false</code> to disable it. Defaults to <code>true</code></li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occurred</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>By default, the underlying socket in the OS will not allow you to send broadcast messages * In order to send broadcast messages, you need to enable this functionality in the socket * A broadcast is a UDP message to addresses like "192.168.255.255" or "255.255.255.255" that is delivered to every host on the network. * The reason this is generally disabled by default (by the OS) is to prevent accidental broadcast messages from flooding the network.</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Enables broadcasting on the underlying socket |
+| **Parameters**                                       | <ul><li>flag - An optional boolean: <code>true</code> to enable broadcasting, <code>false</code> to disable it. Defaults to <code>true</code></li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occurred</li></ul> |
+| **Notes**                                            | <ul><li>By default, the underlying socket in the OS will not allow you to send broadcast messages * In order to send broadcast messages, you need to enable this functionality in the socket * A broadcast is a UDP message to addresses like "192.168.255.255" or "255.255.255.255" that is delivered to every host on the network. * The reason this is generally disabled by default (by the OS) is to prevent accidental broadcast messages from flooding the network.</li></ul> |
 
 #### [close](#close)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:close() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Immediately closes the underlying socket, freeing the [`hs.socket.udp`](#new) instance for reuse. Any pending send operations are discarded                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Immediately closes the underlying socket, freeing the [`hs.socket.udp`](#new) instance for reuse. Any pending send operations are discarded |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
 
 #### [closed](#closed)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:closed() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the closed status of the [`hs.socket.udp`](#new) instance                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if closed, otherwise <code>false</code></li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>UDP sockets are typically meant to be connectionless * Sending a packet anywhere, regardless of whether or not the destination receives it, opens the socket until it is explicitly closed * An active listening socket will not be closed, but will not be 'connected' unless the <a href="#connect">connect</a> method has been called</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the closed status of the [`hs.socket.udp`](#new) instance |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if closed, otherwise <code>false</code></li></ul> |
+| **Notes**                                            | <ul><li>UDP sockets are typically meant to be connectionless * Sending a packet anywhere, regardless of whether or not the destination receives it, opens the socket until it is explicitly closed * An active listening socket will not be closed, but will not be 'connected' unless the <a href="#connect">connect</a> method has been called</li></ul> |
 
 #### [connect](#connect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:connect(host, port[, fn]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Connects an unconnected [`hs.socket.udp`](#new) instance                                                                                         |
-| **Parameters**                                       | <ul><br /><li>host - A string containing the hostname or IP address * port - A port number [1-65535] * fn - An optional single-use callback function to execute after establishing the connection. Receives no parameters</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>By design, UDP is a connectionless protocol, and connecting is not needed<em> Choosing to connect to a specific host/port has the following effect: * You will only be able to send data to the connected host/port * You will only be able to receive data from the connected host/port * You will receive ICMP messages that come from the connected host/port, such as "connection refused"</em> The actual process of connecting a UDP socket does not result in any communication on the socket. It simply changes the internal state of the socket<em> You cannot bind a socket after it has been connected</em> You can only connect a socket once</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Connects an unconnected [`hs.socket.udp`](#new) instance |
+| **Parameters**                                       | <ul><li>host - A string containing the hostname or IP address * port - A port number [1-65535] * fn - An optional single-use callback function to execute after establishing the connection. Receives no parameters</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li></ul> |
+| **Notes**                                            | <ul><li>By design, UDP is a connectionless protocol, and connecting is not needed<em> Choosing to connect to a specific host/port has the following effect: * You will only be able to send data to the connected host/port * You will only be able to receive data from the connected host/port * You will receive ICMP messages that come from the connected host/port, such as "connection refused"</em> The actual process of connecting a UDP socket does not result in any communication on the socket. It simply changes the internal state of the socket<em> You cannot bind a socket after it has been connected</em> You can only connect a socket once</li></ul> |
 
 #### [connected](#connected)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:connected() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the connection status of the [`hs.socket.udp`](#new) instance                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if connected, otherwise <code>false</code></li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>UDP sockets are typically meant to be connectionless * This method will only return <code>true</code> if the <a href="#connect"><code>connect</code></a> method has been explicitly called</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the connection status of the [`hs.socket.udp`](#new) instance |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if connected, otherwise <code>false</code></li></ul> |
+| **Notes**                                            | <ul><li>UDP sockets are typically meant to be connectionless * This method will only return <code>true</code> if the <a href="#connect"><code>connect</code></a> method has been explicitly called</li></ul> |
 
 #### [enableIPv](#enableipv)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:enableIPv(version[, flag]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Enables or disables IPv4 or IPv6 on the underlying socket. By default, both are enabled                                                                                         |
-| **Parameters**                                       | <ul><br /><li>version - A number containing the IP version (4 or 6) to enable or disable * flag - A boolean: <code>true</code> to enable the chosen IP version, <code>false</code> to disable it. Defaults to <code>true</code></li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occurred</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>Must be called before binding the socket. If you want to create an IPv6-only server, do something like:  * <code>hs.socket.udp.new(callback):enableIPv(4, false):listen(port):receive()</code> * The convenience constructor <a href="#server"><code>hs.socket.server</code></a> will automatically bind the socket and requires closing and relistening to use this method</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Enables or disables IPv4 or IPv6 on the underlying socket. By default, both are enabled |
+| **Parameters**                                       | <ul><li>version - A number containing the IP version (4 or 6) to enable or disable * flag - A boolean: <code>true</code> to enable the chosen IP version, <code>false</code> to disable it. Defaults to <code>true</code></li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occurred</li></ul> |
+| **Notes**                                            | <ul><li>Must be called before binding the socket. If you want to create an IPv6-only server, do something like:  * <code>hs.socket.udp.new(callback):enableIPv(4, false):listen(port):receive()</code> * The convenience constructor <a href="#server"><code>hs.socket.server</code></a> will automatically bind the socket and requires closing and relistening to use this method</li></ul> |
 
 #### [info](#info)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:info() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns information on the [`hs.socket.udp`](#new) instance                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table containing the following keys:  * connectedAddress - <code>string</code> (<code>sockaddr</code> struct)  * connectedHost - <code>string</code>  * connectedPort - <code>number</code>  * isClosed - <code>boolean</code>  * isConnected - <code>boolean</code>  * isIPv4 - <code>boolean</code>  * isIPv4Enabled - <code>boolean</code>  * isIPv4Preferred - <code>boolean</code>  * isIPv6 - <code>boolean</code>  * isIPv6Enabled - <code>boolean</code>  * isIPv6Preferred - <code>boolean</code>  * isIPVersionNeutral - <code>boolean</code>  * localAddress - <code>string</code> (<code>sockaddr</code> struct)  * localAddress_IPv4 - <code>string</code> (<code>sockaddr</code> struct)  * localAddress_IPv6 - <code>string</code> (<code>sockaddr</code> struct)  * localHost - <code>string</code>  * localHost_IPv4 - <code>string</code>  * localHost_IPv6 - <code>string</code>  * localPort - <code>number</code>  * localPort_IPv4 - <code>number</code>  * localPort_IPv6 - <code>number</code>  * maxReceiveIPv4BufferSize - <code>number</code>  * maxReceiveIPv6BufferSize - <code>number</code>  * timeout - <code>number</code>  * userData - <code>string</code></li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns information on the [`hs.socket.udp`](#new) instance |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the following keys:  * connectedAddress - <code>string</code> (<code>sockaddr</code> struct)  * connectedHost - <code>string</code>  * connectedPort - <code>number</code>  * isClosed - <code>boolean</code>  * isConnected - <code>boolean</code>  * isIPv4 - <code>boolean</code>  * isIPv4Enabled - <code>boolean</code>  * isIPv4Preferred - <code>boolean</code>  * isIPv6 - <code>boolean</code>  * isIPv6Enabled - <code>boolean</code>  * isIPv6Preferred - <code>boolean</code>  * isIPVersionNeutral - <code>boolean</code>  * localAddress - <code>string</code> (<code>sockaddr</code> struct)  * localAddress_IPv4 - <code>string</code> (<code>sockaddr</code> struct)  * localAddress_IPv6 - <code>string</code> (<code>sockaddr</code> struct)  * localHost - <code>string</code>  * localHost_IPv4 - <code>string</code>  * localHost_IPv6 - <code>string</code>  * localPort - <code>number</code>  * localPort_IPv4 - <code>number</code>  * localPort_IPv6 - <code>number</code>  * maxReceiveIPv4BufferSize - <code>number</code>  * maxReceiveIPv6BufferSize - <code>number</code>  * timeout - <code>number</code>  * userData - <code>string</code></li></ul> |
 
 #### [listen](#listen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:listen(port) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Binds an unconnected [`hs.socket.udp`](#new) instance to a port for listening                                                                                         |
-| **Parameters**                                       | <ul><br /><li>port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Binds an unconnected [`hs.socket.udp`](#new) instance to a port for listening |
+| **Parameters**                                       | <ul><li>port - A port number [0-65535]. Ports [1-1023] are privileged. Port 0 allows the OS to select any available port</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li></ul> |
 
 #### [pause](#pause)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:pause() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Suspends reading of packets from the socket. Call one of the receive methods to resume                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Suspends reading of packets from the socket. Call one of the receive methods to resume |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
 
 #### [preferIPv](#preferipv)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:preferIPv([version]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the preferred IP version: IPv4, IPv6, or neutral (first to resolve)                                                                                         |
-| **Parameters**                                       | <ul><br /><li>version - An optional number containing the IP version to prefer. Anything but 4 or 6 else sets the default neutral behavior</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>If a DNS lookup returns only IPv4 results, the socket will automatically use IPv4 * If a DNS lookup returns only IPv6 results, the socket will automatically use IPv6 * If a DNS lookup returns both IPv4 and IPv6 results, then the protocol used depends on the configured preference</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Sets the preferred IP version: IPv4, IPv6, or neutral (first to resolve) |
+| **Parameters**                                       | <ul><li>version - An optional number containing the IP version to prefer. Anything but 4 or 6 else sets the default neutral behavior</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
+| **Notes**                                            | <ul><li>If a DNS lookup returns only IPv4 results, the socket will automatically use IPv4 * If a DNS lookup returns only IPv6 results, the socket will automatically use IPv6 * If a DNS lookup returns both IPv4 and IPv6 results, then the protocol used depends on the configured preference</li></ul> |
 
 #### [read](#read)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:read(delimiter[, tag]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Alias for [`hs.socket.udp:receive`](#receive)                                                                                         |
+| **Type**                                             | Method |
+| **Description**                                      | Alias for [`hs.socket.udp:receive`](#receive) |
 
 #### [readOne](#readone)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:readOne(delimiter[, tag]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Alias for [`hs.socket.udp:receiveOne`](#receiveOne)                                                                                         |
+| **Type**                                             | Method |
+| **Description**                                      | Alias for [`hs.socket.udp:receiveOne`](#receiveOne) |
 
 #### [receive](#receive)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:receive([fn]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Reads packets from the socket as they arrive. Results are passed to the [callback function](#setCallback), which must be set to use this method                                                                                         |
-| **Parameters**                                       | <ul><br /><li>fn - Optionally supply the <a href="#setCallback">read callback</a> here</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>There are two modes of operation for receiving packets: one-at-a-time &amp; continuous * In one-at-a-time mode, you call receiveOne every time you are ready process an incoming UDP packet * Receiving packets one-at-a-time may be better suited for implementing certain state machine code where your state machine may not always be ready to process incoming packets * In continuous mode, the callback is invoked immediately every time incoming udp packets are received * Receiving packets continuously is better suited to real-time streaming applications * You may switch back and forth between one-at-a-time mode and continuous mode * If the socket is currently in one-at-a-time mode, calling this method will switch it to continuous mode</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Reads packets from the socket as they arrive. Results are passed to the [callback function](#setCallback), which must be set to use this method |
+| **Parameters**                                       | <ul><li>fn - Optionally supply the <a href="#setCallback">read callback</a> here</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li></ul> |
+| **Notes**                                            | <ul><li>There are two modes of operation for receiving packets: one-at-a-time &amp; continuous * In one-at-a-time mode, you call receiveOne every time you are ready process an incoming UDP packet * Receiving packets one-at-a-time may be better suited for implementing certain state machine code where your state machine may not always be ready to process incoming packets * In continuous mode, the callback is invoked immediately every time incoming udp packets are received * Receiving packets continuously is better suited to real-time streaming applications * You may switch back and forth between one-at-a-time mode and continuous mode * If the socket is currently in one-at-a-time mode, calling this method will switch it to continuous mode</li></ul> |
 
 #### [receiveOne](#receiveone)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:receiveOne([fn]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Reads a single packet from the socket. Results are passed to the [callback function](#setCallback), which must be set to use this method                                                                                         |
-| **Parameters**                                       | <ul><br /><li>fn - Optionally supply the <a href="#setCallback">read callback</a> here</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>There are two modes of operation for receiving packets: one-at-a-time &amp; continuous * In one-at-a-time mode, you call receiveOne every time you are ready process an incoming UDP packet * Receiving packets one-at-a-time may be better suited for implementing certain state machine code where your state machine may not always be ready to process incoming packets * In continuous mode, the callback is invoked immediately every time incoming udp packets are received * Receiving packets continuously is better suited to real-time streaming applications * You may switch back and forth between one-at-a-time mode and continuous mode * If the socket is currently in continuous mode, calling this method will switch it to one-at-a-time mode</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Reads a single packet from the socket. Results are passed to the [callback function](#setCallback), which must be set to use this method |
+| **Parameters**                                       | <ul><li>fn - Optionally supply the <a href="#setCallback">read callback</a> here</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occured</li></ul> |
+| **Notes**                                            | <ul><li>There are two modes of operation for receiving packets: one-at-a-time &amp; continuous * In one-at-a-time mode, you call receiveOne every time you are ready process an incoming UDP packet * Receiving packets one-at-a-time may be better suited for implementing certain state machine code where your state machine may not always be ready to process incoming packets * In continuous mode, the callback is invoked immediately every time incoming udp packets are received * Receiving packets continuously is better suited to real-time streaming applications * You may switch back and forth between one-at-a-time mode and continuous mode * If the socket is currently in continuous mode, calling this method will switch it to one-at-a-time mode</li></ul> |
 
 #### [reusePort](#reuseport)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:reusePort([flag]) -> self or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Enables port reuse on the underlying socket                                                                                         |
-| **Parameters**                                       | <ul><br /><li>flag - An optional boolean: <code>true</code> to enable port reuse, <code>false</code> to disable it. Defaults to <code>true</code></li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occurred</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>By default, only one socket can be bound to a given IP address+port at a time * To enable multiple processes to simultaneously bind to the same address+port, you need to enable this functionality in the socket * All processes that wish to use the address+port simultaneously must all enable reuse port on the socket bound to that port * Must be called before binding the socket</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Enables port reuse on the underlying socket |
+| **Parameters**                                       | <ul><li>flag - An optional boolean: <code>true</code> to enable port reuse, <code>false</code> to disable it. Defaults to <code>true</code></li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object or <code>nil</code> if an error occurred</li></ul> |
+| **Notes**                                            | <ul><li>By default, only one socket can be bound to a given IP address+port at a time * To enable multiple processes to simultaneously bind to the same address+port, you need to enable this functionality in the socket * All processes that wish to use the address+port simultaneously must all enable reuse port on the socket bound to that port * Must be called before binding the socket</li></ul> |
 
 #### [send](#send)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:send(message, host, port[, tag][, fn]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sends a packet to the destination address                                                                                         |
-| **Parameters**                                       | <ul><br /><li>message - A string containing data to be sent on the socket * host - A string containing the hostname or IP address * port - A port number [1-65535] * tag - An optional integer to assist with labeling writes * fn - An optional single-use callback function to execute after sending the packet. Receives the tag parameter</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>For non-connected sockets, the remote destination is specified for each packet * If the socket has been explicitly connected with <a href="#connect"><code>connect</code></a>, only the message parameter and an optional tag and/or write callback can be supplied * Recall that connecting is optional for a UDP socket * For connected sockets, data can only be sent to the connected address</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Sends a packet to the destination address |
+| **Parameters**                                       | <ul><li>message - A string containing data to be sent on the socket * host - A string containing the hostname or IP address * port - A port number [1-65535] * tag - An optional integer to assist with labeling writes * fn - An optional single-use callback function to execute after sending the packet. Receives the tag parameter</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
+| **Notes**                                            | <ul><li>For non-connected sockets, the remote destination is specified for each packet * If the socket has been explicitly connected with <a href="#connect"><code>connect</code></a>, only the message parameter and an optional tag and/or write callback can be supplied * Recall that connecting is optional for a UDP socket * For connected sockets, data can only be sent to the connected address</li></ul> |
 
 #### [setBufferSize](#setbuffersize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:setBufferSize(size[, version]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the maximum size of the buffer that will be allocated for receive operations                                                                                         |
-| **Parameters**                                       | <ul><br /><li>size - An number containing the receive buffer size in bytes * version - An optional number containing the IP version for which to set the buffer size. Anything but 4 or 6 else sets the same size for both</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>The default maximum size is 9216 bytes * The theoretical maximum size of any IPv4 UDP packet is UINT16_MAX = 65535 * The theoretical maximum size of any IPv6 UDP packet is UINT32_MAX = 4294967295 * Since the OS notifies us of the size of each received UDP packet, the actual allocated buffer size for each packet is exact * In practice the size of UDP packets is generally much smaller than the max. Most protocols will send and receive packets of only a few bytes, or will set a limit on the size of packets to prevent fragmentation in the IP layer. * If you set the buffer size too small, the sockets API in the OS will silently discard any extra data</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Sets the maximum size of the buffer that will be allocated for receive operations |
+| **Parameters**                                       | <ul><li>size - An number containing the receive buffer size in bytes * version - An optional number containing the IP version for which to set the buffer size. Anything but 4 or 6 else sets the same size for both</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
+| **Notes**                                            | <ul><li>The default maximum size is 9216 bytes * The theoretical maximum size of any IPv4 UDP packet is UINT16_MAX = 65535 * The theoretical maximum size of any IPv6 UDP packet is UINT32_MAX = 4294967295 * Since the OS notifies us of the size of each received UDP packet, the actual allocated buffer size for each packet is exact * In practice the size of UDP packets is generally much smaller than the max. Most protocols will send and receive packets of only a few bytes, or will set a limit on the size of packets to prevent fragmentation in the IP layer. * If you set the buffer size too small, the sockets API in the OS will silently discard any extra data</li></ul> |
 
 #### [setCallback](#setcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:setCallback([fn]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the read callback for the [`hs.socket.udp`](#new) instance. Must be set to read data from the socket                                                                                         |
-| **Parameters**                                       | <ul><br /><li>fn - An optional callback function to process data read from the socket. <code>nil</code> or no argument clears the callback</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Sets the read callback for the [`hs.socket.udp`](#new) instance. Must be set to read data from the socket |
+| **Parameters**                                       | <ul><li>fn - An optional callback function to process data read from the socket. <code>nil</code> or no argument clears the callback</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
 
 #### [setTimeout](#settimeout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:setTimeout(timeout) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets the timeout for the socket operations. If the timeout value is negative, the operations will not use a timeout, which is the default                                                                                         |
-| **Parameters**                                       | <ul><br /><li>timeout - A number containing the timeout duration, in seconds</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Sets the timeout for the socket operations. If the timeout value is negative, the operations will not use a timeout, which is the default |
+| **Parameters**                                       | <ul><li>timeout - A number containing the timeout duration, in seconds</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="#new"><code>hs.socket.udp</code></a> object</li></ul> |
 
 #### [write](#write)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.socket.udp:write(message[, tag]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Alias for [`hs.socket.udp:send`](#send)                                                                                         |
+| **Type**                                             | Method |
+| **Description**                                      | Alias for [`hs.socket.udp:send`](#send) |
 

@@ -19,12 +19,12 @@ our drawing/canvas images will not display correctly.
 #### [dockIconEnabled](#dockiconenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.dockicon.dockIconEnabled <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | If `true` the CommandPost dock icon should be hidden.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | If `true` the CommandPost dock icon should be hidden. |
 
 #### [fcpActiveFullScreen](#fcpactivefullscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.fullscreen.dockicon.fcpActiveFullScreen <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | If `true` FCP is full-screen and the frontmost app.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | If `true` FCP is full-screen and the frontmost app. |
 

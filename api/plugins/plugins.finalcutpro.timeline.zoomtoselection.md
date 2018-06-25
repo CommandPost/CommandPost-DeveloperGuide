@@ -20,38 +20,38 @@ Zoom the Timeline to fit the currently-selected clips.
 #### [DEFAULT_SHIFT](#default_shift)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.zoomtoselection.DEFAULT_SHIFT -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Shift.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Default Shift. |
 
 #### [MIN_SHIFT](#min_shift)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.zoomtoselection.MIN_SHIFT -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Minimum Shift.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Minimum Shift. |
 
 #### [SELECTION_BUFFER](#selection_buffer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.zoomtoselection.SELECTION_BUFFER -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | The number of pixels of buffer space to allow the selection zoom to fit.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | The number of pixels of buffer space to allow the selection zoom to fit. |
 
 ### Functions
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.zoomtoselection.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialise the module. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Methods
 
 #### [zoomToSelection](#zoomtoselection)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.zoomtoselection.zoomToSelection() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Zooms the view to fit the currently-selected clips.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if there is selected content in the timeline and zooming was successful.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Zooms the view to fit the currently-selected clips. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if there is selected content in the timeline and zooming was successful.</li></ul> |
 

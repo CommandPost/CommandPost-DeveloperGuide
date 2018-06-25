@@ -17,22 +17,22 @@ Tangent Display Functions.
 #### [currentOutputDevice](#currentoutputdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.currentOutputDevice <cp.prop: audio>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Current Output Device.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Current Output Device. |
 
 #### [group](#group)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.group <cp.prop: audio>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Tangent Sound Group.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Tangent Sound Group. |
 
 ### Functions
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.init() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>osGroup - The Tangent Sound Group.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialise the module. |
+| **Parameters**                                       | <ul><li>osGroup - The Tangent Sound Group.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

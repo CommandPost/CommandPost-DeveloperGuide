@@ -14,6 +14,6 @@ Show Timecode.
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.showtimecode.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Show Timecode Enabled?                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Show Timecode Enabled? |
 

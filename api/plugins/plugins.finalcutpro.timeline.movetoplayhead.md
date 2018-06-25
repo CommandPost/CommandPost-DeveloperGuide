@@ -14,8 +14,8 @@ Move To Playhead.
 #### [moveToPlayhead](#movetoplayhead)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.movetoplayhead.moveToPlayhead() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Move to Playhead                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Move to Playhead |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 

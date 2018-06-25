@@ -14,6 +14,6 @@ Unsupported version setup panel.
 #### [notifiedVersion](#notifiedversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.setup.unsupportedversion.notifiedVersion <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Notified Version                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Notified Version |
 

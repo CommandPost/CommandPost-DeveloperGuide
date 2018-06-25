@@ -14,8 +14,8 @@ Select All Timeline Clips
 #### [selectalltimelineclips](#selectalltimelineclips)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.selectalltimelineclips(forwards) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Selects all timeline clips to the left or right of the timeline playhead in Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>forwards - <code>true</code> if you want to select forwards</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Selects all timeline clips to the left or right of the timeline playhead in Final Cut Pro. |
+| **Parameters**                                       | <ul><li>forwards - <code>true</code> if you want to select forwards</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 

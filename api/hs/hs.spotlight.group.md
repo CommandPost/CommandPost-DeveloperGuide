@@ -22,43 +22,43 @@ For each spotlightGroupObject you can identify the attribute and value the group
 #### [attribute](#attribute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:attribute() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the name of the attribute the spotlightGroupObject results are grouped by.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>the attribute name as a string</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the name of the attribute the spotlightGroupObject results are grouped by. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the attribute name as a string</li></ul> |
 
 #### [count](#count)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:count() -> integer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the number of query results contained in the spotlightGroupObject.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>an integer specifying the number of results that match the attribute and value represented by this spotlightGroup object.</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>For convenience, metamethods have been added to the spotlightGroupObject which allow you to use <code>#spotlightGroupObject</code> as a shortcut for <code>spotlightGroupObject:count()</code>.</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the number of query results contained in the spotlightGroupObject. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>an integer specifying the number of results that match the attribute and value represented by this spotlightGroup object.</li></ul> |
+| **Notes**                                            | <ul><li>For convenience, metamethods have been added to the spotlightGroupObject which allow you to use <code>#spotlightGroupObject</code> as a shortcut for <code>spotlightGroupObject:count()</code>.</li></ul> |
 
 #### [resultAtIndex](#resultatindex)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:resultAtIndex(index) -> spotlightItemObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the spotlightItemObject at the specified index of the spotlightGroupObject                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>index</code> - an integer specifying the index of the result to return.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>the spotlightItemObject at the specified index or an error if the index is out of bounds.</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>For convenience, metamethods have been added to the spotlightGroupObject which allow you to use <code>spotlightGroupObject[index]</code> as a shortcut for <code>spotlightGroupObject:resultAtIndex(index)</code>.</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the spotlightItemObject at the specified index of the spotlightGroupObject |
+| **Parameters**                                       | <ul><li><code>index</code> - an integer specifying the index of the result to return.</li></ul> |
+| **Returns**                                          | <ul><li>the spotlightItemObject at the specified index or an error if the index is out of bounds.</li></ul> |
+| **Notes**                                            | <ul><li>For convenience, metamethods have been added to the spotlightGroupObject which allow you to use <code>spotlightGroupObject[index]</code> as a shortcut for <code>spotlightGroupObject:resultAtIndex(index)</code>.</li></ul> |
 
 #### [subgroups](#subgroups)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:subgroups() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the subgroups of the spotlightGroupObject                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>an array table containing the subgroups of the spotlightGroupObject or nil if no subgroups exist</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>Subgroups are created when you supply more than one grouping attribute to <code>hs.spotlight:groupingAttributes</code>.</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the subgroups of the spotlightGroupObject |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>an array table containing the subgroups of the spotlightGroupObject or nil if no subgroups exist</li></ul> |
+| **Notes**                                            | <ul><li>Subgroups are created when you supply more than one grouping attribute to <code>hs.spotlight:groupingAttributes</code>.</li></ul> |
 
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight.group:value() -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the value for the attribute the spotlightGroupObject results are grouped by.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>the attribute value as an appropriate data type</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the value for the attribute the spotlightGroupObject results are grouped by. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the attribute value as an appropriate data type</li></ul> |
 

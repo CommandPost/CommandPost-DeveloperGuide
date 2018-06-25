@@ -20,40 +20,40 @@ Accessibility Plugin.
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.enabled <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Is `true` if Accessibility permissions have been enabled for CommandPost.                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Is `true` if Accessibility permissions have been enabled for CommandPost. |
 
 ### Variables
 
 #### [systemPreferencesAlreadyOpen](#systempreferencesalreadyopen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.systemPreferencesAlreadyOpen` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Was System Preferences already open?                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Was System Preferences already open? |
 
 ### Functions
 
 #### [completeSetupPanel](#completesetuppanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.completeSetupPanel() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Called when the setup panel for accessibility was shown and is ready to complete.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Called when the setup panel for accessibility was shown and is ready to complete. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.init(setup) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>setup - Dependancies setup</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The module as a table</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Initialises the module. |
+| **Parameters**                                       | <ul><li>setup - Dependancies setup</li></ul> |
+| **Returns**                                          | <ul><li>The module as a table</li></ul> |
 
 #### [showSetupPanel](#showsetuppanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.showSetupPanel() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Called when the Setup Panel should be shown to prompt the user about enabling Accessbility.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Called when the Setup Panel should be shown to prompt the user about enabling Accessbility. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

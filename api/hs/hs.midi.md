@@ -49,147 +49,147 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #### [commandTypes](#commandtypes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi.commandTypes[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      |                                                                                          |
+| **Type**                                             | Constant |
+| **Description**                                      |  |
 
 ### Functions
 
 #### [deviceCallback](#devicecallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi.deviceCallback(callbackFn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | A callback that's triggered when a physical or virtual MIDI device is added or removed from the system.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>callbackFn - the callback function to trigger.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>The callback function should expect 2 argument and should not return anything:   * <code>devices</code> - A table containing the names of any physically connected MIDI devices as strings.   * <code>virtualDevices</code> - A table containing the names of any virtual MIDI devices as strings. * Example Usage:   <code>hs.midi.deviceCallback(function(devices, virtualDevices)        print(hs.inspect(devices))        print(hs.inspect(virtualDevices))   end)</code></li><br /></ul>                                             |
+| **Type**                                             | Function |
+| **Description**                                      | A callback that's triggered when a physical or virtual MIDI device is added or removed from the system. |
+| **Parameters**                                       | <ul><li>callbackFn - the callback function to trigger.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+| **Notes**                                            | <ul><li>The callback function should expect 2 argument and should not return anything:   * <code>devices</code> - A table containing the names of any physically connected MIDI devices as strings.   * <code>virtualDevices</code> - A table containing the names of any virtual MIDI devices as strings. * Example Usage:   <code>hs.midi.deviceCallback(function(devices, virtualDevices)        print(hs.inspect(devices))        print(hs.inspect(virtualDevices))   end)</code></li></ul> |
 
 #### [devices](#devices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi.devices() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table of currently connected physical MIDI devices.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table containing the names of any physically connected MIDI devices as strings.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Returns a table of currently connected physical MIDI devices. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the names of any physically connected MIDI devices as strings.</li></ul> |
 
 #### [virtualSources](#virtualsources)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi.virtualSources() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns a table of currently available Virtual MIDI sources. This includes devices, such as Native Instruments controllers which present as virtual endpoints rather than physical devices.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>A table containing the names of any virtual MIDI sources as strings.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Returns a table of currently available Virtual MIDI sources. This includes devices, such as Native Instruments controllers which present as virtual endpoints rather than physical devices. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the names of any virtual MIDI sources as strings.</li></ul> |
 
 ### Constructors
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi.new(deviceName) -> `hs.midi` object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>deviceName - A string containing the device name of the MIDI device. A valid device name can be found by checking <code>hs.midi.getDevices()</code> and/or <code>hs.midi.virtualSources()</code>.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>An <code>hs.midi</code> object or <code>nil</code> if an error occured.</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>Example Usage:   <code>hs.midi.new(hs.midi.devices()[1])</code></li><br /></ul>                                             |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `hs.midi` object. |
+| **Parameters**                                       | <ul><li>deviceName - A string containing the device name of the MIDI device. A valid device name can be found by checking <code>hs.midi.getDevices()</code> and/or <code>hs.midi.virtualSources()</code>.</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.midi</code> object or <code>nil</code> if an error occured.</li></ul> |
+| **Notes**                                            | <ul><li>Example Usage:   <code>hs.midi.new(hs.midi.devices()[1])</code></li></ul> |
 
 #### [newVirtualSource](#newvirtualsource)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi.newVirtualSource(virtualSource) -> `hs.midi` object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Creates a new `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>virtualSource - A string containing the virtual source name of the MIDI device. A valid virtual source name can be found by checking <code>hs.midi.virtualSources()</code>.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>An <code>hs.midi</code> object or <code>nil</code> if an error occured.</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>Example Usage:   <code>hs.midi.new(hs.midi.virtualSources()[1])</code></li><br /></ul>                                             |
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `hs.midi` object. |
+| **Parameters**                                       | <ul><li>virtualSource - A string containing the virtual source name of the MIDI device. A valid virtual source name can be found by checking <code>hs.midi.virtualSources()</code>.</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.midi</code> object or <code>nil</code> if an error occured.</li></ul> |
+| **Notes**                                            | <ul><li>Example Usage:   <code>hs.midi.new(hs.midi.virtualSources()[1])</code></li></ul> |
 
 ### Methods
 
 #### [callback](#callback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:callback(callbackFn | nil)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sets or removes a callback function for the `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>callbackFn</code> - a function to set as the callback for this <code>hs.midi</code> object.  If the value provided is <code>nil</code>, any currently existing callback function is removed.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The <code>hs.midi</code> object</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>Most MIDI keyboards produce a <code>noteOn</code> when you press a key, then <code>noteOff</code> when you release. However, some MIDI keyboards will return a <code>noteOn</code> with 0 <code>velocity</code> instead of <code>noteOff</code>, so you will recieve two <code>noteOn</code> commands for every key press/release. * The callback function should expect 8 arguments and should not return anything:   * <code>object</code>       - The <code>hs.midi</code> object.   * <code>deviceName</code>   - The device name as a string.   * <code>commandType</code>  - Type of MIDI message as defined as a string. See <code>hs.midi.commandTypes[]</code> for a list of possibilities.   * <code>description</code>  - Description of the event as a string. This is only really useful for debugging.   * <code>metadata</code>     - A table of data for the MIDI command (see below).</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Sets or removes a callback function for the `hs.midi` object. |
+| **Parameters**                                       | <ul><li><code>callbackFn</code> - a function to set as the callback for this <code>hs.midi</code> object.  If the value provided is <code>nil</code>, any currently existing callback function is removed.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.midi</code> object</li></ul> |
+| **Notes**                                            | <ul><li>Most MIDI keyboards produce a <code>noteOn</code> when you press a key, then <code>noteOff</code> when you release. However, some MIDI keyboards will return a <code>noteOn</code> with 0 <code>velocity</code> instead of <code>noteOff</code>, so you will recieve two <code>noteOn</code> commands for every key press/release. * The callback function should expect 8 arguments and should not return anything:   * <code>object</code>       - The <code>hs.midi</code> object.   * <code>deviceName</code>   - The device name as a string.   * <code>commandType</code>  - Type of MIDI message as defined as a string. See <code>hs.midi.commandTypes[]</code> for a list of possibilities.   * <code>description</code>  - Description of the event as a string. This is only really useful for debugging.   * <code>metadata</code>     - A table of data for the MIDI command (see below).</li></ul> |
 
 #### [displayName](#displayname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:displayName() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the display name of a `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The name as a string.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the display name of a `hs.midi` object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The name as a string.</li></ul> |
 
 #### [identityRequest](#identityrequest)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:identityRequest() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sends an Identity Request message to the `hs.midi` device. You can use `hs.midi:callback()` to receive the `systemExclusive` response.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>Example Usage:  <code>midiDevice = hs.midi.new(hs.midi.devices()[3])  midiDevice:callback(function(object, deviceName, commandType, description, metadata)                        print("object: " .. tostring(object))                        print("deviceName: " .. deviceName)                        print("commandType: " .. commandType)                        print("description: " .. description)                        print("metadata: " .. hs.inspect(metadata))                      end)  midiDevice:identityRequest()</code></li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Sends an Identity Request message to the `hs.midi` device. You can use `hs.midi:callback()` to receive the `systemExclusive` response. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+| **Notes**                                            | <ul><li>Example Usage:  <code>midiDevice = hs.midi.new(hs.midi.devices()[3])  midiDevice:callback(function(object, deviceName, commandType, description, metadata)                        print("object: " .. tostring(object))                        print("deviceName: " .. deviceName)                        print("commandType: " .. commandType)                        print("description: " .. description)                        print("metadata: " .. hs.inspect(metadata))                      end)  midiDevice:identityRequest()</code></li></ul> |
 
 #### [isOnline](#isonline)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:isOnline() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the online status of a `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if online, otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the online status of a `hs.midi` object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if online, otherwise <code>false</code></li></ul> |
 
 #### [isVirtual](#isvirtual)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:isVirtual() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns `true` if an `hs.midi` object is virtual, otherwise `false`.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if virtual, otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns `true` if an `hs.midi` object is virtual, otherwise `false`. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if virtual, otherwise <code>false</code></li></ul> |
 
 #### [manufacturer](#manufacturer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:manufacturer() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the manufacturer name of a `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The manufacturer name as a string.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the manufacturer name of a `hs.midi` object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The manufacturer name as a string.</li></ul> |
 
 #### [model](#model)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:model() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the model name of a `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The model name as a string.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the model name of a `hs.midi` object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The model name as a string.</li></ul> |
 
 #### [name](#name)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:name() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the name of a `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The name as a string.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the name of a `hs.midi` object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The name as a string.</li></ul> |
 
 #### [sendCommand](#sendcommand)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:sendCommand(commandType, metadata) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sends a command to the `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>commandType</code>    - The type of command you want to send as a string. See <code>hs.midi.commandTypes[]</code>. * <code>metadata</code>       - A table of data for the MIDI command (see notes below).</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful, otherwise <code>false</code></li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>The <code>metadata</code> table can accept following, depending on the <code>commandType</code> supplied:</li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Sends a command to the `hs.midi` object. |
+| **Parameters**                                       | <ul><li><code>commandType</code>    - The type of command you want to send as a string. See <code>hs.midi.commandTypes[]</code>. * <code>metadata</code>       - A table of data for the MIDI command (see notes below).</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful, otherwise <code>false</code></li></ul> |
+| **Notes**                                            | <ul><li>The <code>metadata</code> table can accept following, depending on the <code>commandType</code> supplied:</li></ul> |
 
 #### [sendSysex](#sendsysex)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:sendSysex(command) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Sends a System Exclusive Command to the `hs.midi` object.                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>command</code> - The system exclusive command you wish to send as a string. White spaces in the string will be ignored.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>Example Usage:   <code>midiDevice:sendSysex("f07e7f06 01f7")</code></li><br /></ul>                                             |
+| **Type**                                             | Method |
+| **Description**                                      | Sends a System Exclusive Command to the `hs.midi` object. |
+| **Parameters**                                       | <ul><li><code>command</code> - The system exclusive command you wish to send as a string. White spaces in the string will be ignored.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+| **Notes**                                            | <ul><li>Example Usage:   <code>midiDevice:sendSysex("f07e7f06 01f7")</code></li></ul> |
 
 #### [synthesize](#synthesize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:synthesize([value]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Set or display whether or not the MIDI device should synthesize audio on your computer.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>[value] - <code>true</code> if you want to synthesize audio, otherwise <code>false</code>.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if enabled otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Set or display whether or not the MIDI device should synthesize audio on your computer. |
+| **Parameters**                                       | <ul><li>[value] - <code>true</code> if you want to synthesize audio, otherwise <code>false</code>.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if enabled otherwise <code>false</code></li></ul> |
 

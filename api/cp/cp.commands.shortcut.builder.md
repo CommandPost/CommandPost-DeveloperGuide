@@ -15,16 +15,16 @@ Shortcut Commands Builder Module.
 #### [add](#add)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut.builder:add(modifier, [keyCode]) -> shortcut/command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Adds the specified modifier to the set. If a `keyCode` is provided,                                                                                         |
-| **Parameters**                                       | <ul><br /><li>modifier - (optional) The modifier that was added. * keyCode - (optional) The key code being modified.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>self</code> if no <code>keyCode</code> is provided, or the original <code>command</code>.</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Adds the specified modifier to the set. If a `keyCode` is provided, |
+| **Parameters**                                       | <ul><li>modifier - (optional) The modifier that was added. * keyCode - (optional) The key code being modified.</li></ul> |
+| **Returns**                                          | <ul><li><code>self</code> if no <code>keyCode</code> is provided, or the original <code>command</code>.</li></ul> |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.shortcut.builder.new([receiverFn]) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Creates a new shortcut builder. If provided, the receiver function                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>receiverFn</code> - The function which will be called with the new shortcut, when built.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The builder instance</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Creates a new shortcut builder. If provided, the receiver function |
+| **Parameters**                                       | <ul><li><code>receiverFn</code> - The function which will be called with the new shortcut, when built.</li></ul> |
+| **Returns**                                          | <ul><li>The builder instance</li></ul> |
 

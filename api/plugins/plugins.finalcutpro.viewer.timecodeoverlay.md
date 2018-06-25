@@ -14,6 +14,6 @@ Advanced Timecode Overlay.
 #### [timecodeoverlayenabled](#timecodeoverlayenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.timecodeoverlayenabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Advanced Timecode Overlay Enabled?                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Advanced Timecode Overlay Enabled? |
 

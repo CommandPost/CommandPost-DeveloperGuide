@@ -34,120 +34,120 @@ Batch Export Plugin
 #### [DEFAULT_CUSTOM_FILENAME](#default_custom_filename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.DEFAULT_CUSTOM_FILENAME -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant                                                                                         |
-| **Description**                                      | Default Custom Filename                                                                                         |
+| **Type**                                             | Constant |
+| **Description**                                      | Default Custom Filename |
 
 ### Functions
 
 #### [batchExport](#batchexport)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.batchExport() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Opens the Batch Export popup.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>mode - "timeline" or "browser". If no mode is specified then we will determine          the mode based off the mouse location.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Opens the Batch Export popup. |
+| **Parameters**                                       | <ul><li>mode - "timeline" or "browser". If no mode is specified then we will determine          the mode based off the mouse location.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [batchExportBrowserClips](#batchexportbrowserclips)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.batchExportBrowserClips(clips) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Batch Export Clips                                                                                         |
-| **Parameters**                                       | <ul><br /><li>clips - table of selected Clips</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Batch Export Clips |
+| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [batchExportTimelineClips](#batchexporttimelineclips)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.batchExportTimelineClips(clips) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Batch Export Timeline Clips                                                                                         |
-| **Parameters**                                       | <ul><br /><li>clips - table of selected Clips</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Batch Export Timeline Clips |
+| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [changeCustomFilename](#changecustomfilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.changeCustomFilename() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Change Custom Filename String.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Change Custom Filename String. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [changeExportDestinationFolder](#changeexportdestinationfolder)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.changeExportDestinationFolder() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Change Export Destination Folder.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Change Export Destination Folder. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [changeExportDestinationPreset](#changeexportdestinationpreset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.changeExportDestinationPreset() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Change Export Destination Preset.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Change Export Destination Preset. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [getDestinationFolder](#getdestinationfolder)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.getDestinationFolder() -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets the destination preset.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The destination preset as a string, or <code>nil</code> if no preset is set.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Gets the destination preset. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The destination preset as a string, or <code>nil</code> if no preset is set.</li></ul> |
 
 #### [performBatchExport](#performbatchexport)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.performBatchExport() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Performs the Browser Batch Export function.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Performs the Browser Batch Export function. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [sendBrowserClipsToCompressor](#sendbrowserclipstocompressor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.sendBrowserClipsToCompressor(clips) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Send Clips to Compressor                                                                                         |
-| **Parameters**                                       | <ul><br /><li>clips - table of selected Clips</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Send Clips to Compressor |
+| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [sendTimelineClipsToCompressor](#sendtimelineclipstocompressor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.sendTimelineClipsToCompressor(clips) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Send Timeline Clips to Compressor.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>clips - table of selected Clips</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Send Timeline Clips to Compressor. |
+| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 ### Fields
 
 #### [customFilename](#customfilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.customFilename <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Custom Filename for Batch Export.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Custom Filename for Batch Export. |
 
 #### [ignoreMissingEffects](#ignoremissingeffects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreMissingEffects <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Defines whether or not a Batch Export should Ignore Missing Effects.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Defines whether or not a Batch Export should Ignore Missing Effects. |
 
 #### [ignoreProxies](#ignoreproxies)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreProxies <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Defines whether or not a Batch Export should Ignore Proxies.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Defines whether or not a Batch Export should Ignore Proxies. |
 
 #### [replaceExistingFiles](#replaceexistingfiles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.replaceExistingFiles <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Defines whether or not a Batch Export should Replace Existing Files.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Defines whether or not a Batch Export should Replace Existing Files. |
 
 #### [useCustomFilename](#usecustomfilename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.useCustomFilename <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Defines whether or not the Batch Export tool should override the clipname with a custom filename.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Defines whether or not the Batch Export tool should override the clipname with a custom filename. |
 

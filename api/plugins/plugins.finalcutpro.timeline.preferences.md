@@ -16,16 +16,16 @@ Final Cut Pro Timeline Preferences.
 #### [backgroundRender](#backgroundrender)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.preferences.backgroundRender <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Is Background Render enabled?                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Is Background Render enabled? |
 
 ### Functions
 
 #### [getAutoRenderDelay](#getautorenderdelay)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.preferences.getAutoRenderDelay() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Gets the 'FFAutoRenderDelay' value from the Final Cut Pro Preferences file.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>'FFAutoRenderDelay' value as number.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Gets the 'FFAutoRenderDelay' value from the Final Cut Pro Preferences file. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>'FFAutoRenderDelay' value as number.</li></ul> |
 

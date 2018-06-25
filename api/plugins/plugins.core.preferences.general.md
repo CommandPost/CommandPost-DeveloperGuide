@@ -16,16 +16,16 @@ General Preferences Panel.
 #### [openPrivacyPolicy](#openprivacypolicy)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.openPrivacyPolicy() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Opens the CommandPost Privacy Policy in your browser.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Opens the CommandPost Privacy Policy in your browser. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields
 
 #### [autoLaunch](#autolaunch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.autoLaunch <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Controls if CommandPost will automatically upload crash data to the developer.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Controls if CommandPost will automatically upload crash data to the developer. |
 

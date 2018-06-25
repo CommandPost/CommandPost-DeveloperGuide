@@ -31,110 +31,110 @@ Playhead Module.
 #### [find](#find)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.find(containerUI, skimming) -> hs._asm.axuielement object | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Finds the playhead (either persistent or skimming) in the specified container. Defaults to persistent.                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>containerUI</code> - The container UI * <code>skimming</code> - Whether or not you want the skimming playhead as boolean.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The playhead <code>hs._asm.axuielement</code> object or <code>nil</code> if not found.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Finds the playhead (either persistent or skimming) in the specified container. Defaults to persistent. |
+| **Parameters**                                       | <ul><li><code>containerUI</code> - The container UI * <code>skimming</code> - Whether or not you want the skimming playhead as boolean.</li></ul> |
+| **Returns**                                          | <ul><li>The playhead <code>hs._asm.axuielement</code> object or <code>nil</code> if not found.</li></ul> |
 
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Checks to see if a GUI element is the Playhead or not                                                                                         |
-| **Parameters**                                       | <ul><br /><li><code>element</code>    - The element you want to check</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li><code>true</code> if the <code>element</code> is the Playhead otherwise <code>false</code></li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Checks to see if a GUI element is the Playhead or not |
+| **Parameters**                                       | <ul><li><code>element</code>    - The element you want to check</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the <code>element</code> is the Playhead otherwise <code>false</code></li></ul> |
 
 ### Constructors
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.new(parent[, skimming[, containerFn[, useEventViewer]]]) -> Playhead` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constructor                                                                                         |
-| **Description**                                      | Constructs a new Playhead                                                                                         |
-| **Parameters**                                       | <ul><br /><li>parent        - The parent object * skimming      - (optional) if <code>true</code>, this links to the 'skimming' playhead created under the mouse, if present. * containerUI   - (optional) a <code>cp.prop</code> which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element. * useEventViewer - (optional) if <code>true</code>, this will use the Event Viewer's timecode, when available.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The new <code>Playhead</code> instance.</li><br /></ul>                                           |
+| **Type**                                             | Constructor |
+| **Description**                                      | Constructs a new Playhead |
+| **Parameters**                                       | <ul><li>parent        - The parent object * skimming      - (optional) if <code>true</code>, this links to the 'skimming' playhead created under the mouse, if present. * containerUI   - (optional) a <code>cp.prop</code> which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element. * useEventViewer - (optional) if <code>true</code>, this will use the Event Viewer's timecode, when available.</li></ul> |
+| **Returns**                                          | <ul><li>The new <code>Playhead</code> instance.</li></ul> |
 
 ### Fields
 
 #### [center](#center)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.center <cp.prop: hs.geometry.point; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Gets the centre point (`{x, y}`) of the playhead.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Gets the centre point (`{x, y}`) of the playhead. |
 
 #### [currentViewer](#currentviewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.currentViewer <cp.prop: cp.apple.finalcutpro.main.Viewer; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Represents the current viewer for the playhead. This may be either the primary Viewer or the Event Viewer,                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Represents the current viewer for the playhead. This may be either the primary Viewer or the Event Viewer, |
 
 #### [frame](#frame)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.frame <cp.prop: hs.geometry.frame; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Gets the frame of the playhead.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Gets the frame of the playhead. |
 
 #### [isPersistent](#ispersistent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.isPersistent <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is the playhead persistent?                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Is the playhead persistent? |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.isShowing <cp.prop: boolean; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Is the playhead showing?                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Is the playhead showing? |
 
 #### [position](#position)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.position <cp.prop; number; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Gets the horizontal position of the playhead line, which may be different to the `x` position of the playhead.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Gets the horizontal position of the playhead line, which may be different to the `x` position of the playhead. |
 
 #### [timecode](#timecode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.timecode <cp.prop: string; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Gets and sets the current timecode.                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Gets and sets the current timecode. |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.UI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field                                                                                         |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Playhead                                                                                         |
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `hs._asm.axuielement` object for the Playhead |
 
 ### Methods
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:app() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The application object as a table</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:hide() -> Playhead object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Hides the Playhead                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Playhead object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Hides the Playhead |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Playhead object</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Returns the Playhead's parent table                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>The parent object as a table</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Returns the Playhead's parent table |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:show() -> Playhead object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method                                                                                         |
-| **Description**                                      | Shows the Playhead                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>Playhead object</li><br /></ul>                                           |
+| **Type**                                             | Method |
+| **Description**                                      | Shows the Playhead |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Playhead object</li></ul> |
 

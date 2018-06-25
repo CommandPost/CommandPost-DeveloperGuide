@@ -16,18 +16,18 @@ Manages features relating to the Timeline Playhead.
 #### [alwaysCentered](#alwayscentered)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.alwaysCentered <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | If `true`, the playhead will be centered in the view while scrolling.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | If `true`, the playhead will be centered in the view while scrolling. |
 
 #### [scrollingTimeline](#scrollingtimeline)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.scrollingTimeline <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | Enables or disables the scrolling timeline.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | Enables or disables the scrolling timeline. |
 
 #### [tracking](#tracking)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.playhead.tracking <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable                                                                                         |
-| **Description**                                      | If `true`, we are tracking the playhead position.                                                                                         |
+| **Type**                                             | Variable |
+| **Description**                                      | If `true`, we are tracking the playhead position. |
 

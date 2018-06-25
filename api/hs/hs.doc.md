@@ -46,51 +46,51 @@ By default, the internal core documentation and portions of the Lua 5.3 manual, 
 #### [help](#help)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.help(identifier)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Prints the documentation for some part of Hammerspoon's API and Lua 5.3.  This function has also been aliased as `hs.help` and `help` as a shorthand for use within the Hammerspoon console.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>identifier - A string containing the signature of some part of Hammerspoon's API (e.g. <code>"hs.reload"</code>)</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>This function is mainly for runtime API help while using Hammerspoon's Console * This function only returns information about the core Hammerspoon API and Lua 5.3.  If you register additional files from 3rd party modules, or deregister the initial files for creating your own <code>hs.doc</code> objects, it will not affect the results used by this function.</li><br /></ul>                                             |
+| **Type**                                             | Function |
+| **Description**                                      | Prints the documentation for some part of Hammerspoon's API and Lua 5.3.  This function has also been aliased as `hs.help` and `help` as a shorthand for use within the Hammerspoon console. |
+| **Parameters**                                       | <ul><li>identifier - A string containing the signature of some part of Hammerspoon's API (e.g. <code>"hs.reload"</code>)</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+| **Notes**                                            | <ul><li>This function is mainly for runtime API help while using Hammerspoon's Console * This function only returns information about the core Hammerspoon API and Lua 5.3.  If you register additional files from 3rd party modules, or deregister the initial files for creating your own <code>hs.doc</code> objects, it will not affect the results used by this function.</li></ul> |
 
 #### [locateJSONFile](#locatejsonfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.locateJSONFile(module) -> path | false, message` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Locates the JSON file corresponding to the specified module by searching package.path and package.cpath.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>module - the name of the module to locate a JSON file for</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>the path to the JSON file, or <code>false, error</code> if unable to locate a corresponding JSON file.</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>The JSON should be named 'docs.json' and located in the same directory as the <code>lua</code> or <code>so</code> file which is used when the module is loaded via <code>require</code>.</li><br /></ul>                                             |
+| **Type**                                             | Function |
+| **Description**                                      | Locates the JSON file corresponding to the specified module by searching package.path and package.cpath. |
+| **Parameters**                                       | <ul><li>module - the name of the module to locate a JSON file for</li></ul> |
+| **Returns**                                          | <ul><li>the path to the JSON file, or <code>false, error</code> if unable to locate a corresponding JSON file.</li></ul> |
+| **Notes**                                            | <ul><li>The JSON should be named 'docs.json' and located in the same directory as the <code>lua</code> or <code>so</code> file which is used when the module is loaded via <code>require</code>.</li></ul> |
 
 #### [registeredFiles](#registeredfiles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registeredFiles() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Returns the list of registered JSON files.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>a table containing the list of registered JSON files</li><br /></ul>                                           |
-| **Notes**                                            | <ul><br /><li>The table returned by this function has a metatable including a __tostring method which allows you to see the list of registered files by simply typing <code>hs.doc.registeredFiles()</code> in the Hammerspoon Console.</li><br /></ul>                                             |
+| **Type**                                             | Function |
+| **Description**                                      | Returns the list of registered JSON files. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>a table containing the list of registered JSON files</li></ul> |
+| **Notes**                                            | <ul><li>The table returned by this function has a metatable including a __tostring method which allows you to see the list of registered files by simply typing <code>hs.doc.registeredFiles()</code> in the Hammerspoon Console.</li></ul> |
 
 #### [registerJSONFile](#registerjsonfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.registerJSONFile(jsonfile) -> status[, message]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Register a JSON file for inclusion when Hammerspoon generates internal documentation.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>jsonfile - A string containing the location of a JSON file</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Register a JSON file for inclusion when Hammerspoon generates internal documentation. |
+| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file</li></ul> |
+| **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was registered or not.  If the file was not registered, then a message indicating the error is also returned.</li></ul> |
 
 #### [unregisterJSONFile](#unregisterjsonfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.unregisterJSONFile(jsonfile, [isSpoon]) -> status[, message]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Remove a JSON file from the list of registered files.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>jsonfile - A string containing the location of a JSON file * isSpoon  - an optional boolean, default false, specifying that the documentation should be added to the <code>spoons</code> sub heading in the documentation hierarchy.</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>status - Boolean flag indicating if the file was unregistered or not.  If the file was not unregistered, then a message indicating the error is also returned.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Remove a JSON file from the list of registered files. |
+| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file * isSpoon  - an optional boolean, default false, specifying that the documentation should be added to the <code>spoons</code> sub heading in the documentation hierarchy.</li></ul> |
+| **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was unregistered or not.  If the file was not unregistered, then a message indicating the error is also returned.</li></ul> |
 
 #### [validateJSONFile](#validatejsonfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.validateJSONFile(jsonfile) -> status, message|table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function                                                                                         |
-| **Description**                                      | Validate a JSON file potential inclusion in the Hammerspoon internal documentation.                                                                                         |
-| **Parameters**                                       | <ul><br /><li>jsonfile - A string containing the location of a JSON file</li><br /></ul>                                        |
-| **Returns**                                          | <ul><br /><li>status - Boolean flag indicating if the file was validated or not. * message|table - If the file did not contain valid JSON data, then a message indicating the error is returned; otherwise the parsed JSON data is returned as a table.</li><br /></ul>                                           |
+| **Type**                                             | Function |
+| **Description**                                      | Validate a JSON file potential inclusion in the Hammerspoon internal documentation. |
+| **Parameters**                                       | <ul><li>jsonfile - A string containing the location of a JSON file</li></ul> |
+| **Returns**                                          | <ul><li>status - Boolean flag indicating if the file was validated or not. * message|table - If the file did not contain valid JSON data, then a message indicating the error is returned; otherwise the parsed JSON data is returned as a table.</li></ul> |
 
