@@ -30,8 +30,8 @@ Secondary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>element - An <code>axuielementObject</code> to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if matches otherwise <code>false</code></li><br /></ul>                                           |
 
 ### Fields
 
@@ -96,22 +96,22 @@ Secondary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>App</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>App</li><br /></ul>                                           |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:show() -> SecondaryWindow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Show the Secondary Window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>SecondaryWindow</code> object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>SecondaryWindow</code> object.</li><br /></ul>                                           |
 
 #### [window](#window)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:window() -> cp.ui.Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `Window` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>Window</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>Window</code> instance.</li><br /></ul>                                           |
 

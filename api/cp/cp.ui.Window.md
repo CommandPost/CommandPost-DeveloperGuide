@@ -39,8 +39,8 @@ A Window UI element.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Window                                                                                         |
-| **Parameters**                                       | <ul><li><code>uiProp</code>   - a <code>cp.prop</code> that returns the <code>hs._asm.axuielement</code> for the window.</li></ul>   |
-| **Returns**                                          | <ul><li>A new <code>Window</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>uiProp</code>   - a <code>cp.prop</code> that returns the <code>hs._asm.axuielement</code> for the window.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A new <code>Window</code> instance.</li><br /></ul>                                           |
 
 ### Fields
 
@@ -99,21 +99,21 @@ A Window UI element.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Attempts to close the window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the window was successfully closed.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the window was successfully closed.</li><br /></ul>                                           |
 
 #### [focus](#focus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.focus() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Attempts to focus the window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the window was successfully focused.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the window was successfully focused.</li><br /></ul>                                           |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:snapshot([path]) -> hs.image | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it.                                                                                         |
-| **Parameters**                                       | <ul><li>path      - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul>   |
+| **Parameters**                                       | <ul><br /><li>path      - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li><br /></ul>                                        |
 

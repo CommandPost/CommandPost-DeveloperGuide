@@ -26,6 +26,6 @@ Plugins Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><li>deps - The plugin dependencies.</li></ul><ul><li>env  - The plugin environment.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>deps - The plugin dependencies. * env  - The plugin environment.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 

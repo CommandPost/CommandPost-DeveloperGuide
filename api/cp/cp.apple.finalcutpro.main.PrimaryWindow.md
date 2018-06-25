@@ -39,8 +39,8 @@ Primary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if a window matches the PrimaryWindow requirements                                                                                         |
-| **Parameters**                                       | <ul><li>w - The window to check</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if matched otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>w - The window to check</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if matched otherwise <code>false</code></li><br /></ul>                                           |
 
 ### Fields
 
@@ -129,62 +129,62 @@ Primary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Provides access to any 'Alert' windows on the PrimaryWindow.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>cp.ui.Alert</code> object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A <code>cp.ui.Alert</code> object</li><br /></ul>                                           |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:app() -> hs.application` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the application the display belongs to.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The app instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The app instance.</li><br /></ul>                                           |
 
 #### [colorBoard](#colorboard)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:colorBoard() -> ColorBoard` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the ColorBoard object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>ColorBoard</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>ColorBoard</li><br /></ul>                                           |
 
 #### [inspector](#inspector)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:inspector() -> Inspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Inspector object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>Inspector</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Inspector</li><br /></ul>                                           |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.new(app) -> PrimaryWindow object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new PrimaryWindow.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>PrimaryWindow</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>PrimaryWindow</li><br /></ul>                                           |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:show() -> PrimaryWindow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Primary Window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>PrimaryWindow</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>PrimaryWindow</code> instance.</li><br /></ul>                                           |
 
 #### [toolbar](#toolbar)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:toolbar() -> PrimaryToolbar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the PrimaryToolbar element.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>PrimaryToolbar</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>PrimaryToolbar</code>.</li><br /></ul>                                           |
 
 #### [window](#window)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:window() -> cp.ui.Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `Window` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>Window</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>Window</code> instance.</li><br /></ul>                                           |
 

@@ -36,8 +36,8 @@ Timeline Appearance Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>element - An <code>axuielementObject</code> to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if matches otherwise <code>false</code></li><br /></ul>                                           |
 
 ### Constructors
 
@@ -46,8 +46,8 @@ Timeline Appearance Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `TimelineAppearance` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul>   |
-| **Returns**                                          | <ul><li>A new <code>TimelineAppearance</code> object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>parent - The parent object.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A new <code>TimelineAppearance</code> object.</li><br /></ul>                                           |
 
 ### Methods
 
@@ -56,54 +56,54 @@ Timeline Appearance Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance representing Final Cut Pro.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>App</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>App</li><br /></ul>                                           |
 
 #### [clipHeight](#clipheight)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:clipHeight() -> Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the Clip Height Slider.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>Slider</code> object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A <code>Slider</code> object.</li><br /></ul>                                           |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>parent</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>parent</li><br /></ul>                                           |
 
 #### [toggle](#toggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:toggle() -> CheckBox` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Timeline Appearance CheckBox.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>axuielementObject</code> object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A <code>axuielementObject</code> object.</li><br /></ul>                                           |
 
 #### [toggleUI](#toggleui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:toggleUI() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets the Toggle UI.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>axuielementObject</code> object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A <code>axuielementObject</code> object.</li><br /></ul>                                           |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:UI() -> TimelineAppearance` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hide the Timeline Appearance popup.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>TimelineAppearance</code> object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>TimelineAppearance</code> object.</li><br /></ul>                                           |
 
 #### [zoomAmount](#zoomamount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:zoomAmount() -> Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Get the Zoom Slider.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>Slider</code> object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A <code>Slider</code> object.</li><br /></ul>                                           |
 

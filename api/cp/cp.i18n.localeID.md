@@ -37,16 +37,16 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `other` is a `localeID`.                                                                                         |
-| **Parameters**                                       | <ul><li>other     - the other value to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if it is a <code>cp.i18n.locale</code>, otherwise <code>false</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>other     - the other value to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if it is a <code>cp.i18n.locale</code>, otherwise <code>false</code>.</li><br /></ul>                                           |
 
 #### [parse](#parse)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.i18n.localeID.parse(code) -> string, string, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Parses a `language ID` into three possible string components:                                                                                         |
-| **Parameters**                                       | <ul><li>code      - The <code>locale ID</code> code. Eg. "en_AU".</li></ul>   |
-| **Returns**                                          | <ul><li>language  - The two-character lower-case alpha language code.</li></ul><ul><li>script    - the four-character mixed-case alpha script code.</li></ul><ul><li>region    - The two-character upper-case alpha region code.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>code      - The <code>locale ID</code> code. Eg. "en_AU".</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>language  - The two-character lower-case alpha language code. * script    - the four-character mixed-case alpha script code. * region    - The two-character upper-case alpha region code.</li><br /></ul>                                           |
 
 ### Constructors
 
@@ -55,8 +55,8 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates, or retrieves from the cache, a `localeID` instance for the specified `code`.                                                                                         |
-| **Parameters**                                       | <ul><li>code      - The language ID code.</li></ul>   |
-| **Returns**                                          | <ul><li>The matching <code>langaugeID</code>, or <code>nil</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>code      - The language ID code.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The matching <code>langaugeID</code>, or <code>nil</code>.</li><br /></ul>                                           |
 
 ### Fields
 
@@ -103,6 +103,6 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | This compares the `otherLocale` to this locale and returns a number indicating the 'strength'                                                                                         |
-| **Parameters**                                       | <ul><li>otherLocale       - The other locale to compare to.</li></ul>   |
-| **Returns**                                          | <ul><li>A number from <code>0</code> to <code>3</code> indicating the match strength.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>otherLocale       - The other locale to compare to.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A number from <code>0</code> to <code>3</code> indicating the match strength.</li><br /></ul>                                           |
 

@@ -22,8 +22,8 @@ MIDI Manager Controls.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing all of the control groups.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>Table</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Table</li><br /></ul>                                           |
 
 ### Methods
 
@@ -32,38 +32,38 @@ MIDI Manager Controls.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Gets a MIDI control.                                                                                         |
-| **Parameters**                                       | <ul><li><code>id</code>      - The unique ID for the widget you want to return.</li></ul>   |
-| **Returns**                                          | <ul><li>table containing the widget</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>id</code>      - The unique ID for the widget you want to return.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>table containing the widget</li><br /></ul>                                           |
 
 #### [getAll](#getall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.controls:getAll() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns all of the created controls.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>table containing all of the created callbacks</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>table containing all of the created callbacks</li><br /></ul>                                           |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.controls:id() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the ID of the control.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The ID of the widget as a <code>string</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The ID of the widget as a <code>string</code></li><br /></ul>                                           |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.controls:new(id, params) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new MIDI control.                                                                                         |
-| **Parameters**                                       | <ul><li><code>id</code>      - The unique ID for this widget.</li></ul>   |
-| **Returns**                                          | <ul><li>table that has been created</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>id</code>      - The unique ID for this widget.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>table that has been created</li><br /></ul>                                           |
 
 #### [params](#params)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.controls:params() -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the paramaters of the control.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The paramaters of the widget</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The paramaters of the widget</li><br /></ul>                                           |
 

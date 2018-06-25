@@ -59,48 +59,48 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a collection of commands. These commands can be enabled or disabled as a group.                                                                                         |
-| **Parameters**                                       | <ul><li><code>id</code>      - The ID to retrieve</li></ul>   |
-| **Returns**                                          | <ul><li><code>cp.commands</code> - The command group with the specified ID, or <code>nil</code> if none exists.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>id</code>      - The ID to retrieve</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>cp.commands</code> - The command group with the specified ID, or <code>nil</code> if none exists.</li><br /></ul>                                           |
 
 #### [groupIds](#groupids)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.groupIds() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns an array of IDs of command groups which have been created.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>table</code> - The array of group IDs.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>table</code> - The array of group IDs.</li><br /></ul>                                           |
 
 #### [groups](#groups)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.groups() -> table of cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table with the set of commands.                                                                                         |
-| **Parameters**                                       | <ul><li><code>id</code>      - The ID to retrieve</li></ul>   |
-| **Returns**                                          | <ul><li><code>cp.commands</code> - The command group with the specified ID, or <code>nil</code> if none exists.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>id</code>      - The ID to retrieve</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>cp.commands</code> - The command group with the specified ID, or <code>nil</code> if none exists.</li><br /></ul>                                           |
 
 #### [loadFromFile](#loadfromfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.loadFromFile(name) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a shortcut set from the standard location with the specified name.                                                                                         |
-| **Parameters**                                       | <ul><li>name      - The name of the shortcut set. E.g. "My Custom Shortcuts"</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the file was found and loaded successfully.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>name      - The name of the shortcut set. E.g. "My Custom Shortcuts"</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the file was found and loaded successfully.</li><br /></ul>                                           |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.new(id) -> cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a collection of commands. These commands can be enabled or disabled as a group.                                                                                         |
-| **Parameters**                                       | <ul><li><code>id</code>     - The unique ID for this command group.</li></ul>   |
-| **Returns**                                          | <ul><li>cp.commands - The command group that was created.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>id</code>     - The unique ID for this command group.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>cp.commands - The command group that was created.</li><br /></ul>                                           |
 
 #### [saveToFile](#savetofile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.saveToFile(name) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves the current shortcuts for all groups to a file in the standard location with the provided name.                                                                                         |
-| **Parameters**                                       | <ul><li>name      - The name of the command set. E.g. "My Custom Commands"</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the shortcuts were saved successfully.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>name      - The name of the command set. E.g. "My Custom Commands"</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the shortcuts were saved successfully.</li><br /></ul>                                           |
 
 ### Fields
 
@@ -123,56 +123,56 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Will trigger an 'activate' event, and then execute either the `successFn` or `failureFn` if the                                                                                         |
-| **Parameters**                                       | <ul><li>successFn     - the function to call if successfully activated.</li></ul><ul><li>failureFn     - the function to call if not activated after 5 seconds.</li></ul>   |
-| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>successFn     - the function to call if successfully activated.* failureFn        - the function to call if not activated after 5 seconds.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Nothing.</li><br /></ul>                                           |
 
 #### [add](#add)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:add(commandId) -> cp.commands.command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new command with the specified ID to this group. Additional configuration                                                                                         |
-| **Parameters**                                       | <ul><li><code>commandId</code>   - The unique ID for the new command.</li></ul>   |
-| **Returns**                                          | <ul><li>The new <code>cp.commands.command</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>commandId</code>   - The unique ID for the new command.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The new <code>cp.commands.command</code> instance.</li><br /></ul>                                           |
 
 #### [clear](#clear)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:clear() -> cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Clears all commands and their shortcuts.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The command group instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The command group instance.</li><br /></ul>                                           |
 
 #### [deleteShortcuts](#deleteshortcuts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:deleteShortcuts() -> cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Clears all shortcuts associated with commands in this command group.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The command group instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The command group instance.</li><br /></ul>                                           |
 
 #### [disable](#disable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:disable() -> cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Disables the command group.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The command group instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The command group instance.</li><br /></ul>                                           |
 
 #### [enable](#enable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:enable() -> cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Enables the command group.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The command group instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The command group instance.</li><br /></ul>                                           |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:get(commandId) -> cp.commands.command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the command with the specified ID, or `nil` if none exists.                                                                                         |
-| **Parameters**                                       | <ul><li><code>commandId</code>   - The command ID to retrieve.</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.commands.command</code>, or <code>nil</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>commandId</code>   - The command ID to retrieve.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.commands.command</code>, or <code>nil</code>.</li><br /></ul>                                           |
 
 #### [getAll](#getall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:getAll() -> table of cp.commands.command` </span>                                                          |
@@ -185,31 +185,31 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the unique ID of the command group.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The command group ID string.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The command group ID string.</li><br /></ul>                                           |
 
 #### [loadShortcuts](#loadshortcuts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:loadShortcuts(data) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Loads the shortcut details in the data table and applies them to the commands in this group.                                                                                         |
-| **Parameters**                                       | <ul><li>data      - The data table containing shortcuts.</li></ul>   |
-| **Returns**                                          | <ul><li>Nothing</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>data      - The data table containing shortcuts.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Nothing</li><br /></ul>                                           |
 
 #### [saveShortcuts](#saveshortcuts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:saveShortcuts() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a table that is approprate to be saved to file that contains the shortuct                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The table of shortcuts for commands.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The table of shortcuts for commands.</li><br /></ul>                                           |
 
 #### [watch](#watch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands:watch(events) -> cp.commands` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds an event watcher to the command group.                                                                                         |
-| **Parameters**                                       | <ul><li>events    - The table of events to watch for (see Notes).</li></ul>   |
-| **Returns**                                          | <ul><li>The command group instance.</li></ul>            |
-| **Notes**                                            | <ul><li>The table can have properties with the following functions, which will be called for the specific event:</li></ul><p>** <code>add(command)</code>:      Called after the provided <code>cp.commands.command</code> instance has been added.</p><p>** <code>activate()</code>         Called when the command group is activated.</p><p>** <code>enable()</code>:          Called when the command group is enabled.</p><p>** <code>disable()</code>:         Called when the command group is disabled.</p>                 |
+| **Parameters**                                       | <ul><br /><li>events    - The table of events to watch for (see Notes).</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The command group instance.</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>The table can have properties with the following functions, which will be called for the specific event:<strong> <code>add(command)</code>:        Called after the provided <code>cp.commands.command</code> instance has been added.</strong> <code>activate()</code>         Called when the command group is activated.<strong> <code>enable()</code>:           Called when the command group is enabled.</strong> <code>disable()</code>:            Called when the command group is disabled.</li><br /></ul>                                             |
 

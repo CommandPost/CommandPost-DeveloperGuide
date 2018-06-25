@@ -17,14 +17,14 @@ Adds the ability to control any Final Cut Pro User Interface Element via a MIDI 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Control Function                                                                                         |
-| **Parameters**                                       | <ul><li>metadata - table of metadata from the MIDI callback</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>metadata - table of metadata from the MIDI callback</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.midi.controls.controlui.relative.init() -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The module</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The module</li><br /></ul>                                           |
 

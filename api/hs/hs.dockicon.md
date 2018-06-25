@@ -22,36 +22,36 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Bounce Hammerspoon's dock icon                                                                                         |
-| **Parameters**                                       | <ul><li>indefinitely - A boolean value, true if the dock icon should bounce until the dock icon is clicked, false if the dock icon should only bounce briefly</li></ul>   |
+| **Parameters**                                       | <ul><br /><li>indefinitely - A boolean value, true if the dock icon should bounce until the dock icon is clicked, false if the dock icon should only bounce briefly</li><br /></ul>                                        |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.hide()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Hide Hammerspoon's dock icon                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [setBadge](#setbadge)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.setBadge(badge)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Set Hammerspoon's dock icon badge                                                                                         |
-| **Parameters**                                       | <ul><li>badge - A string containing the label to place inside the dock icon badge. If the string is empty, the badge will be cleared</li></ul>   |
+| **Parameters**                                       | <ul><br /><li>badge - A string containing the label to place inside the dock icon badge. If the string is empty, the badge will be cleared</li><br /></ul>                                        |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.show()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Make Hammerspoon's dock icon visible                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [visible](#visible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockicon.visible() -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Determine whether Hammerspoon's dock icon is visible                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean, true if the dock icon is visible, false if not</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A boolean, true if the dock icon is visible, false if not</li><br /></ul>                                           |
 

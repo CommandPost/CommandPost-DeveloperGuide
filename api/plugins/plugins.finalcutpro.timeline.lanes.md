@@ -16,6 +16,6 @@ Controls Final Cut Pro's Lanes.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Select Clip at Lane in Final Cut Pro                                                                                         |
-| **Parameters**                                       | <ul><li>whichLane - Lane Number</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>whichLane - Lane Number</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code></li><br /></ul>                                           |
 

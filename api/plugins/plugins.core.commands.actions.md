@@ -21,38 +21,38 @@ Registers itself with the `core.action.manager`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Executes the action with the provided parameters.                                                                                         |
-| **Parameters**                                       | <ul><li><code>action</code> - A table representing the action, matching the following:</li></ul><pre><code>* `id` - The specific Command ID within the group.</code></pre>   |
-| **Returns**                                          | <ul><li><code>true</code> if the action was executed successfully.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>action</code> - A table representing the action, matching the following:    * <code>id</code> - The specific Command ID within the group.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the action was executed successfully.</li><br /></ul>                                           |
 
 #### [getId](#getid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.commands.actions.getId(action) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets an ID from an action table                                                                                         |
-| **Parameters**                                       | <ul><li><code>action</code>      - The action table.</li></ul>   |
-| **Returns**                                          | <ul><li>The ID as a string.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>action</code>      - The action table.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The ID as a string.</li><br /></ul>                                           |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.commands.actions.init(actionmanager, cmds) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><li><code>actionmanager</code> - The Action Manager Plugin</li></ul><ul><li><code>cmds</code> - The Commands Plugin.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>actionmanager</code> - The Action Manager Plugin* <code>cmds</code> - The Commands Plugin.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [onChoices](#onchoices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.commands.actions.onChoices(choices) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds available choices to the  selection.                                                                                         |
-| **Parameters**                                       | <ul><li><code>choices</code>     - The <code>cp.choices</code> to add choices to.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>choices</code>     - The <code>cp.choices</code> to add choices to.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.commands.actions.reset() -> nothing` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resets the set of choices.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>Nothing</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Nothing</li><br /></ul>                                           |
 

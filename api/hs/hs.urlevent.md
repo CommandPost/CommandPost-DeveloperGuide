@@ -36,7 +36,7 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable                                                                                         |
 | **Description**                                      | A function that should handle http:// and https:// URL events                                                                                         |
-| **Notes**                                            | <ul><li>The function should handle four arguments:</li></ul><ul><li>scheme - A string containing the URL scheme (i.e. "http")</li></ul><ul><li>host - A string containing the host requested (e.g. "www.commandpost.org")</li></ul><ul><li>params - A table containing the key/value pairs of all the URL parameters</li></ul><ul><li>fullURL - A string containing the full, original URL</li></ul>                 |
+| **Notes**                                            | <ul><br /><li>The function should handle four arguments:  * scheme - A string containing the URL scheme (i.e. "http")  * host - A string containing the host requested (e.g. "www.commandpost.org")  * params - A table containing the key/value pairs of all the URL parameters  * fullURL - A string containing the full, original URL</li><br /></ul>                                             |
 
 ### Functions
 
@@ -45,57 +45,57 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Registers a callback for a commandpost:// URL event                                                                                         |
-| **Parameters**                                       | <ul><li>eventName - A string containing the name of an event</li></ul><ul><li>callback - A function that will be called when the specified event is received, or nil to remove an existing callback</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>The callback function should accept two parameters:</li></ul><ul><li>eventName - A string containing the name of the event</li></ul><ul><li>params - A table containing key/value string pairs containing any URL parameters that were specified in the URL</li></ul><ul><li>Given the URL <code>commandpost://doThingA?value=1</code> The event name is <code>doThingA</code> and the callback's <code>params</code> argument will be a table containing <code>{["value"] = "1"}</code></li></ul>                 |
+| **Parameters**                                       | <ul><br /><li>eventName - A string containing the name of an event * callback - A function that will be called when the specified event is received, or nil to remove an existing callback</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>The callback function should accept two parameters:  * eventName - A string containing the name of the event  * params - A table containing key/value string pairs containing any URL parameters that were specified in the URL * Given the URL <code>commandpost://doThingA?value=1</code> The event name is <code>doThingA</code> and the callback's <code>params</code> argument will be a table containing <code>{["value"] = "1"}</code></li><br /></ul>                                             |
 
 #### [getAllHandlersForScheme](#getallhandlersforscheme)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.getAllHandlersForScheme(scheme) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets all of the application bundle identifiers of applications able to handle a URL scheme                                                                                         |
-| **Parameters**                                       | <ul><li>scheme - A string containing a URL scheme (e.g. 'http')</li></ul>   |
-| **Returns**                                          | <ul><li>A table containing the bundle identifiers of all applications that can handle the scheme</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>scheme - A string containing a URL scheme (e.g. 'http')</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A table containing the bundle identifiers of all applications that can handle the scheme</li><br /></ul>                                           |
 
 #### [getDefaultHandler](#getdefaulthandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.getDefaultHandler(scheme) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the application bundle identifier of the application currently registered to handle a URL scheme                                                                                         |
-| **Parameters**                                       | <ul><li>scheme - A string containing a URL scheme (e.g. 'http')</li></ul>   |
-| **Returns**                                          | <ul><li>A string containing the bundle identifier of the current default application</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>scheme - A string containing a URL scheme (e.g. 'http')</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A string containing the bundle identifier of the current default application</li><br /></ul>                                           |
 
 #### [openURL](#openurl)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.openURL(url)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens a URL with the default application                                                                                         |
-| **Parameters**                                       | <ul><li>url - A string containing a URL, which must contain a scheme and '://'</li></ul>   |
-| **Returns**                                          | <ul><li>A boolean, true if the URL was opened successfully, otherwise false</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>url - A string containing a URL, which must contain a scheme and '://'</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A boolean, true if the URL was opened successfully, otherwise false</li><br /></ul>                                           |
 
 #### [openURLWithBundle](#openurlwithbundle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.openURLWithBundle(url, bundleID) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens a URL with a specified application                                                                                         |
-| **Parameters**                                       | <ul><li>url - A string containing a URL</li></ul><ul><li>bundleID - A string containing an application bundle identifier (e.g. "com.apple.Safari")</li></ul>   |
-| **Returns**                                          | <ul><li>True if the application was launched successfully, otherwise false</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>url - A string containing a URL * bundleID - A string containing an application bundle identifier (e.g. "com.apple.Safari")</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>True if the application was launched successfully, otherwise false</li><br /></ul>                                           |
 
 #### [setDefaultHandler](#setdefaulthandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.setDefaultHandler(scheme[, bundleID])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the default system handler for URLs of a given scheme                                                                                         |
-| **Parameters**                                       | <ul><li>scheme - A string containing the URL scheme to change. This must be 'http' or 'https' (although entering either will change the handler for both)</li></ul><ul><li>bundleID - An optional string containing an application bundle identifier for the application to set as the default handler. Defaults to <code>org.latenitefilms.CommandPost</code>.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>Changing the default handler for http/https URLs will display a system prompt asking the user to confirm the change</li></ul>                 |
+| **Parameters**                                       | <ul><br /><li>scheme - A string containing the URL scheme to change. This must be 'http' or 'https' (although entering either will change the handler for both) * bundleID - An optional string containing an application bundle identifier for the application to set as the default handler. Defaults to <code>org.latenitefilms.CommandPost</code>.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>Changing the default handler for http/https URLs will display a system prompt asking the user to confirm the change</li><br /></ul>                                             |
 
 #### [setRestoreHandler](#setrestorehandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.setRestoreHandler(scheme, bundleID)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stores a URL handler that will be restored when CommandPost or reloads its config                                                                                         |
-| **Parameters**                                       | <ul><li>scheme - A string containing the URL scheme to change. This must be 'http' (although both http:// and https:// URLs will be affected)</li></ul><ul><li>bundleID - A string containing an application bundle identifier (e.g. 'com.apple.Safari') for the application to set as the default handler when CommandPost exits or reloads its config</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>You don't have to call this function if you want CommandPost to permanently be your default handler. Only use this if you want the handler to be automatically reverted to something else when CommandPost exits/reloads.</li></ul>                 |
+| **Parameters**                                       | <ul><br /><li>scheme - A string containing the URL scheme to change. This must be 'http' (although both http:// and https:// URLs will be affected) * bundleID - A string containing an application bundle identifier (e.g. 'com.apple.Safari') for the application to set as the default handler when CommandPost exits or reloads its config</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>You don't have to call this function if you want CommandPost to permanently be your default handler. Only use this if you want the handler to be automatically reverted to something else when CommandPost exits/reloads.</li><br /></ul>                                             |
 

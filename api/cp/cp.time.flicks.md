@@ -218,8 +218,8 @@ approximations, and leave it at that!
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the `thing` is a `flicks` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>thing - the thing to check</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the thingis a flicks instance, otherwise <code>false</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>thing - the thing to check</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the thingis a flicks instance, otherwise <code>false</code>.</li><br /></ul>                                           |
 
 ### Constructors
 
@@ -228,16 +228,16 @@ approximations, and leave it at that!
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new `flicks` instance. By default, the unit is in flicks`, but can be set as a                                                                                         |
-| **Parameters**                                       | <ul><li>value - the base value to set to</li></ul>   |
-| **Returns**                                          | <ul><li>the new <code>flicks</code> instance</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>value - the base value to set to</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>the new <code>flicks</code> instance</li><br /></ul>                                           |
 
 #### [parse](#parse)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks.parse(timecodeString, framerate) -> flicks` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Attempts to parse the timecode string value with the specified framerate.                                                                                         |
-| **Parameters**                                       | <ul><li>timecodeString   - The timecode as a string.</li></ul><ul><li>framerate        - The number of frames per second.</li></ul>   |
-| **Returns**                                          | <ul><li>a new <code>flicks</code> instance for the timecode.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>timecodeString   - The timecode as a string. * framerate        - The number of frames per second.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a new <code>flicks</code> instance for the timecode.</li><br /></ul>                                           |
 
 ### Methods
 
@@ -252,14 +252,14 @@ approximations, and leave it at that!
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Converts the flicks into a decimal value of the number of seconds it represents.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>the number of seconds</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>the number of seconds</li><br /></ul>                                           |
 
 #### [toTimecode](#totimecode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.time.flicks:toTimecode(framerate[, delimeter]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Converts the flicks into a string of the format "HH[:]MM[:]SS[:;]FF", with hours, minutes and frames listed respectively.                                                                                         |
-| **Parameters**                                       | <ul><li>framerate    - the framerate to use when calculating frames per second.</li></ul><ul><li>delimeter    - either <code>nil</code> (default), ":", or ";".</li></ul>   |
-| **Returns**                                          | <ul><li>String of the timecode.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>framerate    - the framerate to use when calculating frames per second. * delimeter    - either <code>nil</code> (default), ":", or ";".</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>String of the timecode.</li><br /></ul>                                           |
 

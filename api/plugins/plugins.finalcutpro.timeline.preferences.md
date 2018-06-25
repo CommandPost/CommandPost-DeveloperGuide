@@ -26,6 +26,6 @@ Final Cut Pro Timeline Preferences.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the 'FFAutoRenderDelay' value from the Final Cut Pro Preferences file.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>'FFAutoRenderDelay' value as number.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>'FFAutoRenderDelay' value as number.</li><br /></ul>                                           |
 

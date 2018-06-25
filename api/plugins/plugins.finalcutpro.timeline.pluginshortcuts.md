@@ -30,38 +30,38 @@ Controls for Final Cut Pro's Plugin Shortcuts (for use with Hack Shortcuts).
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies a shortcut.                                                                                         |
-| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>handlerId</code>      - The action handler ID. * <code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [assignShortcut](#assignshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.assignShortcut(shortcutNumber, handlerId) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Asks the user to assign the specified video effect shortcut number to a selected effect.                                                                                         |
-| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>handlerId</code>      - The action handler ID. * <code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [getShortcut](#getshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.getShortcut(handlerId, shortcutNumber) -> shortcut` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a shortcut.                                                                                         |
-| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
-| **Returns**                                          | <ul><li>The shortcut</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>handlerId</code>      - The action handler ID. * <code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The shortcut</li><br /></ul>                                           |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.init(handlerId, action, shortcutNumber) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><li><code>deps</code> - Dependancies</li></ul>   |
-| **Returns**                                          | <ul><li>The module</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>deps</code> - Dependancies</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The module</li><br /></ul>                                           |
 
 #### [setShortcut](#setshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.pluginshortcuts.setShortcut(handlerId, action, shortcutNumber) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets a shortcut.                                                                                         |
-| **Parameters**                                       | <ul><li><code>handlerId</code>      - The action handler ID.</li></ul><ul><li><code>action</code>         - The action.</li></ul><ul><li><code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>handlerId</code>      - The action handler ID. * <code>action</code>         - The action. * <code>shortcutNumber</code> - The shortcut number, between 1 and 5, which is being assigned.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 

@@ -50,8 +50,8 @@ Then, whenever `thing.update(xxx)` is called, the watcher will output `"New valu
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Constructs a new watcher instance.                                                                                         |
-| **Parameters**                                       | <ul><li><code>...</code> - The list of event name strings supported by the watcher.</li></ul>   |
-| **Returns**                                          | <ul><li>a new watcher instance</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>...</code> - The list of event name strings supported by the watcher.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a new watcher instance</li><br /></ul>                                           |
 
 ### Methods
 
@@ -60,38 +60,38 @@ Then, whenever `thing.update(xxx)` is called, the watcher will output `"New valu
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a list of the event names supported by this watcher.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The table of event names.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The table of event names.</li><br /></ul>                                           |
 
 #### [getCount](#getcount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.watcher:getCount()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the number of watchers currently registered.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The number of watchers.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The number of watchers.</li><br /></ul>                                           |
 
 #### [notify](#notify)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.watcher:notify(type, ...) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Notifies watchers of the specified event type.                                                                                         |
-| **Parameters**                                       | <ul><li><code>type</code>   - The event type to notify. Must be one of the supported events.</li></ul><ul><li><code>...</code>    - These parameters are passed directly to the event watcher functions.</li></ul>   |
-| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>type</code>   - The event type to notify. Must be one of the supported events. * <code>...</code>    - These parameters are passed directly to the event watcher functions.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Nothing.</li><br /></ul>                                           |
 
 #### [unwatch](#unwatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.watcher:unwatch(id) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Removes the watchers which were added with the specified ID.                                                                                         |
-| **Parameters**                                       | <ul><li><code>id</code>     - The unique ID returned from <code>watch</code>.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if a watcher with the specified ID exists and was successfully removed.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>id</code>     - The unique ID returned from <code>watch</code>.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if a watcher with the specified ID exists and was successfully removed.</li><br /></ul>                                           |
 
 #### [watch](#watch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.watcher:watch(events) -> id` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a watcher for the specified events.                                                                                         |
-| **Parameters**                                       | <ul><li><code>events</code>     - A table of functions, one for each event to watch.</li></ul>   |
-| **Returns**                                          | <ul><li>A unique ID that can be passed to <code>unwatch</code> to stop watching.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>events</code>     - A table of functions, one for each event to watch.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A unique ID that can be passed to <code>unwatch</code> to stop watching.</li><br /></ul>                                           |
 

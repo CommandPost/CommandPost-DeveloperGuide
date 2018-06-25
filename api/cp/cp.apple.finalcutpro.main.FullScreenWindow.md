@@ -28,8 +28,8 @@ Full Screen Window
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>element - An <code>axuielementObject</code> to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if matches otherwise <code>false</code></li><br /></ul>                                           |
 
 ### Constructors
 
@@ -38,8 +38,8 @@ Full Screen Window
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new FCPX `FullScreenWindow` instance.                                                                                         |
-| **Parameters**                                       | <ul><li>app       - The FCP app instance.</li></ul>   |
-| **Returns**                                          | <ul><li>The new <code>FullScreenWindow</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>app       - The FCP app instance.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The new <code>FullScreenWindow</code>.</li><br /></ul>                                           |
 
 ### Fields
 
@@ -80,22 +80,22 @@ Full Screen Window
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the FCPX app.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The FCPX app.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The FCPX app.</li><br /></ul>                                           |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:show() -> cp.apple.finalcutpro` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Attempts to show the full screen window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The window instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The window instance.</li><br /></ul>                                           |
 
 #### [window](#window)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:window() -> cp.ui.Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `Window` instance for the full-screen window.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>Window</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>Window</code> instance.</li><br /></ul>                                           |
 

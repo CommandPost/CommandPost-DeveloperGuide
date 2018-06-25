@@ -25,9 +25,9 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new path watcher object                                                                                         |
-| **Parameters**                                       | <ul><li>path - A string containing the path to be watched</li></ul><ul><li>fn - A function to be called when changes are detected. It should accept two arguments:</li></ul><ul><li><code>paths</code>: a table containing a list of file paths that have changed</li></ul><ul><li><code>flagTables</code>: a table containing a list of tables denoting how each corresponding file in <code>paths</code> has changed, each containing boolean values indicating which types of events occurred; The possible keys are:</li></ul><pre><code> * mustScanSubDirs</code></pre><pre><code> * userDropped</code></pre><pre><code> * kernelDropped</code></pre><pre><code> * eventIdsWrapped</code></pre><pre><code> * historyDone</code></pre><pre><code> * rootChanged</code></pre><pre><code> * mount</code></pre><pre><code> * unmount</code></pre><pre><code> * itemCreated</code></pre><pre><code> * itemRemoved</code></pre><pre><code> * itemInodeMetaMod</code></pre><pre><code> * itemRenamed</code></pre><pre><code> * itemModified</code></pre><pre><code> * itemFinderInfoMod</code></pre><pre><code> * itemChangeOwner</code></pre><pre><code> * itemXattrMod</code></pre><pre><code> * itemIsFile</code></pre><pre><code> * itemIsDir</code></pre><pre><code> * itemIsSymlink</code></pre><pre><code> * ownEvent (OS X 10.9+)</code></pre><pre><code> * itemIsHardlink (OS X 10.10+)</code></pre><pre><code> * itemIsLastHardlink (OS X 10.10+)</code></pre>   |
-| **Returns**                                          | <ul><li>An <code>hs.pathwatcher</code> object</li></ul>            |
-| **Notes**                                            | <ul><li>For more information about the event flags, see <a href="https://developer.apple.com/reference/coreservices/1455361-fseventstreameventflags/">the official documentation</a></li></ul>                 |
+| **Parameters**                                       | <ul><br /><li>path - A string containing the path to be watched * fn - A function to be called when changes are detected. It should accept two arguments:   * <code>paths</code>: a table containing a list of file paths that have changed   * <code>flagTables</code>: a table containing a list of tables denoting how each corresponding file in <code>paths</code> has changed, each containing boolean values indicating which types of events occurred; The possible keys are:     * mustScanSubDirs     * userDropped     * kernelDropped     * eventIdsWrapped     * historyDone     * rootChanged     * mount     * unmount     * itemCreated     * itemRemoved     * itemInodeMetaMod     * itemRenamed     * itemModified     * itemFinderInfoMod     * itemChangeOwner     * itemXattrMod     * itemIsFile     * itemIsDir     * itemIsSymlink     * ownEvent (OS X 10.9+)     * itemIsHardlink (OS X 10.10+)     * itemIsLastHardlink (OS X 10.10+)</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An <code>hs.pathwatcher</code> object</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>For more information about the event flags, see <a href="https://developer.apple.com/reference/coreservices/1455361-fseventstreameventflags/">the official documentation</a></li><br /></ul>                                             |
 
 ### Methods
 
@@ -36,14 +36,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts a path watcher                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>hs.pathwatcher</code> object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>hs.pathwatcher</code> object</li><br /></ul>                                           |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.pathwatcher:stop()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops a path watcher                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 

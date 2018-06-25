@@ -47,6 +47,6 @@ This plugin basically just disables CP's Tangent Manager when ColorFinale is run
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the module.                                                                                         |
-| **Parameters**                                       | <ul><li>tangentManager - The Tangent Manager</li></ul>   |
-| **Returns**                                          | <ul><li>The ColorFinale Tangent Module.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>tangentManager - The Tangent Manager</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The ColorFinale Tangent Module.</li><br /></ul>                                           |
 

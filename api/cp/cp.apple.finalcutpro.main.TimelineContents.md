@@ -29,16 +29,16 @@ Timeline Contents Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table containing the list of clips in the Timeline.                                                                                         |
-| **Parameters**                                       | <ul><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems</li></ul><ul><li>filterFn     - (optional) if provided, the function will be called to check each clip</li></ul>   |
-| **Returns**                                          | <ul><li>The table of axuielements that match the conditions</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The table of axuielements that match the conditions</li><br /></ul>                                           |
 
 #### [playheadClipsUI](#playheadclipsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:playheadClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a table array containing the list of clips in the Timeline under the playhead, ordered with the                                                                                         |
-| **Parameters**                                       | <ul><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems</li></ul><ul><li>filterFn     - (optional) if provided, the function will be called to check each clip</li></ul>   |
-| **Returns**                                          | <ul><li>The table of axuielements that match the conditions</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The table of axuielements that match the conditions</li><br /></ul>                                           |
 
 ### Fields
 
@@ -97,14 +97,14 @@ Timeline Contents Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the UI for the current 'Range Selection', if present.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The 'Range Selection' UI or <code>nil</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The 'Range Selection' UI or <code>nil</code></li><br /></ul>                                           |
 
 #### [selectedClipsUI](#selectedclipsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:selectedClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a table containing the list of selected clips.                                                                                         |
-| **Parameters**                                       | <ul><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems</li></ul><ul><li>filterFn     - (optional) if provided, the function will be called to check each clip</li></ul>   |
-| **Returns**                                          | <ul><li>The table of selected axuielements that match the conditions</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>expandGroups - (optional) if true, expand AXGroups to include contained AXLayoutItems * filterFn     - (optional) if provided, the function will be called to check each clip</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The table of selected axuielements that match the conditions</li><br /></ul>                                           |
 

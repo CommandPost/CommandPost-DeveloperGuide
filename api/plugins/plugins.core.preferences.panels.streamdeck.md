@@ -38,24 +38,24 @@ Stream Deck Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Group Editor                                                                                         |
-| **Parameters**                                       | <ul><li>groupId - Group ID</li></ul>   |
-| **Returns**                                          | <ul><li>Group Editor</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>groupId - Group ID</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Group Editor</li><br /></ul>                                           |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.streamdeck.init(deps, env) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialise the Module.                                                                                         |
-| **Parameters**                                       | <ul><li>deps - Dependancies Table</li></ul><ul><li>env - Environment Table</li></ul>   |
-| **Returns**                                          | <ul><li>The Module</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>deps - Dependancies Table * env - Environment Table</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The Module</li><br /></ul>                                           |
 
 #### [setGroupEditor](#setgroupeditor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.streamdeck.setGroupEditor(groupId, editorFn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the Group Editor                                                                                         |
-| **Parameters**                                       | <ul><li>groupId - Group ID</li></ul><ul><li>editorFn - Editor Function</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>groupId - Group ID * editorFn - Editor Function</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 ### Fields
 

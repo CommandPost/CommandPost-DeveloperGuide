@@ -22,8 +22,8 @@ Choices Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new `cp.choices` instance for the specified type.                                                                                         |
-| **Parameters**                                       | <ul><li><code>type</code>    - The unique ID for the type.</li></ul>   |
-| **Returns**                                          | <ul><li>The new <code>choices</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>type</code>    - The unique ID for the type.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The new <code>choices</code> instance.</li><br /></ul>                                           |
 
 ### Methods
 
@@ -32,14 +32,14 @@ Choices Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the array of choices that have been added to this instance.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The array of choices.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The array of choices.</li><br /></ul>                                           |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices:new(choiceType) -> choices.builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Adds a new choice with the specified. Additional settings                                                                                         |
-| **Parameters**                                       | <ul><li><code>text</code>   - The text title for the choice.</li></ul>   |
-| **Returns**                                          | <ul><li>The choice builder, added to the choices set.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>text</code>   - The text title for the choice.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The choice builder, added to the choices set.</li><br /></ul>                                           |
 

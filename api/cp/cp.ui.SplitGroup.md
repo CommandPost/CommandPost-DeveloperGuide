@@ -21,8 +21,8 @@ Split Group UI.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if an element matches what we think it should be.                                                                                         |
-| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>element - An <code>axuielementObject</code> to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if matches otherwise <code>false</code></li><br /></ul>                                           |
 
 ### Constructors
 
@@ -31,8 +31,8 @@ Split Group UI.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new Split Group.                                                                                         |
-| **Parameters**                                       | <ul><li>parent       - The parent object.</li></ul><ul><li>finderFn     - The function which returns an <code>hs._asm.axuielement</code> for the Split Group, or <code>nil</code>.</li></ul>   |
-| **Returns**                                          | <ul><li>A new <code>SplitGroup</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>parent       - The parent object. * finderFn     - The function which returns an <code>hs._asm.axuielement</code> for the Split Group, or <code>nil</code>.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A new <code>SplitGroup</code> instance.</li><br /></ul>                                           |
 
 ### Methods
 
@@ -41,14 +41,14 @@ Split Group UI.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the app instance.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>App</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>App</li><br /></ul>                                           |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.SplitGroup:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | The parent object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The parent object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The parent object.</li><br /></ul>                                           |
 

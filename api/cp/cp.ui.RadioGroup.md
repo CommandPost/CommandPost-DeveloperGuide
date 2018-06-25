@@ -28,8 +28,8 @@ Represents an `AXRadioGroup`, providing utility methods.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks if the provided `axuielement` is a RadioGroup.                                                                                         |
-| **Parameters**                                       | <ul><li>element   - The element to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the element is a RadioGroup.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>element   - The element to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the element is a RadioGroup.</li><br /></ul>                                           |
 
 ### Fields
 
@@ -52,61 +52,61 @@ Represents an `AXRadioGroup`, providing utility methods.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if the RadioGroup is enabled.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the RadioGroup is showing and enabled.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the RadioGroup is showing and enabled.</li><br /></ul>                                           |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:isShowing() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if the RadioGroup is visible.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the RadioGroup is visible.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the RadioGroup is visible.</li><br /></ul>                                           |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup.new(parent, finderFn[, cached]) -> RadioGroup` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Creates a new RadioGroup.                                                                                         |
-| **Parameters**                                       | <ul><li>parent    - The parent table.</li></ul><ul><li>finderFn  - The function which will find the <code>axuielement</code> representing the RadioGroup.</li></ul><ul><li>cached    - If set to <code>false</code>, the <code>axuielement</code> will not be cached. Defaults to <code>true</code>.</li></ul>   |
-| **Returns**                                          | <ul><li>The new <code>RadioGroup</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>parent    - The parent table.<em> finderFn   - The function which will find the <code>axuielement</code> representing the RadioGroup.</em> cached   - If set to <code>false</code>, the <code>axuielement</code> will not be cached. Defaults to <code>true</code>.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The new <code>RadioGroup</code> instance.</li><br /></ul>                                           |
 
 #### [nextOption](#nextoption)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:nextOption() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects the next option in the group. Cycles from the last to the first option.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>RadioGroup</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>RadioGroup</code>.</li><br /></ul>                                           |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the parent object.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The parent object.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The parent object.</li><br /></ul>                                           |
 
 #### [previousOption](#previousoption)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:previousOption() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Selects the previous option in the group. Cycles from the first to the last item.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>RadioGroup</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>RadioGroup</code>.</li><br /></ul>                                           |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:snapshot([path]) -> hs.image | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it.                                                                                         |
-| **Parameters**                                       | <ul><li>path      - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul>   |
+| **Parameters**                                       | <ul><br /><li>path      - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li><br /></ul>                                        |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:UI() -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `axuielement` for the RadioGroup, or `nil` if not currently visible.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>asuielement</code> or <code>nil</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>asuielement</code> or <code>nil</code>.</li><br /></ul>                                           |
 

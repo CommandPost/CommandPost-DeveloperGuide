@@ -109,8 +109,8 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a watcher object for system and display sleep/wake/power events                                                                                         |
-| **Parameters**                                       | <ul><li>fn - A function that will be called when system/display events happen. It should accept one parameter:</li></ul><ul><li>An event type (see the constants defined above)</li></ul>   |
-| **Returns**                                          | <ul><li>An <code>hs.caffeinate.watcher</code> object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>fn - A function that will be called when system/display events happen. It should accept one parameter:  * An event type (see the constants defined above)</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An <code>hs.caffeinate.watcher</code> object</li><br /></ul>                                           |
 
 ### Methods
 
@@ -119,14 +119,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Starts the sleep/wake watcher                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>An <code>hs.caffeinate.watcher</code> object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An <code>hs.caffeinate.watcher</code> object</li><br /></ul>                                           |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.watcher:stop()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Stops the sleep/wake watcher                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>An <code>hs.caffeinate.watcher</code> object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An <code>hs.caffeinate.watcher</code> object</li><br /></ul>                                           |
 

@@ -66,39 +66,39 @@ via the Final Cut Pro Command Editor.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [install](#install)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.install(silently) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Installs the Hacks Shortcuts.                                                                                         |
-| **Parameters**                                       | <ul><li><code>silently</code>   - (optional) If <code>true</code>, the user will not be prompted first.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>silently</code>   - (optional) If <code>true</code>, the user will not be prompted first.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if successful.</li><br /></ul>                                           |
 
 #### [refresh](#refresh)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.refresh() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Refresh Hacks Shortcuts if they're enabled.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [uninstall](#uninstall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.uninstall(silently) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Uninstalls the Hacks Shortcuts, if they have been installed                                                                                         |
-| **Parameters**                                       | <ul><li><code>silently</code>   - (optional) If <code>true</code>, the user will not be prompted first.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful.</li></ul>            |
-| **Notes**                                            | <ul><li>Used by Trash Preferences menubar command.</li></ul>                 |
+| **Parameters**                                       | <ul><br /><li><code>silently</code>   - (optional) If <code>true</code>, the user will not be prompted first.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if successful.</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>Used by Trash Preferences menubar command.</li><br /></ul>                                             |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.shortcuts.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Read shortcut keys from the Final Cut Pro Preferences.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 

@@ -44,16 +44,16 @@ This extension differs from the `hs.application` extension in several ways:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a list of all apps that have been requested via [forBundleID](#forBundleID), in no particular order.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A list of <code>cp.app</code> instances.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A list of <code>cp.app</code> instances.</li><br /></ul>                                           |
 
 #### [bundleIDs](#bundleids)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.bundleIDs() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a list of Bundle IDs which have been requested via [forBundleID](#forBundleID).                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>A list of Bundle IDs.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A list of Bundle IDs.</li><br /></ul>                                           |
 
 ### Constructors
 
@@ -62,8 +62,8 @@ This extension differs from the `hs.application` extension in several ways:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Returns the `cp.app` for the specified Bundle ID. If the app has already been created,                                                                                         |
-| **Parameters**                                       | <ul><li>bundleID      - The application bundle ID to find the app for.</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> for the bundle.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>bundleID      - The application bundle ID to find the app for.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app</code> for the bundle.</li><br /></ul>                                           |
 
 ### Fields
 
@@ -80,86 +80,86 @@ This extension differs from the `hs.application` extension in several ways:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds the closest match for the specified locale. The returned locale                                                                                         |
-| **Parameters**                                       | <ul><li>locale    - The local to match</li></ul>   |
-| **Returns**                                          | <ul><li>The closest supported locale or <code>nil</code> if none are available in the language.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>locale    - The local to match</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The closest supported locale or <code>nil</code> if none are available in the language.</li><br /></ul>                                           |
 
 #### [bundleID](#bundleid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:bundleID() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Bundle ID for the app.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The Bundle ID.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The Bundle ID.</li><br /></ul>                                           |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the application, if it's currently running.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app</code> instance.</li><br /></ul>                                           |
 
 #### [isSupportedLocale](#issupportedlocale)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:isSupportedLocale(locale) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if the specified locale is supported. The `locale` can                                                                                         |
-| **Parameters**                                       | <ul><li>locale    - The locale code string or <code>localeID</code> to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if it is supported, otherwise <code>false</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>locale    - The locale code string or <code>localeID</code> to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if it is supported, otherwise <code>false</code>.</li><br /></ul>                                           |
 
 #### [launch](#launch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:launch(waitSeconds) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Launches the application, or brings it to the front if it was already running.                                                                                         |
-| **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the launch completes. If <code>nil</code>, it will return immediately.</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the launch completes. If <code>nil</code>, it will return immediately.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app</code> instance.</li><br /></ul>                                           |
 
 #### [menu](#menu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:menu() -> cp.app.menu` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the main `menu` for the application.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app.menu</code> for the <code>cp.app</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app.menu</code> for the <code>cp.app</code> instance.</li><br /></ul>                                           |
 
 #### [notifier](#notifier)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:notifier() -> cp.ui.notifier` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns a `notifier` that is tracking the application UI element. It has already been started.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The notifier.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The notifier.</li><br /></ul>                                           |
 
 #### [quit](#quit)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:quit(waitSeconds) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Asks the application to quit, if it's running. The app may not have actually quit after this                                                                                         |
-| **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the quit completes. If <code>nil</code>, it will return immediately.</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the quit completes. If <code>nil</code>, it will return immediately.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app</code> instance.</li><br /></ul>                                           |
 
 #### [restart](#restart)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:restart(waitSeconds) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Restart the application, if currently running. If not, no action is taken.                                                                                         |
-| **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the quit completes. If <code>nil</code>, it will return immediately.</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the quit completes. If <code>nil</code>, it will return immediately.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app</code> instance.</li><br /></ul>                                           |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:show() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Ensure the app is onscreen if it is currently running.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app</code> instance.</li><br /></ul>                                           |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:update() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Updates the app, triggering any watchers if values have changed.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>cp.app</code> instance.</li><br /></ul>                                           |
 

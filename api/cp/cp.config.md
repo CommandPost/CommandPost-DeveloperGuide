@@ -190,58 +190,58 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the Application as a hs.application object                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>hs.application object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>hs.application object</li><br /></ul>                                           |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.get(key[, defaultValue]) -> string or boolean or number or nil or table or binary data` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Loads a setting                                                                                         |
-| **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li></ul><ul><li>defaultValue - A default value if the setting doesn't already exist</li></ul>   |
-| **Returns**                                          | <ul><li>The value of the setting</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>key - A string containing the name of the setting * defaultValue - A default value if the setting doesn't already exist</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The value of the setting</li><br /></ul>                                           |
 
 #### [prop](#prop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.prop(key[, defaultValue]) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns a `cp.prop` instance connected to the value of the specified key. When the value is modified, it will be notified.                                                                                         |
-| **Parameters**                                       | <ul><li><code>key</code>             - The configuration setting key.</li></ul><ul><li><code>defaultValue</code>    - The default value if the key has not been set.</li></ul>   |
-| **Returns**                                          | <ul><li>A <code>cp.prop</code> instance for the key.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>key</code>             - The configuration setting key.* <code>defaultValue</code>    - The default value if the key has not been set.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A <code>cp.prop</code> instance for the key.</li><br /></ul>                                           |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.reset()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Resets all the settings for the Application                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [set](#set)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.set(key, value)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Saves a setting with common datatypes                                                                                         |
-| **Parameters**                                       | <ul><li><code>key</code>        - A string containing the name of the setting</li></ul><ul><li><code>value</code>      - An optional value for the setting. Valid datatypes are:</li></ul><ul><li>string</li></ul><ul><li>number</li></ul><ul><li>boolean</li></ul><ul><li>nil</li></ul><ul><li>table (which may contain any of the same valid datatypes)</li></ul><ul><li>if no value is provided, it is assumed to be nil</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
-| **Notes**                                            | <ul><li>This function cannot set dates or raw data types</li></ul>                 |
+| **Parameters**                                       | <ul><br /><li><code>key</code>        - A string containing the name of the setting * <code>value</code>     - An optional value for the setting. Valid datatypes are:   * string   * number   * boolean   * nil   * table (which may contain any of the same valid datatypes) * if no value is provided, it is assumed to be nil</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>This function cannot set dates or raw data types</li><br /></ul>                                             |
 
 #### [unwatch](#unwatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.unwatch(id)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unregisters the watcher with the specified ID.                                                                                         |
-| **Parameters**                                       | <ul><li><code>id</code>     - The ID, originally returned from the <code>watch</code> function.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if a watcher with the ID existed and was successfully removed.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>id</code>     - The ID, originally returned from the <code>watch</code> function.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if a watcher with the ID existed and was successfully removed.</li><br /></ul>                                           |
 
 #### [watch](#watch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.watch(events) -> id` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Watches for config events.                                                                                         |
-| **Parameters**                                       | <ul><li><code>events</code> - a table containing functions for each event to watch for.</li></ul>   |
-| **Returns**                                          | <ul><li>a unique ID that can be used to <code>unwatch</code>.</li></ul>            |
-| **Notes**                                            | <ul><li>Supported events:</li></ul><p>** <code>reset()</code>   - occurs after CommandPost's settings are reset.</p>                 |
+| **Parameters**                                       | <ul><br /><li><code>events</code> - a table containing functions for each event to watch for.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a unique ID that can be used to <code>unwatch</code>.</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>Supported events: ** <code>reset()</code>   - occurs after CommandPost's settings are reset.</li><br /></ul>                                             |
 
 ### Fields
 

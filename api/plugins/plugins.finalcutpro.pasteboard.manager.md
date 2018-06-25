@@ -70,145 +70,145 @@ Pasteboard Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Copy with custom label.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [getClassname](#getclassname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.getClassname(data) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets a class anem from data                                                                                         |
-| **Parameters**                                       | <ul><li>data - The data object to process</li></ul>   |
-| **Returns**                                          | <ul><li>Class name as string</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>data - The data object to process</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Class name as string</li><br /></ul>                                           |
 
 #### [isClassnameSupported](#isclassnamesupported)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.isClassnameSupported(classname) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Is the class name supported?                                                                                         |
-| **Parameters**                                       | <ul><li>classname - The class name you want to check</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the class name is supported otherwise <code>false</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>classname - The class name you want to check</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the class name is supported otherwise <code>false</code>.</li><br /></ul>                                           |
 
 #### [isTimelineClip](#istimelineclip)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.isTimelineClip(data) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Is the data a timeline clip.                                                                                         |
-| **Parameters**                                       | <ul><li>data - The pasteboard data you want to check.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if a timeline clip otherwise <code>false</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>data - The pasteboard data you want to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if a timeline clip otherwise <code>false</code>.</li><br /></ul>                                           |
 
 #### [overrideNextClipName](#overridenextclipname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.overrideNextClipName(overrideName) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Overrides the name for the next clip which is copied from FCPX to the specified                                                                                         |
-| **Parameters**                                       | <ul><li>overrideName - The override name.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>overrideName - The override name.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [processArray](#processarray)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.processArray(data) -> string, number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Processes an 'array' table.                                                                                         |
-| **Parameters**                                       | <ul><li>data - The data object to process</li></ul>   |
-| **Returns**                                          | <ul><li>The primary clip name as a string.</li></ul><ul><li>The number of clips as number.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>data - The data object to process</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The primary clip name as a string. * The number of clips as number.</li><br /></ul>                                           |
 
 #### [processContent](#processcontent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.processContent(fcpxData, default) -> string, number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Searches the Pasteboard binary plist data for the first clip name, and returns it.                                                                                         |
-| **Parameters**                                       | <ul><li>fcpxData - The data object to process</li></ul><ul><li>default - The default value</li></ul>   |
-| **Returns**                                          | <ul><li>Returns the 'default' value if the pasteboard contains a media clip but we could not interpret it, otherwise <code>nil</code> if the data did not contain Final Cut Pro Clip data.</li></ul>            |
-| **Notes**                                            | <ul><li>Example usage: <code>local name = mod.findClipName(myFcpxData, "Unknown")</code></li></ul>                 |
+| **Parameters**                                       | <ul><br /><li>fcpxData - The data object to process * default - The default value</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Returns the 'default' value if the pasteboard contains a media clip but we could not interpret it, otherwise <code>nil</code> if the data did not contain Final Cut Pro Clip data.</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>Example usage: <code>local name = mod.findClipName(myFcpxData, "Unknown")</code></li><br /></ul>                                             |
 
 #### [processObject](#processobject)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.processObject(data) -> string, number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Processes the provided data object, which should have a '$class' property.                                                                                         |
-| **Parameters**                                       | <ul><li>data - The pasteboard data you want to check.</li></ul>   |
-| **Returns**                                          | <ul><li>The primary clip name as a string.</li></ul><ul><li>The number of clips as number.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>data - The pasteboard data you want to check.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The primary clip name as a string. * The number of clips as number.</li><br /></ul>                                           |
 
 #### [readFCPXData](#readfcpxdata)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.readFCPXData() -> data | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Reads Final Cut Pro Data from the Pasteboard as a binary Property List, if present.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The pasteboard data or <code>nil</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The pasteboard data or <code>nil</code>.</li><br /></ul>                                           |
 
 #### [restoreFromBuffer](#restorefrombuffer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.restoreFromBuffer(id) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Restore a Pasteboard item from the buffer.                                                                                         |
-| **Parameters**                                       | <ul><li>id - The ID of the buffer item.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>id - The ID of the buffer item.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [saveToBuffer](#savetobuffer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.saveToBuffer(id) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Save a Pasteboard item to the buffer.                                                                                         |
-| **Parameters**                                       | <ul><li>id - The ID of the buffer item.</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>id - The ID of the buffer item.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [startWatching](#startwatching)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.startWatching() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Start Watching the Pasteboard.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [stopWatching](#stopwatching)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.stopWatching() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stop Watching the Pasteboard.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [supportsContainedItems](#supportscontaineditems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.supportsContainedItems(data) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets whether or not the data supports contained items.                                                                                         |
-| **Parameters**                                       | <ul><li>data - The data object to process</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if supported otherwise <code>false</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>data - The data object to process</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if supported otherwise <code>false</code>.</li><br /></ul>                                           |
 
 #### [unarchiveFCPXData](#unarchivefcpxdata)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.unarchiveFCPXData(fcpxData) -> data | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Unarchive Final Cut Pro data.                                                                                         |
-| **Parameters**                                       | <ul><li>fcpxData - The data object to process</li></ul>   |
-| **Returns**                                          | <ul><li>The unarchived Final Cut Pro Pasteboard data or <code>nil</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>fcpxData - The data object to process</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The unarchived Final Cut Pro Pasteboard data or <code>nil</code>.</li><br /></ul>                                           |
 
 #### [unwatch](#unwatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.unwatch(id) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Stop a watcher.                                                                                         |
-| **Parameters**                                       | <ul><li>id - The ID of the watcher you want to stop.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>id - The ID of the watcher you want to stop.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if successful otherwise <code>false</code>.</li><br /></ul>                                           |
 
 #### [watch](#watch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.watch(events) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Watch events.                                                                                         |
-| **Parameters**                                       | <ul><li>events - Table of events</li></ul>   |
-| **Returns**                                          | <ul><li>Table of watchers.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>events - Table of events</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Table of watchers.</li><br /></ul>                                           |
 
 #### [writeFCPXData](#writefcpxdata)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.writeFCPXData(fcpxData, quiet) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Write Final Cut Pro data to Pasteboard.                                                                                         |
-| **Parameters**                                       | <ul><li>fcpxData - The data to write</li></ul><ul><li>quiet - Whether or not we should stop/start the watcher.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the operation succeeded, otherwise <code>false</code> (which most likely means ownership of the pasteboard has changed).</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>fcpxData - The data to write * quiet - Whether or not we should stop/start the watcher.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the operation succeeded, otherwise <code>false</code> (which most likely means ownership of the pasteboard has changed).</li><br /></ul>                                           |
 
 ### Fields
 

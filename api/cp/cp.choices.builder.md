@@ -21,8 +21,8 @@ Choices Builder Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Creates a new choice builder instance.                                                                                         |
-| **Parameters**                                       | <ul><li><code>choice</code>  - The choice instance to configure.</li></ul>   |
-| **Returns**                                          | <ul><li>The new choice builder.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>choice</code>  - The choice instance to configure.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The new choice builder.</li><br /></ul>                                           |
 
 ### Methods
 
@@ -31,30 +31,30 @@ Choices Builder Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Sets the ID of the choice.                                                                                         |
-| **Parameters**                                       | <ul><li><code>value</code>   - The ID.</li></ul>   |
-| **Returns**                                          | <ul><li>The choice builder.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>value</code>   - The ID.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The choice builder.</li><br /></ul>                                           |
 
 #### [params](#params)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:params(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies a table of parameter values for the choice. These                                                                                         |
-| **Parameters**                                       | <ul><li><code>value</code>   - The table of parameters.</li></ul>   |
-| **Returns**                                          | <ul><li>The choice builder, added to the choices set.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>value</code>   - The table of parameters.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The choice builder, added to the choices set.</li><br /></ul>                                           |
 
 #### [subText](#subtext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:subText(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies the `subText` value for the choice being built.                                                                                         |
-| **Parameters**                                       | <ul><li><code>value</code>   - The subText title for the choice.</li></ul>   |
-| **Returns**                                          | <ul><li>The choice builder.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>value</code>   - The subText title for the choice.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The choice builder.</li><br /></ul>                                           |
 
 #### [text](#text)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.choices.builder:text(value) -> builder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Specifies the text value for the choice being built.                                                                                         |
-| **Parameters**                                       | <ul><li><code>value</code>   - The text title for the choice.</li></ul>   |
-| **Returns**                                          | <ul><li>The choice builder, added to the choices set.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>value</code>   - The text title for the choice.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The choice builder, added to the choices set.</li><br /></ul>                                           |
 

@@ -17,14 +17,14 @@ Change Final Cut Pro's Backup Interval.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Gets the Periodic Backup Interval.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The periodic backup interval as number</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The periodic backup interval as number</li><br /></ul>                                           |
 
 #### [set](#set)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.backupinterval.set() -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Sets the Periodic Backup Interval via a dialog box.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The periodic backup interval as number</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The periodic backup interval as number</li><br /></ul>                                           |
 

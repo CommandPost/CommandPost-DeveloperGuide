@@ -137,70 +137,70 @@ here: http://www.tangentwave.co.uk/developer-support
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a new `mode` with the specified details and returns it.                                                                                         |
-| **Parameters**                                       | <ul><li>id            - The id number of the Mode.</li></ul><ul><li>name          - The name of the Mode.</li></ul>   |
-| **Returns**                                          | <ul><li>The new <code>mode</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>id            - The id number of the Mode.* name          - The name of the Mode.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The new <code>mode</code></li><br /></ul>                                           |
 
 #### [areMappingsInstalled](#aremappingsinstalled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.areMappingsInstalled() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Are mapping files installed?                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if mapping files are installed otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if mapping files are installed otherwise <code>false</code></li><br /></ul>                                           |
 
 #### [disableFinalCutProInTangentHub](#disablefinalcutprointangenthub)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.disableFinalCutProInTangentHub() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Disables the Final Cut Pro preset in the Tangent Hub Application.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [getMode](#getmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.getMode(id) -> plugins.core.tangent.manager.mode` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Returns the `mode` with the specified ID, or `nil`.                                                                                         |
-| **Parameters**                                       | <ul><li>id    - The ID to find.</li></ul>   |
-| **Returns**                                          | <ul><li>The <code>mode</code>, or <code>nil</code>.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>id    - The ID to find.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The <code>mode</code>, or <code>nil</code>.</li><br /></ul>                                           |
 
 #### [interruptWhen](#interruptwhen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.interruptWhen(aProp) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Adds a `cp.prop` that will cause an interruption to the Tangent connection when it is `true`.                                                                                         |
-| **Parameters**                                       | <ul><li>aProp     - The <code>cp.prop</code> that may interrupt the connection.</li></ul>   |
-| **Returns**                                          | <ul><li>Nothing.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>aProp     - The <code>cp.prop</code> that may interrupt the connection.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Nothing.</li><br /></ul>                                           |
 
 #### [launchTangentMapper](#launchtangentmapper)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.launchTangentMapper() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Launches the Tangent Mapper.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Updates the Tangent GUIs.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [updateControls](#updatecontrols)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.updateControls() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Update Controls.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
 #### [writeControlsXML](#writecontrolsxml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.writeControlsXML() -> boolean, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Writes the Tangent controls.xml File to the User's Application Support folder.                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if successfully created otherwise <code>false</code> if an error occurred.</li></ul><ul><li>If an error occurs an error message will also be returned as a string.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if successfully created otherwise <code>false</code> if an error occurred. *  If an error occurs an error message will also be returned as a string.</li><br /></ul>                                           |
 

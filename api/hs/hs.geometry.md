@@ -86,39 +86,39 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a copy of an hs.geometry object                                                                                         |
-| **Parameters**                                       | <ul><li>geom - an hs.geometry object to copy</li></ul>   |
-| **Returns**                                          | <ul><li>a newly created copy of the hs.geometry object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>geom - an hs.geometry object to copy</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a newly created copy of the hs.geometry object</li><br /></ul>                                           |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry.new(...) -> hs.geometry object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Creates a new hs.geometry object                                                                                         |
-| **Returns**                                          | <ul><li>a newly created hs.geometry object</li></ul>            |
+| **Returns**                                          | <ul><br /><li>a newly created hs.geometry object</li><br /></ul>                                           |
 
 #### [point](#point)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry.point(x, y) -> hs.geometry point` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Convenience function for creating a point object                                                                                         |
-| **Parameters**                                       | <ul><li>x - A number containing the horizontal co-ordinate of the point</li></ul><ul><li>y - A number containing the vertical co-ordinate of the point</li></ul>   |
-| **Returns**                                          | <ul><li>An hs.geometry point object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>x - A number containing the horizontal co-ordinate of the point * y - A number containing the vertical co-ordinate of the point</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An hs.geometry point object</li><br /></ul>                                           |
 
 #### [rect](#rect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry.rect(x, y, w, h) -> hs.geometry rect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Convenience function for creating a rect-table                                                                                         |
-| **Parameters**                                       | <ul><li>x - A number containing the horizontal co-ordinate of the top-left point of the rect</li></ul><ul><li>y - A number containing the vertical co-ordinate of the top-left point of the rect</li></ul><ul><li>w - A number containing the width of the rect</li></ul><ul><li>h - A number containing the height of the rect</li></ul>   |
-| **Returns**                                          | <ul><li>An hs.geometry rect object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>x - A number containing the horizontal co-ordinate of the top-left point of the rect * y - A number containing the vertical co-ordinate of the top-left point of the rect * w - A number containing the width of the rect * h - A number containing the height of the rect</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An hs.geometry rect object</li><br /></ul>                                           |
 
 #### [size](#size)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry.size(w, h) -> hs.geometry size` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Convenience function for creating a size object                                                                                         |
-| **Parameters**                                       | <ul><li>w - A number containing a width</li></ul><ul><li>h - A number containing a height</li></ul>   |
-| **Returns**                                          | <ul><li>An hs.geometry size object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>w - A number containing a width * h - A number containing a height</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An hs.geometry size object</li><br /></ul>                                           |
 
 ### Fields
 
@@ -243,136 +243,136 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the angle between the positive x axis and this vector2                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>a number represeting the angle in radians</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a number represeting the angle in radians</li><br /></ul>                                           |
 
 #### [angleTo](#angleto)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:angleTo(point) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the angle between the positive x axis and the vector connecting this point or rect's center to another point or rect's center                                                                                         |
-| **Parameters**                                       | <ul><li>point - an hs.geometry object, or a table or string or parameter list to construct one; if a rect, uses the rect's center</li></ul>   |
-| **Returns**                                          | <ul><li>a number represeting the angle in radians</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>point - an hs.geometry object, or a table or string or parameter list to construct one; if a rect, uses the rect's center</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a number represeting the angle in radians</li><br /></ul>                                           |
 
 #### [distance](#distance)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:distance(point) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Finds the distance between this point or rect's center and another point or rect's center                                                                                         |
-| **Parameters**                                       | <ul><li>point - an hs.geometry object, or a table or string or parameter list to construct one; if a rect, uses the rect's center</li></ul>   |
-| **Returns**                                          | <ul><li>a number indicating the distance</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>point - an hs.geometry object, or a table or string or parameter list to construct one; if a rect, uses the rect's center</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a number indicating the distance</li><br /></ul>                                           |
 
 #### [equals](#equals)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:equals(other) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if two geometry objects are equal                                                                                         |
-| **Parameters**                                       | <ul><li>other - another hs.geometry object, or a table or string or parameter list to construct one</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if this hs.geometry object perfectly overlaps other, <code>false</code> otherwise</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>other - another hs.geometry object, or a table or string or parameter list to construct one</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if this hs.geometry object perfectly overlaps other, <code>false</code> otherwise</li><br /></ul>                                           |
 
 #### [fit](#fit)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:fit(bounds) -> hs.geometry object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Ensure this rect is fully inside `bounds`, by scaling it down if it's larger (preserving its aspect ratio) and moving it if necessary                                                                                         |
-| **Parameters**                                       | <ul><li>bounds - an hs.geometry rect object, or a table or string or parameter list to construct one, indicating the rect that</li></ul><p>must fully contain this rect</p>   |
-| **Returns**                                          | <ul><li>this hs.geometry object for method chaining</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>bounds - an hs.geometry rect object, or a table or string or parameter list to construct one, indicating the rect that   must fully contain this rect</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>this hs.geometry object for method chaining</li><br /></ul>                                           |
 
 #### [floor](#floor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:floor() -> hs.geometry object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Truncates all coordinates in this object to integers                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>this hs.geometry point for method chaining</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>this hs.geometry point for method chaining</li><br /></ul>                                           |
 
 #### [fromUnitRect](#fromunitrect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:fromUnitRect(frame) -> hs.geometry rect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Converts a unit rect within a given frame into a rect                                                                                         |
-| **Parameters**                                       | <ul><li>frame - an hs.geometry rect (with <code>w</code> and <code>h</code> &gt;0)</li></ul>   |
-| **Returns**                                          | <ul><li>An hs.geometry rect object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>frame - an hs.geometry rect (with <code>w</code> and <code>h</code> &gt;0)</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An hs.geometry rect object</li><br /></ul>                                           |
 
 #### [inside](#inside)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:inside(rect) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Checks if this hs.geometry object lies fully inside a given rect                                                                                         |
-| **Parameters**                                       | <ul><li>rect - an hs.geometry rect, or a table or string or parameter list to construct one</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if this point/rect lies fully inside the given rect, <code>false</code> otherwise</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>rect - an hs.geometry rect, or a table or string or parameter list to construct one</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if this point/rect lies fully inside the given rect, <code>false</code> otherwise</li><br /></ul>                                           |
 
 #### [intersect](#intersect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:intersect(rect) -> hs.geometry rect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the intersection rect between this rect and another rect                                                                                         |
-| **Parameters**                                       | <ul><li>rect - an hs.geometry rect, or a table or string or parameter list to construct one</li></ul>   |
-| **Returns**                                          | <ul><li>a new hs.geometry rect</li></ul>            |
-| **Notes**                                            | <ul><li>If the two rects don't intersect, the result rect will be a "projection" of the second rect onto this rect's</li></ul><p>closest edge or corner along the x or y axis; the <code>w</code> and/or <code>h</code> fields in the result rect will be 0.</p>                 |
+| **Parameters**                                       | <ul><br /><li>rect - an hs.geometry rect, or a table or string or parameter list to construct one</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a new hs.geometry rect</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>If the two rects don't intersect, the result rect will be a "projection" of the second rect onto this rect's   closest edge or corner along the x or y axis; the <code>w</code> and/or <code>h</code> fields in the result rect will be 0.</li><br /></ul>                                             |
 
 #### [move](#move)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:move(point) -> hs.geometry object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Moves this point/rect                                                                                         |
-| **Parameters**                                       | <ul><li>point - an hs.geometry object, or a table or string or parameter list to construct one, indicating the x and y displacement to apply</li></ul>   |
-| **Returns**                                          | <ul><li>this hs.geometry object for method chaining</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>point - an hs.geometry object, or a table or string or parameter list to construct one, indicating the x and y displacement to apply</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>this hs.geometry object for method chaining</li><br /></ul>                                           |
 
 #### [normalize](#normalize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:normalize() -> point` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Normalizes this vector2                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>this hs.geometry point for method chaining</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>this hs.geometry point for method chaining</li><br /></ul>                                           |
 
 #### [rotateCCW](#rotateccw)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:rotateCCW(aroundpoint, ntimes) -> hs.geometry point` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Rotates a point around another point N times                                                                                         |
-| **Parameters**                                       | <ul><li>aroundpoint - an hs.geometry point to rotate this point around</li></ul><ul><li>ntimes - the number of times to rotate, defaults to 1</li></ul>   |
-| **Returns**                                          | <ul><li>A new hs.geometry point containing the location of the rotated point</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>aroundpoint - an hs.geometry point to rotate this point around * ntimes - the number of times to rotate, defaults to 1</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>A new hs.geometry point containing the location of the rotated point</li><br /></ul>                                           |
 
 #### [scale](#scale)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:scale(size) -> hs.geometry object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Scales this vector2/size, or this rect *keeping its center constant*                                                                                         |
-| **Parameters**                                       | <ul><li>size - an hs.geometry object, or a table or string or parameter list to construct one, indicating the factors for scaling this rect's width and height;</li></ul><p>if a number, the rect will be scaled by the same factor in both axes</p>   |
-| **Returns**                                          | <ul><li>this hs.geometry object for method chaining</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>size - an hs.geometry object, or a table or string or parameter list to construct one, indicating the factors for scaling this rect's width and height;   if a number, the rect will be scaled by the same factor in both axes</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>this hs.geometry object for method chaining</li><br /></ul>                                           |
 
 #### [toUnitRect](#tounitrect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:toUnitRect(frame) -> hs.geometry unit rect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Converts a rect into its unit rect within a given frame                                                                                         |
-| **Parameters**                                       | <ul><li>frame - an hs.geometry rect (with <code>w</code> and <code>h</code> &gt;0)</li></ul>   |
-| **Returns**                                          | <ul><li>An hs.geometry unit rect object</li></ul>            |
-| **Notes**                                            | <ul><li>The resulting unit rect is always clipped within <code>frame</code>'s bounds (via <code>hs.geometry:intersect()</code>); if <code>frame</code></li></ul><p>does not encompass this rect <em>no error will be thrown</em>, but the resulting unit rect won't be a direct match with this rect</p><p>(i.e. calling <code>:fromUnitRect(frame)</code> on it will return a different rect)</p>                 |
+| **Parameters**                                       | <ul><br /><li>frame - an hs.geometry rect (with <code>w</code> and <code>h</code> &gt;0)</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>An hs.geometry unit rect object</li><br /></ul>                                           |
+| **Notes**                                            | <ul><br /><li>The resulting unit rect is always clipped within <code>frame</code>'s bounds (via <code>hs.geometry:intersect()</code>); if <code>frame</code>   does not encompass this rect <em>no error will be thrown</em>, but the resulting unit rect won't be a direct match with this rect   (i.e. calling <code>:fromUnitRect(frame)</code> on it will return a different rect)</li><br /></ul>                                             |
 
 #### [type](#type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:type() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the type of an hs.geometry object                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>a string describing the type of this hs.geometry object, i.e. 'point', 'size', 'rect' or 'unitrect'; <code>nil</code> if not a valid object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a string describing the type of this hs.geometry object, i.e. 'point', 'size', 'rect' or 'unitrect'; <code>nil</code> if not a valid object</li><br /></ul>                                           |
 
 #### [union](#union)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:union(rect) -> hs.geometry rect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the smallest rect that encloses both this rect and another rect                                                                                         |
-| **Parameters**                                       | <ul><li>rect - an hs.geometry rect, or a table or string or parameter list to construct one</li></ul>   |
-| **Returns**                                          | <ul><li>a new hs.geometry rect</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>rect - an hs.geometry rect, or a table or string or parameter list to construct one</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>a new hs.geometry rect</li><br /></ul>                                           |
 
 #### [vector](#vector)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.geometry:vector(point) -> point` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the vector2 from this point or rect's center to another point or rect's center                                                                                         |
-| **Parameters**                                       | <ul><li>point - an hs.geometry object, or a table or string or parameter list to construct one; if a rect, uses the rect's center</li></ul>   |
-| **Returns**                                          | <ul><li>an hs.geometry point</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>point - an hs.geometry object, or a table or string or parameter list to construct one; if a rect, uses the rect's center</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>an hs.geometry point</li><br /></ul>                                           |
 

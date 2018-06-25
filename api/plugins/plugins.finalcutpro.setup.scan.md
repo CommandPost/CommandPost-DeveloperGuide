@@ -16,6 +16,6 @@ Show setup panel if Final Cut Pro needs scanning.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Initialises the module.                                                                                         |
-| **Parameters**                                       | <ul><li>deps - A table of dependencies.</li></ul>   |
-| **Returns**                                          | <ul><li>self</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>deps - A table of dependencies.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>self</li><br /></ul>                                           |
 

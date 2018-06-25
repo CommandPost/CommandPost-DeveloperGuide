@@ -16,6 +16,6 @@ Controls Final Cut Pro's Generators.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Applies the specified action as a generator. Expects action to be a table with the following structure:                                                                                         |
-| **Parameters**                                       | <ul><li><code>action</code>     - A table with the name/category/theme for the generator to apply, or a string with just the name.</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if a matching generator was found and applied to the timeline.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>action</code>     - A table with the name/category/theme for the generator to apply, or a string with just the name.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if a matching generator was found and applied to the timeline.</li><br /></ul>                                           |
 

@@ -103,6 +103,7 @@
 | [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)                          | Manager for the Batch Export Window.     |
 | [plugins.finalcutpro.export.batch.manager.panel](plugins.finalcutpro.export.batch.manager.panel.md)                          | CommandPost Batch Export Panel.     |
 | [plugins.finalcutpro.feedback.bugreport](plugins.finalcutpro.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Final Cut Pro.     |
+| [plugins.finalcutpro.fullscreen.disableesc](plugins.finalcutpro.fullscreen.disableesc.md)                          | Disables the ESC key when Final Cut Pro is in fullscreen mode.     |
 | [plugins.finalcutpro.fullscreen.dockicon](plugins.finalcutpro.fullscreen.dockicon.md)                          | Manages the CommandPost dock icon when FCP is full-screen.     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
 | [plugins.finalcutpro.hacks.backupinterval](plugins.finalcutpro.hacks.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |

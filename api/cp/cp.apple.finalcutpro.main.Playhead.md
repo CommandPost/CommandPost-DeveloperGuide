@@ -33,16 +33,16 @@ Playhead Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Finds the playhead (either persistent or skimming) in the specified container. Defaults to persistent.                                                                                         |
-| **Parameters**                                       | <ul><li><code>containerUI</code> - The container UI</li></ul><ul><li><code>skimming</code> - Whether or not you want the skimming playhead as boolean.</li></ul>   |
-| **Returns**                                          | <ul><li>The playhead <code>hs._asm.axuielement</code> object or <code>nil</code> if not found.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>containerUI</code> - The container UI * <code>skimming</code> - Whether or not you want the skimming playhead as boolean.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The playhead <code>hs._asm.axuielement</code> object or <code>nil</code> if not found.</li><br /></ul>                                           |
 
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Checks to see if a GUI element is the Playhead or not                                                                                         |
-| **Parameters**                                       | <ul><li><code>element</code>    - The element you want to check</li></ul>   |
-| **Returns**                                          | <ul><li><code>true</code> if the <code>element</code> is the Playhead otherwise <code>false</code></li></ul>            |
+| **Parameters**                                       | <ul><br /><li><code>element</code>    - The element you want to check</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li><code>true</code> if the <code>element</code> is the Playhead otherwise <code>false</code></li><br /></ul>                                           |
 
 ### Constructors
 
@@ -51,8 +51,8 @@ Playhead Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor                                                                                         |
 | **Description**                                      | Constructs a new Playhead                                                                                         |
-| **Parameters**                                       | <ul><li>parent        - The parent object</li></ul><ul><li>skimming      - (optional) if <code>true</code>, this links to the 'skimming' playhead created under the mouse, if present.</li></ul><ul><li>containerUI   - (optional) a <code>cp.prop</code> which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element.</li></ul><ul><li>useEventViewer - (optional) if <code>true</code>, this will use the Event Viewer's timecode, when available.</li></ul>   |
-| **Returns**                                          | <ul><li>The new <code>Playhead</code> instance.</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>parent        - The parent object * skimming      - (optional) if <code>true</code>, this links to the 'skimming' playhead created under the mouse, if present. * containerUI   - (optional) a <code>cp.prop</code> which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element. * useEventViewer - (optional) if <code>true</code>, this will use the Event Viewer's timecode, when available.</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The new <code>Playhead</code> instance.</li><br /></ul>                                           |
 
 ### Fields
 
@@ -111,30 +111,30 @@ Playhead Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The application object as a table</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The application object as a table</li><br /></ul>                                           |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:hide() -> Playhead object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Hides the Playhead                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>Playhead object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Playhead object</li><br /></ul>                                           |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:parent() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Returns the Playhead's parent table                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>The parent object as a table</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>The parent object as a table</li><br /></ul>                                           |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:show() -> Playhead object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method                                                                                         |
 | **Description**                                      | Shows the Playhead                                                                                         |
-| **Parameters**                                       | <ul><li>None</li></ul>   |
-| **Returns**                                          | <ul><li>Playhead object</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>None</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>Playhead object</li><br /></ul>                                           |
 

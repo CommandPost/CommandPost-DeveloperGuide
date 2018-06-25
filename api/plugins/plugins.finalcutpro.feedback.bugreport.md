@@ -47,6 +47,6 @@ Sends Apple a Bug Report or Feature Request for Final Cut Pro.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function                                                                                         |
 | **Description**                                      | Opens Final Cut Pro Feedback Screen                                                                                         |
-| **Parameters**                                       | <ul><li>bugReport - Is it a bug report or an enhancement request?</li></ul>   |
-| **Returns**                                          | <ul><li>None</li></ul>            |
+| **Parameters**                                       | <ul><br /><li>bugReport - Is it a bug report or an enhancement request?</li><br /></ul>                                        |
+| **Returns**                                          | <ul><br /><li>None</li><br /></ul>                                           |
 
