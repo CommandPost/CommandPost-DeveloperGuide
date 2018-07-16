@@ -17,6 +17,7 @@
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
 | [cp](cp.md)                          | Core CommandPost functionality.     |
+| [cp.18n](cp.18n.md)                          | CommandPost's Internationalisation & Localisation Manger.     |
 | [cp.app](cp.app.md)                          | This class assists with working with macOS apps. It provides functions for     |
 | [cp.app.menu](cp.app.menu.md)                          | Represents an app's menu bar, providing multi-lingual access to find and     |
 | [cp.app.prefs](cp.app.prefs.md)                          | Provides access to application preferences, typically stored via `NSUserDefaults` or `CFProperties`.     |
@@ -87,6 +88,8 @@
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
 | [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
+| [cp.collect.Queue](cp.collect.Queue.md)                          | A "double-ended queue" implementation. This allows pushing and popping     |
+| [cp.collect.Set](cp.collect.Set.md)                          | TODO: Write something here.     |
 | [cp.commands](cp.commands.md)                          | Commands Module.     |
 | [cp.commands.command](cp.commands.command.md)                          | Commands Module.     |
 | [cp.commands.englishKeyCodes](cp.commands.englishKeyCodes.md)                          | Returns a table of all the English Key Codes.     |
@@ -104,7 +107,6 @@
 | [cp.disk](cp.disk.md)                          | Provides provides details about disk devices attached to the system.     |
 | [cp.docs](cp.docs.md)                          | Documentation Tools.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
-| [cp.font](cp.font.md)                          | Font Tools     |
 | [cp.i18n.language](cp.i18n.language.md)                          | Provides the set of ISO 693-1/2/3 language codes and names.     |
 | [cp.i18n.languageID](cp.i18n.languageID.md)                          | As per [Apple's documentation](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6),     |
 | [cp.i18n.localeID](cp.i18n.localeID.md)                          | As per [Apple's documentation](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6),     |
@@ -125,6 +127,36 @@
 | [cp.plugins.plugin](cp.plugins.plugin.md)                          | CommandPost Plugin.     |
 | [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
 | [cp.protect](cp.protect.md)                          | Utility function for protecting a table from being modified.     |
+| [cp.rx](cp.rx.md)                          | Reactive Extensions for Lua.     |
+| [cp.rx.go](cp.rx.go.md)                          | Defines [Statements](cp.rx.go.Statement.md) to make processing of     |
+| [cp.rx.go.Do](cp.rx.go.Do.md)                          | A [Statement](cp.rx.go.Statement.md) that will execute the provided `resolvable` values.     |
+| [cp.rx.go.Do.Then](cp.rx.go.Do.Then.md)                          | A [SubStatement](cp.rx.go.SubStatement.md) of [Do](cp.rx.go.Do.md)     |
+| [cp.rx.go.Done](cp.rx.go.Done.md)                          | A [Statement](cp.rx.go.Statement.md) that will complete without sending any values.     |
+| [cp.rx.go.First](cp.rx.go.First.md)                          | _Extends:_ [Statement](cp.rx.go.Statement.md)     |
+| [cp.rx.go.Given](cp.rx.go.Given.md)                          | A [Statement](cp.rx.go.Statement.md) that will execute the provided `resolvable` values.     |
+| [cp.rx.go.Given.Then](cp.rx.go.Given.Then.md)                          | A [SubStatement](cp.rx.go.SubStatement.md) of [Given](cp.rx.go.Given.md)     |
+| [cp.rx.go.If](cp.rx.go.If.md)                          | A `Statement` that will check if a `resolvable` matches a predicate, then executes other `resolvables`.     |
+| [cp.rx.go.If.Are](cp.rx.go.If.Are.md)                          | A [SubStatement] of [If](cp.rx.go.If.md) that sets the values to match.     |
+| [cp.rx.go.If.AreNot](cp.rx.go.If.AreNot.md)                          | A [SubStatement](cp.rx.go.SubStatement.md) for [If](cp.rx.go.If.md) that sets the values to *not* match.     |
+| [cp.rx.go.If.Is](cp.rx.go.If.Is.md)                          | A [SubStatement](cp.rx.go.SubStatement.md) for [If](cp.rx.go.If.md) that sets a specific value to match.     |
+| [cp.rx.go.If.IsNot](cp.rx.go.If.IsNot.md)                          | A [SubStatement](cp.rx.go.SubStatement.md) for [If](cp.rx.go.If.md) that sets a specific value to *not* match.     |
+| [cp.rx.go.If.Matches](cp.rx.go.If.Matches.md)                          | A [SubStatement](cp.rx.go.SubStatement.md) for [If](cp.rx.go.If.md) that sets a predicate check values against.     |
+| [cp.rx.go.If.Then](cp.rx.go.If.Then.md)                          | A `SubStatement` that defines what happens when an `If` matches.     |
+| [cp.rx.go.If.Then.Otherwise](cp.rx.go.If.Then.Otherwise.md)                          | A [SubStatement](cp.rx.go.SubStatement.md) of [If](cp.rx.go.If.md), which should be created via `If:Then(...):Otherwise(...)`.     |
+| [cp.rx.go.If.Then.Otherwise.Then](cp.rx.go.If.Then.Otherwise.Then.md)                          | Each [Otherwise](cp.rx.go.If.Then.Otherwise.md) can have a subsequent `Then` which will be executed after the previous one resolves.     |
+| [cp.rx.go.Last](cp.rx.go.Last.md)                          | A `Statement` that will complete after the only the last result resolves.     |
+| [cp.rx.go.Require](cp.rx.go.Require.md)                          | A `Statement` that will require that the `resolvable` value matches a predicate,     |
+| [cp.rx.go.Require.Are](cp.rx.go.Require.Are.md)                          | Specifies that the `Require`d values `Are` a specific value.     |
+| [cp.rx.go.Require.AreNot](cp.rx.go.Require.AreNot.md)                          | Specifies that the `Require`d values `AreNot` a specific value.     |
+| [cp.rx.go.Require.Is](cp.rx.go.Require.Is.md)                          | Specifies that the `Require`d value `Is` a specific value.     |
+| [cp.rx.go.Require.IsNot](cp.rx.go.Require.IsNot.md)                          | Specifies that the `Require`d value `IsNot` a specific value.     |
+| [cp.rx.go.Require.Matches](cp.rx.go.Require.Matches.md)                          | Specifies that the `Require`d value `Matches` a function predicate.     |
+| [cp.rx.go.Statement](cp.rx.go.Statement.md)                          | A `Statement` is defined to enable processing of asynchronous `resolvable` values such     |
+| [cp.rx.go.Statement.Definition](cp.rx.go.Statement.Definition.md)                          | A [Statement](cp.rx.go.Statement.md) is defined before being executable.     |
+| [cp.rx.go.Statement.Modifier](cp.rx.go.Statement.Modifier.md)                          | A `Statement.Modifier` is an extension to a [Statement](cp.rx.go.Statement.md) that provides additional configuration details.     |
+| [cp.rx.go.Statement.Modifier.Definition](cp.rx.go.Statement.Modifier.Definition.md)                          | A [Statement.Modifier](cp.rx.go.Statement.Modifier.md) is defined before being executable.     |
+| [cp.rx.go.Throw](cp.rx.go.Throw.md)                          | A [Statement](cp.rx.go.Statement.md) that will throw the provided message.     |
+| [cp.rx.go.WaitUntil](cp.rx.go.WaitUntil.md)                          | A [Statement](cp.rx.go.Statement.md) that will wait for the first value from a `resolveable` that matches the predicate.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and reloads the app if they change.     |
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
@@ -151,6 +183,7 @@
 | [cp.ui.StaticText](cp.ui.StaticText.md)                          | Static Text Module.     |
 | [cp.ui.Table](cp.ui.Table.md)                          | Represents an AXTable in the Apple Accessibility UX API.     |
 | [cp.ui.TextField](cp.ui.TextField.md)                          | Text Field Module.     |
+| [cp.ui.Toolbar](cp.ui.Toolbar.md)                          | Toolbar Module.     |
 | [cp.ui.Window](cp.ui.Window.md)                          | A Window UI element.     |
 | [cp.utf16](cp.utf16.md)                          | A pure-LUA implementation of UTF-16 decoding     |
 | [cp.utf16.be](cp.utf16.be.md)                          | A pure-LUA implementation of UTF-16 decoding with big-endian ordering.     |

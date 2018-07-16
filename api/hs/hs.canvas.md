@@ -229,6 +229,7 @@ If you wish to test out the `hs.drawing` wrapper which may eventually replace th
 | **Description**                                      | Places the canvas object on top of normal windows |
 | **Parameters**                                       | <ul><li>aboveEverything - An optional boolean value that controls how far to the front the canvas should be placed. Defaults to false.   * if true, place the canvas on top of all windows (including the dock and menubar and fullscreen windows).   * if false, place the canvas above normal windows, but below the dock, menubar and fullscreen windows.</li></ul> |
 | **Returns**                                          | <ul><li>The canvas object</li></ul> |
+| **Notes**                                            | <ul><li>As of macOS Sierra and later, if you want a <code>hs.canvas</code> object to appear above full-screen windows you must hide the Hammerspoon Dock icon first using: <code>hs.dockicon.hide()</code></li></ul> |
 
 #### [canvasDefaultFor](#canvasdefaultfor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:canvasDefaultFor(keyName, [newValue]) -> canvasObject | currentValue` </span>                                                          |

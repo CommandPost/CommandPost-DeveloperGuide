@@ -56,6 +56,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
  * [subTitle](#subtitle)
  * [title](#title)
  * [withdraw](#withdraw)
+ * [withdrawAfter](#withdrawafter)
 
 ## API Documentation
 
@@ -170,7 +171,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Description**                                      | Shorthand constructor to create and show simple notifications |
 | **Parameters**                                       | <ul><li>title       - the title for the notification * subTitle    - the subtitle, or second line, of the notification * information - the main textual body of the notification * tag         - a function tag corresponding to a function registered with <a href="#register">hs.notify.register</a></li></ul> |
 | **Returns**                                          | <ul><li>a notification object</li></ul> |
-| **Notes**                                            | <ul><li>All three textual parameters are required, though they can be empty strings * This function is really a shorthand for <code>hs.notify.new(...):send()</code></li></ul> |
+| **Notes**                                            | <ul><li>All three textual parameters are required, though they can be empty strings * This function is really a shorthand for <code>hs.notify.new(...):send()</code> * Notifications created using this function will inherit the default <code>withdrawAfter</code> value, which is 5 seconds. To produce persistent notifications you should use <code>hs.notify.new()</code> with a <code>withdrawAfter</code> attribute of 0.</li></ul> |
 
 ### Methods
 
@@ -398,4 +399,11 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Description**                                      | Withdraws a delivered notification from the Notification Center. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The notification object</li></ul> |
+
+#### [withdrawAfter](#withdrawafter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:withdrawAfter([seconds]) -> notificationObject | number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Get or set the number of seconds after which to automatically withdraw a notification |
+| **Returns**                                          | <ul><li>The notification object, if an argument is present; otherwise the current value.</li></ul> |
 

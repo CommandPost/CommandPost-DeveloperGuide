@@ -16,7 +16,6 @@ Represents the Compressor application, providing functions that allow different 
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bundleID](#bundleid)
- * [getVersion](#getversion)
  * [hide](#hide)
  * [launch](#launch)
  * [notifier](#notifier)
@@ -74,15 +73,6 @@ Represents the Compressor application, providing functions that allow different 
 | **Description**                                      | Returns the Compressor Bundle ID |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string of the Compressor Bundle ID</li></ul> |
-
-#### [getVersion](#getversion)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:getVersion() -> string | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Version of Compressor |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Version as string or nil if an error occurred</li></ul> |
-| **Notes**                                            | <ul><li>If Compressor is running it will get the version of the active Compressor application, otherwise, it will use hs.application.infoForBundleID() to find the version.</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:hide() -> self` </span>                                                          |

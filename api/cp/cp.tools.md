@@ -50,6 +50,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [stringMaxLength](#stringmaxlength)
  * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
+ * [tableMatch](#tablematch)
  * [trim](#trim)
  * [unescape](#unescape)
  * [urlQueryStringDecode](#urlquerystringdecode)
@@ -420,6 +421,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Returns how many items are in a table. |
 | **Parameters**                                       | <ul><li>table - The table you want to count.</li></ul> |
 | **Returns**                                          | <ul><li>The number of items in the table.</li></ul> |
+
+#### [tableMatch](#tablematch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableMatch(t1, t2[, ignoreMetatable]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Compares two tables. |
+| **Parameters**                                       | <ul><li>t1 - The first table. * t2 - The second table. * ignoreMetatable - A boolean that determines whether or not we should ignore the metatable.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if <code>t1</code> and <code>t2</code> are identical, otherwise <code>false</code>.</li></ul> |
 
 #### [trim](#trim)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.trim(string) -> string` </span>                                                          |

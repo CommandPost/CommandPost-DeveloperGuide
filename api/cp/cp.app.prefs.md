@@ -41,11 +41,11 @@ end
 | **Returns**                                          | <ul><li>The Bundle ID string, or <code>nil</code> if it's not a <code>cp.app.prefs</code>.</li></ul> |
 
 #### [get](#get)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.get(prefs, key[, defaultValue])` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.get(prefs, key[, defaultValue]) -> value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Retrieves the specifed `key` from the provided `prefs`. |
-| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.<em> key           - The key to retrieve.</em> defaultValue  - The value to return if none is currentl set.</li></ul> |
+| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance. * key           - The key to retrieve. * defaultValue  - The value to return if none is currently set.</li></ul> |
 | **Returns**                                          | <ul><li>The current value, or <code>defaultValue</code> if not set.</li></ul> |
 
 #### [is](#is)
@@ -61,15 +61,15 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Retrieves the `cp.prop` for the specified key. It can be `watched` for changes. |
-| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.<em> key           - The key to get/set.</em> defaultValue  - The value if no default values is currently set.</li></ul> |
+| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance. * key           - The key to get/set. * defaultValue  - The value if no default values is currently set.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.prop</code> for the key.</li></ul> |
 
 #### [set](#set)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.set(prefs, key, value) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.set(prefs, key, value) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the key/value for the specified `prefs` instance. |
-| **Parameters**                                       | <ul><li>prefs     - The <code>prefs</code> instance.<em> key       - The key to set.</em> value     - the new value.</li></ul> |
+| **Parameters**                                       | <ul><li>prefs     - The <code>prefs</code> instance. * key       - The key to set. * value     - the new value.</li></ul> |
 | **Returns**                                          | <ul><li>Nothing.</li></ul> |
 
 #### [watch](#watch)

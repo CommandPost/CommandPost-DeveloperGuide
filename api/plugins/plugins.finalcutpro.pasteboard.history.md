@@ -4,6 +4,10 @@
 Pasteboard History
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [FILE_NAME](#file_name)
+ * [FOLDER_NAME](#folder_name)
+ * [HISTORY_MAXIMUM_SIZE](#history_maximum_size)
 * Functions - API calls offered directly by the extension
  * [addHistoryItem](#addhistoryitem)
  * [clearHistory](#clearhistory)
@@ -13,9 +17,30 @@ Pasteboard History
  * [setHistory](#sethistory)
  * [update](#update)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [_history](#_history)
  * [enabled](#enabled)
 
 ## API Documentation
+
+### Constants
+
+#### [FILE_NAME](#file_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.FILE_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | File name of settings file. |
+
+#### [FOLDER_NAME](#folder_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.FOLDER_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Folder Name where settings file is contained. |
+
+#### [HISTORY_MAXIMUM_SIZE](#history_maximum_size)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.HISTORY_MAXIMUM_SIZE -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Maximum Size of Pasteboard History |
 
 ### Functions
 
@@ -76,6 +101,12 @@ Pasteboard History
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields
+
+#### [_history](#_history)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history._history <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Contains all the saved Touch Bar Buttons |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.enabled <cp.prop: boolean>` </span>                                                          |

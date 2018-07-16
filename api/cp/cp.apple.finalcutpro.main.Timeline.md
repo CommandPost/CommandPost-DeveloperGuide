@@ -12,6 +12,9 @@ Timeline Module.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [contents](#contents)
+ * [doHide](#dohide)
+ * [doShowOnPrimary](#doshowonprimary)
+ * [doShowOnSecondary](#doshowonsecondary)
  * [effects](#effects)
  * [hide](#hide)
  * [playhead](#playhead)
@@ -69,6 +72,30 @@ Timeline Module.
 | **Description**                                      | Gets the Timeline Contents. The Content is the main body of the timeline, |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>TimelineContent</code> object.</li></ul> |
+
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will hide the Timeline (regardless of whether it |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>Statement</code> ready to run.</li></ul> |
+
+#### [doShowOnPrimary](#doshowonprimary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline:doShowOnPrimary() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will ensure the timeline is in the primary window. |
+| **Parameters**                                       | <ul><li>timeout  - The timeout period for the operation.</li></ul> |
+| **Returns**                                          | <ul><li>A <code>Statement</code> which will send <code>true</code> if it successful, or <code>false</code> otherwise.</li></ul> |
+
+#### [doShowOnSecondary](#doshowonsecondary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline:doShowOnSecondary() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will ensure the timeline is in the secondary window. |
+| **Parameters**                                       | <ul><li>timeout  - The timeout period for the operation.</li></ul> |
+| **Returns**                                          | <ul><li>A <code>Statement</code> which will send <code>true</code> if it successful, or <code>false</code> otherwise.</li></ul> |
 
 #### [effects](#effects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline:effects() -> EffectsBrowser` </span>                                                          |

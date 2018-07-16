@@ -29,6 +29,7 @@
 | [plugins.core.helpandsupport.credits](plugins.core.helpandsupport.credits.md)                          | Credits Menu Item.     |
 | [plugins.core.helpandsupport.developerguide](plugins.core.helpandsupport.developerguide.md)                          | Developer Guide Menu Item.     |
 | [plugins.core.helpandsupport.donate](plugins.core.helpandsupport.donate.md)                          | Donate Menu Item.     |
+| [plugins.core.helpandsupport.errorlog](plugins.core.helpandsupport.errorlog.md)                          | Error Log Menu Item.     |
 | [plugins.core.helpandsupport.feedback](plugins.core.helpandsupport.feedback.md)                          | Feedback Menu Item.     |
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
 | [plugins.core.language](plugins.core.language.md)                          | Language Module.     |
@@ -99,6 +100,7 @@
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
 | [plugins.finalcutpro.console.font](plugins.finalcutpro.console.font.md)                          | Final Cut Pro Font Console     |
+| [plugins.finalcutpro.egpu](plugins.finalcutpro.egpu.md)                          | Final Cut Pro eGPU Support.     |
 | [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Batch Export Plugin     |
 | [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)                          | Manager for the Batch Export Window.     |
 | [plugins.finalcutpro.export.batch.manager.panel](plugins.finalcutpro.export.batch.manager.panel.md)                          | CommandPost Batch Export Panel.     |
@@ -115,8 +117,6 @@
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
 | [plugins.finalcutpro.language](plugins.finalcutpro.language.md)                          | Final Cut Pro Language Plugin.     |
-| [plugins.finalcutpro.menu.administrator](plugins.finalcutpro.menu.administrator.md)                          | Administrator Menu.     |
-| [plugins.finalcutpro.menu.administrator.advancedfeatures](plugins.finalcutpro.menu.administrator.advancedfeatures.md)                          | Advanced Features Menu.     |
 | [plugins.finalcutpro.menu.helpandsupport.finalcutpro](plugins.finalcutpro.menu.helpandsupport.finalcutpro.md)                          | The Help & Support > CommandPost menu section.     |
 | [plugins.finalcutpro.menu.mediaimport](plugins.finalcutpro.menu.mediaimport.md)                          | The Media Import menu section.     |
 | [plugins.finalcutpro.menu.menuaction](plugins.finalcutpro.menu.menuaction.md)                          | A `action` which will trigger an Final Cut Pro menu with a matching path, if available/enabled.     |
@@ -145,6 +145,7 @@
 | [plugins.finalcutpro.pasteboard.shared](plugins.finalcutpro.pasteboard.shared.md)                          | Shared Pasteboard Plugin.     |
 | [plugins.finalcutpro.preferences.app](plugins.finalcutpro.preferences.app.md)                          | Final Cut Pro Preferences Panel     |
 | [plugins.finalcutpro.preferences.clearcache](plugins.finalcutpro.preferences.clearcache.md)                          | Adds a "Clear Cache" button to the Final Cut Pro Preferences.     |
+| [plugins.finalcutpro.preferences.general](plugins.finalcutpro.preferences.general.md)                          | Final Cut Pro General Preferences     |
 | [plugins.finalcutpro.setup.scan](plugins.finalcutpro.setup.scan.md)                          | Show setup panel if Final Cut Pro needs scanning.     |
 | [plugins.finalcutpro.setup.unsupportedversion](plugins.finalcutpro.setup.unsupportedversion.md)                          | Unsupported version setup panel.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
@@ -196,5 +197,6 @@
 | [plugins.finalcutpro.watchers.preferences](plugins.finalcutpro.watchers.preferences.md)                          | Final Cut Pro Preferences Watcher.     |
 | [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.panels.media](plugins.finalcutpro.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.finalcutpro.watchfolders.panels.media.MediaFolder](plugins.finalcutpro.watchfolders.panels.media.MediaFolder.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |

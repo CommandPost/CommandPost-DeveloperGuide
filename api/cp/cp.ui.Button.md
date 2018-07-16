@@ -15,6 +15,7 @@ Button Module.
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
+ * [doPress](#dopress)
  * [isEnabled](#isenabled)
  * [parent](#parent)
  * [press](#press)
@@ -77,6 +78,14 @@ Button Module.
 | **Description**                                      | Returns the app instance. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul> |
+
+#### [doPress](#dopress)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:doPress() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will press the button when executed, if available at the time. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> which will press the button when executed.</li></ul> |
 
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:isEnabled() -> boolean` </span>                                                          |
