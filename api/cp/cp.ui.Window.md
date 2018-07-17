@@ -16,10 +16,12 @@ A Window UI element.
  * [hsWindow](#hswindow)
  * [id](#id)
  * [minimized](#minimized)
+ * [UI](#ui)
  * [visible](#visible)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [close](#close)
  * [focus](#focus)
+ * [notifier](#notifier)
  * [snapshot](#snapshot)
 
 ## API Documentation
@@ -35,11 +37,11 @@ A Window UI element.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.new(uiProp) -> Window` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.new(cpApp, uiProp) -> Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Window |
-| **Parameters**                                       | <ul><li><code>uiProp</code>   - a <code>cp.prop</code> that returns the <code>hs._asm.axuielement</code> for the window.</li></ul> |
+| **Parameters**                                       | <ul><li><code>cpApp</code>    - a <code>cp.app</code> for the application the Window belongs to. * <code>uiProp</code>   - a <code>cp.prop</code> that returns the <code>hs._asm.axuielement</code> for the window.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Window</code> instance.</li></ul> |
 
 ### Fields
@@ -86,6 +88,12 @@ A Window UI element.
 | **Type**                                             | Field |
 | **Description**                                      | Returns `true` if the window exists and is minimised. |
 
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.UI <cp.prop: hs._asm.axuielement: read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The UI `axuielement` for the Window. |
+
 #### [visible](#visible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.visible <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -109,6 +117,14 @@ A Window UI element.
 | **Description**                                      | Attempts to focus the window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the window was successfully focused.</li></ul> |
+
+#### [notifier](#notifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:notifier() -> cp.ui.notifier` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `notifier` that is tracking the application UI element. It has already been started. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The notifier.</li></ul> |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:snapshot([path]) -> hs.image | nil` </span>                                                          |

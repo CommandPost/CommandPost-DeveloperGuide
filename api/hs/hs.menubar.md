@@ -13,7 +13,7 @@ Create and manage menubar icons
  * [delete](#delete)
  * [frame](#frame)
  * [icon](#icon)
- * [isInMenubar](#isinmenubar)
+ * [isInMenuBar](#isinmenubar)
  * [popupMenu](#popupmenu)
  * [priority](#priority)
  * [removeFromMenuBar](#removefrommenubar)
@@ -82,8 +82,8 @@ Create and manage menubar icons
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the menubar item icon as an hs.image object, or nil, if there isn't one.</li></ul> |
 
-#### [isInMenubar](#isinmenubar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.menubar:isInMenubar() -> boolean` </span>                                                          |
+#### [isInMenuBar](#isinmenubar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.menubar:isInMenuBar() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a boolean indicating whether or not the specified menu is currently in the OS X menubar. |

@@ -18,6 +18,7 @@ This extension differs from the `hs.application` extension in several ways:
 * Functions - API calls offered directly by the extension
  * [apps](#apps)
  * [bundleIDs](#bundleids)
+ * [is](#is)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [forBundleID](#forbundleid)
 * Fields - Variables which can only be accessed from an object returned by a constructor
@@ -25,6 +26,11 @@ This extension differs from the `hs.application` extension in several ways:
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bestSupportedLocale](#bestsupportedlocale)
  * [bundleID](#bundleid)
+ * [doHide](#dohide)
+ * [doLaunch](#dolaunch)
+ * [doQuit](#doquit)
+ * [doRestart](#dorestart)
+ * [doShow](#doshow)
  * [hide](#hide)
  * [isSupportedLocale](#issupportedlocale)
  * [launch](#launch)
@@ -54,6 +60,14 @@ This extension differs from the `hs.application` extension in several ways:
 | **Description**                                      | Returns a list of Bundle IDs which have been requested via [forBundleID](#forBundleID). |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A list of Bundle IDs.</li></ul> |
+
+#### [is](#is)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.is(thing) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the provided `thing` is a `cp.app` instance. |
+| **Parameters**                                       | <ul><li>thing        - The thing to check.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if it is a <code>cp.app</code> instance, otherwise <code>false</code>.</li></ul> |
 
 ### Constructors
 
@@ -91,6 +105,49 @@ This extension differs from the `hs.application` extension in several ways:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Bundle ID.</li></ul> |
 
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:doHide() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` which will hide the app if it's currently running. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>Statement</code>, resolving to <code>true</code> if the app is running and was successfully hidden, or <code>false</code> otherwise.</li></ul> |
+
+#### [doLaunch](#dolaunch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:doLaunch() -> cp.rx.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that can be run to launch or focus the current app. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> after the app is frontmost.</li></ul> |
+| **Notes**                                            | <ul><li>By default the <code>Statement</code> will time out after 30 seconds, sending an error signal.</li></ul> |
+
+#### [doQuit](#doquit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:doQuit() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will attempt to quit the app when executed. |
+| **Parameters**                                       | <ul><li>None.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if the app was running and was quit successfully, otherwise <code>false</code>.</li></ul> |
+| **Notes**                                            | <ul><li>The Statement will time out after 60 seconds by default. This can be changed by calling the <code>TimeoutAfter</code> method on the Statement before executing.</li></ul> |
+
+#### [doRestart](#dorestart)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:doRestart() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` which will attempt to restart the app. If the app |
+| **Parameters**                                       | <ul><li>None.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if the app was running and was quit and restarted successfully, otherwise <code>false</code>.</li></ul> |
+| **Notes**                                            | <ul><li>The Statement will time out after 60 seconds by default. This can be changed by calling the <code>TimeoutAfter</code> method on the Statement before executing.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:doShow() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` which will show the app if it's currently running. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>Statement</code>, resolving to <code>true</code> if the app is running and was successfully shown, or <code>false</code> otherwise.</li></ul> |
+
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -108,7 +165,7 @@ This extension differs from the `hs.application` extension in several ways:
 | **Returns**                                          | <ul><li><code>true</code> if it is supported, otherwise <code>false</code>.</li></ul> |
 
 #### [launch](#launch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:launch(waitSeconds) -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:launch([waitSeconds]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Launches the application, or brings it to the front if it was already running. |

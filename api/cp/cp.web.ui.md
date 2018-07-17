@@ -43,11 +43,11 @@ and if functions are provided, they are re-evaluated every time the element is g
 | **Notes**                                            | <ul><li>The <code>params</code> table has the following supported fields: <strong> <code>src</code>      - The source of the image. If this points to a local file, it will be encoded as Base64. </strong> <code>class</code>     - A string, (or function returning a string) with the CSS class for the element. <strong> <code>width</code>     - The width of the image. </strong> <code>height</code>   - The height of the image.</li></ul> |
 
 #### [javascript](#javascript)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.javascript(script[, context]) -> cp.web.html` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.web.ui.javascript(script[, context][, naked]) -> cp.web.html` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Generates an HTML script element which will execute the provided |
-| **Parameters**                                       | <ul><li>script   - String containing the JavaScript to execute. * context    - (optional) Table containing any values to inject into the script.</li></ul> |
+| **Parameters**                                       | <ul><li>script   - String containing the JavaScript to execute. * context    - (optional) Table containing any values to inject into the script. * naked    - (optional) If <code>true</code>, the javascript will be returned without a surrounding <script> block.</li></ul> |
 | **Returns**                                          | <ul><li>a <code>cp.web.html</code> element representing the JavaScript block.</li></ul> |
 
 #### [password](#password)

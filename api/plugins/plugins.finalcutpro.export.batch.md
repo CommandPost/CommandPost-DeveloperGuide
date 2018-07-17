@@ -80,12 +80,12 @@ Batch Export Plugin
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [changeExportDestinationPreset](#changeexportdestinationpreset)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.changeExportDestinationPreset() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.changeExportDestinationPreset() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Change Export Destination Preset. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
+| **Returns**                                          | <ul><li>A <code>Statement</code> which is ready to be executed.</li></ul> |
 
 #### [getDestinationFolder](#getdestinationfolder)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.getDestinationFolder() -> string | nil` </span>                                                          |

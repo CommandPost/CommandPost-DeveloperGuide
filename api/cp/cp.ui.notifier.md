@@ -11,7 +11,7 @@ For example:
 local notifier = require("cp.ui.notifier")
 local function finder() ... end -- returns the axuielement
 local o = notifier.new("com.apple.FinalCut", finder)
-o:addWatcher("AXValueChanged", function(notifier, element, notification, details) ... end)
+o:watchFor("AXValueChanged", function(notifier, element, notification, details) ... end)
 o:start()
 ```
 
@@ -20,17 +20,17 @@ o:start()
  * [notifiersForBundleID](#notifiersforbundleid)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [isRunning](#isrunning)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [addWatcher](#addwatcher)
  * [app](#app)
  * [bundleID](#bundleid)
  * [currentElement](#currentelement)
+ * [debugging](#debugging)
  * [pid](#pid)
  * [reset](#reset)
  * [start](#start)
  * [update](#update)
+ * [watchAll](#watchall)
+ * [watchFor](#watchfor)
 
 ## API Documentation
 
@@ -54,24 +54,7 @@ o:start()
 | **Parameters**                                       | <ul><li>bundleID          - The application Bundle ID being observed. E.g. "com.apple.FinalCut". * elementFinderFn   - The function that will return the <code>axuielement</code> to observe.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>cp.ui.notifier</code> instance.</li></ul> |
 
-### Fields
-
-#### [isRunning](#isrunning)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier.isRunning <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Indicates if the notifier is currently running. |
-
 ### Methods
-
-#### [addWatcher](#addwatcher)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:addWatcher(notification, callbackFn) -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Registers a function to get called whenever the specified notification type is triggered |
-| **Parameters**                                       | <ul><li>notification      - The notification type to watch for (e.g. "AXValueChanged"). * callbackFn        - The function to call when the matching notification is happens.</li></ul> |
-| **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul> |
-| **Notes**                                            | <ul><li>The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows: <strong> the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification. </strong> a string with the notification type. ** A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul> |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:app() -> hs.application` </span>                                                          |
@@ -96,6 +79,14 @@ o:start()
 | **Description**                                      | Returns the current `axuielement` being observed. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>axuielement</code>, or <code>nil</code> if not available.</li></ul> |
+
+#### [debugging](#debugging)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:debugging([enabled]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Enables/disables and reports current debugging status. |
+| **Parameters**                                       | <ul><li>enabled  - If <code>true</code>, debugging notifications will be emitted. If <code>false</code>, it will be disabled. If not provided, no change is made.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if currently debugging, <code>false</code> otherwise.</li></ul> |
 
 #### [pid](#pid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:pid() -> number` </span>                                                          |
@@ -126,4 +117,22 @@ o:start()
 | **Description**                                      | Updates any watchers to use the current `axuielement`. |
 | **Parameters**                                       | <ul><li>force     - If <code>true</code>, the notifier will be updated even if the element has not changed since the last update. Defaults to <code>false</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul> |
+
+#### [watchAll](#watchall)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:watchAll(callbackFn) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Registers the callback as a watcher for all standard notifications for the current `axuielement`. |
+| **Parameters**                                       | <ul><li>callbackFn   - the function to call when the notification happens.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul> |
+| **Notes**                                            | <ul><li>This should generally just be used for debugging purposes. It's best to use <code>watchFor</code>[#watchFor] in most cases. * The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:     * the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification.     * a string with the notification type.     * A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul> |
+
+#### [watchFor](#watchfor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:watchFor(notification, callbackFn) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Registers a function to get called whenever the specified notification type is triggered |
+| **Parameters**                                       | <ul><li>notifications     - The <code>string</code> or <code>table of strings</code> with the notification type(s) to watch for (e.g. "AXValueChanged"). * callbackFn        - The function to call when the matching notification is happens.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul> |
+| **Notes**                                            | <ul><li>The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:     * the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification.     * a string with the notification type.     * A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul> |
 

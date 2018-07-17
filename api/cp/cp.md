@@ -4,11 +4,13 @@
 Core CommandPost functionality.
 
 ## Submodules
+ * [cp.18n](cp.18n.md)
  * [cp.app](cp.app.md)
  * [cp.apple](cp.apple.md)
  * [cp.battery](cp.battery.md)
  * [cp.bench](cp.bench.md)
  * [cp.choices](cp.choices.md)
+ * [cp.collect](cp.collect.md)
  * [cp.commands](cp.commands.md)
  * [cp.config](cp.config.md)
  * [cp.console](cp.console.md)
@@ -18,7 +20,6 @@ Core CommandPost functionality.
  * [cp.disk](cp.disk.md)
  * [cp.docs](cp.docs.md)
  * [cp.feedback](cp.feedback.md)
- * [cp.font](cp.font.md)
  * [cp.i18n](cp.i18n.md)
  * [cp.idle](cp.idle.md)
  * [cp.ids](cp.ids.md)
@@ -31,6 +32,7 @@ Core CommandPost functionality.
  * [cp.plugins](cp.plugins.md)
  * [cp.prop](cp.prop.md)
  * [cp.protect](cp.protect.md)
+ * [cp.rx](cp.rx.md)
  * [cp.sourcewatcher](cp.sourcewatcher.md)
  * [cp.strings](cp.strings.md)
  * [cp.test](cp.test.md)

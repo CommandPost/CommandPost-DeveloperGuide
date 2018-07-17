@@ -7,6 +7,7 @@ Provides access to the list of Share Destinations configured for the user.
 * Constants - Useful values which cannot be changed
  * [DESTINATIONS_FILE](#destinations_file)
  * [DESTINATIONS_PATH](#destinations_path)
+ * [DESTINATIONS_PATTERN](#destinations_pattern)
  * [PREFERENCES_PATH](#preferences_path)
 * Functions - API calls offered directly by the extension
  * [details](#details)
@@ -28,6 +29,12 @@ Provides access to the list of Share Destinations configured for the user.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | The Destinations Path. |
+
+#### [DESTINATIONS_PATTERN](#destinations_pattern)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.DESTINATIONS_PATTERN -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Destinations File Pattern. |
 
 #### [PREFERENCES_PATH](#preferences_path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.PREFERENCES_PATH -> string` </span>                                                          |

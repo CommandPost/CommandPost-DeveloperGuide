@@ -14,6 +14,7 @@ Viewer Module.
  * [hide](#hide)
  * [isEventViewer](#iseventviewer)
  * [isMainViewer](#ismainviewer)
+ * [notifier](#notifier)
  * [playButton](#playbutton)
  * [showOnPrimary](#showonprimary)
  * [showOnSecondary](#showonsecondary)
@@ -81,6 +82,14 @@ Viewer Module.
 | **Description**                                      | Returns `true` if this is the main Viewer. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if this is the main Viewer.</li></ul> |
+
+#### [notifier](#notifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:notifier() -> cp.ui.notifier` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `notifier` that is tracking the application UI element. It has already been started. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The notifier.</li></ul> |
 
 #### [playButton](#playbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:playButton() -> Button` </span>                                                          |

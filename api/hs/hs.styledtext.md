@@ -81,9 +81,12 @@ Note that due to differences in the way Lua determines when to use metamethods f
  * [lineStyles](#linestyles)
 * Functions - API calls offered directly by the extension
  * [convertFont](#convertfont)
+ * [fontFamilies](#fontfamilies)
  * [fontInfo](#fontinfo)
  * [fontNames](#fontnames)
  * [fontNamesWithTraits](#fontnameswithtraits)
+ * [fontsForFamily](#fontsforfamily)
+ * [loadFont](#loadfont)
  * [validFont](#validfont)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [ansi](#ansi)
@@ -157,6 +160,14 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Parameters**                                       | <ul><li>font - a string or a table which specifies a font.  If a string is given, the default system font size is assumed.  If a table is provided, it should contain the following keys:   * name - the name of the font (defaults to the system font)   * size - the point size of the font (defaults to the default system font size) * trait - a number corresponding to a trait listed in <code>hs.styledtext.fontTraits</code> you wish to add or remove (unboldFont and unitalicFont) from the given font, or a boolean indicating whether you want a heavier version (true) or a lighter version (false).</li></ul> |
 | **Returns**                                          | <ul><li>a table containing the name and size of the font which most closely matches the specified font and the trait change requested.  If no such font is available, then the original font is returned unchanged.</li></ul> |
 
+#### [fontFamilies](#fontfamilies)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontFamilies() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the names of all font families installed for the system. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>a table containing the names of every font family installed for the system.</li></ul> |
+
 #### [fontInfo](#fontinfo)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontInfo(font) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -181,6 +192,22 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Parameters**                                       | <ul><li>traits - a number, specifying the fontTraitMask, or a table containing traits listed in <code>hs.styledtext.fontTraits</code> which are logically 'OR'ed together to create the fontTraitMask used.</li></ul> |
 | **Returns**                                          | <ul><li>a table containing the names of every font installed for the system which matches the fontTraitMask specified.  The individual names are strings which can be used in the <code>hs.drawing:setTextFont(fontname)</code> method.</li></ul> |
 | **Notes**                                            | <ul><li>specifying 0 or an empty table will match all fonts that are neither italic nor bold.  This would be the same list as you'd get with { hs.styledtext.fontTraits.unBold, hs.styledtext.fontTraits.unItalic } as the parameter.</li></ul> |
+
+#### [fontsForFamily](#fontsforfamily)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontsForFamily(familyName) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns an array containing fonts available for the specified font family or nil if no fonts for the specified family are present. |
+| **Parameters**                                       | <ul><li><code>familyName</code> - a string specifying the font family to return available fonts for. The strings should be one of the values returned by the <a href="#fontFamilies">hs.styledtext.fontFamiles</a> function.</li></ul> |
+| **Returns**                                          | <ul><li>a table containing an array of available fonts for the specified family. Each array entry will be a table, also as an array, in the following order:   * a string specifying the font name which can be used in the <code>hs.drawing:setTextFont(fontname)</code> method.   * a string specifying the basic style of the font (e.g. Bold, Italic, Roman, etc.)   * a table containing one or more strings specifying common names for the weight of the font. ISO equivalent names are preceded with "ISO:". Possible values are:            <code>{ "ultralight" }</code>            <code>{ "thin", "ISO:ultralight" }</code>            <code>{ "light", "extralight", "ISO:extralight" }</code>            <code>{ "book", "ISO:light" }</code>            <code>{ "regular", "plain", "display", "roman", "ISO:semilight" }</code>            <code>{ "medium", "ISO:medium" }</code>            <code>{ "demi", "demibold" }</code>            <code>{ "semi", "semibold", "ISO:semibold" }</code>            <code>{ "bold", "ISO:bold" }</code>            <code>{ "extra", "extrabold", "ISO:extrabold" }</code>            <code>{ "heavy", "heavyface" }</code>            <code>{ "black", "super", "ISO:ultrabold" }</code>            <code>{ "ultra", "ultrablack", "fat" }</code>            <code>{ "extrablack", "obese", "nord" }</code>   * a table specifying zero or more traits for the font as defined in the <a href="#fontTraits">hs.styledtext.fontTraits</a> table. A field with the key <code>_numeric</code> is also set which specified the numeric value corresponding to the traits for easy use with the <a href="#convertFont">hs.styledtext.convertFont</a> function.</li></ul> |
+
+#### [loadFont](#loadfont)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.loadFont(path) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Loads a font from a file at the specified path. |
+| **Returns**                                          | <ul><li>if the font can be registered, returns a string specifying the name of the font to use with <code>hs.canvas</code> and <code>hs.styledtext</code> to use the registered font. If the file does not exist or does not define a macOS compatible font, this function will return a lua error.</li></ul> |
+| **Notes**                                            | <ul><li>if a font with the same name is already registered, this function does nothing but still returns the font name.</li></ul> |
 
 #### [validFont](#validfont)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.validFont(font) -> boolean` </span>                                                          |

@@ -219,20 +219,20 @@ These modules will not be accessible to other plugins or to the main application
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [disable](#disable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.disable(id) -> nothing` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.disable(...) -> boolean, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Disabled the plugin with the specified ID and reloads the application. |
-| **Parameters**                                       | <ul><li><code>id</code> - The plugin package ID.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the plugin was disabled, or <code>false</code> if it could not be disabled.</li></ul> |
+| **Description**                                      | Disabled the plugin(s) with the specified IDs and reloads the application. |
+| **Parameters**                                       | <ul><li><code>...</code> - The list of plugin package IDs.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the plugin was disabled, or <code>false</code> if any of the plugins failed. * If disabling failed, the first ID that failed is returned as the second value.</li></ul> |
 
 #### [enable](#enable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.enable(id) -> nothing` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.enable(...) -> boolean, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Enables the plugin with the specified ID, and reloads the application. |
-| **Parameters**                                       | <ul><li><code>id</code> - The plugin package ID.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the plugin had been disabled and is now enabled.</li></ul> |
+| **Parameters**                                       | <ul><li><code>...</code> - The plugin package ID.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the plugins had been disabled and are now enabled. * If enabling failed, the plugin ID which could not be enabled is returned as the second value.</li></ul> |
 
 #### [getDependents](#getdependents)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getDependents(pluginId)` </span>                                                          |

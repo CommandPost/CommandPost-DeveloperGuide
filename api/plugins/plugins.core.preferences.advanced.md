@@ -7,11 +7,9 @@ Advanced Preferences Panel.
 * Variables - Configurable values
  * [openErrorLogOnDockClick](#openerrorlogondockclick)
 * Functions - API calls offered directly by the extension
- * [openErrorLog](#openerrorlog)
  * [toggleCommandLineTool](#togglecommandlinetool)
  * [toggleDeveloperMode](#toggledevelopermode)
  * [toggleEnableAutomaticScriptReloading](#toggleenableautomaticscriptreloading)
- * [trashPreferences](#trashpreferences)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [developerMode](#developermode)
 
@@ -26,14 +24,6 @@ Advanced Preferences Panel.
 | **Description**                                      | Open Error Log on Dock Icon Click. |
 
 ### Functions
-
-#### [openErrorLog](#openerrorlog)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.openErrorLog() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Opens the Error Log |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [toggleCommandLineTool](#togglecommandlinetool)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.toggleCommandLineTool() -> none` </span>                                                          |
@@ -56,14 +46,6 @@ Advanced Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Toggles the Automatic Script Reloading. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [trashPreferences](#trashpreferences)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.advanced.trashPreferences() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Resets all of the CommandPost Preferences to their default values. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

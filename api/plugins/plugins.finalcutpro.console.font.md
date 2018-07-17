@@ -4,71 +4,37 @@
 Final Cut Pro Font Console
 
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [FILE_NAME](#file_name)
- * [FOLDER_NAME](#folder_name)
- * [FONT_EXTENSIONS](#font_extensions)
- * [IGNORE_FONTS](#ignore_fonts)
- * [RENAME_FONTS](#rename_fonts)
+* Variables - Configurable values
+ * [fontCount](#fontcount)
+ * [fontLookup](#fontlookup)
+ * [processedFonts](#processedfonts)
 * Functions - API calls offered directly by the extension
- * [deleteCache](#deletecache)
- * [getRunningFonts](#getrunningfonts)
  * [onActivate](#onactivate)
  * [show](#show)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [cachedFonts](#cachedfonts)
 
 ## API Documentation
 
-### Constants
+### Variables
 
-#### [FILE_NAME](#file_name)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.FILE_NAME -> string` </span>                                                          |
+#### [fontCount](#fontcount)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.fontCount -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | File name of settings file. |
+| **Type**                                             | Variable |
+| **Description**                                      | The number of fonts available. |
 
-#### [FOLDER_NAME](#folder_name)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.FOLDER_NAME -> string` </span>                                                          |
+#### [fontLookup](#fontlookup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.fontLookup -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Folder Name where settings file is contained. |
+| **Type**                                             | Variable |
+| **Description**                                      | Provides a lookup between Font Names and their position in the Final Cut Pro dropdown menu. |
 
-#### [FONT_EXTENSIONS](#font_extensions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.FONT_EXTENSIONS -> table` </span>                                                          |
+#### [processedFonts](#processedfonts)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.processedFonts -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Table of support font file extensions. |
-
-#### [IGNORE_FONTS](#ignore_fonts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.IGNORE_FONTS -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Fonts to ignore as they're used internally by Final Cut Pro or macOS. |
-
-#### [RENAME_FONTS](#rename_fonts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.RENAME_FONTS -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Special Fonts that appear to have a different name in Final Cut Pro than they do in Font Book. |
+| **Type**                                             | Variable |
+| **Description**                                      | Table of font paths which have already been loaded or skipped. |
 
 ### Functions
-
-#### [deleteCache](#deletecache)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.deleteCache() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Deletes the cache file. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [getRunningFonts](#getrunningfonts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.getRunningFonts() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Shows the Final Cut Pro Console. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [onActivate](#onactivate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.onActivate() -> none` </span>                                                          |
@@ -85,12 +51,4 @@ Final Cut Pro Font Console
 | **Description**                                      | Shows the Font Console. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-### Fields
-
-#### [cachedFonts](#cachedfonts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.cachedFonts <cp.prop: table | nil>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Table of cached fonts. |
 

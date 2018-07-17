@@ -226,9 +226,9 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Places the drawing object on top of normal windows |
-| **Parameters**                                       | <ul><li>aboveEverything - An optional boolean value that controls how far to the front the drawing should be placed. True to place the drawing on top of all windows (including the dock and menubar and fullscreen windows), false to place the drawing above normal windows, but below the dock, menubar and fullscreen windows. Defaults to false.</li></ul> |
+| **Parameters**                                       | <ul><li>aboveEverything - An optional boolean value that controls how far to the front the drawing should be placed. <code>true</code> to place the drawing on top of all windows (including the dock and menubar), <code>false</code> to place the drawing above normal windows, but below the dock and menubar. Defaults to <code>false</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This may not be able to move a drawing above all full-screen windows. More recent versions of macOS have made significant changes to the way full-screen apps work, moving them outside our ability to interact with.</li></ul> |
+| **Notes**                                            | <ul><li>As of macOS Sierra and later, if you want a <code>hs.drawing</code> object to appear above full-screen windows you must hide the Hammerspoon Dock icon first using: <code>hs.dockicon.hide()</code></li></ul> |
 
 #### [clickCallbackActivating](#clickcallbackactivating)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:clickCallbackActivating([false]) -> drawingObject or current value` </span>                                                          |

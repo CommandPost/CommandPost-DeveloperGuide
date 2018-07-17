@@ -115,6 +115,8 @@ end
  * [colorBoard](#colorboard)
  * [commandEditor](#commandeditor)
  * [defaultCommandSetPath](#defaultcommandsetpath)
+ * [doSelectMenu](#doselectmenu)
+ * [doShortcut](#doshortcut)
  * [effects](#effects)
  * [eventViewer](#eventviewer)
  * [exportDialog](#exportdialog)
@@ -145,7 +147,6 @@ end
  * [secondaryWindow](#secondarywindow)
  * [selectLibrary](#selectlibrary)
  * [selectMenu](#selectmenu)
- * [selectMenuItem](#selectmenuitem)
  * [show](#show)
  * [string](#string)
  * [timeline](#timeline)
@@ -159,55 +160,55 @@ end
 ### Constants
 
 #### [ALLOWED_IMPORT_AUDIO_EXTENSIONS](#allowed_import_audio_extensions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_AUDIO_EXTENSIONS` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_AUDIO_EXTENSIONS -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Table of audio file extensions Final Cut Pro can import. |
 
 #### [ALLOWED_IMPORT_EXTENSIONS](#allowed_import_extensions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_EXTENSIONS` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_EXTENSIONS -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Table of all file extensions Final Cut Pro can import. |
 
 #### [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_IMAGE_EXTENSIONS` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_IMAGE_EXTENSIONS -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Table of image file extensions Final Cut Pro can import. |
 
 #### [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_VIDEO_EXTENSIONS` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.ALLOWED_IMPORT_VIDEO_EXTENSIONS -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Table of video file extensions Final Cut Pro can import. |
 
 #### [BUNDLE_ID](#bundle_id)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.BUNDLE_ID` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.BUNDLE_ID -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Final Cut Pro's Bundle ID as a `semver`. |
 
 #### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | The earliest version of Final Cut Pro supported by this module. |
 
 #### [EVENT_DESCRIPTION_PATH](#event_description_path)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EVENT_DESCRIPTION_PATH` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EVENT_DESCRIPTION_PATH -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | The Event Description Path. |
 
 #### [FLEXO_LANGUAGES](#flexo_languages)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.FLEXO_LANGUAGES` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.FLEXO_LANGUAGES -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Table of Final Cut Pro's supported Languages for the Flexo Framework |
 
 #### [PASTEBOARD_UTI](#pasteboard_uti)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.PASTEBOARD_UTI` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.PASTEBOARD_UTI -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Final Cut Pro's Pasteboard UTI |
@@ -413,6 +414,23 @@ end
 | **Description**                                      | Gets the path to the 'Default' Command Set. |
 | **Parameters**                                       | <ul><li><code>locale</code> - The optional locale to use. Defaults to the <a href="#currentLocale">current locale</a>.</li></ul> |
 | **Returns**                                          | <ul><li>The 'Default' Command Set path, or <code>nil</code> if an error occurred</li></ul> |
+
+#### [doSelectMenu](#doselectmenu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doSelectMenu(path, options) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Selects a Menu Item based on the provided menu path. |
+| **Parameters**                                       | <ul><li>path - The list of menu items you'd like to activate. * options - (optional) The table of options to apply.</li></ul> |
+| **Returns**                                          | <ul><li>An <code>Observable</code> which emits the final menu item, or an error if the selection failed.</li></ul> |
+| **Notes**                                            | <ul><li>The returned <code>Observable</code> will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.</li></ul> |
+
+#### [doShortcut](#doshortcut)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doShortcut(whichShortcut) -> Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Perform a Final Cut Pro Keyboard Shortcut |
+| **Parameters**                                       | <ul><li>whichShortcut - As per the Command Set name</li></ul> |
+| **Returns**                                          | <ul><li>A <code>Statement</code> that will perform the shortcut when executed.</li></ul> |
 
 #### [effects](#effects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:effects() -> EffectsBrowser` </span>                                                          |
@@ -654,15 +672,6 @@ end
 | **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English. |
 | **Parameters**                                       | <ul><li><code>path</code>       - The list of menu items you'd like to activate, for example:           select("View", "Browser", "as List") * <code>options</code>    - (optional) The table of options. See <code>cp.app.menu:selectMenu(...)</code> for details.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the press was successful.</li></ul> |
-
-#### [selectMenuItem](#selectmenuitem)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectMenuItem(path, options) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Selects a Menu Item based on the provided menu path. |
-| **Parameters**                                       | <ul><li>path - The list of menu items you'd like to activate. * options - (optional) The table of options to apply.</li></ul> |
-| **Returns**                                          | <ul><li>An <code>Observable</code> which emits the final menu item, or an error if the selection failed.</li></ul> |
-| **Notes**                                            | <ul><li>The returned <code>Observable</code> will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:show() -> cp.apple.finalcutpro` </span>                                                          |

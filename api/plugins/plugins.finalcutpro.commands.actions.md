@@ -66,10 +66,10 @@ Registers itself with the `core.action.manager`.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [reset](#reset)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.reset() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.reset() -> nothing` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Reset the Font Handler Cache. |
+| **Description**                                      | Resets the set of choices. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Nothing</li></ul> |
 

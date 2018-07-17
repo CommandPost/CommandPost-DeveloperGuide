@@ -53,6 +53,7 @@ Notes:
 | **Description**                                      | Creates a new chooser object |
 | **Parameters**                                       | <ul><li>completionFn - A function that will be called when the chooser is dismissed. It should accept one parameter, which will be nil if the user dismissed the chooser window, otherwise it will be a table containing whatever information you supplied for the item the user chose.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.chooser</code> object</li></ul> |
+| **Notes**                                            | <ul><li>As of macOS Sierra and later, if you want a <code>hs.chooser</code> object to appear above full-screen windows you must hide the Hammerspoon Dock icon first using: <code>hs.dockicon.hide()</code></li></ul> |
 
 ### Methods
 
