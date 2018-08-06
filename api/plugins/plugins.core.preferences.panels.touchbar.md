@@ -53,7 +53,7 @@ Touch Bar Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise the Module. |
-| **Parameters**                                       | <ul><li>deps - Dependancies Table * env - Environment Table</li></ul> |
+| **Parameters**                                       | <ul><li>deps - Dependancies Table</li><li>env - Environment Table</li></ul> |
 | **Returns**                                          | <ul><li>The Module</li></ul> |
 
 #### [setGroupEditor](#setgroupeditor)
@@ -61,7 +61,7 @@ Touch Bar Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the Group Editor |
-| **Parameters**                                       | <ul><li>groupId - Group ID * editorFn - Editor Function</li></ul> |
+| **Parameters**                                       | <ul><li>groupId - Group ID</li><li>editorFn - Editor Function</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields

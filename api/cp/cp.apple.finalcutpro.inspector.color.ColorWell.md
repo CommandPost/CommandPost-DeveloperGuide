@@ -44,7 +44,7 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `ColorWell` instance, with the specified parent and finder function. |
-| **Parameters**                                       | <ul><li>parent - The parent object* finderFn - Returns the <code>axuielement</code> that represents the color well.</li></ul> |
+| **Parameters**                                       | <ul><li>parent - The parent object</li><li>finderFn - Returns the <code>axuielement</code> that represents the color well.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>ColorWell</code> instance.</li></ul> |
 
 ### Methods
@@ -62,7 +62,7 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Nudges the `colorPosition` by `right`/`up` values. Negative `right` values shift left, |
-| **Parameters**                                       | <ul><li><code>right</code> - The number of steps to shift right. May be negative to shift left. * <code>up</code> - The number of pixels to shift down. May be negative to shift down.</li></ul> |
+| **Parameters**                                       | <ul><li><code>right</code> - The number of steps to shift right. May be negative to shift left.</li><li><code>up</code> - The number of pixels to shift down. May be negative to shift down.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>ColorWell</code> instance.</li></ul> |
 
 #### [parent](#parent)

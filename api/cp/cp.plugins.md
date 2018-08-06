@@ -215,7 +215,7 @@ These modules will not be accessible to other plugins or to the main application
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Adds the `dependentPlugin` as a dependent of the plugin with the specified id. |
-| **Parameters**                                       | <ul><li><code>id</code>                 - The plugin package ID. * <code>dependentPlugin</code>    - The plugin which is a dependent</li></ul> |
+| **Parameters**                                       | <ul><li><code>id</code>                 - The plugin package ID.</li><li><code>dependentPlugin</code>    - The plugin which is a dependent</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [disable](#disable)
@@ -224,7 +224,7 @@ These modules will not be accessible to other plugins or to the main application
 | **Type**                                             | Function |
 | **Description**                                      | Disabled the plugin(s) with the specified IDs and reloads the application. |
 | **Parameters**                                       | <ul><li><code>...</code> - The list of plugin package IDs.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the plugin was disabled, or <code>false</code> if any of the plugins failed. * If disabling failed, the first ID that failed is returned as the second value.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the plugin was disabled, or <code>false</code> if any of the plugins failed.</li><li>If disabling failed, the first ID that failed is returned as the second value.</li></ul> |
 
 #### [enable](#enable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.enable(...) -> boolean, string` </span>                                                          |
@@ -232,7 +232,7 @@ These modules will not be accessible to other plugins or to the main application
 | **Type**                                             | Function |
 | **Description**                                      | Enables the plugin with the specified ID, and reloads the application. |
 | **Parameters**                                       | <ul><li><code>...</code> - The plugin package ID.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the plugins had been disabled and are now enabled. * If enabling failed, the plugin ID which could not be enabled is returned as the second value.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the plugins had been disabled and are now enabled.</li><li>If enabling failed, the plugin ID which could not be enabled is returned as the second value.</li></ul> |
 
 #### [getDependents](#getdependents)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.getDependents(pluginId)` </span>                                                          |

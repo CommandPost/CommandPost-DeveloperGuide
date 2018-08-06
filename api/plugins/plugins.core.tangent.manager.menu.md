@@ -41,7 +41,7 @@ list of options.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Action` instance. |
-| **Parameters**                                       | <ul><li>id        - The ID number of the menu.<em> name      - The name of the menu.</em> parent    - The parent of the menu.</li></ul> |
+| **Parameters**                                       | <ul><li>id        - The ID number of the menu.</li><li>name      - The name of the menu.</li><li>parent    - The parent of the menu.</li></ul> |
 | **Returns**                                          | <ul><li>the new <code>menu</code>.</li></ul> |
 
 ### Methods

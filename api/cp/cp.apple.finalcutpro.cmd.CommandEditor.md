@@ -9,16 +9,21 @@ Command Editor Module.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [close](#close)
  * [frame](#frame)
  * [hsWindow](#hswindow)
  * [isFullScreen](#isfullscreen)
  * [isShowing](#isshowing)
+ * [save](#save)
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [alert](#alert)
  * [app](#app)
+ * [doClose](#doclose)
+ * [doSave](#dosave)
+ * [doShow](#doshow)
  * [getTitle](#gettitle)
  * [hide](#hide)
- * [save](#save)
  * [saveButton](#savebutton)
  * [show](#show)
  * [window](#window)
@@ -47,6 +52,12 @@ Command Editor Module.
 
 ### Fields
 
+#### [close](#close)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.close <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Close" [Button](cp.ui.Button.md). |
+
 #### [frame](#frame)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.frame <cp.prop: frame; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -71,6 +82,12 @@ Command Editor Module.
 | **Type**                                             | Field |
 | **Description**                                      | Is `true` if the window is visible. |
 
+#### [save](#save)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.save <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Save" [Button](cp.ui.Button.md). |
+
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor.UI <cp.prop: axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -79,6 +96,14 @@ Command Editor Module.
 
 ### Methods
 
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:alert() -> cp.ui.Alert` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The [Alert](cp.ui.Alert.md) for the Command Editor window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Alert</code>.</li></ul> |
+
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:app() -> App` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -86,6 +111,30 @@ Command Editor Module.
 | **Description**                                      | Returns the app instance representing Final Cut Pro. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul> |
+
+#### [doClose](#doclose)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:doClose() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that triggers the Save button in the Command Editor. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if the button was found and pushed, otherwise <code>false</code>.</li></ul> |
+
+#### [doSave](#dosave)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:doSave() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that triggers the Save button in the Command Editor. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if the button was found and pushed, otherwise <code>false</code>.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:doShow() -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Creates a [Statement](cp.rx.go.Statement.md) that will attempt to hide the Command Editor, if FCPX is running. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, which will resolve to <code>true</code> if the CommandEditor is not showing or <code>false</code> if not.</li></ul> |
 
 #### [getTitle](#gettitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:getTitle() -> string | nil` </span>                                                          |
@@ -100,14 +149,6 @@ Command Editor Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Hides the Command Editor. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.cmd.CommandEditor</code> object for method chaining.</li></ul> |
-
-#### [save](#save)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.cmd.CommandEditor:save() -> cp.apple.finalcutpro.cmd.CommandEditor` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Triggers the Save button in the Command Editor. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.cmd.CommandEditor</code> object for method chaining.</li></ul> |
 

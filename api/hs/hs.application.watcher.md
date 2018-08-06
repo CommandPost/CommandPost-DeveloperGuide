@@ -73,7 +73,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates an application event watcher |
-| **Parameters**                                       | <ul><li>fn - A function that will be called when application events happen. It should accept three parameters:  * A string containing the name of the application  * An event type (see the constants defined above)  * An <code>hs.application</code> object representing the application, or nil if the application couldn't be found</li></ul> |
+| **Parameters**                                       | <ul><li>fn - A function that will be called when application events happen. It should accept three parameters:</li><li>A string containing the name of the application</li><li>An event type (see the constants defined above)</li><li>An <code>hs.application</code> object representing the application, or nil if the application couldn't be found</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.application.watcher</code> object</li></ul> |
 | **Notes**                                            | <ul><li>If the function is called with an event type of <code>hs.application.watcher.terminated</code> then the application name parameter will be <code>nil</code> and the <code>hs.application</code> parameter, will only be useful for getting the UNIX process ID (i.e. the PID) of the application</li></ul> |
 

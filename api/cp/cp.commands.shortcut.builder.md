@@ -17,7 +17,7 @@ Shortcut Commands Builder Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds the specified modifier to the set. If a `keyCode` is provided, |
-| **Parameters**                                       | <ul><li>modifier - (optional) The modifier that was added. * keyCode - (optional) The key code being modified.</li></ul> |
+| **Parameters**                                       | <ul><li>modifier - (optional) The modifier that was added.</li><li>keyCode  - (optional) The key code being modified.</li></ul> |
 | **Returns**                                          | <ul><li><code>self</code> if no <code>keyCode</code> is provided, or the original <code>command</code>.</li></ul> |
 
 #### [new](#new)

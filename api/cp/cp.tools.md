@@ -97,7 +97,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs a Left Mouse Double Click. |
-| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks</li></ul> |
+| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [endsWith](#endswith)
@@ -105,7 +105,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks to see if `str` has the same ending as `ending`. |
-| **Parameters**                                       | <ul><li>str       - String to analysis * ending    - End of string to compare against</li></ul> |
+| **Parameters**                                       | <ul><li>str       - String to analysis</li><li>ending    - End of string to compare against</li></ul> |
 | **Returns**                                          | <ul><li>table</li></ul> |
 
 #### [ensureDirectoryExists](#ensuredirectoryexists)
@@ -113,7 +113,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Ensures all steps on a provided path exist. If not, attempts to create them. |
-| **Parameters**                                       | <ul><li><code>rootPath</code> - The root path (should already exist). * <code>...</code>      - The list of path steps to create</li></ul> |
+| **Parameters**                                       | <ul><li><code>rootPath</code> - The root path (should already exist).</li><li><code>...</code>      - The list of path steps to create</li></ul> |
 | **Returns**                                          | <ul><li>The full path, if it exists, or <code>nil</code> if unable to create the directory for some reason.</li></ul> |
 
 #### [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
@@ -121,7 +121,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Executes a single or multiple shell commands with Administrator Privileges. |
-| **Parameters**                                       | <ul><li>input - either a string or a table of strings of commands you want to execute * stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error</li></ul> |
+| **Parameters**                                       | <ul><li>input - either a string or a table of strings of commands you want to execute</li><li>stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful, <code>false</code> if cancelled and a string if there's an error.</li></ul> |
 
 #### [firstToUpper](#firsttoupper)
@@ -153,7 +153,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets the filename component of a path. |
-| **Parameters**                                       | <ul><li>input - The path * removeExtension - (optional) set to <code>true</code> if the file extension should be removed</li></ul> |
+| **Parameters**                                       | <ul><li>input - The path</li><li>removeExtension - (optional) set to <code>true</code> if the file extension should be removed</li></ul> |
 | **Returns**                                          | <ul><li>A string of the filename.</li></ul> |
 
 #### [getFullname](#getfullname)
@@ -169,7 +169,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sorts table keys by a value |
-| **Parameters**                                       | <ul><li>tbl - the table you want to sort * sortFunction - the function you want to use to sort the table</li></ul> |
+| **Parameters**                                       | <ul><li>tbl - the table you want to sort</li><li>sortFunction - the function you want to use to sort the table</li></ul> |
 | **Returns**                                          | <ul><li>A sorted table</li></ul> |
 
 #### [getmacOSVersion](#getmacosversion)
@@ -265,7 +265,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs a Left Mouse Click. |
-| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks * clickNumber - The optional number of times you want to perform the click.</li></ul> |
+| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li><li>clickNumber - The optional number of times you want to perform the click.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [lines](#lines)
@@ -289,7 +289,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Merges multiple tables into a target table. |
-| **Parameters**                                       | <ul><li>target   - The target table * ...      - Any other tables you want to merge into target</li></ul> |
+| **Parameters**                                       | <ul><li>target   - The target table</li><li>...      - Any other tables you want to merge into target</li></ul> |
 | **Returns**                                          | <ul><li>Table</li></ul> |
 
 #### [ninjaDoubleClick](#ninjadoubleclick)
@@ -297,7 +297,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs a mouse double click, but returns the mouse to the original position without the users knowledge. |
-| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks</li></ul> |
+| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [ninjaMouseAction](#ninjamouseaction)
@@ -305,7 +305,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Moves the mouse to a point, performs a function, then returns the mouse to the original point. |
-| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * fn - A function you want to perform</li></ul> |
+| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>fn - A function you want to perform</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [ninjaMouseClick](#ninjamouseclick)
@@ -313,7 +313,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs a mouse click, but returns the mouse to the original position without the users knowledge. |
-| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to * delay - The optional delay between multiple mouse clicks</li></ul> |
+| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [numberToWord](#numbertoword)
@@ -345,7 +345,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Removes a string from a table of strings |
-| **Parameters**                                       | <ul><li>table - the table you want to check * element - the string you want to remove</li></ul> |
+| **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the string you want to remove</li></ul> |
 | **Returns**                                          | <ul><li>A table</li></ul> |
 
 #### [rmdir](#rmdir)
@@ -353,7 +353,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Attempts to remove the directory at the specified path, optionally removing |
-| **Parameters**                                       | <ul><li><code>path</code>        - The absolute path to remove * <code>recursive</code>   - If <code>true</code>, the contents of the directory will be removed first.</li></ul> |
+| **Parameters**                                       | <ul><li><code>path</code>        - The absolute path to remove</li><li><code>recursive</code>   - If <code>true</code>, the contents of the directory will be removed first.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful, or <code>nil, err</code> if there was a problem.</li></ul> |
 
 #### [round](#round)
@@ -361,7 +361,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Rounds a number to a set number of decimal places |
-| **Parameters**                                       | <ul><li>num - The number you want to round * numDecimalPlaces - How many numbers of decimal places (defaults to 0)</li></ul> |
+| **Parameters**                                       | <ul><li>num - The number you want to round</li><li>numDecimalPlaces - How many numbers of decimal places (defaults to 0)</li></ul> |
 | **Returns**                                          | <ul><li>A rounded number</li></ul> |
 
 #### [safeFilename](#safefilename)
@@ -369,7 +369,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a Safe Filename. |
-| **Parameters**                                       | <ul><li>value - a string you want to make safe * defaultValue - the optional default filename to use if the value is not valid</li></ul> |
+| **Parameters**                                       | <ul><li>value - a string you want to make safe</li><li>defaultValue - the optional default filename to use if the value is not valid</li></ul> |
 | **Returns**                                          | <ul><li>A string of the safe filename</li></ul> |
 | **Notes**                                            | <ul><li>Returns "filename" is both <code>value</code> and <code>defaultValue</code> are <code>nil</code>.</li></ul> |
 
@@ -378,7 +378,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | A customised version of pairs, called `spairs` because it iterates over the table in a sorted order. |
-| **Parameters**                                       | <ul><li>t     - The table to process * order - The function of how to sort the table.</li></ul> |
+| **Parameters**                                       | <ul><li>t     - The table to process</li><li>order - The function of how to sort the table.</li></ul> |
 | **Returns**                                          | <ul><li>A iterator function.</li></ul> |
 | **Notes**                                            | <ul><li>Author: <a href="https://stackoverflow.com/a/15706820">Michal Kottman</a></li></ul> |
 
@@ -387,7 +387,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Splits a string with a pattern. |
-| **Parameters**                                       | <ul><li>str - The string to split * pat - The pattern</li></ul> |
+| **Parameters**                                       | <ul><li>str - The string to split</li><li>pat - The pattern</li></ul> |
 | **Returns**                                          | <ul><li>Table</li></ul> |
 
 #### [splitOnColumn](#splitoncolumn)
@@ -403,7 +403,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Trims a string based on a maximum length. |
-| **Parameters**                                       | <ul><li>maxLength - The length of the string as a number * optionalEnd - A string that is applied to the end of the input string if the input string is larger than the maximum length.</li></ul> |
+| **Parameters**                                       | <ul><li>maxLength - The length of the string as a number</li><li>optionalEnd - A string that is applied to the end of the input string if the input string is larger than the maximum length.</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul> |
 
 #### [tableContains](#tablecontains)
@@ -411,7 +411,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Does a element exist in a table? |
-| **Parameters**                                       | <ul><li>table - the table you want to check * element - the element you want to check for</li></ul> |
+| **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the element you want to check for</li></ul> |
 | **Returns**                                          | <ul><li>Boolean</li></ul> |
 
 #### [tableCount](#tablecount)
@@ -427,7 +427,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Compares two tables. |
-| **Parameters**                                       | <ul><li>t1 - The first table. * t2 - The second table. * ignoreMetatable - A boolean that determines whether or not we should ignore the metatable.</li></ul> |
+| **Parameters**                                       | <ul><li>t1 - The first table.</li><li>t2 - The second table.</li><li>ignoreMetatable - A boolean that determines whether or not we should ignore the metatable.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if <code>t1</code> and <code>t2</code> are identical, otherwise <code>false</code>.</li></ul> |
 
 #### [trim](#trim)

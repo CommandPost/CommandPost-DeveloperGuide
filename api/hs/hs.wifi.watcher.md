@@ -59,5 +59,5 @@ Watch for changes to the associated wifi network
 | **Description**                                      | Get or set the specific types of wifi events to generate a callback for with this watcher. |
 | **Parameters**                                       | <ul><li><code>messages</code> - an optional table of or list of strings specifying the types of events this watcher should invoke a callback for.  You can specify multiple types of events to watch for. Defaults to <code>{ "SSIDChange" }</code>.</li></ul> |
 | **Returns**                                          | <ul><li>if a value is provided, returns the watcher object; otherwise returns the current values as a table of strings.</li></ul> |
-| **Notes**                                            | <ul><li>the possible values for this method are described in <a href="#eventTypes">hs.wifi.watcher.eventTypes</a>. * the special string "all" specifies that all event types should be watched for.</li></ul> |
+| **Notes**                                            | <ul><li>the possible values for this method are described in <a href="#eventTypes">hs.wifi.watcher.eventTypes</a>.</li><li>the special string "all" specifies that all event types should be watched for.</li></ul> |
 

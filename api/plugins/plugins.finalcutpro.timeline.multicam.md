@@ -5,17 +5,17 @@ Multicam Tools.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [cutAndSwitchMulticam](#cutandswitchmulticam)
+ * [doCutAndSwitchMulticam](#docutandswitchmulticam)
 
 ## API Documentation
 
 ### Functions
 
-#### [cutAndSwitchMulticam](#cutandswitchmulticam)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.multicam.cutAndSwitchMulticam(whichMode, whichAngle) -> boolean` </span>                                                          |
+#### [doCutAndSwitchMulticam](#docutandswitchmulticam)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.multicam.doCutAndSwitchMulticam(whichMode, whichAngle) -> Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Cut & Switch Multicam. |
-| **Parameters**                                       | <ul><li>whichMode - "Audio", "Video" or "Both" as string * whichAngle - Number of Angle</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Description**                                      | Creates a [Statement](cp.rx.go.Statement.md) to Cut & Switch Multicam. |
+| **Parameters**                                       | <ul><li>whichMode - "Audio", "Video" or "Both" as string</li><li>whichAngle - Number of Angle</li></ul> |
+| **Returns**                                          | <ul><li><a href="cp.rx.go.Statement.md">Statement</a> to execute</li></ul> |
 

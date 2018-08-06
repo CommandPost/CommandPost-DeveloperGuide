@@ -70,14 +70,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Type**                                             | Function |
 | **Description**                                      | Gets the current state of the screen-related accessibility settings |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the following keys, and corresponding boolean values for whether the user has enabled these options:   * ReduceMotion (only available on macOS 10.12 or later)   * ReduceTransparency   * IncreaseContrast   * InvertColors (only available on macOS 10.12 or later)   * DifferentiateWithoutColor</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the following keys, and corresponding boolean values for whether the user has enabled these options:</li><li>ReduceMotion (only available on macOS 10.12 or later)</li><li>ReduceTransparency</li><li>IncreaseContrast</li><li>InvertColors (only available on macOS 10.12 or later)</li><li>DifferentiateWithoutColor</li></ul> |
 
 #### [find](#find)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.find(hint) -> hs.screen object(s)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Finds screens |
-| **Parameters**                                       | <ul><li>hint - search criterion for the desired screen(s); it can be:  * a number as per <code>hs.screen:id()</code>  * a string pattern that matches (via <code>string.match</code>) the screen name as per <code>hs.screen:name()</code> (for convenience, the matching will be done on lowercased strings)  * an hs.geometry <em>point</em> object, or constructor argument, with the <em>x and y position</em> of the screen in the current layout as per <code>hs.screen:position()</code>  * an hs.geometry <em>size</em> object, or constructor argument, with the <em>resolution</em> of the screen as per <code>hs.screen:fullFrame()</code>  * an hs.geometry <em>rect</em> object, or constructor argument, with an arbitrary rect in absolute coordinates; the screen     containing the largest part of the rect will be returned</li></ul> |
+| **Parameters**                                       | <ul><li>hint - search criterion for the desired screen(s); it can be:</li><li>a number as per <code>hs.screen:id()</code></li><li>a string pattern that matches (via <code>string.match</code>) the screen name as per <code>hs.screen:name()</code> (for convenience, the matching will be done on lowercased strings)</li><li>an hs.geometry <em>point</em> object, or constructor argument, with the <em>x and y position</em> of the screen in the current layout as per <code>hs.screen:position()</code></li><li>an hs.geometry <em>size</em> object, or constructor argument, with the <em>resolution</em> of the screen as per <code>hs.screen:fullFrame()</code></li><li>an hs.geometry <em>rect</em> object, or constructor argument, with an arbitrary rect in absolute coordinates; the screen     containing the largest part of the rect will be returned</li></ul> |
 | **Returns**                                          | <ul><li>one or more hs.screen objects that match the supplied search criterion, or <code>nil</code> if none found</li></ul> |
 | **Notes**                                            | <ul><li>for convenience you call call this as <code>hs.screen(hint)</code></li></ul> |
 
@@ -141,8 +141,8 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Type**                                             | Method |
 | **Description**                                      | Returns a table containing the screen modes supported by the screen. A screen mode is a combination of resolution, scaling factor and colour depth |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the supported screen modes. The keys of the table take the form of "1440x900@2x" (for a HiDPI mode) or "1680x1050@1x" (for a native DPI mode). The values are tables which contain the keys:  * w - A number containing the width of the screen mode in points  * h - A number containing the height of the screen mode in points  * scale - A number containing the scaling factor of the screen mode (typically <code>1</code> for a native mode, <code>2</code> for a HiDPI mode)</li></ul> |
-| **Notes**                                            | <ul><li>Only 32-bit colour modes are returned. If you really need to know about 16-bit modes, please file an Issue on GitHub * "points" are not necessarily the same as pixels, because they take the scale factor into account (e.g. "1440x900@2x" is a 2880x1800 screen resolution, with a scaling factor of 2, i.e. with HiDPI pixel-doubled rendering enabled), however, they are far more useful to work with than native pixel modes, when a Retina screen is involved. For non-retina screens, points and pixels are equivalent.</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the supported screen modes. The keys of the table take the form of "1440x900@2x" (for a HiDPI mode) or "1680x1050@1x" (for a native DPI mode). The values are tables which contain the keys:</li><li>w - A number containing the width of the screen mode in points</li><li>h - A number containing the height of the screen mode in points</li><li>scale - A number containing the scaling factor of the screen mode (typically <code>1</code> for a native mode, <code>2</code> for a HiDPI mode)</li></ul> |
+| **Notes**                                            | <ul><li>Only 32-bit colour modes are returned. If you really need to know about 16-bit modes, please file an Issue on GitHub</li><li>"points" are not necessarily the same as pixels, because they take the scale factor into account (e.g. "1440x900@2x" is a 2880x1800 screen resolution, with a scaling factor of 2, i.e. with HiDPI pixel-doubled rendering enabled), however, they are far more useful to work with than native pixel modes, when a Retina screen is involved. For non-retina screens, points and pixels are equivalent.</li></ul> |
 
 #### [currentMode](#currentmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:currentMode() -> table` </span>                                                          |
@@ -150,7 +150,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Type**                                             | Method |
 | **Description**                                      | Returns a table describing the current screen mode |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the current screen mode. The keys of the table are:  * w - A number containing the width of the screen mode in points  * h - A number containing the height of the screen mode in points  * scale - A number containing the scaling factor of the screen mode (typically <code>1</code> for a native mode, <code>2</code> for a HiDPI mode)  * desc - A string containing a representation of the mode as used in <code>hs.screen:availableModes()</code> - e.g. "1920x1080@2x"</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the current screen mode. The keys of the table are:</li><li>w - A number containing the width of the screen mode in points</li><li>h - A number containing the height of the screen mode in points</li><li>scale - A number containing the scaling factor of the screen mode (typically <code>1</code> for a native mode, <code>2</code> for a HiDPI mode)</li><li>desc - A string containing a representation of the mode as used in <code>hs.screen:availableModes()</code> - e.g. "1920x1080@2x"</li></ul> |
 
 #### [desktopImageURL](#desktopimageurl)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:desktopImageURL([imageURL])` </span>                                                          |
@@ -199,7 +199,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Type**                                             | Method |
 | **Description**                                      | Gets the current whitepoint and blackpoint of the screen |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table containing the white point and black point of the screen, or nil if an error occurred. The keys <code>whitepoint</code> and <code>blackpoint</code> each have values of a table containing the following keys, with corresponding values between 0.0 and 1.0:  * red  * green  * blue</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the white point and black point of the screen, or nil if an error occurred. The keys <code>whitepoint</code> and <code>blackpoint</code> each have values of a table containing the following keys, with corresponding values between 0.0 and 1.0:</li><li>red</li><li>green</li><li>blue</li></ul> |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:id() -> number` </span>                                                          |
@@ -254,7 +254,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets/Sets the rotation of a screen |
-| **Parameters**                                       | <ul><li>degrees - An optional number indicating how many degrees clockwise, to rotate. If no number is provided, the current rotation will be returned. This number must be one of:  * 0  * 90  * 180  * 270</li></ul> |
+| **Parameters**                                       | <ul><li>degrees - An optional number indicating how many degrees clockwise, to rotate. If no number is provided, the current rotation will be returned. This number must be one of:</li><li>0</li><li>90</li><li>180</li><li>270</li></ul> |
 | **Returns**                                          | <ul><li>If the rotation is being set, a boolean, true if the operation succeeded, otherwise false. If the rotation is being queried, a number will be returned</li></ul> |
 
 #### [setBrightness](#setbrightness)
@@ -270,7 +270,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets the current white point and black point of the screen |
-| **Parameters**                                       | <ul><li>whitepoint - A table containing color component values between 0.0 and 1.0 for each of the keys:  * red  * green  * blue * blackpoint - A table containing color component values between 0.0 and 1.0 for each of the keys:  * red  * green  * blue</li></ul> |
+| **Parameters**                                       | <ul><li>whitepoint - A table containing color component values between 0.0 and 1.0 for each of the keys:</li><li>red</li><li>green</li><li>blue</li><li>blackpoint - A table containing color component values between 0.0 and 1.0 for each of the keys:</li><li>red</li><li>green</li><li>blue</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the gamma settings were applied, false if an error occurred</li></ul> |
 | **Notes**                                            | <ul><li>If the whitepoint and blackpoint specified, are very similar, it will be impossible to read the screen. You should exercise caution, and may wish to bind a hotkey to <code>hs.screen.restoreGamma()</code> when experimenting</li></ul> |
 
@@ -279,7 +279,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets the screen to a new mode |
-| **Parameters**                                       | <ul><li>width - A number containing the width in points of the new mode * height - A number containing the height in points of the new mode * scale - A number containing the scaling factor of the new mode (typically 1 for native pixel resolutions, 2 for HiDPI/Retina resolutions)</li></ul> |
+| **Parameters**                                       | <ul><li>width - A number containing the width in points of the new mode</li><li>height - A number containing the height in points of the new mode</li><li>scale - A number containing the scaling factor of the new mode (typically 1 for native pixel resolutions, 2 for HiDPI/Retina resolutions)</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the requested mode was set, otherwise false</li></ul> |
 | **Notes**                                            | <ul><li>The available widths/heights/scales can be seen in the output of <code>hs.screen:availableModes()</code>, however, it should be noted that the CoreGraphics subsystem seems to list more modes for a given screen than it is actually prepared to set, so you may find that seemingly valid modes still return false. It is not currently understood why this is so!</li></ul> |
 
@@ -296,7 +296,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Saves an image of the screen to a JPG file |
-| **Parameters**                                       | <ul><li>filePath - A string containing a file path to save the screenshot as * screenRect - An optional <code>hs.geometry</code> rect (or arguments for its constructor) containing a portion of the screen to capture. Defaults to the whole screen</li></ul> |
+| **Parameters**                                       | <ul><li>filePath - A string containing a file path to save the screenshot as</li><li>screenRect - An optional <code>hs.geometry</code> rect (or arguments for its constructor) containing a portion of the screen to capture. Defaults to the whole screen</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [shotAsPNG](#shotaspng)
@@ -304,7 +304,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Saves an image of the screen to a PNG file |
-| **Parameters**                                       | <ul><li>filePath - A string containing a file path to save the screenshot as * screenRect - An optional <code>hs.geometry</code> rect (or arguments for its constructor) containing a portion of the screen to capture. Defaults to the whole screen</li></ul> |
+| **Parameters**                                       | <ul><li>filePath - A string containing a file path to save the screenshot as</li><li>screenRect - An optional <code>hs.geometry</code> rect (or arguments for its constructor) containing a portion of the screen to capture. Defaults to the whole screen</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [snapshot](#snapshot)
@@ -320,7 +320,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the first screen to the east of this one, ordered by proximity to its center or a specified point. |
-| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used  * strict - If <code>true</code>, disregard screens that lie completely above or below this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
+| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used</li><li>strict - If <code>true</code>, disregard screens that lie completely above or below this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.screen</code> object, or <code>nil</code> if not found</li></ul> |
 
 #### [toNorth](#tonorth)
@@ -328,7 +328,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the first screen to the north of this one, ordered by proximity to its center or a specified point. |
-| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used  * strict - If <code>true</code>, disregard screens that lie completely to the left or to the right of this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
+| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used</li><li>strict - If <code>true</code>, disregard screens that lie completely to the left or to the right of this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.screen</code> object, or <code>nil</code> if not found</li></ul> |
 
 #### [toSouth](#tosouth)
@@ -336,7 +336,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the first screen to the south of this one, ordered by proximity to its center or a specified point. |
-| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used  * strict - If <code>true</code>, disregard screens that lie completely to the left or to the right of this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
+| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used</li><li>strict - If <code>true</code>, disregard screens that lie completely to the left or to the right of this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.screen</code> object, or <code>nil</code> if not found</li></ul> |
 
 #### [toUnitRect](#tounitrect)
@@ -353,6 +353,6 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the first screen to the west of this one, ordered by proximity to its center or a specified point. |
-| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used  * strict - If <code>true</code>, disregard screens that lie completely above or below this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
+| **Parameters**                                       | <ul><li>from - An <code>hs.geometry.rect</code> or <code>hs.geometry.point</code> object; if omitted, the geometric center of this screen will be used</li><li>strict - If <code>true</code>, disregard screens that lie completely above or below this one (alternatively, set <code>hs.screen.strictScreenInDirection</code>)</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.screen</code> object, or <code>nil</code> if not found</li></ul> |
 

@@ -33,7 +33,7 @@ Playhead Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Finds the playhead (either persistent or skimming) in the specified container. Defaults to persistent. |
-| **Parameters**                                       | <ul><li><code>containerUI</code> - The container UI * <code>skimming</code> - Whether or not you want the skimming playhead as boolean.</li></ul> |
+| **Parameters**                                       | <ul><li><code>containerUI</code> - The container UI</li><li><code>skimming</code> - Whether or not you want the skimming playhead as boolean.</li></ul> |
 | **Returns**                                          | <ul><li>The playhead <code>hs._asm.axuielement</code> object or <code>nil</code> if not found.</li></ul> |
 
 #### [matches](#matches)
@@ -51,7 +51,7 @@ Playhead Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Constructs a new Playhead |
-| **Parameters**                                       | <ul><li>parent        - The parent object * skimming      - (optional) if <code>true</code>, this links to the 'skimming' playhead created under the mouse, if present. * containerUI   - (optional) a <code>cp.prop</code> which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element. * useEventViewer - (optional) if <code>true</code>, this will use the Event Viewer's timecode, when available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent        - The parent object</li><li>skimming      - (optional) if <code>true</code>, this links to the 'skimming' playhead created under the mouse, if present.</li><li>containerUI   - (optional) a <code>cp.prop</code> which returns the container axuielement which contains the playheads. If not present, it will use the parent's UI element.</li><li>useEventViewer - (optional) if <code>true</code>, this will use the Event Viewer's timecode, when available.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Playhead</code> instance.</li></ul> |
 
 ### Fields

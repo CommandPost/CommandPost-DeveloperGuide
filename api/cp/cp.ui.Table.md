@@ -53,7 +53,7 @@ Represents an AXTable in the Apple Accessibility UX API.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks if the cell's text value equals `value`. |
-| **Parameters**                                       | <ul><li><code>cell</code>   - The cell to check * <code>value</code>   - The text value to compare.</li></ul> |
+| **Parameters**                                       | <ul><li><code>cell</code>   - The cell to check</li><li><code>value</code>  - The text value to compare.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the cell text value equals the provided <code>value</code>.</li></ul> |
 
 #### [discloseRow](#discloserow)
@@ -69,7 +69,7 @@ Represents an AXTable in the Apple Accessibility UX API.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Finds the row at the sub-level named in the `names` table and returns it. |
-| **Parameters**                                       | <ul><li><code>rows</code>       - The array of rows to process. * <code>names</code>       - The array of names to navigate down</li></ul> |
+| **Parameters**                                       | <ul><li><code>rows</code>       - The array of rows to process.</li><li><code>names</code>      - The array of names to navigate down</li></ul> |
 | **Returns**                                          | <ul><li>The row that was visited, or <code>nil</code> if not.</li></ul> |
 
 #### [is](#is)
@@ -101,7 +101,7 @@ Represents an AXTable in the Apple Accessibility UX API.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Selects the row at the sub-level named in the `names` table. |
-| **Parameters**                                       | <ul><li><code>rows</code>       - The array of rows to process. * <code>names</code>       - The array of names to navigate down</li></ul> |
+| **Parameters**                                       | <ul><li><code>rows</code>       - The array of rows to process.</li><li><code>names</code>      - The array of names to navigate down</li></ul> |
 | **Returns**                                          | <ul><li>The row that was visited, or <code>nil</code> if not.</li></ul> |
 
 ### Constructors
@@ -111,7 +111,7 @@ Represents an AXTable in the Apple Accessibility UX API.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Table. |
-| **Parameters**                                       | <ul><li><code>parent</code>     - The parent object. * <code>finder</code>     - A function which will return the <code>axuielement</code> that this table represents.</li></ul> |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent object.</li><li><code>finder</code>     - A function which will return the <code>axuielement</code> that this table represents.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Table</code> instance.</li></ul> |
 
 ### Methods
@@ -150,7 +150,7 @@ Represents an AXTable in the Apple Accessibility UX API.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Finds a specific Cell UI. |
-| **Parameters**                                       | <ul><li>rowNumber - The row number. * columnId - The Column ID.</li></ul> |
+| **Parameters**                                       | <ul><li>rowNumber - The row number.</li><li>columnId - The Column ID.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>hs._asm.axuielement</code> object for the cell, or <code>nil</code> if the cell cannot be found.</li></ul> |
 
 #### [findColumnIndex](#findcolumnindex)

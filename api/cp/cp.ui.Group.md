@@ -31,7 +31,7 @@ UI Group.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Group` instance. |
-| **Parameters**                                       | <ul><li>parent - The parent object. * finderFn - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li><li>finderFn - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Group</code> object.</li></ul> |
 
 ### Methods

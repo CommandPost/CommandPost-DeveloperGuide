@@ -24,7 +24,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Gets the current ambient brightness |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the current ambient brightness, measured in lux. If an error occurred, the number will be -1</li></ul> |
-| **Notes**                                            | <ul><li>Even though external Apple displays include an ambient light sensor, their data is typically not available, so this function will likely only be useful to MacBook users * The raw sensor data is converted to lux via an algorithm used by Mozilla Firefox and is not guaranteed to give an accurate lux value</li></ul> |
+| **Notes**                                            | <ul><li>Even though external Apple displays include an ambient light sensor, their data is typically not available, so this function will likely only be useful to MacBook users</li><li>The raw sensor data is converted to lux via an algorithm used by Mozilla Firefox and is not guaranteed to give an accurate lux value</li></ul> |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.brightness.get() -> number` </span>                                                          |

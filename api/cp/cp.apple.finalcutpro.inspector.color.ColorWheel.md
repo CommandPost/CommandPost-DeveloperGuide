@@ -56,7 +56,7 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `ColorWheel` instance, with the specified parent and type. |
-| **Parameters**                                       | <ul><li>parent    - The parent object.* type      - The type of color wheel. Must be one of the <code>ColorWheel.TYPE</code> values.</li></ul> |
+| **Parameters**                                       | <ul><li>parent    - The parent object.</li><li>type      - The type of color wheel. Must be one of the <code>ColorWheel.TYPE</code> values.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>ColorWheel</code> instance.</li></ul> |
 
 ### Fields
@@ -138,7 +138,7 @@ Represents a single Color Well in the Color Wheels Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Nudges the `colorPosition` by `right`/`up` values. Negative `right` values shift left, |
-| **Parameters**                                       | <ul><li><code>right</code> - The number of steps to shift right. May be negative to shift left. * <code>up</code> - The number of pixels to shift down. May be negative to shift down.</li></ul> |
+| **Parameters**                                       | <ul><li><code>right</code> - The number of steps to shift right. May be negative to shift left.</li><li><code>up</code> - The number of pixels to shift down. May be negative to shift down.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>ColorWheel</code> instance.</li></ul> |
 
 #### [reset](#reset)

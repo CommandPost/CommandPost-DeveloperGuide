@@ -27,7 +27,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Gets the absolute co-ordinates of the mouse pointer |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A point-table containing the absolute x and y co-ordinates of the mouse pointer</li></ul> |
-| **Notes**                                            | <ul><li>The co-ordinates returned by this function are in relation to the full size of your desktop. If you have multiple monitors, the desktop is a large virtual rectangle that contains them all (e.g. if you have two 1920x1080 monitors and the mouse is in the middle of the second monitor, the returned table would be <code>{ x=2879, y=540 }</code>) * Multiple monitors of different sizes can cause the co-ordinates of some areas of the desktop to be negative. This is perfectly normal. 0,0 in the co-ordinates of the desktop is the top left of the primary monitor</li></ul> |
+| **Notes**                                            | <ul><li>The co-ordinates returned by this function are in relation to the full size of your desktop. If you have multiple monitors, the desktop is a large virtual rectangle that contains them all (e.g. if you have two 1920x1080 monitors and the mouse is in the middle of the second monitor, the returned table would be <code>{ x=2879, y=540 }</code>)</li><li>Multiple monitors of different sizes can cause the co-ordinates of some areas of the desktop to be negative. This is perfectly normal. 0,0 in the co-ordinates of the desktop is the top left of the primary monitor</li></ul> |
 
 #### [getButtons](#getbuttons)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getButtons() -> table` </span>                                                          |
@@ -35,8 +35,8 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Type**                                             | Function |
 | **Description**                                      | Returns a table containing the current mouse buttons being pressed *at this instant*. |
 | **Parameters**                                       | <p>None</p> |
-| **Returns**                                          | <ul><li>Returns an array containing indicies starting from 1 up to the highest numbered button currently being pressed where the index is <code>true</code> if the button is currently pressed or <code>false</code> if it is not. * Special hash tag synonyms for <code>left</code> (button 1), <code>right</code> (button 2), and <code>middle</code> (button 3) are also set to true if these buttons are currently being pressed.</li></ul> |
-| **Notes**                                            | <ul><li>This function is a wrapper to <code>hs.eventtap.checkMouseButtons</code> * This is an instantaneous poll of the current mouse buttons, not a callback.</li></ul> |
+| **Returns**                                          | <ul><li>Returns an array containing indicies starting from 1 up to the highest numbered button currently being pressed where the index is <code>true</code> if the button is currently pressed or <code>false</code> if it is not.</li><li>Special hash tag synonyms for <code>left</code> (button 1), <code>right</code> (button 2), and <code>middle</code> (button 3) are also set to true if these buttons are currently being pressed.</li></ul> |
+| **Notes**                                            | <ul><li>This function is a wrapper to <code>hs.eventtap.checkMouseButtons</code></li><li>This is an instantaneous poll of the current mouse buttons, not a callback.</li></ul> |
 
 #### [getCurrentScreen](#getcurrentscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getCurrentScreen() -> screen or nil` </span>                                                          |
@@ -76,7 +76,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the co-ordinates of the mouse pointer, relative to a screen |
-| **Parameters**                                       | <ul><li>point - A point-table containing the relative x and y co-ordinates to move the mouse pointer to * screen - An optional <code>hs.screen</code> object. Defaults to the screen the mouse pointer is currently on</li></ul> |
+| **Parameters**                                       | <ul><li>point - A point-table containing the relative x and y co-ordinates to move the mouse pointer to</li><li>screen - An optional <code>hs.screen</code> object. Defaults to the screen the mouse pointer is currently on</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [trackingSpeed](#trackingspeed)
@@ -86,5 +86,5 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Gets/Sets the current system mouse tracking speed setting |
 | **Parameters**                                       | <ul><li>speed - An optional number containing the new tracking speed to set. If this is ommitted, the current setting is returned</li></ul> |
 | **Returns**                                          | <ul><li>A number (currently between 0.0 and 3.0) indicating the current tracking speed setting for mice, or -1 if an error occurred</li></ul> |
-| **Notes**                                            | <ul><li>This is represented in the System Preferences as the "Tracking speed" setting for mice * Note that not all values will work, they should map to the steps defined in the System Preferences app</li></ul> |
+| **Notes**                                            | <ul><li>This is represented in the System Preferences as the "Tracking speed" setting for mice</li><li>Note that not all values will work, they should map to the steps defined in the System Preferences app</li></ul> |
 

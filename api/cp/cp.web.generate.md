@@ -22,7 +22,7 @@ Functions for Generating HTML UI Items
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Generates a HTML Button |
-| **Parameters**                                       | <ul><li>data - Table containing the data you want to display on the Checkbox * customTrigger - Custom label used for JavaScript Callback * customWidth - Number to set the width of the button to * customID - Overrides the random HTML ID</li></ul> |
+| **Parameters**                                       | <ul><li>data - Table containing the data you want to display on the Checkbox</li><li>customTrigger - Custom label used for JavaScript Callback</li><li>customWidth - Number to set the width of the button to</li><li>customID - Overrides the random HTML ID</li></ul> |
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul> |
 
 #### [checkbox](#checkbox)
@@ -30,7 +30,7 @@ Functions for Generating HTML UI Items
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Generates a HTML Checkbox |
-| **Parameters**                                       | <ul><li>data - Table containing the data you want to display on the Checkbox * customTrigger - Custom label used for JavaScript Callback * customID - Custom ID used for the HTML objects</li></ul> |
+| **Parameters**                                       | <ul><li>data - Table containing the data you want to display on the Checkbox</li><li>customTrigger - Custom label used for JavaScript Callback</li><li>customID - Custom ID used for the HTML objects</li></ul> |
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul> |
 
 #### [dropdown](#dropdown)
@@ -38,7 +38,7 @@ Functions for Generating HTML UI Items
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Generates a HTML Dropdown |
-| **Parameters**                                       | <ul><li>title - Title to put in front of the Dropdown. Can be "". * data - Table containing the data you want to display on the Checkbox * customTrigger - Custom label used for JavaScript Callback</li></ul> |
+| **Parameters**                                       | <ul><li>title - Title to put in front of the Dropdown. Can be "".</li><li>data - Table containing the data you want to display on the Checkbox</li><li>customTrigger - Custom label used for JavaScript Callback</li></ul> |
 | **Returns**                                          | <ul><li>String containing the HTML</li></ul> |
 
 #### [heading](#heading)

@@ -27,6 +27,6 @@ Portions sourced from (https://gist.github.com/shpakovski/1902994).
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Encodes a given string to base64 |
-| **Parameters**                                       | <ul><li>val - A string to encode as base64 * width - Optional line width to split the string into (usually 64 or 76)</li></ul> |
+| **Parameters**                                       | <ul><li>val - A string to encode as base64</li><li>width - Optional line width to split the string into (usually 64 or 76)</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the base64 representation of the input string</li></ul> |
 

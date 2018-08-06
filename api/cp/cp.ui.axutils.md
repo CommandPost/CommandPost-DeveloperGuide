@@ -26,6 +26,7 @@ Utility functions to support `hs._asm.axuielement`.
  * [compareTopToBottom](#comparetoptobottom)
  * [hasAttributeValue](#hasattributevalue)
  * [isValid](#isvalid)
+ * [role](#role)
  * [snapshot](#snapshot)
 
 ## API Documentation
@@ -37,7 +38,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks if the cached value at the `source[key]` is a valid axuielement. If not |
-| **Parameters**                                       | <ul><li>source       - the table containing the cache * key          - the key the value is cached under * finderFn      - the function which will return the element if not found. * [verifyFn] - an optional function which will check the cached element to verify it is still valid.</li></ul> |
+| **Parameters**                                       | <ul><li>source       - the table containing the cache</li><li>key          - the key the value is cached under</li><li>finderFn     - the function which will return the element if not found.</li><li>[verifyFn]   - an optional function which will check the cached element to verify it is still valid.</li></ul> |
 | **Returns**                                          | <ul><li>The valid cached value.</li></ul> |
 
 #### [childAtIndex](#childatindex)
@@ -45,7 +46,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Searches for the child element which is at number `index` when sorted using the `compareFn`. |
-| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements * index      - the index number of the child to find. * compareFn    - a function to compare the elements. * matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements</li><li>index        - the index number of the child to find.</li><li>compareFn    - a function to compare the elements.</li><li>matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or <code>nil</code> if the index is larger than the number of children.</li></ul> |
 
 #### [childFromBottom](#childfrombottom)
@@ -53,7 +54,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Searches for the child element which is at number `index` when sorted bottom-to-top. |
-| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements * index      - the index number of the child to find. * matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements</li><li>index        - the index number of the child to find.</li><li>matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or <code>nil</code> if the index is larger than the number of children.</li></ul> |
 
 #### [childFromLeft](#childfromleft)
@@ -61,7 +62,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Searches for the child element which is at number `index` when sorted left-to-right. |
-| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements * index      - the index number of the child to find. * matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements</li><li>index        - the index number of the child to find.</li><li>matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or <code>nil</code> if the index is larger than the number of children.</li></ul> |
 
 #### [childFromRight](#childfromright)
@@ -69,7 +70,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Searches for the child element which is at number `index` when sorted right-to-left. |
-| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements * index      - the index number of the child to find. * matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements</li><li>index        - the index number of the child to find.</li><li>matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or <code>nil</code> if the index is larger than the number of children.</li></ul> |
 
 #### [childFromTop](#childfromtop)
@@ -77,7 +78,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Searches for the child element which is at number `index` when sorted top-to-bottom. |
-| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements * index      - the index number of the child to find. * matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements</li><li>index        - the index number of the child to find.</li><li>matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or <code>nil</code> if the index is larger than the number of children.</li></ul> |
 
 #### [childMatching](#childmatching)
@@ -85,7 +86,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for the first child of the specified element for which the provided function returns `true`. |
-| **Parameters**                                       | <ul><li>element      - the axuielement * matcherFn   - the function which checks if the child matches the requirements. * index      - the number of matching child to return. Defaults to <code>1</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - the axuielement</li><li>matcherFn    - the function which checks if the child matches the requirements.</li><li>index        - the number of matching child to return. Defaults to <code>1</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul> |
 
 #### [children](#children)
@@ -101,7 +102,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for all children of the specified element for which the provided |
-| **Parameters**                                       | <ul><li>element  - the axuielement * matcherFn   - the function which checks if the child matches the requirements.</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>matcherFn    - the function which checks if the child matches the requirements.</li></ul> |
 | **Returns**                                          | <ul><li>All matching children, or <code>nil</code> if none was found</li></ul> |
 
 #### [childrenWith](#childrenwith)
@@ -109,7 +110,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for all children of the specified element which has an attribute with the matching name and value. |
-| **Parameters**                                       | <ul><li>element  - the axuielement * name        - the name of the attribute * value - the value of the attribute</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>name     - the name of the attribute</li><li>value    - the value of the attribute</li></ul> |
 | **Returns**                                          | <ul><li>All matching children, or <code>nil</code> if none was found</li></ul> |
 
 #### [childrenWithRole](#childrenwithrole)
@@ -117,7 +118,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for all children of the specified element which has an `AXRole` attribute with the matching value. |
-| **Parameters**                                       | <ul><li>element  - the axuielement * value   - the value of the attribute</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>value    - the value of the attribute</li></ul> |
 | **Returns**                                          | <ul><li>All matching children, or <code>nil</code> if none was found</li></ul> |
 
 #### [childWith](#childwith)
@@ -125,7 +126,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for the first child of the specified element which has an attribute with the matching name and value. |
-| **Parameters**                                       | <ul><li>element  - the axuielement * name        - the name of the attribute * value - the value of the attribute</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>name     - the name of the attribute</li><li>value    - the value of the attribute</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul> |
 
 #### [childWithDescription](#childwithdescription)
@@ -133,7 +134,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for the first child of the specified element which has `AXDescription` with the specified value. |
-| **Parameters**                                       | <ul><li>element  - the axuielement * value   - the value</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>value    - the value</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or <code>nil</code> if none was found</li></ul> |
 
 #### [childWithID](#childwithid)
@@ -141,7 +142,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for the first child of the specified element which has `AXIdentifier` with the specified value. |
-| **Parameters**                                       | <ul><li>element  - the axuielement * value   - the value</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>value    - the value</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or <code>nil</code> if none was found</li></ul> |
 
 #### [childWithRole](#childwithrole)
@@ -149,7 +150,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for the first child of the specified element which has `AXRole` with the specified value. |
-| **Parameters**                                       | <ul><li>element  - the axuielement * value   - the value</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>value    - the value</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or <code>nil</code> if none was found</li></ul> |
 
 #### [compareBottomToTop](#comparebottomtotop)
@@ -185,7 +186,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks to see if an element has a specific value. |
-| **Parameters**                                       | <ul><li>element  - the <code>axuielement</code> * name      - the name of the attribute * value - the value of the attribute</li></ul> |
+| **Parameters**                                       | <ul><li>element  - the <code>axuielement</code></li><li>name     - the name of the attribute</li><li>value    - the value of the attribute</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the <code>element</code> has the supplied attribute value, otherwise <code>false</code>.</li></ul> |
 
 #### [isValid](#isvalid)
@@ -196,11 +197,19 @@ Utility functions to support `hs._asm.axuielement`.
 | **Parameters**                                       | <ul><li>element  - the axuielement</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the element is valid.</li></ul> |
 
+#### [role](#role)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.match.role(roleName) -> function` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns a `match` function that will return true if the `axuielement` has the specified `AXRole`. |
+| **Parameters**                                       | <ul><li>roleName  - The role to check for.</li></ul> |
+| **Returns**                                          | <ul><li><code>function(element) -&gt; boolean</code> that checks the <code>AXRole</code> is <code>roleName</code></li></ul> |
+
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.snapshot(element, [filename]) -> hs.image` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Takes a snapshot of the specified `axuielement` and returns it. |
-| **Parameters**                                       | <ul><li>element      - The <code>axuielement</code> to snap. * filename     - (optional) The path to save the image as a PNG file.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - The <code>axuielement</code> to snap.</li><li>filename     - (optional) The path to save the image as a PNG file.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.image</code> file, or <code>nil</code> if the element could not be snapped.</li></ul> |
 

@@ -29,7 +29,7 @@ Fullscreen Shortcuts
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks to see if a shortcut has been pressed, then processes. |
-| **Parameters**                                       | <ul><li>whichModifier - Which modifier key to check. * whichKey - Which key to check.</li></ul> |
+| **Parameters**                                       | <ul><li>whichModifier - Which modifier key to check.</li><li>whichKey - Which key to check.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [ninjaKeyStroke](#ninjakeystroke)
@@ -37,7 +37,7 @@ Fullscreen Shortcuts
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs a Ninja Key Stoke. |
-| **Parameters**                                       | <ul><li>whichModifier - Modifier Key * whichKey - Key</li></ul> |
+| **Parameters**                                       | <ul><li>whichModifier - Modifier Key</li><li>whichKey - Key</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [performCommand](#performcommand)
@@ -45,7 +45,7 @@ Fullscreen Shortcuts
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs a command. |
-| **Parameters**                                       | <ul><li>cmd - The Command. * whichModifier - Which modifier key to check. * whichKey - Which key to check.</li></ul> |
+| **Parameters**                                       | <ul><li>cmd - The Command.</li><li>whichModifier - Which modifier key to check.</li><li>whichKey - Which key to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [update](#update)

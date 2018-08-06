@@ -87,7 +87,7 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | A table of predefined window levels usable with `hs.drawing:setLevel(...)` |
-| **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing <code>hs.drawing.windowLevels</code>. * These key names map to the constants used in CoreGraphics to specify window levels and may not actually be used for what the name might suggest. For example, tests suggest that an active screen saver actually runs at a level of 2002, rather than at 1000, which is the window level corresponding to kCGScreenSaverWindowLevelKey. * Each drawing level is sorted separately and <code>hs.drawing:orderAbove(...)</code> and hs.drawing:orderBelow(...)` only arrange windows within the same level. * If you use Dock hiding (or in 10.11, Menubar hiding) please note that when the Dock (or Menubar) is popped up, it is done so with an implicit orderAbove, which will place it above any items you may also draw at the Dock (or MainMenu) level.</li></ul> |
+| **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing <code>hs.drawing.windowLevels</code>.</li><li>These key names map to the constants used in CoreGraphics to specify window levels and may not actually be used for what the name might suggest. For example, tests suggest that an active screen saver actually runs at a level of 2002, rather than at 1000, which is the window level corresponding to kCGScreenSaverWindowLevelKey.</li><li>Each drawing level is sorted separately and <code>hs.drawing:orderAbove(...)</code> and hs.drawing:orderBelow(...)` only arrange windows within the same level.</li><li>If you use Dock hiding (or in 10.11, Menubar hiding) please note that when the Dock (or Menubar) is popped up, it is done so with an implicit orderAbove, which will place it above any items you may also draw at the Dock (or MainMenu) level.</li></ul> |
 
 ### Functions
 
@@ -107,7 +107,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Tells the OS X window server to pause updating the physical displays for a short while. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule. * This method should always be balanced with a call to <a href="#enableScreenUpdates">hs.drawing.enableScreenUpdates</a> when your updates have been completed.  Failure to do so will be logged in the system logs.</li></ul> |
+| **Notes**                                            | <ul><li>This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be balanced with a call to <a href="#enableScreenUpdates">hs.drawing.enableScreenUpdates</a> when your updates have been completed.  Failure to do so will be logged in the system logs.</li></ul> |
 
 #### [enableScreenUpdates](#enablescreenupdates)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.enableScreenUpdates() -> None` </span>                                                          |
@@ -125,7 +125,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Get the size of the rectangle necessary to fully render the text with the specified style so that is will be completely visible. |
 | **Parameters**                                       | <ul><li>styledTextObject - an object created with the hs.styledtext module or its table representation (see <code>hs.styledtext</code>).</li></ul> |
 | **Returns**                                          | <ul><li>sizeTable - a table containing the Height and Width necessary to fully display the text drawing object, or nil if an error occurred</li></ul> |
-| **Notes**                                            | <ul><li>This function assumes the default values specified for any key which is not included in the provided textStyle. * The size returned is an approximation and may return a width that is off by about 4 points.  Use the returned size as a minimum starting point. Sometimes using the "clip" or "truncateMiddle" lineBreak modes or "justified" alignment will fit, but its safest to add in your own buffer if you have the space in your layout. * Multi-line text (separated by a newline or return) is supported.  The height will be for the multiple lines and the width returned will be for the longest line.</li></ul> |
+| **Notes**                                            | <ul><li>This function assumes the default values specified for any key which is not included in the provided textStyle.</li><li>The size returned is an approximation and may return a width that is off by about 4 points.  Use the returned size as a minimum starting point. Sometimes using the "clip" or "truncateMiddle" lineBreak modes or "justified" alignment will fit, but its safest to add in your own buffer if you have the space in your layout.</li><li>Multi-line text (separated by a newline or return) is supported.  The height will be for the multiple lines and the width returned will be for the longest line.</li></ul> |
 
 ### Constructors
 
@@ -134,16 +134,16 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new image object with the icon of a given app |
-| **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the image. If the size values are -1 then the image will be displayed at the icon's native size * bundleID - A string containing the bundle identifier of an app (e.g. "com.apple.Safari")</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> image object, or nil if an error occurs</li></ul> |
+| **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the image. If the size values are -1 then the image will be displayed at the icon's native size</li><li>bundleID - A string containing the bundle identifier of an app (e.g. "com.apple.Safari")</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li></ul> |
 
 #### [arc](#arc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.arc(centerPoint, radius, startAngle, endAngle) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new arc object |
-| **Parameters**                                       | <ul><li>centerPoint - A point-table containing the center of the circle used to define the arc * radius      - The radius of the circle used to define the arc * startAngle  - The starting angle of the arc, measured in degrees clockwise from the y-axis. * endAngle    - The ending angle of the arc, measured in degrees clockwise from the y-axis.</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> arc object, or nil if an error occurs</li></ul> |
+| **Parameters**                                       | <ul><li>centerPoint - A point-table containing the center of the circle used to define the arc</li><li>radius      - The radius of the circle used to define the arc</li><li>startAngle  - The starting angle of the arc, measured in degrees clockwise from the y-axis.</li><li>endAngle    - The ending angle of the arc, measured in degrees clockwise from the y-axis.</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li></ul> |
 | **Notes**                                            | <ul><li>This constructor is actually a wrapper for the <code>hs.drawing.ellipticalArc</code> constructor.</li></ul> |
 
 #### [circle](#circle)
@@ -152,23 +152,23 @@ Primitives for drawing on the screen in various ways
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new circle object |
 | **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the circle</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> circle object, or nil if an error occurs</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li></ul> |
 
 #### [ellipticalArc](#ellipticalarc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.ellipticalArc(sizeRect, startAngle, endAngle) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new elliptical arc object |
-| **Parameters**                                       | <ul><li>sizeRect    - A rect-table containing the location and size of the ellipse used to define the arc * startAngle  - The starting angle of the arc, measured in degrees clockwise from the y-axis. * endAngle    - The ending angle of the arc, measured in degrees clockwise from the y-axis.</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> arc object, or nil if an error occurs</li></ul> |
+| **Parameters**                                       | <ul><li>sizeRect    - A rect-table containing the location and size of the ellipse used to define the arc</li><li>startAngle  - The starting angle of the arc, measured in degrees clockwise from the y-axis.</li><li>endAngle    - The ending angle of the arc, measured in degrees clockwise from the y-axis.</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li></ul> |
 
 #### [image](#image)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.image(sizeRect, imageData) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new image object |
-| **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the image * imageData - This can be either:  * An <code>hs.image</code> object  * A string containing a path to an image file  * A string beginning with <code>ASCII:</code> which signifies that the rest of the string is interpreted as a special form of ASCII diagram, which will be rendered to an image. See the notes below for information about the special format of ASCII diagram.</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> image object, or nil if an error occurs * Paths relative to the PWD of Hammerspoon (typically ~/.hammerspoon/) will work, but paths relative to the UNIX homedir character, <code>~</code> will not * Animated GIFs are supported. They're not super friendly on your CPU, but they work</li></ul> |
+| **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the image</li><li>imageData - This can be either:</li><li>An <code>hs.image</code> object</li><li>A string containing a path to an image file</li><li>A string beginning with <code>ASCII:</code> which signifies that the rest of the string is interpreted as a special form of ASCII diagram, which will be rendered to an image. See the notes below for information about the special format of ASCII diagram.</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li><li>Paths relative to the PWD of Hammerspoon (typically ~/.hammerspoon/) will work, but paths relative to the UNIX homedir character, <code>~</code> will not</li><li>Animated GIFs are supported. They're not super friendly on your CPU, but they work</li></ul> |
 | **Notes**                                            | <ul><li>To use the ASCII diagram image support, see http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring/ and be sure to preface your ASCII diagram with the special string <code>ASCII:</code></li></ul> |
 
 #### [line](#line)
@@ -176,8 +176,8 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new line object |
-| **Parameters**                                       | <ul><li>originPoint - A point-table containing the co-ordinates of the starting point of the line * endPoint - A point-table containing the co-ordinates of the end point of the line</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> line object, or nil if an error occurs</li></ul> |
+| **Parameters**                                       | <ul><li>originPoint - A point-table containing the co-ordinates of the starting point of the line</li><li>endPoint - A point-table containing the co-ordinates of the end point of the line</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li></ul> |
 
 #### [rectangle](#rectangle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.rectangle(sizeRect) -> drawingObject or nil` </span>                                                          |
@@ -185,15 +185,15 @@ Primitives for drawing on the screen in various ways
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new rectangle object |
 | **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the rectangle</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> rectangle object, or nil if an error occurs</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li></ul> |
 
 #### [text](#text)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.text(sizeRect, message) -> drawingObject or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new text object |
-| **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the text * message - A string containing the text to be displayed.   May also be any of the types supported by <code>hs.styledtext</code>.  See <code>hs.styledtext</code> for more details.</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.drawing</code> text object, or nil if an error occurs</li></ul> |
+| **Parameters**                                       | <ul><li>sizeRect - A rect-table containing the location/size of the text</li><li>message - A string containing the text to be displayed.   May also be any of the types supported by <code>hs.styledtext</code>.  See <code>hs.styledtext</code> for more details.</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.drawing</code> object, or nil if an error occurs</li></ul> |
 
 ### Methods
 
@@ -246,7 +246,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Set the screen area in which the drawing contents are visible. |
 | **Parameters**                                       | <ul><li>rect - an optional rectangle specifying the visible area of the screen where the drawing's contents are visible.  If an explicit <code>nil</code> is specified, no clipping rectangle is set.  Defaults to nil</li></ul> |
 | **Returns**                                          | <ul><li>if an argument is provided, returns the drawing object; otherwise the current value is returned.</li></ul> |
-| **Notes**                                            | <ul><li>This method can be used to specify the area of the display where this drawing should be visible.  If any portion of the drawing extends beyond this rectangle, the image is clipped so that only the portion within this rectangle is visible. * The rectangle defined by this method is independant of the drawing's actual frame -- if you move the drawing with <a href="#setFrame">hs.drawing:setFrame</a> or <a href="#setTopLeft">hs.drawing:setTopLeft</a>, this rectangle retains its current value.</li></ul> |
+| **Notes**                                            | <ul><li>This method can be used to specify the area of the display where this drawing should be visible.  If any portion of the drawing extends beyond this rectangle, the image is clipped so that only the portion within this rectangle is visible.</li><li>The rectangle defined by this method is independant of the drawing's actual frame -- if you move the drawing with <a href="#setFrame">hs.drawing:setFrame</a> or <a href="#setTopLeft">hs.drawing:setTopLeft</a>, this rectangle retains its current value.</li></ul> |
 
 #### [delete](#delete)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:delete()` </span>                                                          |
@@ -287,7 +287,7 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get or set the alignment of an image that doesn't fully fill the drawing objects frame. |
-| **Parameters**                                       | <ul><li>type - an optional string value which should match one of the following (default is center):   * topLeft      - the image's top left corner will match the drawing frame's top left corner   * top          - the image's top match the drawing frame's top and will be centered horizontally   * topRight     - the image's top right corner will match the drawing frame's top right corner   * left         - the image's left side will match the drawing frame's left side and will be centered vertically   * center       - the image will be centered vertically and horizontally within the drawing frame   * right        - the image's right side will match the drawing frame's right side and will be centered vertically   * bottomLeft   - the image's bottom left corner will match the drawing frame's bottom left corner   * bottom       - the image's bottom match the drawing frame's bottom and will be centered horizontally   * bottomRight  - the image's bottom right corner will match the drawing frame's bottom right corner</li></ul> |
+| **Parameters**                                       | <ul><li>type - an optional string value which should match one of the following (default is center):</li><li>topLeft      - the image's top left corner will match the drawing frame's top left corner</li><li>top          - the image's top match the drawing frame's top and will be centered horizontally</li><li>topRight     - the image's top right corner will match the drawing frame's top right corner</li><li>left         - the image's left side will match the drawing frame's left side and will be centered vertically</li><li>center       - the image will be centered vertically and horizontally within the drawing frame</li><li>right        - the image's right side will match the drawing frame's right side and will be centered vertically</li><li>bottomLeft   - the image's bottom left corner will match the drawing frame's bottom left corner</li><li>bottom       - the image's bottom match the drawing frame's bottom and will be centered horizontally</li><li>bottomRight  - the image's bottom right corner will match the drawing frame's bottom right corner</li></ul> |
 | **Returns**                                          | <ul><li>If a setting value is provided, the drawing object is returned; if no argument is provided, the current setting is returned.</li></ul> |
 
 #### [imageAnimates](#imageanimates)
@@ -303,7 +303,7 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get or set what type of frame should be around the drawing frame of the image. |
-| **Parameters**                                       | <ul><li>type - an optional string value which should match one of the following (default is none):   * none   - no frame is drawing around the drawingObject's frameRect   * photo  - a thin black outline with a white background and a dropped shadow.   * bezel  - a gray, concave bezel with no background that makes the image look sunken.   * groove - a thin groove with a gray background that looks etched around the image.   * button - a convex bezel with a gray background that makes the image stand out in relief, like a button.</li></ul> |
+| **Parameters**                                       | <ul><li>type - an optional string value which should match one of the following (default is none):</li><li>none   - no frame is drawing around the drawingObject's frameRect</li><li>photo  - a thin black outline with a white background and a dropped shadow.</li><li>bezel  - a gray, concave bezel with no background that makes the image look sunken.</li><li>groove - a thin groove with a gray background that looks etched around the image.</li><li>button - a convex bezel with a gray background that makes the image stand out in relief, like a button.</li></ul> |
 | **Returns**                                          | <ul><li>If a setting value is provided, the drawing object is returned; if no argument is provided, the current setting is returned.</li></ul> |
 | **Notes**                                            | <ul><li>Apple considers the photo, groove, and button style frames "stylistically obsolete" and if a frame is required, recommend that you use the bezel style or draw your own to more closely match the OS look and feel.</li></ul> |
 
@@ -312,7 +312,7 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get or set how an image is scaled within the frame of a drawing object containing an image. |
-| **Parameters**                                       | <ul><li>type - an optional string value which should match one of the following (default is scaleProportionally):   * shrinkToFit         - shrink the image, preserving the aspect ratio, to fit the drawing frame only if the image is larger than the drawing frame.   * scaleToFit          - shrink or expand the image to fully fill the drawing frame.  This does not preserve the aspect ratio.   * none                - perform no scaling or resizing of the image.   * scalePropertionally - shrink or expand the image to fully fill the drawing frame, preserving the aspect ration.</li></ul> |
+| **Parameters**                                       | <ul><li>type - an optional string value which should match one of the following (default is scaleProportionally):</li><li>shrinkToFit         - shrink the image, preserving the aspect ratio, to fit the drawing frame only if the image is larger than the drawing frame.</li><li>scaleToFit          - shrink or expand the image to fully fill the drawing frame.  This does not preserve the aspect ratio.</li><li>none                - perform no scaling or resizing of the image.</li><li>scalePropertionally - shrink or expand the image to fully fill the drawing frame, preserving the aspect ration.</li></ul> |
 | **Returns**                                          | <ul><li>If a setting value is provided, the drawing object is returned; if no argument is provided, the current setting is returned.</li></ul> |
 
 #### [orderAbove](#orderabove)
@@ -361,7 +361,7 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Changes the starting and ending angles for an arc drawing object |
-| **Parameters**                                       | <ul><li>startAngle  - The starting angle of the arc, measured in degrees clockwise from the y-axis. * endAngle    - The ending angle of the arc, measured in degrees clockwise from the y-axis.</li></ul> |
+| **Parameters**                                       | <ul><li>startAngle  - The starting angle of the arc, measured in degrees clockwise from the y-axis.</li><li>endAngle    - The ending angle of the arc, measured in degrees clockwise from the y-axis.</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
 | **Notes**                                            | <ul><li>This method should only be used on arc drawing objects</li></ul> |
 
@@ -386,7 +386,7 @@ Primitives for drawing on the screen in various ways
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets a callback for mouseUp and mouseDown click events |
-| **Parameters**                                       | <ul><li>mouseUpFn - A function, can be nil, that will be called when the drawing object is clicked on and the mouse button is released. If this argument is nil, any existing callback is removed. * mouseDownFn - A function, can be nil, that will be called when the drawing object is clicked on and the mouse button is first pressed down. If this argument is nil, any existing callback is removed.</li></ul> |
+| **Parameters**                                       | <ul><li>mouseUpFn - A function, can be nil, that will be called when the drawing object is clicked on and the mouse button is released. If this argument is nil, any existing callback is removed.</li><li>mouseDownFn - A function, can be nil, that will be called when the drawing object is clicked on and the mouse button is first pressed down. If this argument is nil, any existing callback is removed.</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
 | **Notes**                                            | <ul><li>No distinction is made between the left, right, or other mouse buttons -- they all invoke the same up or down function.  If you need to determine which specific button was pressed, use <code>hs.eventtap.checkMouseButtons()</code> within your callback to check.</li></ul> |
 
@@ -406,16 +406,16 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the fill color of a drawing object |
 | **Parameters**                                       | <ul><li>color - a color table as described in <code>hs.drawing.color</code></li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on rectangle, circle, or arc drawing objects * Calling this method will remove any gradient fill colors previously set with <code>hs.drawing:setFillGradient()</code></li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on rectangle, circle, or arc drawing objects</li><li>Calling this method will remove any gradient fill colors previously set with <code>hs.drawing:setFillGradient()</code></li></ul> |
 
 #### [setFillGradient](#setfillgradient)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setFillGradient(startColor, endColor, angle) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets the fill gradient of a drawing object |
-| **Parameters**                                       | <ul><li>startColor - A table containing color component values between 0.0 and 1.0 for each of the keys:   * red (default 0.0)   * green (default 0.0)   * blue (default 0.0)   * alpha (default 1.0) * endColor - A table containing color component values between 0.0 and 1.0 for each of the keys:   * red (default 0.0)   * green (default 0.0)   * blue (default 0.0)   * alpha (default 1.0) * angle - A number representing the angle of the gradient, measured in degrees, counter-clockwise, from the left of the drawing object</li></ul> |
+| **Parameters**                                       | <ul><li>startColor - A table containing color component values between 0.0 and 1.0 for each of the keys:</li><li>red (default 0.0)</li><li>green (default 0.0)</li><li>blue (default 0.0)</li><li>alpha (default 1.0)</li><li>endColor - A table containing color component values between 0.0 and 1.0 for each of the keys:</li><li>red (default 0.0)</li><li>green (default 0.0)</li><li>blue (default 0.0)</li><li>alpha (default 1.0)</li><li>angle - A number representing the angle of the gradient, measured in degrees, counter-clockwise, from the left of the drawing object</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on rectangle, circle, or arc drawing objects * Calling this method will remove any fill color previously set with <code>hs.drawing:setFillColor()</code></li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on rectangle, circle, or arc drawing objects</li><li>Calling this method will remove any fill color previously set with <code>hs.drawing:setFillColor()</code></li></ul> |
 
 #### [setFrame](#setframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setFrame(rect) -> drawingObject` </span>                                                          |
@@ -449,7 +449,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the image path of a drawing object |
 | **Parameters**                                       | <ul><li>imagePath - A string containing the path to an image file</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on an image drawing object * Paths relative to the PWD of Hammerspoon (typically ~/.hammerspoon/) will work, but paths relative to the UNIX homedir character, <code>~</code> will not * Animated GIFs are supported. They're not super friendly on your CPU, but they work</li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on an image drawing object</li><li>Paths relative to the PWD of Hammerspoon (typically ~/.hammerspoon/) will work, but paths relative to the UNIX homedir character, <code>~</code> will not</li><li>Animated GIFs are supported. They're not super friendly on your CPU, but they work</li></ul> |
 
 #### [setLevel](#setlevel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setLevel(theLevel) -> drawingObject` </span>                                                          |
@@ -458,16 +458,16 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the window level more precisely than sendToBack and bringToFront. |
 | **Parameters**                                       | <ul><li>theLevel - the level specified as a number or as a string where this object should be drawn.  If it is a string, it must match one of the keys in <code>hs.drawing.windowLevels</code>.</li></ul> |
 | **Returns**                                          | <ul><li>the drawing object</li></ul> |
-| **Notes**                                            | <ul><li>see the notes for <code>hs.drawing.windowLevels</code> * These levels may be unable to explicitly place drawing objects around full-screen macOS windows</li></ul> |
+| **Notes**                                            | <ul><li>see the notes for <code>hs.drawing.windowLevels</code></li><li>These levels may be unable to explicitly place drawing objects around full-screen macOS windows</li></ul> |
 
 #### [setRoundedRectRadii](#setroundedrectradii)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setRoundedRectRadii(xradius, yradius) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets the radii of the corners of a rectangle drawing object |
-| **Parameters**                                       | <ul><li>xradius - A number containing the radius of each corner along the x-axis * yradius - A number containing the radius of each corner along the y-axis</li></ul> |
+| **Parameters**                                       | <ul><li>xradius - A number containing the radius of each corner along the x-axis</li><li>yradius - A number containing the radius of each corner along the y-axis</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on rectangle drawing objects * If either radius value is greater than half the width/height (as appropriate) of the rectangle, the value will be clamped at half the width/height * If either (or both) radius values are 0, the rectangle will be drawn without rounded corners</li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on rectangle drawing objects</li><li>If either radius value is greater than half the width/height (as appropriate) of the rectangle, the value will be clamped at half the width/height</li><li>If either (or both) radius values are 0, the rectangle will be drawn without rounded corners</li></ul> |
 
 #### [setSize](#setsize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setSize(size) -> drawingObject` </span>                                                          |
@@ -521,7 +521,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the text of a drawing object |
 | **Parameters**                                       | <ul><li>message - A string containing the text to display</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on text drawing objects * If the text of the drawing object is emptied (i.e. "") then style changes may be lost.  Use a placeholder such as a space (" ") or hide the object if style changes need to be saved but the text should disappear for a while.</li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>If the text of the drawing object is emptied (i.e. "") then style changes may be lost.  Use a placeholder such as a space (" ") or hide the object if style changes need to be saved but the text should disappear for a while.</li></ul> |
 
 #### [setTextColor](#settextcolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextColor(color) -> drawingObject` </span>                                                          |
@@ -530,7 +530,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the default text color for a drawing object |
 | **Parameters**                                       | <ul><li>color - a color table as described in <code>hs.drawing.color</code></li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be called on text drawing objects * This method changes the font color for portions of an <code>hs.drawing</code> text object which do not have a specific font set in their attributes list (see <code>hs.styledtext</code> for more details).</li></ul> |
+| **Notes**                                            | <ul><li>This method should only be called on text drawing objects</li><li>This method changes the font color for portions of an <code>hs.drawing</code> text object which do not have a specific font set in their attributes list (see <code>hs.styledtext</code> for more details).</li></ul> |
 
 #### [setTextFont](#settextfont)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextFont(fontname) -> drawingObject` </span>                                                          |
@@ -539,7 +539,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the default font for a drawing object |
 | **Parameters**                                       | <ul><li>fontname - A string containing the name of the font to use</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on text drawing objects * This method changes the font for portions of an <code>hs.drawing</code> text object which do not have a specific font set in their attributes list (see <code>hs.styledtext</code> for more details).</li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>This method changes the font for portions of an <code>hs.drawing</code> text object which do not have a specific font set in their attributes list (see <code>hs.styledtext</code> for more details).</li></ul> |
 
 #### [setTextSize](#settextsize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextSize(size) -> drawingObject` </span>                                                          |
@@ -548,16 +548,16 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Sets the default text size for a drawing object |
 | **Parameters**                                       | <ul><li>size - A number containing the font size to use</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on text drawing objects * This method changes the font size for portions of an <code>hs.drawing</code> text object which do not have a specific font set in their attributes list (see <code>hs.styledtext</code> for more details).</li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>This method changes the font size for portions of an <code>hs.drawing</code> text object which do not have a specific font set in their attributes list (see <code>hs.styledtext</code> for more details).</li></ul> |
 
 #### [setTextStyle](#settextstyle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTextStyle([textStyle]) -> drawingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets some simple style parameters for the entire text of a drawing object.  For more control over style including having multiple styles within a single text object, use `hs.styledtext` and `hs.drawing:setStyledText` instead. |
-| **Parameters**                                       | <ul><li>textStyle - an optional table containing one or more of the following keys to set for the text of the drawing object (if the table is nil or left out, the style is reset to the <code>hs.drawing</code> defaults):   * font      - the name of the font to use (default: the system font)   * size      - the font point size to use (default: 27.0)   * color     - a color table as described in <code>hs.drawing.color</code>   * alignment - a string of one of the following indicating the texts alignment within the drawing objects frame:     * "left"      - the text is visually left aligned.     * "right"     - the text is visually right aligned.     * "center"    - the text is visually center aligned.     * "justified" - the text is justified     * "natural"   - (default) the natural alignment of the text’s script   * lineBreak - a string of one of the following indicating how to wrap text which exceeds the drawing object's frame:     * "wordWrap"       - (default) wrap at word boundaries, unless the word itself doesn’t fit on a single line     * "charWrap"       - wrap before the first character that doesn’t fit     * "clip"           - do not draw past the edge of the drawing object frame     * "truncateHead"   - the line is displayed so that the end fits in the frame and the missing text at the beginning of the line is indicated by an ellipsis     * "truncateTail"   - the line is displayed so that the beginning fits in the frame and the missing text at the end of the line is indicated by an ellipsis     * "truncateMiddle" - the line is displayed so that the beginning and end fit in the frame and the missing text in the middle is indicated by an ellipsis</li></ul> |
+| **Parameters**                                       | <ul><li>textStyle - an optional table containing one or more of the following keys to set for the text of the drawing object (if the table is nil or left out, the style is reset to the <code>hs.drawing</code> defaults):</li><li>font      - the name of the font to use (default: the system font)</li><li>size      - the font point size to use (default: 27.0)</li><li>color     - a color table as described in <code>hs.drawing.color</code></li><li>alignment - a string of one of the following indicating the texts alignment within the drawing objects frame:<ul><li>"left"      - the text is visually left aligned.</li><li>"right"     - the text is visually right aligned.</li><li>"center"    - the text is visually center aligned.</li><li>"justified" - the text is justified</li><li>"natural"   - (default) the natural alignment of the text’s script</li></ul></li><li>lineBreak - a string of one of the following indicating how to wrap text which exceeds the drawing object's frame:<ul><li>"wordWrap"       - (default) wrap at word boundaries, unless the word itself doesn’t fit on a single line</li><li>"charWrap"       - wrap before the first character that doesn’t fit</li><li>"clip"           - do not draw past the edge of the drawing object frame</li><li>"truncateHead"   - the line is displayed so that the end fits in the frame and the missing text at the beginning of the line is indicated by an ellipsis</li><li>"truncateTail"   - the line is displayed so that the beginning fits in the frame and the missing text at the end of the line is indicated by an ellipsis</li><li>"truncateMiddle" - the line is displayed so that the beginning and end fit in the frame and the missing text in the middle is indicated by an ellipsis</li></ul></li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-| **Notes**                                            | <ul><li>This method should only be used on text drawing objects * If the text of the drawing object is currently empty (i.e. "") then style changes may be lost.  Use a placeholder such as a space (" ") or hide the object if style changes need to be saved but the text should disappear for a while. * Only the keys specified are changed.  To reset an object to all of its defaults, call this method with an explicit nil as its only parameter (e.g. <code>hs.drawing:setTextStyle(nil)</code> * The font, font size, and font color can also be set by their individual specific methods as well; this method is provided so that style components can be stored and applied collectively, as well as used by <code>hs.drawing.getTextDrawingSize()</code> to determine the proper rectangle size for a textual drawing object.</li></ul> |
+| **Notes**                                            | <ul><li>This method should only be used on text drawing objects</li><li>If the text of the drawing object is currently empty (i.e. "") then style changes may be lost.  Use a placeholder such as a space (" ") or hide the object if style changes need to be saved but the text should disappear for a while.</li><li>Only the keys specified are changed.  To reset an object to all of its defaults, call this method with an explicit nil as its only parameter (e.g. <code>hs.drawing:setTextStyle(nil)</code></li><li>The font, font size, and font color can also be set by their individual specific methods as well; this method is provided so that style components can be stored and applied collectively, as well as used by <code>hs.drawing.getTextDrawingSize()</code> to determine the proper rectangle size for a textual drawing object.</li></ul> |
 
 #### [setTopLeft](#settopleft)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:setTopLeft(point) -> drawingObject` </span>                                                          |

@@ -45,7 +45,7 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | **Type**                                             | Function |
 | **Description**                                      | Parses a `language ID` into three possible string components: |
 | **Parameters**                                       | <ul><li>code      - The <code>language ID</code> code. Eg. "en-AU".</li></ul> |
-| **Returns**                                          | <ul><li>language  - The two-character lower-case alpha language code. * script    - the four-character mixed-case alpha script code. * region    - The two-character upper-case alpha region code.</li></ul> |
+| **Returns**                                          | <ul><li>language  - The two-character lower-case alpha language code.</li><li>script    - the four-character mixed-case alpha script code.</li><li>region    - The two-character upper-case alpha region code.</li></ul> |
 
 ### Constructors
 
@@ -55,22 +55,22 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates, or retrieves from the cache, a `languageID` instance for the specified `code`. |
 | **Parameters**                                       | <ul><li>code      - The language ID code.</li></ul> |
-| **Returns**                                          | <ul><li>The matching <code>languageID</code>, or <code>nil</code> if the language ID couldn't be found. * The error message, or <code>nil</code> if there was no problem.</li></ul> |
+| **Returns**                                          | <ul><li>The matching <code>languageID</code>, or <code>nil</code> if the language ID couldn't be found.</li><li>The error message, or <code>nil</code> if there was no problem.</li></ul> |
 
 #### [forLocaleID](#forlocaleid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.i18n.languageID.forLocaleID(code[, prioritiseScript]) -> cp.i18n.languageID, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates, or retrieves from the cache, a `languageID` instance for the specified `cp.i18n.localeID`. |
-| **Parameters**                                       | <ul><li>locale            - The <code>localeID</code> to convert * prioritiseScript  - If set to <code>true</code> and the locale has both a region and script then the script code will be used.</li></ul> |
-| **Returns**                                          | <ul><li>The <code>languageID</code> for the <code>locale</code>, or <code>nil</code> * The error message if there was a problem.</li></ul> |
+| **Parameters**                                       | <ul><li>locale            - The <code>localeID</code> to convert</li><li>prioritiseScript  - If set to <code>true</code> and the locale has both a region and script then the script code will be used.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>languageID</code> for the <code>locale</code>, or <code>nil</code></li><li>The error message if there was a problem.</li></ul> |
 
 #### [forParts](#forparts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.i18n.languageID.forParts(languageCode[, scriptCode[, regionCode]]) -> cp.i18n.languageID` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Returns a `languageID` with the specified parts. |
-| **Parameters**                                       | <ul><li>languageCode - Language code * scriptCode - Optional Script code * regionCode - Optional Region Code</li></ul> |
+| **Parameters**                                       | <ul><li>languageCode - Language code</li><li>scriptCode - Optional Script code</li><li>regionCode - Optional Region Code</li></ul> |
 | **Returns**                                          | <ul><li>A <code>cp.i18n.languageID</code> object.</li></ul> |
 
 ### Fields

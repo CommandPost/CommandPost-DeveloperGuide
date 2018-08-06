@@ -194,9 +194,8 @@
 | [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timecode.     |
 | [plugins.finalcutpro.viewer.showtimelineinplayer](plugins.finalcutpro.viewer.showtimelineinplayer.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.viewer.timecodeoverlay](plugins.finalcutpro.viewer.timecodeoverlay.md)                          | Advanced Timecode Overlay.     |
-| [plugins.finalcutpro.watchers.preferences](plugins.finalcutpro.watchers.preferences.md)                          | Final Cut Pro Preferences Watcher.     |
-| [plugins.finalcutpro.watchfolders.panels.fcpxml](plugins.finalcutpro.watchfolders.panels.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
-| [plugins.finalcutpro.watchfolders.panels.media](plugins.finalcutpro.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
-| [plugins.finalcutpro.watchfolders.panels.media.MediaFolder](plugins.finalcutpro.watchfolders.panels.media.MediaFolder.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.finalcutpro.watchfolders.fcpxml](plugins.finalcutpro.watchfolders.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
+| [plugins.finalcutpro.watchfolders.media](plugins.finalcutpro.watchfolders.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.finalcutpro.watchfolders.media.MediaFolder](plugins.finalcutpro.watchfolders.media.MediaFolder.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |

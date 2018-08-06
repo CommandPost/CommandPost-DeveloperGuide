@@ -191,7 +191,7 @@ Inspector
 | **Description**                                      | Returns the name of the selected inspector tab otherwise `nil`. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string of the selected tab, otherwise <code>nil</code> if the Inspector is closed or an error occurred.</li></ul> |
-| **Notes**                                            | <ul><li>The tab strings can be:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video</li></ul> |
+| **Notes**                                            | <ul><li>The tab strings can be:</li><li>Audio</li><li>Color</li><li>Effect</li><li>Generator</li><li>Info</li><li>Share</li><li>Text</li><li>Title</li><li>Transition</li><li>Video</li></ul> |
 
 #### [selectTab](#selecttab)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:selectTab(tab) -> boolean` </span>                                                          |
@@ -200,7 +200,7 @@ Inspector
 | **Description**                                      | Selects a tab in the inspector. |
 | **Parameters**                                       | <ul><li>tab - A string from the <code>cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS</code> table</li></ul> |
 | **Returns**                                          | <ul><li>A string of the selected tab, otherwise <code>nil</code> if an error occurred.</li></ul> |
-| **Notes**                                            | <ul><li>This method will open the Inspector if it's closed, and leave it open. * Valid strings for <code>value</code> are as follows:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video</li></ul> |
+| **Notes**                                            | <ul><li>This method will open the Inspector if it's closed, and leave it open.</li><li>Valid strings for <code>value</code> are as follows:</li><li>Audio</li><li>Color</li><li>Effect</li><li>Generator</li><li>Info</li><li>Share</li><li>Text</li><li>Title</li><li>Transition</li><li>Video</li></ul> |
 
 #### [share](#share)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:share() -> ShareInspector` </span>                                                          |
@@ -217,7 +217,7 @@ Inspector
 | **Description**                                      | Shows the inspector. |
 | **Parameters**                                       | <ul><li>[tab] - A string from the <code>cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS</code> table</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Inspector</code> instance.</li></ul> |
-| **Notes**                                            | <ul><li>Valid strings for <code>value</code> are as follows:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video</li></ul> |
+| **Notes**                                            | <ul><li>Valid strings for <code>value</code> are as follows:</li><li>Audio</li><li>Color</li><li>Effect</li><li>Generator</li><li>Info</li><li>Share</li><li>Text</li><li>Title</li><li>Transition</li><li>Video</li></ul> |
 
 #### [tabAvailable](#tabavailable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:tabAvailable(tab) -> boolean` </span>                                                          |
@@ -226,7 +226,7 @@ Inspector
 | **Description**                                      | Checks to see if a tab is currently available in the Inspector. |
 | **Parameters**                                       | <ul><li>tab - A string from the <code>cp.apple.finalcutpro.inspector.Inspector.INSPECTOR_TABS</code> table</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if available otherwise <code>false</code>.</li></ul> |
-| **Notes**                                            | <ul><li>Valid strings for <code>value</code> are as follows:   * Audio   * Color   * Effect   * Generator   * Info   * Share   * Text   * Title   * Transition   * Video</li></ul> |
+| **Notes**                                            | <ul><li>Valid strings for <code>value</code> are as follows:</li><li>Audio</li><li>Color</li><li>Effect</li><li>Generator</li><li>Info</li><li>Share</li><li>Text</li><li>Title</li><li>Transition</li><li>Video</li></ul> |
 
 #### [text](#text)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:text() -> TextInspector` </span>                                                          |

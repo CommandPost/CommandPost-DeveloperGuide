@@ -32,7 +32,7 @@ Provides access to resources in the plugin environment. In generally, this will 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Compiles a Resty Template within the context of the plugin. The `view` may be a resource path pointing at a template file in the plugin, or may be raw template markup. The `layout` is an optional path/template for a layout template. See the [Resty Template](https://github.com/bungle/lua-resty-template) documentation for details. |
-| **Parameters**                                       | <ul><li><code>view</code>    - The local path inside the plugin to the template file, or raw template markup.* <code>layout</code>  - The local path inside the plugin to the layout file.</li></ul> |
+| **Parameters**                                       | <ul><li><code>view</code>    - The local path inside the plugin to the template file, or raw template markup.</li><li><code>layout</code>  - The local path inside the plugin to the layout file.</li></ul> |
 | **Returns**                                          | <ul><li>A function which will render the template.</li></ul> |
 
 #### [pathToAbsolute](#pathtoabsolute)
@@ -64,6 +64,6 @@ Provides access to resources in the plugin environment. In generally, this will 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Renders a Resty Template within the context of the plugin. The `view` may be a resource path pointing at a template file in the plugin, or may be raw template markup. The `layout` is an optional path/template for a layout template. See the [Resty Template](https://github.com/bungle/lua-resty-template) documentation for details. |
-| **Parameters**                                       | <ul><li><code>view</code>    - The local path inside the plugin to the template file, or raw template markup.<em> <code>model</code>   - The model which provides variables/functions/etc to the template.</em> <code>layout</code>   - The local path inside the plugin to the layout file.</li></ul> |
+| **Parameters**                                       | <ul><li><code>view</code>    - The local path inside the plugin to the template file, or raw template markup.</li><li><code>model</code>   - The model which provides variables/functions/etc to the template.</li><li><code>layout</code>  - The local path inside the plugin to the layout file.</li></ul> |
 | **Returns**                                          | <ul><li>A function which will render the template.</li></ul> |
 

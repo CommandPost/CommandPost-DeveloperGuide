@@ -23,7 +23,7 @@ Registers itself with the `core.action.manager`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Executes the action with the provided parameters. |
-| **Parameters**                                       | <ul><li><code>action</code>  - A table representing the action, matching the following:    * <code>id</code>      - The specific Command ID within the group.</li></ul> |
+| **Parameters**                                       | <ul><li><code>action</code>  - A table representing the action, matching the following:<ul><li><code>id</code>      - The specific Command ID within the group.</li></ul></li></ul> |
 
 #### [getId](#getid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.commands.actions.getId(action) -> string` </span>                                                          |
@@ -46,7 +46,7 @@ Registers itself with the `core.action.manager`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialises the module. |
-| **Parameters**                                       | <ul><li>actionmanager - The action manager object * cmds - Final Cut Pro commands manager</li></ul> |
+| **Parameters**                                       | <ul><li>actionmanager - The action manager object</li><li>cmds - Final Cut Pro commands manager</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [onChoices](#onchoices)

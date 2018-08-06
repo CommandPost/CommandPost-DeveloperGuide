@@ -102,7 +102,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Callback Controller |
-| **Parameters**                                       | <ul><li>id - ID as string * params - table of Parameters</li></ul> |
+| **Parameters**                                       | <ul><li>id - ID as string</li><li>params - table of Parameters</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [generateTable](#generatetable)
@@ -118,7 +118,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialises the module. |
-| **Parameters**                                       | <ul><li>deps - The dependencies environment * env - The plugin environment</li></ul> |
+| **Parameters**                                       | <ul><li>deps - The dependencies environment</li><li>env - The plugin environment</li></ul> |
 | **Returns**                                          | <ul><li>Table of the module.</li></ul> |
 
 #### [newWatcher](#newwatcher)
@@ -166,7 +166,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks the Status of a Job in Compressor |
-| **Parameters**                                       | <ul><li>jobID - Job ID as string * file - File Path as string * destinationPath - Destination Path as string</li></ul> |
+| **Parameters**                                       | <ul><li>jobID - Job ID as string</li><li>file - File Path as string</li><li>destinationPath - Destination Path as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [watchFolderTriggered](#watchfoldertriggered)

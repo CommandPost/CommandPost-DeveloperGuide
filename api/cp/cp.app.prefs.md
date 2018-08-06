@@ -24,7 +24,6 @@ end
  * [is](#is)
  * [prop](#prop)
  * [set](#set)
- * [watch](#watch)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 
@@ -45,7 +44,7 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Retrieves the specifed `key` from the provided `prefs`. |
-| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance. * key           - The key to retrieve. * defaultValue  - The value to return if none is currently set.</li></ul> |
+| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.</li><li>key           - The key to retrieve.</li><li>defaultValue  - The value to return if none is currently set.</li></ul> |
 | **Returns**                                          | <ul><li>The current value, or <code>defaultValue</code> if not set.</li></ul> |
 
 #### [is](#is)
@@ -61,7 +60,7 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Retrieves the `cp.prop` for the specified key. It can be `watched` for changes. |
-| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance. * key           - The key to get/set. * defaultValue  - The value if no default values is currently set.</li></ul> |
+| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.</li><li>key           - The key to get/set.</li><li>defaultValue  - The value if no default values is currently set.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.prop</code> for the key.</li></ul> |
 
 #### [set](#set)
@@ -69,16 +68,8 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the key/value for the specified `prefs` instance. |
-| **Parameters**                                       | <ul><li>prefs     - The <code>prefs</code> instance. * key       - The key to set. * value     - the new value.</li></ul> |
+| **Parameters**                                       | <ul><li>prefs     - The <code>prefs</code> instance.</li><li>key       - The key to set.</li><li>value     - the new value.</li></ul> |
 | **Returns**                                          | <ul><li>Nothing.</li></ul> |
-
-#### [watch](#watch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.watch(prefs, watchFn) -> nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Adds a watch function which will be notified when the preferences change. |
-| **Parameters**                                       | <ul><li>prefs     - The <code>prefs</code> instance to watch. * watchFn   - The function that will get called.</li></ul> |
-| **Returns**                                          | <ul><li>Nothing</li></ul> |
 
 ### Constructors
 

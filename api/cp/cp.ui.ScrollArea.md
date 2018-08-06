@@ -48,7 +48,7 @@ Scroll Area Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `ScrollArea`. |
-| **Parameters**                                       | <ul><li>parent       - The parent object. * finderFn     - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>finderFn     - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>ScrollArea</code>.</li></ul> |
 
 ### Methods

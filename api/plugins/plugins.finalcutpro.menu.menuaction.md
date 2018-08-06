@@ -31,7 +31,7 @@ Registers itself with the `plugins.core.actions.actionmanager`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Executes the action with the provided parameters. |
-| **Parameters**                                       | <ul><li><code>action</code>  - A table of parameters, matching the following:    * <code>group</code>   - The Command Group ID    * <code>id</code>      - The specific Command ID within the group.</li></ul> |
+| **Parameters**                                       | <ul><li><code>action</code>  - A table of parameters, matching the following:<ul><li><code>group</code>   - The Command Group ID</li><li><code>id</code>      - The specific Command ID within the group.</li></ul></li></ul> |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.menu.menuaction.id() -> none` </span>                                                          |

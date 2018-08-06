@@ -38,7 +38,7 @@ ValueIndicator Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new ValueIndicator. |
-| **Parameters**                                       | <ul><li><code>parent</code>         - The parent table. * <code>finderFn</code>       - The function which returns the <code>axuielement</code>. * <code>minValue</code>       - The minimum value allowed for the value. * <code>maxValue</code>       - The maximum value allowed for the value. * <code>toAXValueFn</code>    - The function which will convert the user value to the actual AXValue. * <code>fromAXValueFn</code>  - The function which will convert the current AXValue to a user value.</li></ul> |
+| **Parameters**                                       | <ul><li><code>parent</code>         - The parent table.</li><li><code>finderFn</code>       - The function which returns the <code>axuielement</code>.</li><li><code>minValue</code>       - The minimum value allowed for the value.</li><li><code>maxValue</code>       - The maximum value allowed for the value.</li><li><code>toAXValueFn</code>    - The function which will convert the user value to the actual AXValue.</li><li><code>fromAXValueFn</code>  - The function which will convert the current AXValue to a user value.</li></ul> |
 | **Returns**                                          | <ul><li>New <code>ValueIndicator</code> instance.</li></ul> |
 
 ### Methods

@@ -40,7 +40,7 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new handler with the specified ID. |
-| **Parameters**                                       | <ul><li><code>id</code>      - The unique ID of the action handler.* <code>group</code>   - The group the handler belongs to.</li></ul> |
+| **Parameters**                                       | <ul><li><code>id</code>      - The unique ID of the action handler.</li><li><code>group</code>   - The group the handler belongs to.</li></ul> |
 | **Returns**                                          | <ul><li>The new action handler instance.</li></ul> |
 
 ### Fields

@@ -198,7 +198,7 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Loads a setting |
-| **Parameters**                                       | <ul><li>key - A string containing the name of the setting * defaultValue - A default value if the setting doesn't already exist</li></ul> |
+| **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li><li>defaultValue - A default value if the setting doesn't already exist</li></ul> |
 | **Returns**                                          | <ul><li>The value of the setting</li></ul> |
 
 #### [prop](#prop)
@@ -206,7 +206,7 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a `cp.prop` instance connected to the value of the specified key. When the value is modified, it will be notified. |
-| **Parameters**                                       | <ul><li><code>key</code>             - The configuration setting key.* <code>defaultValue</code>    - The default value if the key has not been set.</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>             - The configuration setting key.</li><li><code>defaultValue</code>    - The default value if the key has not been set.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>cp.prop</code> instance for the key.</li></ul> |
 
 #### [reset](#reset)
@@ -222,7 +222,7 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Saves a setting with common datatypes |
-| **Parameters**                                       | <ul><li><code>key</code>        - A string containing the name of the setting * <code>value</code>     - An optional value for the setting. Valid datatypes are:   * string   * number   * boolean   * nil   * table (which may contain any of the same valid datatypes) * if no value is provided, it is assumed to be nil</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>        - A string containing the name of the setting</li><li><code>value</code>      - An optional value for the setting. Valid datatypes are:</li><li>string</li><li>number</li><li>boolean</li><li>nil</li><li>table (which may contain any of the same valid datatypes)</li><li>if no value is provided, it is assumed to be nil</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>This function cannot set dates or raw data types</li></ul> |
 

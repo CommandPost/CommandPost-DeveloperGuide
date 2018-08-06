@@ -23,7 +23,7 @@ Various hashing algorithms
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Calculates an HMAC using a key and an MD5 hash |
-| **Parameters**                                       | <ul><li>key - A string containing a secret key to use * data - A string containing the data to hash</li></ul> |
+| **Parameters**                                       | <ul><li>key - A string containing a secret key to use</li><li>data - A string containing the data to hash</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul> |
 
 #### [hmacSHA1](#hmacsha1)
@@ -31,7 +31,7 @@ Various hashing algorithms
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Calculates an HMAC using a key and a SHA1 hash |
-| **Parameters**                                       | <ul><li>key - A string containing a secret key to use * data - A string containing the data to hash</li></ul> |
+| **Parameters**                                       | <ul><li>key - A string containing a secret key to use</li><li>data - A string containing the data to hash</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul> |
 
 #### [hmacSHA256](#hmacsha256)
@@ -39,7 +39,7 @@ Various hashing algorithms
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Calculates an HMAC using a key and a SHA256 hash |
-| **Parameters**                                       | <ul><li>key - A string containing a secret key to use * data - A string containing the data to hash</li></ul> |
+| **Parameters**                                       | <ul><li>key - A string containing a secret key to use</li><li>data - A string containing the data to hash</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul> |
 
 #### [hmacSHA512](#hmacsha512)
@@ -47,7 +47,7 @@ Various hashing algorithms
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Calculates an HMAC using a key and a SHA512 hash |
-| **Parameters**                                       | <ul><li>key - A string containing a secret key to use * data - A string containing the data to hash</li></ul> |
+| **Parameters**                                       | <ul><li>key - A string containing a secret key to use</li><li>data - A string containing the data to hash</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the hash of the supplied data</li></ul> |
 
 #### [MD5](#md5)

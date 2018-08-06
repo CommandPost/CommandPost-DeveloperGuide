@@ -100,7 +100,7 @@ You can access the individual results of the query with the [hs.spotlight:result
 | **Description**                                      | Returns the number of results for the spotlightObject's query |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>if the query has collected results, returns the number of results that match the query; if the query has not been started, this value will be 0.</li></ul> |
-| **Notes**                                            | <ul><li>Just because the result of this method is 0 does not mean that the query has not been started; the query itself may not match any entries in the Spotlight database. * A query which ran in the past but has been subsequently stopped will retain its queries unless the parameters have been changed.  The result of this method will indicate the number of results still attached to the query, even if it has been previously stopped.</li></ul> |
+| **Notes**                                            | <ul><li>Just because the result of this method is 0 does not mean that the query has not been started; the query itself may not match any entries in the Spotlight database.</li><li>A query which ran in the past but has been subsequently stopped will retain its queries unless the parameters have been changed.  The result of this method will indicate the number of results still attached to the query, even if it has been previously stopped.</li></ul> |
 
 #### [groupedResults](#groupedresults)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight:groupedResults() -> table` </span>                                                          |
@@ -118,7 +118,7 @@ You can access the individual results of the query with the [hs.spotlight:result
 | **Description**                                      | Get or set the grouping attributes for the Spotlight query. |
 | **Parameters**                                       | <ul><li><code>attributes</code> - an optional table or list of items specifying the grouping attributes for the Spotlight query.  Defaults to an empty array.</li></ul> |
 | **Returns**                                          | <ul><li>if an argument is provided, returns the spotlightObject; otherwise returns the current values</li></ul> |
-| **Notes**                                            | <ul><li>Setting this property while a query is running stops the query and discards the current results. The receiver immediately starts a new query. * Setting this property will increase CPU and memory usage while performing the Spotlight query.</li></ul> |
+| **Notes**                                            | <ul><li>Setting this property while a query is running stops the query and discards the current results. The receiver immediately starts a new query.</li><li>Setting this property will increase CPU and memory usage while performing the Spotlight query.</li></ul> |
 
 #### [isGathering](#isgathering)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight:isGathering() -> boolean` </span>                                                          |
@@ -216,7 +216,7 @@ You can access the individual results of the query with the [hs.spotlight:result
 | **Description**                                      | Get or set the attributes for which value list summaries are produced for the Spotlight query. |
 | **Parameters**                                       | <ul><li><code>attributes</code> - an optional table or list of items specifying the attributes for which value list summaries are produced for the Spotlight query.  Defaults to an empty array.</li></ul> |
 | **Returns**                                          | <ul><li>if an argument is provided, returns the spotlightObject; otherwise returns the current values</li></ul> |
-| **Notes**                                            | <ul><li>Setting this property while a query is running stops the query and discards the current results. The receiver immediately starts a new query. * Setting this property will increase CPU and memory usage while performing the Spotlight query.</li></ul> |
+| **Notes**                                            | <ul><li>Setting this property while a query is running stops the query and discards the current results. The receiver immediately starts a new query.</li><li>Setting this property will increase CPU and memory usage while performing the Spotlight query.</li></ul> |
 
 #### [valueLists](#valuelists)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight:valueLists() -> table` </span>                                                          |
@@ -224,6 +224,6 @@ You can access the individual results of the query with the [hs.spotlight:result
 | **Type**                                             | Method |
 | **Description**                                      | Returns the value list summaries for the Spotlight query |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>an array table of the value list summaries for the Spotlight query as specified by the <a href="#valueListAttributes">hs.spotlight:valueListAttributes</a> method.  Each member of the array will be a table with the following keys:   * <code>attribute</code> - the attribute for the summary   * <code>value</code>     - the value of the attribute for the summary   * <code>count</code>     - the number of Spotlight items in the spotlightObject results for which this attribute has this value</li></ul> |
+| **Returns**                                          | <ul><li>an array table of the value list summaries for the Spotlight query as specified by the <a href="#valueListAttributes">hs.spotlight:valueListAttributes</a> method.  Each member of the array will be a table with the following keys:</li><li><code>attribute</code> - the attribute for the summary</li><li><code>value</code>     - the value of the attribute for the summary</li><li><code>count</code>     - the number of Spotlight items in the spotlightObject results for which this attribute has this value</li></ul> |
 | **Notes**                                            | <ul><li>Value list summaries are a quick way to gather statistics about the number of results which match certain criteria - they do not allow you easy access to the matching members, just information about their numbers.</li></ul> |
 

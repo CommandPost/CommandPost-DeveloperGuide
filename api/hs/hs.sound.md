@@ -159,7 +159,7 @@ Load/play/manipulate sound files
 | **Description**                                      | Set or remove the callback for receiving completion notification for the sound object. |
 | **Parameters**                                       | <ul><li>function - A function which should be called when the sound completes playing.  Specify an explicit nil to remove the callback function.</li></ul> |
 | **Returns**                                          | <ul><li>the sound object</li></ul> |
-| **Notes**                                            | <ul><li>the callback function should accept two parameters and return none.  The parameters passed to the callback function are:   * state - a boolean flag indicating if the sound completed playing.  Returns true if playback completes properly, or false if a decoding error occurs or if the sound is stopped early with <code>hs.sound:stop</code>.   * sound - the soundObject userdata</li></ul> |
+| **Notes**                                            | <ul><li>the callback function should accept two parameters and return none.  The parameters passed to the callback function are:</li><li>state - a boolean flag indicating if the sound completed playing.  Returns true if playback completes properly, or false if a decoding error occurs or if the sound is stopped early with <code>hs.sound:stop</code>.</li><li>sound - the soundObject userdata</li></ul> |
 
 #### [stop](#stop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sound:stop() -> soundObject | bool` </span>                                                          |

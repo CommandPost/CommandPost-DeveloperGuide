@@ -32,8 +32,8 @@ Pushover Notifications Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sends a notification. |
-| **Parameters**                                       | <ul><li>message - The message you want to send as a string. * [title] - An optional Title for the message as a string.</li></ul> |
-| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code> * errorMessage - a string containing any error messages</li></ul> |
+| **Parameters**                                       | <ul><li>message - The message you want to send as a string.</li><li>[title] - An optional Title for the message as a string.</li></ul> |
+| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code></li><li>errorMessage - a string containing any error messages</li></ul> |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.pushover.update() -> none` </span>                                                          |
@@ -48,8 +48,8 @@ Pushover Notifications Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Validates a Pushover User & Application API Key |
-| **Parameters**                                       | <ul><li>userKey - The User API Key as a string * appKey - The Application API Key as a string</li></ul> |
-| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code> * errorMessage - a string containing any error messages</li></ul> |
+| **Parameters**                                       | <ul><li>userKey - The User API Key as a string</li><li>appKey - The Application API Key as a string</li></ul> |
+| **Returns**                                          | <ul><li>success - <code>true</code> if successful otherwise <code>false</code></li><li>errorMessage - a string containing any error messages</li></ul> |
 
 ### Fields
 

@@ -40,7 +40,7 @@ Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Button` instance. |
-| **Parameters**                                       | <ul><li>parent       - The parent object. Should have a <code>UI</code> and <code>isShowing</code> field. * finderFn       - A function which will return the <code>hs._asm.axuielement</code> the button belongs to, or <code>nil</code> if not available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object. Should have a <code>UI</code> and <code>isShowing</code> field.</li><li>finderFn     - A function which will return the <code>hs._asm.axuielement</code> the button belongs to, or <code>nil</code> if not available.</li></ul> |
 | **Returns**                                          | <p>The new <code>Button</code> instance.</p> |
 
 ### Fields
@@ -109,7 +109,7 @@ Button Module.
 | **Type**                                             | Method |
 | **Description**                                      | Performs a button press action, if the button is available. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Button</code> instance. * <code>true</code> if the button was actually pressed successfully.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Button</code> instance.</li><li><code>true</code> if the button was actually pressed successfully.</li></ul> |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:snapshot([path]) -> hs.image | nil` </span>                                                          |

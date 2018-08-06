@@ -101,7 +101,7 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Convenience function for creating a point object |
-| **Parameters**                                       | <ul><li>x - A number containing the horizontal co-ordinate of the point * y - A number containing the vertical co-ordinate of the point</li></ul> |
+| **Parameters**                                       | <ul><li>x - A number containing the horizontal co-ordinate of the point</li><li>y - A number containing the vertical co-ordinate of the point</li></ul> |
 | **Returns**                                          | <ul><li>An hs.geometry point object</li></ul> |
 
 #### [rect](#rect)
@@ -109,7 +109,7 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Convenience function for creating a rect-table |
-| **Parameters**                                       | <ul><li>x - A number containing the horizontal co-ordinate of the top-left point of the rect * y - A number containing the vertical co-ordinate of the top-left point of the rect * w - A number containing the width of the rect * h - A number containing the height of the rect</li></ul> |
+| **Parameters**                                       | <ul><li>x - A number containing the horizontal co-ordinate of the top-left point of the rect</li><li>y - A number containing the vertical co-ordinate of the top-left point of the rect</li><li>w - A number containing the width of the rect</li><li>h - A number containing the height of the rect</li></ul> |
 | **Returns**                                          | <ul><li>An hs.geometry rect object</li></ul> |
 
 #### [size](#size)
@@ -117,7 +117,7 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Convenience function for creating a size object |
-| **Parameters**                                       | <ul><li>w - A number containing a width * h - A number containing a height</li></ul> |
+| **Parameters**                                       | <ul><li>w - A number containing a width</li><li>h - A number containing a height</li></ul> |
 | **Returns**                                          | <ul><li>An hs.geometry size object</li></ul> |
 
 ### Fields
@@ -332,7 +332,7 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Rotates a point around another point N times |
-| **Parameters**                                       | <ul><li>aroundpoint - an hs.geometry point to rotate this point around * ntimes - the number of times to rotate, defaults to 1</li></ul> |
+| **Parameters**                                       | <ul><li>aroundpoint - an hs.geometry point to rotate this point around</li><li>ntimes - the number of times to rotate, defaults to 1</li></ul> |
 | **Returns**                                          | <ul><li>A new hs.geometry point containing the location of the rotated point</li></ul> |
 
 #### [scale](#scale)

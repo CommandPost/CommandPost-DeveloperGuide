@@ -50,7 +50,7 @@ Controls sections for the CommandPost menu.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Registers a function which will generate a single table item. |
-| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the item within the section. Lower numbers appear first. * <code>itemFn</code>       - A function which will return a table representing a single menu item. See <code>hs.menubar</code> for details.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the item within the section. Lower numbers appear first.</li><li><code>itemFn</code>     - A function which will return a table representing a single menu item. See <code>hs.menubar</code> for details.</li></ul> |
 | **Returns**                                          | <ul><li>section - The section the item was added to.</li></ul> |
 
 #### [addItems](#additems)
@@ -58,7 +58,7 @@ Controls sections for the CommandPost menu.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Registers a function which will generate multiple table items. |
-| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the items within the section. Lower numbers appear first. * <code>itemsFn</code> - A function which will return a table containing multiple table items. See <code>hs.menubar</code> for details.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the items within the section. Lower numbers appear first.</li><li><code>itemsFn</code>    - A function which will return a table containing multiple table items. See <code>hs.menubar</code> for details.</li></ul> |
 | **Returns**                                          | <ul><li>section - The section the item was added to.</li></ul> |
 
 #### [addMenu](#addmenu)
@@ -66,7 +66,7 @@ Controls sections for the CommandPost menu.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a new sub-menu with the specified priority. The section that will contain |
-| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the item within the section. Lower numbers appear first. * <code>titleFn</code>  - The function which will return the menu title.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority of the item within the section. Lower numbers appear first.</li><li><code>titleFn</code>    - The function which will return the menu title.</li></ul> |
 | **Returns**                                          | <ul><li>section - The new section that was created.</li></ul> |
 
 #### [addSection](#addsection)

@@ -29,16 +29,16 @@ A collection of handy JSON tools.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Encodes a table as JSON |
-| **Parameters**                                       | <ul><li>val - A table containing data to be encoded as JSON * prettyprint - An optional boolean, true to format the JSON for human readability, false to format the JSON for size efficiency. Defaults to false</li></ul> |
+| **Parameters**                                       | <ul><li>val - A table containing data to be encoded as JSON</li><li>prettyprint - An optional boolean, true to format the JSON for human readability, false to format the JSON for size efficiency. Defaults to false</li></ul> |
 | **Returns**                                          | <ul><li>A string containing a JSON representation of the supplied table</li></ul> |
 | **Notes**                                            | <ul><li>This is useful for storing some of the more complex lua table structures as a persistent setting (see <code>hs.settings</code>)</li></ul> |
 
 #### [prop](#prop)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.json.prop(folder, filename, defaultValue) -> cp.prop` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.json.prop(path, folder, filename, defaultValue) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a `cp.prop` instance for a JSON file. |
-| **Parameters**                                       | <ul><li>path - The path to the JSON folder (i.e. "~/Library/Caches") * folder - The folder containing the JSON file (i.e. "Final Cut Pro") * filename - The filename of the JSON file (i.e. "Test.json") * defaultValue - The default value if the JSON file doesn't exist yet.</li></ul> |
+| **Parameters**                                       | <ul><li>path - The path to the JSON folder (i.e. "~/Library/Caches")</li><li>folder - The folder containing the JSON file (i.e. "Final Cut Pro")</li><li>filename - The filename of the JSON file (i.e. "Test.json")</li><li>defaultValue - The default value if the JSON file doesn't exist yet.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>cp.prop</code> instance.</li></ul> |
 
 #### [read](#read)
@@ -54,6 +54,6 @@ A collection of handy JSON tools.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Writes data to a JSON file. |
-| **Parameters**                                       | <ul><li>path - The path to where you want to save the JSON file. * data - A table containing data to be encoded as JSON.</li></ul> |
+| **Parameters**                                       | <ul><li>path - The path to where you want to save the JSON file.</li><li>data - A table containing data to be encoded as JSON.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successfully saved, otherwise <code>false</code>.</li></ul> |
 

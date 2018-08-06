@@ -33,7 +33,7 @@ Represents a Tangent Mode
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Mode` instance. |
-| **Parameters**                                       | <ul><li>id        - The ID number of the mode. * name      - The name of the mode.</li></ul> |
+| **Parameters**                                       | <ul><li>id        - The ID number of the mode.</li><li>name      - The name of the mode.</li></ul> |
 | **Returns**                                          | <p>*</p> |
 
 ### Methods

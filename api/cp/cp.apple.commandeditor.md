@@ -56,7 +56,7 @@ Motion and Compressor.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Compares two modifier tables. |
-| **Parameters**                                       | <ul><li>inputA - table of modifiers * inputB - table of modifiers</li></ul> |
+| **Parameters**                                       | <ul><li>inputA - table of modifiers</li><li>inputB - table of modifiers</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if there's a match otherwise <code>false</code></li></ul> |
 | **Notes**                                            | <ul><li>This function only takes into account 'ctrl', 'alt', 'cmd', 'shift'.</li></ul> |
 
@@ -65,7 +65,7 @@ Motion and Compressor.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets a specific command from a specified Command Set and returns a table of Shortcuts. |
-| **Parameters**                                       | <ul><li>id - The ID of the command you want to get. * commandSet - A table containing an entire Command Set.</li></ul> |
+| **Parameters**                                       | <ul><li>id - The ID of the command you want to get.</li><li>commandSet - A table containing an entire Command Set.</li></ul> |
 | **Returns**                                          | <ul><li>A table of shortcuts for a specific command.</li></ul> |
 
 #### [translateModifiers](#translatemodifiers)

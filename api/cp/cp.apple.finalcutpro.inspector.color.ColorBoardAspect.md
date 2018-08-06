@@ -41,7 +41,7 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `ColorBoardAspect` object. |
-| **Parameters**                                       | <ul><li>parent - The parent object. * index - The Color Board Aspect Index. * hasAngle - If <code>true</code>, the aspect has an <code>angle</code> parameter. Defaults to <code>false</code></li></ul> |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li><li>index - The Color Board Aspect Index.</li><li>hasAngle - If <code>true</code>, the aspect has an <code>angle</code> parameter. Defaults to <code>false</code></li></ul> |
 | **Returns**                                          | <ul><li>A new `ColorBoardAspect object.</li></ul> |
 
 ### Methods

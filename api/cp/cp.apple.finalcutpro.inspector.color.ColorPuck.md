@@ -83,7 +83,7 @@ Color Puck Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `ColorPuck` object |
-| **Parameters**                                       | <ul><li><code>parent</code>     - The parent * <code>puckNumber</code> - The puck number * <code>labelKeys</code>  - Label Keys * <code>hasAngle</code>   - If <code>true</code>, the puck has an <code>angle</code> parameter.</li></ul> |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li><li><code>puckNumber</code> - The puck number</li><li><code>labelKeys</code>  - Label Keys</li><li><code>hasAngle</code>   - If <code>true</code>, the puck has an <code>angle</code> parameter.</li></ul> |
 | **Returns**                                          | <ul><li>A ColorInspector object</li></ul> |
 
 ### Fields
@@ -101,8 +101,8 @@ Color Puck Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Accumulate's the Shift Values. |
-| **Parameters**                                       | <ul><li><code>xShift</code> - <code>x</code> value as number* <code>yShift</code> - <code>y</code> value as number</li></ul> |
-| **Returns**                                          | <ul><li><code>x</code> - Accumulated <code>x</code> value as number* <code>y</code> - Accumulated <code>y</code> value as number</li></ul> |
+| **Parameters**                                       | <ul><li><code>xShift</code> - <code>x</code> value as number</li><li><code>yShift</code> - <code>y</code> value as number</li></ul> |
+| **Returns**                                          | <ul><li><code>x</code> - Accumulated <code>x</code> value as number</li><li><code>y</code> - Accumulated <code>y</code> value as number</li></ul> |
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorPuck:app() -> App` </span>                                                          |

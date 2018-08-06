@@ -49,7 +49,7 @@ Represents a clip of media inside FCP.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Clip` pointing at the specified element, with the specified options. |
-| **Parameters**                                       | <ul><li><code>element</code>        - The <code>axuielement</code> the clip represents. * <code>options</code>        - A table containing the options for the clip.</li></ul> |
+| **Parameters**                                       | <ul><li><code>element</code>        - The <code>axuielement</code> the clip represents.</li><li><code>options</code>        - A table containing the options for the clip.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Clip</code>.</li></ul> |
 | **Notes**                                            | <ul><li>The options may be: ** <code>columnIndex</code>   - A number which will be used to specify the column number to find the title in, if relevant.</li></ul> |
 

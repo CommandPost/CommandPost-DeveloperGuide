@@ -36,7 +36,7 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | A function that should handle http:// and https:// URL events |
-| **Notes**                                            | <ul><li>The function should handle four arguments:  * scheme - A string containing the URL scheme (i.e. "http")  * host - A string containing the host requested (e.g. "www.commandpost.org")  * params - A table containing the key/value pairs of all the URL parameters  * fullURL - A string containing the full, original URL</li></ul> |
+| **Notes**                                            | <ul><li>The function should handle four arguments:</li><li>scheme - A string containing the URL scheme (i.e. "http")</li><li>host - A string containing the host requested (e.g. "www.commandpost.org")</li><li>params - A table containing the key/value pairs of all the URL parameters</li><li>fullURL - A string containing the full, original URL</li></ul> |
 
 ### Functions
 
@@ -45,9 +45,9 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Registers a callback for a commandpost:// URL event |
-| **Parameters**                                       | <ul><li>eventName - A string containing the name of an event * callback - A function that will be called when the specified event is received, or nil to remove an existing callback</li></ul> |
+| **Parameters**                                       | <ul><li>eventName - A string containing the name of an event</li><li>callback - A function that will be called when the specified event is received, or nil to remove an existing callback</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>The callback function should accept two parameters:  * eventName - A string containing the name of the event  * params - A table containing key/value string pairs containing any URL parameters that were specified in the URL * Given the URL <code>commandpost://doThingA?value=1</code> The event name is <code>doThingA</code> and the callback's <code>params</code> argument will be a table containing <code>{["value"] = "1"}</code></li></ul> |
+| **Notes**                                            | <ul><li>The callback function should accept two parameters:</li><li>eventName - A string containing the name of the event</li><li>params - A table containing key/value string pairs containing any URL parameters that were specified in the URL</li><li>Given the URL <code>commandpost://doThingA?value=1</code> The event name is <code>doThingA</code> and the callback's <code>params</code> argument will be a table containing <code>{["value"] = "1"}</code></li></ul> |
 
 #### [getAllHandlersForScheme](#getallhandlersforscheme)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.urlevent.getAllHandlersForScheme(scheme) -> table` </span>                                                          |
@@ -78,7 +78,7 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Opens a URL with a specified application |
-| **Parameters**                                       | <ul><li>url - A string containing a URL * bundleID - A string containing an application bundle identifier (e.g. "com.apple.Safari")</li></ul> |
+| **Parameters**                                       | <ul><li>url - A string containing a URL</li><li>bundleID - A string containing an application bundle identifier (e.g. "com.apple.Safari")</li></ul> |
 | **Returns**                                          | <ul><li>True if the application was launched successfully, otherwise false</li></ul> |
 
 #### [setDefaultHandler](#setdefaulthandler)
@@ -86,7 +86,7 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the default system handler for URLs of a given scheme |
-| **Parameters**                                       | <ul><li>scheme - A string containing the URL scheme to change. This must be 'http' or 'https' (although entering either will change the handler for both) * bundleID - An optional string containing an application bundle identifier for the application to set as the default handler. Defaults to <code>org.latenitefilms.CommandPost</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>scheme - A string containing the URL scheme to change. This must be 'http' or 'https' (although entering either will change the handler for both)</li><li>bundleID - An optional string containing an application bundle identifier for the application to set as the default handler. Defaults to <code>org.latenitefilms.CommandPost</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>Changing the default handler for http/https URLs will display a system prompt asking the user to confirm the change</li></ul> |
 
@@ -95,7 +95,7 @@ NOTE: When you trigger a URL from another application, it is usually best to hav
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Stores a URL handler that will be restored when CommandPost or reloads its config |
-| **Parameters**                                       | <ul><li>scheme - A string containing the URL scheme to change. This must be 'http' (although both http:// and https:// URLs will be affected) * bundleID - A string containing an application bundle identifier (e.g. 'com.apple.Safari') for the application to set as the default handler when CommandPost exits or reloads its config</li></ul> |
+| **Parameters**                                       | <ul><li>scheme - A string containing the URL scheme to change. This must be 'http' (although both http:// and https:// URLs will be affected)</li><li>bundleID - A string containing an application bundle identifier (e.g. 'com.apple.Safari') for the application to set as the default handler when CommandPost exits or reloads its config</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>You don't have to call this function if you want CommandPost to permanently be your default handler. Only use this if you want the handler to be automatically reverted to something else when CommandPost exits/reloads.</li></ul> |
 

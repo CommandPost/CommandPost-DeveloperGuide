@@ -28,7 +28,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Constructs a new panel with the specified priority and ID. |
-| **Parameters**                                       | <ul><li>priority - Defines the order in which the panel appears. * id       - The unique ID for the panel. * webview  - The webview the panel is attached to.</li></ul> |
+| **Parameters**                                       | <ul><li>priority - Defines the order in which the panel appears.</li><li>id       - The unique ID for the panel.</li><li>webview  - The webview the panel is attached to.</li></ul> |
 | **Returns**                                          | <ul><li>A panel object</li></ul> |
 
 ### Methods
@@ -38,7 +38,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a button to the panel with the specified `priority` and `params`. |
-| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the button. * <code>params</code> - The set of parameters for the button.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the button.</li><li><code>params</code> - The set of parameters for the button.</li></ul> |
 | **Returns**                                          | <ul><li>The panel.</li></ul> |
 
 #### [addCheckbox](#addcheckbox)
@@ -46,7 +46,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a checkbox to the panel with the specified `priority` and `params`. |
-| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the checkbox. * <code>params</code>     - The set of parameters for the checkbox.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the checkbox.</li><li><code>params</code>     - The set of parameters for the checkbox.</li></ul> |
 | **Returns**                                          | <ul><li>The panel.</li></ul> |
 | **Notes**                                            | <ul><li>The <code>params</code> can contain the following fields: <strong> <code>id</code>        - (optional) The unique ID. If none is provided, one will be generated. </strong> <code>name</code>      - (optional) The name of the checkbox field. <strong> <code>label</code>     - (optional) The text label to display after the checkbox. </strong> <code>onchange</code>  - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, <code>id</code> and <code>params</code>, the latter of which is a table containing the <code>value</code> and <code>checked</code> values of the checkbox. ** <code>class</code>     - (optional) the CSS class list to apply to the checkbox.</li></ul> |
 
@@ -55,7 +55,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds the specified `content` to the panel, with the specified `priority` order. |
-| **Parameters**                                       | <ul><li><code>priority</code> - the priority order of the content. * <code>content</code> - a value that can be converted to a string. * <code>escaped</code> - if <code>true</code>, the content will be escaped.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code> - the priority order of the content.</li><li><code>content</code> - a value that can be converted to a string.</li><li><code>escaped</code> - if <code>true</code>, the content will be escaped.</li></ul> |
 | **Returns**                                          | <ul><li>The panel object</li></ul> |
 
 #### [addHandler](#addhandler)
@@ -63,7 +63,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a handler |
-| **Parameters**                                       | <ul><li>event - The JavaScript event as string * id - The ID as string * handlerFn - The handler function * keys - Table of keys</li></ul> |
+| **Parameters**                                       | <ul><li>event - The JavaScript event as string</li><li>id - The ID as string</li><li>handlerFn - The handler function</li><li>keys - Table of keys</li></ul> |
 | **Returns**                                          | <ul><li>The panel object</li></ul> |
 
 #### [addHeading](#addheading)
@@ -71,7 +71,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a heading to the panel with the specified `priority` and `text`. |
-| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the heading. * <code>text</code> - The content of the heading as a string. * <code>level</code> - The level of the heading.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the heading.</li><li><code>text</code> - The content of the heading as a string.</li><li><code>level</code> - The level of the heading.</li></ul> |
 | **Returns**                                          | <ul><li>The panel object</li></ul> |
 
 #### [addParagraph](#addparagraph)
@@ -79,7 +79,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a paragraph to the panel with the specified `priority` and `content`. |
-| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the paragraph. * <code>content</code> - The content you want to include as a string. * <code>escaped</code> - Whether or not the HTML is escaped as a boolean. * <code>class</code> - The class name as a string.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the paragraph.</li><li><code>content</code> - The content you want to include as a string.</li><li><code>escaped</code> - Whether or not the HTML is escaped as a boolean.</li><li><code>class</code> - The class name as a string.</li></ul> |
 | **Returns**                                          | <ul><li>The panel object</li></ul> |
 
 #### [addPassword](#addpassword)
@@ -87,7 +87,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a password textbox to the panel with the specified `priority` and `params`. |
-| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the password. * <code>params</code>     - The set of parameters for the password.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the password.</li><li><code>params</code>     - The set of parameters for the password.</li></ul> |
 | **Returns**                                          | <ul><li>The panel.</li></ul> |
 
 #### [addSelect](#addselect)
@@ -95,7 +95,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a select to the panel with the specified `priority` and `params`. |
-| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the select. * <code>params</code> - The set of parameters for the select.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code> - The priority number for the select.</li><li><code>params</code> - The set of parameters for the select.</li></ul> |
 | **Returns**                                          | <ul><li>The panel.</li></ul> |
 
 #### [addTextbox](#addtextbox)
@@ -103,7 +103,7 @@ Watch Folder Panel Manager.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a textbox to the panel with the specified `priority` and `params`. |
-| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the textbox. * <code>params</code>     - The set of parameters for the textbox.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the textbox.</li><li><code>params</code>     - The set of parameters for the textbox.</li></ul> |
 | **Returns**                                          | <ul><li>The panel.</li></ul> |
 
 #### [generateContent](#generatecontent)

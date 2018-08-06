@@ -28,7 +28,7 @@ MIDI Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise the Module. |
-| **Parameters**                                       | <ul><li>deps - Dependancies Table * env - Environment Table</li></ul> |
+| **Parameters**                                       | <ul><li>deps - Dependancies Table</li><li>env - Environment Table</li></ul> |
 | **Returns**                                          | <ul><li>The Module</li></ul> |
 
 ### Fields

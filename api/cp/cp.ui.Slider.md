@@ -42,7 +42,7 @@ Slider Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Slider |
-| **Parameters**                                       | <ul><li>parent       - The parent object. Should have an <code>isShowing</code> property. * finderFn        - The function which returns an <code>hs._asm.axuielement</code> for the slider, or <code>nil</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object. Should have an <code>isShowing</code> property.</li><li>finderFn     - The function which returns an <code>hs._asm.axuielement</code> for the slider, or <code>nil</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Slider</code> instance.</li></ul> |
 
 ### Methods

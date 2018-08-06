@@ -41,7 +41,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `cp.strings` source that loads strings from a plist file. |
-| **Parameters**                                       | <ul><li><code>pathPattern</code>    - The path to load from. May contain a special <code>${language}</code> marker which will be replace with the provided langauge when searching. * <code>cacheSeconds</code>   - (optional) How long in seconds to keep the loaded values cached in memory. Defaults to <a href="#defaultCacheSeconds">defaultCacheSeconds</a></li></ul> |
+| **Parameters**                                       | <ul><li><code>pathPattern</code>    - The path to load from. May contain a special <code>${language}</code> marker which will be replace with the provided langauge when searching.</li><li><code>cacheSeconds</code>   - (optional) How long in seconds to keep the loaded values cached in memory. Defaults to <a href="#defaultCacheSeconds">defaultCacheSeconds</a></li></ul> |
 | **Returns**                                          | <ul><li>The new plist <code>source</code> instance.</li></ul> |
 
 ### Methods
@@ -59,7 +59,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Finds the specified `key` value in the plist, if the plist can be found, and contains matching key value. |
-| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file. * <code>context</code>    - Optional table with additional/alternate context. It will be added to the current context temporarily.</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file.</li><li><code>context</code>    - Optional table with additional/alternate context. It will be added to the current context temporarily.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or <code>nil</code> if not found.</li></ul> |
 
 #### [findKeys](#findkeys)
@@ -67,7 +67,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Finds the array of keys who's value matches the pattern in this table. It will check that the pattern matches the beginning of the value. |
-| **Parameters**                                       | <ul><li><code>pattern     - The string pattern to match. *</code>context`  - An optional additional context for the source.</li></ul> |
+| **Parameters**                                       | <ul><li>`pattern     - The string pattern to match.</li><li><code>context</code>    - An optional additional context for the source.</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys, or <code>{}</code> if none were fround</li></ul> |
 
 #### [loadFile](#loadfile)

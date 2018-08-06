@@ -19,7 +19,7 @@ delayed, up to a finite number of loops.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs an `action` function, looping until the result of the function evaluates to `true` (or a non-nil value). |
-| **Parameters**                                       | <ul><li><code>actionFn</code>   - a fuction which is called on each loop. It should return a 'truthy' value. * <code>timeout</code>    - (optional) the number of seconds after which we will give up. Defaults to 1 second. * <code>frequency</code> - (optional) the amount of time between checks. Defaults to 1 millisecond.</li></ul> |
+| **Parameters**                                       | <ul><li><code>actionFn</code>   - a fuction which is called on each loop. It should return a 'truthy' value.</li><li><code>timeout</code>    - (optional) the number of seconds after which we will give up. Defaults to 1 second.</li><li><code>frequency</code>  - (optional) the amount of time between checks. Defaults to 1 millisecond.</li></ul> |
 | **Returns**                                          | <ul><li>The last return value of the action function.</li></ul> |
 
 #### [doWhile](#dowhile)
@@ -27,7 +27,7 @@ delayed, up to a finite number of loops.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Performs an 'action' function, looping while the result of the function evaluates to `true`. |
-| **Parameters**                                       | <ul><li><code>actionFn</code>   - a fuction which is called on each loop. It should return a 'truthy' value. * <code>timeout</code>    - (optional) the number of seconds after which we will give up. Defaults to 1 second. * <code>frequency</code> - (optional) the time between checks. Defaults to 1 millisecond.</li></ul> |
+| **Parameters**                                       | <ul><li><code>actionFn</code>   - a fuction which is called on each loop. It should return a 'truthy' value.</li><li><code>timeout</code>    - (optional) the number of seconds after which we will give up. Defaults to 1 second.</li><li><code>frequency</code>  - (optional) the time between checks. Defaults to 1 millisecond.</li></ul> |
 | **Returns**                                          | <ul><li>The last return value of the action function.</li></ul> |
 
 #### [wait](#wait)

@@ -76,6 +76,7 @@ by calling the [Now](cp.rx.go.Statement.md#Now) or [After](cp.rx.go.Statement.md
  * [After](#after)
  * [Catch](#catch)
  * [Debug](#debug)
+ * [Finally](#finally)
  * [fullName](#fullname)
  * [Label](#label)
  * [name](#name)
@@ -111,7 +112,7 @@ by calling the [Now](cp.rx.go.Statement.md#Now) or [After](cp.rx.go.Statement.md
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Converts the `thing` into an `Observable`. It converts the following: |
-| **Parameters**                                       | <ul><li>thing    - The thing to convert. * params   - Optional table list to pass as parameters for the <code>thing</code> if it's a <code>function</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>thing    - The thing to convert.</li><li>params   - Optional table list to pass as parameters for the <code>thing</code> if it's a <code>function</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Observable</code>.</li></ul> |
 
 #### [toObservables](#toobservables)
@@ -119,7 +120,7 @@ by calling the [Now](cp.rx.go.Statement.md#Now) or [After](cp.rx.go.Statement.md
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Converts a list of things into a list of `Observables` of those things. |
-| **Parameters**                                       | <ul><li>things       - a table list of things to convert to <code>Observables</code>. * params       - an optional table list of parameters to pass to any <code>function</code> things.</li></ul> |
+| **Parameters**                                       | <ul><li>things       - a table list of things to convert to <code>Observables</code>.</li><li>params       - an optional table list of parameters to pass to any <code>function</code> things.</li></ul> |
 | **Returns**                                          | <ul><li>A table list of the things, converted to <code>Observable</code>.</li></ul> |
 
 ### Constructors
@@ -139,7 +140,7 @@ by calling the [Now](cp.rx.go.Statement.md#Now) or [After](cp.rx.go.Statement.md
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Requests the statement to be executed after the specified amount of time in seconds. |
-| **Parameters**                                       | <ul><li>millis      - The number of milliseconds to delay the execution. * observer     - The observer to subscribe to the final result. * scheduler    - (optional) the <code>cp.rx.Scheduler</code> to use. Uses the <code>cp.rx.util.defaultScheduler()</code> if none is provided.</li></ul> |
+| **Parameters**                                       | <ul><li>millis      - The number of milliseconds to delay the execution.</li><li>observer     - The observer to subscribe to the final result.</li><li>scheduler    - (optional) the <code>cp.rx.Scheduler</code> to use. Uses the <code>cp.rx.util.defaultScheduler()</code> if none is provided.</li></ul> |
 | **Returns**                                          | <ul><li>Nothing.</li></ul> |
 
 #### [Catch](#catch)
@@ -156,6 +157,14 @@ by calling the [Now](cp.rx.go.Statement.md#Now) or [After](cp.rx.go.Statement.md
 | **Type**                                             | Method |
 | **Description**                                      | Indicates that the results of the `Statement` should be output to the Error Log. |
 | **Parameters**                                       | <ul><li>label    - If specified, this is output in the log.</li></ul> |
+| **Returns**                                          | <ul><li>The same <code>Statement</code> instance.</li></ul> |
+
+#### [Finally](#finally)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.rx.go.Statement:Finally(handler) -> Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Provides a function handler to get called when the statement is done, either via an `onError` or `onComplete` signal. |
+| **Parameters**                                       | <ul><li>handler   - The handler function.</li></ul> |
 | **Returns**                                          | <ul><li>The same <code>Statement</code> instance.</li></ul> |
 
 #### [fullName](#fullname)
@@ -209,7 +218,7 @@ by calling the [Now](cp.rx.go.Statement.md#Now) or [After](cp.rx.go.Statement.md
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Indicates that this statement should time out after the specified number of milliseconds. |
-| **Parameters**                                       | <ul><li>millis       - A <code>number</code> or a <code>function</code> returning the number of milliseconds to wait before timing out. * next         - Optional string or <code>resolvable</code> value indicating how to handle it. * scheduler    - The <code>cp.rx.Scheduler</code> to use when timing out. Defaults to <code>cp.rx.defaultScheduler()</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>millis       - A <code>number</code> or a <code>function</code> returning the number of milliseconds to wait before timing out.</li><li>next         - Optional string or <code>resolvable</code> value indicating how to handle it.</li><li>scheduler    - The <code>cp.rx.Scheduler</code> to use when timing out. Defaults to <code>cp.rx.defaultScheduler()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The same <code>Statement</code>.</li></ul> |
 
 #### [toObservable](#toobservable)

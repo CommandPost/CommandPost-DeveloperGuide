@@ -21,7 +21,7 @@ Registers itself with the `core.action.manager`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Executes the action with the provided parameters. |
-| **Parameters**                                       | <ul><li><code>action</code> - A table representing the action, matching the following:    * <code>id</code> - The specific Command ID within the group.</li></ul> |
+| **Parameters**                                       | <ul><li><code>action</code> - A table representing the action, matching the following:<ul><li><code>id</code> - The specific Command ID within the group.</li></ul></li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the action was executed successfully.</li></ul> |
 
 #### [getId](#getid)
@@ -37,7 +37,7 @@ Registers itself with the `core.action.manager`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialises the module. |
-| **Parameters**                                       | <ul><li><code>actionmanager</code> - The Action Manager Plugin* <code>cmds</code> - The Commands Plugin.</li></ul> |
+| **Parameters**                                       | <ul><li><code>actionmanager</code> - The Action Manager Plugin</li><li><code>cmds</code> - The Commands Plugin.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [onChoices](#onchoices)

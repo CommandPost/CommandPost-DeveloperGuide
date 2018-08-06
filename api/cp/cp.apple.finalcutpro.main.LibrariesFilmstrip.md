@@ -123,7 +123,7 @@ Libraries Filmstrip Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Determines if clip A is above clip B or not. |
-| **Parameters**                                       | <ul><li>a - Clip A * b - Clip B</li></ul> |
+| **Parameters**                                       | <ul><li>a - Clip A</li><li>b - Clip B</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if clip A is above clip B, otherwise <code>false</code>.</li></ul> |
 
 ### Constructors

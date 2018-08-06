@@ -84,12 +84,14 @@ end
  * [EVENT_DESCRIPTION_PATH](#event_description_path)
  * [FLEXO_LANGUAGES](#flexo_languages)
  * [PASTEBOARD_UTI](#pasteboard_uti)
+* Variables - Configurable values
+ * [activeCommandSet](#activecommandset)
 * Functions - API calls offered directly by the extension
  * [commandSet](#commandset)
  * [init](#init)
  * [matches](#matches)
- * [reset](#reset)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [activeCommandSetPath](#activecommandsetpath)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
@@ -105,8 +107,6 @@ end
  * [UI](#ui)
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [activeCommandSet](#activecommandset)
- * [activeCommandSetPath](#activecommandsetpath)
  * [alert](#alert)
  * [browser](#browser)
  * [bundleID](#bundleid)
@@ -115,8 +115,13 @@ end
  * [colorBoard](#colorboard)
  * [commandEditor](#commandeditor)
  * [defaultCommandSetPath](#defaultcommandsetpath)
+ * [doHide](#dohide)
+ * [doLaunch](#dolaunch)
+ * [doQuit](#doquit)
+ * [doRestart](#dorestart)
  * [doSelectMenu](#doselectmenu)
  * [doShortcut](#doshortcut)
+ * [doShow](#doshow)
  * [effects](#effects)
  * [eventViewer](#eventviewer)
  * [exportDialog](#exportdialog)
@@ -137,12 +142,10 @@ end
  * [menu](#menu)
  * [notifier](#notifier)
  * [openLibrary](#openlibrary)
- * [performShortcut](#performshortcut)
  * [plugins](#plugins)
  * [preferencesWindow](#preferenceswindow)
  * [primaryWindow](#primarywindow)
  * [quit](#quit)
- * [restart](#restart)
  * [scanPlugins](#scanplugins)
  * [secondaryWindow](#secondarywindow)
  * [selectLibrary](#selectlibrary)
@@ -213,6 +216,14 @@ end
 | **Type**                                             | Constant |
 | **Description**                                      | Final Cut Pro's Pasteboard UTI |
 
+### Variables
+
+#### [activeCommandSet](#activecommandset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.activeCommandSet <cp.prop: table; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Contins the 'Active Command Set' as a `table`. The result is cached, but |
+
 ### Functions
 
 #### [commandSet](#commandset)
@@ -239,24 +250,16 @@ end
 | **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
 
-#### [reset](#reset)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:reset() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Resets the language cache |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
 ### Fields
+
+#### [activeCommandSetPath](#activecommandsetpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.activeCommandSetPath <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences |
 
 #### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `axuielement` containing the properties rows, if available. |
-
-#### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
@@ -268,22 +271,28 @@ end
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
 #### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `axuielement` containing the properties rows, if available. |
+
+#### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
 #### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Checks if the TitleInspector is currently showing. |
-
-#### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.AudioInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the AudioInspector is currently showing. |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the TitleInspector is currently showing. |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
@@ -334,22 +343,6 @@ end
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Text Inspector. |
 
 ### Methods
-
-#### [activeCommandSet](#activecommandset)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:activeCommandSet([forceReload]) -> table or nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the 'Active Command Set' as a Table. The result is cached, so pass in |
-| **Parameters**                                       | <ul><li>[forceReload]    - If <code>true</code>, require the Command Set to be reloaded.</li></ul> |
-| **Returns**                                          | <ul><li>A table of the Active Command Set's contents, or <code>nil</code> if an error occurred</li></ul> |
-
-#### [activeCommandSetPath](#activecommandsetpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:activeCommandSetPath() -> string or nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The 'Active Command Set' value, or the 'Default' Command Set if this is the first time Final Cut Pro has been run.</li></ul> |
 
 #### [alert](#alert)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:alert() -> cp.ui.Alert` </span>                                                          |
@@ -415,12 +408,44 @@ end
 | **Parameters**                                       | <ul><li><code>locale</code> - The optional locale to use. Defaults to the <a href="#currentLocale">current locale</a>.</li></ul> |
 | **Returns**                                          | <ul><li>The 'Default' Command Set path, or <code>nil</code> if an error occurred</li></ul> |
 
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will hide the FCP. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
+
+#### [doLaunch](#dolaunch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doLaunch() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will launch, or focus it if already running FCP. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
+
+#### [doQuit](#doquit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doQuit() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will quit FCP. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
+
+#### [doRestart](#dorestart)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doRestart() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.cp) that will restart Final Cut Pro, if it is running. If not, nothing happens. |
+| **Parameters**                                       | <ul><li>None.</li></ul> |
+| **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
+
 #### [doSelectMenu](#doselectmenu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doSelectMenu(path, options) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Selects a Menu Item based on the provided menu path. |
-| **Parameters**                                       | <ul><li>path - The list of menu items you'd like to activate. * options - (optional) The table of options to apply.</li></ul> |
+| **Parameters**                                       | <ul><li>path - The list of menu items you'd like to activate.</li><li>options - (optional) The table of options to apply.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>Observable</code> which emits the final menu item, or an error if the selection failed.</li></ul> |
 | **Notes**                                            | <ul><li>The returned <code>Observable</code> will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.</li></ul> |
 
@@ -431,6 +456,14 @@ end
 | **Description**                                      | Perform a Final Cut Pro Keyboard Shortcut |
 | **Parameters**                                       | <ul><li>whichShortcut - As per the Command Set name</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Statement</code> that will perform the shortcut when executed.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will show FCP on-screen. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
 
 #### [effects](#effects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:effects() -> EffectsBrowser` </span>                                                          |
@@ -525,7 +558,7 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Looks up an application string and returns an array of keys that match. It will take into account current language the app is running in, or use `lang` if provided. |
-| **Parameters**                                       | <ul><li><code>string</code> - The string to look up. * <code>lang</code>   - The language (defaults to current FCPX language).</li></ul> |
+| **Parameters**                                       | <ul><li><code>string</code> - The string to look up.</li><li><code>lang</code>   - The language (defaults to current FCPX language).</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys with a matching string.</li></ul> |
 | **Notes**                                            | <ul><li>This method may be very inefficient, since it has to search through every possible key/value pair to find matches. It is not recommended that this is used in production.</li></ul> |
 
@@ -593,14 +626,6 @@ end
 | **Parameters**                                       | <ul><li>path  - The path to the FCP Library to open.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful, or <code>false</code> if not.</li></ul> |
 
-#### [performShortcut](#performshortcut)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:performShortcut(whichShortcut) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Performs a Final Cut Pro Shortcut |
-| **Parameters**                                       | <ul><li>whichShortcut - As per the Command Set name</li></ul> |
-| **Returns**                                          | <ul><li>true if successful otherwise false</li></ul> |
-
 #### [plugins](#plugins)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:plugins() -> cp.apple.finalcutpro.plugins` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -633,14 +658,6 @@ end
 | **Parameters**                                       | <ul><li>waitSeconds      - The number of seconds to wait for the quit to complete.</li></ul> |
 | **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
 
-#### [restart](#restart)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:restart([waitSeconds]) -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Restart Final Cut Pro, if it is running. If not, nothing happens. |
-| **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If provided, the number of seconds to wait for the restart to complete.</li></ul> |
-| **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
-
 #### [scanPlugins](#scanplugins)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:scanPlugins() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -670,7 +687,7 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English. |
-| **Parameters**                                       | <ul><li><code>path</code>       - The list of menu items you'd like to activate, for example:           select("View", "Browser", "as List") * <code>options</code>    - (optional) The table of options. See <code>cp.app.menu:selectMenu(...)</code> for details.</li></ul> |
+| **Parameters**                                       | <ul><li><code>path</code>       - The list of menu items you'd like to activate, for example:           select("View", "Browser", "as List")</li><li><code>options</code>    - (optional) The table of options. See <code>cp.app.menu:selectMenu(...)</code> for details.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the press was successful.</li></ul> |
 
 #### [show](#show)
@@ -686,7 +703,7 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Looks up an application string with the specified `key`. |
-| **Parameters**                                       | <ul><li><code>key</code>    - The key to look up. * <code>locale</code> - Optional locale to retrieve the key for, if available. May be a <code>string</code> or <code>cp.i18n.localeID</code>. * <code>quiet</code>    - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>    - The key to look up.</li><li><code>locale</code> - Optional locale to retrieve the key for, if available. May be a <code>string</code> or <code>cp.i18n.localeID</code>.</li><li><code>quiet</code>  - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The requested string or <code>nil</code> if the application is not running.</li></ul> |
 
 #### [timeline](#timeline)

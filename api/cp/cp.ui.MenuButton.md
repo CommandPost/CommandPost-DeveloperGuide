@@ -41,7 +41,7 @@ Pop Up Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new MenuButton. |
-| **Parameters**                                       | <ul><li>parent        - The parent object. Should have an <code>isShowing</code> property.* finderFn     - A <code>cp.prop</code> or function which will return a <code>hs._asm.axuielement</code>, or <code>nil</code> if it's not available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent        - The parent object. Should have an <code>isShowing</code> property.</li><li>finderFn      - A <code>cp.prop</code> or function which will return a <code>hs._asm.axuielement</code>, or <code>nil</code> if it's not available.</li></ul> |
 
 ### Methods
 

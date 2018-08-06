@@ -38,7 +38,7 @@ Viewer Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Viewer` instance. |
-| **Parameters**                                       | <ul><li>app           - The FCP application.* eventViewer   - If <code>true</code>, the viewer is the Event Viewer.</li></ul> |
+| **Parameters**                                       | <ul><li>app           - The FCP application.</li><li>eventViewer   - If <code>true</code>, the viewer is the Event Viewer.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Viewer</code> instance.</li></ul> |
 
 ### Methods

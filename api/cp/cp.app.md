@@ -37,7 +37,7 @@ This extension differs from the `hs.application` extension in several ways:
  * [menu](#menu)
  * [notifier](#notifier)
  * [quit](#quit)
- * [restart](#restart)
+ * [searchResources](#searchresources)
  * [show](#show)
  * [update](#update)
 
@@ -196,13 +196,14 @@ This extension differs from the `hs.application` extension in several ways:
 | **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the quit completes. If <code>nil</code>, it will return immediately.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul> |
 
-#### [restart](#restart)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:restart(waitSeconds) -> self` </span>                                                          |
+#### [searchResources](#searchresources)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:searchResources(value) -> hs.task` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Restart the application, if currently running. If not, no action is taken. |
-| **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the quit completes. If <code>nil</code>, it will return immediately.</li></ul> |
-| **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul> |
+| **Description**                                      | Creates a `hs.task` which will search for the specified string value in the resources |
+| **Parameters**                                       | <ul><li>value     - The string value to search for.</li></ul> |
+| **Returns**                                          | <ul><li><code>hs.task</code> which is already running, searching for the <code>value</code>. Results will be output in the Error Log.</li></ul> |
+| **Notes**                                            | <ul><li>This may take some time to complete, depending on how many resources the app contains.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:show() -> self` </span>                                                          |

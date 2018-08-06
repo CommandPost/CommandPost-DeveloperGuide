@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finalcutpro.watchfolders.panels.media.MediaFolder
+# [docs](index.md) » plugins.finalcutpro.watchfolders.media.MediaFolder
 ---
 
 Final Cut Pro Media Watch Folder Plugin.
@@ -17,6 +17,7 @@ Final Cut Pro Media Watch Folder Plugin.
  * [doDeleteImportedFiles](#dodeleteimportedfiles)
  * [doImportNext](#doimportnext)
  * [doRestoreOriginalPasteboard](#dorestoreoriginalpasteboard)
+ * [doRevealInFinder](#dorevealinfinder)
  * [doTagFiles](#dotagfiles)
  * [doWriteFilesToPasteboard](#dowritefilestopasteboard)
  * [handleImport](#handleimport)
@@ -27,19 +28,18 @@ Final Cut Pro Media Watch Folder Plugin.
  * [init](#init)
  * [processFiles](#processfiles)
  * [removeFile](#removefile)
- * [revealInFinder](#revealinfinder)
  * [save](#save)
  * [skipAll](#skipall)
  * [skipOne](#skipone)
- * [updateImportNotification](#updateimportnotification)
  * [updateIncomingNotification](#updateincomingnotification)
+ * [updateReadyNotification](#updatereadynotification)
 
 ## API Documentation
 
 ### Functions
 
 #### [freeze](#freeze)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder.freeze(mediaFolder) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder.freeze(mediaFolder) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a table with the details of the `MediaFolder`, ready to be stored. |
@@ -49,15 +49,15 @@ Final Cut Pro Media Watch Folder Plugin.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder.new() -> MediaFolder` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder.new() -> MediaFolder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Media Folder. |
-| **Parameters**                                       | <ul><li>mod - The module. * path - Path to the Media Folder. * videoTag - Video Tag as String * audioTag - Audio Tag as String * imageTag - Image Tag as String</li></ul> |
+| **Parameters**                                       | <ul><li>mod - The module.</li><li>path - Path to the Media Folder.</li><li>videoTag - Video Tag as String</li><li>audioTag - Audio Tag as String</li><li>imageTag - Image Tag as String</li></ul> |
 | **Returns**                                          | <ul><li>A new MediaFolder object.</li></ul> |
 
 #### [thaw](#thaw)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder.thaw(details) -> MediaFolder` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder.thaw(details) -> MediaFolder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new MediaFolder based on the details provided. |
@@ -67,7 +67,7 @@ Final Cut Pro Media Watch Folder Plugin.
 ### Methods
 
 #### [addIncoming](#addincoming)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:addIncoming(file) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:addIncoming(file) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds the file to the 'incoming' list and updates the notification. |
@@ -75,7 +75,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>nil</li></ul> |
 
 #### [addReady](#addready)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:addReady(file) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:addReady(file) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds the file to the 'ready' list and updates the notifications. |
@@ -83,14 +83,14 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>nil</li></ul> |
 
 #### [checkNotifications](#checknotifications)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:checkNotifications() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:checkNotifications() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Checks Notifications. |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [destroy](#destroy)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:destroy()` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:destroy()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Destroys the MediaFolder. It should not be used after this is called. |
@@ -98,7 +98,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [doDeleteImportedFiles](#dodeleteimportedfiles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:doDeleteImportedFiles(context) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:doDeleteImportedFiles(context) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Checks if we are deleting after import, and if so schedules them to be deleted. |
@@ -106,7 +106,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [doImportNext](#doimportnext)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:doImportNext() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:doImportNext() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Imports the next file in the Media Folder. |
@@ -114,30 +114,38 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [doRestoreOriginalPasteboard](#dorestoreoriginalpasteboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:doRestoreOriginalPasteboard(context) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:doRestoreOriginalPasteboard(context) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Restore original Pasteboard contents after 2 seconds. |
 | **Parameters**                                       | <ul><li>context - The context.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [doRevealInFinder](#dorevealinfinder)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:doRevealInFinder() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will reveal the MediaFolder path in the Finder. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Statement</li></ul> |
+
 #### [doTagFiles](#dotagfiles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:doTagFiles(files) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:doTagFiles(files) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Tags a table of files. |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [doWriteFilesToPasteboard](#dowritefilestopasteboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:doWriteFilesToPasteboard(files, context) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:doWriteFilesToPasteboard(files, context) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Write files to the Pasteboard. |
-| **Parameters**                                       | <ul><li>files - a table/list of files to be imported. * context - The context.</li></ul> |
+| **Parameters**                                       | <ul><li>files - a table/list of files to be imported.</li><li>context - The context.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Statement</code> to execute.</li></ul> |
 
 #### [handleImport](#handleimport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:handleImport(notification) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:handleImport(notification) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Handles the importing of a file. |
@@ -145,7 +153,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [importAll](#importall)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:importAll() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:importAll() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Begins importing all `ready` files, removing them from the `ready` queue. |
@@ -153,7 +161,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [importFiles](#importfiles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:importFiles(files) -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:importFiles(files) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Requests for the files to be imported. |
@@ -161,7 +169,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [importFirst](#importfirst)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:importFirst() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:importFirst() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Begins importing the first `ready` file, removing it from the `ready` queue. |
@@ -169,7 +177,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [importTag](#importtag)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:importTag() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:importTag() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the import tag. |
@@ -177,38 +185,30 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>The import tag as a string.</li></ul> |
 
 #### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:init() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:init() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Initialises the folder, getting any watchers, notifications, etc. running. |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [processFiles](#processfiles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:processFiles() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:processFiles() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Process files. |
-| **Parameters**                                       | <ul><li>files - A table of files to process. * fileFlags - A table of file flags.</li></ul> |
+| **Parameters**                                       | <ul><li>files - A table of files to process.</li><li>fileFlags - A table of file flags.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [removeFile](#removefile)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:removeFile(file) -> MediaFolder` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:removeFile(file) -> MediaFolder` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Removes the file from any queues it might be in, updating relevant notifications. |
 | **Parameters**                                       | <ul><li>file  - the full path to the file.</li></ul> |
 | **Returns**                                          | <ul><li>The MediaFolder instance</li></ul> |
 
-#### [revealInFinder](#revealinfinder)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:revealInFinder()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Reveal in Finder. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
 #### [save](#save)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:save()` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:save()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Ensures the MediaFolder is saved. |
@@ -216,7 +216,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [skipAll](#skipall)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:skipAll() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:skipAll() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Skip all files in the Media Folder. |
@@ -224,26 +224,26 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [skipOne](#skipone)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:skipOne() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:skipOne() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Skip one file in the Media Folder. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [updateImportNotification](#updateimportnotification)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:updateImportNotification() -> nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Updates the 'ready' notification based on the current set of files in the `ready` queue. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
 #### [updateIncomingNotification](#updateincomingnotification)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.panels.media.MediaFolder:updateIncomingNotification() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:updateIncomingNotification() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Updates the 'incoming' notification based on the current set of files in the `incoming` queue. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [updateReadyNotification](#updatereadynotification)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:updateReadyNotification() -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Updates the 'ready' notification based on the current set of files in the `ready` queue. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

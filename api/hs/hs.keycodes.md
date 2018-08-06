@@ -78,7 +78,7 @@ Convert between key-strings and key-codes. Also provides funcionality for queryi
 | **Description**                                      | Sets the function to be called when your input source (i.e. qwerty, dvorak, colemac) changes. |
 | **Parameters**                                       | <ul><li>fn - A function that will be called when the input source changes. No arguments are supplied to the function.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>This may be helpful for rebinding your hotkeys to appropriate keys in the new layout * Setting this will un-set functions previously registered by this function.</li></ul> |
+| **Notes**                                            | <ul><li>This may be helpful for rebinding your hotkeys to appropriate keys in the new layout</li><li>Setting this will un-set functions previously registered by this function.</li></ul> |
 
 #### [layouts](#layouts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.keycodes.layouts([sourceID]) -> table` </span>                                                          |

@@ -68,7 +68,7 @@ Represents an `AXRadioGroup`, providing utility methods.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Creates a new RadioGroup. |
-| **Parameters**                                       | <ul><li>parent    - The parent table.<em> finderFn   - The function which will find the <code>axuielement</code> representing the RadioGroup.</em> cached   - If set to <code>false</code>, the <code>axuielement</code> will not be cached. Defaults to <code>true</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>parent    - The parent table.</li><li>finderFn  - The function which will find the <code>axuielement</code> representing the RadioGroup.</li><li>cached    - If set to <code>false</code>, the <code>axuielement</code> will not be cached. Defaults to <code>true</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>RadioGroup</code> instance.</li></ul> |
 
 #### [nextOption](#nextoption)

@@ -12,10 +12,10 @@ Move To Playhead.
 ### Functions
 
 #### [moveToPlayhead](#movetoplayhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.movetoplayhead.moveToPlayhead() -> nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.movetoplayhead.moveToPlayhead() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Move to Playhead |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
+| **Returns**                                          | <ul><li><a href="cp.rx.go.Statement.md">Statement</a> to execute.</li></ul> |
 

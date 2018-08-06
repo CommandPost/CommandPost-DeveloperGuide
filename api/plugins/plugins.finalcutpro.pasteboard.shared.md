@@ -7,6 +7,7 @@ Shared Pasteboard Plugin.
 * Functions - API calls offered directly by the extension
  * [copyWithCustomClipName](#copywithcustomclipname)
  * [copyWithCustomClipNameAndFolder](#copywithcustomclipnameandfolder)
+ * [doPasteHistoryItem](#dopastehistoryitem)
  * [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
  * [getHistory](#gethistory)
  * [getHistoryPath](#gethistorypath)
@@ -14,7 +15,6 @@ Shared Pasteboard Plugin.
  * [getRootPath](#getrootpath)
  * [init](#init)
  * [overrideNextFolderName](#overridenextfoldername)
- * [pasteHistoryItem](#pastehistoryitem)
  * [setHistory](#sethistory)
  * [setRootPath](#setrootpath)
  * [update](#update)
@@ -42,6 +42,14 @@ Shared Pasteboard Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [doPasteHistoryItem](#dopastehistoryitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.doPasteHistoryItem(folderName, index) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Paste History Item. |
+| **Parameters**                                       | <ul><li>folderName - The folder name</li><li>index - The index of the item you want to paste</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.generateSharedPasteboardMenu() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -63,7 +71,7 @@ Shared Pasteboard Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets the History Path. |
-| **Parameters**                                       | <ul><li>folderName - The folder name * fileExtension - The file extension</li></ul> |
+| **Parameters**                                       | <ul><li>folderName - The folder name</li><li>fileExtension - The file extension</li></ul> |
 | **Returns**                                          | <ul><li>The history path as a string</li></ul> |
 
 #### [getLocalFolderName](#getlocalfoldername)
@@ -97,14 +105,6 @@ Shared Pasteboard Plugin.
 | **Description**                                      | Overrides the folder name for the next clip which is copied from Final Cut Pro to the |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The local folder name as a string.</li></ul> |
-
-#### [pasteHistoryItem](#pastehistoryitem)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.pasteHistoryItem(folderName, index) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Paste History Item. |
-| **Parameters**                                       | <ul><li>folderName - The folder name * index - The index of the item you want to paste</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [setHistory](#sethistory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.setHistory(folderName, history) -> none` </span>                                                          |

@@ -22,6 +22,7 @@ Timeline Module.
  * [showOnPrimary](#showonprimary)
  * [showOnSecondary](#showonsecondary)
  * [skimmingPlayhead](#skimmingplayhead)
+ * [title](#title)
  * [toolbar](#toolbar)
  * [transitions](#transitions)
 
@@ -152,6 +153,14 @@ Timeline Module.
 | **Description**                                      | Gets the Playhead that tracks under the mouse while skimming. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>Playhead</code> object.</li></ul> |
+
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline:title() -> cp.ui.StaticText` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the [StaticText](cp.ui.StaticText.md) containing the title. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>StaticText</code> object.</li></ul> |
 
 #### [toolbar](#toolbar)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline:toolbar() -> TimelineToolbar` </span>                                                          |

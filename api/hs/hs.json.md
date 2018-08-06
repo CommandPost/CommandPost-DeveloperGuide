@@ -29,7 +29,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Encodes a table as JSON |
-| **Parameters**                                       | <ul><li>val - A table containing data to be encoded as JSON * prettyprint - An optional boolean, true to format the JSON for human readability, false to format the JSON for size efficiency. Defaults to false</li></ul> |
+| **Parameters**                                       | <ul><li>val - A table containing data to be encoded as JSON</li><li>prettyprint - An optional boolean, true to format the JSON for human readability, false to format the JSON for size efficiency. Defaults to false</li></ul> |
 | **Returns**                                          | <ul><li>A string containing a JSON representation of the supplied table</li></ul> |
 | **Notes**                                            | <ul><li>This is useful for storing some of the more complex lua table structures as a persistent setting (see <code>hs.settings</code>)</li></ul> |
 

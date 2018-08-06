@@ -60,7 +60,7 @@ Keyword Editor Module.
 | **Type**                                             | Method |
 | **Description**                                      | Hides the Keyword Editor. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>KeywordEditor object * <code>true</code> if successful otherwise <code>false</code></li></ul> |
+| **Returns**                                          | <ul><li>KeywordEditor object</li><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:isShowing() -> boolean` </span>                                                          |
@@ -100,7 +100,7 @@ Keyword Editor Module.
 | **Type**                                             | Method |
 | **Description**                                      | Shows the Keyword Editor. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>KeywordEditor object * <code>true</code> if successful otherwise <code>false</code></li></ul> |
+| **Returns**                                          | <ul><li>KeywordEditor object</li><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [toolbarCheckBoxUI](#toolbarcheckboxui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.KeywordEditor:toolbarCheckBoxUI() -> hs._asm.axuielement object` </span>                                                          |

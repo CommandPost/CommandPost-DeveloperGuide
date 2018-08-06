@@ -19,7 +19,7 @@ Note: This extension works by controlling the OS X "Messages" app via AppleScrip
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sends an iMessage |
-| **Parameters**                                       | <ul><li>targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to * message - A string containing the message to send</li></ul> |
+| **Parameters**                                       | <ul><li>targetAddress - A string containing a phone number or email address registered with iMessage, to send the iMessage to</li><li>message - A string containing the message to send</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [SMS](#sms)
@@ -27,6 +27,6 @@ Note: This extension works by controlling the OS X "Messages" app via AppleScrip
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sends an SMS using SMS Relay |
-| **Parameters**                                       | <ul><li>targetNumber - A string containing a phone number to send an SMS to * message - A string containing the message to send</li></ul> |
+| **Parameters**                                       | <ul><li>targetNumber - A string containing a phone number to send an SMS to</li><li>message - A string containing the message to send</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

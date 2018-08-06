@@ -89,7 +89,7 @@
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
 | [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
 | [cp.collect.Queue](cp.collect.Queue.md)                          | A "double-ended queue" implementation. This allows pushing and popping     |
-| [cp.collect.Set](cp.collect.Set.md)                          | TODO: Write something here.     |
+| [cp.collect.Set](cp.collect.Set.md)                          | An implementation of a logical `set`, which contains a single unique     |
 | [cp.commands](cp.commands.md)                          | Commands Module.     |
 | [cp.commands.command](cp.commands.command.md)                          | Commands Module.     |
 | [cp.commands.englishKeyCodes](cp.commands.englishKeyCodes.md)                          | Returns a table of all the English Key Codes.     |
@@ -151,6 +151,7 @@
 | [cp.rx.go.Require.Is](cp.rx.go.Require.Is.md)                          | Specifies that the `Require`d value `Is` a specific value.     |
 | [cp.rx.go.Require.IsNot](cp.rx.go.Require.IsNot.md)                          | Specifies that the `Require`d value `IsNot` a specific value.     |
 | [cp.rx.go.Require.Matches](cp.rx.go.Require.Matches.md)                          | Specifies that the `Require`d value `Matches` a function predicate.     |
+| [cp.rx.go.Retry](cp.rx.go.Retry.md)                          | _Extends:_ [Statement](cp.rx.go.Statement.md)     |
 | [cp.rx.go.Statement](cp.rx.go.Statement.md)                          | A `Statement` is defined to enable processing of asynchronous `resolvable` values such     |
 | [cp.rx.go.Statement.Definition](cp.rx.go.Statement.Definition.md)                          | A [Statement](cp.rx.go.Statement.md) is defined before being executable.     |
 | [cp.rx.go.Statement.Modifier](cp.rx.go.Statement.Modifier.md)                          | A `Statement.Modifier` is an extension to a [Statement](cp.rx.go.Statement.md) that provides additional configuration details.     |

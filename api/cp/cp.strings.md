@@ -53,7 +53,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Searches for the specified key, caching the result when found. |
-| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file. * <code>context</code>    - Optional table with additional/alternate context. * <code>quiet</code>      - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file.</li><li><code>context</code>    - Optional table with additional/alternate context.</li><li><code>quiet</code>      - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or <code>nil</code> if not found.</li></ul> |
 
 #### [findInSources](#findinsources)
@@ -61,7 +61,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Searches directly in the sources for the specified key. |
-| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file. * <code>context</code>    - Optional table with additional/alternate context. * <code>quiet</code>      - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve from the file.</li><li><code>context</code>    - Optional table with additional/alternate context.</li><li><code>quiet</code>      - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or <code>nil</code> if not found.</li></ul> |
 
 #### [findKeys](#findkeys)
@@ -69,7 +69,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Searches for the list of keys with a matching value, in the specified language. |
-| **Parameters**                                       | <ul><li><code>value</code>      - The value to search for. * <code>context</code>    - The language code to look for (e.g. <code>"en"</code>, or <code>"fr"</code>).</li></ul> |
+| **Parameters**                                       | <ul><li><code>value</code>      - The value to search for.</li><li><code>context</code>    - The language code to look for (e.g. <code>"en"</code>, or <code>"fr"</code>).</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys, or <code>{}</code> if not found.</li></ul> |
 
 #### [findKeysInSources](#findkeysinsources)
@@ -77,7 +77,7 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Searches directly in the sources for the specified key value pattern. |
-| **Parameters**                                       | <ul><li><code>value</code>      - The value to search for. * <code>context</code>    - Optional additional context for the request.</li></ul> |
+| **Parameters**                                       | <ul><li><code>value</code>      - The value to search for.</li><li><code>context</code>    - Optional additional context for the request.</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys, or <code>{}</code> if not found.</li></ul> |
 
 #### [from](#from)

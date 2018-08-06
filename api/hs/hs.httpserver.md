@@ -37,9 +37,9 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Creates a new HTTP or HTTPS server |
-| **Parameters**                                       | <ul><li>ssl     - An optional boolean. If true, the server will start using HTTPS. Defaults to false. * bonjour - An optional boolean. If true, the server will advertise itself with Bonjour.  Defaults to true. Note that in order to change this, you must supply a true or false value for the <code>ssl</code> argument.</li></ul> |
+| **Parameters**                                       | <ul><li>ssl     - An optional boolean. If true, the server will start using HTTPS. Defaults to false.</li><li>bonjour - An optional boolean. If true, the server will advertise itself with Bonjour.  Defaults to true. Note that in order to change this, you must supply a true or false value for the <code>ssl</code> argument.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.httpserver</code> object</li></ul> |
-| **Notes**                                            | <ul><li>By default, the server will start on a random TCP port and advertise itself with Bonjour. You can check the port with <code>hs.httpserver:getPort()</code> * By default, the server will listen on all network interfaces. You can override this with <code>hs.httpserver:setInterface()</code> before starting the server * Currently, in HTTPS mode, the server will use a self-signed certificate, which most browsers will warn about. If you want/need to be able to use <code>hs.httpserver</code> with a certificate signed by a trusted Certificate Authority, please file an bug on Hammerspoon requesting support for this.</li></ul> |
+| **Notes**                                            | <ul><li>By default, the server will start on a random TCP port and advertise itself with Bonjour. You can check the port with <code>hs.httpserver:getPort()</code></li><li>By default, the server will listen on all network interfaces. You can override this with <code>hs.httpserver:setInterface()</code> before starting the server</li><li>Currently, in HTTPS mode, the server will use a self-signed certificate, which most browsers will warn about. If you want/need to be able to use <code>hs.httpserver</code> with a certificate signed by a trusted Certificate Authority, please file an bug on Hammerspoon requesting support for this.</li></ul> |
 
 ### Methods
 
@@ -92,7 +92,7 @@ Notes:
 | **Description**                                      | Sets the request handling callback for an HTTP server object |
 | **Parameters**                                       | <ul><li>callback - An optional function that will be called to process each incoming HTTP request, or nil to remove an existing callback. See the notes section below for more information about this callback</li></ul> |
 | **Returns**                                          | <ul><li>The <code>hs.httpserver</code> object</li></ul> |
-| **Notes**                                            | <ul><li>The callback will be passed four arguments:  * A string containing the type of request (i.e. <code>GET</code>/<code>POST</code>/<code>DELETE</code>/etc)  * A string containing the path element of the request (e.g. <code>/index.html</code>)  * A table containing the request headers  * A string containing the raw contents of the request body, or the empty string if no body is included in the request. * The callback <em>must</em> return three values:  * A string containing the body of the response  * An integer containing the response code (e.g. 200 for a successful request)  * A table containing additional HTTP headers to set (or an empty table, <code>{}</code>, if no extra headers are required)</li></ul> |
+| **Notes**                                            | <ul><li>The callback will be passed four arguments:</li><li>A string containing the type of request (i.e. <code>GET</code>/<code>POST</code>/<code>DELETE</code>/etc)</li><li>A string containing the path element of the request (e.g. <code>/index.html</code>)</li><li>A table containing the request headers</li><li>A string containing the raw contents of the request body, or the empty string if no body is included in the request.</li><li>The callback <em>must</em> return three values:</li><li>A string containing the body of the response</li><li>An integer containing the response code (e.g. 200 for a successful request)</li><li>A table containing additional HTTP headers to set (or an empty table, <code>{}</code>, if no extra headers are required)</li></ul> |
 
 #### [setInterface](#setinterface)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver:setInterface(interface) -> object` </span>                                                          |
@@ -101,7 +101,7 @@ Notes:
 | **Description**                                      | Sets the network interface the server is configured to listen on |
 | **Parameters**                                       | <ul><li>interface - A string containing an interface name</li></ul> |
 | **Returns**                                          | <ul><li>The <code>hs.httpserver</code> object</li></ul> |
-| **Notes**                                            | <ul><li>As well as real interface names (e.g. <code>en0</code>) the following values are valid:  * An IP address of one of your interfaces  * localhost  * loopback  * nil (which means all interfaces, and is the default)</li></ul> |
+| **Notes**                                            | <ul><li>As well as real interface names (e.g. <code>en0</code>) the following values are valid:</li><li>An IP address of one of your interfaces</li><li>localhost</li><li>loopback</li><li>nil (which means all interfaces, and is the default)</li></ul> |
 
 #### [setName](#setname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.httpserver:setName(name) -> object` </span>                                                          |
@@ -150,7 +150,7 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Enables a websocket endpoint on the HTTP server |
-| **Parameters**                                       | <ul><li>path - A string containing the websocket path such as '/ws' * callback - A function returning a string for each recieved websocket message</li></ul> |
+| **Parameters**                                       | <ul><li>path - A string containing the websocket path such as '/ws'</li><li>callback - A function returning a string for each recieved websocket message</li></ul> |
 | **Returns**                                          | <ul><li>The <code>hs.httpserver</code> object</li></ul> |
-| **Notes**                                            | <ul><li>The callback is passed one string parameter containing the received message * The callback must return a string containing the response message * Given a path '/mysock' and a port of 8000, the websocket URL is as follows:  * ws://localhost:8000/mysock  * wss://localhost:8000/mysock (if SSL enabled)</li></ul> |
+| **Notes**                                            | <ul><li>The callback is passed one string parameter containing the received message</li><li>The callback must return a string containing the response message</li><li>Given a path '/mysock' and a port of 8000, the websocket URL is as follows:</li><li>ws://localhost:8000/mysock</li><li>wss://localhost:8000/mysock (if SSL enabled)</li></ul> |
 

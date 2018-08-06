@@ -23,6 +23,7 @@ for i = 1, #q do print(v) end -- Outputs "1", "nil", "3"
 
 ## API Overview
 * Functions - API calls offered directly by the extension
+ * [contains](#contains)
  * [len](#len)
  * [peekLeft](#peekleft)
  * [peekRight](#peekright)
@@ -35,6 +36,7 @@ for i = 1, #q do print(v) end -- Outputs "1", "nil", "3"
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [contains](#contains)
  * [len](#len)
  * [peekLeft](#peekleft)
  * [peekRight](#peekright)
@@ -46,6 +48,14 @@ for i = 1, #q do print(v) end -- Outputs "1", "nil", "3"
 ## API Documentation
 
 ### Functions
+
+#### [contains](#contains)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Queue.contains(queue, item) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the `queue` contains the specified `item`. |
+| **Parameters**                                       | <ul><li>queue    - The queue to check.</li><li>item     - The item to check for.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the item is in the queue.</li></ul> |
 
 #### [len](#len)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Queue.len(queue) -> anything` </span>                                                          |
@@ -92,7 +102,7 @@ for i = 1, #q do print(v) end -- Outputs "1", "nil", "3"
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Pushes the values to the left side of the `queue`. |
-| **Parameters**                                       | <ul><li>queue        - The queue to push into. * ...          - The values to push.</li></ul> |
+| **Parameters**                                       | <ul><li>queue        - The queue to push into.</li><li>...          - The values to push.</li></ul> |
 | **Returns**                                          | <ul><li>The same <code>Queue</code> instance.</li></ul> |
 
 #### [pushRight](#pushright)
@@ -100,7 +110,7 @@ for i = 1, #q do print(v) end -- Outputs "1", "nil", "3"
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Pushes the values to the right side of the `queue`. |
-| **Parameters**                                       | <ul><li>queue        - The queue to push into. * ...          - The values to push.</li></ul> |
+| **Parameters**                                       | <ul><li>queue        - The queue to push into.</li><li>...          - The values to push.</li></ul> |
 | **Returns**                                          | <ul><li>The same <code>Queue</code> instance.</li></ul> |
 
 #### [removeItem](#removeitem)
@@ -116,7 +126,7 @@ for i = 1, #q do print(v) end -- Outputs "1", "nil", "3"
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Attempts to remove the specified item from the queue. |
-| **Parameters**                                       | <ul><li>queue        - The queue to modify. * item         - The item to remove, if present.</li></ul> |
+| **Parameters**                                       | <ul><li>queue        - The queue to modify.</li><li>item         - The item to remove, if present.</li></ul> |
 | **Returns**                                          | <ul><li>The index of the item, or <code>nil</code> if not found.</li></ul> |
 
 ### Constructors
@@ -131,6 +141,14 @@ for i = 1, #q do print(v) end -- Outputs "1", "nil", "3"
 | **Notes**                                            | <ul><li>You can also create a new queue by calling <code>Queue(..)</code> directly.</li></ul> |
 
 ### Methods
+
+#### [contains](#contains)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Queue:contains(item) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Checks if the `queue` contains the specified `item`. |
+| **Parameters**                                       | <ul><li>item     - The item to check for.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the item is in the queue.</li></ul> |
 
 #### [len](#len)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Queue:len(queue) -> anything` </span>                                                          |

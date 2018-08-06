@@ -321,23 +321,23 @@ So, a little bit tricky. The general rule of thumb is:
 | **Description**                                      | Returns a new `cp.prop` which will be `true` if all `cp.prop` instances passed into the function return a `truthy` value. |
 | **Parameters**                                       | <ul><li><code>...</code>        - The list of <code>cp.prop</code> instances to 'AND' together.</li></ul> |
 | **Returns**                                          | <ul><li>a <code>cp.prop</code> instance.</li></ul> |
-| **Notes**                                            | <ul><li>The value of this instance will resolve by lazily checking the <code>value</code> of the contained <code>cp.prop</code> instances in the order provided. The first <code>falsy</code> value will be returned. Otherwise the last <code>truthy</code> value is returned. * The instance is <strong>immutable</strong>. * Once you have created an 'AND', you cannot 'OR' as a method. Eg, this will fail: <code>prop.TRUE():AND(prop:FALSE()):OR(prop.TRUE())</code>. This is to avoid ambiguity as to whether the 'AND' or 'OR' takes precedence. Is it <code>(true and false) or true</code> or <code>true and (false or true)</code>?. * To combine 'AND' and 'OR' values, group them together when combining. Eg:  * <code>(true and false) or true</code>: <code>prop.OR( prop.TRUE():AND(prop.FALSE()), prop.TRUE() )</code>  * <code>true and (false or true)</code>: <code>prop.TRUE():AND( prop.FALSE():OR(prop.TRUE()) )</code></li></ul> |
+| **Notes**                                            | <ul><li>The value of this instance will resolve by lazily checking the <code>value</code> of the contained <code>cp.prop</code> instances in the order provided. The first <code>falsy</code> value will be returned. Otherwise the last <code>truthy</code> value is returned.</li><li>The instance is <strong>immutable</strong>.</li><li>Once you have created an 'AND', you cannot 'OR' as a method. Eg, this will fail: <code>prop.TRUE():AND(prop:FALSE()):OR(prop.TRUE())</code>. This is to avoid ambiguity as to whether the 'AND' or 'OR' takes precedence. Is it <code>(true and false) or true</code> or <code>true and (false or true)</code>?.</li><li>To combine 'AND' and 'OR' values, group them together when combining. Eg:</li><li><code>(true and false) or true</code>: <code>prop.OR( prop.TRUE():AND(prop.FALSE()), prop.TRUE() )</code></li><li><code>true and (false or true)</code>: <code>prop.TRUE():AND( prop.FALSE():OR(prop.TRUE()) )</code></li></ul> |
 
 #### [bind](#bind)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.bind(owner[, relaxed]) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This provides a utility function for binding multiple properties to a single owner in |
-| **Parameters**                                       | <ul><li>owner     - The owner table to bind the properties to.* relaxed   - If <code>true</code>, then non-<code>cp.prop</code> fields will be ignored. Otherwise they generate an error.</li></ul> |
+| **Parameters**                                       | <ul><li>owner     - The owner table to bind the properties to.</li><li>relaxed   - If <code>true</code>, then non-<code>cp.prop</code> fields will be ignored. Otherwise they generate an error.</li></ul> |
 | **Returns**                                          | <ul><li>A function which should be called, passing in a table of key/value pairs which are <code>string</code>/<code>cp.prop</code> value.</li></ul> |
-| **Notes**                                            | <ul><li>If you are binding multiple <code>cp.prop</code> values that are dependent on other <code>cp.prop</code> values on the same owner (e.g. via <code>mutate</code> or a boolean join), you  will have to break it up into multiple <code>prop.bind(...) {...}</code> calls, so that the dependent property can access the bound property.* If a <code>cp.prop</code> provided as bindings already has a bound owner, it will be wrapped instead of bound directly.</li></ul> |
+| **Notes**                                            | <ul><li>If you are binding multiple <code>cp.prop</code> values that are dependent on other <code>cp.prop</code> values on the same owner (e.g. via <code>mutate</code> or a boolean join), you  will have to break it up into multiple <code>prop.bind(...) {...}</code> calls, so that the dependent property can access the bound property.</li><li>If a <code>cp.prop</code> provided as bindings already has a bound owner, it will be wrapped instead of bound directly.</li></ul> |
 
 #### [extend](#extend)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.extend(target, source) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Makes the `target` extend the `source`. It will copy all bound properties on the source table into the target, rebinding it to the target table. Other keys are inherited via the metatable. |
-| **Parameters**                                       | <ul><li><code>target</code> - The target to extend * <code>source</code> - The source to extend from</li></ul> |
+| **Parameters**                                       | <ul><li><code>target</code> - The target to extend</li><li><code>source</code> - The source to extend from</li></ul> |
 | **Returns**                                          | <ul><li>The <code>target</code>, now extending the <code>source</code>.</li></ul> |
 
 #### [FALSE](#false)
@@ -380,7 +380,7 @@ So, a little bit tricky. The general rule of thumb is:
 | **Description**                                      | Returns a new `cp.prop` which will return the first 'truthy' value provided by one of the provided properties. Otherwise, returns the last 'falsy' value. |
 | **Parameters**                                       | <ul><li><code>...</code>        - The list of <code>cp.prop</code> instances to 'OR' together.</li></ul> |
 | **Returns**                                          | <ul><li>a <code>cp.prop</code> instance.</li></ul> |
-| **Notes**                                            | <ul><li>The value of this instance will resolve by lazily checking the <code>value</code> of the contained <code>cp.prop</code> instances in the order provided. If any return <code>true</code>, no further instances will be checked. * The instance is immutable, since there is no realy way to flip the component values of an 'OR' in a way that makes sense. * Once you have created an 'OR', you cannot 'AND' as a method. Eg, this will fail: <code>prop.TRUE():OR(prop:FALSE()):AND(prop.TRUE())</code>. This is to avoid ambiguity as to whether the 'OR' or 'AND' takes precedence. Is it <code>(true or false) and true</code> or <code>true or (false and true)</code>?. * To combine 'AND' and 'OR' values, group them together when combining. Eg:  * <code>(true or false) and true</code>: <code>prop.AND( prop.TRUE():OR(prop.FALSE()), prop.TRUE() )</code>  * <code>true or (false and true)</code>: <code>prop.TRUE():OR( prop.FALSE():AND(prop.TRUE()) )</code></li></ul> |
+| **Notes**                                            | <ul><li>The value of this instance will resolve by lazily checking the <code>value</code> of the contained <code>cp.prop</code> instances in the order provided. If any return <code>true</code>, no further instances will be checked.</li><li>The instance is immutable, since there is no realy way to flip the component values of an 'OR' in a way that makes sense.</li><li>Once you have created an 'OR', you cannot 'AND' as a method. Eg, this will fail: <code>prop.TRUE():OR(prop:FALSE()):AND(prop.TRUE())</code>. This is to avoid ambiguity as to whether the 'OR' or 'AND' takes precedence. Is it <code>(true or false) and true</code> or <code>true or (false and true)</code>?.</li><li>To combine 'AND' and 'OR' values, group them together when combining. Eg:</li><li><code>(true or false) and true</code>: <code>prop.AND( prop.TRUE():OR(prop.FALSE()), prop.TRUE() )</code></li><li><code>true or (false and true)</code>: <code>prop.TRUE():OR( prop.FALSE():AND(prop.TRUE()) )</code></li></ul> |
 
 #### [THIS](#this)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.THIS([initialValue]) -> cp.prop` </span>                                                          |
@@ -405,9 +405,9 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `prop` value, with the provided `get` and `set` functions. |
-| **Parameters**                                       | <ul><li><code>getFn</code>      - The function that will get called to retrieve the current value. * <code>setFn</code>      - (optional) The function that will get called to set the new value. * <code>cloneFn</code>        - (optional) The function that will get called when cloning the property.</li></ul> |
+| **Parameters**                                       | <ul><li><code>getFn</code>      - The function that will get called to retrieve the current value.</li><li><code>setFn</code>      - (optional) The function that will get called to set the new value.</li><li><code>cloneFn</code>        - (optional) The function that will get called when cloning the property.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>cp.prop</code> instance.</li></ul> |
-| **Notes**                                            | <ul><li><code>getFn</code> signature: <code>function([owner]) -&gt; anything</code>  * <code>owner</code>     - If this is attached as a method, the owner table is passed in. * <code>setFn</code> signature: <code>function(newValue[, owner])</code>  * <code>newValue</code>  - The new value to store.  * <code>owner</code>     - If this is attached as a method, the owner table is passed in. * <code>cloneFn</code> signature: <code>function(prop) -&gt; new cp.prop</code> * This can also be executed by calling the module directly. E.g. <code>require('cp.prop')(myGetFunction)</code></li></ul> |
+| **Notes**                                            | <ul><li><code>getFn</code> signature: <code>function([owner]) -&gt; anything</code></li><li><code>owner</code>     - If this is attached as a method, the owner table is passed in.</li><li><code>setFn</code> signature: <code>function(newValue[, owner])</code></li><li><code>newValue</code>  - The new value to store.</li><li><code>owner</code>     - If this is attached as a method, the owner table is passed in.</li><li><code>cloneFn</code> signature: <code>function(prop) -&gt; new cp.prop</code></li><li>This can also be executed by calling the module directly. E.g. <code>require('cp.prop')(myGetFunction)</code></li></ul> |
 
 ### Methods
 
@@ -457,9 +457,9 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Binds the property to the specified owner. Once bound, it cannot be changed. |
-| **Parameters**                                       | <ul><li><code>owner</code>  - The owner to attach to. * <code>key</code>    - If provided, the property will be bound to the specified key.</li></ul> |
+| **Parameters**                                       | <ul><li><code>owner</code>  - The owner to attach to.</li><li><code>key</code>    - If provided, the property will be bound to the specified key.</li></ul> |
 | **Returns**                                          | <ul><li>the <code>cp.prop</code></li></ul> |
-| **Notes**                                            | <ul><li>Throws an <code>error</code> if the new owner is <code>nil</code>. * Throws an <code>error</code> if the owner already has a property with the name provided in <code>key</code>. * Throws an <code>error</code> if the <code>key</code> is not a string value.</li></ul> |
+| **Notes**                                            | <ul><li>Throws an <code>error</code> if the new owner is <code>nil</code>.</li><li>Throws an <code>error</code> if the owner already has a property with the name provided in <code>key</code>.</li><li>Throws an <code>error</code> if the <code>key</code> is not a string value.</li></ul> |
 
 #### [cached](#cached)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:cached() -> prop` </span>                                                          |
@@ -613,7 +613,7 @@ So, a little bit tricky. The general rule of thumb is:
 | **Description**                                      | Returns the `cp.rx.Observable` for the property. This will emit |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Observable</code> instance for the property.</li></ul> |
-| **Notes**                                            | <ul><li>It will only emit <code>onNext</code> events, never an <code>onError</code> or <code>onCompleted</code> event. * This will trigger an <code>update</code> each time it is called.</li></ul> |
+| **Notes**                                            | <ul><li>It will only emit <code>onNext</code> events, never an <code>onError</code> or <code>onCompleted</code> event.</li><li>This will trigger an <code>update</code> each time it is called.</li></ul> |
 
 #### [OR](#or)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:OR(...) -> cp.prop` </span>                                                          |
@@ -664,7 +664,7 @@ So, a little bit tricky. The general rule of thumb is:
 | **Description**                                      | Toggles the current value. Values are modified as follows: |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The new value.</li></ul> |
-| **Notes**                                            | <ul><li>If the value is immutable, an error will be thrown. * If you toggle a non-boolean parameter twice, it will end up set to <code>true</code>.</li></ul> |
+| **Notes**                                            | <ul><li>If the value is immutable, an error will be thrown.</li><li>If you toggle a non-boolean parameter twice, it will end up set to <code>true</code>.</li></ul> |
 
 #### [unwatch](#unwatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:unwatch(watchFn) -> boolean` </span>                                                          |
@@ -695,8 +695,8 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds the watch function to the value. When the value changes, watchers are notified by calling the function. The function should have the following signature: |
-| **Parameters**                                       | <ul><li><code>watchFn</code>        - The watch function, with the signature <code>function(newValue, owner)</code>. * <code>notifyNow</code>  - The function will be triggered immediately with the current state.  Defaults to <code>false</code>. * <code>uncloned</code>   - If <code>true</code>, the watch function will not be attached to any clones of this prop.</li></ul> |
-| **Returns**                                          | <ul><li><code>cp.prop</code>        - The same <code>cp.prop</code> instance * <code>function</code>   - The watch function, which can be passed to <a href="#unwatch">unwatch</a> to stop watching.</li></ul> |
+| **Parameters**                                       | <ul><li><code>watchFn</code>        - The watch function, with the signature <code>function(newValue, owner)</code>.</li><li><code>notifyNow</code>  - The function will be triggered immediately with the current state.  Defaults to <code>false</code>.</li><li><code>uncloned</code>   - If <code>true</code>, the watch function will not be attached to any clones of this prop.</li></ul> |
+| **Returns**                                          | <ul><li><code>cp.prop</code>        - The same <code>cp.prop</code> instance</li><li><code>function</code>   - The watch function, which can be passed to <a href="#unwatch">unwatch</a> to stop watching.</li></ul> |
 | **Notes**                                            | <ul><li>You can watch immutable values. Wrapped <code>cp.prop</code> instances may not be immutable, and any changes to them will cause watchers to be notified up the chain.</li></ul> |
 
 #### [wrap](#wrap)
@@ -704,6 +704,6 @@ So, a little bit tricky. The general rule of thumb is:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a new property that wraps this one. It will be able to get and set the same as this, and changes |
-| **Parameters**                                       | <ul><li><code>owner</code>  -    (optional) If provided, the wrapper will be bound to the specified owner. * <code>key</code>    -    (optional) If provided, the wrapper will be assigned to the owner with the specified key.</li></ul> |
+| **Parameters**                                       | <ul><li><code>owner</code>  -    (optional) If provided, the wrapper will be bound to the specified owner.</li><li><code>key</code>    -    (optional) If provided, the wrapper will be assigned to the owner with the specified key.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>cp.prop</code> which wraps this property.</li></ul> |
 

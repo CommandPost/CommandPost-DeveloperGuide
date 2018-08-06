@@ -123,7 +123,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Will trigger an 'activate' event, and then execute either the `successFn` or `failureFn` if the |
-| **Parameters**                                       | <ul><li>successFn     - the function to call if successfully activated.* failureFn        - the function to call if not activated after 5 seconds.</li></ul> |
+| **Parameters**                                       | <ul><li>successFn     - the function to call if successfully activated.</li><li>failureFn     - the function to call if not activated after 5 seconds.</li></ul> |
 | **Returns**                                          | <ul><li>Nothing.</li></ul> |
 
 #### [add](#add)
@@ -211,5 +211,5 @@ Commands Module.
 | **Description**                                      | Adds an event watcher to the command group. |
 | **Parameters**                                       | <ul><li>events    - The table of events to watch for (see Notes).</li></ul> |
 | **Returns**                                          | <ul><li>The command group instance.</li></ul> |
-| **Notes**                                            | <ul><li>The table can have properties with the following functions, which will be called for the specific event:<strong> <code>add(command)</code>:        Called after the provided <code>cp.commands.command</code> instance has been added.</strong> <code>activate()</code>         Called when the command group is activated.<strong> <code>enable()</code>:           Called when the command group is enabled.</strong> <code>disable()</code>:            Called when the command group is disabled.</li></ul> |
+| **Notes**                                            | <ul><li>The table can have properties with the following functions, which will be called for the specific event:<strong> <code>add(command)</code>:      Called after the provided <code>cp.commands.command</code> instance has been added.</strong> <code>activate()</code>         Called when the command group is activated.<strong> <code>enable()</code>:          Called when the command group is enabled.</strong> <code>disable()</code>:         Called when the command group is disabled.</li></ul> |
 

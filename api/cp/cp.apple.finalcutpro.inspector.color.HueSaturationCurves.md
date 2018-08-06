@@ -95,7 +95,7 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Sets or gets the View Mode for the Hue/Saturation Curves. |
 | **Parameters**                                       | <ul><li>[value] - An optional value to set the View Mode, as defined in <code>cp.apple.finalcutpro.inspector.color.HueSaturationCurves.VIEW_MODES</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the View Mode or <code>nil</code> if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>Value can be:   * 6 Curves   * Single Curves</li></ul> |
+| **Notes**                                            | <ul><li>Value can be:</li><li>6 Curves</li><li>Single Curves</li></ul> |
 
 #### [visibleCurve](#visiblecurve)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:visibleCurve([value]) -> string | nil` </span>                                                          |
@@ -104,5 +104,5 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Sets or gets the selected hue/saturation curve. |
 | **Parameters**                                       | <ul><li>[value] - An optional value to set the visible curve, as defined in <code>cp.apple.finalcutpro.inspector.color.HueSaturationCurves.CURVES</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the selected color curve or <code>nil</code> if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>Value can be:   * 6 Curves   * HvH   * HvS   * HvL   * LvS   * SvS   * Orange * Example Usage:   <code>require("cp.apple.finalcutpro"):inspector():color():hueSaturationCurves():visibleCurve("HvH")</code></li></ul> |
+| **Notes**                                            | <ul><li>Value can be:</li><li>6 Curves</li><li>HvH</li><li>HvS</li><li>HvL</li><li>LvS</li><li>SvS</li><li>Orange</li><li>Example Usage:   <code>require("cp.apple.finalcutpro"):inspector():color():hueSaturationCurves():visibleCurve("HvH")</code></li></ul> |
 

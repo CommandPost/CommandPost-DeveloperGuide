@@ -59,7 +59,7 @@ Represents a single property row, typically in a Property Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Call this to make `parent` table ready to be a parent of `PropertyRow`s. |
-| **Parameters**                                       | <ul><li>parent    - The parent table. * uiFinder  - The function or cp.prop which will be called to find the parent UI element. Functions will be passed the <code>parent</code> when being executed.</li></ul> |
+| **Parameters**                                       | <ul><li>parent    - The parent table.</li><li>uiFinder  - The function or cp.prop which will be called to find the parent UI element. Functions will be passed the <code>parent</code> when being executed.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Constructors
@@ -69,7 +69,7 @@ Represents a single property row, typically in a Property Inspector.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `PropertyRow` with the specified parent and label key. |
-| **Parameters**                                       | <ul><li>parent        - The parent object. * labelKey      - The key of the label that the row will map to. * index         - The row number with the same label to get. Defaults to <code>1</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>parent        - The parent object.</li><li>labelKey      - The key of the label that the row will map to.</li><li>index         - The row number with the same label to get. Defaults to <code>1</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>PropertyRow</code> instance.</li></ul> |
 
 ### Fields

@@ -55,6 +55,6 @@ Note: This will load the file on each request. To have values cached, use the `c
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Finds the specified `key` value in the plist file for the specified optional `context`, |
-| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve the value for. * <code>context</code>    - An optional table with additional context.</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>        - The key to retrieve the value for.</li><li><code>context</code>    - An optional table with additional context.</li></ul> |
 | **Returns**                                          | <ul><li>The value of the key, or <code>nil</code> if not found.</li></ul> |
 

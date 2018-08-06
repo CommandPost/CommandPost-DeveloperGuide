@@ -42,7 +42,7 @@ This sub-module provides access to the current location set configuration settin
 | **Type**                                             | Method |
 | **Description**                                      | Returns the name of the computeras specified in the Sharing Preferences, and its string encoding |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>name     - the computer name * encoding - the encoding type</li></ul> |
+| **Returns**                                          | <ul><li>name     - the computer name</li><li>encoding - the encoding type</li></ul> |
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with <code>hs.network.configuration:contents("Setup:/System")</code></li></ul> |
 
 #### [consoleUser](#consoleuser)
@@ -51,7 +51,7 @@ This sub-module provides access to the current location set configuration settin
 | **Type**                                             | Method |
 | **Description**                                      | Returns the name of the user currently logged into the system, including the users id and primary group id |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>name - the user name * uid  - the user ID for the user * gid  - the user's primary group ID</li></ul> |
+| **Returns**                                          | <ul><li>name - the user name</li><li>uid  - the user ID for the user</li><li>gid  - the user's primary group ID</li></ul> |
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with <code>hs.network.configuration:contents("State:/Users/ConsoleUser")</code></li></ul> |
 
 #### [contents](#contents)
@@ -59,7 +59,7 @@ This sub-module provides access to the current location set configuration settin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Return the contents of the store for the specified keys or keys matching the specified pattern(s) |
-| **Parameters**                                       | <ul><li>keys    - a string or table of strings containing the keys or patterns of keys, if <code>pattern</code> is true.  Defaults to all keys. * pattern - a boolean indicating wether or not the string(s) provided are to be considered regular expression patterns (true) or literal strings to match (false).  Defaults to false.</li></ul> |
+| **Parameters**                                       | <ul><li>keys    - a string or table of strings containing the keys or patterns of keys, if <code>pattern</code> is true.  Defaults to all keys.</li><li>pattern - a boolean indicating wether or not the string(s) provided are to be considered regular expression patterns (true) or literal strings to match (false).  Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>a table of key-value pairs from the dynamic store which match the specified keys or key patterns.</li></ul> |
 | **Notes**                                            | <ul><li>if no parameters are provided, then all key-value pairs in the dynamic store are returned.</li></ul> |
 
@@ -70,7 +70,7 @@ This sub-module provides access to the current location set configuration settin
 | **Description**                                      | Return the DHCP information for the specified service or the primary service if no parameter is specified. |
 | **Parameters**                                       | <ul><li>serviceID - an optional string contining the service ID of the interface for which to return DHCP info.  If this parameter is not provided, then the default (primary) service is queried.</li></ul> |
 | **Returns**                                          | <ul><li>a table containing DHCP information including lease time and DHCP options</li></ul> |
-| **Notes**                                            | <ul><li>a list of possible Service ID's can be retrieved with <code>hs.network.configuration:contents("Setup:/Network/Global/IPv4")</code> * generates an error if the service ID is invalid or was not assigned an IP address via DHCP.</li></ul> |
+| **Notes**                                            | <ul><li>a list of possible Service ID's can be retrieved with <code>hs.network.configuration:contents("Setup:/Network/Global/IPv4")</code></li><li>generates an error if the service ID is invalid or was not assigned an IP address via DHCP.</li></ul> |
 
 #### [hostname](#hostname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.configuration:hostname() -> name` </span>                                                          |
@@ -96,7 +96,7 @@ This sub-module provides access to the current location set configuration settin
 | **Description**                                      | Returns the current location identifier |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>location - the UUID for the currently active network location</li></ul> |
-| **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with <code>hs.network.configuration:contents("Setup:")</code> * If you have different locations defined in the Network preferences panel, this can be used to determine the currently active location.</li></ul> |
+| **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with <code>hs.network.configuration:contents("Setup:")</code></li><li>If you have different locations defined in the Network preferences panel, this can be used to determine the currently active location.</li></ul> |
 
 #### [locations](#locations)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.configuration:locations() -> table` </span>                                                          |
@@ -111,7 +111,7 @@ This sub-module provides access to the current location set configuration settin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Specify the key(s) or key pattern(s) to monitor for changes. |
-| **Parameters**                                       | <ul><li>keys    - a string or table of strings containing the keys or patterns of keys, if <code>pattern</code> is true.  Defaults to all keys. * pattern - a boolean indicating wether or not the string(s) provided are to be considered regular expression patterns (true) or literal strings to match (false).  Defaults to false.</li></ul> |
+| **Parameters**                                       | <ul><li>keys    - a string or table of strings containing the keys or patterns of keys, if <code>pattern</code> is true.  Defaults to all keys.</li><li>pattern - a boolean indicating wether or not the string(s) provided are to be considered regular expression patterns (true) or literal strings to match (false).  Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>the store Object</li></ul> |
 | **Notes**                                            | <ul><li>if no parameters are provided, then all key-value pairs in the dynamic store are monitored for changes.</li></ul> |
 
@@ -131,7 +131,7 @@ This sub-module provides access to the current location set configuration settin
 | **Description**                                      | Set or remove the callback function for a store object |
 | **Parameters**                                       | <ul><li>a function or nil to set or remove the store object callback function</li></ul> |
 | **Returns**                                          | <ul><li>the store object</li></ul> |
-| **Notes**                                            | <ul><li>The callback function will be invoked each time a monitored key changes value and the callback function should accept two parameters: the storeObject itself, and an array of the keys which contain values that have changed. * This method just sets the callback function.  You specify which keys to watch with <a href="#monitorKeys">hs.network.configuration:monitorKeys</a> and start or stop the watcher with <a href="#start">hs.network.configuration:start</a> or <a href="#stop">hs.network.configuartion:stop</a></li></ul> |
+| **Notes**                                            | <ul><li>The callback function will be invoked each time a monitored key changes value and the callback function should accept two parameters: the storeObject itself, and an array of the keys which contain values that have changed.</li><li>This method just sets the callback function.  You specify which keys to watch with <a href="#monitorKeys">hs.network.configuration:monitorKeys</a> and start or stop the watcher with <a href="#start">hs.network.configuration:start</a> or <a href="#stop">hs.network.configuartion:stop</a></li></ul> |
 
 #### [setLocation](#setlocation)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.configuration:setLocation(location) -> boolean` </span>                                                          |

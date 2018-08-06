@@ -52,7 +52,7 @@ Virtual Touch Bar Manager
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Callback Function for the Virtual Touch Bar |
-| **Parameters**                                       | <ul><li>obj - the touchbarObject the callback is for * message - the message to the callback, either "didEnter" or "didExit"</li></ul> |
+| **Parameters**                                       | <ul><li>obj - the touchbarObject the callback is for</li><li>message - the message to the callback, either "didEnter" or "didExit"</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [hide](#hide)

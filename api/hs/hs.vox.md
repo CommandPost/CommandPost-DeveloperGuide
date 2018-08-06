@@ -110,7 +110,7 @@ Controls for VOX music player
 | **Type**                                             | Function |
 | **Description**                                      | Gets the current playback state of vox |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>0 for paused * 1 for playing</li></ul> |
+| **Returns**                                          | <ul><li>0 for paused</li><li>1 for playing</li></ul> |
 
 #### [getUniqueID](#getuniqueid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.vox.getUniqueID()` </span>                                                          |

@@ -23,7 +23,7 @@ Represents a Tangent Action
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Action` instance. |
-| **Parameters**                                       | <ul><li>id        - The ID number of the action.* name      - The name of the action.</li></ul> |
+| **Parameters**                                       | <ul><li>id        - The ID number of the action.</li><li>name      - The name of the action.</li></ul> |
 | **Returns**                                          | <ul><li>the new <code>action</code>.</li></ul> |
 
 ### Methods

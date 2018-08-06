@@ -65,7 +65,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Specifies that the command is activated by pressing a key combination. |
-| **Parameters**                                       | <ul><li><code>modifiers</code>  - (optional) The table containing names of required modifiers. * <code>keyCode</code>  - (optional) The key code that will activate the command, with no modifiers.</li></ul> |
+| **Parameters**                                       | <ul><li><code>modifiers</code>  - (optional) The table containing names of required modifiers.</li><li><code>keyCode</code>    - (optional) The key code that will activate the command, with no modifiers.</li></ul> |
 | **Returns**                                          | <ul><li><code>command</code> if a <code>keyCode</code> was provided, or <code>modifier</code> if not.</li></ul> |
 
 #### [addShortcut](#addshortcut)
@@ -160,7 +160,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Creates a new command, which can have keyboard shortcuts assigned to it. |
-| **Parameters**                                       | <ul><li><code>id</code>     - the unique identifier for the command. E.g. 'cpCustomCommand' * <code>parent</code>  - The parent group.</li></ul> |
+| **Parameters**                                       | <ul><li><code>id</code>     - the unique identifier for the command. E.g. 'cpCustomCommand'</li><li><code>parent</code> - The parent group.</li></ul> |
 | **Returns**                                          | <ul><li>command - The command that was created.</li></ul> |
 
 #### [parent](#parent)

@@ -76,7 +76,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Stream Deck App Watcher Callback |
-| **Parameters**                                       | <ul><li>name - A string containing the name of the application * event - An event type * app - An <code>hs.application</code> object representing the application, or <code>nil</code> if the application couldn't be found</li></ul> |
+| **Parameters**                                       | <ul><li>name - A string containing the name of the application</li><li>event - An event type</li><li>app - An <code>hs.application</code> object representing the application, or <code>nil</code> if the application couldn't be found</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [buttonCallback](#buttoncallback)
@@ -84,7 +84,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Stream Deck Button Callback |
-| **Parameters**                                       | <ul><li>object - The <code>hs.streamdeck</code> userdata object * buttonID - A number containing the button that was pressed/released * pressed - A boolean indicating whether the button was pressed (<code>true</code>) or released (<code>false</code>)</li></ul> |
+| **Parameters**                                       | <ul><li>object - The <code>hs.streamdeck</code> userdata object</li><li>buttonID - A number containing the button that was pressed/released</li><li>pressed - A boolean indicating whether the button was pressed (<code>true</code>) or released (<code>false</code>)</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [clear](#clear)
@@ -100,7 +100,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Stream Deck Discovery Callback |
-| **Parameters**                                       | <ul><li>connected - A boolean, <code>true</code> if a device was connected, <code>false</code> if a device was disconnected * object - An <code>hs.streamdeck</code> object, being the device that was connected/disconnected</li></ul> |
+| **Parameters**                                       | <ul><li>connected - A boolean, <code>true</code> if a device was connected, <code>false</code> if a device was disconnected</li><li>object - An <code>hs.streamdeck</code> object, being the device that was connected/disconnected</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [getAction](#getaction)
@@ -108,7 +108,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Stream Deck Action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul> |
 
 #### [getActionHandlerID](#getactionhandlerid)
@@ -116,7 +116,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Stream Deck Action Handler ID. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul> |
 
 #### [getActionTitle](#getactiontitle)
@@ -124,7 +124,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Stream Deck Action Title. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul> |
 
 #### [getIcon](#geticon)
@@ -132,7 +132,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Stream Deck Icon. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Icon data as string</li></ul> |
 
 #### [getLabel](#getlabel)
@@ -140,7 +140,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Stream Deck Label. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Label as string</li></ul> |
 
 #### [groupStatus](#groupstatus)
@@ -148,7 +148,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a group's visibility status. |
-| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string. * status - the status of the group as a boolean.</li></ul> |
+| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string.</li><li>status - the status of the group as a boolean.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [init](#init)
@@ -156,7 +156,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialises the Stream Deck Plugin |
-| **Parameters**                                       | <ul><li>deps - Dependencies Table * env - Environment Table</li></ul> |
+| **Parameters**                                       | <ul><li>deps - Dependencies Table</li><li>env - Environment Table</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [start](#start)
@@ -180,7 +180,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Stream Deck action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * action - Action as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>action - Action as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateIcon](#updateicon)
@@ -188,7 +188,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Stream Deck icon. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * icon - Icon Data as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>icon - Icon Data as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateLabel](#updatelabel)
@@ -196,7 +196,7 @@ Elgato Stream Deck Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Stream Deck action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * label - Label as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>label - Label as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields

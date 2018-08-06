@@ -18,7 +18,6 @@ Final Cut Pro Viewer Overlays.
 * Functions - API calls offered directly by the extension
  * [getMemory](#getmemory)
  * [getStillsFolderPath](#getstillsfolderpath)
- * [getViewerUI](#getviewerui)
  * [hide](#hide)
  * [saveMemory](#savememory)
  * [setCustomGridColor](#setcustomgridcolor)
@@ -110,14 +109,6 @@ Final Cut Pro Viewer Overlays.
 | **Description**                                      | Gets the stills folder path. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The stills folder path as a string or <code>nil</code> if an error occurs.</li></ul> |
-
-#### [getViewerUI](#getviewerui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getViewerUI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets the Viewer UI. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.hide() -> none` </span>                                                          |

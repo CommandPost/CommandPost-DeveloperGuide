@@ -109,7 +109,7 @@ Controls for iTunes music player
 | **Type**                                             | Function |
 | **Description**                                      | Gets the current playback state of iTunes |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A string containing one of the following constants:   - <code>hs.itunes.state_stopped</code>   - <code>hs.itunes.state_paused</code>   - <code>hs.itunes.state_playing</code></li></ul> |
+| **Returns**                                          | <ul><li>A string containing one of the following constants:</li><li><code>hs.itunes.state_stopped</code></li><li><code>hs.itunes.state_paused</code></li><li><code>hs.itunes.state_playing</code></li></ul> |
 
 #### [getPosition](#getposition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.itunes.getPosition()` </span>                                                          |

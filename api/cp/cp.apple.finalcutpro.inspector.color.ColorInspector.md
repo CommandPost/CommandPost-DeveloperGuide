@@ -87,7 +87,7 @@ Color Inspector Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Activates the named correction type and number, if present. If no corrector with the type/number combination exists, a new one is added. |
-| **Parameters**                                       | <ul><li>correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc. * number           - The correction number for that type. Defaults to <code>1</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li><li>number           - The correction number for that type. Defaults to <code>1</code>.</li></ul> |
 | **Returns**                                          | <ul><li>ColorInspector object</li></ul> |
 
 #### [addCorrection](#addcorrection)

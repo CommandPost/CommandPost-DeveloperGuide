@@ -7,7 +7,7 @@ TIME FUNCTION EXECUTION:
 Use this to benchmark sections of code. Wrap them in a function inside this
 function call. Eg:
 
-local _bench = require("hs.bench")
+local _bench = require("cp.bench")
 
 local foo = _bench("Foo Test", function()
     return do.somethingHere()

@@ -40,7 +40,7 @@ Shortcut Commands
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Creates a new keyboard shortcut, attached to the specified `hs.commands.command` |
-| **Parameters**                                       | <ul><li><code>modifiers</code>  - The modifiers. * <code>keyCode</code>    - The key code.</li></ul> |
+| **Parameters**                                       | <ul><li><code>modifiers</code>  - The modifiers.</li><li><code>keyCode</code>    - The key code.</li></ul> |
 | **Returns**                                          | <ul><li>shortcut - The shortcut that was created.</li></ul> |
 
 ### Fields
@@ -58,7 +58,7 @@ Shortcut Commands
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | This function binds the shortcut to a hotkey, with the specified callback functions for `pressedFn`, `releasedFn` and `repeatedFn`. |
-| **Parameters**                                       | <ul><li><code>pressedFn</code>  - (optional) If present, this is called when the shortcut combo is pressed. * <code>releasedFn</code>  - (optional) If present, this is called when the shortcut combo is released. * <code>repeatedFn</code> - (optional) If present, this is called when the shortcut combo is repeated.</li></ul> |
+| **Parameters**                                       | <ul><li><code>pressedFn</code>  - (optional) If present, this is called when the shortcut combo is pressed.</li><li><code>releasedFn</code> - (optional) If present, this is called when the shortcut combo is released.</li><li><code>repeatedFn</code> - (optional) If present, this is called when the shortcut combo is repeated.</li></ul> |
 | **Returns**                                          | <ul><li><code>self</code></li></ul> |
 | **Notes**                                            | <ul><li>If the shortcut is enabled, the hotkey will also be enabled at this point.</li></ul> |
 

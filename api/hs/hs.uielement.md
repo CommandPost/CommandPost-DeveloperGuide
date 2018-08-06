@@ -36,7 +36,7 @@ A generalized framework for working with OSX UI elements
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new watcher for the element represented by self (the object the method is being invoked for). |
-| **Parameters**                                       | <ul><li>a function to be called when a watched event occurs.  The argument will be passed the following arguments:   * element: The element the event occurred on. Note this is not always the element being watched.   * event: The name of the event that occurred.   * watcher: The watcher object being created.   * userData: The userData you included, if any. * an optional userData object which will be included as the final argument to the callback function when it is called.</li></ul> |
+| **Parameters**                                       | <ul><li>a function to be called when a watched event occurs.  The argument will be passed the following arguments:</li><li>element: The element the event occurred on. Note this is not always the element being watched.</li><li>event: The name of the event that occurred.</li><li>watcher: The watcher object being created.</li><li>userData: The userData you included, if any.</li><li>an optional userData object which will be included as the final argument to the callback function when it is called.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.uielement.watcher</code> object, or <code>nil</code> if an error occurred</li></ul> |
 
 ### Methods

@@ -87,7 +87,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Description**                                      | Creates a new speech synthesizer object for use by Hammerspoon. |
 | **Parameters**                                       | <ul><li>voice - an optional string specifying the voice the synthesizer should use for generating speech.  Defaults to the system voice.</li></ul> |
 | **Returns**                                          | <ul><li>a speech synthesizer object or nil, if the system was unable to create a new synthesizer.</li></ul> |
-| **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  <code>com.apple.speech.synthesis.voice.*name*</code>.  You can provide this suffix or not as you prefer when specifying a voice name. * You can change the voice later with the <code>hs.speech:voice</code> method.</li></ul> |
+| **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  <code>com.apple.speech.synthesis.voice.*name*</code>.  You can provide this suffix or not as you prefer when specifying a voice name.</li><li>You can change the voice later with the <code>hs.speech:voice</code> method.</li></ul> |
 
 ### Methods
 
@@ -131,7 +131,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Pauses the output of the speech synthesizer. |
-| **Parameters**                                       | <ul><li>where - an optional string indicating when to pause the audio output (defaults to "immediate").  The string can be one of the following:   * "immediate" - pauses output immediately.  If in the middle of a word, when speech is resumed, the word will be repeated.   * "word"      - pauses at the end of the current word.   * "sentence"  - pauses at the end of the current sentence.</li></ul> |
+| **Parameters**                                       | <ul><li>where - an optional string indicating when to pause the audio output (defaults to "immediate").  The string can be one of the following:</li><li>"immediate" - pauses output immediately.  If in the middle of a word, when speech is resumed, the word will be repeated.</li><li>"word"      - pauses at the end of the current word.</li><li>"sentence"  - pauses at the end of the current sentence.</li></ul> |
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul> |
 
 #### [phonemes](#phonemes)
@@ -141,7 +141,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Description**                                      | Returns the phonemes which would be spoken if the text were to be synthesized. |
 | **Parameters**                                       | <ul><li>text - the text to tokenize into phonemes.</li></ul> |
 | **Returns**                                          | <ul><li>the text converted into the series of phonemes the synthesizer would use for the provided text if it were to be synthesized.</li></ul> |
-| **Notes**                                            | <ul><li>This method only returns a phonetic representation of the text if a Macintalk voice has been selected.  The more modern higher quality voices do not use a phonetic representation and an empty string will be returned if this method is used. * You can modify the phonetic representation and feed it into <code>hs.speech:speak</code> if you find that the default interpretation is not correct.  You will need to set the input mode to Phonetic by prefixing the text with "[[inpt PHON]]". * The specific phonetic symbols recognized by a given voice can be queried by examining the array returned by <code>hs.speech:phoneticSymbols</code> after setting an appropriate voice.</li></ul> |
+| **Notes**                                            | <ul><li>This method only returns a phonetic representation of the text if a Macintalk voice has been selected.  The more modern higher quality voices do not use a phonetic representation and an empty string will be returned if this method is used.</li><li>You can modify the phonetic representation and feed it into <code>hs.speech:speak</code> if you find that the default interpretation is not correct.  You will need to set the input mode to Phonetic by prefixing the text with "[[inpt PHON]]".</li><li>The specific phonetic symbols recognized by a given voice can be queried by examining the array returned by <code>hs.speech:phoneticSymbols</code> after setting an appropriate voice.</li></ul> |
 
 #### [phoneticSymbols](#phoneticsymbols)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:phoneticSymbols() -> array | nil` </span>                                                          |
@@ -150,7 +150,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Description**                                      | Returns an array of the phonetic symbols recognized by the synthesizer for the current voice. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>For MacinTalk voices, this method will return an array of the recognized symbols for the currently selected voice.  For the modern higher quality voices, or if an error occurs, returns nil.</li></ul> |
-| **Notes**                                            | <ul><li>Each entry in the array of phonemes returned will contain the following keys:   * Symbol      - The textual representation of this phoneme when returned by <code>hs.speech:phonemes</code> or that you should use for this sound when crafting a phonetic string yourself.   * Opcode      - The numeric opcode passed to the callback for the "willSpeakPhoneme" message corresponding to this phoneme.   * Example     - An example word which contains the sound the phoneme represents   * HiliteEnd   - The character position in the Example where this phoneme's sound begins   * HiliteStart - The character position in the Example where this phoneme's sound ends</li></ul> |
+| **Notes**                                            | <ul><li>Each entry in the array of phonemes returned will contain the following keys:</li><li>Symbol      - The textual representation of this phoneme when returned by <code>hs.speech:phonemes</code> or that you should use for this sound when crafting a phonetic string yourself.</li><li>Opcode      - The numeric opcode passed to the callback for the "willSpeakPhoneme" message corresponding to this phoneme.</li><li>Example     - An example word which contains the sound the phoneme represents</li><li>HiliteEnd   - The character position in the Example where this phoneme's sound begins</li><li>HiliteStart - The character position in the Example where this phoneme's sound ends</li></ul> |
 
 #### [pitch](#pitch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:pitch([pitch]) -> synthsizerObject | pitch | nil` </span>                                                          |
@@ -177,7 +177,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Description**                                      | Reset a synthesizer back to its default state. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Returns the synthesizer object.  Returns nil if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>This method will reset a synthesizer to its default state, including pitch, modulation, volume, rate, etc. * The changes go into effect immediately, if queried, but will not affect a synthesis in progress.</li></ul> |
+| **Notes**                                            | <ul><li>This method will reset a synthesizer to its default state, including pitch, modulation, volume, rate, etc.</li><li>The changes go into effect immediately, if queried, but will not affect a synthesis in progress.</li></ul> |
 
 #### [setCallback](#setcallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:setCallback(fn | nil) -> synthesizerObject` </span>                                                          |
@@ -210,7 +210,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Starts speaking the provided text and saves the audio as an AIFF file. |
-| **Parameters**                                       | <ul><li>textToSpeak - the text to speak with the synthesizer. * destination - the path to the file to create and store the audio data in.</li></ul> |
+| **Parameters**                                       | <ul><li>textToSpeak - the text to speak with the synthesizer.</li><li>destination - the path to the file to create and store the audio data in.</li></ul> |
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul> |
 
 #### [stop](#stop)
@@ -218,7 +218,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Stops the output of the speech synthesizer. |
-| **Parameters**                                       | <ul><li>where - an optional string indicating when to stop the audio output (defaults to "immediate").  The string can be one of the following:   * "immediate" - stops output immediately.   * "word"      - stops at the end of the current word.   * "sentence"  - stops at the end of the current sentence.</li></ul> |
+| **Parameters**                                       | <ul><li>where - an optional string indicating when to stop the audio output (defaults to "immediate").  The string can be one of the following:</li><li>"immediate" - stops output immediately.</li><li>"word"      - stops at the end of the current word.</li><li>"sentence"  - stops at the end of the current sentence.</li></ul> |
 | **Returns**                                          | <ul><li>the synthesizer object</li></ul> |
 
 #### [usesFeedbackWindow](#usesfeedbackwindow)
@@ -235,9 +235,9 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets or sets the active voice for a synthesizer. |
-| **Parameters**                                       | <ul><li>full  - an optional boolean indicating whether or not you wish the full internal voice name to be returned, or if you want the shorter version.  Defaults to false. * voice - an optional string indicating the name of the voice to change the synthesizer to.</li></ul> |
+| **Parameters**                                       | <ul><li>full  - an optional boolean indicating whether or not you wish the full internal voice name to be returned, or if you want the shorter version.  Defaults to false.</li><li>voice - an optional string indicating the name of the voice to change the synthesizer to.</li></ul> |
 | **Returns**                                          | <ul><li>If no parameter is provided (or the parameter is a boolean value), returns the current value; otherwise returns the synthesizer object or nil if the voice could not be changed for some reason.</li></ul> |
-| **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  <code>com.apple.speech.synthesis.voice.*name*</code>.  You can provide this suffix or not as you prefer when specifying a voice name. * The voice cannot be changed while the synthesizer is currently producing output. * If you change the voice while a synthesizer is paused, the current synthesis will be terminated and the voice will be changed.</li></ul> |
+| **Notes**                                            | <ul><li>All of the names that have been encountered thus far follow this pattern for their full name:  <code>com.apple.speech.synthesis.voice.*name*</code>.  You can provide this suffix or not as you prefer when specifying a voice name.</li><li>The voice cannot be changed while the synthesizer is currently producing output.</li><li>If you change the voice while a synthesizer is paused, the current synthesis will be terminated and the voice will be changed.</li></ul> |
 
 #### [volume](#volume)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:volume([volume]) -> synthesizerObject | volume` </span>                                                          |

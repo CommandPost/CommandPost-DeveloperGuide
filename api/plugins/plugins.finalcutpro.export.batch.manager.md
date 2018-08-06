@@ -103,7 +103,7 @@ Manager for the Batch Export Window.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Adds a Handler |
-| **Parameters**                                       | <ul><li>id - The ID * handlerFn - the handler function</li></ul> |
+| **Parameters**                                       | <ul><li>id - The ID</li><li>handlerFn - the handler function</li></ul> |
 | **Returns**                                          | <ul><li>Nothing</li></ul> |
 
 #### [addPanel](#addpanel)

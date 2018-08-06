@@ -21,7 +21,7 @@ Watches folders for specific file extensions and reloads the app if they change.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Checks that the file that triggered the Path Watcher matches the extension given. |
-| **Parameters**                                       | <ul><li><code>files</code>      - Table of files to check as strings * <code>flagTables</code> - Table of flagTables (see: <code>hs.pathwatcher.new</code>)</li></ul> |
+| **Parameters**                                       | <ul><li><code>files</code>      - Table of files to check as strings</li><li><code>flagTables</code> - Table of flagTables (see: <code>hs.pathwatcher.new</code>)</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [matchesExtensions](#matchesextensions)

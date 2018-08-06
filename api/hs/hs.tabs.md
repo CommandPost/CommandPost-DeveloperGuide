@@ -26,7 +26,7 @@ Place the windows of an application into tabs drawn on its titlebar
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Focuses a specific tab of an app |
-| **Parameters**                                       | <ul><li>app - An <code>hs.application</code> object previously enabled for tabbing * num - A tab number to switch to</li></ul> |
+| **Parameters**                                       | <ul><li>app - An <code>hs.application</code> object previously enabled for tabbing</li><li>num - A tab number to switch to</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>If num is higher than the number of tabs, the last tab will be focussed</li></ul> |
 

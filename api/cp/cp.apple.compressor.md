@@ -16,12 +16,12 @@ Represents the Compressor application, providing functions that allow different 
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bundleID](#bundleid)
+ * [doRestart](#dorestart)
  * [hide](#hide)
  * [launch](#launch)
  * [notifier](#notifier)
  * [path](#path)
  * [quit](#quit)
- * [restart](#restart)
  * [show](#show)
 
 ## API Documentation
@@ -74,6 +74,14 @@ Represents the Compressor application, providing functions that allow different 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string of the Compressor Bundle ID</li></ul> |
 
+#### [doRestart](#dorestart)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:doRestart() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that will restart the application. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the application was running and restarted successfully.</li></ul> |
+
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -113,14 +121,6 @@ Represents the Compressor application, providing functions that allow different 
 | **Description**                                      | Quits Compressor |
 | **Parameters**                                       | <ul><li>waitSeconds  - if provided, we will wait for the specified time for the quit to complete before returning.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>compressor</code> instance.</li></ul> |
-
-#### [restart](#restart)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:restart([waitSeconds]) -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Restart the application. |
-| **Parameters**                                       | <ul><li>waitSeconds  - if provided, we will wait for up to the specified seconds for the restart to complete before returning.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the application was running and restarted successfully.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.compressor:show() -> self` </span>                                                          |

@@ -76,7 +76,7 @@ Then, whenever `thing.update(xxx)` is called, the watcher will output `"New valu
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Notifies watchers of the specified event type. |
-| **Parameters**                                       | <ul><li><code>type</code>   - The event type to notify. Must be one of the supported events. * <code>...</code>    - These parameters are passed directly to the event watcher functions.</li></ul> |
+| **Parameters**                                       | <ul><li><code>type</code>   - The event type to notify. Must be one of the supported events.</li><li><code>...</code>    - These parameters are passed directly to the event watcher functions.</li></ul> |
 | **Returns**                                          | <ul><li>Nothing.</li></ul> |
 
 #### [unwatch](#unwatch)

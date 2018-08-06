@@ -20,7 +20,7 @@ Represents a Tangent Binding
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Binding` instance. |
-| **Parameters**                                       | <ul><li>id        - The ID number of the binding.* name      - The name of the binding.</li></ul> |
+| **Parameters**                                       | <ul><li>id        - The ID number of the binding.</li><li>name      - The name of the binding.</li></ul> |
 | **Returns**                                          | <ul><li>the new <code>binding</code>.</li></ul> |
 
 ### Methods

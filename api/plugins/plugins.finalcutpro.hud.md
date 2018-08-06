@@ -80,7 +80,7 @@ Final Cut Pro HUD.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets the button values from settings. |
-| **Parameters**                                       | <ul><li>index - Index of the Button * defaultValue - Default Value of the Button</li></ul> |
+| **Parameters**                                       | <ul><li>index - Index of the Button</li><li>defaultValue - Default Value of the Button</li></ul> |
 | **Returns**                                          | <ul><li>Button value</li></ul> |
 
 #### [getButtonCommand](#getbuttoncommand)
@@ -152,7 +152,7 @@ Final Cut Pro HUD.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the button. |
-| **Parameters**                                       | <ul><li>index - Index of the Button * value - Value you want to set the button to.</li></ul> |
+| **Parameters**                                       | <ul><li>index - Index of the Button</li><li>value - Value you want to set the button to.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [show](#show)

@@ -193,7 +193,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets a MIDI Device. |
-| **Parameters**                                       | <ul><li>deviceName - The device name. * virtual - A boolean that defines whether or not the device is virtual.</li></ul> |
+| **Parameters**                                       | <ul><li>deviceName - The device name.</li><li>virtual - A boolean that defines whether or not the device is virtual.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>hs.midi</code> object or nil if no MIDI device by that name exists.</li></ul> |
 
 #### [getItem](#getitem)
@@ -201,7 +201,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets a MIDI item from Preferences. |
-| **Parameters**                                       | <ul><li>item - The item you want to get. * button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>item - The item you want to get.</li><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>A table otherwise <code>nil</code></li></ul> |
 
 #### [getItems](#getitems)
@@ -225,7 +225,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a group's visibility status. |
-| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string. * status - the status of the group as a boolean.</li></ul> |
+| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string.</li><li>status - the status of the group as a boolean.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [init](#init)
@@ -233,7 +233,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialises the MIDI Plugin |
-| **Parameters**                                       | <ul><li>deps - Dependencies Table * env - Environment Table</li></ul> |
+| **Parameters**                                       | <ul><li>deps - Dependencies Table</li><li>env - Environment Table</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [midiCallback](#midicallback)
@@ -241,7 +241,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | MIDI Callback |
-| **Parameters**                                       | <ul><li>object - The <code>hs.midi</code> userdata object * deviceName - Device name as string * commandType - Command Type as string * description - Description as string * metadata - A table containing metadata for the MIDI command</li></ul> |
+| **Parameters**                                       | <ul><li>object - The <code>hs.midi</code> userdata object</li><li>deviceName - Device name as string</li><li>commandType - Command Type as string</li><li>description - Description as string</li><li>metadata - A table containing metadata for the MIDI command</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [nextSubGroup](#nextsubgroup)
@@ -267,7 +267,7 @@ MIDI Manager Plugin.
 | **Description**                                      | Process MMC Data |
 | **Parameters**                                       | <ul><li>sysexData - Sysex Data as Hex String</li></ul> |
 | **Returns**                                          | <ul><li>A string with the MMC command, and any additional parameters as per below notes.</li></ul> |
-| **Notes**                                            | <ul><li>The possible MMC commands are:   * STOP   * PLAY   * DEFERRED_PLAY   * FAST_FORWARD   * REWIND   * RECORD_STROBE   * RECORD_EXIT   * RECORD_PAUSE   * PAUSE   * EJECT   * CHASE   * MMC_RESET   * WRITE   * GOTO     * timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").     * frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".     * subframe - Subframe as string.   * ERROR   * SHUTTLE</li></ul> |
+| **Notes**                                            | <ul><li>The possible MMC commands are:</li><li>STOP</li><li>PLAY</li><li>DEFERRED_PLAY</li><li>FAST_FORWARD</li><li>REWIND</li><li>RECORD_STROBE</li><li>RECORD_EXIT</li><li>RECORD_PAUSE</li><li>PAUSE</li><li>EJECT</li><li>CHASE</li><li>MMC_RESET</li><li>WRITE</li><li>GOTO<ul><li>timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").</li><li>frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".</li><li>subframe - Subframe as string.</li></ul></li><li>ERROR</li><li>SHUTTLE</li></ul> |
 
 #### [processMTC](#processmtc)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.processMTC(mtcData) -> string, ...` </span>                                                          |
@@ -282,7 +282,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Registers a MIDI Callback. |
-| **Parameters**                                       | <ul><li>id - The ID as a string. * fn - The function you want to trigger.</li></ul> |
+| **Parameters**                                       | <ul><li>id - The ID as a string.</li><li>fn - The function you want to trigger.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [registerListenMMCFunction](#registerlistenmmcfunction)
@@ -290,7 +290,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Registers a MMC Listening Function |
-| **Parameters**                                       | <ul><li>id - The group ID as a string. * fn - The function you want to trigger.</li></ul> |
+| **Parameters**                                       | <ul><li>id - The group ID as a string.</li><li>fn - The function you want to trigger.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [registerListenMTCFunction](#registerlistenmtcfunction)
@@ -298,7 +298,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Registers a MTC Listening Function |
-| **Parameters**                                       | <ul><li>id - The group ID as a string. * fn - The function you want to trigger.</li></ul> |
+| **Parameters**                                       | <ul><li>id - The group ID as a string.</li><li>fn - The function you want to trigger.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [sendMMC](#sendmmc)
@@ -306,16 +306,16 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sends MMC Data to a MIDI Device. |
-| **Parameters**                                       | <ul><li>deviceName - The MIDI Device name. * virtual - Is this MIDI Device virtual as boolean? * channelNumber - "00" to "7F", where "7F" is all devices. * commandType - Command Type as string (see possible options in Notes below) * parameters - Optional parameters in a table.</li></ul> |
+| **Parameters**                                       | <ul><li>deviceName - The MIDI Device name.</li><li>virtual - Is this MIDI Device virtual as boolean?</li><li>channelNumber - "00" to "7F", where "7F" is all devices.</li><li>commandType - Command Type as string (see possible options in Notes below)</li><li>parameters - Optional parameters in a table.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successfully sent otherwise <code>false</code>.</li></ul> |
-| **Notes**                                            | <ul><li>The possible MMC commands are:   * STOP   * PLAY   * DEFERRED_PLAY   * FAST_FORWARD   * REWIND   * RECORD_STROBE   * RECORD_EXIT   * RECORD_PAUSE   * PAUSE   * EJECT   * CHASE   * MMC_RESET   * WRITE   * GOTO     * timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").     * frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".     * subFrame - Subframe as string.   * ERROR   * SHUTTLE* Example Usage:  <code>lua    _plugins("core.midi.manager").sendMMC("CommandPost", false, "7F", "GOTO", {timecode="01:02:03:04", frameRate="25", subFrame="00"})</code></li></ul> |
+| **Notes**                                            | <ul><li>The possible MMC commands are:</li><li>STOP</li><li>PLAY</li><li>DEFERRED_PLAY</li><li>FAST_FORWARD</li><li>REWIND</li><li>RECORD_STROBE</li><li>RECORD_EXIT</li><li>RECORD_PAUSE</li><li>PAUSE</li><li>EJECT</li><li>CHASE</li><li>MMC_RESET</li><li>WRITE</li><li>GOTO<ul><li>timecode - Timecode as string, in the following format: "hh:mm:ss:fr" (i.e. "12:03:03:13").</li><li>frameRate - Frame Rate as string, possible options include: "24", "25", "30 DF" or "30 NDF".</li><li>subFrame - Subframe as string.</li></ul></li><li>ERROR</li><li>SHUTTLE</li><li>Example Usage:  <code>lua    _plugins("core.midi.manager").sendMMC("CommandPost", false, "7F", "GOTO", {timecode="01:02:03:04", frameRate="25", subFrame="00"})</code></li></ul> |
 
 #### [setItem](#setitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.setItem(item, button, group, value) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Stores a MIDI item in Preferences. |
-| **Parameters**                                       | <ul><li>item - The item you want to set. * button - Button ID as string * group - Group ID as string * value - The value of the item you want to set.</li></ul> |
+| **Parameters**                                       | <ul><li>item - The item you want to set.</li><li>button - Button ID as string</li><li>group - Group ID as string</li><li>value - The value of the item you want to set.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [start](#start)
@@ -339,7 +339,7 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a MIDI action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * actionTitle - Action Title as string * handlerID - Handler ID as string * action - Action in a table</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>actionTitle - Action Title as string</li><li>handlerID - Handler ID as string</li><li>action - Action in a table</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [virtualDevices](#virtualdevices)

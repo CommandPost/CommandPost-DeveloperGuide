@@ -236,7 +236,7 @@ approximations, and leave it at that!
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Attempts to parse the timecode string value with the specified framerate. |
-| **Parameters**                                       | <ul><li>timecodeString   - The timecode as a string. * framerate        - The number of frames per second.</li></ul> |
+| **Parameters**                                       | <ul><li>timecodeString   - The timecode as a string.</li><li>framerate        - The number of frames per second.</li></ul> |
 | **Returns**                                          | <ul><li>a new <code>flicks</code> instance for the timecode.</li></ul> |
 
 ### Methods
@@ -260,6 +260,6 @@ approximations, and leave it at that!
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Converts the flicks into a string of the format "HH[:]MM[:]SS[:;]FF", with hours, minutes and frames listed respectively. |
-| **Parameters**                                       | <ul><li>framerate    - the framerate to use when calculating frames per second. * delimeter    - either <code>nil</code> (default), ":", or ";".</li></ul> |
+| **Parameters**                                       | <ul><li>framerate    - the framerate to use when calculating frames per second.</li><li>delimeter    - either <code>nil</code> (default), ":", or ";".</li></ul> |
 | **Returns**                                          | <ul><li>String of the timecode.</li></ul> |
 

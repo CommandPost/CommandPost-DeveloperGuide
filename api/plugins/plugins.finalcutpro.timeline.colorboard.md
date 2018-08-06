@@ -36,7 +36,7 @@ Color Board Plugins.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Color Board - Puck Control Via Mouse |
-| **Parameters**                                       | <ul><li>aspect - "global", "shadows", "midtones" or "highlights" * property - "Color", "Saturation" or "Exposure"</li></ul> |
+| **Parameters**                                       | <ul><li>aspect - "global", "shadows", "midtones" or "highlights"</li><li>property - "Color", "Saturation" or "Exposure"</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [startShiftingPuck](#startshiftingpuck)
@@ -44,7 +44,7 @@ Color Board Plugins.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Starts shifting the puck, repeating at the keyboard repeat rate. Runs until `stopShiftingPuck()` is called. |
-| **Parameters**                                       | <ul><li>puck         - The puck to shift * property      - The property to shift (typically the <code>percent</code> or <code>angle</code> value for the puck) * amount        - The amount to shift the property.</li></ul> |
+| **Parameters**                                       | <ul><li>puck         - The puck to shift</li><li>property     - The property to shift (typically the <code>percent</code> or <code>angle</code> value for the puck)</li><li>amount       - The amount to shift the property.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [stopShiftingPuck](#stopshiftingpuck)

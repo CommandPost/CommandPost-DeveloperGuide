@@ -39,7 +39,7 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Group` instance. |
-| **Parameters**                                       | <ul><li>name      - The name of the group. * parent    - The parent group.</li></ul> |
+| **Parameters**                                       | <ul><li>name      - The name of the group.</li><li>parent    - The parent group.</li></ul> |
 
 ### Methods
 

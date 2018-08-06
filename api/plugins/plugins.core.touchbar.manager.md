@@ -114,7 +114,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Touch Bar Action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul> |
 
 #### [getActionHandlerID](#getactionhandlerid)
@@ -122,7 +122,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Touch Bar Action Handler ID. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul> |
 
 #### [getActionTitle](#getactiontitle)
@@ -130,7 +130,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Touch Bar Action Title. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul> |
 
 #### [getIcon](#geticon)
@@ -138,7 +138,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Touch Bar Icon. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Icon data as string</li></ul> |
 
 #### [getLabel](#getlabel)
@@ -146,7 +146,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a specific Touch Bar Label. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Label as string</li></ul> |
 
 #### [groupStatus](#groupstatus)
@@ -154,7 +154,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a group's visibility status. |
-| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string. * status - the status of the group as a boolean.</li></ul> |
+| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string.</li><li>status - the status of the group as a boolean.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [incrementActiveSubGroup](#incrementactivesubgroup)
@@ -210,7 +210,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Touch Bar action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * action - Action as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>action - Action as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateIcon](#updateicon)
@@ -218,7 +218,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Touch Bar icon. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * icon - Icon Data as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>icon - Icon Data as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateLabel](#updatelabel)
@@ -226,7 +226,7 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Touch Bar action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string * group - Group ID as string * label - Label as string</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>label - Label as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields

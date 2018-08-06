@@ -104,7 +104,7 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Sets or gets the View Mode for the Color Curves. |
 | **Parameters**                                       | <ul><li>[value] - An optional value to set the View Mode, as defined in <code>cp.apple.finalcutpro.inspector.color.ColorCurves.VIEW_MODES</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the View Mode or <code>nil</code> if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>Value can be:   * All Curves   * Single Curves</li></ul> |
+| **Notes**                                            | <ul><li>Value can be:</li><li>All Curves</li><li>Single Curves</li></ul> |
 
 #### [visibleCurve](#visiblecurve)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorCurves:visibleCurve([value]) -> string | nil` </span>                                                          |
@@ -113,5 +113,5 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Sets or gets the selected color curve. |
 | **Parameters**                                       | <ul><li>[value] - An optional value to set the visible curve, as defined in <code>cp.apple.finalcutpro.inspector.color.ColorCurves.CURVES</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the selected color curve or <code>nil</code> if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>Value can be:   * All Curves   * Luma   * Red   * Green   * Blue * Example Usage:   <code>require("cp.apple.finalcutpro"):inspector():color():colorCurves():visibleCurve("Luma")</code></li></ul> |
+| **Notes**                                            | <ul><li>Value can be:</li><li>All Curves</li><li>Luma</li><li>Red</li><li>Green</li><li>Blue</li><li>Example Usage:   <code>require("cp.apple.finalcutpro"):inspector():color():colorCurves():visibleCurve("Luma")</code></li></ul> |
 

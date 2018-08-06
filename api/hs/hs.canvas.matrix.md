@@ -39,7 +39,7 @@ For more information on the mathematics behind these, you can check the web.  On
 | **Description**                                      | Specifies the identity matrix.  Resets all existing transformations when applied as a method to an existing matrixObject. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the identity matrix.</li></ul> |
-| **Notes**                                            | <ul><li>The identity matrix can be thought of as "apply no transformations at all" or "render as specified". * Mathematically this is represented as:~~~[ 1,  0,  0 ][ 0,  1,  0 ][ 0,  0,  1 ]~~~</li></ul> |
+| **Notes**                                            | <ul><li>The identity matrix can be thought of as "apply no transformations at all" or "render as specified".</li><li>Mathematically this is represented as:~~~[ 1,  0,  0 ][ 0,  1,  0 ][ 0,  0,  1 ]~~~</li></ul> |
 
 ### Methods
 
@@ -50,7 +50,7 @@ For more information on the mathematics behind these, you can check the web.  On
 | **Description**                                      | Appends the specified matrix transformations to the matrix and returns the new matrix.  This method cannot be used as a constructor. |
 | **Parameters**                                       | <ul><li><code>matrix</code> - the table to append to the current matrix.</li></ul> |
 | **Returns**                                          | <ul><li>the new matrix</li></ul> |
-| **Notes**                                            | <ul><li>Mathematically this method multiples the original matrix by the new one and returns the result of the multiplication. * You can use this method to "stack" additional transformations on top of existing transformations, without having to know what the existing transformations in effect for the canvas element are.</li></ul> |
+| **Notes**                                            | <ul><li>Mathematically this method multiples the original matrix by the new one and returns the result of the multiplication.</li><li>You can use this method to "stack" additional transformations on top of existing transformations, without having to know what the existing transformations in effect for the canvas element are.</li></ul> |
 
 #### [invert](#invert)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.matrix:invert() -> matrixObject` </span>                                                          |
@@ -59,7 +59,7 @@ For more information on the mathematics behind these, you can check the web.  On
 | **Description**                                      | Generates the mathematical inverse of the matrix.  This method cannot be used as a constructor. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the inverted matrix.</li></ul> |
-| **Notes**                                            | <ul><li>Inverting a matrix which represents a series of transformations has the effect of reversing or undoing the original transformations. * This is useful when used with <a href="#append">hs.canvas.matrix.append</a> to undo a previously applied transformation without actually replacing all of the transformations which may have been applied to a canvas element.</li></ul> |
+| **Notes**                                            | <ul><li>Inverting a matrix which represents a series of transformations has the effect of reversing or undoing the original transformations.</li><li>This is useful when used with <a href="#append">hs.canvas.matrix.append</a> to undo a previously applied transformation without actually replacing all of the transformations which may have been applied to a canvas element.</li></ul> |
 
 #### [prepend](#prepend)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.matrix:prepend(matrix) -> matrixObject` </span>                                                          |
@@ -68,7 +68,7 @@ For more information on the mathematics behind these, you can check the web.  On
 | **Description**                                      | Prepends the specified matrix transformations to the matrix and returns the new matrix.  This method cannot be used as a constructor. |
 | **Parameters**                                       | <ul><li><code>matrix</code> - the table to append to the current matrix.</li></ul> |
 | **Returns**                                          | <ul><li>the new matrix</li></ul> |
-| **Notes**                                            | <ul><li>Mathematically this method multiples the new matrix by the original one and returns the result of the multiplication. * You can use this method to apply a transformation <em>before</em> the currently applied transformations, without having to know what the existing transformations in effect for the canvas element are.</li></ul> |
+| **Notes**                                            | <ul><li>Mathematically this method multiples the new matrix by the original one and returns the result of the multiplication.</li><li>You can use this method to apply a transformation <em>before</em> the currently applied transformations, without having to know what the existing transformations in effect for the canvas element are.</li></ul> |
 
 #### [rotate](#rotate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.matrix:rotate(angle) -> matrixObject` </span>                                                          |
@@ -77,14 +77,14 @@ For more information on the mathematics behind these, you can check the web.  On
 | **Description**                                      | Applies a rotation of the specified number of degrees to the transformation matrix.  This method can be used as a constructor or a method. |
 | **Parameters**                                       | <ul><li><code>angle</code> - the number of degrees to rotate in a clockwise direction.</li></ul> |
 | **Returns**                                          | <ul><li>the new matrix</li></ul> |
-| **Notes**                                            | <ul><li>The rotation of an element this matrix is applied to will be rotated about the origin (zero point).  To rotate an object about another point (its center for example), prepend a translation to the point to rotate about, and append a translation reversing the initial translation.   * e.g. <code>hs.canvas.matrix.translate(x, y):rotate(angle):translate(-x, -y)</code></li></ul> |
+| **Notes**                                            | <ul><li>The rotation of an element this matrix is applied to will be rotated about the origin (zero point).  To rotate an object about another point (its center for example), prepend a translation to the point to rotate about, and append a translation reversing the initial translation.</li><li>e.g. <code>hs.canvas.matrix.translate(x, y):rotate(angle):translate(-x, -y)</code></li></ul> |
 
 #### [scale](#scale)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.matrix:scale(xFactor, [yFactor]) -> matrixObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Applies a scaling transformation to the matrix.  This method can be used as a constructor or a method. |
-| **Parameters**                                       | <ul><li><code>xFactor</code> - the scaling factor to apply to the object in the horizontal orientation. * <code>yFactor</code> - an optional argument specifying a different scaling factor in the vertical orientation.  If this argument is not provided, the <code>xFactor</code> argument will be used for both orientations.</li></ul> |
+| **Parameters**                                       | <ul><li><code>xFactor</code> - the scaling factor to apply to the object in the horizontal orientation.</li><li><code>yFactor</code> - an optional argument specifying a different scaling factor in the vertical orientation.  If this argument is not provided, the <code>xFactor</code> argument will be used for both orientations.</li></ul> |
 | **Returns**                                          | <ul><li>the new matrix</li></ul> |
 
 #### [shear](#shear)
@@ -92,7 +92,7 @@ For more information on the mathematics behind these, you can check the web.  On
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Applies a shearing transformation to the matrix.  This method can be used as a constructor or a method. |
-| **Parameters**                                       | <ul><li><code>xFactor</code> - the shearing factor to apply to the object in the horizontal orientation. * <code>yFactor</code> - an optional argument specifying a different shearing factor in the vertical orientation.  If this argument is not provided, the <code>xFactor</code> argument will be used for both orientations.</li></ul> |
+| **Parameters**                                       | <ul><li><code>xFactor</code> - the shearing factor to apply to the object in the horizontal orientation.</li><li><code>yFactor</code> - an optional argument specifying a different shearing factor in the vertical orientation.  If this argument is not provided, the <code>xFactor</code> argument will be used for both orientations.</li></ul> |
 | **Returns**                                          | <ul><li>the new matrix</li></ul> |
 
 #### [translate](#translate)
@@ -100,6 +100,6 @@ For more information on the mathematics behind these, you can check the web.  On
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Applies a translation transformation to the matrix.  This method can be used as a constructor or a method. |
-| **Parameters**                                       | <ul><li><code>x</code> - the distance to translate the object in the horizontal direction. * <code>y</code> - the distance to translate the object in the vertical direction.</li></ul> |
+| **Parameters**                                       | <ul><li><code>x</code> - the distance to translate the object in the horizontal direction.</li><li><code>y</code> - the distance to translate the object in the vertical direction.</li></ul> |
 | **Returns**                                          | <ul><li>the new matrix</li></ul> |
 

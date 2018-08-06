@@ -34,7 +34,7 @@ This module would not have been possible without standing on the shoulders of ot
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets/clears a callback for reacting to device discovery events |
-| **Parameters**                                       | <ul><li>fn - A function that will be called when a Streaming Deck is connected or disconnected. It should take the following arguments:  * A boolean, true if a device was connected, false if a device was disconnected  * An hs.streamdeck object, being the device that was connected/disconnected</li></ul> |
+| **Parameters**                                       | <ul><li>fn - A function that will be called when a Streaming Deck is connected or disconnected. It should take the following arguments:</li><li>A boolean, true if a device was connected, false if a device was disconnected</li><li>An hs.streamdeck object, being the device that was connected/disconnected</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [getDevice](#getdevice)
@@ -50,7 +50,7 @@ This module would not have been possible without standing on the shoulders of ot
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialises the Stream Deck driver and sets a discovery callback |
-| **Parameters**                                       | <ul><li>fn - A function that will be called when a Streaming Deck is connected or disconnected. It should take the following arguments:  * A boolean, true if a device was connected, false if a device was disconnected  * An hs.streamdeck object, being the device that was connected/disconnected</li></ul> |
+| **Parameters**                                       | <ul><li>fn - A function that will be called when a Streaming Deck is connected or disconnected. It should take the following arguments:</li><li>A boolean, true if a device was connected, false if a device was disconnected</li><li>An hs.streamdeck object, being the device that was connected/disconnected</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>This function must be called before any other parts of this module are used</li></ul> |
 
@@ -69,7 +69,7 @@ This module would not have been possible without standing on the shoulders of ot
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets/clears the button callback function for a deck |
-| **Parameters**                                       | <ul><li>fn - A function to be called when a button is pressed/released on the stream deck. It should receive three arguments:  * The hs.streamdeck userdata object  * A number containing the button that was pressed/released  * A boolean indicating whether the button was pressed (true) or released (false)</li></ul> |
+| **Parameters**                                       | <ul><li>fn - A function to be called when a button is pressed/released on the stream deck. It should receive three arguments:</li><li>The hs.streamdeck userdata object</li><li>A number containing the button that was pressed/released</li><li>A boolean indicating whether the button was pressed (true) or released (false)</li></ul> |
 | **Returns**                                          | <ul><li>The hs.streamdeck device</li></ul> |
 
 #### [firmwareVersion](#firmwareversion)
@@ -109,7 +109,7 @@ This module would not have been possible without standing on the shoulders of ot
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets a button on the deck to the specified color |
-| **Parameters**                                       | <ul><li>button - A number (from 1 to 15) describing which button to set the color on * color - An hs.drawing.color object</li></ul> |
+| **Parameters**                                       | <ul><li>button - A number (from 1 to 15) describing which button to set the color on</li><li>color - An hs.drawing.color object</li></ul> |
 | **Returns**                                          | <ul><li>The hs.streamdeck object</li></ul> |
 
 #### [setButtonImage](#setbuttonimage)
@@ -117,6 +117,6 @@ This module would not have been possible without standing on the shoulders of ot
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets the image of a button on the deck |
-| **Parameters**                                       | <ul><li>button - A number (from 1 to 15) describing which button to set the image for * image - An hs.image object</li></ul> |
+| **Parameters**                                       | <ul><li>button - A number (from 1 to 15) describing which button to set the image for</li><li>image - An hs.image object</li></ul> |
 | **Returns**                                          | <ul><li>The hs.streamdeck object</li></ul> |
 

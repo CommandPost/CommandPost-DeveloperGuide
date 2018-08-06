@@ -109,7 +109,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a watcher object for system and display sleep/wake/power events |
-| **Parameters**                                       | <ul><li>fn - A function that will be called when system/display events happen. It should accept one parameter:  * An event type (see the constants defined above)</li></ul> |
+| **Parameters**                                       | <ul><li>fn - A function that will be called when system/display events happen. It should accept one parameter:</li><li>An event type (see the constants defined above)</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.caffeinate.watcher</code> object</li></ul> |
 
 ### Methods

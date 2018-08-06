@@ -19,7 +19,10 @@ A Window UI element.
  * [UI](#ui)
  * [visible](#visible)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [alert](#alert)
  * [close](#close)
+ * [doClose](#doclose)
+ * [doFocus](#dofocus)
  * [focus](#focus)
  * [notifier](#notifier)
  * [snapshot](#snapshot)
@@ -41,7 +44,7 @@ A Window UI element.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Window |
-| **Parameters**                                       | <ul><li><code>cpApp</code>    - a <code>cp.app</code> for the application the Window belongs to. * <code>uiProp</code>   - a <code>cp.prop</code> that returns the <code>hs._asm.axuielement</code> for the window.</li></ul> |
+| **Parameters**                                       | <ul><li><code>cpApp</code>    - a <code>cp.app</code> for the application the Window belongs to.</li><li><code>uiProp</code>   - a <code>cp.prop</code> that returns the <code>hs._asm.axuielement</code> for the window.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Window</code> instance.</li></ul> |
 
 ### Fields
@@ -77,10 +80,10 @@ A Window UI element.
 | **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found. |
 
 #### [id](#id)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.id <cp.prop: number; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.id <cp.prop: string; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The unique ID for the window. |
+| **Description**                                      | The window title, or `nil` if the window is not currently visible. |
 
 #### [minimized](#minimized)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.minimized <cp.prop: boolean>` </span>                                                          |
@@ -102,16 +105,40 @@ A Window UI element.
 
 ### Methods
 
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:alert() -> cp.ui.Alert` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Provides access to any 'Alert' windows on the PrimaryWindow. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>cp.ui.Alert</code> object</li></ul> |
+
 #### [close](#close)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.close() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:close() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Attempts to close the window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the window was successfully closed.</li></ul> |
 
+#### [doClose](#doclose)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:doClose([waitSeconds]) -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that will attempt to close the window, if it is visible. |
+| **Parameters**                                       | <ul><li>waitSeconds   - If provided, this is the number of seconds to wait before failing. If not provided, no check is done and the statement completes immediately.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute, resolving to <code>true</code> if the window is closed successfully, or <code>false</code> if not.</li></ul> |
+
+#### [doFocus](#dofocus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:doFocus() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) will attempt to focus on the window, if it is visible. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute, which resolves to <code>true</code> if the window was successfully focused, or <code>false</code> if not.</li></ul> |
+
 #### [focus](#focus)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.focus() -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:focus() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Attempts to focus the window. |

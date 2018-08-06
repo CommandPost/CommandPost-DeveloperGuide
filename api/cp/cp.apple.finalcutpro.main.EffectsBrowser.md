@@ -89,7 +89,7 @@ Effects Browser Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `EffectsBrowser` instance. |
-| **Parameters**                                       | <ul><li>parent - The parent object. * type - A string determining whether the Effects Browser is for Effects (<code>cp.apple.finalcutpro.main.EffectsBrowser.EFFECTS</code>) or Transitions (<code>cp.apple.finalcutpro.main.EffectsBrowser.TRANSITIONS</code>).</li></ul> |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li><li>type - A string determining whether the Effects Browser is for Effects (<code>cp.apple.finalcutpro.main.EffectsBrowser.EFFECTS</code>) or Transitions (<code>cp.apple.finalcutpro.main.EffectsBrowser.TRANSITIONS</code>).</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>EffectsBrowser</code> object.</li></ul> |
 
 ### Methods

@@ -51,7 +51,7 @@ o:start()
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `cp.ui.notifier` instance with the specified bundle ID and |
-| **Parameters**                                       | <ul><li>bundleID          - The application Bundle ID being observed. E.g. "com.apple.FinalCut". * elementFinderFn   - The function that will return the <code>axuielement</code> to observe.</li></ul> |
+| **Parameters**                                       | <ul><li>bundleID          - The application Bundle ID being observed. E.g. "com.apple.FinalCut".</li><li>elementFinderFn   - The function that will return the <code>axuielement</code> to observe.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>cp.ui.notifier</code> instance.</li></ul> |
 
 ### Methods
@@ -125,14 +125,14 @@ o:start()
 | **Description**                                      | Registers the callback as a watcher for all standard notifications for the current `axuielement`. |
 | **Parameters**                                       | <ul><li>callbackFn   - the function to call when the notification happens.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul> |
-| **Notes**                                            | <ul><li>This should generally just be used for debugging purposes. It's best to use <code>watchFor</code>[#watchFor] in most cases. * The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:     * the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification.     * a string with the notification type.     * A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul> |
+| **Notes**                                            | <ul><li>This should generally just be used for debugging purposes. It's best to use <code>watchFor</code>[#watchFor] in most cases.</li><li>The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:<ul><li>the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification.</li><li>a string with the notification type.</li><li>A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul></li></ul> |
 
 #### [watchFor](#watchfor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.notifier:watchFor(notification, callbackFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Registers a function to get called whenever the specified notification type is triggered |
-| **Parameters**                                       | <ul><li>notifications     - The <code>string</code> or <code>table of strings</code> with the notification type(s) to watch for (e.g. "AXValueChanged"). * callbackFn        - The function to call when the matching notification is happens.</li></ul> |
+| **Parameters**                                       | <ul><li>notifications     - The <code>string</code> or <code>table of strings</code> with the notification type(s) to watch for (e.g. "AXValueChanged").</li><li>callbackFn        - The function to call when the matching notification is happens.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.ui.notifier</code> instance.</li></ul> |
-| **Notes**                                            | <ul><li>The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:     * the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification.     * a string with the notification type.     * A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul> |
+| **Notes**                                            | <ul><li>The callback function should expect 3 arguments and return none. The arguments passed to the callback will be as follows:<ul><li>the <code>hs._asm.axuielement</code> object for the accessibility element which generated the notification.</li><li>a string with the notification type.</li><li>A table containing key-value pairs with more information about the notification, if provided. Commonly this will be an empty table.</li></ul></li></ul> |
 

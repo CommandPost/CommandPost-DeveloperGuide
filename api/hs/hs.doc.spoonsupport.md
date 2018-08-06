@@ -21,14 +21,14 @@ This module provides support for building (if necessary) and loading the documen
 | **Type**                                             | Function |
 | **Description**                                      | Returns tables describing where spoons are installed and what spoons are currently available. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>two tables:   * an array containing the paths from <code>package.path</code> which can contain Hammerspoon Spoon bundles.   * a table with key-value pairs where the key matches an installed (but not necessarily loaded) spoon name and the value is a table containing the following keys:     * path    - the path to the directory which contains the contents of the Spoon bundle     * docPath - the expected path for documentation for this Spoon bundle     * hasDocs - a boolean indicating whether or not the file referred to by <code>docPath</code> exists and is readable</li></ul> |
+| **Returns**                                          | <ul><li>two tables:</li><li>an array containing the paths from <code>package.path</code> which can contain Hammerspoon Spoon bundles.</li><li>a table with key-value pairs where the key matches an installed (but not necessarily loaded) spoon name and the value is a table containing the following keys:<ul><li>path    - the path to the directory which contains the contents of the Spoon bundle</li><li>docPath - the expected path for documentation for this Spoon bundle</li><li>hasDocs - a boolean indicating whether or not the file referred to by <code>docPath</code> exists and is readable</li></ul></li></ul> |
 
 #### [makeDocsFile](#makedocsfile)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.doc.spoonsupport.makeDocsFile(spoonPath, [force]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Create the docs.json file for the Spoon bundle at the specified path. |
-| **Parameters**                                       | <ul><li>spoonPath - the path of the Spoon bundle to generate the documentation for * force     - an optional boolean, default false, indicating whether or not an existing <code>docs.json</code> file within the Spoon bundle should be overwritten.</li></ul> |
+| **Parameters**                                       | <ul><li>spoonPath - the path of the Spoon bundle to generate the documentation for</li><li>force     - an optional boolean, default false, indicating whether or not an existing <code>docs.json</code> file within the Spoon bundle should be overwritten.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateDocFiles](#updatedocfiles)

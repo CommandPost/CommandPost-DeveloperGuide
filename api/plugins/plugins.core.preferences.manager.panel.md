@@ -44,7 +44,7 @@ CommandPost Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Constructs a new panel with the specified priority and ID. |
-| **Parameters**                                       | <ul><li>priority  - Defines the order in which the panel appears.<em> id        - The unique ID for the panel.</em> webview   - The webview the panel is attached to.</li></ul> |
+| **Parameters**                                       | <ul><li>priority  - Defines the order in which the panel appears.</li><li>id        - The unique ID for the panel.</li><li>webview   - The webview the panel is attached to.</li></ul> |
 
 ### Methods
 
@@ -62,8 +62,8 @@ CommandPost Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a checkbox to the panel with the specified `priority` and `params`. |
-| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the checkbox. * <code>params</code>     - The set of parameters for the checkbox.</li></ul> |
-| **Returns**                                          | <ul><li>The panel.Notes: * The <code>params</code> can contain the following fields: <strong> <code>id</code>         - (optional) The unique ID. If none is provided, one will be generated. </strong> <code>name</code>       - (optional) The name of the checkbox field. <strong> <code>label</code>      - (optional) The text label to display after the checkbox. </strong> <code>onchange</code>   - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, <code>id</code> and <code>params</code>, the latter of which is a table containing the <code>value</code> and <code>checked</code> values of the checkbox. ** <code>class</code>      - (optional) the CSS class list to apply to the checkbox.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>   - The priority number for the checkbox.</li><li><code>params</code>     - The set of parameters for the checkbox.</li></ul> |
+| **Returns**                                          | <ul><li>The panel.Notes:</li><li>The <code>params</code> can contain the following fields: <strong> <code>id</code>         - (optional) The unique ID. If none is provided, one will be generated. </strong> <code>name</code>       - (optional) The name of the checkbox field. <strong> <code>label</code>      - (optional) The text label to display after the checkbox. </strong> <code>onchange</code>   - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, <code>id</code> and <code>params</code>, the latter of which is a table containing the <code>value</code> and <code>checked</code> values of the checkbox. ** <code>class</code>      - (optional) the CSS class list to apply to the checkbox.</li></ul> |
 | **Notes**                                            | <ul><li>The <code>params</code> can contain the following fields: <strong> <code>id</code>         - (optional) The unique ID. If none is provided, one will be generated. </strong> <code>name</code>       - (optional) The name of the checkbox field. <strong> <code>label</code>      - (optional) The text label to display after the checkbox. </strong> <code>onchange</code>   - (optional) a function that will get called when the checkbox value changes. It will be passed two parameters, <code>id</code> and <code>params</code>, the latter of which is a table containing the <code>value</code> and <code>checked</code> values of the checkbox. ** <code>class</code>      - (optional) the CSS class list to apply to the checkbox.</li></ul> |
 
 #### [addContent](#addcontent)
@@ -71,7 +71,7 @@ CommandPost Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds the specified `content` to the panel, with the specified `priority` order. |
-| **Parameters**                                       | <ul><li><code>priority</code>        - the priority order of the content.<em> <code>content</code>         - a value that can be converted to a string.</em> <code>escaped</code>         - if <code>true</code>, the content will be escaped.</li></ul> |
+| **Parameters**                                       | <ul><li><code>priority</code>        - the priority order of the content.</li><li><code>content</code>         - a value that can be converted to a string.</li><li><code>escaped</code>         - if <code>true</code>, the content will be escaped.</li></ul> |
 | **Returns**                                          | <ul><li>The panel.</li></ul> |
 
 #### [addHandler](#addhandler)
@@ -79,7 +79,7 @@ CommandPost Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets a handler from an Handler ID |
-| **Parameters**                                       | <ul><li>event - The event * id - the Handler ID * handlerFn - The Handler function * keys - Keys</li></ul> |
+| **Parameters**                                       | <ul><li>event - The event</li><li>id - the Handler ID</li><li>handlerFn - The Handler function</li><li>keys - Keys</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [addHeading](#addheading)
@@ -95,7 +95,7 @@ CommandPost Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a Paragraph to the panel |
-| **Parameters**                                       | <ul><li>content - The content as a string * escaped - Whether or not the HTML should be escaped as a boolean. Defaults to <code>true</code> for simple text. * class - The class as a string</li></ul> |
+| **Parameters**                                       | <ul><li>content - The content as a string</li><li>escaped - Whether or not the HTML should be escaped as a boolean. Defaults to <code>true</code> for simple text.</li><li>class - The class as a string</li></ul> |
 | **Returns**                                          | <ul><li>The panel object.</li></ul> |
 
 #### [addPassword](#addpassword)
@@ -111,7 +111,7 @@ CommandPost Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a select to the panel. |
-| **Parameters**                                       | <ul><li>priority - Priority of the item as number. * params - A table of parameters</li></ul> |
+| **Parameters**                                       | <ul><li>priority - Priority of the item as number.</li><li>params - A table of parameters</li></ul> |
 | **Returns**                                          | <ul><li>The panel object.</li></ul> |
 
 #### [addTextbox](#addtextbox)

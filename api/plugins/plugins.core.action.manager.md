@@ -61,7 +61,7 @@ Action Manager Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets a URL based on the Handler ID & Action Table. |
-| **Parameters**                                       | <ul><li><code>handlerId</code> - The Handler ID * <code>action</code> The action table</li></ul> |
+| **Parameters**                                       | <ul><li><code>handlerId</code> - The Handler ID</li><li><code>action</code> The action table</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul> |
 
 #### [init](#init)

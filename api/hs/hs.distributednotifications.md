@@ -30,7 +30,7 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sends a distributed notification |
-| **Parameters**                                       | <ul><li>name - A string containing the name of the notification * sender - An optional string containing the name of the sender of the notification (in the form <code>com.domain.application.foo</code>). Defaults to nil. * userInfo - An optional table containing additional information to post with the notification. Defaults to nil.</li></ul> |
+| **Parameters**                                       | <ul><li>name - A string containing the name of the notification</li><li>sender - An optional string containing the name of the sender of the notification (in the form <code>com.domain.application.foo</code>). Defaults to nil.</li><li>userInfo - An optional table containing additional information to post with the notification. Defaults to nil.</li></ul> |
 
 ### Constructors
 
@@ -39,7 +39,7 @@ Note that distributed notifications are expensive - they involve lots of IPC. Al
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new NSDistributedNotificationCenter watcher |
-| **Parameters**                                       | <ul><li>callback - A function to be called when a matching notification arrives. The function should accept one argument:  * notificationName - A string containing the name of the notification * name - An optional string containing the name of notifications to watch for. A value of <code>nil</code> will cause all notifications to be watched. Defaults to <code>nil</code>. * object - An optional string containing the name of sending objects to watch for. A value of <code>nil</code> will cause all sending objects to be watched. Defaults to <code>nil</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>callback - A function to be called when a matching notification arrives. The function should accept one argument:</li><li>notificationName - A string containing the name of the notification</li><li>name - An optional string containing the name of notifications to watch for. A value of <code>nil</code> will cause all notifications to be watched. Defaults to <code>nil</code>.</li><li>object - An optional string containing the name of sending objects to watch for. A value of <code>nil</code> will cause all sending objects to be watched. Defaults to <code>nil</code>.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.distributednotifications</code> object</li></ul> |
 
 ### Methods

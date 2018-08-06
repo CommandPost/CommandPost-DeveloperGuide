@@ -58,7 +58,7 @@ Keyboard Shortcuts
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or gets a specific Keyboard Shortcut Keyword Textbox value. |
-| **Parameters**                                       | <ul><li>item - The textbox you want to update. This can be a number between 1 and 9. * value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.</li></ul> |
+| **Parameters**                                       | <ul><li>item - The textbox you want to update. This can be a number between 1 and 9.</li><li>value - The value you want to set the keyword textbox to. This can either be a string, with the tags separated by a comma, or a table of tags.</li></ul> |
 | **Returns**                                          | <ul><li><code>value</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [parent](#parent)

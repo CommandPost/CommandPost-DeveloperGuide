@@ -49,7 +49,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | **Type**                                             | Function |
 | **Description**                                      | Returns the global log history |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>a list of (at most <code>hs.logger.historySize()</code>) log entries produced by all the logger instances, in chronological order;   each entry is a table with the following fields:   * time - timestamp in seconds since the epoch   * level - a number between 1 (error) and 5 (verbose)   * id - a string containing the id of the logger instance that produced this entry   * message - a string containing the logged message</li></ul> |
+| **Returns**                                          | <ul><li>a list of (at most <code>hs.logger.historySize()</code>) log entries produced by all the logger instances, in chronological order;   each entry is a table with the following fields:</li><li>time - timestamp in seconds since the epoch</li><li>level - a number between 1 (error) and 5 (verbose)</li><li>id - a string containing the id of the logger instance that produced this entry</li><li>message - a string containing the logged message</li></ul> |
 
 #### [historySize](#historysize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.logger.historySize([size]) -> number` </span>                                                          |
@@ -65,7 +65,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Creates a new logger instance |
-| **Parameters**                                       | <ul><li>id - a string identifier for the instance (usually the module name) * loglevel - (optional) can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose', or a corresponding number   between 0 and 5; uses <code>hs.logger.defaultLogLevel</code> if omitted</li></ul> |
+| **Parameters**                                       | <ul><li>id - a string identifier for the instance (usually the module name)</li><li>loglevel - (optional) can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose', or a corresponding number   between 0 and 5; uses <code>hs.logger.defaultLogLevel</code> if omitted</li></ul> |
 | **Returns**                                          | <ul><li>the new logger instance</li></ul> |
 | **Notes**                                            | <ul><li>the logger instance created by this method is not a regular object, but a plain table with "static" functions;   therefore, do not use the colon syntax for so-called "methods" in this module (as in <code>mylogger:setLogLevel(3)</code>);   you must instead use the regular dot syntax: <code>mylogger.setLogLevel(3)</code></li></ul> |
 
@@ -74,7 +74,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Prints the global log history to the console |
-| **Parameters**                                       | <ul><li>entries - (optional) the maximum number of entries to print; if omitted, all entries in the history will be printed * level - (optional) the desired log level (see <code>hs.logger:setLogLevel()</code>); if omitted, defaults to <code>verbose</code> * filter - (optional) a string to filter the entries (by logger id or message) via <code>string.find</code> plain matching * caseSensitive - (optional) if true, filtering is case sensitive</li></ul> |
+| **Parameters**                                       | <ul><li>entries - (optional) the maximum number of entries to print; if omitted, all entries in the history will be printed</li><li>level - (optional) the desired log level (see <code>hs.logger:setLogLevel()</code>); if omitted, defaults to <code>verbose</code></li><li>filter - (optional) a string to filter the entries (by logger id or message) via <code>string.find</code> plain matching</li><li>caseSensitive - (optional) if true, filtering is case sensitive</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [setGlobalLogLevel](#setgloballoglevel)
@@ -117,7 +117,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Logs formatted debug info to the console |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format * ... - arguments to fmt</li></ul> |
+| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li><li>... - arguments to fmt</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [e](#e)
@@ -133,7 +133,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Logs a formatted error to the console |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format * ... - arguments to fmt</li></ul> |
+| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li><li>... - arguments to fmt</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [f](#f)
@@ -141,7 +141,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Logs formatted info to the console |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format * ... - arguments to fmt</li></ul> |
+| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li><li>... - arguments to fmt</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [getLogLevel](#getloglevel)
@@ -181,7 +181,7 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Logs formatted verbose info to the console |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format * ... - arguments to fmt</li></ul> |
+| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li><li>... - arguments to fmt</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [w](#w)
@@ -197,6 +197,6 @@ Note: "methods" in this module are actually "static" functions - see `hs.logger.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Logs a formatted warning to the console |
-| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format * ... - arguments to fmt</li></ul> |
+| **Parameters**                                       | <ul><li>fmt - formatting string as per string.format</li><li>... - arguments to fmt</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

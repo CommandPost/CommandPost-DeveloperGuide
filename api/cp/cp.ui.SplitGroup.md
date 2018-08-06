@@ -31,7 +31,7 @@ Split Group UI.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Split Group. |
-| **Parameters**                                       | <ul><li>parent       - The parent object. * finderFn     - The function which returns an <code>hs._asm.axuielement</code> for the Split Group, or <code>nil</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>finderFn     - The function which returns an <code>hs._asm.axuielement</code> for the Split Group, or <code>nil</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>SplitGroup</code> instance.</li></ul> |
 
 ### Methods

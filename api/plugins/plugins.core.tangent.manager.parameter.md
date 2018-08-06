@@ -43,7 +43,7 @@ Represents a Tangent Parameter
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Parameter` instance. |
-| **Parameters**                                       | <ul><li>id        - The ID number of the parameter. * name      - The name of the parameter. * parent    - The parent of the parameter.</li></ul> |
+| **Parameters**                                       | <ul><li>id        - The ID number of the parameter.</li><li>name      - The name of the parameter.</li><li>parent    - The parent of the parameter.</li></ul> |
 | **Returns**                                          | <ul><li>the new <code>parameter</code>.</li></ul> |
 
 ### Methods

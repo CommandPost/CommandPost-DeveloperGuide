@@ -137,7 +137,7 @@ here: http://www.tangentwave.co.uk/developer-support
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Adds a new `mode` with the specified details and returns it. |
-| **Parameters**                                       | <ul><li>id            - The id number of the Mode.* name          - The name of the Mode.</li></ul> |
+| **Parameters**                                       | <ul><li>id            - The id number of the Mode.</li><li>name          - The name of the Mode.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>mode</code></li></ul> |
 
 #### [areMappingsInstalled](#aremappingsinstalled)
@@ -202,5 +202,5 @@ here: http://www.tangentwave.co.uk/developer-support
 | **Type**                                             | Function |
 | **Description**                                      | Writes the Tangent controls.xml File to the User's Application Support folder. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successfully created otherwise <code>false</code> if an error occurred. *  If an error occurs an error message will also be returned as a string.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successfully created otherwise <code>false</code> if an error occurred.</li><li>If an error occurs an error message will also be returned as a string.</li></ul> |
 

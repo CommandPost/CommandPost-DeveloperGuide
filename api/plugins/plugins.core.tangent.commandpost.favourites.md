@@ -36,7 +36,7 @@ Tangent Favourites.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise Module. |
-| **Parameters**                                       | <ul><li>tangentManager - Tangent Manager Plugin * actionManager - Action Manager Plugin * cpGroup - CommandPost Group</li></ul> |
+| **Parameters**                                       | <ul><li>tangentManager - Tangent Manager Plugin</li><li>actionManager - Action Manager Plugin</li><li>cpGroup - CommandPost Group</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [saveAction](#saveaction)
@@ -44,7 +44,7 @@ Tangent Favourites.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Saves an action to Favourites. |
-| **Parameters**                                       | <ul><li>buttonID - The button ID as number. * actionTitle - The action title as string. * handlerID - The handler ID as string. * action - The action table.</li></ul> |
+| **Parameters**                                       | <ul><li>buttonID - The button ID as number.</li><li>actionTitle - The action title as string.</li><li>handlerID - The handler ID as string.</li><li>action - The action table.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateControls](#updatecontrols)

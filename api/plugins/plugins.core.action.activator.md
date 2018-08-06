@@ -97,12 +97,12 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li><code>true</code> if the handlers were found.</li></ul> |
 
 #### [disableAllHandlers](#disableallhandlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:disableAllHandlers() -> nothing` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:disableAllHandlers() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Disables the all allowed handlers. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Nothing</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [disableHandler](#disablehandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:disableHandler(id) -> boolean` </span>                                                          |
@@ -113,12 +113,12 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li><code>true</code> if the handler exists and was disabled.</li></ul> |
 
 #### [enableAllHandlers](#enableallhandlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:enableAllHandlers() -> nothing` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:enableAllHandlers() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Enables the all allowed handlers. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Nothing</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [enableHandler](#enablehandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:enableHandler(id) -> boolean` </span>                                                          |
@@ -161,7 +161,7 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li>The number of times the choice has been executed.</li></ul> |
 
 #### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:hide()` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:hide() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Hides a chooser listing the available actions. |
@@ -189,7 +189,7 @@ will not affect the "yadayada" activator.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Increases the popularity of the specified choice. |
-| **Parameters**                                       | <ul><li><code>choice</code>      - The choice. * <code>id</code>          - The choice ID to popularise.</li></ul> |
+| **Parameters**                                       | <ul><li><code>choice</code>      - The choice.</li><li><code>id</code>          - The choice ID to popularise.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successfully unfavourited, otherwise <code>false</code>.</li></ul> |
 
 #### [isDisabledHandler](#isdisabledhandler)
@@ -225,13 +225,13 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li>The activator.</li></ul> |
 
 #### [refresh](#refresh)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:refresh()` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:refresh() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Clears the existing set of choices and requests new ones from enabled action handlers. |
 
 #### [refreshChooser](#refreshchooser)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:refreshChooser()` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:refreshChooser() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Refreshes a Chooser. |
@@ -255,12 +255,12 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:show()` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:show() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Shows a chooser listing the available actions. When selected by the user, |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful</li></ul> |
 
 #### [sortChoices](#sortchoices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:sortChoices() -> boolean` </span>                                                          |

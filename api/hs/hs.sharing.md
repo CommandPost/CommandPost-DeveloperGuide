@@ -67,7 +67,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Description**                                      | Returns a table representing a file URL for the path specified. |
 | **Parameters**                                       | <ul><li>path - a string specifying a path to represent as a file URL.</li></ul> |
 | **Returns**                                          | <ul><li>a table containing the necessary labels for converting the specified path into a URL as required by the macOS APIs.</li></ul> |
-| **Notes**                                            | <ul><li>this function is a wrapper to <a href="#URL">hs.sharing.URL</a> which sets the second argument to <code>true</code> for you. * see <a href="#URL">hs.sharing.URL</a> for more information about the table format returned by this function.</li></ul> |
+| **Notes**                                            | <ul><li>this function is a wrapper to <a href="#URL">hs.sharing.URL</a> which sets the second argument to <code>true</code> for you.</li><li>see <a href="#URL">hs.sharing.URL</a> for more information about the table format returned by this function.</li></ul> |
 
 #### [shareTypesFor](#sharetypesfor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing.shareTypesFor(items) -> identifiersTable` </span>                                                          |
@@ -83,7 +83,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a table representing the URL specified. |
-| **Parameters**                                       | <ul><li>URL     - a string or table specifying the URL. * fileURL - an optional boolean, default <code>false</code>, specifying whether or not the URL is supposed to represent a file on the local computer.</li></ul> |
+| **Parameters**                                       | <ul><li>URL     - a string or table specifying the URL.</li><li>fileURL - an optional boolean, default <code>false</code>, specifying whether or not the URL is supposed to represent a file on the local computer.</li></ul> |
 | **Returns**                                          | <ul><li>a table containing the necessary labels for representing the specified URL as required by the macOS APIs.</li></ul> |
 | **Notes**                                            | <ul><li>If the URL is specified as a table, it is expected to contain a <code>url</code> key with a string value specifying a proper schema and resource locator.</li></ul> |
 
@@ -132,7 +132,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Description**                                      | Set or clear the callback for the sharingObject. |
 | **Parameters**                                       | <ul><li>a function, or nil, to set or remove the callback for the sharingObject</li></ul> |
 | **Returns**                                          | <ul><li>the sharingObject</li></ul> |
-| **Notes**                                            | <ul><li>the callback should expect 3 or 4 arguments and return no results.  The arguments will be as follows:   * the sharingObject itself   * the callback message, which will be a string equal to one of the following:     * "didFail"   - an error occurred while attempting to share the items     * "didShare"  - the sharing service has finished sharing the items     * "willShare" - the sharing service is about to start sharing the items; occurs before sharing actually begins   * an array (table) containing the items being shared; if the message is "didFail" or "didShare", the items may be in a different order or converted to a different internal type to facilitate sharing.   * if the message is "didFail", the fourth argument will be a localized description of the error that occurred.</li></ul> |
+| **Notes**                                            | <ul><li>the callback should expect 3 or 4 arguments and return no results.  The arguments will be as follows:</li><li>the sharingObject itself</li><li>the callback message, which will be a string equal to one of the following:<ul><li>"didFail"   - an error occurred while attempting to share the items</li><li>"didShare"  - the sharing service has finished sharing the items</li><li>"willShare" - the sharing service is about to start sharing the items; occurs before sharing actually begins</li></ul></li><li>an array (table) containing the items being shared; if the message is "didFail" or "didShare", the items may be in a different order or converted to a different internal type to facilitate sharing.</li><li>if the message is "didFail", the fourth argument will be a localized description of the error that occurred.</li></ul> |
 
 #### [canShareItems](#canshareitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing:canShareItems(items) -> boolean` </span>                                                          |
@@ -175,7 +175,7 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Description**                                      | Get or set the subject to be used when the sharing service performs its sharing method. |
 | **Parameters**                                       | <ul><li>recipients - an optional array (table) or list of recipient strings separated by commas which specify the recipients of the shared items.</li></ul> |
 | **Returns**                                          | <ul><li>if an argument is provided, returns the sharingObject; otherwise returns the current value.</li></ul> |
-| **Notes**                                            | <ul><li>not all sharing services will make use of the value set by this method. * the individual recipients should be specified as strings in the format expected by the sharing service; e.g. for items being shared in an email, the recipients should be email address, etc.</li></ul> |
+| **Notes**                                            | <ul><li>not all sharing services will make use of the value set by this method.</li><li>the individual recipients should be specified as strings in the format expected by the sharing service; e.g. for items being shared in an email, the recipients should be email address, etc.</li></ul> |
 
 #### [serviceName](#servicename)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing:serviceName() -> string` </span>                                                          |

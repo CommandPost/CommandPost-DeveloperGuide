@@ -66,6 +66,6 @@ local externalDrives = battery.devices({physical = true, ejectable = true})
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Visits all drives matching the `options` and executes the |
-| **Parameters**                                       | <ul><li>options   - The table of filter options.* fn        - The function to execute.</li></ul> |
+| **Parameters**                                       | <ul><li>options   - The table of filter options.</li><li>fn        - The function to execute.</li></ul> |
 | **Returns**                                          | <ul><li>Nothing.</li></ul> |
 

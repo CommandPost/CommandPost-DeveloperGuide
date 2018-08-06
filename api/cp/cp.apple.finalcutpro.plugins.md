@@ -202,7 +202,7 @@ Usage:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Finds the plugins of the specified type (`types.videoEffect`, etc.) and if provided, locale. |
-| **Parameters**                                       | <ul><li><code>type</code>        - The plugin type. See <code>types</code> for the complete list. * <code>locale</code>    - The locale code to search for (e.g. "en"). Defaults to the current FCPX langauge.</li></ul> |
+| **Parameters**                                       | <ul><li><code>type</code>        - The plugin type. See <code>types</code> for the complete list.</li><li><code>locale</code>    - The locale code to search for (e.g. "en"). Defaults to the current FCPX langauge.</li></ul> |
 | **Returns**                                          | <ul><li>A table of the available plugins of the specified type.</li></ul> |
 
 #### [registerPlugin](#registerplugin)
@@ -210,7 +210,7 @@ Usage:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Registers a plugin with the specified details. |
-| **Parameters**                                       | <ul><li><code>path</code>           - The path to the plugin directory. * <code>type</code>           - The type of plugin * <code>categoryName</code>   - The category name, in the specified locale. * <code>themeName</code>      - The theme name, in the specified locale. May be <code>nil</code> if not in a theme. * <code>pluginName</code>     - The plugin name, in the specified locale. * <code>locale</code>         - The <code>cp.i18n.localeID</code> or string code for same (e.g. "en", "fr", "de")</li></ul> |
+| **Parameters**                                       | <ul><li><code>path</code>           - The path to the plugin directory.</li><li><code>type</code>           - The type of plugin</li><li><code>categoryName</code>   - The category name, in the specified locale.</li><li><code>themeName</code>      - The theme name, in the specified locale. May be <code>nil</code> if not in a theme.</li><li><code>pluginName</code>     - The plugin name, in the specified locale.</li><li><code>locale</code>         - The <code>cp.i18n.localeID</code> or string code for same (e.g. "en", "fr", "de")</li></ul> |
 | **Returns**                                          | <ul><li>The plugin object.</li></ul> |
 
 #### [reset](#reset)
@@ -266,7 +266,7 @@ Usage:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Scans a folder as a plugin category folder. The contents will be folders that are either theme folders or actual plugins. |
-| **Parameters**                                       | <ul><li><code>locale</code>        - The locale to scan with. * <code>path</code>            - The path to the plugin type directory * <code>plugin</code>      - A table containing the plugin details collected so far.</li></ul> |
+| **Parameters**                                       | <ul><li><code>locale</code>        - The locale to scan with.</li><li><code>path</code>            - The path to the plugin type directory</li><li><code>plugin</code>      - A table containing the plugin details collected so far.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the folder was scanned successfully.</li></ul> |
 
 #### [scanPluginsDirectory](#scanpluginsdirectory)
@@ -274,7 +274,7 @@ Usage:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Scans a root plugins directory. Plugins directories have a standard structure which comes in two flavours: |
-| **Parameters**                                       | <ul><li><code>locale</code>   - The locale code to scan for (e.g. "en" or "fr"). * <code>path</code>       - The path of the root plugin directory to scan. * <code>checkFn</code>    - A function which will receive the path being scanned and return <code>true</code> if it should be scanned.</li></ul> |
+| **Parameters**                                       | <ul><li><code>locale</code>   - The locale code to scan for (e.g. "en" or "fr").</li><li><code>path</code>       - The path of the root plugin directory to scan.</li><li><code>checkFn</code>    - A function which will receive the path being scanned and return <code>true</code> if it should be scanned.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the plugin directory was successfully scanned.</li></ul> |
 
 #### [scanPluginThemeDirectory](#scanpluginthemedirectory)
@@ -282,7 +282,7 @@ Usage:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Scans a folder as a plugin theme folder. The contents will be plugin folders. |
-| **Parameters**                                       | <ul><li><code>locale</code>        - The locale to scan with. * <code>path</code>            - The path to the plugin type directory * <code>plugin</code>          - A table containing the plugin details collected so far.</li></ul> |
+| **Parameters**                                       | <ul><li><code>locale</code>        - The locale to scan with.</li><li><code>path</code>            - The path to the plugin type directory</li><li><code>plugin</code>          - A table containing the plugin details collected so far.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the folder was scanned successfully.</li></ul> |
 
 #### [scanSystemMotionTemplates](#scansystemmotiontemplates)
@@ -322,7 +322,7 @@ Usage:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Translates an Effect Bundle Item. |
-| **Parameters**                                       | <ul><li>input - The original name * locale - The locale code you want to attempt to translate to</li></ul> |
+| **Parameters**                                       | <ul><li>input - The original name</li><li>locale - The locale code you want to attempt to translate to</li></ul> |
 | **Returns**                                          | <ul><li>The translated value for <code>input</code> in the specified locale, if present.</li></ul> |
 
 #### [unwatch](#unwatch)

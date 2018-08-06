@@ -44,7 +44,7 @@ Shared XML Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Share XML |
-| **Parameters**                                       | <ul><li>incomingXML - XML data as string * noErrors - Prevents error messages from being displayed.</li></ul> |
+| **Parameters**                                       | <ul><li>incomingXML - XML data as string</li><li>noErrors - Prevents error messages from being displayed.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [update](#update)

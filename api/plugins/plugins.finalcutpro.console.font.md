@@ -41,7 +41,7 @@ Final Cut Pro Font Console
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Handles Console Activations. |
-| **Parameters**                                       | <ul><li>handler - Handler instance. * action - Action table. * text - Selected text from the Console.</li></ul> |
+| **Parameters**                                       | <ul><li>handler - Handler instance.</li><li>action - Action table.</li><li>text - Selected text from the Console.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [show](#show)

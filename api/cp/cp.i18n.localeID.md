@@ -46,7 +46,7 @@ You can also convert the resulting table back to the code via `tostring`, or the
 | **Type**                                             | Function |
 | **Description**                                      | Parses a `language ID` into three possible string components: |
 | **Parameters**                                       | <ul><li>code      - The <code>locale ID</code> code. Eg. "en_AU".</li></ul> |
-| **Returns**                                          | <ul><li>language  - The two-character lower-case alpha language code. * script    - the four-character mixed-case alpha script code. * region    - The two-character upper-case alpha region code.</li></ul> |
+| **Returns**                                          | <ul><li>language  - The two-character lower-case alpha language code.</li><li>script    - the four-character mixed-case alpha script code.</li><li>region    - The two-character upper-case alpha region code.</li></ul> |
 
 ### Constructors
 

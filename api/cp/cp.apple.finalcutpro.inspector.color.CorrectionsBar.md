@@ -45,7 +45,7 @@ Requires Final Cut Pro 10.4 or later.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Activates a correction type. |
-| **Parameters**                                       | <ul><li><code>correctionType</code> - The correction type as string. * <code>number</code> - The number of the correction.</li></ul> |
+| **Parameters**                                       | <ul><li><code>correctionType</code> - The correction type as string.</li><li><code>number</code> - The number of the correction.</li></ul> |
 | **Returns**                                          | <ul><li><code>cp.apple.finalcutpro.inspector.color.CorrectionsBar</code> object.</li></ul> |
 
 #### [add](#add)

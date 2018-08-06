@@ -39,7 +39,7 @@ Toolbar Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Toolbar` instance, given the specified `parent` and `finder` |
-| **Parameters**                                       | <ul><li>parent   - The parent object. * finder   - The <code>cp.prop</code> or <code>function</code> that finds the <code>hs._asm.axuielement</code> that represents the <code>Toolbar</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>parent   - The parent object.</li><li>finder   - The <code>cp.prop</code> or <code>function</code> that finds the <code>hs._asm.axuielement</code> that represents the <code>Toolbar</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Toolbar</code> instance.</li></ul> |
 
 ### Fields

@@ -11,10 +11,8 @@ Pasteboard History
 * Functions - API calls offered directly by the extension
  * [addHistoryItem](#addhistoryitem)
  * [clearHistory](#clearhistory)
- * [getHistory](#gethistory)
+ * [doPasteHistoryItem](#dopastehistoryitem)
  * [init](#init)
- * [pasteHistoryItem](#pastehistoryitem)
- * [setHistory](#sethistory)
  * [update](#update)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [_history](#_history)
@@ -60,13 +58,13 @@ Pasteboard History
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [getHistory](#gethistory)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.getHistory() -> table` </span>                                                          |
+#### [doPasteHistoryItem](#dopastehistoryitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.doPasteHistoryItem(index) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Gets the Pasteboard History. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table of the Pasteboard history.</li></ul> |
+| **Description**                                      | Returns a function which will paste a Pasteboard History Item when executed. |
+| **Parameters**                                       | <ul><li>index - The index of the Pasteboard history item.</li></ul> |
+| **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a> to be executed.</li></ul> |
 
 #### [init](#init)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.init(manager) -> Pasteboard History Object` </span>                                                          |
@@ -75,22 +73,6 @@ Pasteboard History
 | **Description**                                      | Initialises the module. |
 | **Parameters**                                       | <ul><li>manager - The Pasteboard manager object.</li></ul> |
 | **Returns**                                          | <ul><li>Pasteboard History Object</li></ul> |
-
-#### [pasteHistoryItem](#pastehistoryitem)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.pasteHistoryItem(index) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Pastes a Pasteboard History Item. |
-| **Parameters**                                       | <ul><li>index - The index of the Pasteboard history item.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [setHistory](#sethistory)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.setHistory(history) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Sets the Pasteboard History. |
-| **Parameters**                                       | <ul><li>history - The history in a table.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.history.update() -> none` </span>                                                          |

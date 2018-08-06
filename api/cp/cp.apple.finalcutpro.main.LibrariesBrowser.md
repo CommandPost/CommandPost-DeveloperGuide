@@ -12,35 +12,41 @@ Libraries Browser Module.
  * [REJECTED](#rejected)
  * [UNUSED](#unused)
 * Functions - API calls offered directly by the extension
- * [clips](#clips)
- * [clipsUI](#clipsui)
  * [deselectAll](#deselectall)
  * [matchesSidebar](#matchessidebar)
- * [openClipTitled](#opencliptitled)
- * [selectAll](#selectall)
- * [selectClip](#selectclip)
- * [selectClipAt](#selectclipat)
- * [selectClipTitled](#selectcliptitled)
- * [selectedClips](#selectedclips)
- * [selectedClipsUI](#selectedclipsui)
- * [selectLibrary](#selectlibrary)
- * [showClip](#showclip)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [appearanceAndFiltering](#appearanceandfiltering)
+ * [clips](#clips)
+ * [clipsUI](#clipsui)
+ * [doFindClips](#dofindclips)
+ * [doFindClipsTitled](#dofindclipstitled)
+ * [doHide](#dohide)
+ * [doOpenClipTitled](#doopencliptitled)
+ * [doSelectClipTitled](#doselectcliptitled)
+ * [doShow](#doshow)
  * [filmstrip](#filmstrip)
  * [filterToggle](#filtertoggle)
  * [hide](#hide)
  * [loadLayout](#loadlayout)
+ * [openClipTitled](#opencliptitled)
  * [parent](#parent)
  * [playhead](#playhead)
  * [saveLayout](#savelayout)
  * [search](#search)
  * [searchToggle](#searchtoggle)
+ * [selectAll](#selectall)
+ * [selectClip](#selectclip)
+ * [selectClipAt](#selectclipat)
  * [selectClipFiltering](#selectclipfiltering)
+ * [selectClipTitled](#selectcliptitled)
+ * [selectedClips](#selectedclips)
+ * [selectedClipsUI](#selectedclipsui)
+ * [selectLibrary](#selectlibrary)
  * [show](#show)
+ * [showClip](#showclip)
  * [sidebar](#sidebar)
  * [skimmingPlayhead](#skimmingplayhead)
  * [toggleViewMode](#toggleviewmode)
@@ -87,22 +93,6 @@ Libraries Browser Module.
 
 ### Functions
 
-#### [clips](#clips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:clips(filterFn) -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets clips using a custom filter. |
-| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul> |
-| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clip UI could be found.</li></ul> |
-
-#### [clipsUI](#clipsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:clipsUI(filterFn) -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets clip UIs using a custom filter. |
-| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul> |
-| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clip UI could be found.</li></ul> |
-
 #### [deselectAll](#deselectall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:deselectAll() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -118,78 +108,6 @@ Libraries Browser Module.
 | **Description**                                      | Checks to see if an element matches the Sidebar type. |
 | **Parameters**                                       | <ul><li>element - The element to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if there's a match, otherwise <code>false</code>.</li></ul> |
-
-#### [openClipTitled](#opencliptitled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:openClipTitled(name) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Open a clip with a specific title. |
-| **Parameters**                                       | <ul><li>name - The name of the clip you want to open.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful, otherwise <code>false</code>.</li></ul> |
-
-#### [selectAll](#selectall)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectAll([clips]) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Select all clips. |
-| **Parameters**                                       | <ul><li>clips - A optional table of <code>Clip</code> objects.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
-
-#### [selectClip](#selectclip)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClip(clip) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Selects a clip. |
-| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to select.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
-
-#### [selectClipAt](#selectclipat)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClipAt(index) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Select clip at a specific index. |
-| **Parameters**                                       | <ul><li>index - A number of where the clip appears in the list.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
-
-#### [selectClipTitled](#selectcliptitled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClipTitled(title) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Select clip with a specific title. |
-| **Parameters**                                       | <ul><li>title - The title of a clip.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
-
-#### [selectedClips](#selectedclips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectedClips() -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets selected clips. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clips are selected.</li></ul> |
-
-#### [selectedClipsUI](#selectedclipsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectedClipsUI() -> table | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets selected clips UI's. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clips are selected.</li></ul> |
-
-#### [selectLibrary](#selectlibrary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectLibrary(...) -> Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Selects a Library. |
-| **Parameters**                                       | <ul><li>... - Libraries as string.</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Table</code> object.</li></ul> |
-
-#### [showClip](#showclip)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:showClip(clip) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Shows a clip. |
-| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to show.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
 
 ### Constructors
 
@@ -218,6 +136,70 @@ Libraries Browser Module.
 | **Description**                                      | Get Appearance & Filtering Button. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Button</code> object.</li></ul> |
+
+#### [clips](#clips)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:clips(filterFn) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets clips using a custom filter. |
+| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul> |
+| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clip UI could be found.</li></ul> |
+
+#### [clipsUI](#clipsui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:clipsUI(filterFn) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets clip UIs using a custom filter. |
+| **Parameters**                                       | <ul><li>filterFn - A function to filter the UI results.</li></ul> |
+| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clip UI could be found.</li></ul> |
+
+#### [doFindClips](#dofindclips)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:doFindClips(filter) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which will send each clip in the Libraries Browser matching the `filter` as an `onNext` signal. |
+| **Parameters**                                       | <ul><li>filter    - a function which receives the <a href="cp.apple.finalcutpro.content.Clip.md">Clip</a> to check and returns <code>true</code> or <code>false</code>.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [doFindClipsTitled](#dofindclipstitled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:doFindClipsTitled(title) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which will send each clip in the Libraries Browser with the specified `title` as an `onNext` signal. |
+| **Parameters**                                       | <ul><li>title    - The title string to check for.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will hide the Libraries Browser. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [doOpenClipTitled](#doopencliptitled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:doOpenClipTitled(title) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will attempt to open the named clip in the Libraries Browser in the Timeline. |
+| **Parameters**                                       | <ul><li>title      - The title of the clip to open.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
+
+#### [doSelectClipTitled](#doselectcliptitled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:doSelectClipTitled(title) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which will select the first clip with a matching `title`. |
+| **Parameters**                                       | <ul><li>title     - The title to select.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> ready to execute.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will show the Libraries Browser. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> object.</li></ul> |
 
 #### [filmstrip](#filmstrip)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:filmstrip() -> LibrariesList` </span>                                                          |
@@ -250,6 +232,14 @@ Libraries Browser Module.
 | **Description**                                      | Loads a Libraries Browser layout. |
 | **Parameters**                                       | <ul><li>layout - A table containing the Libraries Browser layout settings - created using <code>cp.apple.finalcutpro.main.LibrariesBrowser:saveLayout()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [openClipTitled](#opencliptitled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:openClipTitled(name) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Open a clip with a specific title. |
+| **Parameters**                                       | <ul><li>name - The name of the clip you want to open.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful, otherwise <code>false</code>.</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:parent() -> parent` </span>                                                          |
@@ -291,6 +281,30 @@ Libraries Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Button</code> object.</li></ul> |
 
+#### [selectAll](#selectall)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectAll([clips]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Select all clips. |
+| **Parameters**                                       | <ul><li>clips - A optional table of <code>Clip</code> objects.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
+
+#### [selectClip](#selectclip)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClip(clip) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Selects a clip. |
+| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to select.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
+
+#### [selectClipAt](#selectclipat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClipAt(index) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Select clip at a specific index. |
+| **Parameters**                                       | <ul><li>index - A number of where the clip appears in the list.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
+
 #### [selectClipFiltering](#selectclipfiltering)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClipFiltering(filterType) -> LibrariesBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -299,6 +313,38 @@ Libraries Browser Module.
 | **Parameters**                                       | <ul><li>filterType - The filter type.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>LibrariesBrowser</code> object.</li></ul> |
 
+#### [selectClipTitled](#selectcliptitled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClipTitled(title) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Select clip with a specific title. |
+| **Parameters**                                       | <ul><li>title - The title of a clip.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
+
+#### [selectedClips](#selectedclips)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectedClips() -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets selected clips. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of <code>Clip</code> objects or <code>nil</code> if no clips are selected.</li></ul> |
+
+#### [selectedClipsUI](#selectedclipsui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectedClipsUI() -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets selected clips UI's. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of <code>axuielementObject</code> objects or <code>nil</code> if no clips are selected.</li></ul> |
+
+#### [selectLibrary](#selectlibrary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectLibrary(...) -> Table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Selects a Library. |
+| **Parameters**                                       | <ul><li>... - Libraries as string.</li></ul> |
+| **Returns**                                          | <ul><li>A <code>Table</code> object.</li></ul> |
+
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:show() -> LibrariesBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -306,6 +352,14 @@ Libraries Browser Module.
 | **Description**                                      | Show the Libraries Browser. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>LibrariesBrowser</code> object.</li></ul> |
+
+#### [showClip](#showclip)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:showClip(clip) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Shows a clip. |
+| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to show.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
 
 #### [sidebar](#sidebar)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:sidebar() -> Table` </span>                                                          |

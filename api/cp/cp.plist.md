@@ -28,7 +28,7 @@ Reads & Writes plist data.
 | **Type**                                             | Function |
 | **Description**                                      | Converts base64 encoded Property List string into a Table. |
 | **Parameters**                                       | <ul><li>base64Data - Binary data encoded in base64 as a string</li></ul> |
-| **Returns**                                          | <ul><li>A table of the plist data * A error message as string if an error occurs</li></ul> |
+| **Returns**                                          | <ul><li>A table of the plist data</li><li>A error message as string if an error occurs</li></ul> |
 
 #### [binaryFileToTable](#binaryfiletotable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.binaryFileToTable(plistFileName) -> table | nil, string` </span>                                                          |
@@ -36,7 +36,7 @@ Reads & Writes plist data.
 | **Type**                                             | Function |
 | **Description**                                      | Converts the data from a Binary File into a LUA Table. |
 | **Parameters**                                       | <ul><li>plistFileName - Path &amp; Filename of the Binary File</li></ul> |
-| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem. * err             - The error message, or <code>nil</code> if there were no problems.</li></ul> |
+| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem.</li><li>err              - The error message, or <code>nil</code> if there were no problems.</li></ul> |
 
 #### [binaryFileToXML](#binaryfiletoxml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.binaryFileToXML(plistFileName) -> string | nil, string` </span>                                                          |
@@ -44,7 +44,7 @@ Reads & Writes plist data.
 | **Type**                                             | Function |
 | **Description**                                      | Converts the data from a Binary plist File into XML as a string. |
 | **Parameters**                                       | <ul><li>plistFileName - Path &amp; Filename of the Binary File</li></ul> |
-| **Returns**                                          | <ul><li>data             - A string of XML data * err                - The error message, or <code>nil</code> if there were no problems.</li></ul> |
+| **Returns**                                          | <ul><li>data             - A string of XML data</li><li>err              - The error message, or <code>nil</code> if there were no problems.</li></ul> |
 
 #### [binaryToTable](#binarytotable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.binaryToTable(binaryData) -> table | nil, string` </span>                                                          |
@@ -52,7 +52,7 @@ Reads & Writes plist data.
 | **Type**                                             | Function |
 | **Description**                                      | Converts Binary Data into a LUA Table. |
 | **Parameters**                                       | <ul><li>binaryData       - Binary data</li></ul> |
-| **Returns**                                          | <ul><li>data             - A string of XML data * err                - The error message, or <code>nil</code> if there were no problems.</li></ul> |
+| **Returns**                                          | <ul><li>data             - A string of XML data</li><li>err              - The error message, or <code>nil</code> if there were no problems.</li></ul> |
 
 #### [fileToTable](#filetotable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.fileToTable(plistFileName) -> table | nil, string` </span>                                                          |
@@ -60,7 +60,7 @@ Reads & Writes plist data.
 | **Type**                                             | Function |
 | **Description**                                      | Converts plist data from a binary or XML file into a LUA Table. |
 | **Parameters**                                       | <ul><li>plistFileName    - Path &amp; Filename of the XML File</li></ul> |
-| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem. * err             - The error message, or <code>nil</code> if there were no problems.</li></ul> |
+| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem.</li><li>err              - The error message, or <code>nil</code> if there were no problems.</li></ul> |
 
 #### [isBinaryPlist](#isbinaryplist)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.isBinaryPlist(plistList) -> boolean` </span>                                                          |
@@ -76,7 +76,7 @@ Reads & Writes plist data.
 | **Type**                                             | Function |
 | **Description**                                      | Converts XML data from a file into a LUA Table. |
 | **Parameters**                                       | <ul><li>plistFileName    - Path &amp; Filename of the XML File</li></ul> |
-| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem. * err             - The error message, or <code>nil</code> if there were no problems.</li></ul> |
+| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem.</li><li>err              - The error message, or <code>nil</code> if there were no problems.</li></ul> |
 
 #### [xmlToTable](#xmltotable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plist.xmlToTable(plistXml) -> table | nil, string` </span>                                                          |
@@ -84,5 +84,5 @@ Reads & Writes plist data.
 | **Type**                                             | Function |
 | **Description**                                      | Converts an XML plist string into a LUA Table. |
 | **Parameters**                                       | <ul><li>plistXml         - The XML string</li></ul> |
-| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem. * err             - The error message, or <code>nil</code> if there were no problems.</li></ul> |
+| **Returns**                                          | <ul><li>data             - A table of plist data, or <code>nil</code> if there was a problem.</li><li>err              - The error message, or <code>nil</code> if there were no problems.</li></ul> |
 
