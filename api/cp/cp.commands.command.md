@@ -8,12 +8,14 @@ Commands Module.
  * [isActive](#isactive)
  * [isEnabled](#isenabled)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [action](#action)
  * [activated](#activated)
  * [activatedBy](#activatedby)
  * [addShortcut](#addshortcut)
  * [deleteShortcuts](#deleteshortcuts)
  * [disable](#disable)
  * [enable](#enable)
+ * [getAction](#getaction)
  * [getFirstShortcut](#getfirstshortcut)
  * [getGroup](#getgroup)
  * [getShortcuts](#getshortcuts)
@@ -51,6 +53,15 @@ Commands Module.
 | **Description**                                      | If set to `true`, the command is enabled. |
 
 ### Methods
+
+#### [action](#action)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:action(getFn, setFn) -> command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the action get and set callbacks for a specific command. |
+| **Parameters**                                       | <ul><li>getFn - The function that gets the action.</li><li>setFn - The function that sets the action.</li></ul> |
+| **Returns**                                          | <ul><li>command - The command that was created.</li></ul> |
+| **Notes**                                            | <ul><li>The <code>getFn</code> function should have no arguments.</li><li>The <code>setFn</code> function can have two optional arguments:</li><li><code>clear</code> - A boolean that defines whether or not the value should be cleared.</li><li><code>completionFn</code> - An optional completion function callback.</li></ul> |
 
 #### [activated](#activated)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:activated(repeats) -> command` </span>                                                          |
@@ -99,6 +110,14 @@ Commands Module.
 | **Description**                                      | Enables the command. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.commands.command</code> instance.</li></ul> |
+
+#### [getAction](#getaction)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getAction() -> function, function` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the action get and set callbacks for a specific command. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>getFn - The function that gets the action.</li><li>setFn - The function that sets the action.</li></ul> |
 
 #### [getFirstShortcut](#getfirstshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getFirstShortcut() -> command` </span>                                                          |
@@ -214,7 +233,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Applies the provided human-readable title to the command. |
-| **Parameters**                                       | <ul><li><code>id</code> = the unique identifier for the command. E.g. 'FCPXHacksCustomCommand'</li></ul> |
+| **Parameters**                                       | <ul><li>id - the unique identifier for the command (i.e. 'CPCustomCommand').</li></ul> |
 | **Returns**                                          | <ul><li>command - The command that was created.</li></ul> |
 
 #### [whenActivated](#whenactivated)

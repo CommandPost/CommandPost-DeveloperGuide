@@ -7,24 +7,39 @@ Final Cut Pro Viewer Overlays.
 * Variables - Configurable values
  * [activeMemory](#activememory)
  * [basicGridEnabled](#basicgridenabled)
+ * [capslock](#capslock)
  * [customGridColor](#customgridcolor)
+ * [customGuideColor](#customguidecolor)
  * [disabled](#disabled)
  * [draggableGuideEnabled](#draggableguideenabled)
  * [gridAlpha](#gridalpha)
  * [gridColor](#gridcolor)
  * [gridSpacing](#gridspacing)
+ * [guideAlpha](#guidealpha)
+ * [guideColor](#guidecolor)
  * [guidePosition](#guideposition)
  * [stillsLayout](#stillslayout)
 * Functions - API calls offered directly by the extension
+ * [deleteMemory](#deletememory)
+ * [getCustomGuideColor](#getcustomguidecolor)
+ * [getDraggableGuideEnabled](#getdraggableguideenabled)
+ * [getGuideAlpha](#getguidealpha)
+ * [getGuideColor](#getguidecolor)
+ * [getGuidePosition](#getguideposition)
  * [getMemory](#getmemory)
  * [getStillsFolderPath](#getstillsfolderpath)
  * [hide](#hide)
+ * [importMemory](#importmemory)
  * [saveMemory](#savememory)
  * [setCustomGridColor](#setcustomgridcolor)
+ * [setCustomGuideColor](#setcustomguidecolor)
  * [setGridAlpha](#setgridalpha)
  * [setGridColor](#setgridcolor)
  * [setGridSpacing](#setgridspacing)
+ * [setGuideAlpha](#setguidealpha)
+ * [setGuideColor](#setguidecolor)
  * [show](#show)
+ * [toggleDraggableGuide](#toggledraggableguide)
  * [update](#update)
  * [viewMemory](#viewmemory)
 
@@ -44,11 +59,23 @@ Final Cut Pro Viewer Overlays.
 | **Type**                                             | Variable |
 | **Description**                                      | Is Viewer Grid Enabled? |
 
+#### [capslock](#capslock)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.capslock <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Toggle Viewer Overlays with Caps Lock. |
+
 #### [customGridColor](#customgridcolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.customGridColor <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Viewer Custom Grid Color as HTML value |
+
+#### [customGuideColor](#customguidecolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.customGuideColor <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Viewer Custom Guide Color as HTML value |
 
 #### [disabled](#disabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.disabled <cp.prop: boolean>` </span>                                                          |
@@ -57,7 +84,7 @@ Final Cut Pro Viewer Overlays.
 | **Description**                                      | Are all the Viewer Overlay's disabled? |
 
 #### [draggableGuideEnabled](#draggableguideenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.draggableGuideEnabled <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.draggableGuideEnabled <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Is Viewer Grid Enabled? |
@@ -80,6 +107,18 @@ Final Cut Pro Viewer Overlays.
 | **Type**                                             | Variable |
 | **Description**                                      | Viewer Custom Grid Color as HTML value |
 
+#### [guideAlpha](#guidealpha)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.guideAlpha <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Viewer Guide Alpha |
+
+#### [guideColor](#guidecolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.guideColor <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Viewer Guide Color as HTML value |
+
 #### [guidePosition](#guideposition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.guidePosition <cp.prop: table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -93,6 +132,54 @@ Final Cut Pro Viewer Overlays.
 | **Description**                                      | Stills layout. |
 
 ### Functions
+
+#### [deleteMemory](#deletememory)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.deleteMemory() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Deletes a memory. |
+| **Parameters**                                       | <ul><li>id - An identifier in the form of a number.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [getCustomGuideColor](#getcustomguidecolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getCustomGuideColor(id) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get Custom Guide Color. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [getDraggableGuideEnabled](#getdraggableguideenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getDraggableGuideEnabled(id) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get Guide Enabled. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [getGuideAlpha](#getguidealpha)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getGuideAlpha() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get Guide Alpha. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [getGuideColor](#getguidecolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getGuideColor(id) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get Guide Color. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [getGuidePosition](#getguideposition)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getGuidePosition() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get Guide Position. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [getMemory](#getmemory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getMemory(id) -> image | nil` </span>                                                          |
@@ -118,6 +205,14 @@ Final Cut Pro Viewer Overlays.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [importMemory](#importmemory)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.importMemory() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Import a file to memory. |
+| **Parameters**                                       | <ul><li>id - An identifier in the form of a number.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [saveMemory](#savememory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.saveMemory() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -131,6 +226,14 @@ Final Cut Pro Viewer Overlays.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Pops up a Color Dialog box allowing the user to select a custom colour for grid lines. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [setCustomGuideColor](#setcustomguidecolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setCustomGuideColor() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Pops up a Color Dialog box allowing the user to select a custom colour for guide lines. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
@@ -158,12 +261,36 @@ Final Cut Pro Viewer Overlays.
 | **Parameters**                                       | <ul><li>value - The value you want to set.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [setGuideAlpha](#setguidealpha)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setGuideAlpha(value) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Sets Guide Alpha. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li><li>value - The value you want to set.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [setGuideColor](#setguidecolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setGuideColor(value) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Sets Guide Color. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li><li>value - The value you want to set.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.show() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Show's the Viewer Grid. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [toggleDraggableGuide](#toggledraggableguide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.toggleDraggableGuide(id) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Toggle Guide Enabled. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [update](#update)

@@ -85,6 +85,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
  * [fontInfo](#fontinfo)
  * [fontNames](#fontnames)
  * [fontNamesWithTraits](#fontnameswithtraits)
+ * [fontPath](#fontpath)
  * [fontsForFamily](#fontsforfamily)
  * [loadFont](#loadfont)
  * [validFont](#validfont)
@@ -192,6 +193,14 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | **Parameters**                                       | <ul><li>traits - a number, specifying the fontTraitMask, or a table containing traits listed in <code>hs.styledtext.fontTraits</code> which are logically 'OR'ed together to create the fontTraitMask used.</li></ul> |
 | **Returns**                                          | <ul><li>a table containing the names of every font installed for the system which matches the fontTraitMask specified.  The individual names are strings which can be used in the <code>hs.drawing:setTextFont(fontname)</code> method.</li></ul> |
 | **Notes**                                            | <ul><li>specifying 0 or an empty table will match all fonts that are neither italic nor bold.  This would be the same list as you'd get with { hs.styledtext.fontTraits.unBold, hs.styledtext.fontTraits.unItalic } as the parameter.</li></ul> |
+
+#### [fontPath](#fontpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontPath(font) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get the path of a font. |
+| **Parameters**                                       | <ul><li>font - a string containing the name of the font you want to check.</li></ul> |
+| **Returns**                                          | <ul><li>The path to the font or <code>nil</code> if the font name is not valid.</li></ul> |
 
 #### [fontsForFamily](#fontsforfamily)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.styledtext.fontsForFamily(familyName) -> table` </span>                                                          |

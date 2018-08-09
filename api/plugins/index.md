@@ -111,11 +111,12 @@
 | [plugins.finalcutpro.hacks.backupinterval](plugins.finalcutpro.hacks.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
 | [plugins.finalcutpro.hacks.movingmarkers](plugins.finalcutpro.hacks.movingmarkers.md)                          | Moving Markers Plugin.     |
 | [plugins.finalcutpro.hacks.playbackrendering](plugins.finalcutpro.hacks.playbackrendering.md)                          | Playback Rendering Plugin.     |
-| [plugins.finalcutpro.hacks.shortcuts](plugins.finalcutpro.hacks.shortcuts.md)                          | Plugin that allows the user to customise the CommandPost shortcuts     |
 | [plugins.finalcutpro.hacks.smartcollectionslabel](plugins.finalcutpro.hacks.smartcollectionslabel.md)                          | Smart Collections Label.     |
 | [plugins.finalcutpro.hud](plugins.finalcutpro.hud.md)                          | Final Cut Pro HUD.     |
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
+| [plugins.finalcutpro.inspector.text](plugins.finalcutpro.inspector.text.md)                          | Final Cut Pro Text Inspector Additions.     |
+| [plugins.finalcutpro.inspector.video](plugins.finalcutpro.inspector.video.md)                          | Final Cut Pro Video Inspector Additions.     |
 | [plugins.finalcutpro.language](plugins.finalcutpro.language.md)                          | Final Cut Pro Language Plugin.     |
 | [plugins.finalcutpro.menu.helpandsupport.finalcutpro](plugins.finalcutpro.menu.helpandsupport.finalcutpro.md)                          | The Help & Support > CommandPost menu section.     |
 | [plugins.finalcutpro.menu.mediaimport](plugins.finalcutpro.menu.mediaimport.md)                          | The Media Import menu section.     |
