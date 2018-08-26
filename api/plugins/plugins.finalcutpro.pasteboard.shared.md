@@ -7,6 +7,7 @@ Shared Pasteboard Plugin.
 * Functions - API calls offered directly by the extension
  * [copyWithCustomClipName](#copywithcustomclipname)
  * [copyWithCustomClipNameAndFolder](#copywithcustomclipnameandfolder)
+ * [doDecodeHistoryItem](#dodecodehistoryitem)
  * [doPasteHistoryItem](#dopastehistoryitem)
  * [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
  * [getHistory](#gethistory)
@@ -41,6 +42,14 @@ Shared Pasteboard Plugin.
 | **Description**                                      | Copy with Custom Label & Folder. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [doDecodeHistoryItem](#dodecodehistoryitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.doDecodeHistoryItem(folderName, index) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Decodes a Paste History Item. |
+| **Parameters**                                       | <ul><li>folderName - The folder name</li><li>index - The index of the item you want to decode</li></ul> |
+| **Returns**                                          | <ul><li>The decoded Pasteboard History Item or <code>nil</code>.</li></ul> |
 
 #### [doPasteHistoryItem](#dopastehistoryitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.doPasteHistoryItem(folderName, index) -> none` </span>                                                          |

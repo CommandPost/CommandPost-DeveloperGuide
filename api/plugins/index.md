@@ -30,6 +30,7 @@
 | [plugins.core.helpandsupport.developerguide](plugins.core.helpandsupport.developerguide.md)                          | Developer Guide Menu Item.     |
 | [plugins.core.helpandsupport.donate](plugins.core.helpandsupport.donate.md)                          | Donate Menu Item.     |
 | [plugins.core.helpandsupport.errorlog](plugins.core.helpandsupport.errorlog.md)                          | Error Log Menu Item.     |
+| [plugins.core.helpandsupport.facebook](plugins.core.helpandsupport.facebook.md)                          | Facebook Group Menu Item.     |
 | [plugins.core.helpandsupport.feedback](plugins.core.helpandsupport.feedback.md)                          | Feedback Menu Item.     |
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
 | [plugins.core.language](plugins.core.language.md)                          | Language Module.     |
@@ -38,6 +39,8 @@
 | [plugins.core.menu.helpandsupport.commandpost](plugins.core.menu.helpandsupport.commandpost.md)                          | The Help & Support > CommandPost menu section.     |
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
+| [plugins.core.menu.quit](plugins.core.menu.quit.md)                          | Core CommandPost functionality     |
+| [plugins.core.menu.restart](plugins.core.menu.restart.md)                          | Core CommandPost functionality     |
 | [plugins.core.menu.top](plugins.core.menu.top.md)                          | The top menu section.     |
 | [plugins.core.midi.controls.banks](plugins.core.midi.controls.banks.md)                          | MIDI Control Bank Actions.     |
 | [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
@@ -58,7 +61,6 @@
 | [plugins.core.preferences.panels.touchbar](plugins.core.preferences.panels.touchbar.md)                          | Touch Bar Preferences Panel     |
 | [plugins.core.preferences.panels.webapp](plugins.core.preferences.panels.webapp.md)                          | WebApp Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
-| [plugins.core.quit](plugins.core.quit.md)                          | Core CommandPost functionality     |
 | [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
 | [plugins.core.setup.panel](plugins.core.setup.panel.md)                          | CommandPost Setup Window Panel.     |
 | [plugins.core.streamdeck.manager](plugins.core.streamdeck.manager.md)                          | Elgato Stream Deck Manager Plugin.     |
@@ -91,6 +93,7 @@
 | [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | Watch Folder Panel Manager.     |
 | [plugins.core.watchfolders.menuitem](plugins.core.watchfolders.menuitem.md)                          | Adds the "Setup Watch Folders" to the menu bar.     |
 | [plugins.core.webapp](plugins.core.webapp.md)                          | WebApp Plugin.     |
+| [plugins.finalcutpro.actions.custom](plugins.finalcutpro.actions.custom.md)                          | Creates a bunch of commands that can be used to assign actions to.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
 | [plugins.finalcutpro.browser.pasteboardtomarkers](plugins.finalcutpro.browser.pasteboardtomarkers.md)                          | Take the contents of the Pasteboard and pastes it as clip markers on the     |
@@ -179,7 +182,6 @@
 | [plugins.finalcutpro.timeline.playback](plugins.finalcutpro.timeline.playback.md)                          | Playback Plugin.     |
 | [plugins.finalcutpro.timeline.playhead](plugins.finalcutpro.timeline.playhead.md)                          | Manages features relating to the Timeline Playhead.     |
 | [plugins.finalcutpro.timeline.pluginactions](plugins.finalcutpro.timeline.pluginactions.md)                          | Adds Final Cut Pro Plugins (i.e. Effects, Generators, Titles and Transitions) to CommandPost Actions.     |
-| [plugins.finalcutpro.timeline.pluginshortcuts](plugins.finalcutpro.timeline.pluginshortcuts.md)                          | Controls for Final Cut Pro's Plugin Shortcuts (for use with Hack Shortcuts).     |
 | [plugins.finalcutpro.timeline.preferences](plugins.finalcutpro.timeline.preferences.md)                          | Final Cut Pro Timeline Preferences.     |
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
 | [plugins.finalcutpro.timeline.stabilization](plugins.finalcutpro.timeline.stabilization.md)                          | Stabilization Shortcut     |
@@ -198,5 +200,6 @@
 | [plugins.finalcutpro.watchfolders.fcpxml](plugins.finalcutpro.watchfolders.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media](plugins.finalcutpro.watchfolders.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media.MediaFolder](plugins.finalcutpro.watchfolders.media.MediaFolder.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.finalcutpro.watchfolders.media.panel](plugins.finalcutpro.watchfolders.media.panel.md)                          | Watch Folder Media Panel.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |

@@ -12,7 +12,10 @@ Pasteboard Manager.
  * [WATCHER_FREQUENCY](#watcher_frequency)
 * Functions - API calls offered directly by the extension
  * [copyWithCustomClipName](#copywithcustomclipname)
+ * [doDecodeBuffer](#dodecodebuffer)
  * [doRestoreFromBuffer](#dorestorefrombuffer)
+ * [doSaveToBuffer](#dosavetobuffer)
+ * [doWaitForFreshData](#dowaitforfreshdata)
  * [getClassname](#getclassname)
  * [isTimelineClip](#istimelineclip)
  * [overrideNextClipName](#overridenextclipname)
@@ -71,12 +74,36 @@ Pasteboard Manager.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [doDecodeBuffer](#dodecodebuffer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.doDecodeBuffer(id) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which decodes the buffer with the specified ID. |
+| **Parameters**                                       | <ul><li>id        - The ID to decode</li></ul> |
+| **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a> that sends the decoded buffer, or throws an error if not available.</li></ul> |
+
 #### [doRestoreFromBuffer](#dorestorefrombuffer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.doRestoreFromBuffer(id) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) which restore a Pasteboard item from the buffer. |
 | **Parameters**                                       | <ul><li>id - The ID of the buffer item.</li></ul> |
+| **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
+
+#### [doSaveToBuffer](#dosavetobuffer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.doSaveToBuffer(id) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which saves a Pasteboard item to the buffer. |
+| **Parameters**                                       | <ul><li>id - The ID of the buffer item.</li></ul> |
+| **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
+
+#### [doWaitForFreshData](#dowaitforfreshdata)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.doWaitForFreshData(oldData) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which waits for up to 10 seconds for new data to copy |
+| **Parameters**                                       | <ul><li>oldData - The original Pasteboard data.</li></ul> |
 | **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
 
 #### [getClassname](#getclassname)

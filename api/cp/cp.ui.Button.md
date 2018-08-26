@@ -10,13 +10,13 @@ Button Module.
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [frame](#frame)
+ * [isEnabled](#isenabled)
  * [isShowing](#isshowing)
  * [title](#title)
  * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [doPress](#dopress)
- * [isEnabled](#isenabled)
  * [parent](#parent)
  * [press](#press)
  * [snapshot](#snapshot)
@@ -50,6 +50,12 @@ Button Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the table containing the `x`, `y`, `w`, and `h` values for the button frame, or `nil` if not available. |
+
+#### [isEnabled](#isenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button.isEnabled <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns `true` if the button is visible and enabled. |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
@@ -86,14 +92,6 @@ Button Module.
 | **Description**                                      | Returns a `Statement` that will press the button when executed, if available at the time. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code> which will press the button when executed.</li></ul> |
-
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns `true` if the button is visible and enabled. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the button is visible and enabled.</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Button:parent() -> parent` </span>                                                          |

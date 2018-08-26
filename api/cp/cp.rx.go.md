@@ -51,6 +51,7 @@ For more information on using and creating statements, see the
  * [cp.rx.go.Given](cp.rx.go.Given.md)
  * [cp.rx.go.If](cp.rx.go.If.md)
  * [cp.rx.go.Last](cp.rx.go.Last.md)
+ * [cp.rx.go.List](cp.rx.go.List.md)
  * [cp.rx.go.Require](cp.rx.go.Require.md)
  * [cp.rx.go.Retry](cp.rx.go.Retry.md)
  * [cp.rx.go.Statement](cp.rx.go.Statement.md)

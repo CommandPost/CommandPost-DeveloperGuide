@@ -37,7 +37,7 @@ This will also work on [AND](#and) and [OR][#or] properties. Any changes from co
 Similarly, you can 'observe' a prop as a `cp.rx.Observer` by calling the `observe` method:
 
 ```lua
-propValue:observe():subscribe(function(value) print(tostring(value) end))
+propValue:toObservable():subscribe(function(value) print(tostring(value) end))
 ```
 
 These will never emit an `onError` or `onComplete` message, just `onNext` with either `nil` or the current value as it changes.
@@ -107,13 +107,31 @@ owner:isMethod() -- error!
 To use a `prop` as a method, you need to `attach` it to the owning table, like so:
 
 ```lua
-local owner = {
-    _value = true
-}
+local owner = { _value = true }
 owner.isMethod = prop(function(self) return self._value end, function(value, self) self._value = value end):bind(owner)
 owner:isMethod()                -- success!
 owner.isMethod()                -- also works - will still pass in the bound owner.
 owner.isMethod:owner() == owner -- is true~
+```
+
+You can also use the [prop.bind](#bind) function to bind multple properties at once:
+
+```lua
+local owner = { _value = true }
+prop.bind(o) {
+    isMethod = prop(function(self) return self._value end)
+}
+owner:isMethod()                -- success!
+```
+
+The [prop.extend](#extend) function will also bind any `cp.prop` values it finds:
+
+```lua
+local owner = prop.extend({
+    _value = true,
+    isMethod = prop(function(self) return self._value end),
+})
+owner:isMethod()                -- success!
 ```
 
 The bound `owner` is passed in as the last parameter of the `get` and `set` functions.
@@ -287,13 +305,13 @@ So, a little bit tricky. The general rule of thumb is:
  * [mutate](#mutate)
  * [NEQ](#neq)
  * [NOT](#not)
- * [observe](#observe)
  * [OR](#or)
  * [owner](#owner)
  * [preWatch](#prewatch)
  * [set](#set)
  * [shallowTable](#shallowtable)
  * [toggle](#toggle)
+ * [toObservable](#toobservable)
  * [unwatch](#unwatch)
  * [update](#update)
  * [value](#value)
@@ -606,15 +624,6 @@ So, a little bit tricky. The general rule of thumb is:
 | **Returns**                                          | <ul><li>a <code>cp.prop</code> instance negating the current instance.</li></ul> |
 | **Notes**                                            | <ul><li>If this property is mutable, you can set the <code>NOT</code> property value and this property will be set to the negated value. Be aware that the same negation rules apply when setting as when getting.</li></ul> |
 
-#### [observe](#observe)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:observe() -> cp.rx.Observable` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `cp.rx.Observable` for the property. This will emit |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Observable</code> instance for the property.</li></ul> |
-| **Notes**                                            | <ul><li>It will only emit <code>onNext</code> events, never an <code>onError</code> or <code>onCompleted</code> event.</li><li>This will trigger an <code>update</code> each time it is called.</li></ul> |
-
 #### [OR](#or)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:OR(...) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -665,6 +674,15 @@ So, a little bit tricky. The general rule of thumb is:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The new value.</li></ul> |
 | **Notes**                                            | <ul><li>If the value is immutable, an error will be thrown.</li><li>If you toggle a non-boolean parameter twice, it will end up set to <code>true</code>.</li></ul> |
+
+#### [toObservable](#toobservable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:toObservable() -> cp.rx.Observable` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the `cp.rx.Observable` for the property. This will emit |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Observable</code> instance for the property.</li></ul> |
+| **Notes**                                            | <ul><li>It will only emit <code>onNext</code> events, never an <code>onError</code> or <code>onCompleted</code> event.</li><li>This will trigger an <code>update</code> each time it is called.</li></ul> |
 
 #### [unwatch](#unwatch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop:unwatch(watchFn) -> boolean` </span>                                                          |

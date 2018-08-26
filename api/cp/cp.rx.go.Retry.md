@@ -45,11 +45,11 @@ It can be limited to a set number of retries, and have a delay added between ret
 ### Methods
 
 #### [DelayedBy](#delayedby)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.rx.go.Retry:DelayedBy(milliseconds) -> Retry.DelayedBy` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.rx.go.Retry:DelayedBy(milliseconds[, scheduler]) -> Retry.DelayedBy` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Specify a time in millieconds to delay by. |
-| **Parameters**                                       | <ul><li>milliseconds - The amount of time do delay between retries.</li></ul> |
+| **Parameters**                                       | <ul><li>milliseconds - The amount of time do delay between retries.</li><li>scheduler    - The scheduler to use. Defaults to <code>cp.rx.util.defaultScheduler()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>DelayedBy</code> <code>Statement.Modifier</code>.</li></ul> |
 
 #### [UpTo](#upto)

@@ -49,6 +49,7 @@ video:stabilization():smoothing():show():value(1.5)
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
+ * [doShow](#doshow)
  * [parent](#parent)
  * [show](#show)
 
@@ -83,6 +84,14 @@ video:stabilization():smoothing():show():value(1.5)
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The application object as a table</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that shows the Video Inspector. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.video.VideoInspector:parent() -> table` </span>                                                          |

@@ -5,17 +5,17 @@ Caption Tools
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [pasteTextAsCaption](#pastetextascaption)
+ * [doPasteTextAsCaption](#dopastetextascaption)
 
 ## API Documentation
 
 ### Functions
 
-#### [pasteTextAsCaption](#pastetextascaption)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.captions.pasteTextAsCaption() -> none` </span>                                                          |
+#### [doPasteTextAsCaption](#dopastetextascaption)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.captions.doPasteTextAsCaption() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Paste Text As Caption |
+| **Description**                                      | A [Statement](../cp/cp.rx.go.Statement.md) to Paste Text As Caption. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>cp.rx.go.Statement</code></li></ul> |
 

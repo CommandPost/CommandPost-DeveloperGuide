@@ -1,21 +1,21 @@
-# [docs](index.md) » plugins.core.quit
+# [docs](index.md) » plugins.core.helpandsupport.facebook
 ---
 
-Core CommandPost functionality
+Facebook Group Menu Item.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [quit](#quit)
+ * [show](#show)
 
 ## API Documentation
 
 ### Functions
 
-#### [quit](#quit)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.quit.quit() -> nil` </span>                                                          |
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.helpandsupport.facebook.show() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Quit's CommandPost |
+| **Description**                                      | Opens the CommandPost Developer Guide in the Default Browser. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

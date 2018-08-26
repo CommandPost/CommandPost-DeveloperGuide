@@ -23,6 +23,8 @@ Inspector
  * [app](#app)
  * [audio](#audio)
  * [color](#color)
+ * [doFindTabButton](#dofindtabbutton)
+ * [doSelectTab](#doselecttab)
  * [effect](#effect)
  * [generator](#generator)
  * [hide](#hide)
@@ -143,6 +145,23 @@ Inspector
 | **Description**                                      | Gets the ColorInspector object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>ColorInspector</li></ul> |
+
+#### [doFindTabButton](#dofindtabbutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:doFindTabButton(type) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Finds the named Inspector tab button, or sends an error if the type is unsupported. |
+| **Parameters**                                       | <ul><li>type - the type of the button to return. (e.g. "Video")</li></ul> |
+| **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a> to execute.</li></ul> |
+| **Notes**                                            | <ul><li>Valid strings for <code>type</code> are as follows:</li><li>Audio</li><li>Color</li><li>Effect</li><li>Generator</li><li>Info</li><li>Share</li><li>Text</li><li>Title</li><li>Transition</li><li>Video</li><li>Not all button types are available in all contexts.</li></ul> |
+
+#### [doSelectTab](#doselecttab)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:doSelectTab(title) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A Statement that selects the specified tab title. |
+| **Parameters**                                       | <ul><li>title     - The title of the tab to select.</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
 
 #### [effect](#effect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:effect() -> EffectInspector` </span>                                                          |

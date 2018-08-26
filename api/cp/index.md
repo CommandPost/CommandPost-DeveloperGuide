@@ -88,6 +88,7 @@
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
 | [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
+| [cp.collect.List](cp.collect.List.md)                          | Lists are similar `tables` which can contain `nil` items without shortening the length.     |
 | [cp.collect.Queue](cp.collect.Queue.md)                          | A "double-ended queue" implementation. This allows pushing and popping     |
 | [cp.collect.Set](cp.collect.Set.md)                          | An implementation of a logical `set`, which contains a single unique     |
 | [cp.commands](cp.commands.md)                          | Commands Module.     |
@@ -128,6 +129,9 @@
 | [cp.prop](cp.prop.md)                          | This is a utility library for helping keep track of single-value property states. Each property provides access to a single value. Must be readable, but may be read-only. It works by creating a table which has a `get` and (optionally) a `set` function which are called when changing the state.     |
 | [cp.protect](cp.protect.md)                          | Utility function for protecting a table from being modified.     |
 | [cp.rx](cp.rx.md)                          | Reactive Extensions for Lua.     |
+| [cp.rx.AsyncSubject](cp.rx.AsyncSubject.md)                          | `AsyncSubjects` are subjects that produce either no values or a single value.  If     |
+| [cp.rx.BehaviorSubject](cp.rx.BehaviorSubject.md)                          | A [Subject](cp.rx.Subject.md) that tracks its current value. Provides an accessor to retrieve the most     |
+| [cp.rx.CooperativeScheduler](cp.rx.CooperativeScheduler.md)                          | Manages [Observables](cp.rx.Observer.md) using `coroutines` and a virtual clock that must be updated     |
 | [cp.rx.go](cp.rx.go.md)                          | Defines [Statements](cp.rx.go.Statement.md) to make processing of     |
 | [cp.rx.go.Do](cp.rx.go.Do.md)                          | A [Statement](cp.rx.go.Statement.md) that will execute the provided `resolvable` values.     |
 | [cp.rx.go.Do.Then](cp.rx.go.Do.Then.md)                          | A [Statement.Modifier](cp.rx.go.Statement.Modifier.md) of [Do](cp.rx.go.Do.md)     |
@@ -145,6 +149,9 @@
 | [cp.rx.go.If.Then.Otherwise](cp.rx.go.If.Then.Otherwise.md)                          | A [Statement.Modifier](cp.rx.go.Statement.Modifier.md) of [If](cp.rx.go.If.md), which should be created via `If:Then(...):Otherwise(...)`.     |
 | [cp.rx.go.If.Then.Otherwise.Then](cp.rx.go.If.Then.Otherwise.Then.md)                          | Each [Otherwise](cp.rx.go.If.Then.Otherwise.md) can have a subsequent `Then` which will be executed after the previous one resolves.     |
 | [cp.rx.go.Last](cp.rx.go.Last.md)                          | A `Statement` that will complete after the only the last result resolves.     |
+| [cp.rx.go.List](cp.rx.go.List.md)                          | _Extends:_ [Statement](cp.rx.go.Statement.md)     |
+| [cp.rx.go.List.Sorted](cp.rx.go.List.Sorted.md)                          | A `Statement.Modifier` that specifies the list should be sorted by its 'natural' order - that is `a < b`.     |
+| [cp.rx.go.List.SortedBy](cp.rx.go.List.SortedBy.md)                          | A `Statement.Modifier` that specifies the list should be sorted by the specified `function`.     |
 | [cp.rx.go.Require](cp.rx.go.Require.md)                          | A `Statement` that will require that the `resolvable` value matches a predicate,     |
 | [cp.rx.go.Require.Are](cp.rx.go.Require.Are.md)                          | Specifies that the `Require`d values `Are` a specific value.     |
 | [cp.rx.go.Require.AreNot](cp.rx.go.Require.AreNot.md)                          | Specifies that the `Require`d values `AreNot` a specific value.     |
@@ -158,6 +165,13 @@
 | [cp.rx.go.Statement.Modifier.Definition](cp.rx.go.Statement.Modifier.Definition.md)                          | A [Statement.Modifier](cp.rx.go.Statement.Modifier.md) is defined before being executable.     |
 | [cp.rx.go.Throw](cp.rx.go.Throw.md)                          | A [Statement](cp.rx.go.Statement.md) that will throw the provided message.     |
 | [cp.rx.go.WaitUntil](cp.rx.go.WaitUntil.md)                          | A [Statement](cp.rx.go.Statement.md) that will wait for the first value from a `resolveable` that matches the predicate.     |
+| [cp.rx.ImmediateScheduler](cp.rx.ImmediateScheduler.md)                          | Schedules `Observables` by running all operations immediately.     |
+| [cp.rx.Observable](cp.rx.Observable.md)                          | Observables push values to [Observers](cp.rx.Observer.md).     |
+| [cp.rx.Observer](cp.rx.Observer.md)                          | Observers are simple objects that receive values from [Observables](cp.rx.Observables.md).     |
+| [cp.rx.Reference](cp.rx.Reference.md)                          | A handle representing the link between an [Observer](cp.rx.Observer.md) and an [Observable](cp.rx.Observable.md), as well as any     |
+| [cp.rx.RelaySubject](cp.rx.RelaySubject.md)                          | A [Subject](cp.rx.Subject.md) that provides new [Observers](cp.rx.Observer.md) with some or all of the most recently     |
+| [cp.rx.Subject](cp.rx.Subject.md)                          | `Subjects` function both as an [Observer](cp.rs.Observer.md) and as an [Observable](cp.rx.Observable.md). Subjects inherit all     |
+| [cp.rx.TimeoutScheduler](cp.rx.TimeoutScheduler.md)                          | A scheduler that uses the `hs.timer` library to schedule events on an event loop.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and reloads the app if they change.     |
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |

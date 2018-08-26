@@ -14,6 +14,9 @@ end)
 This will `print` "Now using AC Power" or "Now using Battery Power" whenever the
 power supply changes.
 
+By default the watcher initialises in a "stopped" state, and must be started for
+the `cp.prop` watchers to trigger.
+
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [amperage](#amperage)
@@ -33,6 +36,11 @@ power supply changes.
  * [timeToFullCharge](#timetofullcharge)
  * [voltage](#voltage)
  * [watts](#watts)
+* Variables - Configurable values
+ * [_watcher](#_watcher)
+* Functions - API calls offered directly by the extension
+ * [start](#start)
+ * [stop](#stop)
 
 ## API Documentation
 
@@ -144,4 +152,30 @@ power supply changes.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Returns the power entering or leaving the battery, in W. |
+
+### Variables
+
+#### [_watcher](#_watcher)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery._watcher -> hs.battery.watcher object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | The battery watcher. |
+
+### Functions
+
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery.start() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Starts the battery watcher. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.battery.stop() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Stops the battery watcher. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

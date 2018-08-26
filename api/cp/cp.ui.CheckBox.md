@@ -26,6 +26,7 @@ myButton(false) == false	-- now false
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [doPress](#dopress)
  * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
  * [parent](#parent)
@@ -57,6 +58,14 @@ myButton(false) == false	-- now false
 | **Returns**                                          | <ul><li>The new <code>CheckBox</code>.</li></ul> |
 
 ### Methods
+
+#### [doPress](#dopress)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:doPress() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will press the button when executed, if available at the time. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> which will press the button when executed.</li></ul> |
 
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:isEnabled() -> boolean` </span>                                                          |

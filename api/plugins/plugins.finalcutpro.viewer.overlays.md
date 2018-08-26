@@ -8,6 +8,10 @@ Final Cut Pro Viewer Overlays.
  * [activeMemory](#activememory)
  * [basicGridEnabled](#basicgridenabled)
  * [capslock](#capslock)
+ * [crossHairAlpha](#crosshairalpha)
+ * [crossHairColor](#crosshaircolor)
+ * [crossHairEnabled](#crosshairenabled)
+ * [customCrossHairColor](#customcrosshaircolor)
  * [customGridColor](#customgridcolor)
  * [customGuideColor](#customguidecolor)
  * [disabled](#disabled)
@@ -18,9 +22,12 @@ Final Cut Pro Viewer Overlays.
  * [guideAlpha](#guidealpha)
  * [guideColor](#guidecolor)
  * [guidePosition](#guideposition)
+ * [letterboxEnabled](#letterboxenabled)
+ * [letterboxHeight](#letterboxheight)
  * [stillsLayout](#stillslayout)
 * Functions - API calls offered directly by the extension
  * [deleteMemory](#deletememory)
+ * [draggableGuidesEnabled](#draggableguidesenabled)
  * [getCustomGuideColor](#getcustomguidecolor)
  * [getDraggableGuideEnabled](#getdraggableguideenabled)
  * [getGuideAlpha](#getguidealpha)
@@ -31,6 +38,7 @@ Final Cut Pro Viewer Overlays.
  * [hide](#hide)
  * [importMemory](#importmemory)
  * [saveMemory](#savememory)
+ * [setCustomCrossHairColor](#setcustomcrosshaircolor)
  * [setCustomGridColor](#setcustomgridcolor)
  * [setCustomGuideColor](#setcustomguidecolor)
  * [setGridAlpha](#setgridalpha)
@@ -64,6 +72,30 @@ Final Cut Pro Viewer Overlays.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Toggle Viewer Overlays with Caps Lock. |
+
+#### [crossHairAlpha](#crosshairalpha)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.crossHairAlpha <cp.prop: number>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Viewer Grid Alpha |
+
+#### [crossHairColor](#crosshaircolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.crossHairColor <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Viewer Grid Color as HTML value |
+
+#### [crossHairEnabled](#crosshairenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.crossHairEnabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Is Viewer Cross Hair Enabled? |
+
+#### [customCrossHairColor](#customcrosshaircolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.customCrossHairColor <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Viewer Custom Cross Hair Color as HTML value |
 
 #### [customGridColor](#customgridcolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.customGridColor <cp.prop: string>` </span>                                                          |
@@ -125,6 +157,18 @@ Final Cut Pro Viewer Overlays.
 | **Type**                                             | Variable |
 | **Description**                                      | Guide Position. |
 
+#### [letterboxEnabled](#letterboxenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.letterboxEnabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Is Viewer Letterbox Enabled? |
+
+#### [letterboxHeight](#letterboxheight)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.letterboxHeight <cp.prop: number>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Letterbox Height |
+
 #### [stillsLayout](#stillslayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.stillsLayout <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -140,6 +184,14 @@ Final Cut Pro Viewer Overlays.
 | **Description**                                      | Deletes a memory. |
 | **Parameters**                                       | <ul><li>id - An identifier in the form of a number.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [draggableGuidesEnabled](#draggableguidesenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.draggableGuidesEnabled() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Are any draggable guides enabled? |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if at least one draggable guide is enabled otherwise <code>false</code></li></ul> |
 
 #### [getCustomGuideColor](#getcustomguidecolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getCustomGuideColor(id) -> none` </span>                                                          |
@@ -219,6 +271,14 @@ Final Cut Pro Viewer Overlays.
 | **Type**                                             | Function |
 | **Description**                                      | Saves a still frame to file. |
 | **Parameters**                                       | <ul><li>id - An identifier in the form of a number.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [setCustomCrossHairColor](#setcustomcrosshaircolor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.setCustomCrossHairColor() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Pops up a Color Dialog box allowing the user to select a custom colour for cross hairs. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [setCustomGridColor](#setcustomgridcolor)

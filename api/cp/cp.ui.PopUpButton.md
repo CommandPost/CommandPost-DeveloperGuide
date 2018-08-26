@@ -8,7 +8,16 @@ Pop Up Button Module.
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [isShowing](#isshowing)
+ * [menuUI](#menuui)
+ * [UI](#ui)
+ * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [app](#app)
+ * [doPress](#dopress)
+ * [doSelectItem](#doselectitem)
+ * [doSelectValue](#doselectvalue)
  * [getValue](#getvalue)
  * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
@@ -41,7 +50,65 @@ Pop Up Button Module.
 | **Parameters**                                       | <ul><li>parent       - The parent table. Should have a <code>isShowing</code> property.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>PopUpButton</code> instance.</li></ul> |
 
+### Fields
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.isShowing <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the `PopUpButton` is visible on screen. |
+
+#### [menuUI](#menuui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.menuUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `AXMenu` for the PopUpMenu if it is currently visible. |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Provides the `axuielement` for the `PopUpButton`. |
+
+#### [value](#value)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.value <cp.prop: anything; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns or sets the current `PopUpButton` value. |
+
 ### Methods
+
+#### [app](#app)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:app() -> app` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the application object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the Application</li></ul> |
+
+#### [doPress](#dopress)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:doPress() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that presses the `PopUpButton`. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
+
+#### [doSelectItem](#doselectitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:doSelectItem(index) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `PopUpButton` by index. |
+| **Parameters**                                       | <ul><li>index - The index number of the item you want to select.</li></ul> |
+| **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
+
+#### [doSelectValue](#doselectvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:doSelectValue(value) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `PopUpButton` by value. |
+| **Parameters**                                       | <ul><li>value - The value of the item to match.</li></ul> |
+| **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
 
 #### [getValue](#getvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:getValue() -> string | nil` </span>                                                          |

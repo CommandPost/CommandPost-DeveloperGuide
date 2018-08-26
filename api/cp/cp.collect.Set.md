@@ -51,7 +51,10 @@ a + b | c ~= a + (b | c)
  * [symetricDifference](#symetricdifference)
  * [union](#union)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [clone](#clone)
+ * [fromList](#fromlist)
+ * [fromMap](#frommap)
+ * [of](#of)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [complement](#complement)
  * [difference](#difference)
@@ -155,8 +158,32 @@ a + b | c ~= a + (b | c)
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Set.new(...) -> cp.collect.Set` </span>                                                          |
+#### [clone](#clone)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Set.clone(set) -> cp.collect.Set` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `Set` which is a clone of the provided `Set`. |
+| **Parameters**                                       | <ul><li>set       - The set to clone.</li></ul> |
+| **Returns**                                          | <ul><li>The new <code>Set</code> instance.</li></ul> |
+
+#### [fromList](#fromlist)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Set.fromList(list) -> cp.collect.Set` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `Set` instance, containing the unique items in the table collected as a list from `1` to `n`. |
+| **Parameters**                                       | <ul><li>list      - The table that contains items as a list to add to the <code>Set</code>. E.g. `{"foo", "bar"}</li></ul> |
+| **Returns**                                          | <ul><li>The new <code>Set</code>.</li></ul> |
+
+#### [fromMap](#frommap)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Set.fromMap(map) -> cp.collect.Set` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `Set` instance, containing the items in the provided `table` who's key value is `true`. |
+| **Parameters**                                       | <ul><li>map      - The table that contains key/value items to add to the set. E.g. <code>{foo = true, bar = true}</code></li></ul> |
+| **Returns**                                          | <ul><li>The new <code>Set</code>.</li></ul> |
+
+#### [of](#of)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.collect.Set.of(...) -> cp.collect.Set` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Set` instance, containing the items in the parameter list. |

@@ -9,6 +9,7 @@ Core Hammerspoon functionality
  * [hs.applescript](hs.applescript.md)
  * [hs.application](hs.application.md)
  * [hs.audiodevice](hs.audiodevice.md)
+ * [hs.audiounit](hs.audiounit.md)
  * [hs.base64](hs.base64.md)
  * [hs.battery](hs.battery.md)
  * [hs.brightness](hs.brightness.md)

@@ -49,6 +49,8 @@ text:stabilization():smoothing():show():value(1.5)
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
+ * [doHide](#dohide)
+ * [doShow](#doshow)
  * [parent](#parent)
  * [show](#show)
 
@@ -83,6 +85,22 @@ text:stabilization():smoothing():show():value(1.5)
 | **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The application object as a table</li></ul> |
+
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that hides the Text Inspector. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that shows the Text Inspector. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.text.TextInspector:parent() -> table` </span>                                                          |

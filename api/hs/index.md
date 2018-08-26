@@ -25,6 +25,7 @@
 | [hs.audiodevice](hs.audiodevice.md)                          | Manipulate the system's audio devices     |
 | [hs.audiodevice.datasource](hs.audiodevice.datasource.md)                          | Inspect/manipulate the data sources of an audio device     |
 | [hs.audiodevice.watcher](hs.audiodevice.watcher.md)                          | Watch for system level audio hardware events     |
+| [hs.audiounit](hs.audiounit.md)                          | Audio Units Extension.     |
 | [hs.base64](hs.base64.md)                          | Base64 encoding and decoding     |
 | [hs.battery](hs.battery.md)                          | Battery/power information     |
 | [hs.battery.watcher](hs.battery.watcher.md)                          | Watch for battery/power state changes     |
