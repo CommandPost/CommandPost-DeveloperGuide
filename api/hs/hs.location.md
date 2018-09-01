@@ -36,6 +36,7 @@ The following labels are used to describe tables which are used by functions and
 * Functions - API calls offered directly by the extension
  * [authorizationStatus](#authorizationstatus)
  * [distance](#distance)
+ * [dstOffset](#dstoffset)
  * [get](#get)
  * [register](#register)
  * [servicesEnabled](#servicesenabled)
@@ -78,6 +79,15 @@ The following labels are used to describe tables which are used by functions and
 | **Parameters**                                       | <ul><li><code>from</code> - A locationTable as described in the module header</li><li><code>to</code>   - A locationTable as described in the module header</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the distance between <code>from</code> and <code>to</code> in meters. The measurement is made by tracing a line that follows an idealised curvature of the earth</li></ul> |
 | **Notes**                                            | <ul><li>This function does not require Location Services to be enabled for Hammerspoon.</li></ul> |
+
+#### [dstOffset](#dstoffset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.dstOffset() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns a number giving the current daylight savings time offset |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The number of minutes of daylight savings offset, zero if there is no offset</li></ul> |
+| **Notes**                                            | <ul><li>This value is derived from the currently configured system timezone, it does not use Location Services</li></ul> |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location.get() -> locationTable or nil` </span>                                                          |

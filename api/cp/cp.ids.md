@@ -12,6 +12,7 @@ Allows managing values/IDs which can vary between versions.
  * [of](#of)
  * [ofCurrent](#ofcurrent)
  * [previousVersion](#previousversion)
+ * [versions](#versions)
 
 ## API Documentation
 
@@ -66,4 +67,12 @@ Allows managing values/IDs which can vary between versions.
 | **Description**                                      | Returns the previous version number that has stored IDs. |
 | **Parameters**                                       | <ul><li>version      - The version number you want to load as a string (i.e. "10.4.0") or a <code>semver</code>, or <code>nil</code> to use the current version.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>semver</code> instance for the previous version.</li></ul> |
+
+#### [versions](#versions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ids:versions() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a table of versions. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of <code>semver</code> objects.</li></ul> |
 

@@ -34,6 +34,7 @@ Manage CommandPost's constants and settings.
  * [userPluginsPath](#userpluginspath)
 * Variables - Configurable values
  * [automaticScriptReloading](#automaticscriptreloading)
+ * [watcher](#watcher)
 * Functions - API calls offered directly by the extension
  * [application](#application)
  * [get](#get)
@@ -182,6 +183,12 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Automatic Script Reloading. |
+
+#### [watcher](#watcher)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.watcher() -> watcher` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Config Watcher |
 
 ### Functions
 

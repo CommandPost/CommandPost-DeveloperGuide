@@ -94,7 +94,7 @@ Usage:
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.outputReport <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
-| **Description**                                      | Set this to `false` via `_fcp:plugins():outputReport(false)` to disable reporting. |
+| **Description**                                      | Set this to `true` via `_fcp:plugins():outputReport(true)` to enable reporting. |
 
 ### Functions
 

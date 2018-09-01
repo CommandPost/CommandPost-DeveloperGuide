@@ -29,10 +29,10 @@ Tangent Display Functions.
 ### Functions
 
 #### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.init() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.init() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise the module. |
-| **Parameters**                                       | <ul><li>osGroup - The Tangent Sound Group.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>deps - Dependancies</li></ul> |
+| **Returns**                                          | <ul><li>Self</li></ul> |
 

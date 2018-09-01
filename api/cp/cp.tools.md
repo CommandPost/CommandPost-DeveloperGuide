@@ -74,7 +74,7 @@ A collection of handy miscellaneous tools for Lua development.
 | **Type**                                             | Function |
 | **Description**                                      | Gets all the files in a directory |
 | **Parameters**                                       | <ul><li>path - A path as string</li></ul> |
-| **Returns**                                          | <ul><li>A table containing filenames as strings.</li></ul> |
+| **Returns**                                          | <ul><li>A table containing filenames as strings, or <code>nil</code> followed by the error message if an error occurs.</li></ul> |
 
 #### [doesDirectoryExist](#doesdirectoryexist)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.doesDirectoryExist(path) -> boolean` </span>                                                          |
