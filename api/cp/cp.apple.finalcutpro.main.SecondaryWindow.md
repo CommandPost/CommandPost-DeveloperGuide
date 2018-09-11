@@ -6,6 +6,8 @@ Secondary Window Module.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [SecondaryWindow](#secondarywindow)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [browserGroupUI](#browsergroupui)
  * [frame](#frame)
@@ -14,12 +16,11 @@ Secondary Window Module.
  * [isShowing](#isshowing)
  * [rootGroupUI](#rootgroupui)
  * [timelineGroupUI](#timelinegroupui)
- * [UI](#ui)
  * [viewerGroupUI](#viewergroupui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
+ * [doShow](#doshow)
  * [show](#show)
- * [window](#window)
 
 ## API Documentation
 
@@ -32,6 +33,16 @@ Secondary Window Module.
 | **Description**                                      | Checks to see if an element matches what we think it should be. |
 | **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
+
+### Constructors
+
+#### [SecondaryWindow](#secondarywindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow(app) -> SecondaryWindow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `SecondaryWindow` instance. |
+| **Parameters**                                       | <ul><li>app - The <code>cp.apple.finalcutpro</code> object.</li></ul> |
+| **Returns**                                          | <ul><li>A new <code>SecondaryWindow</code> object.</li></ul> |
 
 ### Fields
 
@@ -77,12 +88,6 @@ Secondary Window Module.
 | **Type**                                             | Field |
 | **Description**                                      | The UI element that will contain the `Timeline` if it's on the Secondary Window. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.UI <cp.prop: axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `axuielement` for the window. |
-
 #### [viewerGroupUI](#viewergroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow.viewerGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -99,6 +104,14 @@ Secondary Window Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul> |
 
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement) that shows the Secondary Window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>SecondaryWindow</code> object.</li></ul> |
+
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:show() -> SecondaryWindow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -106,12 +119,4 @@ Secondary Window Module.
 | **Description**                                      | Show the Secondary Window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>SecondaryWindow</code> object.</li></ul> |
-
-#### [window](#window)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.SecondaryWindow:window() -> cp.ui.Window` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `Window` instance. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Window</code> instance.</li></ul> |
 

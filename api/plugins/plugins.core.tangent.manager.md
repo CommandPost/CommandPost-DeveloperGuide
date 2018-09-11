@@ -45,6 +45,8 @@ here: http://www.tangentwave.co.uk/developer-support
  * [update](#update)
  * [updateControls](#updatecontrols)
  * [writeControlsXML](#writecontrolsxml)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [activeModeID](#activemodeid)
 
 ## API Documentation
 
@@ -203,4 +205,12 @@ here: http://www.tangentwave.co.uk/developer-support
 | **Description**                                      | Writes the Tangent controls.xml File to the User's Application Support folder. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successfully created otherwise <code>false</code> if an error occurred.</li><li>If an error occurs an error message will also be returned as a string.</li></ul> |
+
+### Fields
+
+#### [activeModeID](#activemodeid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.activeModeID <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The current active mode ID. |
 

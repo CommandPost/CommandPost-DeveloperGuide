@@ -1,17 +1,16 @@
 # [docs](index.md) » cp.ui.MenuButton
 ---
 
-Pop Up Button Module.
+Menu Button Module.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [MenuButton](#menubutton)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [isShowing](#isshowing)
+ * [menuUI](#menuui)
  * [title](#title)
- * [UI](#ui)
  * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [doPress](#dopress)
@@ -19,9 +18,7 @@ Pop Up Button Module.
  * [doSelectValue](#doselectvalue)
  * [getTitle](#gettitle)
  * [getValue](#getvalue)
- * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
- * [parent](#parent)
  * [press](#press)
  * [saveLayout](#savelayout)
  * [selectItem](#selectitem)
@@ -44,32 +41,26 @@ Pop Up Button Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton.new(parent, finderFn) -> MenuButton` </span>                                                          |
+#### [MenuButton](#menubutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton(parent, uiFinder) -> MenuButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new MenuButton. |
-| **Parameters**                                       | <ul><li>parent        - The parent object. Should have an <code>isShowing</code> property.</li><li>finderFn      - A <code>cp.prop</code> or function which will return a <code>hs._asm.axuielement</code>, or <code>nil</code> if it's not available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent        - The parent object. Should have an <code>isShowing</code> property.</li><li>uiFinder      - A <code>cp.prop</code> or function which will return a <code>hs._asm.axuielement</code>, or <code>nil</code> if it's not available.</li></ul> |
 
 ### Fields
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton.isShowing <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+#### [menuUI](#menuui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton.menuUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Checks if the MenuButton is visible on screen. |
+| **Description**                                      | Returns the `AXMenu` for the MenuButton if it is currently visible. |
 
 #### [title](#title)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton.title <cp.prop: string; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the MenuButton's title. |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton.UI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `axuielement` representing the MenuButton, or `nil` if not available. |
+| **Description**                                      | Returns the title for the MenuButton. |
 
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton.value <cp.prop: anything>` </span>                                                          |
@@ -119,29 +110,13 @@ Pop Up Button Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>MenuButton</code> value as string, or <code>nil</code> if the value cannot be determined.</li></ul> |
 
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Is the `MenuButton` enabled? |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if enabled otherwise <code>false</code>.</li></ul> |
-
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Loads a `MenuButton` layout. |
-| **Parameters**                                       | <ul><li>layout - A table containing the <code>MenuButton</code> layout settings - created using <code>cp.ui.MenuButton:saveLayout()</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>layout - A table containing the <code>MenuButton</code> layout settings - created using <a href="#saveLayout">saveLayout</a>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
 
 #### [press](#press)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:press() -> self` </span>                                                          |

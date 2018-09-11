@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.touchbar.manager.virtual.updateLocationCallback
+# [docs](index.md) » plugins.core.touchbar.location
 ---
 
 Virtual Touch Bar Update Location Callback
@@ -17,7 +17,7 @@ Virtual Touch Bar Update Location Callback
 ### Methods
 
 #### [callbackFn](#callbackfn)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.virtual.updateLocationCallback:callbackFn() -> function` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.location:callbackFn() -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the callbackFn of the current Update Location Callback |
@@ -25,7 +25,7 @@ Virtual Touch Bar Update Location Callback
 | **Returns**                                          | <ul><li>The callbackFn of the current Shutdown Callback</li></ul> |
 
 #### [delete](#delete)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.virtual.updateLocationCallback:delete() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.location:delete() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Deletes a Update Location Callback based on an ID. |
@@ -33,7 +33,7 @@ Virtual Touch Bar Update Location Callback
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [get](#get)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.virtual.updateLocationCallback:get(id) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.location:get(id) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets an Update Location Callback based on an ID. |
@@ -41,7 +41,7 @@ Virtual Touch Bar Update Location Callback
 | **Returns**                                          | <ul><li>table containing the callback</li></ul> |
 
 #### [getAll](#getall)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.virtual.updateLocationCallback:getAll() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.location:getAll() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns all of the created Update Location Callbacks |
@@ -49,7 +49,7 @@ Virtual Touch Bar Update Location Callback
 | **Returns**                                          | <ul><li>table containing all of the created callbacks</li></ul> |
 
 #### [id](#id)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.virtual.updateLocationCallback:id() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.location:id() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the ID of the current Update Location Callback |
@@ -57,7 +57,7 @@ Virtual Touch Bar Update Location Callback
 | **Returns**                                          | <ul><li>The ID of the current File Dropped to Dock Icon Callback as a <code>string</code></li></ul> |
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.virtual.updateLocationCallback:new(id, callbackFn) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.location:new(id, callbackFn) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Creates a new Update Location Callback |

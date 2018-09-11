@@ -9,7 +9,7 @@ Inspector
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [Inspector](#inspector)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [bottomBarUI](#bottombarui)
  * [isFullHeight](#isfullheight)
@@ -18,18 +18,16 @@ Inspector
  * [panelUI](#panelui)
  * [propertiesUI](#propertiesui)
  * [topBarUI](#topbarui)
- * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [audio](#audio)
  * [color](#color)
  * [doFindTabButton](#dofindtabbutton)
+ * [doHide](#dohide)
  * [doSelectTab](#doselecttab)
- * [effect](#effect)
+ * [doShow](#doshow)
  * [generator](#generator)
  * [hide](#hide)
  * [info](#info)
- * [parent](#parent)
  * [selectedTab](#selectedtab)
  * [selectTab](#selecttab)
  * [share](#share)
@@ -62,8 +60,8 @@ Inspector
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.new(parent) -> Inspector` </span>                                                          |
+#### [Inspector](#inspector)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector(parent) -> Inspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Inspector. |
@@ -114,21 +112,7 @@ Inspector
 | **Type**                                             | Field |
 | **Description**                                      | Returns the "top bar" `axuielement` for the Inspector. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the `axuielement` for the Inspector. |
-
 ### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
 
 #### [audio](#audio)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:audio() -> AudioInspector` </span>                                                          |
@@ -155,6 +139,13 @@ Inspector
 | **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a> to execute.</li></ul> |
 | **Notes**                                            | <ul><li>Valid strings for <code>type</code> are as follows:</li><li>Audio</li><li>Color</li><li>Effect</li><li>Generator</li><li>Info</li><li>Share</li><li>Text</li><li>Title</li><li>Transition</li><li>Video</li><li>Not all button types are available in all contexts.</li></ul> |
 
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that attempts to hide the `Inspector`. |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if the Inspector was hidden successfully, or an error if not.</li></ul> |
+
 #### [doSelectTab](#doselecttab)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:doSelectTab(title) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -163,13 +154,12 @@ Inspector
 | **Parameters**                                       | <ul><li>title     - The title of the tab to select.</li></ul> |
 | **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
 
-#### [effect](#effect)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:effect() -> EffectInspector` </span>                                                          |
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:doShow() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Gets the EffectInspector object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>EffectInspector</li></ul> |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that attempts to show the `Inspector`. |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if the Inspector was shown successfully, or an error if not.</li></ul> |
 
 #### [generator](#generator)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:generator() -> GeneratorInspector` </span>                                                          |
@@ -194,14 +184,6 @@ Inspector
 | **Description**                                      | Gets the InfoInspector object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>InfoInspector</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:parent() -> Parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent of the Inspector. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
 
 #### [selectedTab](#selectedtab)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector:selectedTab() -> string or nil` </span>                                                          |

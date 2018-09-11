@@ -7,10 +7,7 @@ Split Group UI.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [parent](#parent)
+ * [SplitGroup](#splitgroup)
 
 ## API Documentation
 
@@ -26,29 +23,11 @@ Split Group UI.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.SplitGroup.new(parent, finderFn) -> cp.ui.SplitGroup` </span>                                                          |
+#### [SplitGroup](#splitgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.SplitGroup(parent, uiFinder) -> cp.ui.SplitGroup` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Split Group. |
-| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>finderFn     - The function which returns an <code>hs._asm.axuielement</code> for the Split Group, or <code>nil</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>uiFinder     - The <code>function</code> or <code>cp.prop</code> which returns an <code>hs._asm.axuielement</code> for the Split Group, or <code>nil</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>SplitGroup</code> instance.</li></ul> |
-
-### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.SplitGroup:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.SplitGroup:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object.</li></ul> |
 

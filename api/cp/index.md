@@ -36,19 +36,22 @@
 | [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)                          | Final Cut Pro IDs.     |
 | [cp.apple.finalcutpro.import.MediaImport](cp.apple.finalcutpro.import.MediaImport.md)                          | Media Import     |
 | [cp.apple.finalcutpro.inspector.audio.AudioInspector](cp.apple.finalcutpro.inspector.audio.AudioInspector.md)                          | Audio Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.BaseMotionPanel](cp.apple.finalcutpro.inspector.BaseMotionPanel.md)                          | A base class for [Inspector](cp.apple.finalcutpro.inspector.Inspector.md) panels     |
+| [cp.apple.finalcutpro.inspector.BasePanel](cp.apple.finalcutpro.inspector.BasePanel.md)                          | A base class for the different panels in the [Inspector](cp.apple.finalcutpro.inspector.Inspector.md).     |
 | [cp.apple.finalcutpro.inspector.color.ColorBoard](cp.apple.finalcutpro.inspector.color.ColorBoard.md)                          | Color Board Module.     |
 | [cp.apple.finalcutpro.inspector.color.ColorBoardAspect](cp.apple.finalcutpro.inspector.color.ColorBoardAspect.md)                          | Represents a particular aspect of the color board (Color/Saturation/Exposure).     |
+| [cp.apple.finalcutpro.inspector.color.ColorCurve](cp.apple.finalcutpro.inspector.color.ColorCurve.md)                          | A ColorCurve [Element](cp.ui.Element.md).     |
 | [cp.apple.finalcutpro.inspector.color.ColorCurves](cp.apple.finalcutpro.inspector.color.ColorCurves.md)                          | Color Curves Module.     |
 | [cp.apple.finalcutpro.inspector.color.ColorInspector](cp.apple.finalcutpro.inspector.color.ColorInspector.md)                          | Color Inspector Module.     |
-| [cp.apple.finalcutpro.inspector.color.ColorPuck](cp.apple.finalcutpro.inspector.color.ColorPuck.md)                          | Color Puck Module.     |
+| [cp.apple.finalcutpro.inspector.color.ColorPuck](cp.apple.finalcutpro.inspector.color.ColorPuck.md)                          | Color ColorPuck Module.     |
 | [cp.apple.finalcutpro.inspector.color.ColorWell](cp.apple.finalcutpro.inspector.color.ColorWell.md)                          | Represents a single Color Well in the Color Wheels Inspector.     |
 | [cp.apple.finalcutpro.inspector.color.ColorWheel](cp.apple.finalcutpro.inspector.color.ColorWheel.md)                          | Represents a single Color Well in the Color Wheels Inspector.     |
 | [cp.apple.finalcutpro.inspector.color.ColorWheels](cp.apple.finalcutpro.inspector.color.ColorWheels.md)                          | Color Wheels Module.     |
 | [cp.apple.finalcutpro.inspector.color.CorrectionsBar](cp.apple.finalcutpro.inspector.color.CorrectionsBar.md)                          | The Correction selection/management bar at the top of the ColorInspector     |
-| [cp.apple.finalcutpro.inspector.color.HueSaturationCurves](cp.apple.finalcutpro.inspector.color.HueSaturationCurves.md)                          | Hue/Saturation Curves Module.     |
+| [cp.apple.finalcutpro.inspector.color.HueSaturationCurve](cp.apple.finalcutpro.inspector.color.HueSaturationCurve.md)                          | A HueSaturationCurve [Element](cp.ui.Element.md).     |
+| [cp.apple.finalcutpro.inspector.color.HueSaturationCurves](cp.apple.finalcutpro.inspector.color.HueSaturationCurves.md)                          | Color Curves Module.     |
 | [cp.apple.finalcutpro.inspector.color.ValueIndicator](cp.apple.finalcutpro.inspector.color.ValueIndicator.md)                          | ValueIndicator Module.     |
-| [cp.apple.finalcutpro.inspector.effect.EffectInspector](cp.apple.finalcutpro.inspector.effect.EffectInspector.md)                          | Effect Inspector Module.     |
-| [cp.apple.finalcutpro.inspector.generator.GeneratorInspector](cp.apple.finalcutpro.inspector.generator.GeneratorInspector.md)                          | Generator Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.generator.GeneratorInspector](cp.apple.finalcutpro.inspector.generator.GeneratorInspector.md)                          | Generator Inspector Module. This appears for both Generators and Titles.     |
 | [cp.apple.finalcutpro.inspector.info.InfoInspector](cp.apple.finalcutpro.inspector.info.InfoInspector.md)                          | Video Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.Inspector](cp.apple.finalcutpro.inspector.Inspector.md)                          | Inspector     |
 | [cp.apple.finalcutpro.inspector.InspectorProperty](cp.apple.finalcutpro.inspector.InspectorProperty.md)                          | `InspectorProperty` contains helper functions for handling common property     |
@@ -118,7 +121,7 @@
 | [cp.is](cp.is.md)                          | A simple class that lets you test if a value `is` a particular type.     |
 | [cp.json](cp.json.md)                          | A collection of handy JSON tools.     |
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
-| [cp.lazy](cp.lazy.md)                          | Lazy Extension.     |
+| [cp.lazy](cp.lazy.md)                          | `cp.lazy` is a [middleclass](https://github.com/kikito/middleclass) "mix-in" that allows for     |
 | [cp.localized](cp.localized.md)                          | Helps look up localized names for folders.     |
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
 | [cp.plist.archiver](cp.plist.archiver.md)                          | Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.     |
@@ -183,10 +186,11 @@
 | [cp.tools](cp.tools.md)                          | A collection of handy miscellaneous tools for Lua development.     |
 | [cp.ui.Alert](cp.ui.Alert.md)                          | Alert UI Module.     |
 | [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`.     |
-| [cp.ui.Button](cp.ui.Button.md)                          | Button Module.     |
+| [cp.ui.Button](cp.ui.Button.md)                          | The `Button` type extends [Element](cp.ui.Element.md) and includes all its     |
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
+| [cp.ui.Element](cp.ui.Element.md)                          | A support class for `hs._asm.axuielement` management.     |
 | [cp.ui.Group](cp.ui.Group.md)                          | UI Group.     |
-| [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Pop Up Button Module.     |
+| [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Menu Button Module.     |
 | [cp.ui.notifier](cp.ui.notifier.md)                          | Supports long-lived 'AX' notifiers. Configure the application to watch, the     |
 | [cp.ui.PopUpButton](cp.ui.PopUpButton.md)                          | Pop Up Button Module.     |
 | [cp.ui.PropertyRow](cp.ui.PropertyRow.md)                          | Represents a single property row, typically in a Property Inspector.     |

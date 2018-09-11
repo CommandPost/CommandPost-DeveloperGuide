@@ -2,10 +2,8 @@
 ---
 
 Touch Bar Manager Plugin.
-This handles both the Virtual Touch Bar and adding items to the physical Touch Bar.
 
 ## Submodules
- * [plugins.core.touchbar.manager.virtual](plugins.core.touchbar.manager.virtual.md)
  * [plugins.core.touchbar.manager.widgets](plugins.core.touchbar.manager.widgets.md)
 
 ## API Overview
@@ -206,12 +204,12 @@ This handles both the Virtual Touch Bar and adding items to the physical Touch B
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [updateAction](#updateaction)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateAction(button, group, action) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateAction(button, group, action) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Touch Bar action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>action - Action as string</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>actionTitle - Action Title as string</li><li>handlerID - Handler ID as string</li><li>action - Action as table</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successfully updated, or <code>false</code> if a duplicate entry was found</li></ul> |
 
 #### [updateIcon](#updateicon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateIcon(button, group, icon) -> none` </span>                                                          |

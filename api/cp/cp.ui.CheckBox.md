@@ -24,15 +24,15 @@ myButton(false) == false	-- now false
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [CheckBox](#checkbox)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [checked](#checked)
+ * [title](#title)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [doPress](#dopress)
- * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
- * [parent](#parent)
  * [press](#press)
  * [saveLayout](#savelayout)
- * [snapshot](#snapshot)
  * [toggle](#toggle)
 
 ## API Documentation
@@ -49,13 +49,27 @@ myButton(false) == false	-- now false
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox.new(parent, finderFn) -> cp.ui.CheckBox` </span>                                                          |
+#### [CheckBox](#checkbox)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox(parent, uiFinder) -> cp.ui.CheckBox` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new CheckBox. |
-| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>finderFn     - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>uiFinder     - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>CheckBox</code>.</li></ul> |
+
+### Fields
+
+#### [checked](#checked)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox.checked <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the checkbox is currently checked. |
+
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox.title <cp.prop: string; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The button title, if available. |
 
 ### Methods
 
@@ -67,14 +81,6 @@ myButton(false) == false	-- now false
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code> which will press the button when executed.</li></ul> |
 
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns `true` if the radio button exists and is enabled. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <p><code>true</code> or <code>false</code>.</p> |
-
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:loadLayout(layout) -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -82,14 +88,6 @@ myButton(false) == false	-- now false
 | **Description**                                      | Applies the settings in the provided layout table. |
 | **Parameters**                                       | <ul><li>layout       - The table containing layout settings. Usually created by the <code>saveLayout</code> method.</li></ul> |
 | **Returns**                                          | <ul><li>nil</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object.</li></ul> |
 
 #### [press](#press)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:press() -> self` </span>                                                          |
@@ -106,13 +104,6 @@ myButton(false) == false	-- now false
 | **Description**                                      | Returns a table containing the layout settings for the checkbox. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A settings table.</li></ul> |
-
-#### [snapshot](#snapshot)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:snapshot([path]) -> hs.image | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it. |
-| **Parameters**                                       | <ul><li>path     - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul> |
 
 #### [toggle](#toggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:toggle() -> self` </span>                                                          |

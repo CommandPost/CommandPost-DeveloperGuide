@@ -7,26 +7,22 @@ Scroll Area Module.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [childrenUI](#childrenui)
+ * [ScrollArea](#scrollarea)
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [contentsUI](#contentsui)
- * [deselectAll](#deselectall)
  * [horizontalScrollBarUI](#horizontalscrollbarui)
- * [isShowing](#isshowing)
+ * [selectedChildrenUI](#selectedchildrenui)
+ * [verticalScrollBarUI](#verticalscrollbarui)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [childrenUI](#childrenui)
+ * [deselectAll](#deselectall)
  * [loadLayout](#loadlayout)
- * [parent](#parent)
  * [saveLayout](#savelayout)
  * [selectAll](#selectall)
  * [selectChild](#selectchild)
  * [selectChildAt](#selectchildat)
- * [selectedChildrenUI](#selectedchildrenui)
  * [showChild](#showchild)
  * [showChildAt](#showchildat)
- * [snapshot](#snapshot)
- * [UI](#ui)
- * [verticalScrollBarUI](#verticalscrollbarui)
  * [viewFrame](#viewframe)
 
 ## API Documentation
@@ -43,23 +39,41 @@ Scroll Area Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.new(parent, finderFn) -> cp.ui.ScrollArea` </span>                                                          |
+#### [ScrollArea](#scrollarea)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea(parent, uiFinder) -> cp.ui.ScrollArea` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `ScrollArea`. |
-| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>finderFn     - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object.</li><li>uiFinder     - A <code>function</code> or <code>cp.prop</code> which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>ScrollArea</code>.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:app() -> App` </span>                                                          |
+#### [contentsUI](#contentsui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.contentsUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `axuielement` representing the Scroll Area Contents, or `nil` if not available. |
+
+#### [horizontalScrollBarUI](#horizontalscrollbarui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.horizontalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `axuielement` representing the Horizontal Scroll Bar, or `nil` if not available. |
+
+#### [selectedChildrenUI](#selectedchildrenui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.selectedChildrenUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `axuielement` representing the Scroll Area Selected Children, or `nil` if not available. |
+
+#### [verticalScrollBarUI](#verticalscrollbarui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.verticalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `axuielement` representing the Vertical Scroll Bar, or `nil` if not available. |
+
+### Methods
 
 #### [childrenUI](#childrenui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:childrenUI(filterFn) -> hs._asm.axuielement | nil` </span>                                                          |
@@ -68,13 +82,6 @@ Scroll Area Module.
 | **Description**                                      | Returns the `axuielement` representing the Scroll Area Contents, or `nil` if not available. |
 | **Parameters**                                       | <ul><li>filterFn - The function which checks if the child matches the requirements.</li></ul> |
 
-#### [contentsUI](#contentsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:contentsUI() -> hs._asm.axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `axuielement` representing the Scroll Area Contents, or `nil` if not available. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-
 #### [deselectAll](#deselectall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:deselectAll() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -82,35 +89,13 @@ Scroll Area Module.
 | **Description**                                      | Deselect all children in a scroll area. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 
-#### [horizontalScrollBarUI](#horizontalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:horizontalScrollBarUI() -> hs._asm.axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `axuielement` representing the Horizontal Scroll Bar, or `nil` if not available. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Is the Scroll Area showing? |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Loads a Scroll Area layout. |
-| **Parameters**                                       | <ul><li>layout - A table containing the Browser layout settings - created using <code>cp.apple.finalcutpro.main.Browser:saveLayout()</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>layout - A table containing the ScrollArea layout settings, typically created using <a href="#saveLayout">saveLayout</a>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object.</li></ul> |
 
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:saveLayout() -> table` </span>                                                          |
@@ -141,13 +126,6 @@ Scroll Area Module.
 | **Description**                                      | Select a child element in a Scroll Area given a specific index. |
 | **Parameters**                                       | <ul><li>index - The index of the child you want to select.</li></ul> |
 
-#### [selectedChildrenUI](#selectedchildrenui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:selectedChildrenUI() -> hs._asm.axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `axuielement` representing the Scroll Area Selected Children, or `nil` if not available. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-
 #### [showChild](#showchild)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:showChild(childUI) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -161,27 +139,6 @@ Scroll Area Module.
 | **Type**                                             | Method |
 | **Description**                                      | Show's a child element in a Scroll Area given a specific index. |
 | **Parameters**                                       | <ul><li>index - The index of the child you want to show.</li></ul> |
-
-#### [snapshot](#snapshot)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:snapshot([path]) -> hs.image | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it. |
-| **Parameters**                                       | <ul><li>path - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul> |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:UI() -> hs._asm.axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `axuielement` representing the `ScrollArea`, or `nil` if not available. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-
-#### [verticalScrollBarUI](#verticalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:verticalScrollBarUI() -> hs._asm.axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `axuielement` representing the Vertical Scroll Bar, or `nil` if not available. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
 
 #### [viewFrame](#viewframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:viewFrame() -> hs.geometry rect` </span>                                                          |

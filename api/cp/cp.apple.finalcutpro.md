@@ -84,28 +84,33 @@ end
  * [EVENT_DESCRIPTION_PATH](#event_description_path)
  * [FLEXO_LANGUAGES](#flexo_languages)
  * [PASTEBOARD_UTI](#pasteboard_uti)
+ * [preferences](#preferences)
 * Variables - Configurable values
  * [activeCommandSet](#activecommandset)
 * Functions - API calls offered directly by the extension
  * [commandSet](#commandset)
- * [init](#init)
  * [matches](#matches)
+ * [userCommandSetPath](#usercommandsetpath)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [activeCommandSetPath](#activecommandsetpath)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
- * [contentUI](#contentui)
+ * [currentLocale](#currentlocale)
+ * [isFrontmost](#isfrontmost)
+ * [isInstalled](#isinstalled)
+ * [isModalDialogOpen](#ismodaldialogopen)
+ * [isRunning](#isrunning)
  * [isShowing](#isshowing)
  * [isShowing](#isshowing)
- * [isShowing](#isshowing)
- * [isShowing](#isshowing)
- * [isShowing](#isshowing)
+ * [isSupported](#issupported)
+ * [isUnsupported](#isunsupported)
+ * [supportedLocales](#supportedlocales)
  * [UI](#ui)
  * [UI](#ui)
- * [UI](#ui)
- * [UI](#ui)
- * [UI](#ui)
+ * [version](#version)
+ * [versionString](#versionstring)
+ * [windowsUI](#windowsui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [alert](#alert)
  * [browser](#browser)
@@ -155,7 +160,6 @@ end
  * [timeline](#timeline)
  * [toolbar](#toolbar)
  * [transitions](#transitions)
- * [userCommandSetPath](#usercommandsetpath)
  * [viewer](#viewer)
 
 ## API Documentation
@@ -216,6 +220,12 @@ end
 | **Type**                                             | Constant |
 | **Description**                                      | Final Cut Pro's Pasteboard UTI |
 
+#### [preferences](#preferences)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.preferences <cp.app.prefs>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | The `cp.app.prefs` for Final Cut Pro. |
+
 ### Variables
 
 #### [activeCommandSet](#activecommandset)
@@ -234,14 +244,6 @@ end
 | **Parameters**                                       | <ul><li><code>path</code>   - The path to the Command Set.</li></ul> |
 | **Returns**                                          | <ul><li>The Command Set as a table, or <code>nil</code> if there was a problem.</li></ul> |
 
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:init() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialises the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The app.</li></ul> |
-
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.CommandEditor.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -249,6 +251,14 @@ end
 | **Description**                                      | Checks to see if an element matches what we think it should be. |
 | **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
+
+#### [userCommandSetPath](#usercommandsetpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.userCommandSetPath() -> string or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the path where User Command Set files are stored. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A path as a string or <code>nil</code> if the folder doesn't exist.</li></ul> |
 
 ### Fields
 
@@ -265,12 +275,6 @@ end
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
 #### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `axuielement` containing the properties rows, if available. |
-
-#### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
@@ -282,17 +286,35 @@ end
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.AudioInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+#### [currentLocale](#currentlocale)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLocale <cp.prop: cp.i18n.localeID; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Checks if the AudioInspector is currently showing. |
+| **Description**                                      | Gets and sets the current locale for FCPX. |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+#### [isFrontmost](#isfrontmost)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isFrontmost <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Checks if the TitleInspector is currently showing. |
+| **Description**                                      | Is Final Cut Pro Frontmost? |
+
+#### [isInstalled](#isinstalled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isInstalled <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is any version of Final Cut Pro Installed? |
+
+#### [isModalDialogOpen](#ismodaldialogopen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isModalDialogOpen <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is a modal dialog currently open? |
+
+#### [isRunning](#isrunning)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isRunning <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is Final Cut Pro Running? |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
@@ -301,34 +323,34 @@ end
 | **Description**                                      | Checks if the ShareInspector is currently showing. |
 
 #### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Checks if the VideoInspector is currently showing. |
+| **Description**                                      | Is Final Cut visible on screen? |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+#### [isSupported](#issupported)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isSupported <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Checks if the TextInspector is currently showing. |
+| **Description**                                      | Is a supported version of Final Cut Pro installed? |
+
+#### [isUnsupported](#isunsupported)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isUnsupported <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is an unsupported version of Final Cut Pro installed? |
+
+#### [supportedLocales](#supportedlocales)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.supportedLocales <cp.prop: table of cp.i18n.localeID; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The list of supported locales for this version of FCPX. |
 
 #### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.AudioInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Audio Inspector. |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Video Inspector. |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TitleInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Title Inspector. |
+| **Description**                                      | The Final Cut Pro `axuielement`, if available. |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
@@ -336,11 +358,23 @@ end
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Share Inspector. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+#### [version](#version)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.version <cp.prop: semver; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Text Inspector. |
+| **Description**                                      | The version number of the running or default installation of FCPX as a `semver`. |
+
+#### [versionString](#versionstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.versionString <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The version number of the running or default installation of FCPX as a `string`. |
+
+#### [windowsUI](#windowsui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.windowsUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the UI containing the list of windows in the app. |
 
 ### Methods
 
@@ -729,14 +763,6 @@ end
 | **Description**                                      | Returns the TransitionsBrowser instance, whether it is in the primary or secondary window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the TransitionsBrowser</li></ul> |
-
-#### [userCommandSetPath](#usercommandsetpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.userCommandSetPath() -> string or nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the path where User Command Set files are stored. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A path as a string or <code>nil</code> if the folder doesn't exist.</li></ul> |
 
 #### [viewer](#viewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:viewer() -> Viewer` </span>                                                          |

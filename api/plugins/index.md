@@ -45,6 +45,7 @@
 | [plugins.core.midi.controls.banks](plugins.core.midi.controls.banks.md)                          | MIDI Control Bank Actions.     |
 | [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
 | [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)                          | MIDI Manager Controls.     |
+| [plugins.core.midi.manager.default](plugins.core.midi.manager.default.md)                          | Default MIDI Controls.     |
 | [plugins.core.preferences.advanced](plugins.core.preferences.advanced.md)                          | Advanced Preferences Panel.     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
@@ -83,10 +84,10 @@
 | [plugins.core.tangent.os.sound](plugins.core.tangent.os.sound.md)                          | Tangent Display Functions.     |
 | [plugins.core.tangent.os.window](plugins.core.tangent.os.window.md)                          | Window Management Tools for Tangent.     |
 | [plugins.core.tangent.prefs](plugins.core.tangent.prefs.md)                          | Tangent Preferences Panel     |
+| [plugins.core.touchbar.location](plugins.core.touchbar.location.md)                          | Virtual Touch Bar Update Location Callback     |
 | [plugins.core.touchbar.manager](plugins.core.touchbar.manager.md)                          | Touch Bar Manager Plugin.     |
-| [plugins.core.touchbar.manager.virtual](plugins.core.touchbar.manager.virtual.md)                          | Virtual Touch Bar Manager     |
-| [plugins.core.touchbar.manager.virtual.updateLocationCallback](plugins.core.touchbar.manager.virtual.updateLocationCallback.md)                          | Virtual Touch Bar Update Location Callback     |
 | [plugins.core.touchbar.manager.widgets](plugins.core.touchbar.manager.widgets.md)                          | Touch Bar Widgets Manager     |
+| [plugins.core.touchbar.virtual](plugins.core.touchbar.virtual.md)                          | Virtual Touch Bar Manager     |
 | [plugins.core.touchbar.widgets.volume](plugins.core.touchbar.widgets.volume.md)                          | Volume Slider     |
 | [plugins.core.touchbar.widgets.windowSlide](plugins.core.touchbar.widgets.windowSlide.md)                          | Window Slide Widget for Touch Bar.     |
 | [plugins.core.watchfolders.manager](plugins.core.watchfolders.manager.md)                          | Manager for the CommandPost Watch Folders Panel.     |

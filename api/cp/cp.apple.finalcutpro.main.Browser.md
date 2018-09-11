@@ -10,9 +10,14 @@ Browser Module.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [Browser](#browser)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [generatorsShowing](#generatorsshowing)
+ * [isOnPrimary](#isonprimary)
+ * [isOnSecondary](#isonsecondary)
+ * [librariesShowing](#librariesshowing)
+ * [mediaShowing](#mediashowing)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [doHide](#dohide)
  * [doShow](#doshow)
  * [doShowOnPrimary](#doshowonprimary)
@@ -44,23 +49,47 @@ Browser Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.new(app) -> Browser` </span>                                                          |
+#### [Browser](#browser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser(app) -> Browser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Browser` instance. |
 | **Parameters**                                       | <ul><li>app - The Final Cut Pro app instance.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Browser</code>.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:app() -> App` </span>                                                          |
+#### [generatorsShowing](#generatorsshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.generatorsShowing <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | Is the 'Generators' button active, and thus showing? |
+
+#### [isOnPrimary](#isonprimary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.isOnPrimary <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is the Browser on the Primary Window? |
+
+#### [isOnSecondary](#isonsecondary)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.isOnSecondary <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is the Browser on the Secondary Window? |
+
+#### [librariesShowing](#librariesshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.librariesShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is the 'Libraries' button active, and thus showing? |
+
+#### [mediaShowing](#mediashowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.mediaShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is the 'Media' button active, and thus showing? |
+
+### Methods
 
 #### [doHide](#dohide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:doHide() -> cp.rx.go.Statement` </span>                                                          |

@@ -4,6 +4,8 @@
 Touch Bar Widgets Manager
 
 ## API Overview
+* Variables - Configurable values
+ * [widgets](#widgets)
 * Functions - API calls offered directly by the extension
  * [allGroups](#allgroups)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -14,6 +16,14 @@ Touch Bar Widgets Manager
  * [params](#params)
 
 ## API Documentation
+
+### Variables
+
+#### [widgets](#widgets)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.widgets -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Widget Manager |
 
 ### Functions
 

@@ -15,6 +15,8 @@ This extension differs from the `hs.application` extension in several ways:
  * [cp.app.prefs](cp.app.prefs.md)
 
 ## API Overview
+* Variables - Configurable values
+ * [frontmostApp](#frontmostapp)
 * Functions - API calls offered directly by the extension
  * [apps](#apps)
  * [bundleIDs](#bundleids)
@@ -22,7 +24,28 @@ This extension differs from the `hs.application` extension in several ways:
 * Constructors - API calls which return an object, typically one that offers API methods
  * [forBundleID](#forbundleid)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [frontmostApp](#frontmostapp)
+ * [baseLocale](#baselocale)
+ * [currentLocale](#currentlocale)
+ * [description](#description)
+ * [displayName](#displayname)
+ * [focusedWindowUI](#focusedwindowui)
+ * [frontmost](#frontmost)
+ * [hsApplication](#hsapplication)
+ * [info](#info)
+ * [installed](#installed)
+ * [isPlaying](#isplaying)
+ * [mainWindowUI](#mainwindowui)
+ * [modalDialogOpen](#modaldialogopen)
+ * [path](#path)
+ * [pid](#pid)
+ * [preferences](#preferences)
+ * [running](#running)
+ * [showing](#showing)
+ * [supportedLocales](#supportedlocales)
+ * [UI](#ui)
+ * [version](#version)
+ * [versionString](#versionstring)
+ * [windowsUI](#windowsui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bestSupportedLocale](#bestsupportedlocale)
  * [bundleID](#bundleid)
@@ -42,6 +65,14 @@ This extension differs from the `hs.application` extension in several ways:
  * [update](#update)
 
 ## API Documentation
+
+### Variables
+
+#### [frontmostApp](#frontmostapp)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.frontmostApp <cp.prop: cp.app; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Returns the most recent 'registered' app that was active, other than CommandPost itself. |
 
 ### Functions
 
@@ -81,11 +112,139 @@ This extension differs from the `hs.application` extension in several ways:
 
 ### Fields
 
-#### [frontmostApp](#frontmostapp)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.frontmostApp <cp.prop: cp.app; read-only; live>` </span>                                                          |
+#### [baseLocale](#baselocale)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.baseLocale <cp.prop: cp.i18n.localeID; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the most recent 'registered' app that was active, other than CommandPost itself. |
+| **Description**                                      | Returns the [localeID](cp.i18n.localeID.md) of the development region. This is the 'Base' locale for I18N. |
+
+#### [currentLocale](#currentlocale)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.currentLocale <cp.prop: cp.i18n.localeID; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Gets and sets the current locale for the application. |
+
+#### [description](#description)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.description -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the short description of the class as "cp.app: <bundleID>" |
+
+#### [displayName](#displayname)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.displayName <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The application display name as a string. |
+
+#### [focusedWindowUI](#focusedwindowui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.focusedWindowUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the UI containing the currently-focused window for the app. |
+
+#### [frontmost](#frontmost)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.frontmost <cp.prop: boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is the application currently frontmost? |
+
+#### [hsApplication](#hsapplication)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.hsApplication <cp.prop: hs.application; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the running `hs.application` for the application, or `nil` if it's not running. |
+
+#### [info](#info)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.info <cp.prop: table; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The info table for the application, if available. |
+
+#### [installed](#installed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.installed <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the application currently installed. |
+
+#### [isPlaying](#isplaying)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcut.main.Viewer.isPlaying <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |
+
+#### [mainWindowUI](#mainwindowui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.mainWindowUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the UI containing the currently-focused window for the app. |
+
+#### [modalDialogOpen](#modaldialogopen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.modalDialogOpen <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if a modal dialog window is currently opon. |
+
+#### [path](#path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.path <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Path to the application, or `nil` if not found. |
+
+#### [pid](#pid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.pid <cp.prop: number; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the PID for the currently-running application, or `nil` if it's not running. |
+
+#### [preferences](#preferences)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.preferences <cp.app.prefs>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The current [preferences](cp.app.prefs.md) for the application. |
+
+#### [running](#running)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.running <cp.prop: boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the application currently is running. |
+
+#### [showing](#showing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.showing <cp.prop: boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Is the app visible on screen? |
+
+#### [supportedLocales](#supportedlocales)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.supportedLocales <cp.prop: table of cp.i18n.localeID; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns a list of `cp.i18n.localeID` values for locales that are supported by this app. |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the application's `axuielement`, if available. |
+
+#### [version](#version)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.version <cp.prop: semver; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The application version as a [semver](https://github.com/kikito/semver.lua). |
+| **Notes**                                            | <ul><li>If the application is running it will get the version of the active application as a string, otherwise, it will use <code>hs.application.infoForBundleID()</code> to find the version.</li></ul> |
+
+#### [versionString](#versionstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.versionString <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The application version as a `string`. |
+| **Notes**                                            | <ul><li>If the application is running it will get the version of the active application as a string, otherwise, it will use <code>hs.application.infoForBundleID()</code> to find the version.</li></ul> |
+
+#### [windowsUI](#windowsui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.windowsUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the UI containing the list of windows in the app. |
 
 ### Methods
 

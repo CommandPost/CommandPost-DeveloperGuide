@@ -1,84 +1,147 @@
 # [docs](index.md) » cp.apple.finalcutpro.inspector.color.HueSaturationCurves
 ---
 
-Hue/Saturation Curves Module.
+Color Curves Module.
 
 Requires Final Cut Pro 10.4 or later.
 
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [CURVES](#curves)
- * [VIEW_MODES](#view_modes)
+* Functions - API calls offered directly by the extension
+ * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [isShowing](#isshowing)
+ * [HueSaturationCurves](#huesaturationcurves)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [contentUI](#contentui)
  * [mix](#mix)
- * [parent](#parent)
+ * [viewingAllCurves](#viewingallcurves)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [colorVsSat](#colorvssat)
+ * [curveType](#curvetype)
+ * [hueVsHue](#huevshue)
+ * [hueVsLuma](#huevsluma)
+ * [hueVsSat](#huevssat)
+ * [lumaVsSat](#lumavssat)
+ * [mixRow](#mixrow)
+ * [mixSlider](#mixslider)
+ * [satVsSat](#satvssat)
  * [show](#show)
- * [viewMode](#viewmode)
- * [visibleCurve](#visiblecurve)
+ * [viewModeButton](#viewmodebutton)
 
 ## API Documentation
 
-### Constants
+### Functions
 
-#### [CURVES](#curves)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.CURVES -> table` </span>                                                          |
+#### [matches](#matches)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.matches(element)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Table containing all the different types of Color Curves |
-
-#### [VIEW_MODES](#view_modes)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.VIEW_MODES -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | View Modes for Color Curves |
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the specified element is the Color Curves element. |
+| **Parameters**                                       | <ul><li>element   - The element to check</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the element is the Color Curves.</li></ul> |
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.new(parent) -> HueSaturationCurves object` </span>                                                          |
+#### [HueSaturationCurves](#huesaturationcurves)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves(parent) -> HueSaturationCurves object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new HueSaturationCurves object |
 | **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul> |
-| **Returns**                                          | <ul><li>A HueSaturationCurves object</li></ul> |
+| **Returns**                                          | <ul><li>A ColorInspector object</li></ul> |
+
+### Fields
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `axuielement` representing the content element of the HueSaturationCurves corrector. |
+
+#### [mix](#mix)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.mix <cp.prop: number>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The mix amount for this corrector. A number ranging from `0` to `1`. |
+
+#### [viewingAllCurves](#viewingallcurves)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves.viewingAllCurves <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Reports and modifies whether the corrector is showing "All Curves" (`true`) or "Single Curves" (`false`). |
 
 ### Methods
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:app() -> table` </span>                                                          |
+#### [colorVsSat](#colorvssat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:colorVsSat() -> HueSaturationCurve` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
+| **Description**                                      | Returns a [HueSaturationCurve](cp.apple.finalcutpro.inspector.color.HueSaturationCurve.md) |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
+| **Returns**                                          | <ul><li>The <code>HueSaturationCurve</code>.</li></ul> |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:isShowing() -> boolean` </span>                                                          |
+#### [curveType](#curvetype)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:curveType() -> RadioGroup` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Is the Hue/Saturation Curves panel currently showing? |
+| **Description**                                      | Returns the `RadioGroup` that allows selection of the curve type. Only available when |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if showing, otherwise <code>false</code></li></ul> |
+| **Returns**                                          | <ul><li>The <code>RadioGroup</code>.</li></ul> |
 
-#### [mix](#mix)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:mix([value]) -> number | nil` </span>                                                          |
+#### [hueVsHue](#huevshue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:hueVsHue() -> HueSaturationCurve` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Sets or gets the Hue/Saturation Curves mix value. |
-| **Parameters**                                       | <ul><li>[value] - An optional value you want to set the mix value to as number (0 to 1).</li></ul> |
-| **Returns**                                          | <ul><li>A number containing the mix value or <code>nil</code> if an error occurs.</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the HueSaturationCurves's parent table |
+| **Description**                                      | Returns a [HueSaturationCurve](cp.apple.finalcutpro.inspector.color.HueSaturationCurve.md) |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
+| **Returns**                                          | <ul><li>The <code>HueSaturationCurve</code>.</li></ul> |
+
+#### [hueVsLuma](#huevsluma)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:hueVsLuma() -> HueSaturationCurve` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [HueSaturationCurve](cp.apple.finalcutpro.inspector.color.HueSaturationCurve.md) |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>HueSaturationCurve</code>.</li></ul> |
+
+#### [hueVsSat](#huevssat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:hueVsSat() -> HueSaturationCurve` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [HueSaturationCurve](cp.apple.finalcutpro.inspector.color.HueSaturationCurve.md) |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>HueSaturationCurve</code>.</li></ul> |
+
+#### [lumaVsSat](#lumavssat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:lumaVsSat() -> HueSaturationCurve` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [HueSaturationCurve](cp.apple.finalcutpro.inspector.color.HueSaturationCurve.md) |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>HueSaturationCurve</code>.</li></ul> |
+
+#### [mixRow](#mixrow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:mixRow() -> cp.ui.PropertyRow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `PropertyRow` that provides access to the 'Mix' parameter, and `axuielement` |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>PropertyRow</code>.</li></ul> |
+
+#### [mixSlider](#mixslider)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:mixSlider() -> cp.ui.Slider` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Slider` that provides access to the 'Mix' slider. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The Mix <code>Slider</code>.</li></ul> |
+
+#### [satVsSat](#satvssat)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:satVsSat() -> HueSaturationCurve` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [HueSaturationCurve](cp.apple.finalcutpro.inspector.color.HueSaturationCurve.md) |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>HueSaturationCurve</code>.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:show() -> boolean` </span>                                                          |
@@ -88,21 +151,11 @@ Requires Final Cut Pro 10.4 or later.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>HueSaturationCurves object</li></ul> |
 
-#### [viewMode](#viewmode)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:viewMode([value]) -> string | nil` </span>                                                          |
+#### [viewModeButton](#viewmodebutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:viewModeButton() -> MenuButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Sets or gets the View Mode for the Hue/Saturation Curves. |
-| **Parameters**                                       | <ul><li>[value] - An optional value to set the View Mode, as defined in <code>cp.apple.finalcutpro.inspector.color.HueSaturationCurves.VIEW_MODES</code>.</li></ul> |
-| **Returns**                                          | <ul><li>A string containing the View Mode or <code>nil</code> if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>Value can be:</li><li>6 Curves</li><li>Single Curves</li></ul> |
-
-#### [visibleCurve](#visiblecurve)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.HueSaturationCurves:visibleCurve([value]) -> string | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Sets or gets the selected hue/saturation curve. |
-| **Parameters**                                       | <ul><li>[value] - An optional value to set the visible curve, as defined in <code>cp.apple.finalcutpro.inspector.color.HueSaturationCurves.CURVES</code>.</li></ul> |
-| **Returns**                                          | <ul><li>A string containing the selected color curve or <code>nil</code> if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>Value can be:</li><li>6 Curves</li><li>HvH</li><li>HvS</li><li>HvL</li><li>LvS</li><li>SvS</li><li>Orange</li><li>Example Usage:   <code>require("cp.apple.finalcutpro"):inspector():color():hueSaturationCurves():visibleCurve("HvH")</code></li></ul> |
+| **Description**                                      | Returns the [MenuButton](cp.ui.MenuButton.md) for the View Mode. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>MenuButton</code> for the View Mode.</li></ul> |
 

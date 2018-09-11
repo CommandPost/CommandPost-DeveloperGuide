@@ -31,6 +31,7 @@ isnt_blank(nil) == false
  * [callable](#callable)
  * [falsey](#falsey)
  * [fn](#fn)
+ * [instance](#instance)
  * [list](#list)
  * [nothing](#nothing)
  * [number](#number)
@@ -84,6 +85,14 @@ isnt_blank(nil) == false
 | **Description**                                      | Check if the value is a `function`. |
 | **Parameters**                                       | <ul><li>value     - the value to check</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if it matches, <code>false</code> if not.</li></ul> |
+
+#### [instance](#instance)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.is.instance(value, class) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Check if the value is an instance of the provided class `table`. It is considered |
+| **Parameters**                                       | <ul><li>value     - the value to check</li><li>class     - the class table to check</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if it is an instance.</li></ul> |
 
 #### [list](#list)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.is.list(value) -> boolean` </span>                                                          |

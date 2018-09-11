@@ -3,6 +3,8 @@
 
 Color Inspector Module.
 
+Extends [Element](cp.ui.Element.md).
+
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [CORRECTION_TYPES](#correction_types)
@@ -11,21 +13,21 @@ Color Inspector Module.
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [correctorUI](#correctorui)
  * [isAdvanced](#isadvanced)
- * [isShowing](#isshowing)
  * [topBarUI](#topbarui)
- * [UI](#ui)
+ * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activateCorrection](#activatecorrection)
  * [addCorrection](#addcorrection)
- * [app](#app)
  * [colorBoard](#colorboard)
  * [colorCurves](#colorcurves)
+ * [ColorInspector](#colorinspector)
  * [colorWheels](#colorwheels)
  * [corrections](#corrections)
+ * [doActivateCorrection](#doactivatecorrection)
+ * [doAddCorrection](#doaddcorrection)
+ * [doShow](#doshow)
  * [hide](#hide)
  * [hueSaturationCurves](#huesaturationcurves)
- * [new](#new)
- * [parent](#parent)
  * [show](#show)
 
 ## API Documentation
@@ -62,23 +64,17 @@ Color Inspector Module.
 | **Type**                                             | Field |
 | **Description**                                      | Is the Color Inspector the advanced version that was added in 10.4? |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Checks if the Color Inspector is visible. |
-
 #### [topBarUI](#topbarui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.topBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `hs._asm.axuielement` object representing the top bar. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+#### [value](#value)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.value <cp.prop: cp.drawing.color>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Color Inspector. Prior to FCPX 10.4 this will be the Color Board. |
+| **Description**                                      | Gets the Color Well Value as a `cp.drawing.color`. |
 
 ### Methods
 
@@ -98,14 +94,6 @@ Color Inspector Module.
 | **Parameters**                                       | <ul><li>correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li></ul> |
 | **Returns**                                          | <ul><li>ColorInspector object</li></ul> |
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:app() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
-
 #### [colorBoard](#colorboard)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:colorBoard() -> ColorBoard` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -121,6 +109,14 @@ Color Inspector Module.
 | **Description**                                      | Gets the ColorCurves object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A new ColorCurves object</li></ul> |
+
+#### [ColorInspector](#colorinspector)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector(parent) -> ColorInspector object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Creates a new ColorInspector object |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul> |
+| **Returns**                                          | <ul><li>A ColorInspector object</li></ul> |
 
 #### [colorWheels](#colorwheels)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:colorWheels() -> ColorWheels` </span>                                                          |
@@ -138,6 +134,30 @@ Color Inspector Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>CorrectionsBar</code> instance.</li></ul> |
 
+#### [doActivateCorrection](#doactivatecorrection)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:doActivateCorrection(correctionType[, number]) -> cp.rx.go.Statement<boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that activates the named correction type and number, if present. |
+| **Parameters**                                       | <ul><li>correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li><li>number           - The correction number for that type. Defaults to <code>1</code>.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, which sends a single <code>true</code> value if successful, or sends an error if not.</li></ul> |
+
+#### [doAddCorrection](#doaddcorrection)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:doAddCorrection(correctionType) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that adds the named correction type. |
+| **Parameters**                                       | <ul><li>correctionType   - The string for the type of correction (in English). E.g. "Color Wheels", "Color Board", etc.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if successful, or sending an error if not.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that attempts to show the Color Inspector. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if successful or sending an error if not.</li></ul> |
+
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:hide() -> ColorInspector` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -153,22 +173,6 @@ Color Inspector Module.
 | **Description**                                      | Gets the HueSaturationCurves object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A new HueSaturationCurves object</li></ul> |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.new(parent) -> ColorInspector object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Creates a new ColorInspector object |
-| **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul> |
-| **Returns**                                          | <ul><li>A ColorInspector object</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the ColorInspector's parent table. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector:show() -> self` </span>                                                          |

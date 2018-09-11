@@ -15,9 +15,13 @@ Libraries Browser Module.
  * [deselectAll](#deselectall)
  * [matchesSidebar](#matchessidebar)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [LibrariesBrowser](#librariesbrowser)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [isFilmstripView](#isfilmstripview)
+ * [isFocused](#isfocused)
+ * [isListView](#islistview)
+ * [mainGroupUI](#maingroupui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [appearanceAndFiltering](#appearanceandfiltering)
  * [clips](#clips)
  * [clipsUI](#clipsui)
@@ -30,9 +34,9 @@ Libraries Browser Module.
  * [filmstrip](#filmstrip)
  * [filterToggle](#filtertoggle)
  * [hide](#hide)
+ * [list](#list)
  * [loadLayout](#loadlayout)
  * [openClipTitled](#opencliptitled)
- * [parent](#parent)
  * [playhead](#playhead)
  * [saveLayout](#savelayout)
  * [search](#search)
@@ -111,23 +115,41 @@ Libraries Browser Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.new(app) -> LibrariesBrowser` </span>                                                          |
+#### [LibrariesBrowser](#librariesbrowser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser(app) -> LibrariesBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `LibrariesBrowser` instance. |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>LibrariesBrowser</code> object.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:app() -> App` </span>                                                          |
+#### [isFilmstripView](#isfilmstripview)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.isFilmstripView <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the Library Browser is in 'filmstrip view' mode. |
+
+#### [isFocused](#isfocused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.isFocused <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the Libraries Browser is the current focus. |
+
+#### [isListView](#islistview)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.isListView <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the Library Browser is in 'list view' mode. |
+
+#### [mainGroupUI](#maingroupui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.mainGroupUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the main group within the Libraries Browser, or `nil` if not available.. |
+
+### Methods
 
 #### [appearanceAndFiltering](#appearanceandfiltering)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:appearanceAndFiltering() -> Button` </span>                                                          |
@@ -202,12 +224,12 @@ Libraries Browser Module.
 | **Returns**                                          | <ul><li>The <code>Statement</code> object.</li></ul> |
 
 #### [filmstrip](#filmstrip)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:filmstrip() -> LibrariesList` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:filmstrip() -> LibrariesFilmstrip` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Get Libraries List object. |
+| **Description**                                      | Get Libraries Film Strip object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>LibrariesList</code> object.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>LibrariesBrowser</code> object.</li></ul> |
 
 #### [filterToggle](#filtertoggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:filterToggle() -> Button` </span>                                                          |
@@ -225,6 +247,14 @@ Libraries Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>LibrariesBrowser</code> object.</li></ul> |
 
+#### [list](#list)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:list() -> LibrariesList` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Get [LibrariesList](cp.apple.finalcutpro.main.LibrariesList.md) object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>LibrariesList</code> object.</li></ul> |
+
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -240,14 +270,6 @@ Libraries Browser Module.
 | **Description**                                      | Open a clip with a specific title. |
 | **Parameters**                                       | <ul><li>name - The name of the clip you want to open.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful, otherwise <code>false</code>.</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
 
 #### [playhead](#playhead)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:playhead() -> Playhead` </span>                                                          |

@@ -10,9 +10,8 @@ Represents a single property row, typically in a Property Inspector.
  * [parentUIFinder](#parentuifinder)
  * [prepareParent](#prepareparent)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [PropertyRow](#propertyrow)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [isShowing](#isshowing)
  * [label](#label)
  * [labelUI](#labelui)
  * [propertiesUI](#propertiesui)
@@ -21,6 +20,7 @@ Represents a single property row, typically in a Property Inspector.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [children](#children)
+ * [doHide](#dohide)
  * [doShow](#doshow)
  * [hide](#hide)
  * [labelKeys](#labelkeys)
@@ -65,8 +65,8 @@ Represents a single property row, typically in a Property Inspector.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.new(parent, labelKey[, index]) -> cp.ui.PropertyRow` </span>                                                          |
+#### [PropertyRow](#propertyrow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow(parent, labelKey[, index]) -> cp.ui.PropertyRow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `PropertyRow` with the specified parent and label key. |
@@ -74,12 +74,6 @@ Represents a single property row, typically in a Property Inspector.
 | **Returns**                                          | <ul><li>The new <code>PropertyRow</code> instance.</li></ul> |
 
 ### Fields
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Checks if the row is showing. |
 
 #### [label](#label)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.label <cp.prop: string; read-only>` </span>                                                          |
@@ -91,7 +85,7 @@ Represents a single property row, typically in a Property Inspector.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.labelUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The `axuielement` containing the row label. |
+| **Description**                                      | Returns the `axuielement` for the label UI. |
 
 #### [propertiesUI](#propertiesui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.propertiesUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
@@ -128,6 +122,13 @@ Represents a single property row, typically in a Property Inspector.
 | **Description**                                      | Gets a table of children for the Property Row. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table of children or <code>nil</code>.</li></ul> |
+
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will attempt to hide the `PropertyRow`. |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
 
 #### [doShow](#doshow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:doShow() -> cp.rx.go.Statement` </span>                                                          |

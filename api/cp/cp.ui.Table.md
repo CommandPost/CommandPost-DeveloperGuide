@@ -14,7 +14,12 @@ Represents an AXTable in the Apple Accessibility UX API.
  * [matchesContent](#matchescontent)
  * [visitRow](#visitrow)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [Table](#table)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [contentUI](#contentui)
+ * [horizontalScrollBarUI](#horizontalscrollbarui)
+ * [isFocused](#isfocused)
+ * [verticalScrollBarUI](#verticalscrollbarui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [columnsUI](#columnsui)
  * [deselectAll](#deselectall)
@@ -23,7 +28,6 @@ Represents an AXTable in the Apple Accessibility UX API.
  * [findCellUI](#findcellui)
  * [findColumnIndex](#findcolumnindex)
  * [loadLayout](#loadlayout)
- * [parent](#parent)
  * [rowsUI](#rowsui)
  * [saveLayout](#savelayout)
  * [selectAll](#selectall)
@@ -106,13 +110,39 @@ Represents an AXTable in the Apple Accessibility UX API.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table.new(parent, finder) -> self` </span>                                                          |
+#### [Table](#table)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table(parent, uiFinder) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Table. |
-| **Parameters**                                       | <ul><li><code>parent</code>     - The parent object.</li><li><code>finder</code>     - A function which will return the <code>axuielement</code> that this table represents.</li></ul> |
+| **Parameters**                                       | <ul><li><code>parent</code>     - The parent object.</li><li><code>uiFinder</code>   - A <code>function</code> or <code>cp.prop</code> which will return the <code>axuielement</code> that this table represents.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Table</code> instance.</li></ul> |
+
+### Fields
+
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `axuielement` that contains the actual rows. |
+
+#### [horizontalScrollBarUI](#horizontalscrollbarui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table.horizontalScrollBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The horizontal scroll bar UI element, if present. |
+
+#### [isFocused](#isfocused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table.isFocused <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns `true` if the table is focused by the user. |
+
+#### [verticalScrollBarUI](#verticalscrollbarui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table.verticalScrollBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The vertical scroll bar UI element, if present. |
 
 ### Methods
 
@@ -168,14 +198,6 @@ Represents an AXTable in the Apple Accessibility UX API.
 | **Description**                                      | Loads a Table layout. |
 | **Parameters**                                       | <ul><li>layout - A table containing the Table layout settings - created using <code>cp.ui.Table:saveLayout()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:parent() -> value` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The table's parent, as provided in the constructor. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The table's parent.</li></ul> |
 
 #### [rowsUI](#rowsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:rowsUI([filterFn]) -> table of axuielements | nil` </span>                                                          |

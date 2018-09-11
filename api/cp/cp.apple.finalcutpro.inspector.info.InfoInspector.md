@@ -13,12 +13,8 @@ Video Inspector Module.
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [metadataView](#metadataview)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [isShowing](#isshowing)
- * [parent](#parent)
  * [propertiesUI](#propertiesui)
  * [show](#show)
- * [UI](#ui)
 
 ## API Documentation
 
@@ -60,30 +56,6 @@ Video Inspector Module.
 
 ### Methods
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:app() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:isShowing() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Is the Info Inspector currently showing? |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if showing, otherwise <code>false</code></li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the InfoInspector's parent table |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
-
 #### [propertiesUI](#propertiesui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:propertiesUI() -> hs._asm.axuielement object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -99,12 +71,4 @@ Video Inspector Module.
 | **Description**                                      | Gets the Info Inspector Metadata View Button. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>An <code>MenuButton</code> object.</li></ul> |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:UI() -> hs._asm.axuielement object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Info Inspector |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>hs._asm.axuielement</code> object.</li></ul> |
 

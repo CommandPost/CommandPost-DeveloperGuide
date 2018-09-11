@@ -6,6 +6,7 @@ A collection of handy miscellaneous tools for Lua development.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [cleanupButtonText](#cleanupbuttontext)
+ * [convertSingleHexStringToDecimalString](#convertsinglehexstringtodecimalstring)
  * [dirFiles](#dirfiles)
  * [doesDirectoryExist](#doesdirectoryexist)
  * [doesFileExist](#doesfileexist)
@@ -67,6 +68,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Removes the … symbol and multiple >'s from a string. |
 | **Parameters**                                       | <ul><li>value - A string</li></ul> |
 | **Returns**                                          | <ul><li>A cleaned string</li></ul> |
+
+#### [convertSingleHexStringToDecimalString](#convertsinglehexstringtodecimalstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.convertSingleHexStringToDecimalString(hex) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Converts a single hex string (i.e. "3") to a binary string (i.e. "0011") |
+| **Parameters**                                       | <ul><li>hex - A single string character</li></ul> |
+| **Returns**                                          | <ul><li>A four character string</li></ul> |
 
 #### [dirFiles](#dirfiles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.dirFiles(path) -> table` </span>                                                          |

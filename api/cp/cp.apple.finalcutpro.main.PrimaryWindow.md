@@ -6,9 +6,12 @@ Primary Window Module.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [PrimaryWindow](#primarywindow)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [bottomGroupUI](#bottomgroupui)
  * [browserGroupUI](#browsergroupui)
+ * [doShow](#doshow)
  * [frame](#frame)
  * [hsWindow](#hswindow)
  * [isFullScreen](#isfullscreen)
@@ -25,7 +28,6 @@ Primary Window Module.
  * [app](#app)
  * [colorBoard](#colorboard)
  * [inspector](#inspector)
- * [new](#new)
  * [show](#show)
  * [toolbar](#toolbar)
  * [window](#window)
@@ -42,6 +44,16 @@ Primary Window Module.
 | **Parameters**                                       | <ul><li>w - The window to check</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matched otherwise <code>false</code></li></ul> |
 
+### Constructors
+
+#### [PrimaryWindow](#primarywindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow(app) -> PrimaryWindow object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new PrimaryWindow. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>PrimaryWindow</li></ul> |
+
 ### Fields
 
 #### [bottomGroupUI](#bottomgroupui)
@@ -55,6 +67,13 @@ Primary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the UI which contains the Browser. |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:doShow() -> PrimaryWindow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that attempts to show the Primary Window. |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, which resolves as either <code>true</code> or sends an error.</li></ul> |
 
 #### [frame](#frame)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.frame <cp.prop: frame>` </span>                                                          |
@@ -111,10 +130,10 @@ Primary Window Module.
 | **Description**                                      | Returns the top group UI as a `hs._asm.axuielement` object. |
 
 #### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.UI <cp.prop: axuielement; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The `axuielement` for the window. |
+| **Description**                                      | The main `axuielement` for the window. May be `nil` if not currently available. |
 
 #### [viewerGroupUI](#viewergroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.viewerGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
@@ -133,7 +152,7 @@ Primary Window Module.
 | **Returns**                                          | <ul><li>A <code>cp.ui.Alert</code> object</li></ul> |
 
 #### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:app() -> hs.application` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:app() -> cp.apple.finalcutpro` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the application the display belongs to. |
@@ -155,14 +174,6 @@ Primary Window Module.
 | **Description**                                      | Gets the Inspector object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Inspector</li></ul> |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.new(app) -> PrimaryWindow object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Creates a new PrimaryWindow. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>PrimaryWindow</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:show() -> PrimaryWindow` </span>                                                          |

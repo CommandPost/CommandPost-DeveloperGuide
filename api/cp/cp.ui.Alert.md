@@ -11,18 +11,14 @@ Alert UI Module.
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [cancel](#cancel)
  * [default](#default)
- * [isShowing](#isshowing)
  * [title](#title)
- * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [containsText](#containstext)
  * [doCancel](#docancel)
  * [doDefault](#dodefault)
  * [doHide](#dohide)
  * [doPress](#dopress)
  * [hide](#hide)
- * [parent](#parent)
  * [pressCancel](#presscancel)
  * [pressDefault](#pressdefault)
 
@@ -41,7 +37,7 @@ Alert UI Module.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert.new(app) -> Alert` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert:new(app) -> Alert` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Alert` instance. |
@@ -62,33 +58,13 @@ Alert UI Module.
 | **Type**                                             | Field |
 | **Description**                                      | The default [Button](cp.ui.Button.md) for the `Alert`. |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Is the alert showing? |
-
 #### [title](#title)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert.title <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Gets the title of the alert. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert.UI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `axuielement` for the Alert, or `nil` if not available. |
-
 ### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
 
 #### [containsText](#containstext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert:containsText(value[, plain]) -> boolean` </span>                                                          |
@@ -137,14 +113,6 @@ Alert UI Module.
 | **Description**                                      | Hides the alert by pressing the "Cancel" button. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
 
 #### [pressCancel](#presscancel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Alert:pressCancel() -> self, boolean` </span>                                                          |

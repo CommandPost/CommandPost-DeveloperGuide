@@ -4,33 +4,20 @@
 Text Field Module.
 
 ## API Overview
-* Variables - Configurable values
- * [isShowing](#isshowing)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [clear](#clear)
+ * [forceFocus](#forcefocus)
  * [getValue](#getvalue)
- * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
- * [new](#new)
- * [parent](#parent)
  * [saveLayout](#savelayout)
  * [setValue](#setvalue)
- * [snapshot](#snapshot)
- * [UI](#ui)
+ * [TextField](#textfield)
 
 ## API Documentation
-
-### Variables
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField.isShowing <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | Is the Text Field showing? |
 
 ### Functions
 
@@ -60,6 +47,12 @@ Text Field Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
 
+#### [forceFocus](#forcefocus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:forceFocus()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Configures the TextField to force a focus on the field before editing. |
+
 #### [getValue](#getvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:getValue() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -68,14 +61,6 @@ Text Field Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The value of the Text Field as a string.</li></ul> |
 
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Is the Text Field enabled? |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if enabled, otherwise <code>false</code>.</li></ul> |
-
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -83,22 +68,6 @@ Text Field Module.
 | **Description**                                      | Loads a Text Field layout. |
 | **Parameters**                                       | <ul><li>layout - A table containing the Text Field layout settings - created using <code>cp.ui.TextField:saveLayout()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField.new(parent, finderFn[, convertFn]) -> TextField` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Creates a new TextField. They have a parent and a finder function. |
-| **Parameters**                                       | <ul><li>parent   - The parent object.</li><li>finderFn - The function will return the <code>axuielement</code> for the TextField.</li><li>convertFn    - (optional) If provided, will be passed the <code>string</code> value when returning.</li></ul> |
-| **Returns**                                          | <ul><li>The new <code>TextField</code>.</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object.</li></ul> |
 
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:saveLayout() -> table` </span>                                                          |
@@ -116,17 +85,11 @@ Text Field Module.
 | **Parameters**                                       | <ul><li>value - The value you want to set the Text Field to as a string.</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
 
-#### [snapshot](#snapshot)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:snapshot([path]) -> hs.image | nil` </span>                                                          |
+#### [TextField](#textfield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField(parent, uiFinder[, convertFn]) -> TextField` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it. |
-| **Parameters**                                       | <ul><li>path     - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul> |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:UI() -> hs._asm.axuielement | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `axuielement` representing the `TextField`, or `nil` if not available. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Description**                                      | Creates a new TextField. They have a parent and a finder function. |
+| **Parameters**                                       | <ul><li>parent   - The parent object.</li><li>uiFinder - The function will return the <code>axuielement</code> for the TextField.</li><li>convertFn    - (optional) If provided, will be passed the <code>string</code> value when returning.</li></ul> |
+| **Returns**                                          | <ul><li>The new <code>TextField</code>.</li></ul> |
 

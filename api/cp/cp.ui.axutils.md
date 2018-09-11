@@ -26,15 +26,19 @@ Utility functions to support `hs._asm.axuielement`.
  * [compareTopToBottom](#comparetoptobottom)
  * [hasAttributeValue](#hasattributevalue)
  * [isValid](#isvalid)
+ * [prop](#prop)
  * [role](#role)
  * [snapshot](#snapshot)
+ * [withAttributeValue](#withattributevalue)
+ * [withRole](#withrole)
+ * [withValue](#withvalue)
 
 ## API Documentation
 
 ### Functions
 
 #### [cache](#cache)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.cache(source, key, finderFn, [verifyFn]) -> axuielement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.cache(source, key, finderFn[, verifyFn]) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks if the cached value at the `source[key]` is a valid axuielement. If not |
@@ -197,6 +201,15 @@ Utility functions to support `hs._asm.axuielement`.
 | **Parameters**                                       | <ul><li>element  - the axuielement</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the element is valid.</li></ul> |
 
+#### [prop](#prop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.prop(uiFinder, attributeName[, settable]) -> cp.prop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Creates a new `cp.prop` which will find the `hs._asm.axuielement` via the `uiFinder` and |
+| **Parameters**                                       | <ul><li>uiFinder      - the <code>cp.prop</code> or <code>function</code> which will retrieve the current <code>hs._asm.axuielement</code>.</li><li>attributeName - the <code>AX</code> atrribute name the property links to.</li><li>settable      - Defaults to <code>false</code>. If <code>true</code>, the property will also be settable.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> for the attribute.</li></ul> |
+| **Notes**                                            | <ul><li>If the <code>uiFinder</code> is a <code>cp.prop</code>, it will be monitored for changes, making the resulting <code>prop</code> "live".</li></ul> |
+
 #### [role](#role)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.match.role(roleName) -> function` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -206,10 +219,34 @@ Utility functions to support `hs._asm.axuielement`.
 | **Returns**                                          | <ul><li><code>function(element) -&gt; boolean</code> that checks the <code>AXRole</code> is <code>roleName</code></li></ul> |
 
 #### [snapshot](#snapshot)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.snapshot(element, [filename]) -> hs.image` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.snapshot(element[, filename]) -> hs.image` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Takes a snapshot of the specified `axuielement` and returns it. |
 | **Parameters**                                       | <ul><li>element      - The <code>axuielement</code> to snap.</li><li>filename     - (optional) The path to save the image as a PNG file.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.image</code> file, or <code>nil</code> if the element could not be snapped.</li></ul> |
+
+#### [withAttributeValue](#withattributevalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.withAttributeValue(element, name, value) -> hs._asm.axuielement | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the element has an attribute value with the specified `name` and `value`. |
+| **Parameters**                                       | <ul><li>element       - The element to check</li><li>name          - The name of the attribute to check</li><li>value         - The value of the attribute</li></ul> |
+| **Returns**                                          | <ul><li>The <code>axuielement</code> if it matches, otherwise <code>nil</code>.</li></ul> |
+
+#### [withRole](#withrole)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.withRole(element, role) -> hs._asm.axuielement | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the element has an "AXRole" attribute with the specified `role`. |
+| **Parameters**                                       | <ul><li>element       - The element to check</li><li>role          - The required role</li></ul> |
+| **Returns**                                          | <ul><li>The <code>axuielement</code> if it matches, otherwise <code>nil</code>.</li></ul> |
+
+#### [withValue](#withvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.withValue(element, value) -> hs._asm.axuielement | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the element has an "AXValue" attribute with the specified `value`. |
+| **Parameters**                                       | <ul><li>element       - The element to check</li><li>value         - The required value</li></ul> |
+| **Returns**                                          | <ul><li>The <code>axuielement</code> if it matches, otherwise <code>nil</code>.</li></ul> |
 

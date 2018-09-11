@@ -7,7 +7,7 @@ A Window UI element.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [Window](#window)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [exists](#exists)
  * [focused](#focused)
@@ -39,8 +39,8 @@ A Window UI element.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.new(cpApp, uiProp) -> Window` </span>                                                          |
+#### [Window](#window)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window(cpApp, uiProp) -> Window` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Window |
@@ -122,11 +122,11 @@ A Window UI element.
 | **Returns**                                          | <ul><li><code>true</code> if the window was successfully closed.</li></ul> |
 
 #### [doClose](#doclose)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:doClose([waitSeconds]) -> cp.rx.go.Statement <boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:doClose() -> cp.rx.go.Statement <boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that will attempt to close the window, if it is visible. |
-| **Parameters**                                       | <ul><li>waitSeconds   - If provided, this is the number of seconds to wait before failing. If not provided, no check is done and the statement completes immediately.</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code> to execute, resolving to <code>true</code> if the window is closed successfully, or <code>false</code> if not.</li></ul> |
 
 #### [doFocus](#dofocus)

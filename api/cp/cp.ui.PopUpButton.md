@@ -7,26 +7,20 @@ Pop Up Button Module.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [PopUpButton](#popupbutton)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [isShowing](#isshowing)
  * [menuUI](#menuui)
- * [UI](#ui)
  * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [doPress](#dopress)
  * [doSelectItem](#doselectitem)
  * [doSelectValue](#doselectvalue)
  * [getValue](#getvalue)
- * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
- * [parent](#parent)
  * [press](#press)
  * [saveLayout](#savelayout)
  * [selectItem](#selectitem)
  * [setValue](#setvalue)
- * [snapshot](#snapshot)
 
 ## API Documentation
 
@@ -42,33 +36,21 @@ Pop Up Button Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.new(axuielement, function) -> cp.ui.PopUpButton` </span>                                                          |
+#### [PopUpButton](#popupbutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton(parent, uiFinder) -> cp.ui.PopUpButton` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new PopUpButton. |
-| **Parameters**                                       | <ul><li>parent       - The parent table. Should have a <code>isShowing</code> property.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent table. Should have a <code>isShowing</code> property.</li><li>uiFinder      - The <code>function</code> or <code>cp.prop</code> that provides the current <code>hs._asm.axuielement</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>PopUpButton</code> instance.</li></ul> |
 
 ### Fields
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.isShowing <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Checks if the `PopUpButton` is visible on screen. |
 
 #### [menuUI](#menuui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.menuUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `AXMenu` for the PopUpMenu if it is currently visible. |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Provides the `axuielement` for the `PopUpButton`. |
 
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton.value <cp.prop: anything; live>` </span>                                                          |
@@ -77,14 +59,6 @@ Pop Up Button Module.
 | **Description**                                      | Returns or sets the current `PopUpButton` value. |
 
 ### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:app() -> app` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the application object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Application</li></ul> |
 
 #### [doPress](#dopress)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:doPress() -> cp.rx.go.Statement` </span>                                                          |
@@ -118,29 +92,13 @@ Pop Up Button Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>PopUpButton</code> value as string, or <code>nil</code> if the value cannot be determined.</li></ul> |
 
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Is the `PopUpButton` enabled? |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if enabled otherwise <code>false</code>.</li></ul> |
-
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Loads a `PopUpButton` layout. |
-| **Parameters**                                       | <ul><li>layout - A table containing the <code>PopUpButton</code> layout settings - created using <code>cp.ui.PopUpButton:saveLayout()</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>layout - A table containing the <code>PopUpButton</code> layout settings - created using <a href="#saveLayout">saveLayout</a>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
 
 #### [press](#press)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:press() -> self` </span>                                                          |
@@ -173,11 +131,4 @@ Pop Up Button Module.
 | **Description**                                      | Sets the `PopUpButton` value. |
 | **Parameters**                                       | <ul><li>value - The value you want to set the <code>PopUpButton</code> to.</li></ul> |
 | **Returns**                                          | <ul><li>self</li></ul> |
-
-#### [snapshot](#snapshot)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PopUpButton:snapshot([path]) -> hs.image | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it. |
-| **Parameters**                                       | <ul><li>path     - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul> |
 

@@ -5,6 +5,7 @@ MIDI Manager Plugin.
 
 ## Submodules
  * [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)
+ * [plugins.core.midi.manager.default](plugins.core.midi.manager.default.md)
 
 ## API Overview
 * Constants - Useful values which cannot be changed

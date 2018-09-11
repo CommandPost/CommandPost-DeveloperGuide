@@ -16,25 +16,27 @@ Color Board Module.
  * [matchesCurrent](#matchescurrent)
  * [matchesOriginal](#matchesoriginal)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [ColorBoard](#colorboard)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [contentUI](#contentui)
  * [isActive](#isactive)
  * [isAdvanced](#isadvanced)
  * [isShowing](#isshowing)
  * [topToolbarUI](#toptoolbarui)
- * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [aspectGroup](#aspectgroup)
  * [backButton](#backbutton)
  * [childUI](#childui)
  * [color](#color)
  * [current](#current)
+ * [doHide](#dohide)
+ * [doNextAspect](#donextaspect)
+ * [doResetCurrent](#doresetcurrent)
+ * [doSelectAspect](#doselectaspect)
+ * [doShow](#doshow)
  * [exposure](#exposure)
  * [hide](#hide)
  * [nextAspect](#nextaspect)
- * [parent](#parent)
  * [reset](#reset)
  * [saturation](#saturation)
  * [show](#show)
@@ -103,8 +105,8 @@ Color Board Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.new(parent) -> ColorBoard object` </span>                                                          |
+#### [ColorBoard](#colorboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard(parent) -> ColorBoard object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new ColorBoard object |
@@ -144,21 +146,7 @@ Color Board Module.
 | **Description**                                      | Gets the `hs._asm.axuielement` object for the top toolbar (i.e. where the Back Button is located in Final Cut Pro 10.3) |
 | **Notes**                                            | <ul><li>This object doesn't exist in Final Cut Pro 10.4 as the Color Board is now contained within the Color Inspector</li></ul> |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Color Board. |
-
 ### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:app() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
 
 #### [aspectGroup](#aspectgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:aspectGroup() -> cp.ui.RadioGroup` </span>                                                          |
@@ -201,6 +189,46 @@ Color Board Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The currently active <code>ColorBoardAspect</code>, or the <code>color</code> aspect if none is showing.</li></ul> |
 
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that hides the Color Board. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, which will send a single <code>true</code> if successful, otherwise <code>false</code>, or an error being sent.</li></ul> |
+
+#### [doNextAspect](#donextaspect)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:doNextAspect() -> cp.rx.go.Statement<boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that toggles the Color Board Panels between "Color", "Saturation" and "Exposure". |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>ColorBoard object</li></ul> |
+
+#### [doResetCurrent](#doresetcurrent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:doResetCurrent([range]) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will reset the current 'active' aspect (e.g. `color`) in the Color Board. |
+| **Parameters**                                       | <ul><li>range     - Optional range to reset in the current aspect.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, resolving with <code>true</code> if completed or an error if not.</li></ul> |
+
+#### [doSelectAspect](#doselectaspect)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:doSelectAspect(index) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will attempt to select the specified aspect `index`. |
+| **Parameters**                                       | <ul><li>index     - The index to select.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, which will resolve to <code>true</code> if successful, or throw an error if not.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that shows the Color Board. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>, which will send a single <code>true</code> if successful, otherwise <code>false</code>, or an error being sent.</li></ul> |
+
 #### [exposure](#exposure)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:exposure() -> ColorBoardAspect` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -224,14 +252,6 @@ Color Board Module.
 | **Description**                                      | Toggles the Color Board Panels between "Color", "Saturation" and "Exposure" |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>ColorBoard object</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the ColorBoard's parent table |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:reset() -> self` </span>                                                          |

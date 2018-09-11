@@ -61,10 +61,10 @@ Provides access to the list of Share Destinations configured for the user.
 | **Returns**                                          | <ul><li>The index of the named Destination, or <code>nil</code>.</li></ul> |
 
 #### [names](#names)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.names() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.names() -> table | nil, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns an array of the names of destinations, in their current order. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The table of Share Destination names.</li></ul> |
+| **Returns**                                          | <ul><li>The table of Share Destination names, or <code>nil</code> if an error has occurred.</li><li>An error message as a string.</li></ul> |
 

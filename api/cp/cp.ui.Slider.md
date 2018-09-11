@@ -7,21 +7,21 @@ Slider Module.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [Slider](#slider)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [maxValue](#maxvalue)
+ * [minValue](#minvalue)
+ * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [decrement](#decrement)
  * [getMaxValue](#getmaxvalue)
  * [getMinValue](#getminvalue)
  * [getValue](#getvalue)
  * [increment](#increment)
- * [isEnabled](#isenabled)
  * [loadLayout](#loadlayout)
- * [parent](#parent)
  * [saveLayout](#savelayout)
  * [setValue](#setvalue)
  * [shiftValue](#shiftvalue)
- * [snapshot](#snapshot)
 
 ## API Documentation
 
@@ -37,23 +37,35 @@ Slider Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider.new(parent, finderFn) -> cp.ui.Slider` </span>                                                          |
+#### [Slider](#slider)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider(parent, uiFinder) -> cp.ui.Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Slider |
-| **Parameters**                                       | <ul><li>parent       - The parent object. Should have an <code>isShowing</code> property.</li><li>finderFn     - The function which returns an <code>hs._asm.axuielement</code> for the slider, or <code>nil</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>parent       - The parent object. Should have an <code>isShowing</code> property.</li><li>uiFinder     - The function which returns an <code>hs._asm.axuielement</code> for the slider, or <code>nil</code>.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Slider</code> instance.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:app() -> App` </span>                                                          |
+#### [maxValue](#maxvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider.maxValue <cp.prop: number; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | Gets the maximum value of the slider. |
+
+#### [minValue](#minvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider.minValue <cp.prop: number; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Gets the minimum value of the slider. |
+
+#### [value](#value)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider.value <cp.prop: number>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Sets or gets the value of the slider. |
+
+### Methods
 
 #### [decrement](#decrement)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:decrement() -> self` </span>                                                          |
@@ -95,29 +107,13 @@ Slider Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
 
-#### [isEnabled](#isenabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:isEnabled() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Is the slider enabled? |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if enabled, otherwise <code>false</code>.</li></ul> |
-
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:loadLayout(layout) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Loads a Slider layout. |
-| **Parameters**                                       | <ul><li>layout - A table containing the Slider layout settings - created using <code>cp.ui.Slider:saveLayout()</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>layout - A table containing the Slider layout settings - created using [saveLayout](#saveLayout].</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object.</li></ul> |
 
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:saveLayout() -> table` </span>                                                          |
@@ -142,11 +138,4 @@ Slider Module.
 | **Description**                                      | Shifts the value of the slider. |
 | **Parameters**                                       | <ul><li>value - The value you want to shift the slider by as a number.</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
-
-#### [snapshot](#snapshot)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Slider:snapshot([path]) -> hs.image | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it. |
-| **Parameters**                                       | <ul><li>path - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul> |
 
