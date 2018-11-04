@@ -6,9 +6,6 @@ Color Board Module.
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [aspect](#aspect)
- * [color](#color)
- * [exposure](#exposure)
- * [saturation](#saturation)
 * Variables - Configurable values
  * [currentAspect](#currentaspect)
 * Functions - API calls offered directly by the extension
@@ -50,24 +47,6 @@ Color Board Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | A table containing tables of all the aspect panel settings |
-
-#### [color](#color)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.aspect.color -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | A table containing the Color Board Color panel settings |
-
-#### [exposure](#exposure)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.aspect.exposure -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | A table containing the Color Board Exposure panel settings |
-
-#### [saturation](#saturation)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.aspect.saturation -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | A table containing the Color Board Saturation panel settings |
 
 ### Variables
 

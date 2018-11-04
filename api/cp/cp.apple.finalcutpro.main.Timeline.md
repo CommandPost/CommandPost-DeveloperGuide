@@ -37,6 +37,7 @@ Timeline Module.
 | **Description**                                      | Checks to see if an element matches what we think it should be. |
 | **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code>.</li></ul> |
+| **Notes**                                            | <ul><li><code>element</code> should be an <code>AXGroup</code>, which contains an <code>AXSplitGroup</code> with an   <code>AXIdentifier</code> of <code>_NS:237</code> (as of Final Cut Pro 10.4)</li></ul> |
 
 #### [matchesMain](#matchesmain)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Timeline.matchesMain(element) -> boolean` </span>                                                          |
@@ -45,6 +46,7 @@ Timeline Module.
 | **Description**                                      | Checks to see if an element matches what we think it should be. |
 | **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
+| **Notes**                                            | <ul><li><code>element</code> should be an <code>AXSplitGroup</code> with an <code>AXIdentifier</code> of <code>_NS:237</code>   (as of Final Cut Pro 10.4)</li><li>Because the timeline contents is hard to detect, we look for the timeline   toolbar instead.</li></ul> |
 
 ### Constructors
 

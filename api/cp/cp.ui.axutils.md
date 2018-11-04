@@ -11,8 +11,10 @@ Utility functions to support `hs._asm.axuielement`.
  * [childFromLeft](#childfromleft)
  * [childFromRight](#childfromright)
  * [childFromTop](#childfromtop)
+ * [childInColumn](#childincolumn)
  * [childMatching](#childmatching)
  * [children](#children)
+ * [childrenInColumn](#childrenincolumn)
  * [childrenMatching](#childrenmatching)
  * [childrenWith](#childrenwith)
  * [childrenWithRole](#childrenwithrole)
@@ -85,6 +87,14 @@ Utility functions to support `hs._asm.axuielement`.
 | **Parameters**                                       | <ul><li>element      - the axuielement or array of axuielements</li><li>index        - the index number of the child to find.</li><li>matcherFn    - an optional function which is passed each child and returns <code>true</code> if the child should be processed.</li></ul> |
 | **Returns**                                          | <ul><li>The child, or <code>nil</code> if the index is larger than the number of children.</li></ul> |
 
+#### [childInColumn](#childincolumn)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childInColumn(element, role, startIndex, childIndex) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Finds the children for an element, then checks to see if they match the supplied |
+| **Parameters**                                       | <ul><li>element     - The element to retrieve the children from.</li><li>role        - The required role as a string.</li><li>startIndex  - A number which defines the index of the first element to use.</li><li>childIndex  - A number which defines the index of the element to return.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>axuielement</code> if it matches, otherwise <code>nil</code>.</li></ul> |
+
 #### [childMatching](#childmatching)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childMatching(element, matcherFn[, index]) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -100,6 +110,14 @@ Utility functions to support `hs._asm.axuielement`.
 | **Description**                                      | Finds the children for the element. If it is an `hs._asm.axuielement`, it will |
 | **Parameters**                                       | <ul><li>element   - The element to retrieve the children of.</li></ul> |
 | **Returns**                                          | <ul><li>the children table, or <code>nil</code>.</li></ul> |
+
+#### [childrenInColumn](#childrenincolumn)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenInColumn(element, role, startIndex) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Finds the children for an element, then checks to see if they match the supplied |
+| **Parameters**                                       | <ul><li>element     - The element to retrieve the children from.</li><li>role        - The required role as a string.</li><li>startIndex  - A number which defines the index of the first element to use.</li></ul> |
+| **Returns**                                          | <ul><li>The table of <code>axuielement</code> objects, otherwise <code>nil</code>.</li></ul> |
 
 #### [childrenMatching](#childrenmatching)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenMatching(element, matcherFn) -> { axuielement }` </span>                                                          |

@@ -324,11 +324,11 @@ This extension differs from the `hs.application` extension in several ways:
 | **Returns**                                          | <ul><li><code>true</code> if it is supported, otherwise <code>false</code>.</li></ul> |
 
 #### [launch](#launch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:launch([waitSeconds]) -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:launch([waitSeconds], [path]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Launches the application, or brings it to the front if it was already running. |
-| **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the launch completes. If <code>nil</code>, it will return immediately.</li></ul> |
+| **Parameters**                                       | <ul><li><code>waitSeconds</code> - If provided, the number of seconds to wait until the launch                   completes. If <code>nil</code>, it will return immediately.</li><li><code>path</code>        - An optional full path to an application without an extension                   (i.e <code>/Applications/Final Cut Pro 10.3.4</code>). This allows you to                   load previous versions of the application.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul> |
 
 #### [menu](#menu)

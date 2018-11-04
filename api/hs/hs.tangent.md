@@ -24,7 +24,6 @@ This extension was thrown together by [Chris Hocking](https://github.com/latenit
  * [toHub](#tohub)
 * Variables - Configurable values
  * [automaticallySendApplicationDefinition](#automaticallysendapplicationdefinition)
- * [interval](#interval)
  * [ipAddress](#ipaddress)
  * [port](#port)
 * Functions - API calls offered directly by the extension
@@ -92,12 +91,6 @@ This extension was thrown together by [Chris Hocking](https://github.com/latenit
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Automatically send the "Application Definition" response. Defaults to `true`. |
-
-#### [interval](#interval)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.interval -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | How often we check for new socket messages. Defaults to 0.001. |
 
 #### [ipAddress](#ipaddress)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.ipAddress -> number` </span>                                                          |

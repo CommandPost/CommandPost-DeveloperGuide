@@ -14,6 +14,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [checkKeyboardModifiers](#checkkeyboardmodifiers)
  * [checkMouseButtons](#checkmousebuttons)
  * [doubleClickInterval](#doubleclickinterval)
+ * [isSecureInputEnabled](#issecureinputenabled)
  * [keyRepeatDelay](#keyrepeatdelay)
  * [keyRepeatInterval](#keyrepeatinterval)
  * [keyStroke](#keystroke)
@@ -59,6 +60,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Returns the system-wide setting for the delay between two clicks, to register a double click event |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the maximum number of seconds between two mouse click events, for a double click event to be registered</li></ul> |
+
+#### [isSecureInputEnabled](#issecureinputenabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.isSecureInputEnabled() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if macOS is preventing keyboard events from being sent to event taps |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if secure input is enabled, otherwise false</li></ul> |
+| **Notes**                                            | <ul><li>If secure input is enabled, Hammerspoon is not able to intercept keyboard events</li><li>Secure input is enabled generally only in situations where an password field is focused in a web browser, system dialog or terminal</li></ul> |
 
 #### [keyRepeatDelay](#keyrepeatdelay)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyRepeatDelay() -> number` </span>                                                          |

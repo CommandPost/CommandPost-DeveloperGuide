@@ -605,11 +605,11 @@ end
 | **Returns**                                          | <ul><li>The Final Cut Pro Keyword Editor</li></ul> |
 
 #### [launch](#launch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:launch([waitSeconds]) -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:launch([waitSeconds], [path]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Launches Final Cut Pro, or brings it to the front if it was already running. |
-| **Parameters**                                       | <ul><li>waitSeconds  - if provided, we will wait for up to the specified seconds for the launch to complete.</li></ul> |
+| **Parameters**                                       | <ul><li><code>waitSeconds</code> - If provided, the number of seconds to wait until the launch                   completes. If <code>nil</code>, it will return immediately.</li><li><code>path</code>        - An optional full path to an application without an extension                   (i.e <code>/Applications/Final Cut Pro 10.3.4</code>). This allows you to                   load previous versions of the application.</li></ul> |
 | **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
 
 #### [libraries](#libraries)
