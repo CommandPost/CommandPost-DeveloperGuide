@@ -6,18 +6,22 @@ Controls sections for the CommandPost menu.
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [DEFAULT_PRIORITY](#default_priority)
- * [WARNING_LIMIT](#warning_limit)
+ * [SECTION_DISABLED_PREFERENCES_KEY_PREFIX](#section_disabled_preferences_key_prefix)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [_addGenerator](#_addgenerator)
+ * [addApplicationHeading](#addapplicationheading)
+ * [addHeading](#addheading)
  * [addItem](#additem)
  * [addItems](#additems)
  * [addMenu](#addmenu)
  * [addSection](#addsection)
  * [addSeparator](#addseparator)
  * [generateTable](#generatetable)
+ * [getDisabledPreferenceKey](#getdisabledpreferencekey)
+ * [isApplicationHeading](#isapplicationheading)
  * [isDisabled](#isdisabled)
  * [new](#new)
  * [setDisabledFn](#setdisabledfn)
+ * [setDisabledPreferenceKey](#setdisabledpreferencekey)
 
 ## API Documentation
 
@@ -29,21 +33,29 @@ Controls sections for the CommandPost menu.
 | **Type**                                             | Constant |
 | **Description**                                      | The default priority |
 
-#### [WARNING_LIMIT](#warning_limit)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section.WARNING_LIMIT -> number` </span>                                                          |
+#### [SECTION_DISABLED_PREFERENCES_KEY_PREFIX](#section_disabled_preferences_key_prefix)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section.SECTION_DISABLED_PREFERENCES_KEY_PREFIX -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
-| **Description**                                      | The limit of how much time a menu item takes to load before we post warnings to the Error Log |
+| **Description**                                      | The preferences key prefix for a disabled section. |
 
 ### Methods
 
-#### [_addGenerator](#_addgenerator)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:_addGenerator() -> section` </span>                                                          |
+#### [addApplicationHeading](#addapplicationheading)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addApplicationHeading(title) -> section` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | A private method for registering a generator. This should not be called directly. |
-| **Parameters**                                       | <ul><li><code>generator</code>  - The generator being added.</li></ul> |
-| **Returns**                                          | <ul><li>section - The section.</li></ul> |
+| **Description**                                      | Adds a heading to the top of the section. |
+| **Parameters**                                       | <ul><li>title - The title of the Application Heading.</li></ul> |
+| **Returns**                                          | <ul><li>section - The new section that was created.</li></ul> |
+
+#### [addHeading](#addheading)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addHeading(title) -> section` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Adds a heading to the top of a section. |
+| **Parameters**                                       | <ul><li>title - The title of the heading.</li></ul> |
+| **Returns**                                          | <ul><li>section - The new section that was created.</li></ul> |
 
 #### [addItem](#additem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:addItem(priority, itemFn) -> section` </span>                                                          |
@@ -93,8 +105,24 @@ Controls sections for the CommandPost menu.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>table</code>  - The menu table for this section. See <code>hs.menubar</code> for details on the format.</li></ul> |
 
+#### [getDisabledPreferenceKey](#getdisabledpreferencekey)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:getDisabledPreferenceKey() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the disabled preferences key. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the section has a disabled preferences key defined, otherwise <code>false</code>.</li></ul> |
+
+#### [isApplicationHeading](#isapplicationheading)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:isApplicationHeading() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Does this section contain an application heading? |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if it does contain an application heading, otherwise <code>false</code>.</li></ul> |
+
 #### [isDisabled](#isdisabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:isDisabled() -> voolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:isDisabled() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the disabled status |
@@ -110,10 +138,18 @@ Controls sections for the CommandPost menu.
 | **Returns**                                          | <ul><li>section - The section that was created.</li></ul> |
 
 #### [setDisabledFn](#setdisabledfn)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:setDisabledFn(disabledFn) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:setDisabledFn(disabledFn) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets the Disabled Function |
 | **Parameters**                                       | <ul><li>disabledFn - The disabled function.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>Self</li></ul> |
+
+#### [setDisabledPreferenceKey](#setdisabledpreferencekey)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.menu.manager.section:setDisabledPreferenceKey(key) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the Disabled Preferences Key. |
+| **Parameters**                                       | <ul><li>key - A string which contains the unique preferences key.</li></ul> |
+| **Returns**                                          | <ul><li>Self</li></ul> |
 

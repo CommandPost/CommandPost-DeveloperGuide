@@ -34,14 +34,8 @@
 | [plugins.core.helpandsupport.feedback](plugins.core.helpandsupport.feedback.md)                          | Feedback Menu Item.     |
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
 | [plugins.core.language](plugins.core.language.md)                          | Language Module.     |
-| [plugins.core.menu.bottom](plugins.core.menu.bottom.md)                          | The bottom menu section.     |
-| [plugins.core.menu.helpandsupport](plugins.core.menu.helpandsupport.md)                          | The Help & Support menu section.     |
-| [plugins.core.menu.helpandsupport.commandpost](plugins.core.menu.helpandsupport.commandpost.md)                          | The Help & Support > CommandPost menu section.     |
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
-| [plugins.core.menu.quit](plugins.core.menu.quit.md)                          | Core CommandPost functionality     |
-| [plugins.core.menu.restart](plugins.core.menu.restart.md)                          | Core CommandPost functionality     |
-| [plugins.core.menu.top](plugins.core.menu.top.md)                          | The top menu section.     |
 | [plugins.core.midi.controls.banks](plugins.core.midi.controls.banks.md)                          | MIDI Control Bank Actions.     |
 | [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
 | [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)                          | MIDI Manager Controls.     |
@@ -50,7 +44,6 @@
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
 | [plugins.core.preferences.manager.panel](plugins.core.preferences.manager.panel.md)                          | CommandPost Preferences Panel.     |
-| [plugins.core.preferences.menuitem](plugins.core.preferences.menuitem.md)                          | Adds a 'Preferences...' menu item to the menu.     |
 | [plugins.core.preferences.panels.advanced](plugins.core.preferences.panels.advanced.md)                          | Advanced Preferences Panel     |
 | [plugins.core.preferences.panels.general](plugins.core.preferences.panels.general.md)                          | General Preferences Panel     |
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
@@ -95,16 +88,18 @@
 | [plugins.core.watchfolders.menuitem](plugins.core.watchfolders.menuitem.md)                          | Adds the "Setup Watch Folders" to the menu bar.     |
 | [plugins.core.webapp](plugins.core.webapp.md)                          | WebApp Plugin.     |
 | [plugins.finalcutpro.actions.custom](plugins.finalcutpro.actions.custom.md)                          | Creates a bunch of commands that can be used to assign actions to.     |
+| [plugins.finalcutpro.advanced.disablewaveforms](plugins.finalcutpro.advanced.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
+| [plugins.finalcutpro.advanced.fcpxml](plugins.finalcutpro.advanced.fcpxml.md)                          | Adds preferences for extra FCPXML import and export options.     |
+| [plugins.finalcutpro.advanced.playbackrendering](plugins.finalcutpro.advanced.playbackrendering.md)                          | Playback Rendering Plugin.     |
+| [plugins.finalcutpro.advanced.showtimelineinplayer](plugins.finalcutpro.advanced.showtimelineinplayer.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
 | [plugins.finalcutpro.browser.pasteboardtomarkers](plugins.finalcutpro.browser.pasteboardtomarkers.md)                          | Take the contents of the Pasteboard and pastes it as clip markers on the     |
 | [plugins.finalcutpro.browser.playhead](plugins.finalcutpro.browser.playhead.md)                          | Browser Playhead Plugin.     |
-| [plugins.finalcutpro.bugfix.clipselection](plugins.finalcutpro.bugfix.clipselection.md)                          | Fixes a bug in Final Cut Pro 10.4.1 that selects unwanted clips when     |
 | [plugins.finalcutpro.commands](plugins.finalcutpro.commands.md)                          | The 'fcpx' command collection.     |
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
 | [plugins.finalcutpro.console.font](plugins.finalcutpro.console.font.md)                          | Final Cut Pro Font Console     |
-| [plugins.finalcutpro.egpu](plugins.finalcutpro.egpu.md)                          | Final Cut Pro eGPU Support.     |
 | [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Batch Export Plugin     |
 | [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)                          | Manager for the Batch Export Window.     |
 | [plugins.finalcutpro.export.batch.manager.panel](plugins.finalcutpro.export.batch.manager.panel.md)                          | CommandPost Batch Export Panel.     |
@@ -112,26 +107,15 @@
 | [plugins.finalcutpro.fullscreen.disableesc](plugins.finalcutpro.fullscreen.disableesc.md)                          | Disables the ESC key when Final Cut Pro is in fullscreen mode.     |
 | [plugins.finalcutpro.fullscreen.dockicon](plugins.finalcutpro.fullscreen.dockicon.md)                          | Manages the CommandPost dock icon when FCP is full-screen.     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
-| [plugins.finalcutpro.hacks.backupinterval](plugins.finalcutpro.hacks.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
-| [plugins.finalcutpro.hacks.movingmarkers](plugins.finalcutpro.hacks.movingmarkers.md)                          | Moving Markers Plugin.     |
-| [plugins.finalcutpro.hacks.playbackrendering](plugins.finalcutpro.hacks.playbackrendering.md)                          | Playback Rendering Plugin.     |
-| [plugins.finalcutpro.hacks.smartcollectionslabel](plugins.finalcutpro.hacks.smartcollectionslabel.md)                          | Smart Collections Label.     |
 | [plugins.finalcutpro.hud](plugins.finalcutpro.hud.md)                          | Final Cut Pro HUD.     |
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
 | [plugins.finalcutpro.inspector.text](plugins.finalcutpro.inspector.text.md)                          | Final Cut Pro Text Inspector Additions.     |
 | [plugins.finalcutpro.inspector.video](plugins.finalcutpro.inspector.video.md)                          | Final Cut Pro Video Inspector Additions.     |
 | [plugins.finalcutpro.language](plugins.finalcutpro.language.md)                          | Final Cut Pro Language Plugin.     |
-| [plugins.finalcutpro.menu.helpandsupport.finalcutpro](plugins.finalcutpro.menu.helpandsupport.finalcutpro.md)                          | The Help & Support > CommandPost menu section.     |
-| [plugins.finalcutpro.menu.mediaimport](plugins.finalcutpro.menu.mediaimport.md)                          | The Media Import menu section.     |
+| [plugins.finalcutpro.menu.manager](plugins.finalcutpro.menu.manager.md)                          | Final Cut Pro Menu Manager.     |
 | [plugins.finalcutpro.menu.menuaction](plugins.finalcutpro.menu.menuaction.md)                          | A `action` which will trigger an Final Cut Pro menu with a matching path, if available/enabled.     |
-| [plugins.finalcutpro.menu.pasteboard](plugins.finalcutpro.menu.pasteboard.md)                          | The Pasteboard menu section.     |
 | [plugins.finalcutpro.menu.proxyicon](plugins.finalcutpro.menu.proxyicon.md)                          | Final Cut Pro Proxy Icon Plugin.     |
-| [plugins.finalcutpro.menu.timeline](plugins.finalcutpro.menu.timeline.md)                          | The TIMELINE menu section.     |
-| [plugins.finalcutpro.menu.tools](plugins.finalcutpro.menu.tools.md)                          | The TOOLS menu section.     |
-| [plugins.finalcutpro.menu.top](plugins.finalcutpro.menu.top.md)                          | The top menu section.     |
-| [plugins.finalcutpro.menu.viewer](plugins.finalcutpro.menu.viewer.md)                          | The VIEWER menu section.     |
-| [plugins.finalcutpro.menu.viewer.showtimecode](plugins.finalcutpro.menu.viewer.showtimecode.md)                          | Highlight Playhead Menu.     |
 | [plugins.finalcutpro.midi.controls.colorboard](plugins.finalcutpro.midi.controls.colorboard.md)                          | Final Cut Pro MIDI Color Controls.     |
 | [plugins.finalcutpro.midi.controls.colorwheels](plugins.finalcutpro.midi.controls.colorwheels.md)                          | Final Cut Pro MIDI Color Controls.     |
 | [plugins.finalcutpro.midi.controls.controlui.absolute](plugins.finalcutpro.midi.controls.controlui.absolute.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |
@@ -148,11 +132,10 @@
 | [plugins.finalcutpro.pasteboard.history](plugins.finalcutpro.pasteboard.history.md)                          | Pasteboard History     |
 | [plugins.finalcutpro.pasteboard.manager](plugins.finalcutpro.pasteboard.manager.md)                          | Pasteboard Manager.     |
 | [plugins.finalcutpro.pasteboard.shared](plugins.finalcutpro.pasteboard.shared.md)                          | Shared Pasteboard Plugin.     |
-| [plugins.finalcutpro.preferences.app](plugins.finalcutpro.preferences.app.md)                          | Final Cut Pro Preferences Panel     |
 | [plugins.finalcutpro.preferences.clearcache](plugins.finalcutpro.preferences.clearcache.md)                          | Adds a "Clear Cache" button to the Final Cut Pro Preferences.     |
 | [plugins.finalcutpro.preferences.general](plugins.finalcutpro.preferences.general.md)                          | Final Cut Pro General Preferences     |
+| [plugins.finalcutpro.preferences.manager](plugins.finalcutpro.preferences.manager.md)                          | Final Cut Pro Preferences Panel Manager.     |
 | [plugins.finalcutpro.setup.scan](plugins.finalcutpro.setup.scan.md)                          | Show setup panel if Final Cut Pro needs scanning.     |
-| [plugins.finalcutpro.setup.unsupportedversion](plugins.finalcutpro.setup.unsupportedversion.md)                          | Unsupported version setup panel.     |
 | [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
 | [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.tangent.clip](plugins.finalcutpro.tangent.clip.md)                          | Final Cut Pro Tangent View Group     |
@@ -172,7 +155,6 @@
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
 | [plugins.finalcutpro.timeline.colorwheels](plugins.finalcutpro.timeline.colorwheels.md)                          | Color Wheel Enhancements.     |
 | [plugins.finalcutpro.timeline.commandsetactions](plugins.finalcutpro.timeline.commandsetactions.md)                          | Adds Actions to the Console for triggering Final Cut Pro shortcuts as defined in the Command Set files.     |
-| [plugins.finalcutpro.timeline.disablewaveforms](plugins.finalcutpro.timeline.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.timeline.generators](plugins.finalcutpro.timeline.generators.md)                          | Controls Final Cut Pro's Generators.     |
 | [plugins.finalcutpro.timeline.height](plugins.finalcutpro.timeline.height.md)                          | Shortcut for changing Final Cut Pro's Timeline Height     |
 | [plugins.finalcutpro.timeline.lanes](plugins.finalcutpro.timeline.lanes.md)                          | Controls Final Cut Pro's Lanes.     |
@@ -195,9 +177,6 @@
 | [plugins.finalcutpro.touchbar.widgets.colorboard](plugins.finalcutpro.touchbar.widgets.colorboard.md)                          | A collection of Final Cut Pro Color Board Widgets for the Touch Bar.     |
 | [plugins.finalcutpro.touchbar.widgets.zoom](plugins.finalcutpro.touchbar.widgets.zoom.md)                          | Final Cut Pro Zoom Control Widget for Touch Bar.     |
 | [plugins.finalcutpro.viewer.overlays](plugins.finalcutpro.viewer.overlays.md)                          | Final Cut Pro Viewer Overlays.     |
-| [plugins.finalcutpro.viewer.showtimecode](plugins.finalcutpro.viewer.showtimecode.md)                          | Show Timecode.     |
-| [plugins.finalcutpro.viewer.showtimelineinplayer](plugins.finalcutpro.viewer.showtimelineinplayer.md)                          | Show Timeline In Player.     |
-| [plugins.finalcutpro.viewer.timecodeoverlay](plugins.finalcutpro.viewer.timecodeoverlay.md)                          | Advanced Timecode Overlay.     |
 | [plugins.finalcutpro.watchfolders.fcpxml](plugins.finalcutpro.watchfolders.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media](plugins.finalcutpro.watchfolders.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media.MediaFolder](plugins.finalcutpro.watchfolders.media.MediaFolder.md)                          | Final Cut Pro Media Watch Folder Plugin.     |

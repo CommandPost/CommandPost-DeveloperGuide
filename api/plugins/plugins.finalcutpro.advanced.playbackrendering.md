@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finalcutpro.hacks.playbackrendering
+# [docs](index.md) » plugins.finalcutpro.advanced.playbackrendering
 ---
 
 Playback Rendering Plugin.
@@ -12,7 +12,7 @@ Playback Rendering Plugin.
 ### Variables
 
 #### [enabled](#enabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hacks.playbackrendering.enabled <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.advanced.playbackrendering.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Gets whether or not Playback Rendering is enabled. |

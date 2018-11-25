@@ -11,14 +11,12 @@ Batch Export Plugin
  * [DEFAULT_CUSTOM_FILENAME](#default_custom_filename)
 * Functions - API calls offered directly by the extension
  * [batchExport](#batchexport)
- * [batchExportBrowserClips](#batchexportbrowserclips)
  * [batchExportTimelineClips](#batchexporttimelineclips)
  * [changeCustomFilename](#changecustomfilename)
  * [changeExportDestinationFolder](#changeexportdestinationfolder)
  * [changeExportDestinationPreset](#changeexportdestinationpreset)
  * [getDestinationFolder](#getdestinationfolder)
  * [performBatchExport](#performbatchexport)
- * [sendBrowserClipsToCompressor](#sendbrowserclipstocompressor)
  * [sendTimelineClipsToCompressor](#sendtimelineclipstocompressor)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [customFilename](#customfilename)
@@ -45,15 +43,7 @@ Batch Export Plugin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Opens the Batch Export popup. |
-| **Parameters**                                       | <ul><li>mode - "timeline" or "browser". If no mode is specified then we will determine          the mode based off the mouse location.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
-
-#### [batchExportBrowserClips](#batchexportbrowserclips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.batchExportBrowserClips(clips) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Batch Export Clips |
-| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [batchExportTimelineClips](#batchexporttimelineclips)
@@ -103,14 +93,6 @@ Batch Export Plugin
 | **Description**                                      | Performs the Browser Batch Export function. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [sendBrowserClipsToCompressor](#sendbrowserclipstocompressor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.sendBrowserClipsToCompressor(clips) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Send Clips to Compressor |
-| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [sendTimelineClipsToCompressor](#sendtimelineclipstocompressor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.sendTimelineClipsToCompressor(clips) -> boolean` </span>                                                          |

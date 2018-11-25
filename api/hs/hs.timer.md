@@ -8,7 +8,7 @@ Execute functions with various timing rules
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [absolutetime](#absolutetime)
+ * [absoluteTime](#absolutetime)
  * [days](#days)
  * [hours](#hours)
  * [localTime](#localtime)
@@ -38,8 +38,8 @@ Execute functions with various timing rules
 
 ### Functions
 
-#### [absolutetime](#absolutetime)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.absolutetime() -> nanoseconds` </span>                                                          |
+#### [absoluteTime](#absolutetime)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.timer.absoluteTime() -> nanoseconds` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns the absolute time in nanoseconds since the last system boot. |
