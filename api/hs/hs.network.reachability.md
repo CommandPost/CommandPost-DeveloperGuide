@@ -55,7 +55,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability.flags[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
-| **Description**                                      |  |
+| **Description**                                      | A table containing the numeric value for the possible flags returned by the [hs.network.reachability:status](#status) method or in the `flags` parameter of the callback function. |
 
 ### Constructors
 

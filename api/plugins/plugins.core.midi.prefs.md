@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.preferences.panels.midi
+# [docs](index.md) » plugins.core.midi.prefs
 ---
 
 MIDI Preferences Panel
@@ -16,7 +16,7 @@ MIDI Preferences Panel
 ### Variables
 
 #### [_currentlyLearning](#_currentlylearning)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi._currentlyLearning -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.prefs._currentlyLearning -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Are we in learning mode? |
@@ -24,7 +24,7 @@ MIDI Preferences Panel
 ### Functions
 
 #### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi.init(deps, env) -> module` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.prefs.init(deps, env) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise the Module. |
@@ -34,7 +34,7 @@ MIDI Preferences Panel
 ### Fields
 
 #### [lastGroup](#lastgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.midi.lastGroup <cp.prop: string>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.prefs.lastGroup <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Last group used in the Preferences Drop Down. |

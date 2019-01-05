@@ -282,7 +282,7 @@ Notes:
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:focusWindowWest([candidateWindows[, frontmost[, strict]]]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Focuses the nearest possible window to the west (i.e. right) |
+| **Description**                                      | Focuses the nearest possible window to the west (i.e. left) |
 
 #### [frame](#frame)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:frame() -> hs.geometry rect` </span>                                                          |

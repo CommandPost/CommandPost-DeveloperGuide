@@ -38,7 +38,7 @@
 | [hs.chooser](hs.chooser.md)                          | Graphical, interactive tool for choosing/searching data     |
 | [hs.console](hs.console.md)                          | Some functions for manipulating the Hammerspoon console.     |
 | [hs.crash](hs.crash.md)                          | Various features/facilities for developers who are working on Hammerspoon itself, or writing extensions for it. It is extremely unlikely that you should need any part of this extension, in a normal user configuration.     |
-| [hs.deezer](hs.deezer.md)                          |      |
+| [hs.deezer](hs.deezer.md)                          | Controls for Deezer music player.     |
 | [hs.dialog](hs.dialog.md)                          | A collection of useful dialog boxes, alerts and panels for user interaction.     |
 | [hs.dialog.color](hs.dialog.color.md)                          | A panel that allows users to select a color.     |
 | [hs.distributednotifications](hs.distributednotifications.md)                          | Interact with NSDistributedNotificationCenter     |

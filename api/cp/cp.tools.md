@@ -38,10 +38,12 @@ A collection of handy miscellaneous tools for Lua development.
  * [ninjaDoubleClick](#ninjadoubleclick)
  * [ninjaMouseAction](#ninjamouseaction)
  * [ninjaMouseClick](#ninjamouseclick)
+ * [ninjaRightMouseClick](#ninjarightmouseclick)
  * [numberToWord](#numbertoword)
  * [playErrorSound](#playerrorsound)
  * [removeFilenameFromPath](#removefilenamefrompath)
  * [removeFromTable](#removefromtable)
+ * [rightClick](#rightclick)
  * [rmdir](#rmdir)
  * [round](#round)
  * [safeFilename](#safefilename)
@@ -325,6 +327,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [ninjaRightMouseClick](#ninjarightmouseclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.ninjaRightMouseClick(point[, delay]) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Performs a right mouse click, but returns the mouse to the original position without the users knowledge. |
+| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [numberToWord](#numbertoword)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.numberToWord(number) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -356,6 +366,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Removes a string from a table of strings |
 | **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the string you want to remove</li></ul> |
 | **Returns**                                          | <ul><li>A table</li></ul> |
+
+#### [rightClick](#rightclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.rightClick(point[, delay, clickNumber]) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Performs a Right Mouse Click. |
+| **Parameters**                                       | <ul><li>point - A point-table containing the absolute x and y co-ordinates to move the mouse pointer to</li><li>delay - The optional delay between multiple mouse clicks</li><li>clickNumber - The optional number of times you want to perform the click.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [rmdir](#rmdir)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.rmdir(path[, recursive]) -> true | nil, err` </span>                                                          |

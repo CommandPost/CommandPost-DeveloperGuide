@@ -60,6 +60,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets the system-wide direction of scolling |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string, either "natural" or "normal"</li></ul> |
 
 #### [setAbsolutePosition](#setabsoluteposition)

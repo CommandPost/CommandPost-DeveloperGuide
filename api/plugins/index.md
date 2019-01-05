@@ -17,6 +17,7 @@
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
 | [plugins.colorfinale.tangent](plugins.colorfinale.tangent.md)                          | This plugin basically just disables CP's Tangent Manager when ColorFinale is running.     |
+| [plugins.compressor.feedback.bugreport](plugins.compressor.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Compressor.     |
 | [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.core.accessibility](plugins.core.accessibility.md)                          | Accessibility Plugin.     |
 | [plugins.core.action.activator](plugins.core.action.activator.md)                          | This module provides provides a way of activating choices provided by action handlers.     |
@@ -40,24 +41,18 @@
 | [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
 | [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)                          | MIDI Manager Controls.     |
 | [plugins.core.midi.manager.default](plugins.core.midi.manager.default.md)                          | Default MIDI Controls.     |
-| [plugins.core.preferences.advanced](plugins.core.preferences.advanced.md)                          | Advanced Preferences Panel.     |
+| [plugins.core.midi.prefs](plugins.core.midi.prefs.md)                          | MIDI Preferences Panel     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
 | [plugins.core.preferences.manager.panel](plugins.core.preferences.manager.panel.md)                          | CommandPost Preferences Panel.     |
-| [plugins.core.preferences.panels.advanced](plugins.core.preferences.panels.advanced.md)                          | Advanced Preferences Panel     |
 | [plugins.core.preferences.panels.general](plugins.core.preferences.panels.general.md)                          | General Preferences Panel     |
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
-| [plugins.core.preferences.panels.midi](plugins.core.preferences.panels.midi.md)                          | MIDI Preferences Panel     |
 | [plugins.core.preferences.panels.notifications](plugins.core.preferences.panels.notifications.md)                          | Notifications Preferences Panel     |
 | [plugins.core.preferences.panels.plugins](plugins.core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.core.preferences.panels.shortcuts](plugins.core.preferences.panels.shortcuts.md)                          | Shortcuts Preferences Panel     |
-| [plugins.core.preferences.panels.streamdeck](plugins.core.preferences.panels.streamdeck.md)                          | Stream Deck Preferences Panel     |
-| [plugins.core.preferences.panels.touchbar](plugins.core.preferences.panels.touchbar.md)                          | Touch Bar Preferences Panel     |
-| [plugins.core.preferences.panels.webapp](plugins.core.preferences.panels.webapp.md)                          | WebApp Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
 | [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
 | [plugins.core.setup.panel](plugins.core.setup.panel.md)                          | CommandPost Setup Window Panel.     |
-| [plugins.core.streamdeck.manager](plugins.core.streamdeck.manager.md)                          | Elgato Stream Deck Manager Plugin.     |
 | [plugins.core.tangent.commandpost](plugins.core.tangent.commandpost.md)                          | CommandPost Group for the Tangent.     |
 | [plugins.core.tangent.commandpost.favourites](plugins.core.tangent.commandpost.favourites.md)                          | Tangent Favourites.     |
 | [plugins.core.tangent.commandpost.functions](plugins.core.tangent.commandpost.functions.md)                          | CommandPost Functions for Tangent.     |
@@ -80,13 +75,13 @@
 | [plugins.core.touchbar.location](plugins.core.touchbar.location.md)                          | Virtual Touch Bar Update Location Callback     |
 | [plugins.core.touchbar.manager](plugins.core.touchbar.manager.md)                          | Touch Bar Manager Plugin.     |
 | [plugins.core.touchbar.manager.widgets](plugins.core.touchbar.manager.widgets.md)                          | Touch Bar Widgets Manager     |
+| [plugins.core.touchbar.prefs](plugins.core.touchbar.prefs.md)                          | Touch Bar Preferences Panel     |
 | [plugins.core.touchbar.virtual](plugins.core.touchbar.virtual.md)                          | Virtual Touch Bar Manager     |
 | [plugins.core.touchbar.widgets.volume](plugins.core.touchbar.widgets.volume.md)                          | Volume Slider     |
 | [plugins.core.touchbar.widgets.windowSlide](plugins.core.touchbar.widgets.windowSlide.md)                          | Window Slide Widget for Touch Bar.     |
 | [plugins.core.watchfolders.manager](plugins.core.watchfolders.manager.md)                          | Manager for the CommandPost Watch Folders Panel.     |
 | [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | Watch Folder Panel Manager.     |
 | [plugins.core.watchfolders.menuitem](plugins.core.watchfolders.menuitem.md)                          | Adds the "Setup Watch Folders" to the menu bar.     |
-| [plugins.core.webapp](plugins.core.webapp.md)                          | WebApp Plugin.     |
 | [plugins.finalcutpro.actions.custom](plugins.finalcutpro.actions.custom.md)                          | Creates a bunch of commands that can be used to assign actions to.     |
 | [plugins.finalcutpro.advanced.disablewaveforms](plugins.finalcutpro.advanced.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.advanced.fcpxml](plugins.finalcutpro.advanced.fcpxml.md)                          | Adds preferences for extra FCPXML import and export options.     |
@@ -110,6 +105,7 @@
 | [plugins.finalcutpro.hud](plugins.finalcutpro.hud.md)                          | Final Cut Pro HUD.     |
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
+| [plugins.finalcutpro.inspector.show](plugins.finalcutpro.inspector.show.md)                          | Final Cut Pro Inspector Additions.     |
 | [plugins.finalcutpro.inspector.text](plugins.finalcutpro.inspector.text.md)                          | Final Cut Pro Text Inspector Additions.     |
 | [plugins.finalcutpro.inspector.video](plugins.finalcutpro.inspector.video.md)                          | Final Cut Pro Video Inspector Additions.     |
 | [plugins.finalcutpro.language](plugins.finalcutpro.language.md)                          | Final Cut Pro Language Plugin.     |
@@ -122,13 +118,11 @@
 | [plugins.finalcutpro.midi.controls.controlui.relative](plugins.finalcutpro.midi.controls.controlui.relative.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |
 | [plugins.finalcutpro.midi.controls.video](plugins.finalcutpro.midi.controls.video.md)                          | Final Cut Pro MIDI Video Inspector Controls.     |
 | [plugins.finalcutpro.midi.controls.zoom](plugins.finalcutpro.midi.controls.zoom.md)                          | Final Cut Pro MIDI Zoom Control.     |
-| [plugins.finalcutpro.midi.manager](plugins.finalcutpro.midi.manager.md)                          | MIDI Manager Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.manager](plugins.finalcutpro.notifications.manager.md)                          | Notifications Manager Plugin.     |
 | [plugins.finalcutpro.notifications.prowl](plugins.finalcutpro.notifications.prowl.md)                          | Prowl Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.pushover](plugins.finalcutpro.notifications.pushover.md)                          | Pushover Notifications Plugin.     |
 | [plugins.finalcutpro.open](plugins.finalcutpro.open.md)                          | Opens Final Cut Pro via Global Shortcut & Menubar.     |
-| [plugins.finalcutpro.os.voice](plugins.finalcutpro.os.voice.md)                          | Voice Command Plugin.     |
 | [plugins.finalcutpro.pasteboard.history](plugins.finalcutpro.pasteboard.history.md)                          | Pasteboard History     |
 | [plugins.finalcutpro.pasteboard.manager](plugins.finalcutpro.pasteboard.manager.md)                          | Pasteboard Manager.     |
 | [plugins.finalcutpro.pasteboard.shared](plugins.finalcutpro.pasteboard.shared.md)                          | Shared Pasteboard Plugin.     |
@@ -136,8 +130,6 @@
 | [plugins.finalcutpro.preferences.general](plugins.finalcutpro.preferences.general.md)                          | Final Cut Pro General Preferences     |
 | [plugins.finalcutpro.preferences.manager](plugins.finalcutpro.preferences.manager.md)                          | Final Cut Pro Preferences Panel Manager.     |
 | [plugins.finalcutpro.setup.scan](plugins.finalcutpro.setup.scan.md)                          | Show setup panel if Final Cut Pro needs scanning.     |
-| [plugins.finalcutpro.sharing.xml](plugins.finalcutpro.sharing.xml.md)                          | Shared XML Plugin.     |
-| [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.tangent.clip](plugins.finalcutpro.tangent.clip.md)                          | Final Cut Pro Tangent View Group     |
 | [plugins.finalcutpro.tangent.edit](plugins.finalcutpro.tangent.edit.md)                          | Final Cut Pro Tangent View Group     |
 | [plugins.finalcutpro.tangent.manager](plugins.finalcutpro.tangent.manager.md)                          | Final Cut Pro Tangent Color Manager.     |
@@ -166,6 +158,7 @@
 | [plugins.finalcutpro.timeline.playhead](plugins.finalcutpro.timeline.playhead.md)                          | Manages features relating to the Timeline Playhead.     |
 | [plugins.finalcutpro.timeline.pluginactions](plugins.finalcutpro.timeline.pluginactions.md)                          | Adds Final Cut Pro Plugins (i.e. Effects, Generators, Titles and Transitions) to CommandPost Actions.     |
 | [plugins.finalcutpro.timeline.preferences](plugins.finalcutpro.timeline.preferences.md)                          | Final Cut Pro Timeline Preferences.     |
+| [plugins.finalcutpro.timeline.renameclip](plugins.finalcutpro.timeline.renameclip.md)                          | Rename Clip     |
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
 | [plugins.finalcutpro.timeline.stabilization](plugins.finalcutpro.timeline.stabilization.md)                          | Stabilization Shortcut     |
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
@@ -183,3 +176,4 @@
 | [plugins.finalcutpro.watchfolders.media.panel](plugins.finalcutpro.watchfolders.media.panel.md)                          | Watch Folder Media Panel.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |
+| [plugins.motion.feedback.bugreport](plugins.motion.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Motion.     |

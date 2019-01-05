@@ -22,6 +22,7 @@ Commands Module.
  * [getSubtitle](#getsubtitle)
  * [getTitle](#gettitle)
  * [groupedBy](#groupedby)
+ * [hasAction](#hasaction)
  * [id](#id)
  * [new](#new)
  * [parent](#parent)
@@ -165,6 +166,14 @@ Commands Module.
 | **Description**                                      | Specifies that the command is grouped by a specific value. |
 | **Parameters**                                       | <ul><li><code>group</code>   - The group ID.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.commands.command</code> instance.</li></ul> |
+
+#### [hasAction](#hasaction)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:hasAction() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets whether or not any action callbacks have been assigned. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if action callbacks have been assigned, otherwise <code>false</code>.</li></ul> |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:id() -> string` </span>                                                          |

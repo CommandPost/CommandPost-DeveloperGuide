@@ -184,7 +184,7 @@ Controls for Spotify music player
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [rw](#rw)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotify.rw` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotify.rw()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Skips the playback position backwards by 5 seconds |

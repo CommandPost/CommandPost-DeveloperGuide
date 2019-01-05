@@ -16,8 +16,6 @@ Final Cut Pro HUD.
  * [getButtonText](#getbuttontext)
  * [getButtonURL](#getbuttonurl)
  * [hide](#hide)
- * [init](#init)
- * [javaScriptCallback](#javascriptcallback)
  * [new](#new)
  * [refresh](#refresh)
  * [setButton](#setbutton)
@@ -113,22 +111,6 @@ Final Cut Pro HUD.
 | **Type**                                             | Function |
 | **Description**                                      | Hide the HUD. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.init() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialise HUD Module. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [javaScriptCallback](#javascriptcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.javaScriptCallback() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Javascript Callback |
-| **Parameters**                                       | <ul><li>message - the message for the callback</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [new](#new)

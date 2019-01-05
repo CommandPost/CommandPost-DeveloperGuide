@@ -19,7 +19,6 @@ Manage CommandPost's constants and settings.
  * [bundleID](#bundleid)
  * [cachePath](#cachepath)
  * [configPrefix](#configprefix)
- * [developerMode](#developermode)
  * [iconPath](#iconpath)
  * [languagePath](#languagepath)
  * [menubarIconPath](#menubariconpath)
@@ -44,6 +43,7 @@ Manage CommandPost's constants and settings.
  * [unwatch](#unwatch)
  * [watch](#watch)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [developerMode](#developermode)
  * [frontmost](#frontmost)
 
 ## API Documentation
@@ -97,12 +97,6 @@ Manage CommandPost's constants and settings.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Prefix used for Configuration Settings |
-
-#### [developerMode](#developermode)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.developerMode <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | When `true`, the app is in developer mode. |
 
 #### [iconPath](#iconpath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.iconPath -> string` </span>                                                          |
@@ -251,6 +245,12 @@ Manage CommandPost's constants and settings.
 | **Notes**                                            | <ul><li>Supported events: ** <code>reset()</code>   - occurs after CommandPost's settings are reset.</li></ul> |
 
 ### Fields
+
+#### [developerMode](#developermode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.developerMode <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | When `true`, the app is in developer mode. |
 
 #### [frontmost](#frontmost)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.frontmost <cp.prop: boolean; read-only>` </span>                                                          |

@@ -24,6 +24,16 @@
 | [cp.apple.commandeditor](cp.apple.commandeditor.md)                          | Functions to control and manage Apple's Command Editor - used in Final Cut Pro,     |
 | [cp.apple.compressor](cp.apple.compressor.md)                          | Represents the Compressor application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.compressor.app](cp.apple.compressor.app.md)                          | The `cp.app` for Apple's Compressor.     |
+| [cp.apple.fcpxml](cp.apple.fcpxml.md)                          | This extension adds functions and methods that simplify the creation     |
+| [cp.apple.fcpxml.compoundClip](cp.apple.fcpxml.compoundClip.md)                          | FCPXML Document Compound Clip Object.     |
+| [cp.apple.fcpxml.event](cp.apple.fcpxml.event.md)                          | FCPXML Document Event Object.     |
+| [cp.apple.fcpxml.gap](cp.apple.fcpxml.gap.md)                          | FCPXML Document Gap Object.     |
+| [cp.apple.fcpxml.multicamClip](cp.apple.fcpxml.multicamClip.md)                          | FCPXML Document Multicam Clip Object.     |
+| [cp.apple.fcpxml.multicamResource](cp.apple.fcpxml.multicamResource.md)                          | FCPXML Document Multicam Resource Object.     |
+| [cp.apple.fcpxml.project](cp.apple.fcpxml.project.md)                          | FCPXML Document Project Object.     |
+| [cp.apple.fcpxml.resource](cp.apple.fcpxml.resource.md)                          | FCPXML Document Resource Object.     |
+| [cp.apple.fcpxml.secondaryStoryline](cp.apple.fcpxml.secondaryStoryline.md)                          | FCPXML Document Secondary Storyline Object.     |
+| [cp.apple.fcpxml.title](cp.apple.fcpxml.title.md)                          | FCPXML Document Title Object.     |
 | [cp.apple.finalcutpro](cp.apple.finalcutpro.md)                          | Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.finalcutpro.app](cp.apple.finalcutpro.app.md)                          | The `cp.app` for Final Cut Pro.     |
 | [cp.apple.finalcutpro.cmd.CommandEditor](cp.apple.finalcutpro.cmd.CommandEditor.md)                          | Command Editor Module.     |
@@ -87,6 +97,8 @@
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
 | [cp.apple.finalcutpro.strings](cp.apple.finalcutpro.strings.md)                          | The `cp.strings` for I18N lookups related to Final Cut Pro.     |
+| [cp.apple.motion](cp.apple.motion.md)                          | Represents the Motion application, providing functions that allow different tasks to be accomplished.     |
+| [cp.apple.motion.app](cp.apple.motion.app.md)                          | The `cp.app` for Apple's Motion.     |
 | [cp.battery](cp.battery.md)                          | Provides access to various properties of the battery. Each of these properties     |
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
@@ -106,7 +118,7 @@
 | [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)                          | Text Dropped to Dock Icon Callback     |
 | [cp.console.history](cp.console.history.md)                          | Console History Manager.     |
 | [cp.deferred](cp.deferred.md)                          | This extension makes it simple to defer multiple actions after a delay from the initial execution.     |
-| [cp.developer](cp.developer.md)                          | Developer Tools     |
+| [cp.dev](cp.dev.md)                          | A set of handy developer tools for CommandPost.     |
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
 | [cp.disk](cp.disk.md)                          | Provides provides details about disk devices attached to the system.     |
 | [cp.docs](cp.docs.md)                          | Documentation Tools.     |

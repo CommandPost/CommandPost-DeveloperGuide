@@ -31,7 +31,9 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
  * [fromUnitRect](#fromunitrect)
  * [fullFrame](#fullframe)
  * [getBrightness](#getbrightness)
+ * [getForceToGray](#getforcetogray)
  * [getGamma](#getgamma)
+ * [getInvertedPolarity](#getinvertedpolarity)
  * [id](#id)
  * [localToAbsolute](#localtoabsolute)
  * [name](#name)
@@ -40,7 +42,9 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
  * [previous](#previous)
  * [rotate](#rotate)
  * [setBrightness](#setbrightness)
+ * [setForceToGray](#setforcetogray)
  * [setGamma](#setgamma)
+ * [setInvertedPolarity](#setinvertedpolarity)
  * [setMode](#setmode)
  * [setPrimary](#setprimary)
  * [shotAsJPG](#shotasjpg)
@@ -193,6 +197,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A floating point number between 0 and 1, containing the current brightness level, or nil if the display does not support brightness queries</li></ul> |
 
+#### [getForceToGray](#getforcetogray)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.getForceToGray() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the screen's ForceToGray setting |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if the ForceToGray mode is set, otherwise false</li></ul> |
+
 #### [getGamma](#getgamma)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:getGamma() -> [whitepoint, blackpoint] or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -200,6 +212,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Description**                                      | Gets the current whitepoint and blackpoint of the screen |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the white point and black point of the screen, or nil if an error occurred. The keys <code>whitepoint</code> and <code>blackpoint</code> each have values of a table containing the following keys, with corresponding values between 0.0 and 1.0:</li><li>red</li><li>green</li><li>blue</li></ul> |
+
+#### [getInvertedPolarity](#getinvertedpolarity)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.getInvertedPolarity() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the screen's InvertedPolarity setting |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if the InvertedPolarity mode is set, otherwise false</li></ul> |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:id() -> number` </span>                                                          |
@@ -265,6 +285,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Parameters**                                       | <ul><li>brightness - A floating point number between 0 and 1</li></ul> |
 | **Returns**                                          | <ul><li>The <code>hs.screen</code> object</li></ul> |
 
+#### [setForceToGray](#setforcetogray)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.setForceToGray(ForceToGray) -> None` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the screen's ForceToGray mode |
+| **Parameters**                                       | <ul><li>ForceToGray - A boolean if ForceToGray mode should be enabled</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [setGamma](#setgamma)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:setGamma(whitepoint, blackpoint) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -273,6 +301,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Parameters**                                       | <ul><li>whitepoint - A table containing color component values between 0.0 and 1.0 for each of the keys:</li><li>red</li><li>green</li><li>blue</li><li>blackpoint - A table containing color component values between 0.0 and 1.0 for each of the keys:</li><li>red</li><li>green</li><li>blue</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the gamma settings were applied, false if an error occurred</li></ul> |
 | **Notes**                                            | <ul><li>If the whitepoint and blackpoint specified, are very similar, it will be impossible to read the screen. You should exercise caution, and may wish to bind a hotkey to <code>hs.screen.restoreGamma()</code> when experimenting</li></ul> |
+
+#### [setInvertedPolarity](#setinvertedpolarity)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen.setInvertedPolarity(InvertedPolarity) -> None` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the screen's InvertedPolarity mode |
+| **Parameters**                                       | <ul><li>InvertedPolarity - A boolean if InvertedPolarity mode should be enabled</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [setMode](#setmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:setMode(width, height, scale) -> boolean` </span>                                                          |

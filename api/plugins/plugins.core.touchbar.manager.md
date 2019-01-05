@@ -34,6 +34,7 @@ Touch Bar Manager Plugin.
  * [updateAction](#updateaction)
  * [updateIcon](#updateicon)
  * [updateLabel](#updatelabel)
+ * [updateOrder](#updateorder)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [buttons](#buttons)
  * [enabled](#enabled)
@@ -225,6 +226,14 @@ Touch Bar Manager Plugin.
 | **Type**                                             | Function |
 | **Description**                                      | Updates a Touch Bar action. |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>label - Label as string</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [updateOrder](#updateorder)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateOrder(direction, button, group) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Shifts a Touch Bar button either up or down. |
+| **Parameters**                                       | <ul><li>direction - Either "up" or "down"</li><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields

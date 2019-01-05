@@ -19,6 +19,7 @@ Notes:
  * [fgColor](#fgcolor)
  * [hide](#hide)
  * [isVisible](#isvisible)
+ * [placeholderText](#placeholdertext)
  * [query](#query)
  * [queryChangedCallback](#querychangedcallback)
  * [refreshChoicesCallback](#refreshchoicescallback)
@@ -114,6 +115,14 @@ Notes:
 | **Description**                                      | Checks if the chooser is currently displayed |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the chooser is displayed on screen, false if not</li></ul> |
+
+#### [placeholderText](#placeholdertext)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:placeholderText([placeholderText]) -> hs.chooser object or string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets/gets placeholder text that is shown in the query text field when no other text is present |
+| **Parameters**                                       | <ul><li>placeholderText - An optional string for placeholder text. If this parameter is omitted, the existing placeholder text will be returned.</li></ul> |
+| **Returns**                                          | <ul><li>The hs.chooser object, or the existing placeholder text</li></ul> |
 
 #### [query](#query)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:query([queryString]) -> hs.chooser object or string` </span>                                                          |

@@ -26,6 +26,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 * Methods - API calls which can only be made on an object returned by a constructor
  * [allInputDataSources](#allinputdatasources)
  * [allOutputDataSources](#alloutputdatasources)
+ * [balance](#balance)
  * [currentInputDataSource](#currentinputdatasource)
  * [currentOutputDataSource](#currentoutputdatasource)
  * [inputMuted](#inputmuted)
@@ -37,6 +38,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [name](#name)
  * [outputMuted](#outputmuted)
  * [outputVolume](#outputvolume)
+ * [setBalance](#setbalance)
  * [setDefaultInputDevice](#setdefaultinputdevice)
  * [setDefaultOutputDevice](#setdefaultoutputdevice)
  * [setInputMuted](#setinputmuted)
@@ -173,6 +175,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A list of hs.audiodevice.dataSource objects, or nil if an error occurred</li></ul> |
 
+#### [balance](#balance)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:balance() -> number or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Get the current left/right balance of this audio device |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A number between 0.0 and 1.0, representing the balance (0.0 for full left, 1.0 for full right, 0.5 for center), or nil if the audio device does not support balance</li></ul> |
+| **Notes**                                            | <ul><li>The return value will be a floating point number</li><li>This method will inspect the device to determine if it is an input or output device, and return the appropriate volume. For devices that are both input and output devices, see <code>:inputVolume()</code> and <code>:outputVolume()</code></li></ul> |
+
 #### [currentInputDataSource](#currentinputdatasource)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:currentInputDataSource() -> hs.audiodevice.dataSource object or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -265,6 +276,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number between 0 and 100, representing the output volume percentage, or nil if the audio device does not support output volume levels</li></ul> |
 | **Notes**                                            | <ul><li>The return value will be a floating point number</li></ul> |
+
+#### [setBalance](#setbalance)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:setBalance(level) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Set the balance of this audio device |
+| **Parameters**                                       | <ul><li>level - A number between 0.0 and 1.0, representing the balance (0.0 for full left, 1.0 for full right, 0.5 for center)</li></ul> |
+| **Returns**                                          | <ul><li>True if the balance was set, false if the audio device does not support setting a balance.</li></ul> |
+| **Notes**                                            | <ul><li>This method will inspect the device to determine if it is an input or output device, and set the appropriate volume. For devices that are both input and output devices, see <code>:setInputVolume()</code> and <code>:setOutputVolume()</code></li></ul> |
 
 #### [setDefaultInputDevice](#setdefaultinputdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:setDefaultInputDevice() -> bool` </span>                                                          |

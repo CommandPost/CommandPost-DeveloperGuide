@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.preferences.panels.touchbar
+# [docs](index.md) » plugins.core.touchbar.prefs
 ---
 
 Touch Bar Preferences Panel
@@ -21,19 +21,19 @@ Touch Bar Preferences Panel
 ### Variables
 
 #### [defaultIconPath](#defaulticonpath)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.defaultIconPath -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.defaultIconPath -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Default Path where built-in icons are stored |
 
 #### [maxItems](#maxitems)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.maxItems -> number` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.maxItems -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | The maximum number of Touch Bar items per group. |
 
 #### [supportedExtensions](#supportedextensions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.supportedExtensions -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.supportedExtensions -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Table of supported extensions for Touch Bar Icons. |
@@ -41,7 +41,7 @@ Touch Bar Preferences Panel
 ### Functions
 
 #### [getGroupEditor](#getgroupeditor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.getGroupEditor(groupId) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.getGroupEditor(groupId) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Gets the Group Editor |
@@ -49,7 +49,7 @@ Touch Bar Preferences Panel
 | **Returns**                                          | <ul><li>Group Editor</li></ul> |
 
 #### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.init(deps, env) -> module` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.init(deps, env) -> module` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise the Module. |
@@ -57,7 +57,7 @@ Touch Bar Preferences Panel
 | **Returns**                                          | <ul><li>The Module</li></ul> |
 
 #### [setGroupEditor](#setgroupeditor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.setGroupEditor(groupId, editorFn) -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.setGroupEditor(groupId, editorFn) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the Group Editor |
@@ -67,13 +67,13 @@ Touch Bar Preferences Panel
 ### Fields
 
 #### [enabled](#enabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.enabled <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.enabled <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Enable or disable Touch Bar Support. |
 
 #### [lastGroup](#lastgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.panels.touchbar.lastGroup <cp.prop: string>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.lastGroup <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Last group used in the Preferences Drop Down. |

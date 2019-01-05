@@ -1,8 +1,9 @@
 # [docs](index.md) » hs.deezer
 ---
 
+Controls for Deezer music player.
 
-Controls for Deezer music player
+Heavily inspired by 'hs.spotify', credits to the original author.
 
 ## API Overview
 * Constants - Useful values which cannot be changed
@@ -176,7 +177,7 @@ Controls for Deezer music player
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [rw](#rw)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.deezer.rw` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.deezer.rw()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Skips the playback position backwards by 5 seconds |

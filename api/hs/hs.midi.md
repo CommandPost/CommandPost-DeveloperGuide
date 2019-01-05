@@ -50,7 +50,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi.commandTypes[]` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
-| **Description**                                      |  |
+| **Description**                                      | A table containing the numeric value for the possible flags returned by the `commandType` parameter of the callback function. |
 
 ### Functions
 

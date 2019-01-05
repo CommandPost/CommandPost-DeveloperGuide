@@ -21,6 +21,7 @@ Manager for the CommandPost Preferences Window.
 * Functions - API calls offered directly by the extension
  * [addHandler](#addhandler)
  * [addPanel](#addpanel)
+ * [currentPanelID](#currentpanelid)
  * [focus](#focus)
  * [getHandler](#gethandler)
  * [getLabel](#getlabel)
@@ -113,6 +114,14 @@ Manager for the CommandPost Preferences Window.
 | **Parameters**                                       | <ul><li><code>params</code> - The parameters table. Details below.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>panel</code> instance.</li></ul> |
 | **Notes**                                            | <ul><li>The <code>params</code> can have the following properties. The <code>priority</code> and <code>id</code> and properties are <strong>required</strong>. <strong> <code>priority</code>      - An integer value specifying the priority of the panel compared to others. </strong> <code>id</code>            - A string containing the unique ID of the panel. <strong> <code>label</code>         - The human-readable label for the panel icon. </strong> <code>image</code>         - The <code>hs.image</code> for the panel icon. <strong> <code>tooltip</code>       - The human-readable details for the toolbar icon when the mouse is hovering over it. </strong> <code>closeFn</code>       - A callback function that's triggered when the Preferences window is closed.</li></ul> |
+
+#### [currentPanelID](#currentpanelid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.currentPanelID() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the panel ID with the highest priority. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The panel ID as a string</li></ul> |
 
 #### [focus](#focus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.focus() -> boolean` </span>                                                          |
