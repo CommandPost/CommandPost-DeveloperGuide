@@ -8,7 +8,7 @@ Playhead Module.
  * [find](#find)
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [Playhead](#playhead)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [center](#center)
  * [currentViewer](#currentviewer)
@@ -17,11 +17,9 @@ Playhead Module.
  * [isShowing](#isshowing)
  * [position](#position)
  * [timecode](#timecode)
- * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [hide](#hide)
- * [parent](#parent)
  * [show](#show)
 
 ## API Documentation
@@ -46,8 +44,8 @@ Playhead Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.new(parent[, skimming[, containerFn[, useEventViewer]]]) -> Playhead` </span>                                                          |
+#### [Playhead](#playhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead(parent[, skimming[, containerFn[, useEventViewer]]]) -> Playhead` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Constructs a new Playhead |
@@ -98,12 +96,6 @@ Playhead Module.
 | **Type**                                             | Field |
 | **Description**                                      | Gets and sets the current timecode. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.UI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Playhead |
-
 ### Methods
 
 #### [app](#app)
@@ -121,14 +113,6 @@ Playhead Module.
 | **Description**                                      | Hides the Playhead |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Playhead object</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:parent() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Playhead's parent table |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object as a table</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:show() -> Playhead object` </span>                                                          |

@@ -8,8 +8,6 @@ Zoom the Timeline to fit the currently-selected clips.
  * [DEFAULT_SHIFT](#default_shift)
  * [MIN_SHIFT](#min_shift)
  * [SELECTION_BUFFER](#selection_buffer)
-* Functions - API calls offered directly by the extension
- * [init](#init)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [zoomToSelection](#zoomtoselection)
 
@@ -34,16 +32,6 @@ Zoom the Timeline to fit the currently-selected clips.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | The number of pixels of buffer space to allow the selection zoom to fit. |
-
-### Functions
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.zoomtoselection.init() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialise the module. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Methods
 

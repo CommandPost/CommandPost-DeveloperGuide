@@ -4,9 +4,6 @@
 CommandPost Preferences Panel.
 
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [DEFAULT_PRIORITY](#default_priority)
- * [HANDLER_PRIORITY](#handler_priority)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -22,20 +19,6 @@ CommandPost Preferences Panel.
  * [getToolbarItem](#gettoolbaritem)
 
 ## API Documentation
-
-### Constants
-
-#### [DEFAULT_PRIORITY](#default_priority)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.panel.DEFAULT_PRIORITY -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The default priority for panels. |
-
-#### [HANDLER_PRIORITY](#handler_priority)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.manager.panel.HANDLER_PRIORITY -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The default priority for handler scripts. |
 
 ### Constructors
 

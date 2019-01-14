@@ -15,6 +15,7 @@ Touch Bar Preferences Panel
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [enabled](#enabled)
  * [lastGroup](#lastgroup)
+ * [scrollBarPosition](#scrollbarposition)
 
 ## API Documentation
 
@@ -74,6 +75,12 @@ Touch Bar Preferences Panel
 
 #### [lastGroup](#lastgroup)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.lastGroup <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last group used in the Preferences Drop Down. |
+
+#### [scrollBarPosition](#scrollbarposition)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.prefs.scrollBarPosition <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Last group used in the Preferences Drop Down. |

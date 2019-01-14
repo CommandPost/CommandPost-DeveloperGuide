@@ -9,9 +9,7 @@ Manager for the Batch Export Window.
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [DEFAULT_HEIGHT](#default_height)
- * [DEFAULT_TITLE](#default_title)
  * [DEFAULT_WIDTH](#default_width)
- * [DEFAULT_WINDOW_STYLE](#default_window_style)
  * [lastTab](#lasttab)
  * [position](#position)
  * [WEBVIEW_LABEL](#webview_label)
@@ -46,23 +44,11 @@ Manager for the Batch Export Window.
 | **Type**                                             | Constant |
 | **Description**                                      | Default Height of Preferences Window |
 
-#### [DEFAULT_TITLE](#default_title)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.DEFAULT_TITLE -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Default Title of Preferences Window |
-
 #### [DEFAULT_WIDTH](#default_width)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.DEFAULT_WIDTH -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Default Width of Preferences Window |
-
-#### [DEFAULT_WINDOW_STYLE](#default_window_style)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.DEFAULT_WINDOW_STYLE -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Default Webview Window Style of Preferences Window |
 
 #### [lastTab](#lasttab)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.lastTab` </span>                                                          |

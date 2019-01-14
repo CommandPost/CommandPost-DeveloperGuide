@@ -8,9 +8,10 @@ Sends Apple a Bug Report or Feature Request for Motion.
  * [DEFAULT_HEIGHT](#default_height)
  * [DEFAULT_TITLE](#default_title)
  * [DEFAULT_WIDTH](#default_width)
- * [DEFAULT_WINDOW_STYLE](#default_window_style)
 * Functions - API calls offered directly by the extension
  * [open](#open)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [position](#position)
 
 ## API Documentation
 
@@ -34,12 +35,6 @@ Sends Apple a Bug Report or Feature Request for Motion.
 | **Type**                                             | Constant |
 | **Description**                                      | Default Window Width |
 
-#### [DEFAULT_WINDOW_STYLE](#default_window_style)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.motion.feedback.bugreport.DEFAULT_WINDOW_STYLE -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Default Window Style |
-
 ### Functions
 
 #### [open](#open)
@@ -49,4 +44,12 @@ Sends Apple a Bug Report or Feature Request for Motion.
 | **Description**                                      | Opens Final Cut Pro Feedback Screen |
 | **Parameters**                                       | <ul><li>bugReport - Is it a bug report or an enhancement request?</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
+
+### Fields
+
+#### [position](#position)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.motion.feedback.bugreport.position <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Webview Position |
 

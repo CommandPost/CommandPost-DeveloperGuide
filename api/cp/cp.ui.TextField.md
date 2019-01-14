@@ -10,6 +10,8 @@ Text Field Module.
  * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [clear](#clear)
+ * [doConfirm](#doconfirm)
+ * [doFocus](#dofocus)
  * [forceFocus](#forcefocus)
  * [getValue](#getvalue)
  * [loadLayout](#loadlayout)
@@ -22,11 +24,11 @@ Text Field Module.
 ### Functions
 
 #### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField.matches(element) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField.matches(element[, subrole]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks to see if an element matches what we think it should be. |
-| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
+| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li><li>subrole - (optional) If provided, the field must have the specified subrole.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
 
 ### Fields
@@ -46,6 +48,18 @@ Text Field Module.
 | **Description**                                      | Clears the value of a Text Field. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
+
+#### [doConfirm](#doconfirm)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:doConfirm() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will confirm the current text value. |
+
+#### [doFocus](#dofocus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:doFocus() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will attempt to focus on the current `TextField`. |
 
 #### [forceFocus](#forcefocus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextField:forceFocus()` </span>                                                          |

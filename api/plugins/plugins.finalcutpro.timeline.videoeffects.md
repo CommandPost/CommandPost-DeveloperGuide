@@ -5,20 +5,11 @@ Controls Final Cut Pro's Video Effects.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [init](#init)
  * [videoeffects](#videoeffects)
 
 ## API Documentation
 
 ### Functions
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.videoeffects.init() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialise the Module |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Module</li></ul> |
 
 #### [videoeffects](#videoeffects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.videoeffects(action) -> boolean` </span>                                                          |

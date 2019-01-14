@@ -4,27 +4,10 @@
 Controls Final Cut Pro's Generators.
 
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [FILE_NAME](#file_name)
- * [FOLDER_NAME](#folder_name)
 * Functions - API calls offered directly by the extension
  * [apply](#apply)
 
 ## API Documentation
-
-### Constants
-
-#### [FILE_NAME](#file_name)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.generators.FILE_NAME -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | File name of settings file. |
-
-#### [FOLDER_NAME](#folder_name)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.generators.FOLDER_NAME -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Folder Name where settings file is contained. |
 
 ### Functions
 

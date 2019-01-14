@@ -27,10 +27,12 @@ Utility functions to support `hs._asm.axuielement`.
  * [compareRightToLeft](#comparerighttoleft)
  * [compareTopToBottom](#comparetoptobottom)
  * [hasAttributeValue](#hasattributevalue)
+ * [hasChild](#haschild)
  * [isValid](#isvalid)
  * [prop](#prop)
  * [role](#role)
  * [snapshot](#snapshot)
+ * [valueOf](#valueof)
  * [withAttributeValue](#withattributevalue)
  * [withRole](#withrole)
  * [withValue](#withvalue)
@@ -211,6 +213,14 @@ Utility functions to support `hs._asm.axuielement`.
 | **Parameters**                                       | <ul><li>element  - the <code>axuielement</code></li><li>name     - the name of the attribute</li><li>value    - the value of the attribute</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the <code>element</code> has the supplied attribute value, otherwise <code>false</code>.</li></ul> |
 
+#### [hasChild](#haschild)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.hasChild(element, matcherFn) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the axuielement has a child that passes the `matcherFn`. |
+| **Parameters**                                       | <ul><li>element - the <code>axuielement</code> to check.</li><li>matcherFn - the <code>function</code> that accepts an <code>axuielement</code> and returns a <code>boolean</code></li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if any child matches, otherwise <code>false</code>.</li></ul> |
+
 #### [isValid](#isvalid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.isValid(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -243,6 +253,14 @@ Utility functions to support `hs._asm.axuielement`.
 | **Description**                                      | Takes a snapshot of the specified `axuielement` and returns it. |
 | **Parameters**                                       | <ul><li>element      - The <code>axuielement</code> to snap.</li><li>filename     - (optional) The path to save the image as a PNG file.</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.image</code> file, or <code>nil</code> if the element could not be snapped.</li></ul> |
+
+#### [valueOf](#valueof)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.valueOf(element, name[, default]) -> anything` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the named `AX` attribute value, or the `default` if it is empty. |
+| **Parameters**                                       | <ul><li>element - the <code>axuielement</code> to retrieve the attribute value for.</li><li>attribute - The attribute name (e.g. "AXValue")</li><li>default - (optional) if provided, this will be returned if the attribute is <code>nil</code>.</li></ul> |
+| **Returns**                                          | <ul><li>The attribute value, or the <code>default</code> if none is found.</li></ul> |
 
 #### [withAttributeValue](#withattributevalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.withAttributeValue(element, name, value) -> hs._asm.axuielement | nil` </span>                                                          |

@@ -16,6 +16,7 @@ Represents an `AXRadioGroup`, providing utility methods.
  * [doPreviousOption](#dopreviousoption)
  * [doSelectOption](#doselectoption)
  * [nextOption](#nextoption)
+ * [options](#options)
  * [previousOption](#previousoption)
 
 ## API Documentation
@@ -87,6 +88,13 @@ Represents an `AXRadioGroup`, providing utility methods.
 | **Description**                                      | Selects the next option in the group. Cycles from the last to the first option. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>RadioGroup</code>.</li></ul> |
+
+#### [options](#options)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:options() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The `table` of options available in the radio group. |
+| **Returns**                                          | <ul><li>The table of options.</li></ul> |
 
 #### [previousOption](#previousoption)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:previousOption() -> self` </span>                                                          |

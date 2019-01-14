@@ -26,7 +26,7 @@ Accessibility Plugin.
 ### Variables
 
 #### [systemPreferencesAlreadyOpen](#systempreferencesalreadyopen)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.systemPreferencesAlreadyOpen` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.accessibility.systemPreferencesAlreadyOpen -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Was System Preferences already open? |

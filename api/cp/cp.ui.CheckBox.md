@@ -29,7 +29,9 @@ myButton(false) == false	-- now false
  * [checked](#checked)
  * [title](#title)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [doCheck](#docheck)
  * [doPress](#dopress)
+ * [doUncheck](#douncheck)
  * [loadLayout](#loadlayout)
  * [press](#press)
  * [saveLayout](#savelayout)
@@ -73,6 +75,12 @@ myButton(false) == false	-- now false
 
 ### Methods
 
+#### [doCheck](#docheck)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:doCheck() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will ensure the `CheckBox` is checked. |
+
 #### [doPress](#dopress)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:doPress() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -80,6 +88,12 @@ myButton(false) == false	-- now false
 | **Description**                                      | Returns a `Statement` that will press the button when executed, if available at the time. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code> which will press the button when executed.</li></ul> |
+
+#### [doUncheck](#douncheck)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:doUncheck() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will ensure the `CheckBox` is unchecked. |
 
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:loadLayout(layout) -> nil` </span>                                                          |

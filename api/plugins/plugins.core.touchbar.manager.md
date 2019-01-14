@@ -19,19 +19,26 @@ Touch Bar Manager Plugin.
  * [activeGroup](#activegroup)
  * [activeSubGroup](#activesubgroup)
  * [clear](#clear)
+ * [forceGroupChange](#forcegroupchange)
  * [getAction](#getaction)
  * [getActionHandlerID](#getactionhandlerid)
  * [getActionTitle](#getactiontitle)
+ * [getBankLabel](#getbanklabel)
  * [getIcon](#geticon)
  * [getLabel](#getlabel)
+ * [gotoSubGroup](#gotosubgroup)
  * [groupStatus](#groupstatus)
  * [incrementActiveSubGroup](#incrementactivesubgroup)
+ * [init](#init)
+ * [nextSubGroup](#nextsubgroup)
+ * [previousSubGroup](#previoussubgroup)
  * [start](#start)
  * [stop](#stop)
  * [toggle](#toggle)
  * [touchBar](#touchbar)
  * [update](#update)
  * [updateAction](#updateaction)
+ * [updateBankLabel](#updatebanklabel)
  * [updateIcon](#updateicon)
  * [updateLabel](#updatelabel)
  * [updateOrder](#updateorder)
@@ -108,6 +115,14 @@ Touch Bar Manager Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [forceGroupChange](#forcegroupchange)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.forceGroupChange(combinedGroupAndSubGroupID) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Loads a specific sub-group. |
+| **Parameters**                                       | <ul><li>combinedGroupAndSubGroupID - The group and subgroup as a single string.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [getAction](#getaction)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getAction(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -132,6 +147,14 @@ Touch Bar Manager Plugin.
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Action as string</li></ul> |
 
+#### [getBankLabel](#getbanklabel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getBankLabel(group) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns a specific Touch Bar Bank Label. |
+| **Parameters**                                       | <ul><li>group - Group ID as string</li></ul> |
+| **Returns**                                          | <ul><li>Label as string</li></ul> |
+
 #### [getIcon](#geticon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.getIcon(button, group) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -148,6 +171,14 @@ Touch Bar Manager Plugin.
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>Label as string</li></ul> |
 
+#### [gotoSubGroup](#gotosubgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.gotoSubGroup() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Loads a specific sub-group. |
+| **Parameters**                                       | <ul><li>id - The ID of the sub-group.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [groupStatus](#groupstatus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.groupStatus(groupID, status) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -161,6 +192,30 @@ Touch Bar Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Increments the active sub-group |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.init(deps) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Initialises the module. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The module.</li></ul> |
+
+#### [nextSubGroup](#nextsubgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.nextSubGroup() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Goes to the next sub-group for the active group. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [previousSubGroup](#previoussubgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.previousSubGroup() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Goes to the previous sub-group for the active group. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
@@ -212,6 +267,14 @@ Touch Bar Manager Plugin.
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>actionTitle - Action Title as string</li><li>handlerID - Handler ID as string</li><li>action - Action as table</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successfully updated, or <code>false</code> if a duplicate entry was found</li></ul> |
 
+#### [updateBankLabel](#updatebanklabel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateBankLabel(group, label) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Updates a Touch Bar Bank Label. |
+| **Parameters**                                       | <ul><li>group - Group ID as string</li><li>label - Label as string</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [updateIcon](#updateicon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateIcon(button, group, icon) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -224,7 +287,7 @@ Touch Bar Manager Plugin.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.updateLabel(button, group, label) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Updates a Touch Bar action. |
+| **Description**                                      | Updates a Touch Bar label. |
 | **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>label - Label as string</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

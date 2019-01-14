@@ -51,7 +51,7 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Description**                                      | Boolean that sets whether or not the files are automatically added to the timeline or not. |
 
 #### [mediaFolders](#mediafolders)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.mediaFolders` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.mediaFolders -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | The table of MediaFolders currently configured. |

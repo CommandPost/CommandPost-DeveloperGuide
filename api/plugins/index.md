@@ -72,6 +72,7 @@
 | [plugins.core.tangent.os.sound](plugins.core.tangent.os.sound.md)                          | Tangent Display Functions.     |
 | [plugins.core.tangent.os.window](plugins.core.tangent.os.window.md)                          | Window Management Tools for Tangent.     |
 | [plugins.core.tangent.prefs](plugins.core.tangent.prefs.md)                          | Tangent Preferences Panel     |
+| [plugins.core.touchbar.banks](plugins.core.touchbar.banks.md)                          | Touch Bar Bank Actions.     |
 | [plugins.core.touchbar.location](plugins.core.touchbar.location.md)                          | Virtual Touch Bar Update Location Callback     |
 | [plugins.core.touchbar.manager](plugins.core.touchbar.manager.md)                          | Touch Bar Manager Plugin.     |
 | [plugins.core.touchbar.manager.widgets](plugins.core.touchbar.manager.widgets.md)                          | Touch Bar Widgets Manager     |
@@ -86,7 +87,7 @@
 | [plugins.finalcutpro.advanced.disablewaveforms](plugins.finalcutpro.advanced.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.advanced.fcpxml](plugins.finalcutpro.advanced.fcpxml.md)                          | Adds preferences for extra FCPXML import and export options.     |
 | [plugins.finalcutpro.advanced.playbackrendering](plugins.finalcutpro.advanced.playbackrendering.md)                          | Playback Rendering Plugin.     |
-| [plugins.finalcutpro.advanced.showtimelineinplayer](plugins.finalcutpro.advanced.showtimelineinplayer.md)                          | Show Timeline In Player.     |
+| [plugins.finalcutpro.advanced.showtimelineinviewers](plugins.finalcutpro.advanced.showtimelineinviewers.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
 | [plugins.finalcutpro.browser.pasteboardtomarkers](plugins.finalcutpro.browser.pasteboardtomarkers.md)                          | Take the contents of the Pasteboard and pastes it as clip markers on the     |
@@ -118,6 +119,7 @@
 | [plugins.finalcutpro.midi.controls.controlui.relative](plugins.finalcutpro.midi.controls.controlui.relative.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |
 | [plugins.finalcutpro.midi.controls.video](plugins.finalcutpro.midi.controls.video.md)                          | Final Cut Pro MIDI Video Inspector Controls.     |
 | [plugins.finalcutpro.midi.controls.zoom](plugins.finalcutpro.midi.controls.zoom.md)                          | Final Cut Pro MIDI Zoom Control.     |
+| [plugins.finalcutpro.midi.manager](plugins.finalcutpro.midi.manager.md)                          | MIDI Manager Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.manager](plugins.finalcutpro.notifications.manager.md)                          | Notifications Manager Plugin.     |
 | [plugins.finalcutpro.notifications.prowl](plugins.finalcutpro.notifications.prowl.md)                          | Prowl Notifications Plugin.     |

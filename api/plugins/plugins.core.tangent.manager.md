@@ -39,6 +39,7 @@ here: http://www.tangentwave.co.uk/developer-support
  * [addMode](#addmode)
  * [areMappingsInstalled](#aremappingsinstalled)
  * [disableFinalCutProInTangentHub](#disablefinalcutprointangenthub)
+ * [getControlsXML](#getcontrolsxml)
  * [getMode](#getmode)
  * [interruptWhen](#interruptwhen)
  * [launchTangentMapper](#launchtangentmapper)
@@ -157,6 +158,14 @@ here: http://www.tangentwave.co.uk/developer-support
 | **Description**                                      | Disables the Final Cut Pro preset in the Tangent Hub Application. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [getControlsXML](#getcontrolsxml)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.getControlsXML() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the controls XML. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The XML controls</li></ul> |
 
 #### [getMode](#getmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.getMode(id) -> plugins.core.tangent.manager.mode` </span>                                                          |

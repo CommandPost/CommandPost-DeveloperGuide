@@ -17,7 +17,7 @@ Notifications Manager Plugin.
 ### Constants
 
 #### [manager](#manager)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.manager` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.notifications.manager -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Event Types |

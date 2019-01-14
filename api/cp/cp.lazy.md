@@ -18,7 +18,7 @@ local class = require "middleclass"
 local MyClass = class("MyClass")
 function MyClass:expensiveThing()
     if self._expensiveThing == nil then
-        self._expensiveThing = ExpensiveThing.new()
+        self._expensiveThing = ExpensiveThing()
     end
     return self._expensiveThing
 end
@@ -39,7 +39,7 @@ local lazy      = require "cp.lazy"
 
 local MyClass = class("MyClass"):include(lazy)
 function MyClass.lazy.method:expensiveThing()
-    return someObject.new()
+    return ExpensiveThing()
 end
 
 local myThing = MyClass()
@@ -54,7 +54,7 @@ local lazy      = require "cp.lazy"
 
 local MyClass = class("MyClass"):include(lazy)
 function MyClass.lazy.value:expensiveThing()
-    return someObject.new()
+    return ExpensiveThing()
 end
 
 local myThing = MyClass()

@@ -11,13 +11,23 @@ See:
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [Element](#element)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [frame](#frame)
+ * [identifier](#identifier)
  * [isEnabled](#isenabled)
  * [isShowing](#isshowing)
+ * [position](#position)
+ * [role](#role)
+ * [size](#size)
+ * [subrole](#subrole)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
+ * [doLayout](#dolayout)
+ * [loadLayout](#loadlayout)
  * [parent](#parent)
+ * [saveLayout](#savelayout)
  * [snapshot](#snapshot)
 
 ## API Documentation
@@ -32,6 +42,16 @@ See:
 | **Parameters**                                       | <ul><li>The element to check</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the element is a valid instance of an <code>hs._asm.axuielement</code>.</li></ul> |
 
+### Constructors
+
+#### [Element](#element)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element(parent, uiFinder) -> cp.ui.Element` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `Element` with the specified `parent` and `uiFinder`. |
+| **Parameters**                                       | <ul><li>parent - The parent Element (may be <code>nil</code>)</li><li>uiFinder - The <code>function</code> or <code>prop</code> that actually provides the current <code>axuielement</code> instance.</li></ul> |
+| **Returns**                                          | <ul><li>The new <code>Element</code> instance.</li></ul> |
+
 ### Fields
 
 #### [frame](#frame)
@@ -39,6 +59,12 @@ See:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the table containing the `x`, `y`, `w`, and `h` values for the `Element` frame, or `nil` if not available. |
+
+#### [identifier](#identifier)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.identifier <cp.prop: string; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `AX` identifier for the element. |
 
 #### [isEnabled](#isenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.isEnabled <cp.prop: boolean; read-only>` </span>                                                          |
@@ -52,6 +78,30 @@ See:
 | **Type**                                             | Field |
 | **Description**                                      | If `true`, the `Element` is showing on screen. |
 
+#### [position](#position)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.position <cp.prop: table; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the table containing the `x` and `y` values for the `Element` frame, or `nil` if not available. |
+
+#### [role](#role)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.role <cp.prop: string; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `AX` role name for the element. |
+
+#### [size](#size)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.size <cp.prop: table; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the table containing the `w` and `h` values for the `Element` frame, or `nil` if not available. |
+
+#### [subrole](#subrole)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.subrole <cp.prop: string; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `AX` subrole name for the element. |
+
 ### Methods
 
 #### [app](#app)
@@ -62,6 +112,23 @@ See:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul> |
 
+#### [doLayout](#dolayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:doLayout(layout) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) which will attempt to load the layout based on the parameters |
+| **Parameters**                                       | <ul><li>layout - a <code>table</code> of parameters that will be used to layout the element.</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a> to execute.</li></ul> |
+| **Notes**                                            | <ul><li>By default, to enable backwards-compatibility, this method will simply call the [#loadLayout]. Override it to provide more optimal asynchonous behaviour if required.</li><li>When subclassing, the overriding <code>doLayout</code> method should call the parent class's <code>doLayout</code> method,then process any custom values from it, like so:   <code>lua   function MyElement:doLayout(layout)       layout = layout or {}       return Do(Element.doLayout(self, layout))       :Then(function()           self.myConfig = layout.myConfig       end)       :Label("MyElement:doLayout")   end</code></li></ul> |
+
+#### [loadLayout](#loadlayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:loadLayout(layout) -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | When called, the Element (or subclass) will attempt to load the layout based on the parameters |
+| **Parameters**                                       | <ul><li>layout - a <code>table</code> of parameters that will be used to layout the element.</li></ul> |
+| **Notes**                                            | <ul><li>When subclassing, the overriding <code>loadLayout</code> method should call the parent's <code>loadLayout</code> method,then process any custom values from it, like so:   <code>function MyElement:loadLayout(layout)       Element.loadLayout(self, layout)       self.myConfig = layout.myConfig   end</code></li></ul> |
+
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -69,6 +136,13 @@ See:
 | **Description**                                      | Returns the parent object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>parent</li></ul> |
+
+#### [saveLayout](#savelayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:saveLayout() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `table` containing the current configuration details for this Element (or subclass). |
+| **Notes**                                            | <ul><li>When subclassing, the overriding <code>saveLayout</code> method should call the parent's saveLayout method,then add values to it, like so:   <code>function MyElement:saveLayout()       local layout = Element.saveLayout(self)       layout.myConfig = self.myConfig       return layout   end</code></li></ul> |
 
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:snapshot([path]) -> hs.image | nil` </span>                                                          |

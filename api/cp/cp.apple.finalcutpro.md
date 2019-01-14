@@ -72,6 +72,7 @@ end
  * [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)
  * [cp.apple.finalcutpro.prefs](cp.apple.finalcutpro.prefs.md)
  * [cp.apple.finalcutpro.strings](cp.apple.finalcutpro.strings.md)
+ * [cp.apple.finalcutpro.timeline](cp.apple.finalcutpro.timeline.md)
 
 ## API Overview
 * Constants - Useful values which cannot be changed
@@ -93,6 +94,7 @@ end
  * [userCommandSetPath](#usercommandsetpath)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [activeCommandSetPath](#activecommandsetpath)
+ * [audioLanes](#audiolanes)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
@@ -267,6 +269,12 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences |
+
+#### [audioLanes](#audiolanes)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.audioLanes <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if audio lanes are currently showing. May be set to ensure it is showing or hidden. |
 
 #### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |

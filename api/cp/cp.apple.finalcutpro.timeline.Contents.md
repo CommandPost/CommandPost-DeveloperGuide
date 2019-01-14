@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.TimelineContents
+# [docs](index.md) » cp.apple.finalcutpro.timeline.Contents
 ---
 
 Timeline Contents Module.
@@ -32,7 +32,7 @@ Timeline Contents Module.
 ### Functions
 
 #### [clipsUI](#clipsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:clipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:clipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a table containing the list of clips in the Timeline. |
@@ -40,7 +40,7 @@ Timeline Contents Module.
 | **Returns**                                          | <ul><li>The table of axuielements that match the conditions</li></ul> |
 
 #### [playheadClipsUI](#playheadclipsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:playheadClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:playheadClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a table array containing the list of clips in the Timeline under the playhead, ordered with the |
@@ -50,61 +50,61 @@ Timeline Contents Module.
 ### Fields
 
 #### [children](#children)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.children <cp.prop: table; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.children <cp.prop: table; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The current set of child elements in the TimelineContents. |
+| **Description**                                      | The current set of child elements in the Contents. |
 
 #### [horizontalScrollBarUI](#horizontalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.horizontalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.horizontalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `AXHorizontalScrolLbar` for the Timeline Contents area. |
 
 #### [isFocused](#isfocused)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.isFocused <cp.prop: booelan; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.isFocused <cp.prop: booelan; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the Timeline is currently the focused panel. |
 
 #### [isLoaded](#isloaded)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.isLoaded <cp.prop: booelan; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.isLoaded <cp.prop: booelan; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the Timeline has content loaded. |
 
 #### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.isShowing <cp.prop: booelan; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.isShowing <cp.prop: booelan; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the Timeline is currently showing. |
 
 #### [scrollAreaUI](#scrollareaui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.scrollAreaUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.scrollAreaUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The parent `ScrollArea` UI of the Timeline Contents area. |
 
 #### [selectedChildren](#selectedchildren)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.selectedChildren <cp.prop: table; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.selectedChildren <cp.prop: table; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The current set of selected child elements in the TimelineContents. |
+| **Description**                                      | The current set of selected child elements in the Contents. |
 
 #### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The main UI of the Timeline Contents area. |
 
 #### [verticalScrollBarUI](#verticalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.verticalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.verticalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `AXVerticalScrollBar` for the Timeline Contents area. |
 
 #### [viewFrame](#viewframe)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents.viewFrame <cp.prop: table; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.viewFrame <cp.prop: table; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The current 'frame' of the internal timeline content,  or `nil` if not available. |
@@ -112,22 +112,22 @@ Timeline Contents Module.
 ### Methods
 
 #### [doFocus](#dofocus)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:doFocus(show) -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:doFocus(show) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which will focus on the `TimelineContents`. |
-| **Parameters**                                       | <ul><li>show      - if <code>true</code>, the <code>TimelineContents</code> will be shown before focusing.</li></ul> |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which will focus on the `Contents`. |
+| **Parameters**                                       | <ul><li>show      - if <code>true</code>, the <code>Contents</code> will be shown before focusing.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
 
 #### [doHide](#dohide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:doHide() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will attempt to hide the Timeline Contents. |
 | **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
 
 #### [doSelectClip](#doselectclip)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:doSelectClip(clipUI) -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:doSelectClip(clipUI) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) which will select the specified single `hs._asm.axuielement` value in the Timeline Contents area. |
@@ -135,7 +135,7 @@ Timeline Contents Module.
 | **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a> that will select the clip or throw an error if there is an issue.</li></ul> |
 
 #### [doSelectClips](#doselectclips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:doSelectClips(clipsUI) -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:doSelectClips(clipsUI) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) which will select the specified list of `hs._asm.axuielement` values in the Timeline Contents area. |
@@ -143,14 +143,14 @@ Timeline Contents Module.
 | **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a> that will select the clips or throw an error if there is an issue.</li></ul> |
 
 #### [doShow](#doshow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:doShow() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will attempt to show the Timeline Contents. |
 | **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
 
 #### [rangeSelectionUI](#rangeselectionui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:rangeSelectionUI() -> axuielements` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:rangeSelectionUI() -> axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the UI for the current 'Range Selection', if present. |
@@ -158,7 +158,7 @@ Timeline Contents Module.
 | **Returns**                                          | <ul><li>The 'Range Selection' UI or <code>nil</code></li></ul> |
 
 #### [selectedClipsUI](#selectedclipsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineContents:selectedClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents:selectedClipsUI(expandedGroups, filterFn) -> table of axuielements` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a table containing the list of selected clips. |

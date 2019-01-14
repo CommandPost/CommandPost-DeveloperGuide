@@ -10,12 +10,11 @@ Scroll Area Module.
  * [ScrollArea](#scrollarea)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [contentsUI](#contentsui)
- * [horizontalScrollBarUI](#horizontalscrollbarui)
  * [selectedChildrenUI](#selectedchildrenui)
- * [verticalScrollBarUI](#verticalscrollbarui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [childrenUI](#childrenui)
  * [deselectAll](#deselectall)
+ * [horizontalScrollBar](#horizontalscrollbar)
  * [loadLayout](#loadlayout)
  * [saveLayout](#savelayout)
  * [selectAll](#selectall)
@@ -23,6 +22,7 @@ Scroll Area Module.
  * [selectChildAt](#selectchildat)
  * [showChild](#showchild)
  * [showChildAt](#showchildat)
+ * [verticalScrollBar](#verticalscrollbar)
  * [viewFrame](#viewframe)
 
 ## API Documentation
@@ -55,23 +55,11 @@ Scroll Area Module.
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `axuielement` representing the Scroll Area Contents, or `nil` if not available. |
 
-#### [horizontalScrollBarUI](#horizontalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.horizontalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the `axuielement` representing the Horizontal Scroll Bar, or `nil` if not available. |
-
 #### [selectedChildrenUI](#selectedchildrenui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.selectedChildrenUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `axuielement` representing the Scroll Area Selected Children, or `nil` if not available. |
-
-#### [verticalScrollBarUI](#verticalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea.verticalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live?>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the `axuielement` representing the Vertical Scroll Bar, or `nil` if not available. |
 
 ### Methods
 
@@ -88,6 +76,12 @@ Scroll Area Module.
 | **Type**                                             | Method |
 | **Description**                                      | Deselect all children in a scroll area. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
+
+#### [horizontalScrollBar](#horizontalscrollbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:horizontalScrollBar() -> cp.ui.ScrollBar` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the horizontal [ScrollBar](cp.ui.ScrollBar.md). |
 
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:loadLayout(layout) -> none` </span>                                                          |
@@ -139,6 +133,12 @@ Scroll Area Module.
 | **Type**                                             | Method |
 | **Description**                                      | Show's a child element in a Scroll Area given a specific index. |
 | **Parameters**                                       | <ul><li>index - The index of the child you want to show.</li></ul> |
+
+#### [verticalScrollBar](#verticalscrollbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:verticalScrollBar() -> cp.ui.ScrollBar` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the vertical [ScrollBar](cp.ui.ScrollBar.md). |
 
 #### [viewFrame](#viewframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollArea:viewFrame() -> hs.geometry rect` </span>                                                          |

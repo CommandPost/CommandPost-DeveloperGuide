@@ -6,8 +6,6 @@ General Preferences Panel.
 ## API Overview
 * Variables - Configurable values
  * [openErrorLogOnDockClick](#openerrorlogondockclick)
-* Functions - API calls offered directly by the extension
- * [openPrivacyPolicy](#openprivacypolicy)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [autoLaunch](#autolaunch)
  * [dockIcon](#dockicon)
@@ -21,16 +19,6 @@ General Preferences Panel.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Open Error Log on Dock Icon Click. |
-
-### Functions
-
-#### [openPrivacyPolicy](#openprivacypolicy)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.openPrivacyPolicy() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Opens the CommandPost Privacy Policy in your browser. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 ### Fields
 

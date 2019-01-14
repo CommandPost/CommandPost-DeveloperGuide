@@ -85,10 +85,6 @@
 | [cp.apple.finalcutpro.main.PrimaryToolbar](cp.apple.finalcutpro.main.PrimaryToolbar.md)                          | Timeline Toolbar.     |
 | [cp.apple.finalcutpro.main.PrimaryWindow](cp.apple.finalcutpro.main.PrimaryWindow.md)                          | Primary Window Module.     |
 | [cp.apple.finalcutpro.main.SecondaryWindow](cp.apple.finalcutpro.main.SecondaryWindow.md)                          | Secondary Window Module.     |
-| [cp.apple.finalcutpro.main.Timeline](cp.apple.finalcutpro.main.Timeline.md)                          | Timeline Module.     |
-| [cp.apple.finalcutpro.main.TimelineAppearance](cp.apple.finalcutpro.main.TimelineAppearance.md)                          | Timeline Appearance Module.     |
-| [cp.apple.finalcutpro.main.TimelineContents](cp.apple.finalcutpro.main.TimelineContents.md)                          | Timeline Contents Module.     |
-| [cp.apple.finalcutpro.main.TimelineToolbar](cp.apple.finalcutpro.main.TimelineToolbar.md)                          | Timeline Toolbar     |
 | [cp.apple.finalcutpro.main.Viewer](cp.apple.finalcutpro.main.Viewer.md)                          | Viewer Module.     |
 | [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu.     |
 | [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
@@ -97,6 +93,30 @@
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
 | [cp.apple.finalcutpro.strings](cp.apple.finalcutpro.strings.md)                          | The `cp.strings` for I18N lookups related to Final Cut Pro.     |
+| [cp.apple.finalcutpro.timeline.Appearance](cp.apple.finalcutpro.timeline.Appearance.md)                          | Timeline Appearance Module.     |
+| [cp.apple.finalcutpro.timeline.AudioRole](cp.apple.finalcutpro.timeline.AudioRole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
+| [cp.apple.finalcutpro.timeline.AudioSubrole](cp.apple.finalcutpro.timeline.AudioSubrole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
+| [cp.apple.finalcutpro.timeline.CaptionsRole](cp.apple.finalcutpro.timeline.CaptionsRole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
+| [cp.apple.finalcutpro.timeline.CaptionsSubrole](cp.apple.finalcutpro.timeline.CaptionsSubrole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
+| [cp.apple.finalcutpro.timeline.Contents](cp.apple.finalcutpro.timeline.Contents.md)                          | Timeline Contents Module.     |
+| [cp.apple.finalcutpro.timeline.Index](cp.apple.finalcutpro.timeline.Index.md)                          | Timeline Index Module.     |
+| [cp.apple.finalcutpro.timeline.IndexCaptions](cp.apple.finalcutpro.timeline.IndexCaptions.md)                          | Provides access to the 'Captions' section of the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md)     |
+| [cp.apple.finalcutpro.timeline.IndexClips](cp.apple.finalcutpro.timeline.IndexClips.md)                          | *Extends [IndexSection](cp.apple.finalcutpro.timeline.IndexSection.md)*     |
+| [cp.apple.finalcutpro.timeline.IndexClips.Type](cp.apple.finalcutpro.timeline.IndexClips.Type.md)                          | The collection of [RadioButtons](cp.ui.RadioButton.md) that allow filtering by Video/Audio/Title.     |
+| [cp.apple.finalcutpro.timeline.IndexMode](cp.apple.finalcutpro.timeline.IndexMode.md)                          | Timeline Index Mode Radio Group Module.     |
+| [cp.apple.finalcutpro.timeline.IndexRoles](cp.apple.finalcutpro.timeline.IndexRoles.md)                          | Provides access to the 'Roles' section of the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md)     |
+| [cp.apple.finalcutpro.timeline.IndexRolesArea](cp.apple.finalcutpro.timeline.IndexRolesArea.md)                          | Represents the list of Roles in the [IndexRoles](cp.apple.finalcutpro.timeline.IndexRoles.md).     |
+| [cp.apple.finalcutpro.timeline.IndexRolesList](cp.apple.finalcutpro.timeline.IndexRolesList.md)                          | Timeline Index Roles List.     |
+| [cp.apple.finalcutpro.timeline.IndexSection](cp.apple.finalcutpro.timeline.IndexSection.md)                          | An abstract base class for sections inside the [Index](cp.apple.finalcutpro.timeline.Index.md).     |
+| [cp.apple.finalcutpro.timeline.IndexTags](cp.apple.finalcutpro.timeline.IndexTags.md)                          | Provides access to the 'Tags' section of the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md)     |
+| [cp.apple.finalcutpro.timeline.IndexTags.Type](cp.apple.finalcutpro.timeline.IndexTags.Type.md)                          | The collection of [RadioButtons](cp.ui.RadioButton.md) that allow filtering by Video/Audio/Title.     |
+| [cp.apple.finalcutpro.timeline.Role](cp.apple.finalcutpro.timeline.Role.md)                          | *Extends [Row](cp.ui.Row.md)*     |
+| [cp.apple.finalcutpro.timeline.Timeline](cp.apple.finalcutpro.timeline.Timeline.md)                          | Timeline Module.     |
+| [cp.apple.finalcutpro.timeline.Toolbar](cp.apple.finalcutpro.timeline.Toolbar.md)                          | Timeline Toolbar     |
+| [cp.apple.finalcutpro.timeline.Toolbar.Browser](cp.apple.finalcutpro.timeline.Toolbar.Browser.md)                          | A [RadioGroup](cp.ui.RadioGroup.md) that contains buttons to show or hide the Effects and Transitions Browsers.     |
+| [cp.apple.finalcutpro.timeline.Toolbar.Skimming](cp.apple.finalcutpro.timeline.Toolbar.Skimming.md)                          | Provides access to mouse/trackpad skimming options.     |
+| [cp.apple.finalcutpro.timeline.VideoRole](cp.apple.finalcutpro.timeline.VideoRole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
+| [cp.apple.finalcutpro.timeline.VideoSubrole](cp.apple.finalcutpro.timeline.VideoSubrole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
 | [cp.apple.motion](cp.apple.motion.md)                          | Represents the Motion application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.motion.app](cp.apple.motion.app.md)                          | The `cp.app` for Apple's Motion.     |
 | [cp.battery](cp.battery.md)                          | Provides access to various properties of the battery. Each of these properties     |
@@ -200,15 +220,20 @@
 | [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`.     |
 | [cp.ui.Button](cp.ui.Button.md)                          | The `Button` type extends [Element](cp.ui.Element.md) and includes all its     |
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
+| [cp.ui.Column](cp.ui.Column.md)                          | Represents an `AXColumn` `axuielement`.     |
 | [cp.ui.Element](cp.ui.Element.md)                          | A support class for `hs._asm.axuielement` management.     |
 | [cp.ui.Group](cp.ui.Group.md)                          | UI Group.     |
 | [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Menu Button Module.     |
 | [cp.ui.notifier](cp.ui.notifier.md)                          | Supports long-lived 'AX' notifiers. Configure the application to watch, the     |
+| [cp.ui.Outline](cp.ui.Outline.md)                          | Represents an `AXOutline` `axuielement`.     |
 | [cp.ui.PopUpButton](cp.ui.PopUpButton.md)                          | Pop Up Button Module.     |
 | [cp.ui.PropertyRow](cp.ui.PropertyRow.md)                          | Represents a single property row, typically in a Property Inspector.     |
 | [cp.ui.RadioButton](cp.ui.RadioButton.md)                          | Radio Button Module.     |
 | [cp.ui.RadioGroup](cp.ui.RadioGroup.md)                          | Represents an `AXRadioGroup`, providing utility methods.     |
+| [cp.ui.Row](cp.ui.Row.md)                          | Represents an `AXRow` `axuielement`.     |
 | [cp.ui.ScrollArea](cp.ui.ScrollArea.md)                          | Scroll Area Module.     |
+| [cp.ui.ScrollBar](cp.ui.ScrollBar.md)                          | Provides access to `AXScrollBar` `axuielement` values.     |
+| [cp.ui.SearchField](cp.ui.SearchField.md)                          | A [TextField](cp.ui.TextField.md) with a subrole of `AXSearchField`.     |
 | [cp.ui.Slider](cp.ui.Slider.md)                          | Slider Module.     |
 | [cp.ui.SplitGroup](cp.ui.SplitGroup.md)                          | Split Group UI.     |
 | [cp.ui.StaticText](cp.ui.StaticText.md)                          | Static Text Module.     |

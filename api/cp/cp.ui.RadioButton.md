@@ -26,8 +26,13 @@ myButton(false) == false	-- now false
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [checked](#checked)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [doLayout](#dolayout)
+ * [doPress](#dopress)
+ * [doToggle](#dotoggle)
+ * [loadLayout](#loadlayout)
  * [press](#press)
  * [RadioButton](#radiobutton)
+ * [saveLayout](#savelayout)
  * [toggle](#toggle)
 
 ## API Documentation
@@ -52,6 +57,37 @@ myButton(false) == false	-- now false
 
 ### Methods
 
+#### [doLayout](#dolayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:doLayout(layout) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that will apply the layout provided, if possible. |
+| **Parameters**                                       | <ul><li>layout - the <code>table</code> containing the layout configuration. Usually created via the [#saveLayout] method.</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a>.</li></ul> |
+
+#### [doPress](#dopress)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:doPress() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will press the button when executed, if available at the time. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> which will press the button when executed.</li></ul> |
+
+#### [doToggle](#dotoggle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:doToggle() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will toggle the button value when executed, if available at the time. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> which will toggle the button when executed.</li></ul> |
+
+#### [loadLayout](#loadlayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:loadLayout(layout) -> nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Processes the `layout` table to restore this to match the provided `layout`. |
+| **Parameters**                                       | <ul><li>layout - the table of state values to restore to.</li></ul> |
+
 #### [press](#press)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:press() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -67,6 +103,13 @@ myButton(false) == false	-- now false
 | **Description**                                      | Creates a new RadioButton. |
 | **Parameters**                                       | <ul><li>parent        - The parent object.</li><li>finderFn      - A function which will return the <code>hs._asm.axuielement</code> when available.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>RadioButton</code>.</li></ul> |
+
+#### [saveLayout](#savelayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:saveLayout() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `table` with the button's current state. This can be passed to [#loadLayout] |
+| **Returns**                                          | <ul><li>The table of the layout state.</li></ul> |
 
 #### [toggle](#toggle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:toggle() -> self` </span>                                                          |

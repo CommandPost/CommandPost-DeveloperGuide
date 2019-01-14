@@ -50,6 +50,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [spairs](#spairs)
  * [split](#split)
  * [splitOnColumn](#splitoncolumn)
+ * [startsWith](#startswith)
  * [stringMaxLength](#stringmaxlength)
  * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
@@ -424,6 +425,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Splits a string on a column. |
 | **Parameters**                                       | <ul><li>Input</li></ul> |
 | **Returns**                                          | <ul><li>String</li></ul> |
+
+#### [startsWith](#startswith)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.startsWith(value, startValue) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks to see if a string starts with a value. |
+| **Parameters**                                       | <ul><li>value - The value to check</li><li>startValue - The value to look for</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if value starts with the startValue, otherwise <code>false</code></li></ul> |
 
 #### [stringMaxLength](#stringmaxlength)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.stringMaxLength(string, maxLength[, optionalEnd]) -> string` </span>                                                          |

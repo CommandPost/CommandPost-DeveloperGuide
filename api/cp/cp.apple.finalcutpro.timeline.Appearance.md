@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.TimelineAppearance
+# [docs](index.md) » cp.apple.finalcutpro.timeline.Appearance
 ---
 
 Timeline Appearance Module.
@@ -24,7 +24,7 @@ Timeline Appearance Module.
 ### Variables
 
 #### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance.isShowing <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance.isShowing <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Is the Timeline Appearance popup showing? |
@@ -32,7 +32,7 @@ Timeline Appearance Module.
 ### Functions
 
 #### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance.matches(element) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks to see if an element matches what we think it should be. |
@@ -42,17 +42,17 @@ Timeline Appearance Module.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance.new(app) -> TimelineAppearance` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance.new(app) -> Appearance` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
-| **Description**                                      | Creates a new `TimelineAppearance` instance. |
+| **Description**                                      | Creates a new `Appearance` instance. |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
-| **Returns**                                          | <ul><li>A new <code>TimelineAppearance</code> object.</li></ul> |
+| **Returns**                                          | <ul><li>A new <code>Appearance</code> object.</li></ul> |
 
 ### Methods
 
 #### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:app() -> App` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:app() -> App` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the app instance representing Final Cut Pro. |
@@ -60,7 +60,7 @@ Timeline Appearance Module.
 | **Returns**                                          | <ul><li>App</li></ul> |
 
 #### [clipHeight](#clipheight)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:clipHeight() -> Slider` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:clipHeight() -> Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get the Clip Height Slider. |
@@ -68,7 +68,7 @@ Timeline Appearance Module.
 | **Returns**                                          | <ul><li>A <code>Slider</code> object.</li></ul> |
 
 #### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:parent() -> parent` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:parent() -> parent` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the parent object. |
@@ -76,7 +76,7 @@ Timeline Appearance Module.
 | **Returns**                                          | <ul><li>parent</li></ul> |
 
 #### [toggle](#toggle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:toggle() -> CheckBox` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:toggle() -> CheckBox` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the Timeline Appearance CheckBox. |
@@ -84,7 +84,7 @@ Timeline Appearance Module.
 | **Returns**                                          | <ul><li>A <code>axuielementObject</code> object.</li></ul> |
 
 #### [toggleUI](#toggleui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:toggleUI() -> axuielementObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:toggleUI() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the Toggle UI. |
@@ -92,15 +92,15 @@ Timeline Appearance Module.
 | **Returns**                                          | <ul><li>A <code>axuielementObject</code> object.</li></ul> |
 
 #### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:UI() -> TimelineAppearance` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:UI() -> Appearance` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Hide the Timeline Appearance popup. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>TimelineAppearance</code> object.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Appearance</code> object.</li></ul> |
 
 #### [zoomAmount](#zoomamount)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.TimelineAppearance:zoomAmount() -> Slider` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:zoomAmount() -> Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get the Zoom Slider. |

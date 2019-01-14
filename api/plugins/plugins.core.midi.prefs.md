@@ -10,6 +10,7 @@ MIDI Preferences Panel
  * [init](#init)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [lastGroup](#lastgroup)
+ * [scrollBarPosition](#scrollbarposition)
 
 ## API Documentation
 
@@ -38,4 +39,10 @@ MIDI Preferences Panel
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Last group used in the Preferences Drop Down. |
+
+#### [scrollBarPosition](#scrollbarposition)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.prefs.scrollBarPosition <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Scroll Bar Position |
 
