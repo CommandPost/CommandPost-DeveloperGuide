@@ -21,7 +21,7 @@ Provides access to the 'Roles' section of the [Timeline Index](cp.apple.finalcut
  * [doShowAudioLanes](#doshowaudiolanes)
  * [doShowSubroleLanes](#doshowsubrolelanes)
  * [doUnfocusInTimeline](#dounfocusintimeline)
- * [ediRoles](#ediroles)
+ * [editRoles](#editroles)
  * [fineRoleTitled](#fineroletitled)
  * [hideAudioLanes](#hideaudiolanes)
  * [list](#list)
@@ -155,8 +155,8 @@ Provides access to the 'Roles' section of the [Timeline Index](cp.apple.finalcut
 | **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
 | **Notes**                                            | <ul><li>The title can be the English name (eg. "Dialogue", "Music", etc.) for default Roles, and it will find the correct role in the current FCPX language.</li></ul> |
 
-#### [ediRoles](#ediroles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexRoles:ediRoles() -> cp.ui.Button` </span>                                                          |
+#### [editRoles](#editroles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexRoles:editRoles() -> cp.ui.Button` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | The `Edit Roles...` [Button](cp.ui.Button.md). |

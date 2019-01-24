@@ -61,6 +61,7 @@ end
 
 ## Submodules
  * [cp.apple.finalcutpro.app](cp.apple.finalcutpro.app.md)
+ * [cp.apple.finalcutpro.browser](cp.apple.finalcutpro.browser.md)
  * [cp.apple.finalcutpro.cmd](cp.apple.finalcutpro.cmd.md)
  * [cp.apple.finalcutpro.content](cp.apple.finalcutpro.content.md)
  * [cp.apple.finalcutpro.export](cp.apple.finalcutpro.export.md)
@@ -132,6 +133,7 @@ end
  * [effects](#effects)
  * [eventViewer](#eventviewer)
  * [exportDialog](#exportdialog)
+ * [findAndReplaceTitleText](#findandreplacetitletext)
  * [fullScreenWindow](#fullscreenwindow)
  * [generators](#generators)
  * [getCommandShortcuts](#getcommandshortcuts)
@@ -531,6 +533,14 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Final Cut Pro Export Dialog Box</li></ul> |
 
+#### [findAndReplaceTitleText](#findandreplacetitletext)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:findAndReplaceTitleText() -> FindAndReplaceTitleText` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the [FindAndReplaceTitleText](cp.apple.finalcutpro.main.FindAndReplaceTitleText.md) dialog window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The window.</li></ul> |
+
 #### [fullScreenWindow](#fullscreenwindow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:fullScreenWindow() -> fullScreenWindow object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -596,11 +606,11 @@ end
 | **Returns**                                          | <ul><li><code>true</code> if the locale is supported.</li></ul> |
 
 #### [keysWithString](#keyswithstring)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:keysWithString(string[, lang]) -> {string}` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:keysWithString(string[, locale]) -> {string}` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Looks up an application string and returns an array of keys that match. It will take into account current language the app is running in, or use `lang` if provided. |
-| **Parameters**                                       | <ul><li><code>string</code> - The string to look up.</li><li><code>lang</code>   - The language (defaults to current FCPX language).</li></ul> |
+| **Description**                                      | Looks up an application string and returns an array of keys that match. It will take into account current locale the app is running in, or use `locale` if provided. |
+| **Parameters**                                       | <ul><li><code>key</code>    - The key to look up.</li><li><code>locale</code> - The locale (defaults to current FCPX locale).</li></ul> |
 | **Returns**                                          | <ul><li>The array of keys with a matching string.</li></ul> |
 | **Notes**                                            | <ul><li>This method may be very inefficient, since it has to search through every possible key/value pair to find matches. It is not recommended that this is used in production.</li></ul> |
 
@@ -741,11 +751,11 @@ end
 | **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
 
 #### [string](#string)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key[, locale][, quiet]]) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:string(key[, locale[, quiet]]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Looks up an application string with the specified `key`. |
-| **Parameters**                                       | <ul><li><code>key</code>    - The key to look up.</li><li><code>locale</code> - Optional locale to retrieve the key for, if available. May be a <code>string</code> or <code>cp.i18n.localeID</code>.</li><li><code>quiet</code>  - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
+| **Parameters**                                       | <ul><li><code>key</code>    - The key to look up.</li><li><code>locale</code> - The locale code to use. Defaults to the current locale.</li><li><code>quiet</code>  - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The requested string or <code>nil</code> if the application is not running.</li></ul> |
 
 #### [timeline](#timeline)

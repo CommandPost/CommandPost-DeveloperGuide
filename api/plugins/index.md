@@ -89,9 +89,14 @@
 | [plugins.finalcutpro.advanced.playbackrendering](plugins.finalcutpro.advanced.playbackrendering.md)                          | Playback Rendering Plugin.     |
 | [plugins.finalcutpro.advanced.showtimelineinviewers](plugins.finalcutpro.advanced.showtimelineinviewers.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
+| [plugins.finalcutpro.browser.appearanceandfiltering](plugins.finalcutpro.browser.appearanceandfiltering.md)                          | Solo a clip in the Final Cut Pro Browser.     |
+| [plugins.finalcutpro.browser.duration](plugins.finalcutpro.browser.duration.md)                          | Shortcut for changing Final Cut Pro's Browser Height     |
+| [plugins.finalcutpro.browser.height](plugins.finalcutpro.browser.height.md)                          | Shortcut for changing Final Cut Pro's Browser Height     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
+| [plugins.finalcutpro.browser.layouts](plugins.finalcutpro.browser.layouts.md)                          | Allows you to save and restore Browser Layouts.     |
 | [plugins.finalcutpro.browser.pasteboardtomarkers](plugins.finalcutpro.browser.pasteboardtomarkers.md)                          | Take the contents of the Pasteboard and pastes it as clip markers on the     |
 | [plugins.finalcutpro.browser.playhead](plugins.finalcutpro.browser.playhead.md)                          | Browser Playhead Plugin.     |
+| [plugins.finalcutpro.browser.soloclip](plugins.finalcutpro.browser.soloclip.md)                          | Solo a clip in the Final Cut Pro Browser.     |
 | [plugins.finalcutpro.commands](plugins.finalcutpro.commands.md)                          | The 'fcpx' command collection.     |
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
@@ -170,12 +175,15 @@
 | [plugins.finalcutpro.touchbar.manager](plugins.finalcutpro.touchbar.manager.md)                          | Final Cut Pro Touch Bar Manager.     |
 | [plugins.finalcutpro.touchbar.virtual](plugins.finalcutpro.touchbar.virtual.md)                          | Virtual Touch Bar Plugin.     |
 | [plugins.finalcutpro.touchbar.widgets.colorboard](plugins.finalcutpro.touchbar.widgets.colorboard.md)                          | A collection of Final Cut Pro Color Board Widgets for the Touch Bar.     |
+| [plugins.finalcutpro.touchbar.widgets.duration](plugins.finalcutpro.touchbar.widgets.duration.md)                          | Final Cut Pro Browser Duration Control Widget for Touch Bar.     |
+| [plugins.finalcutpro.touchbar.widgets.height](plugins.finalcutpro.touchbar.widgets.height.md)                          | Final Cut Pro Browser Height Control Widget for Touch Bar.     |
 | [plugins.finalcutpro.touchbar.widgets.zoom](plugins.finalcutpro.touchbar.widgets.zoom.md)                          | Final Cut Pro Zoom Control Widget for Touch Bar.     |
 | [plugins.finalcutpro.viewer.overlays](plugins.finalcutpro.viewer.overlays.md)                          | Final Cut Pro Viewer Overlays.     |
 | [plugins.finalcutpro.watchfolders.fcpxml](plugins.finalcutpro.watchfolders.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media](plugins.finalcutpro.watchfolders.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media.MediaFolder](plugins.finalcutpro.watchfolders.media.MediaFolder.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media.panel](plugins.finalcutpro.watchfolders.media.panel.md)                          | Watch Folder Media Panel.     |
+| [plugins.finder.dateandtime](plugins.finder.dateandtime.md)                          | Types the date and time in the "YYYYMMDD HHMM" format.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |
 | [plugins.motion.feedback.bugreport](plugins.motion.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Motion.     |

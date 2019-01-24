@@ -19,6 +19,7 @@ Libraries List Module.
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
+ * [columns](#columns)
  * [contents](#contents)
  * [parent](#parent)
  * [playhead](#playhead)
@@ -128,6 +129,14 @@ Libraries List Module.
 | **Description**                                      | Returns the app instance representing Final Cut Pro. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul> |
+
+#### [columns](#columns)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:columns() -> Columns` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the List View Columns object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>AppearanceAndFiltering</code> object.</li></ul> |
 
 #### [contents](#contents)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:contents() -> Table` </span>                                                          |

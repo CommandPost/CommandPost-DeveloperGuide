@@ -14,6 +14,8 @@ Utility functions to support `hs._asm.axuielement`.
  * [childInColumn](#childincolumn)
  * [childMatching](#childmatching)
  * [children](#children)
+ * [childrenAbove](#childrenabove)
+ * [childrenBelow](#childrenbelow)
  * [childrenInColumn](#childrenincolumn)
  * [childrenMatching](#childrenmatching)
  * [childrenWith](#childrenwith)
@@ -112,6 +114,22 @@ Utility functions to support `hs._asm.axuielement`.
 | **Description**                                      | Finds the children for the element. If it is an `hs._asm.axuielement`, it will |
 | **Parameters**                                       | <ul><li>element   - The element to retrieve the children of.</li></ul> |
 | **Returns**                                          | <ul><li>the children table, or <code>nil</code>.</li></ul> |
+
+#### [childrenAbove](#childrenabove)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenAbove(element, bottomElement) -> table of axuielement or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Finds the list of `axuielement` children from the `element` which are above the specified `bottomElement`. |
+| **Parameters**                                       | <ul><li>element - The <code>axuielement</code> to find the children of.</li><li>topElement - The <code>axuielement</code> that the other children must be above.</li></ul> |
+| **Returns**                                          | <ul><li>The table of <code>axuielements</code> that are above, or <code>nil</code> if the element is not available.</li></ul> |
+
+#### [childrenBelow](#childrenbelow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenBelow(element, topElement) -> table of axuielement or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Finds the list of `axuielement` children from the `element` which are below the specified `topElement`. |
+| **Parameters**                                       | <ul><li>element - The <code>axuielement</code> to find the children of.</li><li>topElement - The <code>axuielement</code> that the other children must be below.</li></ul> |
+| **Returns**                                          | <ul><li>The table of <code>axuielements</code> that are below, or <code>nil</code> if the element is not available.</li></ul> |
 
 #### [childrenInColumn](#childrenincolumn)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenInColumn(element, role, startIndex) -> table | nil` </span>                                                          |

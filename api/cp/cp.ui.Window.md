@@ -15,6 +15,7 @@ A Window UI element.
  * [fullScreen](#fullscreen)
  * [hsWindow](#hswindow)
  * [id](#id)
+ * [isShowing](#isshowing)
  * [minimized](#minimized)
  * [UI](#ui)
  * [visible](#visible)
@@ -84,6 +85,12 @@ A Window UI element.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The window title, or `nil` if the window is not currently visible. |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.isShowing <cp.prop: boolean; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the `Window` is currently showing on screen. |
 
 #### [minimized](#minimized)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.minimized <cp.prop: boolean>` </span>                                                          |

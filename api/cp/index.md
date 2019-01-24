@@ -36,6 +36,8 @@
 | [cp.apple.fcpxml.title](cp.apple.fcpxml.title.md)                          | FCPXML Document Title Object.     |
 | [cp.apple.finalcutpro](cp.apple.finalcutpro.md)                          | Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.finalcutpro.app](cp.apple.finalcutpro.app.md)                          | The `cp.app` for Final Cut Pro.     |
+| [cp.apple.finalcutpro.browser.AppearanceAndFiltering](cp.apple.finalcutpro.browser.AppearanceAndFiltering.md)                          | Clip Appearance & Filtering Menu Popover     |
+| [cp.apple.finalcutpro.browser.Columns](cp.apple.finalcutpro.browser.Columns.md)                          | Final Cut Pro Browser List View Columns     |
 | [cp.apple.finalcutpro.cmd.CommandEditor](cp.apple.finalcutpro.cmd.CommandEditor.md)                          | Command Editor Module.     |
 | [cp.apple.finalcutpro.content.Clip](cp.apple.finalcutpro.content.Clip.md)                          | Represents a clip of media inside FCP.     |
 | [cp.apple.finalcutpro.export.destinations](cp.apple.finalcutpro.export.destinations.md)                          | Provides access to the list of Share Destinations configured for the user.     |
@@ -73,6 +75,7 @@
 | [cp.apple.finalcutpro.main.Browser](cp.apple.finalcutpro.main.Browser.md)                          | Browser Module.     |
 | [cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover](cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.md)                          | Browser Marker Popup.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
+| [cp.apple.finalcutpro.main.FindAndReplaceTitleText](cp.apple.finalcutpro.main.FindAndReplaceTitleText.md)                          | Represents a "Find and Replace Title Text" dialogue box.     |
 | [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window     |
 | [cp.apple.finalcutpro.main.GeneratorsBrowser](cp.apple.finalcutpro.main.GeneratorsBrowser.md)                          | Generators Browser Module.     |
 | [cp.apple.finalcutpro.main.KeywordEditor](cp.apple.finalcutpro.main.KeywordEditor.md)                          | Keyword Editor Module.     |
@@ -89,6 +92,7 @@
 | [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu.     |
 | [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
 | [cp.apple.finalcutpro.plugins.guiscan](cp.apple.finalcutpro.plugins.guiscan.md)                          | Final Cut Pro GUI Plugin Scanner.     |
+| [cp.apple.finalcutpro.prefs.GeneralPanel](cp.apple.finalcutpro.prefs.GeneralPanel.md)                          | General Panel Module.     |
 | [cp.apple.finalcutpro.prefs.ImportPanel](cp.apple.finalcutpro.prefs.ImportPanel.md)                          | Import Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
@@ -221,11 +225,14 @@
 | [cp.ui.Button](cp.ui.Button.md)                          | The `Button` type extends [Element](cp.ui.Element.md) and includes all its     |
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
 | [cp.ui.Column](cp.ui.Column.md)                          | Represents an `AXColumn` `axuielement`.     |
+| [cp.ui.Dialog](cp.ui.Dialog.md)                          | Represents a [Window](cp.ui.Window.md) which has a `AXSubrole` of `AXDialog`.     |
 | [cp.ui.Element](cp.ui.Element.md)                          | A support class for `hs._asm.axuielement` management.     |
 | [cp.ui.Group](cp.ui.Group.md)                          | UI Group.     |
+| [cp.ui.Menu](cp.ui.Menu.md)                          | UI Group.     |
 | [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Menu Button Module.     |
 | [cp.ui.notifier](cp.ui.notifier.md)                          | Supports long-lived 'AX' notifiers. Configure the application to watch, the     |
 | [cp.ui.Outline](cp.ui.Outline.md)                          | Represents an `AXOutline` `axuielement`.     |
+| [cp.ui.Popover](cp.ui.Popover.md)                          | UI Group.     |
 | [cp.ui.PopUpButton](cp.ui.PopUpButton.md)                          | Pop Up Button Module.     |
 | [cp.ui.PropertyRow](cp.ui.PropertyRow.md)                          | Represents a single property row, typically in a Property Inspector.     |
 | [cp.ui.RadioButton](cp.ui.RadioButton.md)                          | Radio Button Module.     |

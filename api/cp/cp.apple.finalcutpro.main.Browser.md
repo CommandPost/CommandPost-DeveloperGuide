@@ -18,6 +18,7 @@ Browser Module.
  * [librariesShowing](#librariesshowing)
  * [mediaShowing](#mediashowing)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [appearanceAndFiltering](#appearanceandfiltering)
  * [doHide](#dohide)
  * [doShow](#doshow)
  * [doShowOnPrimary](#doshowonprimary)
@@ -90,6 +91,14 @@ Browser Module.
 | **Description**                                      | Is the 'Media' button active, and thus showing? |
 
 ### Methods
+
+#### [appearanceAndFiltering](#appearanceandfiltering)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:appearanceAndFiltering() -> AppearanceAndFiltering` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The Clip Appearance & Filtering Menu Popover |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>AppearanceAndFiltering</code> object.</li></ul> |
 
 #### [doHide](#dohide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:doHide() -> cp.rx.go.Statement` </span>                                                          |

@@ -22,7 +22,6 @@ Libraries Browser Module.
  * [isListView](#islistview)
  * [mainGroupUI](#maingroupui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [appearanceAndFiltering](#appearanceandfiltering)
  * [clips](#clips)
  * [clipsUI](#clipsui)
  * [doFindClips](#dofindclips)
@@ -150,14 +149,6 @@ Libraries Browser Module.
 | **Description**                                      | Returns the main group within the Libraries Browser, or `nil` if not available.. |
 
 ### Methods
-
-#### [appearanceAndFiltering](#appearanceandfiltering)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:appearanceAndFiltering() -> Button` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Appearance & Filtering Button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Button</code> object.</li></ul> |
 
 #### [clips](#clips)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:clips(filterFn) -> table | nil` </span>                                                          |
