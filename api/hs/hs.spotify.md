@@ -14,6 +14,7 @@ Controls for Spotify music player
  * [getCurrentAlbum](#getcurrentalbum)
  * [getCurrentArtist](#getcurrentartist)
  * [getCurrentTrack](#getcurrenttrack)
+ * [getCurrentTrackId](#getcurrenttrackid)
  * [getDuration](#getduration)
  * [getPlaybackState](#getplaybackstate)
  * [getPosition](#getposition)
@@ -24,6 +25,7 @@ Controls for Spotify music player
  * [pause](#pause)
  * [play](#play)
  * [playpause](#playpause)
+ * [playTrack](#playtrack)
  * [previous](#previous)
  * [rw](#rw)
  * [setPosition](#setposition)
@@ -94,6 +96,14 @@ Controls for Spotify music player
 | **Description**                                      | Gets the name of the current track |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the name of the current track, or nil if an error occurred</li></ul> |
+
+#### [getCurrentTrackId](#getcurrenttrackid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotify.getCurrentTrackId()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the id of the current track |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the id of the current track, or nil if an error occurred</li></ul> |
 
 #### [getDuration](#getduration)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotify.getDuration()` </span>                                                          |
@@ -173,6 +183,14 @@ Controls for Spotify music player
 | **Type**                                             | Function |
 | **Description**                                      | Toggles play/pause of current Spotify track |
 | **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [playTrack](#playtrack)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotify.playTrack(id)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Plays the Spotify track with the given id |
+| **Parameters**                                       | <ul><li>id - The Spotify id of the track to be played</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [previous](#previous)

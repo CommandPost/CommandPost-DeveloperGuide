@@ -8,6 +8,7 @@ Switch focus with a transient per-application keyboard shortcut
  * [fontName](#fontname)
  * [fontSize](#fontsize)
  * [hintChars](#hintchars)
+ * [iconAlpha](#iconalpha)
  * [showTitleThresh](#showtitlethresh)
  * [style](#style)
  * [titleMaxSize](#titlemaxsize)
@@ -35,6 +36,12 @@ Switch focus with a transient per-application keyboard shortcut
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | This controls the set of characters that will be used for window hints. They must be characters found in hs.keycodes.map |
+
+#### [iconAlpha](#iconalpha)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.iconAlpha` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Opacity of the application icon. Default is 0.95. |
 
 #### [showTitleThresh](#showtitlethresh)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.hints.showTitleThresh` </span>                                                          |

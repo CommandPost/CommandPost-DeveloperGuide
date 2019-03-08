@@ -60,7 +60,7 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Retrieves the `cp.prop` for the specified key. It can be `watched` for changes. |
-| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.</li><li>key           - The key to get/set.</li><li>defaultValue  - The value if no default values is currently set.</li></ul> |
+| **Parameters**                                       | <ul><li>prefs         - The <code>prefs</code> instance.</li><li>key           - The key to get/set.</li><li>defaultValue  - The value if no default values is currently set.</li><li>deepTable     - Should the prop use deep table (defaults to <code>true</code>).</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.prop</code> for the key.</li></ul> |
 
 #### [set](#set)

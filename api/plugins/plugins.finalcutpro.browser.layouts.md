@@ -73,7 +73,7 @@ file.
 | **Type**                                             | Function |
 | **Description**                                      | Get active column names in a table. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table of active column names.</li></ul> |
+| **Returns**                                          | <ul><li>A table of active column names or an empty table if something goes wrong.</li></ul> |
 
 #### [getClipNameSize](#getclipnamesize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.browser.layouts.getClipNameSize() -> string | nil` </span>                                                          |

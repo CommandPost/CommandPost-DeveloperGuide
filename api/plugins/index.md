@@ -49,8 +49,10 @@
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
 | [plugins.core.preferences.panels.notifications](plugins.core.preferences.panels.notifications.md)                          | Notifications Preferences Panel     |
 | [plugins.core.preferences.panels.plugins](plugins.core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
+| [plugins.core.preferences.panels.scripting](plugins.core.preferences.panels.scripting.md)                          | General Preferences Panel     |
 | [plugins.core.preferences.panels.shortcuts](plugins.core.preferences.panels.shortcuts.md)                          | Shortcuts Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
+| [plugins.core.scripting.preferences](plugins.core.scripting.preferences.md)                          | Scripting Preferences.     |
 | [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
 | [plugins.core.setup.panel](plugins.core.setup.panel.md)                          | CommandPost Setup Window Panel.     |
 | [plugins.core.tangent.commandpost](plugins.core.tangent.commandpost.md)                          | CommandPost Group for the Tangent.     |
@@ -84,6 +86,7 @@
 | [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | Watch Folder Panel Manager.     |
 | [plugins.core.watchfolders.menuitem](plugins.core.watchfolders.menuitem.md)                          | Adds the "Setup Watch Folders" to the menu bar.     |
 | [plugins.finalcutpro.actions.custom](plugins.finalcutpro.actions.custom.md)                          | Creates a bunch of commands that can be used to assign actions to.     |
+| [plugins.finalcutpro.advanced.backupinterval](plugins.finalcutpro.advanced.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
 | [plugins.finalcutpro.advanced.disablewaveforms](plugins.finalcutpro.advanced.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.advanced.fcpxml](plugins.finalcutpro.advanced.fcpxml.md)                          | Adds preferences for extra FCPXML import and export options.     |
 | [plugins.finalcutpro.advanced.playbackrendering](plugins.finalcutpro.advanced.playbackrendering.md)                          | Playback Rendering Plugin.     |
@@ -108,7 +111,16 @@
 | [plugins.finalcutpro.fullscreen.disableesc](plugins.finalcutpro.fullscreen.disableesc.md)                          | Disables the ESC key when Final Cut Pro is in fullscreen mode.     |
 | [plugins.finalcutpro.fullscreen.dockicon](plugins.finalcutpro.fullscreen.dockicon.md)                          | Manages the CommandPost dock icon when FCP is full-screen.     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
-| [plugins.finalcutpro.hud](plugins.finalcutpro.hud.md)                          | Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.manager](plugins.finalcutpro.hud.manager.md)                          | Manager for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.fcpxml](plugins.finalcutpro.hud.panels.fcpxml.md)                          | FCPXML Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.info](plugins.finalcutpro.hud.panels.info.md)                          | Info Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.minimise](plugins.finalcutpro.hud.panels.minimise.md)                          | Minimise button for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.notes](plugins.finalcutpro.hud.panels.notes.md)                          | Notes Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.pasteboard](plugins.finalcutpro.hud.panels.pasteboard.md)                          | FCPXML Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.search](plugins.finalcutpro.hud.panels.search.md)                          | Ten Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.tenbuttons](plugins.finalcutpro.hud.panels.tenbuttons.md)                          | Ten Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.twelvebuttons](plugins.finalcutpro.hud.panels.twelvebuttons.md)                          | Twelve Button Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.twentyfourbuttons](plugins.finalcutpro.hud.panels.twentyfourbuttons.md)                          | Twenty Four Button Panel for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
 | [plugins.finalcutpro.inspector.show](plugins.finalcutpro.inspector.show.md)                          | Final Cut Pro Inspector Additions.     |
@@ -167,7 +179,6 @@
 | [plugins.finalcutpro.timeline.preferences](plugins.finalcutpro.timeline.preferences.md)                          | Final Cut Pro Timeline Preferences.     |
 | [plugins.finalcutpro.timeline.renameclip](plugins.finalcutpro.timeline.renameclip.md)                          | Rename Clip     |
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
-| [plugins.finalcutpro.timeline.stabilization](plugins.finalcutpro.timeline.stabilization.md)                          | Stabilization Shortcut     |
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Video Effects.     |
@@ -185,5 +196,7 @@
 | [plugins.finalcutpro.watchfolders.media.panel](plugins.finalcutpro.watchfolders.media.panel.md)                          | Watch Folder Media Panel.     |
 | [plugins.finder.dateandtime](plugins.finder.dateandtime.md)                          | Types the date and time in the "YYYYMMDD HHMM" format.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
+| [plugins.finder.preferences.panel](plugins.finder.preferences.panel.md)                          | General Preferences Panel     |
+| [plugins.finder.preferences.powerchime](plugins.finder.preferences.powerchime.md)                          | General Preferences Panel     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |
 | [plugins.motion.feedback.bugreport](plugins.motion.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Motion.     |

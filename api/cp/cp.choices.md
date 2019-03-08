@@ -22,7 +22,7 @@ Choices Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Creates a new `cp.choices` instance for the specified type. |
-| **Parameters**                                       | <ul><li><code>type</code>    - The unique ID for the type.</li></ul> |
+| **Parameters**                                       | <ul><li><code>type</code>   - The unique ID for the type.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>choices</code> instance.</li></ul> |
 
 ### Methods

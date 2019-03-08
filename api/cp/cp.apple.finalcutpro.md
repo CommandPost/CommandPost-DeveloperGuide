@@ -89,6 +89,7 @@ end
  * [preferences](#preferences)
 * Variables - Configurable values
  * [activeCommandSet](#activecommandset)
+ * [selectedWorkspace](#selectedworkspace)
 * Functions - API calls offered directly by the extension
  * [commandSet](#commandset)
  * [matches](#matches)
@@ -115,6 +116,7 @@ end
  * [versionString](#versionstring)
  * [windowsUI](#windowsui)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [activeLibraryPaths](#activelibrarypaths)
  * [alert](#alert)
  * [browser](#browser)
  * [bundleID](#bundleid)
@@ -238,6 +240,12 @@ end
 | **Type**                                             | Variable |
 | **Description**                                      | Contins the 'Active Command Set' as a `table`. The result is cached, but |
 
+#### [selectedWorkspace](#selectedworkspace)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.selectedWorkspace <cp.prop: string; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | The currently selected workspace name. The result is cached, but updated |
+
 ### Functions
 
 #### [commandSet](#commandset)
@@ -285,13 +293,13 @@ end
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
 #### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
 #### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
@@ -357,16 +365,16 @@ end
 | **Description**                                      | The list of supported locales for this version of FCPX. |
 
 #### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The Final Cut Pro `axuielement`, if available. |
-
-#### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Share Inspector. |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro `axuielement`, if available. |
 
 #### [version](#version)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.version <cp.prop: semver; read-only; live>` </span>                                                          |
@@ -387,6 +395,14 @@ end
 | **Description**                                      | Returns the UI containing the list of windows in the app. |
 
 ### Methods
+
+#### [activeLibraryPaths](#activelibrarypaths)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:activeLibraryPaths() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets a table of all the active library paths. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing any active library paths.</li></ul> |
 
 #### [alert](#alert)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:alert() -> cp.ui.Alert` </span>                                                          |
