@@ -341,7 +341,6 @@
    * [commandpost](api/plugins/plugins.core.tangent.commandpost.md)
     * [favourites](api/plugins/plugins.core.tangent.commandpost.favourites.md)
     * [functions](api/plugins/plugins.core.tangent.commandpost.functions.md)
-   * [global](api/plugins/plugins.core.tangent.global.md)
    * [manager](api/plugins/plugins.core.tangent.manager.md)
     * [action](api/plugins/plugins.core.tangent.manager.action.md)
     * [binding](api/plugins/plugins.core.tangent.manager.binding.md)

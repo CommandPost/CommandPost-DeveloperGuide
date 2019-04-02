@@ -58,7 +58,6 @@
 | [plugins.core.tangent.commandpost](plugins.core.tangent.commandpost.md)                          | CommandPost Group for the Tangent.     |
 | [plugins.core.tangent.commandpost.favourites](plugins.core.tangent.commandpost.favourites.md)                          | Tangent Favourites.     |
 | [plugins.core.tangent.commandpost.functions](plugins.core.tangent.commandpost.functions.md)                          | CommandPost Functions for Tangent.     |
-| [plugins.core.tangent.global](plugins.core.tangent.global.md)                          | Global Group for the Tangent.     |
 | [plugins.core.tangent.manager](plugins.core.tangent.manager.md)                          | Tangent Control Surface Manager     |
 | [plugins.core.tangent.manager.action](plugins.core.tangent.manager.action.md)                          | Represents a Tangent Action     |
 | [plugins.core.tangent.manager.binding](plugins.core.tangent.manager.binding.md)                          | Represents a Tangent Binding     |
