@@ -11,8 +11,13 @@ Timeline Appearance Module.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [angles](#angles)
  * [app](#app)
  * [clipHeight](#clipheight)
+ * [clipNames](#clipnames)
+ * [clipRoles](#cliproles)
+ * [clipWaveformHeight](#clipwaveformheight)
+ * [laneHeaders](#laneheaders)
  * [parent](#parent)
  * [toggle](#toggle)
  * [toggleUI](#toggleui)
@@ -51,6 +56,14 @@ Timeline Appearance Module.
 
 ### Methods
 
+#### [angles](#angles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:angles() -> CheckBox` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Angles |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
+
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:app() -> App` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -63,9 +76,41 @@ Timeline Appearance Module.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:clipHeight() -> Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Get the Clip Height Slider. |
+| **Description**                                      | Gets the Clip Height Slider. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Slider</code> object.</li></ul> |
+
+#### [clipNames](#clipnames)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:clipNames() -> CheckBox` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Clip Names |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
+
+#### [clipRoles](#cliproles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:clipRoles() -> CheckBox` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Clip Roles |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
+
+#### [clipWaveformHeight](#clipwaveformheight)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:clipWaveformHeight() -> RadioGroup` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the Waveform Height Radio Group. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>RadioGroup</code> object.</li></ul> |
+
+#### [laneHeaders](#laneheaders)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:laneHeaders() -> CheckBox` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Lane Headers |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
 
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:parent() -> parent` </span>                                                          |
@@ -103,7 +148,7 @@ Timeline Appearance Module.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Appearance:zoomAmount() -> Slider` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Get the Zoom Slider. |
+| **Description**                                      | Gets the Zoom Slider. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Slider</code> object.</li></ul> |
 

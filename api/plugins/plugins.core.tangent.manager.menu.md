@@ -17,8 +17,10 @@ list of options.
  * [onGet](#onget)
  * [onNext](#onnext)
  * [onPrev](#onprev)
+ * [onReset](#onreset)
  * [parent](#parent)
  * [prev](#prev)
+ * [reset](#reset)
  * [update](#update)
  * [xml](#xml)
 
@@ -94,6 +96,14 @@ list of options.
 | **Parameters**                                       | <ul><li>prevFn     - The function to call when the Tangent requests the <code>menu change -1</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>parameter</code> instance.</li></ul> |
 
+#### [onReset](#onreset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:onReset(resetFn) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the function that will be called when the Tangent sends a 'parameter reset' request. |
+| **Parameters**                                       | <ul><li>resetFn     - The function to call when the Tangent requests the parameter reset.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>parameter</code> instance.</li></ul> |
+
 #### [parent](#parent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:parent() -> group | controls` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -109,6 +119,14 @@ list of options.
 | **Description**                                      | Executes the `prev` function, if present. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>nil</code></li></ul> |
+
+#### [reset](#reset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:reset() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Executes the `reset` function if present. Returns the current value of the parameter after reset. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The current value, or <code>nil</code> if it can't be accessed.</li></ul> |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:update() -> nil` </span>                                                          |

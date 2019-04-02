@@ -12,11 +12,14 @@ Utility functions to support `hs._asm.axuielement`.
  * [childFromRight](#childfromright)
  * [childFromTop](#childfromtop)
  * [childInColumn](#childincolumn)
+ * [childIndex](#childindex)
  * [childMatching](#childmatching)
  * [children](#children)
  * [childrenAbove](#childrenabove)
  * [childrenBelow](#childrenbelow)
  * [childrenInColumn](#childrenincolumn)
+ * [childrenInLine](#childreninline)
+ * [childrenInNextLine](#childreninnextline)
  * [childrenMatching](#childrenmatching)
  * [childrenWith](#childrenwith)
  * [childrenWithRole](#childrenwithrole)
@@ -24,6 +27,7 @@ Utility functions to support `hs._asm.axuielement`.
  * [childWithDescription](#childwithdescription)
  * [childWithID](#childwithid)
  * [childWithRole](#childwithrole)
+ * [childWithTitle](#childwithtitle)
  * [compareBottomToTop](#comparebottomtotop)
  * [compareLeftToRight](#comparelefttoright)
  * [compareRightToLeft](#comparerighttoleft)
@@ -37,6 +41,7 @@ Utility functions to support `hs._asm.axuielement`.
  * [valueOf](#valueof)
  * [withAttributeValue](#withattributevalue)
  * [withRole](#withrole)
+ * [withTitle](#withtitle)
  * [withValue](#withvalue)
 
 ## API Documentation
@@ -99,6 +104,14 @@ Utility functions to support `hs._asm.axuielement`.
 | **Parameters**                                       | <ul><li>element     - The element to retrieve the children from.</li><li>role        - The required role as a string.</li><li>startIndex  - A number which defines the index of the first element to use.</li><li>childIndex  - A number which defines the index of the element to return.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>axuielement</code> if it matches, otherwise <code>nil</code>.</li></ul> |
 
+#### [childIndex](#childindex)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childIndex(element) -> number or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Finds the index of the specified child element, if it is present. If not, `nil` is returned. |
+| **Parameters**                                       | <ul><li>element - The <code>axuielement</code> to find the index of.</li></ul> |
+| **Returns**                                          | <ul><li>The index (<code>1</code> or higher) of the <code>element</code>, or <code>nil</code> if it was not found.</li></ul> |
+
 #### [childMatching](#childmatching)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childMatching(element, matcherFn[, index]) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -108,11 +121,11 @@ Utility functions to support `hs._asm.axuielement`.
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul> |
 
 #### [children](#children)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.children(element) -> table | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.children(element[, compareFn]) -> table | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Finds the children for the element. If it is an `hs._asm.axuielement`, it will |
-| **Parameters**                                       | <ul><li>element   - The element to retrieve the children of.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - The element to retrieve the children of.</li><li>compareFn    - Optional function to use to sort the order of the returned children.</li></ul> |
 | **Returns**                                          | <ul><li>the children table, or <code>nil</code>.</li></ul> |
 
 #### [childrenAbove](#childrenabove)
@@ -137,6 +150,22 @@ Utility functions to support `hs._asm.axuielement`.
 | **Type**                                             | Function |
 | **Description**                                      | Finds the children for an element, then checks to see if they match the supplied |
 | **Parameters**                                       | <ul><li>element     - The element to retrieve the children from.</li><li>role        - The required role as a string.</li><li>startIndex  - A number which defines the index of the first element to use.</li></ul> |
+| **Returns**                                          | <ul><li>The table of <code>axuielement</code> objects, otherwise <code>nil</code>.</li></ul> |
+
+#### [childrenInLine](#childreninline)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenInLine(element) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets a table of children that are all in the same family and line as the |
+| **Parameters**                                       | <ul><li>element     - The base element.</li></ul> |
+| **Returns**                                          | <ul><li>The table of <code>axuielement</code> objects, otherwise <code>nil</code>.</li></ul> |
+
+#### [childrenInNextLine](#childreninnextline)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenInNextLine(element) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets a table of children that are in the next line in relation to the supplied |
+| **Parameters**                                       | <ul><li>element - The base element.</li></ul> |
 | **Returns**                                          | <ul><li>The table of <code>axuielement</code> objects, otherwise <code>nil</code>.</li></ul> |
 
 #### [childrenMatching](#childrenmatching)
@@ -192,6 +221,14 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | This searches for the first child of the specified element which has `AXRole` with the specified value. |
+| **Parameters**                                       | <ul><li>element  - the axuielement</li><li>value    - the value</li></ul> |
+| **Returns**                                          | <ul><li>The first matching child, or <code>nil</code> if none was found</li></ul> |
+
+#### [childWithTitle](#childwithtitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childWithTitle(element, value) -> axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | This searches for the first child of the specified element which has `AXTitle` with the specified value. |
 | **Parameters**                                       | <ul><li>element  - the axuielement</li><li>value    - the value</li></ul> |
 | **Returns**                                          | <ul><li>The first matching child, or <code>nil</code> if none was found</li></ul> |
 
@@ -294,6 +331,14 @@ Utility functions to support `hs._asm.axuielement`.
 | **Type**                                             | Function |
 | **Description**                                      | Checks if the element has an "AXRole" attribute with the specified `role`. |
 | **Parameters**                                       | <ul><li>element       - The element to check</li><li>role          - The required role</li></ul> |
+| **Returns**                                          | <ul><li>The <code>axuielement</code> if it matches, otherwise <code>nil</code>.</li></ul> |
+
+#### [withTitle](#withtitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.withTitle(element, title) -> hs._asm.axuielement | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the element has an "AXTitle" attribute with the specified `title`. |
+| **Parameters**                                       | <ul><li>element       - The element to check</li><li>title         - The required title</li></ul> |
 | **Returns**                                          | <ul><li>The <code>axuielement</code> if it matches, otherwise <code>nil</code>.</li></ul> |
 
 #### [withValue](#withvalue)

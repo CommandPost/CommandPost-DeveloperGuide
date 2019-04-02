@@ -4,6 +4,8 @@
 Represents a single property row, typically in a Property Inspector.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [intersectBuffer](#intersectbuffer)
 * Functions - API calls offered directly by the extension
  * [isParent](#isparent)
  * [matches](#matches)
@@ -22,12 +24,21 @@ Represents a single property row, typically in a Property Inspector.
  * [children](#children)
  * [doHide](#dohide)
  * [doShow](#doshow)
+ * [extend](#extend)
  * [hide](#hide)
  * [labelKeys](#labelkeys)
  * [parent](#parent)
  * [show](#show)
 
 ## API Documentation
+
+### Constants
+
+#### [intersectBuffer](#intersectbuffer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow.intersectBuffer` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Defines the buffer for intersections with the `labelUI`. |
 
 ### Functions
 
@@ -137,6 +148,14 @@ Represents a single property row, typically in a Property Inspector.
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that shows the `PropertyRow`. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>self</li></ul> |
+
+#### [extend](#extend)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:extend(extendFn) -> cp.ui.PropertyRow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | This method will call the provided function, passing it the current `PropertyRow`. |
+| **Parameters**                                       | <ul><li>extendFn     - A <code>function</code> that will be passed the current row.</li></ul> |
+| **Returns**                                          | <ul><li>The same <code>PropertyRow</code> instance.</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.PropertyRow:hide() -> self` </span>                                                          |

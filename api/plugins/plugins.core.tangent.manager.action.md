@@ -19,11 +19,11 @@ Represents a Tangent Action
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.action.new(id[, name]) -> action` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.action.new(id[, name[, parent[, localActive]]]) -> action` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Action` instance. |
-| **Parameters**                                       | <ul><li>id        - The ID number of the action.</li><li>name      - The name of the action.</li></ul> |
+| **Parameters**                                       | <ul><li>id        - The ID number of the action.</li><li>name      - The name of the action.</li><li>parent    - The parent group. (optional)</li><li>localActive - If set to <code>true</code>, the parent's <code>active</code> state will be ignored when determining if this action is active. Defaults to <code>false</code>.</li></ul> |
 | **Returns**                                          | <ul><li>the new <code>action</code>.</li></ul> |
 
 ### Methods

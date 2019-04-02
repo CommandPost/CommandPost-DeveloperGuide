@@ -28,6 +28,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [powerSource](#powersource)
  * [privateBluetoothBatteryInfo](#privatebluetoothbatteryinfo)
  * [psuSerial](#psuserial)
+ * [psuSerialString](#psuserialstring)
  * [timeRemaining](#timeremaining)
  * [timeToFullCharge](#timetofullcharge)
  * [voltage](#voltage)
@@ -177,6 +178,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Returns the serial number of the attached power supply, if present |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>An integer containing the power supply's serial number, or 0 if no serial can be found</li></ul> |
+
+#### [psuSerialString](#psuserialstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.psuSerialString() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the serial string of the attached power supply, if present |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the power supply's serial, or an empty string if no serial can be found</li></ul> |
 
 #### [timeRemaining](#timeremaining)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.battery.timeRemaining() -> number` </span>                                                          |

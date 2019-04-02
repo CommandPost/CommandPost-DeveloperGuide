@@ -94,6 +94,7 @@
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.appearanceandfiltering](plugins.finalcutpro.browser.appearanceandfiltering.md)                          | Solo a clip in the Final Cut Pro Browser.     |
 | [plugins.finalcutpro.browser.duration](plugins.finalcutpro.browser.duration.md)                          | Shortcut for changing Final Cut Pro's Browser Height     |
+| [plugins.finalcutpro.browser.frameiotomarkers](plugins.finalcutpro.browser.frameiotomarkers.md)                          | Takes the contents of a Frame.io CSV file and adds markers to a clip     |
 | [plugins.finalcutpro.browser.height](plugins.finalcutpro.browser.height.md)                          | Shortcut for changing Final Cut Pro's Browser Height     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
 | [plugins.finalcutpro.browser.layouts](plugins.finalcutpro.browser.layouts.md)                          | Allows you to save and restore Browser Layouts.     |
@@ -149,17 +150,30 @@
 | [plugins.finalcutpro.preferences.general](plugins.finalcutpro.preferences.general.md)                          | Final Cut Pro General Preferences     |
 | [plugins.finalcutpro.preferences.manager](plugins.finalcutpro.preferences.manager.md)                          | Final Cut Pro Preferences Panel Manager.     |
 | [plugins.finalcutpro.setup.scan](plugins.finalcutpro.setup.scan.md)                          | Show setup panel if Final Cut Pro needs scanning.     |
+| [plugins.finalcutpro.tangent.audio](plugins.finalcutpro.tangent.audio.md)                          | Final Cut Pro Audio Inspector for Tangent     |
+| [plugins.finalcutpro.tangent.browser](plugins.finalcutpro.tangent.browser.md)                          | Final Cut Pro Tangent Browser Group     |
 | [plugins.finalcutpro.tangent.clip](plugins.finalcutpro.tangent.clip.md)                          | Final Cut Pro Tangent View Group     |
+| [plugins.finalcutpro.tangent.commandpost](plugins.finalcutpro.tangent.commandpost.md)                          | Final Cut Pro CommandPost Actions for Tangent     |
+| [plugins.finalcutpro.tangent.common](plugins.finalcutpro.tangent.common.md)                          | Common Final Cut Pro functions for Tangent     |
 | [plugins.finalcutpro.tangent.edit](plugins.finalcutpro.tangent.edit.md)                          | Final Cut Pro Tangent View Group     |
+| [plugins.finalcutpro.tangent.generator](plugins.finalcutpro.tangent.generator.md)                          | Final Cut Pro Generator Inspector for Tangent     |
+| [plugins.finalcutpro.tangent.info](plugins.finalcutpro.tangent.info.md)                          | Final Cut Pro Info Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.manager](plugins.finalcutpro.tangent.manager.md)                          | Final Cut Pro Tangent Color Manager.     |
+| [plugins.finalcutpro.tangent.modes](plugins.finalcutpro.tangent.modes.md)                          | Final Cut Pro Modes for Tangent     |
 | [plugins.finalcutpro.tangent.new](plugins.finalcutpro.tangent.new.md)                          | Final Cut Pro Tangent View Group     |
+| [plugins.finalcutpro.tangent.open](plugins.finalcutpro.tangent.open.md)                          | Final Cut Pro Tangent Open FCPX.     |
 | [plugins.finalcutpro.tangent.overlay](plugins.finalcutpro.tangent.overlay.md)                          | Final Cut Pro Tangent Viewer Overlay Group     |
 | [plugins.finalcutpro.tangent.pasteboard](plugins.finalcutpro.tangent.pasteboard.md)                          | Final Cut Pro Tangent Pasteboard Group     |
 | [plugins.finalcutpro.tangent.playback](plugins.finalcutpro.tangent.playback.md)                          | Final Cut Pro Tangent Playback Group/Management     |
+| [plugins.finalcutpro.tangent.share](plugins.finalcutpro.tangent.share.md)                          | Final Cut Pro Share Inspector for Tangent     |
+| [plugins.finalcutpro.tangent.text](plugins.finalcutpro.tangent.text.md)                          | Final Cut Pro Text Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.timeline](plugins.finalcutpro.tangent.timeline.md)                          | Final Cut Pro Tangent Timeline Group/Management     |
+| [plugins.finalcutpro.tangent.title](plugins.finalcutpro.tangent.title.md)                          | Final Cut Pro Title Inspector for Tangent     |
+| [plugins.finalcutpro.tangent.transition](plugins.finalcutpro.tangent.transition.md)                          | Final Cut Pro Transition Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.trim](plugins.finalcutpro.tangent.trim.md)                          | Final Cut Pro Tangent Trim Group     |
 | [plugins.finalcutpro.tangent.video](plugins.finalcutpro.tangent.video.md)                          | Final Cut Pro Video Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.view](plugins.finalcutpro.tangent.view.md)                          | Final Cut Pro Tangent View Group     |
+| [plugins.finalcutpro.tangent.viewer](plugins.finalcutpro.tangent.viewer.md)                          | Final Cut Pro Viewer Actions for Tangent     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
 | [plugins.finalcutpro.timeline.captions](plugins.finalcutpro.timeline.captions.md)                          | Caption Tools     |
@@ -189,6 +203,7 @@
 | [plugins.finalcutpro.touchbar.widgets.duration](plugins.finalcutpro.touchbar.widgets.duration.md)                          | Final Cut Pro Browser Duration Control Widget for Touch Bar.     |
 | [plugins.finalcutpro.touchbar.widgets.height](plugins.finalcutpro.touchbar.widgets.height.md)                          | Final Cut Pro Browser Height Control Widget for Touch Bar.     |
 | [plugins.finalcutpro.touchbar.widgets.zoom](plugins.finalcutpro.touchbar.widgets.zoom.md)                          | Final Cut Pro Zoom Control Widget for Touch Bar.     |
+| [plugins.finalcutpro.viewer.actions](plugins.finalcutpro.viewer.actions.md)                          | Viewer Actions     |
 | [plugins.finalcutpro.viewer.overlays](plugins.finalcutpro.viewer.overlays.md)                          | Final Cut Pro Viewer Overlays.     |
 | [plugins.finalcutpro.watchfolders.fcpxml](plugins.finalcutpro.watchfolders.fcpxml.md)                          | Final Cut Pro FCPXML Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media](plugins.finalcutpro.watchfolders.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |

@@ -1,4 +1,4 @@
-# [docs](index.md) » cp.apple.finalcutpro.main.Viewer
+# [docs](index.md) » cp.apple.finalcutpro.viewer.Viewer
 ---
 
 Viewer Module.
@@ -10,21 +10,22 @@ Viewer Module.
  * [Viewer](#viewer)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [betterQuality](#betterquality)
- * [bottomToolbarUI](#bottomtoolbarui)
  * [contentsUI](#contentsui)
- * [formatUI](#formatui)
+ * [controlBar](#controlbar)
  * [frame](#frame)
  * [framerate](#framerate)
  * [getFormat](#getformat)
  * [hasPlayerControls](#hasplayercontrols)
+ * [infoBar](#infobar)
  * [isEventViewer](#iseventviewer)
  * [isMainViewer](#ismainviewer)
  * [isOnPrimary](#isonprimary)
  * [isOnSecondary](#isonsecondary)
+ * [playButton](#playbutton)
  * [playerQuality](#playerquality)
  * [timecode](#timecode)
+ * [timecodeField](#timecodefield)
  * [title](#title)
- * [topToolbarUI](#toptoolbarui)
  * [usingProxies](#usingproxies)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
@@ -34,7 +35,6 @@ Viewer Module.
  * [doShowOnSecondary](#doshowonsecondary)
  * [hide](#hide)
  * [notifier](#notifier)
- * [playButton](#playbutton)
  * [showOnPrimary](#showonprimary)
  * [showOnSecondary](#showonsecondary)
 
@@ -43,7 +43,7 @@ Viewer Module.
 ### Functions
 
 #### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.matches(element) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks to see if an element matches what we think it should be. |
@@ -53,7 +53,7 @@ Viewer Module.
 ### Constructors
 
 #### [Viewer](#viewer)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer(app, eventViewer) -> Viewer` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer(app, eventViewer) -> Viewer` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Viewer` instance. |
@@ -63,103 +63,111 @@ Viewer Module.
 ### Fields
 
 #### [betterQuality](#betterquality)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.betterQuality <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.betterQuality <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Indicates if the viewer is using playing with better quality (`true`) or performance (`false). |
 
-#### [bottomToolbarUI](#bottomtoolbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.bottomToolbarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Provides the `axuielement` for the bottom toolbar of the Viewer, or `nil` if not available. |
-
 #### [contentsUI](#contentsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.contentsUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.contentsUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Provides the `axuielement` for the media contents of the Viewer, or `nil` if not available. |
 
-#### [formatUI](#formatui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.formatUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+#### [controlBar](#controlbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.controlBar <cp.apple.finalcutpro.viewer.ControlBar>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Provides the `axuielement` for the Format text. |
+| **Description**                                      | Provides the [ControlBar](cp.apple.finalcutpro.viewer.ControlBar.md) for this `Viewer`. |
 
 #### [frame](#frame)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.frame <cp.prop: table; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.frame <cp.prop: table; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the current frame for the viewer, or `nil` if it is not available. |
 
 #### [framerate](#framerate)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.framerate <cp.prop: number; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.framerate <cp.prop: number; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Provides the framerate as a number, or nil if not available. |
 
 #### [getFormat](#getformat)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.getFormat <cp.prop: string; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.getFormat <cp.prop: string; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Provides the format text value, or `nil` if none is available. |
 
 #### [hasPlayerControls](#hasplayercontrols)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.hasPlayerControls <cp.prop: boolean; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.hasPlayerControls <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the viewer has Player Controls visible. |
 
+#### [infoBar](#infobar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.infoBar <cp.apple.finalcutpro.viewer.InfoBar>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Provides the [InfoBar](cp.apple.finalcutpro.viewer.InfoBar.md) for this `Viewer`. |
+
 #### [isEventViewer](#iseventviewer)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.isEventViewer <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.isEventViewer <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns `true` if this is the Event Viewer. |
 
 #### [isMainViewer](#ismainviewer)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.isMainViewer <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.isMainViewer <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns `true` if this is the main Viewer. |
 
 #### [isOnPrimary](#isonprimary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.isOnPrimary <cp.prop: boolean; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.isOnPrimary <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the Viewer is showing on the Primary Window. |
 
 #### [isOnSecondary](#isonsecondary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.isOnSecondary <cp.prop: boolean; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.isOnSecondary <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the Viewer is showing on the Secondary Window. |
 
-#### [playerQuality](#playerquality)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.playerQuality <cp.prop: string>` </span>                                                          |
+#### [playButton](#playbutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.playButton <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The currentplayer quality value. |
+| **Description**                                      | The Play [Button](cp.ui.Button.md) object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A Button</li></ul> |
+
+#### [playerQuality](#playerquality)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.playerQuality <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The current player quality value. |
 
 #### [timecode](#timecode)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.timecode <cp.prop: string; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.timecode <cp.prop: string; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The current timecode value, with the format "hh:mm:ss:ff". Setting also supports "hh:mm:ss;ff". |
 
-#### [title](#title)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.title <cp.prop: string; read-only>` </span>                                                          |
+#### [timecodeField](#timecodefield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.timecodeField <cp.ui.StaticText>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Provides the Title of the clip in the Viewer as a string, or `nil` if not available. |
+| **Description**                                      | The [StaticText](cp.ui.StaticText.md) containing the timecode value. |
 
-#### [topToolbarUI](#toptoolbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.topToolbarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.title <cp.ui.StaticText>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Provides the `axuielement` for the top toolbar of the Viewer, or `nil` if not available. |
+| **Description**                                      | Provides the Title of the clip in the Viewer as a [StaticText](cp.ui.StaticText.md) |
 
 #### [usingProxies](#usingproxies)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.usingProxies <cp.prop: boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer.usingProxies <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Indicates if the viewer is using Proxies (`true`) or Optimized/Original media (`false`). |
@@ -167,7 +175,7 @@ Viewer Module.
 ### Methods
 
 #### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:app() -> application` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:app() -> application` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the application. |
@@ -175,7 +183,7 @@ Viewer Module.
 | **Returns**                                          | <ul><li>The application.</li></ul> |
 
 #### [currentWindow](#currentwindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:currentWindow() -> PrimaryWindow | SecondaryWindow` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:currentWindow() -> PrimaryWindow | SecondaryWindow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the current window object. |
@@ -183,7 +191,7 @@ Viewer Module.
 | **Returns**                                          | <ul><li>The <code>PrimaryWindow</code> or the <code>SecondaryWindow</code>.</li></ul> |
 
 #### [doHide](#dohide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:doHide() -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:doHide() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that hides the Viewer. |
@@ -191,7 +199,7 @@ Viewer Module.
 | **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code>, or sends an error.</li></ul> |
 
 #### [doShowOnPrimary](#doshowonprimary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:doShowOnPrimary() -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:doShowOnPrimary() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that shows the Viewer on the Primary display. |
@@ -199,7 +207,7 @@ Viewer Module.
 | **Returns**                                          | <ul><li>The <code>Statement</code>, which resolves to <code>true</code>, or sends an error message.</li></ul> |
 
 #### [doShowOnSecondary](#doshowonsecondary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:doShowOnSecondary() -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:doShowOnSecondary() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that shows the Viewer on the Secondary display. |
@@ -207,7 +215,7 @@ Viewer Module.
 | **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code>, or sending an error message.</li></ul> |
 
 #### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:hide() -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Hides the Viewer. |
@@ -215,23 +223,15 @@ Viewer Module.
 | **Returns**                                          | <ul><li>Self</li></ul> |
 
 #### [notifier](#notifier)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:notifier() -> cp.ui.notifier` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:notifier() -> cp.ui.notifier` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a `notifier` that is tracking the application UI element. It has already been started. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The notifier.</li></ul> |
 
-#### [playButton](#playbutton)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:playButton() -> Button` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Play Button object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A Button</li></ul> |
-
 #### [showOnPrimary](#showonprimary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:showOnPrimary() -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:showOnPrimary() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Shows the Viewer on the Primary display. |
@@ -239,7 +239,7 @@ Viewer Module.
 | **Returns**                                          | <ul><li>Self</li></ul> |
 
 #### [showOnSecondary](#showonsecondary)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer:showOnSecondary() -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.Viewer:showOnSecondary() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Shows the Viewer on the Seconary display. |

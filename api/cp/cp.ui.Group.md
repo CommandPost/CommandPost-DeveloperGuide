@@ -5,6 +5,7 @@ UI Group.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
+ * [contents](#contents)
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Group](#group)
@@ -12,6 +13,14 @@ UI Group.
 ## API Documentation
 
 ### Functions
+
+#### [contents](#contents)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group.contents(element) -> axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the `AXContents` of the element, if it is an `AXGroup`. |
+| **Parameters**                                       | <ul><li>element  - The <code>axuielement</code> to check.</li></ul> |
+| **Returns**                                          | <ul><li>The list of <code>axuielements</code> for the <code>AXContents</code> of the <code>AXGroup</code>, or <code>nil</code>.</li></ul> |
 
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group.matches(element) -> boolean` </span>                                                          |
@@ -24,7 +33,7 @@ UI Group.
 ### Constructors
 
 #### [Group](#group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group(parent, uiFinder) -> Alert` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Group(parent, uiFinder[, contentsClass]) -> Alert` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Group` instance. |

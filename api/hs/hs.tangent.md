@@ -41,11 +41,11 @@ This extension was thrown together by [Chris Hocking](https://github.com/latenit
  * [sendMenuString](#sendmenustring)
  * [sendModeValue](#sendmodevalue)
  * [sendPanelConnectionStatesRequest](#sendpanelconnectionstatesrequest)
+ * [sendParameterValue](#sendparametervalue)
  * [sendRenameControl](#sendrenamecontrol)
  * [sendUnmanagedDisplayWrite](#sendunmanageddisplaywrite)
  * [sendUnmanagedPanelCapabilitiesRequest](#sendunmanagedpanelcapabilitiesrequest)
  * [setLogLevel](#setloglevel)
- * [setParameterValue](#setparametervalue)
 
 ## API Documentation
 
@@ -220,6 +220,14 @@ This extension was thrown together by [Chris Hocking](https://github.com/latenit
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if sent successfully, <code>false</code> and an error message if not.</li></ul> |
 
+#### [sendParameterValue](#sendparametervalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.sendParameterValue(paramID, value[, atDefault]) -> boolean, string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Updates the Hub with a parameter value. |
+| **Parameters**                                       | <ul><li>paramID - The ID value of the parameter (Unsigned Int)</li><li>value - The current value of the parameter (Float)</li><li>atDefault - if <code>true</code> the value represents the default. Defaults to <code>false</code>.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful, or <code>false</code> and an error message if not.</li></ul> |
+
 #### [sendRenameControl](#sendrenamecontrol)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.sendRenameControl(targetID, newName) -> boolean, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -251,12 +259,4 @@ This extension was thrown together by [Chris Hocking](https://github.com/latenit
 | **Description**                                      | Sets the Log Level. |
 | **Parameters**                                       | <ul><li>loglevel - can be 'nothing', 'error', 'warning', 'info', 'debug', or 'verbose'; or a corresponding number between 0 and 5</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [setParameterValue](#setparametervalue)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.tangent.setParameterValue(paramID, value[, atDefault]) -> boolean, string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Updates the Hub with a parameter value. |
-| **Parameters**                                       | <ul><li>paramID - The ID value of the parameter (Unsigned Int)</li><li>value - The current value of the parameter (Float)</li><li>atDefault - if <code>true</code> the value represents the default. Defaults to <code>false</code>.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful, or <code>false</code> and an error message if not.</li></ul> |
 

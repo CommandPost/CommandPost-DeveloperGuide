@@ -43,6 +43,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [playErrorSound](#playerrorsound)
  * [removeFilenameFromPath](#removefilenamefrompath)
  * [removeFromTable](#removefromtable)
+ * [rescale](#rescale)
  * [rightClick](#rightclick)
  * [rmdir](#rmdir)
  * [round](#round)
@@ -55,6 +56,8 @@ A collection of handy miscellaneous tools for Lua development.
  * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
  * [tableMatch](#tablematch)
+ * [toRegionalNumber](#toregionalnumber)
+ * [toRegionalNumberString](#toregionalnumberstring)
  * [trim](#trim)
  * [unescape](#unescape)
  * [urlQueryStringDecode](#urlquerystringdecode)
@@ -368,6 +371,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the string you want to remove</li></ul> |
 | **Returns**                                          | <ul><li>A table</li></ul> |
 
+#### [rescale](#rescale)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.rescale(value, inMin, inMax, outMin, outMax) -> number | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Takes an input, rescales it, and provides a new output. |
+| **Parameters**                                       | <ul><li>value - The value you want to process as a number</li><li>inMin - The minimum value of the input as a number</li><li>inMax - The maximum value of the input as a number</li><li>outMin - The minimum value of the output as a number</li><li>outMax - The maximum value of the output as a number</li></ul> |
+| **Returns**                                          | <ul><li>The rescaled value as a number or <code>nil</code>.</li></ul> |
+
 #### [rightClick](#rightclick)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.rightClick(point[, delay, clickNumber]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -465,6 +476,22 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Compares two tables. |
 | **Parameters**                                       | <ul><li>t1 - The first table.</li><li>t2 - The second table.</li><li>ignoreMetatable - A boolean that determines whether or not we should ignore the metatable.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if <code>t1</code> and <code>t2</code> are identical, otherwise <code>false</code>.</li></ul> |
+
+#### [toRegionalNumber](#toregionalnumber)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.toRegionalNumber(value) -> number | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Takes a string and converts it into a number, with the correct |
+| **Parameters**                                       | <ul><li>value - The value you want to process as a string.</li></ul> |
+| **Returns**                                          | <ul><li>The value as a number or <code>nil</code>.</li></ul> |
+
+#### [toRegionalNumberString](#toregionalnumberstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.toRegionalNumberString(value) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Takes a number and converts it into a string, with the correct |
+| **Parameters**                                       | <ul><li>value - The value you want to process as a number.</li></ul> |
+| **Returns**                                          | <ul><li>The value as a number or <code>nil</code>.</li></ul> |
 
 #### [trim](#trim)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.trim(string) -> string` </span>                                                          |

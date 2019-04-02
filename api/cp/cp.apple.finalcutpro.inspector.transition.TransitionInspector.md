@@ -4,12 +4,36 @@
 Transition Inspector Module.
 
 ## API Overview
+* Constants - Useful values which cannot be changed
+ * [EASE](#ease)
+ * [FADE_TYPES](#fade_types)
+ * [LOOKS](#looks)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [TransitionInspector](#transitioninspector)
 
 ## API Documentation
+
+### Constants
+
+#### [EASE](#ease)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.transition.TransitionInspector.EASE -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Ease Types |
+
+#### [FADE_TYPES](#fade_types)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.transition.TransitionInspector.FADE_TYPES -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Fade Types |
+
+#### [LOOKS](#looks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.transition.TransitionInspector.LOOKS -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Cross Dissolve Looks |
 
 ### Functions
 

@@ -4,23 +4,21 @@
 Libraries Browser Module.
 
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [ALL_CLIPS](#all_clips)
- * [FAVORITES](#favorites)
- * [HIDE_REJECTED](#hide_rejected)
- * [NO_RATINGS_OR_KEYWORDS](#no_ratings_or_keywords)
- * [REJECTED](#rejected)
- * [UNUSED](#unused)
 * Functions - API calls offered directly by the extension
  * [deselectAll](#deselectall)
  * [matchesSidebar](#matchessidebar)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [LibrariesBrowser](#librariesbrowser)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [clipFiltering](#clipfiltering)
  * [isFilmstripView](#isfilmstripview)
  * [isFocused](#isfocused)
  * [isListView](#islistview)
  * [mainGroupUI](#maingroupui)
+ * [search](#search)
+ * [searchToggle](#searchtoggle)
+ * [sidebar](#sidebar)
+ * [toggleViewMode](#toggleviewmode)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [clips](#clips)
  * [clipsUI](#clipsui)
@@ -31,68 +29,24 @@ Libraries Browser Module.
  * [doSelectClipTitled](#doselectcliptitled)
  * [doShow](#doshow)
  * [filmstrip](#filmstrip)
- * [filterToggle](#filtertoggle)
  * [hide](#hide)
  * [list](#list)
  * [loadLayout](#loadlayout)
  * [openClipTitled](#opencliptitled)
  * [playhead](#playhead)
  * [saveLayout](#savelayout)
- * [search](#search)
- * [searchToggle](#searchtoggle)
  * [selectAll](#selectall)
  * [selectClip](#selectclip)
  * [selectClipAt](#selectclipat)
- * [selectClipFiltering](#selectclipfiltering)
  * [selectClipTitled](#selectcliptitled)
  * [selectedClips](#selectedclips)
  * [selectedClipsUI](#selectedclipsui)
  * [selectLibrary](#selectlibrary)
  * [show](#show)
  * [showClip](#showclip)
- * [sidebar](#sidebar)
  * [skimmingPlayhead](#skimmingplayhead)
- * [toggleViewMode](#toggleviewmode)
 
 ## API Documentation
-
-### Constants
-
-#### [ALL_CLIPS](#all_clips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.ALL_CLIPS -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | All Clips ID. |
-
-#### [FAVORITES](#favorites)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.FAVORITES -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Favourites ID. |
-
-#### [HIDE_REJECTED](#hide_rejected)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.HIDE_REJECTED -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Hide Rejected ID. |
-
-#### [NO_RATINGS_OR_KEYWORDS](#no_ratings_or_keywords)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.NO_RATINGS_OR_KEYWORDS -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | No Rating or Keywords ID. |
-
-#### [REJECTED](#rejected)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.REJECTED -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Rejected ID. |
-
-#### [UNUSED](#unused)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.UNUSED -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Unused ID. |
 
 ### Functions
 
@@ -124,6 +78,12 @@ Libraries Browser Module.
 
 ### Fields
 
+#### [clipFiltering](#clipfiltering)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.clipFiltering <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Clip Filtering [PopUpButton](cp.ui.PopUpButton.md). |
+
 #### [isFilmstripView](#isfilmstripview)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.isFilmstripView <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -147,6 +107,30 @@ Libraries Browser Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the main group within the Libraries Browser, or `nil` if not available.. |
+
+#### [search](#search)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.search <cp.ui.TextField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Search [TextField](cp.ui.TextField.md). |
+
+#### [searchToggle](#searchtoggle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.searchToggle <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Search Toggle [Button](cp.ui.Button.md). |
+
+#### [sidebar](#sidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.sidebar <cp.ui.Table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Get Libraries sidebar [Table](cp.ui.Table.md). |
+
+#### [toggleViewMode](#toggleviewmode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.toggleViewMode <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Toggle View Mode [Button](cp.ui.Button.md). |
 
 ### Methods
 
@@ -222,14 +206,6 @@ Libraries Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>LibrariesBrowser</code> object.</li></ul> |
 
-#### [filterToggle](#filtertoggle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:filterToggle() -> Button` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The Filter Toggle Button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Button</code> object.</li></ul> |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:hide() -> LibrariesBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -278,22 +254,6 @@ Libraries Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the current Libraries Browser Layout.</li></ul> |
 
-#### [search](#search)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:search() -> TextField` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Search Text Field. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>TextField</code> object.</li></ul> |
-
-#### [searchToggle](#searchtoggle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:searchToggle() -> Button` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Search Toggle Button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Button</code> object.</li></ul> |
-
 #### [selectAll](#selectall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectAll([clips]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -317,14 +277,6 @@ Libraries Browser Module.
 | **Description**                                      | Select clip at a specific index. |
 | **Parameters**                                       | <ul><li>index - A number of where the clip appears in the list.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
-
-#### [selectClipFiltering](#selectclipfiltering)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClipFiltering(filterType) -> LibrariesBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Select Clip Filtering based on Filter Type. |
-| **Parameters**                                       | <ul><li>filterType - The filter type.</li></ul> |
-| **Returns**                                          | <ul><li>The <code>LibrariesBrowser</code> object.</li></ul> |
 
 #### [selectClipTitled](#selectcliptitled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:selectClipTitled(title) -> boolean` </span>                                                          |
@@ -374,14 +326,6 @@ Libraries Browser Module.
 | **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to show.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
 
-#### [sidebar](#sidebar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:sidebar() -> Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Libraries sidebar object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Table</code> object.</li></ul> |
-
 #### [skimmingPlayhead](#skimmingplayhead)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:skimmingPlayhead() -> Playhead` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -389,12 +333,4 @@ Libraries Browser Module.
 | **Description**                                      | Gets the Libraries Browser Skimming Playhead. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Playhead</code> object.</li></ul> |
-
-#### [toggleViewMode](#toggleviewmode)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:toggleViewMode() -> Button` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Toggle View Mode button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Button</code> object.</li></ul> |
 

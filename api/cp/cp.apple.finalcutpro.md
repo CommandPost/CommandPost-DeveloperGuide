@@ -74,6 +74,7 @@ end
  * [cp.apple.finalcutpro.prefs](cp.apple.finalcutpro.prefs.md)
  * [cp.apple.finalcutpro.strings](cp.apple.finalcutpro.strings.md)
  * [cp.apple.finalcutpro.timeline](cp.apple.finalcutpro.timeline.md)
+ * [cp.apple.finalcutpro.viewer](cp.apple.finalcutpro.viewer.md)
 
 ## API Overview
 * Constants - Useful values which cannot be changed
@@ -81,14 +82,21 @@ end
  * [ALLOWED_IMPORT_EXTENSIONS](#allowed_import_extensions)
  * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
  * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
+ * [BLEND_MODES](#blend_modes)
  * [BUNDLE_ID](#bundle_id)
+ * [CROP_TYPES](#crop_types)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
  * [EVENT_DESCRIPTION_PATH](#event_description_path)
  * [FLEXO_LANGUAGES](#flexo_languages)
  * [PASTEBOARD_UTI](#pasteboard_uti)
  * [preferences](#preferences)
+ * [ROLLING_SHUTTER_AMOUNTS](#rolling_shutter_amounts)
+ * [SPATIAL_CONFORM_TYPES](#spatial_conform_types)
+ * [STABILIZATION_METHODS](#stabilization_methods)
+ * [WORKSPACES_PATH](#workspaces_path)
 * Variables - Configurable values
  * [activeCommandSet](#activecommandset)
+ * [customWorkspaces](#customworkspaces)
  * [selectedWorkspace](#selectedworkspace)
 * Functions - API calls offered directly by the extension
  * [commandSet](#commandset)
@@ -96,29 +104,40 @@ end
  * [userCommandSetPath](#usercommandsetpath)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [activeCommandSetPath](#activecommandsetpath)
+ * [audioEnhancements](#audioenhancements)
  * [audioLanes](#audiolanes)
+ * [browser](#browser)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [currentLocale](#currentlocale)
+ * [deselectAll](#deselectall)
+ * [effects](#effects)
+ * [eventViewer](#eventviewer)
+ * [inspector](#inspector)
  * [isFrontmost](#isfrontmost)
  * [isInstalled](#isinstalled)
  * [isModalDialogOpen](#ismodaldialogopen)
  * [isRunning](#isrunning)
  * [isShowing](#isshowing)
- * [isShowing](#isshowing)
  * [isSupported](#issupported)
  * [isUnsupported](#isunsupported)
+ * [libraries](#libraries)
+ * [pan](#pan)
+ * [preset](#preset)
  * [supportedLocales](#supportedlocales)
- * [UI](#ui)
+ * [textArea](#textarea)
+ * [textLayerLeft](#textlayerleft)
+ * [textLayerRight](#textlayerright)
  * [UI](#ui)
  * [version](#version)
  * [versionString](#versionstring)
+ * [viewer](#viewer)
+ * [volume](#volume)
  * [windowsUI](#windowsui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activeLibraryPaths](#activelibrarypaths)
  * [alert](#alert)
- * [browser](#browser)
  * [bundleID](#bundleid)
  * [closeLibrary](#closelibrary)
  * [color](#color)
@@ -133,7 +152,6 @@ end
  * [doShortcut](#doshortcut)
  * [doShow](#doshow)
  * [effects](#effects)
- * [eventViewer](#eventviewer)
  * [exportDialog](#exportdialog)
  * [findAndReplaceTitleText](#findandreplacetitletext)
  * [fullScreenWindow](#fullscreenwindow)
@@ -142,12 +160,10 @@ end
  * [getPath](#getpath)
  * [hide](#hide)
  * [importXML](#importxml)
- * [inspector](#inspector)
  * [isSupportedLocale](#issupportedlocale)
  * [keysWithString](#keyswithstring)
  * [keywordEditor](#keywordeditor)
  * [launch](#launch)
- * [libraries](#libraries)
  * [media](#media)
  * [mediaImport](#mediaimport)
  * [menu](#menu)
@@ -166,7 +182,6 @@ end
  * [timeline](#timeline)
  * [toolbar](#toolbar)
  * [transitions](#transitions)
- * [viewer](#viewer)
 
 ## API Documentation
 
@@ -196,11 +211,23 @@ end
 | **Type**                                             | Constant |
 | **Description**                                      | Table of video file extensions Final Cut Pro can import. |
 
+#### [BLEND_MODES](#blend_modes)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.BLEND_MODES -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Blend Modes |
+
 #### [BUNDLE_ID](#bundle_id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.BUNDLE_ID -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Final Cut Pro's Bundle ID as a `semver`. |
+
+#### [CROP_TYPES](#crop_types)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.CROP_TYPES -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Crop Types |
 
 #### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION -> string` </span>                                                          |
@@ -232,6 +259,30 @@ end
 | **Type**                                             | Constant |
 | **Description**                                      | The `cp.app.prefs` for Final Cut Pro. |
 
+#### [ROLLING_SHUTTER_AMOUNTS](#rolling_shutter_amounts)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.ROLLING_SHUTTER_AMOUNTS -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Rolling Shutter Amounts |
+
+#### [SPATIAL_CONFORM_TYPES](#spatial_conform_types)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.SPATIAL_CONFORM_TYPES -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Spatial Conform Types |
+
+#### [STABILIZATION_METHODS](#stabilization_methods)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.STABILIZATION_METHODS -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Stabilisation Methods |
+
+#### [WORKSPACES_PATH](#workspaces_path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.WORKSPACES_PATH -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | The path to the custom workspaces folder. |
+
 ### Variables
 
 #### [activeCommandSet](#activecommandset)
@@ -239,6 +290,12 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Contins the 'Active Command Set' as a `table`. The result is cached, but |
+
+#### [customWorkspaces](#customworkspaces)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:customWorkspaces <cp.prop: table; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | A table containing the display names of all the user created custom workspaces. |
 
 #### [selectedWorkspace](#selectedworkspace)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.selectedWorkspace <cp.prop: string; live>` </span>                                                          |
@@ -280,20 +337,28 @@ end
 | **Type**                                             | Field |
 | **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences |
 
+#### [audioEnhancements](#audioenhancements)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.audioEnhancements <cp.prop: PropertyRow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Audio Enhancements |
+
 #### [audioLanes](#audiolanes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.audioLanes <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Indicates if audio lanes are currently showing. May be set to ensure it is showing or hidden. |
 
-#### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+#### [browser](#browser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser <cp.apple.finalcutpro.main.Browser>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The `axuielement` containing the properties rows, if available. |
+| **Description**                                      | The [Browser](cp.apple.finalcutpro.main.Browser.md) instance, whether it is in the primary or secondary window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the Browser</li></ul> |
 
 #### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
@@ -304,11 +369,43 @@ end
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
+#### [contentUI](#contentui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `axuielement` containing the properties rows, if available. |
+
 #### [currentLocale](#currentlocale)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLocale <cp.prop: cp.i18n.localeID; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Gets and sets the current locale for FCPX. |
+
+#### [deselectAll](#deselectall)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.deselectAll <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The left text layer arrow at the bottom of the Inspector. |
+
+#### [effects](#effects)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.effects <cp.prop: PropertyRow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Effects |
+
+#### [eventViewer](#eventviewer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.eventViewer <cp.apple.finalcutpro.viewer.Viewer>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the [Viewer](cp.apple.finalcutpro.viewer.Viewer.md) instance, whether it is in the primary or secondary window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the Event Viewer</li></ul> |
+
+#### [inspector](#inspector)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector <cp.apple.finalcutpro.inspector.Inspector>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the [Inspector](cp.apple.finalcutpro.inspector.Inspector.md) instance from the primary window. |
 
 #### [isFrontmost](#isfrontmost)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isFrontmost <cp.prop: boolean; read-only; live>` </span>                                                          |
@@ -335,12 +432,6 @@ end
 | **Description**                                      | Is Final Cut Pro Running? |
 
 #### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Checks if the ShareInspector is currently showing. |
-
-#### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
@@ -358,17 +449,47 @@ end
 | **Type**                                             | Field |
 | **Description**                                      | Is an unsupported version of Final Cut Pro installed? |
 
+#### [libraries](#libraries)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.libraries <cp.apple.finalcutpro.main.LibrariesBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the [LibrariesBrowser](cp.apple.finalcut.main.LibrariesBrowser.md) instance, whether it is in the primary or secondary window. |
+
+#### [pan](#pan)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.pan <cp.prop: PropertyRow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Pan |
+
+#### [preset](#preset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.preset <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The preset popup found at the top of the inspector. |
+
 #### [supportedLocales](#supportedlocales)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.supportedLocales <cp.prop: table of cp.i18n.localeID; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The list of supported locales for this version of FCPX. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.UI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+#### [textArea](#textarea)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.textArea <cp.ui.TextArea>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the `hs._asm.axuielement` object for the Share Inspector. |
+| **Description**                                      | The Text Inspector main Text Area. |
+
+#### [textLayerLeft](#textlayerleft)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.textLayerLeft <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The left text layer arrow at the bottom of the Inspector. |
+
+#### [textLayerRight](#textlayerright)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.textLayerRight <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The left text layer arrow at the bottom of the Inspector. |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
@@ -387,6 +508,20 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The version number of the running or default installation of FCPX as a `string`. |
+
+#### [viewer](#viewer)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer <cp.apple.finalcutpro.viewer.Viewer>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the [Viewer](cp.apple.finalcutpro.viewer.Viewer.md) instance, whether it is in the primary or secondary window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>the Viewer</li></ul> |
+
+#### [volume](#volume)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.volume <cp.prop: PropertyRow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Volume |
 
 #### [windowsUI](#windowsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.windowsUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
@@ -411,14 +546,6 @@ end
 | **Description**                                      | Provides basic access to any 'alert' dialog windows in the app. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the <code>Alert</code> instance</li></ul> |
-
-#### [browser](#browser)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:browser() -> Browser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Browser instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Browser</li></ul> |
 
 #### [bundleID](#bundleid)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:bundleID() -> string` </span>                                                          |
@@ -533,14 +660,6 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the EffectsBrowser</li></ul> |
 
-#### [eventViewer](#eventviewer)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:eventViewer() -> Event Viewer` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Event Viewer instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Event Viewer</li></ul> |
-
 #### [exportDialog](#exportdialog)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:exportDialog() -> exportDialog object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -605,14 +724,6 @@ end
 | **Parameters**                                       | <ul><li>path = Path to XML File</li></ul> |
 | **Returns**                                          | <ul><li>A boolean value indicating whether the AppleScript succeeded or not</li></ul> |
 
-#### [inspector](#inspector)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:inspector() -> Inspector` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Inspector instance from the primary window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Inspector</li></ul> |
-
 #### [isSupportedLocale](#issupportedlocale)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isSupportedLocale(locale) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -645,14 +756,6 @@ end
 | **Description**                                      | Launches Final Cut Pro, or brings it to the front if it was already running. |
 | **Parameters**                                       | <ul><li><code>waitSeconds</code> - If provided, the number of seconds to wait until the launch                   completes. If <code>nil</code>, it will return immediately.</li><li><code>path</code>        - An optional full path to an application without an extension                   (i.e <code>/Applications/Final Cut Pro 10.3.4</code>). This allows you to                   load previous versions of the application.</li></ul> |
 | **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
-
-#### [libraries](#libraries)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:libraries() -> LibrariesBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the LibrariesBrowser instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the LibrariesBrowser</li></ul> |
 
 #### [media](#media)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:media() -> MediaBrowser` </span>                                                          |
@@ -797,12 +900,4 @@ end
 | **Description**                                      | Returns the TransitionsBrowser instance, whether it is in the primary or secondary window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the TransitionsBrowser</li></ul> |
-
-#### [viewer](#viewer)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:viewer() -> Viewer` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Viewer instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Viewer</li></ul> |
 

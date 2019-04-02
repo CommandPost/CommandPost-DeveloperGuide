@@ -34,6 +34,7 @@ This extension differs from the `hs.application` extension in several ways:
  * [info](#info)
  * [installed](#installed)
  * [isPlaying](#isplaying)
+ * [isPlaying](#isplaying)
  * [mainWindowUI](#mainwindowui)
  * [modalDialogOpen](#modaldialogopen)
  * [path](#path)
@@ -168,6 +169,12 @@ This extension differs from the `hs.application` extension in several ways:
 
 #### [isPlaying](#isplaying)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcut.main.Viewer.isPlaying <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |
+
+#### [isPlaying](#isplaying)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcut.main.ControlBar.isPlaying <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |

@@ -104,6 +104,6 @@ Text Field Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Creates a new TextField. They have a parent and a finder function. |
-| **Parameters**                                       | <ul><li>parent   - The parent object.</li><li>uiFinder - The function will return the <code>axuielement</code> for the TextField.</li><li>convertFn    - (optional) If provided, will be passed the <code>string</code> value when returning.</li></ul> |
+| **Parameters**                                       | <ul><li>parent   - The parent object.</li><li>uiFinder - The function will return the <code>axuielement</code> for the TextField.</li><li>getConvertFn    - (optional) If provided, will be passed the <code>string</code> value when returning.</li><li>setConvertFn    - (optional) If provided, will be passed the <code>number</code> value when setting.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>TextField</code>.</li></ul> |
 

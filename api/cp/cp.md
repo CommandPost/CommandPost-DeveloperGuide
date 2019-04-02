@@ -28,6 +28,7 @@ Core CommandPost functionality.
  * [cp.just](cp.just.md)
  * [cp.lazy](cp.lazy.md)
  * [cp.localized](cp.localized.md)
+ * [cp.pattern](cp.pattern.md)
  * [cp.plist](cp.plist.md)
  * [cp.plugins](cp.plugins.md)
  * [cp.prop](cp.prop.md)

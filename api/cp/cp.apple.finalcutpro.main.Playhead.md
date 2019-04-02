@@ -61,7 +61,7 @@ Playhead Module.
 | **Description**                                      | Gets the centre point (`{x, y}`) of the playhead. |
 
 #### [currentViewer](#currentviewer)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.currentViewer <cp.prop: cp.apple.finalcutpro.main.Viewer; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.currentViewer <cp.prop: cp.apple.finalcutpro.viewer.Viewer; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Represents the current viewer for the playhead. This may be either the primary Viewer or the Event Viewer, |

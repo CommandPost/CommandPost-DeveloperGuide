@@ -22,13 +22,19 @@ See:
  * [role](#role)
  * [size](#size)
  * [subrole](#subrole)
+ * [textValue](#textvalue)
+ * [title](#title)
+ * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [doLayout](#dolayout)
+ * [doShow](#doshow)
  * [loadLayout](#loadlayout)
  * [parent](#parent)
  * [saveLayout](#savelayout)
+ * [show](#show)
  * [snapshot](#snapshot)
+ * [valueIs](#valueis)
 
 ## API Documentation
 
@@ -102,6 +108,24 @@ See:
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `AX` subrole name for the element. |
 
+#### [textValue](#textvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.textValue <cp.prop: string; read-only; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The 'AXValue' of the element, if it is a `string`. |
+
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.title <cp.prop: string; read-only, live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The 'AXTitle' of the element. |
+
+#### [value](#value)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.value <cp.prop: anything; live?>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The 'AXValue' of the element. |
+
 ### Methods
 
 #### [app](#app)
@@ -120,6 +144,12 @@ See:
 | **Parameters**                                       | <ul><li>layout - a <code>table</code> of parameters that will be used to layout the element.</li></ul> |
 | **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a> to execute.</li></ul> |
 | **Notes**                                            | <ul><li>By default, to enable backwards-compatibility, this method will simply call the [#loadLayout]. Override it to provide more optimal asynchonous behaviour if required.</li><li>When subclassing, the overriding <code>doLayout</code> method should call the parent class's <code>doLayout</code> method,then process any custom values from it, like so:   <code>lua   function MyElement:doLayout(layout)       layout = layout or {}       return Do(Element.doLayout(self, layout))       :Then(function()           self.myConfig = layout.myConfig       end)       :Label("MyElement:doLayout")   end</code></li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will ensure the Element is showing. |
 
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:loadLayout(layout) -> nil` </span>                                                          |
@@ -144,10 +174,26 @@ See:
 | **Description**                                      | Returns a `table` containing the current configuration details for this Element (or subclass). |
 | **Notes**                                            | <ul><li>When subclassing, the overriding <code>saveLayout</code> method should call the parent's saveLayout method,then add values to it, like so:   <code>function MyElement:saveLayout()       local layout = Element.saveLayout(self)       layout.myConfig = self.myConfig       return layout   end</code></li></ul> |
 
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:show() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Shows the Element. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>self</li></ul> |
+
 #### [snapshot](#snapshot)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:snapshot([path]) -> hs.image | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Takes a snapshot of the button in its current state as a PNG and returns it. |
 | **Parameters**                                       | <ul><li>path     - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul> |
+
+#### [valueIs](#valueis)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element.valueIs(value) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Checks if the current value of this element is the provided value. |
+| **Parameters**                                       | <ul><li>value - The value to compare to.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the current [#value] is equal to the provided <code>value</code>.</li></ul> |
 

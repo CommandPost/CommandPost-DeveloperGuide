@@ -7,7 +7,8 @@ Ignore Final Cut Pro's Media Import Window.
 * Variables - Configurable values
  * [enabled](#enabled)
 * Functions - API calls offered directly by the extension
- * [getDeviceWatcher](#getdevicewatcher)
+ * [start](#start)
+ * [stop](#stop)
  * [update](#update)
 
 ## API Documentation
@@ -22,13 +23,21 @@ Ignore Final Cut Pro's Media Import Window.
 
 ### Functions
 
-#### [getDeviceWatcher](#getdevicewatcher)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.import.ignorecard.getDeviceWatcher() -> none` </span>                                                          |
+#### [start](#start)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.import.ignorecard.start() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Media Import Window Watcher |
+| **Description**                                      | Starts the Media Import Window Watcher |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.fs.volume</code> object</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [stop](#stop)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.import.ignorecard.stop() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Stops the Media Import Window Watcher |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.import.ignorecard.update() -> none` </span>                                                          |

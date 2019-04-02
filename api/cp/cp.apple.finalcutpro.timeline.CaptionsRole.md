@@ -46,5 +46,5 @@ A [Role](cp.apple.finalcutpro.timeline.Role.md) representing Captions.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.CaptionsRole:visibleInViewer() -> cp.ui.CheckBox` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | A [CheckBox](cp.ui.CheckBox.md) that toggles whether captions are visible in the [Viewer](cp.apple.finalcutpro.main.Viewer.md). |
+| **Description**                                      | A [CheckBox](cp.ui.CheckBox.md) that toggles whether captions are visible in the [Viewer](cp.apple.finalcutpro.viewer.Viewer.md). |
 

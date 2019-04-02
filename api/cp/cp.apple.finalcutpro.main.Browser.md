@@ -15,6 +15,7 @@ Browser Module.
  * [generatorsShowing](#generatorsshowing)
  * [isOnPrimary](#isonprimary)
  * [isOnSecondary](#isonsecondary)
+ * [libraries](#libraries)
  * [librariesShowing](#librariesshowing)
  * [mediaShowing](#mediashowing)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -25,7 +26,6 @@ Browser Module.
  * [doShowOnSecondary](#doshowonsecondary)
  * [generators](#generators)
  * [hide](#hide)
- * [libraries](#libraries)
  * [loadLayout](#loadlayout)
  * [markerPopover](#markerpopover)
  * [media](#media)
@@ -78,6 +78,14 @@ Browser Module.
 | **Type**                                             | Field |
 | **Description**                                      | Is the Browser on the Secondary Window? |
 
+#### [libraries](#libraries)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.libraries <cp.apple.finalcutpro.main.LibrariesBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [module](package.module.md) object. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>LibrariesBrowser</code> object.</li></ul> |
+
 #### [librariesShowing](#librariesshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.librariesShowing <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -93,12 +101,10 @@ Browser Module.
 ### Methods
 
 #### [appearanceAndFiltering](#appearanceandfiltering)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:appearanceAndFiltering() -> AppearanceAndFiltering` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.appearanceAndFiltering <cp.apple.finalcutpro.main.AppearanceAndFiltering>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | The Clip Appearance & Filtering Menu Popover |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>AppearanceAndFiltering</code> object.</li></ul> |
+| **Description**                                      | The Clip [AppearanceAndFiltering](cp.apple.finalcutpro.main.AppearanceAndFiltering.md) Menu Popover |
 
 #### [doHide](#dohide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:doHide() -> cp.rx.go.Statement` </span>                                                          |
@@ -147,14 +153,6 @@ Browser Module.
 | **Description**                                      | Hides the Browser. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Browser</code> object.</li></ul> |
-
-#### [libraries](#libraries)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:libraries() -> LibrariesBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Libraries Browser object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>LibrariesBrowser</code> object.</li></ul> |
 
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:loadLayout(layout) -> none` </span>                                                          |

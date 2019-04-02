@@ -35,16 +35,16 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 ### Constructors
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.new(name, parent, controls)` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.new(name[, parent[, localActive]])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Group` instance. |
-| **Parameters**                                       | <ul><li>name      - The name of the group.</li><li>parent    - The parent group.</li></ul> |
+| **Parameters**                                       | <ul><li>name      - The name of the group.</li><li>parent    - The parent group.</li><li>localActive - If <code>true</code>, this group will ignore the parent's <code>active</code> status when determining its own <code>active</code> status. Defaults to <code>false</code>.</li></ul> |
 
 ### Methods
 
 #### [action](#action)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:action(id[, name]) -> action` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:action(id[, name[, localActive]]) -> action` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds an `action` to this group. |
@@ -66,7 +66,7 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 | **Returns**                                          | <ul><li>The <code>controls</code>, or <code>nil</code>.</li></ul> |
 
 #### [group](#group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:group(name) -> group` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:group(name[, localActive]) -> group` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Adds a subgroup to this group. |

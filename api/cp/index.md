@@ -47,6 +47,8 @@
 | [cp.apple.finalcutpro.export.SaveSheet](cp.apple.finalcutpro.export.SaveSheet.md)                          | Save Sheet     |
 | [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)                          | Final Cut Pro IDs.     |
 | [cp.apple.finalcutpro.import.MediaImport](cp.apple.finalcutpro.import.MediaImport.md)                          | Media Import     |
+| [cp.apple.finalcutpro.inspector.audio.AudioComponent](cp.apple.finalcutpro.inspector.audio.AudioComponent.md)                          | The Audio Configuration section of the Audio Inspector.     |
+| [cp.apple.finalcutpro.inspector.audio.AudioConfiguration](cp.apple.finalcutpro.inspector.audio.AudioConfiguration.md)                          | The Audio Configuration section of the Audio Inspector.     |
 | [cp.apple.finalcutpro.inspector.audio.AudioInspector](cp.apple.finalcutpro.inspector.audio.AudioInspector.md)                          | Audio Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.BaseMotionPanel](cp.apple.finalcutpro.inspector.BaseMotionPanel.md)                          | A base class for [Inspector](cp.apple.finalcutpro.inspector.Inspector.md) panels     |
 | [cp.apple.finalcutpro.inspector.BasePanel](cp.apple.finalcutpro.inspector.BasePanel.md)                          | A base class for the different panels in the [Inspector](cp.apple.finalcutpro.inspector.Inspector.md).     |
@@ -88,7 +90,6 @@
 | [cp.apple.finalcutpro.main.PrimaryToolbar](cp.apple.finalcutpro.main.PrimaryToolbar.md)                          | Timeline Toolbar.     |
 | [cp.apple.finalcutpro.main.PrimaryWindow](cp.apple.finalcutpro.main.PrimaryWindow.md)                          | Primary Window Module.     |
 | [cp.apple.finalcutpro.main.SecondaryWindow](cp.apple.finalcutpro.main.SecondaryWindow.md)                          | Secondary Window Module.     |
-| [cp.apple.finalcutpro.main.Viewer](cp.apple.finalcutpro.main.Viewer.md)                          | Viewer Module.     |
 | [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu.     |
 | [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
 | [cp.apple.finalcutpro.plugins.guiscan](cp.apple.finalcutpro.plugins.guiscan.md)                          | Final Cut Pro GUI Plugin Scanner.     |
@@ -121,6 +122,9 @@
 | [cp.apple.finalcutpro.timeline.Toolbar.Skimming](cp.apple.finalcutpro.timeline.Toolbar.Skimming.md)                          | Provides access to mouse/trackpad skimming options.     |
 | [cp.apple.finalcutpro.timeline.VideoRole](cp.apple.finalcutpro.timeline.VideoRole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
 | [cp.apple.finalcutpro.timeline.VideoSubrole](cp.apple.finalcutpro.timeline.VideoSubrole.md)                          | *Extends [Role](cp.apple.finalcutpro.timeline.Role.md)*     |
+| [cp.apple.finalcutpro.viewer.ControlBar](cp.apple.finalcutpro.viewer.ControlBar.md)                          | Represents the bottom "control" bar on a [Viewer](cp.apple.finalcutpro.viewer.Viewer.md)     |
+| [cp.apple.finalcutpro.viewer.InfoBar](cp.apple.finalcutpro.viewer.InfoBar.md)                          | Represents the bar of information about the [Viewer](cp.apple.finalcutpro.viewer.Viewer.md) (format, title, viewing options).     |
+| [cp.apple.finalcutpro.viewer.Viewer](cp.apple.finalcutpro.viewer.Viewer.md)                          | Viewer Module.     |
 | [cp.apple.motion](cp.apple.motion.md)                          | Represents the Motion application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.motion.app](cp.apple.motion.app.md)                          | The `cp.app` for Apple's Motion.     |
 | [cp.battery](cp.battery.md)                          | Provides access to various properties of the battery. Each of these properties     |
@@ -159,6 +163,7 @@
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
 | [cp.lazy](cp.lazy.md)                          | `cp.lazy` is a [middleclass](https://github.com/kikito/middleclass) "mix-in" that allows for     |
 | [cp.localized](cp.localized.md)                          | Helps look up localized names for folders.     |
+| [cp.pattern](cp.pattern.md)                          | Contains pattern matching utility functions.     |
 | [cp.plist](cp.plist.md)                          | Reads & Writes plist data.     |
 | [cp.plist.archiver](cp.plist.archiver.md)                          | Supports 'defrosting' a table which is made up from an 'NSKeyArchiver' record.     |
 | [cp.plist.plistParser](cp.plist.plistParser.md)                          | plistParser (https://codea.io/talk/discussion/1269/code-plist-parser)     |
@@ -223,11 +228,16 @@
 | [cp.ui.Alert](cp.ui.Alert.md)                          | Alert UI Module.     |
 | [cp.ui.axutils](cp.ui.axutils.md)                          | Utility functions to support `hs._asm.axuielement`.     |
 | [cp.ui.Button](cp.ui.Button.md)                          | The `Button` type extends [Element](cp.ui.Element.md) and includes all its     |
+| [cp.ui.Cell](cp.ui.Cell.md)                          | Represents an `AXCell` `axuielement`.     |
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
+| [cp.ui.ColorWell](cp.ui.ColorWell.md)                          | UI ColorWell.     |
 | [cp.ui.Column](cp.ui.Column.md)                          | Represents an `AXColumn` `axuielement`.     |
 | [cp.ui.Dialog](cp.ui.Dialog.md)                          | Represents a [Window](cp.ui.Window.md) which has a `AXSubrole` of `AXDialog`.     |
 | [cp.ui.Element](cp.ui.Element.md)                          | A support class for `hs._asm.axuielement` management.     |
+| [cp.ui.ElementCache](cp.ui.ElementCache.md)                          | Provides caching for [Element](cp.ui.Element.md) subclasses that want to cache children.     |
+| [cp.ui.Grid](cp.ui.Grid.md)                          | Abstract base class for `AX` elements which form a grid, such as [Table2](cp.ui.Table2.md) and [Outline](cp.ui.Outline.md).     |
 | [cp.ui.Group](cp.ui.Group.md)                          | UI Group.     |
+| [cp.ui.Image](cp.ui.Image.md)                          | Represents an `AXImage` `axuielement` value.     |
 | [cp.ui.Menu](cp.ui.Menu.md)                          | UI Group.     |
 | [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Menu Button Module.     |
 | [cp.ui.notifier](cp.ui.notifier.md)                          | Supports long-lived 'AX' notifiers. Configure the application to watch, the     |
@@ -243,8 +253,10 @@
 | [cp.ui.SearchField](cp.ui.SearchField.md)                          | A [TextField](cp.ui.TextField.md) with a subrole of `AXSearchField`.     |
 | [cp.ui.Slider](cp.ui.Slider.md)                          | Slider Module.     |
 | [cp.ui.SplitGroup](cp.ui.SplitGroup.md)                          | Split Group UI.     |
+| [cp.ui.Splitter](cp.ui.Splitter.md)                          | Represents an `AXSplitter`.     |
 | [cp.ui.StaticText](cp.ui.StaticText.md)                          | Static Text Module.     |
 | [cp.ui.Table](cp.ui.Table.md)                          | Represents an AXTable in the Apple Accessibility UX API.     |
+| [cp.ui.TextArea](cp.ui.TextArea.md)                          | UI Text Area.     |
 | [cp.ui.TextField](cp.ui.TextField.md)                          | Text Field Module.     |
 | [cp.ui.Toolbar](cp.ui.Toolbar.md)                          | Toolbar Module.     |
 | [cp.ui.Window](cp.ui.Window.md)                          | A Window UI element.     |

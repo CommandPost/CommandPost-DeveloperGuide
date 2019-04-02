@@ -8,6 +8,7 @@ A set of handy developer tools for CommandPost.
  * [elementAtMouse](#elementatmouse)
  * [findUnusedLanguageStrings](#findunusedlanguagestrings)
  * [highlight](#highlight)
+ * [highlightFrame](#highlightframe)
  * [highlightPoint](#highlightpoint)
  * [hotkey](#hotkey)
  * [inspect](#inspect)
@@ -44,6 +45,14 @@ A set of handy developer tools for CommandPost.
 | **Description**                                      | Highlights an AX element on the screen. |
 | **Parameters**                                       | <ul><li>element - The AX element to highlight.</li></ul> |
 | **Returns**                                          | <ul><li>The element.</li></ul> |
+
+#### [highlightFrame](#highlightframe)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dev.highlightFrame(frame) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Highlights aa frame on the screen. |
+| **Parameters**                                       | <ul><li>frame - A <code>hs.geometry</code> frame object.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [highlightPoint](#highlightpoint)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dev.highlightPoint(point) -> none` </span>                                                          |

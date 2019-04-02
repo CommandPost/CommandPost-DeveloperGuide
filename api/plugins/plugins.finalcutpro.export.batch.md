@@ -20,6 +20,7 @@ Batch Export Plugin
  * [sendTimelineClipsToCompressor](#sendtimelineclipstocompressor)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [customFilename](#customfilename)
+ * [destinationPreset](#destinationpreset)
  * [ignoreInvalidCaptions](#ignoreinvalidcaptions)
  * [ignoreMissingEffects](#ignoremissingeffects)
  * [ignoreProxies](#ignoreproxies)
@@ -109,6 +110,12 @@ Batch Export Plugin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Custom Filename for Batch Export. |
+
+#### [destinationPreset](#destinationpreset)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.destinationPreset <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Destination Preset. |
 
 #### [ignoreInvalidCaptions](#ignoreinvalidcaptions)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreInvalidCaptions <cp.prop: boolean>` </span>                                                          |
