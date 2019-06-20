@@ -1,21 +1,21 @@
-# [docs](index.md) » plugins.finalcutpro.hud.panels.notes
+# [docs](index.md) » plugins.core.streamdeck.banks
 ---
 
-Notes Panel for the Final Cut Pro HUD.
+Stream Deck Bank Actions.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
- * [updateInfo](#updateinfo)
+ * [init](#init)
 
 ## API Documentation
 
 ### Functions
 
-#### [updateInfo](#updateinfo)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.panels.notes.updateInfo() -> none` </span>                                                          |
+#### [init](#init)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.banks.init() -> nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Update the Notes Panel HTML content. |
+| **Description**                                      | Initialise the module. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

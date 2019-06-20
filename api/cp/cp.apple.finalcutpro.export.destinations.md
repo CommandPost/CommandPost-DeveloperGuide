@@ -3,54 +3,65 @@
 
 Provides access to the list of Share Destinations configured for the user.
 
+If...
+
+`~/Library/Preferences/com.apple.FinalCut.UserDestinations3.plist`
+
+...doesn't exist, then Final Cut Pro will use:
+
+`/Applications/Final Cut Pro.app/Contents/Resources/DefaultDestinations.plist`
+
+...followed by any 3rd party applications such as:
+
+`~/Library/Application Support/ProApps/Share Destinations/Vimeo (advanced).fcpxdest`
+`/Library/Application Support/ProApps/Share Destinations/Xsend Motion.fcpxdest`
+
+However, when you close Final Cut Pro, or if you open and close the destinations
+preferences window, a new file will be created:
+
+`~/Library/Preferences/com.apple.FinalCut.UserDestinations3.plist`
+
+Also, if, for example, you delete the Xsend Motion destination in the Final Cut Pro
+user interface, or rename the DVD preset to something else, then it will automatically
+create a new Preferences file:
+
+`~/Library/Preferences/com.apple.FinalCut.UserDestinations3.plist`
+
+It seems that as of FCPX 10.4.6, Final Cut Pro ignores the:
+
+`~/Preferences/com.apple.FinalCut.UserDestinations.plist`
+
+...file (it must be considered legacy). However, if this file exists:
+
+`~/Preferences/com.apple.FinalCut.UserDestinations2.plist`
+
+It will read that file, along with any third party applications such as:
+
+`~/Application Support/ProApps/Share Destinations/Vimeo (advanced).fcpxdest`
+`/Library/Application Support/ProApps/Share Destinations/Xsend Motion.fcpxdest`
+
+However, again, if you close Final Cut Pro, or open and close the destinations
+preferences window, a new file will be created, migrating the data from UserDestinations2:
+
+`~/Preferences/com.apple.FinalCut.UserDestinations3.plist`
+
+Long story short, in MOST cases, `UserDestinations3.plist` will be single source of
+destinations, however, if this file doesn't exist, then `UserDestinations2.plist`
+will be used, and if this file doesn't exist, then it will read the default values
+from `DefaultDestinations.plist`, along with any third party share destinations.
+
+Fun fact: even if you delete third party applications such as "Vimeo (advanced)",
+and "Xsend Motion" from your Final Cut Pro destinations preferences, they'll come
+back after you restart FCPX.
+
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [DESTINATIONS_FILE](#destinations_file)
- * [DESTINATIONS_PATH](#destinations_path)
- * [DESTINATIONS_PATTERN](#destinations_pattern)
- * [PREFERENCES_PATH](#preferences_path)
 * Functions - API calls offered directly by the extension
- * [details](#details)
  * [indexOf](#indexof)
  * [names](#names)
 
 ## API Documentation
 
-### Constants
-
-#### [DESTINATIONS_FILE](#destinations_file)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.DESTINATIONS_FILE -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The Destinations File. |
-
-#### [DESTINATIONS_PATH](#destinations_path)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.DESTINATIONS_PATH -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The Destinations Path. |
-
-#### [DESTINATIONS_PATTERN](#destinations_pattern)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.DESTINATIONS_PATTERN -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Destinations File Pattern. |
-
-#### [PREFERENCES_PATH](#preferences_path)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.PREFERENCES_PATH -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The Preferences Path |
-
 ### Functions
-
-#### [details](#details)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.details() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns the full details of the current Share Destinations as a table. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The table of Share Destinations.</li></ul> |
 
 #### [indexOf](#indexof)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.destinations.indexOf(name) -> number` </span>                                                          |

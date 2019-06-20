@@ -61,7 +61,7 @@ These functions allow altering the behavior and display of the Hammerspoon conso
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Default toolbar for the Console window |
-| **Notes**                                            | <ul><li>This is an <code>hs.toolbar</code> object that is shown by default in the Hammerspoon Console</li><li>You can remove this toolbar by adding <code>hs.console.toolbar(nil)</code> to your config, or you can replace it with your own <code>hs.toolbar</code> object</li></ul> |
+| **Notes**                                            | <ul><li>This is an <code>hs.toolbar</code> object that is shown by default in the Hammerspoon Console</li><li>You can remove this toolbar by adding <code>hs.console.toolbar(nil)</code> to your config, or you can replace it with your own <code>hs.webview.toolbar</code> object</li></ul> |
 
 ### Functions
 
@@ -231,7 +231,7 @@ These functions allow altering the behavior and display of the Hammerspoon conso
 | **Description**                                      | Get or set whether or not the "Hammerspoon Console" text appears in the Hammerspoon console titlebar. |
 | **Parameters**                                       | <ul><li>state - an optional string containing the text "visible" or "hidden", specifying whether or not the console window's title text appears.</li></ul> |
 | **Returns**                                          | <ul><li>a string of "visible" or "hidden" specifying the current (possibly changed) state of the window title's visibility.</li></ul> |
-| **Notes**                                            | <ul><li>When a toolbar is attached to the Hammerspoon console (see the <code>hs.webview.toolbar</code> module documentation), this function can be used to specify whether the Toolbar appears underneath the console window's title ("visible") or in the window's title bar itself, as seen in applications like Safari ("hidden").</li></ul> |
+| **Notes**                                            | <ul><li>When a toolbar is attached to the Hammerspoon console (see the <code>hs.webview.toolbar</code> module documentation), this function can be used to specify whether the Toolbar appears underneath the console window's title ("visible") or in the window's title bar itself, as seen in applications like Safari ("hidden"). When the title is hidden, the toolbar will only display the toolbar items as icons without labels, and ignores changes made with <code>hs.webview.toolbar:displayMode</code>.</li></ul> |
 
 #### [windowBackgroundColor](#windowbackgroundcolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.windowBackgroundColor([color]) -> color` </span>                                                          |

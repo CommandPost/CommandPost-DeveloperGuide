@@ -17,7 +17,6 @@ Manager for the Final Cut Pro HUD.
  * [addPanel](#addpanel)
  * [currentPanelID](#currentpanelid)
  * [delete](#delete)
- * [focus](#focus)
  * [getHandler](#gethandler)
  * [getLabel](#getlabel)
  * [getWebview](#getwebview)
@@ -111,14 +110,6 @@ Manager for the Final Cut Pro HUD.
 | **Description**                                      | Deletes the existing HUD if it exists |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [focus](#focus)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.manager.focus() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Puts focus on the HUD. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful or otherwise <code>false</code>.</li></ul> |
 
 #### [getHandler](#gethandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.hud.manager.getHandler(id) -> string` </span>                                                          |

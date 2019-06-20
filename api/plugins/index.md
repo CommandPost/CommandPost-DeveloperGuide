@@ -27,6 +27,7 @@
 | [plugins.core.commands.global](plugins.core.commands.global.md)                          | The 'global' command collection.     |
 | [plugins.core.console](plugins.core.console.md)                          | Global Console     |
 | [plugins.core.disk.automount](plugins.core.disk.automount.md)                          | Automatic Disk Mounting & Unmounting.     |
+| [plugins.core.disk.favourites](plugins.core.disk.favourites.md)                          | Action that allows you save and open user-defined favourite folders.     |
 | [plugins.core.helpandsupport.credits](plugins.core.helpandsupport.credits.md)                          | Credits Menu Item.     |
 | [plugins.core.helpandsupport.developerguide](plugins.core.helpandsupport.developerguide.md)                          | Developer Guide Menu Item.     |
 | [plugins.core.helpandsupport.donate](plugins.core.helpandsupport.donate.md)                          | Donate Menu Item.     |
@@ -50,11 +51,15 @@
 | [plugins.core.preferences.panels.notifications](plugins.core.preferences.panels.notifications.md)                          | Notifications Preferences Panel     |
 | [plugins.core.preferences.panels.plugins](plugins.core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.core.preferences.panels.scripting](plugins.core.preferences.panels.scripting.md)                          | General Preferences Panel     |
-| [plugins.core.preferences.panels.shortcuts](plugins.core.preferences.panels.shortcuts.md)                          | Shortcuts Preferences Panel     |
+| [plugins.core.preferences.panels.settings](plugins.core.preferences.panels.settings.md)                          | Settings Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
 | [plugins.core.scripting.preferences](plugins.core.scripting.preferences.md)                          | Scripting Preferences.     |
 | [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
 | [plugins.core.setup.panel](plugins.core.setup.panel.md)                          | CommandPost Setup Window Panel.     |
+| [plugins.core.shortcuts.prefs](plugins.core.shortcuts.prefs.md)                          | Shortcuts Preferences Panel     |
+| [plugins.core.streamdeck.banks](plugins.core.streamdeck.banks.md)                          | Stream Deck Bank Actions.     |
+| [plugins.core.streamdeck.manager](plugins.core.streamdeck.manager.md)                          | Elgato Stream Deck Manager Plugin.     |
+| [plugins.core.streamdeck.prefs](plugins.core.streamdeck.prefs.md)                          | Stream Deck Preferences Panel     |
 | [plugins.core.tangent.commandpost](plugins.core.tangent.commandpost.md)                          | CommandPost Group for the Tangent.     |
 | [plugins.core.tangent.commandpost.favourites](plugins.core.tangent.commandpost.favourites.md)                          | Tangent Favourites.     |
 | [plugins.core.tangent.commandpost.functions](plugins.core.tangent.commandpost.functions.md)                          | CommandPost Functions for Tangent.     |
@@ -92,9 +97,12 @@
 | [plugins.finalcutpro.advanced.showtimelineinviewers](plugins.finalcutpro.advanced.showtimelineinviewers.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.appearanceandfiltering](plugins.finalcutpro.browser.appearanceandfiltering.md)                          | Solo a clip in the Final Cut Pro Browser.     |
+| [plugins.finalcutpro.browser.clearnotes](plugins.finalcutpro.browser.clearnotes.md)                          | Clear Notes in Final Cut Pro Browser.     |
+| [plugins.finalcutpro.browser.csv](plugins.finalcutpro.browser.csv.md)                          | Save Browser to CSV     |
 | [plugins.finalcutpro.browser.duration](plugins.finalcutpro.browser.duration.md)                          | Shortcut for changing Final Cut Pro's Browser Height     |
 | [plugins.finalcutpro.browser.frameiotomarkers](plugins.finalcutpro.browser.frameiotomarkers.md)                          | Takes the contents of a Frame.io CSV file and adds markers to a clip     |
 | [plugins.finalcutpro.browser.height](plugins.finalcutpro.browser.height.md)                          | Shortcut for changing Final Cut Pro's Browser Height     |
+| [plugins.finalcutpro.browser.insertvertical](plugins.finalcutpro.browser.insertvertical.md)                          | Insert Clips Vertically from Browser to Timeline.     |
 | [plugins.finalcutpro.browser.keywords](plugins.finalcutpro.browser.keywords.md)                          | Browser Keywords Presets.     |
 | [plugins.finalcutpro.browser.layouts](plugins.finalcutpro.browser.layouts.md)                          | Allows you to save and restore Browser Layouts.     |
 | [plugins.finalcutpro.browser.pasteboardtomarkers](plugins.finalcutpro.browser.pasteboardtomarkers.md)                          | Take the contents of the Pasteboard and pastes it as clip markers on the     |
@@ -130,6 +138,7 @@
 | [plugins.finalcutpro.menu.manager](plugins.finalcutpro.menu.manager.md)                          | Final Cut Pro Menu Manager.     |
 | [plugins.finalcutpro.menu.menuaction](plugins.finalcutpro.menu.menuaction.md)                          | A `action` which will trigger an Final Cut Pro menu with a matching path, if available/enabled.     |
 | [plugins.finalcutpro.menu.proxyicon](plugins.finalcutpro.menu.proxyicon.md)                          | Final Cut Pro Proxy Icon Plugin.     |
+| [plugins.finalcutpro.midi.controls.audio](plugins.finalcutpro.midi.controls.audio.md)                          | Final Cut Pro MIDI Audio Controls.     |
 | [plugins.finalcutpro.midi.controls.colorboard](plugins.finalcutpro.midi.controls.colorboard.md)                          | Final Cut Pro MIDI Color Controls.     |
 | [plugins.finalcutpro.midi.controls.colorwheels](plugins.finalcutpro.midi.controls.colorwheels.md)                          | Final Cut Pro MIDI Color Controls.     |
 | [plugins.finalcutpro.midi.controls.controlui.absolute](plugins.finalcutpro.midi.controls.controlui.absolute.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |
@@ -149,6 +158,7 @@
 | [plugins.finalcutpro.preferences.general](plugins.finalcutpro.preferences.general.md)                          | Final Cut Pro General Preferences     |
 | [plugins.finalcutpro.preferences.manager](plugins.finalcutpro.preferences.manager.md)                          | Final Cut Pro Preferences Panel Manager.     |
 | [plugins.finalcutpro.setup.scan](plugins.finalcutpro.setup.scan.md)                          | Show setup panel if Final Cut Pro needs scanning.     |
+| [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.tangent.audio](plugins.finalcutpro.tangent.audio.md)                          | Final Cut Pro Audio Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.browser](plugins.finalcutpro.tangent.browser.md)                          | Final Cut Pro Tangent Browser Group     |
 | [plugins.finalcutpro.tangent.clip](plugins.finalcutpro.tangent.clip.md)                          | Final Cut Pro Tangent View Group     |
@@ -173,12 +183,15 @@
 | [plugins.finalcutpro.tangent.video](plugins.finalcutpro.tangent.video.md)                          | Final Cut Pro Video Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.view](plugins.finalcutpro.tangent.view.md)                          | Final Cut Pro Tangent View Group     |
 | [plugins.finalcutpro.tangent.viewer](plugins.finalcutpro.tangent.viewer.md)                          | Final Cut Pro Viewer Actions for Tangent     |
+| [plugins.finalcutpro.tangent.workspaces](plugins.finalcutpro.tangent.workspaces.md)                          | Final Cut Pro Workspace Actions for Tangent     |
 | [plugins.finalcutpro.text2speech](plugins.finalcutpro.text2speech.md)                          | Text to Speech Plugin.     |
 | [plugins.finalcutpro.timeline.audioeffects](plugins.finalcutpro.timeline.audioeffects.md)                          | Controls Final Cut Pro's Audio Effects.     |
 | [plugins.finalcutpro.timeline.captions](plugins.finalcutpro.timeline.captions.md)                          | Caption Tools     |
+| [plugins.finalcutpro.timeline.clipnavigation](plugins.finalcutpro.timeline.clipnavigation.md)                          | Clip Navigation Actions.     |
 | [plugins.finalcutpro.timeline.colorboard](plugins.finalcutpro.timeline.colorboard.md)                          | Color Board Plugins.     |
 | [plugins.finalcutpro.timeline.colorwheels](plugins.finalcutpro.timeline.colorwheels.md)                          | Color Wheel Enhancements.     |
 | [plugins.finalcutpro.timeline.commandsetactions](plugins.finalcutpro.timeline.commandsetactions.md)                          | Adds Actions to the Console for triggering Final Cut Pro shortcuts as defined in the Command Set files.     |
+| [plugins.finalcutpro.timeline.csv](plugins.finalcutpro.timeline.csv.md)                          | Save Timeline Index to CSV     |
 | [plugins.finalcutpro.timeline.generators](plugins.finalcutpro.timeline.generators.md)                          | Controls Final Cut Pro's Generators.     |
 | [plugins.finalcutpro.timeline.height](plugins.finalcutpro.timeline.height.md)                          | Shortcut for changing Final Cut Pro's Timeline Height     |
 | [plugins.finalcutpro.timeline.lanes](plugins.finalcutpro.timeline.lanes.md)                          | Controls Final Cut Pro's Lanes.     |

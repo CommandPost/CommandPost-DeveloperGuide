@@ -13,19 +13,15 @@ Usage:
 
 ## API Overview
 * Constants - Useful values which cannot be changed
- * [appBuiltinPlugins](#appbuiltinplugins)
- * [appEdelEffects](#appedeleffects)
- * [audioUnitsCache](#audiounitscache)
- * [coreAudioPreferences](#coreaudiopreferences)
  * [types](#types)
-* Variables - Configurable values
- * [outputReport](#outputreport)
 * Functions - API calls offered directly by the extension
  * [clearCaches](#clearcaches)
  * [new](#new)
  * [scan](#scan)
+ * [scanAppEffectsPresets](#scanappeffectspresets)
  * [scanned](#scanned)
  * [scanSystemAudioUnits](#scansystemaudiounits)
+ * [scanUserColorPresets](#scanusercolorpresets)
  * [scanUserEffectsPresets](#scanusereffectspresets)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
@@ -33,7 +29,6 @@ Usage:
  * [effectBundleStrings](#effectbundlestrings)
  * [effectStrings](#effectstrings)
  * [generators](#generators)
- * [init](#init)
  * [ofType](#oftype)
  * [registerPlugin](#registerplugin)
  * [reset](#reset)
@@ -58,43 +53,11 @@ Usage:
 
 ### Constants
 
-#### [appBuiltinPlugins](#appbuiltinplugins)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.appBuiltinPlugins -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Table of built-in plugins |
-
-#### [appEdelEffects](#appedeleffects)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.appEdelEffects -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Table of Built-in Soundtrack Pro EDEL Effects. |
-
-#### [audioUnitsCache](#audiounitscache)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.audioUnitsCache -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Path to the Audio Units Cache |
-
-#### [coreAudioPreferences](#coreaudiopreferences)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.coreAudioPreferences -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Core Audio Preferences File Path |
-
 #### [types](#types)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.types -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
-| **Description**                                      | Table of the different Motion Template Extensions |
-
-### Variables
-
-#### [outputReport](#outputreport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.outputReport <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | Set this to `true` via `_fcp:plugins():outputReport(true)` to enable reporting. |
+| **Description**                                      | Table of the different audio/video/transition/generator types. |
 
 ### Functions
 
@@ -123,6 +86,14 @@ Usage:
 | **Parameters**                                       | <ul><li>fcp - the <code>cp.apple.finalcutpro</code> instance</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [scanAppEffectsPresets](#scanappeffectspresets)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins:scanAppEffectsPresets(locale) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Scans Final Cut Pro Built-in Effects Presets |
+| **Parameters**                                       | <ul><li><code>locale</code>    - The locale to scan for.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [scanned](#scanned)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins.scanned() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -137,6 +108,14 @@ Usage:
 | **Type**                                             | Function |
 | **Description**                                      | Scans for Validated Audio Units, and saves the results to a cache for faster subsequent startup times. |
 | **Parameters**                                       | <ul><li>locale   - the locale to scan in.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [scanUserColorPresets](#scanusercolorpresets)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins:scanUserColorPresets(locale) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Scans Final Cut Pro User Color Presets |
+| **Parameters**                                       | <ul><li><code>locale</code> - The locale to scan for.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [scanUserEffectsPresets](#scanusereffectspresets)
@@ -189,14 +168,6 @@ Usage:
 | **Parameters**                                       | <ul><li><code>locale</code>    - The locale code to search for (e.g. "en"). Defaults to the current FCPX langauge.</li></ul> |
 | **Returns**                                          | <ul><li>A table of the available plugins.</li></ul> |
 
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins:init() -> plugins` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Initialises the module. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The plugins object.</li></ul> |
-
 #### [ofType](#oftype)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins:ofType(type[, locale]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -212,6 +183,7 @@ Usage:
 | **Description**                                      | Registers a plugin with the specified details. |
 | **Parameters**                                       | <ul><li><code>path</code>           - The path to the plugin directory.</li><li><code>type</code>           - The type of plugin</li><li><code>categoryName</code>   - The category name, in the specified locale.</li><li><code>themeName</code>      - The theme name, in the specified locale. May be <code>nil</code> if not in a theme.</li><li><code>pluginName</code>     - The plugin name, in the specified locale.</li><li><code>locale</code>         - The <code>cp.i18n.localeID</code> or string code for same (e.g. "en", "fr", "de")</li></ul> |
 | **Returns**                                          | <ul><li>The plugin object.</li></ul> |
+| **Notes**                                            | <ul><li><code>locale</code> defaults to the current Final Cut Pro locale if nothing is supplied.</li></ul> |
 
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.plugins:reset() -> none` </span>                                                          |

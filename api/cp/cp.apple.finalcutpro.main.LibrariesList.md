@@ -8,6 +8,7 @@ Libraries List Module.
  * [clips](#clips)
  * [clipsUI](#clipsui)
  * [deselectAll](#deselectall)
+ * [indexOfClip](#indexofclip)
  * [selectAll](#selectall)
  * [selectClip](#selectclip)
  * [selectClipAt](#selectclipat)
@@ -53,6 +54,14 @@ Libraries List Module.
 | **Description**                                      | Deselect all clips. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
+
+#### [indexOfClip](#indexofclip)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:indexOfClip(clip) -> number | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the index of a specific clip. |
+| **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to get the index of.</li></ul> |
+| **Returns**                                          | <ul><li>The index or <code>nil</code> if an error occurs.</li></ul> |
 
 #### [selectAll](#selectall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:selectAll([clips]) -> boolean` </span>                                                          |

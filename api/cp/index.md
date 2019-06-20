@@ -45,7 +45,6 @@
 | [cp.apple.finalcutpro.export.GoToPrompt](cp.apple.finalcutpro.export.GoToPrompt.md)                          | Go To Prompt.     |
 | [cp.apple.finalcutpro.export.ReplaceAlert](cp.apple.finalcutpro.export.ReplaceAlert.md)                          | Replace Alert     |
 | [cp.apple.finalcutpro.export.SaveSheet](cp.apple.finalcutpro.export.SaveSheet.md)                          | Save Sheet     |
-| [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)                          | Final Cut Pro IDs.     |
 | [cp.apple.finalcutpro.import.MediaImport](cp.apple.finalcutpro.import.MediaImport.md)                          | Media Import     |
 | [cp.apple.finalcutpro.inspector.audio.AudioComponent](cp.apple.finalcutpro.inspector.audio.AudioComponent.md)                          | The Audio Configuration section of the Audio Inspector.     |
 | [cp.apple.finalcutpro.inspector.audio.AudioConfiguration](cp.apple.finalcutpro.inspector.audio.AudioConfiguration.md)                          | The Audio Configuration section of the Audio Inspector.     |
@@ -67,6 +66,7 @@
 | [cp.apple.finalcutpro.inspector.color.ValueIndicator](cp.apple.finalcutpro.inspector.color.ValueIndicator.md)                          | ValueIndicator Module.     |
 | [cp.apple.finalcutpro.inspector.generator.GeneratorInspector](cp.apple.finalcutpro.inspector.generator.GeneratorInspector.md)                          | Generator Inspector Module. This appears for both Generators and Titles.     |
 | [cp.apple.finalcutpro.inspector.info.InfoInspector](cp.apple.finalcutpro.inspector.info.InfoInspector.md)                          | Video Inspector Module.     |
+| [cp.apple.finalcutpro.inspector.info.InfoProjectInspector](cp.apple.finalcutpro.inspector.info.InfoProjectInspector.md)                          | Info Inspector Module when a Project is selected.     |
 | [cp.apple.finalcutpro.inspector.Inspector](cp.apple.finalcutpro.inspector.Inspector.md)                          | Inspector     |
 | [cp.apple.finalcutpro.inspector.InspectorProperty](cp.apple.finalcutpro.inspector.InspectorProperty.md)                          | `InspectorProperty` contains helper functions for handling common property     |
 | [cp.apple.finalcutpro.inspector.share.ShareInspector](cp.apple.finalcutpro.inspector.share.ShareInspector.md)                          | Share Inspector Module.     |
@@ -78,7 +78,7 @@
 | [cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover](cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.md)                          | Browser Marker Popup.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
 | [cp.apple.finalcutpro.main.FindAndReplaceTitleText](cp.apple.finalcutpro.main.FindAndReplaceTitleText.md)                          | Represents a "Find and Replace Title Text" dialogue box.     |
-| [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window     |
+| [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window Player.     |
 | [cp.apple.finalcutpro.main.GeneratorsBrowser](cp.apple.finalcutpro.main.GeneratorsBrowser.md)                          | Generators Browser Module.     |
 | [cp.apple.finalcutpro.main.KeywordEditor](cp.apple.finalcutpro.main.KeywordEditor.md)                          | Keyword Editor Module.     |
 | [cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts](cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.md)                          | Keyboard Shortcuts     |

@@ -41,6 +41,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [ninjaRightMouseClick](#ninjarightmouseclick)
  * [numberToWord](#numbertoword)
  * [playErrorSound](#playerrorsound)
+ * [readFromFile](#readfromfile)
  * [removeFilenameFromPath](#removefilenamefrompath)
  * [removeFromTable](#removefromtable)
  * [rescale](#rescale)
@@ -48,6 +49,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [rmdir](#rmdir)
  * [round](#round)
  * [safeFilename](#safefilename)
+ * [shiftPressed](#shiftpressed)
  * [spairs](#spairs)
  * [split](#split)
  * [splitOnColumn](#splitoncolumn)
@@ -62,6 +64,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [unescape](#unescape)
  * [urlQueryStringDecode](#urlquerystringdecode)
  * [volumeFormat](#volumeformat)
+ * [writeToFile](#writetofile)
 
 ## API Documentation
 
@@ -355,6 +358,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [readFromFile](#readfromfile)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.readFromFile(path) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Read data from file. |
+| **Parameters**                                       | <ul><li>path - The path of where you want to load the file.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [removeFilenameFromPath](#removefilenamefrompath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.removeFilenameFromPath(string) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -411,6 +422,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>value - a string you want to make safe</li><li>defaultValue - the optional default filename to use if the value is not valid</li></ul> |
 | **Returns**                                          | <ul><li>A string of the safe filename</li></ul> |
 | **Notes**                                            | <ul><li>Returns "filename" is both <code>value</code> and <code>defaultValue</code> are <code>nil</code>.</li></ul> |
+
+#### [shiftPressed](#shiftpressed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.shiftPressed() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Is the Shift Key being pressed? |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the shift key is being pressed, otherwise <code>false</code>.</li></ul> |
 
 #### [spairs](#spairs)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.spairs(t, order) -> function` </span>                                                          |
@@ -524,4 +543,12 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Gives you the file system volume format of a path. |
 | **Parameters**                                       | <ul><li>path - the path you want to check as a string</li></ul> |
 | **Returns**                                          | <ul><li>The <code>NSURLVolumeLocalizedFormatDescriptionKey</code> as a string, otherwise <code>nil</code>.</li></ul> |
+
+#### [writeToFile](#writetofile)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.writeToFile(path, data) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Write data to a file at a given path. |
+| **Parameters**                                       | <ul><li>path - The path to the file you want to write to.</li><li>data - The data to write to the file.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

@@ -12,6 +12,7 @@ Manipulate running applications
 * Functions - API calls offered directly by the extension
  * [applicationForPID](#applicationforpid)
  * [applicationsForBundleID](#applicationsforbundleid)
+ * [defaultAppForUTI](#defaultappforuti)
  * [enableSpotlightForNameSearches](#enablespotlightfornamesearches)
  * [frontmostApplication](#frontmostapplication)
  * [infoForBundleID](#infoforbundleid)
@@ -78,6 +79,14 @@ Manipulate running applications
 | **Description**                                      | Returns any running apps that have the given bundleID. |
 | **Parameters**                                       | <ul><li>bundleID - An OSX application bundle indentifier</li></ul> |
 | **Returns**                                          | <ul><li>A table of zero or more hs.application objects that match the given identifier</li></ul> |
+
+#### [defaultAppForUTI](#defaultappforuti)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.defaultAppForUTI(uti) -> string or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the bundle ID of the default application for a given UTI |
+| **Parameters**                                       | <ul><li>uti - A string containing a UTI</li></ul> |
+| **Returns**                                          | <ul><li>A string containing a bundle ID, or nil if none could be found</li></ul> |
 
 #### [enableSpotlightForNameSearches](#enablespotlightfornamesearches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application.enableSpotlightForNameSearches([state]) -> boolean` </span>                                                          |

@@ -13,6 +13,7 @@ Common Final Cut Pro functions for Tangent
  * [doShortcut](#doshortcut)
  * [doShowParameter](#doshowparameter)
  * [dynamicPopupSliderParameter](#dynamicpopupsliderparameter)
+ * [functionParameter](#functionparameter)
  * [menuParameter](#menuparameter)
  * [popupParameter](#popupparameter)
  * [popupParameters](#popupparameters)
@@ -89,6 +90,14 @@ Common Final Cut Pro functions for Tangent
 | **Type**                                             | Function |
 | **Description**                                      | Sets up a new Popup Slider parameter for the Tangent |
 | **Parameters**                                       | <ul><li>group - The Tangent Group.</li><li>param - The Parameter</li><li>id - The Tangent ID.</li><li>label - The label to be used by the Tangent. This can either be an i18n ID or           a plain string.</li><li>defaultValue - The default value to use when the reset button is pressed.</li></ul> |
+| **Returns**                                          | <ul><li>An updated ID</li></ul> |
+
+#### [functionParameter](#functionparameter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.common.functionParameter(group, id, label, fn) -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Sets up a new Function Parameter for the Tangent. |
+| **Parameters**                                       | <ul><li>group - The Tangent Group.</li><li>id - The Tangent ID.</li><li>label - The label to be used by the Tangent. This can either be an i18n ID or           a plain string.</li><li>path - The list of menu items you'd like to activate as a table.</li></ul> |
 | **Returns**                                          | <ul><li>An updated ID</li></ul> |
 
 #### [menuParameter](#menuparameter)

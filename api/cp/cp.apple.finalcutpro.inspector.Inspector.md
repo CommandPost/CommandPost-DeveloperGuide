@@ -20,6 +20,7 @@ Inspector
  * [isShowing](#isshowing)
  * [labelUI](#labelui)
  * [panelUI](#panelui)
+ * [projectInfo](#projectinfo)
  * [propertiesUI](#propertiesui)
  * [share](#share)
  * [text](#text)
@@ -123,6 +124,12 @@ Inspector
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the central panel `axuielement` for the Inspector. |
+
+#### [projectInfo](#projectinfo)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.projectInfo <cp.apple.finalcutpro.inspector.InfoProjectInspector>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The  [InfoProjectInspector](cp.apple.finalcutpro.inspector.InfoProjectInspector.md). |
 
 #### [propertiesUI](#propertiesui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.Inspector.propertiesUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |

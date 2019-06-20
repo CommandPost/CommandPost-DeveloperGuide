@@ -1,7 +1,9 @@
 # [docs](index.md) » cp.apple.finalcutpro.main.FullScreenWindow
 ---
 
-Full Screen Window
+Full Screen Window Player.
+
+Triggered by the "View > Playback > Play Full Screen" menubar item.
 
 ## API Overview
 * Functions - API calls offered directly by the extension

@@ -20,7 +20,6 @@ Manager for the Batch Export Window.
  * [addHandler](#addhandler)
  * [addPanel](#addpanel)
  * [disabledPanels](#disabledpanels)
- * [focus](#focus)
  * [getHandler](#gethandler)
  * [getLabel](#getlabel)
  * [getWebview](#getwebview)
@@ -108,14 +107,6 @@ Manager for the Batch Export Window.
 | **Description**                                      | Sets which panels are disabled. |
 | **Parameters**                                       | <ul><li>ids - A table of panel ID's to disable</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [focus](#focus)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.focus() -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Puts focus on the Batch Export Window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful or otherwise <code>false</code>.</li></ul> |
 
 #### [getHandler](#gethandler)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.manager.getHandler(id) -> string` </span>                                                          |

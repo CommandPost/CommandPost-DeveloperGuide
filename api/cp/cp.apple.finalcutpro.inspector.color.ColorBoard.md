@@ -10,19 +10,14 @@ Color Board Module.
  * [currentAspect](#currentaspect)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
- * [matchesCurrent](#matchescurrent)
- * [matchesOriginal](#matchesoriginal)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [ColorBoard](#colorboard)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [contentUI](#contentui)
  * [isActive](#isactive)
- * [isAdvanced](#isadvanced)
  * [isShowing](#isshowing)
- * [topToolbarUI](#toptoolbarui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [aspectGroup](#aspectgroup)
- * [backButton](#backbutton)
  * [childUI](#childui)
  * [color](#color)
  * [current](#current)
@@ -62,25 +57,9 @@ Color Board Module.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.matches(element) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Checks to see if a GUI element is the Color Board or not |
+| **Description**                                      | Checks to see if a GUI element is the Color Board. |
 | **Parameters**                                       | <ul><li><code>element</code>    - The element you want to check</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the <code>element</code> is a Color Board otherwise <code>false</code></li></ul> |
-
-#### [matchesCurrent](#matchescurrent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.matchesCurrent(element) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Checks to see if a GUI element is the 'current' (10.4+) Color Board. |
-| **Parameters**                                       | <ul><li><code>element</code>    - The element you want to check</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the <code>element</code> is a 10.4+ Color Board otherwise <code>false</code></li></ul> |
-
-#### [matchesOriginal](#matchesoriginal)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.matchesOriginal(element) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Checks to see if a GUI element is the 'original' (pre-10.4) Color Board. |
-| **Parameters**                                       | <ul><li><code>element</code>    - The element you want to check</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the <code>element</code> is a pre-10.4 Color Board otherwise <code>false</code></li></ul> |
 
 ### Constructors
 
@@ -106,24 +85,11 @@ Color Board Module.
 | **Type**                                             | Field |
 | **Description**                                      | Returns whether or not the Color Board is active |
 
-#### [isAdvanced](#isadvanced)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.isAdvanced <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Checks if the advanced Color Inspector (from 10.4) is supported. |
-
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns whether or not the Color Board is visible. |
-
-#### [topToolbarUI](#toptoolbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.topToolbarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Gets the `hs._asm.axuielement` object for the top toolbar (i.e. where the Back Button is located in Final Cut Pro 10.3) |
-| **Notes**                                            | <ul><li>This object doesn't exist in Final Cut Pro 10.4 as the Color Board is now contained within the Color Inspector</li></ul> |
 
 ### Methods
 
@@ -134,15 +100,6 @@ Color Board Module.
 | **Description**                                      | Returns the `RadioGroup` for the 'aspect' currently being controlled  |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>RadioGroup</code>.</li></ul> |
-
-#### [backButton](#backbutton)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:backButton() -> Button` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns a `Button` to access the 'Back' button, if present. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Button</code> for 'back'.</li></ul> |
-| **Notes**                                            | <ul><li>This no longer exists in FCP 10.4+, so will always be non-functional.</li></ul> |
 
 #### [childUI](#childui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:childUI(id) -> hs._asm.axuielement object` </span>                                                          |

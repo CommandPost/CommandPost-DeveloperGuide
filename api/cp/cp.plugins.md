@@ -154,7 +154,6 @@ These modules will not be accessible to other plugins or to the main application
 * Constants - Useful values which cannot be changed
  * [CACHE](#cache)
  * [SETTINGS_DISABLED](#settings_disabled)
- * [SLOW_PLUGIN_WARNING_THRESHOLD](#slow_plugin_warning_threshold)
 * Variables - Configurable values
  * [IDS](#ids)
 * Functions - API calls offered directly by the extension
@@ -193,12 +192,6 @@ These modules will not be accessible to other plugins or to the main application
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Plugin Disabled Code |
-
-#### [SLOW_PLUGIN_WARNING_THRESHOLD](#slow_plugin_warning_threshold)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.plugins.SLOW_PLUGIN_WARNING_THRESHOLD -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Slow Plugin Warning Threshold |
 
 ### Variables
 

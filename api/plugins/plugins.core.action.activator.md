@@ -40,6 +40,7 @@ will not affect the "yadayada" activator.
  * [incPopularity](#incpopularity)
  * [isDisabledHandler](#isdisabledhandler)
  * [isHiddenChoice](#ishiddenchoice)
+ * [isVisible](#isvisible)
  * [onActivate](#onactivate)
  * [preloadChoices](#preloadchoices)
  * [refresh](#refresh)
@@ -48,6 +49,8 @@ will not affect the "yadayada" activator.
  * [rightClickMain](#rightclickmain)
  * [show](#show)
  * [sortChoices](#sortchoices)
+ * [toggle](#toggle)
+ * [toolbarIcons](#toolbaricons)
  * [unfavoriteChoice](#unfavoritechoice)
  * [unhiddenChoices](#unhiddenchoices)
  * [unhideChoice](#unhidechoice)
@@ -89,12 +92,12 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li>Table of choices that can be displayed by an <code>hs.chooser</code>.</li></ul> |
 
 #### [allowHandlers](#allowhandlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:allowHandlers(...) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:allowHandlers(...) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Specifies that only the handlers with the specified IDs will be active in |
 | **Parameters**                                       | <ul><li><code>...</code>     - The list of Handler ID strings to allow.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the handlers were found.</li></ul> |
+| **Returns**                                          | <ul><li>Self</li></ul> |
 
 #### [disableAllHandlers](#disableallhandlers)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:disableAllHandlers() -> none` </span>                                                          |
@@ -208,6 +211,14 @@ will not affect the "yadayada" activator.
 | **Parameters**                                       | <ul><li><code>id</code>          - The choice ID to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if currently hidden.</li></ul> |
 
+#### [isVisible](#isvisible)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:isVisible() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Checks if the chooser is currently displayed. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, <code>true</code> if the chooser is displayed on screen, <code>false</code> if not.</li></ul> |
+
 #### [onActivate](#onactivate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:onActivate(activateFn) -> activator` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -269,6 +280,22 @@ will not affect the "yadayada" activator.
 | **Description**                                      | Sorts the current set of choices in the activator. It takes into account |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the action executed successfully, otherwise <code>false</code>.</li></ul> |
+
+#### [toggle](#toggle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:toggle() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Shows or hides the chooser. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [toolbarIcons](#toolbaricons)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:toolbarIcons(table) -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets which sections have an icon on the toolbar. |
+| **Parameters**                                       | <ul><li>table - A table containing paths to all the toolbar icons. The key should be           the handler ID, and the value should be the path to the icon.</li></ul> |
+| **Returns**                                          | <ul><li>Self</li></ul> |
 
 #### [unfavoriteChoice](#unfavoritechoice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:unfavoriteChoice(id) -> boolean` </span>                                                          |

@@ -6,7 +6,6 @@ Text to Speech Plugin.
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [copyToMediaFolder](#copytomediafolder)
- * [DELETE_DELAY](#delete_delay)
 * Variables - Configurable values
  * [addTextToNotesFieldAfterImport](#addtexttonotesfieldafterimport)
  * [createRoleForVoice](#createroleforvoice)
@@ -36,12 +35,6 @@ Text to Speech Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Copy to Media Folder Preferences Key. |
-
-#### [DELETE_DELAY](#delete_delay)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.DELETE_DELAY` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | How long before a file is deleted in seconds. |
 
 ### Variables
 

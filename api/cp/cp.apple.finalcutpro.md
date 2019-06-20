@@ -65,7 +65,6 @@ end
  * [cp.apple.finalcutpro.cmd](cp.apple.finalcutpro.cmd.md)
  * [cp.apple.finalcutpro.content](cp.apple.finalcutpro.content.md)
  * [cp.apple.finalcutpro.export](cp.apple.finalcutpro.export.md)
- * [cp.apple.finalcutpro.ids](cp.apple.finalcutpro.ids.md)
  * [cp.apple.finalcutpro.import](cp.apple.finalcutpro.import.md)
  * [cp.apple.finalcutpro.inspector](cp.apple.finalcutpro.inspector.md)
  * [cp.apple.finalcutpro.main](cp.apple.finalcutpro.main.md)

@@ -12,6 +12,7 @@ Notes:
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [attachedToolbar](#attachedtoolbar)
  * [bgDark](#bgdark)
  * [cancel](#cancel)
  * [choices](#choices)
@@ -57,6 +58,15 @@ Notes:
 | **Notes**                                            | <ul><li>As of macOS Sierra and later, if you want a <code>hs.chooser</code> object to appear above full-screen windows you must hide the Hammerspoon Dock icon first using: <code>hs.dockicon.hide()</code></li></ul> |
 
 ### Methods
+
+#### [attachedToolbar](#attachedtoolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:attachedToolbar([toolbar | nil]) -> hs.chooser object | currentValue` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Get or attach/detach a toolbar to/from the chooser. |
+| **Parameters**                                       | <ul><li><code>toolbar</code> - if an <code>hs.webview.toolbar</code> object is specified, it will be attached to the chooser.  If an explicit nil is specified, the current toolbar will be removed from the chooser.</li></ul> |
+| **Returns**                                          | <ul><li>if a toolbarObject or explicit nil is specified, returns the hs.chooser object; otherwise returns the current toolbarObject or nil, if no toolbar is attached to the chooser.</li></ul> |
+| **Notes**                                            | <ul><li>this method is a convenience wrapper for the <code>hs.webview.toolbar.attachToolbar</code> function.</li></ul> |
 
 #### [bgDark](#bgdark)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:bgDark([beDark]) -> hs.chooser object or boolean` </span>                                                          |

@@ -45,6 +45,7 @@ Notes:
  * [frame](#frame)
  * [id](#id)
  * [isFullScreen](#isfullscreen)
+ * [isMaximizable](#ismaximizable)
  * [isMinimized](#isminimized)
  * [isStandard](#isstandard)
  * [isVisible](#isvisible)
@@ -307,6 +308,13 @@ Notes:
 | **Description**                                      | Gets the fullscreen state of the window |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>True if the window is fullscreen, false if not. Nil if an error occurred</li></ul> |
+
+#### [isMaximizable](#ismaximizable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:isMaximizable() -> bool or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Determines if a window is maximizable |
+| **Returns**                                          | <ul><li>True if the window is maximizable, False if it isn't, or nil if an error occurred</li></ul> |
 
 #### [isMinimized](#isminimized)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:isMinimized() -> bool` </span>                                                          |

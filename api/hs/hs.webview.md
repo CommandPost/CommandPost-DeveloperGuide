@@ -27,6 +27,8 @@ Any suggestions or updates to the code to address any of these or other limitati
 * Constants - Useful values which cannot be changed
  * [certificateOIDs](#certificateoids)
  * [windowMasks](#windowmasks)
+* Functions - API calls offered directly by the extension
+ * [titleVisibility](#titlevisibility)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
  * [newBrowser](#newbrowser)
@@ -126,6 +128,17 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Type**                                             | Constant |
 | **Description**                                      | A table containing valid masks for the webview window. |
 | **Notes**                                            | <ul><li>The Maximize button in the window title is enabled when Resizable is set.</li><li>The Close, Minimize, and Maximize buttons are only visible when the Window is also Titled.</li></ul> |
+
+### Functions
+
+#### [titleVisibility](#titlevisibility)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:titleVisibility([state]) -> webviewObject | string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get or set whether or not the title text appears in the webview window. |
+| **Parameters**                                       | <ul><li><code>state</code> - an optional string containing the text "visible" or "hidden", specifying whether or not the webview's title text appears when webview's window style includes "titled".</li></ul> |
+| **Returns**                                          | <ul><li>if a value is provided, returns the webview object; otherwise returns the current value.</li></ul> |
+| **Notes**                                            | <ul><li>See also <a href="#windowStyle">hs.webview:windowStyle</a> and <a href="#windowMasks">hs.webview.windowMasks</a>.</li></ul> |
 
 ### Constructors
 

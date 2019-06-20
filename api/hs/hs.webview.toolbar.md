@@ -41,12 +41,13 @@ Notes:
  * [systemToolbarItems](#systemtoolbaritems)
 * Functions - API calls offered directly by the extension
  * [attachToolbar](#attachtoolbar)
+ * [inTitleBar](#intitlebar)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [addItems](#additems)
  * [allowedItems](#alloweditems)
- * [autossaves](#autossaves)
+ * [autosaves](#autosaves)
  * [canCustomize](#cancustomize)
  * [copy](#copy)
  * [customizePanel](#customizepanel)
@@ -93,10 +94,19 @@ Notes:
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar.attachToolbar([obj1], [obj2]) -> obj1` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Get or attach/detach a toolbar to the console or webview. |
-| **Parameters**                                       | <ul><li>if no arguments are present, this function returns the current toolbarObject for the Hammerspoon console, or nil if one is not attached.</li><li>if one argument is provided and it is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the Hammerspoon console.</li><li>if one argument is provided and it is a webviewObject, this function will return the current toolbarObject for the webview, or nil if one is not attached.</li><li>if two arguments are provided and the first is a webviewObject and the second is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the webview.</li></ul> |
-| **Returns**                                          | <ul><li>if the function is used to attach/detach a toolbar, then the first object provided will be returned ; if this function is used to get the current toolbar object for a webview or the console, then the toolbarObject or nil will be returned.</li></ul> |
-| **Notes**                                            | <ul><li>This function is not expected to be used directly (though it can be) -- it is added to the <code>hs.webview</code> object metatable so that it may be invoked as <code>hs.webview:attachedToolbar([toolbarObject | nil])</code> and to the <code>hs.console</code> module so that it may be invoked as <code>hs.console.toolbar([toolbarObject | nil])</code>.</li></ul> |
+| **Description**                                      | Get or attach/detach a toolbar to the webview, chooser, or console. |
+| **Parameters**                                       | <ul><li>if no arguments are present, this function returns the current toolbarObject for the Hammerspoon console, or nil if one is not attached.</li><li>if one argument is provided and it is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the Hammerspoon console.</li><li>if one argument is provided and it is an hs.webview or hs.chooser object, this function will return the current toolbarObject for the object, or nil if one is not attached.</li><li>if two arguments are provided and the first is an hs.webview or hs.chooser object and the second is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the object.</li></ul> |
+| **Returns**                                          | <ul><li>if the function is used to attach/detach a toolbar, then the first object provided (the target) will be returned ; if this function is used to get the current toolbar object for a webview, chooser, or console, then the toolbarObject or nil will be returned.</li></ul> |
+| **Notes**                                            | <ul><li>This function is not expected to be used directly (though it can be) -- it is added to the <code>hs.webview</code> and <code>hs.chooser</code> object metatables so that it may be invoked as <code>hs.webview:attachedToolbar([toolbarObject | nil])</code>/<code>hs.chooser:attachedToolbar([toolbarObject | nil])</code> and to the <code>hs.console</code> module so that it may be invoked as <code>hs.console.toolbar([toolbarObject | nil])</code>.</li></ul> |
+
+#### [inTitleBar](#intitlebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar:inTitleBar([state]) -> toolbarObject | boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get or set whether or not the toolbar appears in the containing window's titlebar, similar to Safari. |
+| **Parameters**                                       | <ul><li><code>state</code> - an optional boolean specifying whether or not the toolbar should appear in the window's titlebar.</li></ul> |
+| **Returns**                                          | <ul><li>if a parameter is specified, returns the toolbar object, otherwise the current value.</li></ul> |
+| **Notes**                                            | <ul><li>When this value is true, the toolbar, when visible, will appear in the window's title bar similar to the toolbar as seen in applications like Safari.  In this state, the toolbar will set the display of the toolbar items to icons without labels, ignoring changes made with <a href="#displayMode">hs.webview.toolbar:displayMode</a>.</li></ul> |
 
 ### Constructors
 
@@ -104,10 +114,10 @@ Notes:
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar.new(toolbarName, [toolbarTable]) -> toolbarObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
-| **Description**                                      | Creates a new toolbar for a webview or the console. |
+| **Description**                                      | Creates a new toolbar for a webview, chooser, or the console. |
 | **Parameters**                                       | <ul><li>toolbarName  - a string specifying the name for this toolbar</li><li>toolbarTable - an optional table describing possible items for the toolbar</li></ul> |
 | **Returns**                                          | <ul><li>a toolbarObject</li></ul> |
-| **Notes**                                            | <ul><li>Toolbar names must be unique, but a toolbar may be copied with <a href="#copy">hs.webview.toolbar:copy</a> if you wish to attach it to multiple windows (webview or console).</li><li>See <a href="#addItems">hs.webview.toolbar:addItems</a> for a description of the format for <code>toolbarTable</code></li></ul> |
+| **Notes**                                            | <ul><li>Toolbar names must be unique, but a toolbar may be copied with <a href="#copy">hs.webview.toolbar:copy</a> if you wish to attach it to multiple windows (webview, chooser, or console).</li><li>See <a href="#addItems">hs.webview.toolbar:addItems</a> for a description of the format for <code>toolbarTable</code></li></ul> |
 
 ### Methods
 
@@ -128,8 +138,8 @@ Notes:
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>a table as an array of all toolbar item identifiers defined for this toolbar.  See also <a href="#items">hs.webview.toolbar:items</a> and <a href="#visibleItems">hs.webview.toolbar:visibleItems</a>.</li></ul> |
 
-#### [autossaves](#autossaves)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar:autossaves([bool]) -> toolbarObject | bool` </span>                                                          |
+#### [autosaves](#autosaves)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar:autosaves([bool]) -> toolbarObject | bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get or set whether or not the toolbar autosaves changes made to the toolbar. |
@@ -152,7 +162,7 @@ Notes:
 | **Type**                                             | Method |
 | **Description**                                      | Returns a copy of the toolbar object. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>a copy of the toolbar which can be attached to another window (webview or console).</li></ul> |
+| **Returns**                                          | <ul><li>a copy of the toolbar which can be attached to another window (webview, chooser, or console).</li></ul> |
 
 #### [customizePanel](#customizepanel)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar:customizePanel() -> toolbarObject` </span>                                                          |

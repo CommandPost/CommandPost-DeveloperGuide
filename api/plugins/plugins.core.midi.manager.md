@@ -38,7 +38,6 @@ MIDI Manager Plugin.
  * [updateAction](#updateaction)
  * [virtualDevices](#virtualdevices)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [buttons](#buttons)
  * [enabled](#enabled)
  * [numberOfMidiDevices](#numberofmididevices)
 
@@ -245,12 +244,6 @@ MIDI Manager Plugin.
 | **Returns**                                          | <ul><li>A table of Virtual MIDI Source Names.</li></ul> |
 
 ### Fields
-
-#### [buttons](#buttons)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.buttons <cp.prop: table>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Contains all the saved MIDI items |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.enabled <cp.prop: boolean>` </span>                                                          |

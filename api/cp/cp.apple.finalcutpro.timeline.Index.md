@@ -9,6 +9,7 @@ Timeline Index Module.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Index](#index)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [activeTab](#activetab)
  * [captions](#captions)
  * [clips](#clips)
  * [doHide](#dohide)
@@ -43,6 +44,14 @@ Timeline Index Module.
 | **Returns**                                          | <ul><li>A new <code>Index</code> instance.</li></ul> |
 
 ### Methods
+
+#### [activeTab](#activetab)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:activeTab() -> object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the active tab. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The active tab or <code>nil</code>.</li></ul> |
 
 #### [captions](#captions)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:captions() -> cp.apple.finalcutpro.timeline.IndexCaptions` </span>                                                          |
@@ -94,6 +103,7 @@ Timeline Index Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a `table` containing the layout configuration for this class. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The layout configuration <code>table</code>.</li></ul> |
 
 #### [search](#search)

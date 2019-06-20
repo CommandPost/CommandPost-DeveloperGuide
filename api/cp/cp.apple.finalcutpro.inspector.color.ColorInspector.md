@@ -3,8 +3,6 @@
 
 Color Inspector Module.
 
-Extends [Element](cp.ui.Element.md).
-
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [CORRECTION_TYPES](#correction_types)
@@ -12,7 +10,6 @@ Extends [Element](cp.ui.Element.md).
  * [matches](#matches)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [correctorUI](#correctorui)
- * [isAdvanced](#isadvanced)
  * [topBarUI](#topbarui)
  * [value](#value)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -57,12 +54,6 @@ Extends [Element](cp.ui.Element.md).
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `hs._asm.axuielement` object representing the currently-selected corrector panel. |
-
-#### [isAdvanced](#isadvanced)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.isAdvanced <cp.prop: boolean; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Is the Color Inspector the advanced version that was added in 10.4? |
 
 #### [topBarUI](#topbarui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorInspector.topBarUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |

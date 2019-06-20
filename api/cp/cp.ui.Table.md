@@ -36,6 +36,7 @@ Represents an AXTable in the Apple Accessibility UX API.
  * [selectRowAt](#selectrowat)
  * [showRow](#showrow)
  * [showRowAt](#showrowat)
+ * [toCSV](#tocsv)
  * [topRowsUI](#toprowsui)
  * [uncached](#uncached)
  * [viewFrame](#viewframe)
@@ -257,6 +258,14 @@ Represents an AXTable in the Apple Accessibility UX API.
 | **Type**                                             | Method |
 | **Description**                                      | Shows a row at a specific index. |
 | **Parameters**                                       | <ul><li>index - The index of the row you wish to show.</li></ul> |
+
+#### [toCSV](#tocsv)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:toCSV() -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the contents of the table and formats it as a CSV string. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string or <code>nil</code> if an error occurs.</li></ul> |
 
 #### [topRowsUI](#toprowsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:topRowsUI(filterFn) -> table of axuielements | nil` </span>                                                          |
