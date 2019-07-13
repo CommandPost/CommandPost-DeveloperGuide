@@ -4,10 +4,48 @@
 Feedback Form.
 
 ## API Overview
+* Variables - Configurable values
+ * [defaultHeight](#defaultheight)
+ * [defaultTitle](#defaulttitle)
+ * [defaultWidth](#defaultwidth)
+ * [position](#position)
+ * [quitOnComplete](#quitoncomplete)
 * Functions - API calls offered directly by the extension
  * [showFeedback](#showfeedback)
 
 ## API Documentation
+
+### Variables
+
+#### [defaultHeight](#defaultheight)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.feedback.defaultHeight -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Default webview height. |
+
+#### [defaultTitle](#defaulttitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.feedback.defaultTitle -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Default webview title. |
+
+#### [defaultWidth](#defaultwidth)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.feedback.defaultWidth -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Default webview width. |
+
+#### [position](#position)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.feedback.position -> prop` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Webview Position. |
+
+#### [quitOnComplete](#quitoncomplete)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.feedback.quitOnComplete -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Quit on complete? |
 
 ### Functions
 

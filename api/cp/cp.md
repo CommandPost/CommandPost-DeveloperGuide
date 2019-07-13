@@ -20,6 +20,7 @@ Core CommandPost functionality.
  * [cp.disk](cp.disk.md)
  * [cp.docs](cp.docs.md)
  * [cp.feedback](cp.feedback.md)
+ * [cp.highland2](cp.highland2.md)
  * [cp.i18n](cp.i18n.md)
  * [cp.idle](cp.idle.md)
  * [cp.ids](cp.ids.md)

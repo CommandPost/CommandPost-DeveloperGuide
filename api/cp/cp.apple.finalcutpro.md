@@ -82,7 +82,6 @@ end
  * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
  * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
  * [BLEND_MODES](#blend_modes)
- * [BUNDLE_ID](#bundle_id)
  * [CROP_TYPES](#crop_types)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
  * [EVENT_DESCRIPTION_PATH](#event_description_path)
@@ -215,12 +214,6 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Blend Modes |
-
-#### [BUNDLE_ID](#bundle_id)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.BUNDLE_ID -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Final Cut Pro's Bundle ID as a `semver`. |
 
 #### [CROP_TYPES](#crop_types)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.CROP_TYPES -> table` </span>                                                          |

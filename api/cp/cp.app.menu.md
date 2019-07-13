@@ -8,6 +8,7 @@ trigger menu items.
 * Constants - Useful values which cannot be changed
  * [NIB_FILE](#nib_file)
  * [ROLE](#role)
+ * [STORYBOARD_NAME](#storyboard_name)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -38,6 +39,12 @@ trigger menu items.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | The menu role |
+
+#### [STORYBOARD_NAME](#storyboard_name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu.STORYBOARD_NAME -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Main Storyboard name. |
 
 ### Constructors
 

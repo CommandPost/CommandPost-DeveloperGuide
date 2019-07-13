@@ -288,6 +288,8 @@ So, a little bit tricky. The general rule of thumb is:
  * [TRUE](#true)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [mainWindow](#mainwindow)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [ABOVE](#above)
  * [AND](#and)
@@ -434,6 +436,14 @@ So, a little bit tricky. The general rule of thumb is:
 | **Parameters**                                       | <ul><li><code>getFn</code>      - The function that will get called to retrieve the current value.</li><li><code>setFn</code>      - (optional) The function that will get called to set the new value.</li><li><code>cloneFn</code>        - (optional) The function that will get called when cloning the property.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>cp.prop</code> instance.</li></ul> |
 | **Notes**                                            | <ul><li><code>getFn</code> signature: <code>function([owner]) -&gt; anything</code></li><li><code>owner</code>     - If this is attached as a method, the owner table is passed in.</li><li><code>setFn</code> signature: <code>function(newValue[, owner])</code></li><li><code>newValue</code>  - The new value to store.</li><li><code>owner</code>     - If this is attached as a method, the owner table is passed in.</li><li><code>cloneFn</code> signature: <code>function(prop) -&gt; new cp.prop</code></li><li>This can also be executed by calling the module directly. E.g. <code>require('cp.prop')(myGetFunction)</code></li></ul> |
+
+### Fields
+
+#### [mainWindow](#mainwindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.prop.mainWindow <cp.prop: cp.ui.Window; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The main [Window](cp.ui.Window.md), or `nil` if none is available. |
 
 ### Methods
 

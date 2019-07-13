@@ -36,6 +36,9 @@
 | [plugins.core.helpandsupport.feedback](plugins.core.helpandsupport.feedback.md)                          | Feedback Menu Item.     |
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
 | [plugins.core.language](plugins.core.language.md)                          | Language Module.     |
+| [plugins.core.loupedeck.banks](plugins.core.loupedeck.banks.md)                          | Loupedeck+ Bank Actions.     |
+| [plugins.core.loupedeck.prefs](plugins.core.loupedeck.prefs.md)                          | Loupedeck Preferences Panel     |
+| [plugins.core.loupedeck.prefs.default](plugins.core.loupedeck.prefs.default.md)                          | Default MIDI Controls.     |
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
 | [plugins.core.midi.controls.banks](plugins.core.midi.controls.banks.md)                          | MIDI Control Bank Actions.     |
@@ -143,6 +146,7 @@
 | [plugins.finalcutpro.midi.controls.colorwheels](plugins.finalcutpro.midi.controls.colorwheels.md)                          | Final Cut Pro MIDI Color Controls.     |
 | [plugins.finalcutpro.midi.controls.controlui.absolute](plugins.finalcutpro.midi.controls.controlui.absolute.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |
 | [plugins.finalcutpro.midi.controls.controlui.relative](plugins.finalcutpro.midi.controls.controlui.relative.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |
+| [plugins.finalcutpro.midi.controls.timeline](plugins.finalcutpro.midi.controls.timeline.md)                          | Final Cut Pro MIDI Timeline Controls.     |
 | [plugins.finalcutpro.midi.controls.video](plugins.finalcutpro.midi.controls.video.md)                          | Final Cut Pro MIDI Video Inspector Controls.     |
 | [plugins.finalcutpro.midi.controls.zoom](plugins.finalcutpro.midi.controls.zoom.md)                          | Final Cut Pro MIDI Zoom Control.     |
 | [plugins.finalcutpro.midi.manager](plugins.finalcutpro.midi.manager.md)                          | MIDI Manager Plugin for Final Cut Pro.     |

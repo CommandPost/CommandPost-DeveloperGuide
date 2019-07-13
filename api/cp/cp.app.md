@@ -25,9 +25,11 @@ This extension differs from the `hs.application` extension in several ways:
  * [forBundleID](#forbundleid)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [baseLocale](#baselocale)
+ * [baseResourcesPath](#baseresourcespath)
  * [currentLocale](#currentlocale)
  * [description](#description)
  * [displayName](#displayname)
+ * [focusedWindow](#focusedwindow)
  * [focusedWindowUI](#focusedwindowui)
  * [frontmost](#frontmost)
  * [hsApplication](#hsapplication)
@@ -35,17 +37,20 @@ This extension differs from the `hs.application` extension in several ways:
  * [installed](#installed)
  * [isPlaying](#isplaying)
  * [isPlaying](#isplaying)
+ * [localeResourcesPath](#localeresourcespath)
  * [mainWindowUI](#mainwindowui)
  * [modalDialogOpen](#modaldialogopen)
  * [path](#path)
  * [pid](#pid)
  * [preferences](#preferences)
+ * [resourcesPath](#resourcespath)
  * [running](#running)
  * [showing](#showing)
  * [supportedLocales](#supportedlocales)
  * [UI](#ui)
  * [version](#version)
  * [versionString](#versionstring)
+ * [windows](#windows)
  * [windowsUI](#windowsui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [bestSupportedLocale](#bestsupportedlocale)
@@ -61,6 +66,7 @@ This extension differs from the `hs.application` extension in several ways:
  * [menu](#menu)
  * [notifier](#notifier)
  * [quit](#quit)
+ * [registerWindowType](#registerwindowtype)
  * [searchResources](#searchresources)
  * [show](#show)
  * [update](#update)
@@ -119,6 +125,12 @@ This extension differs from the `hs.application` extension in several ways:
 | **Type**                                             | Field |
 | **Description**                                      | Returns the [localeID](cp.i18n.localeID.md) of the development region. This is the 'Base' locale for I18N. |
 
+#### [baseResourcesPath](#baseresourcespath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.baseResourcesPath <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A [prop](cp.prop.md) for the file path to the `Content/Resources/Base.lproj` folder |
+
 #### [currentLocale](#currentlocale)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.currentLocale <cp.prop: cp.i18n.localeID; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -136,6 +148,12 @@ This extension differs from the `hs.application` extension in several ways:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The application display name as a string. |
+
+#### [focusedWindow](#focusedwindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.focusedWindow <cp.prop: cp.ui.Window; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The currently-focused [Window](cp.ui.Window.md). This may be a subclass of `Window` if |
 
 #### [focusedWindowUI](#focusedwindowui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.focusedWindowUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
@@ -179,6 +197,12 @@ This extension differs from the `hs.application` extension in several ways:
 | **Type**                                             | Field |
 | **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |
 
+#### [localeResourcesPath](#localeresourcespath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.localeResourcesPath <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A [prop](cp.prop.md) for the file path to the locale-specific resources |
+
 #### [mainWindowUI](#mainwindowui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.mainWindowUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -208,6 +232,12 @@ This extension differs from the `hs.application` extension in several ways:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The current [preferences](cp.app.prefs.md) for the application. |
+
+#### [resourcesPath](#resourcespath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.resourcesPath <cp.prop: string; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A [prop](cp.prop.md) for the file path to the `Contents/Resources` folder inside the app. |
 
 #### [running](#running)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.running <cp.prop: boolean; read-only; live>` </span>                                                          |
@@ -247,8 +277,14 @@ This extension differs from the `hs.application` extension in several ways:
 | **Description**                                      | The application version as a `string`. |
 | **Notes**                                            | <ul><li>If the application is running it will get the version of the active application as a string, otherwise, it will use <code>hs.application.infoForBundleID()</code> to find the version.</li></ul> |
 
+#### [windows](#windows)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.windows <cp.prop: table of cp.ui.Window; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns a list containing the [Window](cp.ui.Window.md) instances currently available. |
+
 #### [windowsUI](#windowsui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.windowsUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.windowsUI <cp.prop: table of hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the UI containing the list of windows in the app. |
@@ -361,6 +397,15 @@ This extension differs from the `hs.application` extension in several ways:
 | **Description**                                      | Asks the application to quit, if it's running. The app may not have actually quit after this |
 | **Parameters**                                       | <ul><li><code>waitSeconds</code>    - If povided, the number of seconds to wait until the quit completes. If <code>nil</code>, it will return immediately.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul> |
+
+#### [registerWindowType](#registerwindowtype)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:registerWindowType(windowClass[, options]) -> cp.app` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Registers the specified class as one which will be used when accessing a specific `AXWindow` instance. |
+| **Parameters**                                       | <ul><li>windowClass       - The class that will be used to create the window. It should be a subclass of <a href="cp.ui.Window.md">Window</a></li><li>options           - (optional) if provided, it will be passed the <code>hs.asm.axuielement</code> being wrapped, and should return <code>true</code> or <code>false</code>.</li></ul> |
+| **Returns**                                          | <ul><li>the same instance of the <code>cp.app</code> for further configuration.</li></ul> |
+| **Notes**                                            | <ul><li>Options:<ul><li><code>matches</code>: a <code>function</code> that will receive the AXWindow instance and should return <code>true</code> or <code>false</code>.</li><li><code>persistent</code>: if set to <code>true</code>, the Window instance will be cached and checked when windows appear and disappear.</li></ul></li></ul> |
 
 #### [searchResources](#searchresources)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:searchResources(value) -> hs.task` </span>                                                          |

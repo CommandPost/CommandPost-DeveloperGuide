@@ -57,6 +57,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [stringMaxLength](#stringmaxlength)
  * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
+ * [tableFilter](#tablefilter)
  * [tableMatch](#tablematch)
  * [toRegionalNumber](#toregionalnumber)
  * [toRegionalNumberString](#toregionalnumberstring)
@@ -487,6 +488,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Returns how many items are in a table. |
 | **Parameters**                                       | <ul><li>table - The table you want to count.</li></ul> |
 | **Returns**                                          | <ul><li>The number of items in the table.</li></ul> |
+
+#### [tableFilter](#tablefilter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableFilter(t, matchFn) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Efficiently filters out all elements from the table `t` which to not match the `matchFn`. |
+| **Parameters**                                       | <ul><li>t          - The <code>table</code> to filter.</li><li>matchFn    - A function which will receive the table, the current index, and the target index.</li></ul> |
+| **Returns**                                          | <ul><li>The same table, updated.</li></ul> |
 
 #### [tableMatch](#tablematch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableMatch(t1, t2[, ignoreMetatable]) -> boolean` </span>                                                          |

@@ -61,6 +61,7 @@
 | [hs.grid](hs.grid.md)                          | Move/resize windows within a grid     |
 | [hs.hash](hs.hash.md)                          | Various hashing algorithms     |
 | [hs.hid](hs.hid.md)                          | HID interface for Hammerspoon, controls and queries caps lock state     |
+| [hs.hid.led](hs.hid.led.md)                          | HID LED interface for Hammerspoon, controls the state of keyboard LEDs     |
 | [hs.hints](hs.hints.md)                          | Switch focus with a transient per-application keyboard shortcut     |
 | [hs.host](hs.host.md)                          | Inspect information about the machine Hammerspoon is running on     |
 | [hs.host.locale](hs.host.locale.md)                          | Retrieve information about the user's Language and Region settings.     |

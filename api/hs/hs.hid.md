@@ -5,6 +5,9 @@ HID interface for Hammerspoon, controls and queries caps lock state
 
 Portions sourced from (https://discussions.apple.com/thread/7094207).
 
+## Submodules
+ * [hs.hid.led](hs.hid.led.md)
+
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [get](#get)

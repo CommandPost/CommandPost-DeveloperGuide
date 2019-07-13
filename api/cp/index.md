@@ -151,6 +151,10 @@
 | [cp.disk](cp.disk.md)                          | Provides provides details about disk devices attached to the system.     |
 | [cp.docs](cp.docs.md)                          | Documentation Tools.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
+| [cp.highland2](cp.highland2.md)                          | Highland 2     |
+| [cp.highland2.app](cp.highland2.app.md)                          | The `cp.app` for Highland 2.     |
+| [cp.highland2.Document](cp.highland2.Document.md)                          | Highland 2 Document.     |
+| [cp.highland2.Sidebar](cp.highland2.Sidebar.md)                          | Represents the sidebar for a document opened in Highland.     |
 | [cp.i18n.language](cp.i18n.language.md)                          | Provides the set of ISO 693-1/2/3 language codes and names.     |
 | [cp.i18n.languageID](cp.i18n.languageID.md)                          | As per [Apple's documentation](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6),     |
 | [cp.i18n.localeID](cp.i18n.localeID.md)                          | As per [Apple's documentation](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6),     |
