@@ -26,6 +26,12 @@ Once `brew` is installed, `greadlink` can be installed by executing the followin
 
 `brew install coreutils`
 
+### jq
+
+Once `brew` is installed, `jq` can be installed by executing the following command into Terminal:
+
+`brew install jq`
+
 ### pip
 [pip](https://packaging.python.org/installing/#install-pip-setuptools-and-wheel) can be installed by downloading [get-pip.py](https://bootstrap.pypa.io/get-pip.py) to your desktop, then executing the following command in Terminal:
 
