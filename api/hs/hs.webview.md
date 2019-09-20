@@ -60,6 +60,7 @@ Any suggestions or updates to the code to address any of these or other limitati
  * [hswindow](#hswindow)
  * [html](#html)
  * [isOnlySecureContent](#isonlysecurecontent)
+ * [isVisible](#isvisible)
  * [level](#level)
  * [loading](#loading)
  * [magnification](#magnification)
@@ -390,6 +391,14 @@ Any suggestions or updates to the code to address any of these or other limitati
 | **Description**                                      | Returns a boolean value indicating if all content current displayed in the webview was loaded over securely encrypted connections. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>true if all content current displayed in the web view was loaded over securely encrypted connections; otherwise false.</li></ul> |
+
+#### [isVisible](#isvisible)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:isVisible() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Checks to see if a webview window is visible or not. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the webview window is visible, otherwise <code>false</code></li></ul> |
 
 #### [level](#level)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:level([theLevel]) -> drawingObject | currentValue` </span>                                                          |

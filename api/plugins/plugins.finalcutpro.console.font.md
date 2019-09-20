@@ -5,8 +5,6 @@ Final Cut Pro Font Console
 
 ## API Overview
 * Variables - Configurable values
- * [fontCount](#fontcount)
- * [fontLookup](#fontlookup)
  * [processedFonts](#processedfonts)
 * Functions - API calls offered directly by the extension
  * [onActivate](#onactivate)
@@ -15,18 +13,6 @@ Final Cut Pro Font Console
 ## API Documentation
 
 ### Variables
-
-#### [fontCount](#fontcount)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.fontCount -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | The number of fonts available. |
-
-#### [fontLookup](#fontlookup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.fontLookup -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | Provides a lookup between Font Names and their position in the Final Cut Pro dropdown menu. |
 
 #### [processedFonts](#processedfonts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.console.font.processedFonts -> table` </span>                                                          |

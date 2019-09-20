@@ -21,13 +21,13 @@ This module is produced by the Kepler Project under the name "Lua File System"
  * [fileUTI](#fileuti)
  * [fileUTIalternate](#fileutialternate)
  * [getFinderComments](#getfindercomments)
- * [getHomeDirectoryAsBookmark](#gethomedirectoryasbookmark)
- * [getPathFromBookmark](#getpathfrombookmark)
  * [link](#link)
  * [lock](#lock)
  * [lockDir](#lockdir)
  * [mkdir](#mkdir)
+ * [pathFromBookmark](#pathfrombookmark)
  * [pathToAbsolute](#pathtoabsolute)
+ * [pathToBookmark](#pathtobookmark)
  * [rmdir](#rmdir)
  * [setFinderComments](#setfindercomments)
  * [symlinkAttributes](#symlinkattributes)
@@ -110,24 +110,6 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>a string containing the Finder comments for the file or directory specified.  If no comments have been set for the file, returns an empty string.  If an error occurs, most commonly an invalid path, this function will throw a Lua error.</li></ul> |
 | **Notes**                                            | <ul><li>This function uses <code>hs.osascript</code> to access the file comments through AppleScript</li></ul> |
 
-#### [getHomeDirectoryAsBookmark](#gethomedirectoryasbookmark)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.getHomeDirectoryAsBookmark() -> data` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns the Home Directory path as binary encoded bookmark data. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Bookmark data.</li></ul> |
-| **Notes**                                            | <ul><li>This is primarily just intended for testing <code>hs.fs.getPathFromBookmark</code>.</li></ul> |
-
-#### [getPathFromBookmark](#getpathfrombookmark)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.getPathFromBookmark(data) -> string | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets the file path from a binary encoded bookmark. |
-| **Parameters**                                       | <ul><li>data - The binary encoded Bookmark.</li></ul> |
-| **Returns**                                          | <ul><li>A string containing the path to the Bookmark URL or <code>nil</code> if an error occurs.</li></ul> |
-| **Notes**                                            | <ul><li>A bookmark provides a persistent reference to a file-system resource.   When you resolve a bookmark, you obtain a URL to the resource’s current location.   A bookmark’s association with a file-system resource (typically a file or folder)   usually continues to work if the user moves or renames the resource, or if the   user relaunches your app or restarts the system.</li></ul> |
-
 #### [link](#link)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.link(old, new[, symlink]) -> true or (nil,error)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -161,6 +143,15 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Parameters**                                       | <ul><li>dirname - A string containing the path of a directory to create</li></ul> |
 | **Returns**                                          | <ul><li>True if the directory was created, otherwise nil and an error string</li></ul> |
 
+#### [pathFromBookmark](#pathfrombookmark)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.pathFromBookmark(data) -> string | nil, string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the file path from a binary encoded bookmark. |
+| **Parameters**                                       | <ul><li>data - The binary encoded Bookmark.</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the path to the Bookmark URL or <code>nil</code> if an error occurs.</li><li>An error message if an error occurs.</li></ul> |
+| **Notes**                                            | <ul><li>A bookmark provides a persistent reference to a file-system resource.   When you resolve a bookmark, you obtain a URL to the resource’s current location.   A bookmark’s association with a file-system resource (typically a file or folder)   usually continues to work if the user moves or renames the resource, or if the   user relaunches your app or restarts the system.</li><li>No volumes are mounted during the resolution of the bookmark data.</li></ul> |
+
 #### [pathToAbsolute](#pathtoabsolute)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.pathToAbsolute(filepath) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -168,6 +159,14 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Description**                                      | Gets the absolute path of a given path |
 | **Parameters**                                       | <ul><li>filepath - Any kind of file or directory path, be it relative or not</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the absolute path of <code>filepath</code> (i.e. one that doesn't intolve <code>.</code>, <code>..</code> or symlinks)</li><li>Note that symlinks will be resolved to their target file</li></ul> |
+
+#### [pathToBookmark](#pathtobookmark)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.pathToBookmark(path) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the path as binary encoded bookmark data. |
+| **Parameters**                                       | <ul><li>path - The path to encode</li></ul> |
+| **Returns**                                          | <ul><li>Bookmark data in a binary encoded string or <code>nil</code> if path is invalid.</li></ul> |
 
 #### [rmdir](#rmdir)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.rmdir(dirname) -> true or (nil,error)` </span>                                                          |

@@ -7,6 +7,9 @@ Represents a "Find and Replace Title Text" dialogue box.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [FindAndReplaceTitleText](#findandreplacetitletext)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [cancel](#cancel)
+ * [createOptimizedMedia](#createoptimizedmedia)
+ * [createProxyMedia](#createproxymedia)
  * [doFindAndReplaceAll](#dofindandreplaceall)
  * [doHide](#dohide)
  * [doShow](#doshow)
@@ -33,6 +36,24 @@ Represents a "Find and Replace Title Text" dialogue box.
 | **Description**                                      | Creates a new "Find and Replace Title Text" [Dialog](cp.ui.Dialog.md) |
 
 ### Methods
+
+#### [cancel](#cancel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FindAndReplaceTitleText:cancel() -> cp.ui.Button` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The "Cancel" button, as a [Button](cp.ui.Button.md) |
+
+#### [createOptimizedMedia](#createoptimizedmedia)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FindAndReplaceTitleText:createOptimizedMedia() -> cp.ui.CheckBox` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The "Create Optimized Media" check box, as a [CheckBox](cp.ui.CheckBox.md) |
+
+#### [createProxyMedia](#createproxymedia)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FindAndReplaceTitleText:createProxyMedia() -> cp.ui.CheckBox` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The "Create Proxy Media" check box, as a [CheckBox](cp.ui.CheckBox.md) |
 
 #### [doFindAndReplaceAll](#dofindandreplaceall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FindAndReplaceTitleText:doFindAndReplaceAll(find, replace) -> cp.rx.go.Statement` </span>                                                          |

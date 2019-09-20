@@ -22,6 +22,7 @@ Timeline Module.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [contents](#contents)
+ * [doFocus](#dofocus)
  * [doHide](#dohide)
  * [doShowOnPrimary](#doshowonprimary)
  * [doShowOnSecondary](#doshowonsecondary)
@@ -142,6 +143,12 @@ Timeline Module.
 | **Description**                                      | Gets the Timeline Contents. The Content is the main body of the timeline, |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>TimelineContent</code> object.</li></ul> |
+
+#### [doFocus](#dofocus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:doFocus() -> cp.rx.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will attempt to focus on the Timeline. |
 
 #### [doHide](#dohide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:doHide() -> cp.rx.go.Statement` </span>                                                          |

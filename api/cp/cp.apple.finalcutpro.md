@@ -81,31 +81,30 @@ end
  * [ALLOWED_IMPORT_EXTENSIONS](#allowed_import_extensions)
  * [ALLOWED_IMPORT_IMAGE_EXTENSIONS](#allowed_import_image_extensions)
  * [ALLOWED_IMPORT_VIDEO_EXTENSIONS](#allowed_import_video_extensions)
- * [BLEND_MODES](#blend_modes)
- * [CROP_TYPES](#crop_types)
  * [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
  * [EVENT_DESCRIPTION_PATH](#event_description_path)
  * [FLEXO_LANGUAGES](#flexo_languages)
  * [PASTEBOARD_UTI](#pasteboard_uti)
  * [preferences](#preferences)
- * [ROLLING_SHUTTER_AMOUNTS](#rolling_shutter_amounts)
- * [SPATIAL_CONFORM_TYPES](#spatial_conform_types)
- * [STABILIZATION_METHODS](#stabilization_methods)
  * [WORKSPACES_PATH](#workspaces_path)
 * Variables - Configurable values
  * [activeCommandSet](#activecommandset)
  * [customWorkspaces](#customworkspaces)
+ * [openAndSavePanelDefaultPath](#openandsavepaneldefaultpath)
  * [selectedWorkspace](#selectedworkspace)
 * Functions - API calls offered directly by the extension
  * [commandSet](#commandset)
  * [matches](#matches)
+ * [matches](#matches)
  * [userCommandSetPath](#usercommandsetpath)
+ * [workflowExtensions](#workflowextensions)
+* Constructors - API calls which return an object, typically one that offers API methods
+ * [TranscodeMedia](#transcodemedia)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [activeCommandSetPath](#activecommandsetpath)
  * [audioEnhancements](#audioenhancements)
  * [audioLanes](#audiolanes)
  * [browser](#browser)
- * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [currentLocale](#currentlocale)
@@ -171,6 +170,8 @@ end
  * [preferencesWindow](#preferenceswindow)
  * [primaryWindow](#primarywindow)
  * [quit](#quit)
+ * [recentLibraryNames](#recentlibrarynames)
+ * [recentLibraryPaths](#recentlibrarypaths)
  * [scanPlugins](#scanplugins)
  * [secondaryWindow](#secondarywindow)
  * [selectLibrary](#selectlibrary)
@@ -179,7 +180,9 @@ end
  * [string](#string)
  * [timeline](#timeline)
  * [toolbar](#toolbar)
+ * [transcodeMedia](#transcodemedia)
  * [transitions](#transitions)
+ * [userCommandSets](#usercommandsets)
 
 ## API Documentation
 
@@ -208,18 +211,6 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Table of video file extensions Final Cut Pro can import. |
-
-#### [BLEND_MODES](#blend_modes)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.BLEND_MODES -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Blend Modes |
-
-#### [CROP_TYPES](#crop_types)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.CROP_TYPES -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Crop Types |
 
 #### [EARLIEST_SUPPORTED_VERSION](#earliest_supported_version)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.EARLIEST_SUPPORTED_VERSION -> string` </span>                                                          |
@@ -251,24 +242,6 @@ end
 | **Type**                                             | Constant |
 | **Description**                                      | The `cp.app.prefs` for Final Cut Pro. |
 
-#### [ROLLING_SHUTTER_AMOUNTS](#rolling_shutter_amounts)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.ROLLING_SHUTTER_AMOUNTS -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Rolling Shutter Amounts |
-
-#### [SPATIAL_CONFORM_TYPES](#spatial_conform_types)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.SPATIAL_CONFORM_TYPES -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Spatial Conform Types |
-
-#### [STABILIZATION_METHODS](#stabilization_methods)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.STABILIZATION_METHODS -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | Stabilisation Methods |
-
 #### [WORKSPACES_PATH](#workspaces_path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.WORKSPACES_PATH -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -288,6 +261,12 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | A table containing the display names of all the user created custom workspaces. |
+
+#### [openAndSavePanelDefaultPath](#openandsavepaneldefaultpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:openAndSavePanelDefaultPath <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | A string containing the default open/save panel path. |
 
 #### [selectedWorkspace](#selectedworkspace)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.selectedWorkspace <cp.prop: string; live>` </span>                                                          |
@@ -313,6 +292,14 @@ end
 | **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
 
+#### [matches](#matches)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.TranscodeMedia.matches(element) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks if the element is an `TranscodeMedia` instance. |
+| **Parameters**                                       | <ul><li>element       - The <code>axuielement</code> to check.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if it matches the pattern for a <code>Viewer</code> <code>TranscodeMedia</code>.</li></ul> |
+
 #### [userCommandSetPath](#usercommandsetpath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.userCommandSetPath() -> string or nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -320,6 +307,24 @@ end
 | **Description**                                      | Gets the path where User Command Set files are stored. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A path as a string or <code>nil</code> if the folder doesn't exist.</li></ul> |
+
+#### [workflowExtensions](#workflowextensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.workflowExtensions() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the names of all the installed Workflow Extensions. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of Workflow Extension names</li></ul> |
+
+### Constructors
+
+#### [TranscodeMedia](#transcodemedia)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.TranscodeMedia(viewer)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `TranscodeMedia` instance. |
+| **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
+| **Returns**                                          | <ul><li>The new <code>TranscodeMedia</code>.</li></ul> |
 
 ### Fields
 
@@ -357,12 +362,6 @@ end
 
 #### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `axuielement` containing the properties rows, if available. |
-
-#### [contentUI](#contentui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
@@ -821,6 +820,22 @@ end
 | **Parameters**                                       | <ul><li>waitSeconds      - The number of seconds to wait for the quit to complete.</li></ul> |
 | **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
 
+#### [recentLibraryNames](#recentlibrarynames)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:recentLibraryNames() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets a table of all the recent library names (that are accessible). |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing any recent library names.</li></ul> |
+
+#### [recentLibraryPaths](#recentlibrarypaths)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:recentLibraryPaths() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets a table of all the recent library paths (that are accessible). |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing any recent library paths.</li></ul> |
+
 #### [scanPlugins](#scanplugins)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:scanPlugins() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -885,6 +900,14 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the PrimaryToolbar</li></ul> |
 
+#### [transcodeMedia](#transcodemedia)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:transcodeMedia() -> TranscodeMedia` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the [TranscodeMedia](cp.apple.finalcutpro.main.TranscodeMedia.md) sheet. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The Transcode Media Sheet.</li></ul> |
+
 #### [transitions](#transitions)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:transitions() -> TransitionsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -892,4 +915,12 @@ end
 | **Description**                                      | Returns the TransitionsBrowser instance, whether it is in the primary or secondary window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the TransitionsBrowser</li></ul> |
+
+#### [userCommandSets](#usercommandsets)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:userCommandSets() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the names of all of the user command sets. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of user command sets as strings.</li></ul> |
 

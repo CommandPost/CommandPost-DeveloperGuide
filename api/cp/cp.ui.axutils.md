@@ -306,7 +306,7 @@ Utility functions to support `hs._asm.axuielement`.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Takes a snapshot of the specified `axuielement` and returns it. |
-| **Parameters**                                       | <ul><li>element      - The <code>axuielement</code> to snap.</li><li>filename     - (optional) The path to save the image as a PNG file.</li></ul> |
+| **Parameters**                                       | <ul><li>element      - The <code>axuielement</code> to snap.</li><li>filename     - (optional) The path to save the image as a PNG file.</li><li>elementFrame - (optional) The hs.geometry frame of what you want to capture</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.image</code> file, or <code>nil</code> if the element could not be snapped.</li></ul> |
 
 #### [valueOf](#valueof)

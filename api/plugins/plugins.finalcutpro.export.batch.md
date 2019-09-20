@@ -1,7 +1,7 @@
 # [docs](index.md) » plugins.finalcutpro.export.batch
 ---
 
-Batch Export Plugin
+Timeline Batch Export Plugin.
 
 ## Submodules
  * [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)
@@ -17,7 +17,6 @@ Batch Export Plugin
  * [changeExportDestinationPreset](#changeexportdestinationpreset)
  * [getDestinationFolder](#getdestinationfolder)
  * [performBatchExport](#performbatchexport)
- * [sendTimelineClipsToCompressor](#sendtimelineclipstocompressor)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [customFilename](#customfilename)
  * [destinationPreset](#destinationpreset)
@@ -52,7 +51,7 @@ Batch Export Plugin
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Batch Export Timeline Clips |
-| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
+| **Parameters**                                       | <ul><li>clips - table of selected Clips</li><li>sendToCompressor - <code>true</code> if sending to Compressor, otherwise <code>false</code></li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 #### [changeCustomFilename](#changecustomfilename)
@@ -94,14 +93,6 @@ Batch Export Plugin
 | **Description**                                      | Performs the Browser Batch Export function. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [sendTimelineClipsToCompressor](#sendtimelineclipstocompressor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.sendTimelineClipsToCompressor(clips) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Send Timeline Clips to Compressor. |
-| **Parameters**                                       | <ul><li>clips - table of selected Clips</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li></ul> |
 
 ### Fields
 

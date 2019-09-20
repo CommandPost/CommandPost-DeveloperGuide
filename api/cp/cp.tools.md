@@ -13,7 +13,9 @@ A collection of handy miscellaneous tools for Lua development.
  * [doubleLeftClick](#doubleleftclick)
  * [endsWith](#endswith)
  * [ensureDirectoryExists](#ensuredirectoryexists)
+ * [exactMatch](#exactmatch)
  * [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
+ * [findCommonWordWithinTwoStrings](#findcommonwordwithintwostrings)
  * [firstToUpper](#firsttoupper)
  * [getEmail](#getemail)
  * [getExternalDevices](#getexternaldevices)
@@ -55,6 +57,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [splitOnColumn](#splitoncolumn)
  * [startsWith](#startswith)
  * [stringMaxLength](#stringmaxlength)
+ * [stringToHexString](#stringtohexstring)
  * [tableContains](#tablecontains)
  * [tableCount](#tablecount)
  * [tableFilter](#tablefilter)
@@ -135,6 +138,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li><code>rootPath</code> - The root path (should already exist).</li><li><code>...</code>      - The list of path steps to create</li></ul> |
 | **Returns**                                          | <ul><li>The full path, if it exists, or <code>nil</code> if unable to create the directory for some reason.</li></ul> |
 
+#### [exactMatch](#exactmatch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.exactMatch(value, pattern, plain) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Compares two strings to see if they're an exact match. |
+| **Parameters**                                       | <ul><li>value - The first string</li><li>pattern - The second string, including any patterns</li><li>plain - Whether or not to ignore patterns. Defaults to <code>false</code>.</li><li>ignoreCase - Ignore the case of the value &amp; pattern.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if there's an exact match, otherwise <code>false</code>.</li></ul> |
+
 #### [executeWithAdministratorPrivileges](#executewithadministratorprivileges)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.executeWithAdministratorPrivileges(input[, stopOnError]) -> boolean or string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -142,6 +153,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Executes a single or multiple shell commands with Administrator Privileges. |
 | **Parameters**                                       | <ul><li>input - either a string or a table of strings of commands you want to execute</li><li>stopOnError - an optional variable that stops processing multiple commands when an individual commands returns an error</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful, <code>false</code> if cancelled and a string if there's an error.</li></ul> |
+
+#### [findCommonWordWithinTwoStrings](#findcommonwordwithintwostrings)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.findCommonWordWithinTwoStrings(a, b) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Finds a common word within two strings. |
+| **Parameters**                                       | <ul><li>a - The first string</li><li>b - The second string</li></ul> |
+| **Returns**                                          | <ul><li>The first common word that's found or <code>nil</code> if something goes wrong.</li></ul> |
 
 #### [firstToUpper](#firsttoupper)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.firstToUpper(str) -> string` </span>                                                          |
@@ -472,6 +491,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Trims a string based on a maximum length. |
 | **Parameters**                                       | <ul><li>maxLength - The length of the string as a number</li><li>optionalEnd - A string that is applied to the end of the input string if the input string is larger than the maximum length.</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul> |
+
+#### [stringToHexString](#stringtohexstring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.stringToHexString(value, startValue) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Converts a string to a hex string. |
+| **Parameters**                                       | <ul><li>value - The string to convert</li></ul> |
+| **Returns**                                          | <ul><li>A hex string</li></ul> |
 
 #### [tableContains](#tablecontains)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableContains(table, element) -> boolean` </span>                                                          |

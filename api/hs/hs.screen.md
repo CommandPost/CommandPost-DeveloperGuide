@@ -34,6 +34,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
  * [getForceToGray](#getforcetogray)
  * [getGamma](#getgamma)
  * [getInvertedPolarity](#getinvertedpolarity)
+ * [getUUID](#getuuid)
  * [id](#id)
  * [localToAbsolute](#localtoabsolute)
  * [name](#name)
@@ -81,7 +82,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Finds screens |
-| **Parameters**                                       | <ul><li>hint - search criterion for the desired screen(s); it can be:</li><li>a number as per <code>hs.screen:id()</code></li><li>a string pattern that matches (via <code>string.match</code>) the screen name as per <code>hs.screen:name()</code> (for convenience, the matching will be done on lowercased strings)</li><li>an hs.geometry <em>point</em> object, or constructor argument, with the <em>x and y position</em> of the screen in the current layout as per <code>hs.screen:position()</code></li><li>an hs.geometry <em>size</em> object, or constructor argument, with the <em>resolution</em> of the screen as per <code>hs.screen:fullFrame()</code></li><li>an hs.geometry <em>rect</em> object, or constructor argument, with an arbitrary rect in absolute coordinates; the screen     containing the largest part of the rect will be returned</li></ul> |
+| **Parameters**                                       | <ul><li>hint - search criterion for the desired screen(s); it can be:</li><li>a number as per <code>hs.screen:id()</code></li><li>a string containing the UUID of the desired screen</li><li>a string pattern that matches (via <code>string.match</code>) the screen name as per <code>hs.screen:name()</code> (for convenience, the matching will be done on lowercased strings)</li><li>an hs.geometry <em>point</em> object, or constructor argument, with the <em>x and y position</em> of the screen in the current layout as per <code>hs.screen:position()</code></li><li>an hs.geometry <em>size</em> object, or constructor argument, with the <em>resolution</em> of the screen as per <code>hs.screen:fullFrame()</code></li><li>an hs.geometry <em>rect</em> object, or constructor argument, with an arbitrary rect in absolute coordinates; the screen     containing the largest part of the rect will be returned</li></ul> |
 | **Returns**                                          | <ul><li>one or more hs.screen objects that match the supplied search criterion, or <code>nil</code> if none found</li></ul> |
 | **Notes**                                            | <ul><li>for convenience you call call this as <code>hs.screen(hint)</code></li></ul> |
 
@@ -220,6 +221,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Description**                                      | Gets the screen's InvertedPolarity setting |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the InvertedPolarity mode is set, otherwise false</li></ul> |
+
+#### [getUUID](#getuuid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:getUUID() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the UUID of an `hs.screen` object |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the UUID, or nil if an error occurred.</li></ul> |
 
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:id() -> number` </span>                                                          |

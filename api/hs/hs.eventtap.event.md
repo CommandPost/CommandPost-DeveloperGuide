@@ -29,6 +29,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [getProperty](#getproperty)
  * [getRawEventData](#getraweventdata)
  * [getType](#gettype)
+ * [getUnicodeString](#getunicodestring)
  * [location](#location)
  * [post](#post)
  * [rawFlags](#rawflags)
@@ -36,6 +37,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [setKeyCode](#setkeycode)
  * [setProperty](#setproperty)
  * [setType](#settype)
+ * [setUnicodeString](#setunicodestring)
  * [systemKey](#systemkey)
  * [timestamp](#timestamp)
 
@@ -115,7 +117,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new mouse event |
-| **Parameters**                                       | <ul><li>eventtype - One of the values from <code>hs.eventtap.event.types</code></li><li>point - An hs.geometry point table (i.e. of the form <code>{x=123, y=456}</code>) indicating the location where the mouse event should occur</li><li>modifiers - An optional table containing zero or more of the following keys:</li><li>cmd</li><li>alt</li><li>shift</li><li>ctrl</li><li>fn</li></ul> |
+| **Parameters**                                       | <ul><li>eventtype - One of the values from <code>hs.eventtap.event.types</code></li><li>point - An hs.geometry point table (i.e. of the form <code>{x=123, y=456}</code>) indicating the location where the mouse event should occur</li><li>modifiers - An optional table (e.g. {"cmd", "alt"}) containing zero or more of the following keys:</li><li>cmd</li><li>alt</li><li>shift</li><li>ctrl</li><li>fn</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs.eventtap</code> object</li></ul> |
 
 #### [newScrollEvent](#newscrollevent)
@@ -207,6 +209,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the type of the event, taken from <code>hs.eventtap.event.types</code></li></ul> |
 
+#### [getUnicodeString](#getunicodestring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getUnicodeString()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the single unicode character of an event |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the unicode character</li></ul> |
+
 #### [location](#location)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:location([pointTable]) -> event | table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -266,6 +276,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Set the type for this event. |
 | **Parameters**                                       | <ul><li>type - an integer matching one of the event types described in <a href="#types">hs.eventtap.event.types</a></li></ul> |
 | **Returns**                                          | <ul><li>the <code>hs.eventtap.event</code> object</li></ul> |
+
+#### [setUnicodeString](#setunicodestring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:setUnicodeString(string)` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets a unicode string as the output of the event |
+| **Parameters**                                       | <ul><li>string - A string containing unicode characters, which will be applied to the event</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.eventtap.event</code> object</li></ul> |
+| **Notes**                                            | <ul><li>Calling this method will reset any flags previously set on the event (because they don't make any sense, and you should not try to set flags again)</li><li>This is likely to only work with short unicode strings that resolve to a single character</li></ul> |
 
 #### [systemKey](#systemkey)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:systemKey() -> table` </span>                                                          |

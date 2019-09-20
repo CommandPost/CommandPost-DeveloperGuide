@@ -11,6 +11,7 @@ Manage CommandPost's constants and settings.
 
 ## API Overview
 * Constants - Useful values which cannot be changed
+ * [appBuild](#appbuild)
  * [appName](#appname)
  * [appVersion](#appversion)
  * [assetsPath](#assetspath)
@@ -50,6 +51,12 @@ Manage CommandPost's constants and settings.
 
 ### Constants
 
+#### [appBuild](#appbuild)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appBuild -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Application Build |
+
 #### [appName](#appname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appName -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -60,7 +67,7 @@ Manage CommandPost's constants and settings.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.appVersion -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
-| **Description**                                      | Prefix used for Configuration Settings |
+| **Description**                                      | Application Version |
 
 #### [assetsPath](#assetspath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.config.assetsPath -> string` </span>                                                          |

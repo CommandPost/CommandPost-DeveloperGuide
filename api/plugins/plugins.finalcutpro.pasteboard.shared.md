@@ -10,11 +10,11 @@ Shared Pasteboard Plugin.
  * [doDecodeHistoryItem](#dodecodehistoryitem)
  * [doPasteHistoryItem](#dopastehistoryitem)
  * [generateSharedPasteboardMenu](#generatesharedpasteboardmenu)
+ * [getFolderNames](#getfoldernames)
  * [getHistory](#gethistory)
  * [getHistoryPath](#gethistorypath)
  * [getLocalFolderName](#getlocalfoldername)
  * [getRootPath](#getrootpath)
- * [init](#init)
  * [overrideNextFolderName](#overridenextfoldername)
  * [setHistory](#sethistory)
  * [setRootPath](#setrootpath)
@@ -67,6 +67,14 @@ Shared Pasteboard Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The shared pasteboard menu as a table.</li></ul> |
 
+#### [getFolderNames](#getfoldernames)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getFolderNames() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the list of folder names as an array of strings. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table of folder names.</li></ul> |
+
 #### [getHistory](#gethistory)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.getHistory(folderName) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -99,14 +107,6 @@ Shared Pasteboard Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Shared Pasteboard Path as string.</li></ul> |
 
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.init() -> sharedPasteboard` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialises the module. |
-| **Parameters**                                       | <ul><li>manager - The pasteboard manager</li></ul> |
-| **Returns**                                          | <ul><li>The sharedPasteboard object</li></ul> |
-
 #### [overrideNextFolderName](#overridenextfoldername)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.overrideNextFolderName(overrideFolder) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -132,12 +132,12 @@ Shared Pasteboard Plugin.
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [update](#update)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.update() -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.update() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Returns the list of folder names as an array of strings. |
+| **Description**                                      | Starts or stops the Shared Pasteboard watcher. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table of folder names.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [validRootPath](#validrootpath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.shared.validRootPath() -> boolean` </span>                                                          |

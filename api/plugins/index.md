@@ -29,9 +29,9 @@
 | [plugins.core.disk.automount](plugins.core.disk.automount.md)                          | Automatic Disk Mounting & Unmounting.     |
 | [plugins.core.disk.favourites](plugins.core.disk.favourites.md)                          | Action that allows you save and open user-defined favourite folders.     |
 | [plugins.core.helpandsupport.credits](plugins.core.helpandsupport.credits.md)                          | Credits Menu Item.     |
+| [plugins.core.helpandsupport.debugconsole](plugins.core.helpandsupport.debugconsole.md)                          | Debug Console Menu Item.     |
 | [plugins.core.helpandsupport.developerguide](plugins.core.helpandsupport.developerguide.md)                          | Developer Guide Menu Item.     |
 | [plugins.core.helpandsupport.donate](plugins.core.helpandsupport.donate.md)                          | Donate Menu Item.     |
-| [plugins.core.helpandsupport.errorlog](plugins.core.helpandsupport.errorlog.md)                          | Error Log Menu Item.     |
 | [plugins.core.helpandsupport.facebook](plugins.core.helpandsupport.facebook.md)                          | Facebook Group Menu Item.     |
 | [plugins.core.helpandsupport.feedback](plugins.core.helpandsupport.feedback.md)                          | Feedback Menu Item.     |
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
@@ -115,7 +115,7 @@
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
 | [plugins.finalcutpro.console.font](plugins.finalcutpro.console.font.md)                          | Final Cut Pro Font Console     |
-| [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Batch Export Plugin     |
+| [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Timeline Batch Export Plugin.     |
 | [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)                          | Manager for the Batch Export Window.     |
 | [plugins.finalcutpro.export.batch.manager.panel](plugins.finalcutpro.export.batch.manager.panel.md)                          | CommandPost Batch Export Panel.     |
 | [plugins.finalcutpro.feedback.bugreport](plugins.finalcutpro.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Final Cut Pro.     |
@@ -134,6 +134,7 @@
 | [plugins.finalcutpro.hud.panels.twentyfourbuttons](plugins.finalcutpro.hud.panels.twentyfourbuttons.md)                          | Twenty Four Button Panel for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
+| [plugins.finalcutpro.inspector.audio](plugins.finalcutpro.inspector.audio.md)                          | Final Cut Pro Audio Inspector Additions.     |
 | [plugins.finalcutpro.inspector.show](plugins.finalcutpro.inspector.show.md)                          | Final Cut Pro Inspector Additions.     |
 | [plugins.finalcutpro.inspector.text](plugins.finalcutpro.inspector.text.md)                          | Final Cut Pro Text Inspector Additions.     |
 | [plugins.finalcutpro.inspector.video](plugins.finalcutpro.inspector.video.md)                          | Final Cut Pro Video Inspector Additions.     |
@@ -210,6 +211,7 @@
 | [plugins.finalcutpro.timeline.renameclip](plugins.finalcutpro.timeline.renameclip.md)                          | Rename Clip     |
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
+| [plugins.finalcutpro.timeline.transcode](plugins.finalcutpro.timeline.transcode.md)                          | Adds actions that allows you to transcode clips from the timeline.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Video Effects.     |
 | [plugins.finalcutpro.timeline.zoomtoselection](plugins.finalcutpro.timeline.zoomtoselection.md)                          | Zoom the Timeline to fit the currently-selected clips.     |

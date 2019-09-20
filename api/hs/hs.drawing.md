@@ -1,7 +1,9 @@
 # [docs](index.md) » hs.drawing
 ---
 
-Primitives for drawing on the screen in various ways
+DEPRECATED. Primitives for drawing on the screen in various ways.
+
+hs.drawing is now deprecated and will be removed in a future release. Its functionality is now implemented by hs.canvas and you should migrate your code to using that directly. The API docs for hs.drawing remain here as a convenience.
 
 ## Submodules
  * [hs.drawing.color](hs.drawing.color.md)
@@ -69,7 +71,6 @@ Primitives for drawing on the screen in various ways
  * [setTextStyle](#settextstyle)
  * [setTopLeft](#settopleft)
  * [show](#show)
- * [wantsLayer](#wantslayer)
 
 ## API Documentation
 
@@ -107,7 +108,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Tells the OS X window server to pause updating the physical displays for a short while. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be balanced with a call to <a href="#enableScreenUpdates">hs.drawing.enableScreenUpdates</a> when your updates have been completed.  Failure to do so will be logged in the system logs.</li></ul> |
+| **Notes**                                            | <ul><li>This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be balanced with a call to <a href="#enableScreenUpdates">hs.drawing.enableScreenUpdates</a> when your updates have been completed.  Failure to do so will be logged in the system logs.</li><li>The window server will only allow you to pause updates for up to 1 second.  This prevents a rogue or hung process from locking the systems display completely.  Updates will be resumed when <a href="#enableScreenUpdates">hs.drawing.enableScreenUpdates</a> is encountered or after 1 second, whichever comes first.</li><li>The underlying OS function for disabling screen updates is deprecated.</li></ul> |
 
 #### [enableScreenUpdates](#enablescreenupdates)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.enableScreenUpdates() -> None` </span>                                                          |
@@ -116,7 +117,7 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Tells the OS X window server to resume updating the physical displays after a previous pause. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>In conjunction with <a href="#disableScreenUpdates">hs.drawing.disableScreenUpdates</a>, this method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li></ul> |
+| **Notes**                                            | <ul><li>In conjunction with <a href="#disableScreenUpdates">hs.drawing.disableScreenUpdates</a>, this method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>The window server will only allow you to pause updates for up to 1 second.  This prevents a rogue or hung process from locking the systems display completely.  Updates will be resumed when this function is encountered  or after 1 second, whichever comes first.</li><li>The underlying OS function for enabling screen updates is deprecated.</li></ul> |
 
 #### [getTextDrawingSize](#gettextdrawingsize)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing.getTextDrawingSize(styledTextObject or theText, [textStyle]) -> sizeTable | nil` </span>                                                          |
@@ -574,13 +575,4 @@ Primitives for drawing on the screen in various ways
 | **Description**                                      | Displays the drawing object |
 | **Parameters**                                       | <ul><li>fadeInTime - An optional number of seconds over which to fade in the drawing object. Defaults to zero</li></ul> |
 | **Returns**                                          | <ul><li>The drawing object</li></ul> |
-
-#### [wantsLayer](#wantslayer)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:wantsLayer([flag]) -> object or boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets or sets whether or not the drawing object should be rendered by the view or by Core Animation. |
-| **Parameters**                                       | <ul><li>flag - optional boolean (default false) which indicates whether the drawing object should be rendered by the containing view (false) or by the Core Animation interface (true).</li></ul> |
-| **Returns**                                          | <ul><li>if <code>flag</code> is provided, then returns the drawing object; otherwise returns the current value</li></ul> |
-| **Notes**                                            | <ul><li>This method can help smooth the display or small text objects on non-Retina monitors.</li></ul> |
 

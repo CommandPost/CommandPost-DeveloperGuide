@@ -90,6 +90,7 @@
 | [cp.apple.finalcutpro.main.PrimaryToolbar](cp.apple.finalcutpro.main.PrimaryToolbar.md)                          | Timeline Toolbar.     |
 | [cp.apple.finalcutpro.main.PrimaryWindow](cp.apple.finalcutpro.main.PrimaryWindow.md)                          | Primary Window Module.     |
 | [cp.apple.finalcutpro.main.SecondaryWindow](cp.apple.finalcutpro.main.SecondaryWindow.md)                          | Secondary Window Module.     |
+| [cp.apple.finalcutpro.main.TranscodeMedia](cp.apple.finalcutpro.main.TranscodeMedia.md)                          | Represents the Transcode Media sheet.     |
 | [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu.     |
 | [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
 | [cp.apple.finalcutpro.plugins.guiscan](cp.apple.finalcutpro.plugins.guiscan.md)                          | Final Cut Pro GUI Plugin Scanner.     |
@@ -255,6 +256,7 @@
 | [cp.ui.ScrollArea](cp.ui.ScrollArea.md)                          | Scroll Area Module.     |
 | [cp.ui.ScrollBar](cp.ui.ScrollBar.md)                          | Provides access to `AXScrollBar` `axuielement` values.     |
 | [cp.ui.SearchField](cp.ui.SearchField.md)                          | A [TextField](cp.ui.TextField.md) with a subrole of `AXSearchField`.     |
+| [cp.ui.Sheet](cp.ui.Sheet.md)                          | Sheet UI Module.     |
 | [cp.ui.Slider](cp.ui.Slider.md)                          | Slider Module.     |
 | [cp.ui.SplitGroup](cp.ui.SplitGroup.md)                          | Split Group UI.     |
 | [cp.ui.Splitter](cp.ui.Splitter.md)                          | Represents an `AXSplitter`.     |

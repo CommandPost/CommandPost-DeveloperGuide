@@ -13,10 +13,7 @@ Attributes for canvas elements are defined in [hs.canvas.attributes](#attributes
 
 Some examples of how to use this module can be found at https://github.com/asmagill/hammerspoon/wiki/hs.canvas.examples
 
-If you wish to test out the `hs.drawing` wrapper which may eventually replace the original `hs.drawing` module entirely, check out [hs.canvas.drawingWrapper](#drawingWrapper).
-
 ## Submodules
- * [hs.canvas.drawing](hs.canvas.drawing.md)
  * [hs.canvas.matrix](hs.canvas.matrix.md)
 
 ## API Overview

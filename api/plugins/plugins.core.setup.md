@@ -24,7 +24,6 @@ Manager for the CommandPost Setup Screen.
  * [delete](#delete)
  * [focus](#focus)
  * [getLabel](#getlabel)
- * [init](#init)
  * [injectScript](#injectscript)
  * [new](#new)
  * [nextPanel](#nextpanel)
@@ -133,14 +132,6 @@ Manager for the CommandPost Setup Screen.
 | **Description**                                      | Returns the Webview label. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Webview label as a string.</li></ul> |
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.init(env) -> module` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialises the module. |
-| **Parameters**                                       | <ul><li>env - The plugin environment table</li></ul> |
-| **Returns**                                          | <ul><li>The Module</li></ul> |
 
 #### [injectScript](#injectscript)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.setup.injectScript(script) -> none` </span>                                                          |

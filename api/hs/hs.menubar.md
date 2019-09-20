@@ -71,7 +71,7 @@ Create and manage menubar icons
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the menubar item frame |
-| **Returns**                                          | <ul><li>an hs.geometry rect describing the menubar item's frame</li></ul> |
+| **Returns**                                          | <ul><li>an hs.geometry rect describing the menubar item's frame or nil if the menubar item is not currently in the menubar.</li></ul> |
 | **Notes**                                            | <ul><li>This will return a frame even if no icon or title is set</li></ul> |
 
 #### [icon](#icon)

@@ -42,6 +42,7 @@ Notes:
 * Functions - API calls offered directly by the extension
  * [attachToolbar](#attachtoolbar)
  * [inTitleBar](#intitlebar)
+ * [uniqueName](#uniquename)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Methods - API calls which can only be made on an object returned by a constructor
@@ -107,6 +108,14 @@ Notes:
 | **Parameters**                                       | <ul><li><code>state</code> - an optional boolean specifying whether or not the toolbar should appear in the window's titlebar.</li></ul> |
 | **Returns**                                          | <ul><li>if a parameter is specified, returns the toolbar object, otherwise the current value.</li></ul> |
 | **Notes**                                            | <ul><li>When this value is true, the toolbar, when visible, will appear in the window's title bar similar to the toolbar as seen in applications like Safari.  In this state, the toolbar will set the display of the toolbar items to icons without labels, ignoring changes made with <a href="#displayMode">hs.webview.toolbar:displayMode</a>.</li></ul> |
+
+#### [uniqueName](#uniquename)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar.uniqueName(toolbarName) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Checks to see is a toolbar name is already in use |
+| **Parameters**                                       | <ul><li>toolbarName  - a string specifying the name of a toolbar</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the name is unique otherwise <code>false</code></li></ul> |
 
 ### Constructors
 

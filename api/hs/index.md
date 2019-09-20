@@ -33,7 +33,6 @@
 | [hs.caffeinate](hs.caffeinate.md)                          | Control system power states (sleeping, preventing sleep, screen locking, etc)     |
 | [hs.caffeinate.watcher](hs.caffeinate.watcher.md)                          | Watch for display and system sleep/wake/power events     |
 | [hs.canvas](hs.canvas.md)                          | A different approach to drawing in Hammerspoon     |
-| [hs.canvas.drawing](hs.canvas.drawing.md)                          | An wrapper to replace `hs.drawing` with `hs.canvas`.     |
 | [hs.canvas.matrix](hs.canvas.matrix.md)                          | A sub module to `hs.canvas` which provides support for basic matrix manipulations which can be used as the values for `transformation` attributes in the `hs.canvas` module.     |
 | [hs.chooser](hs.chooser.md)                          | Graphical, interactive tool for choosing/searching data     |
 | [hs.console](hs.console.md)                          | Some functions for manipulating the Hammerspoon console.     |
@@ -48,8 +47,8 @@
 | [hs.doc.markdown](hs.doc.markdown.md)                          | Markdown to HTML and plaintext conversion support used by hs.doc     |
 | [hs.doc.spoonsupport](hs.doc.spoonsupport.md)                          | Provides run-time support for generating and including documentation for installed Hammerspoon Spoon bundles.     |
 | [hs.dockicon](hs.dockicon.md)                          | Control Hammerspoon's dock icon     |
-| [hs.drawing](hs.drawing.md)                          | Primitives for drawing on the screen in various ways     |
-| [hs.drawing.color](hs.drawing.color.md)                          | Additions to hs.drawing which provide access to the system color lists and a wider variety of ways to represent color within Hammerspoon.     |
+| [hs.drawing](hs.drawing.md)                          | DEPRECATED. Primitives for drawing on the screen in various ways.     |
+| [hs.drawing.color](hs.drawing.color.md)                          | Provides ccess to the system color lists and a wider variety of ways to represent color within Hammerspoon.     |
 | [hs.eventtap](hs.eventtap.md)                          | Tap into input events (mouse, keyboard, trackpad) for observation and possibly overriding them     |
 | [hs.eventtap.event](hs.eventtap.event.md)                          | Create, modify and inspect events for `hs.eventtap`     |
 | [hs.expose](hs.expose.md)                          | Keyboard-driven expose replacement/enhancement     |

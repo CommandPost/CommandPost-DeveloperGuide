@@ -5,7 +5,7 @@ General Preferences Panel.
 
 ## API Overview
 * Variables - Configurable values
- * [openErrorLogOnDockClick](#openerrorlogondockclick)
+ * [openDebugConsoleOnDockClick](#opendebugconsoleondockclick)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [autoLaunch](#autolaunch)
  * [dockIcon](#dockicon)
@@ -14,8 +14,8 @@ General Preferences Panel.
 
 ### Variables
 
-#### [openErrorLogOnDockClick](#openerrorlogondockclick)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.openErrorLogOnDockClick <cp.prop: boolean>` </span>                                                          |
+#### [openDebugConsoleOnDockClick](#opendebugconsoleondockclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.openDebugConsoleOnDockClick <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Open Error Log on Dock Icon Click. |

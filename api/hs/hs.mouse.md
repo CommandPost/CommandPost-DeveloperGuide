@@ -5,8 +5,35 @@ Inspect/manipulate the position of the mouse pointer
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
+This module uses ManyMouse by Ryan C. Gordon.
+
+MANYMOUSE LICENSE:
+
+Copyright (c) 2005-2012 Ryan C. Gordon and others.
+
+This software is provided 'as-is', without any express or implied warranty.
+In no event will the authors be held liable for any damages arising from
+the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+claim that you wrote the original software. If you use this software in a
+product, an acknowledgment in the product documentation would be
+appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and must not be
+misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source distribution.
+
+    Ryan C. Gordon <icculus@icculus.org>
+
 ## API Overview
 * Functions - API calls offered directly by the extension
+ * [count](#count)
  * [getAbsolutePosition](#getabsoluteposition)
  * [getButtons](#getbuttons)
  * [getCurrentScreen](#getcurrentscreen)
@@ -19,6 +46,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 ## API Documentation
 
 ### Functions
+
+#### [count](#count)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.count([includeInternal]) -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the total number of mice connected to your system. |
+| **Parameters**                                       | <ul><li>includeInternal - A boolean which sets whether or not you want to include internal Trackpad's in the count. Defaults to false.</li></ul> |
+| **Returns**                                          | <ul><li>The number of mice connected to your system</li></ul> |
+| **Notes**                                            | <ul><li>This function leverages code from <a href="http://icculus.org/manymouse/">ManyMouse</a>.</li></ul> |
 
 #### [getAbsolutePosition](#getabsoluteposition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getAbsolutePosition() -> point` </span>                                                          |
