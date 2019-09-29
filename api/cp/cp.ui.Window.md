@@ -5,6 +5,7 @@ A Window UI element.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
+ * [findSectionUI](#findsectionui)
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Window](#window)
@@ -24,6 +25,7 @@ A Window UI element.
  * [close](#close)
  * [doClose](#doclose)
  * [doFocus](#dofocus)
+ * [findSectionUI](#findsectionui)
  * [focus](#focus)
  * [notifier](#notifier)
  * [snapshot](#snapshot)
@@ -31,6 +33,14 @@ A Window UI element.
 ## API Documentation
 
 ### Functions
+
+#### [findSectionUI](#findsectionui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.findSectionUI(windowUI, sectionID) -> hs._asm.axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Finds the `axuielement` for the specified `sectionID`, if present in the provided `axuielement` `windowUI`. |
+| **Parameters**                                       | <ul><li>windowUI - The <code>AXWindow</code> <code>axuielement</code> to search in.</li><li>sectionID - The string value for the <code>SectionUniqueID</code>.</li></ul> |
+| **Returns**                                          | <ul><li>The matching <code>axuielement</code>, or <code>nil</code>.</li></ul> |
 
 #### [matches](#matches)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.matches(element) -> boolean` </span>                                                          |
@@ -116,7 +126,7 @@ A Window UI element.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:alert() -> cp.ui.Alert` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Provides access to any 'Alert' windows on the PrimaryWindow. |
+| **Description**                                      | Provides access to any 'Alert' windows on the Window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>cp.ui.Alert</code> object</li></ul> |
 
@@ -143,6 +153,14 @@ A Window UI element.
 | **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) will attempt to focus on the window, if it is visible. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code> to execute, which resolves to <code>true</code> if the window was successfully focused, or <code>false</code> if not.</li></ul> |
+
+#### [findSectionUI](#findsectionui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:findSectionUI(sectionID) -> hs._asm.axuielement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Looks for th section with the specified `SectionUniqueID` value and returns the matching `axuielement` value. |
+| **Parameters**                                       | <ul><li>sectionID - The string for the section ID.</li></ul> |
+| **Returns**                                          | <ul><li>The matching <code>axuielement</code>, or <code>nil</code>.</li></ul> |
 
 #### [focus](#focus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:focus() -> boolean` </span>                                                          |

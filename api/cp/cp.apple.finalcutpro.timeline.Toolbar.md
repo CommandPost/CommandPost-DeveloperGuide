@@ -14,7 +14,10 @@ Timeline Toolbar
  * [Toolbar](#toolbar)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [appearance](#appearance)
+ * [back](#back)
  * [browser](#browser)
+ * [duration](#duration)
+ * [forward](#forward)
  * [index](#index)
  * [skimming](#skimming)
  * [skimmingGroup](#skimminggroup)
@@ -51,11 +54,31 @@ Timeline Toolbar
 | **Description**                                      | The [Appearance](cp.apple.finalcutpro.timeline.Appearance.md) button/palette control. |
 | **Returns**                                          | <ul><li>The <code>Appearance</code> class.</li></ul> |
 
+#### [back](#back)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:back() -> cp.ui.Button` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The [Button](cp.ui.Button.md) for "go back in timeline history". |
+
 #### [browser](#browser)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:browser() -> cp.apple.finalcutpro.timeline.Toolbar.Browser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | The [Toolbar.Browser](cp.apple.finalcutpro.timeline.Toolbar.Browser.md) containing buttons that will toggle the Effects/Transitions browsers. |
+
+#### [duration](#duration)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:duration() -> cp.ui.StaticText` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the duration [StaticText](cp.ui.StaticText.md) from the Timeline Titlebar. |
+| **Parameters**                                       | <ul><li>None.</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="cp.ui.StaticText.md">StaticText</a> containing the title.</li></ul> |
+
+#### [forward](#forward)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:forward() -> cp.ui.Button` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The [Button](cp.ui.Button.md) for "go forward in timeline history". |
 
 #### [index](#index)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:index() -> cp.ui.CheckBox` </span>                                                          |

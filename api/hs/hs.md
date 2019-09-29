@@ -12,6 +12,7 @@ Core Hammerspoon functionality
  * [hs.audiounit](hs.audiounit.md)
  * [hs.base64](hs.base64.md)
  * [hs.battery](hs.battery.md)
+ * [hs.bonjour](hs.bonjour.md)
  * [hs.brightness](hs.brightness.md)
  * [hs.caffeinate](hs.caffeinate.md)
  * [hs.canvas](hs.canvas.md)
@@ -105,6 +106,7 @@ Core Hammerspoon functionality
  * [allowAppleScript](#allowapplescript)
  * [autoLaunch](#autolaunch)
  * [automaticallyCheckForUpdates](#automaticallycheckforupdates)
+ * [cameraState](#camerastate)
  * [canCheckForUpdates](#cancheckforupdates)
  * [checkForUpdates](#checkforupdates)
  * [cleanUTF8forConsole](#cleanutf8forconsole)
@@ -118,6 +120,7 @@ Core Hammerspoon functionality
  * [hsdocs](#hsdocs)
  * [loadSpoon](#loadspoon)
  * [menuIcon](#menuicon)
+ * [microphoneState](#microphonestate)
  * [open](#open)
  * [openAbout](#openabout)
  * [openConsole](#openconsole)
@@ -237,6 +240,15 @@ Core Hammerspoon functionality
 | **Returns**                                          | <ul><li>The current (or newly set) value indicating whether or not automatic update checks should occur for Hammerspoon.</li></ul> |
 | **Notes**                                            | <ul><li>If you are running a non-release or locally compiled version of Hammerspoon then the results of this function are unspecified.</li></ul> |
 
+#### [cameraState](#camerastate)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.cameraState(shouldPrompt) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      |  |
+| **Parameters**                                       | <ul><li>shouldPrompt - an optional boolean value indicating if we should request camear access. Defaults to false.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> or <code>false</code> indicating whether or not Camera access is enabled for Hammerspoon.</li></ul> |
+| **Notes**                                            | <ul><li>Will always return <code>true</code> on macOS 10.13 or earlier.</li></ul> |
+
 #### [canCheckForUpdates](#cancheckforupdates)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canCheckForUpdates() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -347,6 +359,15 @@ Core Hammerspoon functionality
 | **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not the Hammerspoon menu icon should be visible.</li></ul> |
 | **Returns**                                          | <ul><li>True if the icon is currently set (or has just been) to be visible or False if it is not.</li></ul> |
 
+#### [microphoneState](#microphonestate)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.microphoneState(shouldPrompt) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      |  |
+| **Parameters**                                       | <ul><li>shouldPrompt - an optional boolean value indicating if we should request microphone access. Defaults to false.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> or <code>false</code> indicating whether or not Microphone access is enabled for Hammerspoon.</li></ul> |
+| **Notes**                                            | <ul><li>Will always return <code>true</code> on macOS 10.13 or earlier.</li></ul> |
+
 #### [open](#open)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.open(filePath)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -435,12 +456,12 @@ Core Hammerspoon functionality
 | **Notes**                                            | <ul><li>If the console is not currently open, it will be opened. If it is open and not the focused window, it will be brought forward and focused.</li><li>If the console is focused, it will be closed.</li></ul> |
 
 #### [updateAvailable](#updateavailable)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.updateAvailable() -> string or false` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.updateAvailable() -> string or false, string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Gets the version number of an available update |
+| **Description**                                      | Gets the version & build number of an available update |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A string containing the version number of the latest release, or a boolean false if no update is available</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the display version of the latest release, or a boolean false if no update is available</li><li>A string containing the build number of the latest release, or <code>nil</code> if no update is available</li></ul> |
 | **Notes**                                            | <ul><li>This is not a live check, it is a cached result of whatever the previous update check found. By default Hammerspoon checks for updates every few hours, but you can also add your own timer to check for updates more frequently with <code>hs.checkForUpdates()</code></li></ul> |
 
 #### [uploadCrashData](#uploadcrashdata)

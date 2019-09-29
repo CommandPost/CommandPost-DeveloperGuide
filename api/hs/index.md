@@ -29,6 +29,8 @@
 | [hs.base64](hs.base64.md)                          | Base64 encoding and decoding     |
 | [hs.battery](hs.battery.md)                          | Battery/power information     |
 | [hs.battery.watcher](hs.battery.watcher.md)                          | Watch for battery/power state changes     |
+| [hs.bonjour](hs.bonjour.md)                          | Find and publish network services advertised by multicast DNS (Bonjour) with Hammerspoon.     |
+| [hs.bonjour.service](hs.bonjour.service.md)                          | Represents the service records that are discovered or published by the hs.bonjour module.     |
 | [hs.brightness](hs.brightness.md)                          | Inspect/manipulate display brightness     |
 | [hs.caffeinate](hs.caffeinate.md)                          | Control system power states (sleeping, preventing sleep, screen locking, etc)     |
 | [hs.caffeinate.watcher](hs.caffeinate.watcher.md)                          | Watch for display and system sleep/wake/power events     |
@@ -45,7 +47,6 @@
 | [hs.doc.builder](hs.doc.builder.md)                          | Builds documentation support files.  Still experimental.     |
 | [hs.doc.hsdocs](hs.doc.hsdocs.md)                          | Manage the internal documentation web server.     |
 | [hs.doc.markdown](hs.doc.markdown.md)                          | Markdown to HTML and plaintext conversion support used by hs.doc     |
-| [hs.doc.spoonsupport](hs.doc.spoonsupport.md)                          | Provides run-time support for generating and including documentation for installed Hammerspoon Spoon bundles.     |
 | [hs.dockicon](hs.dockicon.md)                          | Control Hammerspoon's dock icon     |
 | [hs.drawing](hs.drawing.md)                          | DEPRECATED. Primitives for drawing on the screen in various ways.     |
 | [hs.drawing.color](hs.drawing.color.md)                          | Provides ccess to the system color lists and a wider variety of ways to represent color within Hammerspoon.     |

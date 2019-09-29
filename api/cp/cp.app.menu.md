@@ -10,7 +10,10 @@ trigger menu items.
  * [ROLE](#role)
  * [STORYBOARD_NAME](#storyboard_name)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [menu](#menu)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [showing](#showing)
+ * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [addMenuFinder](#addmenufinder)
  * [app](#app)
@@ -48,13 +51,27 @@ trigger menu items.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu.new(app) -> menu` </span>                                                          |
+#### [menu](#menu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu(app) -> menu` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Constructs a new menu for the specified App. |
 | **Parameters**                                       | <ul><li>app - The <code>cp.app</code> instance the menu belongs to.</li></ul> |
 | **Returns**                                          | <ul><li>a new menu instance</li></ul> |
+
+### Fields
+
+#### [showing](#showing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu.showing <cp.prop: boolean; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Tells you if the app's Menu Bar is visible. |
+
+#### [UI](#ui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.menu.UI <cp.prop:hs._asm.axuielement; read-only; live>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the `axuielement` representing the menu. |
 
 ### Methods
 

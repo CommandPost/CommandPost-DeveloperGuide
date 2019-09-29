@@ -35,8 +35,6 @@ This extension differs from the `hs.application` extension in several ways:
  * [hsApplication](#hsapplication)
  * [info](#info)
  * [installed](#installed)
- * [isPlaying](#isplaying)
- * [isPlaying](#isplaying)
  * [localeResourcesPath](#localeresourcespath)
  * [mainWindowUI](#mainwindowui)
  * [modalDialogOpen](#modaldialogopen)
@@ -63,7 +61,6 @@ This extension differs from the `hs.application` extension in several ways:
  * [hide](#hide)
  * [isSupportedLocale](#issupportedlocale)
  * [launch](#launch)
- * [menu](#menu)
  * [notifier](#notifier)
  * [quit](#quit)
  * [registerWindowType](#registerwindowtype)
@@ -184,18 +181,6 @@ This extension differs from the `hs.application` extension in several ways:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the application currently installed. |
-
-#### [isPlaying](#isplaying)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcut.main.Viewer.isPlaying <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |
-
-#### [isPlaying](#isplaying)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcut.main.ControlBar.isPlaying <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |
 
 #### [localeResourcesPath](#localeresourcespath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.localeResourcesPath <cp.prop: string; read-only; live>` </span>                                                          |
@@ -373,14 +358,6 @@ This extension differs from the `hs.application` extension in several ways:
 | **Description**                                      | Launches the application, or brings it to the front if it was already running. |
 | **Parameters**                                       | <ul><li><code>waitSeconds</code> - If provided, the number of seconds to wait until the launch                   completes. If <code>nil</code>, it will return immediately.</li><li><code>path</code>        - An optional full path to an application without an extension                   (i.e <code>/Applications/Final Cut Pro 10.3.4</code>). This allows you to                   load previous versions of the application.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.app</code> instance.</li></ul> |
-
-#### [menu](#menu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:menu() -> cp.app.menu` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the main `menu` for the application. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>cp.app.menu</code> for the <code>cp.app</code> instance.</li></ul> |
 
 #### [notifier](#notifier)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:notifier() -> cp.ui.notifier` </span>                                                          |

@@ -1,7 +1,8 @@
 # [docs](index.md) » cp.apple.finalcutpro.app
 ---
 
-The `cp.app` for Final Cut Pro.
+The [cp.app](cp.app.md) for Final Cut Pro. Will automatically determine
+if only the trial version of FCPX is installed and use that instead.
 
 ## API Overview
 * Constants - Useful values which cannot be changed
@@ -17,7 +18,8 @@ The `cp.app` for Final Cut Pro.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.app <cp.app>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
-| **Description**                                      | The `cp.app` for Final Cut Pro. |
+| **Description**                                      | The [app](cp.app.md) for Final Cut Pro. |
+| **Notes**                                            | <ul><li>All values from <a href="cp.app.md">app</a> can be accessed directly from the <code>finalcutpro</code> instance.</li></ul> |
 
 ### Fields
 

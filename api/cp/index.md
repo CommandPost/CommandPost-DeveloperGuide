@@ -21,6 +21,7 @@
 | [cp.app](cp.app.md)                          | This class assists with working with macOS apps. It provides functions for     |
 | [cp.app.menu](cp.app.menu.md)                          | Represents an app's menu bar, providing multi-lingual access to find and     |
 | [cp.app.prefs](cp.app.prefs.md)                          | Provides access to application preferences, typically stored via `NSUserDefaults` or `CFProperties`.     |
+| [cp.apple](cp.apple.md)                          | A collection of modules related to Apple apps and frameworks.     |
 | [cp.apple.commandeditor](cp.apple.commandeditor.md)                          | Functions to control and manage Apple's Command Editor - used in Final Cut Pro,     |
 | [cp.apple.compressor](cp.apple.compressor.md)                          | Represents the Compressor application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.compressor.app](cp.apple.compressor.app.md)                          | The `cp.app` for Apple's Compressor.     |
@@ -35,7 +36,7 @@
 | [cp.apple.fcpxml.secondaryStoryline](cp.apple.fcpxml.secondaryStoryline.md)                          | FCPXML Document Secondary Storyline Object.     |
 | [cp.apple.fcpxml.title](cp.apple.fcpxml.title.md)                          | FCPXML Document Title Object.     |
 | [cp.apple.finalcutpro](cp.apple.finalcutpro.md)                          | Represents the Final Cut Pro application, providing functions that allow different tasks to be accomplished.     |
-| [cp.apple.finalcutpro.app](cp.apple.finalcutpro.app.md)                          | The `cp.app` for Final Cut Pro.     |
+| [cp.apple.finalcutpro.app](cp.apple.finalcutpro.app.md)                          | The [cp.app](cp.app.md) for Final Cut Pro. Will automatically determine     |
 | [cp.apple.finalcutpro.browser.AppearanceAndFiltering](cp.apple.finalcutpro.browser.AppearanceAndFiltering.md)                          | Clip Appearance & Filtering Menu Popover     |
 | [cp.apple.finalcutpro.browser.Columns](cp.apple.finalcutpro.browser.Columns.md)                          | Final Cut Pro Browser List View Columns     |
 | [cp.apple.finalcutpro.cmd.CommandEditor](cp.apple.finalcutpro.cmd.CommandEditor.md)                          | Command Editor Module.     |
@@ -147,14 +148,15 @@
 | [cp.config.textDroppedToDockIconCallback](cp.config.textDroppedToDockIconCallback.md)                          | Text Dropped to Dock Icon Callback     |
 | [cp.console.history](cp.console.history.md)                          | Console History Manager.     |
 | [cp.deferred](cp.deferred.md)                          | This extension makes it simple to defer multiple actions after a delay from the initial execution.     |
+| [cp.delegator](cp.delegator.md)                          | `cp.delegator` is a [middleclass](https://github.com/kikito/middleclass) "mix-in" that allows for     |
 | [cp.dev](cp.dev.md)                          | A set of handy developer tools for CommandPost.     |
 | [cp.dialog](cp.dialog.md)                          | A collection of handy Dialog tools for CommandPost.     |
 | [cp.disk](cp.disk.md)                          | Provides provides details about disk devices attached to the system.     |
 | [cp.docs](cp.docs.md)                          | Documentation Tools.     |
 | [cp.feedback](cp.feedback.md)                          | Feedback Form.     |
-| [cp.highland2](cp.highland2.md)                          | Highland 2     |
-| [cp.highland2.app](cp.highland2.app.md)                          | The `cp.app` for Highland 2.     |
-| [cp.highland2.Document](cp.highland2.Document.md)                          | Highland 2 Document.     |
+| [cp.highland2](cp.highland2.md)                          | Highland 2 support.     |
+| [cp.highland2.app](cp.highland2.app.md)                          | The [cp.app](cp.app.md) for Highland 2.     |
+| [cp.highland2.Document](cp.highland2.Document.md)                          | Highland 2 Document [Window](cp.ui.Window.md) extension.     |
 | [cp.highland2.Sidebar](cp.highland2.Sidebar.md)                          | Represents the sidebar for a document opened in Highland.     |
 | [cp.i18n.language](cp.i18n.language.md)                          | Provides the set of ISO 693-1/2/3 language codes and names.     |
 | [cp.i18n.languageID](cp.i18n.languageID.md)                          | As per [Apple's documentation](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html#//apple_ref/doc/uid/10000171i-CH15-SW6),     |

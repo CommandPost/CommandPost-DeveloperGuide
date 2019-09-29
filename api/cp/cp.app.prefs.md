@@ -8,7 +8,7 @@ a table whose keys can be accessed or updated, or iterated via `ipairs`.
 For example:
 
 ```lua
-local previewPrefs = require("cp.app.prefs").new("com.apple.Preview")
+local previewPrefs = require("cp.app.prefs") "com.apple.Preview"
 previewPrefs.MyCustomPreference = "Hello world"
 print(previewPrefs.MyCustomPreference) --> "Hello world"
 
@@ -25,7 +25,7 @@ end
  * [prop](#prop)
  * [set](#set)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [prefs](#prefs)
 
 ## API Documentation
 
@@ -73,8 +73,8 @@ end
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs.new(bundleID) -> cp.app.prefs` </span>                                                          |
+#### [prefs](#prefs)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app.prefs(bundleID) -> cp.app.prefs` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `cp.app.prefs` instance, pointing at the specified `bundleID`. |

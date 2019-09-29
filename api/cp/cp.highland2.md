@@ -1,7 +1,7 @@
 # [docs](index.md) » cp.highland2
 ---
 
-Highland 2
+Highland 2 support.
 
 ## Submodules
  * [cp.highland2.Document](cp.highland2.Document.md)
@@ -10,11 +10,18 @@ Highland 2
 
 ## API Overview
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [documents](#documents)
  * [focusedDocument](#focuseddocument)
 
 ## API Documentation
 
 ### Fields
+
+#### [documents](#documents)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.highland2.documents <cp.prop: table of cp.highland2.Document>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The list of [Documents](cp.highland2.Document.md) currently open. |
 
 #### [focusedDocument](#focuseddocument)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.highland2.focusedDocument <cp.prop: cp.highland2.Document>` </span>                                                          |

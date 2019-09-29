@@ -19,6 +19,7 @@ Timeline Module.
  * [isPlaying](#isplaying)
  * [isShowing](#isshowing)
  * [mainUI](#mainui)
+ * [rangeSelected](#rangeselected)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [contents](#contents)
@@ -29,6 +30,7 @@ Timeline Module.
  * [effects](#effects)
  * [hide](#hide)
  * [index](#index)
+ * [openProject](#openproject)
  * [playhead](#playhead)
  * [show](#show)
  * [showOnPrimary](#showonprimary)
@@ -126,6 +128,12 @@ Timeline Module.
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `axuielement` representing the 'timeline', or `nil` if not available. |
 
+#### [rangeSelected](#rangeselected)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.rangeSelected <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if a range is selected in the timeline. |
+
 ### Methods
 
 #### [app](#app)
@@ -197,6 +205,15 @@ Timeline Module.
 | **Description**                                      | The [Index](cp.apple.finalcutpro.timeline.Index.md). |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>Index</code> object.</li></ul> |
+
+#### [openProject](#openproject)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:openProject(title) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Opens a project from the timeline navigation popups. |
+| **Parameters**                                       | <ul><li>title - The title of the project you want to open.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+| **Notes**                                            | <ul><li>The title supports patterns, so you can do things like:   <code>require("cp.apple.finalcutpro"):timeline():openProject("Audio.*")</code></li></ul> |
 
 #### [playhead](#playhead)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:playhead() -> Playhead` </span>                                                          |

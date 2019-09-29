@@ -6,6 +6,7 @@ A collection of handy miscellaneous tools for Lua development.
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [cleanupButtonText](#cleanupbuttontext)
+ * [contentsInsideBrackets](#contentsinsidebrackets)
  * [convertSingleHexStringToDecimalString](#convertsinglehexstringtodecimalstring)
  * [dirFiles](#dirfiles)
  * [doesDirectoryExist](#doesdirectoryexist)
@@ -29,6 +30,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [getThunderboltDevices](#getthunderboltdevices)
  * [getUSBDevices](#getusbdevices)
  * [getVRAMSize](#getvramsize)
+ * [hexStringToString](#hexstringtostring)
  * [iconFallback](#iconfallback)
  * [incrementFilename](#incrementfilename)
  * [isNumberString](#isnumberstring)
@@ -81,6 +83,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Removes the … symbol and multiple >'s from a string. |
 | **Parameters**                                       | <ul><li>value - A string</li></ul> |
 | **Returns**                                          | <ul><li>A cleaned string</li></ul> |
+
+#### [contentsInsideBrackets](#contentsinsidebrackets)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.contentsInsideBrackets(value) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the contents of any text inside the first bracket set. |
+| **Parameters**                                       | <ul><li>value - The string to process</li></ul> |
+| **Returns**                                          | <ul><li>The contents as a string or <code>nil</code></li></ul> |
 
 #### [convertSingleHexStringToDecimalString](#convertsinglehexstringtodecimalstring)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.convertSingleHexStringToDecimalString(hex) -> string` </span>                                                          |
@@ -265,6 +275,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Returns the VRAM size in format suitable for Apple's Final Cut Pro feedback form or "" if unknown. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>String</li></ul> |
+
+#### [hexStringToString](#hexstringtostring)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.hexStringToString(value) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Converts a hex string to a string. |
+| **Parameters**                                       | <ul><li>value - The string to convert</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul> |
 
 #### [iconFallback](#iconfallback)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.iconFallback(paths) -> string` </span>                                                          |
@@ -493,7 +511,7 @@ A collection of handy miscellaneous tools for Lua development.
 | **Returns**                                          | <ul><li>A string</li></ul> |
 
 #### [stringToHexString](#stringtohexstring)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.stringToHexString(value, startValue) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.stringToHexString(value) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Converts a string to a hex string. |

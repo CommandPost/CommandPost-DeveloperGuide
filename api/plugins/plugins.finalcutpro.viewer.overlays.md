@@ -37,6 +37,8 @@ Final Cut Pro Viewer Overlays.
  * [getStillsFolderPath](#getstillsfolderpath)
  * [hide](#hide)
  * [importMemory](#importmemory)
+ * [resetDraggableGuide](#resetdraggableguide)
+ * [resetOverlays](#resetoverlays)
  * [saveMemory](#savememory)
  * [setCustomCrossHairColor](#setcustomcrosshaircolor)
  * [setCustomGridColor](#setcustomgridcolor)
@@ -263,6 +265,22 @@ Final Cut Pro Viewer Overlays.
 | **Type**                                             | Function |
 | **Description**                                      | Import a file to memory. |
 | **Parameters**                                       | <ul><li>id - An identifier in the form of a number.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [resetDraggableGuide](#resetdraggableguide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.resetDraggableGuide(id) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Reset a specific Draggable Guide. |
+| **Parameters**                                       | <ul><li>id - The ID of the guide.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [resetOverlays](#resetoverlays)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.resetOverlays() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Resets all overlays to their default values. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [saveMemory](#savememory)

@@ -15,6 +15,7 @@ Core CommandPost functionality.
  * [cp.config](cp.config.md)
  * [cp.console](cp.console.md)
  * [cp.deferred](cp.deferred.md)
+ * [cp.delegator](cp.delegator.md)
  * [cp.dev](cp.dev.md)
  * [cp.dialog](cp.dialog.md)
  * [cp.disk](cp.disk.md)

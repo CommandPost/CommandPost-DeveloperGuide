@@ -6,7 +6,7 @@ Represents the Final Cut Pro application, providing functions that allow differe
 Generally, you will `require` the `cp.apple.finalcutpro` module to import it, like so:
 
 ```lua
-local fcp = require("cp.apple.finalcutpro")
+local fcp = require "cp.apple.finalcutpro"
 ```
 
 Then, there are the `UpperCase` files, which represent the application itself:
@@ -31,10 +31,10 @@ The API will automatically open the `Preferences` window, navigate to the 'Impor
 
 The `UpperCase` classes also have a variety of `UI` methods. These will return the `axuielement` for the relevant GUI element, if it is accessible. If not, it will return `nil`. These allow direct interaction with the GUI if necessary. It's most useful when adding new functions to `UpperCase` files for a particular element.
 
-This can also be used to 'wait' for an element to be visible before performing a task. For example, if you need to wait for the `Preferences` window to finish loading before doing something else, you can do this with the `cp.just` library:
+This can also be used to 'wait' for an element to be visible before performing a task. For example, if you need to wait for the `Preferences` window to finish loading before doing something else, you can do this with the [just](cp.just.md) library:
 
 ```lua
-local just = require("cp.just")
+local just = require "cp.just"
 
 local prefsWindow = fcp:preferencesWindow()
 
@@ -57,6 +57,14 @@ if fcp:preferencesWindow():isShowing() then
 else
 	-- it's closed!
 end
+```
+
+**Delegates to:** [app](cp.apple.finalcutpro.app.md), [menu](cp.app.menu.md)
+
+Note: All values/methods/props from delegates can be accessed directly from the `cp.apple.finalcutpro` instance. For example:
+
+```lua
+fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 ```
 
 ## Submodules
@@ -107,7 +115,6 @@ end
  * [browser](#browser)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
- * [currentLocale](#currentlocale)
  * [deselectAll](#deselectall)
  * [effects](#effects)
  * [eventViewer](#eventviewer)
@@ -115,6 +122,8 @@ end
  * [isFrontmost](#isfrontmost)
  * [isInstalled](#isinstalled)
  * [isModalDialogOpen](#ismodaldialogopen)
+ * [isPlaying](#isplaying)
+ * [isPlaying](#isplaying)
  * [isRunning](#isrunning)
  * [isShowing](#isshowing)
  * [isSupported](#issupported)
@@ -122,32 +131,22 @@ end
  * [libraries](#libraries)
  * [pan](#pan)
  * [preset](#preset)
- * [supportedLocales](#supportedlocales)
  * [textArea](#textarea)
  * [textLayerLeft](#textlayerleft)
  * [textLayerRight](#textlayerright)
  * [UI](#ui)
- * [version](#version)
- * [versionString](#versionstring)
  * [viewer](#viewer)
  * [volume](#volume)
  * [windowsUI](#windowsui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activeLibraryPaths](#activelibrarypaths)
  * [alert](#alert)
- * [bundleID](#bundleid)
  * [closeLibrary](#closelibrary)
  * [color](#color)
  * [colorBoard](#colorboard)
  * [commandEditor](#commandeditor)
  * [defaultCommandSetPath](#defaultcommandsetpath)
- * [doHide](#dohide)
- * [doLaunch](#dolaunch)
- * [doQuit](#doquit)
- * [doRestart](#dorestart)
- * [doSelectMenu](#doselectmenu)
  * [doShortcut](#doshortcut)
- * [doShow](#doshow)
  * [effects](#effects)
  * [exportDialog](#exportdialog)
  * [findAndReplaceTitleText](#findandreplacetitletext)
@@ -163,8 +162,6 @@ end
  * [launch](#launch)
  * [media](#media)
  * [mediaImport](#mediaimport)
- * [menu](#menu)
- * [notifier](#notifier)
  * [openLibrary](#openlibrary)
  * [plugins](#plugins)
  * [preferencesWindow](#preferenceswindow)
@@ -175,7 +172,6 @@ end
  * [scanPlugins](#scanplugins)
  * [secondaryWindow](#secondarywindow)
  * [selectLibrary](#selectlibrary)
- * [selectMenu](#selectmenu)
  * [show](#show)
  * [string](#string)
  * [timeline](#timeline)
@@ -366,12 +362,6 @@ end
 | **Type**                                             | Field |
 | **Description**                                      | The `axuielement` containing the properties rows, if available. |
 
-#### [currentLocale](#currentlocale)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.currentLocale <cp.prop: cp.i18n.localeID; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Gets and sets the current locale for FCPX. |
-
 #### [deselectAll](#deselectall)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.deselectAll <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -416,6 +406,18 @@ end
 | **Type**                                             | Field |
 | **Description**                                      | Is a modal dialog currently open? |
 
+#### [isPlaying](#isplaying)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Viewer.isPlaying <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |
+
+#### [isPlaying](#isplaying)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.ControlBar.isPlaying <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The 'playing' status of the viewer. If true, it is playing, if not it is paused. |
+
 #### [isRunning](#isrunning)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.isRunning <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -444,7 +446,7 @@ end
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.libraries <cp.apple.finalcutpro.main.LibrariesBrowser>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the [LibrariesBrowser](cp.apple.finalcut.main.LibrariesBrowser.md) instance, whether it is in the primary or secondary window. |
+| **Description**                                      | Returns the [LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md) instance, whether it is in the primary or secondary window. |
 
 #### [pan](#pan)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.pan <cp.prop: PropertyRow>` </span>                                                          |
@@ -457,12 +459,6 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The preset popup found at the top of the inspector. |
-
-#### [supportedLocales](#supportedlocales)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.supportedLocales <cp.prop: table of cp.i18n.localeID; read-only>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The list of supported locales for this version of FCPX. |
 
 #### [textArea](#textarea)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.textArea <cp.ui.TextArea>` </span>                                                          |
@@ -487,18 +483,6 @@ end
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The Final Cut Pro `axuielement`, if available. |
-
-#### [version](#version)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.version <cp.prop: semver; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The version number of the running or default installation of FCPX as a `semver`. |
-
-#### [versionString](#versionstring)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.versionString <cp.prop: string; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The version number of the running or default installation of FCPX as a `string`. |
 
 #### [viewer](#viewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer <cp.apple.finalcutpro.viewer.Viewer>` </span>                                                          |
@@ -537,14 +521,6 @@ end
 | **Description**                                      | Provides basic access to any 'alert' dialog windows in the app. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the <code>Alert</code> instance</li></ul> |
-
-#### [bundleID](#bundleid)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:bundleID() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Bundle ID for the app. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Bundle ID</li></ul> |
 
 #### [closeLibrary](#closelibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:closeLibrary(title) -> boolean` </span>                                                          |
@@ -586,47 +562,6 @@ end
 | **Parameters**                                       | <ul><li><code>locale</code> - The optional locale to use. Defaults to the <a href="#currentLocale">current locale</a>.</li></ul> |
 | **Returns**                                          | <ul><li>The 'Default' Command Set path, or <code>nil</code> if an error occurred</li></ul> |
 
-#### [doHide](#dohide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doHide() -> cp.rx.go.Statement` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will hide the FCP. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
-
-#### [doLaunch](#dolaunch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doLaunch() -> cp.rx.go.Statement` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will launch, or focus it if already running FCP. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
-
-#### [doQuit](#doquit)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doQuit() -> cp.rx.go.Statement` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will quit FCP. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
-
-#### [doRestart](#dorestart)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doRestart() -> cp.rx.go.Statement` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns a [Statement](cp.rx.go.Statement.cp) that will restart Final Cut Pro, if it is running. If not, nothing happens. |
-| **Parameters**                                       | <ul><li>None.</li></ul> |
-| **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
-
-#### [doSelectMenu](#doselectmenu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doSelectMenu(path, options) -> cp.rx.Observable <hs._asm.axuielement>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Selects a Menu Item based on the provided menu path. |
-| **Parameters**                                       | <ul><li>path - The list of menu items you'd like to activate.</li><li>options - (optional) The table of options to apply.</li></ul> |
-| **Returns**                                          | <ul><li>An <code>Observable</code> which emits the final menu item, or an error if the selection failed.</li></ul> |
-| **Notes**                                            | <ul><li>The returned <code>Observable</code> will be 'hot', in that it will execute even if no subscription is made to the result. However, it will potentially be run asynchronously, so the actual execution may occur later.</li></ul> |
-
 #### [doShortcut](#doshortcut)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doShortcut(whichShortcut) -> Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -634,14 +569,6 @@ end
 | **Description**                                      | Perform a Final Cut Pro Keyboard Shortcut |
 | **Parameters**                                       | <ul><li>whichShortcut - As per the Command Set name</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Statement</code> that will perform the shortcut when executed.</li></ul> |
-
-#### [doShow](#doshow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:doShow() -> cp.rx.go.Statement` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will show FCP on-screen. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
 
 #### [effects](#effects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:effects() -> EffectsBrowser` </span>                                                          |
@@ -764,22 +691,6 @@ end
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The Final Cut Pro Media Import Window</li></ul> |
 
-#### [menu](#menu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:menu() -> cp.app.menu` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `cp.app.menu` for FCP. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>cp.app.menu</code> for the app.</li></ul> |
-
-#### [notifier](#notifier)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:notifier() -> cp.ui.notifier` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns a notifier that is tracking the application UI element. It has already been started. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The notifier.</li></ul> |
-
 #### [openLibrary](#openlibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:openLibrary(path) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -859,14 +770,6 @@ end
 | **Description**                                      | Attempts to select an open library with the specified title. |
 | **Parameters**                                       | <ul><li>title - The title of the library to select.</li></ul> |
 | **Returns**                                          | <ul><li>The library row <code>axuielement</code>.</li></ul> |
-
-#### [selectMenu](#selectmenu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectMenu(path[, options]) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Selects a Final Cut Pro Menu Item based on the list of menu titles in English. |
-| **Parameters**                                       | <ul><li><code>path</code>       - The list of menu items you'd like to activate, for example:           select("View", "Browser", "as List")</li><li><code>options</code>    - (optional) The table of options. See <code>cp.app.menu:selectMenu(...)</code> for details.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if the press was successful.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:show() -> cp.apple.finalcutpro` </span>                                                          |

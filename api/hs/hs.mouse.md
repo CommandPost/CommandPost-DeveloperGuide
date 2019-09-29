@@ -38,6 +38,7 @@ misrepresented as being the original software.
  * [getButtons](#getbuttons)
  * [getCurrentScreen](#getcurrentscreen)
  * [getRelativePosition](#getrelativeposition)
+ * [names](#names)
  * [scrollDirection](#scrolldirection)
  * [setAbsolutePosition](#setabsoluteposition)
  * [setRelativePosition](#setrelativeposition)
@@ -54,7 +55,7 @@ misrepresented as being the original software.
 | **Description**                                      | Gets the total number of mice connected to your system. |
 | **Parameters**                                       | <ul><li>includeInternal - A boolean which sets whether or not you want to include internal Trackpad's in the count. Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>The number of mice connected to your system</li></ul> |
-| **Notes**                                            | <ul><li>This function leverages code from <a href="http://icculus.org/manymouse/">ManyMouse</a>.</li></ul> |
+| **Notes**                                            | <ul><li>This function leverages code from <a href="http://icculus.org/manymouse/">ManyMouse</a>.</li><li>This function considers any mouse labelled as "Apple Internal Keyboard / Trackpad" to be an internal mouse.</li></ul> |
 
 #### [getAbsolutePosition](#getabsoluteposition)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.getAbsolutePosition() -> point` </span>                                                          |
@@ -90,6 +91,15 @@ misrepresented as being the original software.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A point-table containing the relative x and y co-ordinates of the mouse pointer, or nil if an error occured</li></ul> |
 | **Notes**                                            | <ul><li>The co-ordinates returned by this function are relative to the top left pixel of the screen the mouse is on (see <code>hs.mouse.getAbsolutePosition</code> if you need the location in the full desktop space)</li></ul> |
+
+#### [names](#names)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.names() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the names of any mice connected to the system. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing strings of all the mice connected to the system.</li></ul> |
+| **Notes**                                            | <ul><li>This function leverages code from <a href="http://icculus.org/manymouse/">ManyMouse</a>.</li></ul> |
 
 #### [scrollDirection](#scrolldirection)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.mouse.scrollDirection() -> string` </span>                                                          |

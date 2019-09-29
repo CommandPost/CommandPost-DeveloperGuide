@@ -81,6 +81,7 @@
 | [plugins.core.tangent.os.sound](plugins.core.tangent.os.sound.md)                          | Tangent Display Functions.     |
 | [plugins.core.tangent.os.window](plugins.core.tangent.os.window.md)                          | Window Management Tools for Tangent.     |
 | [plugins.core.tangent.prefs](plugins.core.tangent.prefs.md)                          | Tangent Preferences Panel     |
+| [plugins.core.tools.caffeinate](plugins.core.tools.caffeinate.md)                          | Prevents your Mac from going to sleep.     |
 | [plugins.core.touchbar.banks](plugins.core.touchbar.banks.md)                          | Touch Bar Bank Actions.     |
 | [plugins.core.touchbar.location](plugins.core.touchbar.location.md)                          | Virtual Touch Bar Update Location Callback     |
 | [plugins.core.touchbar.manager](plugins.core.touchbar.manager.md)                          | Touch Bar Manager Plugin.     |
@@ -122,6 +123,7 @@
 | [plugins.finalcutpro.fullscreen.disableesc](plugins.finalcutpro.fullscreen.disableesc.md)                          | Disables the ESC key when Final Cut Pro is in fullscreen mode.     |
 | [plugins.finalcutpro.fullscreen.dockicon](plugins.finalcutpro.fullscreen.dockicon.md)                          | Manages the CommandPost dock icon when FCP is full-screen.     |
 | [plugins.finalcutpro.fullscreen.shortcuts](plugins.finalcutpro.fullscreen.shortcuts.md)                          | Fullscreen Shortcuts     |
+| [plugins.finalcutpro.fullscreen.stopped](plugins.finalcutpro.fullscreen.stopped.md)                          | Play Full Screen & Stop     |
 | [plugins.finalcutpro.hud.manager](plugins.finalcutpro.hud.manager.md)                          | Manager for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.hud.panels.fcpxml](plugins.finalcutpro.hud.panels.fcpxml.md)                          | FCPXML Panel for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.hud.panels.info](plugins.finalcutpro.hud.panels.info.md)                          | Info Panel for the Final Cut Pro HUD.     |
@@ -204,6 +206,7 @@
 | [plugins.finalcutpro.timeline.mousezoom](plugins.finalcutpro.timeline.mousezoom.md)                          | Allows you to zoom in or out of a Final Cut Pro timeline using the mechanical scroll wheel on your mouse or the Touch Pad on the Magic Mouse when holding down the OPTION modifier key.     |
 | [plugins.finalcutpro.timeline.movetoplayhead](plugins.finalcutpro.timeline.movetoplayhead.md)                          | Move To Playhead.     |
 | [plugins.finalcutpro.timeline.multicam](plugins.finalcutpro.timeline.multicam.md)                          | Multicam Tools.     |
+| [plugins.finalcutpro.timeline.navigation](plugins.finalcutpro.timeline.navigation.md)                          | Actions to control Timeline Navigation.     |
 | [plugins.finalcutpro.timeline.playback](plugins.finalcutpro.timeline.playback.md)                          | Playback Plugin.     |
 | [plugins.finalcutpro.timeline.playhead](plugins.finalcutpro.timeline.playhead.md)                          | Manages features relating to the Timeline Playhead.     |
 | [plugins.finalcutpro.timeline.pluginactions](plugins.finalcutpro.timeline.pluginactions.md)                          | Adds Final Cut Pro Plugins (i.e. Effects, Generators, Titles and Transitions) to CommandPost Actions.     |
