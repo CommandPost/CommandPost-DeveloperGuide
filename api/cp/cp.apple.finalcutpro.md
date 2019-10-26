@@ -141,6 +141,7 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activeLibraryPaths](#activelibrarypaths)
  * [alert](#alert)
+ * [backgroundTasksDialog](#backgroundtasksdialog)
  * [closeLibrary](#closelibrary)
  * [color](#color)
  * [colorBoard](#colorboard)
@@ -521,6 +522,14 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Description**                                      | Provides basic access to any 'alert' dialog windows in the app. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the <code>Alert</code> instance</li></ul> |
+
+#### [backgroundTasksDialog](#backgroundtasksdialog)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:backgroundTasksDialog() -> BackgroundTasksDialog` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the [BackgroundTasksDialog](cp.apple.finalcutpro.main.BackgroundTasksDialog.md) dialog window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The window.</li></ul> |
 
 #### [closeLibrary](#closelibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:closeLibrary(title) -> boolean` </span>                                                          |

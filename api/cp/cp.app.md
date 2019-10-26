@@ -301,11 +301,11 @@ This extension differs from the `hs.application` extension in several ways:
 | **Returns**                                          | <ul><li>A <code>Statement</code>, resolving to <code>true</code> if the app is running and was successfully hidden, or <code>false</code> otherwise.</li></ul> |
 
 #### [doLaunch](#dolaunch)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:doLaunch() -> cp.rx.Statement <boolean>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:doLaunch([waitSeconds[, path]]) -> cp.rx.Statement <boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a `Statement` that can be run to launch or focus the current app. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>waitSeconds - (optional) The number of seconds to wait for it to load. Defaults to 30 seconds.</li><li>path - (optional) The alternate path of the app to launch.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> after the app is frontmost.</li></ul> |
 | **Notes**                                            | <ul><li>By default the <code>Statement</code> will time out after 30 seconds, sending an error signal.</li></ul> |
 

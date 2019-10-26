@@ -14,6 +14,7 @@ Represents a clip of media inside FCP.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [getTitle](#gettitle)
  * [getType](#gettype)
+ * [setTitle](#settitle)
  * [UI](#ui)
 
 ## API Documentation
@@ -70,6 +71,14 @@ Represents a clip of media inside FCP.
 | **Description**                                      | Returns the type of clip (one of the `Clip.type` values) |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Clip.type</code> value (e.g. <code>Clip.type.row</code> or Clip.type.filmstrip`)</li></ul> |
+
+#### [setTitle](#settitle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.content.Clip:setTitle(title) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the title of a clip. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.content.Clip:UI() -> axuielement` </span>                                                          |

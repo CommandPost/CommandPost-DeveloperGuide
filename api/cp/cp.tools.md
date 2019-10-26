@@ -48,6 +48,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [readFromFile](#readfromfile)
  * [removeFilenameFromPath](#removefilenamefrompath)
  * [removeFromTable](#removefromtable)
+ * [replace](#replace)
  * [rescale](#rescale)
  * [rightClick](#rightclick)
  * [rmdir](#rmdir)
@@ -419,6 +420,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Removes a string from a table of strings |
 | **Parameters**                                       | <ul><li>table - the table you want to check</li><li>element - the string you want to remove</li></ul> |
 | **Returns**                                          | <ul><li>A table</li></ul> |
+
+#### [replace](#replace)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.replace(text, old, new) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | A find and replace feature that doesn't use patterns. |
+| **Parameters**                                       | <ul><li>text - The string you want to process</li><li>old - The string you want to find</li><li>new - The new string you want to replace the old string with</li></ul> |
+| **Returns**                                          | <ul><li>A new string</li></ul> |
 
 #### [rescale](#rescale)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.rescale(value, inMin, inMax, outMin, outMax) -> number | nil` </span>                                                          |

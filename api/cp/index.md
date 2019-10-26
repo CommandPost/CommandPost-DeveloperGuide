@@ -21,7 +21,6 @@
 | [cp.app](cp.app.md)                          | This class assists with working with macOS apps. It provides functions for     |
 | [cp.app.menu](cp.app.menu.md)                          | Represents an app's menu bar, providing multi-lingual access to find and     |
 | [cp.app.prefs](cp.app.prefs.md)                          | Provides access to application preferences, typically stored via `NSUserDefaults` or `CFProperties`.     |
-| [cp.apple](cp.apple.md)                          | A collection of modules related to Apple apps and frameworks.     |
 | [cp.apple.commandeditor](cp.apple.commandeditor.md)                          | Functions to control and manage Apple's Command Editor - used in Final Cut Pro,     |
 | [cp.apple.compressor](cp.apple.compressor.md)                          | Represents the Compressor application, providing functions that allow different tasks to be accomplished.     |
 | [cp.apple.compressor.app](cp.apple.compressor.app.md)                          | The `cp.app` for Apple's Compressor.     |
@@ -75,6 +74,7 @@
 | [cp.apple.finalcutpro.inspector.title.TitleInspector](cp.apple.finalcutpro.inspector.title.TitleInspector.md)                          | Title Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.transition.TransitionInspector](cp.apple.finalcutpro.inspector.transition.TransitionInspector.md)                          | Transition Inspector Module.     |
 | [cp.apple.finalcutpro.inspector.video.VideoInspector](cp.apple.finalcutpro.inspector.video.VideoInspector.md)                          | Video Inspector Module.     |
+| [cp.apple.finalcutpro.main.BackgroundTasksDialog](cp.apple.finalcutpro.main.BackgroundTasksDialog.md)                          | Represents the Background Tasks warning dialog.     |
 | [cp.apple.finalcutpro.main.Browser](cp.apple.finalcutpro.main.Browser.md)                          | Browser Module.     |
 | [cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover](cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.md)                          | Browser Marker Popup.     |
 | [cp.apple.finalcutpro.main.EffectsBrowser](cp.apple.finalcutpro.main.EffectsBrowser.md)                          | Effects Browser Module.     |
@@ -92,7 +92,7 @@
 | [cp.apple.finalcutpro.main.PrimaryWindow](cp.apple.finalcutpro.main.PrimaryWindow.md)                          | Primary Window Module.     |
 | [cp.apple.finalcutpro.main.SecondaryWindow](cp.apple.finalcutpro.main.SecondaryWindow.md)                          | Secondary Window Module.     |
 | [cp.apple.finalcutpro.main.TranscodeMedia](cp.apple.finalcutpro.main.TranscodeMedia.md)                          | Represents the Transcode Media sheet.     |
-| [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu.     |
+| [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu Helper Functions.     |
 | [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
 | [cp.apple.finalcutpro.plugins.guiscan](cp.apple.finalcutpro.plugins.guiscan.md)                          | Final Cut Pro GUI Plugin Scanner.     |
 | [cp.apple.finalcutpro.prefs.GeneralPanel](cp.apple.finalcutpro.prefs.GeneralPanel.md)                          | General Panel Module.     |
@@ -118,6 +118,7 @@
 | [cp.apple.finalcutpro.timeline.IndexTags](cp.apple.finalcutpro.timeline.IndexTags.md)                          | Provides access to the 'Tags' section of the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md)     |
 | [cp.apple.finalcutpro.timeline.IndexTags.Type](cp.apple.finalcutpro.timeline.IndexTags.Type.md)                          | The collection of [RadioButtons](cp.ui.RadioButton.md) that allow filtering by Video/Audio/Title.     |
 | [cp.apple.finalcutpro.timeline.Role](cp.apple.finalcutpro.timeline.Role.md)                          | *Extends [Row](cp.ui.Row.md)*     |
+| [cp.apple.finalcutpro.timeline.SpeedPopover](cp.apple.finalcutpro.timeline.SpeedPopover.md)                          | *Extends [Timeline](cp.apple.finalcutpro.timeline.md)*     |
 | [cp.apple.finalcutpro.timeline.Timeline](cp.apple.finalcutpro.timeline.Timeline.md)                          | Timeline Module.     |
 | [cp.apple.finalcutpro.timeline.Toolbar](cp.apple.finalcutpro.timeline.Toolbar.md)                          | Timeline Toolbar     |
 | [cp.apple.finalcutpro.timeline.Toolbar.Browser](cp.apple.finalcutpro.timeline.Toolbar.Browser.md)                          | A [RadioGroup](cp.ui.RadioGroup.md) that contains buttons to show or hide the Effects and Transitions Browsers.     |
@@ -165,6 +166,7 @@
 | [cp.i18n.script](cp.i18n.script.md)                          | Provides the set of ISO 15924 language scripts.     |
 | [cp.idle](cp.idle.md)                          | This library allows tasks to be queue for execution when the computer has     |
 | [cp.ids](cp.ids.md)                          | Allows managing values/IDs which can vary between versions.     |
+| [cp.interpolate](cp.interpolate.md)                          | Provides a function that will interpolate values into a string.     |
 | [cp.is](cp.is.md)                          | A simple class that lets you test if a value `is` a particular type.     |
 | [cp.json](cp.json.md)                          | A collection of handy JSON tools.     |
 | [cp.just](cp.just.md)                          | This module provides functions to help with performing tasks which may be     |
@@ -224,6 +226,20 @@
 | [cp.rx.Subject](cp.rx.Subject.md)                          | `Subjects` function both as an [Observer](cp.rs.Observer.md) and as an [Observable](cp.rx.Observable.md). Subjects inherit all     |
 | [cp.rx.TimeoutScheduler](cp.rx.TimeoutScheduler.md)                          | A scheduler that uses the `hs.timer` library to schedule events on an event loop.     |
 | [cp.sourcewatcher](cp.sourcewatcher.md)                          | Watches folders for specific file extensions and reloads the app if they change.     |
+| [cp.spec](cp.spec.md)                          | An synchronous/asynchronous test library for Lua.     |
+| [cp.spec.DefaultHandler](cp.spec.DefaultHandler.md)                          | Default implementation of [Handler](cp.spec.Handler.md), which     |
+| [cp.spec.Definition](cp.spec.Definition.md)                          | A [Definition](cp.spec.Definition.md) is a superclass for a "runnable" specification.     |
+| [cp.spec.Error](cp.spec.Error.md)                          | Provides an Error message, which can be thrown via the `error` function.     |
+| [cp.spec.expect](cp.spec.expect.md)                          | Provides a way of checking values match expected results. At it's core, it uses `assert` to make the check.     |
+| [cp.spec.Handler](cp.spec.Handler.md)                          | Subclasses of this can customise how reports are handled.     |
+| [cp.spec.Message](cp.spec.Message.md)                          | Provides an Message message, which can be thrown via the `error` function.     |
+| [cp.spec.Report](cp.spec.Report.md)                          | The results of a test [run](cp.spec.Run.md).     |
+| [cp.spec.Run](cp.spec.Run.md)                          | An individual run of a test [Definition](cp.spec.Definition.md) or [Specification](cp.spec.Specification.md).     |
+| [cp.spec.Run.This](cp.spec.Run.This.md)                          | A token passed to test functions to allow them to indicate if a test [run](cp.spec.Run.md)     |
+| [cp.spec.Scenario](cp.spec.Scenario.md)                          | A [Definition](cp.spec.Definition.md) which describes a specific scenario.     |
+| [cp.spec.Specification](cp.spec.Specification.md)                          | A Specification is a list of [definitions](cp.spec.Definition.md) which     |
+| [cp.spec.TestCase](cp.spec.TestCase.md)                          | Wraps [cp.test](cp.test.md) into a subclass of [Scenario](cp.spec.Scenario.md).     |
+| [cp.spec.Where](cp.spec.Where.md)                          | Created via [Scenario:where(...)](cp.spec.Scenario.md#where).     |
 | [cp.strings](cp.strings.md)                          | Provides strings from (potentially) multiple sources, with support for loading from multiple languages.     |
 | [cp.strings.source.plist](cp.strings.source.plist.md)                          | Loads strings from a `plist` with allowing for a given language variation. Eg:     |
 | [cp.strings.source.table](cp.strings.source.table.md)                          | Loads strings from provided tables, allowing for a given language variation. Eg:     |

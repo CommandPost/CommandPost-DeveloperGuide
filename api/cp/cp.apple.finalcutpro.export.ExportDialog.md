@@ -4,16 +4,10 @@
 Export Dialog Module.
 
 ## API Overview
-* Functions - API calls offered directly by the extension
- * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Fields - Variables which can only be accessed from an object returned by a constructor
- * [isShowing](#isshowing)
- * [title](#title)
- * [UI](#ui)
+ * [ExportDialogTitleText](#exportdialogtitletext)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
+ * [fileExtension](#fileextension)
  * [getTitle](#gettitle)
  * [hide](#hide)
  * [pressCancel](#presscancel)
@@ -23,55 +17,21 @@ Export Dialog Module.
 
 ## API Documentation
 
-### Functions
-
-#### [matches](#matches)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.matches(element) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Checks to see if an element matches what we think it should be. |
-| **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
-
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.new(app) -> ExportDialog` </span>                                                          |
+#### [ExportDialogTitleText](#exportdialogtitletext)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialogTitleText(parent)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
-| **Description**                                      | Creates a new Export Dialog object. |
-| **Parameters**                                       | <ul><li>app - The <code>cp.apple.finalcutpro</code> object.</li></ul> |
-| **Returns**                                          | <ul><li>A new ExportDialog object.</li></ul> |
-
-### Fields
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.isShowing <cp.prop: boolean; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Is the window showing? |
-
-#### [title](#title)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.title <cp.prop: string; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The window title, or `nil` if not available. |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.UI <cp.prop: hs._asm.axuielement: read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns the Export Dialog `axuielement`. |
+| **Description**                                      | Creates a new Export [Dialog](cp.ui.Dialog.md) |
 
 ### Methods
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:app() -> App` </span>                                                          |
+#### [fileExtension](#fileextension)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:fileExtension() -> cp.ui.StaticText` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Description**                                      | The "File Extension" [StaticText](cp.ui.StaticText.md). |
 
 #### [getTitle](#gettitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:getTitle() -> string | nil` </span>                                                          |

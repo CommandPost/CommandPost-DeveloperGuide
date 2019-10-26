@@ -20,6 +20,7 @@ Timeline Batch Export Plugin.
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [customFilename](#customfilename)
  * [destinationPreset](#destinationpreset)
+ * [ignoreBackgroundTasks](#ignorebackgroundtasks)
  * [ignoreInvalidCaptions](#ignoreinvalidcaptions)
  * [ignoreMissingEffects](#ignoremissingeffects)
  * [ignoreProxies](#ignoreproxies)
@@ -107,6 +108,12 @@ Timeline Batch Export Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Destination Preset. |
+
+#### [ignoreBackgroundTasks](#ignorebackgroundtasks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreBackgroundTasks <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Defines whether or not a Batch Export should Ignore Background Tasks. |
 
 #### [ignoreInvalidCaptions](#ignoreinvalidcaptions)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.export.batch.ignoreInvalidCaptions <cp.prop: boolean>` </span>                                                          |

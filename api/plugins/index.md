@@ -25,7 +25,9 @@
 | [plugins.core.action.manager](plugins.core.action.manager.md)                          | Action Manager Module.     |
 | [plugins.core.commands.actions](plugins.core.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.core.commands.global](plugins.core.commands.global.md)                          | The 'global' command collection.     |
-| [plugins.core.console](plugins.core.console.md)                          | Global Console     |
+| [plugins.core.console](plugins.core.console.md)                          | Search Console     |
+| [plugins.core.console.applications](plugins.core.console.applications.md)                          | Adds all installed applications to the Search Console.     |
+| [plugins.core.console.scripts](plugins.core.console.scripts.md)                          | Adds all installed AppleScripts to the Search Console.     |
 | [plugins.core.disk.automount](plugins.core.disk.automount.md)                          | Automatic Disk Mounting & Unmounting.     |
 | [plugins.core.disk.favourites](plugins.core.disk.favourites.md)                          | Action that allows you save and open user-defined favourite folders.     |
 | [plugins.core.helpandsupport.credits](plugins.core.helpandsupport.credits.md)                          | Credits Menu Item.     |
@@ -41,11 +43,13 @@
 | [plugins.core.loupedeck.prefs.default](plugins.core.loupedeck.prefs.default.md)                          | Default MIDI Controls.     |
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
+| [plugins.core.menu.menuaction](plugins.core.menu.menuaction.md)                          | Add actions that allow you to trigger the menubar items from any application.     |
 | [plugins.core.midi.controls.banks](plugins.core.midi.controls.banks.md)                          | MIDI Control Bank Actions.     |
 | [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
 | [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)                          | MIDI Manager Controls.     |
 | [plugins.core.midi.manager.default](plugins.core.midi.manager.default.md)                          | Default MIDI Controls.     |
 | [plugins.core.midi.prefs](plugins.core.midi.prefs.md)                          | MIDI Preferences Panel     |
+| [plugins.core.pasteboard.history](plugins.core.pasteboard.history.md)                          | Adds text pasteboard history actions to the Search Console.     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
 | [plugins.core.preferences.manager.panel](plugins.core.preferences.manager.panel.md)                          | CommandPost Preferences Panel.     |
@@ -55,6 +59,7 @@
 | [plugins.core.preferences.panels.plugins](plugins.core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
 | [plugins.core.preferences.panels.scripting](plugins.core.preferences.panels.scripting.md)                          | General Preferences Panel     |
 | [plugins.core.preferences.panels.settings](plugins.core.preferences.panels.settings.md)                          | Settings Preferences Panel     |
+| [plugins.core.preferences.panels.snippets](plugins.core.preferences.panels.snippets.md)                          | Snippets Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
 | [plugins.core.scripting.preferences](plugins.core.scripting.preferences.md)                          | Scripting Preferences.     |
 | [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
@@ -114,7 +119,7 @@
 | [plugins.finalcutpro.browser.soloclip](plugins.finalcutpro.browser.soloclip.md)                          | Solo a clip in the Final Cut Pro Browser.     |
 | [plugins.finalcutpro.commands](plugins.finalcutpro.commands.md)                          | The 'fcpx' command collection.     |
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
-| [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Console     |
+| [plugins.finalcutpro.console](plugins.finalcutpro.console.md)                          | Final Cut Pro Search Console     |
 | [plugins.finalcutpro.console.font](plugins.finalcutpro.console.font.md)                          | Final Cut Pro Font Console     |
 | [plugins.finalcutpro.export.batch](plugins.finalcutpro.export.batch.md)                          | Timeline Batch Export Plugin.     |
 | [plugins.finalcutpro.export.batch.manager](plugins.finalcutpro.export.batch.manager.md)                          | Manager for the Batch Export Window.     |
@@ -130,6 +135,7 @@
 | [plugins.finalcutpro.hud.panels.minimise](plugins.finalcutpro.hud.panels.minimise.md)                          | Minimise button for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.hud.panels.notes](plugins.finalcutpro.hud.panels.notes.md)                          | Notes Panel for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.hud.panels.pasteboard](plugins.finalcutpro.hud.panels.pasteboard.md)                          | FCPXML Panel for the Final Cut Pro HUD.     |
+| [plugins.finalcutpro.hud.panels.rename](plugins.finalcutpro.hud.panels.rename.md)                          | Batch Rename Panel for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.hud.panels.search](plugins.finalcutpro.hud.panels.search.md)                          | Ten Panel for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.hud.panels.tenbuttons](plugins.finalcutpro.hud.panels.tenbuttons.md)                          | Ten Panel for the Final Cut Pro HUD.     |
 | [plugins.finalcutpro.hud.panels.twelvebuttons](plugins.finalcutpro.hud.panels.twelvebuttons.md)                          | Twelve Button Panel for the Final Cut Pro HUD.     |
@@ -137,6 +143,7 @@
 | [plugins.finalcutpro.import.ignorecard](plugins.finalcutpro.import.ignorecard.md)                          | Ignore Final Cut Pro's Media Import Window.     |
 | [plugins.finalcutpro.import.preferences](plugins.finalcutpro.import.preferences.md)                          | Import Preferences     |
 | [plugins.finalcutpro.inspector.audio](plugins.finalcutpro.inspector.audio.md)                          | Final Cut Pro Audio Inspector Additions.     |
+| [plugins.finalcutpro.inspector.info](plugins.finalcutpro.inspector.info.md)                          | Final Cut Pro Info Inspector Additions.     |
 | [plugins.finalcutpro.inspector.show](plugins.finalcutpro.inspector.show.md)                          | Final Cut Pro Inspector Additions.     |
 | [plugins.finalcutpro.inspector.text](plugins.finalcutpro.inspector.text.md)                          | Final Cut Pro Text Inspector Additions.     |
 | [plugins.finalcutpro.inspector.video](plugins.finalcutpro.inspector.video.md)                          | Final Cut Pro Video Inspector Additions.     |
@@ -213,6 +220,7 @@
 | [plugins.finalcutpro.timeline.preferences](plugins.finalcutpro.timeline.preferences.md)                          | Final Cut Pro Timeline Preferences.     |
 | [plugins.finalcutpro.timeline.renameclip](plugins.finalcutpro.timeline.renameclip.md)                          | Rename Clip     |
 | [plugins.finalcutpro.timeline.selectalltimelineclips](plugins.finalcutpro.timeline.selectalltimelineclips.md)                          | Select All Timeline Clips     |
+| [plugins.finalcutpro.timeline.speed](plugins.finalcutpro.timeline.speed.md)                          | Speed Related Actions     |
 | [plugins.finalcutpro.timeline.titles](plugins.finalcutpro.timeline.titles.md)                          | Controls Final Cut Pro's Titles.     |
 | [plugins.finalcutpro.timeline.transcode](plugins.finalcutpro.timeline.transcode.md)                          | Adds actions that allows you to transcode clips from the timeline.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
@@ -232,6 +240,7 @@
 | [plugins.finalcutpro.watchfolders.media.panel](plugins.finalcutpro.watchfolders.media.panel.md)                          | Watch Folder Media Panel.     |
 | [plugins.finder.dateandtime](plugins.finder.dateandtime.md)                          | Types the date and time in the "YYYYMMDD HHMM" format.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
+| [plugins.finder.pasteboard.history](plugins.finder.pasteboard.history.md)                          | Adds text pasteboard history actions to the Search Console.     |
 | [plugins.finder.preferences.panel](plugins.finder.preferences.panel.md)                          | General Preferences Panel     |
 | [plugins.finder.preferences.powerchime](plugins.finder.preferences.powerchime.md)                          | General Preferences Panel     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |

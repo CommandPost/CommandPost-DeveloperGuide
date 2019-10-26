@@ -9,6 +9,7 @@ UI Text Area.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [TextArea](#textarea)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [focused](#focused)
  * [value](#value)
 
 ## API Documentation
@@ -34,6 +35,12 @@ UI Text Area.
 | **Returns**                                          | <ul><li>A new <code>TextArea</code> object.</li></ul> |
 
 ### Fields
+
+#### [focused](#focused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextArea.focused <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Whether or not the Text Area if focused. |
 
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextArea.value <cp.prop: string>` </span>                                                          |

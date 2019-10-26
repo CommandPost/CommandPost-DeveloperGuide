@@ -164,6 +164,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Description**                                      | Gets/Sets the desktop background image for a screen |
 | **Parameters**                                       | <ul><li>imageURL - An optional file:// URL to an image file to set as the background. If omitted, the current file URL is returned</li></ul> |
 | **Returns**                                          | <ul><li>the <code>hs.screen</code> object if a new URL was set, otherwise a string containing the current URL</li></ul> |
+| **Notes**                                            | <ul><li>If the user has set a folder of pictures to be alternated as the desktop background, the path to that folder will be returned.</li></ul> |
 
 #### [frame](#frame)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:frame() -> hs.geometry rect` </span>                                                          |

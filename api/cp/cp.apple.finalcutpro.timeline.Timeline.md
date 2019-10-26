@@ -20,6 +20,7 @@ Timeline Module.
  * [isShowing](#isshowing)
  * [mainUI](#mainui)
  * [rangeSelected](#rangeselected)
+ * [speedPopover](#speedpopover)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [app](#app)
  * [contents](#contents)
@@ -133,6 +134,12 @@ Timeline Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if a range is selected in the timeline. |
+
+#### [speedPopover](#speedpopover)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.speedPopover <cp.apple.finalcutpro.timeline.SpeedPopover>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Provides the [SpeedPopover](cp.apple.finalcutpro.timeline.SpeedPopover.md). |
 
 ### Methods
 
