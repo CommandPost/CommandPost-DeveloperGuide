@@ -542,6 +542,7 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Returns how many items are in a table. |
 | **Parameters**                                       | <ul><li>table - The table you want to count.</li></ul> |
 | **Returns**                                          | <ul><li>The number of items in the table.</li></ul> |
+| **Notes**                                            | <ul><li>If something other than a table is supplied, this function will return 0.</li></ul> |
 
 #### [tableFilter](#tablefilter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.tableFilter(t, matchFn) -> table` </span>                                                          |

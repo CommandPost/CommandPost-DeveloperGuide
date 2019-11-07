@@ -4,27 +4,16 @@
 Updates Module.
 
 ## API Overview
-* Functions - API calls offered directly by the extension
- * [checkForUpdates](#checkforupdates)
- * [toggleCheckForUpdates](#togglecheckforupdates)
+* Variables - Configurable values
+ * [automaticallyCheckForUpdates](#automaticallycheckforupdates)
 
 ## API Documentation
 
-### Functions
+### Variables
 
-#### [checkForUpdates](#checkforupdates)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.updates.checkForUpdates() -> boolean` </span>                                                          |
+#### [automaticallyCheckForUpdates](#automaticallycheckforupdates)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.updates.automaticallyCheckForUpdates <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns the 'Check for Updates' status |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> or <code>false</code></li></ul> |
-
-#### [toggleCheckForUpdates](#togglecheckforupdates)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.updates.toggleCheckForUpdates() -> nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Toggles 'Check For Updates' |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
+| **Type**                                             | Variable |
+| **Description**                                      | Automatically check for updates? |
 

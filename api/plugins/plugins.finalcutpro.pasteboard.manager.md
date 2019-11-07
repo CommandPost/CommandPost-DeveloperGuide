@@ -18,6 +18,7 @@ Pasteboard Manager.
  * [doWaitForFreshData](#dowaitforfreshdata)
  * [getClassname](#getclassname)
  * [isTimelineClip](#istimelineclip)
+ * [ninjaPasteboardCopy](#ninjapasteboardcopy)
  * [overrideNextClipName](#overridenextclipname)
  * [processArray](#processarray)
  * [processContent](#processcontent)
@@ -121,6 +122,14 @@ Pasteboard Manager.
 | **Description**                                      | Is the data a timeline clip. |
 | **Parameters**                                       | <ul><li>data - The pasteboard data you want to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if a timeline clip otherwise <code>false</code>.</li></ul> |
+
+#### [ninjaPasteboardCopy](#ninjapasteboardcopy)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.ninjaPasteboardCopy() -> boolean, data` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Ninja Pasteboard Copy. Copies something to the pasteboard, then restores the original pasteboard item. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code></li><li>The pasteboard data</li></ul> |
 
 #### [overrideNextClipName](#overridenextclipname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.overrideNextClipName(overrideName) -> none` </span>                                                          |

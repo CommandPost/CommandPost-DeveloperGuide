@@ -4,12 +4,22 @@
 Match Frame Tools for Final Cut Pro.
 
 ## API Overview
+* Variables - Configurable values
+ * [hiddenKeywords](#hiddenkeywords)
 * Functions - API calls offered directly by the extension
  * [getMulticamAngleFromSelectedClip](#getmulticamanglefromselectedclip)
  * [matchFrame](#matchframe)
  * [multicamMatchFrame](#multicammatchframe)
 
 ## API Documentation
+
+### Variables
+
+#### [hiddenKeywords](#hiddenkeywords)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.timeline.matchframe.hiddenKeywords <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Favourite Keywords |
 
 ### Functions
 

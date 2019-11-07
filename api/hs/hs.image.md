@@ -109,12 +109,13 @@ A module for capturing and manipulating image objects from other modules for use
 | **Returns**                                          | <ul><li>An <code>hs.image</code> object, or nil if an error occured</li></ul> |
 
 #### [imageFromURL](#imagefromurl)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.imageFromURL(url) -> object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.imageFromURL(url[, callbackFn]) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates an `hs.image` object from the contents of the specified URL. |
-| **Parameters**                                       | <ul><li>url - a web url specifying the location of the image to retrieve</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.image</code> object or nil, if the url does not specify image contents or is unreachable</li></ul> |
+| **Parameters**                                       | <ul><li>url - a web url specifying the location of the image to retrieve</li><li>callbackFn - an optional callback function to be called when the image fetching is complete</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.image</code> object or nil, if the url does not specify image contents or is unreachable, or if a callback function is supplied</li></ul> |
+| **Notes**                                            | <ul><li>If a callback function is supplied, this function will return nil immediately and the image will be fetched asynchronously</li></ul> |
 
 ### Methods
 
