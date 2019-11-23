@@ -34,7 +34,7 @@ Touch Bar Manager Plugin.
  * [start](#start)
  * [stop](#stop)
  * [toggle](#toggle)
- * [touchBar](#touchbar)
+ * [touchbar](#touchbar)
  * [update](#update)
  * [updateAction](#updateaction)
  * [updateBankLabel](#updatebanklabel)
@@ -236,8 +236,8 @@ Touch Bar Manager Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [touchBar](#touchbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.touchBar() -> none` </span>                                                          |
+#### [touchbar](#touchbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.manager.touchbar() -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns the `hs._asm.undocumented.touchbar` object if it exists. |

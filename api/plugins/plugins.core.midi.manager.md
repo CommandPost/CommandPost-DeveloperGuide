@@ -14,6 +14,7 @@ MIDI Manager Plugin.
  * [DEFAULT_MIDI_CONTROLS](#default_midi_controls)
 * Variables - Configurable values
  * [learningMode](#learningmode)
+ * [loupedeckFnPressed](#loupedeckfnpressed)
  * [maxItems](#maxitems)
  * [numberOfSubGroups](#numberofsubgroups)
 * Functions - API calls offered directly by the extension
@@ -79,6 +80,12 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Whether or not the MIDI Manager is in learning mode. |
+
+#### [loupedeckFnPressed](#loupedeckfnpressed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.loupedeckFnPressed -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Is the Fn key on the Loupedeck+ pressed? |
 
 #### [maxItems](#maxitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.maxItems -> number` </span>                                                          |

@@ -17,6 +17,7 @@ Virtual Touch Bar Manager
  * [show](#show)
  * [start](#start)
  * [stop](#stop)
+ * [touchbar](#touchbar)
  * [update](#update)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [enabled](#enabled)
@@ -103,6 +104,14 @@ Virtual Touch Bar Manager
 | **Description**                                      | Stops the Virtual Touch Bar |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [touchbar](#touchbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.virtual.touchbar() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the `hs._asm.undocumented.touchbar` object if it exists. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>hs._asm.undocumented.touchbar</code></li></ul> |
 
 #### [update](#update)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.touchbar.virtual.update() -> none` </span>                                                          |

@@ -20,6 +20,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [firstToUpper](#firsttoupper)
  * [getEmail](#getemail)
  * [getExternalDevices](#getexternaldevices)
+ * [getFileExtensionFromPath](#getfileextensionfrompath)
  * [getFilenameFromPath](#getfilenamefrompath)
  * [getFullname](#getfullname)
  * [getKeysSortedByValue](#getkeyssortedbyvalue)
@@ -33,6 +34,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [hexStringToString](#hexstringtostring)
  * [iconFallback](#iconfallback)
  * [incrementFilename](#incrementfilename)
+ * [incrementFilenameInPath](#incrementfilenameinpath)
  * [isNumberString](#isnumberstring)
  * [isOffScreen](#isoffscreen)
  * [leftClick](#leftclick)
@@ -197,6 +199,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>String</li></ul> |
 
+#### [getFileExtensionFromPath](#getfileextensionfrompath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFileExtensionFromPath(input) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the file extension from a path. |
+| **Parameters**                                       | <ul><li>input - The path</li></ul> |
+| **Returns**                                          | <ul><li>A string of the file extension.</li></ul> |
+
 #### [getFilenameFromPath](#getfilenamefrompath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.getFilenameFromPath(input[, removeExtension]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -299,6 +309,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Type**                                             | Function |
 | **Description**                                      | Increments the filename. |
 | **Parameters**                                       | <ul><li>value - A string</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul> |
+
+#### [incrementFilenameInPath](#incrementfilenameinpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.incrementFilenameInPath(path) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Increments the filename as it appears in a path. |
+| **Parameters**                                       | <ul><li>path - A path to a file.</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul> |
 
 #### [isNumberString](#isnumberstring)

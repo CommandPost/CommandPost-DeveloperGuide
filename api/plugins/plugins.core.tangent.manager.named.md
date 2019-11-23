@@ -48,7 +48,7 @@ as described below.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.named:nameX(value) -> string | self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Sets the name `X`, where `X` is a number as defined when the `named` was creted. |
+| **Description**                                      | Sets the name `X`, where `X` is a number as defined when the `named` was created. |
 | **Parameters**                                       | <ul><li>value - The new name value.</li></ul> |
 | **Returns**                                          | <ul><li>The current value, or <code>self</code> if a new value was provided.</li></ul> |
 

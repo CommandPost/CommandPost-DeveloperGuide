@@ -18,7 +18,7 @@
 | ------------------------------------------------------------------ | --------------------- |
 | [plugins.colorfinale.tangent](plugins.colorfinale.tangent.md)                          | This plugin basically just disables CP's Tangent Manager when ColorFinale is running.     |
 | [plugins.compressor.feedback.bugreport](plugins.compressor.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Compressor.     |
-| [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
+| [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Compressor Watch Folder Plugin.     |
 | [plugins.core.accessibility](plugins.core.accessibility.md)                          | Accessibility Plugin.     |
 | [plugins.core.action.activator](plugins.core.action.activator.md)                          | This module provides provides a way of activating choices provided by action handlers.     |
 | [plugins.core.action.handler](plugins.core.action.handler.md)                          | A support class for handler handlers. It is not used directly, rather     |

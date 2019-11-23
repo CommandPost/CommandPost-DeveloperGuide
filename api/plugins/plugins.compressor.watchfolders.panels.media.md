@@ -1,16 +1,15 @@
 # [docs](index.md) » plugins.compressor.watchfolders.panels.media
 ---
 
-Final Cut Pro Media Watch Folder Plugin.
+Compressor Watch Folder Plugin.
 
 ## API Overview
 * Variables - Configurable values
- * [automaticallyImport](#automaticallyimport)
- * [deleteAfterImport](#deleteafterimport)
  * [disableImport](#disableimport)
  * [filesInTransit](#filesintransit)
  * [notifications](#notifications)
  * [savedNotifications](#savednotifications)
+ * [tasks](#tasks)
  * [watchFolders](#watchfolders)
 * Functions - API calls offered directly by the extension
  * [addFilesToCompressor](#addfilestocompressor)
@@ -29,18 +28,6 @@ Final Cut Pro Media Watch Folder Plugin.
 ## API Documentation
 
 ### Variables
-
-#### [automaticallyImport](#automaticallyimport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.automaticallyImport <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | Boolean that sets whether or not new generated voice file are automatically added to the timeline or not. |
-
-#### [deleteAfterImport](#deleteafterimport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.deleteAfterImport <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | Boolean that sets whether or not you want to delete file after they've been imported. |
 
 #### [disableImport](#disableimport)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.disableImport -> boolean` </span>                                                          |
@@ -65,6 +52,12 @@ Final Cut Pro Media Watch Folder Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Table of Notifications that are saved between restarts |
+
+#### [tasks](#tasks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.tasks -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Table of Tasks |
 
 #### [watchFolders](#watchfolders)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.compressor.watchfolders.panels.media.watchFolders <cp.prop: table>` </span>                                                          |
