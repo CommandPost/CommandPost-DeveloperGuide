@@ -3,6 +3,9 @@
 
 Accessibility Plugin.
 
+## Submodules
+ * [plugins.core.accessibility.screenrecording](plugins.core.accessibility.screenrecording.md)
+
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [enabled](#enabled)

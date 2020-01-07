@@ -19,7 +19,6 @@ Final Cut Pro Media Watch Folder Plugin.
  * [doRestoreOriginalPasteboard](#dorestoreoriginalpasteboard)
  * [doRevealInFinder](#dorevealinfinder)
  * [doTagFiles](#dotagfiles)
- * [doWriteFilesToPasteboard](#dowritefilestopasteboard)
  * [handleImport](#handleimport)
  * [importAll](#importall)
  * [importFiles](#importfiles)
@@ -135,14 +134,6 @@ Final Cut Pro Media Watch Folder Plugin.
 | **Type**                                             | Method |
 | **Description**                                      | Tags a table of files. |
 | **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [doWriteFilesToPasteboard](#dowritefilestopasteboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:doWriteFilesToPasteboard(files, context) -> nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Write files to the Pasteboard. |
-| **Parameters**                                       | <ul><li>files - a table/list of files to be imported.</li><li>context - The context.</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Statement</code> to execute.</li></ul> |
 
 #### [handleImport](#handleimport)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.watchfolders.media.MediaFolder:handleImport(notification) -> nil` </span>                                                          |

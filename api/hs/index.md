@@ -84,6 +84,7 @@
 | [hs.location](hs.location.md)                          | Determine the machine's location and useful information about that location     |
 | [hs.location.geocoder](hs.location.geocoder.md)                          | Converts between GPS coordinates and more user friendly representations like an address or points of interest.     |
 | [hs.logger](hs.logger.md)                          | Simple logger for debugging purposes     |
+| [hs.math](hs.math.md)                          | Various helpful mathematical functions     |
 | [hs.menubar](hs.menubar.md)                          | Create and manage menubar icons     |
 | [hs.messages](hs.messages.md)                          | Send messages via iMessage and SMS Relay (note, SMS Relay requires OS X 10.10 and an established SMS Relay pairing between your Mac and an iPhone running iOS8)     |
 | [hs.midi](hs.midi.md)                          | MIDI Extension for Hammerspoon.     |

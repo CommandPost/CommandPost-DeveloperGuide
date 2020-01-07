@@ -38,7 +38,6 @@ Represents an AXTable in the Apple Accessibility UX API.
  * [showRowAt](#showrowat)
  * [toCSV](#tocsv)
  * [topRowsUI](#toprowsui)
- * [uncached](#uncached)
  * [viewFrame](#viewframe)
 
 ## API Documentation
@@ -274,13 +273,6 @@ Represents an AXTable in the Apple Accessibility UX API.
 | **Description**                                      | Returns a list of top-level rows in the table. An optional filter function may be provided. |
 | **Parameters**                                       | <ul><li><code>filterFn</code>   - An optional function that will be called to check if individual rows should be included. If not provided, all rows are returned.</li></ul> |
 | **Returns**                                          | <ul><li>Table of rows. If the table is visible but no rows match, it will be an empty table, otherwise it will be <code>nil</code>.</li></ul> |
-
-#### [uncached](#uncached)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:uncached() -> Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Calling this will force the table to look up the `axuielement` on demand, rather than caching the result. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
 
 #### [viewFrame](#viewframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Table:viewFrame() -> hs.geometry rect` </span>                                                          |

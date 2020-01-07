@@ -16,6 +16,7 @@ Final Cut Pro Viewer Overlays.
  * [customGuideColor](#customguidecolor)
  * [disabled](#disabled)
  * [draggableGuideEnabled](#draggableguideenabled)
+ * [enableViewerRightClick](#enableviewerrightclick)
  * [gridAlpha](#gridalpha)
  * [gridColor](#gridcolor)
  * [gridSpacing](#gridspacing)
@@ -122,6 +123,12 @@ Final Cut Pro Viewer Overlays.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Is Viewer Grid Enabled? |
+
+#### [enableViewerRightClick](#enableviewerrightclick)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.enableViewerRightClick <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Allow the user to right click on the top of the viewer to access the menu? |
 
 #### [gridAlpha](#gridalpha)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.gridAlpha <cp.prop: number>` </span>                                                          |

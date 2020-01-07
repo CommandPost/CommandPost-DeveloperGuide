@@ -24,6 +24,7 @@ here: http://www.tangentwave.co.uk/developer-support
  * [activeMode](#activemode)
  * [FCP_KEYPRESS_APPS_PATH](#fcp_keypress_apps_path)
  * [HIDE_FILE_PATH](#hide_file_path)
+ * [LAUNCH_AGENT_PATH](#launch_agent_path)
  * [TANGENT_MAPPER_BUNDLE_ID](#tangent_mapper_bundle_id)
 * Variables - Configurable values
  * [connectable](#connectable)
@@ -70,6 +71,12 @@ here: http://www.tangentwave.co.uk/developer-support
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | Tangent Mapper Hide File Path. |
+
+#### [LAUNCH_AGENT_PATH](#launch_agent_path)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.LAUNCH_AGENT_PATH -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constant |
+| **Description**                                      | Path to Tangent Hub's Launch Agent. |
 
 #### [TANGENT_MAPPER_BUNDLE_ID](#tangent_mapper_bundle_id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.TANGENT_MAPPER_BUNDLE_ID -> string` </span>                                                          |

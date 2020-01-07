@@ -25,6 +25,7 @@ Notes:
  * [orderedWindows](#orderedwindows)
  * [setShadows](#setshadows)
  * [snapshotForID](#snapshotforid)
+ * [timeout](#timeout)
  * [visibleWindows](#visiblewindows)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [find](#find)
@@ -162,6 +163,14 @@ Notes:
 | **Parameters**                                       | <ul><li>ID - Window ID of the window to take a snapshot of.</li><li>keepTransparency - optional boolean value indicating if the windows alpha value (transparency) should be maintained in the resulting image or if it should be fully opaque (default).</li></ul> |
 | **Returns**                                          | <ul><li><code>hs.image</code> object of the window snapshot or nil if unable to create a snapshot</li></ul> |
 | **Notes**                                            | <ul><li>See also method <code>hs.window:snapshot()</code></li><li>Because the window ID cannot always be dynamically determined, this function will allow you to provide the ID of a window that was cached earlier.</li></ul> |
+
+#### [timeout](#timeout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.timeout(value) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Sets the timeout value used in the accessibility API. |
+| **Parameters**                                       | <ul><li>value - The number of seconds for the new timeout value.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> is succesful otherwise <code>false</code> if an error occured.</li></ul> |
 
 #### [visibleWindows](#visiblewindows)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.visibleWindows() -> list of hs.window objects` </span>                                                          |

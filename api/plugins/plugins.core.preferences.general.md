@@ -32,5 +32,5 @@ General Preferences Panel.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.preferences.general.dockIcon <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Controls if CommandPost will automatically upload crash data to the developer. |
+| **Description**                                      | Controls whether or not CommandPost should show a dock icon. |
 

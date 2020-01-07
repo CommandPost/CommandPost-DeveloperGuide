@@ -20,6 +20,7 @@
 | [plugins.compressor.feedback.bugreport](plugins.compressor.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Compressor.     |
 | [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Compressor Watch Folder Plugin.     |
 | [plugins.core.accessibility](plugins.core.accessibility.md)                          | Accessibility Plugin.     |
+| [plugins.core.accessibility.screenrecording](plugins.core.accessibility.screenrecording.md)                          | Screen Recording Permission.     |
 | [plugins.core.action.activator](plugins.core.action.activator.md)                          | This module provides provides a way of activating choices provided by action handlers.     |
 | [plugins.core.action.handler](plugins.core.action.handler.md)                          | A support class for handler handlers. It is not used directly, rather     |
 | [plugins.core.action.manager](plugins.core.action.manager.md)                          | Action Manager Module.     |
@@ -64,6 +65,7 @@
 | [plugins.core.scripting.preferences](plugins.core.scripting.preferences.md)                          | Scripting Preferences.     |
 | [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
 | [plugins.core.setup.panel](plugins.core.setup.panel.md)                          | CommandPost Setup Window Panel.     |
+| [plugins.core.shortcuts.actions](plugins.core.shortcuts.actions.md)                          | Adds actions which allow you to trigger keyboard shortcuts.     |
 | [plugins.core.shortcuts.prefs](plugins.core.shortcuts.prefs.md)                          | Shortcuts Preferences Panel     |
 | [plugins.core.streamdeck.banks](plugins.core.streamdeck.banks.md)                          | Stream Deck Bank Actions.     |
 | [plugins.core.streamdeck.manager](plugins.core.streamdeck.manager.md)                          | Elgato Stream Deck Manager Plugin.     |
@@ -102,6 +104,7 @@
 | [plugins.finalcutpro.advanced.backupinterval](plugins.finalcutpro.advanced.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
 | [plugins.finalcutpro.advanced.disablewaveforms](plugins.finalcutpro.advanced.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
 | [plugins.finalcutpro.advanced.fcpxml](plugins.finalcutpro.advanced.fcpxml.md)                          | Adds preferences for extra FCPXML import and export options.     |
+| [plugins.finalcutpro.advanced.multicam](plugins.finalcutpro.advanced.multicam.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.advanced.playbackrendering](plugins.finalcutpro.advanced.playbackrendering.md)                          | Playback Rendering Plugin.     |
 | [plugins.finalcutpro.advanced.showtimelineinviewers](plugins.finalcutpro.advanced.showtimelineinviewers.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
@@ -116,6 +119,7 @@
 | [plugins.finalcutpro.browser.layouts](plugins.finalcutpro.browser.layouts.md)                          | Allows you to save and restore Browser Layouts.     |
 | [plugins.finalcutpro.browser.pasteboardtomarkers](plugins.finalcutpro.browser.pasteboardtomarkers.md)                          | Take the contents of the Pasteboard and pastes it as clip markers on the     |
 | [plugins.finalcutpro.browser.playhead](plugins.finalcutpro.browser.playhead.md)                          | Browser Playhead Plugin.     |
+| [plugins.finalcutpro.browser.selectlibrary](plugins.finalcutpro.browser.selectlibrary.md)                          | Actions for selecting libraries     |
 | [plugins.finalcutpro.browser.soloclip](plugins.finalcutpro.browser.soloclip.md)                          | Solo a clip in the Final Cut Pro Browser.     |
 | [plugins.finalcutpro.commands](plugins.finalcutpro.commands.md)                          | The 'fcpx' command collection.     |
 | [plugins.finalcutpro.commands.actions](plugins.finalcutpro.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
@@ -160,6 +164,7 @@
 | [plugins.finalcutpro.midi.controls.video](plugins.finalcutpro.midi.controls.video.md)                          | Final Cut Pro MIDI Video Inspector Controls.     |
 | [plugins.finalcutpro.midi.controls.zoom](plugins.finalcutpro.midi.controls.zoom.md)                          | Final Cut Pro MIDI Zoom Control.     |
 | [plugins.finalcutpro.midi.manager](plugins.finalcutpro.midi.manager.md)                          | MIDI Manager Plugin for Final Cut Pro.     |
+| [plugins.finalcutpro.notifications.ifttt](plugins.finalcutpro.notifications.ifttt.md)                          | IFTTT Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.manager](plugins.finalcutpro.notifications.manager.md)                          | Notifications Manager Plugin.     |
 | [plugins.finalcutpro.notifications.prowl](plugins.finalcutpro.notifications.prowl.md)                          | Prowl Notifications Plugin.     |
@@ -171,6 +176,7 @@
 | [plugins.finalcutpro.preferences.clearcache](plugins.finalcutpro.preferences.clearcache.md)                          | Adds a "Clear Cache" button to the Final Cut Pro Preferences.     |
 | [plugins.finalcutpro.preferences.general](plugins.finalcutpro.preferences.general.md)                          | Final Cut Pro General Preferences     |
 | [plugins.finalcutpro.preferences.manager](plugins.finalcutpro.preferences.manager.md)                          | Final Cut Pro Preferences Panel Manager.     |
+| [plugins.finalcutpro.preferences.spelling](plugins.finalcutpro.preferences.spelling.md)                          | Adds Preference for "Correct Spelling Automatically" within Final Cut Pro X.     |
 | [plugins.finalcutpro.setup.scan](plugins.finalcutpro.setup.scan.md)                          | Show setup panel if Final Cut Pro needs scanning.     |
 | [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.tangent.audio](plugins.finalcutpro.tangent.audio.md)                          | Final Cut Pro Audio Inspector for Tangent     |

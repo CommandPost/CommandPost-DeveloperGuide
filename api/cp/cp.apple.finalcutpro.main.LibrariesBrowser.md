@@ -7,7 +7,6 @@ Libraries Browser Module.
 * Functions - API calls offered directly by the extension
  * [deselectAll](#deselectall)
  * [indexOfClip](#indexofclip)
- * [matchesSidebar](#matchessidebar)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [LibrariesBrowser](#librariesbrowser)
 * Fields - Variables which can only be accessed from an object returned by a constructor
@@ -18,7 +17,6 @@ Libraries Browser Module.
  * [mainGroupUI](#maingroupui)
  * [search](#search)
  * [searchToggle](#searchtoggle)
- * [sidebar](#sidebar)
  * [toggleViewMode](#toggleviewmode)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [clips](#clips)
@@ -45,6 +43,7 @@ Libraries Browser Module.
  * [selectLibrary](#selectlibrary)
  * [show](#show)
  * [showClip](#showclip)
+ * [sidebar](#sidebar)
  * [skimmingPlayhead](#skimmingplayhead)
 
 ## API Documentation
@@ -66,14 +65,6 @@ Libraries Browser Module.
 | **Description**                                      | Gets the index of a specific clip. |
 | **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to get the index of.</li></ul> |
 | **Returns**                                          | <ul><li>The index or <code>nil</code> if an error occurs.</li></ul> |
-
-#### [matchesSidebar](#matchessidebar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.matchesSidebar(element) -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Checks to see if an element matches the Sidebar type. |
-| **Parameters**                                       | <ul><li>element - The element to check.</li></ul> |
-| **Returns**                                          | <ul><li><code>true</code> if there's a match, otherwise <code>false</code>.</li></ul> |
 
 ### Constructors
 
@@ -128,12 +119,6 @@ Libraries Browser Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The Search Toggle [Button](cp.ui.Button.md). |
-
-#### [sidebar](#sidebar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.sidebar <cp.ui.Table>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Get Libraries sidebar [Table](cp.ui.Table.md). |
 
 #### [toggleViewMode](#toggleviewmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.toggleViewMode <cp.ui.Button>` </span>                                                          |
@@ -334,6 +319,12 @@ Libraries Browser Module.
 | **Description**                                      | Shows a clip. |
 | **Parameters**                                       | <ul><li>clip - The <code>Clip</code> you want to show.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful otherwise <code>false</code>.</li></ul> |
+
+#### [sidebar](#sidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser.sidebar <cp.apple.finalcutpro.main.LibrariesSidebar>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The  [LibrariesSidebar](cp.apple.finalcutpro.main.LibrariesSidebar.md) Table |
 
 #### [skimmingPlayhead](#skimmingplayhead)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesBrowser:skimmingPlayhead() -> Playhead` </span>                                                          |

@@ -22,8 +22,8 @@ the following:
 * `unmounted`       - only unmounted drives.
 
 ```lua
-local battery = require("cp.battery")
-local externalDrives = battery.devices({physical = true, ejectable = true})
+local disk = require("cp.disk")
+local externalDrives = disk.devices({physical = true, ejectable = true})
 ```
 
 ## API Overview

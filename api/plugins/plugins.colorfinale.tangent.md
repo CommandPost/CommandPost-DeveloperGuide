@@ -23,10 +23,10 @@ This plugin basically just disables CP's Tangent Manager when ColorFinale is run
 | **Description**                                      | Checks to see if ColorFinale is active. |
 
 #### [colorFinaleInstalled](#colorfinaleinstalled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.colorFinaleInstalled <cp.prop: boolean; read-only; live>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.colorFinaleInstalled <cp.prop: boolean; read-only; cached>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
-| **Description**                                      | Checks to see if ColorFinale is installed. |
+| **Description**                                      | Checks to see if ColorFinale is installed. This prop is cached to improve performance. |
 
 #### [colorFinaleVisible](#colorfinalevisible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.colorfinale.tangent.colorFinaleVisible <cp.prop: boolean; read-only; live>` </span>                                                          |

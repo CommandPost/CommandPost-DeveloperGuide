@@ -47,6 +47,7 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
  * [setGamma](#setgamma)
  * [setInvertedPolarity](#setinvertedpolarity)
  * [setMode](#setmode)
+ * [setOrigin](#setorigin)
  * [setPrimary](#setprimary)
  * [shotAsJPG](#shotasjpg)
  * [shotAsPNG](#shotaspng)
@@ -328,6 +329,14 @@ System Preferences->Displays->Arrangement). The origin `0,0` is at the top left 
 | **Parameters**                                       | <ul><li>width - A number containing the width in points of the new mode</li><li>height - A number containing the height in points of the new mode</li><li>scale - A number containing the scaling factor of the new mode (typically 1 for native pixel resolutions, 2 for HiDPI/Retina resolutions)</li></ul> |
 | **Returns**                                          | <ul><li>A boolean, true if the requested mode was set, otherwise false</li></ul> |
 | **Notes**                                            | <ul><li>The available widths/heights/scales can be seen in the output of <code>hs.screen:availableModes()</code>, however, it should be noted that the CoreGraphics subsystem seems to list more modes for a given screen than it is actually prepared to set, so you may find that seemingly valid modes still return false. It is not currently understood why this is so!</li></ul> |
+
+#### [setOrigin](#setorigin)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:setOrigin(x, y) -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the origin of a screen in the global display coordinate space. The origin of the main or primary display is (0,0). The new origin is placed as close as possible to the requested location, without overlapping or leaving a gap between displays. If you use this function to change the origin of a mirrored display, the display may be removed from the mirroring set. |
+| **Parameters**                                       | <ul><li>x - The desired x-coordinate for the upper-left corner of the display.</li><li>y - The desired y-coordinate for the upper-left corner of the display.</li></ul> |
+| **Returns**                                          | <ul><li>true if the operation succeeded, otherwise false</li></ul> |
 
 #### [setPrimary](#setprimary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screen:setPrimary() -> boolean` </span>                                                          |

@@ -48,6 +48,7 @@ Core Hammerspoon functionality
  * [hs.layout](hs.layout.md)
  * [hs.location](hs.location.md)
  * [hs.logger](hs.logger.md)
+ * [hs.math](hs.math.md)
  * [hs.menubar](hs.menubar.md)
  * [hs.messages](hs.messages.md)
  * [hs.midi](hs.midi.md)
@@ -130,6 +131,7 @@ Core Hammerspoon functionality
  * [printf](#printf)
  * [rawprint](#rawprint)
  * [reload](#reload)
+ * [screenRecordingState](#screenrecordingstate)
  * [showError](#showerror)
  * [toggleConsole](#toggleconsole)
  * [updateAvailable](#updateavailable)
@@ -436,6 +438,15 @@ Core Hammerspoon functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Reloads your init-file in a fresh Lua environment. |
+
+#### [screenRecordingState](#screenrecordingstate)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screenRecordingState(shouldPrompt) -> isEnabled` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      |  |
+| **Parameters**                                       | <ul><li>shouldPrompt - an optional boolean value indicating if the dialog box asking if the System Preferences application should be opened should be presented when Screen Recording is not currently enabled for Hammerspoon.  Defaults to false.</li></ul> |
+| **Returns**                                          | <ul><li>True or False indicating whether or not Screen Recording is enabled for Hammerspoon.</li></ul> |
+| **Notes**                                            | <ul><li>If you trigger the prompt and the user denies it, you cannot bring up the prompt again - the user must manually enable it in System Preferences.</li></ul> |
 
 #### [showError](#showerror)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.showError(err)` </span>                                                          |

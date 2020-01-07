@@ -29,6 +29,7 @@ See:
  * [app](#app)
  * [doLayout](#dolayout)
  * [doShow](#doshow)
+ * [focus](#focus)
  * [loadLayout](#loadlayout)
  * [parent](#parent)
  * [saveLayout](#savelayout)
@@ -150,6 +151,14 @@ See:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a `Statement` that will ensure the Element is showing. |
+
+#### [focus](#focus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:focus() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Set the focus on an element. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>self</li></ul> |
 
 #### [loadLayout](#loadlayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Element:loadLayout(layout) -> nil` </span>                                                          |

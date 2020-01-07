@@ -86,6 +86,7 @@
 | [cp.apple.finalcutpro.main.LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md)                          | Libraries Browser Module.     |
 | [cp.apple.finalcutpro.main.LibrariesFilmstrip](cp.apple.finalcutpro.main.LibrariesFilmstrip.md)                          | Libraries Filmstrip Module.     |
 | [cp.apple.finalcutpro.main.LibrariesList](cp.apple.finalcutpro.main.LibrariesList.md)                          | Libraries List Module.     |
+| [cp.apple.finalcutpro.main.LibrariesSidebar](cp.apple.finalcutpro.main.LibrariesSidebar.md)                          | Libraries Sidebar Browser Module.     |
 | [cp.apple.finalcutpro.main.MediaBrowser](cp.apple.finalcutpro.main.MediaBrowser.md)                          | Media Browser Module.     |
 | [cp.apple.finalcutpro.main.Playhead](cp.apple.finalcutpro.main.Playhead.md)                          | Playhead Module.     |
 | [cp.apple.finalcutpro.main.PrimaryToolbar](cp.apple.finalcutpro.main.PrimaryToolbar.md)                          | Timeline Toolbar.     |
