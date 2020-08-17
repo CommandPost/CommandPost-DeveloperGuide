@@ -7,18 +7,13 @@ Media Import
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [MediaImport](#mediaimport)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [frame](#frame)
- * [hsWindow](#hswindow)
- * [isFullScreen](#isfullscreen)
- * [isShowing](#isshowing)
+ * [importAll](#importall)
+ * [stopImport](#stopimport)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [getTitle](#gettitle)
  * [hide](#hide)
  * [show](#show)
- * [UI](#ui)
 
 ## API Documentation
 
@@ -34,8 +29,8 @@ Media Import
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.new(app) -> MediaImport` </span>                                                          |
+#### [MediaImport](#mediaimport)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport(app) -> MediaImport` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Media Import object. |
@@ -44,47 +39,19 @@ Media Import
 
 ### Fields
 
-#### [frame](#frame)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.frame <cp.prop: frame>` </span>                                                          |
+#### [importAll](#importall)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.importAll <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The current position (x, y, width, height) of the window. |
+| **Description**                                      | The Import All button. |
 
-#### [hsWindow](#hswindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.hsWindow <cp.prop: hs.window; read-only>` </span>                                                          |
+#### [stopImport](#stopimport)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.stopImport <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found. |
-
-#### [isFullScreen](#isfullscreen)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.isFullScreen <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Is `true` if the window is full-screen. |
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport.isShowing <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Is `true` if the window is visible. |
+| **Description**                                      | The "Stop Import" button. |
 
 ### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the App instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
-
-#### [getTitle](#gettitle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:getTitle() -> string | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The title of the Media Import window or `nil`. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The title of the Media Import window as a string or <code>nil</code>.</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:hide() -> cp.apple.finalcutpro.import.MediaImport` </span>                                                          |
@@ -98,15 +65,7 @@ Media Import
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:show() -> cp.apple.finalcutpro.import.MediaImport` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Triggers the Import All button. |
+| **Description**                                      | Shows the Media Import window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.import.MediaImport</code> object for method chaining.</li></ul> |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.import.MediaImport:UI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Media Import Accessibility Object |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An <code>axuielementObject</code> or <code>nil</code></li></ul> |
 

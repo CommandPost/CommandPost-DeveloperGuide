@@ -9,16 +9,16 @@ Browser Marker Popup.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [BrowserMarkerPopover](#browsermarkerpopover)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [chapter](#chapter)
  * [completed](#completed)
  * [delete](#delete)
  * [done](#done)
  * [name](#name)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [chapter](#chapter)
- * [hide](#hide)
- * [show](#show)
  * [standard](#standard)
  * [toDo](#todo)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [hide](#hide)
+ * [show](#show)
 
 ## API Documentation
 
@@ -43,6 +43,12 @@ Browser Marker Popup.
 | **Returns**                                          | <ul><li>The new <code>BrowserMarkerPopover</code> instance.</li></ul> |
 
 ### Fields
+
+#### [chapter](#chapter)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.chapter <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Chapter" Marker button. |
 
 #### [completed](#completed)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.completed <cp.ui.CheckBox>` </span>                                                          |
@@ -76,15 +82,19 @@ Browser Marker Popup.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>TextField</code> object.</li></ul> |
 
-### Methods
-
-#### [chapter](#chapter)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.chapter() -> RadioButton` </span>                                                          |
+#### [standard](#standard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.standard <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the "Chapter" Marker button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>RadioButton</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The "Standard" Marker button. |
+
+#### [toDo](#todo)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover.toDo <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "To Do" Marker button. |
+
+### Methods
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:hide() -> BrowserMarkerPopover` </span>                                                          |
@@ -101,20 +111,4 @@ Browser Marker Popup.
 | **Description**                                      | Shows the Browser Marker Popover by triggering "Add Marker and Modify" from the menu bar. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>BrowserMarkerPopover object</li></ul> |
-
-#### [standard](#standard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:standard() -> RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the "Standard" Marker button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>RadioButton</code> object.</li></ul> |
-
-#### [toDo](#todo)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.BrowserMarkerPopover:toDo() -> RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the "To Do" Marker button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>RadioButton</code> object.</li></ul> |
 

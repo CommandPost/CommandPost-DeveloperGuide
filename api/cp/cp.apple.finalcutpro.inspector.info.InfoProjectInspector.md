@@ -8,9 +8,10 @@ Info Inspector Module when a Project is selected.
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [modify](#modify)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [doShow](#doshow)
- * [modify](#modify)
  * [propertiesUI](#propertiesui)
 
 ## API Documentation
@@ -35,6 +36,14 @@ Info Inspector Module when a Project is selected.
 | **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul> |
 | **Returns**                                          | <ul><li>A InfoProjectInspector object</li></ul> |
 
+### Fields
+
+#### [modify](#modify)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoProjectInspector.modify <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Modify Project button in the Info Inspector. |
+
 ### Methods
 
 #### [doShow](#doshow)
@@ -44,14 +53,6 @@ Info Inspector Module when a Project is selected.
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that shows the panel. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code>, resolving to <code>true</code> if successful and sending an error if not.</li></ul> |
-
-#### [modify](#modify)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoProjectInspector:modify() -> Button` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Modify Project button in the Info Inspector. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An <code>Button</code> object.</li></ul> |
 
 #### [propertiesUI](#propertiesui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoProjectInspector:propertiesUI() -> hs._asm.axuielement object` </span>                                                          |

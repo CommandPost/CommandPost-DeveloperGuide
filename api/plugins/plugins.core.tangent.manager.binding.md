@@ -5,18 +5,19 @@ Represents a Tangent Binding
 
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [binding](#binding)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [member](#member)
  * [members](#members)
+ * [name](#name)
  * [xml](#xml)
 
 ## API Documentation
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.binding.new(id[, name]) -> binding` </span>                                                          |
+#### [binding](#binding)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.binding(id[, name]) -> binding` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Binding` instance. |
@@ -40,6 +41,14 @@ Represents a Tangent Binding
 | **Description**                                      | Adds the list of parameters to this binding. |
 | **Parameters**                                       | <ul><li>...   - the list of parameters to bind.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>binding</code> instance.</li></ul> |
+
+#### [name](#name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.binding:name() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the `name` of this binding. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The name.</li></ul> |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.binding:xml() -> cp.web.xml` </span>                                                          |

@@ -9,17 +9,14 @@ Triggered by the "View > Playback > Play Full Screen" menubar item.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [FullScreenWindow](#fullscreenwindow)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [isFullScreen](#isfullscreen)
- * [isShowing](#isshowing)
  * [rootGroupUI](#rootgroupui)
- * [UI](#ui)
  * [viewerGroupUI](#viewergroupui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
+ * [doShow](#doshow)
  * [show](#show)
- * [window](#window)
 
 ## API Documentation
 
@@ -35,8 +32,8 @@ Triggered by the "View > Playback > Play Full Screen" menubar item.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.new(app) -> FullScreenWindow` </span>                                                          |
+#### [FullScreenWindow](#fullscreenwindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow(app) -> FullScreenWindow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new FCPX `FullScreenWindow` instance. |
@@ -51,23 +48,11 @@ Triggered by the "View > Playback > Play Full Screen" menubar item.
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the window is full-screen. |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.isShowing <cp.prop; boolean; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Checks if the window is currently showing. |
-
 #### [rootGroupUI](#rootgroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.rootGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The root `AXGroup`. |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The core `axuielement` for the window. |
 
 #### [viewerGroupUI](#viewergroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow.viewerGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
@@ -77,13 +62,13 @@ Triggered by the "View > Playback > Play Full Screen" menubar item.
 
 ### Methods
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:app() -> cp.apple.finalcutpro` </span>                                                          |
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:doShow() -> <cp.rx.go.Statement>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Returns the FCPX app. |
+| **Description**                                      | A `Statement` that attempts to show the full screen window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The FCPX app.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:show() -> cp.apple.finalcutpro` </span>                                                          |
@@ -92,12 +77,4 @@ Triggered by the "View > Playback > Play Full Screen" menubar item.
 | **Description**                                      | Attempts to show the full screen window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The window instance.</li></ul> |
-
-#### [window](#window)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.FullScreenWindow:window() -> cp.ui.Window` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `Window` instance for the full-screen window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Window</code> instance.</li></ul> |
 

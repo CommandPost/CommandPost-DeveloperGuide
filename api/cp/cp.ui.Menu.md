@@ -1,7 +1,7 @@
 # [docs](index.md) » cp.ui.Menu
 ---
 
-UI Group.
+UI for AXMenus.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -9,7 +9,9 @@ UI Group.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Menu](#menu)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [close](#close)
+ * [cancel](#cancel)
+ * [doSelectItem](#doselectitem)
+ * [doSelectValue](#doselectvalue)
 
 ## API Documentation
 
@@ -35,11 +37,27 @@ UI Group.
 
 ### Methods
 
-#### [close](#close)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Menu:close() -> self` </span>                                                          |
+#### [cancel](#cancel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Menu:cancel() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Closes a menu. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
+
+#### [doSelectItem](#doselectitem)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Menu:doSelectItem(index) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `MenuButton` by index. |
+| **Parameters**                                       | <ul><li>index - The index number of the item to match.</li></ul> |
+| **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
+
+#### [doSelectValue](#doselectvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Menu:doSelectValue(value) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `Menu` by value. |
+| **Parameters**                                       | <ul><li>value - The value of the item to match.</li></ul> |
+| **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
 

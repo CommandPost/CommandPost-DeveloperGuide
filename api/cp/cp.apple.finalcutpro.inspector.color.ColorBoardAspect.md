@@ -9,17 +9,17 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 * Constructors - API calls which return an object, typically one that offers API methods
  * [ColorBoardAspect](#colorboardaspect)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [highlights](#highlights)
+ * [master](#master)
+ * [midtones](#midtones)
  * [selected](#selected)
+ * [shadows](#shadows)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [doShow](#doshow)
  * [hasAngle](#hasangle)
- * [highlights](#highlights)
  * [id](#id)
  * [index](#index)
- * [master](#master)
- * [midtones](#midtones)
  * [reset](#reset)
- * [shadows](#shadows)
  * [show](#show)
 
 ## API Documentation
@@ -44,11 +44,35 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 
 ### Fields
 
+#### [highlights](#highlights)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect.highlights <ColorPuck>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Highlights ColorPuck object. |
+
+#### [master](#master)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect.master <ColorPuck>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Master ColorPuck object. |
+
+#### [midtones](#midtones)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect.midtones <ColorPuck>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Midtones ColorPuck object. |
+
 #### [selected](#selected)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:selected() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Is the Color Board Aspect selected? |
+
+#### [shadows](#shadows)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect.shadows <ColorPuck>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Shadows ColorPuck object. |
 
 ### Methods
 
@@ -68,14 +92,6 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if it has an <code>angle</code> propery.</li></ul> |
 
-#### [highlights](#highlights)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:highlights() -> ColorPuck` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Highlights ColorPuck object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Highlights ColorPuck object.</li></ul> |
-
 #### [id](#id)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:id() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -92,22 +108,6 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A number.</li></ul> |
 
-#### [master](#master)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:master() -> ColorPuck` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Master ColorPuck object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Master ColorPuck object.</li></ul> |
-
-#### [midtones](#midtones)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:midtones() -> ColorPuck` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Midtones ColorPuck object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Midtones ColorPuck object.</li></ul> |
-
 #### [reset](#reset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:reset() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -115,14 +115,6 @@ Represents a particular aspect of the color board (Color/Saturation/Exposure).
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that resets all pucks in the the Color Board Aspect. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code>, which will resolve to <code>true</code> if sucessful, or throws an error if not.</li></ul> |
-
-#### [shadows](#shadows)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:shadows() -> ColorPuck` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Shadows ColorPuck object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Shadows ColorPuck object.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoardAspect:show() -> cp.apple.finalcutpro.inspector.color.ColorBoardAspect` </span>                                                          |

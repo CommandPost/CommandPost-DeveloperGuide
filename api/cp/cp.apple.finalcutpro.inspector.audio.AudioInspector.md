@@ -26,7 +26,7 @@ CheckBox Property:
 
 For example:
 ```lua
-local audio = fcp:inspector():audio()
+local audio = fcp.inspector.audio
 -- Menu Property:
 audio:compositing():blendMode():value("Subtract")
 -- Slider Property:
@@ -50,7 +50,7 @@ audio:stabilization():smoothing():show():value(1.5)
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [AudioInspector](#audioinspector)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [audioConfiguration](#audioconfiguration)
 
 ## API Documentation
@@ -89,13 +89,11 @@ audio:stabilization():smoothing():show():value(1.5)
 | **Parameters**                                       | <ul><li><code>parent</code>     - The parent</li></ul> |
 | **Returns**                                          | <ul><li>A <code>AudioInspector</code> object</li></ul> |
 
-### Methods
+### Fields
 
 #### [audioConfiguration](#audioconfiguration)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioInspector:audioConfiguration() -> AudioConfiguration` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioInspector.audioConfiguration <AudioConfiguration>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `AudioConfiguration` instance. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>CorrectionsBar</code> instance.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `AudioConfiguration` instance. |
 

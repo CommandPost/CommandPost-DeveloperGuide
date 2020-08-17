@@ -8,18 +8,19 @@ Timeline Index Module.
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Index](#index)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [activeTab](#activetab)
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [captions](#captions)
  * [clips](#clips)
+ * [mode](#mode)
+ * [roles](#roles)
+ * [search](#search)
+ * [tags](#tags)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [activeTab](#activetab)
  * [doHide](#dohide)
  * [doLayout](#dolayout)
  * [doShow](#doshow)
- * [mode](#mode)
- * [roles](#roles)
  * [saveLayout](#savelayout)
- * [search](#search)
- * [tags](#tags)
 
 ## API Documentation
 
@@ -43,6 +44,44 @@ Timeline Index Module.
 | **Parameters**                                       | <ul><li>timeline     - <a href="cp.apple.finalcutpro.timeline.Timeline.md">Timeline</a>.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>Index</code> instance.</li></ul> |
 
+### Fields
+
+#### [captions](#captions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index.captions <cp.apple.finalcutpro.timeline.IndexCaptions>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [IndexCaptions](cp.apple.finalcutpro.timeline.IndexCaptions.md). |
+
+#### [clips](#clips)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index.clips <cp.apple.finalcutpro.timeline.IndexClips>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [IndexClips](cp.apple.finalcutpro.timeline.IndexClips.md). |
+
+#### [mode](#mode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index.mode <cp.apple.finalcutpro.timeline.IndexMode>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [IndexMode](cp.apple.finalcutpro.timeline.IndexMode.md) for the Index. |
+
+#### [roles](#roles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index.roles <cp.apple.finalcutpro.timeline.IndexRoles>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [IndexRoles](cp.apple.finalcutpro.timeline.IndexRoles.md). |
+
+#### [search](#search)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index.search <cp.ui.SearchField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [SearchField](cp.ui.SearchField.md) for the Timeline Index. |
+
+#### [tags](#tags)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index.tags <cp.apple.finalcutpro.timeline.IndexTags>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [IndexTags](cp.apple.finalcutpro.timeline.IndexTags.md). |
+
 ### Methods
 
 #### [activeTab](#activetab)
@@ -52,18 +91,6 @@ Timeline Index Module.
 | **Description**                                      | Gets the active tab. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The active tab or <code>nil</code>.</li></ul> |
-
-#### [captions](#captions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:captions() -> cp.apple.finalcutpro.timeline.IndexCaptions` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [IndexCaptions](cp.apple.finalcutpro.timeline.IndexCaptions.md). |
-
-#### [clips](#clips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:clips() -> cp.apple.finalcutpro.timeline.IndexClips` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [IndexClips](cp.apple.finalcutpro.timeline.IndexClips.md). |
 
 #### [doHide](#dohide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:doHide() -> cp.rx.go.Statement` </span>                                                          |
@@ -85,19 +112,6 @@ Timeline Index Module.
 | **Type**                                             | Method |
 | **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) which will show the Index if possible. |
 
-#### [mode](#mode)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:mode() -> cp.apple.finalcutpro.timeline.IndexMode` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [IndexMode](cp.apple.finalcutpro.timeline.IndexMode.md) for the Index. |
-| **Returns**                                          | <ul><li>The <code>IndexMode</code>.</li></ul> |
-
-#### [roles](#roles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:roles() -> cp.apple.finalcutpro.timeline.IndexRoles` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [IndexRoles](cp.apple.finalcutpro.timeline.IndexRoles.md). |
-
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -105,17 +119,4 @@ Timeline Index Module.
 | **Description**                                      | Returns a `table` containing the layout configuration for this class. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The layout configuration <code>table</code>.</li></ul> |
-
-#### [search](#search)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:search() -> cp.ui.SearchField` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [SearchField](cp.ui.SearchField.md) for the Timeline Index. |
-| **Returns**                                          | <ul><li>The SearchField.</li></ul> |
-
-#### [tags](#tags)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Index:tags() -> cp.apple.finalcutpro.timeline.IndexTags` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [IndexTags](cp.apple.finalcutpro.timeline.IndexTags.md). |
 

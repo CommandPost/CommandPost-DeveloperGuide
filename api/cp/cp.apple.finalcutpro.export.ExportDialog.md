@@ -6,13 +6,13 @@ Export Dialog Module.
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
  * [ExportDialogTitleText](#exportdialogtitletext)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [fileExtension](#fileextension)
- * [getTitle](#gettitle)
+ * [saveSheet](#savesheet)
+* Methods - API calls which can only be made on an object returned by a constructor
  * [hide](#hide)
  * [pressCancel](#presscancel)
  * [pressNext](#pressnext)
- * [saveSheet](#savesheet)
  * [show](#show)
 
 ## API Documentation
@@ -25,21 +25,21 @@ Export Dialog Module.
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Export [Dialog](cp.ui.Dialog.md) |
 
-### Methods
+### Fields
 
 #### [fileExtension](#fileextension)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:fileExtension() -> cp.ui.StaticText` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.fileExtension <cp.ui.StaticText>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The "File Extension" [StaticText](cp.ui.StaticText.md). |
 
-#### [getTitle](#gettitle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:getTitle() -> string | nil` </span>                                                          |
+#### [saveSheet](#savesheet)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog.saveSheet <SaveSheet>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The title of the Go To Prompt window or `nil`. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The title of the Go To Prompt window as a string or <code>nil</code>.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `SaveSheet`. |
+
+### Methods
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:hide() -> cp.apple.finalcutpro.export.ExportDialog` </span>                                                          |
@@ -64,14 +64,6 @@ Export Dialog Module.
 | **Description**                                      | Presses the Next Button. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.ExportDialog</code> object for method chaining.</li></ul> |
-
-#### [saveSheet](#savesheet)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:saveSheet() -> SaveSheet` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Creates a new Save Sheet. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The SaveSheet.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.ExportDialog:show(destinationSelect, ignoreProxyWarning, ignoreMissingMedia, ignoreInvalidCaptions, quiet) -> cp.apple.finalcutpro.export.ExportDialog, string` </span>                                                          |

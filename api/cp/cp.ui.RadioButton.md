@@ -26,9 +26,11 @@ myButton(false) == false	-- now false
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [checked](#checked)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [doCheck](#docheck)
  * [doLayout](#dolayout)
  * [doPress](#dopress)
  * [doToggle](#dotoggle)
+ * [doUncheck](#douncheck)
  * [loadLayout](#loadlayout)
  * [press](#press)
  * [RadioButton](#radiobutton)
@@ -57,6 +59,14 @@ myButton(false) == false	-- now false
 
 ### Methods
 
+#### [doCheck](#docheck)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:doCheck() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will check the button value when executed, if available at the time. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> which will toggle the button when executed.</li></ul> |
+
 #### [doLayout](#dolayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:doLayout(layout) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -78,6 +88,14 @@ myButton(false) == false	-- now false
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a `Statement` that will toggle the button value when executed, if available at the time. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> which will toggle the button when executed.</li></ul> |
+
+#### [doUncheck](#douncheck)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioButton:doUncheck() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will uncheck the button value when executed, if available at the time. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code> which will toggle the button when executed.</li></ul> |
 

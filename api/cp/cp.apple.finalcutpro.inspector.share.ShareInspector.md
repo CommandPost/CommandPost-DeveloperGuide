@@ -26,7 +26,7 @@ CheckBox Property:
 
 For example:
 ```lua
-local share = fcp:inspector():share()
+local share = fcp.inspector.share
 -- Menu Property:
 share:compositing():blendMode():value("Subtract")
 -- Slider Property:

@@ -10,6 +10,9 @@ Timeline Module.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Timeline](#timeline)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [contents](#contents)
+ * [effects](#effects)
+ * [index](#index)
  * [isFocused](#isfocused)
  * [isLoaded](#isloaded)
  * [isLockedInCentre](#islockedincentre)
@@ -19,27 +22,24 @@ Timeline Module.
  * [isPlaying](#isplaying)
  * [isShowing](#isshowing)
  * [mainUI](#mainui)
- * [rangeSelected](#rangeselected)
- * [speedPopover](#speedpopover)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [contents](#contents)
- * [doFocus](#dofocus)
- * [doHide](#dohide)
- * [doShowOnPrimary](#doshowonprimary)
- * [doShowOnSecondary](#doshowonsecondary)
- * [effects](#effects)
- * [hide](#hide)
- * [index](#index)
- * [openProject](#openproject)
  * [playhead](#playhead)
- * [show](#show)
- * [showOnPrimary](#showonprimary)
- * [showOnSecondary](#showonsecondary)
+ * [rangeSelected](#rangeselected)
  * [skimmingPlayhead](#skimmingplayhead)
+ * [speedPopover](#speedpopover)
  * [title](#title)
  * [toolbar](#toolbar)
  * [transitions](#transitions)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [app](#app)
+ * [doFocus](#dofocus)
+ * [doHide](#dohide)
+ * [doOpenProject](#doopenproject)
+ * [doShowOnPrimary](#doshowonprimary)
+ * [doShowOnSecondary](#doshowonsecondary)
+ * [hide](#hide)
+ * [show](#show)
+ * [showOnPrimary](#showonprimary)
+ * [showOnSecondary](#showonsecondary)
 
 ## API Documentation
 
@@ -74,6 +74,24 @@ Timeline Module.
 | **Returns**                                          | <ul><li>A new <code>Timeline</code> object.</li></ul> |
 
 ### Fields
+
+#### [contents](#contents)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.contents <cp.apple.finalcutpro.timeline.Contents>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Timeline Contents. The Content is the main body of the timeline, |
+
+#### [effects](#effects)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.effects <cp.apple.finalcutpro.main.EffectsBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The (sometimes hidden) Effect Browser. |
+
+#### [index](#index)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.index <cp.apple.finalcutpro.timeline.Index>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [Index](cp.apple.finalcutpro.timeline.Index.md). |
 
 #### [isFocused](#isfocused)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.isFocused <cp.prop: boolean; read-only>` </span>                                                          |
@@ -129,17 +147,47 @@ Timeline Module.
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `axuielement` representing the 'timeline', or `nil` if not available. |
 
+#### [playhead](#playhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.playhead <Playhead>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Timeline Playhead. |
+
 #### [rangeSelected](#rangeselected)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.rangeSelected <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Checks if a range is selected in the timeline. |
 
+#### [skimmingPlayhead](#skimmingplayhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.skimmingPlayhead <Playhead>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Playhead that tracks under the mouse while skimming. |
+
 #### [speedPopover](#speedpopover)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.speedPopover <cp.apple.finalcutpro.timeline.SpeedPopover>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Provides the [SpeedPopover](cp.apple.finalcutpro.timeline.SpeedPopover.md). |
+| **Description**                                      | The [SpeedPopover](cp.apple.finalcutpro.timeline.SpeedPopover.md). |
+
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.title <cp.ui.StaticText>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [StaticText](cp.ui.StaticText.md) containing the title. |
+
+#### [toolbar](#toolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.toolbar <Toolbar>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The bar at the top of the timeline. |
+
+#### [transitions](#transitions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline.transitions <cp.apple.finalcutpro.main.EffectsBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The (sometimes hidden) Transitions Browser. |
 
 ### Methods
 
@@ -150,14 +198,6 @@ Timeline Module.
 | **Description**                                      | Returns the app instance representing Final Cut Pro. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul> |
-
-#### [contents](#contents)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:contents() -> TimelineContent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Timeline Contents. The Content is the main body of the timeline, |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>TimelineContent</code> object.</li></ul> |
 
 #### [doFocus](#dofocus)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:doFocus() -> cp.rx.Statement` </span>                                                          |
@@ -172,6 +212,15 @@ Timeline Module.
 | **Description**                                      | Returns a `Statement` that will hide the Timeline (regardless of whether it |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Statement</code> ready to run.</li></ul> |
+
+#### [doOpenProject](#doopenproject)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:doOpenProject(title) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Opens a project from the timeline navigation popups. |
+| **Parameters**                                       | <ul><li>title - The title of the project you want to open.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> to run.</li></ul> |
+| **Notes**                                            | <ul><li>The title supports patterns, so you can do things like:   <code>require("cp.apple.finalcutpro").timeline:doOpenProject("Audio.*"):Now()</code></li></ul> |
 
 #### [doShowOnPrimary](#doshowonprimary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:doShowOnPrimary() -> cp.rx.go.Statement <boolean>` </span>                                                          |
@@ -189,14 +238,6 @@ Timeline Module.
 | **Parameters**                                       | <ul><li>timeout  - The timeout period for the operation.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Statement</code> which will send <code>true</code> if it successful, or <code>false</code> otherwise.</li></ul> |
 
-#### [effects](#effects)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:effects() -> EffectsBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the (sometimes hidden) Effect Browser. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>EffectsBrowser</code> object.</li></ul> |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:hide() -> Timeline` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -204,31 +245,6 @@ Timeline Module.
 | **Description**                                      | Hide's the Timeline (regardless of whether it was on the Primary or Secondary display). |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>Timeline</code> object.</li></ul> |
-
-#### [index](#index)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:index() -> Index` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [Index](cp.apple.finalcutpro.timeline.Index.md). |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Index</code> object.</li></ul> |
-
-#### [openProject](#openproject)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:openProject(title) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Opens a project from the timeline navigation popups. |
-| **Parameters**                                       | <ul><li>title - The title of the project you want to open.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>The title supports patterns, so you can do things like:   <code>require("cp.apple.finalcutpro"):timeline():openProject("Audio.*")</code></li></ul> |
-
-#### [playhead](#playhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:playhead() -> Playhead` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Timeline Playhead. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Playhead</code> object.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:show() -> Timeline` </span>                                                          |
@@ -253,36 +269,4 @@ Timeline Module.
 | **Description**                                      | Show's the Timeline on the Secondary Display. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>Timeline</code> object.</li></ul> |
-
-#### [skimmingPlayhead](#skimmingplayhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:skimmingPlayhead() -> Playhead` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Playhead that tracks under the mouse while skimming. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Playhead</code> object.</li></ul> |
-
-#### [title](#title)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:title() -> cp.ui.StaticText` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [StaticText](cp.ui.StaticText.md) containing the title. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>StaticText</code> object.</li></ul> |
-
-#### [toolbar](#toolbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:toolbar() -> Toolbar` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the bar at the top of the timeline. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Toolbar</code> object.</li></ul> |
-
-#### [transitions](#transitions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Timeline:transitions() -> EffectsBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the (sometimes hidden) Transitions Browser. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>EffectsBrowser</code> object.</li></ul> |
 

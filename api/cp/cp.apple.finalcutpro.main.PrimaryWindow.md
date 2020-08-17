@@ -9,28 +9,28 @@ Primary Window Module.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [PrimaryWindow](#primarywindow)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [alert](#alert)
  * [bottomGroupUI](#bottomgroupui)
  * [browserGroupUI](#browsergroupui)
+ * [colorBoard](#colorboard)
  * [doShow](#doshow)
  * [frame](#frame)
  * [hsWindow](#hswindow)
+ * [inspector](#inspector)
  * [isFullScreen](#isfullscreen)
  * [isShowing](#isshowing)
  * [leftGroupUI](#leftgroupui)
  * [rightGroupUI](#rightgroupui)
  * [rootGroupUI](#rootgroupui)
  * [timelineGroupUI](#timelinegroupui)
+ * [toolbar](#toolbar)
  * [topGroupUI](#topgroupui)
  * [UI](#ui)
  * [viewerGroupUI](#viewergroupui)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [alert](#alert)
- * [app](#app)
- * [colorBoard](#colorboard)
- * [inspector](#inspector)
- * [show](#show)
- * [toolbar](#toolbar)
  * [window](#window)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [app](#app)
+ * [show](#show)
 
 ## API Documentation
 
@@ -56,6 +56,12 @@ Primary Window Module.
 
 ### Fields
 
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.alert <cp.ui.Alert>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Provides access to any 'Alert' windows on the PrimaryWindow. |
+
 #### [bottomGroupUI](#bottomgroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:bottomGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -67,6 +73,12 @@ Primary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the UI which contains the Browser. |
+
+#### [colorBoard](#colorboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.colorBoard <ColorBoard>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The ColorBoard object. |
 
 #### [doShow](#doshow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:doShow() -> PrimaryWindow` </span>                                                          |
@@ -86,6 +98,12 @@ Primary Window Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found. |
+
+#### [inspector](#inspector)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.inspector <Inspector>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Inspector object. |
 
 #### [isFullScreen](#isfullscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.isFullScreen <cp.prop: boolean>` </span>                                                          |
@@ -123,6 +141,12 @@ Primary Window Module.
 | **Type**                                             | Field |
 | **Description**                                      | Returns the UI that contains the `Timeline`. |
 
+#### [toolbar](#toolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.toolbar <cp.ui.PrimaryToolbar>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The PrimaryToolbar element. |
+
 #### [topGroupUI](#topgroupui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.topGroupUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -141,15 +165,13 @@ Primary Window Module.
 | **Type**                                             | Field |
 | **Description**                                      | Returns the UI that contains the `Viewer`. |
 
-### Methods
-
-#### [alert](#alert)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:alert() -> cp.ui.Alert` </span>                                                          |
+#### [window](#window)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow.window <cp.ui.Window>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Provides access to any 'Alert' windows on the PrimaryWindow. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>cp.ui.Alert</code> object</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `Window` instance. |
+
+### Methods
 
 #### [app](#app)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:app() -> cp.apple.finalcutpro` </span>                                                          |
@@ -159,22 +181,6 @@ Primary Window Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The app instance.</li></ul> |
 
-#### [colorBoard](#colorboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:colorBoard() -> ColorBoard` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the ColorBoard object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>ColorBoard</li></ul> |
-
-#### [inspector](#inspector)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:inspector() -> Inspector` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Inspector object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Inspector</li></ul> |
-
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:show() -> PrimaryWindow` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -182,20 +188,4 @@ Primary Window Module.
 | **Description**                                      | Shows the Primary Window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>PrimaryWindow</code> instance.</li></ul> |
-
-#### [toolbar](#toolbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:toolbar() -> PrimaryToolbar` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the PrimaryToolbar element. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>PrimaryToolbar</code>.</li></ul> |
-
-#### [window](#window)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryWindow:window() -> cp.ui.Window` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `Window` instance. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Window</code> instance.</li></ul> |
 

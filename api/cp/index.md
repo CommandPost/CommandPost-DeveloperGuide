@@ -82,7 +82,7 @@
 | [cp.apple.finalcutpro.main.FullScreenWindow](cp.apple.finalcutpro.main.FullScreenWindow.md)                          | Full Screen Window Player.     |
 | [cp.apple.finalcutpro.main.GeneratorsBrowser](cp.apple.finalcutpro.main.GeneratorsBrowser.md)                          | Generators Browser Module.     |
 | [cp.apple.finalcutpro.main.KeywordEditor](cp.apple.finalcutpro.main.KeywordEditor.md)                          | Keyword Editor Module.     |
-| [cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts](cp.apple.finalcutpro.main.KeywordEditor.KeyboardShortcuts.md)                          | Keyboard Shortcuts     |
+| [cp.apple.finalcutpro.main.KeywordField](cp.apple.finalcutpro.main.KeywordField.md)                          | Keyword Text Field Module.     |
 | [cp.apple.finalcutpro.main.LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md)                          | Libraries Browser Module.     |
 | [cp.apple.finalcutpro.main.LibrariesFilmstrip](cp.apple.finalcutpro.main.LibrariesFilmstrip.md)                          | Libraries Filmstrip Module.     |
 | [cp.apple.finalcutpro.main.LibrariesList](cp.apple.finalcutpro.main.LibrariesList.md)                          | Libraries List Module.     |
@@ -96,8 +96,10 @@
 | [cp.apple.finalcutpro.menu](cp.apple.finalcutpro.menu.md)                          | Final Cut Pro Menu Helper Functions.     |
 | [cp.apple.finalcutpro.plugins](cp.apple.finalcutpro.plugins.md)                          | Scans an entire system for Final Cut Pro Effects, Generators, Titles & Transitions.     |
 | [cp.apple.finalcutpro.plugins.guiscan](cp.apple.finalcutpro.plugins.guiscan.md)                          | Final Cut Pro GUI Plugin Scanner.     |
+| [cp.apple.finalcutpro.prefs.EditingPanel](cp.apple.finalcutpro.prefs.EditingPanel.md)                          | Editing Panel Module.     |
 | [cp.apple.finalcutpro.prefs.GeneralPanel](cp.apple.finalcutpro.prefs.GeneralPanel.md)                          | General Panel Module.     |
 | [cp.apple.finalcutpro.prefs.ImportPanel](cp.apple.finalcutpro.prefs.ImportPanel.md)                          | Import Panel Module.     |
+| [cp.apple.finalcutpro.prefs.Panel](cp.apple.finalcutpro.prefs.Panel.md)                          | Preferences Panel.     |
 | [cp.apple.finalcutpro.prefs.PlaybackPanel](cp.apple.finalcutpro.prefs.PlaybackPanel.md)                          | Playback Panel Module.     |
 | [cp.apple.finalcutpro.prefs.PreferencesWindow](cp.apple.finalcutpro.prefs.PreferencesWindow.md)                          | Preferences Window Module.     |
 | [cp.apple.finalcutpro.strings](cp.apple.finalcutpro.strings.md)                          | The `cp.strings` for I18N lookups related to Final Cut Pro.     |
@@ -133,6 +135,11 @@
 | [cp.apple.motion.app](cp.apple.motion.app.md)                          | The `cp.app` for Apple's Motion.     |
 | [cp.battery](cp.battery.md)                          | Provides access to various properties of the battery. Each of these properties     |
 | [cp.bench](cp.bench.md)                          | Benchmarking Tool.     |
+| [cp.blackmagic.resolve](cp.blackmagic.resolve.md)                          | The Blackmagic DaVinci Resolve Extension.     |
+| [cp.blackmagic.resolve.app](cp.blackmagic.resolve.app.md)                          | The `cp.app` for Blackmagic DaVinci Resolve.     |
+| [cp.blackmagic.resolve.color.Color](cp.blackmagic.resolve.color.Color.md)                          | Color Module.     |
+| [cp.blackmagic.resolve.color.Tracker](cp.blackmagic.resolve.color.Tracker.md)                          | Tracker     |
+| [cp.blackmagic.resolve.main.PrimaryWindow](cp.blackmagic.resolve.main.PrimaryWindow.md)                          | Primary Window Module.     |
 | [cp.choices](cp.choices.md)                          | Choices Module.     |
 | [cp.choices.builder](cp.choices.builder.md)                          | Choices Builder Module.     |
 | [cp.collect.List](cp.collect.List.md)                          | Lists are similar `tables` which can contain `nil` items without shortening the length.     |
@@ -256,13 +263,16 @@
 | [cp.ui.CheckBox](cp.ui.CheckBox.md)                          | Check Box UI Module.     |
 | [cp.ui.ColorWell](cp.ui.ColorWell.md)                          | UI ColorWell.     |
 | [cp.ui.Column](cp.ui.Column.md)                          | Represents an `AXColumn` `axuielement`.     |
+| [cp.ui.ComboBox](cp.ui.ComboBox.md)                          | Combo Box Module.     |
 | [cp.ui.Dialog](cp.ui.Dialog.md)                          | Represents a [Window](cp.ui.Window.md) which has a `AXSubrole` of `AXDialog`.     |
+| [cp.ui.DisclosureTriangle](cp.ui.DisclosureTriangle.md)                          | Disclosure Triangle UI Module.     |
 | [cp.ui.Element](cp.ui.Element.md)                          | A support class for `hs._asm.axuielement` management.     |
 | [cp.ui.ElementCache](cp.ui.ElementCache.md)                          | Provides caching for [Element](cp.ui.Element.md) subclasses that want to cache children.     |
 | [cp.ui.Grid](cp.ui.Grid.md)                          | Abstract base class for `AX` elements which form a grid, such as [Table2](cp.ui.Table2.md) and [Outline](cp.ui.Outline.md).     |
 | [cp.ui.Group](cp.ui.Group.md)                          | UI Group.     |
 | [cp.ui.Image](cp.ui.Image.md)                          | Represents an `AXImage` `axuielement` value.     |
-| [cp.ui.Menu](cp.ui.Menu.md)                          | UI Group.     |
+| [cp.ui.List](cp.ui.List.md)                          | Represents an `AXList` `axuielement` value.     |
+| [cp.ui.Menu](cp.ui.Menu.md)                          | UI for AXMenus.     |
 | [cp.ui.MenuButton](cp.ui.MenuButton.md)                          | Menu Button Module.     |
 | [cp.ui.notifier](cp.ui.notifier.md)                          | Supports long-lived 'AX' notifiers. Configure the application to watch, the     |
 | [cp.ui.Outline](cp.ui.Outline.md)                          | Represents an `AXOutline` `axuielement`.     |

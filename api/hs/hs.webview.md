@@ -541,9 +541,10 @@ Any suggestions or updates to the code to address any of these or other limitati
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:stopLoading() -> webviewObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Stop loading content if the webview is still loading content.  Does nothing if content has already completed loading. |
+| **Description**                                      | Stop loading additional content for the webview. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The webview object</li></ul> |
+| **Notes**                                            | <ul><li>this method does not stop the loading of the primary content for the page at the specified URL</li><li>if <a href="#loading">hs.webview:loading</a> would return true, this method does nothing -- see notes:</li><li>The documentation from Apple is unclear and experimentation has shown that if this method is applied before the content of the specified URL has loaded, it can cause the webview to lock up; however it appears to stop the loading of addiional resources specified for the content (external script files, external style files, AJAX queries, etc.) and should be used in this context.</li></ul> |
 
 #### [title](#title)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview:title() -> title` </span>                                                          |

@@ -12,27 +12,27 @@ Browser Module.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Browser](#browser)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [generators](#generators)
  * [generatorsShowing](#generatorsshowing)
  * [isOnPrimary](#isonprimary)
  * [isOnSecondary](#isonsecondary)
  * [libraries](#libraries)
  * [librariesShowing](#librariesshowing)
+ * [markerPopover](#markerpopover)
+ * [media](#media)
  * [mediaShowing](#mediashowing)
+ * [showGenerators](#showgenerators)
+ * [showLibraries](#showlibraries)
+ * [showMedia](#showmedia)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [appearanceAndFiltering](#appearanceandfiltering)
  * [doHide](#dohide)
  * [doShow](#doshow)
  * [doShowOnPrimary](#doshowonprimary)
  * [doShowOnSecondary](#doshowonsecondary)
- * [generators](#generators)
  * [hide](#hide)
  * [loadLayout](#loadlayout)
- * [markerPopover](#markerpopover)
- * [media](#media)
  * [saveLayout](#savelayout)
- * [showGenerators](#showgenerators)
- * [showLibraries](#showlibraries)
- * [showMedia](#showmedia)
  * [showOnPrimary](#showonprimary)
  * [showOnSecondary](#showonsecondary)
 
@@ -59,6 +59,12 @@ Browser Module.
 | **Returns**                                          | <ul><li>The new <code>Browser</code>.</li></ul> |
 
 ### Fields
+
+#### [generators](#generators)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.generators <cp.apple.finalcutpro.main.GeneratorsBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Generators Browser object. |
 
 #### [generatorsShowing](#generatorsshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.generatorsShowing <cp.prop: boolean; read-only>` </span>                                                          |
@@ -92,11 +98,41 @@ Browser Module.
 | **Type**                                             | Field |
 | **Description**                                      | Is the 'Libraries' button active, and thus showing? |
 
+#### [markerPopover](#markerpopover)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.markerPopover <BrowserMarkerPopover>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Browser Marker Popover object. |
+
+#### [media](#media)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.media <cp.apple.finalcutpro.main.MediaBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Media Browser object. |
+
 #### [mediaShowing](#mediashowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.mediaShowing <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Is the 'Media' button active, and thus showing? |
+
+#### [showGenerators](#showgenerators)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.showGenerators <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The CheckBox indicating if the Generators Browser is showing. |
+
+#### [showLibraries](#showlibraries)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.showLibraries <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if Libraries is showing, and can be clicked to toggle. |
+
+#### [showMedia](#showmedia)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser.showMedia <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | CheckBox indicating if the  Media Browser is showing. |
 
 ### Methods
 
@@ -138,14 +174,6 @@ Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code> to execute.</li></ul> |
 
-#### [generators](#generators)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:generators() -> GeneratorsBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Generators Browser object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>GeneratorsBrowser</code> object.</li></ul> |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:hide() -> Browser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -162,22 +190,6 @@ Browser Module.
 | **Parameters**                                       | <ul><li>layout - A table containing the Browser layout settings - created using <code>cp.apple.finalcutpro.main.Browser:saveLayout()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [markerPopover](#markerpopover)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:markerPopover() -> BrowserMarkerPopover` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Browser Marker Popover object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>BrowserMarkerPopover</code> object.</li></ul> |
-
-#### [media](#media)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:media() -> MediaBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get Media Browser object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>MediaBrowser</code> object.</li></ul> |
-
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -185,30 +197,6 @@ Browser Module.
 | **Description**                                      | Saves the current Browser layout to a table. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the current Browser Layout.</li></ul> |
-
-#### [showGenerators](#showgenerators)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showGenerators() -> CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Show Media. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
-
-#### [showLibraries](#showlibraries)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showLibraries() -> CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Shows Libraries. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
-
-#### [showMedia](#showmedia)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showMedia() -> CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Show Media. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
 
 #### [showOnPrimary](#showonprimary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Browser:showOnPrimary() -> Browser` </span>                                                          |

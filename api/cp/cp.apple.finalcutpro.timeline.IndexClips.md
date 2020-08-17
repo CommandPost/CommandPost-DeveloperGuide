@@ -11,10 +11,15 @@ Provides access to the 'Clips' section of the [Timeline Index](cp.apple.finalcut
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
  * [IndexClips](#indexclips)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [activate](#activate)
  * [all](#all)
  * [audio](#audio)
+ * [list](#list)
+ * [titles](#titles)
+ * [type](#type)
+ * [video](#video)
+* Methods - API calls which can only be made on an object returned by a constructor
  * [doFindAuditions](#dofindauditions)
  * [doFindClipsContaining](#dofindclipscontaining)
  * [doFindCompoundClips](#dofindcompoundclips)
@@ -26,11 +31,7 @@ Provides access to the 'Clips' section of the [Timeline Index](cp.apple.finalcut
  * [doShowAudio](#doshowaudio)
  * [doShowTitles](#doshowtitles)
  * [doShowVideo](#doshowvideo)
- * [list](#list)
  * [saveLayout](#savelayout)
- * [titles](#titles)
- * [type](#type)
- * [video](#video)
 
 ## API Documentation
 
@@ -43,25 +44,51 @@ Provides access to the 'Clips' section of the [Timeline Index](cp.apple.finalcut
 | **Description**                                      | Creates the `IndexClips` instance. |
 | **Parameters**                                       | <ul><li>index - The <a href="cp.apple.finalcutpro.timeline.Index.md">Index</a> instance.</li></ul> |
 
-### Methods
+### Fields
 
 #### [activate](#activate)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:activate() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips.activate <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) that activates the 'Clips' section. |
 
 #### [all](#all)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:all() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips.all <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) that will show "All" types of media. |
 
 #### [audio](#audio)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:audio() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips.audio <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Audio" filter. |
+
+#### [list](#list)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips.list <cp.ui.Table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The list of clips as a [Table](cp.ui.Table.md). |
+
+#### [titles](#titles)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips.titles <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Titles" filter. |
+
+#### [type](#type)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips.type <cp.apple.finalcutpro.timeline.IndexClips.Type>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [IndexClips.Type](cp.apple.finalcutpro.timeline.IndexClips.Type.md). |
+
+#### [video](#video)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips.video <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Video" filter. |
+
+### Methods
 
 #### [doFindAuditions](#dofindauditions)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:doFindAuditions() -> cp.rx.go.Statement` </span>                                                          |
@@ -134,35 +161,10 @@ Provides access to the 'Clips' section of the [Timeline Index](cp.apple.finalcut
 | **Type**                                             | Method |
 | **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that will set the clip index to "Video" media types. |
 
-#### [list](#list)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:list() -> cp.ui.Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the list of clips as a [Table](cp.ui.Table.md). |
-| **Returns**                                          | <ul><li>The <a href="cp.ui.Table.md">Table</a>.</li></ul> |
-
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a `table` containing the layout configuration for this class. |
 | **Returns**                                          | <ul><li>The layout configuration <code>table</code>.</li></ul> |
-
-#### [titles](#titles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:titles() -> cp.ui.RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Titles" filter. |
-
-#### [type](#type)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:type() -> cp.apple.finalcutpro.timeline.IndexClips.Type` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [IndexClips.Type](cp.apple.finalcutpro.timeline.IndexClips.Type.md). |
-
-#### [video](#video)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexClips:video() -> cp.ui.RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Video" filter. |
 

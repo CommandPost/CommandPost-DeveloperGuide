@@ -20,12 +20,24 @@ will not affect the "yadayada" activator.
 
 ## API Overview
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [activeHandlers](#activehandlers)
+ * [allowedHandlers](#allowedhandlers)
+ * [configurable](#configurable)
+ * [favoriteChoices](#favoritechoices)
+ * [hiddenChoices](#hiddenchoices)
+ * [lastQueryRemembered](#lastqueryremembered)
+ * [lastQueryValue](#lastqueryvalue)
+ * [popularChoices](#popularchoices)
+ * [query](#query)
  * [reducedTransparency](#reducedtransparency)
+ * [searchSubText](#searchsubtext)
+ * [showHidden](#showhidden)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activate](#activate)
  * [activeChoices](#activechoices)
  * [allChoices](#allchoices)
  * [allowHandlers](#allowhandlers)
+ * [chooser](#chooser)
  * [disableAllHandlers](#disableallhandlers)
  * [disableHandler](#disablehandler)
  * [enableAllHandlers](#enableallhandlers)
@@ -52,18 +64,83 @@ will not affect the "yadayada" activator.
  * [toggle](#toggle)
  * [toolbarIcons](#toolbaricons)
  * [unfavoriteChoice](#unfavoritechoice)
- * [unhiddenChoices](#unhiddenchoices)
  * [unhideChoice](#unhidechoice)
 
 ## API Documentation
 
 ### Fields
 
+#### [activeHandlers](#activehandlers)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.activeHandlers <cp.prop: table of handlers>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Contains the table of active handlers. A handler is active if it is both allowed and enabled. |
+
+#### [allowedHandlers](#allowedhandlers)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:allowedHandlers <cp.prop: table of handlers; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Contains all handlers that are allowed in this activator. |
+
+#### [configurable](#configurable)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.configurable <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | If `true` (the default), the activator can be configured by right-clicking on the main chooser. |
+
+#### [favoriteChoices](#favoritechoices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.favoriteChoices <cp.prop: table of booleans>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Contains the set of choice IDs which are favorites in this activator, mapped to a boolean value. |
+
+#### [hiddenChoices](#hiddenchoices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.hiddenChoices <cp.prop: table of booleans>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Contains the set of choice IDs which are hidden in this activator, mapped to a boolean value. |
+
+#### [lastQueryRemembered](#lastqueryremembered)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.lastQueryRemembered <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | If `true`, remember the last query. |
+
+#### [lastQueryValue](#lastqueryvalue)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.lastQueryValue <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The last query value. |
+
+#### [popularChoices](#popularchoices)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.popularChoices <cp.prop: table of integers>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Keeps track of how popular particular choices are. Returns a table of choice IDs |
+
+#### [query](#query)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.query <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The current "query" value for the activator. |
+
 #### [reducedTransparency](#reducedtransparency)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.reducedTransparency <cp.prop: boolean>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | A property which will be true if the 'reduce transparency' mode is enabled. |
+
+#### [searchSubText](#searchsubtext)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.searchSubText <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | If `true`, allow users to search the subtext value. |
+
+#### [showHidden](#showhidden)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator.showHidden <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | If `true`, hidden items are shown. |
 
 ### Methods
 
@@ -79,7 +156,7 @@ will not affect the "yadayada" activator.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:activeChoices() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Returns a table with active choices. If [showHidden](#showHidden) is set to `true`  hidden |
+| **Description**                                      | Returns a table with active choices. If a `query` is set, only choices containing the provided substring are returned. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Table of choices that can be displayed by an <code>hs.chooser</code>.</li></ul> |
 
@@ -98,6 +175,14 @@ will not affect the "yadayada" activator.
 | **Description**                                      | Specifies that only the handlers with the specified IDs will be active in |
 | **Parameters**                                       | <ul><li><code>...</code>     - The list of Handler ID strings to allow.</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
+
+#### [chooser](#chooser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:chooser() -> `hs.chooser` object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets a hs.chooser |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A <code>hs.chooser</code> object</li></ul> |
 
 #### [disableAllHandlers](#disableallhandlers)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:disableAllHandlers() -> none` </span>                                                          |
@@ -304,14 +389,6 @@ will not affect the "yadayada" activator.
 | **Description**                                      | Marks the choice with the specified ID as not a favorite. |
 | **Parameters**                                       | <ul><li><code>id</code>          - The choice ID to unfavorite.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successfully unfavorited.</li></ul> |
-
-#### [unhiddenChoices](#unhiddenchoices)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:unhiddenChoices() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns a table with visible choices. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Table of choices that can be displayed by an <code>hs.chooser</code>.</li></ul> |
 
 #### [unhideChoice](#unhidechoice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:unhideChoice(id) -> boolean` </span>                                                          |

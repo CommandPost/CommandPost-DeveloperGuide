@@ -38,8 +38,9 @@ A collection of handy JSON tools.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a `cp.prop` instance for a JSON file. |
-| **Parameters**                                       | <ul><li>path - The path to the JSON folder (i.e. "~/Library/Caches")</li><li>folder - The folder containing the JSON file (i.e. "Final Cut Pro")</li><li>filename - The filename of the JSON file (i.e. "Test.json")</li><li>defaultValue - The default value if the JSON file doesn't exist yet.</li></ul> |
+| **Parameters**                                       | <ul><li>path - The path to the JSON folder (i.e. "~/Library/Caches")</li><li>folder - The folder containing the JSON file (i.e. "Final Cut Pro")</li><li>filename - The filename of the JSON file (i.e. "Test.json")</li><li>defaultValue - The default value if the JSON file doesn't exist yet.</li><li>errorCallbackFn - An optional function that's triggered if something goes wrong.</li></ul> |
 | **Returns**                                          | <ul><li>A <code>cp.prop</code> instance.</li></ul> |
+| **Notes**                                            | <ul><li>The optional <code>errorCallbackFn</code> should accept one parameter, a string with   the error message.</li></ul> |
 
 #### [read](#read)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.json.read(path) -> table | nil` </span>                                                          |

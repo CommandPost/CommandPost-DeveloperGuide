@@ -4,10 +4,11 @@
 Represents a Tangent Group
 
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [controls](#controls)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [controls](#controls)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [active](#active)
+ * [enabled](#enabled)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [action](#action)
  * [controls](#controls)
@@ -22,22 +23,28 @@ Represents a Tangent Group
 
 ## API Documentation
 
-### Constants
-
-#### [controls](#controls)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The set of controls currently registered. |
-
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls.new(id, name)` </span>                                                          |
+#### [controls](#controls)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls(id, name)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Group` instance. |
 | **Parameters**                                       | <ul><li>name      - The name of the controls.</li></ul> |
+
+### Fields
+
+#### [active](#active)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls.active <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the controls are active. They will be active if `enabled` is `true`. |
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the controls are enabled. |
 
 ### Methods
 

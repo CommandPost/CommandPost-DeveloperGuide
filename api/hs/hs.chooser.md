@@ -19,6 +19,7 @@ Notes:
  * [delete](#delete)
  * [fgColor](#fgcolor)
  * [hide](#hide)
+ * [hideCallback](#hidecallback)
  * [isVisible](#isvisible)
  * [placeholderText](#placeholdertext)
  * [query](#query)
@@ -117,6 +118,15 @@ Notes:
 | **Description**                                      | Hides the chooser |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul> |
+
+#### [hideCallback](#hidecallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:hideCallback([fn]) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets/clears a callback for when the chooser window is hidden |
+| **Parameters**                                       | <ul><li>fn - An optional function that will be called when the chooser window is hidden. If this parameter is omitted, the existing callback will be removed.</li></ul> |
+| **Returns**                                          | <ul><li>The hs.chooser object</li></ul> |
+| **Notes**                                            | <ul><li>This callback is called <em>after</em> the chooser is hidden.</li><li>This callback is called <em>after</em> hs.chooser.globalCallback.</li></ul> |
 
 #### [isVisible](#isvisible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:isVisible() -> boolean` </span>                                                          |

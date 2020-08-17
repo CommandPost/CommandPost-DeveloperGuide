@@ -32,6 +32,7 @@ These work on all UI elements, including windows.
 ## API Overview
 * Methods - API calls which can only be made on an object returned by a constructor
  * [element](#element)
+ * [pid](#pid)
  * [start](#start)
  * [stop](#stop)
 
@@ -46,6 +47,14 @@ These work on all UI elements, including windows.
 | **Description**                                      | Returns the element the watcher is watching. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The element the watcher is watching.</li></ul> |
+
+#### [pid](#pid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.uielement.watcher:pid() -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the PID of the element being watched |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The PID of the element being watched</li></ul> |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.uielement.watcher:start(events) -> hs.uielement.watcher` </span>                                                          |

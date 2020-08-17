@@ -21,6 +21,7 @@ Notes:
  * [allWindows](#allwindows)
  * [desktop](#desktop)
  * [invisibleWindows](#invisiblewindows)
+ * [list](#list)
  * [minimizedWindows](#minimizedwindows)
  * [orderedWindows](#orderedwindows)
  * [setShadows](#setshadows)
@@ -129,6 +130,15 @@ Notes:
 | **Description**                                      | Gets all invisible windows |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A list containing <code>hs.window</code> objects representing all windows that are not visible as per <code>hs.window:isVisible()</code></li></ul> |
+
+#### [list](#list)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.list(allWindows) -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets a table containing all the window data retrieved from `CGWindowListCreate`. |
+| **Parameters**                                       | <ul><li>allWindows - Get all the windows, even those "below" the Dock window.</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> is succesful otherwise <code>false</code> if an error occured.</li></ul> |
+| **Notes**                                            | <ul><li>This allows you to get window information without Accessibility Permissions.</li></ul> |
 
 #### [minimizedWindows](#minimizedwindows)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window.minimizedWindows() -> list of hs.window objects` </span>                                                          |

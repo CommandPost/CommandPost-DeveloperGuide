@@ -9,6 +9,7 @@ Core CommandPost functionality.
  * [cp.apple](cp.apple.md)
  * [cp.battery](cp.battery.md)
  * [cp.bench](cp.bench.md)
+ * [cp.blackmagic](cp.blackmagic.md)
  * [cp.choices](cp.choices.md)
  * [cp.collect](cp.collect.md)
  * [cp.commands](cp.commands.md)

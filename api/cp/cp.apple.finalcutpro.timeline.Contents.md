@@ -9,14 +9,13 @@ Timeline Contents Module.
  * [playheadClipsUI](#playheadclipsui)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [children](#children)
- * [horizontalScrollBarUI](#horizontalscrollbarui)
  * [isFocused](#isfocused)
  * [isLoaded](#isloaded)
- * [isShowing](#isshowing)
+ * [playhead](#playhead)
+ * [scrollArea](#scrollarea)
  * [scrollAreaUI](#scrollareaui)
  * [selectedChildren](#selectedchildren)
- * [UI](#ui)
- * [verticalScrollBarUI](#verticalscrollbarui)
+ * [skimmingPlayhead](#skimmingplayhead)
  * [viewFrame](#viewframe)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [doFocus](#dofocus)
@@ -55,12 +54,6 @@ Timeline Contents Module.
 | **Type**                                             | Field |
 | **Description**                                      | The current set of child elements in the Contents. |
 
-#### [horizontalScrollBarUI](#horizontalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.horizontalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `AXHorizontalScrolLbar` for the Timeline Contents area. |
-
 #### [isFocused](#isfocused)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.isFocused <cp.prop: booelan; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -73,11 +66,17 @@ Timeline Contents Module.
 | **Type**                                             | Field |
 | **Description**                                      | Checks if the Timeline has content loaded. |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.isShowing <cp.prop: booelan; read-only; live>` </span>                                                          |
+#### [playhead](#playhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.playhead <cp.apple.finalcutpro.main.Playhead>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Checks if the Timeline is currently showing. |
+| **Description**                                      | The main Playhead. |
+
+#### [scrollArea](#scrollarea)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.scrollArea <cp.ui.ScrollArea>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `ScrollArea` for the Contents element. |
 
 #### [scrollAreaUI](#scrollareaui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.scrollAreaUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
@@ -91,17 +90,11 @@ Timeline Contents Module.
 | **Type**                                             | Field |
 | **Description**                                      | The current set of selected child elements in the Contents. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
+#### [skimmingPlayhead](#skimmingplayhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.skimmingPlayhead <cp.apple.finalcutpro.main.Playhead>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The main UI of the Timeline Contents area. |
-
-#### [verticalScrollBarUI](#verticalscrollbarui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.verticalScrollBarUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `AXVerticalScrollBar` for the Timeline Contents area. |
+| **Description**                                      | The Playhead that tracks with the mouse pointer. |
 
 #### [viewFrame](#viewframe)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Contents.viewFrame <cp.prop: table; read-only; live>` </span>                                                          |

@@ -17,15 +17,17 @@ Libraries List Module.
  * [selectedClipsUI](#selectedclipsui)
  * [showClip](#showclip)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [columns](#columns)
+ * [LibrariesList](#librarieslist)
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [contents](#contents)
- * [parent](#parent)
+ * [isFocused](#isfocused)
+ * [isShowing](#isshowing)
+ * [playerUI](#playerui)
  * [playhead](#playhead)
- * [show](#show)
  * [skimmingPlayhead](#skimmingplayhead)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [columns](#columns)
+ * [show](#show)
 
 ## API Documentation
 
@@ -121,23 +123,53 @@ Libraries List Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.new(app) -> LibrariesList` </span>                                                          |
+#### [LibrariesList](#librarieslist)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList(app) -> LibrariesList` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `LibrariesList` instance. |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>LibrariesList</code> object.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:app() -> App` </span>                                                          |
+#### [contents](#contents)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.contents <cp.ui.Table>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Libraries List Contents UI. |
+
+#### [isFocused](#isfocused)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.isFocused <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the Libraries List is currently focused within FCPX. |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the Libraries List is showing on screen. |
+
+#### [playerUI](#playerui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.playerUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `axuielement` for the player section of the Libraries List UI. |
+
+#### [playhead](#playhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.playhead <Playhead>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Libraries List Playhead. |
+
+#### [skimmingPlayhead](#skimmingplayhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList.skimmingPlayhead <Playhead>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | the Libraries List Skimming Playhead. |
+
+### Methods
 
 #### [columns](#columns)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:columns() -> Columns` </span>                                                          |
@@ -147,30 +179,6 @@ Libraries List Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>AppearanceAndFiltering</code> object.</li></ul> |
 
-#### [contents](#contents)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:contents() -> Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get the Libraries List Contents UI. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Table</code> object</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
-
-#### [playhead](#playhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:playhead() -> Playhead` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get the Libraries List Playhead. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul> |
-
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:show() -> LibrariesList` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -178,12 +186,4 @@ Libraries List Module.
 | **Description**                                      | Show the Libraries List. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>LibrariesList</code> object</li></ul> |
-
-#### [skimmingPlayhead](#skimmingplayhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesList:skimmingPlayhead() -> Playhead` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get the Libraries List Skimming Playhead. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul> |
 

@@ -19,6 +19,7 @@ Provides access to `AXScrollBar` `axuielement` values.
  * [loadLayout](#loadlayout)
  * [matches](#matches)
  * [saveLayout](#savelayout)
+ * [shiftValueBy](#shiftvalueby)
 
 ## API Documentation
 
@@ -101,4 +102,12 @@ Provides access to `AXScrollBar` `axuielement` values.
 | **Type**                                             | Method |
 | **Description**                                      | Saves the `ScrollBar` layout configuration. |
 | **Returns**                                          | <ul><li>a <code>table</code> with the configuration parameters.</li></ul> |
+
+#### [shiftValueBy](#shiftvalueby)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.ScrollBar:shiftValueBy(amount) -> number` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Attempts to shift the value by the specified amount. |
+| **Parameters**                                       | <ul><li>amount - The amount to shift by.</li></ul> |
+| **Returns**                                          | <ul><li>The new value, or <code>nil</code> if not available.</li></ul> |
 

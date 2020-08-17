@@ -200,7 +200,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sets the cell for a window on a particular screen |
-| **Parameters**                                       | <ul><li>win - an <code>hs.window</code> object representing the window to operate on</li><li>cell - a cell object, i.e. an <code>hs.geometry</code> rect or argument to construct one, to apply to the window</li><li>screen - (optional) an <code>hs.screen</code> object or argument to <code>hs.screen.find()</code> representing the screen to place the window on; if omitted            the window's current screen will be used</li></ul> |
+| **Parameters**                                       | <ul><li>win - an <code>hs.window</code> object representing the window to operate on</li><li>cell - a cell object, i.e. an <code>hs.geometry</code> rect or argument to construct one, to apply to the window</li><li>screen - (optional) an <code>hs.screen</code> object or argument to <code>hs.screen.find()</code> representing the screen to place the window on; if omitted   the window's current screen will be used</li></ul> |
 | **Returns**                                          | <ul><li>the <code>hs.grid</code> module for method chaining</li></ul> |
 
 #### [setGrid](#setgrid)

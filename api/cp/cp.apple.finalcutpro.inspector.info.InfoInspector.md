@@ -12,9 +12,9 @@ Video Inspector Module.
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [metadataView](#metadataview)
+ * [metadataViewButton](#metadataviewbutton)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [propertiesUI](#propertiesui)
- * [show](#show)
 
 ## API Documentation
 
@@ -54,6 +54,12 @@ Video Inspector Module.
 | **Type**                                             | Field |
 | **Description**                                      | Gets the name of the current metadata view. |
 
+#### [metadataViewButton](#metadataviewbutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector.metadataViewButton <cp.io.MenuButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Info Inspector Metadata View Button. |
+
 ### Methods
 
 #### [propertiesUI](#propertiesui)
@@ -63,12 +69,4 @@ Video Inspector Module.
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Properties UI. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A <code>hs._asm.axuielement</code> object.</li></ul> |
-
-#### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.info.InfoInspector:show() -> MenuButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Info Inspector Metadata View Button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An <code>MenuButton</code> object.</li></ul> |
 

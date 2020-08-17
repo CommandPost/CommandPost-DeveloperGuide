@@ -13,24 +13,24 @@ Color Board Module.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [ColorBoard](#colorboard)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [aspectGroup](#aspectgroup)
+ * [color](#color)
  * [contentUI](#contentui)
+ * [exposure](#exposure)
  * [isActive](#isactive)
  * [isShowing](#isshowing)
+ * [saturation](#saturation)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [aspectGroup](#aspectgroup)
  * [childUI](#childui)
- * [color](#color)
  * [current](#current)
  * [doHide](#dohide)
  * [doNextAspect](#donextaspect)
  * [doResetCurrent](#doresetcurrent)
  * [doSelectAspect](#doselectaspect)
  * [doShow](#doshow)
- * [exposure](#exposure)
  * [hide](#hide)
  * [nextAspect](#nextaspect)
  * [reset](#reset)
- * [saturation](#saturation)
  * [show](#show)
 
 ## API Documentation
@@ -73,11 +73,29 @@ Color Board Module.
 
 ### Fields
 
+#### [aspectGroup](#aspectgroup)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.aspectGroup <cp.ui.RadioGroup>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `RadioGroup` for the 'aspect' currently being controlled  |
+
+#### [color](#color)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.color <ColorBoardAspect>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `color` aspect of the color board. |
+
 #### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.contentUI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns the `hs._asm.axuielement` object for the Color Board's content. |
+
+#### [exposure](#exposure)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.exposure <ColorBoardAspect>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `exposure` aspect of the color board. |
 
 #### [isActive](#isactive)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:isActive <cp.prop: boolean; read-only>` </span>                                                          |
@@ -91,15 +109,13 @@ Color Board Module.
 | **Type**                                             | Field |
 | **Description**                                      | Returns whether or not the Color Board is visible. |
 
-### Methods
-
-#### [aspectGroup](#aspectgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:aspectGroup() -> cp.ui.RadioGroup` </span>                                                          |
+#### [saturation](#saturation)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard.saturation <ColorBoardAspect>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `RadioGroup` for the 'aspect' currently being controlled  |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>RadioGroup</code>.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `saturation` aspect of the color board. |
+
+### Methods
 
 #### [childUI](#childui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:childUI(id) -> hs._asm.axuielement object` </span>                                                          |
@@ -108,14 +124,6 @@ Color Board Module.
 | **Description**                                      | Gets the `hs._asm.axuielement` object for a child with the specified ID. |
 | **Parameters**                                       | <ul><li>axID - <code>AXIdentifier</code> of the child</li></ul> |
 | **Returns**                                          | <ul><li>An <code>hs._asm.axuielement</code> object</li></ul> |
-
-#### [color](#color)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:color() -> ColorBoardAspect` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `color` aspect of the color board. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>ColorBoardAspect</code>.</li></ul> |
 
 #### [current](#current)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:current() -> ColorBoardAspect` </span>                                                          |
@@ -165,14 +173,6 @@ Color Board Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Statement</code>, which will send a single <code>true</code> if successful, otherwise <code>false</code>, or an error being sent.</li></ul> |
 
-#### [exposure](#exposure)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:exposure() -> ColorBoardAspect` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `exposure` aspect of the color board. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>ColorBoardAspect</code>.</li></ul> |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:hide() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -196,14 +196,6 @@ Color Board Module.
 | **Description**                                      | Resets the current aspect. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>ColorBoard object</li></ul> |
-
-#### [saturation](#saturation)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:saturation() -> ColorBoardAspect` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `saturation` aspect of the color board. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>ColorBoardAspect</code>.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorBoard:show() -> ColorBoard object` </span>                                                          |

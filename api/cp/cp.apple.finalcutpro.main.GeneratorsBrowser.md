@@ -9,23 +9,23 @@ Generators Browser Module.
 * Variables - Configurable values
  * [isShowing](#isshowing)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [applyItem](#applyitem)
+ * [GeneratorsBrowser](#generatorsbrowser)
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [contents](#contents)
+ * [group](#group)
+ * [mainGroupUI](#maingroupui)
+ * [search](#search)
+ * [sidebar](#sidebar)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [applyItem](#applyitem)
  * [currentItemsUI](#currentitemsui)
  * [getCurrentTitles](#getcurrenttitles)
  * [getGeneratorsRowLabel](#getgeneratorsrowlabel)
  * [getTitlesRowLabel](#gettitlesrowlabel)
- * [group](#group)
  * [hide](#hide)
  * [itemIsSelected](#itemisselected)
  * [loadLayout](#loadlayout)
- * [mainGroupUI](#maingroupui)
- * [parent](#parent)
  * [saveLayout](#savelayout)
- * [search](#search)
  * [selectedItemsUI](#selecteditemsui)
  * [show](#show)
  * [showAllGenerators](#showallgenerators)
@@ -35,9 +35,7 @@ Generators Browser Module.
  * [showInstalledTitles](#showinstalledtitles)
  * [showSidebar](#showsidebar)
  * [showTitlesCategory](#showtitlescategory)
- * [sidebar](#sidebar)
  * [topCategoriesUI](#topcategoriesui)
- * [UI](#ui)
 
 ## API Documentation
 
@@ -59,23 +57,47 @@ Generators Browser Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser.new(parent) -> GeneratorsBrowser` </span>                                                          |
+#### [GeneratorsBrowser](#generatorsbrowser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser(parent) -> GeneratorsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `GeneratorsBrowser` instance. |
 | **Parameters**                                       | <ul><li>app - The <code>cp.apple.finalcutpro</code> object.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>GeneratorsBrowser</code> object.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:app() -> App` </span>                                                          |
+#### [contents](#contents)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser.contents <cp.ui.ScrollArea>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Generators Browser Contents. |
+
+#### [group](#group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser.group <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The group. |
+
+#### [mainGroupUI](#maingroupui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser.mainGroupUI <cp.prop: axuielementObject>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Main Group UI. |
+
+#### [search](#search)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser.search <cp.ui.TextField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Gets the Search TextField object. |
+
+#### [sidebar](#sidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser.sidebar <cp.ui.Table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The sidebar object. |
+
+### Methods
 
 #### [applyItem](#applyitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:applyItem(itemUI) -> GeneratorsBrowser` </span>                                                          |
@@ -84,14 +106,6 @@ Generators Browser Module.
 | **Description**                                      | Applies an item by double clicking on it. |
 | **Parameters**                                       | <ul><li>itemUI - The <code>axuielementObject</code> of the item you want to apply.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>GeneratorsBrowser</code> object.</li></ul> |
-
-#### [contents](#contents)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:contents() -> ScrollArea` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Generators Browser Contents. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>ScrollArea</code> object.</li></ul> |
 
 #### [currentItemsUI](#currentitemsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:currentItemsUI() -> axuielementObject` </span>                                                          |
@@ -125,14 +139,6 @@ Generators Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The 'Titles' label.</li></ul> |
 
-#### [group](#group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:group() -> PopUpButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>PopUpButton</code> object.</li></ul> |
-
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:hide() -> GeneratorsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -157,22 +163,6 @@ Generators Browser Module.
 | **Parameters**                                       | <ul><li>layout - A table containing the Generators Browser layout settings - created using <code>cp.apple.finalcutpro.main.GeneratorsBrowser:saveLayout()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [mainGroupUI](#maingroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:mainGroupUI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Main Group UI. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>axuielementObject</code> object.</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
-
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -180,14 +170,6 @@ Generators Browser Module.
 | **Description**                                      | Saves the current Generators Browser layout to a table. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the current Effects Browser Layout.</li></ul> |
-
-#### [search](#search)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:search() -> PopUpButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Search Popup Button object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>PopUpButton</code> object.</li></ul> |
 
 #### [selectedItemsUI](#selecteditemsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:selectedItemsUI() -> axuielementObject` </span>                                                          |
@@ -261,14 +243,6 @@ Generators Browser Module.
 | **Parameters**                                       | <ul><li>name - The category name, in the current language.</li></ul> |
 | **Returns**                                          | <ul><li>The Generators Browser.</li></ul> |
 
-#### [sidebar](#sidebar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:sidebar() -> Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the sidebar object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Table</code> object.</li></ul> |
-
 #### [topCategoriesUI](#topcategoriesui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:topCategoriesUI() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -276,12 +250,4 @@ Generators Browser Module.
 | **Description**                                      | Returns an array of the top-level categories in the sidebar. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The array of category rows.</li></ul> |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.GeneratorsBrowser:UI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Generator Browser UI. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>axuielementObject</code></li></ul> |
 

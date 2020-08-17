@@ -18,6 +18,7 @@ This module would not have been possible without standing on the shoulders of ot
  * [numDevices](#numdevices)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [buttonCallback](#buttoncallback)
+ * [buttonLayout](#buttonlayout)
  * [firmwareVersion](#firmwareversion)
  * [reset](#reset)
  * [serialNumber](#serialnumber)
@@ -72,6 +73,13 @@ This module would not have been possible without standing on the shoulders of ot
 | **Parameters**                                       | <ul><li>fn - A function to be called when a button is pressed/released on the stream deck. It should receive three arguments:</li><li>The hs.streamdeck userdata object</li><li>A number containing the button that was pressed/released</li><li>A boolean indicating whether the button was pressed (true) or released (false)</li></ul> |
 | **Returns**                                          | <ul><li>The hs.streamdeck device</li></ul> |
 
+#### [buttonLayout](#buttonlayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.streamdeck:buttonLayout()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Gets the layout of buttons the device has |
+| **Returns**                                          | <ul><li>The number of columns</li><li>The number of rows</li></ul> |
+
 #### [firmwareVersion](#firmwareversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.streamdeck:firmwareVersion()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -86,7 +94,7 @@ This module would not have been possible without standing on the shoulders of ot
 | **Type**                                             | Method |
 | **Description**                                      | Resets a deck |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The hs.streamdec object</li></ul> |
+| **Returns**                                          | <ul><li>The hs.streamdeck object</li></ul> |
 
 #### [serialNumber](#serialnumber)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.streamdeck:serialNumber()` </span>                                                          |

@@ -10,7 +10,7 @@ A [Role](cp.apple.finalcutpro.timeline.Role.md) representing Video clips.
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [VideoRole](#videorole)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [subrolesExpanded](#subrolesexpanded)
 
 ## API Documentation
@@ -33,11 +33,11 @@ A [Role](cp.apple.finalcutpro.timeline.Role.md) representing Video clips.
 | **Parameters**                                       | <ul><li>parent - the parent <code>Element</code>.</li><li>uiFinder - a <code>function</code> or <code>cp.prop</code> containing the <code>axuielement</code></li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Row</code>.</li></ul> |
 
-### Methods
+### Fields
 
 #### [subrolesExpanded](#subrolesexpanded)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.VideoRole:subrolesExpanded() -> cp.ui.Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.VideoRole.subrolesExpanded <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | A [Button](cp.ui.Button.md) that toggles whether the sub-captions are visible. |
 

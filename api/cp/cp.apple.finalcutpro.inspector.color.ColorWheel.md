@@ -113,7 +113,7 @@ Represents a single Color Well in the Color Wheels Inspector.
 ### Methods
 
 #### [brightness](#brightness)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:brightness() -> ValueIndicator` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.brightness <ValueIndicator>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the brightness `ValueIndicator` for this ColorWheel. |
@@ -121,7 +121,7 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Returns**                                          | <ul><li>The brightness <code>ValueIndicator</code> instance.</li></ul> |
 
 #### [colorWell](#colorwell)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:colorWell() -> ColorWell` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.colorWell <ColorWell>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the `ColorWell` for this ColorWheel. |
@@ -159,7 +159,7 @@ Represents a single Color Well in the Color Wheels Inspector.
 | **Returns**                                          | <ul><li>The <code>ColorWheel</code> instance.</li></ul> |
 
 #### [saturation](#saturation)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel:saturation() -> ValueIndicator` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheel.saturation <ValueIndicator>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the saturation `ValueIndicator` for this ColorWheel. |

@@ -121,12 +121,12 @@ Utility functions to support `hs._asm.axuielement`.
 | **Returns**                                          | <ul><li>The first matching child, or nil if none was found</li></ul> |
 
 #### [children](#children)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.children(element[, compareFn]) -> table | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.children(element[, compareFn]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Finds the children for the element. If it is an `hs._asm.axuielement`, it will |
 | **Parameters**                                       | <ul><li>element      - The element to retrieve the children of.</li><li>compareFn    - Optional function to use to sort the order of the returned children.</li></ul> |
-| **Returns**                                          | <ul><li>the children table, or <code>nil</code>.</li></ul> |
+| **Returns**                                          | <ul><li>a table of children</li></ul> |
 
 #### [childrenAbove](#childrenabove)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.axutils.childrenAbove(element, bottomElement) -> table of axuielement or nil` </span>                                                          |

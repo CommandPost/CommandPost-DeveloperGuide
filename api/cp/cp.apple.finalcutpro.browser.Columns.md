@@ -6,9 +6,10 @@ Final Cut Pro Browser List View Columns
 ## API Overview
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Columns](#columns)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [menu](#menu)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [isMenuShowing](#ismenushowing)
- * [menu](#menu)
  * [show](#show)
 
 ## API Documentation
@@ -23,6 +24,14 @@ Final Cut Pro Browser List View Columns
 | **Parameters**                                       | <ul><li>parent - The parent object</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Columns</code> instance.</li></ul> |
 
+### Fields
+
+#### [menu](#menu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.Columns.menu <cp.ui.Menu>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Columns menu object. |
+
 ### Methods
 
 #### [isMenuShowing](#ismenushowing)
@@ -32,14 +41,6 @@ Final Cut Pro Browser List View Columns
 | **Description**                                      | Is the Columns menu popup showing? |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if the columns menu popup is showing, otherwise <code>false</code></li></ul> |
-
-#### [menu](#menu)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.Columns:menu() -> cp.ui.Menu` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Columns menu object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Menu</code> object.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.Columns:show() -> self` </span>                                                          |

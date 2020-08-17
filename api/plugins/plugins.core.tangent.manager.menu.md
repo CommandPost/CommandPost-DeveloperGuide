@@ -9,16 +9,14 @@ list of options.
 * Functions - API calls offered directly by the extension
  * [is](#is)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [menu](#menu)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [controls](#controls)
  * [get](#get)
  * [next](#next)
  * [onGet](#onget)
  * [onNext](#onnext)
  * [onPrev](#onprev)
  * [onReset](#onreset)
- * [parent](#parent)
  * [prev](#prev)
  * [reset](#reset)
  * [update](#update)
@@ -29,17 +27,17 @@ list of options.
 ### Functions
 
 #### [is](#is)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu.is(other) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu.is(thing) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Checks if the `other` is a `menu` instance. |
-| **Parameters**                                       | <ul><li>other     - The other object to test.</li></ul> |
+| **Description**                                      | Checks if the `thing` is a `menu` instance. |
+| **Parameters**                                       | <ul><li>thing     - The other object to test.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if it is a <code>menu</code>, <code>false</code> if not.</li></ul> |
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu.new(id[, name[, parent]]) -> menu` </span>                                                          |
+#### [menu](#menu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu(id[, name[, parent]]) -> menu` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Action` instance. |
@@ -47,14 +45,6 @@ list of options.
 | **Returns**                                          | <ul><li>the new <code>menu</code>.</li></ul> |
 
 ### Methods
-
-#### [controls](#controls)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:controls()` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `controls` the menu belongs to. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>controls</code>, or <code>nil</code> if not specified.</li></ul> |
 
 #### [get](#get)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:get() -> string` </span>                                                          |
@@ -103,14 +93,6 @@ list of options.
 | **Description**                                      | Sets the function that will be called when the Tangent sends a 'parameter reset' request. |
 | **Parameters**                                       | <ul><li>resetFn     - The function to call when the Tangent requests the parameter reset.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>parameter</code> instance.</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:parent() -> group | controls` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `group` or `controls` that contains this menu. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent.</li></ul> |
 
 #### [prev](#prev)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.menu:prev() -> nil` </span>                                                          |

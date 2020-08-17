@@ -15,7 +15,9 @@ Menu Button Module.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [doPress](#dopress)
  * [doSelectItem](#doselectitem)
+ * [doSelectItemMatching](#doselectitemmatching)
  * [doSelectValue](#doselectvalue)
+ * [doShowMenu](#doshowmenu)
  * [getTitle](#gettitle)
  * [getValue](#getvalue)
  * [loadLayout](#loadlayout)
@@ -25,7 +27,6 @@ Menu Button Module.
  * [selectItemMatching](#selectitemmatching)
  * [setValue](#setvalue)
  * [show](#show)
- * [snapshot](#snapshot)
 
 ## API Documentation
 
@@ -86,6 +87,14 @@ Menu Button Module.
 | **Parameters**                                       | <ul><li>index - The index number of the item to match.</li></ul> |
 | **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
 
+#### [doSelectItemMatching](#doselectitemmatching)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:doSelectItemMatching(pattern) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `MenuButton` by pattern. |
+| **Parameters**                                       | <ul><li>pattern - The pattern to match.</li></ul> |
+| **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
+
 #### [doSelectValue](#doselectvalue)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:doSelectValue(value) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -93,6 +102,14 @@ Menu Button Module.
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `MenuButton` by value. |
 | **Parameters**                                       | <ul><li>value - The value of the item to match.</li></ul> |
 | **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
+
+#### [doShowMenu](#doshowmenu)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:doShowMenu() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) that presses the `MenuButton` if the menu is not showing. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
 
 #### [getTitle](#gettitle)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:getTitle() -> string | nil` </span>                                                          |
@@ -165,11 +182,4 @@ Menu Button Module.
 | **Description**                                      | Show's the MenuButton. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>self</li></ul> |
-
-#### [snapshot](#snapshot)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:snapshot([path]) -> hs.image | nil` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Takes a snapshot of the UI in its current state as a PNG and returns it. |
-| **Parameters**                                       | <ul><li>path      - (optional) The path to save the file. Should include the extension (should be <code>.png</code>).</li></ul> |
 

@@ -14,11 +14,9 @@ Playhead Module.
  * [currentViewer](#currentviewer)
  * [frame](#frame)
  * [isPersistent](#ispersistent)
- * [isShowing](#isshowing)
  * [position](#position)
  * [timecode](#timecode)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [hide](#hide)
  * [show](#show)
 
@@ -78,12 +76,6 @@ Playhead Module.
 | **Type**                                             | Field |
 | **Description**                                      | Is the playhead persistent? |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.isShowing <cp.prop: boolean; read-only; live?>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Is the playhead showing? |
-
 #### [position](#position)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead.position <cp.prop; number; read-only; live?>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -97,14 +89,6 @@ Playhead Module.
 | **Description**                                      | Gets and sets the current timecode. |
 
 ### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:app() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the `cp.apple.finalcutpro` app table |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The application object as a table</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Playhead:hide() -> Playhead object` </span>                                                          |

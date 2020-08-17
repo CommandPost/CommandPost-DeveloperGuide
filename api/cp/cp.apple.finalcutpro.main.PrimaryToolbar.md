@@ -4,28 +4,21 @@
 Timeline Toolbar.
 
 ## API Overview
-* Variables - Configurable values
- * [isShowing](#isshowing)
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [browserButton](#browserbutton)
- * [parent](#parent)
+ * [PrimaryToolbar](#primarytoolbar)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [backgroundTasksWindow](#backgroundtaskswindow)
+ * [browserShowing](#browsershowing)
+ * [extensions](#extensions)
+ * [inspectorShowing](#inspectorshowing)
+ * [keywordEditor](#keywordeditor)
+ * [mediaImport](#mediaimport)
  * [shareButton](#sharebutton)
- * [UI](#ui)
+ * [timelineShowing](#timelineshowing)
 
 ## API Documentation
-
-### Variables
-
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.isShowing <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | Is the Primary Toolbar showing? |
 
 ### Functions
 
@@ -39,53 +32,61 @@ Timeline Toolbar.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.new(parent) -> PrimaryToolbar` </span>                                                          |
+#### [PrimaryToolbar](#primarytoolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar(parent) -> PrimaryToolbar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `PrimaryToolbar` instance. |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>PrimaryToolbar</code> object.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar:app() -> App` </span>                                                          |
+#### [backgroundTasksWindow](#backgroundtaskswindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.backgroundTasksWindow <cp.ui.CheckBox>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `CheckBox` that will open the `BackgroundTasksWindow` dialog |
 
-#### [browserButton](#browserbutton)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar:browserButton() -> CheckBox` </span>                                                          |
+#### [browserShowing](#browsershowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.browserShowing <cp.ui.CheckBox>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Browser Button Checkbox. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>CheckBox</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `CheckBox` indicating if the `Browser` is showing |
 
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar:parent() -> parent` </span>                                                          |
+#### [extensions](#extensions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.extensions <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `Button` that will open the "Available Extensions" dialog, or trigger the only extension, if only one is installed. |
+
+#### [inspectorShowing](#inspectorshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.inspectorShowing <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `CheckBox` indicating if the Inspector is showing |
+
+#### [keywordEditor](#keywordeditor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.keywordEditor <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `CheckBox` that will open the `KeywordEditor` dialog when checked. |
+
+#### [mediaImport](#mediaimport)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.mediaImport <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `Button` that will open the `MediaImport` dialog |
 
 #### [shareButton](#sharebutton)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar:shareButton() -> Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.shareButton <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Share Button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Button</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Share Button. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar:UI() -> axuielementObject` </span>                                                          |
+#### [timelineShowing](#timelineshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.PrimaryToolbar.timelineShowing <cp.ui.CheckBox>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Primary Toolbar UI. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>axuielementObject</code></li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The `CheckBox` indicating if the `Timeline` is showing |
 

@@ -8,7 +8,7 @@ Timeline Index Mode Radio Group Module.
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [IndexMode](#indexmode)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [captions](#captions)
  * [clips](#clips)
  * [roles](#roles)
@@ -36,33 +36,29 @@ Timeline Index Mode Radio Group Module.
 | **Parameters**                                       | <ul><li>index - The <a href="cp.apple.finalcutpro.timeline.Index.md">Index</a> that contains the <code>mode</code>.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>IndexMode</code> instance.</li></ul> |
 
-### Methods
+### Fields
 
 #### [captions](#captions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode:captions() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode.captions <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [RadioButton](cp.ui.RadioButton.ui) for the "Captions" mode. |
-| **Returns**                                          | <ul><li>The "Captions" RadioButton.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.ui) for the "Captions" mode. |
 
 #### [clips](#clips)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode:clips() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode.clips <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [RadioButton](cp.ui.RadioButton.ui) for the "Clips" mode. |
-| **Returns**                                          | <ul><li>The "Clips" RadioButton.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.ui) for the "Clips" mode. |
 
 #### [roles](#roles)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode:roles() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode.roles <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [RadioButton](cp.ui.RadioButton.ui) for the "Roles" mode. |
-| **Returns**                                          | <ul><li>The "Roles" RadioButton.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.ui) for the "Roles" mode. |
 
 #### [tags](#tags)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode:tags() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexMode.tags <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [RadioButton](cp.ui.RadioButton.ui) for the "Tags" mode. |
-| **Returns**                                          | <ul><li>The "Tags" RadioButton.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.ui) for the "Tags" mode. |
 

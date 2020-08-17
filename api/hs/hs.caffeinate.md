@@ -10,6 +10,7 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 
 ## API Overview
 * Functions - API calls offered directly by the extension
+ * [currentAssertions](#currentassertions)
  * [declareUserActivity](#declareuseractivity)
  * [fastUserSwitch](#fastuserswitch)
  * [get](#get)
@@ -26,6 +27,14 @@ Control system power states (sleeping, preventing sleep, screen locking, etc)
 ## API Documentation
 
 ### Functions
+
+#### [currentAssertions](#currentassertions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.currentAssertions()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Fetches information about processes which are currently asserting display/power sleep restrictions |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing information about current power assertions, with process IDs (PID) as the keys, each of which may contain multiple assertions</li></ul> |
 
 #### [declareUserActivity](#declareuseractivity)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.caffeinate.declareUserActivity([id])` </span>                                                          |

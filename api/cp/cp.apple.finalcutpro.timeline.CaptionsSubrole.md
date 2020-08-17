@@ -10,7 +10,7 @@ A [Role](cp.apple.finalcutpro.timeline.Role.md) representing Captions.
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [CaptionsSubrole](#captionssubrole)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [format](#format)
  * [visibleInTimeline](#visibleintimeline)
 
@@ -34,17 +34,17 @@ A [Role](cp.apple.finalcutpro.timeline.Role.md) representing Captions.
 | **Parameters**                                       | <ul><li>parent - the parent <code>Element</code>.</li><li>uiFinder - a <code>function</code> or <code>cp.prop</code> containing the <code>axuielement</code></li></ul> |
 | **Returns**                                          | <ul><li>The new <code>Row</code>.</li></ul> |
 
-### Methods
+### Fields
 
 #### [format](#format)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.CaptionsSubrole:format() -> cp.ui.StaticText` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.CaptionsSubrole.format <cp.ui.StaticText>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | A [StaticText](cp.ui.StaticText.md) which represents the subtitle format (e.g. "ITT", "SRT"). |
 
 #### [visibleInTimeline](#visibleintimeline)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.CaptionsSubrole:visibleInTimeline() -> cp.ui.CheckBox` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.CaptionsSubrole.visibleInTimeline <cp.ui.CheckBox>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | A [CheckBox](cp.ui.CheckBox.md) that indicates if the subtitle track is visible in the Viewer. |
 

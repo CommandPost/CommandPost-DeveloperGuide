@@ -7,13 +7,9 @@ General Panel Module.
 * Constants - Useful values which cannot be changed
  * [TIME_DISPLAY](#time_display)
 * Functions - API calls offered directly by the extension
- * [hide](#hide)
- * [show](#show)
  * [timeDisplay](#timedisplay)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [parent](#parent)
+ * [GeneralPanel](#generalpanel)
 
 ## API Documentation
 
@@ -27,22 +23,6 @@ General Panel Module.
 
 ### Functions
 
-#### [hide](#hide)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.GeneralPanel:hide() -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Hides the General Preferences Panel. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>self</li></ul> |
-
-#### [show](#show)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.GeneralPanel:show() -> self` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Shows the General Preferences Panel. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>self</li></ul> |
-
 #### [timeDisplay](#timedisplay)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.GeneralPanel.timeDisplay([value]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -53,21 +33,11 @@ General Panel Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.GeneralPanel.new(preferencesDialog) -> GeneralPanel` </span>                                                          |
+#### [GeneralPanel](#generalpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.GeneralPanel(preferencesDialog) -> GeneralPanel` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `GeneralPanel` instance. |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>GeneralPanel</code> object.</li></ul> |
-
-### Methods
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.GeneralPanel:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
 

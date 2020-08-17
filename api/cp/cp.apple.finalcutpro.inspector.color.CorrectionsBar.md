@@ -11,12 +11,12 @@ Requires Final Cut Pro 10.4 or later.
  * [matches](#matches)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [correction](#correction)
+ * [menuButton](#menubutton)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activate](#activate)
  * [add](#add)
  * [doShow](#doshow)
  * [findCorrectionLabel](#findcorrectionlabel)
- * [menuButton](#menubutton)
  * [show](#show)
 
 ## API Documentation
@@ -46,6 +46,12 @@ Requires Final Cut Pro 10.4 or later.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The `MenuButton` that lists the current correction. |
+
+#### [menuButton](#menubutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar.menuButton <MenuButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The menu button. |
 
 ### Methods
 
@@ -80,14 +86,6 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Returns Correction Label. |
 | **Parameters**                                       | <ul><li>correctionType - The correction type as string.</li></ul> |
 | **Returns**                                          | <ul><li>The correction label as string.</li></ul> |
-
-#### [menuButton](#menubutton)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:menuButton() -> MenuButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the menu button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>menuButton</code> object.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:show() -> self` </span>                                                          |

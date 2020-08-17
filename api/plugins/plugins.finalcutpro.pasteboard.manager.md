@@ -15,6 +15,7 @@ Pasteboard Manager.
  * [doDecodeBuffer](#dodecodebuffer)
  * [doRestoreFromBuffer](#dorestorefrombuffer)
  * [doSaveToBuffer](#dosavetobuffer)
+ * [doWaitForData](#dowaitfordata)
  * [doWaitForFreshData](#dowaitforfreshdata)
  * [getClassname](#getclassname)
  * [isTimelineClip](#istimelineclip)
@@ -49,7 +50,7 @@ Pasteboard Manager.
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.RESTART_DELAY -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
-| **Description**                                      | How long to wait until we restart any Pasteboard Watchers. |
+| **Description**                                      | How long to wait until we restart any Pasteboard Watchers in milliseconds. |
 
 ### Variables
 
@@ -97,6 +98,14 @@ Pasteboard Manager.
 | **Type**                                             | Function |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) which saves a Pasteboard item to the buffer. |
 | **Parameters**                                       | <ul><li>id - The ID of the buffer item.</li></ul> |
+| **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
+
+#### [doWaitForData](#dowaitfordata)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.pasteboard.manager.doWaitForData(newData) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | A [Statement](cp.rx.go.Statement.md) which waits for up to 10 seconds for new data to appear |
+| **Parameters**                                       | <ul><li>newData - The new Pasteboard data.</li></ul> |
 | **Returns**                                          | <ul><li>A <a href="cp.rx.go.Statement.md">Statement</a></li></ul> |
 
 #### [doWaitForFreshData](#dowaitforfreshdata)

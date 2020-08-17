@@ -1,48 +1,45 @@
 # [docs](index.md) » plugins.core.loupedeck.prefs
 ---
 
-Loupedeck Preferences Panel
-
-## Submodules
- * [plugins.core.loupedeck.prefs.default](plugins.core.loupedeck.prefs.default.md)
+Loupedeck+ Preferences Panel
 
 ## API Overview
-* Functions - API calls offered directly by the extension
- * [init](#init)
- * [updateAction](#updateaction)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [lastGroup](#lastgroup)
+ * [lastApplication](#lastapplication)
+ * [lastBank](#lastbank)
+ * [lastExportPath](#lastexportpath)
+ * [lastImportPath](#lastimportpath)
  * [lastIsButton](#lastisbutton)
  * [lastLabel](#lastlabel)
  * [lastNote](#lastnote)
 
 ## API Documentation
 
-### Functions
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.init(deps, env) -> module` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialise the Module. |
-| **Parameters**                                       | <ul><li>deps - Dependancies Table</li><li>env - Environment Table</li></ul> |
-| **Returns**                                          | <ul><li>The Module</li></ul> |
-
-#### [updateAction](#updateaction)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.updateAction(button, group, actionTitle, handlerID, action) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Updates a Loupedeck action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>actionTitle - Action Title as string</li><li>handlerID - Handler ID as string</li><li>action - Action in a table</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
 ### Fields
 
-#### [lastGroup](#lastgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.lastGroup <cp.prop: string>` </span>                                                          |
+#### [lastApplication](#lastapplication)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.lastApplication <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Last group used in the Preferences Drop Down. |
+| **Description**                                      | Last application used in the Preferences Drop Down. |
+
+#### [lastBank](#lastbank)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.lastBank <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last bank used in the Preferences Drop Down. |
+
+#### [lastExportPath](#lastexportpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.lastExportPath <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last Export path. |
+
+#### [lastImportPath](#lastimportpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.lastImportPath <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last Import path. |
 
 #### [lastIsButton](#lastisbutton)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.loupedeck.prefs.lastIsButton <cp.prop: boolean>` </span>                                                          |

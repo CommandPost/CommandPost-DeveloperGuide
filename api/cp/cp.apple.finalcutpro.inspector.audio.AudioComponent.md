@@ -7,13 +7,14 @@ The Audio Configuration section of the Audio Inspector.
 * Functions - API calls offered directly by the extension
  * [AudioComponent](#audiocomponent)
  * [matches](#matches)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [channels](#channels)
+ * [role](#role)
+ * [showAs](#showas)
+* Methods - API calls which can only be made on an object returned by a constructor
  * [doShow](#doshow)
  * [enabled](#enabled)
- * [role](#role)
  * [show](#show)
- * [showAs](#showas)
 
 ## API Documentation
 
@@ -35,15 +36,27 @@ The Audio Configuration section of the Audio Inspector.
 | **Parameters**                                       | <ul><li>element - An <code>axuielementObject</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if matches otherwise <code>false</code></li></ul> |
 
-### Methods
+### Fields
 
 #### [channels](#channels)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent:channels() -> MenuButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent.channels <cp.ui.MenuButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the channels popup menu button for the component. This only works for |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>MenuButton</code> instance.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The channels popup menu button for the component. This only present for |
+
+#### [role](#role)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent.role <cp.ui.MenuButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The role popup menu button for the subcomponent. Only present for |
+
+#### [showAs](#showas)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent.showAs <cp.ui.MenuButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The subroles popup menu button for the component. Only present for |
+
+### Methods
 
 #### [doShow](#doshow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent:doShow() -> cp.rx.go.Statement` </span>                                                          |
@@ -61,14 +74,6 @@ The Audio Configuration section of the Audio Inspector.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>Button</code> instance.</li></ul> |
 
-#### [role](#role)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent:role() -> MenuButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the role popup menu button for the subcomponent. This only works for |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>MenuButton</code> instance.</li></ul> |
-
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent:show() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -76,12 +81,4 @@ The Audio Configuration section of the Audio Inspector.
 | **Description**                                      | Attempts to show the bar. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>AudioComponent</code> instance.</li></ul> |
-
-#### [showAs](#showas)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.audio.AudioComponent:showAs() -> MenuButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the subroles popup menu button for the component. This only works for |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>MenuButton</code> instance.</li></ul> |
 

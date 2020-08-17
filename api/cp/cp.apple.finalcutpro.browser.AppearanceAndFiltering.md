@@ -10,15 +10,16 @@ Clip Appearance & Filtering Menu Popover
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [AppearanceAndFiltering](#appearanceandfiltering)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [button](#button)
  * [clipHeight](#clipheight)
  * [continuousPlayback](#continuousplayback)
  * [duration](#duration)
  * [groupBy](#groupby)
- * [show](#show)
  * [sortBy](#sortby)
  * [waveforms](#waveforms)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [show](#show)
 
 ## API Documentation
 
@@ -50,47 +51,51 @@ Clip Appearance & Filtering Menu Popover
 | **Parameters**                                       | <ul><li>parent - The parent object</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>AppearanceAndFiltering</code> instance.</li></ul> |
 
-### Methods
+### Fields
 
 #### [button](#button)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:button() -> cp.ui.Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering.button <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the "Clip Appearance & Filtering Menu" button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Button</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The "Clip Appearance & Filtering Menu" button. |
 
 #### [clipHeight](#clipheight)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:clipHeight() -> cp.ui.Slider` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering.clipHeight <cp.ui.Slider>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Clip Height Slider. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Slider</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Clip Height Slider. |
 
 #### [continuousPlayback](#continuousplayback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:continuousPlayback() -> cp.ui.CheckBox` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering.continuousPlayback <cp.ui.CheckBox>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Continuous Playback checkbox. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Continuous Playback checkbox. |
 
 #### [duration](#duration)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:duration() -> cp.ui.Slider` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering.duration <cp.ui.Slider>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Duration Slider. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Slider</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Duration Slider. |
 
 #### [groupBy](#groupby)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:groupBy() -> cp.ui.PopUpButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering.groupBy <cp.ui.PopUpButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the "Group By" popup button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>PopUpButton</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The "Group By" popup button. |
+
+#### [sortBy](#sortby)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering.sortBy <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Sort By" popup button. |
+
+#### [waveforms](#waveforms)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering.waveforms <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Waveforms checkbox. |
+
+### Methods
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:show() -> self` </span>                                                          |
@@ -99,20 +104,4 @@ Clip Appearance & Filtering Menu Popover
 | **Description**                                      | Shows the "Clip Appearance & Filtering Menu" Popover |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Self</li></ul> |
-
-#### [sortBy](#sortby)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:sortBy() -> cp.ui.PopUpButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the "Sort By" popup button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>PopUpButton</code> object.</li></ul> |
-
-#### [waveforms](#waveforms)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser.AppearanceAndFiltering:waveforms() -> cp.ui.CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Waveforms checkbox. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
 

@@ -47,6 +47,7 @@ Manipulate running applications
  * [path](#path)
  * [pid](#pid)
  * [selectMenuItem](#selectmenuitem)
+ * [setFrontmost](#setfrontmost)
  * [title](#title)
  * [unhide](#unhide)
  * [visibleWindows](#visiblewindows)
@@ -356,6 +357,14 @@ Manipulate running applications
 | **Parameters**                                       | <ul><li>menuitem - The menu item to select, specified as either a string or a table. See the <code>menuitem</code> parameter of <code>hs.application:findMenuItem()</code> for more information.</li><li>isRegex - An optional boolean, defaulting to false, which is only used if <code>menuItem</code> is a string. If set to true, <code>menuItem</code> will be treated as a regular expression rather than a strict string to match against</li></ul> |
 | **Returns**                                          | <ul><li>True if the menu item was found and selected, or nil if it wasn't (e.g. because the menu item couldn't be found)</li></ul> |
 | **Notes**                                            | <ul><li>Depending on the type of menu item involved, this will either activate or tick/untick the menu item</li></ul> |
+
+#### [setFrontmost](#setfrontmost)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:setFrontmost([allWindows]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the app to the frontmost (i.e. currently active) application |
+| **Parameters**                                       | <ul><li>allWindows - An optional boolean, true to bring all windows of the application to the front. Defaults to false</li></ul> |
+| **Returns**                                          | <ul><li>A boolean, true if the operation was successful, otherwise false</li></ul> |
 
 #### [title](#title)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:title() -> string` </span>                                                          |

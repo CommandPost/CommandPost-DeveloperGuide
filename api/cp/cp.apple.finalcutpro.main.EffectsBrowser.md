@@ -12,22 +12,29 @@ Effects Browser Module.
 * Functions - API calls offered directly by the extension
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [EffectsBrowser](#effectsbrowser)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [contents](#contents)
+ * [group](#group)
+ * [mainGroupUI](#maingroupui)
+ * [search](#search)
+ * [sidebar](#sidebar)
+ * [sidebarToggle](#sidebartoggle)
+ * [toggleButton](#togglebutton)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [applyItem](#applyitem)
  * [audioCategoryRowsUI](#audiocategoryrowsui)
  * [currentItemsUI](#currentitemsui)
+ * [doHideSidebar](#dohidesidebar)
+ * [doShow](#doshow)
+ * [doShowSidebar](#doshowsidebar)
+ * [doToggleSidebar](#dotogglesidebar)
  * [getCurrentTitles](#getcurrenttitles)
- * [group](#group)
  * [hide](#hide)
  * [hideSidebar](#hidesidebar)
  * [itemIsSelected](#itemisselected)
  * [loadLayout](#loadlayout)
- * [mainGroupUI](#maingroupui)
- * [parent](#parent)
  * [saveLayout](#savelayout)
- * [search](#search)
  * [selectedItemsUI](#selecteditemsui)
  * [show](#show)
  * [showAllAudioEffects](#showallaudioeffects)
@@ -40,12 +47,8 @@ Effects Browser Module.
  * [showSidebar](#showsidebar)
  * [showTransitionsCategory](#showtransitionscategory)
  * [showVideoCategory](#showvideocategory)
- * [sidebar](#sidebar)
- * [sidebarToggle](#sidebartoggle)
- * [toggleButton](#togglebutton)
  * [toggleSidebar](#togglesidebar)
  * [type](#type)
- * [UI](#ui)
  * [videoCategoryRowsUI](#videocategoryrowsui)
 
 ## API Documentation
@@ -84,23 +87,59 @@ Effects Browser Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser.new(parent, type) -> EffectsBrowser` </span>                                                          |
+#### [EffectsBrowser](#effectsbrowser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser(parent, type) -> EffectsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `EffectsBrowser` instance. |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li><li>type - A string determining whether the Effects Browser is for Effects (<code>cp.apple.finalcutpro.main.EffectsBrowser.EFFECTS</code>) or Transitions (<code>cp.apple.finalcutpro.main.EffectsBrowser.TRANSITIONS</code>).</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>EffectsBrowser</code> object.</li></ul> |
 
-### Methods
+### Fields
 
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:app() -> App` </span>                                                          |
+#### [contents](#contents)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser.contents <cp.ui.ScrollArea>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Effects Browser Contents. |
+
+#### [group](#group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser.group <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The group `PopUpButton`. |
+
+#### [mainGroupUI](#maingroupui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:mainGroupUI() -> <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Main Group UI. |
+
+#### [search](#search)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser.search <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Search `PopUpButton` object. |
+
+#### [sidebar](#sidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser.sidebar <cp.ui.Table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The sidebar `Table` object. |
+
+#### [sidebarToggle](#sidebartoggle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser.sidebarToggle <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Sidebar Toggle. |
+
+#### [toggleButton](#togglebutton)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser.toggleButton <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Effects Browser Toggle Button. |
+
+### Methods
 
 #### [applyItem](#applyitem)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:applyItem(itemUI) -> EffectsBrowser` </span>                                                          |
@@ -126,6 +165,38 @@ Effects Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>axuielementObject</code> object.</li></ul> |
 
+#### [doHideSidebar](#dohidesidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:doHideSidebar() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will hide the Sidebar. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will show the Effects Browser. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [doShowSidebar](#doshowsidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:doShowSidebar() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a `Statement` that will show the Sidebar. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [doToggleSidebar](#dotogglesidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:doToggleSidebar() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A `Statement` to toggle the Sidebar. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code> object.</li></ul> |
+
 #### [getCurrentTitles](#getcurrenttitles)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:getCurrentTitles() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -133,14 +204,6 @@ Effects Browser Module.
 | **Description**                                      | Returns the list of titles for all effects/transitions currently visible. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table</li></ul> |
-
-#### [group](#group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:group() -> PopUpButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>PopUpButton</code> object.</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:hide() -> EffectsBrowser` </span>                                                          |
@@ -174,22 +237,6 @@ Effects Browser Module.
 | **Parameters**                                       | <ul><li>layout - A table containing the Effects Browser layout settings - created using <code>cp.apple.finalcutpro.main.Browser:saveLayout()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [mainGroupUI](#maingroupui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:mainGroupUI() -> ScrollArea` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Effects Browser Contents. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>ScrollArea</code> object.</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
-
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -197,14 +244,6 @@ Effects Browser Module.
 | **Description**                                      | Saves the current Effects Browser layout to a table. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the current Effects Browser Layout.</li></ul> |
-
-#### [search](#search)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:search() -> PopUpButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Search Popup Button object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>PopUpButton</code> object.</li></ul> |
 
 #### [selectedItemsUI](#selecteditemsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:selectedItemsUI() -> axuielementObject` </span>                                                          |
@@ -302,30 +341,6 @@ Effects Browser Module.
 | **Parameters**                                       | <ul><li>name - The category name, in the current language.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>EffectsBrowser</code> object.</li></ul> |
 
-#### [sidebar](#sidebar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:sidebar() -> Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the sidebar object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>Table</code> object.</li></ul> |
-
-#### [sidebarToggle](#sidebartoggle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:sidebarToggle() -> CheckBox` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Gets the Sidebar Toggle. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>CheckBox</code> object.</li></ul> |
-
-#### [toggleButton](#togglebutton)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:toggleButton() -> RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Effects Browser Toggle Button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>RadioButton</code> object.</li></ul> |
-
 #### [toggleSidebar](#togglesidebar)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:toggleSidebar() -> EffectsBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -341,14 +356,6 @@ Effects Browser Module.
 | **Description**                                      | Type of Effects Browser. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>App</li></ul> |
-
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:UI() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The Effects Browser UI. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>axuielementObject</li></ul> |
 
 #### [videoCategoryRowsUI](#videocategoryrowsui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.EffectsBrowser:videoCategoryRowsUI() -> axuielementObject` </span>                                                          |

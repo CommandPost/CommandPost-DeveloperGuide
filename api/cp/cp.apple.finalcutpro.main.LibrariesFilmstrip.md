@@ -20,12 +20,11 @@ Libraries Filmstrip Module.
  * [sortClips](#sortclips)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
- * [parent](#parent)
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [playhead](#playhead)
- * [show](#show)
  * [skimmingPlayhead](#skimmingplayhead)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [show](#show)
 
 ## API Documentation
 
@@ -145,31 +144,21 @@ Libraries Filmstrip Module.
 | **Parameters**                                       | <ul><li>parent - The parent object</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>LibrariesFilmstrip</code> object.</li></ul> |
 
-### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesFilmstrip:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesFilmstrip:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
+### Fields
 
 #### [playhead](#playhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesFilmstrip:playhead() -> Playhead` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesFilmstrip.playhead <Playhead>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get the Libraries Filmstrip Playhead. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The Libraries Filmstrip Playhead. |
+
+#### [skimmingPlayhead](#skimmingplayhead)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesFilmstrip.skimmingPlayhead <Playhead>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Libraries Filmstrip Skimming Playhead. |
+
+### Methods
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesFilmstrip:show() -> LibrariesFilmstrip` </span>                                                          |
@@ -178,12 +167,4 @@ Libraries Filmstrip Module.
 | **Description**                                      | Show the Libraries Filmstrip. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>LibrariesFilmstrip</code> object</li></ul> |
-
-#### [skimmingPlayhead](#skimmingplayhead)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.LibrariesFilmstrip:skimmingPlayhead() -> Playhead` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get the Libraries Filmstrip Skimming Playhead. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Playhead</code> object</li></ul> |
 

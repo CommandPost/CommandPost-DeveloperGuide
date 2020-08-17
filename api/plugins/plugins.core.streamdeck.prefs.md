@@ -7,13 +7,13 @@ Stream Deck Preferences Panel
 * Variables - Configurable values
  * [defaultIconPath](#defaulticonpath)
  * [supportedExtensions](#supportedextensions)
-* Functions - API calls offered directly by the extension
- * [getGroupEditor](#getgroupeditor)
- * [init](#init)
- * [setGroupEditor](#setgroupeditor)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [enabled](#enabled)
- * [lastGroup](#lastgroup)
+ * [lastApplication](#lastapplication)
+ * [lastDevice](#lastdevice)
+ * [lastExportPath](#lastexportpath)
+ * [lastIconPath](#lasticonpath)
+ * [lastImportPath](#lastimportpath)
+ * [lastUnit](#lastunit)
 
 ## API Documentation
 
@@ -31,43 +31,41 @@ Stream Deck Preferences Panel
 | **Type**                                             | Variable |
 | **Description**                                      | Table of supported extensions for Stream Deck Icons. |
 
-### Functions
-
-#### [getGroupEditor](#getgroupeditor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.getGroupEditor(groupId) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets the Group Editor |
-| **Parameters**                                       | <ul><li>groupId - Group ID</li></ul> |
-| **Returns**                                          | <ul><li>Group Editor</li></ul> |
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.init(deps, env) -> module` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialise the Module. |
-| **Parameters**                                       | <ul><li>deps - Dependancies Table</li><li>env - Environment Table</li></ul> |
-| **Returns**                                          | <ul><li>The Module</li></ul> |
-
-#### [setGroupEditor](#setgroupeditor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.setGroupEditor(groupId, editorFn) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Sets the Group Editor |
-| **Parameters**                                       | <ul><li>groupId - Group ID</li><li>editorFn - Editor Function</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
 ### Fields
 
-#### [enabled](#enabled)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.enabled <cp.prop: boolean>` </span>                                                          |
+#### [lastApplication](#lastapplication)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.lastApplication <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Enable or disable Stream Deck Support. |
+| **Description**                                      | Last Bank used in the Preferences Panel. |
 
-#### [lastGroup](#lastgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.lastGroup <cp.prop: string>` </span>                                                          |
+#### [lastDevice](#lastdevice)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.lastDevice <cp.prop: string>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Last group used in the Preferences Drop Down. |
+| **Description**                                      | Last Device used in the Preferences Panel. |
+
+#### [lastExportPath](#lastexportpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.lastExportPath <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last Export path. |
+
+#### [lastIconPath](#lasticonpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.lastIconPath <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last icon path. |
+
+#### [lastImportPath](#lastimportpath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.lastImportPath <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last Import path. |
+
+#### [lastUnit](#lastunit)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.streamdeck.prefs.lastUnit <cp.prop: string>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Last Unit used in the Preferences Panel. |
 

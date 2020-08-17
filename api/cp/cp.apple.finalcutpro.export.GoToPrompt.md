@@ -8,16 +8,16 @@ Go To Prompt.
  * [matches](#matches)
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [isShowing](#isshowing)
+ * [cancel](#cancel)
+ * [go](#go)
+ * [valueCombo](#valuecombo)
+ * [valueText](#valuetext)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
  * [hide](#hide)
- * [parent](#parent)
- * [pressCancel](#presscancel)
- * [pressDefault](#pressdefault)
  * [setValue](#setvalue)
  * [show](#show)
- * [UI](#ui)
+ * [value](#value)
+ * [valueField](#valuefield)
 
 ## API Documentation
 
@@ -41,51 +41,37 @@ Go To Prompt.
 
 ### Fields
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+#### [cancel](#cancel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt.cancel <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Is the 'Go To' prompt showing? |
+| **Description**                                      | The "Cancel" `Button`. |
+
+#### [go](#go)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt.go <cp.ui.Button>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Go" `Button`. |
+
+#### [valueCombo](#valuecombo)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt.valueCombo <cp.ui.ComboBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `ComboBox` containing the folder value, if available. |
+
+#### [valueText](#valuetext)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt.valueText <cp.ui.TextField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `TextField` containing the folder value, if available. |
 
 ### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the App instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:hide() -> cp.apple.finalcutpro.export.GoToPrompt` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Hides the Go To Prompt |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.GoToPrompt</code> object for method chaining.</li></ul> |
-
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:parent() -> object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The parent object.</li></ul> |
-
-#### [pressCancel](#presscancel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:pressCancel() -> cp.apple.finalcutpro.export.GoToPrompt` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Presses the Cancel Button. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.GoToPrompt</code> object for method chaining.</li></ul> |
-
-#### [pressDefault](#pressdefault)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:pressDefault() -> cp.apple.finalcutpro.export.GoToPrompt` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Presses the Default Button. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.GoToPrompt</code> object for method chaining.</li></ul> |
 
@@ -105,11 +91,19 @@ Go To Prompt.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.apple.finalcutpro.export.GoToPrompt</code> object for method chaining.</li></ul> |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:UI() -> axuielementObject` </span>                                                          |
+#### [value](#value)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:value([newValue]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Returns the Go To Prompt Accessibility Object |
+| **Description**                                      | Returns the current path value, or `nil`. |
+| **Parameters**                                       | <ul><li>newValue - (optional) The new value for the path.</li></ul> |
+| **Returns**                                          | <ul><li>The current value of the path.</li></ul> |
+
+#### [valueField](#valuefield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.export.GoToPrompt:valueField() -> TextField | ComboField` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns either the `valueText` or `valueCombo`, depending what is available on-screen. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An <code>axuielementObject</code> or <code>nil</code></li></ul> |
+| **Returns**                                          | <ul><li>The <code>TextField</code> or <code>ComboField</code> containing the value.</li></ul> |
 

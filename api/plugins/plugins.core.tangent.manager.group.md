@@ -8,13 +8,18 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 * Functions - API calls offered directly by the extension
  * [is](#is)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [group](#group)
+* Fields - Variables which can only be accessed from an object returned by a constructor
+ * [active](#active)
+ * [enabled](#enabled)
+ * [localActive](#localactive)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [action](#action)
  * [binding](#binding)
  * [controls](#controls)
  * [group](#group)
  * [menu](#menu)
+ * [name](#name)
  * [parameter](#parameter)
  * [parent](#parent)
  * [reset](#reset)
@@ -25,21 +30,41 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 ### Functions
 
 #### [is](#is)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.is(otherThing) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.is(thing) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Checks if the `otherThing` is a `group`. |
-| **Parameters**                                       | <ul><li>otherThing    - The thing to check.</li></ul> |
+| **Description**                                      | Checks if the `thing` is a `group`. |
+| **Parameters**                                       | <ul><li>thing    - The thing to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if it is a <code>group</code>, <code>false</code> otherwise.</li></ul> |
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.new(name[, parent[, localActive]])` </span>                                                          |
+#### [group](#group)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group(name[, parent[, localActive]])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Group` instance. |
 | **Parameters**                                       | <ul><li>name      - The name of the group.</li><li>parent    - The parent group.</li><li>localActive - If <code>true</code>, this group will ignore the parent's <code>active</code> status when determining its own <code>active</code> status. Defaults to <code>false</code>.</li></ul> |
+
+### Fields
+
+#### [active](#active)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.active <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the group is active. It will only be active if |
+
+#### [enabled](#enabled)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.enabled <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the group is enabled. |
+
+#### [localActive](#localactive)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group.localActive <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Indicates if the group should ignore the parent's `enabled` state when determining if the group is active. |
 
 ### Methods
 
@@ -78,6 +103,14 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 | **Type**                                             | Method |
 | **Description**                                      | Adds an `menu` to this group. |
 | **Returns**                                          | <ul><li>The new <code>menu</code></li></ul> |
+
+#### [name](#name)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:name() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the `name` given to the group. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The name.</li></ul> |
 
 #### [parameter](#parameter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:parameter(id[, name]) -> parameter` </span>                                                          |

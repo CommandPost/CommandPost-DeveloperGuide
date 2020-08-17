@@ -22,6 +22,7 @@ A module for capturing and manipulating image objects from other modules for use
  * [copy](#copy)
  * [croppedCopy](#croppedcopy)
  * [encodeAsURLString](#encodeasurlstring)
+ * [getLoupedeckArray](#getloupedeckarray)
  * [name](#name)
  * [saveToFile](#savetofile)
  * [setName](#setname)
@@ -151,6 +152,14 @@ A module for capturing and manipulating image objects from other modules for use
 | **Parameters**                                       | <ul><li>scale - an optional boolean, default false, which indicates that the image size (which macOS represents as points) should be scaled to pixels.  For images that have Retina scale representations, this may result in an encoded image which is scaled down from the original source.</li><li>type  - optional case-insensitive string paramater specifying the bitmap image type for the encoded string (default PNG)</li><li>PNG  - save in Portable Network Graphics (PNG) format</li><li>TIFF - save in Tagged Image File Format (TIFF) format</li><li>BMP  - save in Windows bitmap image (BMP) format</li><li>GIF  - save in Graphics Image Format (GIF) format</li><li>JPEG - save in Joint Photographic Experts Group (JPEG) format</li></ul> |
 | **Returns**                                          | <ul><li>the bitmap image representation as a Base64 encoded string</li></ul> |
 | **Notes**                                            | <ul><li>You can convert the string back into an image object with <a href="#URL">hs.image.imageFromURL</a>, e.g. <code>hs.image.imageFromURL(string)</code></li></ul> |
+
+#### [getLoupedeckArray](#getloupedeckarray)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:getLoupedeckArray() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Translates an `hs.image` object into an RGB array string suitable for the Loupedeck CT device. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the RGB data</li></ul> |
 
 #### [name](#name)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image:name([name]) -> imageObject | string` </span>                                                          |

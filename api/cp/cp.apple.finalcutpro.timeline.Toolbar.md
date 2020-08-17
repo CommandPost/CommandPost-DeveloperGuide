@@ -12,8 +12,9 @@ Timeline Toolbar
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Toolbar](#toolbar)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [appearance](#appearance)
+ * [appearanceToggle](#appearancetoggle)
  * [back](#back)
  * [browser](#browser)
  * [duration](#duration)
@@ -45,64 +46,65 @@ Timeline Toolbar
 | **Parameters**                                       | <ul><li>timeline - The <a href="cp.apple.finalcutpro.timeline.Timeline.md">Timeline</a>.</li></ul> |
 | **Returns**                                          | <ul><li>The new Toolbar instance.</li></ul> |
 
-### Methods
+### Fields
 
 #### [appearance](#appearance)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:appearance() -> cp.apple.finalcutpro.timeline.Appearance` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.appearance <cp.apple.finalcutpro.timeline.Appearance>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [Appearance](cp.apple.finalcutpro.timeline.Appearance.md) button/palette control. |
-| **Returns**                                          | <ul><li>The <code>Appearance</code> class.</li></ul> |
+
+#### [appearanceToggle](#appearancetoggle)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.appearanceToggle <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A `CheckBox` field which will toggle the `appearance` popover. |
 
 #### [back](#back)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:back() -> cp.ui.Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.back <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [Button](cp.ui.Button.md) for "go back in timeline history". |
 
 #### [browser](#browser)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:browser() -> cp.apple.finalcutpro.timeline.Toolbar.Browser` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.browser <cp.apple.finalcutpro.timeline.Toolbar.Browser>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [Toolbar.Browser](cp.apple.finalcutpro.timeline.Toolbar.Browser.md) containing buttons that will toggle the Effects/Transitions browsers. |
 
 #### [duration](#duration)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:duration() -> cp.ui.StaticText` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.duration <cp.ui.StaticText>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the duration [StaticText](cp.ui.StaticText.md) from the Timeline Titlebar. |
-| **Parameters**                                       | <ul><li>None.</li></ul> |
-| **Returns**                                          | <ul><li>The <a href="cp.ui.StaticText.md">StaticText</a> containing the title.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The duration [StaticText](cp.ui.StaticText.md) from the Timeline Titlebar. |
 
 #### [forward](#forward)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:forward() -> cp.ui.Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.forward <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [Button](cp.ui.Button.md) for "go forward in timeline history". |
 
 #### [index](#index)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:index() -> cp.ui.CheckBox` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.index <cp.ui.CheckBox>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [CheckBox](cp.ui.CheckBox.md) which indicates if the Timeline Index is visible. |
 
 #### [skimming](#skimming)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.skimming() -> cp.apple.finalcutpro.timeline.Toolbar.Skimming` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.skimming <cp.apple.finalcutpro.timeline.Toolbar.Skimming>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [Skimming](cp.apple.finalcutpro.timeline.Toolbar.Skimming.md) group of checkbox items. |
 
 #### [skimmingGroup](#skimminggroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:skimmingGroup() -> cp.ui.Group` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.skimmingGroup <cp.ui.Group>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | A [Group](cp.ui.Group.md) containing buttons relating to mouse skimming behaviour, waveforms, snapping, etc. |
 
 #### [title](#title)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar:title() -> cp.ui.StaticText` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Toolbar.title <cp.ui.StaticText>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the title [StaticText](cp.ui.StaticText.md) from the Timeline Titlebar. |
-| **Parameters**                                       | <ul><li>None.</li></ul> |
-| **Returns**                                          | <ul><li>The <a href="cp.ui.StaticText.md">StaticText</a> containing the title.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The title [StaticText](cp.ui.StaticText.md) from the Timeline Titlebar. |
 

@@ -29,6 +29,7 @@ myButton(false) == false	-- now false
  * [checked](#checked)
  * [title](#title)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [click](#click)
  * [doCheck](#docheck)
  * [doPress](#dopress)
  * [doUncheck](#douncheck)
@@ -74,6 +75,14 @@ myButton(false) == false	-- now false
 | **Description**                                      | The button title, if available. |
 
 ### Methods
+
+#### [click](#click)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:click() -> self` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Performs a single mouse click on the checkbox. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>CheckBox</code> instance.</li></ul> |
 
 #### [doCheck](#docheck)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.CheckBox:doCheck() -> cp.rx.go.Statement` </span>                                                          |

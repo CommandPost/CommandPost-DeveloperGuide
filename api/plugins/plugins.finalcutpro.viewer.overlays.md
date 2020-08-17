@@ -28,7 +28,9 @@ Final Cut Pro Viewer Overlays.
  * [stillsLayout](#stillslayout)
 * Functions - API calls offered directly by the extension
  * [deleteMemory](#deletememory)
+ * [disableAllDraggableGuides](#disablealldraggableguides)
  * [draggableGuidesEnabled](#draggableguidesenabled)
+ * [enableAllDraggableGuides](#enablealldraggableguides)
  * [getCustomGuideColor](#getcustomguidecolor)
  * [getDraggableGuideEnabled](#getdraggableguideenabled)
  * [getGuideAlpha](#getguidealpha)
@@ -194,6 +196,14 @@ Final Cut Pro Viewer Overlays.
 | **Parameters**                                       | <ul><li>id - An identifier in the form of a number.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [disableAllDraggableGuides](#disablealldraggableguides)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.disableAllDraggableGuides() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Disable all draggable guides. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [draggableGuidesEnabled](#draggableguidesenabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.draggableGuidesEnabled() -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -201,6 +211,14 @@ Final Cut Pro Viewer Overlays.
 | **Description**                                      | Are any draggable guides enabled? |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if at least one draggable guide is enabled otherwise <code>false</code></li></ul> |
+
+#### [enableAllDraggableGuides](#enablealldraggableguides)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.enableAllDraggableGuides() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Enable all draggable guides. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [getCustomGuideColor](#getcustomguidecolor)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.viewer.overlays.getCustomGuideColor(id) -> none` </span>                                                          |

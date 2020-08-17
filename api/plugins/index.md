@@ -17,6 +17,7 @@
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
 | [plugins.colorfinale.tangent](plugins.colorfinale.tangent.md)                          | This plugin basically just disables CP's Tangent Manager when ColorFinale is running.     |
+| [plugins.compressor.application.manager](plugins.compressor.application.manager.md)                          | Registers Compressor with the Core Application Manager.     |
 | [plugins.compressor.feedback.bugreport](plugins.compressor.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Compressor.     |
 | [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Compressor Watch Folder Plugin.     |
 | [plugins.core.accessibility](plugins.core.accessibility.md)                          | Accessibility Plugin.     |
@@ -24,13 +25,17 @@
 | [plugins.core.action.activator](plugins.core.action.activator.md)                          | This module provides provides a way of activating choices provided by action handlers.     |
 | [plugins.core.action.handler](plugins.core.action.handler.md)                          | A support class for handler handlers. It is not used directly, rather     |
 | [plugins.core.action.manager](plugins.core.action.manager.md)                          | Action Manager Module.     |
+| [plugins.core.application.manager](plugins.core.application.manager.md)                          | Application manager.     |
+| [plugins.core.audioswift.prefs](plugins.core.audioswift.prefs.md)                          | AudioSwift Preferences Panel     |
 | [plugins.core.commands.actions](plugins.core.commands.actions.md)                          | An `action` which will execute a command with matching group/id values.     |
 | [plugins.core.commands.global](plugins.core.commands.global.md)                          | The 'global' command collection.     |
 | [plugins.core.console](plugins.core.console.md)                          | Search Console     |
 | [plugins.core.console.applications](plugins.core.console.applications.md)                          | Adds all installed applications to the Search Console.     |
 | [plugins.core.console.scripts](plugins.core.console.scripts.md)                          | Adds all installed AppleScripts to the Search Console.     |
+| [plugins.core.controlsurfaces.manager](plugins.core.controlsurfaces.manager.md)                          | Manager for the CommandPost Preferences Window.     |
 | [plugins.core.disk.automount](plugins.core.disk.automount.md)                          | Automatic Disk Mounting & Unmounting.     |
 | [plugins.core.disk.favourites](plugins.core.disk.favourites.md)                          | Action that allows you save and open user-defined favourite folders.     |
+| [plugins.core.display](plugins.core.display.md)                          | Display Controls.     |
 | [plugins.core.helpandsupport.credits](plugins.core.helpandsupport.credits.md)                          | Credits Menu Item.     |
 | [plugins.core.helpandsupport.debugconsole](plugins.core.helpandsupport.debugconsole.md)                          | Debug Console Menu Item.     |
 | [plugins.core.helpandsupport.developerguide](plugins.core.helpandsupport.developerguide.md)                          | Developer Guide Menu Item.     |
@@ -39,16 +44,16 @@
 | [plugins.core.helpandsupport.feedback](plugins.core.helpandsupport.feedback.md)                          | Feedback Menu Item.     |
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
 | [plugins.core.language](plugins.core.language.md)                          | Language Module.     |
-| [plugins.core.loupedeck.banks](plugins.core.loupedeck.banks.md)                          | Loupedeck+ Bank Actions.     |
-| [plugins.core.loupedeck.prefs](plugins.core.loupedeck.prefs.md)                          | Loupedeck Preferences Panel     |
-| [plugins.core.loupedeck.prefs.default](plugins.core.loupedeck.prefs.default.md)                          | Default MIDI Controls.     |
+| [plugins.core.loupedeck.prefs](plugins.core.loupedeck.prefs.md)                          | Loupedeck+ Preferences Panel     |
+| [plugins.core.loupedeckct.changeapplications](plugins.core.loupedeckct.changeapplications.md)                          | Allows you to change the Loupedeck CT application if set to manual.     |
+| [plugins.core.loupedeckct.manager](plugins.core.loupedeckct.manager.md)                          | Loupedeck CT Manager Plugin.     |
+| [plugins.core.loupedeckct.prefs](plugins.core.loupedeckct.prefs.md)                          | Loupedeck CT Preferences Panel     |
+| [plugins.core.loupedeckplus.prefs](plugins.core.loupedeckplus.prefs.md)                          | Loupedeck+ Preferences Panel     |
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
 | [plugins.core.menu.menuaction](plugins.core.menu.menuaction.md)                          | Add actions that allow you to trigger the menubar items from any application.     |
-| [plugins.core.midi.controls.banks](plugins.core.midi.controls.banks.md)                          | MIDI Control Bank Actions.     |
 | [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
 | [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)                          | MIDI Manager Controls.     |
-| [plugins.core.midi.manager.default](plugins.core.midi.manager.default.md)                          | Default MIDI Controls.     |
 | [plugins.core.midi.prefs](plugins.core.midi.prefs.md)                          | MIDI Preferences Panel     |
 | [plugins.core.pasteboard.history](plugins.core.pasteboard.history.md)                          | Adds text pasteboard history actions to the Search Console.     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
@@ -58,16 +63,13 @@
 | [plugins.core.preferences.panels.menubar](plugins.core.preferences.panels.menubar.md)                          | Menubar Preferences Panel     |
 | [plugins.core.preferences.panels.notifications](plugins.core.preferences.panels.notifications.md)                          | Notifications Preferences Panel     |
 | [plugins.core.preferences.panels.plugins](plugins.core.preferences.panels.plugins.md)                          | Plugins Preferences Panel     |
-| [plugins.core.preferences.panels.scripting](plugins.core.preferences.panels.scripting.md)                          | General Preferences Panel     |
+| [plugins.core.preferences.panels.scripting](plugins.core.preferences.panels.scripting.md)                          | Snippets Preferences Panel     |
 | [plugins.core.preferences.panels.settings](plugins.core.preferences.panels.settings.md)                          | Settings Preferences Panel     |
-| [plugins.core.preferences.panels.snippets](plugins.core.preferences.panels.snippets.md)                          | Snippets Preferences Panel     |
 | [plugins.core.preferences.updates](plugins.core.preferences.updates.md)                          | Updates Module.     |
-| [plugins.core.scripting.preferences](plugins.core.scripting.preferences.md)                          | Scripting Preferences.     |
 | [plugins.core.setup](plugins.core.setup.md)                          | Manager for the CommandPost Setup Screen.     |
 | [plugins.core.setup.panel](plugins.core.setup.panel.md)                          | CommandPost Setup Window Panel.     |
 | [plugins.core.shortcuts.actions](plugins.core.shortcuts.actions.md)                          | Adds actions which allow you to trigger keyboard shortcuts.     |
 | [plugins.core.shortcuts.prefs](plugins.core.shortcuts.prefs.md)                          | Shortcuts Preferences Panel     |
-| [plugins.core.streamdeck.banks](plugins.core.streamdeck.banks.md)                          | Stream Deck Bank Actions.     |
 | [plugins.core.streamdeck.manager](plugins.core.streamdeck.manager.md)                          | Elgato Stream Deck Manager Plugin.     |
 | [plugins.core.streamdeck.prefs](plugins.core.streamdeck.prefs.md)                          | Stream Deck Preferences Panel     |
 | [plugins.core.tangent.commandpost](plugins.core.tangent.commandpost.md)                          | CommandPost Group for the Tangent.     |
@@ -81,13 +83,14 @@
 | [plugins.core.tangent.manager.menu](plugins.core.tangent.manager.menu.md)                          | Represents a Tangent Menu. Menus are controls that have a fixed set of     |
 | [plugins.core.tangent.manager.mode](plugins.core.tangent.manager.mode.md)                          | Represents a Tangent Mode     |
 | [plugins.core.tangent.manager.named](plugins.core.tangent.manager.named.md)                          | Provides common functions for 'named' Tangent nodes     |
-| [plugins.core.tangent.manager.parameter](plugins.core.tangent.manager.parameter.md)                          | Represents a Tangent Parameter     |
+| [plugins.core.tangent.manager.parameter](plugins.core.tangent.manager.parameter.md)                          | Represents a Tangent Parameter control.     |
 | [plugins.core.tangent.os](plugins.core.tangent.os.md)                          | macOS Group for the Tangent.     |
 | [plugins.core.tangent.os.display](plugins.core.tangent.os.display.md)                          | Tangent Display Functions.     |
 | [plugins.core.tangent.os.pasteboard](plugins.core.tangent.os.pasteboard.md)                          | Pasteboard Tools for Tangent.     |
 | [plugins.core.tangent.os.sound](plugins.core.tangent.os.sound.md)                          | Tangent Display Functions.     |
 | [plugins.core.tangent.os.window](plugins.core.tangent.os.window.md)                          | Window Management Tools for Tangent.     |
 | [plugins.core.tangent.prefs](plugins.core.tangent.prefs.md)                          | Tangent Preferences Panel     |
+| [plugins.core.toolbox.manager](plugins.core.toolbox.manager.md)                          | Manager for the CommandPost Toolbox Window.     |
 | [plugins.core.tools.caffeinate](plugins.core.tools.caffeinate.md)                          | Prevents your Mac from going to sleep.     |
 | [plugins.core.touchbar.banks](plugins.core.touchbar.banks.md)                          | Touch Bar Bank Actions.     |
 | [plugins.core.touchbar.location](plugins.core.touchbar.location.md)                          | Virtual Touch Bar Update Location Callback     |
@@ -97,9 +100,11 @@
 | [plugins.core.touchbar.virtual](plugins.core.touchbar.virtual.md)                          | Virtual Touch Bar Manager     |
 | [plugins.core.touchbar.widgets.volume](plugins.core.touchbar.widgets.volume.md)                          | Volume Slider     |
 | [plugins.core.touchbar.widgets.windowSlide](plugins.core.touchbar.widgets.windowSlide.md)                          | Window Slide Widget for Touch Bar.     |
+| [plugins.core.utilities.manager.panel](plugins.core.utilities.manager.panel.md)                          | CommandPost Preferences Panel.     |
 | [plugins.core.watchfolders.manager](plugins.core.watchfolders.manager.md)                          | Manager for the CommandPost Watch Folders Panel.     |
 | [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | Watch Folder Panel Manager.     |
 | [plugins.core.watchfolders.menuitem](plugins.core.watchfolders.menuitem.md)                          | Adds the "Setup Watch Folders" to the menu bar.     |
+| [plugins.diskutility.application.manager](plugins.diskutility.application.manager.md)                          | Registers Disk Utility with the Core Application Manager.     |
 | [plugins.finalcutpro.actions.custom](plugins.finalcutpro.actions.custom.md)                          | Creates a bunch of commands that can be used to assign actions to.     |
 | [plugins.finalcutpro.advanced.backupinterval](plugins.finalcutpro.advanced.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
 | [plugins.finalcutpro.advanced.disablewaveforms](plugins.finalcutpro.advanced.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
@@ -107,6 +112,7 @@
 | [plugins.finalcutpro.advanced.multicam](plugins.finalcutpro.advanced.multicam.md)                          | Show Timeline In Player.     |
 | [plugins.finalcutpro.advanced.playbackrendering](plugins.finalcutpro.advanced.playbackrendering.md)                          | Playback Rendering Plugin.     |
 | [plugins.finalcutpro.advanced.showtimelineinviewers](plugins.finalcutpro.advanced.showtimelineinviewers.md)                          | Show Timeline In Player.     |
+| [plugins.finalcutpro.application.manager](plugins.finalcutpro.application.manager.md)                          | Registers Final Cut Pro with the Core Application Manager.     |
 | [plugins.finalcutpro.browser.addnote](plugins.finalcutpro.browser.addnote.md)                          | Add Note Plugin.     |
 | [plugins.finalcutpro.browser.appearanceandfiltering](plugins.finalcutpro.browser.appearanceandfiltering.md)                          | Solo a clip in the Final Cut Pro Browser.     |
 | [plugins.finalcutpro.browser.clearnotes](plugins.finalcutpro.browser.clearnotes.md)                          | Clear Notes in Final Cut Pro Browser.     |
@@ -163,7 +169,6 @@
 | [plugins.finalcutpro.midi.controls.timeline](plugins.finalcutpro.midi.controls.timeline.md)                          | Final Cut Pro MIDI Timeline Controls.     |
 | [plugins.finalcutpro.midi.controls.video](plugins.finalcutpro.midi.controls.video.md)                          | Final Cut Pro MIDI Video Inspector Controls.     |
 | [plugins.finalcutpro.midi.controls.zoom](plugins.finalcutpro.midi.controls.zoom.md)                          | Final Cut Pro MIDI Zoom Control.     |
-| [plugins.finalcutpro.midi.manager](plugins.finalcutpro.midi.manager.md)                          | MIDI Manager Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.notifications.ifttt](plugins.finalcutpro.notifications.ifttt.md)                          | IFTTT Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.imessage](plugins.finalcutpro.notifications.imessage.md)                          | iMessage Notifications Plugin.     |
 | [plugins.finalcutpro.notifications.manager](plugins.finalcutpro.notifications.manager.md)                          | Notifications Manager Plugin.     |
@@ -178,7 +183,6 @@
 | [plugins.finalcutpro.preferences.manager](plugins.finalcutpro.preferences.manager.md)                          | Final Cut Pro Preferences Panel Manager.     |
 | [plugins.finalcutpro.preferences.spelling](plugins.finalcutpro.preferences.spelling.md)                          | Adds Preference for "Correct Spelling Automatically" within Final Cut Pro X.     |
 | [plugins.finalcutpro.setup.scan](plugins.finalcutpro.setup.scan.md)                          | Show setup panel if Final Cut Pro needs scanning.     |
-| [plugins.finalcutpro.streamdeck](plugins.finalcutpro.streamdeck.md)                          | Stream Deck Plugin for Final Cut Pro.     |
 | [plugins.finalcutpro.tangent.audio](plugins.finalcutpro.tangent.audio.md)                          | Final Cut Pro Audio Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.browser](plugins.finalcutpro.tangent.browser.md)                          | Final Cut Pro Tangent Browser Group     |
 | [plugins.finalcutpro.tangent.clip](plugins.finalcutpro.tangent.clip.md)                          | Final Cut Pro Tangent View Group     |
@@ -231,7 +235,9 @@
 | [plugins.finalcutpro.timeline.transcode](plugins.finalcutpro.timeline.transcode.md)                          | Adds actions that allows you to transcode clips from the timeline.     |
 | [plugins.finalcutpro.timeline.transitions](plugins.finalcutpro.timeline.transitions.md)                          | Controls Final Cut Pro's Transitions.     |
 | [plugins.finalcutpro.timeline.videoeffects](plugins.finalcutpro.timeline.videoeffects.md)                          | Controls Final Cut Pro's Video Effects.     |
+| [plugins.finalcutpro.timeline.zoom](plugins.finalcutpro.timeline.zoom.md)                          | Action for changing Final Cut Pro's Timeline Zoom Level     |
 | [plugins.finalcutpro.timeline.zoomtoselection](plugins.finalcutpro.timeline.zoomtoselection.md)                          | Zoom the Timeline to fit the currently-selected clips.     |
+| [plugins.finalcutpro.toolbox.fcpxmltitles](plugins.finalcutpro.toolbox.fcpxmltitles.md)                          | FCPXML Titles Toolbox Panel     |
 | [plugins.finalcutpro.touchbar.manager](plugins.finalcutpro.touchbar.manager.md)                          | Final Cut Pro Touch Bar Manager.     |
 | [plugins.finalcutpro.touchbar.virtual](plugins.finalcutpro.touchbar.virtual.md)                          | Virtual Touch Bar Plugin.     |
 | [plugins.finalcutpro.touchbar.widgets.colorboard](plugins.finalcutpro.touchbar.widgets.colorboard.md)                          | A collection of Final Cut Pro Color Board Widgets for the Touch Bar.     |
@@ -244,10 +250,20 @@
 | [plugins.finalcutpro.watchfolders.media](plugins.finalcutpro.watchfolders.media.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media.MediaFolder](plugins.finalcutpro.watchfolders.media.MediaFolder.md)                          | Final Cut Pro Media Watch Folder Plugin.     |
 | [plugins.finalcutpro.watchfolders.media.panel](plugins.finalcutpro.watchfolders.media.panel.md)                          | Watch Folder Media Panel.     |
+| [plugins.finder.application.manager](plugins.finder.application.manager.md)                          | Registers Finder with the Core Application Manager.     |
+| [plugins.finder.audio](plugins.finder.audio.md)                          | Actions for Audio Controls     |
 | [plugins.finder.dateandtime](plugins.finder.dateandtime.md)                          | Types the date and time in the "YYYYMMDD HHMM" format.     |
 | [plugins.finder.pasteboard](plugins.finder.pasteboard.md)                          | Handy text tools.     |
 | [plugins.finder.pasteboard.history](plugins.finder.pasteboard.history.md)                          | Adds text pasteboard history actions to the Search Console.     |
 | [plugins.finder.preferences.panel](plugins.finder.preferences.panel.md)                          | General Preferences Panel     |
 | [plugins.finder.preferences.powerchime](plugins.finder.preferences.powerchime.md)                          | General Preferences Panel     |
 | [plugins.finder.window](plugins.finder.window.md)                          | Handy tools for Windows Management in macOS.     |
+| [plugins.microsoftteams.application.manager](plugins.microsoftteams.application.manager.md)                          | Registers Microsoft Teams with the Core Application Manager if installed.     |
+| [plugins.motion.application.manager](plugins.motion.application.manager.md)                          | Registers Motion with the Core Application Manager.     |
 | [plugins.motion.feedback.bugreport](plugins.motion.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Motion.     |
+| [plugins.resolve.application.manager](plugins.resolve.application.manager.md)                          | Registers Motion with the Core Application Manager.     |
+| [plugins.skype.application.manager](plugins.skype.application.manager.md)                          | Registers Skype with the Core Application Manager if installed.     |
+| [plugins.skype.shortcuts](plugins.skype.shortcuts.md)                          | Trigger Skype Shortcuts     |
+| [plugins.systempreferences.application.manager](plugins.systempreferences.application.manager.md)                          | Registers System Preferences with the Core Application Manager.     |
+| [plugins.textedit.application.manager](plugins.textedit.application.manager.md)                          | Registers TextEdit with the Core Application Manager.     |
+| [plugins.zoom.application.manager](plugins.zoom.application.manager.md)                          | Registers Zoom with the Core Application Manager if installed.     |

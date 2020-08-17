@@ -101,6 +101,7 @@
 | [hs.notify](hs.notify.md)                          | This module allows you to create on screen notifications in the User Notification Center located at the right of the users screen.     |
 | [hs.osascript](hs.osascript.md)                          | Execute Open Scripting Architecture (OSA) code - AppleScript and JavaScript     |
 | [hs.pasteboard](hs.pasteboard.md)                          | Inspect/manipulate pasteboards (more commonly called clipboards). Both the system default pasteboard and custom named pasteboards can be interacted with.     |
+| [hs.pasteboard.watcher](hs.pasteboard.watcher.md)                          | Watch for Pasteboard Changes.     |
 | [hs.pathwatcher](hs.pathwatcher.md)                          | Watch paths recursively for changes     |
 | [hs.plist](hs.plist.md)                          | Read and write Property List files     |
 | [hs.redshift](hs.redshift.md)                          | Inverts and/or lowers the color temperature of the screen(s) on a schedule, for a more pleasant experience at night     |
@@ -135,6 +136,7 @@
 | [hs.utf8](hs.utf8.md)                          | Functions providing basic support for UTF-8 encodings     |
 | [hs.vox](hs.vox.md)                          | Controls for VOX music player     |
 | [hs.watchable](hs.watchable.md)                          | A minimalistic Key-Value-Observer framework for Lua.     |
+| [hs.websocket](hs.websocket.md)                          | Simple websocket client.     |
 | [hs.webview](hs.webview.md)                          | Display web content in a window from Hammerspoon     |
 | [hs.webview.datastore](hs.webview.datastore.md)                          | Provides methods to list and purge the various types of data used by websites visited with `hs.webview`.     |
 | [hs.webview.toolbar](hs.webview.toolbar.md)                          | Create and manipulate toolbars which can be attached to the Hammerspoon console or hs.webview objects.     |

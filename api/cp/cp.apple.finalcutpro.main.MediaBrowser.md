@@ -12,22 +12,25 @@ Media Browser Module.
  * [SOUND_EFFECTS](#sound_effects)
  * [TITLE](#title)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
-* Methods - API calls which can only be made on an object returned by a constructor
- * [app](#app)
+ * [MediaBrowser](#mediabrowser)
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [group](#group)
+ * [isShowing](#isshowing)
+ * [mainGroupUI](#maingroupui)
+ * [search](#search)
+ * [sidebar](#sidebar)
+* Methods - API calls which can only be made on an object returned by a constructor
  * [hide](#hide)
  * [loadLayout](#loadlayout)
- * [parent](#parent)
  * [saveLayout](#savelayout)
- * [search](#search)
  * [show](#show)
  * [showGarageBand](#showgarageband)
  * [showITunes](#showitunes)
  * [showPhotos](#showphotos)
  * [showSection](#showsection)
+ * [showSidebar](#showsidebar)
  * [showSoundEffects](#showsoundeffects)
- * [sidebar](#sidebar)
+ * [topCategoriesUI](#topcategoriesui)
 
 ## API Documentation
 
@@ -71,31 +74,47 @@ Media Browser Module.
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser.new(parent) -> MediaBrowser` </span>                                                          |
+#### [MediaBrowser](#mediabrowser)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser(parent) -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Browser` instance. |
 | **Parameters**                                       | <ul><li>parent - The parent object.</li></ul> |
 | **Returns**                                          | <ul><li>A new <code>MediaBrowser</code> object.</li></ul> |
 
-### Methods
-
-#### [app](#app)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:app() -> App` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the app instance representing Final Cut Pro. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>App</li></ul> |
+### Fields
 
 #### [group](#group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:group() -> PopUpButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser.group <cp.ui.PopUpButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get the group PopUpButton. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>PopUpButton</code> object.</li></ul> |
+| **Type**                                             | Field |
+| **Description**                                      | The group PopUpButton. |
+
+#### [isShowing](#isshowing)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser.isShowing <cp.prop: boolean; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Checks if the Media Browser is showing. |
+
+#### [mainGroupUI](#maingroupui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser.mainGroupUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the main group UI for the Media Browser, or `nil` if not available. |
+
+#### [search](#search)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser.search <cp.ui.TextField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The search TextField. |
+
+#### [sidebar](#sidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser.sidebar <cp.ui.Table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Sidebar `Table`. |
+
+### Methods
 
 #### [hide](#hide)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:hide() -> MediaBrowser` </span>                                                          |
@@ -113,14 +132,6 @@ Media Browser Module.
 | **Parameters**                                       | <ul><li>layout - A table containing the Media Browser layout settings - created using <code>cp.apple.finalcutpro.main.MediaBrowser:saveLayout()</code>.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [parent](#parent)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:parent() -> parent` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the parent object. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>parent</li></ul> |
-
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -128,14 +139,6 @@ Media Browser Module.
 | **Description**                                      | Saves the current Media Browser layout to a table. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing the current Media Browser Layout.</li></ul> |
-
-#### [search](#search)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:search() -> axuielementObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Get the Top Categories UI. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>axuielementObject</code> object.</li></ul> |
 
 #### [show](#show)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:show() -> MediaBrowser` </span>                                                          |
@@ -177,6 +180,14 @@ Media Browser Module.
 | **Parameters**                                       | <ul><li>index - The index ID of the section you want to show as a number.</li></ul> |
 | **Returns**                                          | <ul><li><code>MediaBrowser</code> object.</li></ul> |
 
+#### [showSidebar](#showsidebar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:showSidebar() -> MediaBrowser` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Show the Media Browser Sidebar. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>MediaBrowser</code> object.</li></ul> |
+
 #### [showSoundEffects](#showsoundeffects)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:showSoundEffects() -> MediaBrowser` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -185,11 +196,11 @@ Media Browser Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li><code>MediaBrowser</code> object.</li></ul> |
 
-#### [sidebar](#sidebar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:sidebar() -> Table` </span>                                                          |
+#### [topCategoriesUI](#topcategoriesui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.MediaBrowser:topCategoriesUI() -> axuielementObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Get the Sidebar Table. |
+| **Description**                                      | Get the Top Categories UI. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li><code>Table</code> object.</li></ul> |
+| **Returns**                                          | <ul><li><code>axuielementObject</code> object.</li></ul> |
 

@@ -7,7 +7,7 @@ Represents a Tangent Mode
 * Functions - API calls offered directly by the extension
  * [is](#is)
 * Constructors - API calls which return an object, typically one that offers API methods
- * [new](#new)
+ * [mode](#mode)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activate](#activate)
  * [onActivate](#onactivate)
@@ -19,17 +19,17 @@ Represents a Tangent Mode
 ### Functions
 
 #### [is](#is)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.mode.is(other) -> boolean` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.mode.is(thing) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Checks to see if other is a mode or not. |
-| **Parameters**                                       | <ul><li>other - The item to check</li></ul> |
+| **Description**                                      | Checks to see if `thing` is a `mode` or not. |
+| **Parameters**                                       | <ul><li>thing - The item to check</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if is a mode otherwise <code>false</code></li></ul> |
 
 ### Constructors
 
-#### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.mode.new(id, name)` </span>                                                          |
+#### [mode](#mode)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.mode(id, name)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Mode` instance. |

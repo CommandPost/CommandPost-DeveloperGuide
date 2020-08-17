@@ -5,75 +5,60 @@ MIDI Manager Plugin.
 
 ## Submodules
  * [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)
- * [plugins.core.midi.manager.default](plugins.core.midi.manager.default.md)
 
 ## API Overview
-* Constants - Useful values which cannot be changed
- * [DEFAULT_CONTROLS](#default_controls)
- * [DEFAULT_GROUP](#default_group)
- * [DEFAULT_MIDI_CONTROLS](#default_midi_controls)
 * Variables - Configurable values
+ * [defaultLayout](#defaultlayout)
+ * [defaultLoupedeckLayout](#defaultloupedecklayout)
+ * [defaultLoupedeckPlusLayout](#defaultloupedeckpluslayout)
+ * [lastActiveBundleID](#lastactivebundleid)
  * [learningMode](#learningmode)
- * [loupedeckFnPressed](#loupedeckfnpressed)
  * [maxItems](#maxitems)
- * [numberOfSubGroups](#numberofsubgroups)
 * Functions - API calls offered directly by the extension
- * [activeGroup](#activegroup)
- * [activeLoupedeckSubGroup](#activeloupedecksubgroup)
- * [activeSubGroup](#activesubgroup)
- * [clear](#clear)
  * [devices](#devices)
- * [forceGroupChange](#forcegroupchange)
- * [forceLoupedeckGroupChange](#forceloupedeckgroupchange)
- * [getBankLabel](#getbanklabel)
  * [getDevice](#getdevice)
  * [getItem](#getitem)
- * [getItems](#getitems)
- * [getLoupedeckBankLabel](#getloupedeckbanklabel)
- * [gotoLoupedeckSubGroup](#gotoloupedecksubgroup)
- * [gotoSubGroup](#gotosubgroup)
- * [groupStatus](#groupstatus)
- * [init](#init)
- * [midiCallback](#midicallback)
- * [nextLoupedeckSubGroup](#nextloupedecksubgroup)
- * [nextSubGroup](#nextsubgroup)
- * [previousLoupedeckSubGroup](#previousloupedecksubgroup)
- * [previousSubGroup](#previoussubgroup)
- * [setBankLabel](#setbanklabel)
- * [setItem](#setitem)
  * [start](#start)
  * [stop](#stop)
  * [update](#update)
- * [updateAction](#updateaction)
  * [virtualDevices](#virtualdevices)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [activeBanks](#activebanks)
+ * [activeLoupedeckBanks](#activeloupedeckbanks)
+ * [activeLoupedeckPlusBanks](#activeloupedeckplusbanks)
+ * [displayMessageWhenChangingBanks](#displaymessagewhenchangingbanks)
  * [enabled](#enabled)
  * [enabledLoupedeck](#enabledloupedeck)
+ * [enabledLoupedeckPlus](#enabledloupedeckplus)
  * [numberOfMidiDevices](#numberofmididevices)
 
 ## API Documentation
 
-### Constants
-
-#### [DEFAULT_CONTROLS](#default_controls)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.DEFAULT_CONTROLS -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The default MIDI controls, so that the user has a starting point. |
-
-#### [DEFAULT_GROUP](#default_group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.DEFAULT_GROUP -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The default group. |
-
-#### [DEFAULT_MIDI_CONTROLS](#default_midi_controls)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.DEFAULT_MIDI_CONTROLS -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Constant |
-| **Description**                                      | The default MIDI controls, so that the user has a starting point. |
-
 ### Variables
+
+#### [defaultLayout](#defaultlayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.defaultLayout -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Default MIDI Layout |
+
+#### [defaultLoupedeckLayout](#defaultloupedecklayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.defaultLoupedeckLayout -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Default Loupedeck Layout |
+
+#### [defaultLoupedeckPlusLayout](#defaultloupedeckpluslayout)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.defaultLoupedeckPlusLayout -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Default Loupedeck+ Layout |
+
+#### [lastActiveBundleID](#lastactivebundleid)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.lastActiveBundleID -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | The last Active Bundle ID. Used for AudioSwift workaround. |
 
 #### [learningMode](#learningmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.learningMode -> boolean` </span>                                                          |
@@ -81,57 +66,13 @@ MIDI Manager Plugin.
 | **Type**                                             | Variable |
 | **Description**                                      | Whether or not the MIDI Manager is in learning mode. |
 
-#### [loupedeckFnPressed](#loupedeckfnpressed)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.loupedeckFnPressed -> boolean` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | Is the Fn key on the Loupedeck+ pressed? |
-
 #### [maxItems](#maxitems)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.maxItems -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
-| **Description**                                      | The maximum number of MIDI items per group. |
-
-#### [numberOfSubGroups](#numberofsubgroups)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.numberOfSubGroups -> number` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Variable |
-| **Description**                                      | The number of Sub Groups per Touch Bar Group. |
+| **Description**                                      | The maximum number of MIDI items per bank. |
 
 ### Functions
-
-#### [activeGroup](#activegroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeGroup() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns the active group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Returns the active group or <code>manager.defaultGroup</code> as a string.</li></ul> |
-
-#### [activeLoupedeckSubGroup](#activeloupedecksubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeLoupedeckSubGroup() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns the active Loupedeck+ sub-group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Returns the active sub group as string</li></ul> |
-
-#### [activeSubGroup](#activesubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeSubGroup() -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns the active sub-group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>Returns the active sub group as string</li></ul> |
-
-#### [clear](#clear)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.clear() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Clears the MIDI items. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [devices](#devices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.devices() -> table` </span>                                                          |
@@ -140,30 +81,6 @@ MIDI Manager Plugin.
 | **Description**                                      | Gets a table of Physical MIDI Device Names. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table of Physical MIDI Device Names.</li></ul> |
-
-#### [forceGroupChange](#forcegroupchange)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.forceGroupChange(combinedGroupAndSubGroupID) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Loads a specific sub-group. |
-| **Parameters**                                       | <ul><li>combinedGroupAndSubGroupID - The group and subgroup as a single string.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [forceLoupedeckGroupChange](#forceloupedeckgroupchange)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.forceLoupedeckGroupChange(combinedGroupAndSubGroupID) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Loads a specific sub-group. |
-| **Parameters**                                       | <ul><li>combinedGroupAndSubGroupID - The group and subgroup as a single string.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [getBankLabel](#getbanklabel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getBankLabel(group) -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns a specific MIDI Bank Label. |
-| **Parameters**                                       | <ul><li>group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul><li>Label as string</li></ul> |
 
 #### [getDevice](#getdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getDevice(deviceName, virtual) -> hs.midi object | nil` </span>                                                          |
@@ -180,110 +97,6 @@ MIDI Manager Plugin.
 | **Description**                                      | Gets a MIDI item from Preferences. |
 | **Parameters**                                       | <ul><li>item - The item you want to get.</li><li>button - Button ID as string</li><li>group - Group ID as string</li></ul> |
 | **Returns**                                          | <ul><li>A table otherwise <code>nil</code></li></ul> |
-
-#### [getItems](#getitems)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getItems() -> tables` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Gets all the MIDI items in a table. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A table</li></ul> |
-
-#### [getLoupedeckBankLabel](#getloupedeckbanklabel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.getLoupedeckBankLabel(group) -> string` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Returns a specific Loupedeck Bank Label. |
-| **Parameters**                                       | <ul><li>group - Group ID as string</li></ul> |
-| **Returns**                                          | <ul><li>Label as string</li></ul> |
-
-#### [gotoLoupedeckSubGroup](#gotoloupedecksubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.gotoLoupedeckSubGroup() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Loads a specific sub-group. |
-| **Parameters**                                       | <ul><li>id - The ID of the sub-group.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [gotoSubGroup](#gotosubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.gotoSubGroup() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Loads a specific sub-group. |
-| **Parameters**                                       | <ul><li>id - The ID of the sub-group.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [groupStatus](#groupstatus)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.groupStatus(groupID, status) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Updates a group's visibility status. |
-| **Parameters**                                       | <ul><li>groupID - the group you want to update as a string.</li><li>status - the status of the group as a boolean.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.init(deps, env) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Initialises the MIDI Plugin |
-| **Parameters**                                       | <ul><li>deps - Dependencies Table</li><li>env - Environment Table</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [midiCallback](#midicallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.midiCallback(object, deviceName, commandType, description, metadata) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | MIDI Callback |
-| **Parameters**                                       | <ul><li>object - The <code>hs.midi</code> userdata object</li><li>deviceName - Device name as string</li><li>commandType - Command Type as string</li><li>description - Description as string</li><li>metadata - A table containing metadata for the MIDI command</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [nextLoupedeckSubGroup](#nextloupedecksubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.nextLoupedeckSubGroup() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Goes to the next sub-group for the active group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [nextSubGroup](#nextsubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.nextSubGroup() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Goes to the next sub-group for the active group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [previousLoupedeckSubGroup](#previousloupedecksubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.previousLoupedeckSubGroup() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Goes to the previous sub-group for the active group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [previousSubGroup](#previoussubgroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.previousSubGroup() -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Goes to the previous sub-group for the active group. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [setBankLabel](#setbanklabel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.setBankLabel(group, label) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Sets a MIDI Bank Label. |
-| **Parameters**                                       | <ul><li>group - Group ID as string</li><li>label - Label as string</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
-#### [setItem](#setitem)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.setItem(item, button, group, value) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Stores a MIDI item in Preferences. |
-| **Parameters**                                       | <ul><li>item - The item you want to set.</li><li>button - Button ID as string</li><li>group - Group ID as string</li><li>value - The value of the item you want to set.</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [start](#start)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.start() -> boolean` </span>                                                          |
@@ -309,14 +122,6 @@ MIDI Manager Plugin.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
-#### [updateAction](#updateaction)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.updateAction(button, group, actionTitle, handlerID, action) -> none` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Updates a MIDI action. |
-| **Parameters**                                       | <ul><li>button - Button ID as string</li><li>group - Group ID as string</li><li>actionTitle - Action Title as string</li><li>handlerID - Handler ID as string</li><li>action - Action in a table</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-
 #### [virtualDevices](#virtualdevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.virtualDevices() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -326,6 +131,30 @@ MIDI Manager Plugin.
 | **Returns**                                          | <ul><li>A table of Virtual MIDI Source Names.</li></ul> |
 
 ### Fields
+
+#### [activeBanks](#activebanks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeBanks <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Table of active banks for each application. |
+
+#### [activeLoupedeckBanks](#activeloupedeckbanks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeLoupedeckBanks <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Table of active banks for each application. |
+
+#### [activeLoupedeckPlusBanks](#activeloupedeckplusbanks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.activeLoupedeckPlusBanks <cp.prop: table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Table of active banks for each application. |
+
+#### [displayMessageWhenChangingBanks](#displaymessagewhenchangingbanks)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.displayMessageWhenChangingBanks <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Display message when changing banks? |
 
 #### [enabled](#enabled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.enabled <cp.prop: boolean>` </span>                                                          |
@@ -338,6 +167,12 @@ MIDI Manager Plugin.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Enable or disable MIDI Loupedeck Support. |
+
+#### [enabledLoupedeckPlus](#enabledloupedeckplus)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.enabledLoupedeckPlus <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Enable or disable MIDI Loupedeck+ Support. |
 
 #### [numberOfMidiDevices](#numberofmididevices)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.midi.manager.numberOfMidiDevices -> <cp.prop: number>` </span>                                                          |

@@ -7,12 +7,18 @@ Provides access to the 'Tags' section of the [Timeline Index](cp.apple.finalcutp
  * [cp.apple.finalcutpro.timeline.IndexTags.Type](cp.apple.finalcutpro.timeline.IndexTags.Type.md)
 
 ## API Overview
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [activate](#activate)
  * [all](#all)
  * [analysisKeywords](#analysiskeywords)
  * [chapters](#chapters)
  * [completeTodos](#completetodos)
+ * [incompleteTodos](#incompletetodos)
+ * [keywords](#keywords)
+ * [list](#list)
+ * [standardMarkers](#standardmarkers)
+ * [type](#type)
+* Methods - API calls which can only be made on an object returned by a constructor
  * [doLayout](#dolayout)
  * [doShowAll](#doshowall)
  * [doShowAnalysisKeywords](#doshowanalysiskeywords)
@@ -21,46 +27,73 @@ Provides access to the 'Tags' section of the [Timeline Index](cp.apple.finalcutp
  * [doShowIncompleteTodos](#doshowincompletetodos)
  * [doShowKeywords](#doshowkeywords)
  * [doShowStandardMarkers](#doshowstandardmarkers)
- * [incompleteTodos](#incompletetodos)
- * [keywords](#keywords)
- * [list](#list)
  * [saveLayout](#savelayout)
- * [standardMarkers](#standardmarkers)
- * [type](#type)
 
 ## API Documentation
 
-### Methods
+### Fields
 
 #### [activate](#activate)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:activate() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.activate <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) that activates the 'Tags' section. |
 
 #### [all](#all)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:all() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.all <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) that will show "All" types of media. |
 
 #### [analysisKeywords](#analysiskeywords)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:analysisKeywords() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.analysisKeywords <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Auto-analysis keywords" filter. |
 
 #### [chapters](#chapters)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:chapters() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.chapters <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Chapter markers" filter. |
 
 #### [completeTodos](#completetodos)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:completeTodos() -> cp.ui.RadioButton` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.completeTodos <cp.ui.RadioButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Complete todo marker" filter. |
+
+#### [incompleteTodos](#incompletetodos)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.incompleteTodos <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Incomplete todo marker" filter. |
+
+#### [keywords](#keywords)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.keywords <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Keywords" filter. |
+
+#### [list](#list)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.list <cp.ui.Table>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The list of tags as a [Table](cp.ui.Table.md). |
+
+#### [standardMarkers](#standardmarkers)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.standardMarkers <cp.ui.RadioButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Standard markers" filter. |
+
+#### [type](#type)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags.type <cp.apple.finalcutpro.timeline.IndexTags.Type>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [IndexTags.Type](cp.apple.finalcutpro.timeline.IndexTags.Type.md). |
+
+### Methods
 
 #### [doLayout](#dolayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:doLayout(layout) -> cp.rx.go.Statement` </span>                                                          |
@@ -112,41 +145,10 @@ Provides access to the 'Tags' section of the [Timeline Index](cp.apple.finalcutp
 | **Type**                                             | Method |
 | **Description**                                      | Returns a [Statement](cp.rx.go.Statement.md) that will set the tag index to "Standard" markers. |
 
-#### [incompleteTodos](#incompletetodos)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:incompleteTodos() -> cp.ui.RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Incomplete todo marker" filter. |
-
-#### [keywords](#keywords)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:keywords() -> cp.ui.RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Keywords" filter. |
-
-#### [list](#list)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:list() -> cp.ui.Table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the list of tags as a [Table](cp.ui.Table.md). |
-| **Returns**                                          | <ul><li>The <a href="cp.ui.Table.md">Table</a>.</li></ul> |
-
 #### [saveLayout](#savelayout)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:saveLayout() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns a `table` containing the layout configuration for this class. |
 | **Returns**                                          | <ul><li>The layout configuration <code>table</code>.</li></ul> |
-
-#### [standardMarkers](#standardmarkers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:standardMarkers() -> cp.ui.RadioButton` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [RadioButton](cp.ui.RadioButton.md) for the "Standard markers" filter. |
-
-#### [type](#type)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.IndexTags:type() -> cp.apple.finalcutpro.timeline.IndexTags.Type` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [IndexTags.Type](cp.apple.finalcutpro.timeline.IndexTags.Type.md). |
 

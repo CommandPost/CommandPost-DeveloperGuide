@@ -5,6 +5,8 @@ A collection of handy miscellaneous tools for Lua development.
 
 ## API Overview
 * Functions - API calls offered directly by the extension
+ * [camelCase](#camelcase)
+ * [centre](#centre)
  * [cleanupButtonText](#cleanupbuttontext)
  * [contentsInsideBrackets](#contentsinsidebrackets)
  * [convertSingleHexStringToDecimalString](#convertsinglehexstringtodecimalstring)
@@ -39,6 +41,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [isOffScreen](#isoffscreen)
  * [leftClick](#leftclick)
  * [lines](#lines)
+ * [lower](#lower)
  * [macOSVersion](#macosversion)
  * [mergeTable](#mergetable)
  * [ninjaDoubleClick](#ninjadoubleclick)
@@ -71,13 +74,34 @@ A collection of handy miscellaneous tools for Lua development.
  * [toRegionalNumberString](#toregionalnumberstring)
  * [trim](#trim)
  * [unescape](#unescape)
+ * [upper](#upper)
  * [urlQueryStringDecode](#urlquerystringdecode)
  * [volumeFormat](#volumeformat)
  * [writeToFile](#writetofile)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [escapeTilda](#escapetilda)
+ * [keyStroke](#keystroke)
+ * [pressSystemKey](#presssystemkey)
 
 ## API Documentation
 
 ### Functions
+
+#### [camelCase](#camelcase)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.camelCase(str) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Converts the supplied string to camelcase. |
+| **Parameters**                                       | <ul><li>str - The string you want to manipulate</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul> |
+
+#### [centre](#centre)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.centre(frame) -> hs.geometry point` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the centre point of a frame. |
+| **Parameters**                                       | <ul><li>frame - an <code>hs.geometry</code> rect</li></ul> |
+| **Returns**                                          | <ul><li>A hs.geometry point</li></ul> |
 
 #### [cleanupButtonText](#cleanupbuttontext)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.cleanupButtonText(value) -> string` </span>                                                          |
@@ -351,6 +375,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>string - the string you want to process</li></ul> |
 | **Returns**                                          | <ul><li>A table or <code>nil</code> if the parameter is not a string.</li></ul> |
 
+#### [lower](#lower)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.lower(str) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Converts the supplied string to lowercase. |
+| **Parameters**                                       | <ul><li>str - The string you want to manipulate</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul> |
+
 #### [macOSVersion](#macosversion)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.macOSVersion() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -610,6 +642,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Parameters**                                       | <ul><li>str - the string to decode</li></ul> |
 | **Returns**                                          | <ul><li>A string with all "+" characters converted to spaces and all percent encoded sequences converted to their ASCII equivalents.</li></ul> |
 
+#### [upper](#upper)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.upper(str) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Converts the supplied string to uppercase. |
+| **Parameters**                                       | <ul><li>str - The string you want to manipulate</li></ul> |
+| **Returns**                                          | <ul><li>A string</li></ul> |
+
 #### [urlQueryStringDecode](#urlquerystringdecode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.urlQueryStringDecode() -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -633,4 +673,30 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Write data to a file at a given path. |
 | **Parameters**                                       | <ul><li>path - The path to the file you want to write to.</li><li>data - The data to write to the file.</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
+
+### Methods
+
+#### [escapeTilda](#escapetilda)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.escapeTilda(input) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Escapes a tilda. |
+| **Parameters**                                       | <ul><li>input - The string you want to escape.</li></ul> |
+| **Returns**                                          | <ul><li>A new string</li></ul> |
+
+#### [keyStroke](#keystroke)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.keyStroke(modifiers, character, app) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Generates and emits a single keystroke event pair for the supplied keyboard |
+| **Parameters**                                       | <ul><li>modifiers - A table containing the keyboard modifiers to apply ("fn", "ctrl", "alt", "cmd" or "shift")</li><li>character - A string containing a character to be emitted</li><li>app - The optional <code>hs.application</code> you want to target</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
+#### [pressSystemKey](#presssystemkey)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.pressSystemKey(key) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Virtually presses a system key. |
+| **Parameters**                                       | <ul><li>key - The key to use.</li></ul> |
+| **Returns**                                          | <ul><li>Supported key values are:</li><li>SOUND_UP</li><li>SOUND_DOWN</li><li>MUTE</li><li>BRIGHTNESS_UP</li><li>BRIGHTNESS_DOWN</li><li>CONTRAST_UP</li><li>CONTRAST_DOWN</li><li>POWER</li><li>LAUNCH_PANEL</li><li>VIDMIRROR</li><li>PLAY</li><li>EJECT</li><li>NEXT</li><li>PREVIOUS</li><li>FAST</li><li>REWIND</li><li>ILLUMINATION_UP</li><li>ILLUMINATION_DOWN</li><li>ILLUMINATION_TOGGLE</li><li>CAPS_LOCK</li><li>HELP</li><li>NUM_LOCK</li></ul> |
 

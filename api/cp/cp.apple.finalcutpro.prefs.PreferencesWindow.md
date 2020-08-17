@@ -5,42 +5,51 @@ Preferences Window Module.
 
 ## API Overview
 * Fields - Variables which can only be accessed from an object returned by a constructor
- * [frame](#frame)
- * [hsWindow](#hswindow)
- * [isFullScreen](#isfullscreen)
- * [isShowing](#isshowing)
+ * [editingPanel](#editingpanel)
+ * [generalPanel](#generalpanel)
+ * [importPanel](#importpanel)
+ * [playbackPanel](#playbackpanel)
+ * [title](#title)
  * [toolbar](#toolbar)
- * [UI](#ui)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [window](#window)
+ * [doHide](#dohide)
+ * [doShow](#doshow)
+ * [hide](#hide)
+ * [show](#show)
 
 ## API Documentation
 
 ### Fields
 
-#### [frame](#frame)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.frame <cp.prop: frame; live>` </span>                                                          |
+#### [editingPanel](#editingpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.editingPanel <EditingPanel>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The current position (x, y, width, height) of the window. |
+| **Description**                                      | The `EditingPanel` for the Preferences Window. |
 
-#### [hsWindow](#hswindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.hsWindow <cp.prop: hs.window; read-only>` </span>                                                          |
+#### [generalPanel](#generalpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.generalPanel <GeneralPanel>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | The `hs.window` instance for the window, or `nil` if it can't be found. |
+| **Description**                                      | The `GeneralPanel` for the Preferences Window. |
 
-#### [isFullScreen](#isfullscreen)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.isFullScreen <cp.prop: boolean; live>` </span>                                                          |
+#### [importPanel](#importpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.importPanel <ImportPanel>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Is `true` if the window is full-screen. |
+| **Description**                                      | The `ImportPanel` for the Preferences Window. |
 
-#### [isShowing](#isshowing)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.isShowing <cp.prop: boolean; live>` </span>                                                          |
+#### [playbackPanel](#playbackpanel)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.playbackPanel <PlaybackPanel>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Is `true` if the window is visible. |
+| **Description**                                      | The `PlaybackPanel` for the Preferences Window. |
+
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.title <cp.ui.StaticText>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The `StaticText` for the Preferences Window title. |
 
 #### [toolbar](#toolbar)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.toolbar <cp.ui.Toolbar>` </span>                                                          |
@@ -48,19 +57,37 @@ Preferences Window Module.
 | **Type**                                             | Field |
 | **Description**                                      | The `Toolbar` for the Preferences Window. |
 
-#### [UI](#ui)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | The `axuielement` instance for the window. |
-
 ### Methods
 
-#### [window](#window)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow:window() -> cp.ui.Window` </span>                                                          |
+#### [doHide](#dohide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow:doHide() -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Returns the `Window` for the Preferences Window. |
+| **Description**                                      | A `Statement` that attempts to hide the Preferences window. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Window</code>.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [doShow](#doshow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow:doShow() -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A `Statement` that attempts to show the Preferences window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+
+#### [hide](#hide)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow:hide() -> PreferencesWindow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Attempts to hide the Preferences window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The same <code>PreferencesWindow</code>, for chaining.</li></ul> |
+
+#### [show](#show)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.prefs.PreferencesWindow:show() -> PreferencesWindow` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Attempts to show the Preferences window. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The same <code>PreferencesWindow</code>, for chaining.</li></ul> |
 

@@ -16,13 +16,13 @@ Represents a Role in the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Role](#role)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [active](#active)
  * [cellUI](#cellui)
  * [subroleRow](#subrolerow)
+ * [title](#title)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [active](#active)
  * [doActivate](#doactivate)
  * [doDeactivate](#dodeactivate)
- * [title](#title)
  * [type](#type)
 
 ## API Documentation
@@ -79,6 +79,12 @@ Represents a Role in the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md
 
 ### Fields
 
+#### [active](#active)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Role.active <cp.ui.CheckBox>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [CheckBox](cp.ui.CheckBox.md) that determines if the `Role` is active in the timeline. |
+
 #### [cellUI](#cellui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Role.cellUI <cp.prop: axuielement; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -91,13 +97,13 @@ Represents a Role in the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md
 | **Type**                                             | Field |
 | **Description**                                      | This is `true` if the `Role` is an Subrole [Row](cp.ui.Row.md). |
 
-### Methods
-
-#### [active](#active)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Role:active() -> cp.ui.CheckBox` </span>                                                          |
+#### [title](#title)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Role.title <cp.ui.StaticText>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [CheckBox](cp.ui.CheckBox.md) that determines if the `Role` is active in the timeline. |
+| **Type**                                             | Field |
+| **Description**                                      | The [StaticText](cp.ui.StaticText.md) containing the title. |
+
+### Methods
 
 #### [doActivate](#doactivate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Role:doActivate() -> cp.rx.go.Statement.md` </span>                                                          |
@@ -110,12 +116,6 @@ Represents a Role in the [Timeline Index](cp.apple.finalcutpro.timeline.Index.md
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will deactivate the current role, if possible. |
-
-#### [title](#title)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Role:title() -> cp.ui.StaticText` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The [StaticText](cp.ui.StaticText.md) containing the title. |
 
 #### [type](#type)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline.Role:type() -> cp.apple.finalcut.timeline.Role.TYPE` </span>                                                          |

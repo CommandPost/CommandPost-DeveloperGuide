@@ -10,18 +10,18 @@ A Window UI element.
 * Constructors - API calls which return an object, typically one that offers API methods
  * [Window](#window)
 * Fields - Variables which can only be accessed from an object returned by a constructor
+ * [alert](#alert)
  * [exists](#exists)
  * [focused](#focused)
  * [frame](#frame)
- * [fullScreen](#fullscreen)
  * [hsWindow](#hswindow)
  * [id](#id)
+ * [isFullScreen](#isfullscreen)
  * [isShowing](#isshowing)
  * [minimized](#minimized)
  * [UI](#ui)
  * [visible](#visible)
 * Methods - API calls which can only be made on an object returned by a constructor
- * [alert](#alert)
  * [close](#close)
  * [doClose](#doclose)
  * [doFocus](#dofocus)
@@ -60,6 +60,12 @@ A Window UI element.
 
 ### Fields
 
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.alert <cp.ui.Alert>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Provides access to any 'Alert' windows on the Window. |
+
 #### [exists](#exists)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.exists <cp.prop: boolean; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -78,12 +84,6 @@ A Window UI element.
 | **Type**                                             | Field |
 | **Description**                                      | The `hs.geometry` rect value describing the window's position. |
 
-#### [fullScreen](#fullscreen)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.fullScreen <cp.prop: boolean>` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Field |
-| **Description**                                      | Returns `true` if the window is full-screen. |
-
 #### [hsWindow](#hswindow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.hsWindow <cp.prop: hs.window; read-only>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -95,6 +95,12 @@ A Window UI element.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The window title, or `nil` if the window is not currently visible. |
+
+#### [isFullScreen](#isfullscreen)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.isFullScreen <cp.prop: boolean>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns `true` if the window is full-screen. |
 
 #### [isShowing](#isshowing)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window.isShowing <cp.prop: boolean; read-only; live?>` </span>                                                          |
@@ -121,14 +127,6 @@ A Window UI element.
 | **Description**                                      | Returns `true` if the window is visible on a screen. |
 
 ### Methods
-
-#### [alert](#alert)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:alert() -> cp.ui.Alert` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Provides access to any 'Alert' windows on the Window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>A <code>cp.ui.Alert</code> object</li></ul> |
 
 #### [close](#close)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Window:close() -> boolean` </span>                                                          |

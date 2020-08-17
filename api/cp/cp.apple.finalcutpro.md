@@ -18,13 +18,13 @@ Then, there are the `UpperCase` files, which represent the application itself:
 The `fcp` variable is the root application. It has functions which allow you to perform tasks or access parts of the UI. For example, to open the `Preferences` window, you can do this:
 
 ```lua
-fcp:preferencesWindow():show()
+fcp.preferencesWindow:show()
 ```
 
 In general, as long as Final Cut Pro is running, actions can be performed directly, and the API will perform the required operations to achieve it. For example, to toggle the 'Create Optimized Media' checkbox in the 'Import' section of the 'Preferences' window, you can simply do this:
 
 ```lua
-fcp:preferencesWindow():importPanel():toggleCreateOptimizedMedia()
+fcp.preferencesWindow.importPanel:toggleCreateOptimizedMedia()
 ```
 
 The API will automatically open the `Preferences` window, navigate to the 'Import' panel and toggle the checkbox.
@@ -36,7 +36,7 @@ This can also be used to 'wait' for an element to be visible before performing a
 ```lua
 local just = require "cp.just"
 
-local prefsWindow = fcp:preferencesWindow()
+local prefsWindow = fcp.preferencesWindow
 
 local prefsUI = just.doUntil(function() return prefsWindow:UI() end)
 
@@ -52,7 +52,7 @@ By using the `just` library, we can do a loop waiting until the function returns
 Of course, we have a specific support function for that already, so you could do this instead:
 
 ```lua
-if fcp:preferencesWindow():isShowing() then
+if fcp.preferencesWindow:isShowing() then
 	-- it's open!
 else
 	-- it's closed!
@@ -107,18 +107,31 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
  * [userCommandSetPath](#usercommandsetpath)
  * [workflowExtensions](#workflowextensions)
 * Constructors - API calls which return an object, typically one that offers API methods
+ * [Color](#color)
  * [TranscodeMedia](#transcodemedia)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [activeCommandSetPath](#activecommandsetpath)
+ * [alert](#alert)
  * [audioEnhancements](#audioenhancements)
  * [audioLanes](#audiolanes)
+ * [backgroundTasksDialog](#backgroundtasksdialog)
  * [browser](#browser)
+ * [color](#color)
+ * [colorBoard](#colorboard)
+ * [colorCorrection](#colorcorrection)
+ * [commandEditor](#commandeditor)
  * [contentUI](#contentui)
  * [contentUI](#contentui)
  * [deselectAll](#deselectall)
  * [effects](#effects)
+ * [effects](#effects)
  * [eventViewer](#eventviewer)
+ * [exportDialog](#exportdialog)
+ * [findAndReplaceTitleText](#findandreplacetitletext)
+ * [fullScreenWindow](#fullscreenwindow)
+ * [generators](#generators)
  * [inspector](#inspector)
+ * [inspectorUnits](#inspectorunits)
  * [isFrontmost](#isfrontmost)
  * [isInstalled](#isinstalled)
  * [isModalDialogOpen](#ismodaldialogopen)
@@ -128,57 +141,50 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
  * [isShowing](#isshowing)
  * [isSupported](#issupported)
  * [isUnsupported](#isunsupported)
+ * [keywordEditor](#keywordeditor)
  * [libraries](#libraries)
+ * [media](#media)
+ * [mediaImport](#mediaimport)
  * [pan](#pan)
+ * [preferencesWindow](#preferenceswindow)
  * [preset](#preset)
+ * [primaryWindow](#primarywindow)
+ * [resetDialogWarnings](#resetdialogwarnings)
+ * [secondaryWindow](#secondarywindow)
  * [textArea](#textarea)
  * [textLayerLeft](#textlayerleft)
  * [textLayerRight](#textlayerright)
+ * [timeDisplay](#timedisplay)
+ * [timeline](#timeline)
+ * [toolbar](#toolbar)
+ * [transcodeMedia](#transcodemedia)
+ * [transitions](#transitions)
  * [UI](#ui)
+ * [validateAudioUnits](#validateaudiounits)
  * [viewer](#viewer)
  * [volume](#volume)
  * [windowsUI](#windowsui)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activeLibraryPaths](#activelibrarypaths)
- * [alert](#alert)
- * [backgroundTasksDialog](#backgroundtasksdialog)
  * [closeLibrary](#closelibrary)
- * [color](#color)
- * [colorBoard](#colorboard)
- * [commandEditor](#commandeditor)
  * [defaultCommandSetPath](#defaultcommandsetpath)
  * [doShortcut](#doshortcut)
- * [effects](#effects)
- * [exportDialog](#exportdialog)
- * [findAndReplaceTitleText](#findandreplacetitletext)
- * [fullScreenWindow](#fullscreenwindow)
- * [generators](#generators)
  * [getCommandShortcuts](#getcommandshortcuts)
  * [getPath](#getpath)
  * [hide](#hide)
  * [importXML](#importxml)
  * [isSupportedLocale](#issupportedlocale)
  * [keysWithString](#keyswithstring)
- * [keywordEditor](#keywordeditor)
  * [launch](#launch)
- * [media](#media)
- * [mediaImport](#mediaimport)
  * [openLibrary](#openlibrary)
  * [plugins](#plugins)
- * [preferencesWindow](#preferenceswindow)
- * [primaryWindow](#primarywindow)
  * [quit](#quit)
  * [recentLibraryNames](#recentlibrarynames)
  * [recentLibraryPaths](#recentlibrarypaths)
  * [scanPlugins](#scanplugins)
- * [secondaryWindow](#secondarywindow)
  * [selectLibrary](#selectlibrary)
  * [show](#show)
  * [string](#string)
- * [timeline](#timeline)
- * [toolbar](#toolbar)
- * [transcodeMedia](#transcodemedia)
- * [transitions](#transitions)
  * [userCommandSets](#usercommandsets)
 
 ## API Documentation
@@ -315,6 +321,14 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 
 ### Constructors
 
+#### [Color](#color)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.Color(app) -> Color` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates a new `Color` instance. |
+| **Parameters**                                       | <ul><li>app - The Final Cut Pro app instance.</li></ul> |
+| **Returns**                                          | <ul><li>The new <code>Color</code>.</li></ul> |
+
 #### [TranscodeMedia](#transcodemedia)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer.TranscodeMedia(viewer)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -331,6 +345,12 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Type**                                             | Field |
 | **Description**                                      | Gets the 'Active Command Set' value from the Final Cut Pro preferences |
 
+#### [alert](#alert)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.alert <cp.ui.Alert>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Provides basic access to any 'alert' dialog windows in the app. |
+
 #### [audioEnhancements](#audioenhancements)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.audioEnhancements <cp.prop: PropertyRow>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -343,13 +363,41 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Type**                                             | Field |
 | **Description**                                      | Indicates if audio lanes are currently showing. May be set to ensure it is showing or hidden. |
 
+#### [backgroundTasksDialog](#backgroundtasksdialog)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.backgroundTasksDialog <cp.apple.finalcutpro.main.BackgroundTasksDialog>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [BackgroundTasksDialog](cp.apple.finalcutpro.main.BackgroundTasksDialog.md) dialog window. |
+
 #### [browser](#browser)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.browser <cp.apple.finalcutpro.main.Browser>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The [Browser](cp.apple.finalcutpro.main.Browser.md) instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Browser</li></ul> |
+
+#### [color](#color)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.color <ColorInspector>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The ColorInspector instance from the primary window |
+
+#### [colorBoard](#colorboard)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.colorBoard <ColorBoard>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The ColorBoard instance from the primary window |
+
+#### [colorCorrection](#colorcorrection)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.presfs.GeneralPanel.colorCorrection <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Color Correction" `PopUpButton`. |
+
+#### [commandEditor](#commandeditor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.commandEditor <CommandEditor>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro Command Editor |
 
 #### [contentUI](#contentui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ShareInspector.contentUI <cp.prop: hs._asm.axuielement; read-only>` </span>                                                          |
@@ -375,19 +423,53 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Type**                                             | Field |
 | **Description**                                      | Effects |
 
+#### [effects](#effects)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.effects <cp.apple.finalcutpro.main.EffectsBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The EffectsBrowser instance, whether it is in the primary or secondary window. |
+
 #### [eventViewer](#eventviewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.eventViewer <cp.apple.finalcutpro.viewer.Viewer>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the [Viewer](cp.apple.finalcutpro.viewer.Viewer.md) instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Event Viewer</li></ul> |
+| **Description**                                      | The Event [Viewer](cp.apple.finalcutpro.viewer.Viewer.md) instance, whether it is in the primary or secondary window. |
+
+#### [exportDialog](#exportdialog)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.exportDialog <cp.apple.finalcutpro.main.ExportDialog>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro Export Dialog Box |
+
+#### [findAndReplaceTitleText](#findandreplacetitletext)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.findAndReplaceTitleText <cp.apple.finalcutpro.main.FindAndReplaceTitleText>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [FindAndReplaceTitleText](cp.apple.finalcutpro.main.FindAndReplaceTitleText.md) dialog window. |
+
+#### [fullScreenWindow](#fullscreenwindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.fullScreenWindow <FullScreenWindow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns the Final Cut Pro Full Screen Window (usually triggered by Cmd+Shift+F) |
+
+#### [generators](#generators)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.generators <cp.apple.finalcutpro.main.GeneratorsBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The GeneratorsBrowser instance, whether it is in the primary or secondary window. |
 
 #### [inspector](#inspector)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector <cp.apple.finalcutpro.inspector.Inspector>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the [Inspector](cp.apple.finalcutpro.inspector.Inspector.md) instance from the primary window. |
+| **Description**                                      | The [Inspector](cp.apple.finalcutpro.inspector.Inspector.md) instance from the primary window. |
+
+#### [inspectorUnits](#inspectorunits)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.presfs.GeneralPanel.inspectorUnits <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Inspector Units" `PopUpButton`. |
 
 #### [isFrontmost](#isfrontmost)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:isFrontmost <cp.prop: boolean; read-only; live>` </span>                                                          |
@@ -443,11 +525,29 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Type**                                             | Field |
 | **Description**                                      | Is an unsupported version of Final Cut Pro installed? |
 
+#### [keywordEditor](#keywordeditor)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.keywordEditor <KeywordEditor>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro Keyword Editor |
+
 #### [libraries](#libraries)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.libraries <cp.apple.finalcutpro.main.LibrariesBrowser>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the [LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md) instance, whether it is in the primary or secondary window. |
+| **Description**                                      | The [LibrariesBrowser](cp.apple.finalcutpro.main.LibrariesBrowser.md) instance, whether it is in the primary or secondary window. |
+
+#### [media](#media)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.media <cp.apple.finalcutpro.main.MediaBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The MediaBrowser instance, whether it is in the primary or secondary window. |
+
+#### [mediaImport](#mediaimport)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.mediaImport <MediaImport>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro Media Import Window |
 
 #### [pan](#pan)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.pan <cp.prop: PropertyRow>` </span>                                                          |
@@ -455,11 +555,35 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Type**                                             | Field |
 | **Description**                                      | Pan |
 
+#### [preferencesWindow](#preferenceswindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.preferencesWindow <PreferencesWindow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro Preferences Window |
+
 #### [preset](#preset)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.preset <cp.ui.PopUpButton>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The preset popup found at the top of the inspector. |
+
+#### [primaryWindow](#primarywindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.primaryWindow <cp.apple.finalcutpro.main.PrimaryWindow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro Primary Window |
+
+#### [resetDialogWarnings](#resetdialogwarnings)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.presfs.GeneralPanel.resetDialogWarnings <cp.ui.Buton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Reset Dialog warnings" `Button`. |
+
+#### [secondaryWindow](#secondarywindow)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.secondaryWindow <cp.apple.finalcutpro.main.SecondaryWindow>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Final Cut Pro Preferences Window |
 
 #### [textArea](#textarea)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.TextInspector.textArea <cp.ui.TextArea>` </span>                                                          |
@@ -479,19 +603,53 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Type**                                             | Field |
 | **Description**                                      | The left text layer arrow at the bottom of the Inspector. |
 
+#### [timeDisplay](#timedisplay)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.presfs.GeneralPanel.timeDisplay <cp.ui.PopUpButton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Time Display" `PopUpButton`. |
+
+#### [timeline](#timeline)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.timeline <Timeline>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Timeline instance, whether it is in the primary or secondary window. |
+
+#### [toolbar](#toolbar)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.toolbar <cp.apple.finalcutpro.main.PrimaryToolbar>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Primary Toolbar - the toolbar at the top of the Primary Window. |
+
+#### [transcodeMedia](#transcodemedia)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.transcodeMedia <cp.apple.finalcutpro.main.TranscodeMedia>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The [TranscodeMedia](cp.apple.finalcutpro.main.TranscodeMedia.md) sheet. |
+
+#### [transitions](#transitions)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.transitions <cp.apple.finalcutpro.main.EffectsBrowser>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The Transitions `EffectsBrowser` instance, whether it is in the primary or secondary window. |
+
 #### [UI](#ui)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.UI <cp.prop: hs._asm.axuielement; read-only; live>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The Final Cut Pro `axuielement`, if available. |
 
+#### [validateAudioUnits](#validateaudiounits)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.presfs.GeneralPanel.validateAudioUnits <cp.ui.Buton>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | The "Validate Audio Units" `Button`. |
+
 #### [viewer](#viewer)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.viewer <cp.apple.finalcutpro.viewer.Viewer>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
-| **Description**                                      | Returns the [Viewer](cp.apple.finalcutpro.viewer.Viewer.md) instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Viewer</li></ul> |
+| **Description**                                      | The [Viewer](cp.apple.finalcutpro.viewer.Viewer.md) instance, whether it is in the primary or secondary window. |
 
 #### [volume](#volume)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.VideoInspector.volume <cp.prop: PropertyRow>` </span>                                                          |
@@ -515,22 +673,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A table containing any active library paths.</li></ul> |
 
-#### [alert](#alert)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:alert() -> cp.ui.Alert` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Provides basic access to any 'alert' dialog windows in the app. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the <code>Alert</code> instance</li></ul> |
-
-#### [backgroundTasksDialog](#backgroundtasksdialog)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:backgroundTasksDialog() -> BackgroundTasksDialog` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [BackgroundTasksDialog](cp.apple.finalcutpro.main.BackgroundTasksDialog.md) dialog window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The window.</li></ul> |
-
 #### [closeLibrary](#closelibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:closeLibrary(title) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -538,30 +680,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Description**                                      | Attempts to close a library with the specified `title`. |
 | **Parameters**                                       | <ul><li>title - The title of the FCP Library to close.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successful, or <code>false</code> if not.</li></ul> |
-
-#### [color](#color)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:color() -> ColorInspector` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the ColorInspector instance from the primary window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the ColorInspector</li></ul> |
-
-#### [colorBoard](#colorboard)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:colorBoard() -> ColorBoard` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the ColorBoard instance from the primary window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the ColorBoard</li></ul> |
-
-#### [commandEditor](#commandeditor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:commandEditor() -> commandEditor object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Command Editor |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Final Cut Pro Command Editor</li></ul> |
 
 #### [defaultCommandSetPath](#defaultcommandsetpath)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:defaultCommandSetPath([locale]) -> string` </span>                                                          |
@@ -578,46 +696,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Description**                                      | Perform a Final Cut Pro Keyboard Shortcut |
 | **Parameters**                                       | <ul><li>whichShortcut - As per the Command Set name</li></ul> |
 | **Returns**                                          | <ul><li>A <code>Statement</code> that will perform the shortcut when executed.</li></ul> |
-
-#### [effects](#effects)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:effects() -> EffectsBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the EffectsBrowser instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the EffectsBrowser</li></ul> |
-
-#### [exportDialog](#exportdialog)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:exportDialog() -> exportDialog object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Export Dialog Box |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Final Cut Pro Export Dialog Box</li></ul> |
-
-#### [findAndReplaceTitleText](#findandreplacetitletext)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:findAndReplaceTitleText() -> FindAndReplaceTitleText` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [FindAndReplaceTitleText](cp.apple.finalcutpro.main.FindAndReplaceTitleText.md) dialog window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The window.</li></ul> |
-
-#### [fullScreenWindow](#fullscreenwindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:fullScreenWindow() -> fullScreenWindow object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Full Screen Window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Full Screen Playback Window</li></ul> |
-
-#### [generators](#generators)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:generators() -> GeneratorsBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the GeneratorsBrowser instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the GeneratorsBrowser</li></ul> |
 
 #### [getCommandShortcuts](#getcommandshortcuts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.getCommandShortcuts(id) -> table of hs.commands.shortcut` </span>                                                          |
@@ -668,14 +746,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Returns**                                          | <ul><li>The array of keys with a matching string.</li></ul> |
 | **Notes**                                            | <ul><li>This method may be very inefficient, since it has to search through every possible key/value pair to find matches. It is not recommended that this is used in production.</li></ul> |
 
-#### [keywordEditor](#keywordeditor)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:keywordEditor() -> keywordEditor object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Keyword Editor |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Final Cut Pro Keyword Editor</li></ul> |
-
 #### [launch](#launch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:launch([waitSeconds], [path]) -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -683,22 +753,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Description**                                      | Launches Final Cut Pro, or brings it to the front if it was already running. |
 | **Parameters**                                       | <ul><li><code>waitSeconds</code> - If provided, the number of seconds to wait until the launch                   completes. If <code>nil</code>, it will return immediately.</li><li><code>path</code>        - An optional full path to an application without an extension                   (i.e <code>/Applications/Final Cut Pro 10.3.4</code>). This allows you to                   load previous versions of the application.</li></ul> |
 | **Returns**                                          | <ul><li>The FCP instance.</li></ul> |
-
-#### [media](#media)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:media() -> MediaBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the MediaBrowser instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the MediaBrowser</li></ul> |
-
-#### [mediaImport](#mediaimport)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:mediaImport() -> mediaImport object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Media Import Window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Final Cut Pro Media Import Window</li></ul> |
 
 #### [openLibrary](#openlibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:openLibrary(path) -> boolean` </span>                                                          |
@@ -715,22 +769,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Description**                                      | Returns the plugins manager for the app. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The plugins manager.</li></ul> |
-
-#### [preferencesWindow](#preferenceswindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:preferencesWindow() -> preferenceWindow object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Preferences Window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Preferences Window</li></ul> |
-
-#### [primaryWindow](#primarywindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:primaryWindow() -> primaryWindow object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Preferences Window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Primary Window</li></ul> |
 
 #### [quit](#quit)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:quit([waitSeconds]) -> self` </span>                                                          |
@@ -764,14 +802,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>A MenuBar object</li></ul> |
 
-#### [secondaryWindow](#secondarywindow)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:secondaryWindow() -> secondaryWindow object` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Final Cut Pro Preferences Window |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Secondary Window</li></ul> |
-
 #### [selectLibrary](#selectlibrary)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:selectLibrary(title) -> axuielement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -795,38 +825,6 @@ fcp.app:UI() == fcp:UI() -- the same `cp.prop` result.
 | **Description**                                      | Looks up an application string with the specified `key`. |
 | **Parameters**                                       | <ul><li><code>key</code>    - The key to look up.</li><li><code>locale</code> - The locale code to use. Defaults to the current locale.</li><li><code>quiet</code>  - Optional boolean, defaults to <code>false</code>. If <code>true</code>, no warnings are logged for missing keys.</li></ul> |
 | **Returns**                                          | <ul><li>The requested string or <code>nil</code> if the application is not running.</li></ul> |
-
-#### [timeline](#timeline)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:timeline() -> Timeline` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Timeline instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the Timeline</li></ul> |
-
-#### [toolbar](#toolbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:toolbar() -> PrimaryToolbar` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the Primary Toolbar - the toolbar at the top of the Primary Window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the PrimaryToolbar</li></ul> |
-
-#### [transcodeMedia](#transcodemedia)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:transcodeMedia() -> TranscodeMedia` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the [TranscodeMedia](cp.apple.finalcutpro.main.TranscodeMedia.md) sheet. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The Transcode Media Sheet.</li></ul> |
-
-#### [transitions](#transitions)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:transitions() -> TransitionsBrowser` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | Returns the TransitionsBrowser instance, whether it is in the primary or secondary window. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>the TransitionsBrowser</li></ul> |
 
 #### [userCommandSets](#usercommandsets)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro:userCommandSets() -> table` </span>                                                          |

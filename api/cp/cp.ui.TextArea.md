@@ -11,6 +11,9 @@ UI Text Area.
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [focused](#focused)
  * [value](#value)
+* Methods - API calls which can only be made on an object returned by a constructor
+ * [append](#append)
+ * [prepend](#prepend)
 
 ## API Documentation
 
@@ -47,4 +50,22 @@ UI Text Area.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The current value of the text field. |
+
+### Methods
+
+#### [append](#append)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextArea:append(moreText) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Appends `moreText` to the end of the current value, returning the combined text value. If no text is currently set, `moreText` becomes the value. |
+| **Parameters**                                       | <ul><li>moreText - The text to add.</li></ul> |
+| **Returns**                                          | <ul><li>The combined <code>string</code> value.</li></ul> |
+
+#### [prepend](#prepend)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.TextArea:prepend(moreText) -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Appends `moreText` to the beginning of the current value, returning the combined text value. If no text is currently set, `moreText` becomes the value. |
+| **Parameters**                                       | <ul><li>moreText - The text to add.</li></ul> |
+| **Returns**                                          | <ul><li>The combined <code>string</code> value.</li></ul> |
 

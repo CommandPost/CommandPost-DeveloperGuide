@@ -79,20 +79,20 @@ A set of handy developer tools for CommandPost.
 | **Returns**                                          | <ul><li>A results as a string.</li></ul> |
 
 #### [inspectAtMouse](#inspectatmouse)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dev.inspectAtMouse(options) -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dev.inspectAtMouse(options) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Inspects an AX element under the current mouse position. |
 | **Parameters**                                       | <ul><li>options - Any additional options to pass along to <code>cp.dev.inspectElement</code>.</li></ul> |
-| **Returns**                                          | <ul><li>A string containing the results.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [inspectElement](#inspectelement)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dev.inspectElement() -> string` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.dev.inspectElement(element[, options]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      | Inspect an AX element. |
+| **Description**                                      | Inspect an AX element. Writes results to Debug Console. |
 | **Parameters**                                       | <ul><li>element - The element to inspect.</li><li>options - A table containing any optional values.</li></ul> |
-| **Returns**                                          | <ul><li>The results as a string.</li></ul> |
+| **Returns**                                          | <ul><li>None.</li></ul> |
 | **Notes**                                            | <ul><li>The options table accepts the following parameters:</li><li>depth - A number representing the maximum depth to recurse into variable.</li></ul> |
 
 #### [inspectElementAtMousePath](#inspectelementatmousepath)

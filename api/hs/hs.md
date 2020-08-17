@@ -86,6 +86,7 @@ Core Hammerspoon functionality
  * [hs.utf8](hs.utf8.md)
  * [hs.vox](hs.vox.md)
  * [hs.watchable](hs.watchable.md)
+ * [hs.websocket](hs.websocket.md)
  * [hs.webview](hs.webview.md)
  * [hs.wifi](hs.wifi.md)
  * [hs.window](hs.window.md)
@@ -112,7 +113,9 @@ Core Hammerspoon functionality
  * [checkForUpdates](#checkforupdates)
  * [cleanUTF8forConsole](#cleanutf8forconsole)
  * [closeConsole](#closeconsole)
+ * [closePreferences](#closepreferences)
  * [consoleOnTop](#consoleontop)
+ * [coroutineApplicationYield](#coroutineapplicationyield)
  * [dockIcon](#dockicon)
  * [execute](#execute)
  * [focus](#focus)
@@ -130,6 +133,7 @@ Core Hammerspoon functionality
  * [preferencesDarkMode](#preferencesdarkmode)
  * [printf](#printf)
  * [rawprint](#rawprint)
+ * [relaunch](#relaunch)
  * [reload](#reload)
  * [screenRecordingState](#screenrecordingstate)
  * [showError](#showerror)
@@ -286,6 +290,13 @@ Core Hammerspoon functionality
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
+#### [closePreferences](#closepreferences)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.closePreferences()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Closes the Hammerspoon Preferences window |
+| **Returns**                                          | <ul><li>None</li></ul> |
+
 #### [consoleOnTop](#consoleontop)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.consoleOnTop([state]) -> bool` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -293,6 +304,15 @@ Core Hammerspoon functionality
 | **Description**                                      | Set or display whether or not the Hammerspoon console is always on top when visible. |
 | **Parameters**                                       | <ul><li>state - an optional boolean which will set whether or not the Hammerspoon console is always on top when visible.</li></ul> |
 | **Returns**                                          | <ul><li>True if the console is currently set (or has just been) to be always on top when visible or False if it is not.</li></ul> |
+
+#### [coroutineApplicationYield](#coroutineapplicationyield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.coroutineApplicationYield([delay])` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Yield coroutine to allow the Hammerspoon application to process other scheduled events and schedule a resume in the event application queue. |
+| **Parameters**                                       | <ul><li><code>delay</code> - an optional number, default <code>hs.math.minFloat</code>, specifying the number of seconds from when this function is executed that the <code>coroutine.resume</code> should be scheduled for.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+| **Notes**                                            | <ul><li>this function will return an error if invoked outside of a coroutine.</li><li>unlike <code>coroutine.yield</code>, this function does not allow the passing of (new) information to or from the coroutine while it is running; this function is to allow long running tasks to yield time to the Hammerspoon application so other timers and scheduled events can occur without requiring the programmer to add code for an explicit resume.</li></ul> |
 
 #### [dockIcon](#dockicon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.dockIcon([state]) -> bool` </span>                                                          |
@@ -432,6 +452,14 @@ Core Hammerspoon functionality
 | **Parameters**                                       | <ul><li>aString - A string to be printed</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>Hammerspoon overrides Lua's print() function, but this is a reference we retain to is, should you need it for any reason</li></ul> |
+
+#### [relaunch](#relaunch)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.relaunch()` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Quits and relaunches Hammerspoon. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [reload](#reload)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.reload()` </span>                                                          |

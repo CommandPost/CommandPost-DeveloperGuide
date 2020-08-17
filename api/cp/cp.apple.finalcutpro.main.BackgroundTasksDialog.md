@@ -8,7 +8,7 @@ Represents the Background Tasks warning dialog.
  * [matches](#matches)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [BackgroundTasksDialog](#backgroundtasksdialog)
-* Methods - API calls which can only be made on an object returned by a constructor
+* Fields - Variables which can only be accessed from an object returned by a constructor
  * [cancel](#cancel)
  * [continue](#continue)
 
@@ -32,17 +32,17 @@ Represents the Background Tasks warning dialog.
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new Background Tasks [Dialog](cp.ui.Dialog.md) |
 
-### Methods
+### Fields
 
 #### [cancel](#cancel)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.BackgroundTasksDialog:cancel() -> cp.ui.Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.BackgroundTasksDialog.cancel <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The Cancel button. |
 
 #### [continue](#continue)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.BackgroundTasksDialog:continue() -> cp.ui.Button` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.main.BackgroundTasksDialog.continue <cp.ui.Button>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
+| **Type**                                             | Field |
 | **Description**                                      | The Continue button. |
 

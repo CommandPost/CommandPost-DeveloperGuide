@@ -10,13 +10,14 @@ Represents an `AXRadioGroup`, providing utility methods.
  * [RadioGroup](#radiogroup)
 * Fields - Variables which can only be accessed from an object returned by a constructor
  * [optionCount](#optioncount)
+ * [options](#options)
+ * [optionsUI](#optionsui)
  * [selectedOption](#selectedoption)
 * Methods - API calls which can only be made on an object returned by a constructor
  * [doNextOption](#donextoption)
  * [doPreviousOption](#dopreviousoption)
  * [doSelectOption](#doselectoption)
  * [nextOption](#nextoption)
- * [options](#options)
  * [previousOption](#previousoption)
 
 ## API Documentation
@@ -34,11 +35,11 @@ Represents an `AXRadioGroup`, providing utility methods.
 ### Constructors
 
 #### [RadioGroup](#radiogroup)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup(parent, finderFn[, cached]) -> cp.ui.RadioGroup` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup(parent, uiFinder[, createOptionFn]) -> cp.ui.RadioGroup` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new RadioGroup. |
-| **Parameters**                                       | <ul><li>parent    - The parent table.</li><li>finderFn  - The function which will find the <code>axuielement</code> representing the RadioGroup.</li></ul> |
+| **Parameters**                                       | <ul><li>parent           - The parent table.</li><li>uiFinder         - The function which will find the <code>axuielement</code> representing the RadioGroup.</li><li>createOptionFn   - If provided a function that receives the <code>RadioGroup</code> and an <code>axuielement</code> for a given option within the group.</li></ul> |
 | **Returns**                                          | <ul><li>The new <code>RadioGroup</code> instance.</li></ul> |
 
 ### Fields
@@ -48,6 +49,20 @@ Represents an `AXRadioGroup`, providing utility methods.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | The number of options in the group. |
+
+#### [options](#options)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup.options <table: cp.ui.Element; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A `table` containing `cp.ui.Element` available in the radio group. |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> of options.</li></ul> |
+
+#### [optionsUI](#optionsui)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup.optionsUI <cp.prop: axuielement; read-only>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A `cp.prop` containing `table` of `axuielement` options available in the radio group. |
+| **Returns**                                          | <ul><li>The <code>cp.prop</code> of options.</li></ul> |
 
 #### [selectedOption](#selectedoption)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup.selectedOption <cp.prop: number>` </span>                                                          |
@@ -88,13 +103,6 @@ Represents an `AXRadioGroup`, providing utility methods.
 | **Description**                                      | Selects the next option in the group. Cycles from the last to the first option. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>RadioGroup</code>.</li></ul> |
-
-#### [options](#options)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:options() -> table` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | The `table` of options available in the radio group. |
-| **Returns**                                          | <ul><li>The table of options.</li></ul> |
 
 #### [previousOption](#previousoption)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.RadioGroup:previousOption() -> self` </span>                                                          |

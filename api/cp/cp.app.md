@@ -60,6 +60,7 @@ This extension differs from the `hs.application` extension in several ways:
  * [doShow](#doshow)
  * [hide](#hide)
  * [isSupportedLocale](#issupportedlocale)
+ * [keyStroke](#keystroke)
  * [launch](#launch)
  * [notifier](#notifier)
  * [quit](#quit)
@@ -350,6 +351,14 @@ This extension differs from the `hs.application` extension in several ways:
 | **Description**                                      | Checks if the specified locale is supported. The `locale` can |
 | **Parameters**                                       | <ul><li>locale    - The locale code string or <code>localeID</code> to check.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if it is supported, otherwise <code>false</code>.</li></ul> |
+
+#### [keyStroke](#keystroke)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:keyStroke(modifiers, character) -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Generates and emits a single keystroke event pair for the supplied keyboard |
+| **Parameters**                                       | <ul><li>modifiers - A table containing the keyboard modifiers to apply ("fn", "ctrl", "alt", "cmd" or "shift")</li><li>character - A string containing a character to be emitted</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [launch](#launch)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.app:launch([waitSeconds], [path]) -> self` </span>                                                          |
