@@ -64,6 +64,7 @@ Core Hammerspoon functionality
  * [hs.plist](hs.plist.md)
  * [hs.redshift](hs.redshift.md)
  * [hs.screen](hs.screen.md)
+ * [hs.serial](hs.serial.md)
  * [hs.settings](hs.settings.md)
  * [hs.sharing](hs.sharing.md)
  * [hs.socket](hs.socket.md)

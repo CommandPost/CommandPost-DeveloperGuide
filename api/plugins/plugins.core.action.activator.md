@@ -65,6 +65,7 @@ will not affect the "yadayada" activator.
  * [toolbarIcons](#toolbaricons)
  * [unfavoriteChoice](#unfavoritechoice)
  * [unhideChoice](#unhidechoice)
+ * [updateSelectedToolbarIcon](#updateselectedtoolbaricon)
 
 ## API Documentation
 
@@ -185,11 +186,11 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li>A <code>hs.chooser</code> object</li></ul> |
 
 #### [disableAllHandlers](#disableallhandlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:disableAllHandlers() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:disableAllHandlers([groupID]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Disables the all allowed handlers. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>groupID - An optional group ID to only disable all handlers of a specific group</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [disableHandler](#disablehandler)
@@ -201,11 +202,11 @@ will not affect the "yadayada" activator.
 | **Returns**                                          | <ul><li><code>true</code> if the handler exists and was disabled.</li></ul> |
 
 #### [enableAllHandlers](#enableallhandlers)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:enableAllHandlers() -> none` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:enableAllHandlers([groupID]]) -> none` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Enables the all allowed handlers. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li>groupID - An optional group ID to only enable all handlers of a specific group</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [enableHandler](#enablehandler)
@@ -397,4 +398,12 @@ will not affect the "yadayada" activator.
 | **Description**                                      | Reveals the choice with the specified ID. |
 | **Parameters**                                       | <ul><li><code>id</code>          - The choice ID to hide.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> if successfully unhidden otherwise <code>false</code>.</li></ul> |
+
+#### [updateSelectedToolbarIcon](#updateselectedtoolbaricon)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.activator:updateSelectedToolbarIcon() -> none` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Updates the selected toolbar icon. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 

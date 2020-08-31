@@ -49,6 +49,7 @@ A collection of handy miscellaneous tools for Lua development.
  * [ninjaMouseClick](#ninjamouseclick)
  * [ninjaRightMouseClick](#ninjarightmouseclick)
  * [numberToWord](#numbertoword)
+ * [optionPressed](#optionpressed)
  * [playErrorSound](#playerrorsound)
  * [readFromFile](#readfromfile)
  * [removeFilenameFromPath](#removefilenamefrompath)
@@ -438,6 +439,14 @@ A collection of handy miscellaneous tools for Lua development.
 | **Description**                                      | Converts a number to a string (i.e. 1 becomes "One"). |
 | **Parameters**                                       | <ul><li>number - A whole number between 0 and 10</li></ul> |
 | **Returns**                                          | <ul><li>A string</li></ul> |
+
+#### [optionPressed](#optionpressed)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.optionPressed() -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Is the Option Key being pressed? |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if the option key is being pressed, otherwise <code>false</code>.</li></ul> |
 
 #### [playErrorSound](#playerrorsound)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.tools.playErrorSound() -> none` </span>                                                          |

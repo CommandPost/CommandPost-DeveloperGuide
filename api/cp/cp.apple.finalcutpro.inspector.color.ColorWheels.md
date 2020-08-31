@@ -15,6 +15,7 @@ Extends [Element](cp.ui.Element.md)
  * [highlights](#highlights)
  * [hue](#hue)
  * [hueRow](#huerow)
+ * [hueSlider](#hueslider)
  * [hueTextField](#huetextfield)
  * [master](#master)
  * [maxValue](#maxvalue)
@@ -23,13 +24,16 @@ Extends [Element](cp.ui.Element.md)
  * [mix](#mix)
  * [mixRow](#mixrow)
  * [mixSlider](#mixslider)
+ * [mixTextField](#mixtextfield)
  * [shadows](#shadows)
  * [temperature](#temperature)
  * [temperatureRow](#temperaturerow)
  * [temperatureSlider](#temperatureslider)
+ * [temperatureTextField](#temperaturetextfield)
  * [tint](#tint)
  * [tintRow](#tintrow)
  * [tintSlider](#tintslider)
+ * [tintTextField](#tinttextfield)
  * [value](#value)
  * [viewingAllWheels](#viewingallwheels)
  * [viewMode](#viewmode)
@@ -86,6 +90,12 @@ Extends [Element](cp.ui.Element.md)
 | **Type**                                             | Field |
 | **Description**                                      | A `PropertyRow` that provides access to the 'Hue' parameter, and `axuielement` |
 
+#### [hueSlider](#hueslider)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.hueSlider <cp.ui.Slider>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | Returns a `Slider` that provides access to the 'Hue' slider. |
+
 #### [hueTextField](#huetextfield)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.hueTextField <cp.ui.TextField>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -134,6 +144,12 @@ Extends [Element](cp.ui.Element.md)
 | **Type**                                             | Field |
 | **Description**                                      | A `Slider` that provides access to the 'Mix' slider. |
 
+#### [mixTextField](#mixtextfield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.mixTextField <cp.ui.TextField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A `TextField` that provides access to the 'Mix' slider. |
+
 #### [shadows](#shadows)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.shadows <ColorWheel>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -158,6 +174,12 @@ Extends [Element](cp.ui.Element.md)
 | **Type**                                             | Field |
 | **Description**                                      | A `Slider` that provides access to the 'Temperatures' slider. |
 
+#### [temperatureTextField](#temperaturetextfield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.temperatureTextField <cp.ui.TextField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A `TextField` that provides access to the 'Temperature' slider. |
+
 #### [tint](#tint)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.tint <cp.prop: number>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -175,6 +197,12 @@ Extends [Element](cp.ui.Element.md)
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Field |
 | **Description**                                      | Returns a `Slider` that provides access to the 'Tint' slider. |
+
+#### [tintTextField](#tinttextfield)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.tintTextField <cp.ui.TextField>` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Field |
+| **Description**                                      | A `TextField` that provides access to the 'Tint' slider. |
 
 #### [value](#value)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.ColorWheels.value <cp.prop: number>` </span>                                                          |

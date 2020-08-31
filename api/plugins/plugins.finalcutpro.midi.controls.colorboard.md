@@ -1,7 +1,7 @@
 # [docs](index.md) » plugins.finalcutpro.midi.controls.colorboard
 ---
 
-Final Cut Pro MIDI Color Controls.
+Final Cut Pro MIDI Color Board Controls.
 
 ## API Overview
 

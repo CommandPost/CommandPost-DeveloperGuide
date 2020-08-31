@@ -31,11 +31,13 @@
 | [plugins.core.commands.global](plugins.core.commands.global.md)                          | The 'global' command collection.     |
 | [plugins.core.console](plugins.core.console.md)                          | Search Console     |
 | [plugins.core.console.applications](plugins.core.console.applications.md)                          | Adds all installed applications to the Search Console.     |
+| [plugins.core.console.keyboardmaestromacros](plugins.core.console.keyboardmaestromacros.md)                          | Adds Keyboard Maestro Macros to the Search Console.     |
 | [plugins.core.console.scripts](plugins.core.console.scripts.md)                          | Adds all installed AppleScripts to the Search Console.     |
 | [plugins.core.controlsurfaces.manager](plugins.core.controlsurfaces.manager.md)                          | Manager for the CommandPost Preferences Window.     |
 | [plugins.core.disk.automount](plugins.core.disk.automount.md)                          | Automatic Disk Mounting & Unmounting.     |
 | [plugins.core.disk.favourites](plugins.core.disk.favourites.md)                          | Action that allows you save and open user-defined favourite folders.     |
 | [plugins.core.display](plugins.core.display.md)                          | Display Controls.     |
+| [plugins.core.gamepad.prefs](plugins.core.gamepad.prefs.md)                          | Gamepad Preferences Panel     |
 | [plugins.core.helpandsupport.credits](plugins.core.helpandsupport.credits.md)                          | Credits Menu Item.     |
 | [plugins.core.helpandsupport.debugconsole](plugins.core.helpandsupport.debugconsole.md)                          | Debug Console Menu Item.     |
 | [plugins.core.helpandsupport.developerguide](plugins.core.helpandsupport.developerguide.md)                          | Developer Guide Menu Item.     |
@@ -55,6 +57,7 @@
 | [plugins.core.midi.manager](plugins.core.midi.manager.md)                          | MIDI Manager Plugin.     |
 | [plugins.core.midi.manager.controls](plugins.core.midi.manager.controls.md)                          | MIDI Manager Controls.     |
 | [plugins.core.midi.prefs](plugins.core.midi.prefs.md)                          | MIDI Preferences Panel     |
+| [plugins.core.monogram.prefs](plugins.core.monogram.prefs.md)                          | Monogram Preferences Panel     |
 | [plugins.core.pasteboard.history](plugins.core.pasteboard.history.md)                          | Adds text pasteboard history actions to the Search Console.     |
 | [plugins.core.preferences.general](plugins.core.preferences.general.md)                          | General Preferences Panel.     |
 | [plugins.core.preferences.manager](plugins.core.preferences.manager.md)                          | Manager for the CommandPost Preferences Window.     |
@@ -100,6 +103,9 @@
 | [plugins.core.touchbar.virtual](plugins.core.touchbar.virtual.md)                          | Virtual Touch Bar Manager     |
 | [plugins.core.touchbar.widgets.volume](plugins.core.touchbar.widgets.volume.md)                          | Volume Slider     |
 | [plugins.core.touchbar.widgets.windowSlide](plugins.core.touchbar.widgets.windowSlide.md)                          | Window Slide Widget for Touch Bar.     |
+| [plugins.core.tourbox.changeapplications](plugins.core.tourbox.changeapplications.md)                          | Allows you to change the TourBox application if set to manual.     |
+| [plugins.core.tourbox.manager](plugins.core.tourbox.manager.md)                          | Loupedeck CT Manager Plugin.     |
+| [plugins.core.tourbox.prefs](plugins.core.tourbox.prefs.md)                          | TourBox Preferences Panel     |
 | [plugins.core.utilities.manager.panel](plugins.core.utilities.manager.panel.md)                          | CommandPost Preferences Panel.     |
 | [plugins.core.watchfolders.manager](plugins.core.watchfolders.manager.md)                          | Manager for the CommandPost Watch Folders Panel.     |
 | [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | Watch Folder Panel Manager.     |
@@ -162,7 +168,7 @@
 | [plugins.finalcutpro.menu.menuaction](plugins.finalcutpro.menu.menuaction.md)                          | A `action` which will trigger an Final Cut Pro menu with a matching path, if available/enabled.     |
 | [plugins.finalcutpro.menu.proxyicon](plugins.finalcutpro.menu.proxyicon.md)                          | Final Cut Pro Proxy Icon Plugin.     |
 | [plugins.finalcutpro.midi.controls.audio](plugins.finalcutpro.midi.controls.audio.md)                          | Final Cut Pro MIDI Audio Controls.     |
-| [plugins.finalcutpro.midi.controls.colorboard](plugins.finalcutpro.midi.controls.colorboard.md)                          | Final Cut Pro MIDI Color Controls.     |
+| [plugins.finalcutpro.midi.controls.colorboard](plugins.finalcutpro.midi.controls.colorboard.md)                          | Final Cut Pro MIDI Color Board Controls.     |
 | [plugins.finalcutpro.midi.controls.colorwheels](plugins.finalcutpro.midi.controls.colorwheels.md)                          | Final Cut Pro MIDI Color Controls.     |
 | [plugins.finalcutpro.midi.controls.controlui.absolute](plugins.finalcutpro.midi.controls.controlui.absolute.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |
 | [plugins.finalcutpro.midi.controls.controlui.relative](plugins.finalcutpro.midi.controls.controlui.relative.md)                          | Adds the ability to control any Final Cut Pro User Interface Element via a MIDI Knob/Slider.     |

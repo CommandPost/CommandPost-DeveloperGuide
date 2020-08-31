@@ -18,12 +18,14 @@ Commands Module.
  * [getAction](#getaction)
  * [getFirstShortcut](#getfirstshortcut)
  * [getGroup](#getgroup)
+ * [getImage](#getimage)
  * [getShortcuts](#getshortcuts)
  * [getSubtitle](#getsubtitle)
  * [getTitle](#gettitle)
  * [groupedBy](#groupedby)
  * [hasAction](#hasaction)
  * [id](#id)
+ * [image](#image)
  * [new](#new)
  * [parent](#parent)
  * [pressed](#pressed)
@@ -136,6 +138,14 @@ Commands Module.
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The group ID.</li></ul> |
 
+#### [getImage](#getimage)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getImage() -> hs.image object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the current image. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A hs.image object or <code>nil</code> if not is specified.</li></ul> |
+
 #### [getShortcuts](#getshortcuts)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:getShortcuts() -> command` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -164,7 +174,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Specifies that the command is grouped by a specific value. |
-| **Parameters**                                       | <ul><li><code>group</code>   - The group ID.</li></ul> |
+| **Parameters**                                       | <ul><li><code>group</code>  - The group ID.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.commands.command</code> instance.</li></ul> |
 
 #### [hasAction](#hasaction)
@@ -182,6 +192,14 @@ Commands Module.
 | **Description**                                      | Returns the ID for this command. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The ID.</li></ul> |
+
+#### [image](#image)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:image(img) -> cp.commands.command` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets the specified image and returns the `cp.commands.command` instance. |
+| **Parameters**                                       | <ul><li><code>img</code> - The <code>hs.image</code> to use.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>cp.commands.command</code> instance.</li></ul> |
 
 #### [new](#new)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command.new() -> command` </span>                                                          |
@@ -227,7 +245,7 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Deletes any existing shortcuts and applies the new set of shortcuts in the table. |
-| **Parameters**                                       | <ul><li>shortcuts     - The set of <code>cp.commands.shortcuts</code> to apply to this command.</li></ul> |
+| **Parameters**                                       | <ul><li>shortcuts        - The set of <code>cp.commands.shortcuts</code> to apply to this command.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>cp.commands.command</code> instance.</li></ul> |
 
 #### [subtitled](#subtitled)
@@ -235,7 +253,8 @@ Commands Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets the specified subtitle and returns the `cp.commands.command` instance. |
-| **Parameters**                                       | <ul><li><code>subtitle</code>    - The new subtitle.</li></ul> |
+| **Parameters**                                       | <ul><li><code>subtitle</code>   - The new subtitle.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>cp.commands.command</code> instance.</li></ul> |
 
 #### [titled](#titled)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.commands.command:titled(title) -> command` </span>                                                          |

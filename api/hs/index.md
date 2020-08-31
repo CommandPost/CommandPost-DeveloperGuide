@@ -107,6 +107,7 @@
 | [hs.redshift](hs.redshift.md)                          | Inverts and/or lowers the color temperature of the screen(s) on a schedule, for a more pleasant experience at night     |
 | [hs.screen](hs.screen.md)                          | Manipulate screens (i.e. monitors)     |
 | [hs.screen.watcher](hs.screen.watcher.md)                          | Watch for screen layout changes     |
+| [hs.serial](hs.serial.md)                          | Communicate with external devices through a serial port (most commonly RS-232).     |
 | [hs.settings](hs.settings.md)                          | Serialize simple Lua variables across Hammerspoon launches     |
 | [hs.sharing](hs.sharing.md)                          | Share items with the macOS Sharing Services under the control of Hammerspoon.     |
 | [hs.socket](hs.socket.md)                          | Talk to custom protocols using asynchronous TCP sockets     |

@@ -5,6 +5,7 @@ Search Console
 
 ## Submodules
  * [plugins.core.console.applications](plugins.core.console.applications.md)
+ * [plugins.core.console.keyboardmaestromacros](plugins.core.console.keyboardmaestromacros.md)
  * [plugins.core.console.scripts](plugins.core.console.scripts.md)
 
 ## API Overview
