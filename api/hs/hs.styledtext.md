@@ -215,6 +215,7 @@ Note that due to differences in the way Lua determines when to use metamethods f
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Loads a font from a file at the specified path. |
+| **Parameters**                                       | <ul><li><code>path</code> - the path and filename of the font file to attempt to load</li></ul> |
 | **Returns**                                          | <ul><li>If the font can be registered returns <code>true</code>, otherwise <code>false</code> and an error message as string.</li></ul> |
 
 #### [validFont](#validfont)

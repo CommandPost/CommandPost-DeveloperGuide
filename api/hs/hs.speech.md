@@ -180,7 +180,7 @@ A discussion concerning the embedding of commands into the text to be spoken can
 | **Notes**                                            | <ul><li>This method will reset a synthesizer to its default state, including pitch, modulation, volume, rate, etc.</li><li>The changes go into effect immediately, if queried, but will not affect a synthesis in progress.</li></ul> |
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:setCallback(fn | nil) -> synthesizerObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech:setCallback(fn) -> synthesizerObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or removes a callback function for the synthesizer. |

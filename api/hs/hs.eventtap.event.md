@@ -5,6 +5,25 @@ Create, modify and inspect events for `hs.eventtap`
 
 This module is based primarily on code from the previous incarnation of Mjolnir by [Steven Degutis](https://github.com/sdegutis/).
 
+`hs.eventtap.event.newGesture` uses an external library by Calf Trail Software, LLC.
+
+Touch
+Copyright (C) 2010 Calf Trail Software, LLC
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
 ## API Overview
 * Constants - Useful values which cannot be changed
  * [properties](#properties)
@@ -16,6 +35,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [copy](#copy)
  * [newEvent](#newevent)
  * [newEventFromData](#neweventfromdata)
+ * [newGesture](#newgesture)
  * [newKeyEvent](#newkeyevent)
  * [newMouseEvent](#newmouseevent)
  * [newScrollEvent](#newscrollevent)
@@ -28,6 +48,8 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [getKeyCode](#getkeycode)
  * [getProperty](#getproperty)
  * [getRawEventData](#getraweventdata)
+ * [getTouchDetails](#gettouchdetails)
+ * [getTouches](#gettouches)
  * [getType](#gettype)
  * [getUnicodeString](#getunicodestring)
  * [location](#location)
@@ -50,7 +72,6 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | A table containing property types for use with `hs.eventtap.event:getProperty()` and `hs.eventtap.event:setProperty()`.  The table supports forward (label to number) and reverse (number to label) lookups to increase its flexibility. |
-| **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing <code>hs.eventtap.event.properties</code>.</li><li>In previous versions of Hammerspoon, property labels were defined with the labels in all lowercase.  This practice is deprecated, but an __index metamethod allows the lowercase labels to still be used; however a warning will be printed to the Hammerspoon console.  At some point, this may go away, so please update your code to follow the new format.</li></ul> |
 
 #### [rawFlagMasks](#rawflagmasks)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.rawFlagMasks[]` </span>                                                          |
@@ -63,7 +84,6 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constant |
 | **Description**                                      | A table containing event types to be used with `hs.eventtap.new(...)` and returned by `hs.eventtap.event:type()`.  The table supports forward (label to number) and reverse (number to label) lookups to increase its flexibility. |
-| **Notes**                                            | <ul><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing <code>hs.eventtap.event.types</code>.</li><li>In previous versions of Hammerspoon, type labels were defined with the labels in all lowercase.  This practice is deprecated, but an __index metamethod allows the lowercase labels to still be used; however a warning will be printed to the Hammerspoon console.  At some point, this may go away, so please update your code to follow the new format.</li></ul> |
 
 ### Functions
 
@@ -102,6 +122,15 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Creates an event from the data encoded in the string provided. |
 | **Parameters**                                       | <ul><li>data - a string containing binary data provided by <a href="#asData">hs.eventtap.event:asData</a> representing an event.</li></ul> |
 | **Returns**                                          | <ul><li>a new <code>hs.eventtap.event</code> object or nil if the string did not represent a valid event</li></ul> |
+
+#### [newGesture](#newgesture)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newGesture(gestureType[, gestureValue]) -> event` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Constructor |
+| **Description**                                      | Creates an gesture event. |
+| **Parameters**                                       | <ul><li>gestureType - the type of gesture you want to create as a string (see notes below).</li><li>[gestureValue] - an optional value for the specific gesture (i.e. magnification amount or rotation in degrees).</li></ul> |
+| **Returns**                                          | <ul><li>a new <code>hs.eventtap.event</code> object or <code>nil</code> if the <code>gestureType</code> is not valid.</li></ul> |
+| **Notes**                                            | <ul><li>Valid gestureType values are:</li><li><code>beginMagnify</code> - Starts a magnification event with an optional magnification value as a number (defaults to 0). The exact unit of measurement is unknown.</li><li><code>endMagnify</code> - Starts a magnification event with an optional magnification value as a number (defaults to 0.1). The exact unit of measurement is unknown.</li><li><code>beginRotate</code> - Starts a rotation event with an rotation value in degrees (i.e. a value of 45 turns it 45 degrees left - defaults to 0).</li><li><code>endRotate</code> - Starts a rotation event with an rotation value in degrees (i.e. a value of 45 turns it 45 degrees left - defaults to 45).</li><li><code>beginSwipeLeft</code> - Begin a swipe left.</li><li><code>endSwipeLeft</code> - End a swipe left.</li><li><code>beginSwipeRight</code> - Begin a swipe right.</li><li><code>endSwipeRight</code> - End a swipe right.</li><li><code>beginSwipeUp</code> - Begin a swipe up.</li><li><code>endSwipeUp</code> - End a swipe up.</li><li><code>beginSwipeDown</code> - Begin a swipe down.</li><li><code>endSwipeDown</code> - End a swipe down.</li></ul> |
 
 #### [newKeyEvent](#newkeyevent)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event.newKeyEvent([mods], key, isdown) -> event` </span>                                                          |
@@ -146,7 +175,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Returns a string containing binary data representing the event.  This can be used to record events for later use. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>a string representing the event or nil if the event cannot be represented as a string</li></ul> |
-| **Notes**                                            | <ul><li>You can recreate the event for later posting with <a href="#newEventFromData">hs.eventtap.event.newnEventFromData</a></li></ul> |
+| **Notes**                                            | <ul><li>You can recreate the event for later posting with <a href="#newEventFromData">hs.eventtap.event.newEventFromData</a></li></ul> |
 
 #### [getButtonState](#getbuttonstate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getButtonState(button) -> bool` </span>                                                          |
@@ -201,13 +230,31 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A table with two keys:</li><li>CGEventData -- a table with keys containing CGEvent data about the event.</li><li>NSEventData -- a table with keys containing NSEvent data about the event.</li></ul> |
 | **Notes**                                            | <ul><li>Most of the data in <code>CGEventData</code> is already available through other methods, but is presented here without any cleanup or parsing.</li><li>This method is expected to be used mostly for testing and expanding the range of possibilities available with the hs.eventtap module.  If you find that you are regularly using specific data from this method for common or re-usable purposes, consider submitting a request for adding a more targeted method to hs.eventtap or hs.eventtap.event -- it will likely be more efficient and faster for common tasks, something eventtaps need to be to minimize affecting system responsiveness.</li></ul> |
 
+#### [getTouchDetails](#gettouchdetails)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getTouchDetails() -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a table contining more information about some touch related events. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>if the event is a touch event (i.e. is an event of type <code>hs.eventtap.event.types.gesture</code>), then this method returns a table with zero or more of the following key-value pairs:</li><li>if the gesture is for a pressure event:<ul><li><code>pressure</code>         - a number between 0.0 and 1.0 inclusive indicating the relative amount of pressure applied by the touch; trackpads which are not pressure sensitive will only report the discrete values of 0.0 and 1.0.</li><li><code>stage</code>            - an integer between 0 and 2 specifying the stage. 0 represents a touch transitioning to a state too light to be considered a touch, usually at the end of a click; 1 represents a touch with enough pressure to be considered a mouseDown event; 2 represents additional pressure, usually what would trigger a "deep" or "force" touch.</li><li><code>stageTransition</code>  - a number between 0.0 and 1.0. As the pressure increases and transition between stages begins, this will rise from 0.0 to 1.0; as the pressure decreases and a transition between stages begins, this will fall from 0.0 to -1.0. When the pressure is solidly within a specific stage, this will remain 0.0.</li><li><code>pressureBehavior</code> - a string specifying the effect or purpose of the pressure. Note that the exact meaning (in terms of haptic feedback or action being performed) of each label is target application or ui element specific. Valid values for this key are:</li><li>"unknown", "default", "click", "generic", "accelerator", "deepClick", "deepDrag"</li></ul></li><li>if the gesture is for a magnification event:<ul><li><code>magnification</code> - a number specifying the change in magnification that should be added to the current scaling of an item to achieve the new scale factor.</li></ul></li><li>if the gesture is for a rotation event:<ul><li><code>rotation</code> - a number specifying in degrees the change in rotation that should be added as specified by this event. Clockwise rotation is indicated by a negative number while counter-clockwise rotation will be positive.</li></ul></li></ul> |
+
+#### [getTouches](#gettouches)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getTouches() -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns a table of details containing information about touches on the trackpad associated with this event if the event is of the type `hs.eventtap.event.types.gesture`. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>if the event is of the type gesture, returns a table; otherwise returns nil.</li></ul> |
+| **Notes**                                            | <ul><li>if the event is of the type gesture, the table will contain one or more tables in an array. Each member table of the array will have the following key-value pairs:</li><li><code>device</code>                     - a string containing a unique identifier for the device on which the touch occurred. At present we do not have a way to match the identifier to a specific touch device, but if multiple such devices are attached to the computer, this value will differ between them.</li><li><code>deviceSize</code>                 - a size table containing keys <code>h</code> and <code>w</code> for the height and width of the touch device in points (72 PPI resolution).</li><li><code>force</code>                      - a number representing a measure of the force of the touch when the device is a forcetouch trackpad. This will be 0.0 for non-forcetouch trackpads and the touchbar.</li><li><code>identity</code>                   - a string specifying a unique identifier for the touch guaranteed to be unique for the life of the touch. This identifier may be used to track the movement of a specific touch (e.g. finger) as it moves through successive callbacks.</li><li><code>phase</code>                      - a string specifying the current phase the touch is considered to be in. The possible values are: "began", "moved", "stationary", "ended", or "cancelled".</li><li><code>resting</code>                    - Resting touches occur when a user simply rests their thumb on the trackpad device. Requires that the foreground window has views accepting resting touches.</li><li><code>timestamp</code>                  - a number representing the time the touch was detected. This number corresponds to seconds since the last system boot, not including time the computer has been asleep. Comparable to <code>hs.timer.absoluteTime() / 1000000000</code>.</li><li><code>touching</code>                   - a boolean specifying whether or not the touch phase is "began", "moved", or "stationary" (i.e. is <em>not</em> "ended" or "cancelled").</li><li><code>type</code>                       - a string specifying the type of touch. A "direct" touch will indicate a touchbar, while a trackpad will report "indirect".</li></ul> |
+
 #### [getType](#gettype)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getType() -> number` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getType([nsSpecificType]) -> number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the type of the event |
-| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Parameters**                                       | <ul><li><code>nsSpecificType</code> - an optional boolean, default false, specifying whether or not a more specific Cocoa NSEvent type should be returned, if available.</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the type of the event, taken from <code>hs.eventtap.event.types</code></li></ul> |
+| **Notes**                                            | <ul><li>some newer events are grouped into a more generic event for watching purposes and the specific event type is determined by examining the event through the Cocoa API. The primary example of this is for gestures on a trackpad or touches of the touchbar, as all of these are grouped under the <code>hs.eventtap.event.types.gesture</code> event. For example:</li></ul> |
 
 #### [getUnicodeString](#getunicodestring)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.event:getUnicodeString()` </span>                                                          |

@@ -68,6 +68,7 @@ Additional functions and values that are specific to Hammerspoon which provide e
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns whether or not the value is a finite number |
+| **Parameters**                                       | <ul><li><code>value</code> - the value to be tested</li></ul> |
 | **Returns**                                          | <ul><li>true if the value is a finite number, or false otherwise</li></ul> |
 | **Notes**                                            | <ul><li>This function returns true if the value is a number and both <a href="#isNaN">hs.math.isNaN</a> and <a href="#isInfinite">hs.math.isInfinite</a> return false.</li></ul> |
 

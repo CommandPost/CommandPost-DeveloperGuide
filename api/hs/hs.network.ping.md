@@ -122,7 +122,7 @@ This module provides a basic ping function which can test host availability. Pin
 | **Returns**                                          | <ul><li>A string matching the hostname or ip address given to the <a href="#ping">hs.network.ping.ping</a> constructor for this object.</li></ul> |
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping:setCallback(fn | nil) -> pingObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping:setCallback(fn) -> pingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Set or remoce the callback function for the pingObject. |

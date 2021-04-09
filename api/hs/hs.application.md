@@ -331,7 +331,7 @@ Manipulate running applications
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:name()` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Alias for `hs.application:title()` |
+| **Description**                                      | Alias for [`hs.application:title()`](#title) |
 
 #### [path](#path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.application:path() -> string` </span>                                                          |

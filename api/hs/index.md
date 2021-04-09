@@ -4,14 +4,14 @@
 ## Project Links
 | Resource        | Link                             |
 | --------------- | -------------------------------- |
-| Website | [http://www.hammerspoon.org/](http://www.hammerspoon.org/) |
+| Website | [https://www.hammerspoon.org/](https://www.hammerspoon.org/) |
 | GitHub page | [https://github.com/Hammerspoon/hammerspoon](https://github.com/Hammerspoon/hammerspoon) |
-| Getting Started Guide | [http://www.hammerspoon.org/go/](http://www.hammerspoon.org/go/) |
+| Getting Started Guide | [https://www.hammerspoon.org/go/](https://www.hammerspoon.org/go/) |
 | Spoon Plugin Documentation | [https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md) |
-| Official Spoon repository | [http://www.hammerspoon.org/Spoons](http://www.hammerspoon.org/Spoons) |
+| Official Spoon repository | [https://www.hammerspoon.org/Spoons](https://www.hammerspoon.org/Spoons) |
 | IRC channel | [irc://chat.freenode.net/#hammerspoon](irc://chat.freenode.net/#hammerspoon) |
 | Mailing list | [https://groups.google.com/forum/#!forum/hammerspoon/](https://groups.google.com/forum/#!forum/hammerspoon/) |
-| LuaSkin API docs | [http://www.hammerspoon.org/docs/LuaSkin/](http://www.hammerspoon.org/docs/LuaSkin/) |
+| LuaSkin API docs | [https://www.hammerspoon.org/docs/LuaSkin/](https://www.hammerspoon.org/docs/LuaSkin/) |
 
 ## API Documentation
 | Module                                                             | Description           |
@@ -25,7 +25,9 @@
 | [hs.audiodevice](hs.audiodevice.md)                          | Manipulate the system's audio devices     |
 | [hs.audiodevice.datasource](hs.audiodevice.datasource.md)                          | Inspect/manipulate the data sources of an audio device     |
 | [hs.audiodevice.watcher](hs.audiodevice.watcher.md)                          | Watch for system level audio hardware events     |
-| [hs.audiounit](hs.audiounit.md)                          | Audio Units Extension.     |
+| [hs.axuielement](hs.axuielement.md)                          | This module allows you to access the accessibility objects of running applications, their windows, menus, and other user interface elements that support the OS X accessibility API.     |
+| [hs.axuielement.axtextmarker](hs.axuielement.axtextmarker.md)                          | This submodule allows hs.axuielement to support using AXTextMarker and AXTextMarkerRange objects as parameters for parameterized Accessibility attributes with applications that support them.     |
+| [hs.axuielement.observer](hs.axuielement.observer.md)                          | This submodule allows you to create observers for accessibility elements and be notified when they trigger notifications. Not all notifications are supported by all elements and not all elements support notifications, so some trial and error will be necessary, but for compliant applications, this can allow your code to be notified when an application's user interface changes in some way.     |
 | [hs.base64](hs.base64.md)                          | Base64 encoding and decoding     |
 | [hs.battery](hs.battery.md)                          | Battery/power information     |
 | [hs.battery.watcher](hs.battery.watcher.md)                          | Watch for battery/power state changes     |
@@ -79,7 +81,7 @@
 | [hs.itunes](hs.itunes.md)                          | Controls for iTunes music player     |
 | [hs.javascript](hs.javascript.md)                          | Execute JavaScript code     |
 | [hs.json](hs.json.md)                          | JSON encoding and decoding     |
-| [hs.keycodes](hs.keycodes.md)                          | Convert between key-strings and key-codes. Also provides funcionality for querying and changing keyboard layouts.     |
+| [hs.keycodes](hs.keycodes.md)                          | Convert between key-strings and key-codes. Also provides functionality for querying and changing keyboard layouts.     |
 | [hs.layout](hs.layout.md)                          | Window layout manager     |
 | [hs.location](hs.location.md)                          | Determine the machine's location and useful information about that location     |
 | [hs.location.geocoder](hs.location.geocoder.md)                          | Converts between GPS coordinates and more user friendly representations like an address or points of interest.     |
@@ -113,6 +115,7 @@
 | [hs.socket](hs.socket.md)                          | Talk to custom protocols using asynchronous TCP sockets     |
 | [hs.socket.udp](hs.socket.udp.md)                          | Talk to custom protocols using asynchronous UDP sockets     |
 | [hs.sound](hs.sound.md)                          | Load/play/manipulate sound files     |
+| [hs.spaces](hs.spaces.md)                          | Controls for macOS Spaces. Currenly only used by `hs.spaces.watcher`.      |
 | [hs.spaces.watcher](hs.spaces.watcher.md)                          | Watches for the current Space being changed     |
 | [hs.speech](hs.speech.md)                          | This module provides access to the Speech Synthesizer component of OS X.     |
 | [hs.speech.listener](hs.speech.listener.md)                          | This module provides access to the Speech Recognizer component of OS X.     |

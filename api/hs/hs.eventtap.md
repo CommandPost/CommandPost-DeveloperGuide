@@ -49,7 +49,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a table containing the current mouse buttons being pressed *at this instant*. |
-| **Parameters**                                       | <p>None</p> |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>Returns an array containing indicies starting from 1 up to the highest numbered button currently being pressed where the index is <code>true</code> if the button is currently pressed or <code>false</code> if it is not.</li><li>Special hash tag synonyms for <code>left</code> (button 1), <code>right</code> (button 2), and <code>middle</code> (button 3) are also set to true if these buttons are currently being pressed.</li></ul> |
 | **Notes**                                            | <ul><li>This is an instantaneous poll of the current mouse buttons, not a callback.  This is useful primarily in conjuction with other modules, such as <code>hs.menubar</code>, when a callback is already in progress or waiting for an event callback is not practical or possible.</li></ul> |
 
@@ -87,20 +87,20 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Returns**                                          | <ul><li>A number containing the number of seconds between keyboard events, if a key is held down</li></ul> |
 
 #### [keyStroke](#keystroke)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStroke(modifiers, character[, delay])` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStroke(modifiers, character[, delay, application])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Generates and emits a single keystroke event pair for the supplied keyboard modifiers and character |
-| **Parameters**                                       | <ul><li>modifiers - A table containing the keyboard modifiers to apply ("fn", "ctrl", "alt", "cmd", "shift", or their Unicode equivalents)</li><li>character - A string containing a character to be emitted</li><li>delay - An optional delay (in microseconds) between key down and up event. Defaults to 200000 (i.e. 200ms)</li></ul> |
+| **Parameters**                                       | <ul><li>modifiers - A table containing the keyboard modifiers to apply ("fn", "ctrl", "alt", "cmd", "shift", or their Unicode equivalents)</li><li>character - A string containing a character to be emitted</li><li>delay - An optional delay (in microseconds) between key down and up event. Defaults to 200000 (i.e. 200ms)</li><li>application - An optional hs.application object to send the keystroke to</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>This function is ideal for sending single keystrokes with a modifier applied (e.g. sending ⌘-v to paste, with <code>hs.eventtap.keyStroke({"cmd"}, "v")</code>). If you want to emit multiple keystrokes for typing strings of text, see <code>hs.eventtap.keyStrokes()</code></li></ul> |
 
 #### [keyStrokes](#keystrokes)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStrokes(text)` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.eventtap.keyStrokes(text[, application])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Generates and emits keystroke events for the supplied text |
-| **Parameters**                                       | <ul><li>text - A string containing the text to be typed</li></ul> |
+| **Parameters**                                       | <ul><li>text - A string containing the text to be typed</li><li>application - An optional hs.application object to send the keystrokes to</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>If you want to send a single keystroke with keyboard modifiers (e.g. sending ⌘-v to paste), see <code>hs.eventtap.keyStroke()</code></li></ul> |
 

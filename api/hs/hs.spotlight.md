@@ -166,7 +166,7 @@ You can access the individual results of the query with the [hs.spotlight:result
 | **Notes**                                            | <ul><li>Setting this property while a query is running stops the query and discards the current results. The receiver immediately starts a new query.</li></ul> |
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight:setCallback(fn | nil) -> spotlightObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spotlight:setCallback(fn) -> spotlightObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Set or remove the callback function for the Spotlight search object. |

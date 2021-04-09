@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.finalcutpro.tangent.commandpost
+# [docs](index.md) » plugins.finalcutpro.tangent.features
 ---
 
 Final Cut Pro CommandPost Actions for Tangent

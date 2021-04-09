@@ -126,7 +126,7 @@ In cases where the callback receives a "receivedUnexpectedPacket" message becaus
 | **Notes**                                            | <ul><li>By convention, unless you are trying to test for specific network fragmentation or congestion problems, ICMP Echo Requests are generally 64 bytes in length (this includes the 8 byte header, giving 56 bytes of payload data).  If you do not specify a payload, a default payload which will result in a packet size of 64 bytes is constructed.</li></ul> |
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:setCallback(fn | nil) -> echoRequestObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.ping.echoRequest:setCallback(fn) -> echoRequestObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Set or remove the object callback function |

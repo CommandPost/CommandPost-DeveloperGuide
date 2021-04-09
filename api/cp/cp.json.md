@@ -34,7 +34,7 @@ A collection of handy JSON tools.
 | **Notes**                                            | <ul><li>This is useful for storing some of the more complex lua table structures as a persistent setting (see <code>hs.settings</code>)</li></ul> |
 
 #### [prop](#prop)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.json.prop(path, folder, filename, defaultValue) -> cp.prop` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.json.prop(path, folder, filename, defaultValue[, errorCallbackFn]) -> cp.prop` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a `cp.prop` instance for a JSON file. |

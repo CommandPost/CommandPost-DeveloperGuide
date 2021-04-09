@@ -102,7 +102,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ### Methods
 
 #### [callback](#callback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:callback(callbackFn | nil)` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.midi:callback(callbackFn)` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or removes a callback function for the `hs.midi` object. |

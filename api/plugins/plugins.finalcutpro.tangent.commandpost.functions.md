@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.tangent.commandpost.functions
+# [docs](index.md) » plugins.finalcutpro.tangent.commandpost.functions
 ---
 
 CommandPost Functions for Tangent.

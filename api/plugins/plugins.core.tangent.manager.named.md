@@ -20,6 +20,7 @@ as described below.
  * [name](#name)
  * [nameX](#namex)
  * [parent](#parent)
+ * [tangent](#tangent)
 
 ## API Documentation
 
@@ -97,4 +98,12 @@ as described below.
 | **Description**                                      | Returns the `group` or `controls` that contains this parameter. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The parent.</li></ul> |
+
+#### [tangent](#tangent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.named:tangent() -> hs.tangent` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The Tangent Hub connection for this value, from the `parent`. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.tangent</code>, if available.</li></ul> |
 

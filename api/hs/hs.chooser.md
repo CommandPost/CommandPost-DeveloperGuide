@@ -20,6 +20,7 @@ Notes:
  * [fgColor](#fgcolor)
  * [hide](#hide)
  * [hideCallback](#hidecallback)
+ * [invalidCallback](#invalidcallback)
  * [isVisible](#isvisible)
  * [placeholderText](#placeholdertext)
  * [query](#query)
@@ -61,11 +62,11 @@ Notes:
 ### Methods
 
 #### [attachedToolbar](#attachedtoolbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:attachedToolbar([toolbar | nil]) -> hs.chooser object | currentValue` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:attachedToolbar([toolbar]) -> hs.chooser object | currentValue` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get or attach/detach a toolbar to/from the chooser. |
-| **Parameters**                                       | <ul><li><code>toolbar</code> - if an <code>hs.webview.toolbar</code> object is specified, it will be attached to the chooser.  If an explicit nil is specified, the current toolbar will be removed from the chooser.</li></ul> |
+| **Parameters**                                       | <ul><li><code>toolbar</code> - An <code>hs.webview.toolbar</code> object to be attached to the chooser. If <code>nil</code> is supplied, the current toolbar will be removed</li></ul> |
 | **Returns**                                          | <ul><li>if a toolbarObject or explicit nil is specified, returns the hs.chooser object; otherwise returns the current toolbarObject or nil, if no toolbar is attached to the chooser.</li></ul> |
 | **Notes**                                            | <ul><li>this method is a convenience wrapper for the <code>hs.webview.toolbar.attachToolbar</code> function.</li></ul> |
 
@@ -93,7 +94,7 @@ Notes:
 | **Description**                                      | Sets the choices for a chooser |
 | **Parameters**                                       | <ul><li>choices - Either a function to call when the list of choices is needed, or nil to remove any existing choices/callback, or a table containing static choices.</li></ul> |
 | **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul> |
-| **Notes**                                            | <ul><li>The table of choices (be it provided statically, or returned by the callback) must contain at least the following keys for each choice:</li><li>text - A string or hs.styledtext object that will be shown as the main text of the choice</li><li>Each choice may also optionally contain the following keys:</li><li>subText - A string or hs.styledtext object that will be shown underneath the main text of the choice</li><li>image - An <code>hs.image</code> image object that will be displayed next to the choice</li><li>Any other keys/values in each choice table will be retained by the chooser and returned to the completion callback when a choice is made. This is useful for storing UUIDs or other non-user-facing information, however, it is important to note that you should not store userdata objects in the table - it is run through internal conversion functions, so only basic Lua types should be stored.</li><li>If a function is given, it will be called once, when the chooser window is displayed. The results are then cached until this method is called again, or <code>hs.chooser:refreshChoicesCallback()</code> is called.</li><li>If you're using a hs.styledtext object for text or subText choices, make sure you specify a color, otherwise your text could appear transparent depending on the bgDark setting.</li></ul> |
+| **Notes**                                            | <ul><li>The table of choices (be it provided statically, or returned by the callback) must contain at least the following keys for each choice:</li><li>text - A string or hs.styledtext object that will be shown as the main text of the choice</li><li>Each choice may also optionally contain the following keys:</li><li>subText - A string or hs.styledtext object that will be shown underneath the main text of the choice</li><li>image - An <code>hs.image</code> image object that will be displayed next to the choice</li><li>valid - A boolean that defaults to <code>true</code>, if set to <code>false</code> selecting the choice will invoke the <code>invalidCallback</code> method instead of dismissing the chooser</li><li>Any other keys/values in each choice table will be retained by the chooser and returned to the completion callback when a choice is made. This is useful for storing UUIDs or other non-user-facing information, however, it is important to note that you should not store userdata objects in the table - it is run through internal conversion functions, so only basic Lua types should be stored.</li><li>If a function is given, it will be called once, when the chooser window is displayed. The results are then cached until this method is called again, or <code>hs.chooser:refreshChoicesCallback()</code> is called.</li><li>If you're using a hs.styledtext object for text or subText choices, make sure you specify a color, otherwise your text could appear transparent depending on the bgDark setting.</li></ul> |
 
 #### [delete](#delete)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:delete()` </span>                                                          |
@@ -127,6 +128,15 @@ Notes:
 | **Parameters**                                       | <ul><li>fn - An optional function that will be called when the chooser window is hidden. If this parameter is omitted, the existing callback will be removed.</li></ul> |
 | **Returns**                                          | <ul><li>The hs.chooser object</li></ul> |
 | **Notes**                                            | <ul><li>This callback is called <em>after</em> the chooser is hidden.</li><li>This callback is called <em>after</em> hs.chooser.globalCallback.</li></ul> |
+
+#### [invalidCallback](#invalidcallback)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:invalidCallback([fn]) -> hs.chooser object` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Sets/clears a callback for invalid choices |
+| **Parameters**                                       | <ul><li>fn - An optional function that will be called whenever the user select an choice set as invalid. If this parameter is omitted, the existing callback will be removed.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.chooser</code> object</li></ul> |
+| **Notes**                                            | <ul><li>The callback may accept one argument, it will be a table containing whatever information you supplied for the item the user chose.</li><li>To display a context menu, see <code>hs.menubar</code>, specifically the <code>:popupMenu()</code> method</li></ul> |
 
 #### [isVisible](#isvisible)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.chooser:isVisible() -> boolean` </span>                                                          |

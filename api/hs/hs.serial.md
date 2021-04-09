@@ -98,7 +98,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 | **Notes**                                            | <ul><li>This function supports the following standard baud rates as numbers: 300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200, 230400.</li><li>If no baud rate is supplied, it defaults to 115200.</li></ul> |
 
 #### [callback](#callback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.serial:callback(callbackFn | nil) -> serialPortObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.serial:callback(callbackFn) -> serialPortObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or removes a callback function for the `hs.serial` object. |
@@ -119,8 +119,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets or sets the number of data bits for the serial port. |
-| **Parameters**                                       | <ul><li>value - An optional number to set the number of stop bits. It can be 5 to 8.</li></ul> |
-| **Returns**                                          | <ul><li>If a value is specified, then this method returns the serial port object. Otherwise this method reutrns a string value of "none", "odd" or "even".</li><li>The default value is 8.</li></ul> |
+| **Parameters**                                       | <ul><li>value - An optional number to set the number of data bits. It can be 5 to 8.</li></ul> |
+| **Returns**                                          | <ul><li>If a value is specified, then this method returns the serial port object. Otherwise this method returns the data bits as a number.</li><li>The default value is 8.</li></ul> |
 
 #### [isOpen](#isopen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.serial:isOpen() -> boolean` </span>                                                          |
@@ -152,7 +152,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 | **Type**                                             | Method |
 | **Description**                                      | Gets or sets the parity for the serial port. |
 | **Parameters**                                       | <ul><li>value - An optional string to set the parity. It can be "none", "odd" or "even".</li></ul> |
-| **Returns**                                          | <ul><li>If a value is specified, then this method returns the serial port object. Otherwise this method reutrns a string value of "none", "odd" or "even".</li></ul> |
+| **Returns**                                          | <ul><li>If a value is specified, then this method returns the serial port object. Otherwise this method returns a string value of "none", "odd" or "even".</li></ul> |
 
 #### [path](#path)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.serial:path() -> string` </span>                                                          |
@@ -184,7 +184,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 | **Type**                                             | Method |
 | **Description**                                      | Gets or sets the number of stop bits for the serial port. |
 | **Parameters**                                       | <ul><li>value - An optional number to set the number of stop bits. It can be 1 or 2.</li></ul> |
-| **Returns**                                          | <ul><li>If a value is specified, then this method returns the serial port object. Otherwise this method reutrns a string value of "none", "odd" or "even".</li><li>The default value is 1.</li></ul> |
+| **Returns**                                          | <ul><li>If a value is specified, then this method returns the serial port object. Otherwise this method returns the number of stop bits as a number.</li><li>The default value is 1.</li></ul> |
 
 #### [usesDTRDSRFlowControl](#usesdtrdsrflowcontrol)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.serial:usesDTRDSRFlowControl([value]) -> boolean | serialPortObject` </span>                                                          |

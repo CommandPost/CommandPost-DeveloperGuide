@@ -4,19 +4,23 @@
 ## Project Links
 | Resource        | Link                             |
 | --------------- | -------------------------------- |
-| Website | [http://www.hammerspoon.org/](http://www.hammerspoon.org/) |
+| Website | [https://www.hammerspoon.org/](https://www.hammerspoon.org/) |
 | GitHub page | [https://github.com/Hammerspoon/hammerspoon](https://github.com/Hammerspoon/hammerspoon) |
-| Getting Started Guide | [http://www.hammerspoon.org/go/](http://www.hammerspoon.org/go/) |
+| Getting Started Guide | [https://www.hammerspoon.org/go/](https://www.hammerspoon.org/go/) |
 | Spoon Plugin Documentation | [https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md) |
-| Official Spoon repository | [http://www.hammerspoon.org/Spoons](http://www.hammerspoon.org/Spoons) |
+| Official Spoon repository | [https://www.hammerspoon.org/Spoons](https://www.hammerspoon.org/Spoons) |
 | IRC channel | [irc://chat.freenode.net/#hammerspoon](irc://chat.freenode.net/#hammerspoon) |
 | Mailing list | [https://groups.google.com/forum/#!forum/hammerspoon/](https://groups.google.com/forum/#!forum/hammerspoon/) |
-| LuaSkin API docs | [http://www.hammerspoon.org/docs/LuaSkin/](http://www.hammerspoon.org/docs/LuaSkin/) |
+| LuaSkin API docs | [https://www.hammerspoon.org/docs/LuaSkin/](https://www.hammerspoon.org/docs/LuaSkin/) |
 
 ## API Documentation
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
-| [plugins.colorfinale.tangent](plugins.colorfinale.tangent.md)                          | This plugin basically just disables CP's Tangent Manager when ColorFinale is running.     |
+| [plugins.aftereffects.application.manager](plugins.aftereffects.application.manager.md)                          | Registers After Effects with the Core Application Manager if installed.     |
+| [plugins.aftereffects.effects](plugins.aftereffects.effects.md)                          | Apply an After Effect effect to selected layer     |
+| [plugins.aftereffects.preferences](plugins.aftereffects.preferences.md)                          | After Effects Preferences Panel     |
+| [plugins.aftereffects.shortcuts](plugins.aftereffects.shortcuts.md)                          | Trigger After Effects Shortcuts     |
+| [plugins.aftereffects.tangent.manager](plugins.aftereffects.tangent.manager.md)                          | Manager for After Effects Tangent Support     |
 | [plugins.compressor.application.manager](plugins.compressor.application.manager.md)                          | Registers Compressor with the Core Application Manager.     |
 | [plugins.compressor.feedback.bugreport](plugins.compressor.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Compressor.     |
 | [plugins.compressor.watchfolders.panels.media](plugins.compressor.watchfolders.panels.media.md)                          | Compressor Watch Folder Plugin.     |
@@ -47,9 +51,8 @@
 | [plugins.core.helpandsupport.userguide](plugins.core.helpandsupport.userguide.md)                          | User Guide Menu Item.     |
 | [plugins.core.language](plugins.core.language.md)                          | Language Module.     |
 | [plugins.core.loupedeck.prefs](plugins.core.loupedeck.prefs.md)                          | Loupedeck+ Preferences Panel     |
-| [plugins.core.loupedeckct.changeapplications](plugins.core.loupedeckct.changeapplications.md)                          | Allows you to change the Loupedeck CT application if set to manual.     |
-| [plugins.core.loupedeckct.manager](plugins.core.loupedeckct.manager.md)                          | Loupedeck CT Manager Plugin.     |
-| [plugins.core.loupedeckct.prefs](plugins.core.loupedeckct.prefs.md)                          | Loupedeck CT Preferences Panel     |
+| [plugins.core.loupedeckctandlive.manager](plugins.core.loupedeckctandlive.manager.md)                          | Loupedeck CT & Loupedeck Live Manager Plugin.     |
+| [plugins.core.loupedeckctandlive.prefs](plugins.core.loupedeckctandlive.prefs.md)                          | Loupedeck CT & Loupedeck Live Preferences Panels     |
 | [plugins.core.loupedeckplus.prefs](plugins.core.loupedeckplus.prefs.md)                          | Loupedeck+ Preferences Panel     |
 | [plugins.core.menu.manager](plugins.core.menu.manager.md)                          | Menu Manager Plugin.     |
 | [plugins.core.menu.manager.section](plugins.core.menu.manager.section.md)                          | Controls sections for the CommandPost menu.     |
@@ -75,23 +78,16 @@
 | [plugins.core.shortcuts.prefs](plugins.core.shortcuts.prefs.md)                          | Shortcuts Preferences Panel     |
 | [plugins.core.streamdeck.manager](plugins.core.streamdeck.manager.md)                          | Elgato Stream Deck Manager Plugin.     |
 | [plugins.core.streamdeck.prefs](plugins.core.streamdeck.prefs.md)                          | Stream Deck Preferences Panel     |
-| [plugins.core.tangent.commandpost](plugins.core.tangent.commandpost.md)                          | CommandPost Group for the Tangent.     |
-| [plugins.core.tangent.commandpost.favourites](plugins.core.tangent.commandpost.favourites.md)                          | Tangent Favourites.     |
-| [plugins.core.tangent.commandpost.functions](plugins.core.tangent.commandpost.functions.md)                          | CommandPost Functions for Tangent.     |
 | [plugins.core.tangent.manager](plugins.core.tangent.manager.md)                          | Tangent Control Surface Manager     |
 | [plugins.core.tangent.manager.action](plugins.core.tangent.manager.action.md)                          | Represents a Tangent Action     |
 | [plugins.core.tangent.manager.binding](plugins.core.tangent.manager.binding.md)                          | Represents a Tangent Binding     |
+| [plugins.core.tangent.manager.connection](plugins.core.tangent.manager.connection.md)                          | Represents a Tangent Connection.     |
 | [plugins.core.tangent.manager.controls](plugins.core.tangent.manager.controls.md)                          | Represents a Tangent Group     |
 | [plugins.core.tangent.manager.group](plugins.core.tangent.manager.group.md)                          | Represents a Tangent Group. Groups can also be used to enable/disable multiple     |
 | [plugins.core.tangent.manager.menu](plugins.core.tangent.manager.menu.md)                          | Represents a Tangent Menu. Menus are controls that have a fixed set of     |
 | [plugins.core.tangent.manager.mode](plugins.core.tangent.manager.mode.md)                          | Represents a Tangent Mode     |
 | [plugins.core.tangent.manager.named](plugins.core.tangent.manager.named.md)                          | Provides common functions for 'named' Tangent nodes     |
 | [plugins.core.tangent.manager.parameter](plugins.core.tangent.manager.parameter.md)                          | Represents a Tangent Parameter control.     |
-| [plugins.core.tangent.os](plugins.core.tangent.os.md)                          | macOS Group for the Tangent.     |
-| [plugins.core.tangent.os.display](plugins.core.tangent.os.display.md)                          | Tangent Display Functions.     |
-| [plugins.core.tangent.os.pasteboard](plugins.core.tangent.os.pasteboard.md)                          | Pasteboard Tools for Tangent.     |
-| [plugins.core.tangent.os.sound](plugins.core.tangent.os.sound.md)                          | Tangent Display Functions.     |
-| [plugins.core.tangent.os.window](plugins.core.tangent.os.window.md)                          | Window Management Tools for Tangent.     |
 | [plugins.core.tangent.prefs](plugins.core.tangent.prefs.md)                          | Tangent Preferences Panel     |
 | [plugins.core.toolbox.manager](plugins.core.toolbox.manager.md)                          | Manager for the CommandPost Toolbox Window.     |
 | [plugins.core.tools.caffeinate](plugins.core.tools.caffeinate.md)                          | Prevents your Mac from going to sleep.     |
@@ -111,6 +107,7 @@
 | [plugins.core.watchfolders.manager.panel](plugins.core.watchfolders.manager.panel.md)                          | Watch Folder Panel Manager.     |
 | [plugins.core.watchfolders.menuitem](plugins.core.watchfolders.menuitem.md)                          | Adds the "Setup Watch Folders" to the menu bar.     |
 | [plugins.diskutility.application.manager](plugins.diskutility.application.manager.md)                          | Registers Disk Utility with the Core Application Manager.     |
+| [plugins.ecammlive.application.manager](plugins.ecammlive.application.manager.md)                          | Registers Ecamm Live with the Core Application Manager.     |
 | [plugins.finalcutpro.actions.custom](plugins.finalcutpro.actions.custom.md)                          | Creates a bunch of commands that can be used to assign actions to.     |
 | [plugins.finalcutpro.advanced.backupinterval](plugins.finalcutpro.advanced.backupinterval.md)                          | Change Final Cut Pro's Backup Interval.     |
 | [plugins.finalcutpro.advanced.disablewaveforms](plugins.finalcutpro.advanced.disablewaveforms.md)                          | Disable Waveforms Plugin.     |
@@ -192,15 +189,21 @@
 | [plugins.finalcutpro.tangent.audio](plugins.finalcutpro.tangent.audio.md)                          | Final Cut Pro Audio Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.browser](plugins.finalcutpro.tangent.browser.md)                          | Final Cut Pro Tangent Browser Group     |
 | [plugins.finalcutpro.tangent.clip](plugins.finalcutpro.tangent.clip.md)                          | Final Cut Pro Tangent View Group     |
-| [plugins.finalcutpro.tangent.commandpost](plugins.finalcutpro.tangent.commandpost.md)                          | Final Cut Pro CommandPost Actions for Tangent     |
+| [plugins.finalcutpro.tangent.color](plugins.finalcutpro.tangent.color.md)                          | Final Cut Pro Tangent Color Manager.     |
+| [plugins.finalcutpro.tangent.commandpost.functions](plugins.finalcutpro.tangent.commandpost.functions.md)                          | CommandPost Functions for Tangent.     |
 | [plugins.finalcutpro.tangent.common](plugins.finalcutpro.tangent.common.md)                          | Common Final Cut Pro functions for Tangent     |
 | [plugins.finalcutpro.tangent.edit](plugins.finalcutpro.tangent.edit.md)                          | Final Cut Pro Tangent View Group     |
+| [plugins.finalcutpro.tangent.features](plugins.finalcutpro.tangent.features.md)                          | Final Cut Pro CommandPost Actions for Tangent     |
 | [plugins.finalcutpro.tangent.generator](plugins.finalcutpro.tangent.generator.md)                          | Final Cut Pro Generator Inspector for Tangent     |
 | [plugins.finalcutpro.tangent.info](plugins.finalcutpro.tangent.info.md)                          | Final Cut Pro Info Inspector for Tangent     |
-| [plugins.finalcutpro.tangent.manager](plugins.finalcutpro.tangent.manager.md)                          | Final Cut Pro Tangent Color Manager.     |
-| [plugins.finalcutpro.tangent.modes](plugins.finalcutpro.tangent.modes.md)                          | Final Cut Pro Modes for Tangent     |
+| [plugins.finalcutpro.tangent.manager](plugins.finalcutpro.tangent.manager.md)                          | Manager for Final Cut Pro's Tangent Support     |
 | [plugins.finalcutpro.tangent.new](plugins.finalcutpro.tangent.new.md)                          | Final Cut Pro Tangent View Group     |
 | [plugins.finalcutpro.tangent.open](plugins.finalcutpro.tangent.open.md)                          | Final Cut Pro Tangent Open FCPX.     |
+| [plugins.finalcutpro.tangent.os](plugins.finalcutpro.tangent.os.md)                          | macOS Group for the Tangent.     |
+| [plugins.finalcutpro.tangent.os.display](plugins.finalcutpro.tangent.os.display.md)                          | Tangent Display Functions.     |
+| [plugins.finalcutpro.tangent.os.pasteboard](plugins.finalcutpro.tangent.os.pasteboard.md)                          | Pasteboard Tools for Tangent.     |
+| [plugins.finalcutpro.tangent.os.sound](plugins.finalcutpro.tangent.os.sound.md)                          | Tangent Sound Functions.     |
+| [plugins.finalcutpro.tangent.os.window](plugins.finalcutpro.tangent.os.window.md)                          | Window Management Tools for Tangent.     |
 | [plugins.finalcutpro.tangent.overlay](plugins.finalcutpro.tangent.overlay.md)                          | Final Cut Pro Tangent Viewer Overlay Group     |
 | [plugins.finalcutpro.tangent.pasteboard](plugins.finalcutpro.tangent.pasteboard.md)                          | Final Cut Pro Tangent Pasteboard Group     |
 | [plugins.finalcutpro.tangent.playback](plugins.finalcutpro.tangent.playback.md)                          | Final Cut Pro Tangent Playback Group/Management     |
@@ -268,6 +271,8 @@
 | [plugins.motion.application.manager](plugins.motion.application.manager.md)                          | Registers Motion with the Core Application Manager.     |
 | [plugins.motion.feedback.bugreport](plugins.motion.feedback.bugreport.md)                          | Sends Apple a Bug Report or Feature Request for Motion.     |
 | [plugins.resolve.application.manager](plugins.resolve.application.manager.md)                          | Registers Motion with the Core Application Manager.     |
+| [plugins.resolve.tangent.emulation ===](plugins.resolve.tangent.emulation ===.md)                          | Emulates a Tangent Element Panel.     |
+| [plugins.resolve.tangent.manager](plugins.resolve.tangent.manager.md)                          | Manager for DaVinci Resolve's Tangent Support     |
 | [plugins.skype.application.manager](plugins.skype.application.manager.md)                          | Registers Skype with the Core Application Manager if installed.     |
 | [plugins.skype.shortcuts](plugins.skype.shortcuts.md)                          | Trigger Skype Shortcuts     |
 | [plugins.systempreferences.application.manager](plugins.systempreferences.application.manager.md)                          | Registers System Preferences with the Core Application Manager.     |

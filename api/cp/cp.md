@@ -5,6 +5,7 @@ Core CommandPost functionality.
 
 ## Submodules
  * [cp.18n](cp.18n.md)
+ * [cp.adobe](cp.adobe.md)
  * [cp.app](cp.app.md)
  * [cp.apple](cp.apple.md)
  * [cp.battery](cp.battery.md)

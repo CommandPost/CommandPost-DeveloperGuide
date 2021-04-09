@@ -9,7 +9,7 @@ Core Hammerspoon functionality
  * [hs.applescript](hs.applescript.md)
  * [hs.application](hs.application.md)
  * [hs.audiodevice](hs.audiodevice.md)
- * [hs.audiounit](hs.audiounit.md)
+ * [hs.axuielement](hs.axuielement.md)
  * [hs.base64](hs.base64.md)
  * [hs.battery](hs.battery.md)
  * [hs.bonjour](hs.bonjour.md)
@@ -216,7 +216,7 @@ Core Hammerspoon functionality
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.accessibilityState(shouldPrompt) -> isEnabled` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      |  |
+| **Description**                                      | Checks the Accessibility Permissions for Hammerspoon, and optionally allows you to prompt for permissions. |
 | **Parameters**                                       | <ul><li>shouldPrompt - an optional boolean value indicating if the dialog box asking if the System Preferences application should be opened should be presented when Accessibility is not currently enabled for Hammerspoon.  Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>True or False indicating whether or not Accessibility is enabled for Hammerspoon.</li></ul> |
 | **Notes**                                            | <ul><li>Since this check is done automatically when Hammerspoon loads, it is probably of limited use except for skipping things that are known to fail when Accessibility is not enabled.  Evettaps which try to capture keyUp and keyDown events, for example, will fail until Accessibility is enabled and the Hammerspoon application is relaunched.</li></ul> |
@@ -251,7 +251,7 @@ Core Hammerspoon functionality
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.cameraState(shouldPrompt) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      |  |
+| **Description**                                      | Checks the Camera Permissions for Hammerspoon, and optionally allows you to prompt for permissions. |
 | **Parameters**                                       | <ul><li>shouldPrompt - an optional boolean value indicating if we should request camear access. Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> or <code>false</code> indicating whether or not Camera access is enabled for Hammerspoon.</li></ul> |
 | **Notes**                                            | <ul><li>Will always return <code>true</code> on macOS 10.13 or earlier.</li></ul> |
@@ -296,6 +296,7 @@ Core Hammerspoon functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Closes the Hammerspoon Preferences window |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [consoleOnTop](#consoleontop)
@@ -338,6 +339,8 @@ Core Hammerspoon functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Makes Hammerspoon the foreground app. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [getObjectMetatable](#getobjectmetatable)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.getObjectMetatable(name) -> table or nil` </span>                                                          |
@@ -372,7 +375,7 @@ Core Hammerspoon functionality
 | **Description**                                      | Loads a Spoon |
 | **Parameters**                                       | <ul><li>name - The name of a Spoon (without the trailing <code>.spoon</code>)</li><li>global - An optional boolean. If true, this function will insert the spoon into Lua's global namespace as <code>spoon.NAME</code>. Defaults to true.</li></ul> |
 | **Returns**                                          | <ul><li>The object provided by the Spoon (which can be ignored if you chose to make the Spoon global)</li></ul> |
-| **Notes**                                            | <ul><li>Spoons are a way of distributing self-contained units of Lua functionality, for Hammerspoon. For more information, see https://github.com/Hammerspoon/hammerspoon/blob/master/SPOON.md</li><li>This function will load the Spoon and call its <code>:init()</code> method if it has one. If you do not wish this to happen, or wish to use a Spoon that somehow doesn't fit with the behaviours of this function, you can also simply <code>require('name')</code> to load the Spoon</li><li>If the Spoon provides documentation, it will be loaded by made available in hs.docs</li><li>To learn how to distribute your own code as a Spoon, see https://github.com/Hammerspoon/hammerspoon/blob/master/SPOON.md</li></ul> |
+| **Notes**                                            | <ul><li>Spoons are a way of distributing self-contained units of Lua functionality, for Hammerspoon. For more information, see https://github.com/Hammerspoon/hammerspoon/blob/master/SPOON.md</li><li>This function will load the Spoon and call its <code>:init()</code> method if it has one. If you do not wish this to happen, or wish to use a Spoon that somehow doesn't fit with the behaviours of this function, you can also simply <code>require('name')</code> to load the Spoon</li><li>If the Spoon has a <code>:start()</code> method you are responsible for calling it before using the functionality of the Spoon.</li><li>If the Spoon provides documentation, it will be loaded by made available in hs.docs</li><li>To learn how to distribute your own code as a Spoon, see https://github.com/Hammerspoon/hammerspoon/blob/master/SPOON.md</li></ul> |
 
 #### [menuIcon](#menuicon)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.menuIcon([state]) -> bool` </span>                                                          |
@@ -386,7 +389,7 @@ Core Hammerspoon functionality
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.microphoneState(shouldPrompt) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      |  |
+| **Description**                                      | Checks the Microphone Permissions for Hammerspoon, and optionally allows you to prompt for permissions. |
 | **Parameters**                                       | <ul><li>shouldPrompt - an optional boolean value indicating if we should request microphone access. Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li><code>true</code> or <code>false</code> indicating whether or not Microphone access is enabled for Hammerspoon.</li></ul> |
 | **Notes**                                            | <ul><li>Will always return <code>true</code> on macOS 10.13 or earlier.</li></ul> |
@@ -404,6 +407,8 @@ Core Hammerspoon functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Displays the OS X About panel for Hammerspoon; implicitly focuses Hammerspoon. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [openConsole](#openconsole)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.openConsole([bringToFront])` </span>                                                          |
@@ -427,6 +432,8 @@ Core Hammerspoon functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Displays the Hammerspoon Preferences panel; implicitly focuses Hammerspoon. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [preferencesDarkMode](#preferencesdarkmode)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.preferencesDarkMode([state]) -> bool` </span>                                                          |
@@ -467,12 +474,14 @@ Core Hammerspoon functionality
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Reloads your init-file in a fresh Lua environment. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [screenRecordingState](#screenrecordingstate)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.screenRecordingState(shouldPrompt) -> isEnabled` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
-| **Description**                                      |  |
+| **Description**                                      | Checks the Screen Recording Permissions for Hammerspoon, and optionally allows you to prompt for permissions. |
 | **Parameters**                                       | <ul><li>shouldPrompt - an optional boolean value indicating if the dialog box asking if the System Preferences application should be opened should be presented when Screen Recording is not currently enabled for Hammerspoon.  Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>True or False indicating whether or not Screen Recording is enabled for Hammerspoon.</li></ul> |
 | **Notes**                                            | <ul><li>If you trigger the prompt and the user denies it, you cannot bring up the prompt again - the user must manually enable it in System Preferences.</li></ul> |
@@ -511,5 +520,5 @@ Core Hammerspoon functionality
 | **Description**                                      | Get or set the "Upload Crash Data" preference for Hammerspoon |
 | **Parameters**                                       | <ul><li>state - An optional boolean, true to upload crash reports, false to not</li></ul> |
 | **Returns**                                          | <ul><li>True if Hammerspoon is currently (or has just been) set to upload crash data or False otherwise</li></ul> |
-| **Notes**                                            | <ul><li>If at all possible, please do allow Hammerspoon to upload crash reports to us, it helps a great deal in keeping Hammerspoon stable</li><li>Our Privacy Policy can be found here: <a href="http://www.hammerspoon.org/privacy.html">http://www.hammerspoon.org/privacy.html</a></li></ul> |
+| **Notes**                                            | <ul><li>If at all possible, please do allow Hammerspoon to upload crash reports to us, it helps a great deal in keeping Hammerspoon stable</li><li>Our Privacy Policy can be found here: <a href="https://www.hammerspoon.org/privacy.html">https://www.hammerspoon.org/privacy.html</a></li></ul> |
 

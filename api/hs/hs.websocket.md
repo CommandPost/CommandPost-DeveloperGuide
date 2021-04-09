@@ -35,12 +35,13 @@ Simple websocket client.
 | **Returns**                                          | <ul><li>The <code>hs.websocket</code> object</li></ul> |
 
 #### [send](#send)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.websocket:send(message) -> object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.websocket:send(message[, isData]) -> object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | Sends a message to the websocket client |
-| **Parameters**                                       | <ul><li>message - A string containing the message to send</li></ul> |
+| **Description**                                      | Sends a message to the websocket client. |
+| **Parameters**                                       | <ul><li>message - A string containing the message to send.</li><li>isData - An optional boolean that sends the message as binary data (defaults to true).</li></ul> |
 | **Returns**                                          | <ul><li>The <code>hs.websocket</code> object</li></ul> |
+| **Notes**                                            | <ul><li>Forcing a text representation by setting isData to <code>false</code> may alter the data if it  contains invalid UTF8 character sequences (the default string behavior is to make  sure everything is "printable" by converting invalid sequences into the Unicode  Invalid Character sequence).</li></ul> |
 
 #### [status](#status)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.websocket:status() -> string` </span>                                                          |

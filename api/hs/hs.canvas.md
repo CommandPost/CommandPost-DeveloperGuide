@@ -23,10 +23,9 @@ Some examples of how to use this module can be found at https://github.com/asmag
  * [windowLevels](#windowlevels)
 * Functions - API calls offered directly by the extension
  * [defaultTextStyle](#defaulttextstyle)
- * [disableScreenUpdates](#disablescreenupdates)
  * [elementSpec](#elementspec)
- * [enableScreenUpdates](#enablescreenupdates)
  * [help](#help)
+ * [useCustomAccessibilitySubrole](#usecustomaccessibilitysubrole)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [new](#new)
 * Fields - Variables which can only be accessed from an object returned by a constructor
@@ -34,6 +33,7 @@ Some examples of how to use this module can be found at https://github.com/asmag
  * [object](#object)
  * [percentages](#percentages)
 * Methods - API calls which can only be made on an object returned by a constructor
+ * [_accessibilitySubrole](#_accessibilitysubrole)
  * [alpha](#alpha)
  * [appendElements](#appendelements)
  * [assignElement](#assignelement)
@@ -109,15 +109,6 @@ Some examples of how to use this module can be found at https://github.com/asmag
 | **Returns**                                          | <ul><li>a table containing the default style attributes <code>hs.canvas</code> uses for text drawing objects in the <code>hs.styledtext</code> attributes table format.</li></ul> |
 | **Notes**                                            | <ul><li>This method is intended to be used in conjunction with <code>hs.styledtext</code> to create styledtext objects that are based on, or a slight variation of, the defaults used by <code>hs.canvas</code>.</li></ul> |
 
-#### [disableScreenUpdates](#disablescreenupdates)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.disableScreenUpdates() -> None` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Tells the OS X window server to pause updating the physical displays for a short while. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>This method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be balanced with a call to <a href="#enableScreenUpdates">hs.canvas.enableScreenUpdates</a> when your updates have been completed.  Failure to do so will be logged in the system logs.</li></ul> |
-
 #### [elementSpec](#elementspec)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.elementSpec() -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -127,15 +118,6 @@ Some examples of how to use this module can be found at https://github.com/asmag
 | **Returns**                                          | <ul><li>A table containing the attributes and specifications defined for this module.</li></ul> |
 | **Notes**                                            | <ul><li>This is primarily for debugging purposes and may be removed in the future.</li></ul> |
 
-#### [enableScreenUpdates](#enablescreenupdates)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.enableScreenUpdates() -> None` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Function |
-| **Description**                                      | Tells the OS X window server to resume updating the physical displays after a previous pause. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>In conjunction with <a href="#disableScreenUpdates">hs.canvas.disableScreenUpdates</a>, this method can be used to allow multiple changes which are being made to the users display appear as if they all occur simultaneously by holding off on updating the screen on the regular schedule.</li><li>This method should always be preceded by a call to <a href="#disableScreenUpdates">hs.canvas.disableScreenUpdates</a>.  Failure to do so will be logged in the system logs.</li></ul> |
-
 #### [help](#help)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.help([attribute]) -> string` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -143,6 +125,15 @@ Some examples of how to use this module can be found at https://github.com/asmag
 | **Description**                                      | Provides specification information for the recognized attributes, or the specific attribute specified. |
 | **Parameters**                                       | <ul><li><code>attribute</code> - an optional string specifying an element attribute. If this argument is not provided, all attributes are listed.</li></ul> |
 | **Returns**                                          | <ul><li>a string containing some of the information provided by the <a href="#elementSpec">hs.canvas.elementSpec</a> in a manner that is easy to reference from the Hammerspoon console.</li></ul> |
+
+#### [useCustomAccessibilitySubrole](#usecustomaccessibilitysubrole)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas.useCustomAccessibilitySubrole([state]) -> boolean` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get or set whether or not canvas objects use a custom accessibility subrole for the contaning system window. |
+| **Parameters**                                       | <ul><li><code>state</code> - an optional boolean, default true, specifying whether or not canvas containers should use a custom accessibility subrole.</li></ul> |
+| **Returns**                                          | <ul><li>the current, possibly changed, value as a boolean</li></ul> |
+| **Notes**                                            | <ul><li>Under some conditions, it has been observed that Hammerspoon's <code>hs.window.filter</code> module will misidentify Canvas and Drawing objects as windows of the Hammerspoon application that it should consider when evaluating its filters. To eliminate this, <code>hs.canvas</code> objects (and previously <code>hs.drawing</code> objects, which are now deprecated and pass through to <code>hs.canvas</code>) were given a nonstandard accessibilty subrole to prevent them from being included. This has caused some issues with third party tools, like Yabai, which also use the accessibility subroles for determining what actions it may take with Hammerspoon windows.</li></ul> |
 
 ### Constructors
 
@@ -177,6 +168,15 @@ Some examples of how to use this module can be found at https://github.com/asmag
 
 ### Methods
 
+#### [_accessibilitySubrole](#_accessibilitysubrole)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:_accessibilitySubrole([subrole]) -> canvasObject | current value` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Get or set the accessibility subrole returned by `hs.canvas` objects. |
+| **Parameters**                                       | <ul><li><code>subrole</code> - an optional string or explicit nil wihch specifies what accessibility subrole value should be returned when canvas objects are queried through the macOS accessibility framework. See Notes for a discussion of how this value is interpreted. Defaults to <code>nil</code>.</li></ul> |
+| **Returns**                                          | <ul><li>If an argument is specified, returns the canvasObject; otherwise returns the current value.</li></ul> |
+| **Notes**                                            | <ul><li>Most people will probably not need to use this method; See <a href="#useCustomAccessibilitySubrole">hs.canvas.useCustomAccessibilitySubrole</a> for a discussion as to why this method may be of use when Hammerspoon is being controlled through the accessibility framework by other applications.</li></ul> |
+
 #### [alpha](#alpha)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:alpha([alpha]) -> canvasObject | currentValue` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -186,7 +186,7 @@ Some examples of how to use this module can be found at https://github.com/asmag
 | **Returns**                                          | <ul><li>If an argument is provided, the canvas object; otherwise the current value.</li></ul> |
 
 #### [appendElements](#appendelements)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:appendElements(element, ...) -> canvasObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:appendElements(element...) -> canvasObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Appends the elements specified to the canvas. |
@@ -299,7 +299,7 @@ Some examples of how to use this module can be found at https://github.com/asmag
 | **Notes**                                            | <ul><li>This method is automatically called during garbage collection, notably during a Hammerspoon termination or reload, with a fade time of 0.</li></ul> |
 
 #### [draggingCallback](#draggingcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:draggingCallback(fn | nil) -> canvasObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:draggingCallback(fn) -> canvasObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or remove a callback for accepting dragging and dropping items onto the canvas. |
@@ -456,7 +456,7 @@ Some examples of how to use this module can be found at https://github.com/asmag
 | **Returns**                                          | <ul><li>the canvasObject</li></ul> |
 
 #### [replaceElements](#replaceelements)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:replaceElements(element, ...) -> canvasObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.canvas:replaceElements(element...) -> canvasObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Replaces all of the elements in the canvas with the elements specified.  Shortens or lengthens the canvas element count if necessary to accomodate the new canvas elements. |

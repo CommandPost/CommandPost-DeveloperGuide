@@ -180,7 +180,7 @@ The following labels are used to describe tables which are used by functions and
 | **Notes**                                            | <ul><li>This method activates Location Services for Hammerspoon, so the first time you call this, you may be prompted to authorise Hammerspoon to use Location Services.</li><li>If the <code>identifier</code> key is not provided, a new UUID string is generated and used as the identifier.</li><li>If the <code>identifier</code> key matches an already monitored region, this region will replace the existing one.</li></ul> |
 
 #### [callback](#callback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:callback(fn | nil) -> locationObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.location:callback(fn) -> locationObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or removes the callback function for this locationObject |

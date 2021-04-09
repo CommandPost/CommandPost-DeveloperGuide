@@ -1,7 +1,7 @@
 # [docs](index.md) » plugins.finalcutpro.tangent.manager
 ---
 
-Final Cut Pro Tangent Color Manager.
+Manager for Final Cut Pro's Tangent Support
 
 ## API Overview
 

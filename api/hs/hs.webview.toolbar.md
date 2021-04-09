@@ -96,7 +96,7 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Get or attach/detach a toolbar to the webview, chooser, or console. |
-| **Parameters**                                       | <ul><li>if no arguments are present, this function returns the current toolbarObject for the Hammerspoon console, or nil if one is not attached.</li><li>if one argument is provided and it is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the Hammerspoon console.</li><li>if one argument is provided and it is an hs.webview or hs.chooser object, this function will return the current toolbarObject for the object, or nil if one is not attached.</li><li>if two arguments are provided and the first is an hs.webview or hs.chooser object and the second is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the object.</li></ul> |
+| **Parameters**                                       | <ul><li>obj1 - An optional toolbarObject</li><li>obj2 - An optional toolbarObject</li><li>if no arguments are present, this function returns the current toolbarObject for the Hammerspoon console, or nil if one is not attached.</li><li>if one argument is provided and it is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the Hammerspoon console.</li><li>if one argument is provided and it is an hs.webview or hs.chooser object, this function will return the current toolbarObject for the object, or nil if one is not attached.</li><li>if two arguments are provided and the first is an hs.webview or hs.chooser object and the second is a toolbarObject or nil, this function will attach or detach a toolbarObject to/from the object.</li></ul> |
 | **Returns**                                          | <ul><li>if the function is used to attach/detach a toolbar, then the first object provided (the target) will be returned ; if this function is used to get the current toolbar object for a webview, chooser, or console, then the toolbarObject or nil will be returned.</li></ul> |
 | **Notes**                                            | <ul><li>This function is not expected to be used directly (though it can be) -- it is added to the <code>hs.webview</code> and <code>hs.chooser</code> object metatables so that it may be invoked as <code>hs.webview:attachedToolbar([toolbarObject | nil])</code>/<code>hs.chooser:attachedToolbar([toolbarObject | nil])</code> and to the <code>hs.console</code> module so that it may be invoked as <code>hs.console.toolbar([toolbarObject | nil])</code>.</li></ul> |
 
@@ -278,7 +278,7 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Remove the toolbar item at the index position specified, or with the specified identifier, if currently present in the toolbar. |
-| **Parameters**                                       | <ul><li><code>index</code> - the numerical position of the toolbar item to remove.     or</li><li><code>identifier</code> - the identifier of the toolbar item to remove, if currently active in the toolbar</li></ul> |
+| **Parameters**                                       | <ul><li><code>index</code> - the numerical position of the toolbar item to remove.</li><li><code>identifier</code> - the identifier of the toolbar item to remove, if currently active in the toolbar</li></ul> |
 | **Returns**                                          | <ul><li>the toolbar object</li></ul> |
 | **Notes**                                            | <ul><li>the toolbar position must be between 1 and the number of currently active toolbar items.</li></ul> |
 
@@ -318,7 +318,7 @@ Notes:
 | **Returns**                                          | <ul><li>if an argument is provided, returns the toolbar object; otherwise returns the current value</li></ul> |
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar:setCallback(fn | nil) -> toolbarObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.webview.toolbar:setCallback(fn) -> toolbarObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or removes the global callback function for the toolbar. |

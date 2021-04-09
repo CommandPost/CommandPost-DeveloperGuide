@@ -24,7 +24,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 | **Description**                                      | Creates a new delayed timer. |
 | **Parameters**                                       | <ul><li>delay - number of seconds to wait for after a <code>:start()</code> invocation (the "callback countdown")</li><li>fn - a function to call after <code>delay</code> has fully elapsed without any further <code>:start()</code> invocations</li></ul> |
 | **Returns**                                          | <ul><li>a new <code>hs.timer.delayed</code> object</li></ul> |
-| **Notes**                                            | <ul><li>these timers are meant to be long-lived: once instantiated, there's no way to remove them from the run loop;    create them once at the module level.</li></ul> |
+| **Notes**                                            | <ul><li>these timers are meant to be long-lived: once instantiated, there's no way to remove them from the run loop; create them once at the module level.</li></ul> |
 
 ### Methods
 
@@ -58,7 +58,7 @@ Specialized timer objects to coalesce processing of unpredictable asynchronous e
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Starts or restarts the callback countdown |
-| **Parameters**                                       | <ul><li>delay - (optional) if provided, sets the countdown duration to this number of seconds    for this time only; subsequent calls to <code>:start()</code> will revert to the original delay (or    to the delay set with <code>:setDelay(delay)</code>)</li></ul> |
+| **Parameters**                                       | <ul><li>delay - (optional) if provided, sets the countdown duration to this number of seconds for this time only; subsequent calls to <code>:start()</code> will revert to the original delay (or to the delay set with <code>:setDelay(delay)</code>)</li></ul> |
 | **Returns**                                          | <ul><li>the delayed timer object</li></ul> |
 
 #### [stop](#stop)

@@ -4,20 +4,23 @@
 ## Project Links
 | Resource        | Link                             |
 | --------------- | -------------------------------- |
-| Website | [http://www.hammerspoon.org/](http://www.hammerspoon.org/) |
+| Website | [https://www.hammerspoon.org/](https://www.hammerspoon.org/) |
 | GitHub page | [https://github.com/Hammerspoon/hammerspoon](https://github.com/Hammerspoon/hammerspoon) |
-| Getting Started Guide | [http://www.hammerspoon.org/go/](http://www.hammerspoon.org/go/) |
+| Getting Started Guide | [https://www.hammerspoon.org/go/](https://www.hammerspoon.org/go/) |
 | Spoon Plugin Documentation | [https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md) |
-| Official Spoon repository | [http://www.hammerspoon.org/Spoons](http://www.hammerspoon.org/Spoons) |
+| Official Spoon repository | [https://www.hammerspoon.org/Spoons](https://www.hammerspoon.org/Spoons) |
 | IRC channel | [irc://chat.freenode.net/#hammerspoon](irc://chat.freenode.net/#hammerspoon) |
 | Mailing list | [https://groups.google.com/forum/#!forum/hammerspoon/](https://groups.google.com/forum/#!forum/hammerspoon/) |
-| LuaSkin API docs | [http://www.hammerspoon.org/docs/LuaSkin/](http://www.hammerspoon.org/docs/LuaSkin/) |
+| LuaSkin API docs | [https://www.hammerspoon.org/docs/LuaSkin/](https://www.hammerspoon.org/docs/LuaSkin/) |
 
 ## API Documentation
 | Module                                                             | Description           |
 | ------------------------------------------------------------------ | --------------------- |
 | [cp](cp.md)                          | Core CommandPost functionality.     |
 | [cp.18n](cp.18n.md)                          | CommandPost's Internationalisation & Localisation Manger.     |
+| [cp.adobe.aftereffects](cp.adobe.aftereffects.md)                          | Adobe After Effects Extension     |
+| [cp.adobe.aftereffects.app](cp.adobe.aftereffects.app.md)                          | The `cp.app` for Adobe After Effects.     |
+| [cp.adobe.aftereffects.shortcuts](cp.adobe.aftereffects.shortcuts.md)                          | Translations between After Effects shortcuts and Hammerspoon-friendly shortcuts.     |
 | [cp.app](cp.app.md)                          | This class assists with working with macOS apps. It provides functions for     |
 | [cp.app.menu](cp.app.menu.md)                          | Represents an app's menu bar, providing multi-lingual access to find and     |
 | [cp.app.prefs](cp.app.prefs.md)                          | Provides access to application preferences, typically stored via `NSUserDefaults` or `CFProperties`.     |

@@ -22,11 +22,11 @@ This module provides functions for inquiring about and monitoring changes to the
 ### Functions
 
 #### [addresses](#addresses)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.addresses([interface, ...]) -> table` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.addresses([interface_list]) -> table` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns a list of the IPv4 and IPv6 addresses for the specified interfaces, or all interfaces if no arguments are given. |
-| **Parameters**                                       | <ul><li>interface, ... - The interface names to return the IP addresses for. It should be specified as one of the following:</li><li>one or more interface names, separated by a comma</li><li>if the first argument is a table, it is assumes to be a table containing a list of interfaces and this list is used instead, ignoring any additional arguments that may be provided</li><li>if no arguments are specified, then the results of <a href="#interfaces">hs.network.interfaces</a> is used.</li></ul> |
+| **Parameters**                                       | <ul><li>interface_list - The interface names to return the IP addresses for. It should be specified as one of the following:</li><li>one or more interface names, separated by a comma</li><li>if the first argument is a table, it is assumes to be a table containing a list of interfaces and this list is used instead, ignoring any additional arguments that may be provided</li><li>if no arguments are specified, then the results of <a href="#interfaces">hs.network.interfaces</a> is used.</li></ul> |
 | **Returns**                                          | <ul><li>A table containing a list of the IP addresses for the interfaces as determined by the arguments provided.</li></ul> |
 | **Notes**                                            | <ul><li>The order of the IP addresses returned is undefined.</li><li>If no arguments are provided, then this function returns the same results as <code>hs.host.addresses</code>, but does not block.</li></ul> |
 
@@ -44,6 +44,7 @@ This module provides functions for inquiring about and monitoring changes to the
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns the user defined name for the specified interface or the primary interface if no interface is specified. |
+| **Parameters**                                       | <ul><li>interface - an optional string specifying the interface to retrieve the name for.  Defaults to the primary interface if not specified.</li><li>favorIPv6 - an optional boolean specifying whether or not to prefer the primary IPv6 or the primary IPv4 interface if <code>interface</code> is not specified.  Defaults to false.</li></ul> |
 | **Returns**                                          | <ul><li>A string containing the user defined name for the interface, if one exists, or false if the interface does not have a user defined name. Logs an error and returns nil if there was a problem retrieving this information.</li></ul> |
 | **Notes**                                            | <ul><li>Only interfaces which show up in the System Preferences Network panel will have a user defined name.</li></ul> |
 

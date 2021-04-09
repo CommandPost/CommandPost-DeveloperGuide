@@ -69,9 +69,9 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Saves a setting with common datatypes |
-| **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li><li>val - An optional value for the setting. Valid datatypes are:</li><li>string</li><li>number</li><li>boolean</li><li>nil</li><li>table (which may contain any of the same valid datatypes)</li><li>if no value is provided, it is assumed to be nil</li></ul> |
+| **Parameters**                                       | <ul><li>key - A string containing the name of the setting</li><li>val - An optional value for the setting. Valid datatypes are:</li><li>string</li><li>number</li><li>boolean</li><li>nil</li><li>table (which may contain any of the same valid datatypes)</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
-| **Notes**                                            | <ul><li>This function cannot set dates or raw data types, see <code>hs.settings.setDate()</code> and <code>hs.settings.setData()</code></li><li>Assigning a nil value is equivalent to clearing the value with <code>hs.settings.clear</code></li></ul> |
+| **Notes**                                            | <ul><li>If no val parameter is provided, it is assumed to be nil</li><li>This function cannot set dates or raw data types, see <code>hs.settings.setDate()</code> and <code>hs.settings.setData()</code></li><li>Assigning a nil value is equivalent to clearing the value with <code>hs.settings.clear</code></li></ul> |
 
 #### [setData](#setdata)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.settings.setData(key, val)` </span>                                                          |
@@ -91,7 +91,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Notes**                                            | <ul><li>See <code>hs.settings.dateFormat</code> for a convenient representation of the RFC3339 format, to use with other time/date related functions</li></ul> |
 
 #### [watchKey](#watchkey)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.settings.watchKey(identifier, key, [fn | nil]) -> identifier | current value` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.settings.watchKey(identifier, key, [fn]) -> identifier | current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Get or set a watcher to invoke a callback when the specified settings key changes |

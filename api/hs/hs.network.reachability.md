@@ -107,7 +107,7 @@ A specific test for determining if an OpenVPN network is available.  This exampl
 ### Methods
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability:setCallback(function | nil) -> reachabilityObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.reachability:setCallback(function) -> reachabilityObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Set or remove the callback function for a reachability object |

@@ -1,7 +1,7 @@
-# [docs](index.md) » plugins.core.tangent.os.sound
+# [docs](index.md) » plugins.finalcutpro.tangent.os.sound
 ---
 
-Tangent Display Functions.
+Tangent Sound Functions.
 
 ## API Overview
 * Variables - Configurable values
@@ -15,13 +15,13 @@ Tangent Display Functions.
 ### Variables
 
 #### [currentOutputDevice](#currentoutputdevice)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.currentOutputDevice <cp.prop: audio>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.os.sound.currentOutputDevice <cp.prop: audio>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Current Output Device. |
 
 #### [group](#group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.group <cp.prop: audio>` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.os.sound.group <cp.prop: audio>` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Tangent Sound Group. |
@@ -29,7 +29,7 @@ Tangent Display Functions.
 ### Functions
 
 #### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.sound.init() -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.os.sound.init() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise the module. |

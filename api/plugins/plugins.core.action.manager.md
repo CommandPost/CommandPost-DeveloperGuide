@@ -37,7 +37,7 @@ Action Manager Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Adds a new action handler with the specified unique ID and returns it for further configuration. |
-| **Parameters**                                       | <ul><li><code>id</code>      - The unique ID</li></ul> |
+| **Parameters**                                       | <ul><li><code>id</code>     - The unique ID</li><li><code>group</code>   - The group the handler belongs to.</li><li><code>label</code>   - An optional label for the handler (over-riding a supplied i18n value)</li></ul> |
 | **Returns**                                          | <ul><li>The <code>handler</code> instance.</li></ul> |
 
 #### [getActivator](#getactivator)
@@ -45,7 +45,7 @@ Action Manager Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns an activator with the specified ID. If it doesn't exist, it will be created. |
-| **Parameters**                                       | <ul><li><code>activatorId</code>     - The unique ID of the activator.</li></ul> |
+| **Parameters**                                       | <ul><li><code>activatorId</code>        - The unique ID of the activator.</li></ul> |
 | **Returns**                                          | <ul><li>The activator with the specified ID.</li></ul> |
 
 #### [getHandler](#gethandler)
@@ -53,7 +53,7 @@ Action Manager Module.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Returns an existing handler with the specified ID. |
-| **Parameters**                                       | <ul><li><code>id</code>          - The unique ID of the action handler.</li></ul> |
+| **Parameters**                                       | <ul><li><code>id</code>         - The unique ID of the action handler.</li></ul> |
 | **Returns**                                          | <ul><li>The action handler, or <code>nil</code></li></ul> |
 
 #### [getURL](#geturl)

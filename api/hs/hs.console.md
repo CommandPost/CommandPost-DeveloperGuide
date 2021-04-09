@@ -254,7 +254,7 @@ These functions allow altering the behavior and display of the Hammerspoon conso
 | **Notes**                                            | <ul><li>Window behaviors determine how the webview object is handled by Spaces and Exposé. See <code>hs.drawing.windowBehaviors</code> for more information.</li></ul> |
 
 #### [toolbar](#toolbar)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.toolbar([toolbar | nil]) -> toolbarObject | currentValue` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.console.toolbar([toolbar]) -> toolbarObject | currentValue` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get or attach/detach a toolbar to/from the Hammerspoon console. |

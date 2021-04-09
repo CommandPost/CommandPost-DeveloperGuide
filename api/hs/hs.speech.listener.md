@@ -77,7 +77,7 @@ The speech recognizer functions and methods provide a way to add commands which 
 | **Returns**                                          | <ul><li>true if the listener is listening (has been started) or false if it is not.</li></ul> |
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech.listener:setCallback(fn | nil) -> recognizerObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.speech.listener:setCallback(fn) -> recognizerObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Sets or removes a callback function for the speech recognizer. |

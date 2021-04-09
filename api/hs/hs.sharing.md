@@ -126,11 +126,11 @@ Common item data types that can be shared with Sharing Services include (but are
 | **Notes**                                            | <ul><li>not all sharing services will set a value for this property.</li></ul> |
 
 #### [callback](#callback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing:callback(function | nil) -> sharingObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sharing:callback(fn) -> sharingObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Set or clear the callback for the sharingObject. |
-| **Parameters**                                       | <ul><li>a function, or nil, to set or remove the callback for the sharingObject</li></ul> |
+| **Parameters**                                       | <ul><li>fn - A function, or nil, to set or remove the callback for the sharingObject</li></ul> |
 | **Returns**                                          | <ul><li>the sharingObject</li></ul> |
 | **Notes**                                            | <ul><li>the callback should expect 3 or 4 arguments and return no results.  The arguments will be as follows:</li><li>the sharingObject itself</li><li>the callback message, which will be a string equal to one of the following:<ul><li>"didFail"   - an error occurred while attempting to share the items</li><li>"didShare"  - the sharing service has finished sharing the items</li><li>"willShare" - the sharing service is about to start sharing the items; occurs before sharing actually begins</li></ul></li><li>an array (table) containing the items being shared; if the message is "didFail" or "didShare", the items may be in a different order or converted to a different internal type to facilitate sharing.</li><li>if the message is "didFail", the fourth argument will be a localized description of the error that occurred.</li></ul> |
 

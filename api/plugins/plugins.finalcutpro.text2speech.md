@@ -7,8 +7,11 @@ Text to Speech Plugin.
 * Constants - Useful values which cannot be changed
  * [copyToMediaFolder](#copytomediafolder)
 * Variables - Configurable values
+ * [addCaption](#addcaption)
+ * [addCustomKeyword](#addcustomkeyword)
+ * [addKeywordForVoiceName](#addkeywordforvoicename)
  * [addTextToNotesFieldAfterImport](#addtexttonotesfieldafterimport)
- * [createRoleForVoice](#createroleforvoice)
+ * [assignClipAudioRoleToVoiceName](#assignclipaudioroletovoicename)
  * [currentIncrementalNumber](#currentincrementalnumber)
  * [customPrefix](#customprefix)
  * [deleteFileAfterImport](#deletefileafterimport)
@@ -38,17 +41,35 @@ Text to Speech Plugin.
 
 ### Variables
 
+#### [addCaption](#addcaption)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.addCaption` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Option to Add Text to Notes Field After Importing |
+
+#### [addCustomKeyword](#addcustomkeyword)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.addCustomKeyword` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Boolean that sets whether or not to add a custom keyword. |
+
+#### [addKeywordForVoiceName](#addkeywordforvoicename)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.addKeywordForVoiceName` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Variable |
+| **Description**                                      | Boolean that sets whether or not a tag should be added for the voice. |
+
 #### [addTextToNotesFieldAfterImport](#addtexttonotesfieldafterimport)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.addTextToNotesFieldAfterImport` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
 | **Description**                                      | Option to Add Text to Notes Field After Importing |
 
-#### [createRoleForVoice](#createroleforvoice)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.createRoleForVoice` </span>                                                          |
+#### [assignClipAudioRoleToVoiceName](#assignclipaudioroletovoicename)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.assignClipAudioRoleToVoiceName` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Variable |
-| **Description**                                      | Boolean that sets whether or not a tag should be added for the voice. |
+| **Description**                                      | Assign Clip Audio Role to Voice Name |
 
 #### [currentIncrementalNumber](#currentincrementalnumber)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.text2speech.currentIncrementalNumber` </span>                                                          |

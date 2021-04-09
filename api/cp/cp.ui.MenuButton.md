@@ -88,11 +88,11 @@ Menu Button Module.
 | **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
 
 #### [doSelectItemMatching](#doselectitemmatching)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:doSelectItemMatching(pattern) -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.MenuButton:doSelectItemMatching(pattern[, altPattern]) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `MenuButton` by pattern. |
-| **Parameters**                                       | <ul><li>pattern - The pattern to match.</li></ul> |
+| **Parameters**                                       | <ul><li>pattern - The pattern to match.</li><li>[altPattern] - An optional alternate pattern to match if the first pattern fails.</li></ul> |
 | **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
 
 #### [doSelectValue](#doselectvalue)

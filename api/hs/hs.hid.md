@@ -23,6 +23,7 @@ Portions sourced from (https://discussions.apple.com/thread/7094207).
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Checks the state of the caps lock via HID |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>true if on, false if off</li></ul> |
 
 #### [set](#set)
@@ -38,5 +39,6 @@ Portions sourced from (https://discussions.apple.com/thread/7094207).
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Toggles the state of caps lock via HID |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>true if on, false if off</li></ul> |
 

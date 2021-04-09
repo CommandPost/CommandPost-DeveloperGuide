@@ -15,6 +15,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [allInputDevices](#allinputdevices)
  * [allOutputDevices](#alloutputdevices)
  * [current](#current)
+ * [defaultEffectDevice](#defaulteffectdevice)
  * [defaultInputDevice](#defaultinputdevice)
  * [defaultOutputDevice](#defaultoutputdevice)
  * [findDeviceByName](#finddevicebyname)
@@ -39,6 +40,7 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
  * [outputMuted](#outputmuted)
  * [outputVolume](#outputvolume)
  * [setBalance](#setbalance)
+ * [setDefaultEffectDevice](#setdefaulteffectdevice)
  * [setDefaultInputDevice](#setdefaultinputdevice)
  * [setDefaultOutputDevice](#setdefaultoutputdevice)
  * [setInputMuted](#setinputmuted)
@@ -92,6 +94,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Description**                                      | Fetch various metadata about the current default audio devices |
 | **Parameters**                                       | <ul><li>output - An optional boolean, true to fetch information about the default input device, false for output device. Defaults to false</li></ul> |
 | **Returns**                                          | <ul><li>A table with the following contents:<code>lua    {        name = defaultOutputDevice():name(),        uid = module.defaultOutputDevice():uid(),        muted = defaultOutputDevice():muted(),        volume = defaultOutputDevice():volume(),        device = defaultOutputDevice(),    }</code></li></ul> |
+
+#### [defaultEffectDevice](#defaulteffectdevice)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice.defaultEffectDevice() -> audio or nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Get the currently selected sound effect device |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>An hs.audiodevice object, or nil if no suitable device could be found</li></ul> |
 
 #### [defaultInputDevice](#defaultinputdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice.defaultInputDevice() -> audio or nil` </span>                                                          |
@@ -285,6 +295,14 @@ This module is based primarily on code from the previous incarnation of Mjolnir 
 | **Parameters**                                       | <ul><li>level - A number between 0.0 and 1.0, representing the balance (0.0 for full left, 1.0 for full right, 0.5 for center)</li></ul> |
 | **Returns**                                          | <ul><li>True if the balance was set, false if the audio device does not support setting a balance.</li></ul> |
 | **Notes**                                            | <ul><li>This method will inspect the device to determine if it is an input or output device, and set the appropriate volume. For devices that are both input and output devices, see <code>:setInputVolume()</code> and <code>:setOutputVolume()</code></li></ul> |
+
+#### [setDefaultEffectDevice](#setdefaulteffectdevice)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:setDefaultEffectDevice() -> bool` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Selects this device as the audio output device for system sound effects |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>True if the audio device was successfully selected, otherwise false.</li></ul> |
 
 #### [setDefaultInputDevice](#setdefaultinputdevice)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.audiodevice:setDefaultInputDevice() -> bool` </span>                                                          |

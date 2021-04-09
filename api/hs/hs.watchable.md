@@ -44,7 +44,7 @@ The goal is to provide a mechanism for sharing state information between separat
 ### Methods
 
 #### [callback](#callback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.watchable:callback(fn | nil) -> watchableObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.watchable:callback(fn) -> watchableObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Change or remove the callback function for the watchableObject. |

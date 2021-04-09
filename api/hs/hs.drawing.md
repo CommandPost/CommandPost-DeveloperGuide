@@ -124,7 +124,7 @@ hs.drawing is now deprecated and will be removed in a future release. Its functi
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Get the size of the rectangle necessary to fully render the text with the specified style so that is will be completely visible. |
-| **Parameters**                                       | <ul><li>styledTextObject - an object created with the hs.styledtext module or its table representation (see <code>hs.styledtext</code>).</li></ul> |
+| **Parameters**                                       | <ul><li>styledTextObject - an object created with the hs.styledtext module or its table representation (see <code>hs.styledtext</code>).</li><li>textStyle - an optional table containing one or more of the following keys to set for the text of the drawing object (if textStyle is nil or missing, the <code>hs.drawing</code> defaults are used):</li></ul> |
 | **Returns**                                          | <ul><li>sizeTable - a table containing the Height and Width necessary to fully display the text drawing object, or nil if an error occurred</li></ul> |
 | **Notes**                                            | <ul><li>This function assumes the default values specified for any key which is not included in the provided textStyle.</li><li>The size returned is an approximation and may return a width that is off by about 4 points.  Use the returned size as a minimum starting point. Sometimes using the "clip" or "truncateMiddle" lineBreak modes or "justified" alignment will fit, but its safest to add in your own buffer if you have the space in your layout.</li><li>Multi-line text (separated by a newline or return) is supported.  The height will be for the multiple lines and the width returned will be for the longest line.</li></ul> |
 
@@ -241,7 +241,7 @@ hs.drawing is now deprecated and will be removed in a future release. Its functi
 | **Notes**                                            | <ul><li>Setting this to false changes a drawing object's AXsubrole value and may affect the results of filters defined for hs.window.filter, depending upon how they are defined.</li></ul> |
 
 #### [clippingRectangle](#clippingrectangle)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:clippingRectangle([rect | nil]) -> drawingObject or current value` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.drawing:clippingRectangle([rect]) -> drawingObject or current value` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Set the screen area in which the drawing contents are visible. |

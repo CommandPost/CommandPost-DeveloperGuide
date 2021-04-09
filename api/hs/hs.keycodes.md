@@ -1,7 +1,7 @@
 # [docs](index.md) » hs.keycodes
 ---
 
-Convert between key-strings and key-codes. Also provides funcionality for querying and changing keyboard layouts.
+Convert between key-strings and key-codes. Also provides functionality for querying and changing keyboard layouts.
 
 ## API Overview
 * Constants - Useful values which cannot be changed

@@ -23,6 +23,7 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
  * [parameter](#parameter)
  * [parent](#parent)
  * [reset](#reset)
+ * [tangent](#tangent)
  * [xml](#xml)
 
 ## API Documentation
@@ -40,11 +41,11 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 ### Constructors
 
 #### [group](#group)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group(name[, parent[, localActive]])` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group(name, manager, [, parent[, localActive]])` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new `Group` instance. |
-| **Parameters**                                       | <ul><li>name      - The name of the group.</li><li>parent    - The parent group.</li><li>localActive - If <code>true</code>, this group will ignore the parent's <code>active</code> status when determining its own <code>active</code> status. Defaults to <code>false</code>.</li></ul> |
+| **Parameters**                                       | <ul><li>name      - The name of the group.</li><li>manager   - The Tangent Manager.</li><li>parent    - The parent group.</li><li>localActive - If <code>true</code>, this group will ignore the parent's <code>active</code> status when determining its own <code>active</code> status. Defaults to <code>false</code>.</li></ul> |
 
 ### Fields
 
@@ -134,6 +135,14 @@ Parameters/Actions/Menus by enabling/disabling the containing group.
 | **Description**                                      | This will remove all parameters, actions, menus and bindings from |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The <code>group</code> instance.</li></ul> |
+
+#### [tangent](#tangent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:tangent() -> hs.tangent` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The `hs.tangent` connection. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.tangent</code>.</li></ul> |
 
 #### [xml](#xml)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.group:xml() -> cp.web.xml` </span>                                                          |

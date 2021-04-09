@@ -11,6 +11,7 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 ## API Overview
 * Functions - API calls offered directly by the extension
  * [allContentTypes](#allcontenttypes)
+ * [callbackWhenChanged](#callbackwhenchanged)
  * [changeCount](#changecount)
  * [clearContents](#clearcontents)
  * [contentTypes](#contenttypes)
@@ -47,6 +48,15 @@ This module is based partially on code from the previous incarnation of Mjolnir 
 | **Description**                                      | An array whose elements are a table containing the content types for each element on the clipboard. |
 | **Parameters**                                       | <ul><li>name - an optional string indicating the pasteboard name.  If nil or not present, defaults to the system pasteboard.</li></ul> |
 | **Returns**                                          | <ul><li>an array with each index representing an object on the pasteboard.  If the pasteboard contains only one element, this is equivalent to <code>{ hs.pasteboard.contentTypes(name) }</code>.</li></ul> |
+
+#### [callbackWhenChanged](#callbackwhenchanged)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.pasteboard.callbackWhenChanged([name], [timeout], callback) -> None` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Invokes callback when the specified pasteoard has changed or the timeout is reached. |
+| **Parameters**                                       | <ul><li><code>name</code>     - an optional string indicating the pasteboard name.  If nil or not present, defaults to the system pasteboard.</li><li><code>timeout</code>  - an optional number, default 2.0, specifying the time in seconds that this function should wait for a change to the specified pasteboard before timing out.</li><li><code>callback</code> - a required callback function that will be invoked when either the specified pasteboard contents have changed or the timeout has been reached. The function should expect one boolean argument, true if the pasteboard contents have changed or false if timeout has been reached.</li></ul> |
+| **Returns**                                          | <ul><li>None</li></ul> |
+| **Notes**                                            | <ul><li>This function can be used to capture the results of a copy operation issued programatically with <code>hs.application:selectMenuItem</code> or <code>hs.eventtap.keyStroke</code> without resorting to creating your own timers:</li></ul> |
 
 #### [changeCount](#changecount)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.pasteboard.changeCount([name]) -> number` </span>                                                          |

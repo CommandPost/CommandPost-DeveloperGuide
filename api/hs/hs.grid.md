@@ -224,7 +224,7 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Shows the grid and starts the modal interactive resizing process for the focused or frontmost window. |
-| **Parameters**                                       | <ul><li>exitedCallback - (optional) a function that will be called after the user dismisses the modal interface</li><li>multipleWindows - (optional) if <code>true</code>, the resizing grid won't automatically go away after selecting the desired cells   for the frontmost window; instead, it'll switch to the next window</li></ul> |
+| **Parameters**                                       | <ul><li>exitedCallback - (optional) a function that will be called after the user dismisses the modal interface</li><li>multipleWindows - (optional) if <code>true</code>, the resizing grid won't automatically go away after selecting the desired cells for the frontmost window; instead, it'll switch to the next window</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 | **Notes**                                            | <ul><li>In the modal interface, press the arrow keys to jump to adjacent screens; spacebar to maximize/unmaximize; esc to quit without any effect</li><li>Pressing <code>tab</code> or <code>shift-tab</code> in the modal interface will cycle to the next or previous window; if <code>multipleWindows</code>   is false or omitted, the first press will just enable the multiple windows behaviour</li><li>The keyboard hints assume a QWERTY layout; if you use a different layout, change <code>hs.grid.HINTS</code> accordingly</li><li>If grid dimensions are greater than 10x10 then you may have to change <code>hs.grid.HINTS</code> depending on your   requirements. See note in <code>HINTS</code>.</li></ul> |
 
@@ -241,5 +241,6 @@ After highlighting enough cells, press enter to move/resize the window to the hi
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Toggles the grid and modal resizing mode - see `hs.grid.show()` and `hs.grid.hide()` |
+| **Parameters**                                       | <ul><li>exitedCallback - (optional) a function that will be called after the user dismisses the modal interface</li><li>multipleWindows - (optional) if <code>true</code>, the resizing grid won't automatically go away after selecting the desired cells for the frontmost window; instead, it'll switch to the next window</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 

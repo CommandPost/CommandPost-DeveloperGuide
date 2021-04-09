@@ -125,7 +125,7 @@ This sub-module provides access to the current location set configuration settin
 | **Notes**                                            | <ul><li>You can also retrieve this information as key-value pairs with <code>hs.network.configuration:contents("State:/Network/Global/Proxies")</code></li></ul> |
 
 #### [setCallback](#setcallback)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.configuration:setCallback(function | nil) -> storeObject` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.network.configuration:setCallback(function) -> storeObject` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Set or remove the callback function for a store object |

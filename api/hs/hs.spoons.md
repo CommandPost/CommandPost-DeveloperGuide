@@ -3,7 +3,7 @@
 
 Utility and management functions for Spoons
 Spoons are Lua plugins for Hammerspoon.
-See http://www.hammerspoon.org/Spoons/ for more information
+See https://www.hammerspoon.org/Spoons/ for more information
 
 ## API Overview
 * Functions - API calls offered directly by the extension
@@ -53,7 +53,7 @@ See http://www.hammerspoon.org/Spoons/ for more information
 | **Returns**                                          | <ul><li>Table with a list of installed/loaded spoons (depending on the value of <code>onlyLoaded</code>). Each entry is a table with the following entries:</li><li><code>name</code> - Spoon name</li><li><code>loaded</code> - boolean indication of whether the Spoon is loaded (<code>true</code>) or only installed (<code>false</code>)</li><li><code>version</code> - Spoon version number. Available only for loaded Spoons.</li></ul> |
 
 #### [newSpoon](#newspoon)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.newSpoon(name, basedir, metadata) -> string | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.newSpoon(name, basedir, metadata, [template]) -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Create a skeleton for a new Spoon |
@@ -77,7 +77,7 @@ See http://www.hammerspoon.org/Spoons/ for more information
 | **Returns**                                          | <ul><li>String with the path from where the calling code was loaded.</li></ul> |
 
 #### [use](#use)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.use(name, arg) -> boolean | nil` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.spoons.use(name, arg, [noerror]) -> boolean | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Declaratively load and configure a Spoon |

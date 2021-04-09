@@ -147,6 +147,7 @@ Additional submodules which may address this limitation as well as provide addit
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Stop advertising or resolving the service specified by the serviceObject |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>the serviceObject</li></ul> |
 | **Notes**                                            | <ul><li>this method will stop the advertising of a service which has been published with <a href="#publish">hs.bonjour.service:publish</a> or is being resolved with <a href="#resolve">hs.bonjour.service:resolve</a>.</li></ul> |
 

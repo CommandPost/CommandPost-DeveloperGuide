@@ -94,6 +94,7 @@ You can use any of these anywhere an hs.geometry object is expected in Hammerspo
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new hs.geometry object |
+| **Parameters**                                       | <ul><li>... - see the module description at the top</li></ul> |
 | **Returns**                                          | <ul><li>a newly created hs.geometry object</li></ul> |
 
 #### [point](#point)

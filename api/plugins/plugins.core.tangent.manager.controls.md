@@ -18,6 +18,7 @@ Represents a Tangent Group
  * [parameter](#parameter)
  * [parent](#parent)
  * [register](#register)
+ * [tangent](#tangent)
  * [unregister](#unregister)
  * [xml](#xml)
 
@@ -107,6 +108,14 @@ Represents a Tangent Group
 | **Description**                                      | Registers a control (Action/Parameter/Menu) with it's ID |
 | **Parameters**                                       | <ul><li>control       - The Action/Parameter/Menu to register</li></ul> |
 | **Returns**                                          | <ul><li>self</li></ul> |
+
+#### [tangent](#tangent)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:tangent() -> hs.tangent` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | The `hs.tangent` connection. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.tangent</code>.</li></ul> |
 
 #### [unregister](#unregister)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.manager.controls:unregister(control) -> self` </span>                                                          |

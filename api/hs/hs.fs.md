@@ -3,9 +3,7 @@
 
 Access/inspect the filesystem
 
-Home: http://keplerproject.github.io/luafilesystem
-
-This module is produced by the Kepler Project under the name "Lua File System"
+This module is partial superset of LuaFileSystem 1.8.0 (http://keplerproject.github.io/luafilesystem/). It has been modified to remove functions which do not apply to macOS filesystems and additional functions providing macOS specific filesystem information have been added.
 
 ## Submodules
  * [hs.fs.volume](hs.fs.volume.md)
@@ -38,6 +36,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
  * [temporaryDirectory](#temporarydirectory)
  * [touch](#touch)
  * [unlock](#unlock)
+ * [urlFromPath](#urlfrompath)
 
 ## API Documentation
 
@@ -49,7 +48,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Type**                                             | Function |
 | **Description**                                      | Gets the attributes of a file |
 | **Parameters**                                       | <ul><li>filepath - A string containing the path of a file to inspect</li><li>aName - An optional attribute name. If this value is specified, only the attribute requested, is returned</li></ul> |
-| **Returns**                                          | <ul><li>A table with the file attributes corresponding to filepath (or nil followed by an error message in case of error). If the second optional argument is given, then a string is returned with the value of the named attribute. attribute mode is a string, all the others are numbers, and the time related attributes use the same time reference of os.time:</li><li>dev - A number containing the device the file resides on</li><li>ino - A number containing the inode of the file</li><li>mode - A string containing the type of the file (possible values are: file, directory, link, socket, named pipe, char device, block device or other)</li><li>nlink - A number containing a count of hard links to the file</li><li>uid - A number containing the user-id of owner</li><li>gid - A number containing the group-id of owner</li><li>rdev - A number containing the type of device, for files that are char/block devices</li><li>access - A number containing the time of last access modification (as seconds since the UNIX epoch)</li><li>change - A number containing the time of last file status change (as seconds since the UNIX epoch)</li><li>modification - A number containing the time of the last file contents change (as seconds since the UNIX epoch)</li><li>creation - A number containing the time the file was created (as seconds since the UNIX epoch)</li><li>size - A number containing the file size, in bytes</li><li>blocks - A number containing the number of blocks allocated for file</li><li>blksize - A number containing the optimal file system I/O blocksize</li></ul> |
+| **Returns**                                          | <ul><li>A table with the file attributes corresponding to filepath (or nil followed by an error message in case of error). If the second optional argument is given, then a string is returned with the value of the named attribute. attribute mode is a string, all the others are numbers, and the time related attributes use the same time reference of os.time:</li><li>dev - A number containing the device the file resides on</li><li>ino - A number containing the inode of the file</li><li>mode - A string containing the type of the file (possible values are: file, directory, link, socket, named pipe, char device, block device or other)</li><li>nlink - A number containing a count of hard links to the file</li><li>uid - A number containing the user-id of owner</li><li>gid - A number containing the group-id of owner</li><li>rdev - A number containing the type of device, for files that are char/block devices</li><li>access - A number containing the time of last access modification (as seconds since the UNIX epoch)</li><li>change - A number containing the time of last file status change (as seconds since the UNIX epoch)</li><li>modification - A number containing the time of the last file contents change (as seconds since the UNIX epoch)</li><li>permissions - A 9 character string specifying the user access permissions for the file. The first three characters represent Read/Write/Execute permissions for the file owner. The first character will be "r" if the user has read permissions, "-" if they do not; the second will be "w" if they have write permissions, "-" if they do not; the third will be "x" if they have execute permissions, "-" if they do not. The second group of three characters follow the same convention, but refer to whether or not the file's group have Read/Write/Execute permissions, and the final three characters follow the same convention, but apply to other system users not covered by the Owner or Group fields.</li><li>creation - A number containing the time the file was created (as seconds since the UNIX epoch)</li><li>size - A number containing the file size, in bytes</li><li>blocks - A number containing the number of blocks allocated for file</li><li>blksize - A number containing the optimal file system I/O blocksize</li></ul> |
 | **Notes**                                            | <ul><li>This function uses <code>stat()</code> internally thus if the given filepath is a symbolic link, it is followed (if it points to another link the chain is followed recursively) and the information is about the file it refers to. To obtain information about the link itself, see function <code>hs.fs.symlinkAttributes()</code></li></ul> |
 
 #### [chdir](#chdir)
@@ -69,13 +68,13 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Returns**                                          | <ul><li>A string containing the current working directory, or if an error occured, nil and an error string</li></ul> |
 
 #### [dir](#dir)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.dir(path) -> iter_fn, dir_obj` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.dir(path) -> iter_fn, dir_obj, nil, dir_obj` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Creates an iterator for walking a filesystem path |
 | **Parameters**                                       | <ul><li>path - A string containing a directory to iterate</li></ul> |
-| **Returns**                                          | <ul><li>An iterator function or <code>nil</code> if the supplied path cannot be iterated</li><li>A data object to pass to the iterator function or an error message as a string</li></ul> |
-| **Notes**                                            | <ul><li>The data object should be passed to the iterator function. Each call will return either a string containing the name of an entry in the directory, or <code>nil</code> if there are no more entries.</li><li>Iteration can also be performed by calling <code>:next()</code> on the data object. Note that if you do this, you must call <code>:close()</code> on the object when you have finished.</li><li>The iterator function will return <code>nil</code> if the supplied path cannot be iterated, as well as the error message as a string.</li><li>Example Usage:   <code>local iterFn, dirObj = hs.fs.dir("/Users/Guest/Documents")      if iterFn then         for file in iterFn, dirObj do            print(file)         end      else         print(string.format("The following error occurred: %s", dirObj))      end</code></li></ul> |
+| **Returns**                                          | <ul><li>An iterator function</li><li>A data object to pass to the iterator function or an error message as a string</li><li><code>nil</code> as the initial argument for the iterator (unused and unnecessary in this case, but conforms to Lua spec for iterators). Ignore this value if you are not using this function with <code>for</code> (see Notes).</li><li>A second data object used by <code>for</code> to close the directory object immediately when the loop terminates. Ignore this value if you are not using this function with <code>for</code> (see Notes).</li></ul> |
+| **Notes**                                            | <ul><li>Unlike most functions in this module, <code>hs.fs.dir</code> will throw a Lua error if the supplied path cannot be iterated.</li></ul> |
 
 #### [displayName](#displayname)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.displayName(filepath) -> string` </span>                                                          |
@@ -158,7 +157,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Type**                                             | Function |
 | **Description**                                      | Gets the absolute path of a given path |
 | **Parameters**                                       | <ul><li>filepath - Any kind of file or directory path, be it relative or not</li></ul> |
-| **Returns**                                          | <ul><li>A string containing the absolute path of <code>filepath</code> (i.e. one that doesn't intolve <code>.</code>, <code>..</code> or symlinks)</li><li>Note that symlinks will be resolved to their target file</li></ul> |
+| **Returns**                                          | <ul><li>A string containing the absolute path of <code>filepath</code> (i.e. one that doesn't include <code>.</code>, <code>..</code> or symlinks)</li><li>Note that symlinks will be resolved to their target file</li></ul> |
 
 #### [pathToBookmark](#pathtobookmark)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.pathToBookmark(path) -> string | nil` </span>                                                          |
@@ -192,7 +191,7 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Description**                                      | Gets the attributes of a symbolic link |
 | **Parameters**                                       | <ul><li>filepath - A string containing the path of a link to inspect</li><li>aName - An optional attribute name. If this value is specified, only the attribute requested, is returned</li></ul> |
 | **Returns**                                          | <ul><li>A table or string if the values could be found, otherwise nil and an error string.</li></ul> |
-| **Notes**                                            | <ul><li>The return values for this function are identical to those provided by <code>hs.fs.attributes()</code></li></ul> |
+| **Notes**                                            | <ul><li>The return values for this function are identical to those provided by <code>hs.fs.attributes()</code> with the following addition: the attribute name "target" is added and specifies a string containing the absolute path that the symlink points to.</li></ul> |
 
 #### [tagsAdd](#tagsadd)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.tagsAdd(filepath, tags)` </span>                                                          |
@@ -249,4 +248,12 @@ This module is produced by the Kepler Project under the name "Lua File System"
 | **Description**                                      | Unlocks a file or a part of it. |
 | **Parameters**                                       | <ul><li>filehandle - An open file</li><li>start - An optional number containing an offset from the start of the file, to unlock. Defaults to 0</li><li>length - An optional number containing the length of file to unlock. Defaults to the full size of the file</li></ul> |
 | **Returns**                                          | <ul><li>True if the unlock succeeded, otherwise nil and an error string</li></ul> |
+
+#### [urlFromPath](#urlfrompath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.fs.urlFromPath(path) -> string | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Returns the encoded URL from a path. |
+| **Parameters**                                       | <ul><li>path - The path</li></ul> |
+| **Returns**                                          | <ul><li>A string or <code>nil</code> if path is invalid.</li></ul> |
 

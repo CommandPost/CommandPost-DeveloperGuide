@@ -35,7 +35,7 @@ Notes:
 ### Functions
 
 #### [new](#new)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task.new(launchPath, callbackFn[, streamCallbackFn, arguments]) -> hs.task object` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.task.new(launchPath, callbackFn[, streamCallbackFn][, arguments]) -> hs.task object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Creates a new hs.task object |

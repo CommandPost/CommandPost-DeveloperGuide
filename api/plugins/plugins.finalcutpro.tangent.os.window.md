@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.tangent.os.window
+# [docs](index.md) » plugins.finalcutpro.tangent.os.window
 ---
 
 Window Management Tools for Tangent.

@@ -26,6 +26,7 @@ containing the details of the action to execute if the choice is selected.
  * [execute](#execute)
  * [group](#group)
  * [id](#id)
+ * [label](#label)
  * [onActionId](#onactionid)
  * [onChoices](#onchoices)
  * [onExecute](#onexecute)
@@ -40,7 +41,7 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Constructor |
 | **Description**                                      | Creates a new handler with the specified ID. |
-| **Parameters**                                       | <ul><li><code>id</code>      - The unique ID of the action handler.</li><li><code>group</code>   - The group the handler belongs to.</li></ul> |
+| **Parameters**                                       | <ul><li><code>id</code>      - The unique ID of the action handler.</li><li><code>group</code>   - The group the handler belongs to.</li><li><code>label</code>   - An optional label for the handler (over-riding a supplied i18n value)</li></ul> |
 | **Returns**                                          | <ul><li>The new action handler instance.</li></ul> |
 
 ### Fields
@@ -86,6 +87,14 @@ containing the details of the action to execute if the choice is selected.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Returns the ID for this handler. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>The ID string.</li></ul> |
+
+#### [label](#label)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.action.handler:label() -> string` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | Returns the label for this handler. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The ID string.</li></ul> |
 

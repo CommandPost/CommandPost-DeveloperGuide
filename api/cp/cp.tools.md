@@ -173,7 +173,7 @@ A collection of handy miscellaneous tools for Lua development.
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Ensures all steps on a provided path exist. If not, attempts to create them. |
-| **Parameters**                                       | <ul><li><code>rootPath</code> - The root path (should already exist).</li><li><code>...</code>      - The list of path steps to create</li></ul> |
+| **Parameters**                                       | <ul><li><code>rootPath</code> - The root path</li><li><code>...</code>      - The list of path steps to create</li></ul> |
 | **Returns**                                          | <ul><li>The full path, if it exists, or <code>nil</code> if unable to create the directory for some reason.</li></ul> |
 
 #### [exactMatch](#exactmatch)

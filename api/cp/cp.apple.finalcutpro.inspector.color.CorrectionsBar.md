@@ -15,6 +15,7 @@ Requires Final Cut Pro 10.4 or later.
 * Methods - API calls which can only be made on an object returned by a constructor
  * [activate](#activate)
  * [add](#add)
+ * [doActivate](#doactivate)
  * [doShow](#doshow)
  * [findCorrectionLabel](#findcorrectionlabel)
  * [show](#show)
@@ -56,12 +57,12 @@ Requires Final Cut Pro 10.4 or later.
 ### Methods
 
 #### [activate](#activate)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:activate(correctionType, number) -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:activate(correctionType, number) -> cp.apple.finalcutpro.inspector.color.CorrectionsBar` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
-| **Description**                                      | A Statement that activates a correction type. |
+| **Description**                                      | Activates a correction type. |
 | **Parameters**                                       | <ul><li><code>correctionType</code> - The correction type as string.</li><li><code>number</code> - The number of the correction.</li></ul> |
-| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
+| **Returns**                                          | <ul><li><code>cp.apple.finalcutpro.inspector.color.CorrectionsBar</code> object.</li></ul> |
 
 #### [add](#add)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:add(correctionType) -> cp.apple.finalcutpro.inspector.color.CorrectionsBar` </span>                                                          |
@@ -70,6 +71,14 @@ Requires Final Cut Pro 10.4 or later.
 | **Description**                                      | Adds the specific correction type. |
 | **Parameters**                                       | <ul><li><code>correctionType</code> - The correction type as string.</li></ul> |
 | **Returns**                                          | <ul><li><code>cp.apple.finalcutpro.inspector.color.CorrectionsBar</code> object.</li></ul> |
+
+#### [doActivate](#doactivate)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:doActivate(correctionType, number) -> cp.rx.go.Statement` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Method |
+| **Description**                                      | A Statement that activates a correction type. |
+| **Parameters**                                       | <ul><li><code>correctionType</code> - The correction type as string.</li><li><code>number</code> - The number of the correction.</li></ul> |
+| **Returns**                                          | <ul><li>The <code>Statement</code>.</li></ul> |
 
 #### [doShow](#doshow)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.apple.finalcutpro.inspector.color.CorrectionsBar:doShow() -> cp.rx.go.Statement` </span>                                                          |

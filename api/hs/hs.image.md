@@ -8,6 +8,8 @@ A module for capturing and manipulating image objects from other modules for use
 * Constants - Useful values which cannot be changed
  * [additionalImageNames](#additionalimagenames)
  * [systemImageNames](#systemimagenames)
+* Functions - API calls offered directly by the extension
+ * [getExifFromPath](#getexiffrompath)
 * Constructors - API calls which return an object, typically one that offers API methods
  * [iconForFile](#iconforfile)
  * [iconForFileType](#iconforfiletype)
@@ -47,6 +49,16 @@ A module for capturing and manipulating image objects from other modules for use
 | **Type**                                             | Constant |
 | **Description**                                      | Table containing the names of internal system images for use with hs.drawing.image |
 | **Notes**                                            | <ul><li>Image names pulled from NSImage.h</li><li>This table has a __tostring() metamethod which allows listing it's contents in the Hammerspoon console by typing <code>hs.image.systemImageNames</code>.</li></ul> |
+
+### Functions
+
+#### [getExifFromPath](#getexiffrompath)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.image.getExifFromPath(path) -> table | nil` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets the EXIF metadata information from an image file. |
+| **Parameters**                                       | <ul><li>path - The path to the image file.</li></ul> |
+| **Returns**                                          | <ul><li>A table of EXIF metadata, or <code>nil</code> if no metadata can be found or the file path is invalid.</li></ul> |
 
 ### Constructors
 

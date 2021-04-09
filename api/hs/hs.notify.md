@@ -46,7 +46,6 @@ This module is based in part on code from the previous incarnation of Mjolnir by
  * [informativeText](#informativetext)
  * [otherButtonTitle](#otherbuttontitle)
  * [presented](#presented)
- * [release](#release)
  * [response](#response)
  * [responsePlaceholder](#responseplaceholder)
  * [schedule](#schedule)
@@ -124,7 +123,7 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Unregisters a function callback so that it is no longer available as a callback when notifications corresponding to the specified entry are interacted with. |
-| **Parameters**                                       | <ul><li>id or tag - the numerical id provided by <a href="#register">hs.notify.register</a> or string tag representing the callback function to be removed</li></ul> |
+| **Parameters**                                       | <ul><li>id - the numerical id provided by <a href="#register">hs.notify.register</a></li><li>tag - a string tag representing the callback function to be removed</li></ul> |
 | **Returns**                                          | <ul><li>None</li></ul> |
 
 #### [unregisterall](#unregisterall)
@@ -313,15 +312,6 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Returns**                                          | <ul><li>A boolean indicating whether the users Notification Center decided to display the notification</li></ul> |
 | **Notes**                                            | <ul><li>Examples of why the users Notification Center would choose not to display a notification would be if Hammerspoon is the currently focussed application, being attached to a projector, or the user having set Do Not Disturb.</li></ul> |
 
-#### [release](#release)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:release() -> notificationObject` </span>                                                          |
-| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **Type**                                             | Method |
-| **Description**                                      | This is a no-op included for backwards compatibility. |
-| **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The notification object</li></ul> |
-| **Notes**                                            | <ul><li>This is no longer required during garbage collection as function tags can be re-established after a reload.</li><li>The proper way to release a notifications callback is to remove its tag from the <a href="#registry">hs.notify.registry</a> with <a href="#unregister">hs.notify.unregister</a>.</li><li>This is included for backwards compatibility.</li></ul> |
-
 #### [response](#response)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:response() -> string | nil` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
@@ -398,12 +388,13 @@ This module is based in part on code from the previous incarnation of Mjolnir by
 | **Type**                                             | Method |
 | **Description**                                      | Withdraws a delivered notification from the Notification Center. |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>The notification object</li></ul> |
+| **Returns**                                          | <ul><li>The notification object</li><li>This method allows you to unlock a dispatched notification so that it can be modified and resent.</li></ul> |
 
 #### [withdrawAfter](#withdrawafter)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.notify:withdrawAfter([seconds]) -> notificationObject | number` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Get or set the number of seconds after which to automatically withdraw a notification |
+| **Parameters**                                       | <ul><li>seconds - An optional number, default 5, of seconds after which to withdraw a notification. A value of 0 will not withdraw a notification automatically</li></ul> |
 | **Returns**                                          | <ul><li>The notification object, if an argument is present; otherwise the current value.</li></ul> |
 

@@ -54,10 +54,10 @@ UI for AXMenus.
 | **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
 
 #### [doSelectValue](#doselectvalue)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Menu:doSelectValue(value) -> cp.rx.go.Statement` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`cp.ui.Menu:doSelectValue(pattern[, altPattern]) -> cp.rx.go.Statement` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | A [Statement](cp.rx.go.Statement.md) that will select an item on the `Menu` by value. |
-| **Parameters**                                       | <ul><li>value - The value of the item to match.</li></ul> |
+| **Parameters**                                       | <ul><li>pattern - The pattern to match.</li><li>[altPattern] - An optional alternate pattern to match if the first pattern fails.</li></ul> |
 | **Returns**                                          | <ul><li>the <code>Statement</code>.</li></ul> |
 

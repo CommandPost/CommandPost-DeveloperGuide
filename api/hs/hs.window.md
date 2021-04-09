@@ -120,7 +120,7 @@ Notes:
 | **Type**                                             | Function |
 | **Description**                                      | Returns the desktop "window" |
 | **Parameters**                                       | <ul><li>None</li></ul> |
-| **Returns**                                          | <ul><li>An <code>hs.window</code> object representing the desktop</li></ul> |
+| **Returns**                                          | <ul><li>An <code>hs.window</code> object representing the desktop, or nil if Finder is not running</li></ul> |
 | **Notes**                                            | <ul><li>The desktop belongs to Finder.app: when Finder is the active application, you can focus the desktop by cycling   through windows via cmd-`</li><li>The desktop window has no id, a role of <code>AXScrollArea</code> and no subrole</li><li>The desktop is filtered out from <code>hs.window.allWindows()</code> (and downstream uses)</li></ul> |
 
 #### [invisibleWindows](#invisiblewindows)
@@ -291,18 +291,27 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Focuses the nearest possible window to the north (i.e. up) |
+| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows   to the east are candidates.</li><li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the   eastward axis</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if a window was found and focused, <code>false</code> otherwise; <code>nil</code> if the search couldn't take place</li></ul> |
+| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows   every time this method is called; this can be slow, and some undesired "windows" could be included   (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in   <code>hs.window.filter</code> instead</li></ul> |
 
 #### [focusWindowSouth](#focuswindowsouth)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:focusWindowSouth([candidateWindows[, frontmost[, strict]]]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Focuses the nearest possible window to the south (i.e. down) |
+| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows   to the east are candidates.</li><li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the   eastward axis</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if a window was found and focused, <code>false</code> otherwise; <code>nil</code> if the search couldn't take place</li></ul> |
+| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows   every time this method is called; this can be slow, and some undesired "windows" could be included   (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in   <code>hs.window.filter</code> instead</li></ul> |
 
 #### [focusWindowWest](#focuswindowwest)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:focusWindowWest([candidateWindows[, frontmost[, strict]]]) -> boolean` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Focuses the nearest possible window to the west (i.e. left) |
+| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows   to the east are candidates.</li><li>frontmost - (optional) boolean, if true focuses the nearest window that isn't occluded by any other window</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the   eastward axis</li></ul> |
+| **Returns**                                          | <ul><li><code>true</code> if a window was found and focused, <code>false</code> otherwise; <code>nil</code> if the search couldn't take place</li></ul> |
+| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows   every time this method is called; this can be slow, and some undesired "windows" could be included   (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in   <code>hs.window.filter</code> instead</li></ul> |
 
 #### [frame](#frame)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:frame() -> hs.geometry rect` </span>                                                          |
@@ -333,6 +342,7 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Determines if a window is maximizable |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>True if the window is maximizable, False if it isn't, or nil if an error occurred</li></ul> |
 
 #### [isMinimized](#isminimized)
@@ -400,18 +410,24 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Moves the window one screen north (i.e. up) |
+| **Parameters**                                       | <ul><li>noResize - (optional) if <code>true</code>, maintain the window's absolute size</li><li>ensureInScreenBounds - (optional) if <code>true</code>, use <code>setFrameInScreenBounds()</code> to ensure the resulting window frame is fully contained within   the window's screen</li><li>duration - (optional) The number of seconds to animate the transition. Defaults to the value of <code>hs.window.animationDuration</code></li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.window</code> object</li></ul> |
 
 #### [moveOneScreenSouth](#moveonescreensouth)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:moveOneScreenSouth([noResize, ensureInScreenBounds][, duration]) -> hs.window object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Moves the window one screen south (i.e. down) |
+| **Parameters**                                       | <ul><li>noResize - (optional) if <code>true</code>, maintain the window's absolute size</li><li>ensureInScreenBounds - (optional) if <code>true</code>, use <code>setFrameInScreenBounds()</code> to ensure the resulting window frame is fully contained within   the window's screen</li><li>duration - (optional) The number of seconds to animate the transition. Defaults to the value of <code>hs.window.animationDuration</code></li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.window</code> object</li></ul> |
 
 #### [moveOneScreenWest](#moveonescreenwest)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:moveOneScreenWest([noResize, ensureInScreenBounds][, duration]) -> hs.window object` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Moves the window one screen west (i.e. left) |
+| **Parameters**                                       | <ul><li>noResize - (optional) if <code>true</code>, maintain the window's absolute size</li><li>ensureInScreenBounds - (optional) if <code>true</code>, use <code>setFrameInScreenBounds()</code> to ensure the resulting window frame is fully contained within   the window's screen</li><li>duration - (optional) The number of seconds to animate the transition. Defaults to the value of <code>hs.window.animationDuration</code></li></ul> |
+| **Returns**                                          | <ul><li>The <code>hs.window</code> object</li></ul> |
 
 #### [moveToScreen](#movetoscreen)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:moveToScreen(screen[, noResize, ensureInScreenBounds][, duration]) -> hs.window object` </span>                                                          |
@@ -607,27 +623,36 @@ Notes:
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets all windows to the east of this window |
-| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows   to the east are candidates.</li><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the   eastward axis</li></ul> |
+| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows to the east are candidates.</li><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the eastward axis</li></ul> |
 | **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned east (i.e. right) of the window, in ascending order of distance</li></ul> |
-| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows   every time this method is called; this can be slow, and some undesired "windows" could be included   (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in   <code>hs.window.filter</code> instead</li></ul> |
+| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows every time this method is called; this can be slow, and some undesired "windows" could be included (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in <code>hs.window.filter</code> instead</li></ul> |
 
 #### [windowsToNorth](#windowstonorth)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:windowsToNorth([candidateWindows[, frontmost[, strict]]]) -> list of hs.window objects` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets all windows to the north of this window |
+| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows to the north are candidates.</li><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the northward axis</li></ul> |
+| **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned north (i.e. up) of the window, in ascending order of distance</li></ul> |
+| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows every time this method is called; this can be slow, and some undesired "windows" could be included (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in <code>hs.window.filter</code> instead</li></ul> |
 
 #### [windowsToSouth](#windowstosouth)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:windowsToSouth([candidateWindows[, frontmost[, strict]]]) -> list of hs.window objects` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets all windows to the south of this window |
+| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows to the south are candidates.</li><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the southward axis</li></ul> |
+| **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned south (i.e. down) of the window, in ascending order of distance</li></ul> |
+| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows every time this method is called; this can be slow, and some undesired "windows" could be included (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in <code>hs.window.filter</code> instead</li></ul> |
 
 #### [windowsToWest](#windowstowest)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:windowsToWest([candidateWindows[, frontmost[, strict]]]) -> list of hs.window objects` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets all windows to the west of this window |
+| **Parameters**                                       | <ul><li>candidateWindows - (optional) a list of candidate windows to consider; if nil, all visible windows to the west are candidates.</li><li>frontmost - (optional) boolean, if true unoccluded windows will be placed before occluded ones in the result list</li><li>strict - (optional) boolean, if true only consider windows at an angle between 45° and -45° on the westward axis</li></ul> |
+| **Returns**                                          | <ul><li>A list of <code>hs.window</code> objects representing all windows positioned west (i.e. left) of the window, in ascending order of distance</li></ul> |
+| **Notes**                                            | <ul><li>If you don't pass <code>candidateWindows</code>, Hammerspoon will query for the list of all visible windows every time this method is called; this can be slow, and some undesired "windows" could be included (see the notes for <code>hs.window.allWindows()</code>); consider using the equivalent methods in <code>hs.window.filter</code> instead</li></ul> |
 
 #### [zoomButtonRect](#zoombuttonrect)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.window:zoomButtonRect() -> rect-table or nil` </span>                                                          |

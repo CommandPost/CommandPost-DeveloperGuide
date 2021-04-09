@@ -5,6 +5,7 @@ Load/play/manipulate sound files
 
 ## API Overview
 * Functions - API calls offered directly by the extension
+ * [getAudioEffectNames](#getaudioeffectnames)
  * [soundFileTypes](#soundfiletypes)
  * [soundTypes](#soundtypes)
  * [systemSounds](#systemsounds)
@@ -29,6 +30,15 @@ Load/play/manipulate sound files
 ## API Documentation
 
 ### Functions
+
+#### [getAudioEffectNames](#getaudioeffectnames)
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sound.getAudioEffectNames() -> table` </span>                                                          |
+| -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Type**                                             | Function |
+| **Description**                                      | Gets a table of installed Audio Units Effect names. |
+| **Parameters**                                       | <ul><li>None</li></ul> |
+| **Returns**                                          | <ul><li>A table containing the names of all installed Audio Units Effects.</li></ul> |
+| **Notes**                                            | <ul><li>Example usage: <code>hs.inspect(hs.audiounit.getAudioEffectNames())</code></li></ul> |
 
 #### [soundFileTypes](#soundfiletypes)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.sound.soundFileTypes() -> table` </span>                                                          |

@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.tangent.os.pasteboard
+# [docs](index.md) » plugins.finalcutpro.tangent.os.pasteboard
 ---
 
 Pasteboard Tools for Tangent.

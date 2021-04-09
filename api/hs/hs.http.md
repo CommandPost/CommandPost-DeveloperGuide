@@ -54,7 +54,7 @@ Perform HTTP requests
 | **Description**                                      | Convert all recognized HTML Entities in the `inString` to appropriate UTF8 byte sequences and returns the converted text. |
 | **Parameters**                                       | <ul><li>inString -- A string containing any number of HTML Entities (&whatever;) in the text.</li></ul> |
 | **Returns**                                          | <ul><li>outString -- the input string with all recognized HTML Entity sequences converted to UTF8 byte sequences.</li></ul> |
-| **Notes**                                            | <ul><li>Recognized HTML Entities are those registered in <code>hs.http.htmlEntities</code> or numeric entity sequences: &#n; where <code>n</code> can be any integer number.</li><li>This function is especially useful as a post-filter to data retrieved by the <code>hs.http.get</code> and <code>hs.http.asyncGet</code> functions.</li></ul> |
+| **Notes**                                            | <ul><li>Recognized HTML Entities are those registered in <code>hs.http.htmlEntities</code> or numeric entity sequences: &amp;#n; where <code>n</code> can be any integer number.</li><li>This function is especially useful as a post-filter to data retrieved by the <code>hs.http.get</code> and <code>hs.http.asyncGet</code> functions.</li></ul> |
 
 #### [doAsyncRequest](#doasyncrequest)
 | <span style="float: left;">**Signature**</span> | <span style="float: left;">`hs.http.doAsyncRequest(url, method, data, headers, callback, [cachePolicy])` </span>                                                          |
@@ -88,6 +88,7 @@ Perform HTTP requests
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sends an HTTP GET request to a URL |
+| **Parameters**                                       | <ul><li>url - A string containing the URL to retrieve</li><li>headers - A table containing string keys and values representing the request headers, or nil to add no headers</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the HTTP response status</li><li>A string containing the response body</li><li>A table containing the response headers</li></ul> |
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul> |
 
@@ -96,6 +97,7 @@ Perform HTTP requests
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Sends an HTTP POST request to a URL |
+| **Parameters**                                       | <ul><li>url - A string containing the URL to submit to</li><li>data - A string containing the request body, or nil to send no body</li><li>headers - A table containing string keys and values representing the request headers, or nil to add no headers</li></ul> |
 | **Returns**                                          | <ul><li>A number containing the HTTP response status</li><li>A string containing the response body</li><li>A table containing the response headers</li></ul> |
 | **Notes**                                            | <ul><li>If authentication is required in order to download the request, the required credentials must be specified as part of the URL (e.g. "http://user:password@host.com/"). If authentication fails, or credentials are missing, the connection will attempt to continue without credentials.</li></ul> |
 

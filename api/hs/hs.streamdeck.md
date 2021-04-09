@@ -78,6 +78,7 @@ This module would not have been possible without standing on the shoulders of ot
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Method |
 | **Description**                                      | Gets the layout of buttons the device has |
+| **Parameters**                                       | <ul><li>None</li></ul> |
 | **Returns**                                          | <ul><li>The number of columns</li><li>The number of rows</li></ul> |
 
 #### [firmwareVersion](#firmwareversion)

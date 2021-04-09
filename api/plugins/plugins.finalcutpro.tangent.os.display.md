@@ -1,4 +1,4 @@
-# [docs](index.md) » plugins.core.tangent.os.display
+# [docs](index.md) » plugins.finalcutpro.tangent.os.display
 ---
 
 Tangent Display Functions.
@@ -12,7 +12,7 @@ Tangent Display Functions.
 ### Functions
 
 #### [init](#init)
-| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.core.tangent.os.display.init() -> self` </span>                                                          |
+| <span style="float: left;">**Signature**</span> | <span style="float: left;">`plugins.finalcutpro.tangent.os.display.init() -> self` </span>                                                          |
 | -----------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Type**                                             | Function |
 | **Description**                                      | Initialise the module. |
